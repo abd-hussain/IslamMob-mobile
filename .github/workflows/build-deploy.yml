@@ -1,0 +1,129 @@
+name: CI/CD Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: 📚 Git Checkout
+          uses: actions/checkout@v2
+
+        - name: 🐦 Setup Flutter
+          uses: subosito/flutter-action@v2
+          with:
+            flutter-version: '3.19.0'
+            cache: true
+    
+        - name: 📦 Set up key.properties
+          run: |
+            echo "keyPassword=${{ secrets.KEY_PASSWORD }}" > android/key.properties
+            echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> android/key.properties
+            echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
+            echo "${{ secrets.KEY_STORE }}" | base64 --decode > android/androidkeystore.jks
+    
+        - name: 📦 Set up local.properties
+          run: |
+              echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
+    
+        - name: 📦 Set up Play Store Secret
+          run: |
+              echo "${{ secrets.GOOGLE_PLAY_STORE_KEY }}" | base64 --decode > android/play_store_secret.json
+    
+        - name: 🎯 Setup Fastlane
+          uses: ruby/setup-ruby@v1
+          with:
+            ruby-version: 2.6
+            rubygems: latest
+    
+        - name: 🛠️ Build and Deploy
+          run: |
+            flutter pub get
+            make deploy-android
+
+  ios:
+    runs-on: macOS-13
+
+    steps:
+        - name: 📚 Git Checkout
+          uses: actions/checkout@v3
+
+        - name: 🐦 Setup Flutter
+          uses: subosito/flutter-action@v2
+          with:
+            flutter-version: '3.19.1'
+            cache: true
+
+        - name: 📦 Set up App Store Connect
+          run: |
+              echo "${{ secrets.APP_STORE_CONNECT }}" | base64 --decode > ios/app_store_connect.json
+
+        - name: 🎯 Setup Fastlane
+          uses: ruby/setup-ruby@v1
+          with:
+            ruby-version: 2.6.1
+            rubygems: 3.2.3
+
+        - name: 📦 Cleaning before we start
+          run: |
+              flutter clean
+              cd ios && rm -rf Podfile.lock
+              cd ios && rm -rf Pods
+              cd ios && pod install
+              cd ..
+              flutter pub get
+              cd ios && pod install
+
+        - name: 📦 Update Fastlane
+          run: |
+              cd ios && bundle update fastlane
+    
+        - name: 🛠️ Build and Deploy
+          run: |
+            make deploy-ios
+          env:
+            MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+            MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
+            FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+            MATCH_KEYCHAIN_NAME: ${{ secrets.MATCH_KEYCHAIN_NAME }}
+            MATCH_KEYCHAIN_PASSWORD: ${{ secrets.MATCH_KEYCHAIN_PASSWORD }}
+
+  web:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v2
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.0'
+          cache: true
+
+      - name: 🛠️ Build the application
+        run: flutter build web -t lib/main.dart
+      
+      - name: ⬇️ Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: build
+          path: build/web
+
+      - name: ⬇️ Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: build
+          path: build/web
+
+      - name: 🎯 Deploy to firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_LEGALZHUB }}"
+          channelId: live
+          projectId: legalzhub
