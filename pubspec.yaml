@@ -16,6 +16,16 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  # [UNKNOWN PLATFORMS]
+  firebase_core: ^2.1.1
+  firebase_analytics: ^10.0.3
+  firebase_crashlytics: ^3.0.3
+  firebase_messaging: ^14.0.3
+  cloud_firestore: ^4.1.0
+  firebase_remote_config: ^3.0.3
+  firebase_performance: ^0.9.0+11
+
+
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
