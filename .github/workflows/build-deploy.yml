@@ -37,7 +37,7 @@ jobs:
         - name: 🎯 Setup Fastlane
           uses: ruby/setup-ruby@v1
           with:
-            ruby-version: 2.6
+            ruby-version: 3.0
             rubygems: latest
     
         - name: 🛠️ Build and Deploy
@@ -45,12 +45,12 @@ jobs:
             flutter pub get
             make deploy-android
 
-  # ios:
-  #   runs-on: macOS-13
+  ios:
+    runs-on: macOS-13
 
-  #   steps:
-  #       - name: 📚 Git Checkout
-  #         uses: actions/checkout@v3
+    steps:
+        - name: 📚 Git Checkout
+          uses: actions/checkout@v3
 
   #       - name: 🐦 Setup Flutter
   #         uses: subosito/flutter-action@v2
@@ -92,12 +92,12 @@ jobs:
   #           MATCH_KEYCHAIN_NAME: ${{ secrets.MATCH_KEYCHAIN_NAME }}
   #           MATCH_KEYCHAIN_PASSWORD: ${{ secrets.MATCH_KEYCHAIN_PASSWORD }}
 
-  # web:
-  #   runs-on: ubuntu-latest
+  web:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: 📚 Git Checkout
-  #       uses: actions/checkout@v2
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v2
 
   #     - name: 🐦 Setup Flutter
   #       uses: subosito/flutter-action@v2
