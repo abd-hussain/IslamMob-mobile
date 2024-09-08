@@ -20,12 +20,6 @@ jobs:
           with:
             flutter-version: '3.24.1'
             cache: true
-
-        - name: Install dependencies
-          run: flutter pub get
-
-        - name: Clean build
-          run: flutter clean
     
         - name: 📦 Set up key.properties
           run: |
