@@ -1,4 +1,4 @@
-# Islam App
+# Islam Mob
 
 All Muslim Application
 

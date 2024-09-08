@@ -23,7 +23,7 @@
 
        <application
         android:usesCleartextTraffic="true"
-        android:label="Islam App"
+        android:label="Islam Mob"
         android:hasCode="true"
         tools:replace="android:hasCode"
         android:name="${applicationName}"
