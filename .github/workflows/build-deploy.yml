@@ -29,6 +29,7 @@ jobs:
             echo "${{ secrets.KEY_STORE }}" | base64 --decode > android/androidkeystore.jks
             echo "${{ secrets.GOOGLE_PLAY_STORE_KEY }}" | base64 --decode > android/play_store_secret.json
 
+            
         - name: 📦 Set up local.properties
           run: |
               echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
