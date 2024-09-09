@@ -27,15 +27,12 @@ jobs:
             echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> android/key.properties
             echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
             echo "${{ secrets.KEY_STORE }}" | base64 --decode > android/androidkeystore.jks
-    
+            echo "${{ secrets.GOOGLE_PLAY_STORE_KEY }}" | base64 --decode > android/play_store_secret.json
+
         - name: 📦 Set up local.properties
           run: |
               echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
-    
-        - name: 📦 Set up Play Store Secret
-          run: |
-              echo "${{ secrets.GOOGLE_PLAY_STORE_KEY }}" | base64 --decode > android/play_store_secret.json
-    
+
         - name: 🎯 Setup Fastlane
           uses: ruby/setup-ruby@v1
           with:
