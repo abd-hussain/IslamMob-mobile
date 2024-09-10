@@ -12,7 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  
   flutter_localizations:
     sdk: flutter
 
@@ -25,6 +25,16 @@ dependencies:
   firebase_remote_config: ^5.1.0
   firebase_performance: ^0.10.0+5
 
+  http: ^1.2.2
+  dio: ^5.7.0
+  logger: ^2.4.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  async: ^2.11.0
+  get_it: ^7.7.0
+  google_mobile_ads: ^5.1.0
+  connectivity_plus: ^6.0.5
+  loading_indicator: ^3.1.1
 
   cupertino_icons: ^1.0.8
 
@@ -39,11 +49,13 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
-  # assets:
-  # - assets/images/
+  assets:
+  - assets/images/
+  - assets/images/logoz/
+
   # - assets/images/svg/
   # - assets/images/days/
-  # - assets/images/logoz/
+  
   # - assets/images/tutorials/
   # - assets/lottie/
   

@@ -65,7 +65,7 @@ jobs:
         - name: 🎯 Setup Fastlane
           uses: ruby/setup-ruby@v1
           with:
-            ruby-version: 3.0
+            ruby-version: 3.3.5
             rubygems: latest
 
         - name: 📦 Cleaning before we start
@@ -77,10 +77,6 @@ jobs:
               cd ..
               flutter pub get
               cd ios && pod install
-
-        - name: 📦 Update Fastlane
-          run: |
-              cd ios && bundle update fastlane
     
         - name: 🛠️ Build and Deploy
           run: |

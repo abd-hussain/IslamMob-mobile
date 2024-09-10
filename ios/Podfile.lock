@@ -3,6 +3,9 @@ PODS:
     - Firebase/Firestore (= 11.0.0)
     - firebase_core
     - Flutter
+  - connectivity_plus (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - Firebase/Analytics (11.0.0):
     - Firebase/Core
   - Firebase/Core (11.0.0):
@@ -150,6 +153,12 @@ PODS:
     - PromisesSwift (~> 2.1)
   - FirebaseSharedSwift (11.0.0)
   - Flutter (1.0.0)
+  - Google-Mobile-Ads-SDK (11.2.0):
+    - GoogleUserMessagingPlatform (>= 1.1)
+  - google_mobile_ads (5.1.0):
+    - Flutter
+    - Google-Mobile-Ads-SDK (~> 11.2.0)
+    - webview_flutter_wkwebview
   - GoogleAppMeasurement (11.0.0):
     - GoogleAppMeasurement/AdIdSupport (= 11.0.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
@@ -175,6 +184,7 @@ PODS:
     - PromisesObjC (~> 2.4)
   - GoogleTagManager (8.0.0):
     - FirebaseAnalytics (~> 11.0)
+  - GoogleUserMessagingPlatform (2.6.0)
   - GoogleUtilities/AppDelegateSwizzler (8.0.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -208,12 +218,19 @@ PODS:
     - nanopb/encode (= 3.30910.0)
   - nanopb/decode (3.30910.0)
   - nanopb/encode (3.30910.0)
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - PromisesObjC (2.4.0)
   - PromisesSwift (2.4.0):
     - PromisesObjC (= 2.4.0)
+  - webview_flutter_wkwebview (0.0.1):
+    - Flutter
+    - FlutterMacOS
 
 DEPENDENCIES:
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/darwin`)
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
@@ -222,7 +239,10 @@ DEPENDENCIES:
   - firebase_remote_config (from `.symlinks/plugins/firebase_remote_config/ios`)
   - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `11.0.0`)
   - Flutter (from `Flutter`)
+  - google_mobile_ads (from `.symlinks/plugins/google_mobile_ads/ios`)
   - GoogleTagManager
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/darwin`)
 
 SPEC REPOS:
   trunk:
@@ -246,9 +266,11 @@ SPEC REPOS:
     - FirebaseRemoteConfigInterop
     - FirebaseSessions
     - FirebaseSharedSwift
+    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleTagManager
+    - GoogleUserMessagingPlatform
     - GoogleUtilities
     - leveldb-library
     - nanopb
@@ -258,6 +280,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   cloud_firestore:
     :path: ".symlinks/plugins/cloud_firestore/ios"
+  connectivity_plus:
+    :path: ".symlinks/plugins/connectivity_plus/darwin"
   firebase_analytics:
     :path: ".symlinks/plugins/firebase_analytics/ios"
   firebase_core:
@@ -275,6 +299,12 @@ EXTERNAL SOURCES:
     :tag: 11.0.0
   Flutter:
     :path: Flutter
+  google_mobile_ads:
+    :path: ".symlinks/plugins/google_mobile_ads/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  webview_flutter_wkwebview:
+    :path: ".symlinks/plugins/webview_flutter_wkwebview/darwin"
 
 CHECKOUT OPTIONS:
   FirebaseFirestore:
@@ -283,6 +313,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   cloud_firestore: c44f5943a6f7fc1775cfa4a1e980a0024ed565ee
+  connectivity_plus: ddd7f30999e1faaef5967c23d5b6d503d10434db
   Firebase: 9f574c08c2396885b5e7e100ed4293d956218af9
   firebase_analytics: 1a66fe8d4375eccff44671ea37897683a78b2675
   firebase_core: ceec591a66629daaee82d3321551692c4a871493
@@ -311,14 +342,19 @@ SPEC CHECKSUMS:
   FirebaseSessions: 78f137e68dc01ca71606169ba4ac73b98c13752a
   FirebaseSharedSwift: 9d0e7130af2f0cf162ecd136971f9661f2a3f769
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  Google-Mobile-Ads-SDK: 5a6d005a6cb5b5e8f4c7b69ca05cdea79c181139
+  google_mobile_ads: 9379c80fdfa9988fb0e105a407890ff8deb3cf86
   GoogleAppMeasurement: 6e49ffac7d3f2c3ded9cc663f912a13b67bbd0de
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
   GoogleTagManager: 05f257a9afe6e1d6da24f0ee37ab255ce34108b6
+  GoogleUserMessagingPlatform: 0c3a08353e53ce8c2feab7addd0b652cde522450
   GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
   leveldb-library: e8eadf9008a61f9e1dde3978c086d2b6d9b9dc28
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
+  webview_flutter_wkwebview: 0982481e3d9c78fd5c6f62a002fcd24fc791f1e4
 
 PODFILE CHECKSUM: 79c4320fbd2ea6fb0ca3b2c94f7b221f89a7b547
 

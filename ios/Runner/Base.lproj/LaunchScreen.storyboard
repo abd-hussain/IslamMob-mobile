@@ -22,12 +22,28 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
                                 <rect key="frame" x="0.0" y="-86" width="393" height="1024"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every Muslim Application" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3s-cG-CkR">
+                                <rect key="frame" x="115.66666666666669" y="793" width="162" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Islam-Mob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuD-4n-zXs">
+                                <rect key="frame" x="156.66666666666666" y="768.66666666666663" width="79.666666666666657" height="19.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1a2-6s-vTC"/>
                             <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4X2-HB-R7a"/>
+                            <constraint firstItem="u3s-cG-CkR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="C1C-vS-rjT"/>
+                            <constraint firstItem="u3s-cG-CkR" firstAttribute="top" secondItem="NuD-4n-zXs" secondAttribute="bottom" constant="5" id="Gcn-DD-gyw"/>
+                            <constraint firstItem="NuD-4n-zXs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Oem-wp-BSs"/>
                             <constraint firstAttribute="trailing" secondItem="YRO-k0-Ey4" secondAttribute="trailing" id="eYd-nx-OhL"/>
+                            <constraint firstItem="xbc-2k-c8Z" firstAttribute="top" secondItem="u3s-cG-CkR" secondAttribute="bottom" constant="8" id="ns8-5j-KJ5"/>
                             <constraint firstItem="YRO-k0-Ey4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="y6Y-3i-eeA"/>
                         </constraints>
                     </view>
