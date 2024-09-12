@@ -22,7 +22,7 @@ class SplashLoadingScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                   width: 50,
                   child: LoadingIndicator(
