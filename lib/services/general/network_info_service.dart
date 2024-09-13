@@ -4,23 +4,20 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:islam_app/utils/exceptions.dart';
 
 class NetworkInfoService {
-  StreamController<bool> networkStateStreamControler =
-      StreamController.broadcast();
+  StreamController<bool> networkStateStreamControler = StreamController.broadcast();
   Connectivity connectivity = Connectivity();
 
   void initNetworkConnectionCheck() {
     connectivity.onConnectivityChanged.distinct((previous, next) {
       return previous != next;
     }).listen((event) {
-      final isConnected = event.contains(ConnectivityResult.mobile) ||
-          event.contains(ConnectivityResult.wifi);
+      final isConnected = event == ConnectivityResult.mobile || event == ConnectivityResult.wifi;
       networkStateStreamControler.sink.add(isConnected);
     });
   }
 
   Future<bool> checkConnectivityonLunching() async {
-    final List<ConnectivityResult> connectivityResult =
-        await connectivity.checkConnectivity();
+    final ConnectivityResult connectivityResult = await connectivity.checkConnectivity();
 
     if (_isConnected(connectivityResult)) {
       final result = await _internetLookupCheck();
@@ -32,12 +29,12 @@ class NetworkInfoService {
     }
   }
 
-  bool _isConnected(List<ConnectivityResult> result) {
-    return result.contains(ConnectivityResult.mobile) ||
-        result.contains(ConnectivityResult.wifi) ||
-        result.contains(ConnectivityResult.ethernet) ||
-        result.contains(ConnectivityResult.vpn) ||
-        result.contains(ConnectivityResult.other);
+  bool _isConnected(ConnectivityResult result) {
+    return result == ConnectivityResult.mobile ||
+        result == ConnectivityResult.wifi ||
+        result == ConnectivityResult.ethernet ||
+        result == ConnectivityResult.vpn ||
+        result == ConnectivityResult.other;
   }
 
   Future<bool> _internetLookupCheck() async {
