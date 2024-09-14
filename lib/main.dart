@@ -6,6 +6,8 @@ import 'package:islam_app/my_app/my_app.dart';
 import 'package:islam_app/utils/logger.dart';
 import 'package:islam_app/utils/exceptions.dart';
 
+//TODO: check coloring and logo
+
 void main() {
   runZonedGuarded(() {
     logDebugMessage(message: 'Application Started ...');

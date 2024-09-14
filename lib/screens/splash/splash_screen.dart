@@ -17,7 +17,7 @@ class SplashLoadingScreen extends StatelessWidget {
                 Center(
                   child: Image.asset(
                     "assets/images/logoz/logo.png",
-                    height: 100,
+                    height: 150,
                     width: 150,
                   ),
                 ),
@@ -34,7 +34,15 @@ class SplashLoadingScreen extends StatelessWidget {
                 ),
                 const Expanded(child: SizedBox()),
                 const Text(
-                  "Loading ...",
+                  "Islam-Mob",
+                  style: TextStyle(
+                    color: Color(0xff444444),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Text(
+                  "For Every Muslim",
                   style: TextStyle(
                     color: Color(0xff444444),
                     fontSize: 12,

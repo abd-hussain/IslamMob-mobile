@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/islam_mob_app/islam_mob_app.dart';
 import 'package:islam_app/my_app/my_app_bloc.dart';
-import 'package:islam_app/screens/myhomepage.dart';
 import 'package:islam_app/screens/splash/splash_screen.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -30,21 +30,10 @@ class _MyAppState extends State<MyApp> {
             if (snapshot.connectionState == ConnectionState.done) {
               logDebugMessage(message: 'Initialize Firebase Done!!');
 
-              return MaterialApp(
-                title: 'Flutter Demo',
-                theme: ThemeData(
-                  colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                  useMaterial3: true,
-                ),
-                home: const MyHomePage(title: 'Flutter Demo Home Page'),
+              return IslamMobApp(
+                //   navigatorKey: widget.navigatorKey,
+                hasConnectivity: _bloc.hasConnectivity,
               );
-
-              //TODO HERE
-
-              // return LegalzApp(
-              //   navigatorKey: widget.navigatorKey,
-              //   hasConnectivity: hasConnectivity,
-              // );
             }
           }
 
