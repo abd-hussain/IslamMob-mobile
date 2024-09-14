@@ -8,8 +8,6 @@ import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 
 class MyAppBloc {
-  bool hasConnectivity = false;
-
   Future fetchData() {
     return AsyncMemoizer().runOnce(() async {
       await Future.delayed(const Duration(seconds: 2));
@@ -20,15 +18,19 @@ class MyAppBloc {
   Future _initializeEveryThing() async {
     await Hive.initFlutter();
     await Hive.openBox(DatabaseBoxConstant.userInfo);
-    await Firebase.initializeApp();
     await setupLocator();
 
-    hasConnectivity = await _initInternetConnection();
+    final bool hasConnectivity = await _initInternetConnection();
 
-    await MobileAds.instance.initialize();
-    await MobileAds.instance.updateRequestConfiguration(
-      RequestConfiguration(testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231']),
-    );
+    if (hasConnectivity) {
+      await Firebase.initializeApp();
+
+      await MobileAds.instance.initialize();
+      await MobileAds.instance.updateRequestConfiguration(
+        RequestConfiguration(
+            testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231']),
+      );
+    }
 
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,

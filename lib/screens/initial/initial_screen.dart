@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/initial/bloc/initial_screen_bloc.dart';
 import 'package:islam_app/screens/initial/widgets/list_of_languages_view.dart';
 import 'package:islam_app/screens/initial/widgets/title_table_widget.dart';
@@ -67,11 +68,31 @@ class _InitialScreenState extends State<InitialScreen> {
               const SizedBox(height: 20),
               const TitleTableWidget(),
               const ListOfLanguagesView(),
-              CustomButton(
-                enableButton: true,
-                buttonTitle: "asdasd",
-                onTap: () async {
-                  //TODO
+              BlocBuilder<InitialScreenBloc, InitialScreenState>(
+                buildWhen: (previous, current) {
+                  return previous.selectedLanguage != current.selectedLanguage;
+                },
+                builder: (context, state) {
+                  return state.selectedLanguage == null
+                      ? const SizedBox()
+                      : CustomButton(
+                          enableButton: true,
+                          buttonTitle:
+                              state.selectedLanguage!.selectButtonTitle,
+                          onTap: () async {
+                            context
+                                .read<InitialScreenBloc>()
+                                .setLanguageInStorage(
+                                    context, state.selectedLanguage!.code);
+                            final navigator =
+                                Navigator.of(context, rootNavigator: true);
+
+                            await navigator.pushNamedAndRemoveUntil(
+                              RoutesConstants.mainContainer,
+                              (Route<dynamic> route) => false,
+                            );
+                          },
+                        );
                 },
               ),
             ],

@@ -30,10 +30,7 @@ class _MyAppState extends State<MyApp> {
             if (snapshot.connectionState == ConnectionState.done) {
               logDebugMessage(message: 'Initialize Firebase Done!!');
 
-              return IslamMobApp(
-                //   navigatorKey: widget.navigatorKey,
-                hasConnectivity: _bloc.hasConnectivity,
-              );
+              return const IslamMobApp();
             }
           }
 

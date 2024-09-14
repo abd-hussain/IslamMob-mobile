@@ -38,7 +38,10 @@ class CustomButton extends StatelessWidget {
               buttonTitle == "Submit"
                   ? AppLocalizations.of(context)!.submit
                   : buttonTitle,
-              style: TextStyle(color: buttonTitleColor),
+              style: TextStyle(
+                color: buttonTitleColor,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
