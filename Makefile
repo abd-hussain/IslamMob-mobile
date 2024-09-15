@@ -8,9 +8,4 @@ deploy-ios:
 	cd ios/fastlane && bundle install
 	cd ios/fastlane && bundle exec fastlane deploy
 
-deploy-web:
-	@echo "╠ Sending Build to Firebase Hosting..."
-	flutter build web --no-tree-shake-icons
-	firebase deploy
-
-deploy: deploy-android deploy-ios deploy-web
+deploy: deploy-android deploy-ios

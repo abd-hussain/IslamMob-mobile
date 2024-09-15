@@ -37,16 +37,23 @@ jobs:
         - name: 🎯 Setup Fastlane
           uses: ruby/setup-ruby@v1
           with:
-            ruby-version: 2.6.1
-            rubygems: latest
+              ruby-version: 3.2 
+    
+        - name: 📦 Update RubyGems
+          run: gem update --system
+
+        - name: 📦 Cleaning before we start
+          run: |
+              flutter clean
+              rm -rf pubspec.lock
+              flutter pub get
     
         # - name: 🛠️ Build and Deploy
         #   run: |
-        #     flutter pub get
         #     make deploy-android
 
   ios:
-    runs-on: macOS-13
+    runs-on: macos-latest
 
     steps:
         - name: 📚 Git Checkout
@@ -65,8 +72,10 @@ jobs:
         - name: 🎯 Setup Fastlane
           uses: ruby/setup-ruby@v1
           with:
-            ruby-version: 2.6.1
-            rubygems: latest
+            ruby-version: 3.2 
+
+        - name: 📦 Update RubyGems
+          run: gem update --system
 
         - name: 📦 Cleaning before we start
           run: |
@@ -75,8 +84,8 @@ jobs:
               cd ios && rm -rf Pods
               cd ios && pod install
               cd ..
+              rm -rf pubspec.lock
               flutter pub get
-              cd ios && pod install
     
         # - name: 🛠️ Build and Deploy
         #   run: |

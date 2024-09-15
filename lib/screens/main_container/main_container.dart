@@ -27,9 +27,7 @@ class _MainContainerState extends State<MainContainer> {
             },
             builder: (context, state) {
               return IndexedStack(
-                index: context
-                    .read<MainContainerBloc>()
-                    .getSelectedIndexDependOnTab(state.selectedIndex),
+                index: context.read<MainContainerBloc>().getSelectedIndexDependOnTab(state.selectedIndex),
                 children: const [
                   TabNavigator(initialRoute: RoutesConstants.quranScreen),
                 ],
@@ -46,14 +44,12 @@ class _MainContainerState extends State<MainContainer> {
           height: 60,
           style: TabStyle.fixedCircle,
           items: const [
-            TabItem(icon: Icons.menu_book_sharp),
+            TabItem(icon: Icons.menu_book_rounded),
           ],
           onTap: (int index) {
             context.read<MainContainerBloc>().add(
                   MainContainerEvent.changeSelectedIndex(
-                    context
-                        .read<MainContainerBloc>()
-                        .returnSelectedTypeDependOnIndex(index),
+                    context.read<MainContainerBloc>().returnSelectedTypeDependOnIndex(index),
                   ),
                 );
           },

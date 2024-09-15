@@ -4,4 +4,5 @@ class DatabaseBoxConstant {
 
 class DatabaseFieldConstant {
   static const String selectedLanguage = "selectedLanguage";
+  static const String quranKaremLastPageNumber = "quranKaremLastPageNumber";
 }
