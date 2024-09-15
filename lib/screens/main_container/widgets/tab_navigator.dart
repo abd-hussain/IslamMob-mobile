@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 
 class TabNavigator extends StatelessWidget {
   const TabNavigator({super.key, required this.initialRoute});

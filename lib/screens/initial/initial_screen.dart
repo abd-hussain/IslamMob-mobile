@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/initial/bloc/initial_screen_bloc.dart';
-import 'package:islam_app/screens/initial/widgets/list_of_languages_view.dart';
-import 'package:islam_app/screens/initial/widgets/title_table_widget.dart';
+import 'package:islam_app/screens/initial/widgets/i_list_of_languages_view.dart';
+import 'package:islam_app/screens/initial/widgets/i_title_table_widget.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

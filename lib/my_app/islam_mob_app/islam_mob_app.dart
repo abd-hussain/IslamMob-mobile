@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:islam_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_gusture.dart';
 import 'package:islam_app/utils/constants/constant.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';

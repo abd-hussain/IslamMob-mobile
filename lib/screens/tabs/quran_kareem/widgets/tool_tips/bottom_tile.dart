@@ -14,7 +14,9 @@ class BottomTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onTap,
+      onTap: () {
+        onTap();
+      },
       child: Container(
         color: Colors.black.withOpacity(0.5),
         child: Padding(

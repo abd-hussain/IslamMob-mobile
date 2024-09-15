@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/models/app_model/language.dart';
-import 'package:islam_app/screens/initial/bloc/initial_screen_bloc.dart';
-import 'package:islam_app/screens/initial/widgets/list_of_languages_tile.dart';
+import 'package:islam_app/screens/change_language/widgets/c_list_of_languages_tile.dart';
+import 'package:islam_app/utils/constants/constant.dart';
 
 class ListOfLanguagesView extends StatelessWidget {
   const ListOfLanguagesView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<LanguageModel> languages =
-        context.read<InitialScreenBloc>().languages;
+    final List<LanguageModel> languages = AppConstant.languages;
     return Expanded(
       child: ListView.builder(
           itemCount: languages.length,

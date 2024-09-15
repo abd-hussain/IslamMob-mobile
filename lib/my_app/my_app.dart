@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/islam_mob_app/islam_mob_app.dart';
+import 'package:islam_app/my_app/islam_mob_app/islam_mob_app.dart';
 import 'package:islam_app/my_app/my_app_bloc.dart';
 import 'package:islam_app/screens/splash/splash_screen.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';

@@ -1,7 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/screens/main_container/widgets/tab_navigator.dart';
 

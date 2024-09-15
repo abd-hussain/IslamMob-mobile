@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/bottom_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -72,8 +73,9 @@ class QuranBottomHelpBar extends StatelessWidget {
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingLanguage,
               icon: Icons.language,
-              onTap: () {
-                //TODO
+              onTap: () async {
+                final navigator = Navigator.of(context, rootNavigator: true);
+                await navigator.pushNamed(RoutesConstants.changeLanguageScreen);
               },
             ),
           ]),
