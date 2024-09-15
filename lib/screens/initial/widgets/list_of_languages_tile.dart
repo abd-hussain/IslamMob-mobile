@@ -33,7 +33,7 @@ class ListOfLanguageTile extends StatelessWidget {
                   width: 40,
                   height: 30,
                   child: CountryFlag.fromCountryCode(
-                    language.code,
+                    language.flagCode,
                     shape: const RoundedRectangle(4),
                   ),
                 ),
@@ -52,7 +52,7 @@ class ListOfLanguageTile extends StatelessWidget {
                   },
                   builder: (context, state) {
                     return Icon(
-                      state.selectedLanguage?.code == language.code
+                      state.selectedLanguage?.flagCode == language.flagCode
                           ? Icons.check_box_outlined
                           : Icons.check_box_outline_blank_rounded,
                       size: 25,

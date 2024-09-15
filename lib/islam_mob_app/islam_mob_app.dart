@@ -29,6 +29,7 @@ class IslamMobAppState extends State<IslamMobApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         onGenerateTitle: (BuildContext context) {
           return AppConstant.appName;
         },

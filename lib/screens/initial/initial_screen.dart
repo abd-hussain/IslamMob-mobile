@@ -82,8 +82,8 @@ class _InitialScreenState extends State<InitialScreen> {
                           onTap: () async {
                             context
                                 .read<InitialScreenBloc>()
-                                .setLanguageInStorage(
-                                    context, state.selectedLanguage!.code);
+                                .setLanguageInStorage(context,
+                                    state.selectedLanguage!.languageCode);
                             final navigator =
                                 Navigator.of(context, rootNavigator: true);
 

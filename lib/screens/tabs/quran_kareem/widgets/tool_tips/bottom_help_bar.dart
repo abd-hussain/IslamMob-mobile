@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/bottom_tile.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
   const QuranBottomHelpBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //TODO
     return Container(
-      color: Colors.black.withOpacity(0.7),
+      color: Colors.black.withOpacity(0.6),
       height: 140,
       child: GridView(
           physics: const NeverScrollableScrollPhysics(),
@@ -20,39 +20,61 @@ class QuranBottomHelpBar extends StatelessWidget {
           ),
           children: [
             BottomTile(
-              title: "Lighting",
+              title: AppLocalizations.of(context)!.quranSettingLighting,
               icon: Icons.sunny,
+              onTap: () {
+                //TODO
+              },
             ),
             BottomTile(
-              title: "Add Bookmark",
+              title: AppLocalizations.of(context)!.quranSettingAddBookMark,
               icon: Icons.bookmark_add,
+              onTap: () {
+                //TODO
+              },
             ),
             BottomTile(
-              title: "Bookmark List",
+              title: AppLocalizations.of(context)!.quranSettingBookMarkList,
               icon: Icons.collections_bookmark_sharp,
+              onTap: () {
+                //TODO
+              },
             ),
             BottomTile(
-              title: "Indexing",
-              icon: Icons.list,
+              title: AppLocalizations.of(context)!.quranSettingMushaf,
+              icon: Icons.library_books,
+              onTap: () {
+                //TODO
+              },
             ),
             BottomTile(
-              title: "Parts",
+              title: AppLocalizations.of(context)!.quranSettingParts,
               icon: Icons.pie_chart_rounded,
+              onTap: () {
+                //TODO
+              },
             ),
             BottomTile(
-              title: "Pages",
+              title: AppLocalizations.of(context)!.quranSettingPages,
               icon: Icons.copy_sharp,
+              onTap: () {
+                //TODO
+              },
             ),
             BottomTile(
-              title: "Settings",
-              icon: Icons.settings,
+              title: AppLocalizations.of(context)!.quranSettingReport,
+              icon: Icons.report_outlined,
+              onTap: () {
+                //TODO
+              },
             ),
-            Container(
-              color: Colors.black.withOpacity(0.9),
-            ),
+            Container(color: Colors.black.withOpacity(0.6)),
             BottomTile(
-              title: "Language",
+              title: AppLocalizations.of(context)!.quranSettingLanguage,
               icon: Icons.language,
+              onTap: () {
+                //TODO
+              },
             ),
           ]),
     );

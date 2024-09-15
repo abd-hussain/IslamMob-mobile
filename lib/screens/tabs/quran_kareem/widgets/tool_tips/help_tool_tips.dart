@@ -9,9 +9,7 @@ class HelpToolTipsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const QuranHeaderHelpBar(
-          hezbName: 'hezbName',
-        ),
+        const QuranHeaderHelpBar(),
         Expanded(child: Container()),
         const QuranBottomHelpBar(),
       ],

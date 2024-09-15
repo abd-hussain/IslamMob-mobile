@@ -20,9 +20,8 @@ mixin _$QuranKareemEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(String name) updateSorahName,
-    required TResult Function(String name) updateJozo2Name,
-    required TResult Function(double number) updateHezebNumber,
+    required TResult Function(int num) updateSorahReferanceNumber,
+    required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,9 +29,8 @@ mixin _$QuranKareemEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(String name)? updateSorahName,
-    TResult? Function(String name)? updateJozo2Name,
-    TResult? Function(double number)? updateHezebNumber,
+    TResult? Function(int num)? updateSorahReferanceNumber,
+    TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,9 +38,8 @@ mixin _$QuranKareemEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(String name)? updateSorahName,
-    TResult Function(String name)? updateJozo2Name,
-    TResult Function(double number)? updateHezebNumber,
+    TResult Function(int num)? updateSorahReferanceNumber,
+    TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     required TResult orElse(),
   }) =>
@@ -51,9 +48,10 @@ mixin _$QuranKareemEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
     required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-    required TResult Function(_UpdateHezebNumber value) updateHezebNumber,
+    required TResult Function(_UpdateSorahReferanceNumber value)
+        updateSorahReferanceNumber,
+    required TResult Function(_UpdateJozo2ReferanceNumber value)
+        updateJozo2ReferanceNumber,
     required TResult Function(_UpdateSidePage value) updateSidePage,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,9 +59,10 @@ mixin _$QuranKareemEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult? Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult? Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult? Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
   }) =>
       throw _privateConstructorUsedError;
@@ -71,9 +70,10 @@ mixin _$QuranKareemEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     required TResult orElse(),
   }) =>
@@ -172,9 +172,8 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(String name) updateSorahName,
-    required TResult Function(String name) updateJozo2Name,
-    required TResult Function(double number) updateHezebNumber,
+    required TResult Function(int num) updateSorahReferanceNumber,
+    required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
   }) {
     return showHideHelpBar(status);
@@ -185,9 +184,8 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(String name)? updateSorahName,
-    TResult? Function(String name)? updateJozo2Name,
-    TResult? Function(double number)? updateHezebNumber,
+    TResult? Function(int num)? updateSorahReferanceNumber,
+    TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
   }) {
     return showHideHelpBar?.call(status);
@@ -198,9 +196,8 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(String name)? updateSorahName,
-    TResult Function(String name)? updateJozo2Name,
-    TResult Function(double number)? updateHezebNumber,
+    TResult Function(int num)? updateSorahReferanceNumber,
+    TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     required TResult orElse(),
   }) {
@@ -215,9 +212,10 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
     required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-    required TResult Function(_UpdateHezebNumber value) updateHezebNumber,
+    required TResult Function(_UpdateSorahReferanceNumber value)
+        updateSorahReferanceNumber,
+    required TResult Function(_UpdateJozo2ReferanceNumber value)
+        updateJozo2ReferanceNumber,
     required TResult Function(_UpdateSidePage value) updateSidePage,
   }) {
     return showHideHelpBar(this);
@@ -228,9 +226,10 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult? Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult? Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult? Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
   }) {
     return showHideHelpBar?.call(this);
@@ -241,9 +240,10 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     required TResult orElse(),
   }) {
@@ -338,9 +338,8 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(String name) updateSorahName,
-    required TResult Function(String name) updateJozo2Name,
-    required TResult Function(double number) updateHezebNumber,
+    required TResult Function(int num) updateSorahReferanceNumber,
+    required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
   }) {
     return updatePageCount(pageCount);
@@ -351,9 +350,8 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(String name)? updateSorahName,
-    TResult? Function(String name)? updateJozo2Name,
-    TResult? Function(double number)? updateHezebNumber,
+    TResult? Function(int num)? updateSorahReferanceNumber,
+    TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
   }) {
     return updatePageCount?.call(pageCount);
@@ -364,9 +362,8 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(String name)? updateSorahName,
-    TResult Function(String name)? updateJozo2Name,
-    TResult Function(double number)? updateHezebNumber,
+    TResult Function(int num)? updateSorahReferanceNumber,
+    TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     required TResult orElse(),
   }) {
@@ -381,9 +378,10 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
     required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-    required TResult Function(_UpdateHezebNumber value) updateHezebNumber,
+    required TResult Function(_UpdateSorahReferanceNumber value)
+        updateSorahReferanceNumber,
+    required TResult Function(_UpdateJozo2ReferanceNumber value)
+        updateJozo2ReferanceNumber,
     required TResult Function(_UpdateSidePage value) updateSidePage,
   }) {
     return updatePageCount(this);
@@ -394,9 +392,10 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult? Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult? Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult? Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
   }) {
     return updatePageCount?.call(this);
@@ -407,9 +406,10 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     required TResult orElse(),
   }) {
@@ -433,20 +433,23 @@ abstract class _UpdatePageCount implements QuranKareemEvent {
 }
 
 /// @nodoc
-abstract class _$$UpdateSorahNameImplCopyWith<$Res> {
-  factory _$$UpdateSorahNameImplCopyWith(_$UpdateSorahNameImpl value,
-          $Res Function(_$UpdateSorahNameImpl) then) =
-      __$$UpdateSorahNameImplCopyWithImpl<$Res>;
+abstract class _$$UpdateSorahReferanceNumberImplCopyWith<$Res> {
+  factory _$$UpdateSorahReferanceNumberImplCopyWith(
+          _$UpdateSorahReferanceNumberImpl value,
+          $Res Function(_$UpdateSorahReferanceNumberImpl) then) =
+      __$$UpdateSorahReferanceNumberImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String name});
+  $Res call({int num});
 }
 
 /// @nodoc
-class __$$UpdateSorahNameImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateSorahNameImpl>
-    implements _$$UpdateSorahNameImplCopyWith<$Res> {
-  __$$UpdateSorahNameImplCopyWithImpl(
-      _$UpdateSorahNameImpl _value, $Res Function(_$UpdateSorahNameImpl) _then)
+class __$$UpdateSorahReferanceNumberImplCopyWithImpl<$Res>
+    extends _$QuranKareemEventCopyWithImpl<$Res,
+        _$UpdateSorahReferanceNumberImpl>
+    implements _$$UpdateSorahReferanceNumberImplCopyWith<$Res> {
+  __$$UpdateSorahReferanceNumberImplCopyWithImpl(
+      _$UpdateSorahReferanceNumberImpl _value,
+      $Res Function(_$UpdateSorahReferanceNumberImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
@@ -454,61 +457,60 @@ class __$$UpdateSorahNameImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? num = null,
   }) {
-    return _then(_$UpdateSorahNameImpl(
-      null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$UpdateSorahReferanceNumberImpl(
+      null == num
+          ? _value.num
+          : num // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$UpdateSorahNameImpl implements _UpdateSorahName {
-  _$UpdateSorahNameImpl(this.name);
+class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
+  _$UpdateSorahReferanceNumberImpl(this.num);
 
   @override
-  final String name;
+  final int num;
 
   @override
   String toString() {
-    return 'QuranKareemEvent.updateSorahName(name: $name)';
+    return 'QuranKareemEvent.updateSorahReferanceNumber(num: $num)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateSorahNameImpl &&
-            (identical(other.name, name) || other.name == name));
+            other is _$UpdateSorahReferanceNumberImpl &&
+            (identical(other.num, num) || other.num == num));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode => Object.hash(runtimeType, num);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateSorahNameImplCopyWith<_$UpdateSorahNameImpl> get copyWith =>
-      __$$UpdateSorahNameImplCopyWithImpl<_$UpdateSorahNameImpl>(
-          this, _$identity);
+  _$$UpdateSorahReferanceNumberImplCopyWith<_$UpdateSorahReferanceNumberImpl>
+      get copyWith => __$$UpdateSorahReferanceNumberImplCopyWithImpl<
+          _$UpdateSorahReferanceNumberImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(String name) updateSorahName,
-    required TResult Function(String name) updateJozo2Name,
-    required TResult Function(double number) updateHezebNumber,
+    required TResult Function(int num) updateSorahReferanceNumber,
+    required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
   }) {
-    return updateSorahName(name);
+    return updateSorahReferanceNumber(num);
   }
 
   @override
@@ -516,12 +518,11 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(String name)? updateSorahName,
-    TResult? Function(String name)? updateJozo2Name,
-    TResult? Function(double number)? updateHezebNumber,
+    TResult? Function(int num)? updateSorahReferanceNumber,
+    TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
   }) {
-    return updateSorahName?.call(name);
+    return updateSorahReferanceNumber?.call(num);
   }
 
   @override
@@ -529,14 +530,13 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(String name)? updateSorahName,
-    TResult Function(String name)? updateJozo2Name,
-    TResult Function(double number)? updateHezebNumber,
+    TResult Function(int num)? updateSorahReferanceNumber,
+    TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     required TResult orElse(),
   }) {
-    if (updateSorahName != null) {
-      return updateSorahName(name);
+    if (updateSorahReferanceNumber != null) {
+      return updateSorahReferanceNumber(num);
     }
     return orElse();
   }
@@ -546,12 +546,13 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
     required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-    required TResult Function(_UpdateHezebNumber value) updateHezebNumber,
+    required TResult Function(_UpdateSorahReferanceNumber value)
+        updateSorahReferanceNumber,
+    required TResult Function(_UpdateJozo2ReferanceNumber value)
+        updateJozo2ReferanceNumber,
     required TResult Function(_UpdateSidePage value) updateSidePage,
   }) {
-    return updateSorahName(this);
+    return updateSorahReferanceNumber(this);
   }
 
   @override
@@ -559,12 +560,13 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult? Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult? Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult? Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
   }) {
-    return updateSorahName?.call(this);
+    return updateSorahReferanceNumber?.call(this);
   }
 
   @override
@@ -572,46 +574,51 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     required TResult orElse(),
   }) {
-    if (updateSorahName != null) {
-      return updateSorahName(this);
+    if (updateSorahReferanceNumber != null) {
+      return updateSorahReferanceNumber(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateSorahName implements QuranKareemEvent {
-  factory _UpdateSorahName(final String name) = _$UpdateSorahNameImpl;
+abstract class _UpdateSorahReferanceNumber implements QuranKareemEvent {
+  factory _UpdateSorahReferanceNumber(final int num) =
+      _$UpdateSorahReferanceNumberImpl;
 
-  String get name;
+  int get num;
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateSorahNameImplCopyWith<_$UpdateSorahNameImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateSorahReferanceNumberImplCopyWith<_$UpdateSorahReferanceNumberImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateJozo2NameImplCopyWith<$Res> {
-  factory _$$UpdateJozo2NameImplCopyWith(_$UpdateJozo2NameImpl value,
-          $Res Function(_$UpdateJozo2NameImpl) then) =
-      __$$UpdateJozo2NameImplCopyWithImpl<$Res>;
+abstract class _$$UpdateJozo2ReferanceNumberImplCopyWith<$Res> {
+  factory _$$UpdateJozo2ReferanceNumberImplCopyWith(
+          _$UpdateJozo2ReferanceNumberImpl value,
+          $Res Function(_$UpdateJozo2ReferanceNumberImpl) then) =
+      __$$UpdateJozo2ReferanceNumberImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String name});
+  $Res call({int num});
 }
 
 /// @nodoc
-class __$$UpdateJozo2NameImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateJozo2NameImpl>
-    implements _$$UpdateJozo2NameImplCopyWith<$Res> {
-  __$$UpdateJozo2NameImplCopyWithImpl(
-      _$UpdateJozo2NameImpl _value, $Res Function(_$UpdateJozo2NameImpl) _then)
+class __$$UpdateJozo2ReferanceNumberImplCopyWithImpl<$Res>
+    extends _$QuranKareemEventCopyWithImpl<$Res,
+        _$UpdateJozo2ReferanceNumberImpl>
+    implements _$$UpdateJozo2ReferanceNumberImplCopyWith<$Res> {
+  __$$UpdateJozo2ReferanceNumberImplCopyWithImpl(
+      _$UpdateJozo2ReferanceNumberImpl _value,
+      $Res Function(_$UpdateJozo2ReferanceNumberImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
@@ -619,61 +626,60 @@ class __$$UpdateJozo2NameImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? num = null,
   }) {
-    return _then(_$UpdateJozo2NameImpl(
-      null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$UpdateJozo2ReferanceNumberImpl(
+      null == num
+          ? _value.num
+          : num // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
-  _$UpdateJozo2NameImpl(this.name);
+class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
+  _$UpdateJozo2ReferanceNumberImpl(this.num);
 
   @override
-  final String name;
+  final int num;
 
   @override
   String toString() {
-    return 'QuranKareemEvent.updateJozo2Name(name: $name)';
+    return 'QuranKareemEvent.updateJozo2ReferanceNumber(num: $num)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateJozo2NameImpl &&
-            (identical(other.name, name) || other.name == name));
+            other is _$UpdateJozo2ReferanceNumberImpl &&
+            (identical(other.num, num) || other.num == num));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode => Object.hash(runtimeType, num);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateJozo2NameImplCopyWith<_$UpdateJozo2NameImpl> get copyWith =>
-      __$$UpdateJozo2NameImplCopyWithImpl<_$UpdateJozo2NameImpl>(
-          this, _$identity);
+  _$$UpdateJozo2ReferanceNumberImplCopyWith<_$UpdateJozo2ReferanceNumberImpl>
+      get copyWith => __$$UpdateJozo2ReferanceNumberImplCopyWithImpl<
+          _$UpdateJozo2ReferanceNumberImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(String name) updateSorahName,
-    required TResult Function(String name) updateJozo2Name,
-    required TResult Function(double number) updateHezebNumber,
+    required TResult Function(int num) updateSorahReferanceNumber,
+    required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
   }) {
-    return updateJozo2Name(name);
+    return updateJozo2ReferanceNumber(num);
   }
 
   @override
@@ -681,12 +687,11 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(String name)? updateSorahName,
-    TResult? Function(String name)? updateJozo2Name,
-    TResult? Function(double number)? updateHezebNumber,
+    TResult? Function(int num)? updateSorahReferanceNumber,
+    TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
   }) {
-    return updateJozo2Name?.call(name);
+    return updateJozo2ReferanceNumber?.call(num);
   }
 
   @override
@@ -694,14 +699,13 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(String name)? updateSorahName,
-    TResult Function(String name)? updateJozo2Name,
-    TResult Function(double number)? updateHezebNumber,
+    TResult Function(int num)? updateSorahReferanceNumber,
+    TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     required TResult orElse(),
   }) {
-    if (updateJozo2Name != null) {
-      return updateJozo2Name(name);
+    if (updateJozo2ReferanceNumber != null) {
+      return updateJozo2ReferanceNumber(num);
     }
     return orElse();
   }
@@ -711,12 +715,13 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
     required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-    required TResult Function(_UpdateHezebNumber value) updateHezebNumber,
+    required TResult Function(_UpdateSorahReferanceNumber value)
+        updateSorahReferanceNumber,
+    required TResult Function(_UpdateJozo2ReferanceNumber value)
+        updateJozo2ReferanceNumber,
     required TResult Function(_UpdateSidePage value) updateSidePage,
   }) {
-    return updateJozo2Name(this);
+    return updateJozo2ReferanceNumber(this);
   }
 
   @override
@@ -724,12 +729,13 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult? Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult? Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult? Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
   }) {
-    return updateJozo2Name?.call(this);
+    return updateJozo2ReferanceNumber?.call(this);
   }
 
   @override
@@ -737,194 +743,31 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     required TResult orElse(),
   }) {
-    if (updateJozo2Name != null) {
-      return updateJozo2Name(this);
+    if (updateJozo2ReferanceNumber != null) {
+      return updateJozo2ReferanceNumber(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateJozo2Name implements QuranKareemEvent {
-  factory _UpdateJozo2Name(final String name) = _$UpdateJozo2NameImpl;
+abstract class _UpdateJozo2ReferanceNumber implements QuranKareemEvent {
+  factory _UpdateJozo2ReferanceNumber(final int num) =
+      _$UpdateJozo2ReferanceNumberImpl;
 
-  String get name;
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateJozo2NameImplCopyWith<_$UpdateJozo2NameImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateHezebNumberImplCopyWith<$Res> {
-  factory _$$UpdateHezebNumberImplCopyWith(_$UpdateHezebNumberImpl value,
-          $Res Function(_$UpdateHezebNumberImpl) then) =
-      __$$UpdateHezebNumberImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({double number});
-}
-
-/// @nodoc
-class __$$UpdateHezebNumberImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateHezebNumberImpl>
-    implements _$$UpdateHezebNumberImplCopyWith<$Res> {
-  __$$UpdateHezebNumberImplCopyWithImpl(_$UpdateHezebNumberImpl _value,
-      $Res Function(_$UpdateHezebNumberImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? number = null,
-  }) {
-    return _then(_$UpdateHezebNumberImpl(
-      null == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateHezebNumberImpl implements _UpdateHezebNumber {
-  _$UpdateHezebNumberImpl(this.number);
-
-  @override
-  final double number;
-
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateHezebNumber(number: $number)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateHezebNumberImpl &&
-            (identical(other.number, number) || other.number == number));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, number);
+  int get num;
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateHezebNumberImplCopyWith<_$UpdateHezebNumberImpl> get copyWith =>
-      __$$UpdateHezebNumberImplCopyWithImpl<_$UpdateHezebNumberImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(String name) updateSorahName,
-    required TResult Function(String name) updateJozo2Name,
-    required TResult Function(double number) updateHezebNumber,
-    required TResult Function(PageSide side) updateSidePage,
-  }) {
-    return updateHezebNumber(number);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(String name)? updateSorahName,
-    TResult? Function(String name)? updateJozo2Name,
-    TResult? Function(double number)? updateHezebNumber,
-    TResult? Function(PageSide side)? updateSidePage,
-  }) {
-    return updateHezebNumber?.call(number);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(String name)? updateSorahName,
-    TResult Function(String name)? updateJozo2Name,
-    TResult Function(double number)? updateHezebNumber,
-    TResult Function(PageSide side)? updateSidePage,
-    required TResult orElse(),
-  }) {
-    if (updateHezebNumber != null) {
-      return updateHezebNumber(number);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-    required TResult Function(_UpdateHezebNumber value) updateHezebNumber,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-  }) {
-    return updateHezebNumber(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult? Function(_UpdateHezebNumber value)? updateHezebNumber,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-  }) {
-    return updateHezebNumber?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult Function(_UpdateHezebNumber value)? updateHezebNumber,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    required TResult orElse(),
-  }) {
-    if (updateHezebNumber != null) {
-      return updateHezebNumber(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateHezebNumber implements QuranKareemEvent {
-  factory _UpdateHezebNumber(final double number) = _$UpdateHezebNumberImpl;
-
-  double get number;
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateHezebNumberImplCopyWith<_$UpdateHezebNumberImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateJozo2ReferanceNumberImplCopyWith<_$UpdateJozo2ReferanceNumberImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -998,9 +841,8 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(String name) updateSorahName,
-    required TResult Function(String name) updateJozo2Name,
-    required TResult Function(double number) updateHezebNumber,
+    required TResult Function(int num) updateSorahReferanceNumber,
+    required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
   }) {
     return updateSidePage(side);
@@ -1011,9 +853,8 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(String name)? updateSorahName,
-    TResult? Function(String name)? updateJozo2Name,
-    TResult? Function(double number)? updateHezebNumber,
+    TResult? Function(int num)? updateSorahReferanceNumber,
+    TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
   }) {
     return updateSidePage?.call(side);
@@ -1024,9 +865,8 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(String name)? updateSorahName,
-    TResult Function(String name)? updateJozo2Name,
-    TResult Function(double number)? updateHezebNumber,
+    TResult Function(int num)? updateSorahReferanceNumber,
+    TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     required TResult orElse(),
   }) {
@@ -1041,9 +881,10 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
     required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-    required TResult Function(_UpdateHezebNumber value) updateHezebNumber,
+    required TResult Function(_UpdateSorahReferanceNumber value)
+        updateSorahReferanceNumber,
+    required TResult Function(_UpdateJozo2ReferanceNumber value)
+        updateJozo2ReferanceNumber,
     required TResult Function(_UpdateSidePage value) updateSidePage,
   }) {
     return updateSidePage(this);
@@ -1054,9 +895,10 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult? Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult? Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult? Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
   }) {
     return updateSidePage?.call(this);
@@ -1067,9 +909,10 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
     TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    TResult Function(_UpdateHezebNumber value)? updateHezebNumber,
+    TResult Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     required TResult orElse(),
   }) {
@@ -1096,9 +939,8 @@ abstract class _UpdateSidePage implements QuranKareemEvent {
 mixin _$QuranKareemState {
   bool get showHelpBar => throw _privateConstructorUsedError;
   int get pageCount => throw _privateConstructorUsedError;
-  String get sorahName => throw _privateConstructorUsedError;
-  String get jozo2Name => throw _privateConstructorUsedError;
-  double get hezebNumber => throw _privateConstructorUsedError;
+  int get sorahReferanceNumber => throw _privateConstructorUsedError;
+  int get jozo2ReferanceNumber => throw _privateConstructorUsedError;
   PageSide get pageSide => throw _privateConstructorUsedError;
 
   /// Create a copy of QuranKareemState
@@ -1117,9 +959,8 @@ abstract class $QuranKareemStateCopyWith<$Res> {
   $Res call(
       {bool showHelpBar,
       int pageCount,
-      String sorahName,
-      String jozo2Name,
-      double hezebNumber,
+      int sorahReferanceNumber,
+      int jozo2ReferanceNumber,
       PageSide pageSide});
 }
 
@@ -1140,9 +981,8 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
   $Res call({
     Object? showHelpBar = null,
     Object? pageCount = null,
-    Object? sorahName = null,
-    Object? jozo2Name = null,
-    Object? hezebNumber = null,
+    Object? sorahReferanceNumber = null,
+    Object? jozo2ReferanceNumber = null,
     Object? pageSide = null,
   }) {
     return _then(_value.copyWith(
@@ -1154,18 +994,14 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
           ? _value.pageCount
           : pageCount // ignore: cast_nullable_to_non_nullable
               as int,
-      sorahName: null == sorahName
-          ? _value.sorahName
-          : sorahName // ignore: cast_nullable_to_non_nullable
-              as String,
-      jozo2Name: null == jozo2Name
-          ? _value.jozo2Name
-          : jozo2Name // ignore: cast_nullable_to_non_nullable
-              as String,
-      hezebNumber: null == hezebNumber
-          ? _value.hezebNumber
-          : hezebNumber // ignore: cast_nullable_to_non_nullable
-              as double,
+      sorahReferanceNumber: null == sorahReferanceNumber
+          ? _value.sorahReferanceNumber
+          : sorahReferanceNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      jozo2ReferanceNumber: null == jozo2ReferanceNumber
+          ? _value.jozo2ReferanceNumber
+          : jozo2ReferanceNumber // ignore: cast_nullable_to_non_nullable
+              as int,
       pageSide: null == pageSide
           ? _value.pageSide
           : pageSide // ignore: cast_nullable_to_non_nullable
@@ -1185,9 +1021,8 @@ abstract class _$$QuranKareemStateImplCopyWith<$Res>
   $Res call(
       {bool showHelpBar,
       int pageCount,
-      String sorahName,
-      String jozo2Name,
-      double hezebNumber,
+      int sorahReferanceNumber,
+      int jozo2ReferanceNumber,
       PageSide pageSide});
 }
 
@@ -1206,9 +1041,8 @@ class __$$QuranKareemStateImplCopyWithImpl<$Res>
   $Res call({
     Object? showHelpBar = null,
     Object? pageCount = null,
-    Object? sorahName = null,
-    Object? jozo2Name = null,
-    Object? hezebNumber = null,
+    Object? sorahReferanceNumber = null,
+    Object? jozo2ReferanceNumber = null,
     Object? pageSide = null,
   }) {
     return _then(_$QuranKareemStateImpl(
@@ -1220,18 +1054,14 @@ class __$$QuranKareemStateImplCopyWithImpl<$Res>
           ? _value.pageCount
           : pageCount // ignore: cast_nullable_to_non_nullable
               as int,
-      sorahName: null == sorahName
-          ? _value.sorahName
-          : sorahName // ignore: cast_nullable_to_non_nullable
-              as String,
-      jozo2Name: null == jozo2Name
-          ? _value.jozo2Name
-          : jozo2Name // ignore: cast_nullable_to_non_nullable
-              as String,
-      hezebNumber: null == hezebNumber
-          ? _value.hezebNumber
-          : hezebNumber // ignore: cast_nullable_to_non_nullable
-              as double,
+      sorahReferanceNumber: null == sorahReferanceNumber
+          ? _value.sorahReferanceNumber
+          : sorahReferanceNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      jozo2ReferanceNumber: null == jozo2ReferanceNumber
+          ? _value.jozo2ReferanceNumber
+          : jozo2ReferanceNumber // ignore: cast_nullable_to_non_nullable
+              as int,
       pageSide: null == pageSide
           ? _value.pageSide
           : pageSide // ignore: cast_nullable_to_non_nullable
@@ -1246,9 +1076,8 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
   const _$QuranKareemStateImpl(
       {this.showHelpBar = true,
       this.pageCount = 1,
-      this.sorahName = "",
-      this.jozo2Name = "",
-      this.hezebNumber = 0,
+      this.sorahReferanceNumber = 0,
+      this.jozo2ReferanceNumber = 0,
       this.pageSide = PageSide.left});
 
   @override
@@ -1259,20 +1088,17 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
   final int pageCount;
   @override
   @JsonKey()
-  final String sorahName;
+  final int sorahReferanceNumber;
   @override
   @JsonKey()
-  final String jozo2Name;
-  @override
-  @JsonKey()
-  final double hezebNumber;
+  final int jozo2ReferanceNumber;
   @override
   @JsonKey()
   final PageSide pageSide;
 
   @override
   String toString() {
-    return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, sorahName: $sorahName, jozo2Name: $jozo2Name, hezebNumber: $hezebNumber, pageSide: $pageSide)';
+    return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, sorahReferanceNumber: $sorahReferanceNumber, jozo2ReferanceNumber: $jozo2ReferanceNumber, pageSide: $pageSide)';
   }
 
   @override
@@ -1284,19 +1110,17 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
                 other.showHelpBar == showHelpBar) &&
             (identical(other.pageCount, pageCount) ||
                 other.pageCount == pageCount) &&
-            (identical(other.sorahName, sorahName) ||
-                other.sorahName == sorahName) &&
-            (identical(other.jozo2Name, jozo2Name) ||
-                other.jozo2Name == jozo2Name) &&
-            (identical(other.hezebNumber, hezebNumber) ||
-                other.hezebNumber == hezebNumber) &&
+            (identical(other.sorahReferanceNumber, sorahReferanceNumber) ||
+                other.sorahReferanceNumber == sorahReferanceNumber) &&
+            (identical(other.jozo2ReferanceNumber, jozo2ReferanceNumber) ||
+                other.jozo2ReferanceNumber == jozo2ReferanceNumber) &&
             (identical(other.pageSide, pageSide) ||
                 other.pageSide == pageSide));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, showHelpBar, pageCount,
-      sorahName, jozo2Name, hezebNumber, pageSide);
+      sorahReferanceNumber, jozo2ReferanceNumber, pageSide);
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.
@@ -1312,9 +1136,8 @@ abstract class _QuranKareemState implements QuranKareemState {
   const factory _QuranKareemState(
       {final bool showHelpBar,
       final int pageCount,
-      final String sorahName,
-      final String jozo2Name,
-      final double hezebNumber,
+      final int sorahReferanceNumber,
+      final int jozo2ReferanceNumber,
       final PageSide pageSide}) = _$QuranKareemStateImpl;
 
   @override
@@ -1322,11 +1145,9 @@ abstract class _QuranKareemState implements QuranKareemState {
   @override
   int get pageCount;
   @override
-  String get sorahName;
+  int get sorahReferanceNumber;
   @override
-  String get jozo2Name;
-  @override
-  double get hezebNumber;
+  int get jozo2ReferanceNumber;
   @override
   PageSide get pageSide;
 

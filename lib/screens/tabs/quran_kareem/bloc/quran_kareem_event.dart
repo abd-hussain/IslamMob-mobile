@@ -4,8 +4,9 @@ part of 'quran_kareem_bloc.dart';
 class QuranKareemEvent with _$QuranKareemEvent {
   factory QuranKareemEvent.showHideHelpBar(bool status) = _ShowHideHelpBar;
   factory QuranKareemEvent.updatePageCount(int pageCount) = _UpdatePageCount;
-  factory QuranKareemEvent.updateSorahName(String name) = _UpdateSorahName;
-  factory QuranKareemEvent.updateJozo2Name(String name) = _UpdateJozo2Name;
-  factory QuranKareemEvent.updateHezebNumber(double number) = _UpdateHezebNumber;
+  factory QuranKareemEvent.updateSorahReferanceNumber(int num) =
+      _UpdateSorahReferanceNumber;
+  factory QuranKareemEvent.updateJozo2ReferanceNumber(int num) =
+      _UpdateJozo2ReferanceNumber;
   factory QuranKareemEvent.updateSidePage(PageSide side) = _UpdateSidePage;
 }

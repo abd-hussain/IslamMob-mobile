@@ -3,14 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/tabs/quran_kareem/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'dart:math' as math; // import this
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranHeaderHelpBar extends StatelessWidget {
-  const QuranHeaderHelpBar({
-    super.key,
-    required this.hezbName,
-  });
-
-  final String hezbName;
+  const QuranHeaderHelpBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +23,13 @@ class QuranHeaderHelpBar extends StatelessWidget {
                   child: Row(
                     children: [
                       BlocBuilder<QuranKareemBloc, QuranKareemState>(
-                        buildWhen: (previous, current) => previous.sorahName != current.sorahName,
+                        buildWhen: (previous, current) =>
+                            previous.sorahReferanceNumber !=
+                            current.sorahReferanceNumber,
                         builder: (context, state) {
                           return CustomText(
-                            title: state.sorahName,
+                            title:
+                                "${AppLocalizations.of(context)!.quranSorah} ${context.read<QuranKareemBloc>().getSorahName(context: context, pageNumber: state.sorahReferanceNumber)}",
                             fontSize: 14,
                             textColor: Colors.white70,
                             fontWeight: FontWeight.bold,
@@ -39,10 +38,13 @@ class QuranHeaderHelpBar extends StatelessWidget {
                       ),
                       const Expanded(child: SizedBox()),
                       BlocBuilder<QuranKareemBloc, QuranKareemState>(
-                        buildWhen: (previous, current) => previous.jozo2Name != current.jozo2Name,
+                        buildWhen: (previous, current) =>
+                            previous.jozo2ReferanceNumber !=
+                            current.jozo2ReferanceNumber,
                         builder: (context, state) {
                           return CustomText(
-                            title: state.jozo2Name,
+                            title:
+                                "${AppLocalizations.of(context)!.quranJuz} ${state.jozo2ReferanceNumber}",
                             fontSize: 14,
                             textColor: Colors.white70,
                             fontWeight: FontWeight.bold,
@@ -54,7 +56,8 @@ class QuranHeaderHelpBar extends StatelessWidget {
                 ),
                 Center(
                   child: BlocBuilder<QuranKareemBloc, QuranKareemState>(
-                    buildWhen: (previous, current) => previous.pageCount != current.pageCount,
+                    buildWhen: (previous, current) =>
+                        previous.pageCount != current.pageCount,
                     builder: (context, state) {
                       return CustomText(
                         title: state.pageCount.toString(),
@@ -76,11 +79,13 @@ class QuranHeaderHelpBar extends StatelessWidget {
             height: 60,
             color: Colors.black.withOpacity(0.8),
             child: BlocBuilder<QuranKareemBloc, QuranKareemState>(
-              buildWhen: (previous, current) => previous.pageSide != current.pageSide,
+              buildWhen: (previous, current) =>
+                  previous.pageSide != current.pageSide,
               builder: (context, state) {
                 return Transform(
                   alignment: Alignment.center,
-                  transform: Matrix4.rotationY(state.pageSide == PageSide.left ? math.pi : 0),
+                  transform: Matrix4.rotationY(
+                      state.pageSide == PageSide.left ? math.pi : 0),
                   child: const Icon(
                     Icons.menu_book_rounded,
                     color: Colors.white70,
