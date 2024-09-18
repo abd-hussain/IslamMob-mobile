@@ -65,8 +65,10 @@ class QuranBottomHelpBar extends StatelessWidget {
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingReport,
               icon: Icons.report_outlined,
-              onTap: () {
-                //TODO
+              onTap: () async {
+                final navigator = Navigator.of(context, rootNavigator: true);
+                await navigator
+                    .pushNamed(RoutesConstants.reportOrSuggestionScreen);
               },
             ),
             Container(color: Colors.black.withOpacity(0.6)),

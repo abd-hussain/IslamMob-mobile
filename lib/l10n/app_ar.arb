@@ -125,7 +125,16 @@
     "quranSorahName112": "الإخلاص",
     "quranSorahName113": "الفلق",
     "quranSorahName114": "الناس",
-    "quranSorah" : "سورة"
+    "quranSorah" : "سورة",
+    "reportFooterText" : "We read all of the feedback carefully, but we may not respond to each submission individually.",
+    "reportandsuggestiontitle" : "الإبلاغ عن مشكلة - اقتراح",
+    "feedbackmessage" : "ملاحظاتك مهمة بالنسبة لنا ، يرجى وصف مشكلتك هنا",
+    "pleasecheckyourinternetconnection" : "الرجاء التحقق من الاتصال بالانترنت",
+    "pickimageremoveimage" : "حذف الصورة",
+    "pickimagefromstudio" : "اختيار من الاستديو",
+    "pickimagefromcamera" : "اختيار من الكاميرا",
+    "photosetting" : "اعدادات الصورة",
+    "setphoto" : "تحديد صورة"
 
 
  

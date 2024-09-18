@@ -125,6 +125,15 @@
     "quranSorahName112": "Al-Ikhlas",
     "quranSorahName113": "Al-Falaq",
     "quranSorahName114": "An-Nas",
-    "quranSorah" : "Sorah"
+    "quranSorah" : "Sorah",
+    "reportFooterText" : "We read all of the feedback carefully, but we may not respond to each submission individually.",
+    "reportandsuggestiontitle" : "Report Problem - Suggestion",
+    "feedbackmessage" : "Your feedback is important to us, Please describe your issue here",
+    "pleasecheckyourinternetconnection" : "Please check your internet connection",
+    "pickimageremoveimage" : "Remove image",
+    "pickimagefromstudio" : "Choose from Library",
+    "pickimagefromcamera" : "Choose from Camera",
+    "photosetting" : "Photo Setting",
+    "setphoto" : "Set Photo"
 
 }

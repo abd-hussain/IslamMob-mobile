@@ -2,6 +2,7 @@ import 'package:islam_app/models/app_model/language.dart';
 
 class AppConstant {
   static const String appName = "LegalzHub";
+  static const String applicationMainURL = ""; //TODO
 
   static List<LanguageModel> languages = [
     LanguageModel(
