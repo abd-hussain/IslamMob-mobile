@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:islam_app/screens/report_suggestions/bloc/report_and_suggestion_bloc.dart';
-import 'package:islam_app/screens/report_suggestions/widgets/attachmen_bottom_sheet.dart';
+import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/report_suggestions/bloc/report_and_suggestion_bloc.dart';
+import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/report_suggestions/widgets/attachmen_bottom_sheet.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ReportSuggestionAttachment extends StatelessWidget {

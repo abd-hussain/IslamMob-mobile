@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/screens/report_suggestions/bloc/report_and_suggestion_bloc.dart';
-import 'package:islam_app/screens/report_suggestions/widgets/attachments.dart';
-import 'package:islam_app/screens/report_suggestions/widgets/footer.dart';
+import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/report_suggestions/bloc/report_and_suggestion_bloc.dart';
+import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/report_suggestions/widgets/attachments.dart';
+import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/report_suggestions/widgets/footer.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -39,7 +39,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                 return const SizedBox(
                   child: Center(
                     child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Color(0xff292929),
+                      ),
                     ),
                   ),
                 );
