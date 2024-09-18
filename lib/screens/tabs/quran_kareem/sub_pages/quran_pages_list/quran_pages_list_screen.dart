@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/quran_pages_list/widgets/quran_pages_tile.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranPagesListScreen extends StatelessWidget {
   const QuranPagesListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //TODO
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xff292929),
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomText(
+              title: AppLocalizations.of(context)!.quranpages,
+              fontSize: 14,
+            )
+          ],
+        ),
+      ), //TODO
+
+      // body: ListView.builder(
+      //   itemBuilder: (context, index) {
+      //     return const QuranPagesTileView();
+      //   },
+      // ),
+    );
   }
 }
