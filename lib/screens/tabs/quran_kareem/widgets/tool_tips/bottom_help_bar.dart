@@ -35,10 +35,11 @@ class QuranBottomHelpBar extends StatelessWidget {
               },
             ),
             BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingBookMarkList,
-              icon: Icons.collections_bookmark_sharp,
-              onTap: () {
-                //TODO
+              title: AppLocalizations.of(context)!.quranSettingPages,
+              icon: Icons.copy_sharp,
+              onTap: () async {
+                final navigator = Navigator.of(context, rootNavigator: true);
+                await navigator.pushNamed(RoutesConstants.quranPagesListScreen);
               },
             ),
             BottomTile(
@@ -56,11 +57,10 @@ class QuranBottomHelpBar extends StatelessWidget {
               },
             ),
             BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingPages,
-              icon: Icons.copy_sharp,
+              title: AppLocalizations.of(context)!.quranSettingSupportUs,
+              icon: Icons.ads_click,
               onTap: () async {
-                final navigator = Navigator.of(context, rootNavigator: true);
-                await navigator.pushNamed(RoutesConstants.quranPagesListScreen);
+                //TODO
               },
             ),
             BottomTile(

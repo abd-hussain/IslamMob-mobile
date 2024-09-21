@@ -60,6 +60,7 @@ flutter:
   assets:
   - assets/images/
   - assets/images/logoz/
+  - assets/images/sorah_type/
 
   - assets/pdf/
   - assets/pdf/quran/

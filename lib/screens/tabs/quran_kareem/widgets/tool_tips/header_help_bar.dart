@@ -4,6 +4,7 @@ import 'package:islam_app/screens/tabs/quran_kareem/bloc/quran_kareem_bloc.dart'
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'dart:math' as math; // import this
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/utils/quran_referances.dart';
 
 class QuranHeaderHelpBar extends StatelessWidget {
   const QuranHeaderHelpBar({super.key});
@@ -29,7 +30,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
                         builder: (context, state) {
                           return CustomText(
                             title:
-                                "${AppLocalizations.of(context)!.quranSorah} ${context.read<QuranKareemBloc>().getSorahName(context: context, pageNumber: state.sorahReferanceNumber)}",
+                                "${AppLocalizations.of(context)!.quranSorah} ${QuranReferances.getSorahName(context: context, pageNumber: state.sorahReferanceNumber)}",
                             fontSize: 14,
                             textColor: Colors.white70,
                             fontWeight: FontWeight.bold,
