@@ -6,9 +6,11 @@ class BottomTile extends StatelessWidget {
       {super.key,
       required this.title,
       required this.icon,
+      required this.colorIcon,
       required this.onTap});
   final String title;
   final IconData icon;
+  final Color? colorIcon;
   final void Function() onTap;
 
   @override
@@ -26,7 +28,7 @@ class BottomTile extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                color: Colors.white70,
+                color: colorIcon,
                 size: 20,
               ),
               const SizedBox(width: 4),

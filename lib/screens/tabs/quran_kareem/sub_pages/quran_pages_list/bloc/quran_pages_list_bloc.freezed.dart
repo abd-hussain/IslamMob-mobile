@@ -16,36 +16,37 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$QuranPagesListEvent {
-  bool get status => throw _privateConstructorUsedError;
+  List<int> get list => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) changeMarkerStatus,
+    required TResult Function(List<int> list) updateBookMarkedPages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? changeMarkerStatus,
+    TResult? Function(List<int> list)? updateBookMarkedPages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? changeMarkerStatus,
+    TResult Function(List<int> list)? updateBookMarkedPages,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ChangeMarkerStatus value) changeMarkerStatus,
+    required TResult Function(_UpdateBookMarkedPages value)
+        updateBookMarkedPages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ChangeMarkerStatus value)? changeMarkerStatus,
+    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ChangeMarkerStatus value)? changeMarkerStatus,
+    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +64,7 @@ abstract class $QuranPagesListEventCopyWith<$Res> {
           QuranPagesListEvent value, $Res Function(QuranPagesListEvent) then) =
       _$QuranPagesListEventCopyWithImpl<$Res, QuranPagesListEvent>;
   @useResult
-  $Res call({bool status});
+  $Res call({List<int> list});
 }
 
 /// @nodoc
@@ -81,34 +82,35 @@ class _$QuranPagesListEventCopyWithImpl<$Res, $Val extends QuranPagesListEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = null,
+    Object? list = null,
   }) {
     return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
+      list: null == list
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ChangeMarkerStatusImplCopyWith<$Res>
+abstract class _$$UpdateBookMarkedPagesImplCopyWith<$Res>
     implements $QuranPagesListEventCopyWith<$Res> {
-  factory _$$ChangeMarkerStatusImplCopyWith(_$ChangeMarkerStatusImpl value,
-          $Res Function(_$ChangeMarkerStatusImpl) then) =
-      __$$ChangeMarkerStatusImplCopyWithImpl<$Res>;
+  factory _$$UpdateBookMarkedPagesImplCopyWith(
+          _$UpdateBookMarkedPagesImpl value,
+          $Res Function(_$UpdateBookMarkedPagesImpl) then) =
+      __$$UpdateBookMarkedPagesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool status});
+  $Res call({List<int> list});
 }
 
 /// @nodoc
-class __$$ChangeMarkerStatusImplCopyWithImpl<$Res>
-    extends _$QuranPagesListEventCopyWithImpl<$Res, _$ChangeMarkerStatusImpl>
-    implements _$$ChangeMarkerStatusImplCopyWith<$Res> {
-  __$$ChangeMarkerStatusImplCopyWithImpl(_$ChangeMarkerStatusImpl _value,
-      $Res Function(_$ChangeMarkerStatusImpl) _then)
+class __$$UpdateBookMarkedPagesImplCopyWithImpl<$Res>
+    extends _$QuranPagesListEventCopyWithImpl<$Res, _$UpdateBookMarkedPagesImpl>
+    implements _$$UpdateBookMarkedPagesImplCopyWith<$Res> {
+  __$$UpdateBookMarkedPagesImplCopyWithImpl(_$UpdateBookMarkedPagesImpl _value,
+      $Res Function(_$UpdateBookMarkedPagesImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of QuranPagesListEvent
@@ -116,74 +118,80 @@ class __$$ChangeMarkerStatusImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = null,
+    Object? list = null,
   }) {
-    return _then(_$ChangeMarkerStatusImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
+    return _then(_$UpdateBookMarkedPagesImpl(
+      null == list
+          ? _value._list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ChangeMarkerStatusImpl implements _ChangeMarkerStatus {
-  const _$ChangeMarkerStatusImpl({required this.status});
+class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
+  _$UpdateBookMarkedPagesImpl(final List<int> list) : _list = list;
 
+  final List<int> _list;
   @override
-  final bool status;
+  List<int> get list {
+    if (_list is EqualUnmodifiableListView) return _list;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_list);
+  }
 
   @override
   String toString() {
-    return 'QuranPagesListEvent.changeMarkerStatus(status: $status)';
+    return 'QuranPagesListEvent.updateBookMarkedPages(list: $list)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeMarkerStatusImpl &&
-            (identical(other.status, status) || other.status == status));
+            other is _$UpdateBookMarkedPagesImpl &&
+            const DeepCollectionEquality().equals(other._list, _list));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
 
   /// Create a copy of QuranPagesListEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeMarkerStatusImplCopyWith<_$ChangeMarkerStatusImpl> get copyWith =>
-      __$$ChangeMarkerStatusImplCopyWithImpl<_$ChangeMarkerStatusImpl>(
-          this, _$identity);
+  _$$UpdateBookMarkedPagesImplCopyWith<_$UpdateBookMarkedPagesImpl>
+      get copyWith => __$$UpdateBookMarkedPagesImplCopyWithImpl<
+          _$UpdateBookMarkedPagesImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) changeMarkerStatus,
+    required TResult Function(List<int> list) updateBookMarkedPages,
   }) {
-    return changeMarkerStatus(status);
+    return updateBookMarkedPages(list);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? changeMarkerStatus,
+    TResult? Function(List<int> list)? updateBookMarkedPages,
   }) {
-    return changeMarkerStatus?.call(status);
+    return updateBookMarkedPages?.call(list);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? changeMarkerStatus,
+    TResult Function(List<int> list)? updateBookMarkedPages,
     required TResult orElse(),
   }) {
-    if (changeMarkerStatus != null) {
-      return changeMarkerStatus(status);
+    if (updateBookMarkedPages != null) {
+      return updateBookMarkedPages(list);
     }
     return orElse();
   }
@@ -191,50 +199,51 @@ class _$ChangeMarkerStatusImpl implements _ChangeMarkerStatus {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ChangeMarkerStatus value) changeMarkerStatus,
+    required TResult Function(_UpdateBookMarkedPages value)
+        updateBookMarkedPages,
   }) {
-    return changeMarkerStatus(this);
+    return updateBookMarkedPages(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ChangeMarkerStatus value)? changeMarkerStatus,
+    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
   }) {
-    return changeMarkerStatus?.call(this);
+    return updateBookMarkedPages?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ChangeMarkerStatus value)? changeMarkerStatus,
+    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     required TResult orElse(),
   }) {
-    if (changeMarkerStatus != null) {
-      return changeMarkerStatus(this);
+    if (updateBookMarkedPages != null) {
+      return updateBookMarkedPages(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangeMarkerStatus implements QuranPagesListEvent {
-  const factory _ChangeMarkerStatus({required final bool status}) =
-      _$ChangeMarkerStatusImpl;
+abstract class _UpdateBookMarkedPages implements QuranPagesListEvent {
+  factory _UpdateBookMarkedPages(final List<int> list) =
+      _$UpdateBookMarkedPagesImpl;
 
   @override
-  bool get status;
+  List<int> get list;
 
   /// Create a copy of QuranPagesListEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChangeMarkerStatusImplCopyWith<_$ChangeMarkerStatusImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateBookMarkedPagesImplCopyWith<_$UpdateBookMarkedPagesImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$QuranPagesListState {
-  bool get markered => throw _privateConstructorUsedError;
+  List<int> get bookmarkedPages => throw _privateConstructorUsedError;
 
   /// Create a copy of QuranPagesListState
   /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +258,7 @@ abstract class $QuranPagesListStateCopyWith<$Res> {
           QuranPagesListState value, $Res Function(QuranPagesListState) then) =
       _$QuranPagesListStateCopyWithImpl<$Res, QuranPagesListState>;
   @useResult
-  $Res call({bool markered});
+  $Res call({List<int> bookmarkedPages});
 }
 
 /// @nodoc
@@ -267,13 +276,13 @@ class _$QuranPagesListStateCopyWithImpl<$Res, $Val extends QuranPagesListState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? markered = null,
+    Object? bookmarkedPages = null,
   }) {
     return _then(_value.copyWith(
-      markered: null == markered
-          ? _value.markered
-          : markered // ignore: cast_nullable_to_non_nullable
-              as bool,
+      bookmarkedPages: null == bookmarkedPages
+          ? _value.bookmarkedPages
+          : bookmarkedPages // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ) as $Val);
   }
 }
@@ -286,7 +295,7 @@ abstract class _$$QuranPagesListStateImplCopyWith<$Res>
       __$$QuranPagesListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool markered});
+  $Res call({List<int> bookmarkedPages});
 }
 
 /// @nodoc
@@ -302,13 +311,13 @@ class __$$QuranPagesListStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? markered = null,
+    Object? bookmarkedPages = null,
   }) {
     return _then(_$QuranPagesListStateImpl(
-      markered: null == markered
-          ? _value.markered
-          : markered // ignore: cast_nullable_to_non_nullable
-              as bool,
+      bookmarkedPages: null == bookmarkedPages
+          ? _value._bookmarkedPages
+          : bookmarkedPages // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
@@ -316,15 +325,21 @@ class __$$QuranPagesListStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$QuranPagesListStateImpl implements _QuranPagesListState {
-  const _$QuranPagesListStateImpl({this.markered = false});
+  const _$QuranPagesListStateImpl({final List<int> bookmarkedPages = const []})
+      : _bookmarkedPages = bookmarkedPages;
 
+  final List<int> _bookmarkedPages;
   @override
   @JsonKey()
-  final bool markered;
+  List<int> get bookmarkedPages {
+    if (_bookmarkedPages is EqualUnmodifiableListView) return _bookmarkedPages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bookmarkedPages);
+  }
 
   @override
   String toString() {
-    return 'QuranPagesListState(markered: $markered)';
+    return 'QuranPagesListState(bookmarkedPages: $bookmarkedPages)';
   }
 
   @override
@@ -332,12 +347,13 @@ class _$QuranPagesListStateImpl implements _QuranPagesListState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QuranPagesListStateImpl &&
-            (identical(other.markered, markered) ||
-                other.markered == markered));
+            const DeepCollectionEquality()
+                .equals(other._bookmarkedPages, _bookmarkedPages));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, markered);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_bookmarkedPages));
 
   /// Create a copy of QuranPagesListState
   /// with the given fields replaced by the non-null parameter values.
@@ -350,11 +366,11 @@ class _$QuranPagesListStateImpl implements _QuranPagesListState {
 }
 
 abstract class _QuranPagesListState implements QuranPagesListState {
-  const factory _QuranPagesListState({final bool markered}) =
+  const factory _QuranPagesListState({final List<int> bookmarkedPages}) =
       _$QuranPagesListStateImpl;
 
   @override
-  bool get markered;
+  List<int> get bookmarkedPages;
 
   /// Create a copy of QuranPagesListState
   /// with the given fields replaced by the non-null parameter values.

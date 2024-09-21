@@ -20,6 +20,19 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     on<_UpdateSorahReferanceNumber>(_updateSorahReferanceNumber);
     on<_UpdateJozo2ReferanceNumber>(_updateJozo2ReferanceNumber);
     on<_UpdateSidePage>(_updateSidePage);
+    on<_UpdateBookMarkedPages>(_updateBookMarkedPages);
+
+    _getListOfBookMarkedPages();
+  }
+
+  void _getListOfBookMarkedPages() {
+    final List<dynamic> bookMarkedPages =
+        box.get(DatabaseFieldConstant.quranKaremBookMarkList, defaultValue: []);
+
+    if (bookMarkedPages.isNotEmpty) {
+      List<int> intList = bookMarkedPages.cast<int>();
+      add(QuranKareemEvent.updateBookMarkedPages(intList));
+    }
   }
 
   PdfController pageController() {
@@ -71,5 +84,11 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   FutureOr<void> _updateSidePage(
       _UpdateSidePage event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(pageSide: event.side));
+  }
+
+  FutureOr<void> _updateBookMarkedPages(
+      _UpdateBookMarkedPages event, Emitter<QuranKareemState> emit) async {
+    await box.put(DatabaseFieldConstant.quranKaremBookMarkList, event.list);
+    emit(state.copyWith(bookmarkedPages: event.list));
   }
 }

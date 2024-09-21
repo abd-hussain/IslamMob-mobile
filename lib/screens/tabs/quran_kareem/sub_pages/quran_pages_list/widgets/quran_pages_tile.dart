@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/quran_pages_list/bloc/quran_pages_list_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/utils/quran_referances.dart';
 
@@ -56,16 +58,22 @@ class _QuranPagesTileViewState extends State<QuranPagesTileView> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                // page.isMarked
-                //     ? const SizedBox(
-                //         width: 30,
-                //         child: Icon(
-                //           Icons.bookmark,
-                //           color: Colors.red,
-                //         ),
-                //       )
-                //     : const SizedBox(width: 30),//TODO
-
+                BlocBuilder<QuranPagesListBloc, QuranPagesListState>(
+                  buildWhen: (previous, current) {
+                    return previous.bookmarkedPages != current.bookmarkedPages;
+                  },
+                  builder: (context, state) {
+                    return state.bookmarkedPages.contains(widget.pageNumber)
+                        ? const SizedBox(
+                            width: 30,
+                            child: Icon(
+                              Icons.bookmark,
+                              color: Colors.red,
+                            ),
+                          )
+                        : const SizedBox(width: 30);
+                  },
+                ),
                 QuranReferances.getSorahTypeIcon(
                     context: context,
                     pageNumber: widget.pageNumber,

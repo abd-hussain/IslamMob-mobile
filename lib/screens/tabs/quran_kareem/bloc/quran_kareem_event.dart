@@ -9,4 +9,6 @@ class QuranKareemEvent with _$QuranKareemEvent {
   factory QuranKareemEvent.updateJozo2ReferanceNumber(int num) =
       _UpdateJozo2ReferanceNumber;
   factory QuranKareemEvent.updateSidePage(PageSide side) = _UpdateSidePage;
+  factory QuranKareemEvent.updateBookMarkedPages(List<int> list) =
+      _UpdateBookMarkedPages;
 }

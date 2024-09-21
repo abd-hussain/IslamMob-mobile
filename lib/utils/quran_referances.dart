@@ -168,11 +168,11 @@ class QuranReferances {
       return Row(
         children: [
           SizedBox(
-            width: 40,
+            width: 35,
             child: Image.asset("assets/images/sorah_type/macca.png"),
           ),
           SizedBox(
-            width: 40,
+            width: 35,
             child: Image.asset("assets/images/sorah_type/madenah.png"),
           ),
         ],
@@ -181,11 +181,11 @@ class QuranReferances {
       return Row(
         children: [
           SizedBox(
-            width: 40,
+            width: 35,
             child: Image.asset("assets/images/sorah_type/madenah.png"),
           ),
           SizedBox(
-            width: 40,
+            width: 35,
             child: Image.asset("assets/images/sorah_type/macca.png"),
           ),
         ],
@@ -194,22 +194,22 @@ class QuranReferances {
       return Row(
         children: [
           SizedBox(
-            width: 40,
+            width: 35,
             child: Image.asset("assets/images/sorah_type/macca.png"),
           ),
           SizedBox(
-            width: 40,
+            width: 35,
             child: Image.asset("assets/images/sorah_type/madenah.png"),
           ),
           SizedBox(
-            width: 40,
+            width: 35,
             child: Image.asset("assets/images/sorah_type/macca.png"),
           ),
         ],
       );
     } else {
       return SizedBox(
-        width: 40,
+        width: 35,
         child: Image.asset(
             _getSorahType(context: context, sorahName: sorahName) ==
                     SorahType.maccah
