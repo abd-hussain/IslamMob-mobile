@@ -13,6 +13,10 @@ part 'quran_kareem_bloc.freezed.dart';
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   final box = Hive.box(DatabaseBoxConstant.userInfo);
+  PdfController pdfController = PdfController(
+    viewportFraction: 1.1,
+    document: PdfDocument.openAsset('assets/pdf/quran_kareem.pdf'),
+  );
 
   QuranKareemBloc() : super(const QuranKareemState()) {
     on<_ShowHideHelpBar>(_showHideHelpBar);
@@ -40,12 +44,11 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
         defaultValue: 1);
     add(QuranKareemEvent.updatePageCount(pageNumber));
+    pdfController.initialPage = pageNumber;
+    pdfController.document =
+        PdfDocument.openAsset('assets/pdf/quran/arabic-madina.pdf');
 
-    return PdfController(
-      initialPage: pageNumber,
-      viewportFraction: 1.1,
-      document: PdfDocument.openAsset('assets/pdf/quran/arabic-madina.pdf'),
-    );
+    return pdfController;
   }
 
   FutureOr<void> _showHideHelpBar(

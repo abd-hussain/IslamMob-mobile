@@ -5,6 +5,7 @@ import 'package:islam_app/screens/tabs/quran_kareem/bloc/quran_kareem_bloc.dart'
 import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/bottom_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/brightness_popup.dart';
+import 'package:islam_app/utils/constants/argument_constant.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
   final Function(double) returnBrightness;
@@ -83,13 +84,42 @@ class QuranBottomHelpBar extends StatelessWidget {
                 );
               },
             ),
-            BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingPages,
-              icon: Icons.copy_sharp,
-              colorIcon: Colors.white70,
-              onTap: () async {
-                final navigator = Navigator.of(context, rootNavigator: true);
-                await navigator.pushNamed(RoutesConstants.quranPagesListScreen);
+            BlocBuilder<QuranKareemBloc, QuranKareemState>(
+              buildWhen: (previous, current) {
+                return previous.pageCount != current.pageCount ||
+                    previous.bookmarkedPages != current.bookmarkedPages;
+              },
+              builder: (context, state) {
+                return BottomTile(
+                  title: AppLocalizations.of(context)!.quranSettingPages,
+                  icon: Icons.copy_sharp,
+                  colorIcon: Colors.white70,
+                  onTap: () async {
+                    final navigator =
+                        Navigator.of(context, rootNavigator: true);
+                    await navigator.pushNamed(
+                        RoutesConstants.quranPagesListScreen,
+                        arguments: {
+                          ArgumentConstant.currentPageNumber: state.pageCount
+                        }).then(
+                      (value) {
+                        if (value != null) {
+                          if (value is Map<String, dynamic>) {
+                            if (context.mounted) {
+                              context.read<QuranKareemBloc>().add(
+                                  QuranKareemEvent.updatePageCount(
+                                      value["pageNumber"]));
+                              context
+                                  .read<QuranKareemBloc>()
+                                  .pdfController
+                                  .jumpToPage(value["pageNumber"]);
+                            }
+                          }
+                        }
+                      },
+                    );
+                  },
+                );
               },
             ),
             BottomTile(

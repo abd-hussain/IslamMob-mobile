@@ -6,8 +6,13 @@ import 'package:islam_app/utils/quran_referances.dart';
 
 class QuranPagesTileView extends StatefulWidget {
   const QuranPagesTileView(
-      {super.key, required this.onTap, required this.pageNumber});
+      {super.key,
+      required this.onTap,
+      required this.pageNumber,
+      required this.selectedPageNumber});
   final int pageNumber;
+  final int selectedPageNumber;
+
   final Function() onTap;
 
   @override
@@ -40,6 +45,9 @@ class _QuranPagesTileViewState extends State<QuranPagesTileView> {
                     child: CustomText(
                       title: widget.pageNumber.toString(),
                       fontSize: 20,
+                      textColor: widget.selectedPageNumber == widget.pageNumber
+                          ? Colors.redAccent
+                          : Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
