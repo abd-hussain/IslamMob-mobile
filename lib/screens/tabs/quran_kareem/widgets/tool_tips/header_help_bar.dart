@@ -44,8 +44,9 @@ class QuranHeaderHelpBar extends StatelessWidget {
                             current.jozo2ReferanceNumber,
                         builder: (context, state) {
                           return CustomText(
-                            title:
-                                "${AppLocalizations.of(context)!.quranJuz} ${state.jozo2ReferanceNumber}",
+                            title: QuranReferances.juzNameDependOnNumber(
+                                context: context,
+                                index: state.jozo2ReferanceNumber),
                             fontSize: 14,
                             textColor: Colors.white70,
                             fontWeight: FontWeight.bold,

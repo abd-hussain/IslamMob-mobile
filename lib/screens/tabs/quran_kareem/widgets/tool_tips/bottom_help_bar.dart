@@ -131,8 +131,30 @@ class QuranBottomHelpBar extends StatelessWidget {
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingParts,
               icon: Icons.pie_chart_rounded,
-              onTap: () {
-                //TODO
+              onTap: () async {
+                final navigator = Navigator.of(context, rootNavigator: true);
+                await navigator
+                    .pushNamed(RoutesConstants.quranPartsListScreen)
+                    .then(
+                  (value) {
+                    if (value != null) {
+                      if (value is Map<String, dynamic>) {
+                        if (value['jusNumber'] != null) {
+                          //TODO
+                        }
+                        if (value['sorahNumber'] != null) {
+                          //TODO
+                        }
+
+                        // if (context.mounted) {
+                        //   //TODO
+                        //   // context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(value["pageNumber"]));
+                        //   // context.read<QuranKareemBloc>().pdfController.jumpToPage(value["pageNumber"]);
+                        // }
+                      }
+                    }
+                  },
+                );
               },
             ),
             BlocBuilder<QuranKareemBloc, QuranKareemState>(

@@ -138,9 +138,37 @@
     "setphoto" : "Set Photo",
     "quranpages" : "Holy Quran Pages",
     "close" : "Close",
-    "resetbrightness" : "Reset Brightness"
-
-
+    "resetbrightness" : "Reset Brightness",
+    "jusone" : "Part One",
+    "justwo" : "Part Two",
+    "justhree" : "Part Three",
+    "jusfour" : "Part Four",
+    "jusfive" : "Part Five",
+    "jussix" : "Part Six",
+    "jusseven" : "Part Seven",
+    "juseight" : "Part Eight",
+    "jusnine" : "Part Nine",
+    "justen" : "Part Ten",
+    "juseleven" : "Part Eleven",
+    "justwelve" : "Part Twelve",
+    "justhirteen" : "Part Thirteen",
+    "jusfourteen" : "Part Fourteen",
+    "jusfifteen" : "Part Fifteen",
+    "jussixteen" : "Part Sixteen",
+    "jusseventeen" : "Part Seventeen",
+    "juseightteen" : "Part Eighteen",
+    "jusnineteen" : "Part Nineteen",
+    "justtwenty" : "Part Twenty",
+    "justwentyone" : "Part Twenty-One",
+    "justwentytwo" : "Part Twenty-Two",
+    "justwentythree" : "Part Twenty-Three",
+    "justwentyfour" : "Part Twenty-Four",
+    "justwentyfive" : "Part Twenty-Five",
+    "justwentysix" : "Part Twenty-Six",
+    "justwentyseven" : "Part Twenty-Seven",
+    "justwentyeight" : "Part Twenty-Eight",
+    "justwentynine" : "Part Twenty-Nine",
+    "justhirty" : "Part Thirty"
 
 
 

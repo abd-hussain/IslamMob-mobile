@@ -138,9 +138,37 @@
     "setphoto" : "تحديد صورة",
     "quranpages" : "صفحات القرآن الكريم",
     "close" : "إغلاق",
-    "resetbrightness" : "إعادة تعيين"
-
-
+    "resetbrightness" : "إعادة تعيين",
+    "jusone" : "الجزء الأول",
+    "justwo" : "الجزء الثاني",
+    "justhree" : "الجزء الثالث",
+    "jusfour" : "الجزء الرابع",
+    "jusfive" : "الجزء الخامس",
+    "jussix" : "الجزء السادس",
+    "jusseven" : "الجزء السابع",
+    "juseight" : "الجزء الثامن",
+    "jusnine" : "الجزء التاسع",
+    "justen" : "الجزء العاشر",
+    "juseleven" : "الجزء الحادي عشر",
+    "justwelve" : "الجزء الثاني عشر",
+    "justhirteen" : "الجزء الثالث عشر",
+    "jusfourteen" : "الجزء الرابع عشر",
+    "jusfifteen" : "الجزء الخامس عشر",
+    "jussixteen" : "الجزء السادس عشر",
+    "jusseventeen" : "الجزء السابع عشر",
+    "juseightteen" : "الجزء الثامن عشر",
+    "jusnineteen" : "الجزء التاسع عشر",
+    "justtwenty" : "الجزء العشرون",
+    "justwentyone" : "الجزء الحادي والعشرون",
+    "justwentytwo" : "الجزء الثاني والعشرون",
+    "justwentythree" : "الجزء الثالث والعشرون",
+    "justwentyfour" : "الجزء الرابع والعشرون",
+    "justwentyfive" : "الجزء الخامس والعشرون",
+    "justwentysix" : "الجزء السادس والعشرون",
+    "justwentyseven" : "الجزء السابع والعشرون",
+    "justwentyeight" : "الجزء الثامن والعشرون",
+    "justwentynine" : "الجزء التاسع والعشرون",
+    "justhirty" : "الجزء الثلاثون"
  
 
 }

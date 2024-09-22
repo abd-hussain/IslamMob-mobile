@@ -460,4 +460,96 @@ class QuranReferances {
         return "";
     }
   }
+
+  static String juzNameDependOnNumber(
+      {required BuildContext context, required int index}) {
+    switch (index) {
+      case 1:
+        return AppLocalizations.of(context)!.jusone;
+      case 2:
+        return AppLocalizations.of(context)!.justwo;
+      case 3:
+        return AppLocalizations.of(context)!.justhree;
+      case 4:
+        return AppLocalizations.of(context)!.jusfour;
+      case 5:
+        return AppLocalizations.of(context)!.jusfive;
+      case 6:
+        return AppLocalizations.of(context)!.jussix;
+      case 7:
+        return AppLocalizations.of(context)!.jusseven;
+      case 8:
+        return AppLocalizations.of(context)!.juseight;
+      case 9:
+        return AppLocalizations.of(context)!.jusnine;
+      case 10:
+        return AppLocalizations.of(context)!.justen;
+      case 11:
+        return AppLocalizations.of(context)!.juseleven;
+      case 12:
+        return AppLocalizations.of(context)!.justwelve;
+      case 13:
+        return AppLocalizations.of(context)!.justhirteen;
+      case 14:
+        return AppLocalizations.of(context)!.jusfourteen;
+      case 15:
+        return AppLocalizations.of(context)!.jusfifteen;
+      case 16:
+        return AppLocalizations.of(context)!.jussixteen;
+      case 17:
+        return AppLocalizations.of(context)!.jusseventeen;
+      case 18:
+        return AppLocalizations.of(context)!.juseightteen;
+      case 19:
+        return AppLocalizations.of(context)!.jusnineteen;
+      case 20:
+        return AppLocalizations.of(context)!.justtwenty;
+      case 21:
+        return AppLocalizations.of(context)!.justwentyone;
+      case 22:
+        return AppLocalizations.of(context)!.justwentytwo;
+      case 23:
+        return AppLocalizations.of(context)!.justwentythree;
+      case 24:
+        return AppLocalizations.of(context)!.justwentyfour;
+      case 25:
+        return AppLocalizations.of(context)!.justwentyfive;
+      case 26:
+        return AppLocalizations.of(context)!.justwentysix;
+      case 27:
+        return AppLocalizations.of(context)!.justwentyseven;
+      case 28:
+        return AppLocalizations.of(context)!.justwentyeight;
+      case 29:
+        return AppLocalizations.of(context)!.justwentynine;
+      case 30:
+        return AppLocalizations.of(context)!.justhirty;
+      default:
+        return "";
+    }
+  }
+
+  static List<int> getPageRangeForJuz({required int juz}) {
+    final pages = _pageToJuz();
+    int? startPage;
+    int? endPage;
+
+    // Iterate through the map to find the range
+    pages.forEach((page, j) {
+      if (j == juz) {
+        startPage = page;
+      } else if (j == juz + 1) {
+        endPage = page - 1;
+      }
+    });
+
+    // If the endPage is null, it means it's the last Juz
+    endPage ??= 604; // Assuming 604 is the last page of the Quran
+
+    if (startPage != null) {
+      return [startPage!, endPage!];
+    } else {
+      throw ArgumentError('Invalid Juz number');
+    }
+  }
 }
