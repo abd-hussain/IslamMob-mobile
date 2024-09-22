@@ -33,7 +33,6 @@ class QuranBottomHelpBar extends StatelessWidget {
                 return BottomTile(
                   title: AppLocalizations.of(context)!.quranSettingLighting,
                   icon: Icons.sunny,
-                  colorIcon: Colors.white70,
                   onTap: () {
                     showDialog(
                       context: context,
@@ -125,7 +124,6 @@ class QuranBottomHelpBar extends StatelessWidget {
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingMushaf,
               icon: Icons.library_books,
-              colorIcon: Colors.white70,
               onTap: () {
                 //TODO
               },
@@ -133,23 +131,35 @@ class QuranBottomHelpBar extends StatelessWidget {
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingParts,
               icon: Icons.pie_chart_rounded,
-              colorIcon: Colors.white70,
               onTap: () {
                 //TODO
               },
             ),
-            BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingSupportUs,
-              icon: Icons.ads_click,
-              colorIcon: Colors.white70,
-              onTap: () async {
-                //TODO
+            BlocBuilder<QuranKareemBloc, QuranKareemState>(
+              buildWhen: (previous, current) {
+                return previous.adsShown != current.adsShown;
+              },
+              builder: (context, state) {
+                return BottomTile(
+                  title: AppLocalizations.of(context)!.quranSettingSupportUs,
+                  icon: Icons.ads_click,
+                  isIconBlinking: !state.adsShown,
+                  onTap: () {
+                    if (context.read<QuranKareemBloc>().interstitialAd !=
+                            null &&
+                        state.adsShown == false) {
+                      context.read<QuranKareemBloc>().interstitialAd!.show();
+                      context
+                          .read<QuranKareemBloc>()
+                          .add(QuranKareemEvent.updateAdsShown(true));
+                    }
+                  },
+                );
               },
             ),
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingReport,
               icon: Icons.report_outlined,
-              colorIcon: Colors.white70,
               onTap: () async {
                 final navigator = Navigator.of(context, rootNavigator: true);
                 await navigator
@@ -160,7 +170,6 @@ class QuranBottomHelpBar extends StatelessWidget {
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingLanguage,
               icon: Icons.language,
-              colorIcon: Colors.white70,
               onTap: () async {
                 final navigator = Navigator.of(context, rootNavigator: true);
                 await navigator.pushNamed(RoutesConstants.changeLanguageScreen);

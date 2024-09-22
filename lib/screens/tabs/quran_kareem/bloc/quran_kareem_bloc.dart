@@ -1,8 +1,11 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/utils/adds_helper.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/quran_referances.dart';
 import 'package:pdfx/pdfx.dart';
@@ -13,6 +16,8 @@ part 'quran_kareem_bloc.freezed.dart';
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   final box = Hive.box(DatabaseBoxConstant.userInfo);
+  InterstitialAd? interstitialAd;
+
   PdfController pdfController = PdfController(
     viewportFraction: 1.1,
     document: PdfDocument.openAsset('assets/pdf/quran_kareem.pdf'),
@@ -26,8 +31,25 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     on<_UpdateSidePage>(_updateSidePage);
     on<_UpdateBookMarkedPages>(_updateBookMarkedPages);
     on<_UpdateScreenBrigtness>(_updateScreenBrigtness);
+    on<_UpdateAdsShown>(_updateAdsShown);
 
     _getListOfBookMarkedPages();
+    _prepareInterstitialAd();
+  }
+
+  void _prepareInterstitialAd() {
+    InterstitialAd.load(
+      adUnitId: AdHelper.interstitialAdUnitId,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(onAdLoaded: (currentAd) {
+        currentAd.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (currentAd) {});
+        interstitialAd = currentAd;
+        add(QuranKareemEvent.updateAdsShown(false));
+      }, onAdFailedToLoad: (error) {
+        debugPrint("Failed to load : Flutter AdMob Interstitial Ad");
+      }),
+    );
   }
 
   void _getListOfBookMarkedPages() {
@@ -99,5 +121,10 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   FutureOr<void> _updateScreenBrigtness(
       _UpdateScreenBrigtness event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(brigtness: event.value));
+  }
+
+  FutureOr<void> _updateAdsShown(
+      _UpdateAdsShown event, Emitter<QuranKareemState> emit) {
+    emit(state.copyWith(adsShown: event.status));
   }
 }
