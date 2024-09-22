@@ -13,7 +13,7 @@ class QuranReferances {
         .reduce((prev, next) => prev > next ? prev : next);
   }
 
-  static int getJuzName(int pageNumber) {
+  static int getJuzNumberFromPageNumber(int pageNumber) {
     return _pageToJuz()
         .entries
         .where((entry) => entry.key <= pageNumber)
@@ -459,6 +459,23 @@ class QuranReferances {
       default:
         return "";
     }
+  }
+
+  static List<String> getSurahNamesInRange({
+    required BuildContext context,
+    required int fromPage,
+    required int toPage,
+  }) {
+    List<String> surahNames = [];
+
+    for (int i = fromPage; i <= toPage; i++) {
+      String surahName = getSorahName(context: context, pageNumber: i);
+      if (surahName.isNotEmpty && !surahNames.contains(surahName)) {
+        surahNames.add(surahName);
+      }
+    }
+
+    return surahNames;
   }
 
   static String juzNameDependOnNumber(

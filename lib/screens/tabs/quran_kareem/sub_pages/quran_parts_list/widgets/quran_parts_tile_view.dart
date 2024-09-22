@@ -17,6 +17,11 @@ class QuranPartsTileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> sowarNames = QuranReferances.getSurahNamesInRange(
+        context: context,
+        fromPage: QuranReferances.getPageRangeForJuz(juz: pageNumber).first,
+        toPage: QuranReferances.getPageRangeForJuz(juz: pageNumber).last);
+
     return Padding(
       padding: const EdgeInsets.only(top: 2, bottom: 2),
       child: Column(
@@ -66,19 +71,14 @@ class QuranPartsTileView extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 150,
-            child: GridView.builder(
+            height: sowarNames.length * 43,
+            child: ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // Number of items per row
-                childAspectRatio: 1.0, // Aspect ratio of the items
-                mainAxisExtent: 50, // Height of each item
-              ),
-              itemCount: 5,
+              itemCount: sowarNames.length,
               itemBuilder: (context, index) {
                 return SorahTileView(
-                  sorahName: '',
-                  sorahType: SorahType.maccah,
+                  sorahName: sowarNames[index],
+                  pageNumber: 100,
                   onSorahTap: () {
                     //TODO
                     onSorahTap(1);

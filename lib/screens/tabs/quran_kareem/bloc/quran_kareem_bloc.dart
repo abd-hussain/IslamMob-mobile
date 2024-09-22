@@ -86,7 +86,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     add(QuranKareemEvent.updateSorahReferanceNumber(
         QuranReferances.getSurahName(event.pageCount)));
     add(QuranKareemEvent.updateJozo2ReferanceNumber(
-        QuranReferances.getJuzName(event.pageCount)));
+        QuranReferances.getJuzNumberFromPageNumber(event.pageCount)));
     add(QuranKareemEvent.updateSidePage(_getPageSide(event.pageCount)));
 
     await box.put(

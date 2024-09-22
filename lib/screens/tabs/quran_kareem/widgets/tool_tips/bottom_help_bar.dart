@@ -140,7 +140,15 @@ class QuranBottomHelpBar extends StatelessWidget {
                     if (value != null) {
                       if (value is Map<String, dynamic>) {
                         if (value['jusNumber'] != null) {
-                          //TODO
+                          if (context.mounted) {
+                            context.read<QuranKareemBloc>().add(
+                                QuranKareemEvent.updatePageCount(
+                                    value["jusNumber"]));
+                            context
+                                .read<QuranKareemBloc>()
+                                .pdfController
+                                .jumpToPage(value["jusNumber"]);
+                          }
                         }
                         if (value['sorahNumber'] != null) {
                           //TODO
