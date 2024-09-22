@@ -136,7 +136,9 @@
     "pickimagefromcamera" : "اختيار من الكاميرا",
     "photosetting" : "اعدادات الصورة",
     "setphoto" : "تحديد صورة",
-    "quranpages" : "صفحات القرآن الكريم"
+    "quranpages" : "صفحات القرآن الكريم",
+    "close" : "إغلاق",
+    "resetbrightness" : "إعادة تعيين"
 
 
  

@@ -16,7 +16,15 @@ class QuranKareemScreen extends StatelessWidget {
           return Stack(
             children: [
               const QuranKareemMainView(),
-              state.showHelpBar ? const HelpToolTipsView() : const SizedBox(),
+              state.showHelpBar
+                  ? HelpToolTipsView(
+                      returnBrightness: (value) {
+                        context
+                            .read<QuranKareemBloc>()
+                            .add(QuranKareemEvent.updateScreenBrigtness(value));
+                      },
+                    )
+                  : const SizedBox(),
             ],
           );
         },

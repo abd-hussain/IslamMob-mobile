@@ -24,6 +24,7 @@ mixin _$QuranKareemEvent {
     required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$QuranKareemEvent {
     TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$QuranKareemEvent {
     TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -58,6 +61,8 @@ mixin _$QuranKareemEvent {
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
         updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +75,7 @@ mixin _$QuranKareemEvent {
         updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +88,7 @@ mixin _$QuranKareemEvent {
         updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -183,6 +190,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
   }) {
     return showHideHelpBar(status);
   }
@@ -196,6 +204,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
   }) {
     return showHideHelpBar?.call(status);
   }
@@ -209,6 +218,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (showHideHelpBar != null) {
@@ -229,6 +239,8 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
         updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
   }) {
     return showHideHelpBar(this);
   }
@@ -244,6 +256,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
         updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
   }) {
     return showHideHelpBar?.call(this);
   }
@@ -259,6 +272,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
         updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (showHideHelpBar != null) {
@@ -356,6 +370,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
   }) {
     return updatePageCount(pageCount);
   }
@@ -369,6 +384,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
   }) {
     return updatePageCount?.call(pageCount);
   }
@@ -382,6 +398,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updatePageCount != null) {
@@ -402,6 +419,8 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
         updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
   }) {
     return updatePageCount(this);
   }
@@ -417,6 +436,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
         updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
   }) {
     return updatePageCount?.call(this);
   }
@@ -432,6 +452,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
         updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updatePageCount != null) {
@@ -531,6 +552,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
   }) {
     return updateSorahReferanceNumber(num);
   }
@@ -544,6 +566,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
   }) {
     return updateSorahReferanceNumber?.call(num);
   }
@@ -557,6 +580,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updateSorahReferanceNumber != null) {
@@ -577,6 +601,8 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
         updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
   }) {
     return updateSorahReferanceNumber(this);
   }
@@ -592,6 +618,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
         updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
   }) {
     return updateSorahReferanceNumber?.call(this);
   }
@@ -607,6 +634,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
         updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updateSorahReferanceNumber != null) {
@@ -707,6 +735,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
   }) {
     return updateJozo2ReferanceNumber(num);
   }
@@ -720,6 +749,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
   }) {
     return updateJozo2ReferanceNumber?.call(num);
   }
@@ -733,6 +763,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updateJozo2ReferanceNumber != null) {
@@ -753,6 +784,8 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
         updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
   }) {
     return updateJozo2ReferanceNumber(this);
   }
@@ -768,6 +801,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
         updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
   }) {
     return updateJozo2ReferanceNumber?.call(this);
   }
@@ -783,6 +817,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
         updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updateJozo2ReferanceNumber != null) {
@@ -880,6 +915,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
   }) {
     return updateSidePage(side);
   }
@@ -893,6 +929,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
   }) {
     return updateSidePage?.call(side);
   }
@@ -906,6 +943,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updateSidePage != null) {
@@ -926,6 +964,8 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
         updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
   }) {
     return updateSidePage(this);
   }
@@ -941,6 +981,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
         updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
   }) {
     return updateSidePage?.call(this);
   }
@@ -956,6 +997,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
         updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updateSidePage != null) {
@@ -1059,6 +1101,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     required TResult Function(int num) updateJozo2ReferanceNumber,
     required TResult Function(PageSide side) updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
   }) {
     return updateBookMarkedPages(list);
   }
@@ -1072,6 +1115,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     TResult? Function(int num)? updateJozo2ReferanceNumber,
     TResult? Function(PageSide side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
   }) {
     return updateBookMarkedPages?.call(list);
   }
@@ -1085,6 +1129,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     TResult Function(int num)? updateJozo2ReferanceNumber,
     TResult Function(PageSide side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updateBookMarkedPages != null) {
@@ -1105,6 +1150,8 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
         updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
   }) {
     return updateBookMarkedPages(this);
   }
@@ -1120,6 +1167,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
         updateJozo2ReferanceNumber,
     TResult? Function(_UpdateSidePage value)? updateSidePage,
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
   }) {
     return updateBookMarkedPages?.call(this);
   }
@@ -1135,6 +1183,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
         updateJozo2ReferanceNumber,
     TResult Function(_UpdateSidePage value)? updateSidePage,
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     required TResult orElse(),
   }) {
     if (updateBookMarkedPages != null) {
@@ -1158,6 +1207,187 @@ abstract class _UpdateBookMarkedPages implements QuranKareemEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateScreenBrigtnessImplCopyWith<$Res> {
+  factory _$$UpdateScreenBrigtnessImplCopyWith(
+          _$UpdateScreenBrigtnessImpl value,
+          $Res Function(_$UpdateScreenBrigtnessImpl) then) =
+      __$$UpdateScreenBrigtnessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double value});
+}
+
+/// @nodoc
+class __$$UpdateScreenBrigtnessImplCopyWithImpl<$Res>
+    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateScreenBrigtnessImpl>
+    implements _$$UpdateScreenBrigtnessImplCopyWith<$Res> {
+  __$$UpdateScreenBrigtnessImplCopyWithImpl(_$UpdateScreenBrigtnessImpl _value,
+      $Res Function(_$UpdateScreenBrigtnessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QuranKareemEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateScreenBrigtnessImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
+  _$UpdateScreenBrigtnessImpl(this.value);
+
+  @override
+  final double value;
+
+  @override
+  String toString() {
+    return 'QuranKareemEvent.updateScreenBrigtness(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateScreenBrigtnessImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of QuranKareemEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateScreenBrigtnessImplCopyWith<_$UpdateScreenBrigtnessImpl>
+      get copyWith => __$$UpdateScreenBrigtnessImplCopyWithImpl<
+          _$UpdateScreenBrigtnessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool status) showHideHelpBar,
+    required TResult Function(int pageCount) updatePageCount,
+    required TResult Function(int num) updateSorahReferanceNumber,
+    required TResult Function(int num) updateJozo2ReferanceNumber,
+    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
+  }) {
+    return updateScreenBrigtness(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool status)? showHideHelpBar,
+    TResult? Function(int pageCount)? updatePageCount,
+    TResult? Function(int num)? updateSorahReferanceNumber,
+    TResult? Function(int num)? updateJozo2ReferanceNumber,
+    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
+  }) {
+    return updateScreenBrigtness?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool status)? showHideHelpBar,
+    TResult Function(int pageCount)? updatePageCount,
+    TResult Function(int num)? updateSorahReferanceNumber,
+    TResult Function(int num)? updateJozo2ReferanceNumber,
+    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
+    required TResult orElse(),
+  }) {
+    if (updateScreenBrigtness != null) {
+      return updateScreenBrigtness(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
+    required TResult Function(_UpdatePageCount value) updatePageCount,
+    required TResult Function(_UpdateSorahReferanceNumber value)
+        updateSorahReferanceNumber,
+    required TResult Function(_UpdateJozo2ReferanceNumber value)
+        updateJozo2ReferanceNumber,
+    required TResult Function(_UpdateSidePage value) updateSidePage,
+    required TResult Function(_UpdateBookMarkedPages value)
+        updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
+  }) {
+    return updateScreenBrigtness(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
+    TResult? Function(_UpdatePageCount value)? updatePageCount,
+    TResult? Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult? Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
+    TResult? Function(_UpdateSidePage value)? updateSidePage,
+    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
+  }) {
+    return updateScreenBrigtness?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
+    TResult Function(_UpdatePageCount value)? updatePageCount,
+    TResult Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
+    TResult Function(_UpdateSidePage value)? updateSidePage,
+    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
+    required TResult orElse(),
+  }) {
+    if (updateScreenBrigtness != null) {
+      return updateScreenBrigtness(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateScreenBrigtness implements QuranKareemEvent {
+  factory _UpdateScreenBrigtness(final double value) =
+      _$UpdateScreenBrigtnessImpl;
+
+  double get value;
+
+  /// Create a copy of QuranKareemEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateScreenBrigtnessImplCopyWith<_$UpdateScreenBrigtnessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$QuranKareemState {
   bool get showHelpBar => throw _privateConstructorUsedError;
   int get pageCount => throw _privateConstructorUsedError;
@@ -1165,6 +1395,7 @@ mixin _$QuranKareemState {
   int get jozo2ReferanceNumber => throw _privateConstructorUsedError;
   PageSide get pageSide => throw _privateConstructorUsedError;
   List<int> get bookmarkedPages => throw _privateConstructorUsedError;
+  double get brigtness => throw _privateConstructorUsedError;
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.
@@ -1185,7 +1416,8 @@ abstract class $QuranKareemStateCopyWith<$Res> {
       int sorahReferanceNumber,
       int jozo2ReferanceNumber,
       PageSide pageSide,
-      List<int> bookmarkedPages});
+      List<int> bookmarkedPages,
+      double brigtness});
 }
 
 /// @nodoc
@@ -1209,6 +1441,7 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
     Object? jozo2ReferanceNumber = null,
     Object? pageSide = null,
     Object? bookmarkedPages = null,
+    Object? brigtness = null,
   }) {
     return _then(_value.copyWith(
       showHelpBar: null == showHelpBar
@@ -1235,6 +1468,10 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
           ? _value.bookmarkedPages
           : bookmarkedPages // ignore: cast_nullable_to_non_nullable
               as List<int>,
+      brigtness: null == brigtness
+          ? _value.brigtness
+          : brigtness // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -1253,7 +1490,8 @@ abstract class _$$QuranKareemStateImplCopyWith<$Res>
       int sorahReferanceNumber,
       int jozo2ReferanceNumber,
       PageSide pageSide,
-      List<int> bookmarkedPages});
+      List<int> bookmarkedPages,
+      double brigtness});
 }
 
 /// @nodoc
@@ -1275,6 +1513,7 @@ class __$$QuranKareemStateImplCopyWithImpl<$Res>
     Object? jozo2ReferanceNumber = null,
     Object? pageSide = null,
     Object? bookmarkedPages = null,
+    Object? brigtness = null,
   }) {
     return _then(_$QuranKareemStateImpl(
       showHelpBar: null == showHelpBar
@@ -1301,6 +1540,10 @@ class __$$QuranKareemStateImplCopyWithImpl<$Res>
           ? _value._bookmarkedPages
           : bookmarkedPages // ignore: cast_nullable_to_non_nullable
               as List<int>,
+      brigtness: null == brigtness
+          ? _value.brigtness
+          : brigtness // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -1314,7 +1557,8 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
       this.sorahReferanceNumber = 0,
       this.jozo2ReferanceNumber = 0,
       this.pageSide = PageSide.left,
-      final List<int> bookmarkedPages = const []})
+      final List<int> bookmarkedPages = const [],
+      this.brigtness = 0})
       : _bookmarkedPages = bookmarkedPages;
 
   @override
@@ -1342,8 +1586,12 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
   }
 
   @override
+  @JsonKey()
+  final double brigtness;
+
+  @override
   String toString() {
-    return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, sorahReferanceNumber: $sorahReferanceNumber, jozo2ReferanceNumber: $jozo2ReferanceNumber, pageSide: $pageSide, bookmarkedPages: $bookmarkedPages)';
+    return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, sorahReferanceNumber: $sorahReferanceNumber, jozo2ReferanceNumber: $jozo2ReferanceNumber, pageSide: $pageSide, bookmarkedPages: $bookmarkedPages, brigtness: $brigtness)';
   }
 
   @override
@@ -1362,7 +1610,9 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
             (identical(other.pageSide, pageSide) ||
                 other.pageSide == pageSide) &&
             const DeepCollectionEquality()
-                .equals(other._bookmarkedPages, _bookmarkedPages));
+                .equals(other._bookmarkedPages, _bookmarkedPages) &&
+            (identical(other.brigtness, brigtness) ||
+                other.brigtness == brigtness));
   }
 
   @override
@@ -1373,7 +1623,8 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
       sorahReferanceNumber,
       jozo2ReferanceNumber,
       pageSide,
-      const DeepCollectionEquality().hash(_bookmarkedPages));
+      const DeepCollectionEquality().hash(_bookmarkedPages),
+      brigtness);
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.
@@ -1392,7 +1643,8 @@ abstract class _QuranKareemState implements QuranKareemState {
       final int sorahReferanceNumber,
       final int jozo2ReferanceNumber,
       final PageSide pageSide,
-      final List<int> bookmarkedPages}) = _$QuranKareemStateImpl;
+      final List<int> bookmarkedPages,
+      final double brigtness}) = _$QuranKareemStateImpl;
 
   @override
   bool get showHelpBar;
@@ -1406,6 +1658,8 @@ abstract class _QuranKareemState implements QuranKareemState {
   PageSide get pageSide;
   @override
   List<int> get bookmarkedPages;
+  @override
+  double get brigtness;
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.

@@ -3,7 +3,8 @@ import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/bottom_hel
 import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/header_help_bar.dart';
 
 class HelpToolTipsView extends StatelessWidget {
-  const HelpToolTipsView({super.key});
+  final Function(double) returnBrightness;
+  const HelpToolTipsView({super.key, required this.returnBrightness});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,11 @@ class HelpToolTipsView extends StatelessWidget {
       children: [
         const QuranHeaderHelpBar(),
         Expanded(child: Container()),
-        const QuranBottomHelpBar(),
+        QuranBottomHelpBar(
+          returnBrightness: (value) {
+            returnBrightness(value);
+          },
+        ),
       ],
     );
   }

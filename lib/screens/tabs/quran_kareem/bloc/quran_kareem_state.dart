@@ -11,5 +11,6 @@ class QuranKareemState with _$QuranKareemState {
     @Default(0) int jozo2ReferanceNumber,
     @Default(PageSide.left) PageSide pageSide,
     @Default([]) List<int> bookmarkedPages,
+    @Default(1) double brigtness,
   }) = _QuranKareemState;
 }

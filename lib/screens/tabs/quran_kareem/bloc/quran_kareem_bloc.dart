@@ -21,6 +21,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     on<_UpdateJozo2ReferanceNumber>(_updateJozo2ReferanceNumber);
     on<_UpdateSidePage>(_updateSidePage);
     on<_UpdateBookMarkedPages>(_updateBookMarkedPages);
+    on<_UpdateScreenBrigtness>(_updateScreenBrigtness);
 
     _getListOfBookMarkedPages();
   }
@@ -90,5 +91,10 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
       _UpdateBookMarkedPages event, Emitter<QuranKareemState> emit) async {
     await box.put(DatabaseFieldConstant.quranKaremBookMarkList, event.list);
     emit(state.copyWith(bookmarkedPages: event.list));
+  }
+
+  FutureOr<void> _updateScreenBrigtness(
+      _UpdateScreenBrigtness event, Emitter<QuranKareemState> emit) {
+    emit(state.copyWith(brigtness: event.value));
   }
 }

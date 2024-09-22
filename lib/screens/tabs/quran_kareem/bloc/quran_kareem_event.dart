@@ -11,4 +11,6 @@ class QuranKareemEvent with _$QuranKareemEvent {
   factory QuranKareemEvent.updateSidePage(PageSide side) = _UpdateSidePage;
   factory QuranKareemEvent.updateBookMarkedPages(List<int> list) =
       _UpdateBookMarkedPages;
+  factory QuranKareemEvent.updateScreenBrigtness(double value) =
+      _UpdateScreenBrigtness;
 }

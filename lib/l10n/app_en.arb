@@ -136,7 +136,10 @@
     "pickimagefromcamera" : "Choose from Camera",
     "photosetting" : "Photo Setting",
     "setphoto" : "Set Photo",
-    "quranpages" : "Holy Quran Pages"
+    "quranpages" : "Holy Quran Pages",
+    "close" : "Close",
+    "resetbrightness" : "Reset Brightness"
+
 
 
 

@@ -4,9 +4,11 @@ import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/tabs/quran_kareem/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/bottom_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/brightness_popup.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
-  const QuranBottomHelpBar({super.key});
+  final Function(double) returnBrightness;
+  const QuranBottomHelpBar({super.key, required this.returnBrightness});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +24,28 @@ class QuranBottomHelpBar extends StatelessWidget {
             childAspectRatio: 3,
           ),
           children: [
-            BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingLighting,
-              icon: Icons.sunny,
-              colorIcon: Colors.white70,
-              onTap: () {
-                //TODO
+            BlocBuilder<QuranKareemBloc, QuranKareemState>(
+              buildWhen: (previous, current) {
+                return previous.brigtness != current.brigtness;
+              },
+              builder: (context, state) {
+                return BottomTile(
+                  title: AppLocalizations.of(context)!.quranSettingLighting,
+                  icon: Icons.sunny,
+                  colorIcon: Colors.white70,
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      barrierColor: const Color(0x01000000),
+                      builder: (BuildContext context) => BrightnessPopup(
+                        initialValue: state.brigtness,
+                        returnBrightness: (value) {
+                          returnBrightness(value);
+                        },
+                      ),
+                    );
+                  },
+                );
               },
             ),
             BlocBuilder<QuranKareemBloc, QuranKareemState>(
