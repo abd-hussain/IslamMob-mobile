@@ -14,6 +14,7 @@ class QuranPagesListScreen extends StatelessWidget {
     int selectedPageNumber = _handleReadingArguments(
             arguments: ModalRoute.of(context)!.settings.arguments) ??
         1;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff292929),
@@ -39,7 +40,8 @@ class QuranPagesListScreen extends StatelessWidget {
                   pageNumber: index + 1,
                   selectedPageNumber: selectedPageNumber,
                   onTap: () {
-                    Navigator.of(context).pop({"pageNumber": index + 1});
+                    Navigator.of(context)
+                        .pop({ArgumentConstant.currentPageNumber: index + 1});
                   },
                 );
               },

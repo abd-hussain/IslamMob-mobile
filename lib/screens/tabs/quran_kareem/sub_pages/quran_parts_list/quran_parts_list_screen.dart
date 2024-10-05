@@ -4,6 +4,7 @@ import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/quran_parts_list/b
 import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/quran_parts_list/widgets/quran_parts_tile_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/utils/constants/argument_constant.dart';
 
 class QuranPartsListScreen extends StatelessWidget {
   const QuranPartsListScreen({super.key});
@@ -32,10 +33,12 @@ class QuranPartsListScreen extends StatelessWidget {
             return QuranPartsTileView(
               pageNumber: index + 1,
               onJuzTap: (value) {
-                Navigator.of(context).pop({"jusNumber": value});
+                Navigator.of(context)
+                    .pop({ArgumentConstant.currentPageNumber: value});
               },
               onSorahTap: (sorahPageNumber) {
-                Navigator.of(context).pop({"sorahNumber": sorahPageNumber});
+                Navigator.of(context)
+                    .pop({ArgumentConstant.currentPageNumber: sorahPageNumber});
               },
             );
           },

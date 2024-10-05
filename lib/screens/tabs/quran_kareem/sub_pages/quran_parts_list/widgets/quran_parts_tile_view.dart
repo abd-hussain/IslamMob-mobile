@@ -81,7 +81,7 @@ class QuranPartsTileView extends StatelessWidget {
                   pageNumber: 100,
                   onSorahTap: () {
                     //TODO
-                    onSorahTap(1);
+                    // onSorahTap(sowarNames[index].fro);
                   },
                 );
               },

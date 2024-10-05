@@ -13,6 +13,8 @@ class QuranBottomHelpBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final navigator = Navigator.of(context, rootNavigator: true);
+
     return Container(
       color: Colors.black.withOpacity(0.6),
       height: 140,
@@ -94,8 +96,6 @@ class QuranBottomHelpBar extends StatelessWidget {
                   icon: Icons.copy_sharp,
                   colorIcon: Colors.white70,
                   onTap: () async {
-                    final navigator =
-                        Navigator.of(context, rootNavigator: true);
                     await navigator.pushNamed(
                         RoutesConstants.quranPagesListScreen,
                         arguments: {
@@ -106,12 +106,13 @@ class QuranBottomHelpBar extends StatelessWidget {
                           if (value is Map<String, dynamic>) {
                             if (context.mounted) {
                               context.read<QuranKareemBloc>().add(
-                                  QuranKareemEvent.updatePageCount(
-                                      value["pageNumber"]));
+                                  QuranKareemEvent.updatePageCount(value[
+                                      ArgumentConstant.currentPageNumber]));
                               context
                                   .read<QuranKareemBloc>()
                                   .pdfController
-                                  .jumpToPage(value["pageNumber"]);
+                                  .jumpToPage(value[
+                                      ArgumentConstant.currentPageNumber]);
                             }
                           }
                         }
@@ -132,33 +133,24 @@ class QuranBottomHelpBar extends StatelessWidget {
               title: AppLocalizations.of(context)!.quranSettingParts,
               icon: Icons.pie_chart_rounded,
               onTap: () async {
-                final navigator = Navigator.of(context, rootNavigator: true);
                 await navigator
                     .pushNamed(RoutesConstants.quranPartsListScreen)
                     .then(
                   (value) {
                     if (value != null) {
                       if (value is Map<String, dynamic>) {
-                        if (value['jusNumber'] != null) {
+                        if (value[ArgumentConstant.currentPageNumber] != null) {
                           if (context.mounted) {
                             context.read<QuranKareemBloc>().add(
                                 QuranKareemEvent.updatePageCount(
-                                    value["jusNumber"]));
+                                    value[ArgumentConstant.currentPageNumber]));
                             context
                                 .read<QuranKareemBloc>()
                                 .pdfController
-                                .jumpToPage(value["jusNumber"]);
+                                .jumpToPage(
+                                    value[ArgumentConstant.currentPageNumber]);
                           }
                         }
-                        if (value['sorahNumber'] != null) {
-                          //TODO
-                        }
-
-                        // if (context.mounted) {
-                        //   //TODO
-                        //   // context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(value["pageNumber"]));
-                        //   // context.read<QuranKareemBloc>().pdfController.jumpToPage(value["pageNumber"]);
-                        // }
                       }
                     }
                   },
@@ -191,7 +183,6 @@ class QuranBottomHelpBar extends StatelessWidget {
               title: AppLocalizations.of(context)!.quranSettingReport,
               icon: Icons.report_outlined,
               onTap: () async {
-                final navigator = Navigator.of(context, rootNavigator: true);
                 await navigator
                     .pushNamed(RoutesConstants.reportOrSuggestionScreen);
               },
@@ -201,7 +192,6 @@ class QuranBottomHelpBar extends StatelessWidget {
               title: AppLocalizations.of(context)!.quranSettingLanguage,
               icon: Icons.language,
               onTap: () async {
-                final navigator = Navigator.of(context, rootNavigator: true);
                 await navigator.pushNamed(RoutesConstants.changeLanguageScreen);
               },
             ),
