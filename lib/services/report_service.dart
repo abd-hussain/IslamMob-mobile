@@ -1,37 +1,35 @@
-import 'package:dio/dio.dart';
+import 'package:islam_app/models/rest_api/firestore_options.dart';
 import 'package:islam_app/models/rest_api/report_request.dart';
+import 'package:islam_app/services/general/firebase_services.dart';
+import 'package:islam_app/utils/constants/firebase_constants.dart';
 import 'package:islam_app/utils/mixins.dart';
 
 class ReportService with Service {
   Future<dynamic> addNewReportOrSuggestion(
       {required ReportRequest reportData}) async {
-    final FormData formData = FormData();
-    formData.fields.add(MapEntry("content", reportData.content));
-
-    void addFileIfNotNull(String fieldName, dynamic attach) {
+    Future<String?> addFileIfNotNull(dynamic attach) async {
       if (attach != null) {
         final String fileName = attach.path.split('/').last;
-        formData.files.add(
-          MapEntry(
-            fieldName,
-            MultipartFile.fromFileSync(
-              attach.path,
-              filename: fileName,
-            ),
-          ),
-        );
+        return await FirestoreService()
+            .uploadFile(file: attach, fileName: fileName);
       }
+      return null;
     }
 
-    addFileIfNotNull("attach1", reportData.attach1);
-    addFileIfNotNull("attach2", reportData.attach2);
-    addFileIfNotNull("attach3", reportData.attach3);
+    final url1 = await addFileIfNotNull(reportData.attach1);
+    final url2 = await addFileIfNotNull(reportData.attach2);
+    final url3 = await addFileIfNotNull(reportData.attach3);
 
-    //TODO
-    // return repository.callRequest(
-    //   requestType: RequestType.post,
-    //   methodName: MethodNameConstant.reportSuggestion,
-    //   formData: formData,
-    // );
+    await FirestoreService()
+        .setFireStoreData(FireStoreOptions<ReportRequestToFirebase>(
+      collectionName: FirebaseConstants.reports,
+      docName: DateTime.now().toString(),
+      fromModel: ReportRequestToFirebase(
+        content: reportData.content,
+        attach1: url1,
+        attach2: url2,
+        attach3: url3,
+      ),
+    ));
   }
 }
