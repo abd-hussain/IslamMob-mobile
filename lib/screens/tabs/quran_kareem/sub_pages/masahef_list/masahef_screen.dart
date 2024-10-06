@@ -50,7 +50,8 @@ class MasaheefScreen extends StatelessWidget {
                         description: state.listOfPrints![index].description,
                         language: context
                             .read<MasahefBloc>()
-                            .getNameByLanguageCode(state.listOfPrints![index].language ?? ""),
+                            .getNameByLanguageCode(
+                                state.listOfPrints![index].language ?? ""),
                       );
                     },
                   );

@@ -54,10 +54,14 @@ class MushafCopyTile extends StatelessWidget {
                   ),
                 ),
                 CustomButton(
-                    enableButton: true, padding: const EdgeInsets.all(8), buttonTitle: "Download", onTap: () {}),
+                    enableButton: true,
+                    padding: const EdgeInsets.all(8),
+                    buttonTitle: "Download",
+                    onTap: () {}),
                 CustomButton(
                     enableButton: false,
-                    padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
+                    padding:
+                        const EdgeInsets.only(left: 8, right: 8, bottom: 8),
                     buttonTitle: "Use",
                     onTap: () {})
               ],

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/services/general/network_info_service.dart';
-import 'package:islam_app/utils/constants/constant.dart';
+import 'package:islam_app/utils/constants/app_constant.dart';
 import 'package:islam_app/utils/exceptions.dart';
 import 'package:islam_app/utils/mixins.dart';
 import 'package:islam_app/utils/repository/http_interceptor.dart';

@@ -58,9 +58,12 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(8),
                               child: TextField(
-                                controller: context.read<ReportAndSuggestionBloc>().textController,
+                                controller: context
+                                    .read<ReportAndSuggestionBloc>()
+                                    .textController,
                                 decoration: InputDecoration(
-                                  hintText: AppLocalizations.of(context)!.feedbackmessage,
+                                  hintText: AppLocalizations.of(context)!
+                                      .feedbackmessage,
                                   hintMaxLines: 2,
                                   hintStyle: const TextStyle(fontSize: 15),
                                   enabledBorder: InputBorder.none,
@@ -74,18 +77,20 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                         ),
                       ),
                       const ReportSuggestionAttachment(),
-                      BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
+                      BlocBuilder<ReportAndSuggestionBloc,
+                          ReportAndSuggestionState>(
                         buildWhen: (previous, current) {
-                          return previous.enableSubmitBtn != current.enableSubmitBtn;
+                          return previous.enableSubmitBtn !=
+                              current.enableSubmitBtn;
                         },
                         builder: (context, state) {
                           return CustomButton(
                             enableButton: state.enableSubmitBtn,
                             onTap: () {
                               try {
-                                context
-                                    .read<ReportAndSuggestionBloc>()
-                                    .add(const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
+                                context.read<ReportAndSuggestionBloc>().add(
+                                    const ReportAndSuggestionEvent
+                                        .updateLoadingStatus(status: true));
 
                                 final navigator = Navigator.of(context);
 
@@ -98,18 +103,22 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                                     )
                                     .then((value) async {
                                   if (context.mounted) {
-                                    context
-                                        .read<ReportAndSuggestionBloc>()
-                                        .add(const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
+                                    context.read<ReportAndSuggestionBloc>().add(
+                                        const ReportAndSuggestionEvent
+                                            .updateLoadingStatus(
+                                            status: false));
                                   }
 
                                   navigator.pop();
                                 });
                               } on ConnectionException {
-                                final scaffoldMessenger = ScaffoldMessenger.of(context);
+                                final scaffoldMessenger =
+                                    ScaffoldMessenger.of(context);
                                 scaffoldMessenger.showSnackBar(
                                   SnackBar(
-                                      content: Text(AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+                                      content: Text(AppLocalizations.of(
+                                              context)!
+                                          .pleasecheckyourinternetconnection)),
                                 );
                               }
                             },

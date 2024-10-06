@@ -27,7 +27,8 @@ class MyAppBloc {
 
       await MobileAds.instance.initialize();
       await MobileAds.instance.updateRequestConfiguration(
-        RequestConfiguration(testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231']),
+        RequestConfiguration(
+            testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231']),
       );
     }
 

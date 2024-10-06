@@ -6,7 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/models/rest_api/quran_prints.dart';
 import 'package:islam_app/services/general/firebase_services.dart';
-import 'package:islam_app/utils/constants/constant.dart';
+import 'package:islam_app/utils/constants/app_constant.dart';
 // import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/constants/firebase_constants.dart';
 import 'package:islam_app/utils/logger.dart';
@@ -26,7 +26,8 @@ class MasahefBloc extends Bloc<MasahefEvent, MasahefState> {
   Future<void> _getListOfPrints() async {
     final List<QueryDocumentSnapshot<Object?>> documents;
     try {
-      documents = await FirestoreService().getAllDocumentsFromFireStore(collectionName: FirebaseConstants.quranPrints);
+      documents = await FirestoreService().getAllDocumentsFromFireStore(
+          collectionName: FirebaseConstants.quranPrints);
     } catch (e) {
       logDebugMessage(message: 'Error fetching documents: $e ');
       return;
@@ -42,7 +43,8 @@ class MasahefBloc extends Bloc<MasahefEvent, MasahefState> {
       obj.language = doc["language"] ?? "";
       obj.previewImage = doc["previewImage"] ?? "";
       obj.attachmentLocation = doc["attachmentLocation"] ?? "";
-      obj.addedPagesAttachmentLocation = doc["addedPagesAttachmentLocation"] ?? "";
+      obj.addedPagesAttachmentLocation =
+          doc["addedPagesAttachmentLocation"] ?? "";
       // obj.juz2ToPageNumbers = doc["juz2ToPageNumbers"] ?? [];
       // obj.sorahToPageNumbers = doc["sorahToPageNumbers"] ?? [];
 
@@ -62,7 +64,8 @@ class MasahefBloc extends Bloc<MasahefEvent, MasahefState> {
     return "";
   }
 
-  FutureOr<void> _updatelistOfPrints(_UpdatelistOfPrints event, Emitter<MasahefState> emit) {
+  FutureOr<void> _updatelistOfPrints(
+      _UpdatelistOfPrints event, Emitter<MasahefState> emit) {
     emit(state.copyWith(listOfPrints: event.list));
   }
 }
