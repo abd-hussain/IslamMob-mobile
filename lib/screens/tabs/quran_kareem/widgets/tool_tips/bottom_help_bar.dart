@@ -52,43 +52,34 @@ class QuranBottomHelpBar extends StatelessWidget {
             ),
             BlocBuilder<QuranKareemBloc, QuranKareemState>(
               buildWhen: (previous, current) {
-                return previous.pageCount != current.pageCount ||
-                    previous.bookmarkedPages != current.bookmarkedPages;
+                return previous.pageCount != current.pageCount || previous.bookmarkedPages != current.bookmarkedPages;
               },
               builder: (context, state) {
                 return BottomTile(
                   title: state.bookmarkedPages.contains(state.pageCount)
                       ? AppLocalizations.of(context)!.quranSettingRemoveBookMark
                       : AppLocalizations.of(context)!.quranSettingAddBookMark,
-                  icon: state.bookmarkedPages.contains(state.pageCount)
-                      ? Icons.bookmark_remove
-                      : Icons.bookmark_add,
-                  colorIcon: state.bookmarkedPages.contains(state.pageCount)
-                      ? Colors.redAccent
-                      : Colors.white70,
+                  icon: state.bookmarkedPages.contains(state.pageCount) ? Icons.bookmark_remove : Icons.bookmark_add,
+                  colorIcon: state.bookmarkedPages.contains(state.pageCount) ? Colors.redAccent : Colors.white70,
                   onTap: () async {
                     final List<int> newList = List.from(state.bookmarkedPages);
 
                     if (newList.contains(state.pageCount)) {
                       //remove from the list
-                      newList
-                          .removeWhere((element) => element == state.pageCount);
+                      newList.removeWhere((element) => element == state.pageCount);
                     } else {
                       //add to the list
                       newList.add(state.pageCount);
                     }
 
-                    context
-                        .read<QuranKareemBloc>()
-                        .add(QuranKareemEvent.updateBookMarkedPages(newList));
+                    context.read<QuranKareemBloc>().add(QuranKareemEvent.updateBookMarkedPages(newList));
                   },
                 );
               },
             ),
             BlocBuilder<QuranKareemBloc, QuranKareemState>(
               buildWhen: (previous, current) {
-                return previous.pageCount != current.pageCount ||
-                    previous.bookmarkedPages != current.bookmarkedPages;
+                return previous.pageCount != current.pageCount || previous.bookmarkedPages != current.bookmarkedPages;
               },
               builder: (context, state) {
                 return BottomTile(
@@ -96,23 +87,19 @@ class QuranBottomHelpBar extends StatelessWidget {
                   icon: Icons.copy_sharp,
                   colorIcon: Colors.white70,
                   onTap: () async {
-                    await navigator.pushNamed(
-                        RoutesConstants.quranPagesListScreen,
-                        arguments: {
-                          ArgumentConstant.currentPageNumber: state.pageCount
-                        }).then(
+                    await navigator.pushNamed(RoutesConstants.quranPagesListScreen,
+                        arguments: {ArgumentConstant.currentPageNumber: state.pageCount}).then(
                       (value) {
                         if (value != null) {
                           if (value is Map<String, dynamic>) {
                             if (context.mounted) {
-                              context.read<QuranKareemBloc>().add(
-                                  QuranKareemEvent.updatePageCount(value[
-                                      ArgumentConstant.currentPageNumber]));
+                              context
+                                  .read<QuranKareemBloc>()
+                                  .add(QuranKareemEvent.updatePageCount(value[ArgumentConstant.currentPageNumber]));
                               context
                                   .read<QuranKareemBloc>()
                                   .pdfController
-                                  .jumpToPage(value[
-                                      ArgumentConstant.currentPageNumber]);
+                                  .jumpToPage(value[ArgumentConstant.currentPageNumber]);
                             }
                           }
                         }
@@ -125,30 +112,33 @@ class QuranBottomHelpBar extends StatelessWidget {
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingMushaf,
               icon: Icons.library_books,
-              onTap: () {
-                //TODO
+              onTap: () async {
+                await navigator.pushNamed(RoutesConstants.masaheefScreen).then(
+                  (value) {
+                    if (value != null) {
+                      //TODO
+                    }
+                  },
+                );
               },
             ),
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingParts,
               icon: Icons.pie_chart_rounded,
               onTap: () async {
-                await navigator
-                    .pushNamed(RoutesConstants.quranPartsListScreen)
-                    .then(
+                await navigator.pushNamed(RoutesConstants.quranPartsListScreen).then(
                   (value) {
                     if (value != null) {
                       if (value is Map<String, dynamic>) {
                         if (value[ArgumentConstant.currentPageNumber] != null) {
                           if (context.mounted) {
-                            context.read<QuranKareemBloc>().add(
-                                QuranKareemEvent.updatePageCount(
-                                    value[ArgumentConstant.currentPageNumber]));
+                            context
+                                .read<QuranKareemBloc>()
+                                .add(QuranKareemEvent.updatePageCount(value[ArgumentConstant.currentPageNumber]));
                             context
                                 .read<QuranKareemBloc>()
                                 .pdfController
-                                .jumpToPage(
-                                    value[ArgumentConstant.currentPageNumber]);
+                                .jumpToPage(value[ArgumentConstant.currentPageNumber]);
                           }
                         }
                       }
@@ -167,13 +157,9 @@ class QuranBottomHelpBar extends StatelessWidget {
                   icon: Icons.ads_click,
                   isIconBlinking: !state.adsShown,
                   onTap: () {
-                    if (context.read<QuranKareemBloc>().interstitialAd !=
-                            null &&
-                        state.adsShown == false) {
+                    if (context.read<QuranKareemBloc>().interstitialAd != null && state.adsShown == false) {
                       context.read<QuranKareemBloc>().interstitialAd!.show();
-                      context
-                          .read<QuranKareemBloc>()
-                          .add(QuranKareemEvent.updateAdsShown(true));
+                      context.read<QuranKareemBloc>().add(QuranKareemEvent.updateAdsShown(true));
                     }
                   },
                 );
@@ -183,8 +169,7 @@ class QuranBottomHelpBar extends StatelessWidget {
               title: AppLocalizations.of(context)!.quranSettingReport,
               icon: Icons.report_outlined,
               onTap: () async {
-                await navigator
-                    .pushNamed(RoutesConstants.reportOrSuggestionScreen);
+                await navigator.pushNamed(RoutesConstants.reportOrSuggestionScreen);
               },
             ),
             Container(color: Colors.black.withOpacity(0.6)),

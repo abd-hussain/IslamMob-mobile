@@ -77,15 +77,12 @@ class _InitialScreenState extends State<InitialScreen> {
                       ? const SizedBox()
                       : CustomButton(
                           enableButton: true,
-                          buttonTitle:
-                              state.selectedLanguage!.selectButtonTitle,
+                          buttonTitle: state.selectedLanguage!.selectButtonTitle,
                           onTap: () async {
                             context
                                 .read<InitialScreenBloc>()
-                                .setLanguageInStorage(context,
-                                    state.selectedLanguage!.languageCode);
-                            final navigator =
-                                Navigator.of(context, rootNavigator: true);
+                                .setLanguageInStorage(context, state.selectedLanguage!.languageCode);
+                            final navigator = Navigator.of(context, rootNavigator: true);
 
                             await navigator.pushNamedAndRemoveUntil(
                               RoutesConstants.mainContainer,

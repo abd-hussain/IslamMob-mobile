@@ -7,11 +7,16 @@ import 'package:islam_app/utils/logger.dart';
 import 'package:islam_app/utils/exceptions.dart';
 
 //TODO: check coloring and logo
+final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() {
   runZonedGuarded(() {
     logDebugMessage(message: 'Application Started ...');
-    runApp(const MyApp());
+    WidgetsFlutterBinding.ensureInitialized();
+
+    runApp(MyApp(
+      navigatorKey: navigatorKey,
+    ));
   }, (error, stackTrace) {
     if (error is DioException) {
       final exception = error.error;

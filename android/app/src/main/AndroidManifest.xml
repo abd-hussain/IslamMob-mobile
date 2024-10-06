@@ -24,6 +24,7 @@
    <application
         android:usesCleartextTraffic="true"
         android:label="Islam Mob"
+        android:enableOnBackInvokedCallback="true"
         android:hasCode="true"
         tools:replace="android:hasCode"
         android:name="${applicationName}"

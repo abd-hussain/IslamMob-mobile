@@ -8,7 +8,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class IslamMobApp extends StatefulWidget {
-  const IslamMobApp({super.key});
+  const IslamMobApp({super.key, required this.navigatorKey});
+  final GlobalKey<NavigatorState> navigatorKey;
 
   @override
   State<IslamMobApp> createState() => IslamMobAppState();
@@ -33,6 +34,7 @@ class IslamMobAppState extends State<IslamMobApp> {
         onGenerateTitle: (BuildContext context) {
           return AppConstant.appName;
         },
+        navigatorKey: widget.navigatorKey,
         locale: myBox.get(DatabaseFieldConstant.selectedLanguage) != null
             ? Locale(myBox.get(DatabaseFieldConstant.selectedLanguage))
             : const Locale("en"),
@@ -54,10 +56,8 @@ class IslamMobAppState extends State<IslamMobApp> {
         scrollBehavior: MyCustomScrollBehavior(),
         onGenerateRoute: (settings) {
           return PageRouteBuilder(
-              transitionsBuilder: (BuildContext context,
-                  Animation<double> animation,
-                  Animation<double> secondaryAnimation,
-                  Widget child) {
+              transitionsBuilder: (BuildContext context, Animation<double> animation,
+                  Animation<double> secondaryAnimation, Widget child) {
                 return SlideTransition(
                   position: Tween<Offset>(
                     begin: const Offset(1, 0),

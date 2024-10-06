@@ -7,7 +7,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/utils/logger.dart';
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.navigatorKey});
+  final GlobalKey<NavigatorState> navigatorKey;
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -30,7 +31,7 @@ class _MyAppState extends State<MyApp> {
             if (snapshot.connectionState == ConnectionState.done) {
               logDebugMessage(message: 'Initialize Firebase Done!!');
 
-              return const IslamMobApp();
+              return IslamMobApp(navigatorKey: widget.navigatorKey);
             }
           }
 
