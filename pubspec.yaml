@@ -52,6 +52,7 @@ dependencies:
   pdfx: ^2.7.0
   image_picker: ^1.1.2
   screen_brightness: ^1.0.1
+  cached_network_image: ^3.4.1
   
   cupertino_icons: ^1.0.8
 
