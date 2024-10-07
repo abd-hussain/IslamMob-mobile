@@ -8,8 +8,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class IslamMobApp extends StatefulWidget {
-  const IslamMobApp({super.key, required this.navigatorKey});
-  final GlobalKey<NavigatorState> navigatorKey;
+  const IslamMobApp({super.key});
 
   @override
   State<IslamMobApp> createState() => IslamMobAppState();
@@ -34,7 +33,6 @@ class IslamMobAppState extends State<IslamMobApp> {
         onGenerateTitle: (BuildContext context) {
           return AppConstant.appName;
         },
-        navigatorKey: widget.navigatorKey,
         locale: myBox.get(DatabaseFieldConstant.selectedLanguage) != null
             ? Locale(myBox.get(DatabaseFieldConstant.selectedLanguage))
             : const Locale("en"),

@@ -16,7 +16,7 @@ part 'quran_kareem_bloc.freezed.dart';
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   final box = Hive.box(DatabaseBoxConstant.userInfo);
-  InterstitialAd? interstitialAd;
+  int _numRewardedLoadAttempts = 0;
 
   PdfController pdfController = PdfController(
     viewportFraction: 1.1,
@@ -31,25 +31,52 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     on<_UpdateSidePage>(_updateSidePage);
     on<_UpdateBookMarkedPages>(_updateBookMarkedPages);
     on<_UpdateScreenBrigtness>(_updateScreenBrigtness);
-    on<_UpdateAdsShown>(_updateAdsShown);
+    on<_UpdateRewardedAd>(_updateRewardedAd);
 
     _getListOfBookMarkedPages();
-    _prepareInterstitialAd();
+    _createRewardedAd();
   }
 
-  void _prepareInterstitialAd() {
-    InterstitialAd.load(
-      adUnitId: AdHelper.interstitialAdUnitId,
+  void _createRewardedAd() {
+    RewardedAd.load(
+      adUnitId: AdHelper.rewardedAdUnitId,
       request: const AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(onAdLoaded: (currentAd) {
-        currentAd.fullScreenContentCallback = FullScreenContentCallback(
-            onAdDismissedFullScreenContent: (currentAd) {});
-        interstitialAd = currentAd;
-        add(QuranKareemEvent.updateAdsShown(false));
-      }, onAdFailedToLoad: (error) {
-        debugPrint("Failed to load : Flutter AdMob Interstitial Ad");
+      rewardedAdLoadCallback:
+          RewardedAdLoadCallback(onAdLoaded: (RewardedAd rewardedAd) {
+        _numRewardedLoadAttempts = 0;
+        add(QuranKareemEvent.updateRewardedAd(rewardedAd));
+      }, onAdFailedToLoad: (LoadAdError error) {
+        add(QuranKareemEvent.updateRewardedAd(null));
+        _numRewardedLoadAttempts += 1;
+        if (_numRewardedLoadAttempts < 3) {
+          _createRewardedAd();
+        }
       }),
     );
+  }
+
+  void showRewardedAd(RewardedAd rewardedAd) {
+    rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
+      onAdShowedFullScreenContent: (RewardedAd ad) =>
+          debugPrint('ad onAdShowedFullScreenContent.'),
+      onAdDismissedFullScreenContent: (RewardedAd ad) {
+        debugPrint('$ad onAdDismissedFullScreenContent.');
+        ad.dispose();
+        _createRewardedAd();
+      },
+      onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
+        debugPrint('$ad onAdFailedToShowFullScreenContent: $error');
+        ad.dispose();
+        _createRewardedAd();
+      },
+    );
+
+    rewardedAd.setImmersiveMode(true);
+    rewardedAd.show(onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
+      debugPrint(
+          '$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
+    });
+    add(QuranKareemEvent.updateRewardedAd(null));
   }
 
   void _getListOfBookMarkedPages() {
@@ -123,8 +150,8 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     emit(state.copyWith(brigtness: event.value));
   }
 
-  FutureOr<void> _updateAdsShown(
-      _UpdateAdsShown event, Emitter<QuranKareemState> emit) {
-    emit(state.copyWith(adsShown: event.status));
+  FutureOr<void> _updateRewardedAd(
+      _UpdateRewardedAd event, Emitter<QuranKareemState> emit) {
+    emit(state.copyWith(rewardedAd: event.value));
   }
 }

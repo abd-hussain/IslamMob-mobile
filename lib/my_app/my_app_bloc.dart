@@ -1,5 +1,6 @@
 import 'package:async/async.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -16,6 +17,8 @@ class MyAppBloc {
   }
 
   Future _initializeEveryThing() async {
+    WidgetsFlutterBinding.ensureInitialized();
+
     await Hive.initFlutter();
     await Hive.openBox(DatabaseBoxConstant.userInfo);
     await setupLocator();

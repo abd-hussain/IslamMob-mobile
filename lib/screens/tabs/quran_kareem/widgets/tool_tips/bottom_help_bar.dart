@@ -165,21 +165,18 @@ class QuranBottomHelpBar extends StatelessWidget {
             ),
             BlocBuilder<QuranKareemBloc, QuranKareemState>(
               buildWhen: (previous, current) {
-                return previous.adsShown != current.adsShown;
+                return previous.rewardedAd != current.rewardedAd;
               },
               builder: (context, state) {
                 return BottomTile(
                   title: AppLocalizations.of(context)!.quranSettingSupportUs,
                   icon: Icons.ads_click,
-                  isIconBlinking: !state.adsShown,
+                  isIconBlinking: state.rewardedAd != null,
                   onTap: () {
-                    if (context.read<QuranKareemBloc>().interstitialAd !=
-                            null &&
-                        state.adsShown == false) {
-                      context.read<QuranKareemBloc>().interstitialAd!.show();
+                    if (state.rewardedAd != null) {
                       context
                           .read<QuranKareemBloc>()
-                          .add(QuranKareemEvent.updateAdsShown(true));
+                          .showRewardedAd(state.rewardedAd!);
                     }
                   },
                 );

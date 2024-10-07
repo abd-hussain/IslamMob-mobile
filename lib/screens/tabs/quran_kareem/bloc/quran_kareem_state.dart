@@ -12,6 +12,6 @@ class QuranKareemState with _$QuranKareemState {
     @Default(PageSide.left) PageSide pageSide,
     @Default([]) List<int> bookmarkedPages,
     @Default(0) double brigtness,
-    @Default(false) bool adsShown,
+    RewardedAd? rewardedAd,
   }) = _QuranKareemState;
 }

@@ -81,7 +81,10 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                           ReportAndSuggestionState>(
                         buildWhen: (previous, current) {
                           return previous.enableSubmitBtn !=
-                              current.enableSubmitBtn;
+                                  current.enableSubmitBtn ||
+                              previous.attach1 != current.attach1 ||
+                              previous.attach2 != current.attach2 ||
+                              previous.attach3 != current.attach3;
                         },
                         builder: (context, state) {
                           return CustomButton(

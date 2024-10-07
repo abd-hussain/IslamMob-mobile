@@ -13,5 +13,6 @@ class QuranKareemEvent with _$QuranKareemEvent {
       _UpdateBookMarkedPages;
   factory QuranKareemEvent.updateScreenBrigtness(double value) =
       _UpdateScreenBrigtness;
-  factory QuranKareemEvent.updateAdsShown(bool status) = _UpdateAdsShown;
+  factory QuranKareemEvent.updateRewardedAd(RewardedAd? value) =
+      _UpdateRewardedAd;
 }

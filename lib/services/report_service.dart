@@ -7,18 +7,9 @@ import 'package:islam_app/utils/mixins.dart';
 class ReportService with Service {
   Future<dynamic> addNewReportOrSuggestion(
       {required ReportRequest reportData}) async {
-    Future<String?> addFileIfNotNull(dynamic attach) async {
-      if (attach != null) {
-        final String fileName = attach.path.split('/').last;
-        return await FirestoreService()
-            .uploadFile(file: attach, fileName: fileName);
-      }
-      return null;
-    }
-
-    final url1 = await addFileIfNotNull(reportData.attach1);
-    final url2 = await addFileIfNotNull(reportData.attach2);
-    final url3 = await addFileIfNotNull(reportData.attach3);
+    final url1 = await _addFileIfNotNull(reportData.attach1);
+    final url2 = await _addFileIfNotNull(reportData.attach2);
+    final url3 = await _addFileIfNotNull(reportData.attach3);
 
     await FirestoreService()
         .setFireStoreData(FireStoreOptions<ReportRequestToFirebase>(
@@ -31,5 +22,15 @@ class ReportService with Service {
         attach3: url3,
       ),
     ));
+  }
+
+  Future<String?> _addFileIfNotNull(dynamic attach) async {
+    if (attach != null) {
+      final String attachType = attach.path.split('.').last;
+      final String fileName = '${DateTime.now().toString()}.$attachType';
+      return await FirestoreService()
+          .uploadFile(file: attach, fileName: fileName);
+    }
+    return null;
   }
 }
