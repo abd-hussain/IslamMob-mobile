@@ -26,6 +26,7 @@ class _MushafCopyTileState extends State<MushafCopyTile> {
   double progress = 0.0;
   bool isDownloading = false;
   Dio dio = Dio();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -62,23 +63,16 @@ class _MushafCopyTileState extends State<MushafCopyTile> {
                   padding: const EdgeInsets.all(8.0),
                   child: CachedNetworkImage(
                     imageUrl: widget.previewImage!,
-                    progressIndicatorBuilder:
-                        (context, url, downloadProgress) =>
-                            CircularProgressIndicator(
-                                value: downloadProgress.progress),
-                    errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
+                    progressIndicatorBuilder: (context, url, downloadProgress) =>
+                        CircularProgressIndicator(value: downloadProgress.progress),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
                   ),
                 ),
                 CustomButton(
-                    enableButton: true,
-                    padding: const EdgeInsets.all(8),
-                    buttonTitle: "Download",
-                    onTap: () {}),
+                    enableButton: true, padding: const EdgeInsets.all(8), buttonTitle: "Download", onTap: () {}),
                 CustomButton(
                     enableButton: false,
-                    padding:
-                        const EdgeInsets.only(left: 8, right: 8, bottom: 8),
+                    padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
                     buttonTitle: "Use",
                     onTap: () {})
               ],
