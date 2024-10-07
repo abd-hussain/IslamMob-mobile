@@ -19,7 +19,7 @@ class MushafCopyTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
       child: ClipRect(
         child: Banner(
           message: language,
@@ -30,7 +30,8 @@ class MushafCopyTile extends StatelessWidget {
             margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               border: Border.all(
-                color: const Color(0xff034061),
+                color: const Color(0xff292929),
+                width: 2,
               ),
               borderRadius: const BorderRadius.all(Radius.circular(5.0)),
             ),

@@ -9,8 +9,8 @@ import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 
 class MyAppBloc {
-  Future fetchData() {
-    return AsyncMemoizer().runOnce(() async {
+  Future fetchData(AsyncMemoizer memoizer) {
+    return memoizer.runOnce(() async {
       await Future.delayed(const Duration(seconds: 2));
       return _initializeEveryThing();
     });
