@@ -48,9 +48,9 @@ jobs:
               rm -rf pubspec.lock
               flutter pub get
     
-        # - name: 🛠️ Build and Deploy
-        #   run: |
-        #     make deploy-android
+        - name: 🛠️ Build and Deploy
+          run: |
+            make deploy-android
 
   ios:
     runs-on: macos-latest
