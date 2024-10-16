@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/bloc/quran_kareem_bloc.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/widgets/main_view.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/help_tool_tips.dart';
+import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
+import 'package:islam_app/screens/quran_kareem_tab/widgets/main_view.dart';
+import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/help_tool_tips.dart';
 
 class QuranKareemScreen extends StatelessWidget {
   const QuranKareemScreen({super.key});

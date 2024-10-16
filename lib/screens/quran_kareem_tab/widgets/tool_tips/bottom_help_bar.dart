@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/bloc/quran_kareem_bloc.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/bottom_tile.dart';
+import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
+import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/widgets/tool_tips/brightness_popup.dart';
+import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {

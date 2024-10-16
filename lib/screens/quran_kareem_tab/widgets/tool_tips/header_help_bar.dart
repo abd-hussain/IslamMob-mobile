@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/bloc/quran_kareem_bloc.dart';
+import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'dart:math' as math; // import this
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

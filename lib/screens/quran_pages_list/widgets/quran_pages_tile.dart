@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/quran_pages_list/bloc/quran_pages_list_bloc.dart';
+import 'package:islam_app/screens/quran_pages_list/bloc/quran_pages_list_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/utils/quran_referances.dart';
 

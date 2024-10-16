@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/screens/tabs/quran_kareem/sub_pages/quran_parts_list/widgets/sorah_tile_view.dart';
+import 'package:islam_app/screens/quran_parts_list/widgets/sorah_tile_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/utils/quran_referances.dart';
 
