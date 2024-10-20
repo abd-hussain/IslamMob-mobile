@@ -46,8 +46,8 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
         defaultValue: 1);
     final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
         defaultValue: "");
-    add(QuranKareemEvent.updatePageCount(pageNumber));
     pdfController.initialPage = pageNumber;
+
     final file = File(printName);
     if (await file.exists()) {
       debugPrint("file exists at: ${file.path}");
@@ -56,6 +56,10 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     } else {
       debugPrint("file does NOT exist at: ${file.path}");
     }
+    add(QuranKareemEvent.updatePageCount(pageNumber));
+
+    //TODO: pdf not jump to the last page
+    pdfController.jumpToPage(pageNumber);
   }
 
   void _createRewardedAd() {

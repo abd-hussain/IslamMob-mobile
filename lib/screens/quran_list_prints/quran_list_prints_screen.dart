@@ -124,6 +124,10 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
     await box.put(
         DatabaseFieldConstant.quranKaremPrintNameToUse, filePath.path);
     await box.put(DatabaseFieldConstant.quranKaremLastPageNumber, 1);
+    await box.put(DatabaseFieldConstant.quranKaremJuz2ToPageNumbers,
+        printItem.juz2ToPageNumbers);
+    await box.put(DatabaseFieldConstant.quranKaremSorahToPageNumbers,
+        printItem.sorahToPageNumbers);
 
     if (context.mounted) {
       if (isDetailsPage) {

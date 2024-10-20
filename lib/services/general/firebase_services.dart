@@ -48,4 +48,14 @@ class FirestoreService {
         .doc(options.docName)
         .set(options.fromModel!.toJson());
   }
+
+  // Future temp<T>() async {
+  //   FirebaseFirestore? initInstance = FirebaseFirestore.instance;
+  //   await initInstance.collection("quran_prints").doc("2").update({
+  //     "juz2ToPageNumbers": {
+  //       "1": 1,
+  //       "2": 19,
+  //     }
+  //   });
+  // }
 }

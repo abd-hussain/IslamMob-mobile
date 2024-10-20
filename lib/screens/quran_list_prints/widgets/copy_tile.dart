@@ -53,10 +53,14 @@ class MushafCopyTile extends StatelessWidget {
                   textColor: const Color(0xff034061),
                   fontWeight: FontWeight.bold,
                 ),
-                CustomText(
-                  title: description ?? "",
-                  fontSize: 16,
-                  textColor: const Color(0xff034061),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CustomText(
+                    title: description ?? "",
+                    fontSize: 16,
+                    maxLins: 4,
+                    textColor: const Color(0xff034061),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

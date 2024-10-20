@@ -17,6 +17,6 @@ class QuranPrints {
   String? previewImage;
   String? attachmentLocation;
   String? addedPagesAttachmentLocation;
-  List<Map<int, int>>? juz2ToPageNumbers;
-  List<Map<String, int>>? sorahToPageNumbers;
+  Map<String, dynamic>? juz2ToPageNumbers;
+  Map<String, dynamic>? sorahToPageNumbers;
 }

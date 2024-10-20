@@ -47,9 +47,8 @@ class QuranListPrintsBloc
       obj.addedPagesAttachmentLocation =
           doc["addedPagesAttachmentLocation"] ?? "";
       obj.fieldName = doc["fieldName"] ?? "";
-      //TODO
-      // obj.juz2ToPageNumbers = doc["juz2ToPageNumbers"] ?? [];
-      // obj.sorahToPageNumbers = doc["sorahToPageNumbers"] ?? [];
+      obj.juz2ToPageNumbers = doc["juz2ToPageNumbers"] ?? {};
+      obj.sorahToPageNumbers = doc["sorahToPageNumbers"] ?? {};
       listOfPrints.add(obj);
     }
 
@@ -63,11 +62,6 @@ class QuranListPrintsBloc
       }
     }
     return "";
-  }
-
-  FutureOr<void> _updatelistOfPrints(
-      _UpdatelistOfPrints event, Emitter<QuranListPrintsState> emit) {
-    emit(state.copyWith(listOfPrints: event.list));
   }
 
   Future<bool> permissionRequest() async {
@@ -91,5 +85,10 @@ class QuranListPrintsBloc
 
   Future<String> getFilePath(String fileName) async {
     return await FileDownload().getFilePath(fileName);
+  }
+
+  FutureOr<void> _updatelistOfPrints(
+      _UpdatelistOfPrints event, Emitter<QuranListPrintsState> emit) {
+    emit(state.copyWith(listOfPrints: event.list));
   }
 }
