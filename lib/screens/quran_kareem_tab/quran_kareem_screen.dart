@@ -4,9 +4,14 @@ import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/main_view.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/help_tool_tips.dart';
 
-class QuranKareemScreen extends StatelessWidget {
+class QuranKareemScreen extends StatefulWidget {
   const QuranKareemScreen({super.key});
 
+  @override
+  State<QuranKareemScreen> createState() => _QuranKareemScreenState();
+}
+
+class _QuranKareemScreenState extends State<QuranKareemScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -22,6 +27,11 @@ class QuranKareemScreen extends StatelessWidget {
                         context
                             .read<QuranKareemBloc>()
                             .add(QuranKareemEvent.updateScreenBrigtness(value));
+                      },
+                      returnWithNewPrint: (value) {
+                        context
+                            .read<QuranKareemBloc>()
+                            .add(QuranKareemEvent.updateReadPDFFile(value));
                       },
                     )
                   : const SizedBox(),

@@ -16,36 +16,41 @@ class QuranKareemMainView extends StatelessWidget {
             .read<QuranKareemBloc>()
             .add(QuranKareemEvent.showHideHelpBar(!status));
       },
-      child: Stack(
-        children: [
-          PdfView(
-            reverse: context
-                    .read<QuranKareemBloc>()
-                    .box
-                    .get(DatabaseFieldConstant.selectedLanguage) !=
-                "ar",
-            controller: context.read<QuranKareemBloc>().pageController(),
-            onPageChanged: (index) {
-              context
-                  .read<QuranKareemBloc>()
-                  .add(QuranKareemEvent.updatePageCount(index));
-            },
-          ),
-          BlocBuilder<QuranKareemBloc, QuranKareemState>(
-            buildWhen: (previous, current) {
-              return previous.brigtness != current.brigtness;
-            },
-            builder: (context, state) {
-              return IgnorePointer(
-                ignoring: true,
-                child: Container(
-                  color: Colors.black.withOpacity(state.brigtness),
+      child: FutureBuilder<PdfController>(
+          initialData: context.read<QuranKareemBloc>().pdfController,
+          future: context.read<QuranKareemBloc>().pageController(),
+          builder: (context, snap) {
+            return Stack(
+              children: [
+                PdfView(
+                  reverse: context
+                          .read<QuranKareemBloc>()
+                          .box
+                          .get(DatabaseFieldConstant.selectedLanguage) !=
+                      "ar",
+                  controller: snap.data!,
+                  onPageChanged: (index) {
+                    context
+                        .read<QuranKareemBloc>()
+                        .add(QuranKareemEvent.updatePageCount(index));
+                  },
                 ),
-              );
-            },
-          ),
-        ],
-      ),
+                BlocBuilder<QuranKareemBloc, QuranKareemState>(
+                  buildWhen: (previous, current) {
+                    return previous.brigtness != current.brigtness;
+                  },
+                  builder: (context, state) {
+                    return IgnorePointer(
+                      ignoring: true,
+                      child: Container(
+                        color: Colors.black.withOpacity(state.brigtness),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            );
+          }),
     );
   }
 }

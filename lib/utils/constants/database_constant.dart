@@ -7,4 +7,5 @@ class DatabaseFieldConstant {
   static const String selectedLanguage = "selectedLanguage";
   static const String quranKaremLastPageNumber = "quranKaremLastPageNumber";
   static const String quranKaremBookMarkList = "quranKaremBookMarkList";
+  static const String quranKaremPrintNameToUse = "quranKaremPrintNameToUse";
 }

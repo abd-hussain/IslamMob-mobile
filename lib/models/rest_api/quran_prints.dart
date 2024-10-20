@@ -1,5 +1,6 @@
 class QuranPrints {
   QuranPrints({
+    this.fieldName,
     this.nameReferance,
     this.description,
     this.language,
@@ -9,6 +10,7 @@ class QuranPrints {
     this.juz2ToPageNumbers,
     this.sorahToPageNumbers,
   });
+  String? fieldName;
   String? nameReferance;
   String? description;
   String? language;

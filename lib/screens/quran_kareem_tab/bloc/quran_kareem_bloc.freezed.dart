@@ -26,6 +26,7 @@ mixin _$QuranKareemEvent {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +39,7 @@ mixin _$QuranKareemEvent {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +52,7 @@ mixin _$QuranKareemEvent {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +70,7 @@ mixin _$QuranKareemEvent {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +85,7 @@ mixin _$QuranKareemEvent {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -95,6 +100,7 @@ mixin _$QuranKareemEvent {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -198,6 +204,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) {
     return showHideHelpBar(status);
   }
@@ -213,6 +220,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) {
     return showHideHelpBar?.call(status);
   }
@@ -228,6 +236,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (showHideHelpBar != null) {
@@ -251,6 +260,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) {
     return showHideHelpBar(this);
   }
@@ -268,6 +278,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) {
     return showHideHelpBar?.call(this);
   }
@@ -285,6 +296,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (showHideHelpBar != null) {
@@ -384,6 +396,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) {
     return updatePageCount(pageCount);
   }
@@ -399,6 +412,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) {
     return updatePageCount?.call(pageCount);
   }
@@ -414,6 +428,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updatePageCount != null) {
@@ -437,6 +452,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) {
     return updatePageCount(this);
   }
@@ -454,6 +470,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) {
     return updatePageCount?.call(this);
   }
@@ -471,6 +488,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updatePageCount != null) {
@@ -572,6 +590,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) {
     return updateSorahReferanceNumber(num);
   }
@@ -587,6 +606,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) {
     return updateSorahReferanceNumber?.call(num);
   }
@@ -602,6 +622,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateSorahReferanceNumber != null) {
@@ -625,6 +646,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) {
     return updateSorahReferanceNumber(this);
   }
@@ -642,6 +664,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) {
     return updateSorahReferanceNumber?.call(this);
   }
@@ -659,6 +682,7 @@ class _$UpdateSorahReferanceNumberImpl implements _UpdateSorahReferanceNumber {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateSorahReferanceNumber != null) {
@@ -761,6 +785,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) {
     return updateJozo2ReferanceNumber(num);
   }
@@ -776,6 +801,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) {
     return updateJozo2ReferanceNumber?.call(num);
   }
@@ -791,6 +817,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateJozo2ReferanceNumber != null) {
@@ -814,6 +841,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) {
     return updateJozo2ReferanceNumber(this);
   }
@@ -831,6 +859,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) {
     return updateJozo2ReferanceNumber?.call(this);
   }
@@ -848,6 +877,7 @@ class _$UpdateJozo2ReferanceNumberImpl implements _UpdateJozo2ReferanceNumber {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateJozo2ReferanceNumber != null) {
@@ -947,6 +977,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) {
     return updateSidePage(side);
   }
@@ -962,6 +993,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) {
     return updateSidePage?.call(side);
   }
@@ -977,6 +1009,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateSidePage != null) {
@@ -1000,6 +1033,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) {
     return updateSidePage(this);
   }
@@ -1017,6 +1051,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) {
     return updateSidePage?.call(this);
   }
@@ -1034,6 +1069,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateSidePage != null) {
@@ -1139,6 +1175,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) {
     return updateBookMarkedPages(list);
   }
@@ -1154,6 +1191,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) {
     return updateBookMarkedPages?.call(list);
   }
@@ -1169,6 +1207,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateBookMarkedPages != null) {
@@ -1192,6 +1231,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) {
     return updateBookMarkedPages(this);
   }
@@ -1209,6 +1249,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) {
     return updateBookMarkedPages?.call(this);
   }
@@ -1226,6 +1267,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateBookMarkedPages != null) {
@@ -1326,6 +1368,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) {
     return updateScreenBrigtness(value);
   }
@@ -1341,6 +1384,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) {
     return updateScreenBrigtness?.call(value);
   }
@@ -1356,6 +1400,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateScreenBrigtness != null) {
@@ -1379,6 +1424,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) {
     return updateScreenBrigtness(this);
   }
@@ -1396,6 +1442,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) {
     return updateScreenBrigtness?.call(this);
   }
@@ -1413,6 +1460,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateScreenBrigtness != null) {
@@ -1512,6 +1560,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
   }) {
     return updateRewardedAd(value);
   }
@@ -1527,6 +1576,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
   }) {
     return updateRewardedAd?.call(value);
   }
@@ -1542,6 +1592,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateRewardedAd != null) {
@@ -1565,6 +1616,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
     required TResult Function(_UpdateScreenBrigtness value)
         updateScreenBrigtness,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
   }) {
     return updateRewardedAd(this);
   }
@@ -1582,6 +1634,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
     TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
   }) {
     return updateRewardedAd?.call(this);
   }
@@ -1599,6 +1652,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
     TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
     TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     required TResult orElse(),
   }) {
     if (updateRewardedAd != null) {
@@ -1621,6 +1675,197 @@ abstract class _UpdateRewardedAd implements QuranKareemEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateReadPDFFileImplCopyWith<$Res> {
+  factory _$$UpdateReadPDFFileImplCopyWith(_$UpdateReadPDFFileImpl value,
+          $Res Function(_$UpdateReadPDFFileImpl) then) =
+      __$$UpdateReadPDFFileImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateReadPDFFileImplCopyWithImpl<$Res>
+    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateReadPDFFileImpl>
+    implements _$$UpdateReadPDFFileImplCopyWith<$Res> {
+  __$$UpdateReadPDFFileImplCopyWithImpl(_$UpdateReadPDFFileImpl _value,
+      $Res Function(_$UpdateReadPDFFileImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QuranKareemEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateReadPDFFileImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateReadPDFFileImpl implements _UpdateReadPDFFile {
+  _$UpdateReadPDFFileImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'QuranKareemEvent.updateReadPDFFile(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateReadPDFFileImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of QuranKareemEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateReadPDFFileImplCopyWith<_$UpdateReadPDFFileImpl> get copyWith =>
+      __$$UpdateReadPDFFileImplCopyWithImpl<_$UpdateReadPDFFileImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool status) showHideHelpBar,
+    required TResult Function(int pageCount) updatePageCount,
+    required TResult Function(int num) updateSorahReferanceNumber,
+    required TResult Function(int num) updateJozo2ReferanceNumber,
+    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(List<int> list) updateBookMarkedPages,
+    required TResult Function(double value) updateScreenBrigtness,
+    required TResult Function(RewardedAd? value) updateRewardedAd,
+    required TResult Function(String value) updateReadPDFFile,
+  }) {
+    return updateReadPDFFile(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool status)? showHideHelpBar,
+    TResult? Function(int pageCount)? updatePageCount,
+    TResult? Function(int num)? updateSorahReferanceNumber,
+    TResult? Function(int num)? updateJozo2ReferanceNumber,
+    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(List<int> list)? updateBookMarkedPages,
+    TResult? Function(double value)? updateScreenBrigtness,
+    TResult? Function(RewardedAd? value)? updateRewardedAd,
+    TResult? Function(String value)? updateReadPDFFile,
+  }) {
+    return updateReadPDFFile?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool status)? showHideHelpBar,
+    TResult Function(int pageCount)? updatePageCount,
+    TResult Function(int num)? updateSorahReferanceNumber,
+    TResult Function(int num)? updateJozo2ReferanceNumber,
+    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(List<int> list)? updateBookMarkedPages,
+    TResult Function(double value)? updateScreenBrigtness,
+    TResult Function(RewardedAd? value)? updateRewardedAd,
+    TResult Function(String value)? updateReadPDFFile,
+    required TResult orElse(),
+  }) {
+    if (updateReadPDFFile != null) {
+      return updateReadPDFFile(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
+    required TResult Function(_UpdatePageCount value) updatePageCount,
+    required TResult Function(_UpdateSorahReferanceNumber value)
+        updateSorahReferanceNumber,
+    required TResult Function(_UpdateJozo2ReferanceNumber value)
+        updateJozo2ReferanceNumber,
+    required TResult Function(_UpdateSidePage value) updateSidePage,
+    required TResult Function(_UpdateBookMarkedPages value)
+        updateBookMarkedPages,
+    required TResult Function(_UpdateScreenBrigtness value)
+        updateScreenBrigtness,
+    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
+  }) {
+    return updateReadPDFFile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
+    TResult? Function(_UpdatePageCount value)? updatePageCount,
+    TResult? Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult? Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
+    TResult? Function(_UpdateSidePage value)? updateSidePage,
+    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
+    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
+  }) {
+    return updateReadPDFFile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
+    TResult Function(_UpdatePageCount value)? updatePageCount,
+    TResult Function(_UpdateSorahReferanceNumber value)?
+        updateSorahReferanceNumber,
+    TResult Function(_UpdateJozo2ReferanceNumber value)?
+        updateJozo2ReferanceNumber,
+    TResult Function(_UpdateSidePage value)? updateSidePage,
+    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
+    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
+    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
+    required TResult orElse(),
+  }) {
+    if (updateReadPDFFile != null) {
+      return updateReadPDFFile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateReadPDFFile implements QuranKareemEvent {
+  factory _UpdateReadPDFFile(final String value) = _$UpdateReadPDFFileImpl;
+
+  String get value;
+
+  /// Create a copy of QuranKareemEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateReadPDFFileImplCopyWith<_$UpdateReadPDFFileImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$QuranKareemState {
   bool get showHelpBar => throw _privateConstructorUsedError;
   int get pageCount => throw _privateConstructorUsedError;
@@ -1630,6 +1875,7 @@ mixin _$QuranKareemState {
   List<int> get bookmarkedPages => throw _privateConstructorUsedError;
   double get brigtness => throw _privateConstructorUsedError;
   RewardedAd? get rewardedAd => throw _privateConstructorUsedError;
+  String get sourceFileOfPDF => throw _privateConstructorUsedError;
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.
@@ -1652,7 +1898,8 @@ abstract class $QuranKareemStateCopyWith<$Res> {
       PageSide pageSide,
       List<int> bookmarkedPages,
       double brigtness,
-      RewardedAd? rewardedAd});
+      RewardedAd? rewardedAd,
+      String sourceFileOfPDF});
 }
 
 /// @nodoc
@@ -1678,6 +1925,7 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
     Object? bookmarkedPages = null,
     Object? brigtness = null,
     Object? rewardedAd = freezed,
+    Object? sourceFileOfPDF = null,
   }) {
     return _then(_value.copyWith(
       showHelpBar: null == showHelpBar
@@ -1712,6 +1960,10 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
           ? _value.rewardedAd
           : rewardedAd // ignore: cast_nullable_to_non_nullable
               as RewardedAd?,
+      sourceFileOfPDF: null == sourceFileOfPDF
+          ? _value.sourceFileOfPDF
+          : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -1732,7 +1984,8 @@ abstract class _$$QuranKareemStateImplCopyWith<$Res>
       PageSide pageSide,
       List<int> bookmarkedPages,
       double brigtness,
-      RewardedAd? rewardedAd});
+      RewardedAd? rewardedAd,
+      String sourceFileOfPDF});
 }
 
 /// @nodoc
@@ -1756,6 +2009,7 @@ class __$$QuranKareemStateImplCopyWithImpl<$Res>
     Object? bookmarkedPages = null,
     Object? brigtness = null,
     Object? rewardedAd = freezed,
+    Object? sourceFileOfPDF = null,
   }) {
     return _then(_$QuranKareemStateImpl(
       showHelpBar: null == showHelpBar
@@ -1790,6 +2044,10 @@ class __$$QuranKareemStateImplCopyWithImpl<$Res>
           ? _value.rewardedAd
           : rewardedAd // ignore: cast_nullable_to_non_nullable
               as RewardedAd?,
+      sourceFileOfPDF: null == sourceFileOfPDF
+          ? _value.sourceFileOfPDF
+          : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -1805,7 +2063,8 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
       this.pageSide = PageSide.left,
       final List<int> bookmarkedPages = const [],
       this.brigtness = 0,
-      this.rewardedAd})
+      this.rewardedAd,
+      this.sourceFileOfPDF = ""})
       : _bookmarkedPages = bookmarkedPages;
 
   @override
@@ -1837,10 +2096,13 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
   final double brigtness;
   @override
   final RewardedAd? rewardedAd;
+  @override
+  @JsonKey()
+  final String sourceFileOfPDF;
 
   @override
   String toString() {
-    return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, sorahReferanceNumber: $sorahReferanceNumber, jozo2ReferanceNumber: $jozo2ReferanceNumber, pageSide: $pageSide, bookmarkedPages: $bookmarkedPages, brigtness: $brigtness, rewardedAd: $rewardedAd)';
+    return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, sorahReferanceNumber: $sorahReferanceNumber, jozo2ReferanceNumber: $jozo2ReferanceNumber, pageSide: $pageSide, bookmarkedPages: $bookmarkedPages, brigtness: $brigtness, rewardedAd: $rewardedAd, sourceFileOfPDF: $sourceFileOfPDF)';
   }
 
   @override
@@ -1863,7 +2125,9 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
             (identical(other.brigtness, brigtness) ||
                 other.brigtness == brigtness) &&
             (identical(other.rewardedAd, rewardedAd) ||
-                other.rewardedAd == rewardedAd));
+                other.rewardedAd == rewardedAd) &&
+            (identical(other.sourceFileOfPDF, sourceFileOfPDF) ||
+                other.sourceFileOfPDF == sourceFileOfPDF));
   }
 
   @override
@@ -1876,7 +2140,8 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
       pageSide,
       const DeepCollectionEquality().hash(_bookmarkedPages),
       brigtness,
-      rewardedAd);
+      rewardedAd,
+      sourceFileOfPDF);
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.
@@ -1897,7 +2162,8 @@ abstract class _QuranKareemState implements QuranKareemState {
       final PageSide pageSide,
       final List<int> bookmarkedPages,
       final double brigtness,
-      final RewardedAd? rewardedAd}) = _$QuranKareemStateImpl;
+      final RewardedAd? rewardedAd,
+      final String sourceFileOfPDF}) = _$QuranKareemStateImpl;
 
   @override
   bool get showHelpBar;
@@ -1915,6 +2181,8 @@ abstract class _QuranKareemState implements QuranKareemState {
   double get brigtness;
   @override
   RewardedAd? get rewardedAd;
+  @override
+  String get sourceFileOfPDF;
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.

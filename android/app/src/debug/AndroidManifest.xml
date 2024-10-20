@@ -26,6 +26,7 @@
         android:label="Islam Mob"
         android:enableOnBackInvokedCallback="true"
         android:hasCode="true"
+        android:requestLegacyExternalStorage="true"
         tools:replace="android:hasCode"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

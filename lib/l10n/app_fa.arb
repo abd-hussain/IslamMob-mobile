@@ -169,6 +169,12 @@
     "justwentyseven" : "Part Twenty-Seven",
     "justwentyeight" : "Part Twenty-Eight",
     "justwentynine" : "Part Twenty-Nine",
-    "justhirty" : "Part Thirty"
+    "justhirty" : "Part Thirty",
+    "downloading" : "Downloading",
+    "cancel" : "cancel",
+    "download" : "Download",
+    "use" : "Use",
+    "downloadpopupmessage" : "Download can take some time, depending on your internet connection, please wait..."
+
 
 }

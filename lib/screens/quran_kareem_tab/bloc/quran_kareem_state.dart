@@ -13,5 +13,6 @@ class QuranKareemState with _$QuranKareemState {
     @Default([]) List<int> bookmarkedPages,
     @Default(0) double brigtness,
     RewardedAd? rewardedAd,
+    @Default("") String sourceFileOfPDF,
   }) = _QuranKareemState;
 }

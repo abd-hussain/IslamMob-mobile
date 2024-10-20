@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,6 +9,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/utils/adds_helper.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/quran_referances.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:pdfx/pdfx.dart';
 
 part 'quran_kareem_event.dart';
@@ -20,7 +22,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   PdfController pdfController = PdfController(
     viewportFraction: 1.1,
-    document: PdfDocument.openAsset('assets/pdf/quran_kareem.pdf'),
+    document: PdfDocument.openAsset('assets/pdf/quran/arabic-madina.pdf'),
   );
 
   QuranKareemBloc() : super(const QuranKareemState()) {
@@ -32,6 +34,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     on<_UpdateBookMarkedPages>(_updateBookMarkedPages);
     on<_UpdateScreenBrigtness>(_updateScreenBrigtness);
     on<_UpdateRewardedAd>(_updateRewardedAd);
+    on<_UpdateReadPDFFile>(_updateReadPDFFile);
 
     _getListOfBookMarkedPages();
     _createRewardedAd();
@@ -89,14 +92,48 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     }
   }
 
-  PdfController pageController() {
+  Future<PdfController> pageController() async {
+    print("pageController");
     final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
         defaultValue: 1);
+    final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
+        defaultValue: "arabic-madina.pdf");
+
+    print("printName");
+    print(printName);
+
     add(QuranKareemEvent.updatePageCount(pageNumber));
     pdfController.initialPage = pageNumber;
-    pdfController.document =
-        PdfDocument.openAsset('assets/pdf/quran/arabic-madina.pdf');
 
+    final Directory dir = await getApplicationDocumentsDirectory();
+    final filePath = Directory('${dir.path}/$printName');
+
+    final file = File(filePath.path);
+    if (await file.exists()) {
+      print("newDirectory");
+      print(filePath);
+      pdfController.document = PdfDocument.openFile(filePath.path);
+    } else {
+      print("NTO");
+      pdfController.document = PdfDocument.openFile(filePath.path);
+    }
+
+    return pdfController;
+  }
+
+  Future<PdfController> newPageController() async {
+    final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
+        defaultValue: "arabic-madina.pdf");
+
+    final Directory dir = await getApplicationDocumentsDirectory();
+    final filePath = Directory('${dir.path}/$printName');
+
+    final file = File(filePath.path);
+    if (await file.exists()) {
+      print("newDirectory");
+      print(filePath);
+      pdfController.document = PdfDocument.openFile(filePath.path);
+    }
     return pdfController;
   }
 
@@ -153,5 +190,11 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   FutureOr<void> _updateRewardedAd(
       _UpdateRewardedAd event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(rewardedAd: event.value));
+  }
+
+  FutureOr<void> _updateReadPDFFile(
+      _UpdateReadPDFFile event, Emitter<QuranKareemState> emit) {
+    pageController();
+    emit(state.copyWith(sourceFileOfPDF: event.value));
   }
 }

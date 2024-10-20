@@ -40,6 +40,8 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
+	<key>FDAllFilesDownloadedMessage</key>
+	<string>All files have been downloaded</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow access to camera in order to register your profile pictures</string>
 	<key>NSContactsUsageDescription</key>
@@ -48,6 +50,14 @@
 	<string>We Need This Permission to hear your voice when you talk to the client</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow access to gallery in order to register your profile pictures</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+    <string>speech</string>
+	<key>NSMotionUsageDescription</key>
+    <string>motion</string>
+	<key>NSRemindersUsageDescription</key>
+    <string>reminders</string>
+	<key>NSUserTrackingUsageDescription</key>
+    <string>appTrackingTransparency</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIBackgroundModes</key>

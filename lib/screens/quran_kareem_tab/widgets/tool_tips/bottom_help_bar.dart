@@ -9,7 +9,11 @@ import 'package:islam_app/utils/constants/argument_constant.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
   final Function(double) returnBrightness;
-  const QuranBottomHelpBar({super.key, required this.returnBrightness});
+  final Function(String) returnWithNewPrint;
+  const QuranBottomHelpBar(
+      {super.key,
+      required this.returnBrightness,
+      required this.returnWithNewPrint});
 
   @override
   Widget build(BuildContext context) {
@@ -128,8 +132,8 @@ class QuranBottomHelpBar extends StatelessWidget {
               onTap: () async {
                 await navigator.pushNamed(RoutesConstants.masaheefScreen).then(
                   (value) {
-                    if (value != null) {
-                      //TODO
+                    if (value is Map<String, String>) {
+                      returnWithNewPrint(value["use"]!);
                     }
                   },
                 );

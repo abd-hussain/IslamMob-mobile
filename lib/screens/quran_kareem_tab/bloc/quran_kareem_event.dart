@@ -15,4 +15,5 @@ class QuranKareemEvent with _$QuranKareemEvent {
       _UpdateScreenBrigtness;
   factory QuranKareemEvent.updateRewardedAd(RewardedAd? value) =
       _UpdateRewardedAd;
+  factory QuranKareemEvent.updateReadPDFFile(String value) = _UpdateReadPDFFile;
 }
