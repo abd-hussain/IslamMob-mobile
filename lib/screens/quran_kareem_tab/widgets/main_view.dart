@@ -16,41 +16,75 @@ class QuranKareemMainView extends StatelessWidget {
             .read<QuranKareemBloc>()
             .add(QuranKareemEvent.showHideHelpBar(!status));
       },
-      child: FutureBuilder<PdfController>(
-          initialData: context.read<QuranKareemBloc>().pdfController,
-          future: context.read<QuranKareemBloc>().pageController(),
-          builder: (context, snap) {
-            return Stack(
-              children: [
-                PdfView(
+      child: Stack(
+        children: [
+          BlocBuilder<QuranKareemBloc, QuranKareemState>(
+            buildWhen: (previous, current) {
+              return previous.sourceFileOfPDF != current.sourceFileOfPDF;
+            },
+            builder: (context, state) {
+              print("ahaaaa");
+
+              if (state.sourceFileOfPDF == "") {
+                return PdfView(
                   reverse: context
                           .read<QuranKareemBloc>()
                           .box
                           .get(DatabaseFieldConstant.selectedLanguage) !=
                       "ar",
-                  controller: snap.data!,
+                  controller: context.read<QuranKareemBloc>().pageController(),
                   onPageChanged: (index) {
                     context
                         .read<QuranKareemBloc>()
                         .add(QuranKareemEvent.updatePageCount(index));
                   },
+                );
+              } else {
+                print("ahaaaa else");
+
+                return FutureBuilder(
+                    future: context.read<QuranKareemBloc>().newPageController(),
+                    builder: (context, file) {
+                      if (file.data == null) {
+                        print("ahaaaa loading");
+
+                        return const Center(child: CircularProgressIndicator());
+                      }
+
+                      print("ahaaaa ssss");
+
+                      return PdfView(
+                        reverse: context
+                                .read<QuranKareemBloc>()
+                                .box
+                                .get(DatabaseFieldConstant.selectedLanguage) !=
+                            "ar",
+                        controller: file.data!,
+                        onPageChanged: (index) {
+                          context
+                              .read<QuranKareemBloc>()
+                              .add(QuranKareemEvent.updatePageCount(index));
+                        },
+                      );
+                    });
+              }
+            },
+          ),
+          BlocBuilder<QuranKareemBloc, QuranKareemState>(
+            buildWhen: (previous, current) {
+              return previous.brigtness != current.brigtness;
+            },
+            builder: (context, state) {
+              return IgnorePointer(
+                ignoring: true,
+                child: Container(
+                  color: Colors.black.withOpacity(state.brigtness),
                 ),
-                BlocBuilder<QuranKareemBloc, QuranKareemState>(
-                  buildWhen: (previous, current) {
-                    return previous.brigtness != current.brigtness;
-                  },
-                  builder: (context, state) {
-                    return IgnorePointer(
-                      ignoring: true,
-                      child: Container(
-                        color: Colors.black.withOpacity(state.brigtness),
-                      ),
-                    );
-                  },
-                ),
-              ],
-            );
-          }),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }

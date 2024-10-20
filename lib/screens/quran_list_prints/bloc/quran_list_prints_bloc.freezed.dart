@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'masahef_bloc.dart';
+part of 'quran_list_prints_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$MasahefEvent {
+mixin _$QuranListPrintsEvent {
   List<QuranPrints>? get list => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -50,33 +50,34 @@ mixin _$MasahefEvent {
   }) =>
       throw _privateConstructorUsedError;
 
-  /// Create a copy of MasahefEvent
+  /// Create a copy of QuranListPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MasahefEventCopyWith<MasahefEvent> get copyWith =>
+  $QuranListPrintsEventCopyWith<QuranListPrintsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MasahefEventCopyWith<$Res> {
-  factory $MasahefEventCopyWith(
-          MasahefEvent value, $Res Function(MasahefEvent) then) =
-      _$MasahefEventCopyWithImpl<$Res, MasahefEvent>;
+abstract class $QuranListPrintsEventCopyWith<$Res> {
+  factory $QuranListPrintsEventCopyWith(QuranListPrintsEvent value,
+          $Res Function(QuranListPrintsEvent) then) =
+      _$QuranListPrintsEventCopyWithImpl<$Res, QuranListPrintsEvent>;
   @useResult
   $Res call({List<QuranPrints>? list});
 }
 
 /// @nodoc
-class _$MasahefEventCopyWithImpl<$Res, $Val extends MasahefEvent>
-    implements $MasahefEventCopyWith<$Res> {
-  _$MasahefEventCopyWithImpl(this._value, this._then);
+class _$QuranListPrintsEventCopyWithImpl<$Res,
+        $Val extends QuranListPrintsEvent>
+    implements $QuranListPrintsEventCopyWith<$Res> {
+  _$QuranListPrintsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MasahefEvent
+  /// Create a copy of QuranListPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -94,7 +95,7 @@ class _$MasahefEventCopyWithImpl<$Res, $Val extends MasahefEvent>
 
 /// @nodoc
 abstract class _$$UpdatelistOfPrintsImplCopyWith<$Res>
-    implements $MasahefEventCopyWith<$Res> {
+    implements $QuranListPrintsEventCopyWith<$Res> {
   factory _$$UpdatelistOfPrintsImplCopyWith(_$UpdatelistOfPrintsImpl value,
           $Res Function(_$UpdatelistOfPrintsImpl) then) =
       __$$UpdatelistOfPrintsImplCopyWithImpl<$Res>;
@@ -105,13 +106,13 @@ abstract class _$$UpdatelistOfPrintsImplCopyWith<$Res>
 
 /// @nodoc
 class __$$UpdatelistOfPrintsImplCopyWithImpl<$Res>
-    extends _$MasahefEventCopyWithImpl<$Res, _$UpdatelistOfPrintsImpl>
+    extends _$QuranListPrintsEventCopyWithImpl<$Res, _$UpdatelistOfPrintsImpl>
     implements _$$UpdatelistOfPrintsImplCopyWith<$Res> {
   __$$UpdatelistOfPrintsImplCopyWithImpl(_$UpdatelistOfPrintsImpl _value,
       $Res Function(_$UpdatelistOfPrintsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MasahefEvent
+  /// Create a copy of QuranListPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -144,7 +145,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
 
   @override
   String toString() {
-    return 'MasahefEvent.updatelistOfPrints(list: $list)';
+    return 'QuranListPrintsEvent.updatelistOfPrints(list: $list)';
   }
 
   @override
@@ -159,7 +160,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
 
-  /// Create a copy of MasahefEvent
+  /// Create a copy of QuranListPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -225,14 +226,14 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   }
 }
 
-abstract class _UpdatelistOfPrints implements MasahefEvent {
+abstract class _UpdatelistOfPrints implements QuranListPrintsEvent {
   factory _UpdatelistOfPrints(final List<QuranPrints>? list) =
       _$UpdatelistOfPrintsImpl;
 
   @override
   List<QuranPrints>? get list;
 
-  /// Create a copy of MasahefEvent
+  /// Create a copy of QuranListPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -241,36 +242,37 @@ abstract class _UpdatelistOfPrints implements MasahefEvent {
 }
 
 /// @nodoc
-mixin _$MasahefState {
+mixin _$QuranListPrintsState {
   List<QuranPrints>? get listOfPrints => throw _privateConstructorUsedError;
 
-  /// Create a copy of MasahefState
+  /// Create a copy of QuranListPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MasahefStateCopyWith<MasahefState> get copyWith =>
+  $QuranListPrintsStateCopyWith<QuranListPrintsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MasahefStateCopyWith<$Res> {
-  factory $MasahefStateCopyWith(
-          MasahefState value, $Res Function(MasahefState) then) =
-      _$MasahefStateCopyWithImpl<$Res, MasahefState>;
+abstract class $QuranListPrintsStateCopyWith<$Res> {
+  factory $QuranListPrintsStateCopyWith(QuranListPrintsState value,
+          $Res Function(QuranListPrintsState) then) =
+      _$QuranListPrintsStateCopyWithImpl<$Res, QuranListPrintsState>;
   @useResult
   $Res call({List<QuranPrints>? listOfPrints});
 }
 
 /// @nodoc
-class _$MasahefStateCopyWithImpl<$Res, $Val extends MasahefState>
-    implements $MasahefStateCopyWith<$Res> {
-  _$MasahefStateCopyWithImpl(this._value, this._then);
+class _$QuranListPrintsStateCopyWithImpl<$Res,
+        $Val extends QuranListPrintsState>
+    implements $QuranListPrintsStateCopyWith<$Res> {
+  _$QuranListPrintsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MasahefState
+  /// Create a copy of QuranListPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -287,32 +289,32 @@ class _$MasahefStateCopyWithImpl<$Res, $Val extends MasahefState>
 }
 
 /// @nodoc
-abstract class _$$MasahefStateImplCopyWith<$Res>
-    implements $MasahefStateCopyWith<$Res> {
-  factory _$$MasahefStateImplCopyWith(
-          _$MasahefStateImpl value, $Res Function(_$MasahefStateImpl) then) =
-      __$$MasahefStateImplCopyWithImpl<$Res>;
+abstract class _$$QuranListPrintsStateImplCopyWith<$Res>
+    implements $QuranListPrintsStateCopyWith<$Res> {
+  factory _$$QuranListPrintsStateImplCopyWith(_$QuranListPrintsStateImpl value,
+          $Res Function(_$QuranListPrintsStateImpl) then) =
+      __$$QuranListPrintsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<QuranPrints>? listOfPrints});
 }
 
 /// @nodoc
-class __$$MasahefStateImplCopyWithImpl<$Res>
-    extends _$MasahefStateCopyWithImpl<$Res, _$MasahefStateImpl>
-    implements _$$MasahefStateImplCopyWith<$Res> {
-  __$$MasahefStateImplCopyWithImpl(
-      _$MasahefStateImpl _value, $Res Function(_$MasahefStateImpl) _then)
+class __$$QuranListPrintsStateImplCopyWithImpl<$Res>
+    extends _$QuranListPrintsStateCopyWithImpl<$Res, _$QuranListPrintsStateImpl>
+    implements _$$QuranListPrintsStateImplCopyWith<$Res> {
+  __$$QuranListPrintsStateImplCopyWithImpl(_$QuranListPrintsStateImpl _value,
+      $Res Function(_$QuranListPrintsStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MasahefState
+  /// Create a copy of QuranListPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? listOfPrints = freezed,
   }) {
-    return _then(_$MasahefStateImpl(
+    return _then(_$QuranListPrintsStateImpl(
       listOfPrints: freezed == listOfPrints
           ? _value._listOfPrints
           : listOfPrints // ignore: cast_nullable_to_non_nullable
@@ -323,8 +325,8 @@ class __$$MasahefStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MasahefStateImpl implements _MasahefState {
-  const _$MasahefStateImpl({final List<QuranPrints>? listOfPrints})
+class _$QuranListPrintsStateImpl implements _QuranListPrintsState {
+  const _$QuranListPrintsStateImpl({final List<QuranPrints>? listOfPrints})
       : _listOfPrints = listOfPrints;
 
   final List<QuranPrints>? _listOfPrints;
@@ -339,14 +341,14 @@ class _$MasahefStateImpl implements _MasahefState {
 
   @override
   String toString() {
-    return 'MasahefState(listOfPrints: $listOfPrints)';
+    return 'QuranListPrintsState(listOfPrints: $listOfPrints)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MasahefStateImpl &&
+            other is _$QuranListPrintsStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._listOfPrints, _listOfPrints));
   }
@@ -355,26 +357,28 @@ class _$MasahefStateImpl implements _MasahefState {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_listOfPrints));
 
-  /// Create a copy of MasahefState
+  /// Create a copy of QuranListPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MasahefStateImplCopyWith<_$MasahefStateImpl> get copyWith =>
-      __$$MasahefStateImplCopyWithImpl<_$MasahefStateImpl>(this, _$identity);
+  _$$QuranListPrintsStateImplCopyWith<_$QuranListPrintsStateImpl>
+      get copyWith =>
+          __$$QuranListPrintsStateImplCopyWithImpl<_$QuranListPrintsStateImpl>(
+              this, _$identity);
 }
 
-abstract class _MasahefState implements MasahefState {
-  const factory _MasahefState({final List<QuranPrints>? listOfPrints}) =
-      _$MasahefStateImpl;
+abstract class _QuranListPrintsState implements QuranListPrintsState {
+  const factory _QuranListPrintsState({final List<QuranPrints>? listOfPrints}) =
+      _$QuranListPrintsStateImpl;
 
   @override
   List<QuranPrints>? get listOfPrints;
 
-  /// Create a copy of MasahefState
+  /// Create a copy of QuranListPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MasahefStateImplCopyWith<_$MasahefStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$QuranListPrintsStateImplCopyWith<_$QuranListPrintsStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

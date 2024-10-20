@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_gusture.dart';
@@ -8,7 +9,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class IslamMobApp extends StatefulWidget {
-  const IslamMobApp({super.key});
+  final GlobalKey<NavigatorState> navigatorKey;
+
+  const IslamMobApp({super.key, required this.navigatorKey});
 
   @override
   State<IslamMobApp> createState() => IslamMobAppState();
@@ -29,6 +32,8 @@ class IslamMobAppState extends State<IslamMobApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        builder: FToastBuilder(),
+        navigatorKey: widget.navigatorKey,
         debugShowCheckedModeBanner: false,
         onGenerateTitle: (BuildContext context) {
           return AppConstant.appName;

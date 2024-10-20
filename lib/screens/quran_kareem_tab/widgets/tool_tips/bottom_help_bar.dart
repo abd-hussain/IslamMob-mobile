@@ -114,7 +114,7 @@ class QuranBottomHelpBar extends StatelessWidget {
                                       ArgumentConstant.currentPageNumber]));
                               context
                                   .read<QuranKareemBloc>()
-                                  .pdfController
+                                  .pageController()
                                   .jumpToPage(value[
                                       ArgumentConstant.currentPageNumber]);
                             }
@@ -130,7 +130,9 @@ class QuranBottomHelpBar extends StatelessWidget {
               title: AppLocalizations.of(context)!.quranSettingMushaf,
               icon: Icons.library_books,
               onTap: () async {
-                await navigator.pushNamed(RoutesConstants.masaheefScreen).then(
+                await navigator
+                    .pushNamed(RoutesConstants.quranPrintListScreen)
+                    .then(
                   (value) {
                     if (value is Map<String, String>) {
                       returnWithNewPrint(value["use"]!);
@@ -156,7 +158,7 @@ class QuranBottomHelpBar extends StatelessWidget {
                                     value[ArgumentConstant.currentPageNumber]));
                             context
                                 .read<QuranKareemBloc>()
-                                .pdfController
+                                .pageController()
                                 .jumpToPage(
                                     value[ArgumentConstant.currentPageNumber]);
                           }

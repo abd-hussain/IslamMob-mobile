@@ -7,7 +7,9 @@ import 'package:islam_app/screens/splash/splash_screen.dart';
 import 'package:islam_app/utils/logger.dart';
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  final GlobalKey<NavigatorState> navigatorKey;
+
+  const MyApp({super.key, required this.navigatorKey});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -28,7 +30,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             if (snapshot.connectionState == ConnectionState.done) {
               logDebugMessage(message: 'Initialize Firebase Done!!');
 
-              return const IslamMobApp();
+              return IslamMobApp(
+                navigatorKey: widget.navigatorKey,
+              );
             }
           }
 

@@ -14,12 +14,13 @@ import 'package:islam_app/utils/download_file.dart';
 import 'package:islam_app/utils/logger.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-part 'masahef_event.dart';
-part 'masahef_state.dart';
-part 'masahef_bloc.freezed.dart';
+part 'quran_list_prints_event.dart';
+part 'quran_list_prints_state.dart';
+part 'quran_list_prints_bloc.freezed.dart';
 
-class MasahefBloc extends Bloc<MasahefEvent, MasahefState> {
-  MasahefBloc() : super(const MasahefState()) {
+class QuranListPrintsBloc
+    extends Bloc<QuranListPrintsEvent, QuranListPrintsState> {
+  QuranListPrintsBloc() : super(const QuranListPrintsState()) {
     on<_UpdatelistOfPrints>(_updatelistOfPrints);
 
     _getListOfPrints();
@@ -55,7 +56,7 @@ class MasahefBloc extends Bloc<MasahefEvent, MasahefState> {
       listOfPrints.add(obj);
     }
 
-    add(MasahefEvent.updatelistOfPrints(listOfPrints));
+    add(QuranListPrintsEvent.updatelistOfPrints(listOfPrints));
   }
 
   String getNameByLanguageCode(String languageCode) {
@@ -68,7 +69,7 @@ class MasahefBloc extends Bloc<MasahefEvent, MasahefState> {
   }
 
   FutureOr<void> _updatelistOfPrints(
-      _UpdatelistOfPrints event, Emitter<MasahefState> emit) {
+      _UpdatelistOfPrints event, Emitter<QuranListPrintsState> emit) {
     emit(state.copyWith(listOfPrints: event.list));
   }
 
@@ -89,5 +90,9 @@ class MasahefBloc extends Bloc<MasahefEvent, MasahefState> {
 
   Future<bool> verifyIfFileExists(String fileName) async {
     return await FileDownload().checkIfFileExists(fileName);
+  }
+
+  Future<String> getFilePath(String fileName) async {
+    return await FileDownload().getFilePath(fileName);
   }
 }

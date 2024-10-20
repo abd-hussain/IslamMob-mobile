@@ -17,7 +17,7 @@ class FileDownload {
     required final Function(int recivedBytes, int totalBytes) progressCallback,
     required final Function(String filePath) finishCallback,
   }) async {
-    String path = await _getFilePath(fileNameWithExtension);
+    String path = await getFilePath(fileNameWithExtension);
 
     try {
       await dio.download(
@@ -43,7 +43,7 @@ class FileDownload {
     }
   }
 
-  Future<String> _getFilePath(String filename) async {
+  Future<String> getFilePath(String filename) async {
     final Directory dir = await getApplicationDocumentsDirectory();
     final newDirectory = Directory('${dir.path}/');
 

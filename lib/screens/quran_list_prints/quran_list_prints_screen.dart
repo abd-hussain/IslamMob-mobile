@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/screens/quran_masahef_list/bloc/masahef_bloc.dart';
-import 'package:islam_app/screens/quran_masahef_list/widgets/copy_tile.dart';
-import 'package:islam_app/screens/quran_masahef_list/widgets/download_progress_dialog.dart';
+import 'package:islam_app/screens/quran_list_prints/bloc/quran_list_prints_bloc.dart';
+import 'package:islam_app/screens/quran_list_prints/widgets/copy_tile.dart';
+import 'package:islam_app/screens/quran_list_prints/widgets/download_progress_dialog.dart';
+import 'package:islam_app/screens/quran_list_prints/widgets/shimmer_print_list.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/logger.dart';
 
-class MasaheefScreen extends StatefulWidget {
-  const MasaheefScreen({super.key});
+class QuranListPrintsScreen extends StatefulWidget {
+  const QuranListPrintsScreen({super.key});
 
   @override
-  State<MasaheefScreen> createState() => _MasaheefScreenState();
+  State<QuranListPrintsScreen> createState() => _QuranListPrintsScreenState();
 }
 
-class _MasaheefScreenState extends State<MasaheefScreen> {
+class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MasahefBloc(),
+      create: (context) => QuranListPrintsBloc(),
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xff292929),
@@ -34,28 +36,20 @@ class _MasaheefScreenState extends State<MasaheefScreen> {
             ],
           ),
         ),
-        body: BlocBuilder<MasahefBloc, MasahefState>(
+        body: BlocBuilder<QuranListPrintsBloc, QuranListPrintsState>(
           buildWhen: (previous, current) {
             return previous.listOfPrints != current.listOfPrints;
           },
           builder: (context, state) {
             return state.listOfPrints == null
-                ? const SizedBox(
-                    child: Center(
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          Color(0xff292929),
-                        ),
-                      ),
-                    ),
-                  )
+                ? const QuranListPrintsShimmer()
                 : ListView.builder(
                     itemCount: state.listOfPrints!.length,
                     itemBuilder: (context, index) {
                       return FutureBuilder<bool>(
                           initialData: false,
                           future: context
-                              .read<MasahefBloc>()
+                              .read<QuranListPrintsBloc>()
                               .verifyIfFileExists(
                                   state.listOfPrints![index].fieldName!),
                           builder: (context, fileExsist) {
@@ -68,7 +62,7 @@ class _MasaheefScreenState extends State<MasaheefScreen> {
                               description:
                                   state.listOfPrints![index].description,
                               language: context
-                                  .read<MasahefBloc>()
+                                  .read<QuranListPrintsBloc>()
                                   .getNameByLanguageCode(
                                       state.listOfPrints![index].language ??
                                           ""),
@@ -76,7 +70,7 @@ class _MasaheefScreenState extends State<MasaheefScreen> {
                               useButtonAvaliable: fileExists,
                               onDownloadPressed: () async {
                                 bool result = await context
-                                    .read<MasahefBloc>()
+                                    .read<QuranListPrintsBloc>()
                                     .permissionRequest();
                                 if (result) {
                                   if (context.mounted) {
@@ -98,17 +92,30 @@ class _MasaheefScreenState extends State<MasaheefScreen> {
                                 } else {
                                   logDebugMessage(
                                       message:
-                                          "No permission to read and write.");
+                                          "No permission to read and write");
+                                  if (context.mounted) {
+                                    CustomToast.showWarningToast(
+                                        context: context,
+                                        message:
+                                            "No permission to read and write");
+                                  }
                                 }
                               },
-                              onUsePressed: () {
-                                context.read<MasahefBloc>().box.put(
-                                    DatabaseFieldConstant
-                                        .quranKaremPrintNameToUse,
-                                    state.listOfPrints![index].fieldName!);
-                                Navigator.pop(context, {
-                                  "use": state.listOfPrints![index].fieldName!
-                                });
+                              onUsePressed: () async {
+                                await context
+                                    .read<QuranListPrintsBloc>()
+                                    .box
+                                    .put(
+                                        DatabaseFieldConstant
+                                            .quranKaremPrintNameToUse,
+                                        state.listOfPrints![index].fieldName!);
+                                if (context.mounted) {
+                                  Navigator.pop(context, {
+                                    "use":
+                                        state.listOfPrints![index].fieldName ??
+                                            ""
+                                  });
+                                }
                               },
                             );
                           });

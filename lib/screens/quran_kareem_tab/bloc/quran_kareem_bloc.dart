@@ -20,7 +20,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   final box = Hive.box(DatabaseBoxConstant.userInfo);
   int _numRewardedLoadAttempts = 0;
 
-  PdfController pdfController = PdfController(
+  final PdfController _pdfController = PdfController(
     viewportFraction: 1.1,
     document: PdfDocument.openAsset('assets/pdf/quran/arabic-madina.pdf'),
   );
@@ -92,33 +92,17 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     }
   }
 
-  Future<PdfController> pageController() async {
-    print("pageController");
+  PdfController pageController() {
     final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
         defaultValue: 1);
-    final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
-        defaultValue: "arabic-madina.pdf");
-
-    print("printName");
-    print(printName);
 
     add(QuranKareemEvent.updatePageCount(pageNumber));
-    pdfController.initialPage = pageNumber;
+    _pdfController.initialPage = pageNumber;
 
-    final Directory dir = await getApplicationDocumentsDirectory();
-    final filePath = Directory('${dir.path}/$printName');
+    _pdfController.document = PdfDocument.openFile(
+        '/data/user/0/com.islammob.app/app_flutter/normal1.pdf');
 
-    final file = File(filePath.path);
-    if (await file.exists()) {
-      print("newDirectory");
-      print(filePath);
-      pdfController.document = PdfDocument.openFile(filePath.path);
-    } else {
-      print("NTO");
-      pdfController.document = PdfDocument.openFile(filePath.path);
-    }
-
-    return pdfController;
+    return _pdfController;
   }
 
   Future<PdfController> newPageController() async {
@@ -132,9 +116,12 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     if (await file.exists()) {
       print("newDirectory");
       print(filePath);
-      pdfController.document = PdfDocument.openFile(filePath.path);
+      _pdfController.document = PdfDocument.openFile(filePath.path);
     }
-    return pdfController;
+
+    print("return");
+
+    return _pdfController;
   }
 
   FutureOr<void> _showHideHelpBar(
@@ -194,7 +181,6 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   FutureOr<void> _updateReadPDFFile(
       _UpdateReadPDFFile event, Emitter<QuranKareemState> emit) {
-    pageController();
     emit(state.copyWith(sourceFileOfPDF: event.value));
   }
 }
