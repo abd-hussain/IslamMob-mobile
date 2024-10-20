@@ -1,19 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
+import 'package:islam_app/utils/constants/database_constant.dart';
+import 'package:pdfx/pdfx.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
   final Function(double) returnBrightness;
-  final Function(String) returnWithNewPrint;
-  const QuranBottomHelpBar(
-      {super.key,
-      required this.returnBrightness,
-      required this.returnWithNewPrint});
+  const QuranBottomHelpBar({super.key, required this.returnBrightness});
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +115,7 @@ class QuranBottomHelpBar extends StatelessWidget {
                                       ArgumentConstant.currentPageNumber]));
                               context
                                   .read<QuranKareemBloc>()
-                                  .pageController()
+                                  .pdfController
                                   .jumpToPage(value[
                                       ArgumentConstant.currentPageNumber]);
                             }
@@ -130,12 +131,43 @@ class QuranBottomHelpBar extends StatelessWidget {
               title: AppLocalizations.of(context)!.quranSettingMushaf,
               icon: Icons.library_books,
               onTap: () async {
-                await navigator
-                    .pushNamed(RoutesConstants.quranPrintListScreen)
-                    .then(
-                  (value) {
+                await navigator.pushNamed(RoutesConstants.quranPrintListScreen,
+                    arguments: {ArgumentConstant.isDetailsPage: true}).then(
+                  (value) async {
                     if (value is Map<String, String>) {
-                      returnWithNewPrint(value["use"]!);
+                      final box = Hive.box(DatabaseBoxConstant.userInfo);
+
+                      final pageNumber = box.get(
+                          DatabaseFieldConstant.quranKaremLastPageNumber,
+                          defaultValue: 1);
+                      final printName = box.get(
+                          DatabaseFieldConstant.quranKaremPrintNameToUse,
+                          defaultValue:
+                              "/data/user/0/com.islammob.app/app_flutter/normal1.pdf");
+                      final file = File(printName);
+                      if (await file.exists()) {
+                        debugPrint("file exists at: ${file.path}");
+                        if (context.mounted) {
+                          context.read<QuranKareemBloc>().add(
+                              QuranKareemEvent.updateReadPDFFile(printName));
+                          context
+                              .read<QuranKareemBloc>()
+                              .pdfController
+                              .loadDocument(PdfDocument.openFile(file.path));
+                          context.read<QuranKareemBloc>().add(
+                              QuranKareemEvent.updatePageCount(pageNumber));
+                          context
+                              .read<QuranKareemBloc>()
+                              .pdfController
+                              .initialPage = pageNumber;
+                          context
+                              .read<QuranKareemBloc>()
+                              .pdfController
+                              .jumpToPage(1);
+                        }
+                      } else {
+                        debugPrint("file does NOT exist at: ${file.path}");
+                      }
                     }
                   },
                 );
@@ -158,7 +190,7 @@ class QuranBottomHelpBar extends StatelessWidget {
                                     value[ArgumentConstant.currentPageNumber]));
                             context
                                 .read<QuranKareemBloc>()
-                                .pageController()
+                                .pdfController
                                 .jumpToPage(
                                     value[ArgumentConstant.currentPageNumber]);
                           }

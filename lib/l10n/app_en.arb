@@ -174,7 +174,8 @@
     "cancel" : "cancel",
     "download" : "Download",
     "use" : "Use",
-    "downloadpopupmessage" : "Download can take some time, depending on your internet connection, please wait..."
+    "downloadpopupmessage" : "Download can take some time, depending on your internet connection, please wait...",
+    "downloadnopermission" : "No permission to read and write"
 
  
 

@@ -9,7 +9,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/utils/adds_helper.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/quran_referances.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:pdfx/pdfx.dart';
 
 part 'quran_kareem_event.dart';
@@ -20,9 +19,9 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   final box = Hive.box(DatabaseBoxConstant.userInfo);
   int _numRewardedLoadAttempts = 0;
 
-  final PdfController _pdfController = PdfController(
+  late PdfController pdfController = PdfController(
     viewportFraction: 1.1,
-    document: PdfDocument.openAsset('assets/pdf/quran/arabic-madina.pdf'),
+    document: PdfDocument.openAsset(""),
   );
 
   QuranKareemBloc() : super(const QuranKareemState()) {
@@ -36,8 +35,27 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     on<_UpdateRewardedAd>(_updateRewardedAd);
     on<_UpdateReadPDFFile>(_updateReadPDFFile);
 
+    _setupFirstInitialPDF();
+
     _getListOfBookMarkedPages();
     _createRewardedAd();
+  }
+
+  void _setupFirstInitialPDF() async {
+    final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
+        defaultValue: 1);
+    final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
+        defaultValue: "");
+    add(QuranKareemEvent.updatePageCount(pageNumber));
+    pdfController.initialPage = pageNumber;
+    final file = File(printName);
+    if (await file.exists()) {
+      debugPrint("file exists at: ${file.path}");
+      pdfController.loadDocument(PdfDocument.openFile(file.path));
+      add(QuranKareemEvent.updateReadPDFFile(file.path));
+    } else {
+      debugPrint("file does NOT exist at: ${file.path}");
+    }
   }
 
   void _createRewardedAd() {
@@ -90,38 +108,6 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
       List<int> intList = bookMarkedPages.cast<int>();
       add(QuranKareemEvent.updateBookMarkedPages(intList));
     }
-  }
-
-  PdfController pageController() {
-    final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
-        defaultValue: 1);
-
-    add(QuranKareemEvent.updatePageCount(pageNumber));
-    _pdfController.initialPage = pageNumber;
-
-    _pdfController.document = PdfDocument.openFile(
-        '/data/user/0/com.islammob.app/app_flutter/normal1.pdf');
-
-    return _pdfController;
-  }
-
-  Future<PdfController> newPageController() async {
-    final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
-        defaultValue: "arabic-madina.pdf");
-
-    final Directory dir = await getApplicationDocumentsDirectory();
-    final filePath = Directory('${dir.path}/$printName');
-
-    final file = File(filePath.path);
-    if (await file.exists()) {
-      print("newDirectory");
-      print(filePath);
-      _pdfController.document = PdfDocument.openFile(filePath.path);
-    }
-
-    print("return");
-
-    return _pdfController;
   }
 
   FutureOr<void> _showHideHelpBar(

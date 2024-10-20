@@ -28,11 +28,6 @@ class _QuranKareemScreenState extends State<QuranKareemScreen> {
                             .read<QuranKareemBloc>()
                             .add(QuranKareemEvent.updateScreenBrigtness(value));
                       },
-                      returnWithNewPrint: (value) {
-                        context
-                            .read<QuranKareemBloc>()
-                            .add(QuranKareemEvent.updateReadPDFFile(value));
-                      },
                     )
                   : const SizedBox(),
             ],

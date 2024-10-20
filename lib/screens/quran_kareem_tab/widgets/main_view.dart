@@ -18,56 +18,17 @@ class QuranKareemMainView extends StatelessWidget {
       },
       child: Stack(
         children: [
-          BlocBuilder<QuranKareemBloc, QuranKareemState>(
-            buildWhen: (previous, current) {
-              return previous.sourceFileOfPDF != current.sourceFileOfPDF;
-            },
-            builder: (context, state) {
-              print("ahaaaa");
-
-              if (state.sourceFileOfPDF == "") {
-                return PdfView(
-                  reverse: context
-                          .read<QuranKareemBloc>()
-                          .box
-                          .get(DatabaseFieldConstant.selectedLanguage) !=
-                      "ar",
-                  controller: context.read<QuranKareemBloc>().pageController(),
-                  onPageChanged: (index) {
-                    context
-                        .read<QuranKareemBloc>()
-                        .add(QuranKareemEvent.updatePageCount(index));
-                  },
-                );
-              } else {
-                print("ahaaaa else");
-
-                return FutureBuilder(
-                    future: context.read<QuranKareemBloc>().newPageController(),
-                    builder: (context, file) {
-                      if (file.data == null) {
-                        print("ahaaaa loading");
-
-                        return const Center(child: CircularProgressIndicator());
-                      }
-
-                      print("ahaaaa ssss");
-
-                      return PdfView(
-                        reverse: context
-                                .read<QuranKareemBloc>()
-                                .box
-                                .get(DatabaseFieldConstant.selectedLanguage) !=
-                            "ar",
-                        controller: file.data!,
-                        onPageChanged: (index) {
-                          context
-                              .read<QuranKareemBloc>()
-                              .add(QuranKareemEvent.updatePageCount(index));
-                        },
-                      );
-                    });
-              }
+          PdfView(
+            reverse: context
+                    .read<QuranKareemBloc>()
+                    .box
+                    .get(DatabaseFieldConstant.selectedLanguage) !=
+                "ar",
+            controller: context.read<QuranKareemBloc>().pdfController,
+            onPageChanged: (index) {
+              context
+                  .read<QuranKareemBloc>()
+                  .add(QuranKareemEvent.updatePageCount(index));
             },
           ),
           BlocBuilder<QuranKareemBloc, QuranKareemState>(

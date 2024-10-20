@@ -88,7 +88,7 @@ class _InitialScreenState extends State<InitialScreen> {
                                 Navigator.of(context, rootNavigator: true);
 
                             await navigator.pushNamedAndRemoveUntil(
-                              RoutesConstants.mainContainer,
+                              RoutesConstants.quranPrintListScreen,
                               (Route<dynamic> route) => false,
                             );
                           },

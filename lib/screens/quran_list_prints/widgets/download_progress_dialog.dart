@@ -52,22 +52,32 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            child: Text(
-              AppLocalizations.of(context)!.downloading,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                AppLocalizations.of(context)!.downloading,
+                textAlign: TextAlign.center,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             ),
           ),
           LinearProgressIndicator(
             value: progress,
             backgroundColor: Colors.grey,
             color: Colors.green,
-            minHeight: 10,
+            minHeight: 16,
           ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Text(
-              "$downloadingProgress %",
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                "$downloadingProgress %",
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             ),
           ),
           Container(
@@ -75,6 +85,7 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
             child: Text(
               AppLocalizations.of(context)!.downloadpopupmessage,
               maxLines: 3,
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,

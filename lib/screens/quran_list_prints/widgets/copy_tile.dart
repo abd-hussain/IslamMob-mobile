@@ -43,7 +43,7 @@ class MushafCopyTile extends StatelessWidget {
                 color: const Color(0xff292929),
                 width: 2,
               ),
-              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+              borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
             child: Column(
               children: [

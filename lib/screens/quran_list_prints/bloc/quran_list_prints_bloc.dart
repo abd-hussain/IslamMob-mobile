@@ -4,11 +4,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/models/rest_api/quran_prints.dart';
 import 'package:islam_app/services/general/firebase_services.dart';
 import 'package:islam_app/utils/constants/app_constant.dart';
-import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/constants/firebase_constants.dart';
 import 'package:islam_app/utils/download_file.dart';
 import 'package:islam_app/utils/logger.dart';
@@ -25,7 +23,6 @@ class QuranListPrintsBloc
 
     _getListOfPrints();
   }
-  final box = Hive.box(DatabaseBoxConstant.userInfo);
 
   Future<void> _getListOfPrints() async {
     final List<QueryDocumentSnapshot<Object?>> documents;
@@ -50,7 +47,7 @@ class QuranListPrintsBloc
       obj.addedPagesAttachmentLocation =
           doc["addedPagesAttachmentLocation"] ?? "";
       obj.fieldName = doc["fieldName"] ?? "";
-      // //TODO
+      //TODO
       // obj.juz2ToPageNumbers = doc["juz2ToPageNumbers"] ?? [];
       // obj.sorahToPageNumbers = doc["sorahToPageNumbers"] ?? [];
       listOfPrints.add(obj);

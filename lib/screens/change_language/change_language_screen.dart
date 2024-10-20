@@ -37,7 +37,6 @@ class ChangeLanguageScreen extends StatelessWidget {
                                 .read<ChangeLanguageBloc>()
                                 .setLanguageInStorage(context,
                                     state.selectedLanguage!.languageCode);
-
                             Navigator.pop(context);
                           },
                         );
