@@ -1,9 +1,9 @@
-git_url("https://github.com/abd-hussain/legalz_hub_app_certificate")
+git_url("https://github.com/abd-hussain/IslamMob-Certificates.git")
 
 storage_mode("git")
 
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
-clone_branch_directly(true)
+# clone_branch_directly(true)
 app_identifier(["com.islammob.app"])
 username("aboud.masoud.92@gmail.com") # Your Apple Developer Portal username
 
