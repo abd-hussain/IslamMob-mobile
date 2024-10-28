@@ -78,35 +78,35 @@ jobs:
           with:
             fetch-depth: 0
 
-        - name: 📦 Setup Ruby
-          uses: ruby/setup-ruby@v1
-          with:
-            ruby-version: "3.2"
+        # - name: 📦 Setup Ruby
+        #   uses: ruby/setup-ruby@v1
+        #   with:
+        #     ruby-version: "3.2"
         
-        - name: 📦 Bundle install for iOS Gemfile
-          timeout-minutes: 5
-          run: cd ./ios && bundle install
+        # - name: 📦 Bundle install for iOS Gemfile
+        #   timeout-minutes: 5
+        #   run: cd ./ios && bundle install
 
-        - name: 🐦 Setup Flutter
-          uses: subosito/flutter-action@v2
-          with:
-            flutter-version: '3.24.1'
-            channel: 'stable'
-            cache: true
+        # - name: 🐦 Setup Flutter
+        #   uses: subosito/flutter-action@v2
+        #   with:
+        #     flutter-version: '3.24.1'
+        #     channel: 'stable'
+        #     cache: true
 
-        - name: 🔎 Install Dependencies
-          run: flutter pub get
+        # - name: 🔎 Install Dependencies
+        #   run: flutter pub get
 
-        - name: Build and Deploy to TestFlight
-          env:
-            MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
-            MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
-            ASC_KEY_ID: ${{ secrets.APPSTORE_ASC_KEY_ID }}
-            ASC_ISSUER_ID: ${{ secrets.APPSTORE_ASC_ISSUER_ID }}
-            ASC_KEY_P8: ${{ secrets.APPSTORE_ASC_KEY_P8 }}
-          run: |
-            cd ./ios
-            bundle exec fastlane release_beta
+        # - name: Build and Deploy to TestFlight
+        #   env:
+        #     MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
+        #     MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
+        #     ASC_KEY_ID: ${{ secrets.APPSTORE_ASC_KEY_ID }}
+        #     ASC_ISSUER_ID: ${{ secrets.APPSTORE_ASC_ISSUER_ID }}
+        #     ASC_KEY_P8: ${{ secrets.APPSTORE_ASC_KEY_P8 }}
+        #   run: |
+        #     cd ./ios
+        #     bundle exec fastlane release_beta
 
         # - name: 🔑 Set up App Store Connect
         #   run: |
