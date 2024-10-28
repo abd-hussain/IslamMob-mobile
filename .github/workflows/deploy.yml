@@ -37,49 +37,25 @@ jobs:
           run: |
             echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
 
+        - name: 🔑 Set up Play Store Secret
+          run: |
+            echo "${{ secrets.PLAY_STORE_SECRET }}" | base64 --decode > android/play_store_secret.json
 
-        # - name: 🔎 Install Dependencies
-        #   run: flutter pub get
+        - name: 🎯 Setup Fastlane
+          uses: ruby/setup-ruby@v1
+          with:
+              ruby-version: 2.6
+              rubygems: latest
+
+        - name: 🔎 Cleaning before we start
+          run: |
+              flutter clean
+              rm -rf pubspec.lock
     
-        # - name: 🔑 Decode Keystore
-        #   run: |
-        #     echo "${{ secrets.KEY_STORE }}" | base64 --decode > android/app/keystore.jks
-
-        # - name: 🔑 Create key.properties
-        #   run: |
-        #     echo "keyPassword=${{ secrets.KEY_PASSWORD }}" > android/key.properties
-        #     echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> android/key.properties
-        #     echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
-        #     echo "storeFile=keystore.jks" >> android/key.properties
-        #     echo "${{ secrets.GOOGLE_PLAY_STORE_KEY }}" | base64 --decode > android/play_store_secret.json
-
-        # - name: 🏗 Build APK
-        #   run: flutter build apk --release
- 
-        # - name: 🏗 Build appBundle
-        #   run: flutter build appbundle
-            
-        # - name: 📦 Set up local.properties
-        #   run: |
-        #       echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
-
-        # - name: 🎯 Setup Fastlane
-        #   uses: ruby/setup-ruby@v1
-        #   with:
-        #       ruby-version: 3.2 
-    
-        # - name: 📦 Update RubyGems
-        #   run: gem update --system
-
-        # - name: 📦 Cleaning before we start
-        #   run: |
-        #       flutter clean
-        #       rm -rf pubspec.lock
-        #       flutter pub get
-    
-        # - name: 🛠️ Build and Deploy
-        #   run: |
-        #     make deploy-android
+        - name: 🛠️ Build and Deploy
+          run: |
+              flutter pub get
+              make deploy-android
 
   ios:
     runs-on: macos-latest
