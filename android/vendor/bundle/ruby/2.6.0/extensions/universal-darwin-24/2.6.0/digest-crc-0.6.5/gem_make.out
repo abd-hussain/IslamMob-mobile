@@ -1,5 +1,8 @@
-current directory: /Users/abdelrahman/My Docs/Islam app/islamApp-mobile/android/vendor/bundle/ruby/2.6.0/gems/digest-crc-0.6.5/ext/digest
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I/Library/Ruby/Site/2.6.0 -rrubygems /Users/abdelrahman/My\ Docs/Islam\ app/islamApp-mobile/android/vendor/bundle/ruby/2.6.0/gems/rake-13.1.0/exe/rake RUBYARCHDIR\=/Users/abdelrahman/My\ Docs/Islam\ app/islamApp-mobile/android/vendor/bundle/ruby/2.6.0/extensions/universal-darwin-24/2.6.0/digest-crc-0.6.5 RUBYLIBDIR\=/Users/abdelrahman/My\ Docs/Islam\ app/islamApp-mobile/android/vendor/bundle/ruby/2.6.0/extensions/universal-darwin-24/2.6.0/digest-crc-0.6.5
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/2.6.0/gems/digest-crc-0.6.5/ext/digest
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I/Library/Ruby/Site/2.6.0 -rrubygems /Users/abdelrahman/My\ Docs/Islam\ app/IslamMob-mobile/android/vendor/bundle/ruby/2.6.0/gems/rake-13.2.1/exe/rake RUBYARCHDIR\=/Users/abdelrahman/My\ Docs/Islam\ app/IslamMob-mobile/android/vendor/bundle/ruby/2.6.0/extensions/universal-darwin-24/2.6.0/digest-crc-0.6.5 RUBYLIBDIR\=/Users/abdelrahman/My\ Docs/Islam\ app/IslamMob-mobile/android/vendor/bundle/ruby/2.6.0/extensions/universal-darwin-24/2.6.0/digest-crc-0.6.5
+Ignoring digest-crc-0.6.5 because its extensions are not built. Try: gem pristine digest-crc --version 0.6.5
+Ignoring json-2.7.4 because its extensions are not built. Try: gem pristine json --version 2.7.4
+Ignoring nkf-0.2.0 because its extensions are not built. Try: gem pristine nkf --version 0.2.0
 /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -S extconf.rb
 checking for stdint.h... yes
 checking for stddef.h... yes
