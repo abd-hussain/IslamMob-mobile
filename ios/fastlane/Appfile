@@ -1,5 +1,5 @@
 app_identifier("com.islammob.app") # The bundle identifier of your app
-apple_id("aboud.masoud.92@gmail.com") # Your Apple Developer Portal username
+apple_id("abd.alhaj.hussain@gmail.com") # Your Apple Developer Portal username
 
 itc_team_id("108758801") # App Store Connect Team ID
 team_id("DX9H87DTX5") # Developer Portal Team ID
