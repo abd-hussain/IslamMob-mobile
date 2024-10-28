@@ -31,7 +31,7 @@ jobs:
             echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" > android/key.properties
             echo "storePassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
             echo "keyAlias=${{ secrets.ANDROID_KEY_Alias }}" >> android/key.properties
-            echo "${{ secrets.ANDROID_KEY_CONTENT }}" | base64 --decode > android/key.jks
+            echo "${{ secrets.ANDROID_KEY_CONTENT }}" | base64 --decode > android/androidkeystore.jks
 
         - name: 🔑 Set up local.properties
           run: |
