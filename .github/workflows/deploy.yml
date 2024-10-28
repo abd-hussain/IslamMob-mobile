@@ -25,9 +25,21 @@ jobs:
             flutter-version: '3.24.1'
             channel: 'stable'
             cache: true
+            
+        - name: 🔑 Set up key.properties
+          run: |
+            echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" > android/key.properties
+            echo "storePassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
+            echo "keyAlias=${{ secrets.ANDROID_KEY_Alias }}" >> android/key.properties
+            echo "${{ secrets.ANDROID_KEY_CONTENT }}" | base64 --decode > android/key.jks
 
-        - name: 🔎 Install Dependencies
-          run: flutter pub get
+        - name: 🔑 Set up local.properties
+          run: |
+            echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
+
+
+        # - name: 🔎 Install Dependencies
+        #   run: flutter pub get
     
         # - name: 🔑 Decode Keystore
         #   run: |
