@@ -1,4 +1,4 @@
-git_url("https://github.com/abd-hussain/IslamMob-Certificates.git")
+git_url("https://github.com/abd-hussain/IslamMob-Certificates")
 
 storage_mode("git")
 
