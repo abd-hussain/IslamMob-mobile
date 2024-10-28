@@ -1,6 +1,7 @@
 deploy-android:
 	@echo "╠ Sending Android Build to Closed Testing..."
 	cd android && bundle install
+	@echo "╠ bundle installed"
 	cd android/fastlane && bundle exec fastlane deploy
 
 deploy-ios:
