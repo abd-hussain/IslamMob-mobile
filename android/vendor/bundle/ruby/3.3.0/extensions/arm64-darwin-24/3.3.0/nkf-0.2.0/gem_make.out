@@ -1,0 +1,18 @@
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241028-17347-bgresm sitelibdir\=./.gem.20241028-17347-bgresm clean
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241028-17347-bgresm sitelibdir\=./.gem.20241028-17347-bgresm
+compiling nkf.c
+linking shared-object nkf.bundle
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241028-17347-bgresm sitelibdir\=./.gem.20241028-17347-bgresm install
+/usr/bin/install -c -m 0755 nkf.bundle ./.gem.20241028-17347-bgresm
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241028-17347-bgresm sitelibdir\=./.gem.20241028-17347-bgresm clean

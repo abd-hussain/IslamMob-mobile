@@ -1,0 +1,17 @@
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/2.6.0/gems/sysrandom-1.0.5/ext/sysrandom
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /Library/Ruby/Site/2.6.0 -r ./siteconf20241028-35968-1vv34p8.rb extconf.rb
+creating Makefile
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/2.6.0/gems/sysrandom-1.0.5/ext/sysrandom
+make "DESTDIR=" clean
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/2.6.0/gems/sysrandom-1.0.5/ext/sysrandom
+make "DESTDIR="
+compiling randombytes_sysrandom.c
+compiling sysrandom_ext.c
+linking shared-object sysrandom_ext.bundle
+ld: warning: search path '/AppleInternal/Library/BuildRoots/e0873e53-5185-11ef-9a51-9ab6d782fe32/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.Internal.sdk/usr/local/lib' not found
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/2.6.0/gems/sysrandom-1.0.5/ext/sysrandom
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 sysrandom_ext.bundle ./.gem.20241028-35968-v2h76h
