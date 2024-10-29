@@ -3,10 +3,13 @@ deploy-android:
 	cd android && bundle install
 	@echo "╠ bundle installed"
 	cd android/fastlane && bundle exec fastlane deploy
+	@echo "╠ FINISHED ╠"
 
 deploy-ios:
 	@echo "╠ Sending iOS Build to TestFlight..."
 	cd ios/fastlane && bundle install
+	@echo "╠ bundle installed"
 	cd ios/fastlane && bundle exec fastlane deploy
+	@echo "╠ FINISHED ╠"
 
 deploy: deploy-android deploy-ios
