@@ -1,5 +1,5 @@
 current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/ios/vendor/bundle/ruby/2.6.0/gems/nkf-0.2.0/ext/nkf
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /Library/Ruby/Site/2.6.0 -r ./siteconf20241028-42690-z81jq6.rb extconf.rb
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /Library/Ruby/Site/2.6.0 -r ./siteconf20241029-21093-o41k83.rb extconf.rb
 creating Makefile
 
 current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/ios/vendor/bundle/ruby/2.6.0/gems/nkf-0.2.0/ext/nkf
@@ -13,4 +13,4 @@ ld: warning: search path '/AppleInternal/Library/BuildRoots/e0873e53-5185-11ef-9
 
 current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/ios/vendor/bundle/ruby/2.6.0/gems/nkf-0.2.0/ext/nkf
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nkf.bundle ./.gem.20241028-42690-10wi688
+/usr/bin/install -c -m 0755 nkf.bundle ./.gem.20241029-21093-t7flfl

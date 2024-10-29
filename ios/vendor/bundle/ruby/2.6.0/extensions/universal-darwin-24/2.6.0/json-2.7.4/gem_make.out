@@ -1,5 +1,5 @@
 current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/ios/vendor/bundle/ruby/2.6.0/gems/json-2.7.4/ext/json/ext/parser
-/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /Library/Ruby/Site/2.6.0 -r ./siteconf20241028-42690-woxrx6.rb extconf.rb
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /Library/Ruby/Site/2.6.0 -r ./siteconf20241029-21093-rc5hzy.rb extconf.rb
 checking for rb_enc_raise() in ruby.h... yes
 checking for rb_enc_interned_str() in ruby.h... no
 checking for whether -std=c99 is accepted as CFLAGS... yes
@@ -16,4 +16,4 @@ ld: warning: search path '/AppleInternal/Library/BuildRoots/e0873e53-5185-11ef-9
 
 current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/ios/vendor/bundle/ruby/2.6.0/gems/json-2.7.4/ext/json/ext/parser
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 parser.bundle ./.gem.20241028-42690-wg3n7h/json/ext
+/usr/bin/install -c -m 0755 parser.bundle ./.gem.20241029-21093-1oadik6/json/ext

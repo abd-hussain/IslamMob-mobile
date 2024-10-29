@@ -14,6 +14,15 @@ platform :ios do
   lane :deploy do
     set_full_version()
 
+    setup_ci if is_ci
+
+    cocoapods(clean_install: true)
+
+    match(
+      type: "appstore",
+      readonly: is_ci,
+    )
+    
     build_app(
       workspace: "Runner.xcworkspace",
       scheme: "Runner",
