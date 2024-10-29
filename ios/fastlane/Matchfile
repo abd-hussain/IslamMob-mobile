@@ -5,7 +5,7 @@ git_branch("main") # Use the correct branch name if it's not "master"
 
 # type("development") # The default type, can be: appstore, adhoc, enterprise or development
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
-clone_branch_directly(true)
+# clone_branch_directly(true)
 app_identifier(["com.islammob.app"])
 username("abd.alhaj.hussain@gmail.com") # Your Apple Developer Portal username
 
