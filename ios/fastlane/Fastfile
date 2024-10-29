@@ -35,7 +35,7 @@ platform :ios do
       type: "appstore",
       readonly: false,
       keychain_name: "CI",
-      keychain_password: ENV["MATCH_PASSWORD"])
+      keychain_password: "password123")
       sh("security list-keychains -d user") 
       sh("security default-keychain -d user")
       sh("security find-identity -v -p codesigning CI")
