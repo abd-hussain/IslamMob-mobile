@@ -4,10 +4,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     this.buttonTitle = "Submit",
-    this.buttonTitleColor = Colors.black,
+    this.buttonTitleColor = Colors.white,
     required this.enableButton,
     this.width,
-    this.buttonColor = const Color(0xff4CB6EA),
+    this.buttonColor = const Color(0xff007F37),
     required this.onTap,
     super.key,
     this.padding = const EdgeInsets.all(16),
@@ -40,6 +40,7 @@ class CustomButton extends StatelessWidget {
                   : buttonTitle,
               style: TextStyle(
                 color: buttonTitleColor,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
