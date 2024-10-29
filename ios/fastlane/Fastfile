@@ -14,13 +14,32 @@ platform :ios do
   lane :deploy do
     set_full_version()
 
-    setup_ci if is_ci
+    create_keychain(
+      name: "CI",
+      password: "password123",
+      default_keychain: true,
+      unlock: true,
+      timeout: 36000,
+      lock_when_sleeps: false
+    )
 
-    cocoapods(clean_install: is_ci)
+    app_store_connect_api_key(
+      key_id: "DT8Q73M9SS",
+      issuer_id: "69a6de83-6943-47e3-e053-5b8c7c11a4d1",
+      key_content: "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgZER2fTIi4LKuzysl\nu8gu0KE6xKTH6qK8bGan7Teds6GgCgYIKoZIzj0DAQehRANCAAQPMGrlJ9HNXEeY\nB7ZnBvZHpUamGvVYHN3TunB0bDoWvIjCOX7skA0gP8bV0k7X6HYvvDl55cFvjN/P\nvVQwga4l\n-----END PRIVATE KEY-----",
+      duration: 500, # maximum 120
+      in_house: false # optional but may be required if using match/sigh
+    )
 
     match(
       type: "appstore",
-      readonly: is_ci,
+      readonly: false,
+      keychain_name: "CI",
+      keychain_password: ENV["MATCH_PASSWORD"])
+      sh("security list-keychains -d user") 
+      sh("security default-keychain -d user")
+      sh("security find-identity -v -p codesigning CI")
+      increment_build_number(xcodeproj: "Runner.xcodeproj",build_number: "1.0.0"
     )
 
     build_app(
