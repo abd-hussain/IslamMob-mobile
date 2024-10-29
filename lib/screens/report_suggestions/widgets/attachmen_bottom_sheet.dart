@@ -40,7 +40,7 @@ class AttachmentBottomSheetsUtil {
                         children: [
                           const Icon(
                             Icons.hide_image,
-                            color: Color(0xff4CB6EA),
+                            color: Color(0xff007F37),
                           ),
                           const SizedBox(width: 10),
                           CustomText(

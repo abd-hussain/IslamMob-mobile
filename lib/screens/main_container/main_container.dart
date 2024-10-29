@@ -40,7 +40,7 @@ class _MainContainerState extends State<MainContainer> {
         bottomNavigationBar: ConvexAppBar(
           initialActiveIndex: 0,
           backgroundColor: Colors.white,
-          activeColor: const Color(0xff4CB6EA),
+          activeColor: const Color(0xff007F37),
           color: const Color(0xff444444),
           cornerRadius: 8,
           height: 60,
