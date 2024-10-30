@@ -7,7 +7,7 @@ git_branch("main") # Use the correct branch name if it's not "master"
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
 # clone_branch_directly(true)
 app_identifier(["com.islammob.app"])
-username("abd.alhaj.hussain@gmail.com") # Your Apple Developer Portal username
+username("aboud.masoud.92@gmail.com") # Your Apple Developer Portal username
 
 # For all available options run `fastlane match --help`
 # Remove the # in the beginning of the line to enable the other options
