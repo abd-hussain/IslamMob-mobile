@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/report_suggestions/bloc/report_and_suggestion_bloc.dart';
 import 'package:islam_app/screens/report_suggestions/widgets/attachments.dart';
 import 'package:islam_app/screens/report_suggestions/widgets/footer.dart';
+import 'package:islam_app/shared_widgets/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/utils/exceptions.dart';
 
@@ -17,19 +17,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: const Color(0xff292929),
-            iconTheme: const IconThemeData(color: Colors.white),
-            title: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomText(
-                  title: AppLocalizations.of(context)!.reportandsuggestiontitle,
-                  fontSize: 14,
-                )
-              ],
-            ),
-          ),
+          appBar: CustomAppBar(title: AppLocalizations.of(context)!.reportandsuggestiontitle),
           body: BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
             buildWhen: (previous, current) {
               return previous.loadingStatus != current.loadingStatus;
@@ -58,12 +46,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(8),
                               child: TextField(
-                                controller: context
-                                    .read<ReportAndSuggestionBloc>()
-                                    .textController,
+                                controller: context.read<ReportAndSuggestionBloc>().textController,
                                 decoration: InputDecoration(
-                                  hintText: AppLocalizations.of(context)!
-                                      .feedbackmessage,
+                                  hintText: AppLocalizations.of(context)!.feedbackmessage,
                                   hintMaxLines: 2,
                                   hintStyle: const TextStyle(fontSize: 15),
                                   enabledBorder: InputBorder.none,
@@ -77,11 +62,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                         ),
                       ),
                       const ReportSuggestionAttachment(),
-                      BlocBuilder<ReportAndSuggestionBloc,
-                          ReportAndSuggestionState>(
+                      BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
                         buildWhen: (previous, current) {
-                          return previous.enableSubmitBtn !=
-                                  current.enableSubmitBtn ||
+                          return previous.enableSubmitBtn != current.enableSubmitBtn ||
                               previous.attach1 != current.attach1 ||
                               previous.attach2 != current.attach2 ||
                               previous.attach3 != current.attach3;
@@ -91,9 +74,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                             enableButton: state.enableSubmitBtn,
                             onTap: () {
                               try {
-                                context.read<ReportAndSuggestionBloc>().add(
-                                    const ReportAndSuggestionEvent
-                                        .updateLoadingStatus(status: true));
+                                context
+                                    .read<ReportAndSuggestionBloc>()
+                                    .add(const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
 
                                 final navigator = Navigator.of(context);
 
@@ -106,22 +89,18 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                                     )
                                     .then((value) async {
                                   if (context.mounted) {
-                                    context.read<ReportAndSuggestionBloc>().add(
-                                        const ReportAndSuggestionEvent
-                                            .updateLoadingStatus(
-                                            status: false));
+                                    context
+                                        .read<ReportAndSuggestionBloc>()
+                                        .add(const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
                                   }
 
                                   navigator.pop();
                                 });
                               } on ConnectionException {
-                                final scaffoldMessenger =
-                                    ScaffoldMessenger.of(context);
+                                final scaffoldMessenger = ScaffoldMessenger.of(context);
                                 scaffoldMessenger.showSnackBar(
                                   SnackBar(
-                                      content: Text(AppLocalizations.of(
-                                              context)!
-                                          .pleasecheckyourinternetconnection)),
+                                      content: Text(AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
                                 );
                               }
                             },
