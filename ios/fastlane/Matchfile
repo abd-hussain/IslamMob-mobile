@@ -1,4 +1,4 @@
-git_url("git@github.com:abd-hussain/IslamMob-Certificates")
+git_url("https://github.com/abd-hussain/IslamMob-Certificates")
 
 storage_mode("git")
 git_branch("main") # Use the correct branch name if it's not "master"
