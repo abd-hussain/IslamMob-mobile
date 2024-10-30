@@ -29,7 +29,7 @@ platform :android do
 
     upload_to_play_store(
       aab: "../build/app/outputs/bundle/release/app-release.aab",
-      track: "alpha", # production: Deploys to Production, beta: Deploys to Open testing, alpha: Deploys to Closed testing, internal: Deploys to Internal testing
+      track: "internal", # production: Deploys to Production, beta: Deploys to Open testing, alpha: Deploys to Closed testing, internal: Deploys to Internal testing
       skip_upload_metadata: false
     )
   end

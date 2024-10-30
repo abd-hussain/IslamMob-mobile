@@ -1,0 +1,20 @@
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/unf_ext-0.0.9.1/ext/unf_ext
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/unf_ext-0.0.9.1/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20241030-53339-ilm8sw sitelibdir\=./.gem.20241030-53339-ilm8sw clean
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/unf_ext-0.0.9.1/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20241030-53339-ilm8sw sitelibdir\=./.gem.20241030-53339-ilm8sw
+compiling unf.cc
+linking shared-object unf_ext.bundle
+ld: warning: ignoring duplicate libraries: '-lc++'
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/unf_ext-0.0.9.1/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20241030-53339-ilm8sw sitelibdir\=./.gem.20241030-53339-ilm8sw install
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20241030-53339-ilm8sw
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/unf_ext-0.0.9.1/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20241030-53339-ilm8sw sitelibdir\=./.gem.20241030-53339-ilm8sw clean

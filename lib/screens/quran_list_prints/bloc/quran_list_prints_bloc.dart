@@ -16,8 +16,7 @@ part 'quran_list_prints_event.dart';
 part 'quran_list_prints_state.dart';
 part 'quran_list_prints_bloc.freezed.dart';
 
-class QuranListPrintsBloc
-    extends Bloc<QuranListPrintsEvent, QuranListPrintsState> {
+class QuranListPrintsBloc extends Bloc<QuranListPrintsEvent, QuranListPrintsState> {
   QuranListPrintsBloc() : super(const QuranListPrintsState()) {
     on<_UpdatelistOfPrints>(_updatelistOfPrints);
 
@@ -26,9 +25,9 @@ class QuranListPrintsBloc
 
   Future<void> _getListOfPrints() async {
     final List<QueryDocumentSnapshot<Object?>> documents;
+    print("_getListOfPrints");
     try {
-      documents = await FirestoreService().getAllDocumentsFromFireStore(
-          collectionName: FirebaseConstants.quranPrints);
+      documents = await FirestoreService().getAllDocumentsFromFireStore(collectionName: FirebaseConstants.quranPrints);
     } catch (e) {
       logDebugMessage(message: 'Error fetching documents: $e ');
       return;
@@ -44,8 +43,7 @@ class QuranListPrintsBloc
       obj.language = doc["language"] ?? "";
       obj.previewImage = doc["previewImage"] ?? "";
       obj.attachmentLocation = doc["attachmentLocation"] ?? "";
-      obj.addedPagesAttachmentLocation =
-          doc["addedPagesAttachmentLocation"] ?? "";
+      obj.addedPagesAttachmentLocation = doc["addedPagesAttachmentLocation"] ?? "";
       obj.fieldName = doc["fieldName"] ?? "";
       obj.juz2ToPageNumbers = doc["juz2ToPageNumbers"] ?? {};
       obj.sorahToPageNumbers = doc["sorahToPageNumbers"] ?? {};
@@ -68,9 +66,7 @@ class QuranListPrintsBloc
     final plugin = DeviceInfoPlugin();
     final android = await plugin.androidInfo;
 
-    final storageStatus = android.version.sdkInt < 33
-        ? await Permission.storage.request()
-        : PermissionStatus.granted;
+    final storageStatus = android.version.sdkInt < 33 ? await Permission.storage.request() : PermissionStatus.granted;
 
     if (storageStatus.isGranted) {
       return true;
@@ -87,8 +83,7 @@ class QuranListPrintsBloc
     return await FileDownload().getFilePath(fileName);
   }
 
-  FutureOr<void> _updatelistOfPrints(
-      _UpdatelistOfPrints event, Emitter<QuranListPrintsState> emit) {
+  FutureOr<void> _updatelistOfPrints(_UpdatelistOfPrints event, Emitter<QuranListPrintsState> emit) {
     emit(state.copyWith(listOfPrints: event.list));
   }
 }

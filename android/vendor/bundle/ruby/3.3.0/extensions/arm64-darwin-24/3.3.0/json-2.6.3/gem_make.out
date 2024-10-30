@@ -1,0 +1,16 @@
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/json-2.6.3/ext/json
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20241030-53339-6n69bn sitelibdir\=./.gem.20241030-53339-6n69bn clean
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20241030-53339-6n69bn sitelibdir\=./.gem.20241030-53339-6n69bn
+make: Nothing to be done for `all'.
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20241030-53339-6n69bn sitelibdir\=./.gem.20241030-53339-6n69bn install
+
+current directory: /Users/abdelrahman/My Docs/Islam app/IslamMob-mobile/android/vendor/bundle/ruby/3.3.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20241030-53339-6n69bn sitelibdir\=./.gem.20241030-53339-6n69bn clean
