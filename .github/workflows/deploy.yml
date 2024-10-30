@@ -89,7 +89,6 @@ jobs:
           run: |
             flutter clean
             cd ios && rm -rf Podfile.lock
-            cd ios && rm -rf Pods
             cd ios && pod install
             cd ..
             flutter pub get
