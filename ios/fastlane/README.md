@@ -29,7 +29,7 @@ Set Info.plist Version and Build Number
 [bundle exec] fastlane ios deploy
 ```
 
-Push a new build to TestFlight
+Push a new beta build to TestFlight
 
 ----
 
