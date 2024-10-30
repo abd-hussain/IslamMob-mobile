@@ -11,7 +11,9 @@ class QuranPagesListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int selectedPageNumber = _handleReadingArguments(arguments: ModalRoute.of(context)!.settings.arguments) ?? 1;
+    int selectedPageNumber = _handleReadingArguments(
+            arguments: ModalRoute.of(context)!.settings.arguments) ??
+        1;
 
     return Scaffold(
       appBar: CustomAppBar(title: AppLocalizations.of(context)!.quranpages),
@@ -26,7 +28,8 @@ class QuranPagesListScreen extends StatelessWidget {
                   pageNumber: index + 1,
                   selectedPageNumber: selectedPageNumber,
                   onTap: () {
-                    Navigator.of(context).pop({ArgumentConstant.currentPageNumber: index + 1});
+                    Navigator.of(context)
+                        .pop({ArgumentConstant.currentPageNumber: index + 1});
                   },
                 );
               },
