@@ -8,15 +8,16 @@ import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/utils/logger.dart';
 
 class FirestoreService {
+  FirebaseFirestore? firestoreInstance = FirebaseFirestore.instance;
+  FirebaseStorage? storageInstance = FirebaseStorage.instance;
+
   Future<List<QueryDocumentSnapshot<Object?>>> getAllDocumentsFromFireStore(
       {required String collectionName}) async {
     if (await locator<NetworkInfoService>().checkConnectivityonLunching()) {
       try {
-        FirebaseFirestore? initInstance = FirebaseFirestore.instance;
         CollectionReference? configCollectionReference =
-            initInstance.collection(collectionName);
-
-        return (await configCollectionReference.get()).docs;
+            firestoreInstance?.collection(collectionName);
+        return (await configCollectionReference!.get()).docs;
       } on FirebaseException catch (error) {
         logDebugMessage(
             message:
@@ -28,10 +29,8 @@ class FirestoreService {
 
   Future<String> uploadFile(
       {required File file, required String fileName}) async {
-    var storage = FirebaseStorage.instance;
-
     try {
-      final ref = storage.ref("reports/").child(fileName);
+      final ref = storageInstance!.ref("reports/").child(fileName);
       await ref.putFile(file);
       final String downloadUrl = await ref.getDownloadURL();
       return downloadUrl;
@@ -42,8 +41,7 @@ class FirestoreService {
   }
 
   Future setFireStoreData<T>(FireStoreOptions<T>? options) async {
-    FirebaseFirestore? initInstance = FirebaseFirestore.instance;
-    await initInstance
+    await firestoreInstance!
         .collection(options!.collectionName!)
         .doc(options.docName)
         .set(options.fromModel!.toJson());

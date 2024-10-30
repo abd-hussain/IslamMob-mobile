@@ -27,7 +27,6 @@ class MyAppBloc {
 
     if (hasConnectivity) {
       await Firebase.initializeApp();
-
       await MobileAds.instance.initialize();
       await MobileAds.instance.updateRequestConfiguration(
         RequestConfiguration(
@@ -42,7 +41,7 @@ class MyAppBloc {
   }
 
   Future<bool> _initInternetConnection() async {
-    final networkInfoService = locator<NetworkInfoService>();
+    final networkInfoService = NetworkInfoService();
     networkInfoService.initNetworkConnectionCheck();
     return networkInfoService.checkConnectivityonLunching();
   }
