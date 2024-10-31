@@ -41,7 +41,7 @@ class MyAppBloc {
   }
 
   Future<bool> _initInternetConnection() async {
-    final networkInfoService = NetworkInfoService();
+    final networkInfoService = locator<NetworkInfoService>();
     networkInfoService.initNetworkConnectionCheck();
     return networkInfoService.checkConnectivityonLunching();
   }

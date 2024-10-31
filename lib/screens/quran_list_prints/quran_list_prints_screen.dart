@@ -9,9 +9,10 @@ import 'package:islam_app/screens/quran_list_prints/bloc/quran_list_prints_bloc.
 import 'package:islam_app/screens/quran_list_prints/widgets/copy_tile.dart';
 import 'package:islam_app/screens/quran_list_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/screens/quran_list_prints/widgets/shimmer_print_list.dart';
-import 'package:islam_app/shared_widgets/custom_appbar.dart';
+import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
+import 'package:islam_app/shared_widgets/no_internet_view.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:path_provider/path_provider.dart';
@@ -35,8 +36,19 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
         appBar: CustomAppBar(title: AppLocalizations.of(context)!.quranprints),
         body: BlocBuilder<QuranListPrintsBloc, QuranListPrintsState>(
           buildWhen: (previous, current) =>
-              previous.listOfPrints != current.listOfPrints,
+              previous.listOfPrints != current.listOfPrints ||
+              previous.internetConnectionStauts !=
+                  current.internetConnectionStauts,
           builder: (context, state) {
+            if (state.internetConnectionStauts == false) {
+              return NoInternetView(
+                retryCallback: () {
+                  context.read<QuranListPrintsBloc>().initial();
+                  //TODO: issue in inialization firebase
+                },
+              );
+            }
+
             return state.listOfPrints == null
                 ? const QuranListPrintsShimmer()
                 : ListView.builder(
@@ -89,7 +101,9 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
         builder: (_) => DownloadProgressDialog(
           fileUrl: printItem.attachmentLocation!,
           fileNameWithExtension: printItem.fieldName!,
-          filePathCallback: (_) => setState(() {}),
+          filePathCallback: (_) {
+            setState(() {});
+          },
         ),
       );
     } else if (context.mounted) {

@@ -8,6 +8,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/models/rest_api/quran_prints.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/services/general/firebase_services.dart';
+import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/utils/constants/app_constant.dart';
 import 'package:islam_app/utils/constants/firebase_constants.dart';
 import 'package:islam_app/utils/download_file.dart';
@@ -22,8 +23,25 @@ class QuranListPrintsBloc
     extends Bloc<QuranListPrintsEvent, QuranListPrintsState> {
   QuranListPrintsBloc() : super(const QuranListPrintsState()) {
     on<_UpdatelistOfPrints>(_updatelistOfPrints);
+    on<_UpdateInternetConnectionStatus>(_updateInternetConnectionStatus);
 
-    _getListOfPrints();
+    initial();
+  }
+
+  initial() {
+    _checkInternetConnectionStatus().then((value) {
+      _getListOfPrints();
+    });
+  }
+
+  Future<bool> _checkInternetConnectionStatus() async {
+    if (!await locator<NetworkInfoService>().checkConnectivityonLunching()) {
+      add(QuranListPrintsEvent.updateInternetConnectionStatus(false));
+      return false;
+    } else {
+      add(QuranListPrintsEvent.updateInternetConnectionStatus(true));
+      return true;
+    }
   }
 
   Future<void> _getListOfPrints() async {
@@ -99,5 +117,11 @@ class QuranListPrintsBloc
   FutureOr<void> _updatelistOfPrints(
       _UpdatelistOfPrints event, Emitter<QuranListPrintsState> emit) {
     emit(state.copyWith(listOfPrints: event.list));
+  }
+
+  FutureOr<void> _updateInternetConnectionStatus(
+      _UpdateInternetConnectionStatus event,
+      Emitter<QuranListPrintsState> emit) {
+    emit(state.copyWith(internetConnectionStauts: event.status));
   }
 }

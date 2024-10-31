@@ -8,8 +8,6 @@ import 'package:islam_app/utils/repository/http_repository.dart';
 
 GetIt locator = GetIt.instance;
 
-//TODO: try to open the app with no internet connection
-
 Future<void> setupLocator() async {
   locator.pushNewScope();
   locator.registerLazySingleton(FirestoreService.new);

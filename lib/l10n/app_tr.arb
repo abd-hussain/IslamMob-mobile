@@ -175,6 +175,10 @@
     "download" : "Download",
     "use" : "Use",
     "downloadpopupmessage" : "Download can take some time, depending on your internet connection, please wait...",
-    "downloadnopermission" : "No permission to read and write"
+    "downloadnopermission" : "No permission to read and write",
+    "internetconnection" : "No Internet Connection",
+    "titleofretry" : "retry",
+    "intenetshouldbeenableforthispage" : "In Order to Use This Feature You Need To Connect To The Internet"
+
 
 }

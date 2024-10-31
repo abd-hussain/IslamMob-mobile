@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/report_suggestions/bloc/report_and_suggestion_bloc.dart';
 import 'package:islam_app/screens/report_suggestions/widgets/attachments.dart';
 import 'package:islam_app/screens/report_suggestions/widgets/footer.dart';
-import 'package:islam_app/shared_widgets/custom_appbar.dart';
+import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/utils/exceptions.dart';

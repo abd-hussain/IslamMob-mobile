@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/screens/main_container/widgets/tab_navigator.dart';
+import 'package:islam_app/shared_widgets/appbar/main_appbar.dart';
 
 class MainContainer extends StatefulWidget {
   const MainContainer({super.key});
@@ -20,6 +21,7 @@ class _MainContainerState extends State<MainContainer> {
       child: Scaffold(
         backgroundColor: const Color(0xffF5F6F7),
         resizeToAvoidBottomInset: false,
+        appBar: const MainCustomAppBar(),
         body: SafeArea(
           child: BlocBuilder<MainContainerBloc, MainContainerState>(
             buildWhen: (previous, current) {
