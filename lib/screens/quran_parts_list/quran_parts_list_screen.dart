@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/quran_parts_list/bloc/quran_parts_list_bloc.dart';
 import 'package:islam_app/screens/quran_parts_list/widgets/quran_parts_tile_view.dart';
-import 'package:islam_app/shared_widgets/custom_appbar.dart';
+import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
 

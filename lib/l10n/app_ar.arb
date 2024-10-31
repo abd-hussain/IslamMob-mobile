@@ -175,7 +175,10 @@
     "download" : "تحميل",
     "use" : "استخدام",
     "downloadpopupmessage" : "قد يستغرق التنزيل بعض الوقت، اعتمادًا على اتصالك بالإنترنت، يرجى الانتظار ...",
-    "downloadnopermission" : "لا يوجد إذن للقراءة والكتابة"
+    "downloadnopermission" : "لا يوجد إذن للقراءة والكتابة",
+    "internetconnection" : "لا يوجد اتصال بالإنترنت",
+    "titleofretry" : "إعادة المحاولة",
+    "intenetshouldbeenableforthispage" : "لكي تتمكن من استخدام هذه الميزة، يجب عليك الاتصال بالإنترنت"
  
 
 }
