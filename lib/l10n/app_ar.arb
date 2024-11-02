@@ -178,7 +178,11 @@
     "downloadnopermission" : "لا يوجد إذن للقراءة والكتابة",
     "internetconnection" : "لا يوجد اتصال بالإنترنت",
     "titleofretry" : "إعادة المحاولة",
-    "intenetshouldbeenableforthispage" : "لكي تتمكن من استخدام هذه الميزة، يجب عليك الاتصال بالإنترنت"
- 
+    "intenetshouldbeenableforthispage" : "لكي تتمكن من استخدام هذه الميزة، يجب عليك الاتصال بالإنترنت",
+    "selectprint" : "اختيار الطبعة",
+    "selectprintdetails" : "لتتمكن من القراءه يجب عليك اختيار وتحميل طبعه معينه",
+    "home" : "الرئيسية",
+    "settings" : "الاعدادات"
+
 
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/main_view.dart';
+import 'package:islam_app/screens/quran_kareem_tab/widgets/no_pdf_view.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/help_tool_tips.dart';
 
 class QuranKareemScreen extends StatefulWidget {
@@ -18,6 +19,9 @@ class _QuranKareemScreenState extends State<QuranKareemScreen> {
       create: (context) => QuranKareemBloc(),
       child: BlocBuilder<QuranKareemBloc, QuranKareemState>(
         builder: (context, state) {
+          if (state.sourceFileOfPDF == "") {
+            return const NoPDFView();
+          }
           return Stack(
             children: [
               const QuranKareemMainView(),

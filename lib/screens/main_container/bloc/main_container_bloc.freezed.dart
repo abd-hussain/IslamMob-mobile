@@ -16,20 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MainContainerEvent {
-  SelectedTab get tab => throw _privateConstructorUsedError;
+  int get tabIndex => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SelectedTab tab) changeSelectedIndex,
+    required TResult Function(int tabIndex) changeSelectedIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SelectedTab tab)? changeSelectedIndex,
+    TResult? Function(int tabIndex)? changeSelectedIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SelectedTab tab)? changeSelectedIndex,
+    TResult Function(int tabIndex)? changeSelectedIndex,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ abstract class $MainContainerEventCopyWith<$Res> {
           MainContainerEvent value, $Res Function(MainContainerEvent) then) =
       _$MainContainerEventCopyWithImpl<$Res, MainContainerEvent>;
   @useResult
-  $Res call({SelectedTab tab});
+  $Res call({int tabIndex});
 }
 
 /// @nodoc
@@ -81,13 +81,13 @@ class _$MainContainerEventCopyWithImpl<$Res, $Val extends MainContainerEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tab = null,
+    Object? tabIndex = null,
   }) {
     return _then(_value.copyWith(
-      tab: null == tab
-          ? _value.tab
-          : tab // ignore: cast_nullable_to_non_nullable
-              as SelectedTab,
+      tabIndex: null == tabIndex
+          ? _value.tabIndex
+          : tabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -100,7 +100,7 @@ abstract class _$$ChangeSelectedIndexImplCopyWith<$Res>
       __$$ChangeSelectedIndexImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({SelectedTab tab});
+  $Res call({int tabIndex});
 }
 
 /// @nodoc
@@ -116,13 +116,13 @@ class __$$ChangeSelectedIndexImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tab = null,
+    Object? tabIndex = null,
   }) {
     return _then(_$ChangeSelectedIndexImpl(
-      null == tab
-          ? _value.tab
-          : tab // ignore: cast_nullable_to_non_nullable
-              as SelectedTab,
+      null == tabIndex
+          ? _value.tabIndex
+          : tabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -130,14 +130,14 @@ class __$$ChangeSelectedIndexImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
-  _$ChangeSelectedIndexImpl(this.tab);
+  _$ChangeSelectedIndexImpl(this.tabIndex);
 
   @override
-  final SelectedTab tab;
+  final int tabIndex;
 
   @override
   String toString() {
-    return 'MainContainerEvent.changeSelectedIndex(tab: $tab)';
+    return 'MainContainerEvent.changeSelectedIndex(tabIndex: $tabIndex)';
   }
 
   @override
@@ -145,11 +145,12 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangeSelectedIndexImpl &&
-            (identical(other.tab, tab) || other.tab == tab));
+            (identical(other.tabIndex, tabIndex) ||
+                other.tabIndex == tabIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tab);
+  int get hashCode => Object.hash(runtimeType, tabIndex);
 
   /// Create a copy of MainContainerEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -163,27 +164,27 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SelectedTab tab) changeSelectedIndex,
+    required TResult Function(int tabIndex) changeSelectedIndex,
   }) {
-    return changeSelectedIndex(tab);
+    return changeSelectedIndex(tabIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SelectedTab tab)? changeSelectedIndex,
+    TResult? Function(int tabIndex)? changeSelectedIndex,
   }) {
-    return changeSelectedIndex?.call(tab);
+    return changeSelectedIndex?.call(tabIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SelectedTab tab)? changeSelectedIndex,
+    TResult Function(int tabIndex)? changeSelectedIndex,
     required TResult orElse(),
   }) {
     if (changeSelectedIndex != null) {
-      return changeSelectedIndex(tab);
+      return changeSelectedIndex(tabIndex);
     }
     return orElse();
   }
@@ -218,11 +219,10 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
 }
 
 abstract class _ChangeSelectedIndex implements MainContainerEvent {
-  factory _ChangeSelectedIndex(final SelectedTab tab) =
-      _$ChangeSelectedIndexImpl;
+  factory _ChangeSelectedIndex(final int tabIndex) = _$ChangeSelectedIndexImpl;
 
   @override
-  SelectedTab get tab;
+  int get tabIndex;
 
   /// Create a copy of MainContainerEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -234,7 +234,7 @@ abstract class _ChangeSelectedIndex implements MainContainerEvent {
 
 /// @nodoc
 mixin _$MainContainerState {
-  SelectedTab get selectedIndex => throw _privateConstructorUsedError;
+  int get selectedIndex => throw _privateConstructorUsedError;
 
   /// Create a copy of MainContainerState
   /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +249,7 @@ abstract class $MainContainerStateCopyWith<$Res> {
           MainContainerState value, $Res Function(MainContainerState) then) =
       _$MainContainerStateCopyWithImpl<$Res, MainContainerState>;
   @useResult
-  $Res call({SelectedTab selectedIndex});
+  $Res call({int selectedIndex});
 }
 
 /// @nodoc
@@ -273,7 +273,7 @@ class _$MainContainerStateCopyWithImpl<$Res, $Val extends MainContainerState>
       selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
-              as SelectedTab,
+              as int,
     ) as $Val);
   }
 }
@@ -286,7 +286,7 @@ abstract class _$$MainContainerStateImplCopyWith<$Res>
       __$$MainContainerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({SelectedTab selectedIndex});
+  $Res call({int selectedIndex});
 }
 
 /// @nodoc
@@ -308,7 +308,7 @@ class __$$MainContainerStateImplCopyWithImpl<$Res>
       selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
-              as SelectedTab,
+              as int,
     ));
   }
 }
@@ -316,11 +316,11 @@ class __$$MainContainerStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MainContainerStateImpl implements _MainContainerState {
-  const _$MainContainerStateImpl({this.selectedIndex = SelectedTab.quran});
+  const _$MainContainerStateImpl({this.selectedIndex = 1});
 
   @override
   @JsonKey()
-  final SelectedTab selectedIndex;
+  final int selectedIndex;
 
   @override
   String toString() {
@@ -350,11 +350,11 @@ class _$MainContainerStateImpl implements _MainContainerState {
 }
 
 abstract class _MainContainerState implements MainContainerState {
-  const factory _MainContainerState({final SelectedTab selectedIndex}) =
+  const factory _MainContainerState({final int selectedIndex}) =
       _$MainContainerStateImpl;
 
   @override
-  SelectedTab get selectedIndex;
+  int get selectedIndex;
 
   /// Create a copy of MainContainerState
   /// with the given fields replaced by the non-null parameter values.

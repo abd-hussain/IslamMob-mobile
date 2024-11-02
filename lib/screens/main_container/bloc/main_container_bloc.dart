@@ -14,25 +14,7 @@ class MainContainerBloc extends Bloc<MainContainerEvent, MainContainerState> {
 
   FutureOr<void> _changeSelectedIndex(
       _ChangeSelectedIndex event, Emitter<MainContainerState> emit) {
-    emit(state.copyWith(selectedIndex: event.tab));
-  }
-
-  SelectedTab returnSelectedTypeDependOnIndex(int index) {
-    // switch (index) {
-    //   case 0:
-    //     return SelectedTab.quran;
-    //   default:
-    return SelectedTab.quran;
-    // }
-  }
-
-  int getSelectedIndexDependOnTab(SelectedTab tab) {
-    // switch (tab) {
-    //   case SelectedTab.quran:
-    //     return 0;
-    //   default:
-    return 0;
-    // }
+    emit(state.copyWith(selectedIndex: event.tabIndex));
   }
 
   // Future<void> _callRegisterTokenRequest(BuildContext context) async {
