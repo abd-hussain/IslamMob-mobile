@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/screens/change_language/bloc/change_language_bloc.dart';
-import 'package:islam_app/screens/change_language/widgets/c_list_of_languages_view.dart';
-import 'package:islam_app/screens/change_language/widgets/c_title_table_widget.dart';
+import 'package:islam_app/screens/select_change_language/bloc/change_language_bloc.dart';
+import 'package:islam_app/screens/select_change_language/widgets/list_of_languages_view.dart';
+import 'package:islam_app/screens/select_change_language/widgets/title_table_widget.dart';
+import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 
 class ChangeLanguageScreen extends StatelessWidget {
@@ -11,8 +12,11 @@ class ChangeLanguageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ChangeLanguageBloc(),
+      create: (_) => ChangeLanguageBloc(),
       child: Scaffold(
+        appBar: CustomAppBar(
+          title: "Change Language",
+        ),
         backgroundColor: const Color(0xffF5F6F7),
         body: SafeArea(
           child: Column(

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:islam_app/screens/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/services/general/firebase_services.dart';
 import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/services/report_service.dart';
@@ -16,4 +17,5 @@ Future<void> setupLocator() async {
   locator.registerFactory<Dio>(Dio.new);
   locator.registerFactory<HttpInterceptor>(HttpInterceptor.new);
   locator.registerSingleton<HttpRepository>(HttpRepository());
+  locator.registerFactory<MainContainerBloc>(MainContainerBloc.new);
 }

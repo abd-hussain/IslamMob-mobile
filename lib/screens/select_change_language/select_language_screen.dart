@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
-import 'package:islam_app/screens/initial/bloc/initial_screen_bloc.dart';
-import 'package:islam_app/screens/initial/widgets/i_list_of_languages_view.dart';
-import 'package:islam_app/screens/initial/widgets/i_title_table_widget.dart';
+import 'package:islam_app/screens/select_change_language/bloc/change_language_bloc.dart';
+import 'package:islam_app/screens/select_change_language/widgets/list_of_languages_view.dart';
+import 'package:islam_app/screens/select_change_language/widgets/title_table_widget.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class InitialScreen extends StatefulWidget {
-  const InitialScreen({super.key});
+class SelectLanguageScreen extends StatefulWidget {
+  const SelectLanguageScreen({super.key});
 
   @override
-  State<InitialScreen> createState() => _InitialScreenState();
+  State<SelectLanguageScreen> createState() => _SelectLanguageScreenState();
 }
 
-class _InitialScreenState extends State<InitialScreen> {
+class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => InitialScreenBloc(),
+      create: (context) => ChangeLanguageBloc(),
       child: Scaffold(
         backgroundColor: const Color(0xffF5F6F7),
         body: SafeArea(
@@ -68,7 +68,7 @@ class _InitialScreenState extends State<InitialScreen> {
               const SizedBox(height: 20),
               const TitleTableWidget(),
               const ListOfLanguagesView(),
-              BlocBuilder<InitialScreenBloc, InitialScreenState>(
+              BlocBuilder<ChangeLanguageBloc, ChangeLanguageState>(
                 buildWhen: (previous, current) {
                   return previous.selectedLanguage != current.selectedLanguage;
                 },
@@ -81,7 +81,7 @@ class _InitialScreenState extends State<InitialScreen> {
                               state.selectedLanguage!.selectButtonTitle,
                           onTap: () async {
                             context
-                                .read<InitialScreenBloc>()
+                                .read<ChangeLanguageBloc>()
                                 .setLanguageInStorage(context,
                                     state.selectedLanguage!.languageCode);
                             final navigator =

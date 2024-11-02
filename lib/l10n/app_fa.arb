@@ -178,7 +178,12 @@
     "downloadnopermission" : "No permission to read and write",
     "internetconnection" : "No Internet Connection",
     "titleofretry" : "retry",
-    "intenetshouldbeenableforthispage" : "In Order to Use This Feature You Need To Connect To The Internet"
+    "intenetshouldbeenableforthispage" : "In Order to Use This Feature You Need To Connect To The Internet",
+    "selectprint" : "Select Edition",
+    "selectprintdetails" : "To be able to read, you must choose and download a specific edition",
+    "home" : "Home",
+    "settings" : "Settings"
+
 
 
 

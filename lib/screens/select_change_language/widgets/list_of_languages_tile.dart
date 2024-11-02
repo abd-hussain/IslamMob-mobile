@@ -2,7 +2,7 @@ import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/models/app_model/language.dart';
-import 'package:islam_app/screens/initial/bloc/initial_screen_bloc.dart';
+import 'package:islam_app/screens/select_change_language/bloc/change_language_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class ListOfLanguageTile extends StatelessWidget {
@@ -17,8 +17,8 @@ class ListOfLanguageTile extends StatelessWidget {
       child: InkWell(
         onTap: () async {
           context
-              .read<InitialScreenBloc>()
-              .add(InitialScreenEvent.changeSelectedLanguage(type: language));
+              .read<ChangeLanguageBloc>()
+              .add(ChangeLanguageEvent.changeSelectedLanguage(type: language));
         },
         child: Container(
           height: 50,
@@ -45,7 +45,7 @@ class ListOfLanguageTile extends StatelessWidget {
                     textColor: const Color(0xff034061),
                   ),
                 ),
-                BlocBuilder<InitialScreenBloc, InitialScreenState>(
+                BlocBuilder<ChangeLanguageBloc, ChangeLanguageState>(
                   buildWhen: (previous, current) {
                     return previous.selectedLanguage !=
                         current.selectedLanguage;
