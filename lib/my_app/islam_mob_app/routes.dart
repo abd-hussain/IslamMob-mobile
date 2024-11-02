@@ -9,6 +9,7 @@ import 'package:islam_app/screens/quran_parts_list/quran_parts_list_screen.dart'
 import 'package:islam_app/screens/report_suggestions/report_suggestion_screen.dart';
 import 'package:islam_app/screens/quran_kareem_tab/quran_kareem_screen.dart';
 import 'package:islam_app/screens/settings_tab/settings_screen.dart';
+import 'package:islam_app/screens/web_view/web_view_screen.dart';
 
 class RoutesConstants {
   static const String initialRoute = 'initScreen';
@@ -21,6 +22,7 @@ class RoutesConstants {
   static const String quranPrintListScreen = 'quranPrintListScreen';
   static const String settingsScreen = 'settingsScreen';
   static const String homeScreen = 'homeScreen';
+  static const String webViewScreen = 'webViewScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -34,4 +36,5 @@ final Map<String, Widget> routes = {
   RoutesConstants.quranPrintListScreen: const QuranListPrintsScreen(),
   RoutesConstants.settingsScreen: const SettingsScreen(),
   RoutesConstants.homeScreen: const HomeScreen(),
+  RoutesConstants.webViewScreen: const WebViewScreen(),
 };

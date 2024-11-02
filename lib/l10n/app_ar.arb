@@ -182,7 +182,21 @@
     "selectprint" : "اختيار الطبعة",
     "selectprintdetails" : "لتتمكن من القراءه يجب عليك اختيار وتحميل طبعه معينه",
     "home" : "الرئيسية",
-    "settings" : "الاعدادات"
-
-
+    "settings" : "الاعدادات",
+    "welcomeback" : "اهلا بعودتك",
+    "generalsettings" : "اعدادات عامة",
+    "reachouttous" : "ابعث لنا",
+    "support" : "الدعم",
+    "version" : "الاصدار",
+    "rightsreserved" : "@ 2025 IslamMob. جميع الحقوق محفوظة.",
+    "rateapp" : "تقييم التطبيق",
+    "whatsappnotinstalled" : "واتساب غير مثبت على الجهاز",
+    "linkedin" : "لينكد ان",
+    "facebook" : "فيس بوك",
+    "rateapponstore" : "تقييم التطبيق على المتجر",
+    "rateapponstoremessage" : "إذا أعجبك هذا التطبيق، فيرجى قضاء بعض الوقت في مراجعته! إنه يساعدنا حقًا ولا ينبغي أن يستغرق الأمر أكثر من دقيقة واحدة.",
+    "later" : "لاحقاً",
+    "privacypolicy" : "سياسة الخصوصية",
+    "termsandconditions" : "الشروط و الاحكام",
+    "aboutus" : "من نحن"    
 }

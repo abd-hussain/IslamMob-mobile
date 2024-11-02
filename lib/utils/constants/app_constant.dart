@@ -3,8 +3,9 @@ import 'package:islam_app/models/app_model/language.dart';
 class AppConstant {
   static const String appName = "Islam Mob";
   static const String whatsappNumber = "+962795190663";
-  static const String applicationMainURL = "https://www.helpera.app/";
-
+  static const String applicationMainURL = "";
+  static const String webViewPageUrl = "webViewPageUrl";
+  static const String pageTitle = "pageTitle";
   static List<LanguageModel> languages = [
     LanguageModel(
         name: 'العربية',
@@ -37,4 +38,12 @@ class AppConstant {
         selectButtonTitle: "Выбирать",
         languageCode: "ru"),
   ];
+
+  static const String linkedinLink =
+      "http://www.linkedin.com/company/legalzhub/";
+  static const String facebookLink = "http://www.facebook.com/legalzhub/";
+  static const String termsLink =
+      "${AppConstant.applicationMainURL}static/web/terms.html";
+  static const String privacypolicyLink =
+      "${AppConstant.applicationMainURL}static/web/privacypolicy.html";
 }

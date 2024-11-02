@@ -182,7 +182,23 @@
     "selectprint" : "Select Edition",
     "selectprintdetails" : "To be able to read, you must choose and download a specific edition",
     "home" : "Home",
-    "settings" : "Settings"
+    "settings" : "Settings",
+    "welcomeback" : "Welcome Back",
+    "generalsettings" : "General Settings",
+    "reachouttous" : "Reach out to us",
+    "support" : "Support",
+    "version" : "Version",
+    "rightsreserved" : "@ 2025 IslamMob. All right reserved.",
+    "rateapp" : "Rate Application",
+    "whatsappnotinstalled" : "WhatsApp is not installed on the device",
+    "linkedin" : "LinkedIn",
+    "facebook" : "Facebook",
+    "rateapponstore" : "Rate Application on Store",
+    "rateapponstoremessage" : "If you like this app, please take a little bit of your time to review it ! It really helps us and it shouldn't take you more than one minute.",
+    "later" : "Later",
+    "privacypolicy" : "Privacy Policy",
+    "termsandconditions" : "Terms & Conditions",
+    "aboutus" : "About Us"
 
 
 

@@ -4,6 +4,7 @@ import 'package:islam_app/screens/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/services/general/firebase_services.dart';
 import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/services/report_service.dart';
+import 'package:islam_app/utils/day_time.dart';
 import 'package:islam_app/utils/repository/http_interceptor.dart';
 import 'package:islam_app/utils/repository/http_repository.dart';
 
@@ -18,4 +19,5 @@ Future<void> setupLocator() async {
   locator.registerFactory<HttpInterceptor>(HttpInterceptor.new);
   locator.registerSingleton<HttpRepository>(HttpRepository());
   locator.registerFactory<MainContainerBloc>(MainContainerBloc.new);
+  locator.registerSingleton<DayTime>(DayTime());
 }
