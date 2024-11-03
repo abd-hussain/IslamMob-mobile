@@ -21,4 +21,7 @@ class ReportAndSuggestionEvent with _$ReportAndSuggestionEvent {
   const factory ReportAndSuggestionEvent.updateAttachment3({
     required File? value,
   }) = _UpdateAttachment3;
+
+  factory ReportAndSuggestionEvent.updateInternetConnectionStatus(bool status) =
+      _UpdateInternetConnectionStatus;
 }

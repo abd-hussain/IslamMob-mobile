@@ -8,5 +8,6 @@ class ReportAndSuggestionState with _$ReportAndSuggestionState {
     File? attach1,
     File? attach2,
     File? attach3,
+    @Default(false) bool internetConnectionStauts,
   }) = _ReportAndSuggestionState;
 }

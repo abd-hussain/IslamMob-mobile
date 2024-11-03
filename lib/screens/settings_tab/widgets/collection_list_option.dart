@@ -26,7 +26,10 @@ class CollectionListOptionView extends StatelessWidget {
           shrinkWrap: true,
           separatorBuilder: (BuildContext context, int index) => const Padding(
                 padding: EdgeInsets.only(left: 30, right: 30),
-                child: Divider(),
+                child: Divider(
+                  thickness: 0.5,
+                  color: Colors.grey,
+                ),
               ),
           itemBuilder: (ctx, index) {
             return InkWell(
@@ -69,19 +72,6 @@ class CollectionListOptionView extends StatelessWidget {
                       ],
                     ),
                     const Expanded(child: SizedBox()),
-                    if (listOfOptions[index].selectedItem != "")
-                      CustomText(
-                        title: listOfOptions[index].selectedItem,
-                        fontSize: 14,
-                        textColor: const Color(0xffFFA200),
-                      )
-                    else
-                      const SizedBox(),
-                    if (listOfOptions[index].selectedItemImage != null)
-                      listOfOptions[index].selectedItemImage!
-                    else
-                      const SizedBox(),
-                    const SizedBox(width: 8),
                     const Icon(
                       Icons.arrow_forward_ios_outlined,
                       size: 12,

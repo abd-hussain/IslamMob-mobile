@@ -1,69 +1,68 @@
 import 'package:flutter/material.dart';
-// import 'package:legalz_hub_app/screens/web_view/web_view_bloc.dart';
-// import 'package:legalz_hub_app/shared_widget/custom_appbar.dart';
-// import 'package:legalz_hub_app/utils/constants/database_constant.dart';
-// import 'package:legalz_hub_app/utils/enums/loading_status.dart';
-// import 'package:legalz_hub_app/utils/enums/user_type.dart';
-// import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/screens/web_view/bloc/web_view_bloc.dart';
+import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
+import 'package:islam_app/shared_widgets/no_internet_view.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class WebViewScreen extends StatefulWidget {
   const WebViewScreen({super.key});
 
-//TODO
   @override
   State<WebViewScreen> createState() => _WebViewScreenState();
 }
 
 class _WebViewScreenState extends State<WebViewScreen> {
-  // final bloc = WebViewBloc();
+  late WebViewBloc _webViewBloc;
 
   @override
   void didChangeDependencies() {
-    // bloc.extractArguments(context);
+    // Initialize your bloc with the arguments here
+    _webViewBloc = WebViewBloc(
+      arguments:
+          ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>?,
+    );
     super.didChangeDependencies();
   }
 
   @override
-  void dispose() {
-    // bloc.onDispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        // appBar: customAppBar(
-        //   title: bloc.pageTitle,
-        // ),
-        // body: ValueListenableBuilder<LoadingStatus>(
-        //     valueListenable: bloc.loadingStatus,
-        //     builder: (context, loadingsnapshot, child) {
-        //       if (loadingsnapshot == LoadingStatus.finish) {
-        //         return WebViewAware(
-        //           child: WebViewX(
-        //             key: const ValueKey('webviewx'),
-        //             initialSourceType: SourceType.urlBypass,
-        //             width: MediaQuery.of(context).size.width,
-        //             height: MediaQuery.of(context).size.height,
-        //             onWebViewCreated: (controller) async {
-        //               bloc.webviewController = controller;
-        //               await bloc.webviewController!.loadContent(
-        //                 bloc.webViewUrl,
-        //                 sourceType: SourceType.urlBypass,
-        //               );
-        //             },
-        //           ),
-        //         );
-        //       } else {
-        //         return const SizedBox(
-        //           child: Center(
-        //             child: CircularProgressIndicator(
-        //               valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-        //             ),
-        //           ),
-        //         );
-        //       }
-        //     }),
-        );
+    return BlocProvider(
+      create: (context) => _webViewBloc,
+      child: BlocBuilder<WebViewBloc, WebViewState>(
+        builder: (context, state) {
+          return Scaffold(
+            appBar: CustomAppBar(
+              title: state.pageTitle,
+            ),
+            body: (state.internetConnectionStauts == false)
+                ? NoInternetView(
+                    retryCallback: () {
+                      context.read<WebViewBloc>().initial();
+                    },
+                  )
+                : WebViewAware(
+                    child: WebViewX(
+                      key: const ValueKey('webviewx'),
+                      initialSourceType: SourceType.urlBypass,
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      onWebViewCreated: (controller) async {
+                        context.read<WebViewBloc>().webviewController =
+                            controller;
+                        await context
+                            .read<WebViewBloc>()
+                            .webviewController!
+                            .loadContent(
+                              state.webViewUrl,
+                              sourceType: SourceType.urlBypass,
+                            );
+                      },
+                    ),
+                  ),
+          );
+        },
+      ),
+    );
   }
 }
