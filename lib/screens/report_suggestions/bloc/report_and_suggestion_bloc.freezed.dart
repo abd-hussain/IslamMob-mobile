@@ -23,6 +23,7 @@ mixin _$ReportAndSuggestionEvent {
     required TResult Function(File? value) updateAttachment1,
     required TResult Function(File? value) updateAttachment2,
     required TResult Function(File? value) updateAttachment3,
+    required TResult Function(bool status) updateInternetConnectionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$ReportAndSuggestionEvent {
     TResult? Function(File? value)? updateAttachment1,
     TResult? Function(File? value)? updateAttachment2,
     TResult? Function(File? value)? updateAttachment3,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$ReportAndSuggestionEvent {
     TResult Function(File? value)? updateAttachment1,
     TResult Function(File? value)? updateAttachment2,
     TResult Function(File? value)? updateAttachment3,
+    TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +55,8 @@ mixin _$ReportAndSuggestionEvent {
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +66,8 @@ mixin _$ReportAndSuggestionEvent {
     TResult? Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +77,8 @@ mixin _$ReportAndSuggestionEvent {
     TResult Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -173,6 +182,7 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
     required TResult Function(File? value) updateAttachment1,
     required TResult Function(File? value) updateAttachment2,
     required TResult Function(File? value) updateAttachment3,
+    required TResult Function(bool status) updateInternetConnectionStatus,
   }) {
     return updateEnableSubmitBtn(status);
   }
@@ -185,6 +195,7 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
     TResult? Function(File? value)? updateAttachment1,
     TResult? Function(File? value)? updateAttachment2,
     TResult? Function(File? value)? updateAttachment3,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
   }) {
     return updateEnableSubmitBtn?.call(status);
   }
@@ -197,6 +208,7 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
     TResult Function(File? value)? updateAttachment1,
     TResult Function(File? value)? updateAttachment2,
     TResult Function(File? value)? updateAttachment3,
+    TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateEnableSubmitBtn != null) {
@@ -214,6 +226,8 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
   }) {
     return updateEnableSubmitBtn(this);
   }
@@ -226,6 +240,8 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
     TResult? Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
   }) {
     return updateEnableSubmitBtn?.call(this);
   }
@@ -238,6 +254,8 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
     TResult Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateEnableSubmitBtn != null) {
@@ -335,6 +353,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     required TResult Function(File? value) updateAttachment1,
     required TResult Function(File? value) updateAttachment2,
     required TResult Function(File? value) updateAttachment3,
+    required TResult Function(bool status) updateInternetConnectionStatus,
   }) {
     return updateLoadingStatus(status);
   }
@@ -347,6 +366,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     TResult? Function(File? value)? updateAttachment1,
     TResult? Function(File? value)? updateAttachment2,
     TResult? Function(File? value)? updateAttachment3,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
   }) {
     return updateLoadingStatus?.call(status);
   }
@@ -359,6 +379,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     TResult Function(File? value)? updateAttachment1,
     TResult Function(File? value)? updateAttachment2,
     TResult Function(File? value)? updateAttachment3,
+    TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateLoadingStatus != null) {
@@ -376,6 +397,8 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
   }) {
     return updateLoadingStatus(this);
   }
@@ -388,6 +411,8 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     TResult? Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
   }) {
     return updateLoadingStatus?.call(this);
   }
@@ -400,6 +425,8 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     TResult Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateLoadingStatus != null) {
@@ -497,6 +524,7 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
     required TResult Function(File? value) updateAttachment1,
     required TResult Function(File? value) updateAttachment2,
     required TResult Function(File? value) updateAttachment3,
+    required TResult Function(bool status) updateInternetConnectionStatus,
   }) {
     return updateAttachment1(value);
   }
@@ -509,6 +537,7 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
     TResult? Function(File? value)? updateAttachment1,
     TResult? Function(File? value)? updateAttachment2,
     TResult? Function(File? value)? updateAttachment3,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
   }) {
     return updateAttachment1?.call(value);
   }
@@ -521,6 +550,7 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
     TResult Function(File? value)? updateAttachment1,
     TResult Function(File? value)? updateAttachment2,
     TResult Function(File? value)? updateAttachment3,
+    TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment1 != null) {
@@ -538,6 +568,8 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment1(this);
   }
@@ -550,6 +582,8 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
     TResult? Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment1?.call(this);
   }
@@ -562,6 +596,8 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
     TResult Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment1 != null) {
@@ -659,6 +695,7 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
     required TResult Function(File? value) updateAttachment1,
     required TResult Function(File? value) updateAttachment2,
     required TResult Function(File? value) updateAttachment3,
+    required TResult Function(bool status) updateInternetConnectionStatus,
   }) {
     return updateAttachment2(value);
   }
@@ -671,6 +708,7 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
     TResult? Function(File? value)? updateAttachment1,
     TResult? Function(File? value)? updateAttachment2,
     TResult? Function(File? value)? updateAttachment3,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
   }) {
     return updateAttachment2?.call(value);
   }
@@ -683,6 +721,7 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
     TResult Function(File? value)? updateAttachment1,
     TResult Function(File? value)? updateAttachment2,
     TResult Function(File? value)? updateAttachment3,
+    TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment2 != null) {
@@ -700,6 +739,8 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment2(this);
   }
@@ -712,6 +753,8 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
     TResult? Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment2?.call(this);
   }
@@ -724,6 +767,8 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
     TResult Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment2 != null) {
@@ -821,6 +866,7 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
     required TResult Function(File? value) updateAttachment1,
     required TResult Function(File? value) updateAttachment2,
     required TResult Function(File? value) updateAttachment3,
+    required TResult Function(bool status) updateInternetConnectionStatus,
   }) {
     return updateAttachment3(value);
   }
@@ -833,6 +879,7 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
     TResult? Function(File? value)? updateAttachment1,
     TResult? Function(File? value)? updateAttachment2,
     TResult? Function(File? value)? updateAttachment3,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
   }) {
     return updateAttachment3?.call(value);
   }
@@ -845,6 +892,7 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
     TResult Function(File? value)? updateAttachment1,
     TResult Function(File? value)? updateAttachment2,
     TResult Function(File? value)? updateAttachment3,
+    TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment3 != null) {
@@ -862,6 +910,8 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment3(this);
   }
@@ -874,6 +924,8 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
     TResult? Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment3?.call(this);
   }
@@ -886,6 +938,8 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
     TResult Function(_UpdateAttachment1 value)? updateAttachment1,
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment3 != null) {
@@ -909,12 +963,190 @@ abstract class _UpdateAttachment3 implements ReportAndSuggestionEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateInternetConnectionStatusImplCopyWith<$Res> {
+  factory _$$UpdateInternetConnectionStatusImplCopyWith(
+          _$UpdateInternetConnectionStatusImpl value,
+          $Res Function(_$UpdateInternetConnectionStatusImpl) then) =
+      __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool status});
+}
+
+/// @nodoc
+class __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>
+    extends _$ReportAndSuggestionEventCopyWithImpl<$Res,
+        _$UpdateInternetConnectionStatusImpl>
+    implements _$$UpdateInternetConnectionStatusImplCopyWith<$Res> {
+  __$$UpdateInternetConnectionStatusImplCopyWithImpl(
+      _$UpdateInternetConnectionStatusImpl _value,
+      $Res Function(_$UpdateInternetConnectionStatusImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ReportAndSuggestionEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$UpdateInternetConnectionStatusImpl(
+      null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateInternetConnectionStatusImpl
+    implements _UpdateInternetConnectionStatus {
+  _$UpdateInternetConnectionStatusImpl(this.status);
+
+  @override
+  final bool status;
+
+  @override
+  String toString() {
+    return 'ReportAndSuggestionEvent.updateInternetConnectionStatus(status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateInternetConnectionStatusImpl &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, status);
+
+  /// Create a copy of ReportAndSuggestionEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateInternetConnectionStatusImplCopyWith<
+          _$UpdateInternetConnectionStatusImpl>
+      get copyWith => __$$UpdateInternetConnectionStatusImplCopyWithImpl<
+          _$UpdateInternetConnectionStatusImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool status) updateEnableSubmitBtn,
+    required TResult Function(bool status) updateLoadingStatus,
+    required TResult Function(File? value) updateAttachment1,
+    required TResult Function(File? value) updateAttachment2,
+    required TResult Function(File? value) updateAttachment3,
+    required TResult Function(bool status) updateInternetConnectionStatus,
+  }) {
+    return updateInternetConnectionStatus(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool status)? updateEnableSubmitBtn,
+    TResult? Function(bool status)? updateLoadingStatus,
+    TResult? Function(File? value)? updateAttachment1,
+    TResult? Function(File? value)? updateAttachment2,
+    TResult? Function(File? value)? updateAttachment3,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
+  }) {
+    return updateInternetConnectionStatus?.call(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool status)? updateEnableSubmitBtn,
+    TResult Function(bool status)? updateLoadingStatus,
+    TResult Function(File? value)? updateAttachment1,
+    TResult Function(File? value)? updateAttachment2,
+    TResult Function(File? value)? updateAttachment3,
+    TResult Function(bool status)? updateInternetConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (updateInternetConnectionStatus != null) {
+      return updateInternetConnectionStatus(status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateEnableSubmitBtn value)
+        updateEnableSubmitBtn,
+    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
+    required TResult Function(_UpdateAttachment1 value) updateAttachment1,
+    required TResult Function(_UpdateAttachment2 value) updateAttachment2,
+    required TResult Function(_UpdateAttachment3 value) updateAttachment3,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
+  }) {
+    return updateInternetConnectionStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateEnableSubmitBtn value)? updateEnableSubmitBtn,
+    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult? Function(_UpdateAttachment1 value)? updateAttachment1,
+    TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
+    TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
+  }) {
+    return updateInternetConnectionStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateEnableSubmitBtn value)? updateEnableSubmitBtn,
+    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult Function(_UpdateAttachment1 value)? updateAttachment1,
+    TResult Function(_UpdateAttachment2 value)? updateAttachment2,
+    TResult Function(_UpdateAttachment3 value)? updateAttachment3,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (updateInternetConnectionStatus != null) {
+      return updateInternetConnectionStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateInternetConnectionStatus
+    implements ReportAndSuggestionEvent {
+  factory _UpdateInternetConnectionStatus(final bool status) =
+      _$UpdateInternetConnectionStatusImpl;
+
+  bool get status;
+
+  /// Create a copy of ReportAndSuggestionEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateInternetConnectionStatusImplCopyWith<
+          _$UpdateInternetConnectionStatusImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ReportAndSuggestionState {
   bool get enableSubmitBtn => throw _privateConstructorUsedError;
   bool get loadingStatus => throw _privateConstructorUsedError;
   File? get attach1 => throw _privateConstructorUsedError;
   File? get attach2 => throw _privateConstructorUsedError;
   File? get attach3 => throw _privateConstructorUsedError;
+  bool get internetConnectionStauts => throw _privateConstructorUsedError;
 
   /// Create a copy of ReportAndSuggestionState
   /// with the given fields replaced by the non-null parameter values.
@@ -934,7 +1166,8 @@ abstract class $ReportAndSuggestionStateCopyWith<$Res> {
       bool loadingStatus,
       File? attach1,
       File? attach2,
-      File? attach3});
+      File? attach3,
+      bool internetConnectionStauts});
 }
 
 /// @nodoc
@@ -958,6 +1191,7 @@ class _$ReportAndSuggestionStateCopyWithImpl<$Res,
     Object? attach1 = freezed,
     Object? attach2 = freezed,
     Object? attach3 = freezed,
+    Object? internetConnectionStauts = null,
   }) {
     return _then(_value.copyWith(
       enableSubmitBtn: null == enableSubmitBtn
@@ -980,6 +1214,10 @@ class _$ReportAndSuggestionStateCopyWithImpl<$Res,
           ? _value.attach3
           : attach3 // ignore: cast_nullable_to_non_nullable
               as File?,
+      internetConnectionStauts: null == internetConnectionStauts
+          ? _value.internetConnectionStauts
+          : internetConnectionStauts // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -998,7 +1236,8 @@ abstract class _$$ReportAndSuggestionStateImplCopyWith<$Res>
       bool loadingStatus,
       File? attach1,
       File? attach2,
-      File? attach3});
+      File? attach3,
+      bool internetConnectionStauts});
 }
 
 /// @nodoc
@@ -1021,6 +1260,7 @@ class __$$ReportAndSuggestionStateImplCopyWithImpl<$Res>
     Object? attach1 = freezed,
     Object? attach2 = freezed,
     Object? attach3 = freezed,
+    Object? internetConnectionStauts = null,
   }) {
     return _then(_$ReportAndSuggestionStateImpl(
       enableSubmitBtn: null == enableSubmitBtn
@@ -1043,6 +1283,10 @@ class __$$ReportAndSuggestionStateImplCopyWithImpl<$Res>
           ? _value.attach3
           : attach3 // ignore: cast_nullable_to_non_nullable
               as File?,
+      internetConnectionStauts: null == internetConnectionStauts
+          ? _value.internetConnectionStauts
+          : internetConnectionStauts // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1055,7 +1299,8 @@ class _$ReportAndSuggestionStateImpl implements _ReportAndSuggestionState {
       this.loadingStatus = false,
       this.attach1,
       this.attach2,
-      this.attach3});
+      this.attach3,
+      this.internetConnectionStauts = false});
 
   @override
   @JsonKey()
@@ -1069,10 +1314,13 @@ class _$ReportAndSuggestionStateImpl implements _ReportAndSuggestionState {
   final File? attach2;
   @override
   final File? attach3;
+  @override
+  @JsonKey()
+  final bool internetConnectionStauts;
 
   @override
   String toString() {
-    return 'ReportAndSuggestionState(enableSubmitBtn: $enableSubmitBtn, loadingStatus: $loadingStatus, attach1: $attach1, attach2: $attach2, attach3: $attach3)';
+    return 'ReportAndSuggestionState(enableSubmitBtn: $enableSubmitBtn, loadingStatus: $loadingStatus, attach1: $attach1, attach2: $attach2, attach3: $attach3, internetConnectionStauts: $internetConnectionStauts)';
   }
 
   @override
@@ -1086,12 +1334,15 @@ class _$ReportAndSuggestionStateImpl implements _ReportAndSuggestionState {
                 other.loadingStatus == loadingStatus) &&
             (identical(other.attach1, attach1) || other.attach1 == attach1) &&
             (identical(other.attach2, attach2) || other.attach2 == attach2) &&
-            (identical(other.attach3, attach3) || other.attach3 == attach3));
+            (identical(other.attach3, attach3) || other.attach3 == attach3) &&
+            (identical(
+                    other.internetConnectionStauts, internetConnectionStauts) ||
+                other.internetConnectionStauts == internetConnectionStauts));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, enableSubmitBtn, loadingStatus, attach1, attach2, attach3);
+  int get hashCode => Object.hash(runtimeType, enableSubmitBtn, loadingStatus,
+      attach1, attach2, attach3, internetConnectionStauts);
 
   /// Create a copy of ReportAndSuggestionState
   /// with the given fields replaced by the non-null parameter values.
@@ -1109,7 +1360,8 @@ abstract class _ReportAndSuggestionState implements ReportAndSuggestionState {
       final bool loadingStatus,
       final File? attach1,
       final File? attach2,
-      final File? attach3}) = _$ReportAndSuggestionStateImpl;
+      final File? attach3,
+      final bool internetConnectionStauts}) = _$ReportAndSuggestionStateImpl;
 
   @override
   bool get enableSubmitBtn;
@@ -1121,6 +1373,8 @@ abstract class _ReportAndSuggestionState implements ReportAndSuggestionState {
   File? get attach2;
   @override
   File? get attach3;
+  @override
+  bool get internetConnectionStauts;
 
   /// Create a copy of ReportAndSuggestionState
   /// with the given fields replaced by the non-null parameter values.

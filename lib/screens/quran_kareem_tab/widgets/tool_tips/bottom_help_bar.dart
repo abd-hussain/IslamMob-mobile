@@ -220,22 +220,6 @@ class QuranBottomHelpBar extends StatelessWidget {
                 );
               },
             ),
-            BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingReport,
-              icon: Icons.report_outlined,
-              onTap: () async {
-                await navigator
-                    .pushNamed(RoutesConstants.reportOrSuggestionScreen);
-              },
-            ),
-            Container(color: Colors.black.withOpacity(0.6)),
-            BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingLanguage,
-              icon: Icons.language,
-              onTap: () async {
-                await navigator.pushNamed(RoutesConstants.changeLanguageScreen);
-              },
-            ),
           ]),
     );
   }

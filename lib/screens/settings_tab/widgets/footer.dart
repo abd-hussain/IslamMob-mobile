@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:ionicons/ionicons.dart';
@@ -6,7 +5,6 @@ import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/utils/constants/app_constant.dart';
 import 'package:islam_app/utils/version.dart';
-import 'package:rate_my_app/rate_my_app.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FooterView extends StatelessWidget {
@@ -65,46 +63,27 @@ class FooterView extends StatelessWidget {
               ),
             ],
           ),
-          if (kIsWeb)
-            const SizedBox()
-          else
-            TextButton(
-              onPressed: () {
-                WidgetsBinding.instance.addPostFrameCallback((_) async {
-                  await RateMyApp().showRateDialog(
-                    context,
-                    title: AppLocalizations.of(context)!.rateapponstore,
-                    message:
-                        AppLocalizations.of(context)!.rateapponstoremessage,
-                    rateButton: AppLocalizations.of(context)!.rateapp,
-                    laterButton: AppLocalizations.of(context)!.later,
-                    noButton: AppLocalizations.of(context)!.close,
-                  );
-                });
-              },
-              child: _footerTextWidget(AppLocalizations.of(context)!.rateapp),
-            ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context, rootNavigator: true)
-                  .pushNamed(RoutesConstants.webViewScreen, arguments: {
-                AppConstant.webViewPageUrl: AppConstant.termsLink,
-                AppConstant.pageTitle:
-                    AppLocalizations.of(context)!.termsandconditions
-              });
-            },
-            child: _footerTextWidget(
-                AppLocalizations.of(context)!.termsandconditions),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(context, rootNavigator: true)
-                .pushNamed(RoutesConstants.webViewScreen, arguments: {
-              AppConstant.webViewPageUrl: AppConstant.privacypolicyLink,
-              AppConstant.pageTitle: AppLocalizations.of(context)!.privacypolicy
-            }),
-            child:
-                _footerTextWidget(AppLocalizations.of(context)!.privacypolicy),
-          ),
+
+          // TextButton(
+          //   onPressed: () {
+          //     Navigator.of(context, rootNavigator: true)
+          //         .pushNamed(RoutesConstants.webViewScreen, arguments: {
+          //       AppConstant.webViewPageUrl: AppConstant.termsLink,
+          //       AppConstant.pageTitle:
+          //           AppLocalizations.of(context)!.termsandconditions
+          //     });
+          //   },
+          //   child: _footerTextWidget(
+          //       AppLocalizations.of(context)!.termsandconditions),
+          // ),
+          // TextButton(
+          //   onPressed: () =>
+          //       Navigator.of(context, rootNavigator: true).pushNamed(RoutesConstants.webViewScreen, arguments: {
+          //     AppConstant.webViewPageUrl: AppConstant.privacypolicyLink,
+          //     AppConstant.pageTitle: AppLocalizations.of(context)!.privacypolicy
+          //   }),
+          //   child: _footerTextWidget(AppLocalizations.of(context)!.privacypolicy),
+          // ),
           const SizedBox(height: 16),
           FutureBuilder<String>(
               initialData: "",

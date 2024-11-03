@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:islam_app/models/rest_api/report_request.dart';
 import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/services/report_service.dart';
 
 part 'report_and_suggestion_event.dart';
@@ -21,8 +22,25 @@ class ReportAndSuggestionBloc
     on<_UpdateAttachment1>(_updateAttachment1);
     on<_UpdateAttachment2>(_updateAttachment2);
     on<_UpdateAttachment3>(_updateAttachment3);
+    on<_UpdateInternetConnectionStatus>(_updateInternetConnectionStatus);
 
-    textController.addListener(_validationFields);
+    initial();
+  }
+
+  initial() {
+    _checkInternetConnectionStatus().then((value) {
+      textController.addListener(_validationFields);
+    });
+  }
+
+  Future<bool> _checkInternetConnectionStatus() async {
+    if (!await locator<NetworkInfoService>().checkConnectivityonLunching()) {
+      add(ReportAndSuggestionEvent.updateInternetConnectionStatus(false));
+      return false;
+    } else {
+      add(ReportAndSuggestionEvent.updateInternetConnectionStatus(true));
+      return true;
+    }
   }
 
   TextEditingController textController = TextEditingController();
@@ -77,5 +95,11 @@ class ReportAndSuggestionBloc
   FutureOr<void> _updateAttachment3(
       _UpdateAttachment3 event, Emitter<ReportAndSuggestionState> emit) {
     emit(state.copyWith(attach3: event.value));
+  }
+
+  FutureOr<void> _updateInternetConnectionStatus(
+      _UpdateInternetConnectionStatus event,
+      Emitter<ReportAndSuggestionState> emit) {
+    emit(state.copyWith(internetConnectionStauts: event.status));
   }
 }
