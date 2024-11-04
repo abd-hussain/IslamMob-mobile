@@ -17,9 +17,9 @@ enum AccountButtonType {
 class ProfileOptions {
   ProfileOptions(
       {required this.icon,
-      this.iconColor = const Color(0xff034061),
+      this.iconColor = const Color(0xff007F37),
       required this.name,
-      this.nameColor = const Color(0xff034061),
+      this.nameColor = const Color(0xff292929),
       this.selectedItem = "",
       this.selectedItemImage,
       this.subtitle = "",

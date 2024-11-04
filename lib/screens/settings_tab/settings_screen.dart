@@ -73,11 +73,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       });
                     }),
                 ProfileOptions(
-                    icon: Ionicons.color_palette,
-                    name: AppLocalizations.of(context)!.aboutus,
-                    onTap: () {
-                      // _openAboutUs(context),
-                    })
+                  icon: Ionicons.color_palette,
+                  name: AppLocalizations.of(context)!.aboutus,
+                  onTap: () async =>
+                      await navigator.pushNamed(RoutesConstants.aboutUsScreen),
+                )
               ]),
               const SizedBox(height: 8),
               if (kIsWeb) const SizedBox() else const AddMobBanner(),

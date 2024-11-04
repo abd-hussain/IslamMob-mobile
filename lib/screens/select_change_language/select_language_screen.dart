@@ -40,7 +40,7 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                   child: CustomText(
                     title: AppLocalizations.of(context)!.appName,
                     fontSize: 20,
-                    textColor: const Color(0xff034061),
+                    textColor: const Color(0xff292929),
                     fontWeight: FontWeight.bold,
                     textAlign: TextAlign.center,
                     maxLins: 3,
@@ -53,7 +53,7 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                   child: CustomText(
                     title: AppLocalizations.of(context)!.appshortdesc,
                     fontSize: 12,
-                    textColor: const Color(0xff034061),
+                    textColor: const Color(0xff292929),
                     fontWeight: FontWeight.bold,
                     textAlign: TextAlign.center,
                     maxLins: 3,
@@ -63,7 +63,7 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 30, right: 30),
-                child: Container(height: 1, color: const Color(0xff034061)),
+                child: Container(height: 1, color: const Color(0xff292929)),
               ),
               const SizedBox(height: 20),
               const TitleTableWidget(),

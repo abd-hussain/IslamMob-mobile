@@ -58,7 +58,7 @@ class CollectionListOptionView extends StatelessWidget {
                             textColor: listOfOptions[index].avaliable
                                 ? listOfOptions[index].nameColor
                                 : Colors.grey,
-                            fontWeight: FontWeight.w500),
+                            fontWeight: FontWeight.bold),
                         if (listOfOptions[index].subtitle != "")
                           CustomText(
                               title: listOfOptions[index].subtitle,
