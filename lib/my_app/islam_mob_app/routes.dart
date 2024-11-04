@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/screens/about_us/about_us_screen.dart';
+import 'package:islam_app/screens/about_us/privacy_policy_screen.dart';
+import 'package:islam_app/screens/about_us/terms_condition_screen.dart';
 import 'package:islam_app/screens/select_change_language/change_language_screen.dart';
 import 'package:islam_app/screens/home_tab/home_screen.dart';
 import 'package:islam_app/screens/select_change_language/select_language_screen.dart';
@@ -23,6 +26,9 @@ class RoutesConstants {
   static const String settingsScreen = 'settingsScreen';
   static const String homeScreen = 'homeScreen';
   static const String webViewScreen = 'webViewScreen';
+  static const String aboutUsScreen = 'aboutUsScreen';
+  static const String termsconditionScreen = 'termsconditionScreen';
+  static const String privacypolicyScreen = 'privacypolicyScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -37,4 +43,7 @@ final Map<String, Widget> routes = {
   RoutesConstants.settingsScreen: const SettingsScreen(),
   RoutesConstants.homeScreen: const HomeScreen(),
   RoutesConstants.webViewScreen: const WebViewScreen(),
+  RoutesConstants.aboutUsScreen: const AboutUsScreen(),
+  RoutesConstants.termsconditionScreen: const TermsConditionScreen(),
+  RoutesConstants.privacypolicyScreen: const PrivacyPolicyScreen(),
 };
