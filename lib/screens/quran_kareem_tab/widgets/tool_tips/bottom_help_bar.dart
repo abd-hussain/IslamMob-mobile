@@ -22,7 +22,7 @@ class QuranBottomHelpBar extends StatelessWidget {
 
     return Container(
       color: Colors.black.withOpacity(0.6),
-      height: 140,
+      height: 97,
       child: GridView(
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -90,43 +90,45 @@ class QuranBottomHelpBar extends StatelessWidget {
                 );
               },
             ),
-            BlocBuilder<QuranKareemBloc, QuranKareemState>(
-              buildWhen: (previous, current) {
-                return previous.pageCount != current.pageCount ||
-                    previous.bookmarkedPages != current.bookmarkedPages;
-              },
-              builder: (context, state) {
-                return BottomTile(
-                  title: AppLocalizations.of(context)!.quranSettingPages,
-                  icon: Icons.copy_sharp,
-                  colorIcon: Colors.white70,
-                  onTap: () async {
-                    await navigator.pushNamed(
-                        RoutesConstants.quranPagesListScreen,
-                        arguments: {
-                          ArgumentConstant.currentPageNumber: state.pageCount
-                        }).then(
-                      (value) {
-                        if (value != null) {
-                          if (value is Map<String, dynamic>) {
-                            if (context.mounted) {
-                              context.read<QuranKareemBloc>().add(
-                                  QuranKareemEvent.updatePageCount(value[
-                                      ArgumentConstant.currentPageNumber]));
-                              context
-                                  .read<QuranKareemBloc>()
-                                  .pdfController
-                                  .jumpToPage(value[
-                                      ArgumentConstant.currentPageNumber]);
-                            }
-                          }
-                        }
-                      },
-                    );
-                  },
-                );
+            BottomTile(
+              title: "الفهرس",
+              icon: Icons.copy_sharp,
+              onTap: () async {
+                //TODO
               },
             ),
+            // BlocBuilder<QuranKareemBloc, QuranKareemState>(
+            //   buildWhen: (previous, current) {
+            //     return previous.pageCount != current.pageCount || previous.bookmarkedPages != current.bookmarkedPages;
+            //   },
+            //   builder: (context, state) {
+            //     return BottomTile(
+            //       title: AppLocalizations.of(context)!.quranSettingPages,
+            //       icon: Icons.copy_sharp,
+            //       colorIcon: Colors.white70,
+            //       onTap: () async {
+            //         await navigator.pushNamed(RoutesConstants.quranPagesListScreen,
+            //             arguments: {ArgumentConstant.currentPageNumber: state.pageCount}).then(
+            //           (value) {
+            //             if (value != null) {
+            //               if (value is Map<String, dynamic>) {
+            //                 if (context.mounted) {
+            //                   context
+            //                       .read<QuranKareemBloc>()
+            //                       .add(QuranKareemEvent.updatePageCount(value[ArgumentConstant.currentPageNumber]));
+            //                   context
+            //                       .read<QuranKareemBloc>()
+            //                       .pdfController
+            //                       .jumpToPage(value[ArgumentConstant.currentPageNumber]);
+            //                 }
+            //               }
+            //             }
+            //           },
+            //         );
+            //       },
+            //     );
+            //   },
+            // ),
             BottomTile(
               title: AppLocalizations.of(context)!.quranSettingMushaf,
               icon: Icons.library_books,
@@ -173,34 +175,32 @@ class QuranBottomHelpBar extends StatelessWidget {
                 );
               },
             ),
-            BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingParts,
-              icon: Icons.pie_chart_rounded,
-              onTap: () async {
-                await navigator
-                    .pushNamed(RoutesConstants.quranPartsListScreen)
-                    .then(
-                  (value) {
-                    if (value != null) {
-                      if (value is Map<String, dynamic>) {
-                        if (value[ArgumentConstant.currentPageNumber] != null) {
-                          if (context.mounted) {
-                            context.read<QuranKareemBloc>().add(
-                                QuranKareemEvent.updatePageCount(
-                                    value[ArgumentConstant.currentPageNumber]));
-                            context
-                                .read<QuranKareemBloc>()
-                                .pdfController
-                                .jumpToPage(
-                                    value[ArgumentConstant.currentPageNumber]);
-                          }
-                        }
-                      }
-                    }
-                  },
-                );
-              },
-            ),
+            ColoredBox(color: Colors.black.withOpacity(0.5)),
+            // BottomTile(
+            //   title: AppLocalizations.of(context)!.quranSettingParts,
+            //   icon: Icons.pie_chart_rounded,
+            //   onTap: () async {
+            //     await navigator.pushNamed(RoutesConstants.quranPartsListScreen).then(
+            //       (value) {
+            //         if (value != null) {
+            //           if (value is Map<String, dynamic>) {
+            //             if (value[ArgumentConstant.currentPageNumber] != null) {
+            //               if (context.mounted) {
+            //                 context
+            //                     .read<QuranKareemBloc>()
+            //                     .add(QuranKareemEvent.updatePageCount(value[ArgumentConstant.currentPageNumber]));
+            //                 context
+            //                     .read<QuranKareemBloc>()
+            //                     .pdfController
+            //                     .jumpToPage(value[ArgumentConstant.currentPageNumber]);
+            //               }
+            //             }
+            //           }
+            //         }
+            //       },
+            //     );
+            //   },
+            // ),
             BlocBuilder<QuranKareemBloc, QuranKareemState>(
               buildWhen: (previous, current) {
                 return previous.rewardedAd != current.rewardedAd;
