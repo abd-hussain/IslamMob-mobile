@@ -22,6 +22,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
       arguments:
           ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>?,
     );
+
     super.didChangeDependencies();
   }
 

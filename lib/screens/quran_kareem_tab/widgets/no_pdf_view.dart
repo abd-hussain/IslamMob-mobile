@@ -9,6 +9,7 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
+import 'package:lottie/lottie.dart';
 import 'package:pdfx/pdfx.dart';
 
 class NoPDFView extends StatelessWidget {
@@ -22,6 +23,10 @@ class NoPDFView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Lottie.asset(
+              'assets/lottie/animation_lm3q2kl2.zip',
+              width: 200,
+            ),
             CustomText(
               title: AppLocalizations.of(context)!.selectprintdetails,
               fontSize: 16,
@@ -47,30 +52,19 @@ class NoPDFView extends StatelessWidget {
                       final pageNumber = box.get(
                           DatabaseFieldConstant.quranKaremLastPageNumber,
                           defaultValue: 1);
-                      final printName = box.get(
-                          DatabaseFieldConstant.quranKaremPrintNameToUse,
-                          defaultValue:
-                              "/data/user/0/com.islammob.app/app_flutter/normal1.pdf");
+                      final printName = box
+                          .get(DatabaseFieldConstant.quranKaremPrintNameToUse);
                       final file = File(printName);
                       if (await file.exists()) {
                         debugPrint("file exists at: ${file.path}");
                         if (context.mounted) {
                           context.read<QuranKareemBloc>().add(
                               QuranKareemEvent.updateReadPDFFile(printName));
-                          context
-                              .read<QuranKareemBloc>()
-                              .pdfController
-                              .loadDocument(PdfDocument.openFile(file.path));
-                          context.read<QuranKareemBloc>().add(
-                              QuranKareemEvent.updatePageCount(pageNumber));
-                          context
-                              .read<QuranKareemBloc>()
-                              .pdfController
-                              .initialPage = pageNumber;
-                          context
-                              .read<QuranKareemBloc>()
-                              .pdfController
-                              .jumpToPage(1);
+                          //TODO
+                          // context.read<QuranKareemBloc>().pdfController.loadDocument(PdfDocument.openFile(file.path));
+                          // context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(pageNumber));
+                          // context.read<QuranKareemBloc>().pdfController.initialPage = pageNumber;
+                          // context.read<QuranKareemBloc>().pdfController.jumpToPage(1);
                         }
                       } else {
                         debugPrint("file does NOT exist at: ${file.path}");

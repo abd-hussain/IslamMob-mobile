@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/my_app/locator.dart';
@@ -33,6 +34,14 @@ class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
       add(WebViewEvent.updateWebViewContent(
           webViewUrl: arguments?[AppConstant.webViewPageUrl] ?? "",
           pageTitle: arguments?[AppConstant.pageTitle] ?? ""));
+
+      FirebaseAnalytics.instance.logEvent(
+        name: "WebViewScreen",
+        parameters: {
+          "webViewUrl": arguments?[AppConstant.webViewPageUrl] ?? "",
+          "pageTitle": arguments?[AppConstant.pageTitle] ?? "",
+        },
+      );
     }
   }
 

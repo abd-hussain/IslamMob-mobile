@@ -4,7 +4,7 @@ import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'dart:math' as math; // import this
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/utils/quran_referances.dart';
+import 'package:islam_app/utils/extensions/localization.dart';
 
 class QuranHeaderHelpBar extends StatelessWidget {
   const QuranHeaderHelpBar({super.key});
@@ -25,12 +25,11 @@ class QuranHeaderHelpBar extends StatelessWidget {
                     children: [
                       BlocBuilder<QuranKareemBloc, QuranKareemState>(
                         buildWhen: (previous, current) =>
-                            previous.sorahReferanceNumber !=
-                            current.sorahReferanceNumber,
+                            previous.sorahName != current.sorahName,
                         builder: (context, state) {
                           return CustomText(
                             title:
-                                "${AppLocalizations.of(context)!.quranSorah} ${QuranReferances.getSorahName(context: context, pageNumber: state.sorahReferanceNumber)}",
+                                "${AppLocalizations.of(context)!.quranSorah} ${AppLocalizations.of(context)!.getLocalizedString(state.sorahName)}",
                             fontSize: 14,
                             textColor: Colors.white70,
                             fontWeight: FontWeight.bold,
@@ -40,13 +39,11 @@ class QuranHeaderHelpBar extends StatelessWidget {
                       const Expanded(child: SizedBox()),
                       BlocBuilder<QuranKareemBloc, QuranKareemState>(
                         buildWhen: (previous, current) =>
-                            previous.jozo2ReferanceNumber !=
-                            current.jozo2ReferanceNumber,
+                            previous.jozo2Name != current.jozo2Name,
                         builder: (context, state) {
                           return CustomText(
-                            title: QuranReferances.juzNameDependOnNumber(
-                                context: context,
-                                index: state.jozo2ReferanceNumber),
+                            title: AppLocalizations.of(context)!
+                                .getLocalizedString(state.jozo2Name),
                             fontSize: 14,
                             textColor: Colors.white70,
                             fontWeight: FontWeight.bold,

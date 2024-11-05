@@ -11,10 +11,7 @@ class QuranKareemMainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        final bool status = context.read<QuranKareemBloc>().state.showHelpBar;
-        context
-            .read<QuranKareemBloc>()
-            .add(QuranKareemEvent.showHideHelpBar(!status));
+        context.read<QuranKareemBloc>().changeHelpBarShowingStatus();
       },
       child: Stack(
         children: [
@@ -24,7 +21,7 @@ class QuranKareemMainView extends StatelessWidget {
                     .box
                     .get(DatabaseFieldConstant.selectedLanguage) !=
                 "ar",
-            controller: context.read<QuranKareemBloc>().pdfController,
+            controller: context.read<QuranKareemBloc>().pdfController!,
             onPageChanged: (index) {
               context
                   .read<QuranKareemBloc>()

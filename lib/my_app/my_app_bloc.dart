@@ -1,5 +1,7 @@
 import 'package:async/async.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -27,6 +29,11 @@ class MyAppBloc {
 
     if (hasConnectivity) {
       await Firebase.initializeApp();
+
+      if (!kDebugMode) {
+        FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+      }
+
       await MobileAds.instance.initialize();
       await MobileAds.instance.updateRequestConfiguration(
         RequestConfiguration(

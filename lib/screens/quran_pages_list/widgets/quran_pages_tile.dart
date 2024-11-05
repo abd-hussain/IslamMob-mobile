@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/quran_pages_list/bloc/quran_pages_list_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:islam_app/utils/quran_referances.dart';
 
 class QuranPagesTileView extends StatefulWidget {
   const QuranPagesTileView(
@@ -22,9 +21,10 @@ class QuranPagesTileView extends StatefulWidget {
 class _QuranPagesTileViewState extends State<QuranPagesTileView> {
   @override
   Widget build(BuildContext context) {
-    int nearestSorahName = QuranReferances.getSurahName(widget.pageNumber);
-    String sorahName = QuranReferances.getSorahName(
-        context: context, pageNumber: nearestSorahName);
+    //TODO
+    // int nearestSorahName = QuranReferances.getSurahName(widget.pageNumber);
+    // String sorahName = QuranReferances.getSorahName(
+    //     context: context, pageNumber: nearestSorahName);
 
     return Padding(
       padding: const EdgeInsets.only(top: 2, bottom: 2),
@@ -59,13 +59,13 @@ class _QuranPagesTileViewState extends State<QuranPagesTileView> {
                 const SizedBox(
                   width: 10,
                 ),
-                Expanded(
-                  child: CustomText(
-                    title: sorahName,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                // Expanded(
+                //   child: CustomText(
+                //     title: sorahName,
+                //     fontSize: 20,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
                 BlocBuilder<QuranPagesListBloc, QuranPagesListState>(
                   buildWhen: (previous, current) {
                     return previous.bookmarkedPages != current.bookmarkedPages;
@@ -82,10 +82,7 @@ class _QuranPagesTileViewState extends State<QuranPagesTileView> {
                         : const SizedBox(width: 30);
                   },
                 ),
-                QuranReferances.getSorahTypeIcon(
-                    context: context,
-                    pageNumber: widget.pageNumber,
-                    sorahName: sorahName),
+                // QuranReferances.getSorahTypeIcon(context: context, pageNumber: widget.pageNumber, sorahName: sorahName),
               ],
             ),
           ),

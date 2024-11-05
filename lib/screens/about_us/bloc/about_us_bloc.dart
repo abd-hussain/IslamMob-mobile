@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -38,15 +39,30 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
 
   void showRewardedAd(RewardedAd rewardedAd) {
     rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
-      onAdShowedFullScreenContent: (RewardedAd ad) =>
-          debugPrint('ad onAdShowedFullScreenContent.'),
+      onAdShowedFullScreenContent: (RewardedAd ad) {
+        debugPrint('$ad onAdShowedFullScreenContent.');
+        FirebaseAnalytics.instance.logEvent(
+          name: "RewardedAd_AboutUsScreen",
+          parameters: {"status": "onAdShowedFullScreenContent"},
+        );
+      },
       onAdDismissedFullScreenContent: (RewardedAd ad) {
         debugPrint('$ad onAdDismissedFullScreenContent.');
+        FirebaseAnalytics.instance.logEvent(
+          name: "RewardedAd_AboutUsScreen",
+          parameters: {"status": "onAdDismissedFullScreenContent"},
+        );
         ad.dispose();
         _createRewardedAd();
       },
       onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
         debugPrint('$ad onAdFailedToShowFullScreenContent: $error');
+        FirebaseAnalytics.instance.logEvent(
+          name: "RewardedAd_AboutUsScreen",
+          parameters: {
+            "status": "$ad onAdFailedToShowFullScreenContent: $error"
+          },
+        );
         ad.dispose();
         _createRewardedAd();
       },
@@ -56,6 +72,13 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
     rewardedAd.show(onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
       debugPrint(
           '$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
+      FirebaseAnalytics.instance.logEvent(
+        name: "RewardedAd_AboutUsScreen",
+        parameters: {
+          "status":
+              "$ad with reward $RewardItem(${reward.amount}, ${reward.type})"
+        },
+      );
     });
     add(AboutUsEvent.updateRewardedAd(null));
   }
