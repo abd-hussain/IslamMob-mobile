@@ -21,58 +21,50 @@ class BottomTile extends StatefulWidget {
 
 class _BottomTileState extends State<BottomTile>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
   late Animation<Color?> _colorAnimation;
 
   @override
   void initState() {
     super.initState();
 
-    _controller = AnimationController(
-      duration: const Duration(milliseconds: 800),
-      vsync: this,
-    )..repeat(reverse: true);
-
     _colorAnimation = ColorTween(
       begin: Colors.white70,
       end: const Color(0xffFFD700),
-    ).animate(_controller);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+    ).animate(AnimationController(
+      duration: const Duration(milliseconds: 800),
+      vsync: this,
+    )..repeat(reverse: true));
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        widget.onTap();
-      },
+      onTap: () => widget.onTap(),
       child: Container(
         color: Colors.black.withOpacity(0.5),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              AnimatedBuilder(
-                  animation: _colorAnimation,
-                  builder: (context, child) {
-                    return Icon(
+              widget.isIconBlinking
+                  ? AnimatedBuilder(
+                      animation: _colorAnimation,
+                      builder: (context, child) {
+                        return Icon(
+                          widget.icon,
+                          color: _colorAnimation.value,
+                          size: 20,
+                        );
+                      })
+                  : Icon(
                       widget.icon,
-                      color: widget.isIconBlinking
-                          ? _colorAnimation.value
-                          : widget.colorIcon,
+                      color: widget.colorIcon,
                       size: 20,
-                    );
-                  }),
+                    ),
               const SizedBox(width: 4),
               CustomText(
                 title: widget.title,
-                fontSize: 14,
+                fontSize: 12,
                 textColor: Colors.white70,
                 fontWeight: FontWeight.bold,
               ),

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -102,6 +103,12 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
           fileUrl: printItem.attachmentLocation!,
           fileNameWithExtension: printItem.fieldName!,
           filePathCallback: (_) {
+            FirebaseAnalytics.instance.logEvent(
+              name: "download file ",
+              parameters: {
+                "file": printItem.fieldName!,
+              },
+            );
             setState(() {});
           },
         ),
@@ -127,6 +134,13 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
         printItem.juz2ToPageNumbers);
     await box.put(DatabaseFieldConstant.quranKaremSorahToPageNumbers,
         printItem.sorahToPageNumbers);
+
+    FirebaseAnalytics.instance.logEvent(
+      name: "use file ",
+      parameters: {
+        "file": printItem.fieldName!,
+      },
+    );
 
     if (context.mounted) {
       if (isDetailsPage) {
