@@ -63,27 +63,6 @@ class FooterView extends StatelessWidget {
               ),
             ],
           ),
-
-          // TextButton(
-          //   onPressed: () {
-          //     Navigator.of(context, rootNavigator: true)
-          //         .pushNamed(RoutesConstants.webViewScreen, arguments: {
-          //       AppConstant.webViewPageUrl: AppConstant.termsLink,
-          //       AppConstant.pageTitle:
-          //           AppLocalizations.of(context)!.termsandconditions
-          //     });
-          //   },
-          //   child: _footerTextWidget(
-          //       AppLocalizations.of(context)!.termsandconditions),
-          // ),
-          // TextButton(
-          //   onPressed: () =>
-          //       Navigator.of(context, rootNavigator: true).pushNamed(RoutesConstants.webViewScreen, arguments: {
-          //     AppConstant.webViewPageUrl: AppConstant.privacypolicyLink,
-          //     AppConstant.pageTitle: AppLocalizations.of(context)!.privacypolicy
-          //   }),
-          //   child: _footerTextWidget(AppLocalizations.of(context)!.privacypolicy),
-          // ),
           const SizedBox(height: 16),
           FutureBuilder<String>(
               initialData: "",
@@ -105,24 +84,6 @@ class FooterView extends StatelessWidget {
           const SizedBox(height: 20),
         ],
       ),
-    );
-  }
-
-  Widget _footerTextWidget(String title) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        CustomText(
-          title: title,
-          fontSize: 10,
-          textColor: const Color(0xff444444),
-        ),
-        const Icon(
-          Icons.arrow_forward_rounded,
-          size: 10,
-          color: Color(0xff444444),
-        )
-      ],
     );
   }
 
