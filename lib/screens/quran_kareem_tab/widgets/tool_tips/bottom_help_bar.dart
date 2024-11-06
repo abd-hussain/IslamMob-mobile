@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
@@ -90,11 +91,27 @@ class QuranBottomHelpBar extends StatelessWidget {
                 );
               },
             ),
-            BottomTile(
-              title: "الفهرس",
-              icon: Icons.copy_sharp,
-              onTap: () async {
-                //TODO
+            BlocBuilder<QuranKareemBloc, QuranKareemState>(
+              buildWhen: (previous, current) {
+                return previous.pageCount != current.pageCount ||
+                    previous.bookmarkedPages != current.bookmarkedPages;
+              },
+              builder: (context, state) {
+                return BottomTile(
+                  title: AppLocalizations.of(context)!.quranSettingIndex,
+                  icon: Ionicons.book,
+                  onTap: () async {
+                    await navigator.pushNamed(
+                        RoutesConstants.quranPagesIndexScreen,
+                        arguments: {
+                          ArgumentConstant.currentPageNumber: state.pageCount
+                        }).then(
+                      (value) {
+                        //TODO
+                      },
+                    );
+                  },
+                );
               },
             ),
             // // BlocBuilder<QuranKareemBloc, QuranKareemState>(
