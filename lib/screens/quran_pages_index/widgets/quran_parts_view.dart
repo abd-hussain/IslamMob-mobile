@@ -5,10 +5,12 @@ class QuranPartsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("B"),
-      ),
-    );
+    return ListView.builder(
+        itemCount: 30,
+        itemBuilder: (context, index) {
+          return Center(
+            child: Text("B"),
+          );
+        });
   }
 }
