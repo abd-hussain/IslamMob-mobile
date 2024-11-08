@@ -2,19 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/screens/quran_pages_index/bloc/quran_pages_index_bloc.dart';
+import 'package:islam_app/screens/quran_pages_index/widgets/quran_pages_view.dart';
 import 'package:islam_app/screens/quran_pages_index/widgets/quran_parts_view.dart';
 import 'package:islam_app/screens/quran_pages_index/widgets/quran_sowar_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:islam_app/utils/constants/argument_constant.dart';
 
 class QuranPagesIndexScreen extends StatelessWidget {
   const QuranPagesIndexScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Map<String, dynamic> arguments =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+
+    String currentSowrahName =
+        arguments[ArgumentConstant.currentSowrahName] ?? "";
+    String currentPartName = arguments[ArgumentConstant.currentPartName] ?? "";
+    int currentPageNumber = arguments[ArgumentConstant.currentPageNumber] ?? 0;
+
     return BlocProvider(
       create: (context) => QuranPagesIndexBloc(),
       child: DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: const Color(0xff292929),
@@ -64,6 +74,13 @@ class QuranPagesIndexScreen extends StatelessWidget {
                           size: 20,
                         ),
                       ),
+                      Tab(
+                        text: AppLocalizations.of(context)!.quranpages,
+                        icon: const Icon(
+                          Icons.pageview,
+                          size: 20,
+                        ),
+                      ),
                     ],
                   );
                 },
@@ -74,14 +91,29 @@ class QuranPagesIndexScreen extends StatelessWidget {
             builder: (context, state) {
               return TabBarView(
                 controller: TabController(
-                  length: 2,
+                  length: 3,
                   vsync: Scaffold.of(context),
                   initialIndex: state.selectedIndex,
                 ),
                 physics: const NeverScrollableScrollPhysics(),
-                children: const [
-                  QuranSowarView(),
-                  QuranPartsView(),
+                children: [
+                  QuranSowarView(
+                    currentSowrahName: currentSowrahName,
+                    onSowrahSelected: (sorahNumber) {
+                      //TODO
+                    },
+                  ),
+                  QuranPartsView(
+                    currentPartName: currentPartName,
+                    onPartSelected: (partNumber) {
+                      //TODO
+                    },
+                  ),
+                  QuranPagesView(
+                      currentPageNumber: currentPageNumber,
+                      onPageSelected: (pageNumber) {
+                        //TODO
+                      }),
                 ],
               );
             },

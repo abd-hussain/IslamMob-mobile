@@ -2,25 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/screens/quran_pages_index/widgets/sub_widgets/arrow_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
-enum SowrahType {
-  makyeh,
-  madanyeh,
-}
-
-class SowrahTileView extends StatelessWidget {
-  final Function() onTap;
+class PagesTileView extends StatelessWidget {
   final int index;
   final String sowrahName;
   final bool isCurrentPage;
-  final SowrahType sowrahType;
+  final bool isBookedMarked;
 
-  const SowrahTileView(
+  final Function() onTap;
+
+  const PagesTileView(
       {super.key,
-      required this.onTap,
       required this.index,
       required this.sowrahName,
       required this.isCurrentPage,
-      required this.sowrahType});
+      required this.onTap,
+      required this.isBookedMarked});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +56,16 @@ class SowrahTileView extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                _getSorahTypeIcon(sowrahType),
+                const SizedBox(width: 10),
+                isBookedMarked
+                    ? const SizedBox(
+                        width: 30,
+                        child: Icon(
+                          Icons.bookmark,
+                          color: Colors.red,
+                        ),
+                      )
+                    : const SizedBox(width: 30),
                 const SizedBox(width: 10),
                 const ArrowView()
               ],
@@ -69,20 +74,5 @@ class SowrahTileView extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Widget _getSorahTypeIcon(SowrahType type) {
-    switch (type) {
-      case SowrahType.makyeh:
-        return SizedBox(
-          width: 35,
-          child: Image.asset("assets/images/sorah_type/macca.png"),
-        );
-      case SowrahType.madanyeh:
-        return SizedBox(
-          width: 35,
-          child: Image.asset("assets/images/sorah_type/madenah.png"),
-        );
-    }
   }
 }

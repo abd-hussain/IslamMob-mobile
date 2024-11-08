@@ -6,7 +6,8 @@ class QuranReferances {
   static String getSorahReferanceNameForLocalizationFromPageNumber(
       int pageNumber) {
     final box = Hive.box(DatabaseBoxConstant.userInfo);
-
+    //TODO: Some pages have more than one sorah
+    // Retrieve the map from the Hive box
     final Map<dynamic, dynamic> quiryFromDB = box.get(
         DatabaseFieldConstant.quranKaremSorahToPageNumbers,
         defaultValue: {});
@@ -25,6 +26,19 @@ class QuranReferances {
 
     // Return a default value or handle the case where no sorah matches
     return '';
+  }
+
+  static int getNumberOfPagesForTheSelectedPrint() {
+    final box = Hive.box(DatabaseBoxConstant.userInfo);
+
+    // Retrieve the map from the Hive box
+    final Map<dynamic, dynamic> quiryFromDB = box.get(
+        DatabaseFieldConstant.quranKaremSorahToPageNumbers,
+        defaultValue: {});
+
+    // Get the value for the key `quranSorahName114`
+    var valueForSorahName114 = quiryFromDB['quranSorahName114'];
+    return valueForSorahName114;
   }
 
   static String getJozo2NumberFromPageNumber(int pageNumber) {
@@ -48,63 +62,4 @@ class QuranReferances {
     // Return a default value or handle the case where no jozo2 matches
     return '';
   }
-
-  // static Widget getSorahTypeIcon(
-  //     {required BuildContext context,
-  //     required int pageNumber,
-  //     required String sorahName}) {
-  //   if (pageNumber == 598) {
-  //     return Row(
-  //       children: [
-  //         SizedBox(
-  //           width: 35,
-  //           child: Image.asset("assets/images/sorah_type/macca.png"),
-  //         ),
-  //         SizedBox(
-  //           width: 35,
-  //           child: Image.asset("assets/images/sorah_type/madenah.png"),
-  //         ),
-  //       ],
-  //     );
-  //   } else if (pageNumber == 599) {
-  //     return Row(
-  //       children: [
-  //         SizedBox(
-  //           width: 35,
-  //           child: Image.asset("assets/images/sorah_type/madenah.png"),
-  //         ),
-  //         SizedBox(
-  //           width: 35,
-  //           child: Image.asset("assets/images/sorah_type/macca.png"),
-  //         ),
-  //       ],
-  //     );
-  //   } else if (pageNumber == 603) {
-  //     return Row(
-  //       children: [
-  //         SizedBox(
-  //           width: 35,
-  //           child: Image.asset("assets/images/sorah_type/macca.png"),
-  //         ),
-  //         SizedBox(
-  //           width: 35,
-  //           child: Image.asset("assets/images/sorah_type/madenah.png"),
-  //         ),
-  //         SizedBox(
-  //           width: 35,
-  //           child: Image.asset("assets/images/sorah_type/macca.png"),
-  //         ),
-  //       ],
-  //     );
-  //   } else {
-  //     return SizedBox(
-  //       width: 35,
-  //       child: Image.asset(SorahTypeHelper.getSorahType(
-  //                   context: context, sorahName: sorahName) ==
-  //               SorahType.maccah
-  //           ? "assets/images/sorah_type/macca.png"
-  //           : "assets/images/sorah_type/madenah.png"),
-  //     );
-  //   }
-  // }
 }
