@@ -39,6 +39,8 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     _createRewardedAd();
   }
 
+  int currentPageNumber = 0;
+
   void _setupFirstInitialPDF() async {
     final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
         defaultValue: 1);
@@ -143,16 +145,16 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   FutureOr<void> _updatePageCount(
       _UpdatePageCount event, Emitter<QuranKareemState> emit) async {
-    final pageCount = event.pageCount;
-    emit(state.copyWith(pageCount: pageCount));
+    currentPageNumber = event.pageCount;
+    emit(state.copyWith(pageCount: currentPageNumber));
 
     final referanceSorahName =
         QuranReferances.getSorahReferanceNameForLocalizationFromPageNumber(
-            pageCount);
+            currentPageNumber);
     add(QuranKareemEvent.updateSorahName(referanceSorahName));
 
     final referanceJozo2Name =
-        QuranReferances.getJozo2NumberFromPageNumber(pageCount);
+        QuranReferances.getJozo2NumberFromPageNumber(currentPageNumber);
     add(QuranKareemEvent.updateJozo2Name(referanceJozo2Name));
 
     add(QuranKareemEvent.updateSidePage(_getPageSide(event.pageCount)));

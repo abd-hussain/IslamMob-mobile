@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
@@ -10,8 +7,8 @@ import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/bottom_tile
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
-import 'package:islam_app/utils/constants/database_constant.dart';
-import 'package:pdfx/pdfx.dart';
+import 'package:islam_app/utils/extensions/localization.dart';
+import 'package:islam_app/utils/quran_referances.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
   final Function(double) returnBrightness;
@@ -91,25 +88,31 @@ class QuranBottomHelpBar extends StatelessWidget {
                 );
               },
             ),
-            BlocBuilder<QuranKareemBloc, QuranKareemState>(
-              buildWhen: (previous, current) {
-                return previous.pageCount != current.pageCount ||
-                    previous.bookmarkedPages != current.bookmarkedPages;
-              },
-              builder: (context, state) {
-                return BottomTile(
-                  title: AppLocalizations.of(context)!.quranSettingIndex,
-                  icon: Ionicons.book,
-                  onTap: () async {
-                    await navigator.pushNamed(
-                        RoutesConstants.quranPagesIndexScreen,
-                        arguments: {
-                          ArgumentConstant.currentPageNumber: state.pageCount
-                        }).then(
-                      (value) {
-                        //TODO
-                      },
-                    );
+            BottomTile(
+              title: AppLocalizations.of(context)!.quranSettingIndex,
+              icon: Ionicons.book,
+              onTap: () async {
+                final referanceSorahName = QuranReferances
+                    .getSorahReferanceNameForLocalizationFromPageNumber(
+                  context.read<QuranKareemBloc>().currentPageNumber,
+                );
+                final referanceJozo2Name =
+                    QuranReferances.getJozo2NumberFromPageNumber(
+                  context.read<QuranKareemBloc>().currentPageNumber,
+                );
+                await navigator.pushNamed(RoutesConstants.quranPagesIndexScreen,
+                    arguments: {
+                      ArgumentConstant.currentPageNumber:
+                          context.read<QuranKareemBloc>().currentPageNumber,
+                      ArgumentConstant.currentSowrahName:
+                          AppLocalizations.of(context)!
+                              .getLocalizedString(referanceSorahName),
+                      ArgumentConstant.currentPartName:
+                          AppLocalizations.of(context)!
+                              .getLocalizedString(referanceJozo2Name),
+                    }).then(
+                  (value) {
+                    //TODO
                   },
                 );
               },
