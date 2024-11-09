@@ -232,5 +232,12 @@
     "termsdesc8" : "We may update these Terms and Conditions periodically. Continued use of the app after changes indicates acceptance of the new terms.",
     "quranSettingIndex" : "Index",
     "quranSowarIndex" : "Sowar Index",
-    "quranPartsIndex" : "Parts Index"
+    "quranPartsIndex" : "Parts Index",
+    "fajr": "Fajr",
+    "sherooq": "Sherooq",
+    "zhur": "Zhur",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha",
+    "after" : "After"
 }

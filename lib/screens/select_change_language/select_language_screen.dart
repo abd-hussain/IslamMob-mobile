@@ -88,7 +88,7 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                                 Navigator.of(context, rootNavigator: true);
 
                             await navigator.pushNamedAndRemoveUntil(
-                              RoutesConstants.quranPrintListScreen,
+                              RoutesConstants.mainContainer,
                               (Route<dynamic> route) => false,
                             );
                           },

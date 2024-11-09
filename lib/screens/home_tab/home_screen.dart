@@ -1,12 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/screens/home_tab/widgets/header_view.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("TODO"),
+    return BlocProvider(
+      create: (context) => HomeTabBloc(),
+      child: Builder(builder: (context) {
+        return NestedScrollView(
+          controller: context.read<HomeTabBloc>().scrollController,
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              HomeHeaderView(
+                salahType: SalahType.fajr, //TODO
+                salahTime: DateTime.utc(2023, 03, 1, 3, 55, 36), //TODO
+                regionName: "al qwasmeeh", //TODO
+                cityName: "Amman", //TODO
+              ),
+            ];
+          },
+          body: Column(
+            children: [
+              BlocBuilder<HomeTabBloc, HomeTabState>(
+                buildWhen: (previous, current) =>
+                    previous.isBarExpanded != current.isBarExpanded,
+                builder: (context, state) {
+                  return SizedBox(height: state.isBarExpanded ? 0 : 75);
+                },
+              ),
+              Container(
+                color: const Color(0xff292929),
+                height: 150,
+              ),
+            ],
+          ),
+        );
+      }),
     );
   }
 }
