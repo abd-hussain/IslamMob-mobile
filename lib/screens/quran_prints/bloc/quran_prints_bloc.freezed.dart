@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'quran_list_prints_bloc.dart';
+part of 'quran_prints_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,23 +15,26 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$QuranListPrintsEvent {
+mixin _$QuranPrintsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
     required TResult Function(bool status) updateInternetConnectionStatus,
+    required TResult Function(List<String> print) updatePrintsDownloading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult? Function(bool status)? updateInternetConnectionStatus,
+    TResult? Function(List<String> print)? updatePrintsDownloading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult Function(bool status)? updateInternetConnectionStatus,
+    TResult Function(List<String> print)? updatePrintsDownloading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +43,8 @@ mixin _$QuranListPrintsEvent {
     required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
+    required TResult Function(_UpdatePrintsDownloading value)
+        updatePrintsDownloading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +52,7 @@ mixin _$QuranListPrintsEvent {
     TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
+    TResult? Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,30 +60,30 @@ mixin _$QuranListPrintsEvent {
     TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
+    TResult Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $QuranListPrintsEventCopyWith<$Res> {
-  factory $QuranListPrintsEventCopyWith(QuranListPrintsEvent value,
-          $Res Function(QuranListPrintsEvent) then) =
-      _$QuranListPrintsEventCopyWithImpl<$Res, QuranListPrintsEvent>;
+abstract class $QuranPrintsEventCopyWith<$Res> {
+  factory $QuranPrintsEventCopyWith(
+          QuranPrintsEvent value, $Res Function(QuranPrintsEvent) then) =
+      _$QuranPrintsEventCopyWithImpl<$Res, QuranPrintsEvent>;
 }
 
 /// @nodoc
-class _$QuranListPrintsEventCopyWithImpl<$Res,
-        $Val extends QuranListPrintsEvent>
-    implements $QuranListPrintsEventCopyWith<$Res> {
-  _$QuranListPrintsEventCopyWithImpl(this._value, this._then);
+class _$QuranPrintsEventCopyWithImpl<$Res, $Val extends QuranPrintsEvent>
+    implements $QuranPrintsEventCopyWith<$Res> {
+  _$QuranPrintsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of QuranListPrintsEvent
+  /// Create a copy of QuranPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -92,13 +98,13 @@ abstract class _$$UpdatelistOfPrintsImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdatelistOfPrintsImplCopyWithImpl<$Res>
-    extends _$QuranListPrintsEventCopyWithImpl<$Res, _$UpdatelistOfPrintsImpl>
+    extends _$QuranPrintsEventCopyWithImpl<$Res, _$UpdatelistOfPrintsImpl>
     implements _$$UpdatelistOfPrintsImplCopyWith<$Res> {
   __$$UpdatelistOfPrintsImplCopyWithImpl(_$UpdatelistOfPrintsImpl _value,
       $Res Function(_$UpdatelistOfPrintsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of QuranListPrintsEvent
+  /// Create a copy of QuranPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -131,7 +137,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
 
   @override
   String toString() {
-    return 'QuranListPrintsEvent.updatelistOfPrints(list: $list)';
+    return 'QuranPrintsEvent.updatelistOfPrints(list: $list)';
   }
 
   @override
@@ -146,7 +152,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
 
-  /// Create a copy of QuranListPrintsEvent
+  /// Create a copy of QuranPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -160,6 +166,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   TResult when<TResult extends Object?>({
     required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
     required TResult Function(bool status) updateInternetConnectionStatus,
+    required TResult Function(List<String> print) updatePrintsDownloading,
   }) {
     return updatelistOfPrints(list);
   }
@@ -169,6 +176,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult? Function(bool status)? updateInternetConnectionStatus,
+    TResult? Function(List<String> print)? updatePrintsDownloading,
   }) {
     return updatelistOfPrints?.call(list);
   }
@@ -178,6 +186,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult Function(bool status)? updateInternetConnectionStatus,
+    TResult Function(List<String> print)? updatePrintsDownloading,
     required TResult orElse(),
   }) {
     if (updatelistOfPrints != null) {
@@ -192,6 +201,8 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
     required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
+    required TResult Function(_UpdatePrintsDownloading value)
+        updatePrintsDownloading,
   }) {
     return updatelistOfPrints(this);
   }
@@ -202,6 +213,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
     TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
+    TResult? Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
   }) {
     return updatelistOfPrints?.call(this);
   }
@@ -212,6 +224,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
     TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
+    TResult Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
     required TResult orElse(),
   }) {
     if (updatelistOfPrints != null) {
@@ -221,13 +234,13 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   }
 }
 
-abstract class _UpdatelistOfPrints implements QuranListPrintsEvent {
+abstract class _UpdatelistOfPrints implements QuranPrintsEvent {
   factory _UpdatelistOfPrints(final List<QuranPrints>? list) =
       _$UpdatelistOfPrintsImpl;
 
   List<QuranPrints>? get list;
 
-  /// Create a copy of QuranListPrintsEvent
+  /// Create a copy of QuranPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdatelistOfPrintsImplCopyWith<_$UpdatelistOfPrintsImpl> get copyWith =>
@@ -246,7 +259,7 @@ abstract class _$$UpdateInternetConnectionStatusImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>
-    extends _$QuranListPrintsEventCopyWithImpl<$Res,
+    extends _$QuranPrintsEventCopyWithImpl<$Res,
         _$UpdateInternetConnectionStatusImpl>
     implements _$$UpdateInternetConnectionStatusImplCopyWith<$Res> {
   __$$UpdateInternetConnectionStatusImplCopyWithImpl(
@@ -254,7 +267,7 @@ class __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>
       $Res Function(_$UpdateInternetConnectionStatusImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of QuranListPrintsEvent
+  /// Create a copy of QuranPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -281,7 +294,7 @@ class _$UpdateInternetConnectionStatusImpl
 
   @override
   String toString() {
-    return 'QuranListPrintsEvent.updateInternetConnectionStatus(status: $status)';
+    return 'QuranPrintsEvent.updateInternetConnectionStatus(status: $status)';
   }
 
   @override
@@ -295,7 +308,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   int get hashCode => Object.hash(runtimeType, status);
 
-  /// Create a copy of QuranListPrintsEvent
+  /// Create a copy of QuranPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -310,6 +323,7 @@ class _$UpdateInternetConnectionStatusImpl
   TResult when<TResult extends Object?>({
     required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
     required TResult Function(bool status) updateInternetConnectionStatus,
+    required TResult Function(List<String> print) updatePrintsDownloading,
   }) {
     return updateInternetConnectionStatus(status);
   }
@@ -319,6 +333,7 @@ class _$UpdateInternetConnectionStatusImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult? Function(bool status)? updateInternetConnectionStatus,
+    TResult? Function(List<String> print)? updatePrintsDownloading,
   }) {
     return updateInternetConnectionStatus?.call(status);
   }
@@ -328,6 +343,7 @@ class _$UpdateInternetConnectionStatusImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult Function(bool status)? updateInternetConnectionStatus,
+    TResult Function(List<String> print)? updatePrintsDownloading,
     required TResult orElse(),
   }) {
     if (updateInternetConnectionStatus != null) {
@@ -342,6 +358,8 @@ class _$UpdateInternetConnectionStatusImpl
     required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
+    required TResult Function(_UpdatePrintsDownloading value)
+        updatePrintsDownloading,
   }) {
     return updateInternetConnectionStatus(this);
   }
@@ -352,6 +370,7 @@ class _$UpdateInternetConnectionStatusImpl
     TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
+    TResult? Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
   }) {
     return updateInternetConnectionStatus?.call(this);
   }
@@ -362,6 +381,7 @@ class _$UpdateInternetConnectionStatusImpl
     TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
+    TResult Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
     required TResult orElse(),
   }) {
     if (updateInternetConnectionStatus != null) {
@@ -371,13 +391,13 @@ class _$UpdateInternetConnectionStatusImpl
   }
 }
 
-abstract class _UpdateInternetConnectionStatus implements QuranListPrintsEvent {
+abstract class _UpdateInternetConnectionStatus implements QuranPrintsEvent {
   factory _UpdateInternetConnectionStatus(final bool status) =
       _$UpdateInternetConnectionStatusImpl;
 
   bool get status;
 
-  /// Create a copy of QuranListPrintsEvent
+  /// Create a copy of QuranPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateInternetConnectionStatusImplCopyWith<
@@ -386,44 +406,208 @@ abstract class _UpdateInternetConnectionStatus implements QuranListPrintsEvent {
 }
 
 /// @nodoc
-mixin _$QuranListPrintsState {
-  List<QuranPrints>? get listOfPrints => throw _privateConstructorUsedError;
-  bool get internetConnectionStauts => throw _privateConstructorUsedError;
+abstract class _$$UpdatePrintsDownloadingImplCopyWith<$Res> {
+  factory _$$UpdatePrintsDownloadingImplCopyWith(
+          _$UpdatePrintsDownloadingImpl value,
+          $Res Function(_$UpdatePrintsDownloadingImpl) then) =
+      __$$UpdatePrintsDownloadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<String> print});
+}
 
-  /// Create a copy of QuranListPrintsState
+/// @nodoc
+class __$$UpdatePrintsDownloadingImplCopyWithImpl<$Res>
+    extends _$QuranPrintsEventCopyWithImpl<$Res, _$UpdatePrintsDownloadingImpl>
+    implements _$$UpdatePrintsDownloadingImplCopyWith<$Res> {
+  __$$UpdatePrintsDownloadingImplCopyWithImpl(
+      _$UpdatePrintsDownloadingImpl _value,
+      $Res Function(_$UpdatePrintsDownloadingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QuranPrintsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? print = null,
+  }) {
+    return _then(_$UpdatePrintsDownloadingImpl(
+      null == print
+          ? _value._print
+          : print // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
+  _$UpdatePrintsDownloadingImpl(final List<String> print) : _print = print;
+
+  final List<String> _print;
+  @override
+  List<String> get print {
+    if (_print is EqualUnmodifiableListView) return _print;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_print);
+  }
+
+  @override
+  String toString() {
+    return 'QuranPrintsEvent.updatePrintsDownloading(print: $print)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePrintsDownloadingImpl &&
+            const DeepCollectionEquality().equals(other._print, _print));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_print));
+
+  /// Create a copy of QuranPrintsEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $QuranListPrintsStateCopyWith<QuranListPrintsState> get copyWith =>
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePrintsDownloadingImplCopyWith<_$UpdatePrintsDownloadingImpl>
+      get copyWith => __$$UpdatePrintsDownloadingImplCopyWithImpl<
+          _$UpdatePrintsDownloadingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
+    required TResult Function(bool status) updateInternetConnectionStatus,
+    required TResult Function(List<String> print) updatePrintsDownloading,
+  }) {
+    return updatePrintsDownloading(print);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
+    TResult? Function(List<String> print)? updatePrintsDownloading,
+  }) {
+    return updatePrintsDownloading?.call(print);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
+    TResult Function(bool status)? updateInternetConnectionStatus,
+    TResult Function(List<String> print)? updatePrintsDownloading,
+    required TResult orElse(),
+  }) {
+    if (updatePrintsDownloading != null) {
+      return updatePrintsDownloading(print);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
+    required TResult Function(_UpdatePrintsDownloading value)
+        updatePrintsDownloading,
+  }) {
+    return updatePrintsDownloading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
+    TResult? Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
+  }) {
+    return updatePrintsDownloading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
+    TResult Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
+    required TResult orElse(),
+  }) {
+    if (updatePrintsDownloading != null) {
+      return updatePrintsDownloading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdatePrintsDownloading implements QuranPrintsEvent {
+  factory _UpdatePrintsDownloading(final List<String> print) =
+      _$UpdatePrintsDownloadingImpl;
+
+  List<String> get print;
+
+  /// Create a copy of QuranPrintsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdatePrintsDownloadingImplCopyWith<_$UpdatePrintsDownloadingImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$QuranPrintsState {
+  List<QuranPrints>? get listOfPrints => throw _privateConstructorUsedError;
+  bool get internetConnectionStauts => throw _privateConstructorUsedError;
+  List<String> get printsDownloading => throw _privateConstructorUsedError;
+
+  /// Create a copy of QuranPrintsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $QuranPrintsStateCopyWith<QuranPrintsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $QuranListPrintsStateCopyWith<$Res> {
-  factory $QuranListPrintsStateCopyWith(QuranListPrintsState value,
-          $Res Function(QuranListPrintsState) then) =
-      _$QuranListPrintsStateCopyWithImpl<$Res, QuranListPrintsState>;
+abstract class $QuranPrintsStateCopyWith<$Res> {
+  factory $QuranPrintsStateCopyWith(
+          QuranPrintsState value, $Res Function(QuranPrintsState) then) =
+      _$QuranPrintsStateCopyWithImpl<$Res, QuranPrintsState>;
   @useResult
-  $Res call({List<QuranPrints>? listOfPrints, bool internetConnectionStauts});
+  $Res call(
+      {List<QuranPrints>? listOfPrints,
+      bool internetConnectionStauts,
+      List<String> printsDownloading});
 }
 
 /// @nodoc
-class _$QuranListPrintsStateCopyWithImpl<$Res,
-        $Val extends QuranListPrintsState>
-    implements $QuranListPrintsStateCopyWith<$Res> {
-  _$QuranListPrintsStateCopyWithImpl(this._value, this._then);
+class _$QuranPrintsStateCopyWithImpl<$Res, $Val extends QuranPrintsState>
+    implements $QuranPrintsStateCopyWith<$Res> {
+  _$QuranPrintsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of QuranListPrintsState
+  /// Create a copy of QuranPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? listOfPrints = freezed,
     Object? internetConnectionStauts = null,
+    Object? printsDownloading = null,
   }) {
     return _then(_value.copyWith(
       listOfPrints: freezed == listOfPrints
@@ -434,38 +618,46 @@ class _$QuranListPrintsStateCopyWithImpl<$Res,
           ? _value.internetConnectionStauts
           : internetConnectionStauts // ignore: cast_nullable_to_non_nullable
               as bool,
+      printsDownloading: null == printsDownloading
+          ? _value.printsDownloading
+          : printsDownloading // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$QuranListPrintsStateImplCopyWith<$Res>
-    implements $QuranListPrintsStateCopyWith<$Res> {
-  factory _$$QuranListPrintsStateImplCopyWith(_$QuranListPrintsStateImpl value,
-          $Res Function(_$QuranListPrintsStateImpl) then) =
-      __$$QuranListPrintsStateImplCopyWithImpl<$Res>;
+abstract class _$$QuranPrintsStateImplCopyWith<$Res>
+    implements $QuranPrintsStateCopyWith<$Res> {
+  factory _$$QuranPrintsStateImplCopyWith(_$QuranPrintsStateImpl value,
+          $Res Function(_$QuranPrintsStateImpl) then) =
+      __$$QuranPrintsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<QuranPrints>? listOfPrints, bool internetConnectionStauts});
+  $Res call(
+      {List<QuranPrints>? listOfPrints,
+      bool internetConnectionStauts,
+      List<String> printsDownloading});
 }
 
 /// @nodoc
-class __$$QuranListPrintsStateImplCopyWithImpl<$Res>
-    extends _$QuranListPrintsStateCopyWithImpl<$Res, _$QuranListPrintsStateImpl>
-    implements _$$QuranListPrintsStateImplCopyWith<$Res> {
-  __$$QuranListPrintsStateImplCopyWithImpl(_$QuranListPrintsStateImpl _value,
-      $Res Function(_$QuranListPrintsStateImpl) _then)
+class __$$QuranPrintsStateImplCopyWithImpl<$Res>
+    extends _$QuranPrintsStateCopyWithImpl<$Res, _$QuranPrintsStateImpl>
+    implements _$$QuranPrintsStateImplCopyWith<$Res> {
+  __$$QuranPrintsStateImplCopyWithImpl(_$QuranPrintsStateImpl _value,
+      $Res Function(_$QuranPrintsStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of QuranListPrintsState
+  /// Create a copy of QuranPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? listOfPrints = freezed,
     Object? internetConnectionStauts = null,
+    Object? printsDownloading = null,
   }) {
-    return _then(_$QuranListPrintsStateImpl(
+    return _then(_$QuranPrintsStateImpl(
       listOfPrints: freezed == listOfPrints
           ? _value._listOfPrints
           : listOfPrints // ignore: cast_nullable_to_non_nullable
@@ -474,17 +666,23 @@ class __$$QuranListPrintsStateImplCopyWithImpl<$Res>
           ? _value.internetConnectionStauts
           : internetConnectionStauts // ignore: cast_nullable_to_non_nullable
               as bool,
+      printsDownloading: null == printsDownloading
+          ? _value._printsDownloading
+          : printsDownloading // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$QuranListPrintsStateImpl implements _QuranListPrintsState {
-  const _$QuranListPrintsStateImpl(
+class _$QuranPrintsStateImpl implements _QuranPrintsState {
+  const _$QuranPrintsStateImpl(
       {final List<QuranPrints>? listOfPrints,
-      this.internetConnectionStauts = false})
-      : _listOfPrints = listOfPrints;
+      this.internetConnectionStauts = false,
+      final List<String> printsDownloading = const []})
+      : _listOfPrints = listOfPrints,
+        _printsDownloading = printsDownloading;
 
   final List<QuranPrints>? _listOfPrints;
   @override
@@ -499,55 +697,69 @@ class _$QuranListPrintsStateImpl implements _QuranListPrintsState {
   @override
   @JsonKey()
   final bool internetConnectionStauts;
+  final List<String> _printsDownloading;
+  @override
+  @JsonKey()
+  List<String> get printsDownloading {
+    if (_printsDownloading is EqualUnmodifiableListView)
+      return _printsDownloading;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_printsDownloading);
+  }
 
   @override
   String toString() {
-    return 'QuranListPrintsState(listOfPrints: $listOfPrints, internetConnectionStauts: $internetConnectionStauts)';
+    return 'QuranPrintsState(listOfPrints: $listOfPrints, internetConnectionStauts: $internetConnectionStauts, printsDownloading: $printsDownloading)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuranListPrintsStateImpl &&
+            other is _$QuranPrintsStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._listOfPrints, _listOfPrints) &&
             (identical(
                     other.internetConnectionStauts, internetConnectionStauts) ||
-                other.internetConnectionStauts == internetConnectionStauts));
+                other.internetConnectionStauts == internetConnectionStauts) &&
+            const DeepCollectionEquality()
+                .equals(other._printsDownloading, _printsDownloading));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_listOfPrints),
-      internetConnectionStauts);
+      internetConnectionStauts,
+      const DeepCollectionEquality().hash(_printsDownloading));
 
-  /// Create a copy of QuranListPrintsState
+  /// Create a copy of QuranPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$QuranListPrintsStateImplCopyWith<_$QuranListPrintsStateImpl>
-      get copyWith =>
-          __$$QuranListPrintsStateImplCopyWithImpl<_$QuranListPrintsStateImpl>(
-              this, _$identity);
+  _$$QuranPrintsStateImplCopyWith<_$QuranPrintsStateImpl> get copyWith =>
+      __$$QuranPrintsStateImplCopyWithImpl<_$QuranPrintsStateImpl>(
+          this, _$identity);
 }
 
-abstract class _QuranListPrintsState implements QuranListPrintsState {
-  const factory _QuranListPrintsState(
+abstract class _QuranPrintsState implements QuranPrintsState {
+  const factory _QuranPrintsState(
       {final List<QuranPrints>? listOfPrints,
-      final bool internetConnectionStauts}) = _$QuranListPrintsStateImpl;
+      final bool internetConnectionStauts,
+      final List<String> printsDownloading}) = _$QuranPrintsStateImpl;
 
   @override
   List<QuranPrints>? get listOfPrints;
   @override
   bool get internetConnectionStauts;
+  @override
+  List<String> get printsDownloading;
 
-  /// Create a copy of QuranListPrintsState
+  /// Create a copy of QuranPrintsState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$QuranListPrintsStateImplCopyWith<_$QuranListPrintsStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$QuranPrintsStateImplCopyWith<_$QuranPrintsStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

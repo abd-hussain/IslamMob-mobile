@@ -6,37 +6,33 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/models/rest_api/quran_prints.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
-import 'package:islam_app/screens/quran_list_prints/bloc/quran_list_prints_bloc.dart';
-import 'package:islam_app/screens/quran_list_prints/widgets/copy_tile.dart';
-import 'package:islam_app/screens/quran_list_prints/widgets/download_progress_dialog.dart';
-import 'package:islam_app/screens/quran_list_prints/widgets/shimmer_print_list.dart';
+import 'package:islam_app/screens/quran_prints/bloc/quran_prints_bloc.dart';
+import 'package:islam_app/screens/quran_prints/widgets/download_progress_dialog.dart';
+import 'package:islam_app/screens/quran_prints/widgets/print_tile_view.dart';
+import 'package:islam_app/screens/quran_prints/widgets/quran_print_list_shimmer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:path_provider/path_provider.dart';
 
-class QuranListPrintsScreen extends StatefulWidget {
-  const QuranListPrintsScreen({super.key});
+class QuranPrintsScreen extends StatelessWidget {
+  const QuranPrintsScreen({super.key});
 
-  @override
-  State<QuranListPrintsScreen> createState() => _QuranListPrintsScreenState();
-}
-
-class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
-  //TODO
   @override
   Widget build(BuildContext context) {
     bool isDetailsPage = _handleReadingArguments(
+            context: context,
             arguments: ModalRoute.of(context)!.settings.arguments) ??
         false;
+
     return BlocProvider(
-      create: (context) => QuranListPrintsBloc(),
+      create: (context) => QuranPrintsBloc(),
       child: Scaffold(
         appBar: CustomAppBar(title: AppLocalizations.of(context)!.quranprints),
-        body: BlocBuilder<QuranListPrintsBloc, QuranListPrintsState>(
+        body: BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
           buildWhen: (previous, current) =>
               previous.listOfPrints != current.listOfPrints ||
               previous.internetConnectionStauts !=
@@ -44,62 +40,56 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
           builder: (context, state) {
             if (state.internetConnectionStauts == false) {
               return NoInternetView(
-                retryCallback: () {
-                  context.read<QuranListPrintsBloc>().initial();
-                  //TODO: issue in inialization firebase
-                },
+                retryCallback: () => context.read<QuranPrintsBloc>().initial(),
               );
             }
 
-            return state.listOfPrints == null
-                ? const QuranListPrintsShimmer()
-                : ListView.builder(
+            if (state.listOfPrints == null) {
+              return const QuranListPrintsShimmer();
+            } else {
+              return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
+                buildWhen: (previous, current) =>
+                    previous.printsDownloading != current.printsDownloading,
+                builder: (context, state) {
+                  return ListView.builder(
                     itemCount: state.listOfPrints!.length,
                     itemBuilder: (context, index) {
                       final printItem = state.listOfPrints![index];
-                      return _buildPrintTile(context, printItem, isDetailsPage);
+                      return PrintTileView(
+                        language: context
+                            .read<QuranPrintsBloc>()
+                            .getNameByLanguageCode(printItem.language ?? ""),
+                        title: printItem.nameReferance,
+                        description: printItem.description,
+                        previewImage: printItem.previewImage,
+                        downloadButtonAvaliable: !state.printsDownloading
+                            .contains(printItem.fieldName),
+                        useButtonAvaliable: state.printsDownloading
+                            .contains(printItem.fieldName),
+                        onDownloadPressed: () =>
+                            _handleDownloadPressed(context, printItem),
+                        onUsePressed: () => _handleUsePressed(
+                            context, printItem, isDetailsPage),
+                      );
                     },
                   );
+                },
+              );
+            }
           },
         ),
       ),
     );
   }
 
-  Widget _buildPrintTile(
-      BuildContext context, QuranPrints printItem, bool isDetailsPage) {
-    return FutureBuilder<bool>(
-      initialData: false,
-      future: context
-          .read<QuranListPrintsBloc>()
-          .verifyIfFileExists(printItem.fieldName!),
-      builder: (context, snapshot) {
-        final fileExists = snapshot.data ?? false;
-        return MushafCopyTile(
-          previewImage: printItem.previewImage,
-          title: printItem.nameReferance,
-          description: printItem.description,
-          language: context
-              .read<QuranListPrintsBloc>()
-              .getNameByLanguageCode(printItem.language ?? ""),
-          downloadButtonAvaliable: !fileExists,
-          useButtonAvaliable: fileExists,
-          onDownloadPressed: () => _handleDownloadPressed(context, printItem),
-          onUsePressed: () =>
-              _handleUsePressed(context, printItem, isDetailsPage),
-        );
-      },
-    );
-  }
-
   Future<void> _handleDownloadPressed(
       BuildContext context, QuranPrints printItem) async {
     final permissionGranted =
-        await context.read<QuranListPrintsBloc>().permissionRequest();
-
+        await context.read<QuranPrintsBloc>().permissionRequest();
     if (permissionGranted && context.mounted) {
       showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (_) => DownloadProgressDialog(
           fileUrl: printItem.attachmentLocation!,
           fileNameWithExtension: printItem.fieldName!,
@@ -110,7 +100,14 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
                 "file": printItem.fieldName!,
               },
             );
-            setState(() {});
+            final List<String> updatedList = List.from(
+                context.read<QuranPrintsBloc>().state.printsDownloading);
+            updatedList.add(printItem.fieldName!);
+
+            // Dispatch the event with the updated list
+            context
+                .read<QuranPrintsBloc>()
+                .add(QuranPrintsEvent.updatePrintsDownloading(updatedList));
           },
         ),
       );
@@ -127,7 +124,6 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/${printItem.fieldName!}');
     final box = Hive.box(DatabaseBoxConstant.userInfo);
-
     await box.put(
         DatabaseFieldConstant.quranKaremPrintNameToUse, filePath.path);
     await box.put(DatabaseFieldConstant.quranKaremLastPageNumber, 1);
@@ -145,7 +141,7 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
 
     if (context.mounted) {
       if (isDetailsPage) {
-        Navigator.pop(context, {"use": printItem.fieldName ?? ""});
+        Navigator.pop(context);
       } else {
         await Navigator.of(context, rootNavigator: true)
             .pushNamedAndRemoveUntil(
@@ -156,7 +152,8 @@ class _QuranListPrintsScreenState extends State<QuranListPrintsScreen> {
     }
   }
 
-  bool? _handleReadingArguments({required Object? arguments}) {
+  bool? _handleReadingArguments(
+      {required BuildContext context, required Object? arguments}) {
     final arguments =
         ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
     return arguments?[ArgumentConstant.isDetailsPage] as bool?;

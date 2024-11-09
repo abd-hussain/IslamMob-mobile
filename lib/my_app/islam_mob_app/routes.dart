@@ -3,11 +3,11 @@ import 'package:islam_app/screens/about_us/about_us_screen.dart';
 import 'package:islam_app/screens/about_us/privacy_policy_screen.dart';
 import 'package:islam_app/screens/about_us/terms_condition_screen.dart';
 import 'package:islam_app/screens/quran_pages_index/quran_pages_index_screen.dart';
+import 'package:islam_app/screens/quran_prints/quran_prints_screen.dart';
 import 'package:islam_app/screens/select_change_language/change_language_screen.dart';
 import 'package:islam_app/screens/home_tab/home_screen.dart';
 import 'package:islam_app/screens/select_change_language/select_language_screen.dart';
 import 'package:islam_app/screens/main_container/main_container.dart';
-import 'package:islam_app/screens/quran_list_prints/quran_list_prints_screen.dart';
 import 'package:islam_app/screens/report_suggestions/report_suggestion_screen.dart';
 import 'package:islam_app/screens/quran_kareem_tab/quran_kareem_screen.dart';
 import 'package:islam_app/screens/settings_tab/settings_screen.dart';
@@ -36,7 +36,7 @@ final Map<String, Widget> routes = {
   RoutesConstants.quranScreen: const QuranKareemScreen(),
   RoutesConstants.reportOrSuggestionScreen: const ReportOrSuggestionScreen(),
   RoutesConstants.quranPagesIndexScreen: const QuranPagesIndexScreen(),
-  RoutesConstants.quranPrintListScreen: const QuranListPrintsScreen(),
+  RoutesConstants.quranPrintListScreen: const QuranPrintsScreen(),
   RoutesConstants.settingsScreen: const SettingsScreen(),
   RoutesConstants.homeScreen: const HomeScreen(),
   RoutesConstants.webViewScreen: const WebViewScreen(),

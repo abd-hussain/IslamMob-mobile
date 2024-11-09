@@ -12,6 +12,7 @@ import 'package:islam_app/utils/constants/argument_constant.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/extensions/localization.dart';
 import 'package:islam_app/utils/quran_referances.dart';
+import 'package:pdfx/pdfx.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
   final Function(double) returnBrightness;
@@ -160,36 +161,27 @@ Widget _buildMushafTile(BuildContext context) {
     icon: Icons.library_books,
     onTap: () async {
       await navigator.pushNamed(RoutesConstants.quranPrintListScreen,
-          arguments: {
-            ArgumentConstant.isDetailsPage: true
-          }).then((value) async {
-        if (value != null && value is Map<String, dynamic>) {
-          // ignore: use_build_context_synchronously
-          await _loadMushafFile(context, value);
-        }
+          arguments: {ArgumentConstant.isDetailsPage: true}).then((value) {
+        // ignore: use_build_context_synchronously
+        _loadMushafFile(context);
       });
     },
   );
 }
 
-Future<void> _loadMushafFile(
-    BuildContext context, Map<String, dynamic> value) async {
+void _loadMushafFile(BuildContext context) {
   final box = Hive.box(DatabaseBoxConstant.userInfo);
-  final pageNumber =
-      box.get(DatabaseFieldConstant.quranKaremLastPageNumber, defaultValue: 1);
   final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse);
   final file = File(printName);
 
-  if (await file.exists() && context.mounted) {
+  if (file.existsSync() && context.mounted) {
     context
         .read<QuranKareemBloc>()
         .add(QuranKareemEvent.updateReadPDFFile(printName));
-    //TODO
-    // You can uncomment the following lines once the PDF controller is ready to handle these calls
-    // context.read<QuranKareemBloc>().pdfController.loadDocument(PdfDocument.openFile(file.path));
-    // context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(pageNumber));
-    // context.read<QuranKareemBloc>().pdfController.initialPage = pageNumber;
-    // context.read<QuranKareemBloc>().pdfController.jumpToPage(1);
+    context
+        .read<QuranKareemBloc>()
+        .pdfController
+        ?.loadDocument(PdfDocument.openFile(file.path));
   } else {
     debugPrint("file does NOT exist at: ${file.path}");
   }
