@@ -95,7 +95,7 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
           CustomButton(
             enableButton: true,
             buttonTitle: AppLocalizations.of(context)!.cancel,
-            buttonColor: Colors.red,
+            buttonColor: Colors.redAccent,
             onTap: () {
               Navigator.of(context).pop();
             },

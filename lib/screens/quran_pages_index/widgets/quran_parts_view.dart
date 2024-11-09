@@ -5,7 +5,7 @@ import 'package:islam_app/screens/quran_pages_index/widgets/sub_widgets/part_til
 
 class QuranPartsView extends StatelessWidget {
   final String currentPartName;
-  final Function(int partNumber) onPartSelected;
+  final Function(String partNumber) onPartSelected;
 
   const QuranPartsView(
       {super.key, required this.onPartSelected, required this.currentPartName});
@@ -24,7 +24,7 @@ class QuranPartsView extends StatelessWidget {
               index: index,
               isCurrentPart: currentPartName == list[index],
               partName: list[index],
-              onTap: () => onPartSelected(index + 1),
+              onTap: () => onPartSelected((index + 1).toString()),
             );
           }),
     );
