@@ -71,9 +71,7 @@ class IslamMobAppState extends State<IslamMobApp> {
               pageBuilder: (_, __, ___) => routes[settings.name]!);
         },
         initialRoute: myBox.get(DatabaseFieldConstant.selectedLanguage) != null
-            ? myBox.get(DatabaseFieldConstant.quranKaremPrintNameToUse) != null
-                ? RoutesConstants.mainContainer
-                : RoutesConstants.quranPrintListScreen
+            ? RoutesConstants.mainContainer
             : RoutesConstants.initialRoute);
   }
 }
