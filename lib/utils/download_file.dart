@@ -14,6 +14,7 @@ class FileDownload {
     required BuildContext context,
     required String fileNameWithExtension,
     required String fileUrl,
+    required CancelToken cancelToken,
     required final Function(int recivedBytes, int totalBytes) progressCallback,
     required final Function(String filePath) finishCallback,
   }) async {
@@ -23,6 +24,7 @@ class FileDownload {
       await dio.download(
         fileUrl,
         path,
+        cancelToken: cancelToken, // Use cancelToken here to allow cancellation
         onReceiveProgress: (recivedBytes, totalBytes) {
           progressCallback(recivedBytes, totalBytes);
         },
@@ -36,10 +38,8 @@ class FileDownload {
       logDebugMessage(message: "Exception - $e");
     }
 
-    if (isSuccess) {
-      if (context.mounted) {
-        Navigator.pop(context);
-      }
+    if (isSuccess && context.mounted) {
+      Navigator.pop(context);
     }
   }
 
