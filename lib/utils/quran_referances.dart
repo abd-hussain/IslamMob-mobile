@@ -1,65 +1,56 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
-// import 'package:islam_app/utils/sorah_type.dart';
 
 class QuranReferances {
-  static String getSorahReferanceNameForLocalizationFromPageNumber(
+  static final _box = Hive.box(DatabaseBoxConstant.userInfo);
+
+  static Map<dynamic, dynamic> _getDatabaseField(String fieldName) {
+    return _box.get(fieldName, defaultValue: {});
+  }
+
+  static String getSorahReferenceNameForLocalizationFromPageNumber(
       int pageNumber) {
-    final box = Hive.box(DatabaseBoxConstant.userInfo);
-    //TODO: Some pages have more than one sorah
-    // Retrieve the map from the Hive box
-    final Map<dynamic, dynamic> quiryFromDB = box.get(
-        DatabaseFieldConstant.quranKaremSorahToPageNumbers,
-        defaultValue: {});
+    final sorahToPageNumbers =
+        _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
+    return _getNearestLowerOrEqualKey(sorahToPageNumbers, pageNumber);
+  }
 
-    // Convert the map entries to a list and sort them by the page number (value)
-    List<MapEntry<dynamic, dynamic>> sortedEntries = quiryFromDB.entries
-        .toList()
-      ..sort((a, b) => a.value.compareTo(b.value));
-
-    // Find the nearest lower or equal page number entry
-    for (int i = sortedEntries.length - 1; i >= 0; i--) {
-      if (sortedEntries[i].value <= pageNumber) {
-        return sortedEntries[i].key;
-      }
-    }
-
-    // Return a default value or handle the case where no sorah matches
-    return '';
+  static int getPageNumberFromSorahReferenceName(String sorahName) {
+    final sorahToPageNumbers =
+        _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
+    return sorahToPageNumbers[sorahName] ?? -1;
   }
 
   static int getNumberOfPagesForTheSelectedPrint() {
-    final box = Hive.box(DatabaseBoxConstant.userInfo);
-
-    // Retrieve the map from the Hive box
-    final Map<dynamic, dynamic> quiryFromDB = box.get(
-        DatabaseFieldConstant.quranKaremSorahToPageNumbers,
-        defaultValue: {});
-
-    // Get the value for the key `quranSorahName114`
-    var valueForSorahName114 = quiryFromDB['quranSorahName114'];
-    return valueForSorahName114;
+    final sorahToPageNumbers =
+        _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
+    return sorahToPageNumbers['quranSorahName114'] ?? -1;
   }
 
-  static String getJozo2NumberFromPageNumber(int pageNumber) {
-    final box = Hive.box(DatabaseBoxConstant.userInfo);
+  static String getJuzNumberFromPageNumber(int pageNumber) {
+    final juzToPageNumbers =
+        _getDatabaseField(DatabaseFieldConstant.quranKaremJuz2ToPageNumbers);
+    return _getNearestLowerOrEqualKey(juzToPageNumbers, pageNumber);
+  }
 
-    final Map<dynamic, dynamic> quiryFromDB = box.get(
-        DatabaseFieldConstant.quranKaremJuz2ToPageNumbers,
-        defaultValue: {});
+  static int getPageNumberFromJuzNumber(String juzNumber) {
+    final juzToPageNumbers =
+        _getDatabaseField(DatabaseFieldConstant.quranKaremJuz2ToPageNumbers);
+    return juzToPageNumbers[juzNumber] ?? -1;
+  }
 
-    // Convert the map entries to a list and sort them by the page number (value)
-    List<MapEntry<dynamic, dynamic>> sortedEntries = quiryFromDB.entries
-        .toList()
+  static String _getNearestLowerOrEqualKey(
+      Map<dynamic, dynamic> map, int pageNumber) {
+    if (map.isEmpty) return '';
+
+    final sortedEntries = map.entries.toList()
       ..sort((a, b) => a.value.compareTo(b.value));
 
-    // Find the nearest lower or equal page number entry
     for (int i = sortedEntries.length - 1; i >= 0; i--) {
       if (sortedEntries[i].value <= pageNumber) {
         return sortedEntries[i].key;
       }
     }
-    // Return a default value or handle the case where no jozo2 matches
-    return '';
+    return ''; // Default if no matching key is found
   }
 }

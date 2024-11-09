@@ -5,7 +5,7 @@ import 'package:islam_app/screens/quran_pages_index/widgets/sub_widgets/sworah_t
 
 class QuranSowarView extends StatelessWidget {
   final String currentSowrahName;
-  final Function(int sorahNumber) onSowrahSelected;
+  final Function(String sowrahName) onSowrahSelected;
 
   const QuranSowarView(
       {super.key,
@@ -29,7 +29,7 @@ class QuranSowarView extends StatelessWidget {
                     context: context,
                     sorahName: list[index],
                   ),
-              onTap: () => onSowrahSelected(index + 1),
+              onTap: () => onSowrahSelected(list[index]),
             );
           }),
     );

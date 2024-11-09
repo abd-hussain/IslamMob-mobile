@@ -99,20 +99,26 @@ class QuranPagesIndexScreen extends StatelessWidget {
                 children: [
                   QuranSowarView(
                     currentSowrahName: currentSowrahName,
-                    onSowrahSelected: (sorahNumber) {
-                      //TODO
+                    onSowrahSelected: (sowrahName) {
+                      Navigator.of(context).pop({
+                        ArgumentConstant.currentSowrahName: sowrahName,
+                      });
                     },
                   ),
                   QuranPartsView(
                     currentPartName: currentPartName,
                     onPartSelected: (partNumber) {
-                      //TODO
+                      Navigator.of(context).pop({
+                        ArgumentConstant.currentPartNumber: partNumber,
+                      });
                     },
                   ),
                   QuranPagesView(
                       currentPageNumber: currentPageNumber,
                       onPageSelected: (pageNumber) {
-                        //TODO
+                        Navigator.of(context).pop({
+                          ArgumentConstant.currentPageNumber: pageNumber,
+                        });
                       }),
                 ],
               );

@@ -23,7 +23,7 @@ class QuranPagesView extends StatelessWidget {
         itemCount: QuranReferances.getNumberOfPagesForTheSelectedPrint(),
         itemBuilder: (context, index) {
           final referanceSorahName = QuranReferances
-              .getSorahReferanceNameForLocalizationFromPageNumber(index + 1);
+              .getSorahReferenceNameForLocalizationFromPageNumber(index + 1);
           return PagesTileView(
             index: index,
             sowrahName: AppLocalizations.of(context)!

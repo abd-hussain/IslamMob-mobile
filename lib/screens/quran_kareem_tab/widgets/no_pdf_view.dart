@@ -10,7 +10,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pdfx/pdfx.dart';
 
 class NoPDFView extends StatelessWidget {
   const NoPDFView({super.key});
@@ -46,28 +45,30 @@ class NoPDFView extends StatelessWidget {
                 await navigator.pushNamed(RoutesConstants.quranPrintListScreen,
                     arguments: {ArgumentConstant.isDetailsPage: true}).then(
                   (value) async {
-                    if (value is Map<String, String>) {
-                      final box = Hive.box(DatabaseBoxConstant.userInfo);
+                    if (value != null) {
+                      if (value is Map<String, String>) {
+                        final box = Hive.box(DatabaseBoxConstant.userInfo);
 
-                      final pageNumber = box.get(
-                          DatabaseFieldConstant.quranKaremLastPageNumber,
-                          defaultValue: 1);
-                      final printName = box
-                          .get(DatabaseFieldConstant.quranKaremPrintNameToUse);
-                      final file = File(printName);
-                      if (await file.exists()) {
-                        debugPrint("file exists at: ${file.path}");
-                        if (context.mounted) {
-                          context.read<QuranKareemBloc>().add(
-                              QuranKareemEvent.updateReadPDFFile(printName));
-                          //TODO
-                          // context.read<QuranKareemBloc>().pdfController.loadDocument(PdfDocument.openFile(file.path));
-                          // context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(pageNumber));
-                          // context.read<QuranKareemBloc>().pdfController.initialPage = pageNumber;
-                          // context.read<QuranKareemBloc>().pdfController.jumpToPage(1);
+                        final pageNumber = box.get(
+                            DatabaseFieldConstant.quranKaremLastPageNumber,
+                            defaultValue: 1);
+                        final printName = box.get(
+                            DatabaseFieldConstant.quranKaremPrintNameToUse);
+                        final file = File(printName);
+                        if (await file.exists()) {
+                          debugPrint("file exists at: ${file.path}");
+                          if (context.mounted) {
+                            context.read<QuranKareemBloc>().add(
+                                QuranKareemEvent.updateReadPDFFile(printName));
+                            //TODO
+                            // context.read<QuranKareemBloc>().pdfController.loadDocument(PdfDocument.openFile(file.path));
+                            // context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(pageNumber));
+                            // context.read<QuranKareemBloc>().pdfController.initialPage = pageNumber;
+                            // context.read<QuranKareemBloc>().pdfController.jumpToPage(1);
+                          }
+                        } else {
+                          debugPrint("file does NOT exist at: ${file.path}");
                         }
-                      } else {
-                        debugPrint("file does NOT exist at: ${file.path}");
                       }
                     }
                   },

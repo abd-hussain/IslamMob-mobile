@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
@@ -7,6 +9,7 @@ import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/bottom_tile
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
+import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/extensions/localization.dart';
 import 'package:islam_app/utils/quran_referances.dart';
 
@@ -16,215 +19,196 @@ class QuranBottomHelpBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final navigator = Navigator.of(context, rootNavigator: true);
-
     return Container(
       color: Colors.black.withOpacity(0.6),
       height: 95,
       child: GridView(
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 1,
-            mainAxisSpacing: 1,
-            childAspectRatio: 3,
-          ),
-          children: [
-            BlocBuilder<QuranKareemBloc, QuranKareemState>(
-              buildWhen: (previous, current) {
-                return previous.brigtness != current.brigtness;
-              },
-              builder: (context, state) {
-                return BottomTile(
-                  title: AppLocalizations.of(context)!.quranSettingLighting,
-                  icon: Icons.sunny,
-                  onTap: () {
-                    showDialog(
-                      context: context,
-                      barrierColor: const Color(0x01000000),
-                      builder: (BuildContext context) => BrightnessPopup(
-                        initialValue: state.brigtness,
-                        returnBrightness: (value) {
-                          returnBrightness(value);
-                        },
-                      ),
-                    );
-                  },
-                );
-              },
-            ),
-            BlocBuilder<QuranKareemBloc, QuranKareemState>(
-              buildWhen: (previous, current) {
-                return previous.pageCount != current.pageCount ||
-                    previous.bookmarkedPages != current.bookmarkedPages;
-              },
-              builder: (context, state) {
-                return BottomTile(
-                  title: state.bookmarkedPages.contains(state.pageCount)
-                      ? AppLocalizations.of(context)!.quranSettingRemoveBookMark
-                      : AppLocalizations.of(context)!.quranSettingAddBookMark,
-                  icon: state.bookmarkedPages.contains(state.pageCount)
-                      ? Icons.bookmark_remove
-                      : Icons.bookmark_add,
-                  colorIcon: state.bookmarkedPages.contains(state.pageCount)
-                      ? Colors.redAccent
-                      : Colors.white70,
-                  onTap: () async {
-                    final List<int> newList = List.from(state.bookmarkedPages);
-
-                    if (newList.contains(state.pageCount)) {
-                      //remove from the list
-                      newList
-                          .removeWhere((element) => element == state.pageCount);
-                    } else {
-                      //add to the list
-                      newList.add(state.pageCount);
-                    }
-
-                    context
-                        .read<QuranKareemBloc>()
-                        .add(QuranKareemEvent.updateBookMarkedPages(newList));
-                  },
-                );
-              },
-            ),
-            BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingIndex,
-              icon: Ionicons.book,
-              onTap: () async {
-                final referanceSorahName = QuranReferances
-                    .getSorahReferanceNameForLocalizationFromPageNumber(
-                  context.read<QuranKareemBloc>().currentPageNumber,
-                );
-                final referanceJozo2Name =
-                    QuranReferances.getJozo2NumberFromPageNumber(
-                  context.read<QuranKareemBloc>().currentPageNumber,
-                );
-                await navigator.pushNamed(RoutesConstants.quranPagesIndexScreen,
-                    arguments: {
-                      ArgumentConstant.currentPageNumber:
-                          context.read<QuranKareemBloc>().currentPageNumber,
-                      ArgumentConstant.currentSowrahName:
-                          AppLocalizations.of(context)!
-                              .getLocalizedString(referanceSorahName),
-                      ArgumentConstant.currentPartName:
-                          AppLocalizations.of(context)!
-                              .getLocalizedString(referanceJozo2Name),
-                    }).then(
-                  (value) {
-                    //TODO
-                  },
-                );
-              },
-            ),
-            // // BlocBuilder<QuranKareemBloc, QuranKareemState>(
-            // //   buildWhen: (previous, current) {
-            // //     return previous.pageCount != current.pageCount || previous.bookmarkedPages != current.bookmarkedPages;
-            // //   },
-            // //   builder: (context, state) {
-            // //     return BottomTile(
-            // //       title: AppLocalizations.of(context)!.quranSettingPages,
-            // //       icon: Icons.copy_sharp,
-            // //       colorIcon: Colors.white70,
-            // //       onTap: () async {
-            // //         await navigator.pushNamed(RoutesConstants.quranPagesListScreen,
-            // //             arguments: {ArgumentConstant.currentPageNumber: state.pageCount}).then(
-            // //           (value) {
-            // //             if (value != null) {
-            // //               if (value is Map<String, dynamic>) {
-            // //                 if (context.mounted) {
-            // //                   context
-            // //                       .read<QuranKareemBloc>()
-            // //                       .add(QuranKareemEvent.updatePageCount(value[ArgumentConstant.currentPageNumber]));
-            // //                   context
-            // //                       .read<QuranKareemBloc>()
-            // //                       .pdfController
-            // //                       .jumpToPage(value[ArgumentConstant.currentPageNumber]);
-            // //                 }
-            // //               }
-            // //             }
-            // //           },
-            // //         );
-            // //       },
-            // //     );
-            // //   },
-            // // ),
-            BottomTile(
-              title: AppLocalizations.of(context)!.quranSettingMushaf,
-              icon: Icons.library_books,
-              onTap: () async {
-                //     await navigator.pushNamed(RoutesConstants.quranPrintListScreen,
-                //         arguments: {ArgumentConstant.isDetailsPage: true}).then(
-                //       (value) async {
-                //         if (value is Map<String, String>) {
-                //           final box = Hive.box(DatabaseBoxConstant.userInfo);
-
-                //           final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber, defaultValue: 1);
-                //           final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse);
-                //           final file = File(printName);
-                //           if (await file.exists()) {
-                //             debugPrint("file exists at: ${file.path}");
-                //             if (context.mounted) {
-                //               context.read<QuranKareemBloc>().add(QuranKareemEvent.updateReadPDFFile(printName));
-                //               context.read<QuranKareemBloc>().pdfController!.loadDocument(PdfDocument.openFile(file.path));
-                //               context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(pageNumber));
-                //               context.read<QuranKareemBloc>().pdfController!.initialPage = pageNumber;
-                //               context.read<QuranKareemBloc>().pdfController!.jumpToPage(1);
-                //             }
-                //           } else {
-                //             debugPrint("file does NOT exist at: ${file.path}");
-                //           }
-                //         }
-                //       },
-                //     );
-              },
-            ),
-            ColoredBox(color: Colors.black.withOpacity(0.5)),
-            // // BottomTile(
-            // //   title: AppLocalizations.of(context)!.quranSettingParts,
-            // //   icon: Icons.pie_chart_rounded,
-            // //   onTap: () async {
-            // //     await navigator.pushNamed(RoutesConstants.quranPartsListScreen).then(
-            // //       (value) {
-            // //         if (value != null) {
-            // //           if (value is Map<String, dynamic>) {
-            // //             if (value[ArgumentConstant.currentPageNumber] != null) {
-            // //               if (context.mounted) {
-            // //                 context
-            // //                     .read<QuranKareemBloc>()
-            // //                     .add(QuranKareemEvent.updatePageCount(value[ArgumentConstant.currentPageNumber]));
-            // //                 context
-            // //                     .read<QuranKareemBloc>()
-            // //                     .pdfController
-            // //                     .jumpToPage(value[ArgumentConstant.currentPageNumber]);
-            // //               }
-            // //             }
-            // //           }
-            // //         }
-            // //       },
-            // //     );
-            // //   },
-            // // ),
-            BlocBuilder<QuranKareemBloc, QuranKareemState>(
-              buildWhen: (previous, current) {
-                return previous.rewardedAd != current.rewardedAd;
-              },
-              builder: (context, state) {
-                return BottomTile(
-                  title: AppLocalizations.of(context)!.quranSettingSupportUs,
-                  icon: Icons.ads_click,
-                  isIconBlinking: state.rewardedAd != null,
-                  onTap: () {
-                    if (state.rewardedAd != null) {
-                      context
-                          .read<QuranKareemBloc>()
-                          .showRewardedAd(state.rewardedAd!);
-                    }
-                  },
-                );
-              },
-            ),
-          ]),
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 1,
+          mainAxisSpacing: 1,
+          childAspectRatio: 3,
+        ),
+        children: [
+          _buildBrightnessTile(context),
+          _buildBookmarkTile(context),
+          _buildIndexTile(context),
+          _buildMushafTile(context),
+          ColoredBox(color: Colors.black.withOpacity(0.5)),
+          _buildSupportUsTile(context),
+        ],
+      ),
     );
   }
+
+  Widget _buildBrightnessTile(BuildContext context) {
+    return BlocBuilder<QuranKareemBloc, QuranKareemState>(
+      buildWhen: (previous, current) => previous.brigtness != current.brigtness,
+      builder: (context, state) {
+        return BottomTile(
+          title: AppLocalizations.of(context)!.quranSettingLighting,
+          icon: Icons.sunny,
+          onTap: () {
+            showDialog(
+              context: context,
+              barrierColor: const Color(0x01000000),
+              builder: (BuildContext context) => BrightnessPopup(
+                initialValue: state.brigtness,
+                returnBrightness: returnBrightness,
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+}
+
+Widget _buildBookmarkTile(BuildContext context) {
+  return BlocBuilder<QuranKareemBloc, QuranKareemState>(
+    buildWhen: (previous, current) =>
+        previous.pageCount != current.pageCount ||
+        previous.bookmarkedPages != current.bookmarkedPages,
+    builder: (context, state) {
+      final isBookmarked = state.bookmarkedPages.contains(state.pageCount);
+      return BottomTile(
+        title: isBookmarked
+            ? AppLocalizations.of(context)!.quranSettingRemoveBookMark
+            : AppLocalizations.of(context)!.quranSettingAddBookMark,
+        icon: isBookmarked ? Icons.bookmark_remove : Icons.bookmark_add,
+        colorIcon: isBookmarked ? Colors.redAccent : Colors.white70,
+        onTap: () =>
+            _toggleBookmark(context, state.pageCount, state.bookmarkedPages),
+      );
+    },
+  );
+}
+
+void _toggleBookmark(
+    BuildContext context, int pageCount, List<int> bookmarkedPages) {
+  final updatedList = List<int>.from(bookmarkedPages);
+  if (updatedList.contains(pageCount)) {
+    updatedList.remove(pageCount);
+  } else {
+    updatedList.add(pageCount);
+  }
+  context
+      .read<QuranKareemBloc>()
+      .add(QuranKareemEvent.updateBookMarkedPages(updatedList));
+}
+
+Widget _buildIndexTile(BuildContext context) {
+  final navigator = Navigator.of(context, rootNavigator: true);
+  return BottomTile(
+    title: AppLocalizations.of(context)!.quranSettingIndex,
+    icon: Ionicons.book,
+    onTap: () async {
+      final bloc = context.read<QuranKareemBloc>();
+      final currentPage = bloc.currentPageNumber;
+      final sorahName =
+          QuranReferances.getSorahReferenceNameForLocalizationFromPageNumber(
+              currentPage);
+      final jozo2Name = QuranReferances.getJuzNumberFromPageNumber(currentPage);
+
+      await navigator
+          .pushNamed(RoutesConstants.quranPagesIndexScreen, arguments: {
+        ArgumentConstant.currentPageNumber: currentPage,
+        ArgumentConstant.currentSowrahName:
+            AppLocalizations.of(context)!.getLocalizedString(sorahName),
+        ArgumentConstant.currentPartName:
+            AppLocalizations.of(context)!.getLocalizedString(jozo2Name),
+        // ignore: use_build_context_synchronously
+      }).then((value) => _handleNavigationResult(context, value));
+    },
+  );
+}
+
+Future<void> _handleNavigationResult(
+    BuildContext context, dynamic value) async {
+  if (value is! Map<String, dynamic> || !context.mounted) return;
+
+  final bloc = context.read<QuranKareemBloc>();
+  if (value[ArgumentConstant.currentPageNumber] != null) {
+    bloc.add(QuranKareemEvent.updatePageCount(
+        value[ArgumentConstant.currentPageNumber]));
+    bloc.pdfController!.jumpToPage(value[ArgumentConstant.currentPageNumber]);
+  }
+
+  if (value[ArgumentConstant.currentPartNumber] != null) {
+    final jozo2PageNumber = QuranReferances.getPageNumberFromJuzNumber(
+        value[ArgumentConstant.currentPartNumber]);
+    bloc.add(QuranKareemEvent.updatePageCount(jozo2PageNumber));
+    bloc.pdfController!.jumpToPage(jozo2PageNumber);
+  }
+
+  if (value[ArgumentConstant.currentSowrahName] != null) {
+    final sorahPageNumber = QuranReferances.getPageNumberFromSorahReferenceName(
+        AppLocalizations.of(context)!.getKeyFromLocalizedString(
+            value[ArgumentConstant.currentSowrahName]));
+    if (sorahPageNumber != -1) {
+      bloc.add(QuranKareemEvent.updatePageCount(sorahPageNumber));
+      bloc.pdfController!.jumpToPage(sorahPageNumber);
+    }
+  }
+}
+
+Widget _buildMushafTile(BuildContext context) {
+  final navigator = Navigator.of(context, rootNavigator: true);
+  return BottomTile(
+    title: AppLocalizations.of(context)!.quranSettingMushaf,
+    icon: Icons.library_books,
+    onTap: () async {
+      await navigator.pushNamed(RoutesConstants.quranPrintListScreen,
+          arguments: {
+            ArgumentConstant.isDetailsPage: true
+          }).then((value) async {
+        if (value != null && value is Map<String, dynamic>) {
+          // ignore: use_build_context_synchronously
+          await _loadMushafFile(context, value);
+        }
+      });
+    },
+  );
+}
+
+Future<void> _loadMushafFile(
+    BuildContext context, Map<String, dynamic> value) async {
+  final box = Hive.box(DatabaseBoxConstant.userInfo);
+  final pageNumber =
+      box.get(DatabaseFieldConstant.quranKaremLastPageNumber, defaultValue: 1);
+  final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse);
+  final file = File(printName);
+
+  if (await file.exists() && context.mounted) {
+    context
+        .read<QuranKareemBloc>()
+        .add(QuranKareemEvent.updateReadPDFFile(printName));
+    //TODO
+    // You can uncomment the following lines once the PDF controller is ready to handle these calls
+    // context.read<QuranKareemBloc>().pdfController.loadDocument(PdfDocument.openFile(file.path));
+    // context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(pageNumber));
+    // context.read<QuranKareemBloc>().pdfController.initialPage = pageNumber;
+    // context.read<QuranKareemBloc>().pdfController.jumpToPage(1);
+  } else {
+    debugPrint("file does NOT exist at: ${file.path}");
+  }
+}
+
+Widget _buildSupportUsTile(BuildContext context) {
+  return BlocBuilder<QuranKareemBloc, QuranKareemState>(
+    buildWhen: (previous, current) => previous.rewardedAd != current.rewardedAd,
+    builder: (context, state) {
+      return BottomTile(
+        title: AppLocalizations.of(context)!.quranSettingSupportUs,
+        icon: Icons.ads_click,
+        isIconBlinking: state.rewardedAd != null,
+        onTap: () {
+          if (state.rewardedAd != null) {
+            context.read<QuranKareemBloc>().showRewardedAd(state.rewardedAd!);
+          }
+        },
+      );
+    },
+  );
 }
