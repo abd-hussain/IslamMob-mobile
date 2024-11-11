@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/screens/home_tab/widgets/azkar_view.dart';
 import 'package:islam_app/screens/home_tab/widgets/header_view.dart';
+import 'package:islam_app/screens/home_tab/widgets/salah_timing_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,10 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   return SizedBox(height: state.isBarExpanded ? 0 : 75);
                 },
               ),
-              Container(
-                color: const Color(0xff292929),
-                height: 150,
+              SalahTimingView(
+                currentLanguageCode:
+                    context.read<HomeTabBloc>().currentLanguageCode(),
               ),
+              const AzkarView(),
             ],
           ),
         );

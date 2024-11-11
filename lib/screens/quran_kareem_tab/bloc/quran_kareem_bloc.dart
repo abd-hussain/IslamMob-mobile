@@ -34,14 +34,18 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     on<_UpdateRewardedAd>(_updateRewardedAd);
     on<_UpdateReadPDFFile>(_updateReadPDFFile);
 
-    _setupFirstInitialPDF();
+    initalMethod();
+  }
+
+  void initalMethod() async {
+    await _setupFirstInitialPDF();
     _getListOfBookMarkedPages();
     _createRewardedAd();
   }
 
   int currentPageNumber = 0;
 
-  void _setupFirstInitialPDF() async {
+  Future<void> _setupFirstInitialPDF() async {
     final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
         defaultValue: 1);
     final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
