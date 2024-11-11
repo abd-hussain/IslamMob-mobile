@@ -486,6 +486,54 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.9.2"
+  firebase_performance:
+    dependency: "direct main"
+    description:
+      name: firebase_performance
+      sha256: "1d69118597e398e01fb3d18abc660499f09123726f85b6a4f67fd835ae43c1ca"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.10.0+9"
+  firebase_performance_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_performance_platform_interface
+      sha256: b5988b4d2c5f256b6d1cd2c44633d136111505f85548b2abc462cc88b7a55942
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.4+45"
+  firebase_performance_web:
+    dependency: transitive
+    description:
+      name: firebase_performance_web
+      sha256: "1de85ca43840bc16c171dcc668bcb597324f68c74112224fe8a856032d89665c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.7+3"
+  firebase_remote_config:
+    dependency: "direct main"
+    description:
+      name: firebase_remote_config
+      sha256: "10ecace220616349263c8b6b80760f302d4bc68e6a9db2800c615ab06853de46"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.4"
+  firebase_remote_config_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_remote_config_platform_interface
+      sha256: "2595a3def5dfab965b8a2cfd272a5595dec464a7a593258cfa9e4144cbe9842c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.45"
+  firebase_remote_config_web:
+    dependency: transitive
+    description:
+      name: firebase_remote_config_web
+      sha256: fc8ec1bfab20eec37026c4ca0272f3647eae28bc186168e4a2d2859ed7d0f863
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.7.3"
   firebase_storage:
     dependency: "direct main"
     description:
@@ -666,6 +714,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+  hijri:
+    dependency: "direct main"
+    description:
+      name: hijri
+      sha256: "203eb7341e32789af6429877e88411b1526ef44c5d157ce4d3b930dd32c37ef1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   hive:
     dependency: "direct main"
     description:

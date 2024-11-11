@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-enum SalahType {
-  fajr,
-  shoroq,
-  dhuhr,
-  asr,
-  maghrib,
-  isha,
-}
 
 class HomeHeaderView extends StatelessWidget {
   final SalahType salahType;
@@ -30,7 +22,7 @@ class HomeHeaderView extends StatelessWidget {
     return SliverAppBar(
       backgroundColor: const Color(0xff292929),
       expandedHeight: 250,
-      collapsedHeight: 75,
+      collapsedHeight: 80,
       floating: false,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
@@ -138,9 +130,9 @@ class HomeHeaderView extends StatelessWidget {
     switch (salahType) {
       case SalahType.fajr:
         return AppLocalizations.of(context)!.fajr;
-      case SalahType.shoroq:
+      case SalahType.sunrise:
         return AppLocalizations.of(context)!.sherooq;
-      case SalahType.dhuhr:
+      case SalahType.zhur:
         return AppLocalizations.of(context)!.zhur;
       case SalahType.asr:
         return AppLocalizations.of(context)!.asr;

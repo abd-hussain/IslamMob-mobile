@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:firebase_performance/firebase_performance.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/utils/constants/app_constant.dart';
@@ -21,6 +22,19 @@ class HttpRepository {
           message: "Please check your internet connection");
     }
 
+    final HttpMetric metric = FirebasePerformance.instance.newHttpMetric(
+      "${AppConstant.applicationMainURL}$methodName",
+      requestType == RequestType.get
+          ? HttpMethod.Get
+          : requestType == RequestType.post
+              ? HttpMethod.Post
+              : requestType == RequestType.delete
+                  ? HttpMethod.Delete
+                  : HttpMethod.Put,
+    );
+
+    metric.start();
+
     final dioClient = _createDioClient();
 
     // Prepare the request data
@@ -37,6 +51,8 @@ class HttpRepository {
       return response.data;
     } on DioException catch (_) {
       rethrow; // Rethrow DioExceptions for handling upstream
+    } finally {
+      metric.stop();
     }
   }
 

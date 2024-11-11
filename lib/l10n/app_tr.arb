@@ -234,10 +234,18 @@
     "quranSowarIndex" : "Sowar Index",
     "quranPartsIndex" : "Parts Index",
     "fajr": "Fajr",
-    "sherooq": "Sherooq",
+    "sherooq": "Sunrise",
     "zhur": "Zhur",
     "asr": "Asr",
     "maghrib": "Maghrib",
     "isha": "Isha",
-    "after" : "After"
+    "after" : "After",
+    "saturday" : "Saturday",
+    "sunday" : "Sunday",
+    "monday" : "Monday",
+    "tuesday" : "Tuesday",
+    "wednesday" : "Wednesday",
+    "thursday" : "Thursday",
+    "friday" : "Friday",
+    "qurankareem" : "Holy Quran"
 }

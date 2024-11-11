@@ -10,7 +10,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pdfx/pdfx.dart';
 
 class NoPDFView extends StatelessWidget {
   const NoPDFView({super.key});
@@ -70,13 +69,7 @@ class NoPDFView extends StatelessWidget {
     final file = File(printName);
 
     if (file.existsSync() && context.mounted) {
-      context
-          .read<QuranKareemBloc>()
-          .add(QuranKareemEvent.updateReadPDFFile(printName));
-      context
-          .read<QuranKareemBloc>()
-          .pdfController
-          ?.loadDocument(PdfDocument.openFile(file.path));
+      context.read<QuranKareemBloc>().initalMethod();
     } else {
       debugPrint("file does NOT exist at: ${file.path}");
     }

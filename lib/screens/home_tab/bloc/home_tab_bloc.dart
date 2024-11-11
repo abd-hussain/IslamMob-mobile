@@ -3,10 +3,21 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/utils/constants/database_constant.dart';
 
 part 'home_tab_event.dart';
 part 'home_tab_state.dart';
 part 'home_tab_bloc.freezed.dart';
+
+enum SalahType {
+  fajr,
+  sunrise,
+  zhur,
+  asr,
+  maghrib,
+  isha,
+}
 
 class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   final ScrollController scrollController = ScrollController();
@@ -15,6 +26,7 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     on<_UpdateExpandedStatus>(_updateExpandedStatus);
     scrollController.addListener(_scrollListener);
   }
+  late Box box = Hive.box(DatabaseBoxConstant.userInfo);
 
   void _scrollListener() {
     // Adjust this value based on your SliverAppBar expanded height
@@ -28,6 +40,10 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     if (isExpanded != state.isBarExpanded) {
       add(HomeTabEvent.updateExpandedStatus(isExpanded));
     }
+  }
+
+  String currentLanguageCode() {
+    return box.get(DatabaseFieldConstant.selectedLanguage);
   }
 
   FutureOr<void> _updateExpandedStatus(event, Emitter<HomeTabState> emit) {

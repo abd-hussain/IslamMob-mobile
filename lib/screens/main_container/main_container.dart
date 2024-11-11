@@ -52,7 +52,9 @@ class _MainContainerState extends State<MainContainer> {
             items: [
               TabItem(
                   icon: Icons.home, title: AppLocalizations.of(context)!.home),
-              const TabItem(icon: Icons.menu_book_rounded),
+              TabItem(
+                  icon: Icons.menu_book_rounded,
+                  title: AppLocalizations.of(context)!.qurankareem),
               TabItem(
                   icon: Icons.settings,
                   title: AppLocalizations.of(context)!.settings),
