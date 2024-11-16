@@ -247,6 +247,11 @@
     "wednesday" : "الاربعاء",
     "thursday" : "الخميس",
     "friday" : "الجمعة",
-    "qurankareem" : "القرآن الكريم"
+    "qurankareem" : "القرآن الكريم",
+    "mawaqeetalsalah" : "مواقيت الصلاة",
+    "mawaqeetalsalahdetails" : "السماح بتحديد موقعك لتحديد مواقيت الصلاة بشكل دقيق وفقا لموقعك",
+    "mawaqeetalsalahdetails2" : "يمكنك تغير ذلك لاحقاً من الاعدادات",
+    "allowgetlocation" : "السماح بالحصول على موقعك"
+
 
 }
