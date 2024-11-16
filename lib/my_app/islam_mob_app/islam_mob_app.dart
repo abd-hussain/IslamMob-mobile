@@ -70,8 +70,10 @@ class IslamMobAppState extends State<IslamMobApp> {
               transitionDuration: const Duration(milliseconds: 100),
               pageBuilder: (_, __, ___) => routes[settings.name]!);
         },
-        initialRoute: myBox.get(DatabaseFieldConstant.selectedLanguage) != null
+        initialRoute: myBox.get(
+                    DatabaseFieldOnBoardingStageConstant.onBoardingfinished) !=
+                null
             ? RoutesConstants.mainContainer
-            : RoutesConstants.initialRoute);
+            : RoutesConstants.inBoardingScreen);
   }
 }
