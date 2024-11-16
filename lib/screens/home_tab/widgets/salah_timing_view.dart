@@ -106,7 +106,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                 child: const Padding(
                   padding: EdgeInsets.all(16),
                   child: Icon(
-                    Icons.notifications_active,
+                    Icons.alarm,
                     color: Color(0xff444444),
                   ),
                 ),

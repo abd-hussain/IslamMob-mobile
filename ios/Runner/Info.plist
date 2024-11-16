@@ -60,6 +60,8 @@
 	<string>Please allow access to gallery in order to register your profile pictures</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>reminders</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location when open.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>speech</string>
 	<key>NSUserTrackingUsageDescription</key>

@@ -13,3 +13,8 @@ class DatabaseFieldConstant {
   static const String quranKaremSorahToPageNumbers =
       "quranKaremSorahToPageNumbers";
 }
+
+class DatabaseFieldOnBoardingStageConstant {
+  static const String onBoardingfinished = "onBoardingfinished";
+  static const String onBoardingStage = "onBoardingStage";
+}
