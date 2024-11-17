@@ -62,42 +62,35 @@ class InBoardingScreen extends StatelessWidget {
                   buildWhen: (previous, current) =>
                       previous.inBoardingStage != current.inBoardingStage,
                   builder: (context, state) {
+                    final mainContext = context.read<InboardingBloc>();
+
                     switch (state.inBoardingStage) {
                       case 0:
                         return LanguageInBoardingView(
                           onSelectLanguage: (langCode) async {
-                            await context
-                                .read<InboardingBloc>()
-                                .setLanguageInStorage(context, langCode);
+                            await mainContext.setLanguageInStorage(
+                                context, langCode);
 
-                            await context
-                                .read<InboardingBloc>()
-                                .changeOnBoardingStage(1);
+                            await mainContext.changeOnBoardingStage(1);
                           },
                         );
                       case 1:
                         return LocationInBoardingView(
                           onSelectLocation: () async {
-                            await context
-                                .read<InboardingBloc>()
-                                .changeOnBoardingStage(2);
+                            await mainContext.changeOnBoardingStage(2);
                           },
                         );
                       case 2:
                         return NotificationInBoardingView(
                           onSelect: () async {
-                            await context
-                                .read<InboardingBloc>()
-                                .changeOnBoardingStage(3);
+                            await mainContext.changeOnBoardingStage(3);
                           },
                         );
                       case 3:
                         return GenderInBoardingView(onSelect: () async {
                           final navigator =
                               Navigator.of(context, rootNavigator: true);
-                          await context
-                              .read<InboardingBloc>()
-                              .finishInBoarding();
+                          await mainContext.finishInBoarding();
                           await navigator.pushNamedAndRemoveUntil(
                             RoutesConstants.mainContainer,
                             (Route<dynamic> route) => false,

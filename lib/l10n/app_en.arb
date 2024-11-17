@@ -251,7 +251,14 @@
     "mawaqeetalsalah" : "Prayer times",
     "mawaqeetalsalahdetails" : "Allow your location to be determined to accurately determine prayer times according to your location",
     "mawaqeetalsalahdetails2" : "You can change that later from the settings",
-    "allowgetlocation" : "Allow to get your location"
+    "allowgetlocation" : "Allow to get your location",
+    "whyyoushouldallowlocation": "Why should you allow your site to be accessed?",
+    "whyyoushouldallowlocationdetails": "Without allowing your location, we will not be able to accurately determine prayer times based on your location.",
+    "nolocationPermissionButton" : "Activate from settings",
+    "nolocationPermissionButton2" : "Search offline",
+    "locationPermissionSuccses" : "Your location is correct",
+    "locationPermissionSuccsesButton" : "Continue",
+    "locationPermissionSuccsesButtonError" : "location is not correct"
 
 
 

@@ -4,10 +4,36 @@ import 'package:geolocator/geolocator.dart';
 import 'package:islam_app/utils/logger.dart';
 
 class LocationService {
-  Future<String> getCurrentCountryCode() async {
-    return await _getLocationData(_getAddressFromLatLng);
+  /// Get the current country, city, and sub-city
+  Future<Map<String, String>> getLocationDetails() async {
+    if (!await _handleLocationPermission()) {
+      return {'error': 'No-Permission'};
+    }
+
+    try {
+      final Position position = await Geolocator.getCurrentPosition();
+      final placemarks = await placemarkFromCoordinates(
+        position.latitude,
+        position.longitude,
+      );
+
+      if (placemarks.isNotEmpty) {
+        final placemark = placemarks[0];
+        return {
+          'country': placemark.country ?? 'Unknown',
+          'city': placemark.locality ?? 'Unknown',
+          'subCity': placemark.subLocality ?? 'Unknown',
+        };
+      }
+    } on PlatformException catch (e) {
+      await _logPlatformException(e);
+    } catch (e) {
+      logDebugMessage(message: "Unexpected error: $e");
+    }
+    return {'error': 'Error retrieving location'};
   }
 
+  /// Handle location permissions
   Future<bool> _handleLocationPermission() async {
     if (!await Geolocator.isLocationServiceEnabled()) {
       return false;
@@ -22,45 +48,7 @@ class LocationService {
         permission != LocationPermission.denied;
   }
 
-  Future<String> _getLocationData(
-      Future<String?> Function(Position) dataFetcher) async {
-    if (!await _handleLocationPermission()) {
-      return 'No-Permission';
-    }
-
-    try {
-      final Position position = await Geolocator.getCurrentPosition();
-      final String? result = await dataFetcher(position);
-      return result ?? "Unknown";
-    } on PlatformException catch (e) {
-      await _logPlatformException(e);
-      return "Error";
-    }
-  }
-
-  Future<String?> _getAddressFromLatLng(Position position) async {
-    return await _getPlacemarkData(
-      position,
-      (placemark) => placemark.isoCountryCode,
-    );
-  }
-
-  Future<String?> _getPlacemarkData(
-      Position position, String? Function(Placemark) extractor) async {
-    try {
-      final placemarks =
-          await placemarkFromCoordinates(position.latitude, position.longitude);
-      if (placemarks.isNotEmpty) {
-        return extractor(placemarks[0]);
-      }
-    } on PlatformException catch (e) {
-      await _logPlatformException(e);
-    } catch (e) {
-      logDebugMessage(message: "Unexpected error: $e");
-    }
-    return null;
-  }
-
+  /// Log platform exceptions
   Future<void> _logPlatformException(PlatformException e) async {
     logDebugMessage(message: e.message ?? "An error occurred");
   }
