@@ -9,7 +9,7 @@ class TitleTableWidget extends StatefulWidget {
 }
 
 class _TitleTableWidgetState extends State<TitleTableWidget> {
-  final List<String> phrases = [
+  final List<String> _phrases = [
     "اختر لغتك المفضلة",
     "Select Your Favorite Language",
     'Favori Dilinizi Seçin',
@@ -17,7 +17,8 @@ class _TitleTableWidgetState extends State<TitleTableWidget> {
     'Sélectionnez votre langue préférée',
     'Выберите ваш любимый язык',
   ];
-  int currentIndex = 0;
+  int _currentIndex = 0;
+  bool _isDisposed = false;
 
   @override
   void initState() {
@@ -27,12 +28,20 @@ class _TitleTableWidgetState extends State<TitleTableWidget> {
 
   void _startAnimation() {
     Future.delayed(const Duration(seconds: 1), () {
-      setState(() {
-        currentIndex =
-            (currentIndex + 1) % phrases.length; // Cycle through phrases
-      });
-      _startAnimation(); // Continue looping the animation
+      if (!_isDisposed) {
+        setState(() {
+          _currentIndex =
+              (_currentIndex + 1) % _phrases.length; // Cycle through phrases
+        });
+        _startAnimation(); // Continue looping the animation
+      }
     });
+  }
+
+  @override
+  void dispose() {
+    _isDisposed = true; // Mark the widget as disposed
+    super.dispose();
   }
 
   @override
@@ -43,7 +52,7 @@ class _TitleTableWidgetState extends State<TitleTableWidget> {
       child: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16),
         child: CustomText(
-          title: phrases[currentIndex],
+          title: _phrases[_currentIndex],
           fontSize: 15,
           textColor: const Color(0xff034061),
           fontWeight: FontWeight.bold,

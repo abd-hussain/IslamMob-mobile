@@ -251,7 +251,17 @@
     "mawaqeetalsalah" : "مواقيت الصلاة",
     "mawaqeetalsalahdetails" : "السماح بتحديد موقعك لتحديد مواقيت الصلاة بشكل دقيق وفقا لموقعك",
     "mawaqeetalsalahdetails2" : "يمكنك تغير ذلك لاحقاً من الاعدادات",
-    "allowgetlocation" : "السماح بالحصول على موقعك"
+    "allowgetlocation" : "السماح بالحصول على موقعك",
+    "whyyoushouldallowlocation": "لماذا يجب عليك السماح بالحصول على موقعك؟",
+    "whyyoushouldallowlocationdetails": "بدون السماح بالحصول على موقعك، لن نتمكن من تحديد مواقيت الصلاة بشكل دقيق وفقا لموقعك",
+    "nolocationPermissionButton" : "تفعيل من الاعدادات",
+    "nolocationPermissionButton2" : "البحث دون الاتصال بالانترنت",
+    "locationPermissionSuccses" : "تم تفعيل الموقع بنجاح",
+    "locationPermissionSuccsesButton" : "الموقع صحيح",
+    "locationPermissionSuccsesButtonError" : "الموقع غير صحيح"
+
+
+
 
 
 }
