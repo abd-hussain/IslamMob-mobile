@@ -24,9 +24,21 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
 
   HomeTabBloc() : super(const HomeTabState()) {
     on<_UpdateExpandedStatus>(_updateExpandedStatus);
+    on<_UpdateShowingNotificationView>(_updateShowingNotificationView);
+
+    _handleShowNotificationView();
+
     scrollController.addListener(_scrollListener);
   }
   final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
+
+  void _handleShowNotificationView() {
+    final String token =
+        _box.get(DatabaseFieldConstant.notificationToken, defaultValue: "");
+    if (token == "") {
+      add(HomeTabEvent.updateShowingNotificationView(true));
+    }
+  }
 
   void _scrollListener() {
     // Adjust this value based on your SliverAppBar expanded height
@@ -60,6 +72,11 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
 
   FutureOr<void> _updateExpandedStatus(event, Emitter<HomeTabState> emit) {
     emit(state.copyWith(isBarExpanded: event.status));
+  }
+
+  FutureOr<void> _updateShowingNotificationView(
+      _UpdateShowingNotificationView event, Emitter<HomeTabState> emit) {
+    emit(state.copyWith(showAllowNotificationView: event.status));
   }
 
   @override

@@ -4,5 +4,6 @@ part of 'home_tab_bloc.dart';
 class HomeTabState with _$HomeTabState {
   const factory HomeTabState({
     @Default(true) bool isBarExpanded,
+    @Default(false) bool showAllowNotificationView,
   }) = _HomeTabState;
 }

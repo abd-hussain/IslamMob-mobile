@@ -20,32 +20,41 @@ mixin _$HomeTabEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) updateExpandedStatus,
+    required TResult Function(bool status) updateShowingNotificationView,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? updateExpandedStatus,
+    TResult? Function(bool status)? updateShowingNotificationView,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? updateExpandedStatus,
+    TResult Function(bool status)? updateShowingNotificationView,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateExpandedStatus value) updateExpandedStatus,
+    required TResult Function(_UpdateShowingNotificationView value)
+        updateShowingNotificationView,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateExpandedStatus value)? updateExpandedStatus,
+    TResult? Function(_UpdateShowingNotificationView value)?
+        updateShowingNotificationView,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateExpandedStatus value)? updateExpandedStatus,
+    TResult Function(_UpdateShowingNotificationView value)?
+        updateShowingNotificationView,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -165,6 +174,7 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) updateExpandedStatus,
+    required TResult Function(bool status) updateShowingNotificationView,
   }) {
     return updateExpandedStatus(status);
   }
@@ -173,6 +183,7 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? updateExpandedStatus,
+    TResult? Function(bool status)? updateShowingNotificationView,
   }) {
     return updateExpandedStatus?.call(status);
   }
@@ -181,6 +192,7 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? updateExpandedStatus,
+    TResult Function(bool status)? updateShowingNotificationView,
     required TResult orElse(),
   }) {
     if (updateExpandedStatus != null) {
@@ -193,6 +205,8 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateExpandedStatus value) updateExpandedStatus,
+    required TResult Function(_UpdateShowingNotificationView value)
+        updateShowingNotificationView,
   }) {
     return updateExpandedStatus(this);
   }
@@ -201,6 +215,8 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateExpandedStatus value)? updateExpandedStatus,
+    TResult? Function(_UpdateShowingNotificationView value)?
+        updateShowingNotificationView,
   }) {
     return updateExpandedStatus?.call(this);
   }
@@ -209,6 +225,8 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateExpandedStatus value)? updateExpandedStatus,
+    TResult Function(_UpdateShowingNotificationView value)?
+        updateShowingNotificationView,
     required TResult orElse(),
   }) {
     if (updateExpandedStatus != null) {
@@ -233,8 +251,164 @@ abstract class _UpdateExpandedStatus implements HomeTabEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateShowingNotificationViewImplCopyWith<$Res>
+    implements $HomeTabEventCopyWith<$Res> {
+  factory _$$UpdateShowingNotificationViewImplCopyWith(
+          _$UpdateShowingNotificationViewImpl value,
+          $Res Function(_$UpdateShowingNotificationViewImpl) then) =
+      __$$UpdateShowingNotificationViewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool status});
+}
+
+/// @nodoc
+class __$$UpdateShowingNotificationViewImplCopyWithImpl<$Res>
+    extends _$HomeTabEventCopyWithImpl<$Res,
+        _$UpdateShowingNotificationViewImpl>
+    implements _$$UpdateShowingNotificationViewImplCopyWith<$Res> {
+  __$$UpdateShowingNotificationViewImplCopyWithImpl(
+      _$UpdateShowingNotificationViewImpl _value,
+      $Res Function(_$UpdateShowingNotificationViewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeTabEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$UpdateShowingNotificationViewImpl(
+      null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateShowingNotificationViewImpl
+    implements _UpdateShowingNotificationView {
+  _$UpdateShowingNotificationViewImpl(this.status);
+
+  @override
+  final bool status;
+
+  @override
+  String toString() {
+    return 'HomeTabEvent.updateShowingNotificationView(status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateShowingNotificationViewImpl &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, status);
+
+  /// Create a copy of HomeTabEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateShowingNotificationViewImplCopyWith<
+          _$UpdateShowingNotificationViewImpl>
+      get copyWith => __$$UpdateShowingNotificationViewImplCopyWithImpl<
+          _$UpdateShowingNotificationViewImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool status) updateExpandedStatus,
+    required TResult Function(bool status) updateShowingNotificationView,
+  }) {
+    return updateShowingNotificationView(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool status)? updateExpandedStatus,
+    TResult? Function(bool status)? updateShowingNotificationView,
+  }) {
+    return updateShowingNotificationView?.call(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool status)? updateExpandedStatus,
+    TResult Function(bool status)? updateShowingNotificationView,
+    required TResult orElse(),
+  }) {
+    if (updateShowingNotificationView != null) {
+      return updateShowingNotificationView(status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateExpandedStatus value) updateExpandedStatus,
+    required TResult Function(_UpdateShowingNotificationView value)
+        updateShowingNotificationView,
+  }) {
+    return updateShowingNotificationView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateExpandedStatus value)? updateExpandedStatus,
+    TResult? Function(_UpdateShowingNotificationView value)?
+        updateShowingNotificationView,
+  }) {
+    return updateShowingNotificationView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateExpandedStatus value)? updateExpandedStatus,
+    TResult Function(_UpdateShowingNotificationView value)?
+        updateShowingNotificationView,
+    required TResult orElse(),
+  }) {
+    if (updateShowingNotificationView != null) {
+      return updateShowingNotificationView(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateShowingNotificationView implements HomeTabEvent {
+  factory _UpdateShowingNotificationView(final bool status) =
+      _$UpdateShowingNotificationViewImpl;
+
+  @override
+  bool get status;
+
+  /// Create a copy of HomeTabEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateShowingNotificationViewImplCopyWith<
+          _$UpdateShowingNotificationViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeTabState {
   bool get isBarExpanded => throw _privateConstructorUsedError;
+  bool get showAllowNotificationView => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeTabState
   /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +423,7 @@ abstract class $HomeTabStateCopyWith<$Res> {
           HomeTabState value, $Res Function(HomeTabState) then) =
       _$HomeTabStateCopyWithImpl<$Res, HomeTabState>;
   @useResult
-  $Res call({bool isBarExpanded});
+  $Res call({bool isBarExpanded, bool showAllowNotificationView});
 }
 
 /// @nodoc
@@ -268,11 +442,16 @@ class _$HomeTabStateCopyWithImpl<$Res, $Val extends HomeTabState>
   @override
   $Res call({
     Object? isBarExpanded = null,
+    Object? showAllowNotificationView = null,
   }) {
     return _then(_value.copyWith(
       isBarExpanded: null == isBarExpanded
           ? _value.isBarExpanded
           : isBarExpanded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showAllowNotificationView: null == showAllowNotificationView
+          ? _value.showAllowNotificationView
+          : showAllowNotificationView // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -286,7 +465,7 @@ abstract class _$$HomeTabStateImplCopyWith<$Res>
       __$$HomeTabStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isBarExpanded});
+  $Res call({bool isBarExpanded, bool showAllowNotificationView});
 }
 
 /// @nodoc
@@ -303,11 +482,16 @@ class __$$HomeTabStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isBarExpanded = null,
+    Object? showAllowNotificationView = null,
   }) {
     return _then(_$HomeTabStateImpl(
       isBarExpanded: null == isBarExpanded
           ? _value.isBarExpanded
           : isBarExpanded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showAllowNotificationView: null == showAllowNotificationView
+          ? _value.showAllowNotificationView
+          : showAllowNotificationView // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -316,15 +500,19 @@ class __$$HomeTabStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeTabStateImpl implements _HomeTabState {
-  const _$HomeTabStateImpl({this.isBarExpanded = true});
+  const _$HomeTabStateImpl(
+      {this.isBarExpanded = true, this.showAllowNotificationView = false});
 
   @override
   @JsonKey()
   final bool isBarExpanded;
+  @override
+  @JsonKey()
+  final bool showAllowNotificationView;
 
   @override
   String toString() {
-    return 'HomeTabState(isBarExpanded: $isBarExpanded)';
+    return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView)';
   }
 
   @override
@@ -333,11 +521,15 @@ class _$HomeTabStateImpl implements _HomeTabState {
         (other.runtimeType == runtimeType &&
             other is _$HomeTabStateImpl &&
             (identical(other.isBarExpanded, isBarExpanded) ||
-                other.isBarExpanded == isBarExpanded));
+                other.isBarExpanded == isBarExpanded) &&
+            (identical(other.showAllowNotificationView,
+                    showAllowNotificationView) ||
+                other.showAllowNotificationView == showAllowNotificationView));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isBarExpanded);
+  int get hashCode =>
+      Object.hash(runtimeType, isBarExpanded, showAllowNotificationView);
 
   /// Create a copy of HomeTabState
   /// with the given fields replaced by the non-null parameter values.
@@ -349,10 +541,14 @@ class _$HomeTabStateImpl implements _HomeTabState {
 }
 
 abstract class _HomeTabState implements HomeTabState {
-  const factory _HomeTabState({final bool isBarExpanded}) = _$HomeTabStateImpl;
+  const factory _HomeTabState(
+      {final bool isBarExpanded,
+      final bool showAllowNotificationView}) = _$HomeTabStateImpl;
 
   @override
   bool get isBarExpanded;
+  @override
+  bool get showAllowNotificationView;
 
   /// Create a copy of HomeTabState
   /// with the given fields replaced by the non-null parameter values.

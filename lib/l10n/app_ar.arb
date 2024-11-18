@@ -266,7 +266,8 @@
     "whyyoushouldallownotificationdetails" : "بدون السماح بالإشعارات، لن تتمكن من تلقي إشعارات مهمة حول الصلاة والختمة والذكر وغيرها من الأحداث المهمة.",
     "whyyoushouldallownotification" : "لماذا يجب عليك السماح بالإشعارات؟",
     "notificationPermissionSuccses" : "تم تفعيل الإشعارات بنجاح",
-    "startyourjourney" : "ابدأ رحلتك الإسلامية"
+    "startyourjourney" : "ابدأ رحلتك الإسلامية",
+    "notificationSettings" : "إعدادات الإشعارات"
 
 
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_app/screens/home_tab/widgets/sub_widgets/day_box.dart';
 import 'package:islam_app/screens/home_tab/widgets/sub_widgets/salah_box.dart';
@@ -83,7 +84,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                           textAlign: TextAlign.center,
                         ),
                         CustomText(
-                          title: "11:59",
+                          title: "11:59", //TODO
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                           textColor: Color(0xff444444),
@@ -94,24 +95,36 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    topLeft: Radius.circular(10),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[100],
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      topLeft: Radius.circular(10),
+                    ),
                   ),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Icon(
-                    Icons.alarm,
-                    color: Color(0xff444444),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Material(
+                      child: InkWell(
+                        onTap: () async {
+                          final navigator =
+                              Navigator.of(context, rootNavigator: true);
+                          await navigator.pushNamed(
+                              RoutesConstants.prayNotificationSettingScreen);
+                        },
+                        child: const Icon(
+                          Icons.alarm,
+                          size: 28,
+                          color: Color(0xff444444),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
               Expanded(
                 child: Container(
                   decoration: const BoxDecoration(
@@ -133,7 +146,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                           textAlign: TextAlign.center,
                         ),
                         CustomText(
-                          title: "1:38",
+                          title: "1:38", //TODO
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                           textColor: Color(0xff444444),
@@ -145,7 +158,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
