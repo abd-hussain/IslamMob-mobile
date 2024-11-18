@@ -25,8 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
               HomeHeaderView(
                 salahType: SalahType.fajr, //TODO
                 salahTime: DateTime.utc(2023, 03, 1, 3, 55, 36), //TODO
-                regionName: "al qwasmeeh", //TODO
-                cityName: "Amman", //TODO
+                countryName: context.read<HomeTabBloc>().currentCountry(),
+                regionName: context.read<HomeTabBloc>().currentSubCity(),
+                cityName: context.read<HomeTabBloc>().currentCity(),
               ),
             ];
           },

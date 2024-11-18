@@ -47,7 +47,7 @@ class _MainContainerState extends State<MainContainer> {
             backgroundColor: Colors.white,
             activeColor: const Color(0xff007F37),
             color: const Color(0xff444444),
-            height: 50,
+            height: 55,
             style: TabStyle.react,
             items: [
               TabItem(

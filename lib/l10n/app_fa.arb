@@ -258,7 +258,15 @@
     "nolocationPermissionButton2" : "Search offline",
     "locationPermissionSuccses" : "Your location is correct",
     "locationPermissionSuccsesButton" : "Continue",
-    "locationPermissionSuccsesButtonError" : "location is not correct"
+    "locationPermissionSuccsesButtonError" : "location is not correct",
+    "allowSendingNotifications" : "Allow sending notifications",
+    "allowSendingNotificationsdetails" : "Allowing notifications will allow us to remind you of prayer, Khatmat, Dhikr, and other important events.",
+    "allowNotifications" : "Allow notifications",
+    "notNowNotifications" : "Not Now , Will Allow it Later",
+    "whyyoushouldallownotificationdetails" : "Without allowing notifications, you will not be able to receive important notifications about prayer, Khatmat, Dhikr, and other important events.",
+    "whyyoushouldallownotification" : "Why should you allow notifications?",
+    "notificationPermissionSuccses" : "Notifications are enabled",
+    "startyourjourney" : "Start your journey"
 
 
 

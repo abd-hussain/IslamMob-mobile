@@ -45,14 +45,6 @@ class LocationHavePermissionView extends StatelessWidget {
               AppLocalizations.of(context)!.locationPermissionSuccsesButton,
           onTap: () => onConfirmationPress(),
         ),
-        const SizedBox(height: 16),
-        CustomText(
-          title: AppLocalizations.of(context)!
-              .locationPermissionSuccsesButtonError,
-          fontSize: 16,
-          textColor: const Color(0xff292929),
-          textAlign: TextAlign.center,
-        ),
       ],
     );
   }

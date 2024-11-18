@@ -26,7 +26,7 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     on<_UpdateExpandedStatus>(_updateExpandedStatus);
     scrollController.addListener(_scrollListener);
   }
-  late Box box = Hive.box(DatabaseBoxConstant.userInfo);
+  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
   void _scrollListener() {
     // Adjust this value based on your SliverAppBar expanded height
@@ -43,7 +43,19 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   }
 
   String currentLanguageCode() {
-    return box.get(DatabaseFieldConstant.selectedLanguage);
+    return _box.get(DatabaseFieldConstant.selectedLanguage);
+  }
+
+  String currentCountry() {
+    return _box.get(DatabaseFieldConstant.selectedCountry);
+  }
+
+  String currentCity() {
+    return _box.get(DatabaseFieldConstant.selectedCity);
+  }
+
+  String currentSubCity() {
+    return _box.get(DatabaseFieldConstant.selectedSubCity);
   }
 
   FutureOr<void> _updateExpandedStatus(event, Emitter<HomeTabState> emit) {
