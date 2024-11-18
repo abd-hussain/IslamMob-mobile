@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/inboarding/bloc/inboarding_bloc.dart';
-import 'package:islam_app/screens/inboarding/widgets/gender/gender_view.dart';
 import 'package:islam_app/screens/inboarding/widgets/language/language_view.dart';
 import 'package:islam_app/screens/inboarding/widgets/location/location_view.dart';
 import 'package:islam_app/screens/inboarding/widgets/notification/notification_view.dart';
@@ -22,6 +21,7 @@ class InBoardingScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -70,32 +70,31 @@ class InBoardingScreen extends StatelessWidget {
                           onSelectLanguage: (langCode) async {
                             await mainContext.setLanguageInStorage(
                                 context, langCode);
-
                             await mainContext.changeOnBoardingStage(1);
                           },
                         );
                       case 1:
                         return LocationInBoardingView(
-                          onSelectLocation: () async {
+                          onSelectLocation: (country, city, subCity) async {
+                            await mainContext.setLocationInStorage(
+                                country: country, city: city, subCity: subCity);
                             await mainContext.changeOnBoardingStage(2);
                           },
                         );
                       case 2:
                         return NotificationInBoardingView(
-                          onSelect: () async {
-                            await mainContext.changeOnBoardingStage(3);
+                          onSelect: (token) async {
+                            final navigator =
+                                Navigator.of(context, rootNavigator: true);
+                            await mainContext
+                                .setNotificationTokenInStorage(token);
+                            await mainContext.finishInBoarding();
+                            await navigator.pushNamedAndRemoveUntil(
+                              RoutesConstants.mainContainer,
+                              (Route<dynamic> route) => false,
+                            );
                           },
                         );
-                      case 3:
-                        return GenderInBoardingView(onSelect: () async {
-                          final navigator =
-                              Navigator.of(context, rootNavigator: true);
-                          await mainContext.finishInBoarding();
-                          await navigator.pushNamedAndRemoveUntil(
-                            RoutesConstants.mainContainer,
-                            (Route<dynamic> route) => false,
-                          );
-                        });
                       default:
                         return const SizedBox();
                     }

@@ -11,13 +11,13 @@ class HttpInterceptor extends InterceptorsWrapper {
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     final box = Hive.box(DatabaseBoxConstant.userInfo);
-    final token = box.get(DatabaseFieldConstant.token);
+    // final token = box.get(DatabaseFieldConstant.token);
     final language = box.get(DatabaseFieldConstant.selectedLanguage);
 
-    // Set Authorization header if token exists
-    if (token != null && token.isNotEmpty) {
-      options.headers["Authorization"] = "Bearer $token";
-    }
+    // // Set Authorization header if token exists
+    // if (token != null && token.isNotEmpty) {
+    //   options.headers["Authorization"] = "Bearer $token";
+    // }
 
     // Set language header
     options.headers["lang"] =

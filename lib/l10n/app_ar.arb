@@ -258,7 +258,15 @@
     "nolocationPermissionButton2" : "البحث دون الاتصال بالانترنت",
     "locationPermissionSuccses" : "تم تفعيل الموقع بنجاح",
     "locationPermissionSuccsesButton" : "الموقع صحيح",
-    "locationPermissionSuccsesButtonError" : "الموقع غير صحيح"
+    "locationPermissionSuccsesButtonError" : "الموقع غير صحيح",
+    "allowSendingNotifications" : "السماح بإرسال الإشعارات",
+    "allowSendingNotificationsdetails" : "إن تفعيل الإشعارات يسمح لنا بتذكيرك بالصلاة والختمة والأذكار وغيرها من الأحداث المهمة.",
+    "allowNotifications" : "السماح بالإشعارات",
+    "notNowNotifications" : "ليس الآن، سأسمح بذلك لاحقًا",
+    "whyyoushouldallownotificationdetails" : "بدون السماح بالإشعارات، لن تتمكن من تلقي إشعارات مهمة حول الصلاة والختمة والذكر وغيرها من الأحداث المهمة.",
+    "whyyoushouldallownotification" : "لماذا يجب عليك السماح بالإشعارات؟",
+    "notificationPermissionSuccses" : "تم تفعيل الإشعارات بنجاح",
+    "startyourjourney" : "ابدأ رحلتك الإسلامية"
 
 
 

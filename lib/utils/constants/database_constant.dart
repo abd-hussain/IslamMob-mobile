@@ -3,8 +3,12 @@ class DatabaseBoxConstant {
 }
 
 class DatabaseFieldConstant {
-  static const String token = "token";
+  static const String notificationToken = "notificationToken";
   static const String selectedLanguage = "selectedLanguage";
+  static const String selectedCountry = "selectedCountry";
+  static const String selectedCity = "selectedCity";
+  static const String selectedSubCity = "selectedSubCity";
+
   static const String quranKaremLastPageNumber = "quranKaremLastPageNumber";
   static const String quranKaremBookMarkList = "quranKaremBookMarkList";
   static const String quranKaremPrintNameToUse = "quranKaremPrintNameToUse";

@@ -8,11 +8,13 @@ class HomeHeaderView extends StatelessWidget {
   final DateTime salahTime;
   final String regionName;
   final String cityName;
+  final String countryName;
 
   const HomeHeaderView({
     super.key,
     required this.salahType,
     required this.salahTime,
+    required this.countryName,
     required this.cityName,
     required this.regionName,
   });
@@ -105,7 +107,7 @@ class HomeHeaderView extends StatelessWidget {
                       size: 12,
                     ),
                     CustomText(
-                      title: "$regionName, $cityName",
+                      title: "$regionName, $cityName, $countryName",
                       fontSize: 10,
                     ),
                   ],

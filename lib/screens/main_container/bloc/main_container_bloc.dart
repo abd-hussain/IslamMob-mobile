@@ -16,8 +16,4 @@ class MainContainerBloc extends Bloc<MainContainerEvent, MainContainerState> {
       _ChangeSelectedIndex event, Emitter<MainContainerState> emit) {
     emit(state.copyWith(selectedIndex: event.tabIndex));
   }
-
-  // Future<void> _callRegisterTokenRequest(BuildContext context) async {
-  //   //TODO
-  // }
 }

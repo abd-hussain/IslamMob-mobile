@@ -4,7 +4,7 @@ import 'package:islam_app/screens/inboarding/widgets/location/bloc/location_bloc
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/utils/location_service.dart';
+import 'package:islam_app/services/general/location_service.dart';
 
 class LocationIdleView extends StatelessWidget {
   const LocationIdleView({super.key});
@@ -38,7 +38,7 @@ class LocationIdleView extends StatelessWidget {
             final mainContext = context.read<LocationBloc>();
             mainContext.add(
               const LocationEvent.changeLocationStatus(
-                status: LocationProcessState.loading(),
+                status: LocationProcessStateLoading(),
               ),
             );
             final locationDetails =
