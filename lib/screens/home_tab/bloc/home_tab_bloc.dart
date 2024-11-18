@@ -10,24 +10,13 @@ part 'home_tab_event.dart';
 part 'home_tab_state.dart';
 part 'home_tab_bloc.freezed.dart';
 
-enum SalahType {
-  fajr,
-  sunrise,
-  zhur,
-  asr,
-  maghrib,
-  isha,
-}
-
 class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   final ScrollController scrollController = ScrollController();
 
   HomeTabBloc() : super(const HomeTabState()) {
     on<_UpdateExpandedStatus>(_updateExpandedStatus);
     on<_UpdateShowingNotificationView>(_updateShowingNotificationView);
-
     _handleShowNotificationView();
-
     scrollController.addListener(_scrollListener);
   }
   final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
@@ -56,18 +45,6 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
 
   String currentLanguageCode() {
     return _box.get(DatabaseFieldConstant.selectedLanguage);
-  }
-
-  String currentCountry() {
-    return _box.get(DatabaseFieldConstant.selectedCountry);
-  }
-
-  String currentCity() {
-    return _box.get(DatabaseFieldConstant.selectedCity);
-  }
-
-  String currentSubCity() {
-    return _box.get(DatabaseFieldConstant.selectedSubCity);
   }
 
   FutureOr<void> _updateExpandedStatus(event, Emitter<HomeTabState> emit) {

@@ -46,4 +46,38 @@ class DayTime {
         return AppLocalizations.of(context)!.sunday;
     }
   }
+
+  String convertingHoursFrom24To12(int? hour) {
+    if (hour == null) {
+      return "00";
+    }
+
+    // Handle midnight
+    if (hour == 0) {
+      return "12";
+    }
+
+    // Handle noon and AM/PM conversion
+    if (hour >= 1 && hour <= 12) {
+      return hour
+          .toString()
+          .padLeft(2, '0'); // Add leading zero for single-digit hours
+    } else {
+      return (hour - 12)
+          .toString()
+          .padLeft(2, '0'); // Convert to 12-hour format
+    }
+  }
+
+  String knowTimingAMorPM(int? hour) {
+    if (hour == null) {
+      return "AM";
+    }
+
+    if (hour >= 0 && hour <= 12) {
+      return "AM";
+    } else {
+      return "PM";
+    }
+  }
 }

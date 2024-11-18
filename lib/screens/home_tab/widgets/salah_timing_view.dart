@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
-import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/screens/home_tab/widgets/home_header_view/bloc/home_header_bloc.dart';
 import 'package:islam_app/screens/home_tab/widgets/sub_widgets/day_box.dart';
 import 'package:islam_app/screens/home_tab/widgets/sub_widgets/salah_box.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -28,32 +28,32 @@ class _SalahTimingViewState extends State<SalahTimingView> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SalahBox(
-                  salahType: SalahType.fajr,
+                  salahType: SalahTimeStateFajir(),
                   salahTime: "05:00", //TODO
                   isCurrentSalah: false,
                 ),
                 SalahBox(
-                  salahType: SalahType.sunrise,
+                  salahType: SalahTimeStateSunrise(),
                   salahTime: "06:00", //TODO
                   isCurrentSalah: false,
                 ),
                 SalahBox(
-                  salahType: SalahType.zhur,
+                  salahType: SalahTimeStateZhur(),
                   salahTime: "07:00", //TODO
                   isCurrentSalah: true,
                 ),
                 SalahBox(
-                  salahType: SalahType.asr,
+                  salahType: SalahTimeStateAsr(),
                   salahTime: "08:00", //TODO
                   isCurrentSalah: false,
                 ),
                 SalahBox(
-                  salahType: SalahType.maghrib,
+                  salahType: SalahTimeStateMaghrib(),
                   salahTime: "09:00", //TODO
                   isCurrentSalah: false,
                 ),
                 SalahBox(
-                  salahType: SalahType.isha,
+                  salahType: SalahTimeStateIsha(),
                   salahTime: "10:00", //TODO
                   isCurrentSalah: false,
                 ),
@@ -116,7 +116,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                               RoutesConstants.prayNotificationSettingScreen);
                         },
                         child: const Icon(
-                          Icons.alarm,
+                          Icons.settings,
                           size: 28,
                           color: Color(0xff444444),
                         ),
