@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/screens/home_tab/widgets/home_header_view/bloc/home_header_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SalahBox extends StatelessWidget {
-  final SalahType salahType;
+  final SalahTimeState salahType;
   final String salahTime;
   final bool isCurrentSalah;
 
@@ -52,36 +52,36 @@ class SalahBox extends StatelessWidget {
   }
 
   String getSalahName(
-      {required BuildContext context, required SalahType salahType}) {
+      {required BuildContext context, required SalahTimeState salahType}) {
     switch (salahType) {
-      case SalahType.fajr:
+      case SalahTimeStateFajir():
         return AppLocalizations.of(context)!.fajr;
-      case SalahType.sunrise:
+      case SalahTimeStateSunrise():
         return AppLocalizations.of(context)!.sherooq;
-      case SalahType.zhur:
+      case SalahTimeStateZhur():
         return AppLocalizations.of(context)!.zhur;
-      case SalahType.asr:
+      case SalahTimeStateAsr():
         return AppLocalizations.of(context)!.asr;
-      case SalahType.maghrib:
+      case SalahTimeStateMaghrib():
         return AppLocalizations.of(context)!.maghrib;
-      case SalahType.isha:
+      case SalahTimeStateIsha():
         return AppLocalizations.of(context)!.isha;
     }
   }
 
-  String getSalaImage({required SalahType salahType}) {
+  String getSalaImage({required SalahTimeState salahType}) {
     switch (salahType) {
-      case SalahType.fajr:
+      case SalahTimeStateFajir():
         return "assets/images/days/fajr.png";
-      case SalahType.sunrise:
+      case SalahTimeStateSunrise():
         return "assets/images/days/sunrise.png";
-      case SalahType.zhur:
+      case SalahTimeStateZhur():
         return "assets/images/days/zhur.png";
-      case SalahType.asr:
+      case SalahTimeStateAsr():
         return "assets/images/days/asr.png";
-      case SalahType.maghrib:
+      case SalahTimeStateMaghrib():
         return "assets/images/days/maghrib.png";
-      case SalahType.isha:
+      case SalahTimeStateIsha():
         return "assets/images/days/isha.png";
     }
   }

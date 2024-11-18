@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
-import 'package:islam_app/screens/home_tab/widgets/azkar_view.dart';
-import 'package:islam_app/screens/home_tab/widgets/header_view.dart';
+import 'package:islam_app/screens/home_tab/widgets/azkar/azkar_view.dart';
+import 'package:islam_app/screens/home_tab/widgets/home_header_view/home_header_view.dart';
 import 'package:islam_app/screens/home_tab/widgets/notification_permission_view.dart';
 import 'package:islam_app/screens/home_tab/widgets/salah_timing_view.dart';
 import 'package:islam_app/shared_widgets/admob_banner.dart';
@@ -24,13 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
           controller: context.read<HomeTabBloc>().scrollController,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
-              HomeHeaderView(
-                salahType: SalahType.fajr, //TODO
-                salahTime: DateTime.utc(2023, 03, 1, 3, 55, 36), //TODO
-                countryName: context.read<HomeTabBloc>().currentCountry(),
-                regionName: context.read<HomeTabBloc>().currentSubCity(),
-                cityName: context.read<HomeTabBloc>().currentCity(),
-              ),
+              const HomeHeaderView(),
             ];
           },
           body: SingleChildScrollView(
