@@ -266,5 +266,6 @@
     "whyyoushouldallownotificationdetails" : "Without allowing notifications, you will not be able to receive important notifications about prayer, Khatmat, Dhikr, and other important events.",
     "whyyoushouldallownotification" : "Why should you allow notifications?",
     "notificationPermissionSuccses" : "Notifications are enabled",
-    "startyourjourney" : "Start your journey"
+    "startyourjourney" : "Start your journey",
+    "notificationSettings" : "Notification Settings"
 }
