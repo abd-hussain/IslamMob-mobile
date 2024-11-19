@@ -94,19 +94,18 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
 
   String getDateMelady(int index) {
     return locator<DayTime>().formatDateDDMMYYYY(
-        locator<DayTime>().getDateWithDayFraction(dayFraction: index - 3));
+        locator<DayTime>().getDateWithDayFraction(dayFraction: index));
   }
 
   String getDateHijri(int index) {
     return locator<DayTime>().formatHijriDateDDMMYYYY(
-        locator<DayTime>().getHijriDateWithDayFraction(dayFraction: index - 3));
+        locator<DayTime>().getHijriDateWithDayFraction(dayFraction: index));
   }
 
   String getDayName(BuildContext context, int index) {
     return locator<DayTime>().getDayName(
         context: context,
-        date:
-            locator<DayTime>().getDateWithDayFraction(dayFraction: index - 3));
+        date: locator<DayTime>().getDateWithDayFraction(dayFraction: index));
   }
 
   String getTitleOfTheDay(BuildContext context, int index) {

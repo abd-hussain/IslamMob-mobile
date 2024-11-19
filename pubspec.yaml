@@ -3,7 +3,7 @@ description: "A new Flutter project."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+30
+version: 1.0.0+31
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -66,7 +66,8 @@ dependencies:
   card_swiper: ^3.0.1
   adhan: ^2.0.0+1 
   share_plus: ^10.1.2 
-
+  custom_radio_grouped_button: ^2.2.1
+  
   # flutter_qiblah: ^3.0.4 #TODO
   # flutter_animate: ^4.5.0 #TODO
   # just_audio: ^0.9.42 #TODO

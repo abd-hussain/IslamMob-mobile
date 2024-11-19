@@ -3,6 +3,7 @@ import 'package:islam_app/screens/about_us/about_us_screen.dart';
 import 'package:islam_app/screens/about_us/privacy_policy_screen.dart';
 import 'package:islam_app/screens/about_us/terms_condition_screen.dart';
 import 'package:islam_app/screens/inboarding/inboarding_screen.dart';
+import 'package:islam_app/screens/pray_calculation_setting/pray_calculation_setting_screen.dart';
 import 'package:islam_app/screens/pray_notification_setting/pray_notification_setting_screen.dart';
 import 'package:islam_app/screens/quran_pages_index/quran_pages_index_screen.dart';
 import 'package:islam_app/screens/quran_prints/quran_prints_screen.dart';
@@ -30,6 +31,8 @@ class RoutesConstants {
   static const String inBoardingScreen = 'inBoardingScreen';
   static const String prayNotificationSettingScreen =
       'prayNotificationSettingScreen';
+  static const String prayCalculationSettingScreen =
+      'prayCalculationSettingScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -48,4 +51,6 @@ final Map<String, Widget> routes = {
   RoutesConstants.inBoardingScreen: const InBoardingScreen(),
   RoutesConstants.prayNotificationSettingScreen:
       const PrayNotificationSettingScreen(),
+  RoutesConstants.prayCalculationSettingScreen:
+      const PrayCalculationSettingScreen(),
 };

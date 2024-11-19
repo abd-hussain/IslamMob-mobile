@@ -22,7 +22,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
     return BlocProvider(
       create: (context) => SalahTimingBloc(),
       child: SizedBox(
-        height: 210,
+        height: 220,
         child: Swiper(
           itemCount: 7,
           index: 3,
@@ -37,16 +37,17 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                 children: [
                   DayBox(
                     index: index,
-                    dateMilady:
-                        context.read<SalahTimingBloc>().getDateMelady(index),
+                    dateMilady: context
+                        .read<SalahTimingBloc>()
+                        .getDateMelady(index - 3),
                     dateHijry:
-                        context.read<SalahTimingBloc>().getDateHijri(index),
+                        context.read<SalahTimingBloc>().getDateHijri(index - 3),
                     dayName: context
                         .read<SalahTimingBloc>()
-                        .getDayName(context, index),
+                        .getDayName(context, index - 3),
                     titileOfTheDay: context
                         .read<SalahTimingBloc>()
-                        .getTitleOfTheDay(context, index),
+                        .getTitleOfTheDay(context, index - 3),
                     currentLanguageCode:
                         context.read<SalahTimingBloc>().currentLanguageCode(),
                   ),
@@ -216,7 +217,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                                             rootNavigator: true);
                                         await navigator.pushNamed(
                                             RoutesConstants
-                                                .prayNotificationSettingScreen);
+                                                .prayCalculationSettingScreen);
                                       },
                                       child: const Icon(
                                         Icons.settings,
