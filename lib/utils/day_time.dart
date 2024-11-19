@@ -12,20 +12,27 @@ class DayTime {
     return "assets/images/days/moon.png";
   }
 
-  String getCurrentTimeMelady() {
-    final now = DateTime.now();
-    return DateFormat('dd/MM/yyyy').format(now);
+  String formatDateDDMMYYYY(DateTime date) {
+    return DateFormat('dd/MM/yyyy').format(date);
   }
 
-  String getCurrentTimeHejri() {
-    final now = HijriCalendar.now();
-    final xx = now.toFormat("dd/MM/yyyy");
+  String formatHijriDateDDMMYYYY(HijriCalendar date) {
+    final xx = date.toFormat("dd/MM/yyyy");
     return xx;
   }
 
-  String getDayName(BuildContext context) {
-    final now = DateTime.now();
-    final today = DateFormat('EEEE').format(now);
+  DateTime getDateWithDayFraction({required int dayFraction}) {
+    return DateTime.now().add(Duration(days: dayFraction));
+  }
+
+  HijriCalendar getHijriDateWithDayFraction({required int dayFraction}) {
+    final date = HijriCalendar.now();
+    date.hDay += dayFraction;
+    return date;
+  }
+
+  String getDayName({required BuildContext context, required DateTime date}) {
+    final today = DateFormat('EEEE').format(date);
 
     switch (today) {
       case "Sunday":

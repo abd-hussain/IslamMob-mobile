@@ -46,4 +46,8 @@ class AppConstant {
       "${AppConstant.applicationMainURL}static/web/terms.html";
   static const String privacypolicyLink =
       "${AppConstant.applicationMainURL}static/web/privacypolicy.html";
+
+  static const String androidAppLink =
+      "https://play.google.com/store/apps/details?id=com.islammob.app";
+  static const String iOSAppLink = "https://apps.apple.com/app/id6670502375";
 }

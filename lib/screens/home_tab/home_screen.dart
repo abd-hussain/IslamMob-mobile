@@ -4,7 +4,7 @@ import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_app/screens/home_tab/widgets/azkar/azkar_view.dart';
 import 'package:islam_app/screens/home_tab/widgets/home_header_view/home_header_view.dart';
 import 'package:islam_app/screens/home_tab/widgets/notification_permission_view.dart';
-import 'package:islam_app/screens/home_tab/widgets/salah_timing_view.dart';
+import 'package:islam_app/screens/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
 import 'package:islam_app/shared_widgets/admob_banner.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,10 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     return SizedBox(height: state.isBarExpanded ? 0 : 75);
                   },
                 ),
-                SalahTimingView(
-                  currentLanguageCode:
-                      context.read<HomeTabBloc>().currentLanguageCode(),
-                ),
+                const SalahTimingView(),
                 BlocBuilder<HomeTabBloc, HomeTabState>(
                   buildWhen: (previous, current) =>
                       previous.showAllowNotificationView !=

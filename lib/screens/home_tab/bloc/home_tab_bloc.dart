@@ -43,10 +43,6 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     }
   }
 
-  String currentLanguageCode() {
-    return _box.get(DatabaseFieldConstant.selectedLanguage);
-  }
-
   FutureOr<void> _updateExpandedStatus(event, Emitter<HomeTabState> emit) {
     emit(state.copyWith(isBarExpanded: event.status));
   }

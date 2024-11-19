@@ -9,7 +9,9 @@ import 'package:islam_app/screens/settings_tab/widgets/profile_header.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/screens/settings_tab/widgets/title_view.dart';
 import 'package:islam_app/shared_widgets/admob_banner.dart';
+import 'package:islam_app/utils/constants/app_constant.dart';
 import 'package:rate_my_app/rate_my_app.dart';
+import 'package:share_plus/share_plus.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -36,7 +38,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   name: AppLocalizations.of(context)!.changeSelectedLanguage,
                   onTap: () async => await navigator
                       .pushNamed(RoutesConstants.changeLanguageScreen),
-                )
+                ),
+                ProfileOptions(
+                  icon: Icons.notification_important,
+                  name: AppLocalizations.of(context)!.notificationSettings,
+                  onTap: () async {
+                    //TODO:
+                  },
+                ),
+                ProfileOptions(
+                  icon: Icons.settings,
+                  name: AppLocalizations.of(context)!.prayCalculationSettings,
+                  onTap: () async {
+                    //TODO:
+                  },
+                ),
               ]),
               TitleView(title: AppLocalizations.of(context)!.reachouttous),
               CollectionListOptionView(listOfOptions: [
@@ -77,7 +93,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   name: AppLocalizations.of(context)!.aboutus,
                   onTap: () async =>
                       await navigator.pushNamed(RoutesConstants.aboutUsScreen),
-                )
+                ),
+                ProfileOptions(
+                  icon: Icons.share,
+                  name: AppLocalizations.of(context)!.shareapp,
+                  onTap: () async {
+                    await Share.share(
+                        "${AppLocalizations.of(context)!.shareMessageBody} \n Android : ${AppConstant.androidAppLink} \n iOS : ${AppConstant.iOSAppLink}",
+                        subject:
+                            AppLocalizations.of(context)!.shareMessageTitle);
+                  },
+                ),
               ]),
               const SizedBox(height: 8),
               if (kIsWeb) const SizedBox() else const AddMobBanner(),
