@@ -31,14 +31,8 @@ class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
 
     add(
       HomeHeaderEvent.updateSalahTypeAndTime(
-        nextPrayType: prayManager.getNextPrayer(),
-        nextPrayDateTime: DateTime(
-          prayManager.getNextPrayerTime().year,
-          prayManager.getNextPrayerTime().month,
-          prayManager.getNextPrayerTime().day,
-          prayManager.getNextPrayerTime().hour,
-          prayManager.getNextPrayerTime().minute,
-        ),
+        nextPrayType: prayManager.getNextPrayerType(),
+        nextPrayDateTime: prayManager.getNextPrayerTime(),
       ),
     );
   }

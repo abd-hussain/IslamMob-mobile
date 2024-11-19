@@ -18,6 +18,8 @@ class PrayManager {
     this.specificDate,
   });
 
+  //TODO: All of this calculation is wrong
+
   PrayTimingModel getAllPrayTime() {
     final date = specificDate ?? DateComponents.from(DateTime.now());
     final params = calculationMethod.getParameters()..madhab = madhab;
@@ -26,15 +28,16 @@ class PrayManager {
     final sunnahTimes = SunnahTimes(prayerTimes);
 
     return PrayTimingModel(
-      fajir: DateFormat.jm().format(prayerTimes.fajr),
-      sunrise: DateFormat.jm().format(prayerTimes.sunrise),
-      dhuhr: DateFormat.jm().format(prayerTimes.dhuhr),
-      asr: DateFormat.jm().format(prayerTimes.asr),
-      maghrib: DateFormat.jm().format(prayerTimes.maghrib),
-      isha: DateFormat.jm().format(prayerTimes.isha),
-      middleOfTheNight: DateFormat.jm().format(sunnahTimes.middleOfTheNight),
+      fajir: DateFormat('hh:mm').format(prayerTimes.fajr),
+      sunrise: DateFormat('hh:mm').format(prayerTimes.sunrise),
+      dhuhr: DateFormat('hh:mm').format(prayerTimes.dhuhr),
+      asr: DateFormat('hh:mm').format(prayerTimes.asr),
+      maghrib: DateFormat('hh:mm').format(prayerTimes.maghrib),
+      isha: DateFormat('hh:mm').format(prayerTimes.isha),
+      middleOfTheNight:
+          DateFormat('hh:mm').format(sunnahTimes.middleOfTheNight),
       lastThirdOfTheNight:
-          DateFormat.jm().format(sunnahTimes.lastThirdOfTheNight),
+          DateFormat('hh:mm').format(sunnahTimes.lastThirdOfTheNight),
     );
   }
 
@@ -61,29 +64,40 @@ class PrayManager {
     return nextDayPrayerTimes.fajr; // Fajr is the first prayer of the next day
   }
 
-  SalahTimeState getNextPrayer() {
+  SalahTimeState getNextPrayerType() {
     final now = DateTime.now();
     final date = specificDate ?? DateComponents.from(now);
     final params = calculationMethod.getParameters()..madhab = madhab;
-    final prayerTimes =
-        PrayerTimes(coordinates, date, params, utcOffset: utcOffset);
+    final prayerTimes = PrayerTimes(coordinates, date, params,
+        utcOffset: const Duration(hours: 0));
 
-    final nextPrayer = prayerTimes.nextPrayerByDateTime(now);
+    // Retrieve all prayer times
+    final fajir = prayerTimes.fajr;
+    final dhuhr = prayerTimes.dhuhr;
+    final asr = prayerTimes.asr;
+    final maghrib = prayerTimes.maghrib;
+    final isha = prayerTimes.isha;
 
-    switch (nextPrayer) {
-      case Prayer.dhuhr:
-        return const SalahTimeStateZhur();
-      case Prayer.asr:
-        return const SalahTimeStateAsr();
-      case Prayer.sunrise:
-        return const SalahTimeStateSunrise();
-      case Prayer.maghrib:
-        return const SalahTimeStateMaghrib();
-      case Prayer.isha:
-        return const SalahTimeStateIsha();
-      default:
-        return const SalahTimeStateFajir();
+    // Create a list of prayer times
+    final List<Map<String, Object>> prayerTimesList = [
+      {'name': const SalahTimeStateFajir(), 'time': fajir},
+      {'name': const SalahTimeStateZhur(), 'time': dhuhr},
+      {'name': const SalahTimeStateAsr(), 'time': asr},
+      {'name': const SalahTimeStateMaghrib(), 'time': maghrib},
+      {'name': const SalahTimeStateIsha(), 'time': isha},
+    ];
+
+    // Find the next prayer time
+    for (var prayer in prayerTimesList) {
+      final prayerTime = (prayer['time'] as DateTime).toUtc();
+      if (prayerTime.isAfter(now)) {
+        final prayerName = prayer['name'] as SalahTimeState;
+        return prayerName;
+      }
     }
+
+    // If all prayer times are in the past, return Fajr of the next day
+    return const SalahTimeStateFajir();
   }
 
   double getQiblaDirection() {
