@@ -42,16 +42,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ProfileOptions(
                   icon: Icons.notification_important,
                   name: AppLocalizations.of(context)!.notificationSettings,
-                  onTap: () async {
-                    //TODO:
-                  },
+                  onTap: () async => await navigator
+                      .pushNamed(RoutesConstants.prayNotificationSettingScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.settings,
                   name: AppLocalizations.of(context)!.prayCalculationSettings,
-                  onTap: () async {
-                    //TODO:
-                  },
+                  onTap: () async => await navigator
+                      .pushNamed(RoutesConstants.prayCalculationSettingScreen),
                 ),
               ]),
               TitleView(title: AppLocalizations.of(context)!.reachouttous),
