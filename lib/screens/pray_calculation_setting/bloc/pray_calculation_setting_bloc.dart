@@ -21,6 +21,10 @@ class PrayCalculationSettingBloc
     on<_UpdateMidleNighTime>(_updateMidleNighTime);
     on<_UpdateLast3thTime>(_updateLast3thTime);
     on<_UpdateMathhab>(_updateMathhab);
+    on<_UpdateCalculationMethod>(_updateCalculationMethod);
+    on<_UpdateTimeZone>(_updateTimeZone);
+    on<_FactoryReset>(_factoryReset);
+    on<_UpdateButtonsStatus>(_updateButtonsStatus);
 
     _prepareSalahTiming();
   }
@@ -31,6 +35,7 @@ class PrayCalculationSettingBloc
     Duration utcOffset = const Duration(hours: 3),
   }) {
     //TODO: handle PrayManager
+    // save previos pass value
     final prayManager = PrayManager(
       coordinates: Coordinates(31.913932, 35.925581),
       utcOffset: utcOffset,
@@ -101,5 +106,56 @@ class PrayCalculationSettingBloc
             ? Madhab.hanafi
             : Madhab.shafi);
     emit(state.copyWith(mathhab: event.mathhab));
+  }
+
+  FutureOr<void> _updateCalculationMethod(_UpdateCalculationMethod event,
+      Emitter<PrayCalculationSettingState> emit) {
+    switch (event.method) {
+      case CalculationMethodStateUmmAlQura _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.umm_al_qura);
+      case CalculationMethodStateDubai _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.dubai);
+      case CalculationMethodStateKarachi _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.karachi);
+      case CalculationMethodStateMuslimWorldLeague _:
+        _prepareSalahTiming(
+            calculationMethod: CalculationMethod.muslim_world_league);
+      case CalculationMethodStateEgypt _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.egyptian);
+      case CalculationMethodStateKuwait _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.kuwait);
+      case CalculationMethodStateQatar _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.qatar);
+      case CalculationMethodStateTehran _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.tehran);
+      case CalculationMethodStateTurkey _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.turkey);
+      case CalculationMethodStateIslamicSocietyOfNorthAmerica _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.north_america);
+      case CalculationMethodStateSingapore _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.singapore);
+      case CalculationMethodStateCustom _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.other);
+      //TODO : handle other state
+      default:
+        break;
+    }
+
+    emit(state.copyWith(calculationMethod: event.method));
+  }
+
+  FutureOr<void> _updateTimeZone(
+      _UpdateTimeZone event, Emitter<PrayCalculationSettingState> emit) {
+    emit(state.copyWith(timeZone: event.value));
+  }
+
+  FutureOr<void> _factoryReset(
+      event, Emitter<PrayCalculationSettingState> emit) {
+    //TODO
+  }
+
+  FutureOr<void> _updateButtonsStatus(
+      _UpdateButtonsStatus event, Emitter<PrayCalculationSettingState> emit) {
+    emit(state.copyWith(buttonsStatus: event.status));
   }
 }

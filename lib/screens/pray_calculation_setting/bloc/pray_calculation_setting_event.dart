@@ -37,4 +37,18 @@ class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
   factory PrayCalculationSettingEvent.updateMathhab({
     required MathhabState mathhab,
   }) = _UpdateMathhab;
+
+  factory PrayCalculationSettingEvent.updateCalculationMethod({
+    required CalculationMethodState method,
+  }) = _UpdateCalculationMethod;
+
+  factory PrayCalculationSettingEvent.updateTimeZone({
+    required double value,
+  }) = _UpdateTimeZone;
+
+  factory PrayCalculationSettingEvent.updateButtonsStatus({
+    required bool status,
+  }) = _UpdateButtonsStatus;
+
+  factory PrayCalculationSettingEvent.factoryReset() = _FactoryReset;
 }
