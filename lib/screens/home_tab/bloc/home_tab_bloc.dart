@@ -47,15 +47,15 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     emit(state.copyWith(isBarExpanded: event.status));
   }
 
-  FutureOr<void> _updateShowingNotificationView(
-      _UpdateShowingNotificationView event, Emitter<HomeTabState> emit) {
-    emit(state.copyWith(showAllowNotificationView: event.status));
-  }
-
   @override
   Future<void> close() {
     scrollController.removeListener(_scrollListener);
     scrollController.dispose();
     return super.close();
+  }
+
+  FutureOr<void> _updateShowingNotificationView(
+      _UpdateShowingNotificationView event, Emitter<HomeTabState> emit) {
+    emit(state.copyWith(showAllowNotificationView: event.status));
   }
 }

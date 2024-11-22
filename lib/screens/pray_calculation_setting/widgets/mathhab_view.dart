@@ -24,7 +24,7 @@ class MathhabView extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           CustomText(
-            title: "Will Change Asr Prayer Time With One Hour Digree", //TODO
+            title: AppLocalizations.of(context)!.mathhabdetails,
             fontSize: 14,
             textColor: const Color(0xff444444),
             textAlign: TextAlign.center,
@@ -32,7 +32,7 @@ class MathhabView extends StatelessWidget {
           ),
           BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
             buildWhen: (previous, current) =>
-                previous.mathhab != current.mathhab,
+                previous.calculationMethod != current.calculationMethod,
             builder: (context, state) {
               return CustomRadioButton(
                 elevation: 2,
@@ -41,25 +41,16 @@ class MathhabView extends StatelessWidget {
                 unSelectedColor: Colors.white,
                 unSelectedBorderColor: const Color(0xff444444),
                 selectedColor: const Color(0xff007F37),
-                defaultSelected: state.mathhab == const MathhabState.hanafi()
-                    ? "Hanafi"
-                    : "Hanbali / Shafi / Maliki", //TODO
-                buttonLables: const [
-                  'Hanbali / Shafi / Maliki', //TODO
-                  'Hanafi', //TODO
-                ],
-                buttonValues: const [
-                  "Hanbali / Shafi / Maliki", //TODO
-                  "Hanafi", //TODO
-                ],
+                defaultSelected: getInitialMthab(context, state.mathhab),
+                buttonLables: getMathhabList(context),
+                buttonValues: getMathhabList(context),
                 buttonTextStyle: const ButtonTextStyle(
                   selectedColor: Colors.white,
                   unSelectedColor: Color(0xff444444),
                   textStyle: TextStyle(fontSize: 14),
                 ),
                 radioButtonValue: (value) {
-                  if (value == "Hanbali / Shafi / Maliki") {
-                    //TODO
+                  if (value == AppLocalizations.of(context)!.mathhab1Shafi) {
                     context.read<PrayCalculationSettingBloc>().add(
                           PrayCalculationSettingEvent.updateMathhab(
                             mathhab: const MathhabState.shaafei(),
@@ -79,5 +70,21 @@ class MathhabView extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String getInitialMthab(BuildContext context, MathhabState mathhab) {
+    switch (mathhab) {
+      case MathhabStateHanafi():
+        return AppLocalizations.of(context)!.mathhab1Shafi;
+      case MathhabStateShaafei():
+        return AppLocalizations.of(context)!.mathhab2Hanafi;
+    }
+  }
+
+  List<String> getMathhabList(BuildContext context) {
+    return [
+      AppLocalizations.of(context)!.mathhab1Shafi,
+      AppLocalizations.of(context)!.mathhab2Hanafi,
+    ];
   }
 }
