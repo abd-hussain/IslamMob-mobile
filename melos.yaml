@@ -1,0 +1,16 @@
+
+name: sub_projects
+
+packages:
+  - sub_projects/islam_mob_adhan/*
+  - .
+
+scripts:
+  analyze:
+    exec: dart analyze .
+  pub-get:
+    run: melos exec -- "flutter pub get"
+
+command:
+  bootstrap:
+    usePubspecOverrides: true

@@ -92,4 +92,6 @@ class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
   factory PrayCalculationSettingEvent.updateHightLatitudeCaluclation({
     required HightLatitudeCaluclationState state,
   }) = _UpdateHightLatitudeCaluclation;
+
+  factory PrayCalculationSettingEvent.saveChanges() = _SaveChanges;
 }

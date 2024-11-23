@@ -44,6 +44,7 @@ mixin _$PrayCalculationSettingEvent {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +74,7 @@ mixin _$PrayCalculationSettingEvent {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,6 +104,7 @@ mixin _$PrayCalculationSettingEvent {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -136,6 +139,7 @@ mixin _$PrayCalculationSettingEvent {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -166,6 +170,7 @@ mixin _$PrayCalculationSettingEvent {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -196,6 +201,7 @@ mixin _$PrayCalculationSettingEvent {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -321,6 +327,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateFajirTime(fajirTime);
   }
@@ -353,6 +360,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateFajirTime?.call(fajirTime);
   }
@@ -385,6 +393,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateFajirTime != null) {
@@ -425,6 +434,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateFajirTime(this);
   }
@@ -458,6 +468,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateFajirTime?.call(this);
   }
@@ -491,6 +502,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateFajirTime != null) {
@@ -610,6 +622,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateSunriseTime(sunriseTime);
   }
@@ -642,6 +655,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateSunriseTime?.call(sunriseTime);
   }
@@ -674,6 +688,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateSunriseTime != null) {
@@ -714,6 +729,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateSunriseTime(this);
   }
@@ -747,6 +763,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateSunriseTime?.call(this);
   }
@@ -780,6 +797,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateSunriseTime != null) {
@@ -898,6 +916,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateDuherTime(duherTime);
   }
@@ -930,6 +949,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateDuherTime?.call(duherTime);
   }
@@ -962,6 +982,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateDuherTime != null) {
@@ -1002,6 +1023,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateDuherTime(this);
   }
@@ -1035,6 +1057,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateDuherTime?.call(this);
   }
@@ -1068,6 +1091,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateDuherTime != null) {
@@ -1184,6 +1208,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateAsrTime(asrTime);
   }
@@ -1216,6 +1241,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateAsrTime?.call(asrTime);
   }
@@ -1248,6 +1274,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateAsrTime != null) {
@@ -1288,6 +1315,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateAsrTime(this);
   }
@@ -1321,6 +1349,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateAsrTime?.call(this);
   }
@@ -1354,6 +1383,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateAsrTime != null) {
@@ -1472,6 +1502,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateMegribTime(megribTime);
   }
@@ -1504,6 +1535,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateMegribTime?.call(megribTime);
   }
@@ -1536,6 +1568,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMegribTime != null) {
@@ -1576,6 +1609,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateMegribTime(this);
   }
@@ -1609,6 +1643,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateMegribTime?.call(this);
   }
@@ -1642,6 +1677,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMegribTime != null) {
@@ -1760,6 +1796,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateIshaTime(ishaTime);
   }
@@ -1792,6 +1829,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateIshaTime?.call(ishaTime);
   }
@@ -1824,6 +1862,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateIshaTime != null) {
@@ -1864,6 +1903,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateIshaTime(this);
   }
@@ -1897,6 +1937,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateIshaTime?.call(this);
   }
@@ -1930,6 +1971,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateIshaTime != null) {
@@ -2049,6 +2091,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateMidleNighTime(midleNighTime);
   }
@@ -2081,6 +2124,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateMidleNighTime?.call(midleNighTime);
   }
@@ -2113,6 +2157,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMidleNighTime != null) {
@@ -2153,6 +2198,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateMidleNighTime(this);
   }
@@ -2186,6 +2232,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateMidleNighTime?.call(this);
   }
@@ -2219,6 +2266,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMidleNighTime != null) {
@@ -2338,6 +2386,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateLast3thTime(last3thTime);
   }
@@ -2370,6 +2419,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateLast3thTime?.call(last3thTime);
   }
@@ -2402,6 +2452,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateLast3thTime != null) {
@@ -2442,6 +2493,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateLast3thTime(this);
   }
@@ -2475,6 +2527,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateLast3thTime?.call(this);
   }
@@ -2508,6 +2561,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateLast3thTime != null) {
@@ -2636,6 +2690,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateMathhab(mathhab);
   }
@@ -2668,6 +2723,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateMathhab?.call(mathhab);
   }
@@ -2700,6 +2756,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMathhab != null) {
@@ -2740,6 +2797,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateMathhab(this);
   }
@@ -2773,6 +2831,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateMathhab?.call(this);
   }
@@ -2806,6 +2865,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMathhab != null) {
@@ -2938,6 +2998,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateCalculationMethod(method);
   }
@@ -2970,6 +3031,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateCalculationMethod?.call(method);
   }
@@ -3002,6 +3064,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateCalculationMethod != null) {
@@ -3042,6 +3105,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateCalculationMethod(this);
   }
@@ -3075,6 +3139,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateCalculationMethod?.call(this);
   }
@@ -3108,6 +3173,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateCalculationMethod != null) {
@@ -3226,6 +3292,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateTimeZone(value);
   }
@@ -3258,6 +3325,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateTimeZone?.call(value);
   }
@@ -3290,6 +3358,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateTimeZone != null) {
@@ -3330,6 +3399,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateTimeZone(this);
   }
@@ -3363,6 +3433,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateTimeZone?.call(this);
   }
@@ -3396,6 +3467,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateTimeZone != null) {
@@ -3513,6 +3585,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateButtonsStatus(status);
   }
@@ -3545,6 +3618,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateButtonsStatus?.call(status);
   }
@@ -3577,6 +3651,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateButtonsStatus != null) {
@@ -3617,6 +3692,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateButtonsStatus(this);
   }
@@ -3650,6 +3726,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateButtonsStatus?.call(this);
   }
@@ -3683,6 +3760,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateButtonsStatus != null) {
@@ -3815,6 +3893,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateApplicationAndDeviceTimeStatus(appTime, deviceTime);
   }
@@ -3847,6 +3926,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateApplicationAndDeviceTimeStatus?.call(appTime, deviceTime);
   }
@@ -3879,6 +3959,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateApplicationAndDeviceTimeStatus != null) {
@@ -3919,6 +4000,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateApplicationAndDeviceTimeStatus(this);
   }
@@ -3952,6 +4034,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateApplicationAndDeviceTimeStatus?.call(this);
   }
@@ -3985,6 +4068,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateApplicationAndDeviceTimeStatus != null) {
@@ -4078,6 +4162,7 @@ class _$FactoryResetImpl implements _FactoryReset {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return factoryReset();
   }
@@ -4110,6 +4195,7 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return factoryReset?.call();
   }
@@ -4142,6 +4228,7 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (factoryReset != null) {
@@ -4182,6 +4269,7 @@ class _$FactoryResetImpl implements _FactoryReset {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return factoryReset(this);
   }
@@ -4215,6 +4303,7 @@ class _$FactoryResetImpl implements _FactoryReset {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return factoryReset?.call(this);
   }
@@ -4248,6 +4337,7 @@ class _$FactoryResetImpl implements _FactoryReset {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (factoryReset != null) {
@@ -4357,6 +4447,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return editFajirTimeManual(value);
   }
@@ -4389,6 +4480,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return editFajirTimeManual?.call(value);
   }
@@ -4421,6 +4513,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (editFajirTimeManual != null) {
@@ -4461,6 +4554,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return editFajirTimeManual(this);
   }
@@ -4494,6 +4588,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return editFajirTimeManual?.call(this);
   }
@@ -4527,6 +4622,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (editFajirTimeManual != null) {
@@ -4646,6 +4742,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return editSunriseTimeManual(value);
   }
@@ -4678,6 +4775,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return editSunriseTimeManual?.call(value);
   }
@@ -4710,6 +4808,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (editSunriseTimeManual != null) {
@@ -4750,6 +4849,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return editSunriseTimeManual(this);
   }
@@ -4783,6 +4883,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return editSunriseTimeManual?.call(this);
   }
@@ -4816,6 +4917,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (editSunriseTimeManual != null) {
@@ -4934,6 +5036,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return editDuhirTimeManual(value);
   }
@@ -4966,6 +5069,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return editDuhirTimeManual?.call(value);
   }
@@ -4998,6 +5102,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (editDuhirTimeManual != null) {
@@ -5038,6 +5143,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return editDuhirTimeManual(this);
   }
@@ -5071,6 +5177,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return editDuhirTimeManual?.call(this);
   }
@@ -5104,6 +5211,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (editDuhirTimeManual != null) {
@@ -5222,6 +5330,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return editAsrTimeManual(value);
   }
@@ -5254,6 +5363,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return editAsrTimeManual?.call(value);
   }
@@ -5286,6 +5396,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (editAsrTimeManual != null) {
@@ -5326,6 +5437,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return editAsrTimeManual(this);
   }
@@ -5359,6 +5471,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return editAsrTimeManual?.call(this);
   }
@@ -5392,6 +5505,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (editAsrTimeManual != null) {
@@ -5511,6 +5625,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return editMagrebTimeManual(value);
   }
@@ -5543,6 +5658,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return editMagrebTimeManual?.call(value);
   }
@@ -5575,6 +5691,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (editMagrebTimeManual != null) {
@@ -5615,6 +5732,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return editMagrebTimeManual(this);
   }
@@ -5648,6 +5766,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return editMagrebTimeManual?.call(this);
   }
@@ -5681,6 +5800,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (editMagrebTimeManual != null) {
@@ -5799,6 +5919,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return editIshaTimeManual(value);
   }
@@ -5831,6 +5952,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return editIshaTimeManual?.call(value);
   }
@@ -5863,6 +5985,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (editIshaTimeManual != null) {
@@ -5903,6 +6026,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return editIshaTimeManual(this);
   }
@@ -5936,6 +6060,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return editIshaTimeManual?.call(this);
   }
@@ -5969,6 +6094,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (editIshaTimeManual != null) {
@@ -6089,6 +6215,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return editMidNightTimeManual(value);
   }
@@ -6121,6 +6248,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return editMidNightTimeManual?.call(value);
   }
@@ -6153,6 +6281,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (editMidNightTimeManual != null) {
@@ -6193,6 +6322,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return editMidNightTimeManual(this);
   }
@@ -6226,6 +6356,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return editMidNightTimeManual?.call(this);
   }
@@ -6259,6 +6390,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (editMidNightTimeManual != null) {
@@ -6379,6 +6511,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return editLast3thTimeTimeManual(value);
   }
@@ -6411,6 +6544,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return editLast3thTimeTimeManual?.call(value);
   }
@@ -6443,6 +6577,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (editLast3thTimeTimeManual != null) {
@@ -6483,6 +6618,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return editLast3thTimeTimeManual(this);
   }
@@ -6516,6 +6652,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return editLast3thTimeTimeManual?.call(this);
   }
@@ -6549,6 +6686,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (editLast3thTimeTimeManual != null) {
@@ -6684,6 +6822,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
   }) {
     return updateHightLatitudeCaluclation(state);
   }
@@ -6716,6 +6855,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
   }) {
     return updateHightLatitudeCaluclation?.call(state);
   }
@@ -6748,6 +6888,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
     if (updateHightLatitudeCaluclation != null) {
@@ -6788,6 +6929,7 @@ class _$UpdateHightLatitudeCaluclationImpl
         editLast3thTimeTimeManual,
     required TResult Function(_UpdateHightLatitudeCaluclation value)
         updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
   }) {
     return updateHightLatitudeCaluclation(this);
   }
@@ -6821,6 +6963,7 @@ class _$UpdateHightLatitudeCaluclationImpl
         editLast3thTimeTimeManual,
     TResult? Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
   }) {
     return updateHightLatitudeCaluclation?.call(this);
   }
@@ -6854,6 +6997,7 @@ class _$UpdateHightLatitudeCaluclationImpl
         editLast3thTimeTimeManual,
     TResult Function(_UpdateHightLatitudeCaluclation value)?
         updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateHightLatitudeCaluclation != null) {
@@ -6877,6 +7021,262 @@ abstract class _UpdateHightLatitudeCaluclation
   _$$UpdateHightLatitudeCaluclationImplCopyWith<
           _$UpdateHightLatitudeCaluclationImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveChangesImplCopyWith<$Res> {
+  factory _$$SaveChangesImplCopyWith(
+          _$SaveChangesImpl value, $Res Function(_$SaveChangesImpl) then) =
+      __$$SaveChangesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SaveChangesImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res, _$SaveChangesImpl>
+    implements _$$SaveChangesImplCopyWith<$Res> {
+  __$$SaveChangesImplCopyWithImpl(
+      _$SaveChangesImpl _value, $Res Function(_$SaveChangesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SaveChangesImpl implements _SaveChanges {
+  _$SaveChangesImpl();
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.saveChanges()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SaveChangesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+    required TResult Function() saveChanges,
+  }) {
+    return saveChanges();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    TResult? Function()? saveChanges,
+  }) {
+    return saveChanges?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    TResult Function()? saveChanges,
+    required TResult orElse(),
+  }) {
+    if (saveChanges != null) {
+      return saveChanges();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+    required TResult Function(_SaveChanges value) saveChanges,
+  }) {
+    return saveChanges(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    TResult? Function(_SaveChanges value)? saveChanges,
+  }) {
+    return saveChanges?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    TResult Function(_SaveChanges value)? saveChanges,
+    required TResult orElse(),
+  }) {
+    if (saveChanges != null) {
+      return saveChanges(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SaveChanges implements PrayCalculationSettingEvent {
+  factory _SaveChanges() = _$SaveChangesImpl;
 }
 
 /// @nodoc

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:adhan/adhan.dart';
+import 'package:islam_mob_adhan/adhan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
@@ -37,13 +37,20 @@ class PrayCalculationSettingBloc
     on<_EditMidNightTimeManual>(_editMidNightTimeManual);
     on<_EditLast3thTimeTimeManual>(_editLast3thTimeTimeManual);
     on<_UpdateHightLatitudeCaluclation>(_updateHightLatitudeCaluclation);
+    on<_SaveChanges>(_saveChanges);
 
+    _fillInitialData();
     _prepareSalahTiming();
+  }
+
+  void _fillInitialData() {
+    //TODO
   }
 
   void _prepareSalahTiming({
     Madhab madhab = Madhab.hanafi,
-    CalculationMethod calculationMethod = CalculationMethod.umm_al_qura,
+    HighLatitudeRule? highLatitudeRule,
+    CalculationMethod calculationMethod = CalculationMethod.ummAlQura,
     Duration utcOffset = const Duration(hours: 3),
     Duration fajirOffset = const Duration(minutes: 0),
     Duration sunriseOffset = const Duration(minutes: 0),
@@ -57,11 +64,11 @@ class PrayCalculationSettingBloc
     //TODO: handle PrayManager
     // save previos pass value
     final prayManager = PrayManager(
-      coordinates: Coordinates(31.913932, 35.925581),
-      utcOffset: utcOffset,
-      calculationMethod: calculationMethod,
-      madhab: madhab,
-    );
+        coordinates: Coordinates(31.913932, 35.925581),
+        utcOffset: utcOffset,
+        calculationMethod: calculationMethod,
+        madhab: madhab,
+        highLatitudeRule: highLatitudeRule);
 
     final currentTime = DateTime.now();
 
@@ -149,14 +156,14 @@ class PrayCalculationSettingBloc
       Emitter<PrayCalculationSettingState> emit) {
     switch (event.method) {
       case CalculationMethodStateUmmAlQura _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.umm_al_qura);
+        _prepareSalahTiming(calculationMethod: CalculationMethod.ummAlQura);
       case CalculationMethodStateDubai _:
         _prepareSalahTiming(calculationMethod: CalculationMethod.dubai);
       case CalculationMethodStateKarachi _:
         _prepareSalahTiming(calculationMethod: CalculationMethod.karachi);
       case CalculationMethodStateMuslimWorldLeague _:
         _prepareSalahTiming(
-            calculationMethod: CalculationMethod.muslim_world_league);
+            calculationMethod: CalculationMethod.muslimWorldLeague);
       case CalculationMethodStateEgypt _:
         _prepareSalahTiming(calculationMethod: CalculationMethod.egyptian);
       case CalculationMethodStateKuwait _:
@@ -168,14 +175,33 @@ class PrayCalculationSettingBloc
       case CalculationMethodStateTurkey _:
         _prepareSalahTiming(calculationMethod: CalculationMethod.turkey);
       case CalculationMethodStateIslamicSocietyOfNorthAmerica _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.north_america);
+        _prepareSalahTiming(calculationMethod: CalculationMethod.northAmerica);
       case CalculationMethodStateSingapore _:
         _prepareSalahTiming(calculationMethod: CalculationMethod.singapore);
+      case CalculationMethodStateGulfRegion _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.gulfRegion);
+      case CalculationMethodStateJafari _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.jafari);
+      case CalculationMethodStateFrance _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.france);
+      case CalculationMethodStateRussia _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.russia);
+      case CalculationMethodStateJAKIM _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.jakim);
+      case CalculationMethodStateTunisia _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.tunisia);
+      case CalculationMethodStateAlgeria _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.algeria);
+      case CalculationMethodStateMorocco _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.morocco);
+      case CalculationMethodStateKEMENAG _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.kemenag);
+      case CalculationMethodStateComunidadeIslamicaLisboa _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.portugal);
+      case CalculationMethodStateJordanAwqaf _:
+        _prepareSalahTiming(calculationMethod: CalculationMethod.jordan);
       case CalculationMethodStateCustom _:
         _prepareSalahTiming(calculationMethod: CalculationMethod.other);
-      //TODO : handle other state
-      default:
-        break;
     }
 
     emit(state.copyWith(calculationMethod: event.method));
@@ -268,7 +294,7 @@ class PrayCalculationSettingBloc
 
   FutureOr<void> _factoryReset(
       event, Emitter<PrayCalculationSettingState> emit) {
-    //TODO
+    _fillInitialData();
   }
 
   FutureOr<void> _updateButtonsStatus(
@@ -335,8 +361,23 @@ class PrayCalculationSettingBloc
   FutureOr<void> _updateHightLatitudeCaluclation(
       _UpdateHightLatitudeCaluclation event,
       Emitter<PrayCalculationSettingState> emit) {
-    //TODO
-    // _prepareSalahTiming(lastThirdOfTheNightOffset: Duration(hours: event.value));
+    switch (event.state) {
+      case HightLatitudeCaluclationStateNone():
+        _prepareSalahTiming(highLatitudeRule: null);
+      case HightLatitudeCaluclationStateAngleBasedMethod():
+        _prepareSalahTiming(highLatitudeRule: HighLatitudeRule.twilightAngle);
+      case HightLatitudeCaluclationStateMidnight():
+        _prepareSalahTiming(
+            highLatitudeRule: HighLatitudeRule.middleOfTheNight);
+      case HightLatitudeCaluclationStateSeventhPartOfTheNight():
+        _prepareSalahTiming(
+            highLatitudeRule: HighLatitudeRule.seventhOfTheNight);
+    }
     emit(state.copyWith(hightLatitudeCaluclation: event.state));
+  }
+
+  FutureOr<void> _saveChanges(
+      event, Emitter<PrayCalculationSettingState> emit) {
+    //TODO
   }
 }

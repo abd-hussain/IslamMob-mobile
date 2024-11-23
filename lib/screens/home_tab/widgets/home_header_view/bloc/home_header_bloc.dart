@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:adhan/adhan.dart';
+import 'package:islam_mob_adhan/adhan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -25,7 +25,7 @@ class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
     final prayManager = PrayManager(
       coordinates: Coordinates(31.913932, 35.925581),
       utcOffset: const Duration(hours: 2),
-      calculationMethod: CalculationMethod.umm_al_qura,
+      calculationMethod: CalculationMethod.ummAlQura,
       madhab: Madhab.hanafi,
     );
 

@@ -66,9 +66,9 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                     enableButton: state.buttonsStatus,
                     padding: const EdgeInsets.only(left: 16, right: 16),
                     buttonTitle: AppLocalizations.of(context)!.save,
-                    onTap: () {
-                      //TODO
-                    },
+                    onTap: () => context.read<PrayCalculationSettingBloc>().add(
+                          PrayCalculationSettingEvent.saveChanges(),
+                        ),
                   );
                 },
               ),
