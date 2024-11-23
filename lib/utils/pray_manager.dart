@@ -20,6 +20,25 @@ class PrayManager {
 
   //TODO: All of this calculation is wrong
 
+  PrayTimingDateTimeModel getAllPrayTimeAsDateTime() {
+    final date = specificDate ?? DateComponents.from(DateTime.now());
+    final params = calculationMethod.getParameters()..madhab = madhab;
+    final prayerTimes =
+        PrayerTimes(coordinates, date, params, utcOffset: utcOffset);
+    final sunnahTimes = SunnahTimes(prayerTimes);
+
+    return PrayTimingDateTimeModel(
+      fajir: prayerTimes.fajr,
+      sunrise: prayerTimes.sunrise,
+      dhuhr: prayerTimes.dhuhr,
+      asr: prayerTimes.asr,
+      maghrib: prayerTimes.maghrib,
+      isha: prayerTimes.isha,
+      middleOfTheNight: sunnahTimes.middleOfTheNight,
+      lastThirdOfTheNight: sunnahTimes.lastThirdOfTheNight,
+    );
+  }
+
   PrayTimingModel getAllPrayTime() {
     final date = specificDate ?? DateComponents.from(DateTime.now());
     final params = calculationMethod.getParameters()..madhab = madhab;
@@ -98,10 +117,5 @@ class PrayManager {
 
     // If all prayer times are in the past, return Fajr of the next day
     return const SalahTimeStateFajir();
-  }
-
-  double getQiblaDirection() {
-    final qibla = Qibla(coordinates);
-    return qibla.direction;
   }
 }

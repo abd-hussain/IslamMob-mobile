@@ -8,7 +8,6 @@ import 'package:islam_app/screens/pray_calculation_setting/widgets/mathhab_view.
 import 'package:islam_app/screens/pray_calculation_setting/widgets/poles_calculation_view.dart';
 import 'package:islam_app/screens/pray_calculation_setting/widgets/pray_calculation_header_view.dart';
 import 'package:islam_app/screens/pray_calculation_setting/widgets/pray_calculation_subheader_view.dart';
-import 'package:islam_app/screens/pray_calculation_setting/widgets/summer_timing_view.dart';
 import 'package:islam_app/screens/pray_calculation_setting/widgets/time_zoon_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -28,14 +27,14 @@ class PrayCalculationSettingScreen extends StatelessWidget {
           child: Column(
             children: [
               const PrayCalculationHeaderView(),
-              const SizedBox(height: 10),
+              const SizedBox(height: 4),
               const PrayCalculationSubHeaderView(),
-              const SizedBox(height: 10),
+              const SizedBox(height: 8),
               Expanded(
                 child: Container(
                   color: Colors.grey[300],
                   child: Swiper(
-                    itemCount: 6,
+                    itemCount: 5,
                     pagination: const SwiperPagination(),
                     controller: SwiperController(),
                     itemBuilder: (BuildContext context, int index) {
@@ -47,10 +46,8 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                         case 2:
                           return const TimeZoneView();
                         case 3:
-                          return const SummerTimingView();
-                        case 4:
                           return const EditPrayTimeMinutesView();
-                        case 5:
+                        case 4:
                           return const PolesCalculationView();
                         default:
                           return const SizedBox.shrink();

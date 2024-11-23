@@ -11,12 +11,37 @@ class PrayCalculationSettingState with _$PrayCalculationSettingState {
     @Default("") String ishaTime,
     @Default("") String midleNighTime,
     @Default("") String last3thTime,
+    @Default("") String applicationTime,
+    @Default("") String deviceTime,
     @Default(false) bool buttonsStatus,
-    @Default(3) double timeZone,
+    @Default("UTC +03:00") String timeZone,
+    @Default(0) int editFajirTimeManual,
+    @Default(0) int editSunriseTimeManual,
+    @Default(0) int editDuhirTimeManual,
+    @Default(0) int editAsrTimeManual,
+    @Default(0) int editMagrebTimeManual,
+    @Default(0) int editIshaTimeManual,
+    @Default(0) int editMidNightTimeManual,
+    @Default(0) int editLast3thTimeTimeManual,
     @Default(MathhabState.hanafi()) MathhabState mathhab,
     @Default(CalculationMethodState.jordanAwqaf())
     CalculationMethodState calculationMethod,
+    @Default(HightLatitudeCaluclationState.none())
+    HightLatitudeCaluclationState hightLatitudeCaluclation,
   }) = _PrayCalculationSettingState;
+}
+
+@freezed
+sealed class HightLatitudeCaluclationState
+    with _$HightLatitudeCaluclationState {
+  const factory HightLatitudeCaluclationState.none() =
+      HightLatitudeCaluclationStateNone;
+  const factory HightLatitudeCaluclationState.angleBasedMethod() =
+      HightLatitudeCaluclationStateAngleBasedMethod;
+  const factory HightLatitudeCaluclationState.midnight() =
+      HightLatitudeCaluclationStateMidnight;
+  const factory HightLatitudeCaluclationState.seventhPartOfTheNight() =
+      HightLatitudeCaluclationStateSeventhPartOfTheNight;
 }
 
 @freezed

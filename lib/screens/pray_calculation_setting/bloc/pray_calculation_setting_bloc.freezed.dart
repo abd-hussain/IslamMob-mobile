@@ -29,9 +29,21 @@ mixin _$PrayCalculationSettingEvent {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,9 +58,21 @@ mixin _$PrayCalculationSettingEvent {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,9 +87,21 @@ mixin _$PrayCalculationSettingEvent {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -84,7 +120,22 @@ mixin _$PrayCalculationSettingEvent {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -101,7 +152,20 @@ mixin _$PrayCalculationSettingEvent {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -118,7 +182,20 @@ mixin _$PrayCalculationSettingEvent {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -229,9 +306,21 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateFajirTime(fajirTime);
   }
@@ -249,9 +338,21 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateFajirTime?.call(fajirTime);
   }
@@ -269,9 +370,21 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateFajirTime != null) {
@@ -296,7 +409,22 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateFajirTime(this);
   }
@@ -316,7 +444,20 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateFajirTime?.call(this);
   }
@@ -336,7 +477,20 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateFajirTime != null) {
@@ -441,9 +595,21 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateSunriseTime(sunriseTime);
   }
@@ -461,9 +627,21 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateSunriseTime?.call(sunriseTime);
   }
@@ -481,9 +659,21 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateSunriseTime != null) {
@@ -508,7 +698,22 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateSunriseTime(this);
   }
@@ -528,7 +733,20 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateSunriseTime?.call(this);
   }
@@ -548,7 +766,20 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateSunriseTime != null) {
@@ -652,9 +883,21 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateDuherTime(duherTime);
   }
@@ -672,9 +915,21 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateDuherTime?.call(duherTime);
   }
@@ -692,9 +947,21 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateDuherTime != null) {
@@ -719,7 +986,22 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateDuherTime(this);
   }
@@ -739,7 +1021,20 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateDuherTime?.call(this);
   }
@@ -759,7 +1054,20 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateDuherTime != null) {
@@ -861,9 +1169,21 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateAsrTime(asrTime);
   }
@@ -881,9 +1201,21 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateAsrTime?.call(asrTime);
   }
@@ -901,9 +1233,21 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateAsrTime != null) {
@@ -928,7 +1272,22 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateAsrTime(this);
   }
@@ -948,7 +1307,20 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateAsrTime?.call(this);
   }
@@ -968,7 +1340,20 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateAsrTime != null) {
@@ -1072,9 +1457,21 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateMegribTime(megribTime);
   }
@@ -1092,9 +1489,21 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateMegribTime?.call(megribTime);
   }
@@ -1112,9 +1521,21 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateMegribTime != null) {
@@ -1139,7 +1560,22 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateMegribTime(this);
   }
@@ -1159,7 +1595,20 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateMegribTime?.call(this);
   }
@@ -1179,7 +1628,20 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateMegribTime != null) {
@@ -1283,9 +1745,21 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateIshaTime(ishaTime);
   }
@@ -1303,9 +1777,21 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateIshaTime?.call(ishaTime);
   }
@@ -1323,9 +1809,21 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateIshaTime != null) {
@@ -1350,7 +1848,22 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateIshaTime(this);
   }
@@ -1370,7 +1883,20 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateIshaTime?.call(this);
   }
@@ -1390,7 +1916,20 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateIshaTime != null) {
@@ -1495,9 +2034,21 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateMidleNighTime(midleNighTime);
   }
@@ -1515,9 +2066,21 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateMidleNighTime?.call(midleNighTime);
   }
@@ -1535,9 +2098,21 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateMidleNighTime != null) {
@@ -1562,7 +2137,22 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateMidleNighTime(this);
   }
@@ -1582,7 +2172,20 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateMidleNighTime?.call(this);
   }
@@ -1602,7 +2205,20 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateMidleNighTime != null) {
@@ -1707,9 +2323,21 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateLast3thTime(last3thTime);
   }
@@ -1727,9 +2355,21 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateLast3thTime?.call(last3thTime);
   }
@@ -1747,9 +2387,21 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateLast3thTime != null) {
@@ -1774,7 +2426,22 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateLast3thTime(this);
   }
@@ -1794,7 +2461,20 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateLast3thTime?.call(this);
   }
@@ -1814,7 +2494,20 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateLast3thTime != null) {
@@ -1928,9 +2621,21 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateMathhab(mathhab);
   }
@@ -1948,9 +2653,21 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateMathhab?.call(mathhab);
   }
@@ -1968,9 +2685,21 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateMathhab != null) {
@@ -1995,7 +2724,22 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateMathhab(this);
   }
@@ -2015,7 +2759,20 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateMathhab?.call(this);
   }
@@ -2035,7 +2792,20 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateMathhab != null) {
@@ -2153,9 +2923,21 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateCalculationMethod(method);
   }
@@ -2173,9 +2955,21 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateCalculationMethod?.call(method);
   }
@@ -2193,9 +2987,21 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateCalculationMethod != null) {
@@ -2220,7 +3026,22 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateCalculationMethod(this);
   }
@@ -2240,7 +3061,20 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateCalculationMethod?.call(this);
   }
@@ -2260,7 +3094,20 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateCalculationMethod != null) {
@@ -2290,7 +3137,7 @@ abstract class _$$UpdateTimeZoneImplCopyWith<$Res> {
           $Res Function(_$UpdateTimeZoneImpl) then) =
       __$$UpdateTimeZoneImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({double value});
+  $Res call({String value});
 }
 
 /// @nodoc
@@ -2312,7 +3159,7 @@ class __$$UpdateTimeZoneImplCopyWithImpl<$Res>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as double,
+              as String,
     ));
   }
 }
@@ -2323,7 +3170,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   _$UpdateTimeZoneImpl({required this.value});
 
   @override
-  final double value;
+  final String value;
 
   @override
   String toString() {
@@ -2364,9 +3211,21 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateTimeZone(value);
   }
@@ -2384,9 +3243,21 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateTimeZone?.call(value);
   }
@@ -2404,9 +3275,21 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateTimeZone != null) {
@@ -2431,7 +3314,22 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateTimeZone(this);
   }
@@ -2451,7 +3349,20 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateTimeZone?.call(this);
   }
@@ -2471,7 +3382,20 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateTimeZone != null) {
@@ -2482,9 +3406,9 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
 }
 
 abstract class _UpdateTimeZone implements PrayCalculationSettingEvent {
-  factory _UpdateTimeZone({required final double value}) = _$UpdateTimeZoneImpl;
+  factory _UpdateTimeZone({required final String value}) = _$UpdateTimeZoneImpl;
 
-  double get value;
+  String get value;
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -2574,9 +3498,21 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return updateButtonsStatus(status);
   }
@@ -2594,9 +3530,21 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateButtonsStatus?.call(status);
   }
@@ -2614,9 +3562,21 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateButtonsStatus != null) {
@@ -2641,7 +3601,22 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return updateButtonsStatus(this);
   }
@@ -2661,7 +3636,20 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return updateButtonsStatus?.call(this);
   }
@@ -2681,7 +3669,20 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (updateButtonsStatus != null) {
@@ -2702,6 +3703,312 @@ abstract class _UpdateButtonsStatus implements PrayCalculationSettingEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateButtonsStatusImplCopyWith<_$UpdateButtonsStatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateApplicationAndDeviceTimeStatusImplCopyWith<$Res> {
+  factory _$$UpdateApplicationAndDeviceTimeStatusImplCopyWith(
+          _$UpdateApplicationAndDeviceTimeStatusImpl value,
+          $Res Function(_$UpdateApplicationAndDeviceTimeStatusImpl) then) =
+      __$$UpdateApplicationAndDeviceTimeStatusImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String appTime, String deviceTime});
+}
+
+/// @nodoc
+class __$$UpdateApplicationAndDeviceTimeStatusImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$UpdateApplicationAndDeviceTimeStatusImpl>
+    implements _$$UpdateApplicationAndDeviceTimeStatusImplCopyWith<$Res> {
+  __$$UpdateApplicationAndDeviceTimeStatusImplCopyWithImpl(
+      _$UpdateApplicationAndDeviceTimeStatusImpl _value,
+      $Res Function(_$UpdateApplicationAndDeviceTimeStatusImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? appTime = null,
+    Object? deviceTime = null,
+  }) {
+    return _then(_$UpdateApplicationAndDeviceTimeStatusImpl(
+      appTime: null == appTime
+          ? _value.appTime
+          : appTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      deviceTime: null == deviceTime
+          ? _value.deviceTime
+          : deviceTime // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateApplicationAndDeviceTimeStatusImpl
+    implements _UpdateApplicationAndDeviceTimeStatus {
+  _$UpdateApplicationAndDeviceTimeStatusImpl(
+      {required this.appTime, required this.deviceTime});
+
+  @override
+  final String appTime;
+  @override
+  final String deviceTime;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.updateApplicationAndDeviceTimeStatus(appTime: $appTime, deviceTime: $deviceTime)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateApplicationAndDeviceTimeStatusImpl &&
+            (identical(other.appTime, appTime) || other.appTime == appTime) &&
+            (identical(other.deviceTime, deviceTime) ||
+                other.deviceTime == deviceTime));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, appTime, deviceTime);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateApplicationAndDeviceTimeStatusImplCopyWith<
+          _$UpdateApplicationAndDeviceTimeStatusImpl>
+      get copyWith => __$$UpdateApplicationAndDeviceTimeStatusImplCopyWithImpl<
+          _$UpdateApplicationAndDeviceTimeStatusImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return updateApplicationAndDeviceTimeStatus(appTime, deviceTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return updateApplicationAndDeviceTimeStatus?.call(appTime, deviceTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (updateApplicationAndDeviceTimeStatus != null) {
+      return updateApplicationAndDeviceTimeStatus(appTime, deviceTime);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return updateApplicationAndDeviceTimeStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return updateApplicationAndDeviceTimeStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (updateApplicationAndDeviceTimeStatus != null) {
+      return updateApplicationAndDeviceTimeStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateApplicationAndDeviceTimeStatus
+    implements PrayCalculationSettingEvent {
+  factory _UpdateApplicationAndDeviceTimeStatus(
+          {required final String appTime, required final String deviceTime}) =
+      _$UpdateApplicationAndDeviceTimeStatusImpl;
+
+  String get appTime;
+  String get deviceTime;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateApplicationAndDeviceTimeStatusImplCopyWith<
+          _$UpdateApplicationAndDeviceTimeStatusImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2756,9 +4063,21 @@ class _$FactoryResetImpl implements _FactoryReset {
     required TResult Function(MathhabState mathhab) updateMathhab,
     required TResult Function(CalculationMethodState method)
         updateCalculationMethod,
-    required TResult Function(double value) updateTimeZone,
+    required TResult Function(String value) updateTimeZone,
     required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
   }) {
     return factoryReset();
   }
@@ -2776,9 +4095,21 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult? Function(String last3thTime)? updateLast3thTime,
     TResult? Function(MathhabState mathhab)? updateMathhab,
     TResult? Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult? Function(double value)? updateTimeZone,
+    TResult? Function(String value)? updateTimeZone,
     TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
   }) {
     return factoryReset?.call();
   }
@@ -2796,9 +4127,21 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult Function(String last3thTime)? updateLast3thTime,
     TResult Function(MathhabState mathhab)? updateMathhab,
     TResult Function(CalculationMethodState method)? updateCalculationMethod,
-    TResult Function(double value)? updateTimeZone,
+    TResult Function(String value)? updateTimeZone,
     TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (factoryReset != null) {
@@ -2823,7 +4166,22 @@ class _$FactoryResetImpl implements _FactoryReset {
         updateCalculationMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
     required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
   }) {
     return factoryReset(this);
   }
@@ -2843,7 +4201,20 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
   }) {
     return factoryReset?.call(this);
   }
@@ -2863,7 +4234,20 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
     TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
     required TResult orElse(),
   }) {
     if (factoryReset != null) {
@@ -2878,6 +4262,2624 @@ abstract class _FactoryReset implements PrayCalculationSettingEvent {
 }
 
 /// @nodoc
+abstract class _$$EditFajirTimeManualImplCopyWith<$Res> {
+  factory _$$EditFajirTimeManualImplCopyWith(_$EditFajirTimeManualImpl value,
+          $Res Function(_$EditFajirTimeManualImpl) then) =
+      __$$EditFajirTimeManualImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$EditFajirTimeManualImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$EditFajirTimeManualImpl>
+    implements _$$EditFajirTimeManualImplCopyWith<$Res> {
+  __$$EditFajirTimeManualImplCopyWithImpl(_$EditFajirTimeManualImpl _value,
+      $Res Function(_$EditFajirTimeManualImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EditFajirTimeManualImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
+  _$EditFajirTimeManualImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.editFajirTimeManual(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditFajirTimeManualImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditFajirTimeManualImplCopyWith<_$EditFajirTimeManualImpl> get copyWith =>
+      __$$EditFajirTimeManualImplCopyWithImpl<_$EditFajirTimeManualImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editFajirTimeManual(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editFajirTimeManual?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editFajirTimeManual != null) {
+      return editFajirTimeManual(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editFajirTimeManual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editFajirTimeManual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editFajirTimeManual != null) {
+      return editFajirTimeManual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditFajirTimeManual implements PrayCalculationSettingEvent {
+  factory _EditFajirTimeManual({required final int value}) =
+      _$EditFajirTimeManualImpl;
+
+  int get value;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditFajirTimeManualImplCopyWith<_$EditFajirTimeManualImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EditSunriseTimeManualImplCopyWith<$Res> {
+  factory _$$EditSunriseTimeManualImplCopyWith(
+          _$EditSunriseTimeManualImpl value,
+          $Res Function(_$EditSunriseTimeManualImpl) then) =
+      __$$EditSunriseTimeManualImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$EditSunriseTimeManualImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$EditSunriseTimeManualImpl>
+    implements _$$EditSunriseTimeManualImplCopyWith<$Res> {
+  __$$EditSunriseTimeManualImplCopyWithImpl(_$EditSunriseTimeManualImpl _value,
+      $Res Function(_$EditSunriseTimeManualImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EditSunriseTimeManualImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
+  _$EditSunriseTimeManualImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.editSunriseTimeManual(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditSunriseTimeManualImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditSunriseTimeManualImplCopyWith<_$EditSunriseTimeManualImpl>
+      get copyWith => __$$EditSunriseTimeManualImplCopyWithImpl<
+          _$EditSunriseTimeManualImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editSunriseTimeManual(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editSunriseTimeManual?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editSunriseTimeManual != null) {
+      return editSunriseTimeManual(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editSunriseTimeManual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editSunriseTimeManual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editSunriseTimeManual != null) {
+      return editSunriseTimeManual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditSunriseTimeManual implements PrayCalculationSettingEvent {
+  factory _EditSunriseTimeManual({required final int value}) =
+      _$EditSunriseTimeManualImpl;
+
+  int get value;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditSunriseTimeManualImplCopyWith<_$EditSunriseTimeManualImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EditDuhirTimeManualImplCopyWith<$Res> {
+  factory _$$EditDuhirTimeManualImplCopyWith(_$EditDuhirTimeManualImpl value,
+          $Res Function(_$EditDuhirTimeManualImpl) then) =
+      __$$EditDuhirTimeManualImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$EditDuhirTimeManualImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$EditDuhirTimeManualImpl>
+    implements _$$EditDuhirTimeManualImplCopyWith<$Res> {
+  __$$EditDuhirTimeManualImplCopyWithImpl(_$EditDuhirTimeManualImpl _value,
+      $Res Function(_$EditDuhirTimeManualImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EditDuhirTimeManualImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
+  _$EditDuhirTimeManualImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.editDuhirTimeManual(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditDuhirTimeManualImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditDuhirTimeManualImplCopyWith<_$EditDuhirTimeManualImpl> get copyWith =>
+      __$$EditDuhirTimeManualImplCopyWithImpl<_$EditDuhirTimeManualImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editDuhirTimeManual(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editDuhirTimeManual?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editDuhirTimeManual != null) {
+      return editDuhirTimeManual(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editDuhirTimeManual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editDuhirTimeManual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editDuhirTimeManual != null) {
+      return editDuhirTimeManual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditDuhirTimeManual implements PrayCalculationSettingEvent {
+  factory _EditDuhirTimeManual({required final int value}) =
+      _$EditDuhirTimeManualImpl;
+
+  int get value;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditDuhirTimeManualImplCopyWith<_$EditDuhirTimeManualImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EditAsrTimeManualImplCopyWith<$Res> {
+  factory _$$EditAsrTimeManualImplCopyWith(_$EditAsrTimeManualImpl value,
+          $Res Function(_$EditAsrTimeManualImpl) then) =
+      __$$EditAsrTimeManualImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$EditAsrTimeManualImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$EditAsrTimeManualImpl>
+    implements _$$EditAsrTimeManualImplCopyWith<$Res> {
+  __$$EditAsrTimeManualImplCopyWithImpl(_$EditAsrTimeManualImpl _value,
+      $Res Function(_$EditAsrTimeManualImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EditAsrTimeManualImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
+  _$EditAsrTimeManualImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.editAsrTimeManual(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditAsrTimeManualImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditAsrTimeManualImplCopyWith<_$EditAsrTimeManualImpl> get copyWith =>
+      __$$EditAsrTimeManualImplCopyWithImpl<_$EditAsrTimeManualImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editAsrTimeManual(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editAsrTimeManual?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editAsrTimeManual != null) {
+      return editAsrTimeManual(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editAsrTimeManual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editAsrTimeManual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editAsrTimeManual != null) {
+      return editAsrTimeManual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditAsrTimeManual implements PrayCalculationSettingEvent {
+  factory _EditAsrTimeManual({required final int value}) =
+      _$EditAsrTimeManualImpl;
+
+  int get value;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditAsrTimeManualImplCopyWith<_$EditAsrTimeManualImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EditMagrebTimeManualImplCopyWith<$Res> {
+  factory _$$EditMagrebTimeManualImplCopyWith(_$EditMagrebTimeManualImpl value,
+          $Res Function(_$EditMagrebTimeManualImpl) then) =
+      __$$EditMagrebTimeManualImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$EditMagrebTimeManualImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$EditMagrebTimeManualImpl>
+    implements _$$EditMagrebTimeManualImplCopyWith<$Res> {
+  __$$EditMagrebTimeManualImplCopyWithImpl(_$EditMagrebTimeManualImpl _value,
+      $Res Function(_$EditMagrebTimeManualImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EditMagrebTimeManualImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
+  _$EditMagrebTimeManualImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.editMagrebTimeManual(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditMagrebTimeManualImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditMagrebTimeManualImplCopyWith<_$EditMagrebTimeManualImpl>
+      get copyWith =>
+          __$$EditMagrebTimeManualImplCopyWithImpl<_$EditMagrebTimeManualImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editMagrebTimeManual(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editMagrebTimeManual?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editMagrebTimeManual != null) {
+      return editMagrebTimeManual(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editMagrebTimeManual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editMagrebTimeManual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editMagrebTimeManual != null) {
+      return editMagrebTimeManual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditMagrebTimeManual implements PrayCalculationSettingEvent {
+  factory _EditMagrebTimeManual({required final int value}) =
+      _$EditMagrebTimeManualImpl;
+
+  int get value;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditMagrebTimeManualImplCopyWith<_$EditMagrebTimeManualImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EditIshaTimeManualImplCopyWith<$Res> {
+  factory _$$EditIshaTimeManualImplCopyWith(_$EditIshaTimeManualImpl value,
+          $Res Function(_$EditIshaTimeManualImpl) then) =
+      __$$EditIshaTimeManualImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$EditIshaTimeManualImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$EditIshaTimeManualImpl>
+    implements _$$EditIshaTimeManualImplCopyWith<$Res> {
+  __$$EditIshaTimeManualImplCopyWithImpl(_$EditIshaTimeManualImpl _value,
+      $Res Function(_$EditIshaTimeManualImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EditIshaTimeManualImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
+  _$EditIshaTimeManualImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.editIshaTimeManual(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditIshaTimeManualImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditIshaTimeManualImplCopyWith<_$EditIshaTimeManualImpl> get copyWith =>
+      __$$EditIshaTimeManualImplCopyWithImpl<_$EditIshaTimeManualImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editIshaTimeManual(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editIshaTimeManual?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editIshaTimeManual != null) {
+      return editIshaTimeManual(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editIshaTimeManual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editIshaTimeManual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editIshaTimeManual != null) {
+      return editIshaTimeManual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditIshaTimeManual implements PrayCalculationSettingEvent {
+  factory _EditIshaTimeManual({required final int value}) =
+      _$EditIshaTimeManualImpl;
+
+  int get value;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditIshaTimeManualImplCopyWith<_$EditIshaTimeManualImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EditMidNightTimeManualImplCopyWith<$Res> {
+  factory _$$EditMidNightTimeManualImplCopyWith(
+          _$EditMidNightTimeManualImpl value,
+          $Res Function(_$EditMidNightTimeManualImpl) then) =
+      __$$EditMidNightTimeManualImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$EditMidNightTimeManualImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$EditMidNightTimeManualImpl>
+    implements _$$EditMidNightTimeManualImplCopyWith<$Res> {
+  __$$EditMidNightTimeManualImplCopyWithImpl(
+      _$EditMidNightTimeManualImpl _value,
+      $Res Function(_$EditMidNightTimeManualImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EditMidNightTimeManualImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
+  _$EditMidNightTimeManualImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.editMidNightTimeManual(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditMidNightTimeManualImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditMidNightTimeManualImplCopyWith<_$EditMidNightTimeManualImpl>
+      get copyWith => __$$EditMidNightTimeManualImplCopyWithImpl<
+          _$EditMidNightTimeManualImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editMidNightTimeManual(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editMidNightTimeManual?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editMidNightTimeManual != null) {
+      return editMidNightTimeManual(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editMidNightTimeManual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editMidNightTimeManual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editMidNightTimeManual != null) {
+      return editMidNightTimeManual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditMidNightTimeManual implements PrayCalculationSettingEvent {
+  factory _EditMidNightTimeManual({required final int value}) =
+      _$EditMidNightTimeManualImpl;
+
+  int get value;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditMidNightTimeManualImplCopyWith<_$EditMidNightTimeManualImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EditLast3thTimeTimeManualImplCopyWith<$Res> {
+  factory _$$EditLast3thTimeTimeManualImplCopyWith(
+          _$EditLast3thTimeTimeManualImpl value,
+          $Res Function(_$EditLast3thTimeTimeManualImpl) then) =
+      __$$EditLast3thTimeTimeManualImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$EditLast3thTimeTimeManualImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$EditLast3thTimeTimeManualImpl>
+    implements _$$EditLast3thTimeTimeManualImplCopyWith<$Res> {
+  __$$EditLast3thTimeTimeManualImplCopyWithImpl(
+      _$EditLast3thTimeTimeManualImpl _value,
+      $Res Function(_$EditLast3thTimeTimeManualImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$EditLast3thTimeTimeManualImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
+  _$EditLast3thTimeTimeManualImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.editLast3thTimeTimeManual(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditLast3thTimeTimeManualImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditLast3thTimeTimeManualImplCopyWith<_$EditLast3thTimeTimeManualImpl>
+      get copyWith => __$$EditLast3thTimeTimeManualImplCopyWithImpl<
+          _$EditLast3thTimeTimeManualImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editLast3thTimeTimeManual(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editLast3thTimeTimeManual?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editLast3thTimeTimeManual != null) {
+      return editLast3thTimeTimeManual(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return editLast3thTimeTimeManual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return editLast3thTimeTimeManual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (editLast3thTimeTimeManual != null) {
+      return editLast3thTimeTimeManual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditLast3thTimeTimeManual
+    implements PrayCalculationSettingEvent {
+  factory _EditLast3thTimeTimeManual({required final int value}) =
+      _$EditLast3thTimeTimeManualImpl;
+
+  int get value;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditLast3thTimeTimeManualImplCopyWith<_$EditLast3thTimeTimeManualImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateHightLatitudeCaluclationImplCopyWith<$Res> {
+  factory _$$UpdateHightLatitudeCaluclationImplCopyWith(
+          _$UpdateHightLatitudeCaluclationImpl value,
+          $Res Function(_$UpdateHightLatitudeCaluclationImpl) then) =
+      __$$UpdateHightLatitudeCaluclationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({HightLatitudeCaluclationState state});
+
+  $HightLatitudeCaluclationStateCopyWith<$Res> get state;
+}
+
+/// @nodoc
+class __$$UpdateHightLatitudeCaluclationImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$UpdateHightLatitudeCaluclationImpl>
+    implements _$$UpdateHightLatitudeCaluclationImplCopyWith<$Res> {
+  __$$UpdateHightLatitudeCaluclationImplCopyWithImpl(
+      _$UpdateHightLatitudeCaluclationImpl _value,
+      $Res Function(_$UpdateHightLatitudeCaluclationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? state = null,
+  }) {
+    return _then(_$UpdateHightLatitudeCaluclationImpl(
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as HightLatitudeCaluclationState,
+    ));
+  }
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $HightLatitudeCaluclationStateCopyWith<$Res> get state {
+    return $HightLatitudeCaluclationStateCopyWith<$Res>(_value.state, (value) {
+      return _then(_value.copyWith(state: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateHightLatitudeCaluclationImpl
+    implements _UpdateHightLatitudeCaluclation {
+  _$UpdateHightLatitudeCaluclationImpl({required this.state});
+
+  @override
+  final HightLatitudeCaluclationState state;
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.updateHightLatitudeCaluclation(state: $state)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateHightLatitudeCaluclationImpl &&
+            (identical(other.state, state) || other.state == state));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, state);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateHightLatitudeCaluclationImplCopyWith<
+          _$UpdateHightLatitudeCaluclationImpl>
+      get copyWith => __$$UpdateHightLatitudeCaluclationImplCopyWithImpl<
+          _$UpdateHightLatitudeCaluclationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fajirTime) updateFajirTime,
+    required TResult Function(String sunriseTime) updateSunriseTime,
+    required TResult Function(String duherTime) updateDuherTime,
+    required TResult Function(String asrTime) updateAsrTime,
+    required TResult Function(String megribTime) updateMegribTime,
+    required TResult Function(String ishaTime) updateIshaTime,
+    required TResult Function(String midleNighTime) updateMidleNighTime,
+    required TResult Function(String last3thTime) updateLast3thTime,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(CalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(String value) updateTimeZone,
+    required TResult Function(bool status) updateButtonsStatus,
+    required TResult Function(String appTime, String deviceTime)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function() factoryReset,
+    required TResult Function(int value) editFajirTimeManual,
+    required TResult Function(int value) editSunriseTimeManual,
+    required TResult Function(int value) editDuhirTimeManual,
+    required TResult Function(int value) editAsrTimeManual,
+    required TResult Function(int value) editMagrebTimeManual,
+    required TResult Function(int value) editIshaTimeManual,
+    required TResult Function(int value) editMidNightTimeManual,
+    required TResult Function(int value) editLast3thTimeTimeManual,
+    required TResult Function(HightLatitudeCaluclationState state)
+        updateHightLatitudeCaluclation,
+  }) {
+    return updateHightLatitudeCaluclation(state);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fajirTime)? updateFajirTime,
+    TResult? Function(String sunriseTime)? updateSunriseTime,
+    TResult? Function(String duherTime)? updateDuherTime,
+    TResult? Function(String asrTime)? updateAsrTime,
+    TResult? Function(String megribTime)? updateMegribTime,
+    TResult? Function(String ishaTime)? updateIshaTime,
+    TResult? Function(String midleNighTime)? updateMidleNighTime,
+    TResult? Function(String last3thTime)? updateLast3thTime,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(bool status)? updateButtonsStatus,
+    TResult? Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function()? factoryReset,
+    TResult? Function(int value)? editFajirTimeManual,
+    TResult? Function(int value)? editSunriseTimeManual,
+    TResult? Function(int value)? editDuhirTimeManual,
+    TResult? Function(int value)? editAsrTimeManual,
+    TResult? Function(int value)? editMagrebTimeManual,
+    TResult? Function(int value)? editIshaTimeManual,
+    TResult? Function(int value)? editMidNightTimeManual,
+    TResult? Function(int value)? editLast3thTimeTimeManual,
+    TResult? Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return updateHightLatitudeCaluclation?.call(state);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fajirTime)? updateFajirTime,
+    TResult Function(String sunriseTime)? updateSunriseTime,
+    TResult Function(String duherTime)? updateDuherTime,
+    TResult Function(String asrTime)? updateAsrTime,
+    TResult Function(String megribTime)? updateMegribTime,
+    TResult Function(String ishaTime)? updateIshaTime,
+    TResult Function(String midleNighTime)? updateMidleNighTime,
+    TResult Function(String last3thTime)? updateLast3thTime,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(String value)? updateTimeZone,
+    TResult Function(bool status)? updateButtonsStatus,
+    TResult Function(String appTime, String deviceTime)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function()? factoryReset,
+    TResult Function(int value)? editFajirTimeManual,
+    TResult Function(int value)? editSunriseTimeManual,
+    TResult Function(int value)? editDuhirTimeManual,
+    TResult Function(int value)? editAsrTimeManual,
+    TResult Function(int value)? editMagrebTimeManual,
+    TResult Function(int value)? editIshaTimeManual,
+    TResult Function(int value)? editMidNightTimeManual,
+    TResult Function(int value)? editLast3thTimeTimeManual,
+    TResult Function(HightLatitudeCaluclationState state)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (updateHightLatitudeCaluclation != null) {
+      return updateHightLatitudeCaluclation(state);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateFajirTime value) updateFajirTime,
+    required TResult Function(_UpdateSunriseTime value) updateSunriseTime,
+    required TResult Function(_UpdateDuherTime value) updateDuherTime,
+    required TResult Function(_UpdateAsrTime value) updateAsrTime,
+    required TResult Function(_UpdateMegribTime value) updateMegribTime,
+    required TResult Function(_UpdateIshaTime value) updateIshaTime,
+    required TResult Function(_UpdateMidleNighTime value) updateMidleNighTime,
+    required TResult Function(_UpdateLast3thTime value) updateLast3thTime,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateButtonsStatus value) updateButtonsStatus,
+    required TResult Function(_UpdateApplicationAndDeviceTimeStatus value)
+        updateApplicationAndDeviceTimeStatus,
+    required TResult Function(_FactoryReset value) factoryReset,
+    required TResult Function(_EditFajirTimeManual value) editFajirTimeManual,
+    required TResult Function(_EditSunriseTimeManual value)
+        editSunriseTimeManual,
+    required TResult Function(_EditDuhirTimeManual value) editDuhirTimeManual,
+    required TResult Function(_EditAsrTimeManual value) editAsrTimeManual,
+    required TResult Function(_EditMagrebTimeManual value) editMagrebTimeManual,
+    required TResult Function(_EditIshaTimeManual value) editIshaTimeManual,
+    required TResult Function(_EditMidNightTimeManual value)
+        editMidNightTimeManual,
+    required TResult Function(_EditLast3thTimeTimeManual value)
+        editLast3thTimeTimeManual,
+    required TResult Function(_UpdateHightLatitudeCaluclation value)
+        updateHightLatitudeCaluclation,
+  }) {
+    return updateHightLatitudeCaluclation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult? Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult? Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult? Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult? Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult? Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult? Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult? Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult? Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult? Function(_FactoryReset value)? factoryReset,
+    TResult? Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult? Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult? Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult? Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult? Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult? Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult? Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult? Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult? Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+  }) {
+    return updateHightLatitudeCaluclation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateFajirTime value)? updateFajirTime,
+    TResult Function(_UpdateSunriseTime value)? updateSunriseTime,
+    TResult Function(_UpdateDuherTime value)? updateDuherTime,
+    TResult Function(_UpdateAsrTime value)? updateAsrTime,
+    TResult Function(_UpdateMegribTime value)? updateMegribTime,
+    TResult Function(_UpdateIshaTime value)? updateIshaTime,
+    TResult Function(_UpdateMidleNighTime value)? updateMidleNighTime,
+    TResult Function(_UpdateLast3thTime value)? updateLast3thTime,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateButtonsStatus value)? updateButtonsStatus,
+    TResult Function(_UpdateApplicationAndDeviceTimeStatus value)?
+        updateApplicationAndDeviceTimeStatus,
+    TResult Function(_FactoryReset value)? factoryReset,
+    TResult Function(_EditFajirTimeManual value)? editFajirTimeManual,
+    TResult Function(_EditSunriseTimeManual value)? editSunriseTimeManual,
+    TResult Function(_EditDuhirTimeManual value)? editDuhirTimeManual,
+    TResult Function(_EditAsrTimeManual value)? editAsrTimeManual,
+    TResult Function(_EditMagrebTimeManual value)? editMagrebTimeManual,
+    TResult Function(_EditIshaTimeManual value)? editIshaTimeManual,
+    TResult Function(_EditMidNightTimeManual value)? editMidNightTimeManual,
+    TResult Function(_EditLast3thTimeTimeManual value)?
+        editLast3thTimeTimeManual,
+    TResult Function(_UpdateHightLatitudeCaluclation value)?
+        updateHightLatitudeCaluclation,
+    required TResult orElse(),
+  }) {
+    if (updateHightLatitudeCaluclation != null) {
+      return updateHightLatitudeCaluclation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateHightLatitudeCaluclation
+    implements PrayCalculationSettingEvent {
+  factory _UpdateHightLatitudeCaluclation(
+          {required final HightLatitudeCaluclationState state}) =
+      _$UpdateHightLatitudeCaluclationImpl;
+
+  HightLatitudeCaluclationState get state;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateHightLatitudeCaluclationImplCopyWith<
+          _$UpdateHightLatitudeCaluclationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PrayCalculationSettingState {
   String get fajirTime => throw _privateConstructorUsedError;
   String get sunriseTime => throw _privateConstructorUsedError;
@@ -2887,10 +6889,22 @@ mixin _$PrayCalculationSettingState {
   String get ishaTime => throw _privateConstructorUsedError;
   String get midleNighTime => throw _privateConstructorUsedError;
   String get last3thTime => throw _privateConstructorUsedError;
+  String get applicationTime => throw _privateConstructorUsedError;
+  String get deviceTime => throw _privateConstructorUsedError;
   bool get buttonsStatus => throw _privateConstructorUsedError;
-  double get timeZone => throw _privateConstructorUsedError;
+  String get timeZone => throw _privateConstructorUsedError;
+  int get editFajirTimeManual => throw _privateConstructorUsedError;
+  int get editSunriseTimeManual => throw _privateConstructorUsedError;
+  int get editDuhirTimeManual => throw _privateConstructorUsedError;
+  int get editAsrTimeManual => throw _privateConstructorUsedError;
+  int get editMagrebTimeManual => throw _privateConstructorUsedError;
+  int get editIshaTimeManual => throw _privateConstructorUsedError;
+  int get editMidNightTimeManual => throw _privateConstructorUsedError;
+  int get editLast3thTimeTimeManual => throw _privateConstructorUsedError;
   MathhabState get mathhab => throw _privateConstructorUsedError;
   CalculationMethodState get calculationMethod =>
+      throw _privateConstructorUsedError;
+  HightLatitudeCaluclationState get hightLatitudeCaluclation =>
       throw _privateConstructorUsedError;
 
   /// Create a copy of PrayCalculationSettingState
@@ -2917,13 +6931,25 @@ abstract class $PrayCalculationSettingStateCopyWith<$Res> {
       String ishaTime,
       String midleNighTime,
       String last3thTime,
+      String applicationTime,
+      String deviceTime,
       bool buttonsStatus,
-      double timeZone,
+      String timeZone,
+      int editFajirTimeManual,
+      int editSunriseTimeManual,
+      int editDuhirTimeManual,
+      int editAsrTimeManual,
+      int editMagrebTimeManual,
+      int editIshaTimeManual,
+      int editMidNightTimeManual,
+      int editLast3thTimeTimeManual,
       MathhabState mathhab,
-      CalculationMethodState calculationMethod});
+      CalculationMethodState calculationMethod,
+      HightLatitudeCaluclationState hightLatitudeCaluclation});
 
   $MathhabStateCopyWith<$Res> get mathhab;
   $CalculationMethodStateCopyWith<$Res> get calculationMethod;
+  $HightLatitudeCaluclationStateCopyWith<$Res> get hightLatitudeCaluclation;
 }
 
 /// @nodoc
@@ -2950,10 +6976,21 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
     Object? ishaTime = null,
     Object? midleNighTime = null,
     Object? last3thTime = null,
+    Object? applicationTime = null,
+    Object? deviceTime = null,
     Object? buttonsStatus = null,
     Object? timeZone = null,
+    Object? editFajirTimeManual = null,
+    Object? editSunriseTimeManual = null,
+    Object? editDuhirTimeManual = null,
+    Object? editAsrTimeManual = null,
+    Object? editMagrebTimeManual = null,
+    Object? editIshaTimeManual = null,
+    Object? editMidNightTimeManual = null,
+    Object? editLast3thTimeTimeManual = null,
     Object? mathhab = null,
     Object? calculationMethod = null,
+    Object? hightLatitudeCaluclation = null,
   }) {
     return _then(_value.copyWith(
       fajirTime: null == fajirTime
@@ -2988,6 +7025,14 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
           ? _value.last3thTime
           : last3thTime // ignore: cast_nullable_to_non_nullable
               as String,
+      applicationTime: null == applicationTime
+          ? _value.applicationTime
+          : applicationTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      deviceTime: null == deviceTime
+          ? _value.deviceTime
+          : deviceTime // ignore: cast_nullable_to_non_nullable
+              as String,
       buttonsStatus: null == buttonsStatus
           ? _value.buttonsStatus
           : buttonsStatus // ignore: cast_nullable_to_non_nullable
@@ -2995,7 +7040,39 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
       timeZone: null == timeZone
           ? _value.timeZone
           : timeZone // ignore: cast_nullable_to_non_nullable
-              as double,
+              as String,
+      editFajirTimeManual: null == editFajirTimeManual
+          ? _value.editFajirTimeManual
+          : editFajirTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editSunriseTimeManual: null == editSunriseTimeManual
+          ? _value.editSunriseTimeManual
+          : editSunriseTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editDuhirTimeManual: null == editDuhirTimeManual
+          ? _value.editDuhirTimeManual
+          : editDuhirTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editAsrTimeManual: null == editAsrTimeManual
+          ? _value.editAsrTimeManual
+          : editAsrTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editMagrebTimeManual: null == editMagrebTimeManual
+          ? _value.editMagrebTimeManual
+          : editMagrebTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editIshaTimeManual: null == editIshaTimeManual
+          ? _value.editIshaTimeManual
+          : editIshaTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editMidNightTimeManual: null == editMidNightTimeManual
+          ? _value.editMidNightTimeManual
+          : editMidNightTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editLast3thTimeTimeManual: null == editLast3thTimeTimeManual
+          ? _value.editLast3thTimeTimeManual
+          : editLast3thTimeTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
       mathhab: null == mathhab
           ? _value.mathhab
           : mathhab // ignore: cast_nullable_to_non_nullable
@@ -3004,6 +7081,10 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
           ? _value.calculationMethod
           : calculationMethod // ignore: cast_nullable_to_non_nullable
               as CalculationMethodState,
+      hightLatitudeCaluclation: null == hightLatitudeCaluclation
+          ? _value.hightLatitudeCaluclation
+          : hightLatitudeCaluclation // ignore: cast_nullable_to_non_nullable
+              as HightLatitudeCaluclationState,
     ) as $Val);
   }
 
@@ -3027,6 +7108,17 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
       return _then(_value.copyWith(calculationMethod: value) as $Val);
     });
   }
+
+  /// Create a copy of PrayCalculationSettingState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $HightLatitudeCaluclationStateCopyWith<$Res> get hightLatitudeCaluclation {
+    return $HightLatitudeCaluclationStateCopyWith<$Res>(
+        _value.hightLatitudeCaluclation, (value) {
+      return _then(_value.copyWith(hightLatitudeCaluclation: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -3047,15 +7139,28 @@ abstract class _$$PrayCalculationSettingStateImplCopyWith<$Res>
       String ishaTime,
       String midleNighTime,
       String last3thTime,
+      String applicationTime,
+      String deviceTime,
       bool buttonsStatus,
-      double timeZone,
+      String timeZone,
+      int editFajirTimeManual,
+      int editSunriseTimeManual,
+      int editDuhirTimeManual,
+      int editAsrTimeManual,
+      int editMagrebTimeManual,
+      int editIshaTimeManual,
+      int editMidNightTimeManual,
+      int editLast3thTimeTimeManual,
       MathhabState mathhab,
-      CalculationMethodState calculationMethod});
+      CalculationMethodState calculationMethod,
+      HightLatitudeCaluclationState hightLatitudeCaluclation});
 
   @override
   $MathhabStateCopyWith<$Res> get mathhab;
   @override
   $CalculationMethodStateCopyWith<$Res> get calculationMethod;
+  @override
+  $HightLatitudeCaluclationStateCopyWith<$Res> get hightLatitudeCaluclation;
 }
 
 /// @nodoc
@@ -3081,10 +7186,21 @@ class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
     Object? ishaTime = null,
     Object? midleNighTime = null,
     Object? last3thTime = null,
+    Object? applicationTime = null,
+    Object? deviceTime = null,
     Object? buttonsStatus = null,
     Object? timeZone = null,
+    Object? editFajirTimeManual = null,
+    Object? editSunriseTimeManual = null,
+    Object? editDuhirTimeManual = null,
+    Object? editAsrTimeManual = null,
+    Object? editMagrebTimeManual = null,
+    Object? editIshaTimeManual = null,
+    Object? editMidNightTimeManual = null,
+    Object? editLast3thTimeTimeManual = null,
     Object? mathhab = null,
     Object? calculationMethod = null,
+    Object? hightLatitudeCaluclation = null,
   }) {
     return _then(_$PrayCalculationSettingStateImpl(
       fajirTime: null == fajirTime
@@ -3119,6 +7235,14 @@ class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
           ? _value.last3thTime
           : last3thTime // ignore: cast_nullable_to_non_nullable
               as String,
+      applicationTime: null == applicationTime
+          ? _value.applicationTime
+          : applicationTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      deviceTime: null == deviceTime
+          ? _value.deviceTime
+          : deviceTime // ignore: cast_nullable_to_non_nullable
+              as String,
       buttonsStatus: null == buttonsStatus
           ? _value.buttonsStatus
           : buttonsStatus // ignore: cast_nullable_to_non_nullable
@@ -3126,7 +7250,39 @@ class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
       timeZone: null == timeZone
           ? _value.timeZone
           : timeZone // ignore: cast_nullable_to_non_nullable
-              as double,
+              as String,
+      editFajirTimeManual: null == editFajirTimeManual
+          ? _value.editFajirTimeManual
+          : editFajirTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editSunriseTimeManual: null == editSunriseTimeManual
+          ? _value.editSunriseTimeManual
+          : editSunriseTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editDuhirTimeManual: null == editDuhirTimeManual
+          ? _value.editDuhirTimeManual
+          : editDuhirTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editAsrTimeManual: null == editAsrTimeManual
+          ? _value.editAsrTimeManual
+          : editAsrTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editMagrebTimeManual: null == editMagrebTimeManual
+          ? _value.editMagrebTimeManual
+          : editMagrebTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editIshaTimeManual: null == editIshaTimeManual
+          ? _value.editIshaTimeManual
+          : editIshaTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editMidNightTimeManual: null == editMidNightTimeManual
+          ? _value.editMidNightTimeManual
+          : editMidNightTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editLast3thTimeTimeManual: null == editLast3thTimeTimeManual
+          ? _value.editLast3thTimeTimeManual
+          : editLast3thTimeTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
       mathhab: null == mathhab
           ? _value.mathhab
           : mathhab // ignore: cast_nullable_to_non_nullable
@@ -3135,6 +7291,10 @@ class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
           ? _value.calculationMethod
           : calculationMethod // ignore: cast_nullable_to_non_nullable
               as CalculationMethodState,
+      hightLatitudeCaluclation: null == hightLatitudeCaluclation
+          ? _value.hightLatitudeCaluclation
+          : hightLatitudeCaluclation // ignore: cast_nullable_to_non_nullable
+              as HightLatitudeCaluclationState,
     ));
   }
 }
@@ -3152,10 +7312,22 @@ class _$PrayCalculationSettingStateImpl
       this.ishaTime = "",
       this.midleNighTime = "",
       this.last3thTime = "",
+      this.applicationTime = "",
+      this.deviceTime = "",
       this.buttonsStatus = false,
-      this.timeZone = 3,
+      this.timeZone = "UTC +03:00",
+      this.editFajirTimeManual = 0,
+      this.editSunriseTimeManual = 0,
+      this.editDuhirTimeManual = 0,
+      this.editAsrTimeManual = 0,
+      this.editMagrebTimeManual = 0,
+      this.editIshaTimeManual = 0,
+      this.editMidNightTimeManual = 0,
+      this.editLast3thTimeTimeManual = 0,
       this.mathhab = const MathhabState.hanafi(),
-      this.calculationMethod = const CalculationMethodState.jordanAwqaf()});
+      this.calculationMethod = const CalculationMethodState.jordanAwqaf(),
+      this.hightLatitudeCaluclation =
+          const HightLatitudeCaluclationState.none()});
 
   @override
   @JsonKey()
@@ -3183,20 +7355,53 @@ class _$PrayCalculationSettingStateImpl
   final String last3thTime;
   @override
   @JsonKey()
+  final String applicationTime;
+  @override
+  @JsonKey()
+  final String deviceTime;
+  @override
+  @JsonKey()
   final bool buttonsStatus;
   @override
   @JsonKey()
-  final double timeZone;
+  final String timeZone;
+  @override
+  @JsonKey()
+  final int editFajirTimeManual;
+  @override
+  @JsonKey()
+  final int editSunriseTimeManual;
+  @override
+  @JsonKey()
+  final int editDuhirTimeManual;
+  @override
+  @JsonKey()
+  final int editAsrTimeManual;
+  @override
+  @JsonKey()
+  final int editMagrebTimeManual;
+  @override
+  @JsonKey()
+  final int editIshaTimeManual;
+  @override
+  @JsonKey()
+  final int editMidNightTimeManual;
+  @override
+  @JsonKey()
+  final int editLast3thTimeTimeManual;
   @override
   @JsonKey()
   final MathhabState mathhab;
   @override
   @JsonKey()
   final CalculationMethodState calculationMethod;
+  @override
+  @JsonKey()
+  final HightLatitudeCaluclationState hightLatitudeCaluclation;
 
   @override
   String toString() {
-    return 'PrayCalculationSettingState(fajirTime: $fajirTime, sunriseTime: $sunriseTime, duherTime: $duherTime, asrTime: $asrTime, megribTime: $megribTime, ishaTime: $ishaTime, midleNighTime: $midleNighTime, last3thTime: $last3thTime, buttonsStatus: $buttonsStatus, timeZone: $timeZone, mathhab: $mathhab, calculationMethod: $calculationMethod)';
+    return 'PrayCalculationSettingState(fajirTime: $fajirTime, sunriseTime: $sunriseTime, duherTime: $duherTime, asrTime: $asrTime, megribTime: $megribTime, ishaTime: $ishaTime, midleNighTime: $midleNighTime, last3thTime: $last3thTime, applicationTime: $applicationTime, deviceTime: $deviceTime, buttonsStatus: $buttonsStatus, timeZone: $timeZone, editFajirTimeManual: $editFajirTimeManual, editSunriseTimeManual: $editSunriseTimeManual, editDuhirTimeManual: $editDuhirTimeManual, editAsrTimeManual: $editAsrTimeManual, editMagrebTimeManual: $editMagrebTimeManual, editIshaTimeManual: $editIshaTimeManual, editMidNightTimeManual: $editMidNightTimeManual, editLast3thTimeTimeManual: $editLast3thTimeTimeManual, mathhab: $mathhab, calculationMethod: $calculationMethod, hightLatitudeCaluclation: $hightLatitudeCaluclation)';
   }
 
   @override
@@ -3219,30 +7424,66 @@ class _$PrayCalculationSettingStateImpl
                 other.midleNighTime == midleNighTime) &&
             (identical(other.last3thTime, last3thTime) ||
                 other.last3thTime == last3thTime) &&
+            (identical(other.applicationTime, applicationTime) ||
+                other.applicationTime == applicationTime) &&
+            (identical(other.deviceTime, deviceTime) ||
+                other.deviceTime == deviceTime) &&
             (identical(other.buttonsStatus, buttonsStatus) ||
                 other.buttonsStatus == buttonsStatus) &&
             (identical(other.timeZone, timeZone) ||
                 other.timeZone == timeZone) &&
+            (identical(other.editFajirTimeManual, editFajirTimeManual) ||
+                other.editFajirTimeManual == editFajirTimeManual) &&
+            (identical(other.editSunriseTimeManual, editSunriseTimeManual) ||
+                other.editSunriseTimeManual == editSunriseTimeManual) &&
+            (identical(other.editDuhirTimeManual, editDuhirTimeManual) ||
+                other.editDuhirTimeManual == editDuhirTimeManual) &&
+            (identical(other.editAsrTimeManual, editAsrTimeManual) ||
+                other.editAsrTimeManual == editAsrTimeManual) &&
+            (identical(other.editMagrebTimeManual, editMagrebTimeManual) ||
+                other.editMagrebTimeManual == editMagrebTimeManual) &&
+            (identical(other.editIshaTimeManual, editIshaTimeManual) ||
+                other.editIshaTimeManual == editIshaTimeManual) &&
+            (identical(other.editMidNightTimeManual, editMidNightTimeManual) ||
+                other.editMidNightTimeManual == editMidNightTimeManual) &&
+            (identical(other.editLast3thTimeTimeManual,
+                    editLast3thTimeTimeManual) ||
+                other.editLast3thTimeTimeManual == editLast3thTimeTimeManual) &&
             (identical(other.mathhab, mathhab) || other.mathhab == mathhab) &&
             (identical(other.calculationMethod, calculationMethod) ||
-                other.calculationMethod == calculationMethod));
+                other.calculationMethod == calculationMethod) &&
+            (identical(
+                    other.hightLatitudeCaluclation, hightLatitudeCaluclation) ||
+                other.hightLatitudeCaluclation == hightLatitudeCaluclation));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      fajirTime,
-      sunriseTime,
-      duherTime,
-      asrTime,
-      megribTime,
-      ishaTime,
-      midleNighTime,
-      last3thTime,
-      buttonsStatus,
-      timeZone,
-      mathhab,
-      calculationMethod);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        fajirTime,
+        sunriseTime,
+        duherTime,
+        asrTime,
+        megribTime,
+        ishaTime,
+        midleNighTime,
+        last3thTime,
+        applicationTime,
+        deviceTime,
+        buttonsStatus,
+        timeZone,
+        editFajirTimeManual,
+        editSunriseTimeManual,
+        editDuhirTimeManual,
+        editAsrTimeManual,
+        editMagrebTimeManual,
+        editIshaTimeManual,
+        editMidNightTimeManual,
+        editLast3thTimeTimeManual,
+        mathhab,
+        calculationMethod,
+        hightLatitudeCaluclation
+      ]);
 
   /// Create a copy of PrayCalculationSettingState
   /// with the given fields replaced by the non-null parameter values.
@@ -3265,10 +7506,21 @@ abstract class _PrayCalculationSettingState
           final String ishaTime,
           final String midleNighTime,
           final String last3thTime,
+          final String applicationTime,
+          final String deviceTime,
           final bool buttonsStatus,
-          final double timeZone,
+          final String timeZone,
+          final int editFajirTimeManual,
+          final int editSunriseTimeManual,
+          final int editDuhirTimeManual,
+          final int editAsrTimeManual,
+          final int editMagrebTimeManual,
+          final int editIshaTimeManual,
+          final int editMidNightTimeManual,
+          final int editLast3thTimeTimeManual,
           final MathhabState mathhab,
-          final CalculationMethodState calculationMethod}) =
+          final CalculationMethodState calculationMethod,
+          final HightLatitudeCaluclationState hightLatitudeCaluclation}) =
       _$PrayCalculationSettingStateImpl;
 
   @override
@@ -3288,13 +7540,35 @@ abstract class _PrayCalculationSettingState
   @override
   String get last3thTime;
   @override
+  String get applicationTime;
+  @override
+  String get deviceTime;
+  @override
   bool get buttonsStatus;
   @override
-  double get timeZone;
+  String get timeZone;
+  @override
+  int get editFajirTimeManual;
+  @override
+  int get editSunriseTimeManual;
+  @override
+  int get editDuhirTimeManual;
+  @override
+  int get editAsrTimeManual;
+  @override
+  int get editMagrebTimeManual;
+  @override
+  int get editIshaTimeManual;
+  @override
+  int get editMidNightTimeManual;
+  @override
+  int get editLast3thTimeTimeManual;
   @override
   MathhabState get mathhab;
   @override
   CalculationMethodState get calculationMethod;
+  @override
+  HightLatitudeCaluclationState get hightLatitudeCaluclation;
 
   /// Create a copy of PrayCalculationSettingState
   /// with the given fields replaced by the non-null parameter values.
@@ -3302,6 +7576,636 @@ abstract class _PrayCalculationSettingState
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PrayCalculationSettingStateImplCopyWith<_$PrayCalculationSettingStateImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$HightLatitudeCaluclationState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() angleBasedMethod,
+    required TResult Function() midnight,
+    required TResult Function() seventhPartOfTheNight,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? angleBasedMethod,
+    TResult? Function()? midnight,
+    TResult? Function()? seventhPartOfTheNight,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? angleBasedMethod,
+    TResult Function()? midnight,
+    TResult Function()? seventhPartOfTheNight,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HightLatitudeCaluclationStateNone value) none,
+    required TResult Function(
+            HightLatitudeCaluclationStateAngleBasedMethod value)
+        angleBasedMethod,
+    required TResult Function(HightLatitudeCaluclationStateMidnight value)
+        midnight,
+    required TResult Function(
+            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
+        seventhPartOfTheNight,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $HightLatitudeCaluclationStateCopyWith<$Res> {
+  factory $HightLatitudeCaluclationStateCopyWith(
+          HightLatitudeCaluclationState value,
+          $Res Function(HightLatitudeCaluclationState) then) =
+      _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
+          HightLatitudeCaluclationState>;
+}
+
+/// @nodoc
+class _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
+        $Val extends HightLatitudeCaluclationState>
+    implements $HightLatitudeCaluclationStateCopyWith<$Res> {
+  _$HightLatitudeCaluclationStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of HightLatitudeCaluclationState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$HightLatitudeCaluclationStateNoneImplCopyWith<$Res> {
+  factory _$$HightLatitudeCaluclationStateNoneImplCopyWith(
+          _$HightLatitudeCaluclationStateNoneImpl value,
+          $Res Function(_$HightLatitudeCaluclationStateNoneImpl) then) =
+      __$$HightLatitudeCaluclationStateNoneImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$HightLatitudeCaluclationStateNoneImplCopyWithImpl<$Res>
+    extends _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
+        _$HightLatitudeCaluclationStateNoneImpl>
+    implements _$$HightLatitudeCaluclationStateNoneImplCopyWith<$Res> {
+  __$$HightLatitudeCaluclationStateNoneImplCopyWithImpl(
+      _$HightLatitudeCaluclationStateNoneImpl _value,
+      $Res Function(_$HightLatitudeCaluclationStateNoneImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HightLatitudeCaluclationState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$HightLatitudeCaluclationStateNoneImpl
+    implements HightLatitudeCaluclationStateNone {
+  const _$HightLatitudeCaluclationStateNoneImpl();
+
+  @override
+  String toString() {
+    return 'HightLatitudeCaluclationState.none()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HightLatitudeCaluclationStateNoneImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() angleBasedMethod,
+    required TResult Function() midnight,
+    required TResult Function() seventhPartOfTheNight,
+  }) {
+    return none();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? angleBasedMethod,
+    TResult? Function()? midnight,
+    TResult? Function()? seventhPartOfTheNight,
+  }) {
+    return none?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? angleBasedMethod,
+    TResult Function()? midnight,
+    TResult Function()? seventhPartOfTheNight,
+    required TResult orElse(),
+  }) {
+    if (none != null) {
+      return none();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HightLatitudeCaluclationStateNone value) none,
+    required TResult Function(
+            HightLatitudeCaluclationStateAngleBasedMethod value)
+        angleBasedMethod,
+    required TResult Function(HightLatitudeCaluclationStateMidnight value)
+        midnight,
+    required TResult Function(
+            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
+        seventhPartOfTheNight,
+  }) {
+    return none(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+  }) {
+    return none?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+    required TResult orElse(),
+  }) {
+    if (none != null) {
+      return none(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HightLatitudeCaluclationStateNone
+    implements HightLatitudeCaluclationState {
+  const factory HightLatitudeCaluclationStateNone() =
+      _$HightLatitudeCaluclationStateNoneImpl;
+}
+
+/// @nodoc
+abstract class _$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWith<
+    $Res> {
+  factory _$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWith(
+          _$HightLatitudeCaluclationStateAngleBasedMethodImpl value,
+          $Res Function(_$HightLatitudeCaluclationStateAngleBasedMethodImpl)
+              then) =
+      __$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl<$Res>
+    extends _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
+        _$HightLatitudeCaluclationStateAngleBasedMethodImpl>
+    implements
+        _$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWith<$Res> {
+  __$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl(
+      _$HightLatitudeCaluclationStateAngleBasedMethodImpl _value,
+      $Res Function(_$HightLatitudeCaluclationStateAngleBasedMethodImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HightLatitudeCaluclationState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$HightLatitudeCaluclationStateAngleBasedMethodImpl
+    implements HightLatitudeCaluclationStateAngleBasedMethod {
+  const _$HightLatitudeCaluclationStateAngleBasedMethodImpl();
+
+  @override
+  String toString() {
+    return 'HightLatitudeCaluclationState.angleBasedMethod()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HightLatitudeCaluclationStateAngleBasedMethodImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() angleBasedMethod,
+    required TResult Function() midnight,
+    required TResult Function() seventhPartOfTheNight,
+  }) {
+    return angleBasedMethod();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? angleBasedMethod,
+    TResult? Function()? midnight,
+    TResult? Function()? seventhPartOfTheNight,
+  }) {
+    return angleBasedMethod?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? angleBasedMethod,
+    TResult Function()? midnight,
+    TResult Function()? seventhPartOfTheNight,
+    required TResult orElse(),
+  }) {
+    if (angleBasedMethod != null) {
+      return angleBasedMethod();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HightLatitudeCaluclationStateNone value) none,
+    required TResult Function(
+            HightLatitudeCaluclationStateAngleBasedMethod value)
+        angleBasedMethod,
+    required TResult Function(HightLatitudeCaluclationStateMidnight value)
+        midnight,
+    required TResult Function(
+            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
+        seventhPartOfTheNight,
+  }) {
+    return angleBasedMethod(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+  }) {
+    return angleBasedMethod?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+    required TResult orElse(),
+  }) {
+    if (angleBasedMethod != null) {
+      return angleBasedMethod(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HightLatitudeCaluclationStateAngleBasedMethod
+    implements HightLatitudeCaluclationState {
+  const factory HightLatitudeCaluclationStateAngleBasedMethod() =
+      _$HightLatitudeCaluclationStateAngleBasedMethodImpl;
+}
+
+/// @nodoc
+abstract class _$$HightLatitudeCaluclationStateMidnightImplCopyWith<$Res> {
+  factory _$$HightLatitudeCaluclationStateMidnightImplCopyWith(
+          _$HightLatitudeCaluclationStateMidnightImpl value,
+          $Res Function(_$HightLatitudeCaluclationStateMidnightImpl) then) =
+      __$$HightLatitudeCaluclationStateMidnightImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$HightLatitudeCaluclationStateMidnightImplCopyWithImpl<$Res>
+    extends _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
+        _$HightLatitudeCaluclationStateMidnightImpl>
+    implements _$$HightLatitudeCaluclationStateMidnightImplCopyWith<$Res> {
+  __$$HightLatitudeCaluclationStateMidnightImplCopyWithImpl(
+      _$HightLatitudeCaluclationStateMidnightImpl _value,
+      $Res Function(_$HightLatitudeCaluclationStateMidnightImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HightLatitudeCaluclationState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$HightLatitudeCaluclationStateMidnightImpl
+    implements HightLatitudeCaluclationStateMidnight {
+  const _$HightLatitudeCaluclationStateMidnightImpl();
+
+  @override
+  String toString() {
+    return 'HightLatitudeCaluclationState.midnight()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HightLatitudeCaluclationStateMidnightImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() angleBasedMethod,
+    required TResult Function() midnight,
+    required TResult Function() seventhPartOfTheNight,
+  }) {
+    return midnight();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? angleBasedMethod,
+    TResult? Function()? midnight,
+    TResult? Function()? seventhPartOfTheNight,
+  }) {
+    return midnight?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? angleBasedMethod,
+    TResult Function()? midnight,
+    TResult Function()? seventhPartOfTheNight,
+    required TResult orElse(),
+  }) {
+    if (midnight != null) {
+      return midnight();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HightLatitudeCaluclationStateNone value) none,
+    required TResult Function(
+            HightLatitudeCaluclationStateAngleBasedMethod value)
+        angleBasedMethod,
+    required TResult Function(HightLatitudeCaluclationStateMidnight value)
+        midnight,
+    required TResult Function(
+            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
+        seventhPartOfTheNight,
+  }) {
+    return midnight(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+  }) {
+    return midnight?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+    required TResult orElse(),
+  }) {
+    if (midnight != null) {
+      return midnight(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HightLatitudeCaluclationStateMidnight
+    implements HightLatitudeCaluclationState {
+  const factory HightLatitudeCaluclationStateMidnight() =
+      _$HightLatitudeCaluclationStateMidnightImpl;
+}
+
+/// @nodoc
+abstract class _$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith<
+    $Res> {
+  factory _$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith(
+          _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl value,
+          $Res Function(
+                  _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl)
+              then) =
+      __$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl<
+          $Res>;
+}
+
+/// @nodoc
+class __$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl<
+        $Res>
+    extends _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
+        _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl>
+    implements
+        _$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith<
+            $Res> {
+  __$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl(
+      _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl _value,
+      $Res Function(_$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl)
+          _then)
+      : super(_value, _then);
+
+  /// Create a copy of HightLatitudeCaluclationState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl
+    implements HightLatitudeCaluclationStateSeventhPartOfTheNight {
+  const _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl();
+
+  @override
+  String toString() {
+    return 'HightLatitudeCaluclationState.seventhPartOfTheNight()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() none,
+    required TResult Function() angleBasedMethod,
+    required TResult Function() midnight,
+    required TResult Function() seventhPartOfTheNight,
+  }) {
+    return seventhPartOfTheNight();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? none,
+    TResult? Function()? angleBasedMethod,
+    TResult? Function()? midnight,
+    TResult? Function()? seventhPartOfTheNight,
+  }) {
+    return seventhPartOfTheNight?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? none,
+    TResult Function()? angleBasedMethod,
+    TResult Function()? midnight,
+    TResult Function()? seventhPartOfTheNight,
+    required TResult orElse(),
+  }) {
+    if (seventhPartOfTheNight != null) {
+      return seventhPartOfTheNight();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HightLatitudeCaluclationStateNone value) none,
+    required TResult Function(
+            HightLatitudeCaluclationStateAngleBasedMethod value)
+        angleBasedMethod,
+    required TResult Function(HightLatitudeCaluclationStateMidnight value)
+        midnight,
+    required TResult Function(
+            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
+        seventhPartOfTheNight,
+  }) {
+    return seventhPartOfTheNight(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+  }) {
+    return seventhPartOfTheNight?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HightLatitudeCaluclationStateNone value)? none,
+    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
+        angleBasedMethod,
+    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
+    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
+        seventhPartOfTheNight,
+    required TResult orElse(),
+  }) {
+    if (seventhPartOfTheNight != null) {
+      return seventhPartOfTheNight(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HightLatitudeCaluclationStateSeventhPartOfTheNight
+    implements HightLatitudeCaluclationState {
+  const factory HightLatitudeCaluclationStateSeventhPartOfTheNight() =
+      _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl;
 }
 
 /// @nodoc

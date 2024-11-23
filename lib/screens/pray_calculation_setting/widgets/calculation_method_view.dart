@@ -30,34 +30,39 @@ class CalculationMethodView extends StatelessWidget {
             textAlign: TextAlign.center,
             maxLins: 2,
           ),
-          BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-            buildWhen: (previous, current) =>
-                previous.calculationMethod != current.calculationMethod,
-            builder: (context, state) {
-              final calculationMethodList = _getCalculationMethodList(context);
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: BlocBuilder<PrayCalculationSettingBloc,
+                  PrayCalculationSettingState>(
+                buildWhen: (previous, current) =>
+                    previous.calculationMethod != current.calculationMethod,
+                builder: (context, state) {
+                  final calculationMethodList =
+                      _getCalculationMethodList(context);
 
-              return Expanded(
-                child: CustomRadioButton(
-                  elevation: 2,
-                  horizontal: true,
-                  absoluteZeroSpacing: false,
-                  unSelectedColor: Colors.white,
-                  unSelectedBorderColor: const Color(0xff444444),
-                  selectedColor: const Color(0xff007F37),
-                  defaultSelected: _getInitialCalculationMethod(
-                      context, state.calculationMethod),
-                  buttonLables: calculationMethodList,
-                  buttonValues: calculationMethodList,
-                  buttonTextStyle: const ButtonTextStyle(
-                    selectedColor: Colors.white,
-                    unSelectedColor: Color(0xff444444),
-                    textStyle: TextStyle(fontSize: 14),
-                  ),
-                  radioButtonValue: (value) =>
-                      _onCalculationMethodSelected(context, value),
-                ),
-              );
-            },
+                  return CustomRadioButton(
+                    elevation: 2,
+                    horizontal: true,
+                    absoluteZeroSpacing: false,
+                    unSelectedColor: Colors.white,
+                    unSelectedBorderColor: const Color(0xff444444),
+                    selectedColor: const Color(0xff007F37),
+                    defaultSelected: _getInitialCalculationMethod(
+                        context, state.calculationMethod),
+                    buttonLables: calculationMethodList,
+                    buttonValues: calculationMethodList,
+                    buttonTextStyle: const ButtonTextStyle(
+                      selectedColor: Colors.white,
+                      unSelectedColor: Color(0xff444444),
+                      textStyle: TextStyle(fontSize: 14),
+                    ),
+                    radioButtonValue: (value) =>
+                        _onCalculationMethodSelected(context, value),
+                  );
+                },
+              ),
+            ),
           ),
         ],
       ),
