@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:adhan/adhan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -12,6 +11,7 @@ import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/day_time.dart';
 import 'package:islam_app/utils/pray_manager.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_mob_adhan/adhan.dart';
 
 part 'salah_timing_event.dart';
 part 'salah_timing_state.dart';
@@ -43,7 +43,7 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
     return PrayManager(
       coordinates: Coordinates(31.913932, 35.925581),
       utcOffset: const Duration(hours: 2),
-      calculationMethod: CalculationMethod.umm_al_qura,
+      calculationMethod: CalculationMethod.ummAlQura,
       madhab: Madhab.hanafi,
       specificDate: DateComponents(date.year, date.month, date.day),
     );

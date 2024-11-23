@@ -1,4 +1,4 @@
-import 'package:adhan/adhan.dart';
+import 'package:islam_mob_adhan/adhan.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/models/app_model/pray_timing.dart';
 import 'package:islam_app/screens/home_tab/widgets/home_header_view/bloc/home_header_bloc.dart';
@@ -7,14 +7,16 @@ class PrayManager {
   final Coordinates coordinates;
   final Duration utcOffset;
   final CalculationMethod calculationMethod;
+  final HighLatitudeRule? highLatitudeRule;
   final Madhab madhab;
   final DateComponents? specificDate; // Optional for specific date calculations
 
   PrayManager({
     required this.coordinates,
     required this.utcOffset,
-    this.calculationMethod = CalculationMethod.umm_al_qura,
+    this.calculationMethod = CalculationMethod.ummAlQura,
     this.madhab = Madhab.shafi,
+    this.highLatitudeRule,
     this.specificDate,
   });
 
@@ -22,7 +24,10 @@ class PrayManager {
 
   PrayTimingDateTimeModel getAllPrayTimeAsDateTime() {
     final date = specificDate ?? DateComponents.from(DateTime.now());
-    final params = calculationMethod.getParameters()..madhab = madhab;
+    final params = calculationMethod.getParameters();
+    params.madhab = madhab;
+    params.highLatitudeRule = highLatitudeRule;
+
     final prayerTimes =
         PrayerTimes(coordinates, date, params, utcOffset: utcOffset);
     final sunnahTimes = SunnahTimes(prayerTimes);
