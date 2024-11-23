@@ -18,3 +18,24 @@ class PrayTimingModel {
   String middleOfTheNight;
   String lastThirdOfTheNight;
 }
+
+class PrayTimingDateTimeModel {
+  PrayTimingDateTimeModel({
+    required this.fajir,
+    required this.sunrise,
+    required this.dhuhr,
+    required this.asr,
+    required this.maghrib,
+    required this.isha,
+    required this.middleOfTheNight,
+    required this.lastThirdOfTheNight,
+  });
+  DateTime fajir;
+  DateTime sunrise;
+  DateTime dhuhr;
+  DateTime asr;
+  DateTime maghrib;
+  DateTime isha;
+  DateTime middleOfTheNight;
+  DateTime lastThirdOfTheNight;
+}

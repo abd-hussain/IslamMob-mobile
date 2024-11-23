@@ -313,7 +313,25 @@
     "timezone": "Time Zone",
     "timezoneDetails": "Control The Time Zone Of The Calculation",
     "save": "Save",
-    "factoryReset" : "Factory Reset"
+    "factoryReset" : "Factory Reset",
+    "deviceTime" : "Device Time",
+    "applicationTime" : "Application Time",
+    "highLatitude" : "High Latitude",
+    "highLatitudeDetails" : "Method of calculation in regions of high latitude",
+    "hightLatitudeCaluclationNone" : "None",
+    "hightLatitudeCaluclationAngleBasedMethod" : "Angle based method",
+    "hightLatitudeCaluclationMidnight" : "Midnight",
+    "hightLatitudeCaluclationOneSeventh" : "1/7 Part of the night",
+    "editPrayTimeMinManual" : "Edit Pray Time In Minutes, Manually",
+    "editPrayTimeMinManualDetails" : "Edit Pray Time In Minutes, Manually by degree",
+    "fajirCorrectionTitle" : "Fajir correction (minites)",
+    "sunriseCorrectionTitle" : "Sunrise correction (minites)",
+    "duhorCorrectionTitle" : "Zhur correction (minites)",
+    "asrCorrectionTitle" : "Asr correction (minites)",
+    "maghribCorrectionTitle" : "Maghrib correction (minites)",
+    "ishaCorrectionTitle" : "Isha correction (minites)",
+    "midnightCorrectionTitle" : "Midnight correction (minites)",
+    "lastThirdOfTheNightCorrectionTitle" : "Last 1/3 of Night correction (minites)"
 
 
 

@@ -313,7 +313,25 @@
     "timezone": "المنطقة الزمنية",
     "timezoneDetails": "التحكم في المنطقة الزمنية للحساب",
     "save": "حفظ",
-    "factoryReset" : "إعادة الضبط الأصلي"
+    "factoryReset" : "إعادة الضبط الأصلي",
+    "deviceTime" : "وقت الجهاز",
+    "applicationTime" : "وقت التطبيق",
+    "highLatitude" : "خط العرض العالي",
+    "highLatitudeDetails" : "طريقة الحساب في مناطق خطوط العرض المرتفعة",
+    "hightLatitudeCaluclationNone" : "لا أحد",
+    "hightLatitudeCaluclationAngleBasedMethod" : "الطريقة المعتمدة على الزاوية",
+    "hightLatitudeCaluclationMidnight" : "منتصف الليل",
+    "hightLatitudeCaluclationOneSeventh" : "1/7 جزء من الليل",
+    "editPrayTimeMinManual" : "تعديل وقت الصلاة بالدقائق، يدويًا",
+    "editPrayTimeMinManualDetails" : "تعديل وقت الصلاة بالدقائق، يدويًا حسب الدرجة",
+    "fajirCorrectionTitle" : "تصحيح الفجر (بالدقائق)",
+    "sunriseCorrectionTitle" : "تصحيح شروق الشمس (بالدقائق)",
+    "duhorCorrectionTitle" : "تصحيح الظهر (بالدقائق)",
+    "asrCorrectionTitle" : "تصحيح العصر (بالدقائق)",
+    "maghribCorrectionTitle" : "تصحيح المغرب (بالدقائق)",
+    "ishaCorrectionTitle" : "تصحيح العشاء (بالدقائق)",
+    "midnightCorrectionTitle" : "تصحيح منتصف الليل (بالدقائق)",
+    "lastThirdOfTheNightCorrectionTitle" : "تصحيح الثلث الأخير من الليل (بالدقائق)"
 
 
 

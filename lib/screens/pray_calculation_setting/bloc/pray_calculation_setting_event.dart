@@ -43,12 +43,53 @@ class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
   }) = _UpdateCalculationMethod;
 
   factory PrayCalculationSettingEvent.updateTimeZone({
-    required double value,
+    required String value,
   }) = _UpdateTimeZone;
 
   factory PrayCalculationSettingEvent.updateButtonsStatus({
     required bool status,
   }) = _UpdateButtonsStatus;
 
+  factory PrayCalculationSettingEvent.updateApplicationAndDeviceTimeStatus({
+    required String appTime,
+    required String deviceTime,
+  }) = _UpdateApplicationAndDeviceTimeStatus;
+
   factory PrayCalculationSettingEvent.factoryReset() = _FactoryReset;
+
+  factory PrayCalculationSettingEvent.editFajirTimeManual({
+    required int value,
+  }) = _EditFajirTimeManual;
+
+  factory PrayCalculationSettingEvent.editSunriseTimeManual({
+    required int value,
+  }) = _EditSunriseTimeManual;
+
+  factory PrayCalculationSettingEvent.editDuhirTimeManual({
+    required int value,
+  }) = _EditDuhirTimeManual;
+
+  factory PrayCalculationSettingEvent.editAsrTimeManual({
+    required int value,
+  }) = _EditAsrTimeManual;
+
+  factory PrayCalculationSettingEvent.editMagrebTimeManual({
+    required int value,
+  }) = _EditMagrebTimeManual;
+
+  factory PrayCalculationSettingEvent.editIshaTimeManual({
+    required int value,
+  }) = _EditIshaTimeManual;
+
+  factory PrayCalculationSettingEvent.editMidNightTimeManual({
+    required int value,
+  }) = _EditMidNightTimeManual;
+
+  factory PrayCalculationSettingEvent.editLast3thTimeTimeManual({
+    required int value,
+  }) = _EditLast3thTimeTimeManual;
+
+  factory PrayCalculationSettingEvent.updateHightLatitudeCaluclation({
+    required HightLatitudeCaluclationState state,
+  }) = _UpdateHightLatitudeCaluclation;
 }
