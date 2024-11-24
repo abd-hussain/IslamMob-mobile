@@ -54,12 +54,20 @@ class LocationIdleView extends StatelessWidget {
               final countryName = locationDetails['country'] ?? "";
               final cityName = locationDetails['city'] ?? "";
               final subCityName = locationDetails['subCity'] ?? "";
+              final street = locationDetails['street'] ?? "";
+              final thoroughfare = locationDetails['thoroughfare'] ?? "";
+              final latitude = locationDetails['latitude'] ?? "";
+              final longitude = locationDetails['longitude'] ?? "";
 
               mainContext.add(
                 LocationEvent.setCountryAndCityNames(
                   cityName: cityName,
                   countryName: countryName,
                   subCityName: subCityName,
+                  street: street,
+                  latitude: latitude,
+                  longitude: longitude,
+                  thoroughfare: thoroughfare,
                 ),
               );
 

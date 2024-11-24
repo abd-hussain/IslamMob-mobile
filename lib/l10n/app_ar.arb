@@ -331,7 +331,20 @@
     "maghribCorrectionTitle" : "تصحيح المغرب (بالدقائق)",
     "ishaCorrectionTitle" : "تصحيح العشاء (بالدقائق)",
     "midnightCorrectionTitle" : "تصحيح منتصف الليل (بالدقائق)",
-    "lastThirdOfTheNightCorrectionTitle" : "تصحيح الثلث الأخير من الليل (بالدقائق)"
+    "lastThirdOfTheNightCorrectionTitle" : "تصحيح الثلث الأخير من الليل (بالدقائق)",
+    "notificationSettingQuick" : "إعدادات الإشعارات السريعة",
+    "notificationSettingPray" : "إعدادات إشعارات الصلاة",
+    "notificationSettingOther" : "إعدادات الإشعارات الأخرى",
+    "notificationSettingAllowAll" : "السماح بجميع الإشعارات",
+    "notificationSettingTodayAll" : "تعطيل جميع الإشعارات لهذا اليوم",
+    "notificationSettingThreedayAll" : "تعطيل جميع الإشعارات لمدة ثلاثة أيام اليوم",
+    "notificationSettingWeekAll" : "تعطيل جميع الإشعارات لمدة أسبوع",
+    "notificationSettingFajir" : "إشعارات أذان الفجر",
+    "notificationSettingDuher" : "إشعارات أذان الظهر",
+    "notificationSettingAsr" : "إشعارات أذان العصر",
+    "notificationSettingMagrieb" : "إشعارات أذان المغرب",
+    "notificationSettingIsha" : "إشعارات أذان العشاء",
+    "notificationSettingAzkar" : "إشعارات الأذكار"
 
 
 

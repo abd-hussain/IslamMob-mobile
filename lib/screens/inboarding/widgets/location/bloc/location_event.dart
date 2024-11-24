@@ -6,6 +6,10 @@ class LocationEvent with _$LocationEvent {
     required String countryName,
     required String cityName,
     required String subCityName,
+    required String street,
+    required String latitude,
+    required String longitude,
+    required String thoroughfare,
   }) = _SetCountryAndCityNames;
 
   const factory LocationEvent.changeLocationStatus({

@@ -14,6 +14,7 @@ class NotificationService {
   /// Request notification permission
   Future<bool> _requestNotificationPermission() async {
     final status = await Permission.notification.request();
+    print(status);
     if (status.isGranted) {
       logDebugMessage(message: "Notification permission granted.");
       return true;
@@ -25,11 +26,16 @@ class NotificationService {
 
   /// Check and request notification permission
   Future<bool> checkAndRequestPermission() async {
-    final isGranted = await _isNotificationPermissionGranted();
-    if (!isGranted) {
-      return await _requestNotificationPermission();
+    try {
+      final isGranted = await _isNotificationPermissionGranted();
+      if (!isGranted) {
+        return await _requestNotificationPermission();
+      }
+      return true;
+    } catch (e) {
+      logDebugMessage(message: "Error retrieving notification token: $e");
+      return false;
     }
-    return true;
   }
 
   /// Get the FCM token

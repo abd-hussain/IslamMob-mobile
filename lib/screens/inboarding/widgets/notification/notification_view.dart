@@ -9,7 +9,7 @@ import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationInBoardingView extends StatelessWidget {
-  final Function(String token) onSelect;
+  final Function(String? token) onSelect;
 
   const NotificationInBoardingView({super.key, required this.onSelect});
 
@@ -51,7 +51,7 @@ class NotificationInBoardingView extends StatelessWidget {
                       );
                     case NotificationsProcessStateNoPermission():
                       return NotificationNothavePermissionView(
-                        skipButton: () => onSelect(""),
+                        skipButton: () => onSelect(null),
                       );
                     case NotificationsProcessStateHavePermission():
                       return NotificationHavePermissionView(

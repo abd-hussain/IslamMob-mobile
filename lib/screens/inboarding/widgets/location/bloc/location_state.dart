@@ -6,6 +6,10 @@ class LocationState with _$LocationState {
     @Default("") String countryName,
     @Default("") String cityName,
     @Default("") String subCityName,
+    @Default("") String street,
+    @Default("") String latitude,
+    @Default("") String longitude,
+    @Default("") String thoroughfare,
     @Default(LocationProcessState.idl()) LocationProcessState status,
   }) = _LocationState;
 }
