@@ -8,6 +8,10 @@ class DatabaseFieldConstant {
   static const String selectedCountry = "selectedCountry";
   static const String selectedCity = "selectedCity";
   static const String selectedSubCity = "selectedSubCity";
+  static const String selectedStreet = "selectedStreet";
+  static const String selectedLatitude = "selectedLatitude";
+  static const String selectedLongitude = "selectedLongitude";
+  static const String selectedThoroughfare = "selectedThoroughfare";
 
   static const String quranKaremLastPageNumber = "quranKaremLastPageNumber";
   static const String quranKaremBookMarkList = "quranKaremBookMarkList";

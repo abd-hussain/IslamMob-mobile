@@ -21,8 +21,13 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
   FutureOr<void> _setCountryAndCityNames(
       _SetCountryAndCityNames event, Emitter<LocationState> emit) {
     emit(state.copyWith(
-        cityName: event.cityName,
-        countryName: event.countryName,
-        subCityName: event.subCityName));
+      cityName: event.cityName,
+      countryName: event.countryName,
+      subCityName: event.subCityName,
+      latitude: event.latitude,
+      longitude: event.longitude,
+      street: event.street,
+      thoroughfare: event.thoroughfare,
+    ));
   }
 }

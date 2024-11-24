@@ -7,6 +7,11 @@ class LocationHavePermissionView extends StatelessWidget {
   final String countryName;
   final String cityName;
   final String subCityName;
+  final String street;
+  final String thoroughfare;
+  final String latitude;
+  final String longitude;
+
   final Function() onConfirmationPress;
 
   const LocationHavePermissionView({
@@ -15,6 +20,10 @@ class LocationHavePermissionView extends StatelessWidget {
     required this.cityName,
     required this.subCityName,
     required this.onConfirmationPress,
+    required this.street,
+    required this.thoroughfare,
+    required this.latitude,
+    required this.longitude,
   });
 
   @override
@@ -33,11 +42,34 @@ class LocationHavePermissionView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: "$countryName - $cityName - $subCityName",
+          title: "$countryName - $cityName",
           fontSize: 16,
           textColor: const Color(0xff292929),
           textAlign: TextAlign.center,
-          maxLins: 2,
+          fontWeight: FontWeight.bold,
+        ),
+        subCityName != ""
+            ? CustomText(
+                title: subCityName,
+                fontSize: 16,
+                textColor: const Color(0xff292929),
+                textAlign: TextAlign.center,
+                fontWeight: FontWeight.bold,
+                maxLins: 2,
+              )
+            : const SizedBox.shrink(),
+        CustomText(
+          title: thoroughfare,
+          fontSize: 16,
+          textColor: const Color(0xff292929),
+          textAlign: TextAlign.center,
+          fontWeight: FontWeight.bold,
+        ),
+        CustomText(
+          title: "$latitude - $longitude",
+          fontSize: 10,
+          textColor: const Color(0xff292929),
+          textAlign: TextAlign.center,
         ),
         CustomButton(
           enableButton: true,

@@ -331,7 +331,20 @@
     "maghribCorrectionTitle" : "Maghrib correction (minites)",
     "ishaCorrectionTitle" : "Isha correction (minites)",
     "midnightCorrectionTitle" : "Midnight correction (minites)",
-    "lastThirdOfTheNightCorrectionTitle" : "Last 1/3 of Night correction (minites)"
+    "lastThirdOfTheNightCorrectionTitle" : "Last 1/3 of Night correction (minites)",
+    "notificationSettingQuick" : "Quick Notifications Settings",
+    "notificationSettingPray" : "Pray Notifications Settings",
+    "notificationSettingOther" : "Other Notifications Settings",
+    "notificationSettingAllowAll" : "Allow All Notifications",
+    "notificationSettingTodayAll" : "Disable All Notifications For Today",
+    "notificationSettingThreedayAll" : "Disable All Notifications For Three Today",
+    "notificationSettingWeekAll" : "Disable All Notifications For One Week",
+    "notificationSettingFajir" : "Fajir Adhan Notifications",
+    "notificationSettingDuher" : "Duher Adhan Notifications",
+    "notificationSettingAsr" : "Asr Adhan Notifications",
+    "notificationSettingMagrieb" : "Magrieb Adhan Notifications",
+    "notificationSettingIsha" : "Isha Adhan Notifications",
+    "notificationSettingAzkar" : "Azkar Notifications"
 
 
 

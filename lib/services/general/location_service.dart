@@ -23,6 +23,15 @@ class LocationService {
           'country': placemark.country ?? 'Unknown',
           'city': placemark.locality ?? 'Unknown',
           'subCity': placemark.subLocality ?? 'Unknown',
+          'street': placemark.street ?? 'Unknown',
+          'administrativeArea': placemark.administrativeArea ?? 'Unknown',
+          'subAdministrativeArea': placemark.subAdministrativeArea ?? 'Unknown',
+          'isoCountryCode': placemark.isoCountryCode ?? 'Unknown',
+          'thoroughfare': placemark.thoroughfare ?? 'Unknown',
+          'subThoroughfare': placemark.subThoroughfare ?? 'Unknown',
+          'name': placemark.name ?? 'Unknown',
+          'latitude': position.latitude.toString(),
+          'longitude': position.longitude.toString(),
         };
       }
     } on PlatformException catch (e) {

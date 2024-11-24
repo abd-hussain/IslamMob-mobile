@@ -9,7 +9,15 @@ import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocationInBoardingView extends StatelessWidget {
-  final Function(String country, String city, String subCity) onSelectLocation;
+  final Function({
+    required String country,
+    required String city,
+    required String subCity,
+    required String street,
+    required String latitude,
+    required String longitude,
+    required String thoroughfare,
+  }) onSelectLocation;
 
   const LocationInBoardingView({super.key, required this.onSelectLocation});
 
@@ -56,10 +64,18 @@ class LocationInBoardingView extends StatelessWidget {
                         countryName: state.countryName,
                         cityName: state.cityName,
                         subCityName: state.subCityName,
+                        street: state.street,
+                        thoroughfare: state.thoroughfare,
+                        latitude: state.latitude,
+                        longitude: state.longitude,
                         onConfirmationPress: () => onSelectLocation(
-                          state.countryName,
-                          state.cityName,
-                          state.subCityName,
+                          country: state.countryName,
+                          city: state.cityName,
+                          subCity: state.subCityName,
+                          latitude: state.latitude,
+                          longitude: state.longitude,
+                          street: state.street,
+                          thoroughfare: state.thoroughfare,
                         ),
                       );
                   }

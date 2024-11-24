@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class CounterView extends StatefulWidget {
   final int initialValue;
@@ -46,13 +47,11 @@ class _CounterViewState extends State<CounterView> {
           SizedBox(
             width: 30,
             child: Center(
-              child: Text(
-                widget.initialValue.toString(),
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+              child: CustomText(
+                title: widget.initialValue.toString(),
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                textColor: Colors.white,
               ),
             ),
           ),

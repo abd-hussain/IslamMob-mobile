@@ -38,13 +38,22 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
     IslamMobApp.of(context)!.rebuild();
   }
 
-  Future<void> setLocationInStorage(
-      {required String country,
-      required String city,
-      required String subCity}) async {
+  Future<void> setLocationInStorage({
+    required String country,
+    required String city,
+    required String subCity,
+    required String street,
+    required String latitude,
+    required String longitude,
+    required String thoroughfare,
+  }) async {
     await _box.put(DatabaseFieldConstant.selectedCountry, country);
-    await _box.put(DatabaseFieldConstant.selectedSubCity, subCity);
     await _box.put(DatabaseFieldConstant.selectedCity, city);
+    await _box.put(DatabaseFieldConstant.selectedSubCity, subCity);
+    await _box.put(DatabaseFieldConstant.selectedStreet, street);
+    await _box.put(DatabaseFieldConstant.selectedLatitude, latitude);
+    await _box.put(DatabaseFieldConstant.selectedLongitude, longitude);
+    await _box.put(DatabaseFieldConstant.selectedThoroughfare, thoroughfare);
   }
 
   Future<void> setNotificationTokenInStorage(String token) async {

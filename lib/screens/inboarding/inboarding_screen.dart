@@ -75,9 +75,22 @@ class InBoardingScreen extends StatelessWidget {
                         );
                       case 1:
                         return LocationInBoardingView(
-                          onSelectLocation: (country, city, subCity) async {
-                            await mainContext.setLocationInStorage(
-                                country: country, city: city, subCity: subCity);
+                          onSelectLocation: (
+                              {required city,
+                              required country,
+                              required latitude,
+                              required longitude,
+                              required street,
+                              required subCity,
+                              required thoroughfare}) async {
+                            mainContext.setLocationInStorage(
+                                country: country,
+                                city: city,
+                                subCity: subCity,
+                                latitude: latitude,
+                                longitude: longitude,
+                                street: street,
+                                thoroughfare: thoroughfare);
                             await mainContext.changeOnBoardingStage(2);
                           },
                         );
@@ -86,8 +99,10 @@ class InBoardingScreen extends StatelessWidget {
                           onSelect: (token) async {
                             final navigator =
                                 Navigator.of(context, rootNavigator: true);
-                            await mainContext
-                                .setNotificationTokenInStorage(token);
+                            if (token != null) {
+                              await mainContext
+                                  .setNotificationTokenInStorage(token);
+                            }
                             await mainContext.finishInBoarding();
                             await navigator.pushNamedAndRemoveUntil(
                               RoutesConstants.mainContainer,
@@ -96,7 +111,7 @@ class InBoardingScreen extends StatelessWidget {
                           },
                         );
                       default:
-                        return const SizedBox();
+                        return const SizedBox.shrink();
                     }
                   },
                 ),
