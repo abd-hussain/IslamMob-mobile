@@ -7,47 +7,84 @@ import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/services/general/local_notification_service.dart';
 import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
+import 'package:timezone/data/latest.dart' as tz;
 
 class MyAppBloc {
-  Future fetchData(AsyncMemoizer memoizer) {
-    return memoizer.runOnce(() async {
-      await Future.delayed(const Duration(seconds: 2));
-      return _initializeEveryThing();
-    });
+  final AsyncMemoizer _memoizer = AsyncMemoizer();
+
+  /// Public method to fetch data with memoization
+  Future fetchData() => _memoizer.runOnce(_initializeApp);
+
+  /// Initializes the app by setting up dependencies and configurations
+  Future<void> _initializeApp() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await _initializeHive();
+    await _initializeServices();
+    await _initializeLocalNotifications();
+    _initializeTimeZones();
+    await _initializeFirebaseAndAds();
+    await _setPreferredOrientations();
   }
 
-  Future _initializeEveryThing() async {
-    WidgetsFlutterBinding.ensureInitialized();
-
+  /// Initializes Hive and opens required boxes
+  Future<void> _initializeHive() async {
     await Hive.initFlutter();
     await Hive.openBox(DatabaseBoxConstant.userInfo);
+  }
+
+  /// Sets up dependency injection locator
+  Future<void> _initializeServices() async {
     await setupLocator();
+  }
 
-    final bool hasConnectivity = await _initInternetConnection();
+  /// Initializes local notifications
+  Future<void> _initializeLocalNotifications() async {
+    await LocalNotificationService.init();
+  }
 
-    if (hasConnectivity) {
-      await Firebase.initializeApp();
+  /// Initializes timezone data
+  void _initializeTimeZones() {
+    tz.initializeTimeZones();
+  }
 
-      if (!kDebugMode) {
-        FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
-      }
-
-      await MobileAds.instance.initialize();
-      await MobileAds.instance.updateRequestConfiguration(
-        RequestConfiguration(
-            testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231']),
-      );
+  /// Initializes Firebase and Mobile Ads if the device has internet connectivity
+  Future<void> _initializeFirebaseAndAds() async {
+    if (await _hasInternetConnectivity()) {
+      await _initializeFirebase();
+      await _initializeMobileAds();
     }
+  }
 
+  /// Initializes Firebase
+  Future<void> _initializeFirebase() async {
+    await Firebase.initializeApp();
+
+    if (!kDebugMode) {
+      FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+    }
+  }
+
+  /// Initializes Google Mobile Ads
+  Future<void> _initializeMobileAds() async {
+    await MobileAds.instance.initialize();
+    await MobileAds.instance.updateRequestConfiguration(
+      RequestConfiguration(testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231']),
+    );
+  }
+
+  /// Sets the preferred screen orientations for the app
+  Future<void> _setPreferredOrientations() async {
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
   }
 
-  Future<bool> _initInternetConnection() async {
+  /// Checks for internet connectivity during app initialization
+  Future<bool> _hasInternetConnectivity() async {
     final networkInfoService = locator<NetworkInfoService>();
     networkInfoService.initNetworkConnectionCheck();
     return networkInfoService.checkConnectivityonLunching();

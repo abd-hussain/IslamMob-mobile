@@ -18,34 +18,48 @@ class LanguageInBoardingView extends StatelessWidget {
       child: Column(
         children: [
           const TitleTableWidget(),
-          Lottie.asset(
-            'assets/lottie/Animation - 1731435678253.json',
-            height: 200,
-          ),
-          Expanded(
-            child: ListView.builder(
-                itemCount: AppConstant.languages.length,
-                itemBuilder: (context, index) {
-                  return LanguageTile(language: AppConstant.languages[index]);
-                }),
-          ),
-          BlocBuilder<LanguageBloc, LanguageState>(
-            buildWhen: (previous, current) {
-              return previous.selectedLanguage != current.selectedLanguage;
-            },
-            builder: (context, state) {
-              return state.selectedLanguage == null
-                  ? const SizedBox()
-                  : CustomButton(
-                      enableButton: true,
-                      buttonTitle: state.selectedLanguage!.selectButtonTitle,
-                      onTap: () => onSelectLanguage(
-                          state.selectedLanguage!.languageCode),
-                    );
-            },
-          ),
+          _buildAnimation(),
+          _buildLanguageList(),
+          _buildSelectButton(context),
         ],
       ),
+    );
+  }
+
+  /// Builds the animation widget
+  Widget _buildAnimation() {
+    return Lottie.asset(
+      'assets/lottie/Animation - 1731435678253.json',
+      height: 200,
+    );
+  }
+
+  /// Builds the language list view
+  Widget _buildLanguageList() {
+    return Expanded(
+      child: ListView.builder(
+        itemCount: AppConstant.languages.length,
+        itemBuilder: (context, index) {
+          return LanguageTile(language: AppConstant.languages[index]);
+        },
+      ),
+    );
+  }
+
+  /// Builds the button to select a language
+  Widget _buildSelectButton(BuildContext context) {
+    return BlocBuilder<LanguageBloc, LanguageState>(
+      buildWhen: (previous, current) =>
+          previous.selectedLanguage != current.selectedLanguage,
+      builder: (context, state) {
+        if (state.selectedLanguage == null) return const SizedBox();
+
+        return CustomButton(
+          enableButton: true,
+          buttonTitle: state.selectedLanguage!.selectButtonTitle,
+          onTap: () => onSelectLanguage(state.selectedLanguage!.languageCode),
+        );
+      },
     );
   }
 }

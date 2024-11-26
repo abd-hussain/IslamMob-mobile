@@ -5,9 +5,16 @@ import 'package:islam_app/screens/pray_notification_setting/widgets/notification
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+//TODO: This tree need to be refactored
 
 class PrayNotificationSettingScreen extends StatelessWidget {
   const PrayNotificationSettingScreen({super.key});
+
+//TODO: Setup local notification
+//TODO: local notification for tasbee7
+//TODO: local notification sound
+//TODO: local notification with timer such as other apps
+//TODO: design of disable should be change
 
   @override
   Widget build(BuildContext context) {

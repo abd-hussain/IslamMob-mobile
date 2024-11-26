@@ -11,39 +11,53 @@ class NotificationRowView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<PrayNotificationSettingBloc>();
+    final isRtl = _isRtlLanguage(bloc.getLanguage());
+
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomText(
-            title: prayerNotification.title,
-            fontSize: 16,
-            textColor: const Color(0xff444444),
-            fontWeight: FontWeight.bold,
-          ),
-          BlocBuilder<PrayNotificationSettingBloc,
-              PrayNotificationSettingState>(
-            buildWhen: (previous, current) =>
-                prayerNotification.notificationSelector(previous) !=
-                prayerNotification.notificationSelector(current),
-            builder: (context, state) {
-              final isEnabled = prayerNotification.notificationSelector(state);
-              return CustomSwitch(
-                value: isEnabled,
-                backgroundColorOfSelection: isEnabled
-                    ? const Color(0xff34C759)
-                    : const Color(0xffE74C4C),
-                onChanged: (value) {
-                  context.read<PrayNotificationSettingBloc>().add(
-                        prayerNotification.eventCreator(value),
-                      );
-                },
-              );
-            },
-          ),
+          _buildNotificationTitle(),
+          _buildNotificationSwitch(context, isRtl),
         ],
       ),
     );
+  }
+
+  Widget _buildNotificationTitle() {
+    return CustomText(
+      title: prayerNotification.title,
+      fontSize: 16,
+      textColor: const Color(0xff444444),
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+  Widget _buildNotificationSwitch(BuildContext context, bool isRtl) {
+    return BlocBuilder<PrayNotificationSettingBloc,
+        PrayNotificationSettingState>(
+      buildWhen: (previous, current) =>
+          prayerNotification.notificationSelector(previous) !=
+          prayerNotification.notificationSelector(current),
+      builder: (context, state) {
+        final isEnabled = prayerNotification.notificationSelector(state);
+
+        return CustomSwitch(
+          value: isEnabled,
+          direction: isRtl ? Direction.rtl : Direction.ltr,
+          onChanged: (value) {
+            context.read<PrayNotificationSettingBloc>().add(
+                  prayerNotification.eventCreator(value),
+                );
+          },
+        );
+      },
+    );
+  }
+
+  bool _isRtlLanguage(String languageCode) {
+    return languageCode == "ar" || languageCode == "fa";
   }
 }

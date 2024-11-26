@@ -7,6 +7,7 @@ import 'package:islam_app/screens/quran_pages_index/widgets/quran_parts_view.dar
 import 'package:islam_app/screens/quran_pages_index/widgets/quran_sowar_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/utils/constants/argument_constant.dart';
+//TODO: This tree need to be refactored
 
 class QuranPagesIndexScreen extends StatelessWidget {
   const QuranPagesIndexScreen({super.key});

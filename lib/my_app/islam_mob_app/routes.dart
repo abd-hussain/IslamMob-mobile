@@ -16,23 +16,21 @@ import 'package:islam_app/screens/settings_tab/settings_screen.dart';
 import 'package:islam_app/screens/web_view/web_view_screen.dart';
 
 class RoutesConstants {
-  static const String changeLanguageScreen = 'changeLanguageScreen';
-  static const String mainContainer = 'mainContainer';
-  static const String quranScreen = 'quranScreen';
-  static const String reportOrSuggestionScreen = 'reportOrSuggestionScreen';
-  static const String quranPagesIndexScreen = 'quranPagesIndexScreen';
-  static const String quranPrintListScreen = 'quranPrintListScreen';
-  static const String settingsScreen = 'settingsScreen';
-  static const String homeScreen = 'homeScreen';
-  static const String webViewScreen = 'webViewScreen';
-  static const String aboutUsScreen = 'aboutUsScreen';
-  static const String termsconditionScreen = 'termsconditionScreen';
-  static const String privacypolicyScreen = 'privacypolicyScreen';
-  static const String inBoardingScreen = 'inBoardingScreen';
-  static const String prayNotificationSettingScreen =
-      'prayNotificationSettingScreen';
-  static const String prayCalculationSettingScreen =
-      'prayCalculationSettingScreen';
+  static const changeLanguageScreen = 'changeLanguageScreen';
+  static const mainContainer = 'mainContainer';
+  static const quranScreen = 'quranScreen';
+  static const reportOrSuggestionScreen = 'reportOrSuggestionScreen';
+  static const quranPagesIndexScreen = 'quranPagesIndexScreen';
+  static const quranPrintListScreen = 'quranPrintListScreen';
+  static const settingsScreen = 'settingsScreen';
+  static const homeScreen = 'homeScreen';
+  static const webViewScreen = 'webViewScreen';
+  static const aboutUsScreen = 'aboutUsScreen';
+  static const termsConditionScreen = 'termsConditionScreen';
+  static const privacyPolicyScreen = 'privacyPolicyScreen';
+  static const inBoardingScreen = 'inBoardingScreen';
+  static const prayNotificationSettingScreen = 'prayNotificationSettingScreen';
+  static const prayCalculationSettingScreen = 'prayCalculationSettingScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -46,8 +44,8 @@ final Map<String, Widget> routes = {
   RoutesConstants.homeScreen: const HomeScreen(),
   RoutesConstants.webViewScreen: const WebViewScreen(),
   RoutesConstants.aboutUsScreen: const AboutUsScreen(),
-  RoutesConstants.termsconditionScreen: const TermsConditionScreen(),
-  RoutesConstants.privacypolicyScreen: const PrivacyPolicyScreen(),
+  RoutesConstants.termsConditionScreen: const TermsConditionScreen(),
+  RoutesConstants.privacyPolicyScreen: const PrivacyPolicyScreen(),
   RoutesConstants.inBoardingScreen: const InBoardingScreen(),
   RoutesConstants.prayNotificationSettingScreen:
       const PrayNotificationSettingScreen(),

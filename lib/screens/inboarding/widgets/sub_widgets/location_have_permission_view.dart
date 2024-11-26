@@ -1,29 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/models/app_model/location.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocationHavePermissionView extends StatelessWidget {
-  final String countryName;
-  final String cityName;
-  final String subCityName;
-  final String street;
-  final String thoroughfare;
-  final String latitude;
-  final String longitude;
-
+  final LocationModel locationModel;
   final Function() onConfirmationPress;
 
   const LocationHavePermissionView({
     super.key,
-    required this.countryName,
-    required this.cityName,
-    required this.subCityName,
+    required this.locationModel,
     required this.onConfirmationPress,
-    required this.street,
-    required this.thoroughfare,
-    required this.latitude,
-    required this.longitude,
   });
 
   @override
@@ -42,15 +30,15 @@ class LocationHavePermissionView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: "$countryName - $cityName",
+          title: "${locationModel.country} - ${locationModel.city}",
           fontSize: 16,
           textColor: const Color(0xff292929),
           textAlign: TextAlign.center,
           fontWeight: FontWeight.bold,
         ),
-        subCityName != ""
+        locationModel.subCity != ""
             ? CustomText(
-                title: subCityName,
+                title: locationModel.subCity,
                 fontSize: 16,
                 textColor: const Color(0xff292929),
                 textAlign: TextAlign.center,
@@ -59,14 +47,14 @@ class LocationHavePermissionView extends StatelessWidget {
               )
             : const SizedBox.shrink(),
         CustomText(
-          title: thoroughfare,
+          title: locationModel.thoroughfare,
           fontSize: 16,
           textColor: const Color(0xff292929),
           textAlign: TextAlign.center,
           fontWeight: FontWeight.bold,
         ),
         CustomText(
-          title: "$latitude - $longitude",
+          title: "${locationModel.latitude} - ${locationModel.longitude}",
           fontSize: 10,
           textColor: const Color(0xff292929),
           textAlign: TextAlign.center,

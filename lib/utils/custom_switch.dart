@@ -1,65 +1,76 @@
 import 'package:flutter/material.dart';
 
+enum Direction {
+  ltr,
+  rtl,
+}
+
 class CustomSwitch extends StatefulWidget {
+  final bool value;
+  final Direction direction;
+
+  final ValueChanged<bool> onChanged;
   const CustomSwitch({
     super.key,
-    this.value,
-    this.onChanged,
-    this.backgroundColorOfSelection,
-    this.hight = 25.0,
-    this.width = 40.0,
-    this.toggleNotifier,
+    this.value = false,
+    required this.onChanged,
+    required this.direction,
   });
-  final bool? value;
-  final Color? backgroundColorOfSelection;
-  final ValueChanged<bool>? onChanged;
-  final double hight;
-  final double width;
-  final ValueNotifier<bool>? toggleNotifier;
-
   @override
   State<CustomSwitch> createState() => _CustomSwitchState();
 }
 
-class _CustomSwitchState extends State<CustomSwitch> with SingleTickerProviderStateMixin {
-  //TODO: refactor this page and make it rotate for arabic
+class _CustomSwitchState extends State<CustomSwitch>
+    with SingleTickerProviderStateMixin {
+  bool toggleNotifier = false;
+
+  @override
+  void initState() {
+    toggleNotifier = widget.value;
+    setState(() {});
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<bool>(
-        valueListenable: widget.toggleNotifier ?? ValueNotifier<bool>(widget.value!),
-        builder: (context, toggleNotifier, child) {
-          return GestureDetector(
-            onTap: () {
-              widget.value == false ? widget.onChanged!(true) : widget.onChanged!(false);
-            },
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 60),
-              width: widget.width,
-              height: widget.hight,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24),
-                color: !toggleNotifier
-                    ? const Color(0xffDFE1E3)
-                    : widget.backgroundColorOfSelection ?? const Color(0xff34C759),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(1.5),
-                child: AnimatedAlign(
-                  alignment: toggleNotifier == true ? Alignment.centerRight : Alignment.centerLeft,
-                  duration: const Duration(milliseconds: 60),
-                  child: Container(
-                    width: 20,
-                    height: 20,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xffFFFFFF),
-                    ),
-                  ),
-                ),
+    return GestureDetector(
+      onTap: () {
+        toggleNotifier = !toggleNotifier;
+        setState(() {});
+        widget.onChanged(toggleNotifier);
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 60),
+        width: 40,
+        height: 25,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          color: toggleNotifier
+              ? const Color(0xff34C759)
+              : const Color(0xffDFE1E3),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(2),
+          child: AnimatedAlign(
+            alignment: widget.direction == Direction.rtl
+                ? (toggleNotifier == true
+                    ? Alignment.centerLeft
+                    : Alignment.centerRight)
+                : (toggleNotifier == true
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft),
+            duration: const Duration(milliseconds: 60),
+            child: Container(
+              width: 20,
+              height: 20,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
               ),
             ),
-          );
-        });
+          ),
+        ),
+      ),
+    );
   }
 }

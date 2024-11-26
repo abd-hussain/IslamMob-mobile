@@ -14,7 +14,6 @@ class NotificationService {
   /// Request notification permission
   Future<bool> _requestNotificationPermission() async {
     final status = await Permission.notification.request();
-    print(status);
     if (status.isGranted) {
       logDebugMessage(message: "Notification permission granted.");
       return true;

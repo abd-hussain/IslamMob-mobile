@@ -1,10 +1,12 @@
 import 'dart:async';
 
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
-import 'package:islam_app/utils/pray_manager.dart';
+import 'package:islam_app/services/general/pray_manager.dart';
 
 part 'pray_calculation_setting_event.dart';
 part 'pray_calculation_setting_state.dart';
@@ -42,15 +44,16 @@ class PrayCalculationSettingBloc
     _fillInitialData();
     _prepareSalahTiming();
   }
+  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
   void _fillInitialData() {
     //TODO
   }
 
   void _prepareSalahTiming({
-    Madhab madhab = Madhab.hanafi,
+    Madhab madhab = Madhab.shafi,
     HighLatitudeRule? highLatitudeRule,
-    CalculationMethod calculationMethod = CalculationMethod.ummAlQura,
+    CalculationMethod calculationMethod = CalculationMethod.jordan,
     Duration utcOffset = const Duration(hours: 3),
     Duration fajirOffset = const Duration(minutes: 0),
     Duration sunriseOffset = const Duration(minutes: 0),
@@ -64,7 +67,7 @@ class PrayCalculationSettingBloc
     //TODO: handle PrayManager
     // save previos pass value
     final prayManager = PrayManager(
-        coordinates: Coordinates(31.913932, 35.925581),
+        coordinates: Coordinates(_getLatitude(), _getLongitude()),
         utcOffset: utcOffset,
         calculationMethod: calculationMethod,
         madhab: madhab,
@@ -101,6 +104,19 @@ class PrayCalculationSettingBloc
             .format(model.lastThirdOfTheNight.add(lastThirdOfTheNightOffset))));
     add(PrayCalculationSettingEvent.updateApplicationAndDeviceTimeStatus(
         deviceTime: formattedDeviceTime, appTime: formattedApplicationTime));
+
+    add(PrayCalculationSettingEvent.factoryReset(status: true));
+    add(PrayCalculationSettingEvent.saveChanges(status: true));
+  }
+
+  double _getLatitude() {
+    return double.parse(
+        _box.get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0"));
+  }
+
+  double _getLongitude() {
+    return double.parse(
+        _box.get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0"));
   }
 
   FutureOr<void> _updateFajirTime(
@@ -292,11 +308,6 @@ class PrayCalculationSettingBloc
     emit(state.copyWith(timeZone: event.value));
   }
 
-  FutureOr<void> _factoryReset(
-      event, Emitter<PrayCalculationSettingState> emit) {
-    _fillInitialData();
-  }
-
   FutureOr<void> _updateButtonsStatus(
       _UpdateButtonsStatus event, Emitter<PrayCalculationSettingState> emit) {
     emit(state.copyWith(buttonsStatus: event.status));
@@ -376,8 +387,14 @@ class PrayCalculationSettingBloc
     emit(state.copyWith(hightLatitudeCaluclation: event.state));
   }
 
+  FutureOr<void> _factoryReset(
+      event, Emitter<PrayCalculationSettingState> emit) {
+    _fillInitialData();
+    emit(state.copyWith(buttonsStatus: true));
+  }
+
   FutureOr<void> _saveChanges(
       event, Emitter<PrayCalculationSettingState> emit) {
-    //TODO
+    emit(state.copyWith(buttonsStatus: true));
   }
 }

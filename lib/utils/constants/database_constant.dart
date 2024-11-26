@@ -22,7 +22,22 @@ class DatabaseFieldConstant {
       "quranKaremSorahToPageNumbers";
 }
 
-class DatabaseFieldOnBoardingStageConstant {
-  static const String onBoardingfinished = "onBoardingfinished";
-  static const String onBoardingStage = "onBoardingStage";
+class DatabaseFieldInBoardingStageConstant {
+  static const String inBoardingfinished = "inBoardingfinished";
+  static const String inBoardingStage = "inBoardingStage";
+}
+
+class LocalNotificationConstant {
+  static const String disableAllForToday = "disableAllForToday";
+  static const String disableAllForThreeDay = "disableAllForThreeDay";
+  static const String disableAllForWeek = "disableAllForWeek";
+
+  static const String disableFajr = "disableFajr";
+  static const String disableDuher = "disableDuher";
+  static const String disableAsr = "disableAsr";
+  static const String disableMagrieb = "disableMagrieb";
+  static const String disableIsha = "disableIsha";
+
+  static const String disableAzkar = "disableAzkar";
+  static const String disableApplication = "disableApplication";
 }

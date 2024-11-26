@@ -55,7 +55,9 @@ class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
     required String deviceTime,
   }) = _UpdateApplicationAndDeviceTimeStatus;
 
-  factory PrayCalculationSettingEvent.factoryReset() = _FactoryReset;
+  factory PrayCalculationSettingEvent.factoryReset({
+    required bool status,
+  }) = _FactoryReset;
 
   factory PrayCalculationSettingEvent.editFajirTimeManual({
     required int value,
@@ -93,5 +95,7 @@ class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
     required HightLatitudeCaluclationState state,
   }) = _UpdateHightLatitudeCaluclation;
 
-  factory PrayCalculationSettingEvent.saveChanges() = _SaveChanges;
+  factory PrayCalculationSettingEvent.saveChanges({
+    required bool status,
+  }) = _SaveChanges;
 }

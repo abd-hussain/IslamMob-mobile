@@ -12,6 +12,7 @@ import 'package:islam_app/screens/pray_calculation_setting/widgets/time_zoon_vie
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
+//TODO: This tree need to be refactored
 
 class PrayCalculationSettingScreen extends StatelessWidget {
   const PrayCalculationSettingScreen({super.key});
@@ -67,7 +68,7 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 16, right: 16),
                     buttonTitle: AppLocalizations.of(context)!.save,
                     onTap: () => context.read<PrayCalculationSettingBloc>().add(
-                          PrayCalculationSettingEvent.saveChanges(),
+                          PrayCalculationSettingEvent.saveChanges(status: true),
                         ),
                   );
                 },
@@ -82,9 +83,10 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 16, right: 16),
                     enableButton: state.buttonsStatus,
                     buttonTitle: AppLocalizations.of(context)!.factoryReset,
-                    onTap: () => context
-                        .read<PrayCalculationSettingBloc>()
-                        .add(PrayCalculationSettingEvent.factoryReset()),
+                    onTap: () => context.read<PrayCalculationSettingBloc>().add(
+                          PrayCalculationSettingEvent.factoryReset(
+                              status: true),
+                        ),
                   );
                 },
               ),

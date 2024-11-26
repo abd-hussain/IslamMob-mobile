@@ -32,18 +32,13 @@ class SolarTime {
     _solar = SolarCoordinates(CalendricalHelper.julianDayByDate(today));
     _nextSolar = SolarCoordinates(CalendricalHelper.julianDayByDate(tomorrow));
 
-    _approximateTransit = Astronomical.approximateTransit(coordinates.longitude,
-        _solar.apparentSiderealTime, _solar.rightAscension);
+    _approximateTransit =
+        Astronomical.approximateTransit(coordinates.longitude, _solar.apparentSiderealTime, _solar.rightAscension);
     const solarAltitude = -50.0 / 60.0;
 
     _observer = coordinates;
-    _transit = Astronomical.correctedTransit(
-        _approximateTransit,
-        coordinates.longitude,
-        _solar.apparentSiderealTime,
-        _solar.rightAscension,
-        _prevSolar.rightAscension,
-        _nextSolar.rightAscension);
+    _transit = Astronomical.correctedTransit(_approximateTransit, coordinates.longitude, _solar.apparentSiderealTime,
+        _solar.rightAscension, _prevSolar.rightAscension, _nextSolar.rightAscension);
     _sunrise = Astronomical.correctedHourAngle(
         _approximateTransit,
         solarAltitude,
@@ -87,7 +82,6 @@ class SolarTime {
 
   // hours from transit
   double afternoon(ShadowLength shadowLength) {
-    // TODO (from Swift version) source shadow angle calculation
     final tangent = (_observer.latitude - _solar.declination).abs();
     final inverse = shadowLength.getShadowLength() + tan(radians(tangent));
     final angle = degrees(atan(1.0 / inverse));

@@ -28,7 +28,7 @@ class CalculationParameters {
   Madhab madhab;
 
   /// Rules for placing bounds on Fajr and Isha for high latitude areas
-  HighLatitudeRule? highLatitudeRule;
+  HighLatitudeRule highLatitudeRule;
 
   /// Used to optionally add or subtract a set amount of time from each prayer time
   PrayerAdjustments adjustments;
@@ -60,16 +60,24 @@ class CalculationParameters {
   NightPortions nightPortions() {
     switch (highLatitudeRule) {
       case HighLatitudeRule.middleOfTheNight:
-        return NightPortions(1.0 / 2.0, 1.0 / 2.0);
-      case HighLatitudeRule.seventhOfTheNight:
-        return NightPortions(1.0 / 7.0, 1.0 / 7.0);
-      case HighLatitudeRule.twilightAngle:
-        if (ishaAngle == null) {
-          throw const FormatException('ishaAngle\'s value isn\'t define');
+        {
+          return NightPortions(1.0 / 2.0, 1.0 / 2.0);
         }
-        return NightPortions(fajrAngle / 60.0, ishaAngle! / 60.0);
+      case HighLatitudeRule.seventhOfTheNight:
+        {
+          return NightPortions(1.0 / 7.0, 1.0 / 7.0);
+        }
+      case HighLatitudeRule.twilightAngle:
+        {
+          if (ishaAngle == null) {
+            throw const FormatException('ishaAngle\'s value isn\'t define');
+          }
+          return NightPortions(fajrAngle / 60.0, ishaAngle! / 60.0);
+        }
       default:
-        throw const FormatException('Invalid high latitude rule');
+        {
+          throw const FormatException('Invalid high latitude rule');
+        }
     }
   }
 }
@@ -77,5 +85,6 @@ class CalculationParameters {
 class NightPortions {
   final double fajr;
   final double isha;
+
   NightPortions(this.fajr, this.isha);
 }

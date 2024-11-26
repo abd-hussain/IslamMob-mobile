@@ -344,7 +344,8 @@
     "notificationSettingAsr" : "Asr Adhan Notifications",
     "notificationSettingMagrieb" : "Magrieb Adhan Notifications",
     "notificationSettingIsha" : "Isha Adhan Notifications",
-    "notificationSettingAzkar" : "Azkar Notifications"
+    "notificationSettingAzkar" : "Azkar Notifications",
+    "notificationSettingApplication" : "Application Notifications"
 
 
 

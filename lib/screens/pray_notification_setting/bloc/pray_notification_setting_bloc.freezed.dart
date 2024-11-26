@@ -30,6 +30,7 @@ mixin _$PrayNotificationSettingEvent {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) =>
       throw _privateConstructorUsedError;
@@ -46,6 +47,7 @@ mixin _$PrayNotificationSettingEvent {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +64,7 @@ mixin _$PrayNotificationSettingEvent {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) =>
@@ -90,6 +93,8 @@ mixin _$PrayNotificationSettingEvent {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +117,8 @@ mixin _$PrayNotificationSettingEvent {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +141,8 @@ mixin _$PrayNotificationSettingEvent {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) =>
@@ -270,6 +279,7 @@ class _$UpdateAllowAllNotificationsImpl
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateAllowAllNotifications(status);
@@ -289,6 +299,7 @@ class _$UpdateAllowAllNotificationsImpl
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateAllowAllNotifications?.call(status);
@@ -308,6 +319,7 @@ class _$UpdateAllowAllNotificationsImpl
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -342,6 +354,8 @@ class _$UpdateAllowAllNotificationsImpl
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateAllowAllNotifications(this);
@@ -367,6 +381,8 @@ class _$UpdateAllowAllNotificationsImpl
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateAllowAllNotifications?.call(this);
@@ -392,6 +408,8 @@ class _$UpdateAllowAllNotificationsImpl
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -503,6 +521,7 @@ class _$UpdateNextPrayNotificationImpl implements _UpdateNextPrayNotification {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateNextPrayNotification(status);
@@ -522,6 +541,7 @@ class _$UpdateNextPrayNotificationImpl implements _UpdateNextPrayNotification {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateNextPrayNotification?.call(status);
@@ -541,6 +561,7 @@ class _$UpdateNextPrayNotificationImpl implements _UpdateNextPrayNotification {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -575,6 +596,8 @@ class _$UpdateNextPrayNotificationImpl implements _UpdateNextPrayNotification {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateNextPrayNotification(this);
@@ -600,6 +623,8 @@ class _$UpdateNextPrayNotificationImpl implements _UpdateNextPrayNotification {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateNextPrayNotification?.call(this);
@@ -625,6 +650,8 @@ class _$UpdateNextPrayNotificationImpl implements _UpdateNextPrayNotification {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -738,6 +765,7 @@ class _$UpdateAllNotificationForTodayImpl
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateAllNotificationForToday(status);
@@ -757,6 +785,7 @@ class _$UpdateAllNotificationForTodayImpl
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateAllNotificationForToday?.call(status);
@@ -776,6 +805,7 @@ class _$UpdateAllNotificationForTodayImpl
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -810,6 +840,8 @@ class _$UpdateAllNotificationForTodayImpl
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateAllNotificationForToday(this);
@@ -835,6 +867,8 @@ class _$UpdateAllNotificationForTodayImpl
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateAllNotificationForToday?.call(this);
@@ -860,6 +894,8 @@ class _$UpdateAllNotificationForTodayImpl
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -974,6 +1010,7 @@ class _$UpdateAllNotificationForThreeDayImpl
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateAllNotificationForThreeDay(status);
@@ -993,6 +1030,7 @@ class _$UpdateAllNotificationForThreeDayImpl
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateAllNotificationForThreeDay?.call(status);
@@ -1012,6 +1050,7 @@ class _$UpdateAllNotificationForThreeDayImpl
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1046,6 +1085,8 @@ class _$UpdateAllNotificationForThreeDayImpl
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateAllNotificationForThreeDay(this);
@@ -1071,6 +1112,8 @@ class _$UpdateAllNotificationForThreeDayImpl
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateAllNotificationForThreeDay?.call(this);
@@ -1096,6 +1139,8 @@ class _$UpdateAllNotificationForThreeDayImpl
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1210,6 +1255,7 @@ class _$UpdateAllNotificationForWeekDayImpl
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateAllNotificationForWeekDay(status);
@@ -1229,6 +1275,7 @@ class _$UpdateAllNotificationForWeekDayImpl
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateAllNotificationForWeekDay?.call(status);
@@ -1248,6 +1295,7 @@ class _$UpdateAllNotificationForWeekDayImpl
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1282,6 +1330,8 @@ class _$UpdateAllNotificationForWeekDayImpl
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateAllNotificationForWeekDay(this);
@@ -1307,6 +1357,8 @@ class _$UpdateAllNotificationForWeekDayImpl
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateAllNotificationForWeekDay?.call(this);
@@ -1332,6 +1384,8 @@ class _$UpdateAllNotificationForWeekDayImpl
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1444,6 +1498,7 @@ class _$UpdateFajirNotificationImpl implements _UpdateFajirNotification {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateFajirNotification(status);
@@ -1463,6 +1518,7 @@ class _$UpdateFajirNotificationImpl implements _UpdateFajirNotification {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateFajirNotification?.call(status);
@@ -1482,6 +1538,7 @@ class _$UpdateFajirNotificationImpl implements _UpdateFajirNotification {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1516,6 +1573,8 @@ class _$UpdateFajirNotificationImpl implements _UpdateFajirNotification {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateFajirNotification(this);
@@ -1541,6 +1600,8 @@ class _$UpdateFajirNotificationImpl implements _UpdateFajirNotification {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateFajirNotification?.call(this);
@@ -1566,6 +1627,8 @@ class _$UpdateFajirNotificationImpl implements _UpdateFajirNotification {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1677,6 +1740,7 @@ class _$UpdateDuhirNotificationImpl implements _UpdateDuhirNotification {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateDuhirNotification(status);
@@ -1696,6 +1760,7 @@ class _$UpdateDuhirNotificationImpl implements _UpdateDuhirNotification {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateDuhirNotification?.call(status);
@@ -1715,6 +1780,7 @@ class _$UpdateDuhirNotificationImpl implements _UpdateDuhirNotification {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1749,6 +1815,8 @@ class _$UpdateDuhirNotificationImpl implements _UpdateDuhirNotification {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateDuhirNotification(this);
@@ -1774,6 +1842,8 @@ class _$UpdateDuhirNotificationImpl implements _UpdateDuhirNotification {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateDuhirNotification?.call(this);
@@ -1799,6 +1869,8 @@ class _$UpdateDuhirNotificationImpl implements _UpdateDuhirNotification {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1909,6 +1981,7 @@ class _$UpdateAsrNotificationImpl implements _UpdateAsrNotification {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateAsrNotification(status);
@@ -1928,6 +2001,7 @@ class _$UpdateAsrNotificationImpl implements _UpdateAsrNotification {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateAsrNotification?.call(status);
@@ -1947,6 +2021,7 @@ class _$UpdateAsrNotificationImpl implements _UpdateAsrNotification {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -1981,6 +2056,8 @@ class _$UpdateAsrNotificationImpl implements _UpdateAsrNotification {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateAsrNotification(this);
@@ -2006,6 +2083,8 @@ class _$UpdateAsrNotificationImpl implements _UpdateAsrNotification {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateAsrNotification?.call(this);
@@ -2031,6 +2110,8 @@ class _$UpdateAsrNotificationImpl implements _UpdateAsrNotification {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2141,6 +2222,7 @@ class _$UpdateMagriebNotificationImpl implements _UpdateMagriebNotification {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateMagriebNotification(status);
@@ -2160,6 +2242,7 @@ class _$UpdateMagriebNotificationImpl implements _UpdateMagriebNotification {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateMagriebNotification?.call(status);
@@ -2179,6 +2262,7 @@ class _$UpdateMagriebNotificationImpl implements _UpdateMagriebNotification {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2213,6 +2297,8 @@ class _$UpdateMagriebNotificationImpl implements _UpdateMagriebNotification {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateMagriebNotification(this);
@@ -2238,6 +2324,8 @@ class _$UpdateMagriebNotificationImpl implements _UpdateMagriebNotification {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateMagriebNotification?.call(this);
@@ -2263,6 +2351,8 @@ class _$UpdateMagriebNotificationImpl implements _UpdateMagriebNotification {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2374,6 +2464,7 @@ class _$UpdateIshaNotificationImpl implements _UpdateIshaNotification {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateIshaNotification(status);
@@ -2393,6 +2484,7 @@ class _$UpdateIshaNotificationImpl implements _UpdateIshaNotification {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateIshaNotification?.call(status);
@@ -2412,6 +2504,7 @@ class _$UpdateIshaNotificationImpl implements _UpdateIshaNotification {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2446,6 +2539,8 @@ class _$UpdateIshaNotificationImpl implements _UpdateIshaNotification {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateIshaNotification(this);
@@ -2471,6 +2566,8 @@ class _$UpdateIshaNotificationImpl implements _UpdateIshaNotification {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateIshaNotification?.call(this);
@@ -2496,6 +2593,8 @@ class _$UpdateIshaNotificationImpl implements _UpdateIshaNotification {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2606,6 +2705,7 @@ class _$UpdateAdkarNotificationImpl implements _UpdateAdkarNotification {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateAdkarNotification(status);
@@ -2625,6 +2725,7 @@ class _$UpdateAdkarNotificationImpl implements _UpdateAdkarNotification {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateAdkarNotification?.call(status);
@@ -2644,6 +2745,7 @@ class _$UpdateAdkarNotificationImpl implements _UpdateAdkarNotification {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2678,6 +2780,8 @@ class _$UpdateAdkarNotificationImpl implements _UpdateAdkarNotification {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateAdkarNotification(this);
@@ -2703,6 +2807,8 @@ class _$UpdateAdkarNotificationImpl implements _UpdateAdkarNotification {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateAdkarNotification?.call(this);
@@ -2728,6 +2834,8 @@ class _$UpdateAdkarNotificationImpl implements _UpdateAdkarNotification {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2751,6 +2859,251 @@ abstract class _UpdateAdkarNotification
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateAdkarNotificationImplCopyWith<_$UpdateAdkarNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateApplicationNotificationImplCopyWith<$Res>
+    implements $PrayNotificationSettingEventCopyWith<$Res> {
+  factory _$$UpdateApplicationNotificationImplCopyWith(
+          _$UpdateApplicationNotificationImpl value,
+          $Res Function(_$UpdateApplicationNotificationImpl) then) =
+      __$$UpdateApplicationNotificationImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool status});
+}
+
+/// @nodoc
+class __$$UpdateApplicationNotificationImplCopyWithImpl<$Res>
+    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
+        _$UpdateApplicationNotificationImpl>
+    implements _$$UpdateApplicationNotificationImplCopyWith<$Res> {
+  __$$UpdateApplicationNotificationImplCopyWithImpl(
+      _$UpdateApplicationNotificationImpl _value,
+      $Res Function(_$UpdateApplicationNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayNotificationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$UpdateApplicationNotificationImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateApplicationNotificationImpl
+    implements _UpdateApplicationNotification {
+  const _$UpdateApplicationNotificationImpl({required this.status});
+
+  @override
+  final bool status;
+
+  @override
+  String toString() {
+    return 'PrayNotificationSettingEvent.updateApplicationNotification(status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateApplicationNotificationImpl &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, status);
+
+  /// Create a copy of PrayNotificationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateApplicationNotificationImplCopyWith<
+          _$UpdateApplicationNotificationImpl>
+      get copyWith => __$$UpdateApplicationNotificationImplCopyWithImpl<
+          _$UpdateApplicationNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool status) updateAllowAllNotifications,
+    required TResult Function(bool status) updateNextPrayNotification,
+    required TResult Function(bool status) updateAllNotificationForToday,
+    required TResult Function(bool status) updateAllNotificationForThreeDay,
+    required TResult Function(bool status) updateAllNotificationForWeekDay,
+    required TResult Function(bool status) updateFajirNotification,
+    required TResult Function(bool status) updateDuhirNotification,
+    required TResult Function(bool status) updateAsrNotification,
+    required TResult Function(bool status) updateMagriebNotification,
+    required TResult Function(bool status) updateIshaNotification,
+    required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
+    required TResult Function(bool status) updateLoadingStatus,
+  }) {
+    return updateApplicationNotification(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool status)? updateAllowAllNotifications,
+    TResult? Function(bool status)? updateNextPrayNotification,
+    TResult? Function(bool status)? updateAllNotificationForToday,
+    TResult? Function(bool status)? updateAllNotificationForThreeDay,
+    TResult? Function(bool status)? updateAllNotificationForWeekDay,
+    TResult? Function(bool status)? updateFajirNotification,
+    TResult? Function(bool status)? updateDuhirNotification,
+    TResult? Function(bool status)? updateAsrNotification,
+    TResult? Function(bool status)? updateMagriebNotification,
+    TResult? Function(bool status)? updateIshaNotification,
+    TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
+    TResult? Function(bool status)? updateLoadingStatus,
+  }) {
+    return updateApplicationNotification?.call(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool status)? updateAllowAllNotifications,
+    TResult Function(bool status)? updateNextPrayNotification,
+    TResult Function(bool status)? updateAllNotificationForToday,
+    TResult Function(bool status)? updateAllNotificationForThreeDay,
+    TResult Function(bool status)? updateAllNotificationForWeekDay,
+    TResult Function(bool status)? updateFajirNotification,
+    TResult Function(bool status)? updateDuhirNotification,
+    TResult Function(bool status)? updateAsrNotification,
+    TResult Function(bool status)? updateMagriebNotification,
+    TResult Function(bool status)? updateIshaNotification,
+    TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
+    TResult Function(bool status)? updateLoadingStatus,
+    required TResult orElse(),
+  }) {
+    if (updateApplicationNotification != null) {
+      return updateApplicationNotification(status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateAllowAllNotifications value)
+        updateAllowAllNotifications,
+    required TResult Function(_UpdateNextPrayNotification value)
+        updateNextPrayNotification,
+    required TResult Function(_UpdateAllNotificationForToday value)
+        updateAllNotificationForToday,
+    required TResult Function(_UpdateAllNotificationForThreeDay value)
+        updateAllNotificationForThreeDay,
+    required TResult Function(_UpdateAllNotificationForWeekDay value)
+        updateAllNotificationForWeekDay,
+    required TResult Function(_UpdateFajirNotification value)
+        updateFajirNotification,
+    required TResult Function(_UpdateDuhirNotification value)
+        updateDuhirNotification,
+    required TResult Function(_UpdateAsrNotification value)
+        updateAsrNotification,
+    required TResult Function(_UpdateMagriebNotification value)
+        updateMagriebNotification,
+    required TResult Function(_UpdateIshaNotification value)
+        updateIshaNotification,
+    required TResult Function(_UpdateAdkarNotification value)
+        updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
+    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
+  }) {
+    return updateApplicationNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateAllowAllNotifications value)?
+        updateAllowAllNotifications,
+    TResult? Function(_UpdateNextPrayNotification value)?
+        updateNextPrayNotification,
+    TResult? Function(_UpdateAllNotificationForToday value)?
+        updateAllNotificationForToday,
+    TResult? Function(_UpdateAllNotificationForThreeDay value)?
+        updateAllNotificationForThreeDay,
+    TResult? Function(_UpdateAllNotificationForWeekDay value)?
+        updateAllNotificationForWeekDay,
+    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
+    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
+    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
+    TResult? Function(_UpdateMagriebNotification value)?
+        updateMagriebNotification,
+    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
+    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
+    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+  }) {
+    return updateApplicationNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateAllowAllNotifications value)?
+        updateAllowAllNotifications,
+    TResult Function(_UpdateNextPrayNotification value)?
+        updateNextPrayNotification,
+    TResult Function(_UpdateAllNotificationForToday value)?
+        updateAllNotificationForToday,
+    TResult Function(_UpdateAllNotificationForThreeDay value)?
+        updateAllNotificationForThreeDay,
+    TResult Function(_UpdateAllNotificationForWeekDay value)?
+        updateAllNotificationForWeekDay,
+    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
+    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
+    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
+    TResult Function(_UpdateMagriebNotification value)?
+        updateMagriebNotification,
+    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
+    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
+    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    required TResult orElse(),
+  }) {
+    if (updateApplicationNotification != null) {
+      return updateApplicationNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateApplicationNotification
+    implements PrayNotificationSettingEvent {
+  const factory _UpdateApplicationNotification({required final bool status}) =
+      _$UpdateApplicationNotificationImpl;
+
+  @override
+  bool get status;
+
+  /// Create a copy of PrayNotificationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateApplicationNotificationImplCopyWith<
+          _$UpdateApplicationNotificationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2837,6 +3190,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     required TResult Function(bool status) updateMagriebNotification,
     required TResult Function(bool status) updateIshaNotification,
     required TResult Function(bool status) updateAdkarNotification,
+    required TResult Function(bool status) updateApplicationNotification,
     required TResult Function(bool status) updateLoadingStatus,
   }) {
     return updateLoadingStatus(status);
@@ -2856,6 +3210,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     TResult? Function(bool status)? updateMagriebNotification,
     TResult? Function(bool status)? updateIshaNotification,
     TResult? Function(bool status)? updateAdkarNotification,
+    TResult? Function(bool status)? updateApplicationNotification,
     TResult? Function(bool status)? updateLoadingStatus,
   }) {
     return updateLoadingStatus?.call(status);
@@ -2875,6 +3230,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     TResult Function(bool status)? updateMagriebNotification,
     TResult Function(bool status)? updateIshaNotification,
     TResult Function(bool status)? updateAdkarNotification,
+    TResult Function(bool status)? updateApplicationNotification,
     TResult Function(bool status)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2909,6 +3265,8 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
         updateIshaNotification,
     required TResult Function(_UpdateAdkarNotification value)
         updateAdkarNotification,
+    required TResult Function(_UpdateApplicationNotification value)
+        updateApplicationNotification,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
   }) {
     return updateLoadingStatus(this);
@@ -2934,6 +3292,8 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
         updateMagriebNotification,
     TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult? Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
   }) {
     return updateLoadingStatus?.call(this);
@@ -2959,6 +3319,8 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
         updateMagriebNotification,
     TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
     TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
+    TResult Function(_UpdateApplicationNotification value)?
+        updateApplicationNotification,
     TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
     required TResult orElse(),
   }) {
@@ -2987,7 +3349,6 @@ abstract class _UpdateLoadingStatus implements PrayNotificationSettingEvent {
 /// @nodoc
 mixin _$PrayNotificationSettingState {
   bool get allowAllNotifications => throw _privateConstructorUsedError;
-  bool get nextPrayNotification => throw _privateConstructorUsedError;
   bool get allNotificationForToday => throw _privateConstructorUsedError;
   bool get allNotificationForThreeDay => throw _privateConstructorUsedError;
   bool get allNotificationForWeekDay => throw _privateConstructorUsedError;
@@ -2997,6 +3358,7 @@ mixin _$PrayNotificationSettingState {
   bool get magriebNotification => throw _privateConstructorUsedError;
   bool get ishaNotification => throw _privateConstructorUsedError;
   bool get adkarNotification => throw _privateConstructorUsedError;
+  bool get applicationNotification => throw _privateConstructorUsedError;
   dynamic get loadingStatus => throw _privateConstructorUsedError;
 
   /// Create a copy of PrayNotificationSettingState
@@ -3016,7 +3378,6 @@ abstract class $PrayNotificationSettingStateCopyWith<$Res> {
   @useResult
   $Res call(
       {bool allowAllNotifications,
-      bool nextPrayNotification,
       bool allNotificationForToday,
       bool allNotificationForThreeDay,
       bool allNotificationForWeekDay,
@@ -3026,6 +3387,7 @@ abstract class $PrayNotificationSettingStateCopyWith<$Res> {
       bool magriebNotification,
       bool ishaNotification,
       bool adkarNotification,
+      bool applicationNotification,
       dynamic loadingStatus});
 }
 
@@ -3046,7 +3408,6 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? allowAllNotifications = null,
-    Object? nextPrayNotification = null,
     Object? allNotificationForToday = null,
     Object? allNotificationForThreeDay = null,
     Object? allNotificationForWeekDay = null,
@@ -3056,16 +3417,13 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
     Object? magriebNotification = null,
     Object? ishaNotification = null,
     Object? adkarNotification = null,
+    Object? applicationNotification = null,
     Object? loadingStatus = freezed,
   }) {
     return _then(_value.copyWith(
       allowAllNotifications: null == allowAllNotifications
           ? _value.allowAllNotifications
           : allowAllNotifications // ignore: cast_nullable_to_non_nullable
-              as bool,
-      nextPrayNotification: null == nextPrayNotification
-          ? _value.nextPrayNotification
-          : nextPrayNotification // ignore: cast_nullable_to_non_nullable
               as bool,
       allNotificationForToday: null == allNotificationForToday
           ? _value.allNotificationForToday
@@ -3102,6 +3460,10 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
       adkarNotification: null == adkarNotification
           ? _value.adkarNotification
           : adkarNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
+      applicationNotification: null == applicationNotification
+          ? _value.applicationNotification
+          : applicationNotification // ignore: cast_nullable_to_non_nullable
               as bool,
       loadingStatus: freezed == loadingStatus
           ? _value.loadingStatus
@@ -3122,7 +3484,6 @@ abstract class _$$PrayNotificationSettingStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool allowAllNotifications,
-      bool nextPrayNotification,
       bool allNotificationForToday,
       bool allNotificationForThreeDay,
       bool allNotificationForWeekDay,
@@ -3132,6 +3493,7 @@ abstract class _$$PrayNotificationSettingStateImplCopyWith<$Res>
       bool magriebNotification,
       bool ishaNotification,
       bool adkarNotification,
+      bool applicationNotification,
       dynamic loadingStatus});
 }
 
@@ -3151,7 +3513,6 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? allowAllNotifications = null,
-    Object? nextPrayNotification = null,
     Object? allNotificationForToday = null,
     Object? allNotificationForThreeDay = null,
     Object? allNotificationForWeekDay = null,
@@ -3161,16 +3522,13 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
     Object? magriebNotification = null,
     Object? ishaNotification = null,
     Object? adkarNotification = null,
+    Object? applicationNotification = null,
     Object? loadingStatus = freezed,
   }) {
     return _then(_$PrayNotificationSettingStateImpl(
       allowAllNotifications: null == allowAllNotifications
           ? _value.allowAllNotifications
           : allowAllNotifications // ignore: cast_nullable_to_non_nullable
-              as bool,
-      nextPrayNotification: null == nextPrayNotification
-          ? _value.nextPrayNotification
-          : nextPrayNotification // ignore: cast_nullable_to_non_nullable
               as bool,
       allNotificationForToday: null == allNotificationForToday
           ? _value.allNotificationForToday
@@ -3208,6 +3566,10 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
           ? _value.adkarNotification
           : adkarNotification // ignore: cast_nullable_to_non_nullable
               as bool,
+      applicationNotification: null == applicationNotification
+          ? _value.applicationNotification
+          : applicationNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
       loadingStatus:
           freezed == loadingStatus ? _value.loadingStatus! : loadingStatus,
     ));
@@ -3220,24 +3582,21 @@ class _$PrayNotificationSettingStateImpl
     implements _PrayNotificationSettingState {
   const _$PrayNotificationSettingStateImpl(
       {this.allowAllNotifications = false,
-      this.nextPrayNotification = false,
       this.allNotificationForToday = false,
       this.allNotificationForThreeDay = false,
       this.allNotificationForWeekDay = false,
-      this.fajirNotification = false,
-      this.duhirNotification = false,
-      this.asrNotification = false,
-      this.magriebNotification = false,
-      this.ishaNotification = false,
-      this.adkarNotification = false,
+      this.fajirNotification = true,
+      this.duhirNotification = true,
+      this.asrNotification = true,
+      this.magriebNotification = true,
+      this.ishaNotification = true,
+      this.adkarNotification = true,
+      this.applicationNotification = false,
       this.loadingStatus = const PrayNotificationSettingProcessState.idl()});
 
   @override
   @JsonKey()
   final bool allowAllNotifications;
-  @override
-  @JsonKey()
-  final bool nextPrayNotification;
   @override
   @JsonKey()
   final bool allNotificationForToday;
@@ -3267,11 +3626,14 @@ class _$PrayNotificationSettingStateImpl
   final bool adkarNotification;
   @override
   @JsonKey()
+  final bool applicationNotification;
+  @override
+  @JsonKey()
   final dynamic loadingStatus;
 
   @override
   String toString() {
-    return 'PrayNotificationSettingState(allowAllNotifications: $allowAllNotifications, nextPrayNotification: $nextPrayNotification, allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajirNotification: $fajirNotification, duhirNotification: $duhirNotification, asrNotification: $asrNotification, magriebNotification: $magriebNotification, ishaNotification: $ishaNotification, adkarNotification: $adkarNotification, loadingStatus: $loadingStatus)';
+    return 'PrayNotificationSettingState(allowAllNotifications: $allowAllNotifications, allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajirNotification: $fajirNotification, duhirNotification: $duhirNotification, asrNotification: $asrNotification, magriebNotification: $magriebNotification, ishaNotification: $ishaNotification, adkarNotification: $adkarNotification, applicationNotification: $applicationNotification, loadingStatus: $loadingStatus)';
   }
 
   @override
@@ -3281,8 +3643,6 @@ class _$PrayNotificationSettingStateImpl
             other is _$PrayNotificationSettingStateImpl &&
             (identical(other.allowAllNotifications, allowAllNotifications) ||
                 other.allowAllNotifications == allowAllNotifications) &&
-            (identical(other.nextPrayNotification, nextPrayNotification) ||
-                other.nextPrayNotification == nextPrayNotification) &&
             (identical(
                     other.allNotificationForToday, allNotificationForToday) ||
                 other.allNotificationForToday == allNotificationForToday) &&
@@ -3305,6 +3665,9 @@ class _$PrayNotificationSettingStateImpl
                 other.ishaNotification == ishaNotification) &&
             (identical(other.adkarNotification, adkarNotification) ||
                 other.adkarNotification == adkarNotification) &&
+            (identical(
+                    other.applicationNotification, applicationNotification) ||
+                other.applicationNotification == applicationNotification) &&
             const DeepCollectionEquality()
                 .equals(other.loadingStatus, loadingStatus));
   }
@@ -3313,7 +3676,6 @@ class _$PrayNotificationSettingStateImpl
   int get hashCode => Object.hash(
       runtimeType,
       allowAllNotifications,
-      nextPrayNotification,
       allNotificationForToday,
       allNotificationForThreeDay,
       allNotificationForWeekDay,
@@ -3323,6 +3685,7 @@ class _$PrayNotificationSettingStateImpl
       magriebNotification,
       ishaNotification,
       adkarNotification,
+      applicationNotification,
       const DeepCollectionEquality().hash(loadingStatus));
 
   /// Create a copy of PrayNotificationSettingState
@@ -3340,7 +3703,6 @@ abstract class _PrayNotificationSettingState
     implements PrayNotificationSettingState {
   const factory _PrayNotificationSettingState(
       {final bool allowAllNotifications,
-      final bool nextPrayNotification,
       final bool allNotificationForToday,
       final bool allNotificationForThreeDay,
       final bool allNotificationForWeekDay,
@@ -3350,12 +3712,11 @@ abstract class _PrayNotificationSettingState
       final bool magriebNotification,
       final bool ishaNotification,
       final bool adkarNotification,
+      final bool applicationNotification,
       final dynamic loadingStatus}) = _$PrayNotificationSettingStateImpl;
 
   @override
   bool get allowAllNotifications;
-  @override
-  bool get nextPrayNotification;
   @override
   bool get allNotificationForToday;
   @override
@@ -3374,6 +3735,8 @@ abstract class _PrayNotificationSettingState
   bool get ishaNotification;
   @override
   bool get adkarNotification;
+  @override
+  bool get applicationNotification;
   @override
   dynamic get loadingStatus;
 

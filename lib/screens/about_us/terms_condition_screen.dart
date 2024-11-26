@@ -1,8 +1,8 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/screens/about_us/widgets/section_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class TermsConditionScreen extends StatelessWidget {
   const TermsConditionScreen({super.key});
@@ -10,162 +10,57 @@ class TermsConditionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirebaseAnalytics.instance.logEvent(name: "TermsConditionScreen");
+    final localization = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar:
-          CustomAppBar(title: AppLocalizations.of(context)!.termsandconditions),
+      appBar: CustomAppBar(title: localization.termsandconditions),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomText(
-                title: AppLocalizations.of(context)!.termstitle1,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                fontWeight: FontWeight.bold,
+              SectionView(
+                title: localization.termstitle1,
+                descriptions: [localization.termsdesc1],
               ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc1,
-                fontSize: 16,
-                maxLins: 5,
-                textColor: const Color(0xff444444),
+              SectionView(
+                title: localization.termstitle2,
+                descriptions: [localization.termsdesc2],
               ),
-              const SizedBox(height: 20),
-              CustomText(
-                title: AppLocalizations.of(context)!.termstitle2,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                fontWeight: FontWeight.bold,
+              SectionView(
+                title: localization.termstitle3,
+                descriptions: [
+                  localization.termsdesc31,
+                  localization.termsdesc32,
+                  localization.termsdesc33,
+                ],
               ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc2,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 5,
+              SectionView(
+                title: localization.termstitle4,
+                descriptions: [localization.termsdesc4],
               ),
-              const SizedBox(height: 20),
-              CustomText(
-                title: AppLocalizations.of(context)!.termstitle3,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                fontWeight: FontWeight.bold,
+              SectionView(
+                title: localization.termstitle5,
+                descriptions: [localization.termsdesc5],
               ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc31,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 5,
+              SectionView(
+                title: localization.termstitle6,
+                descriptions: [
+                  localization.termsdesc61,
+                  localization.termsdesc62,
+                  localization.termsdesc63,
+                  localization.termsdesc64,
+                ],
               ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc32,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 5,
+              SectionView(
+                title: localization.termstitle7,
+                descriptions: [localization.termsdesc7],
               ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc33,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 5,
+              SectionView(
+                title: localization.termstitle8,
+                descriptions: [localization.termsdesc8],
               ),
-              const SizedBox(height: 20),
-              CustomText(
-                title: AppLocalizations.of(context)!.termstitle4,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                fontWeight: FontWeight.bold,
-              ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc4,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 5,
-              ),
-              const SizedBox(height: 20),
-              CustomText(
-                title: AppLocalizations.of(context)!.termstitle5,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                fontWeight: FontWeight.bold,
-              ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc5,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 5,
-              ),
-              const SizedBox(height: 20),
-              CustomText(
-                title: AppLocalizations.of(context)!.termstitle6,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                fontWeight: FontWeight.bold,
-              ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc61,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-              ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc62,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 3,
-              ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc63,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 3,
-              ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc64,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 3,
-              ),
-              const SizedBox(height: 20),
-              CustomText(
-                title: AppLocalizations.of(context)!.termstitle7,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                fontWeight: FontWeight.bold,
-              ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc7,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 5,
-              ),
-              const SizedBox(height: 20),
-              CustomText(
-                title: AppLocalizations.of(context)!.termstitle8,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                fontWeight: FontWeight.bold,
-              ),
-              const SizedBox(height: 4),
-              CustomText(
-                title: AppLocalizations.of(context)!.termsdesc8,
-                fontSize: 16,
-                textColor: const Color(0xff444444),
-                maxLins: 5,
-              ),
-              const SizedBox(height: 20),
             ],
           ),
         ),

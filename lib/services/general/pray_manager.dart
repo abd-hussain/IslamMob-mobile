@@ -14,7 +14,7 @@ class PrayManager {
   PrayManager({
     required this.coordinates,
     required this.utcOffset,
-    this.calculationMethod = CalculationMethod.ummAlQura,
+    this.calculationMethod = CalculationMethod.jordan,
     this.madhab = Madhab.shafi,
     this.highLatitudeRule,
     this.specificDate,
@@ -26,7 +26,7 @@ class PrayManager {
     final date = specificDate ?? DateComponents.from(DateTime.now());
     final params = calculationMethod.getParameters();
     params.madhab = madhab;
-    params.highLatitudeRule = highLatitudeRule;
+    // params.highLatitudeRule = highLatitudeRule;
 
     final prayerTimes =
         PrayerTimes(coordinates, date, params, utcOffset: utcOffset);

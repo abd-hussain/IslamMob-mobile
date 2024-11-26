@@ -1,4 +1,12 @@
 class PrayTimingModel {
+  String fajir;
+  String sunrise;
+  String dhuhr;
+  String asr;
+  String maghrib;
+  String isha;
+  String middleOfTheNight;
+  String lastThirdOfTheNight;
   PrayTimingModel({
     required this.fajir,
     required this.sunrise,
@@ -9,17 +17,17 @@ class PrayTimingModel {
     required this.middleOfTheNight,
     required this.lastThirdOfTheNight,
   });
-  String fajir;
-  String sunrise;
-  String dhuhr;
-  String asr;
-  String maghrib;
-  String isha;
-  String middleOfTheNight;
-  String lastThirdOfTheNight;
 }
 
 class PrayTimingDateTimeModel {
+  DateTime fajir;
+  DateTime sunrise;
+  DateTime dhuhr;
+  DateTime asr;
+  DateTime maghrib;
+  DateTime isha;
+  DateTime middleOfTheNight;
+  DateTime lastThirdOfTheNight;
   PrayTimingDateTimeModel({
     required this.fajir,
     required this.sunrise,
@@ -30,12 +38,4 @@ class PrayTimingDateTimeModel {
     required this.middleOfTheNight,
     required this.lastThirdOfTheNight,
   });
-  DateTime fajir;
-  DateTime sunrise;
-  DateTime dhuhr;
-  DateTime asr;
-  DateTime maghrib;
-  DateTime isha;
-  DateTime middleOfTheNight;
-  DateTime lastThirdOfTheNight;
 }

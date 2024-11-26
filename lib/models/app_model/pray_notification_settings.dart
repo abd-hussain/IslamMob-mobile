@@ -4,7 +4,6 @@ class PrayerNotification {
   final String title;
   final bool Function(PrayNotificationSettingState state) notificationSelector;
   final PrayNotificationSettingEvent Function(bool value) eventCreator;
-
   const PrayerNotification({
     required this.title,
     required this.notificationSelector,
