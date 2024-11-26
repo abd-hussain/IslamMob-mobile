@@ -91,7 +91,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                         },
                         builder: (context, state) {
                           return CustomButton(
-                            enableButton: state.enableSubmitBtn,
+                            isEnabled: state.enableSubmitBtn,
                             onTap: () {
                               try {
                                 context.read<ReportAndSuggestionBloc>().add(

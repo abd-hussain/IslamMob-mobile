@@ -60,11 +60,11 @@ class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
   }
 
   String knowTimingAMorPM() {
-    return locator<DayTime>().knowTimingAMorPM(state.nextPrayDateTime?.hour);
+    return locator<DayTime>().getAmPm(state.nextPrayDateTime?.hour);
   }
 
   String getNextSalahTime() {
-    return "${locator<DayTime>().convertingHoursFrom24To12(state.nextPrayDateTime?.hour)}:${(state.nextPrayDateTime?.minute ?? "00").toString().padLeft(2, '0')}";
+    return "${locator<DayTime>().convertTo12HourFormat(state.nextPrayDateTime?.hour)}:${(state.nextPrayDateTime?.minute ?? "00").toString().padLeft(2, '0')}";
   }
 
   FutureOr<void> _updateSalahTypeAndTime(

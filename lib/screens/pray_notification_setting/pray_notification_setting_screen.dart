@@ -10,9 +10,6 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 class PrayNotificationSettingScreen extends StatelessWidget {
   const PrayNotificationSettingScreen({super.key});
 
-//TODO: Setup local notification
-//TODO: local notification for tasbee7
-//TODO: local notification sound
 //TODO: local notification with timer such as other apps
 //TODO: design of disable should be change
 
@@ -58,7 +55,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                               .notificationSettingQuick,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
-                          textColor: const Color(0xff444444),
+                          color: const Color(0xff444444),
                         ),
                       ),
                       NotificationView(
@@ -74,7 +71,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                               .notificationSettingPray,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
-                          textColor: const Color(0xff444444),
+                          color: const Color(0xff444444),
                         ),
                       ),
                       NotificationView(
@@ -90,7 +87,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                               .notificationSettingOther,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
-                          textColor: const Color(0xff444444),
+                          color: const Color(0xff444444),
                         ),
                       ),
                       NotificationView(

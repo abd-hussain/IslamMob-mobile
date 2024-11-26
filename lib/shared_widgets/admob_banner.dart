@@ -10,30 +10,37 @@ class AddMobBanner extends StatefulWidget {
 }
 
 class _AddMobBannerState extends State<AddMobBanner> {
-  late BannerAd _bannerAd;
+  late final BannerAd _bannerAd;
   bool _isBannerAdReady = false;
 
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
+    _initializeBannerAd();
+  }
+
+  void _initializeBannerAd() {
     _bannerAd = BannerAd(
       adUnitId: AdHelper.bannerAdUnitId,
       request: const AdRequest(),
       size: AdSize.banner,
       listener: BannerAdListener(
-        onAdLoaded: (_) {
-          setState(() {
-            _isBannerAdReady = true;
-          });
-        },
-        onAdFailedToLoad: (ad, err) {
-          debugPrint('Failed to load a banner ad: ${err.message}');
-          _isBannerAdReady = false;
-          ad.dispose();
-        },
+        onAdLoaded: (_) => _onAdLoaded(),
+        onAdFailedToLoad: (ad, error) => _onAdFailedToLoad(ad, error),
       ),
     )..load();
+  }
 
-    super.didChangeDependencies();
+  void _onAdLoaded() {
+    setState(() {
+      _isBannerAdReady = true;
+    });
+  }
+
+  void _onAdFailedToLoad(Ad ad, LoadAdError error) {
+    debugPrint('Failed to load banner ad: ${error.message}');
+    _isBannerAdReady = false;
+    ad.dispose();
   }
 
   @override
@@ -46,7 +53,7 @@ class _AddMobBannerState extends State<AddMobBanner> {
   Widget build(BuildContext context) {
     return _isBannerAdReady
         ? Padding(
-            padding: const EdgeInsets.only(top: 8, bottom: 8),
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: Align(
               alignment: Alignment.topCenter,
               child: SizedBox(

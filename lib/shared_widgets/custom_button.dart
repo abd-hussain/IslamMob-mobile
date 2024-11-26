@@ -2,44 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
-    this.buttonTitle = "Submit",
-    this.buttonTitleColor = Colors.white,
-    required this.enableButton,
-    this.width,
-    this.buttonColor = const Color(0xff007F37),
-    required this.onTap,
-    super.key,
-    this.padding = const EdgeInsets.all(16),
-  });
-  final String buttonTitle;
-  final Color buttonTitleColor;
-
-  final bool enableButton;
-  final Color buttonColor;
-  final Function() onTap;
+  final String title;
+  final Color titleColor;
+  final bool isEnabled;
+  final Color color;
+  final VoidCallback onTap;
   final double? width;
   final EdgeInsetsGeometry padding;
+
+  const CustomButton({
+    super.key,
+    this.title = "Submit",
+    this.titleColor = Colors.white,
+    required this.isEnabled,
+    this.width,
+    this.color = const Color(0xff007F37),
+    required this.onTap,
+    this.padding = const EdgeInsets.all(16),
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
       child: ElevatedButton(
-        style: ButtonStyle(
-            backgroundColor: WidgetStateProperty.all(
-                enableButton ? buttonColor : const Color(0xffB1B1B1))),
-        onPressed: () => enableButton ? onTap() : null,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: isEnabled ? color : const Color(0xffB1B1B1),
+          padding: EdgeInsets.zero,
+        ),
+        onPressed: isEnabled ? onTap : null,
         child: SizedBox(
           height: 45,
           width: width,
           child: Center(
             child: Text(
-              buttonTitle == "Submit"
-                  ? AppLocalizations.of(context)!.submit
-                  : buttonTitle,
+              title == "Submit" ? AppLocalizations.of(context)!.submit : title,
               style: TextStyle(
-                color: buttonTitleColor,
+                color: titleColor,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),

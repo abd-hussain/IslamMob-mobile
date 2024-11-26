@@ -28,7 +28,7 @@ class AttachmentBottomSheetsUtil {
                   children: [
                     CustomText(
                       title: title1,
-                      textColor: Colors.black,
+                      color: Colors.black,
                       fontSize: 18,
                     ),
                     const SizedBox(height: 27),
@@ -46,7 +46,7 @@ class AttachmentBottomSheetsUtil {
                           CustomText(
                             title: AppLocalizations.of(context)!
                                 .pickimageremoveimage,
-                            textColor: Colors.red,
+                            color: Colors.red,
                             fontSize: 16,
                           ),
                         ],
@@ -60,7 +60,7 @@ class AttachmentBottomSheetsUtil {
                   children: [
                     CustomText(
                       title: title2,
-                      textColor: Colors.black,
+                      color: Colors.black,
                       fontSize: 18,
                     ),
                     const SizedBox(height: 27),
@@ -91,7 +91,7 @@ class AttachmentBottomSheetsUtil {
                                       title: AppLocalizations.of(context)!
                                           .pickimagefromstudio,
                                       fontSize: 16,
-                                      textColor: const Color(0xff444444),
+                                      color: const Color(0xff444444),
                                     ),
                                   ),
                                   const Icon(
@@ -124,7 +124,7 @@ class AttachmentBottomSheetsUtil {
                                       title: AppLocalizations.of(context)!
                                           .pickimagefromcamera,
                                       fontSize: 16,
-                                      textColor: const Color(0xff444444),
+                                      color: const Color(0xff444444),
                                     ),
                                   ),
                                   const Icon(

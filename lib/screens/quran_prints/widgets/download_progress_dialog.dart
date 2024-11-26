@@ -110,9 +110,9 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
             ),
           ),
           CustomButton(
-            enableButton: true,
-            buttonTitle: AppLocalizations.of(context)!.cancel,
-            buttonColor: Colors.redAccent,
+            isEnabled: true,
+            title: AppLocalizations.of(context)!.cancel,
+            color: Colors.redAccent,
             onTap: () {
               cancelToken.cancel(); // Cancel the download when pressing Cancel
               Navigator.of(context).pop();

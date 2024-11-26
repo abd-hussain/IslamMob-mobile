@@ -55,7 +55,7 @@ class CollectionListOptionView extends StatelessWidget {
                         CustomText(
                             title: listOfOptions[index].name,
                             fontSize: 16,
-                            textColor: listOfOptions[index].avaliable
+                            color: listOfOptions[index].avaliable
                                 ? const Color(0xff292929)
                                 : Colors.grey,
                             fontWeight: FontWeight.bold),
@@ -63,7 +63,7 @@ class CollectionListOptionView extends StatelessWidget {
                           CustomText(
                               title: listOfOptions[index].subtitle,
                               fontSize: 12,
-                              textColor: listOfOptions[index].avaliable
+                              color: listOfOptions[index].avaliable
                                   ? const Color(0xff292929)
                                   : Colors.grey,
                               fontWeight: FontWeight.w500)

@@ -46,7 +46,7 @@ class NotificationInBoardingView extends StatelessWidget {
     return CustomText(
       title: AppLocalizations.of(context)!.allowSendingNotifications,
       fontSize: 20,
-      textColor: const Color(0xff007F37),
+      color: const Color(0xff007F37),
       fontWeight: FontWeight.bold,
       textAlign: TextAlign.center,
     );

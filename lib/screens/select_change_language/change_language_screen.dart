@@ -35,9 +35,8 @@ class ChangeLanguageScreen extends StatelessWidget {
                   return state.selectedLanguage == null
                       ? const SizedBox()
                       : CustomButton(
-                          enableButton: true,
-                          buttonTitle:
-                              state.selectedLanguage!.selectButtonTitle,
+                          isEnabled: true,
+                          title: state.selectedLanguage!.selectButtonTitle,
                           onTap: () async {
                             context
                                 .read<ChangeLanguageBloc>()

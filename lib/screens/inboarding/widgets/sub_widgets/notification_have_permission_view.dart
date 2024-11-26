@@ -19,15 +19,15 @@ class NotificationHavePermissionView extends StatelessWidget {
           child: CustomText(
             title: AppLocalizations.of(context)!.notificationPermissionSuccses,
             fontSize: 18,
-            textColor: const Color(0xff292929),
+            color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
             textAlign: TextAlign.center,
-            maxLins: 4,
+            maxLines: 4,
           ),
         ),
         CustomButton(
-          enableButton: true,
-          buttonTitle: AppLocalizations.of(context)!.startyourjourney,
+          isEnabled: true,
+          title: AppLocalizations.of(context)!.startyourjourney,
           onTap: () async {
             final String? notificationsDetails =
                 await NotificationService().getNotificationToken();

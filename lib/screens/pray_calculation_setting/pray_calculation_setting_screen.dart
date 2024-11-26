@@ -64,9 +64,9 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                     previous.buttonsStatus != current.buttonsStatus,
                 builder: (context, state) {
                   return CustomButton(
-                    enableButton: state.buttonsStatus,
+                    isEnabled: state.buttonsStatus,
                     padding: const EdgeInsets.only(left: 16, right: 16),
-                    buttonTitle: AppLocalizations.of(context)!.save,
+                    title: AppLocalizations.of(context)!.save,
                     onTap: () => context.read<PrayCalculationSettingBloc>().add(
                           PrayCalculationSettingEvent.saveChanges(status: true),
                         ),
@@ -81,8 +81,8 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                 builder: (context, state) {
                   return CustomButton(
                     padding: const EdgeInsets.only(left: 16, right: 16),
-                    enableButton: state.buttonsStatus,
-                    buttonTitle: AppLocalizations.of(context)!.factoryReset,
+                    isEnabled: state.buttonsStatus,
+                    title: AppLocalizations.of(context)!.factoryReset,
                     onTap: () => context.read<PrayCalculationSettingBloc>().add(
                           PrayCalculationSettingEvent.factoryReset(
                               status: true),

@@ -46,7 +46,7 @@ class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
   }
 
   Future<bool> _checkInternetConnectionStatus() async {
-    if (!await locator<NetworkInfoService>().checkConnectivityonLunching()) {
+    if (!await locator<NetworkInfoService>().checkConnectivityOnLaunch()) {
       add(WebViewEvent.updateInternetConnectionStatus(false));
       return false;
     } else {

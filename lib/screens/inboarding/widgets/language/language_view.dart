@@ -55,8 +55,8 @@ class LanguageInBoardingView extends StatelessWidget {
         if (state.selectedLanguage == null) return const SizedBox();
 
         return CustomButton(
-          enableButton: true,
-          buttonTitle: state.selectedLanguage!.selectButtonTitle,
+          isEnabled: true,
+          title: state.selectedLanguage!.selectButtonTitle,
           onTap: () => onSelectLanguage(state.selectedLanguage!.languageCode),
         );
       },

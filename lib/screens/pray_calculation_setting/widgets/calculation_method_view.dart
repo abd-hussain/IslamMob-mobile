@@ -19,16 +19,16 @@ class CalculationMethodView extends StatelessWidget {
             title: AppLocalizations.of(context)!.calculationMethod,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            textColor: const Color(0xff444444),
+            color: const Color(0xff444444),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           CustomText(
             title: AppLocalizations.of(context)!.calculationMethodDetails,
             fontSize: 14,
-            textColor: const Color(0xff444444),
+            color: const Color(0xff444444),
             textAlign: TextAlign.center,
-            maxLins: 2,
+            maxLines: 2,
           ),
           Expanded(
             child: Padding(

@@ -50,7 +50,7 @@ class PrintTileView extends StatelessWidget {
                 CustomText(
                   title: title ?? "",
                   fontSize: 22,
-                  textColor: const Color(0xff034061),
+                  color: const Color(0xff034061),
                   fontWeight: FontWeight.bold,
                 ),
                 Padding(
@@ -58,9 +58,9 @@ class PrintTileView extends StatelessWidget {
                   child: CustomText(
                     title: description ?? "",
                     fontSize: 16,
-                    maxLins: 4,
+                    maxLines: 4,
                     textAlign: TextAlign.center,
-                    textColor: const Color(0xff034061),
+                    color: const Color(0xff034061),
                   ),
                 ),
                 Padding(
@@ -76,15 +76,15 @@ class PrintTileView extends StatelessWidget {
                   ),
                 ),
                 CustomButton(
-                  enableButton: downloadButtonAvaliable,
+                  isEnabled: downloadButtonAvaliable,
                   padding: const EdgeInsets.all(8),
-                  buttonTitle: AppLocalizations.of(context)!.download,
+                  title: AppLocalizations.of(context)!.download,
                   onTap: () => onDownloadPressed(),
                 ),
                 CustomButton(
-                  enableButton: useButtonAvaliable,
+                  isEnabled: useButtonAvaliable,
                   padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                  buttonTitle: AppLocalizations.of(context)!.use,
+                  title: AppLocalizations.of(context)!.use,
                   onTap: () => onUsePressed(),
                 ),
               ],

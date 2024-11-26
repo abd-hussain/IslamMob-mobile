@@ -51,7 +51,7 @@ class _CounterViewState extends State<CounterView> {
                 title: widget.initialValue.toString(),
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
-                textColor: Colors.white,
+                color: Colors.white,
               ),
             ),
           ),

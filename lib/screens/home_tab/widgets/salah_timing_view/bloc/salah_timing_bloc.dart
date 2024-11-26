@@ -39,7 +39,6 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
 
   PrayManager _getPrayManagerForDate(DateTime date) {
     //TODO: this need to be fixed
-    //TODO: Time is not equil other app
     return PrayManager(
       coordinates: Coordinates(_getLatitude(), _getLongitude()),
       utcOffset: const Duration(hours: 3),
@@ -103,19 +102,19 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
   }
 
   String getDateMelady(int index) {
-    return locator<DayTime>().formatDateDDMMYYYY(
-        locator<DayTime>().getDateWithDayFraction(dayFraction: index));
+    return locator<DayTime>()
+        .formatDate(locator<DayTime>().getDateWithDayOffset(dayOffset: index));
   }
 
   String getDateHijri(int index) {
-    return locator<DayTime>().formatHijriDateDDMMYYYY(
-        locator<DayTime>().getHijriDateWithDayFraction(dayFraction: index));
+    return locator<DayTime>().formatHijriDate(
+        locator<DayTime>().getHijriDateWithDayOffset(dayOffset: index));
   }
 
   String getDayName(BuildContext context, int index) {
     return locator<DayTime>().getDayName(
         context: context,
-        date: locator<DayTime>().getDateWithDayFraction(dayFraction: index));
+        date: locator<DayTime>().getDateWithDayOffset(dayOffset: index));
   }
 
   String getTitleOfTheDay(BuildContext context, int index) {

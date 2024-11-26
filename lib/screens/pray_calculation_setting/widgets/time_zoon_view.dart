@@ -19,16 +19,16 @@ class TimeZoneView extends StatelessWidget {
             title: AppLocalizations.of(context)!.timezone,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            textColor: const Color(0xff444444),
+            color: const Color(0xff444444),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           CustomText(
             title: AppLocalizations.of(context)!.timezoneDetails,
             fontSize: 14,
-            textColor: const Color(0xff444444),
+            color: const Color(0xff444444),
             textAlign: TextAlign.center,
-            maxLins: 2,
+            maxLines: 2,
           ),
           Expanded(
             child: Padding(

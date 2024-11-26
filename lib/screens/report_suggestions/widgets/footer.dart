@@ -13,9 +13,9 @@ class ReportSuggestionFooterView extends StatelessWidget {
         child: CustomText(
           title: AppLocalizations.of(context)!.reportFooterText,
           fontSize: 10,
-          maxLins: 2,
+          maxLines: 2,
           textAlign: TextAlign.center,
-          textColor: const Color(0xffBFBFBF),
+          color: const Color(0xffBFBFBF),
         ),
       ),
     );

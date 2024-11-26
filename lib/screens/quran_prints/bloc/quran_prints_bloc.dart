@@ -42,7 +42,7 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   }
 
   Future<bool> _checkInternetConnectionStatus() async {
-    if (!await locator<NetworkInfoService>().checkConnectivityonLunching()) {
+    if (!await locator<NetworkInfoService>().checkConnectivityOnLaunch()) {
       add(QuranPrintsEvent.updateInternetConnectionStatus(false));
       return false;
     } else {
@@ -53,9 +53,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   Future<void> _getListOfPrints() async {
     try {
-      final documents =
-          await locator<FirestoreService>().getAllDocumentsFromFireStore(
-        collectionName: FirebaseConstants.quranPrints,
+      final documents = await locator<FirestoreService>().getAllDocuments(
+        collectionName: FirebaseCollectionConstants.quranPrints,
       );
       final listOfPrints = documents.map((doc) {
         return QuranPrints(
@@ -105,7 +104,7 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   }
 
   Future<bool> verifyIfFileExists(String fileName) async {
-    return await FileDownload().checkIfFileExists(fileName);
+    return await FileDownload().fileExists(fileName);
   }
 
   String getNameByLanguageCode(String languageCode) {

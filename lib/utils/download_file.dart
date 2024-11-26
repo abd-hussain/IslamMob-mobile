@@ -7,39 +7,34 @@ import 'package:islam_app/utils/logger.dart';
 import 'package:path_provider/path_provider.dart';
 
 class FileDownload {
-  Dio dio = Dio();
-  bool isSuccess = false;
+  final Dio dio = Dio();
 
-  void startDownloading({
+  /// Starts downloading a file and provides progress and completion callbacks.
+  Future<void> startDownloading({
     required BuildContext context,
     required String fileNameWithExtension,
     required String fileUrl,
     required CancelToken cancelToken,
-    required final Function(int recivedBytes, int totalBytes) progressCallback,
-    required final Function(String filePath) finishCallback,
+    required Function(int receivedBytes, int totalBytes) progressCallback,
+    required Function(String filePath) finishCallback,
   }) async {
-    String path = await getFilePath(fileNameWithExtension);
+    final String filePath = await _getFilePath(fileNameWithExtension);
 
     try {
       await dio.download(
         fileUrl,
-        path,
-        cancelToken: cancelToken, // Use cancelToken here to allow cancellation
-        onReceiveProgress: (recivedBytes, totalBytes) {
-          progressCallback(recivedBytes, totalBytes);
-        },
+        filePath,
+        cancelToken: cancelToken,
+        onReceiveProgress: progressCallback,
         deleteOnError: true,
-      ).then((_) {
-        logDebugMessage(message: "Download Completed");
-        isSuccess = true;
-        finishCallback(path);
-      });
+      );
+      logDebugMessage(message: "Download Completed");
+      finishCallback(filePath);
+      if (context.mounted) {
+        Navigator.pop(context);
+      }
     } catch (e) {
-      logDebugMessage(message: "Exception - $e");
-    }
-
-    if (isSuccess && context.mounted) {
-      Navigator.pop(context);
+      logDebugMessage(message: "Download failed: $e");
     }
   }
 
@@ -57,17 +52,37 @@ class FileDownload {
     return "${newDirectory.path}$filename";
   }
 
-  Future<bool> checkIfFileExists(String fileNameWithExtension) async {
-    final Directory dir = await getApplicationDocumentsDirectory();
-    final newDirectory = Directory('${dir.path}/');
-    File file = File("${newDirectory.path}$fileNameWithExtension");
-    return file.existsSync();
+  /// Checks if a file with the given name exists.
+  Future<bool> fileExists(String fileNameWithExtension) async {
+    final String filePath = await _getFilePath(fileNameWithExtension);
+    return File(filePath).existsSync();
   }
 
+  /// Deletes a file with the given name if it exists.
   Future<void> deleteFile(String fileNameWithExtension) async {
+    final String filePath = await _getFilePath(fileNameWithExtension);
+    final File file = File(filePath);
+
+    if (await file.exists()) {
+      await file.delete();
+      logDebugMessage(message: "File deleted: $filePath");
+    } else {
+      logDebugMessage(message: "File not found: $filePath");
+    }
+  }
+
+  /// Gets the full file path for a given file name.
+  Future<String> _getFilePath(String fileName) async {
     final Directory dir = await getApplicationDocumentsDirectory();
-    final newDirectory = Directory('${dir.path}/');
-    File file = File("${newDirectory.path}$fileNameWithExtension");
-    await file.delete();
+    final Directory newDirectory = Directory(dir.path);
+
+    if (!await newDirectory.exists()) {
+      await newDirectory.create();
+      logDebugMessage(message: "Directory created: ${newDirectory.path}");
+    } else {
+      logDebugMessage(message: "Directory exists: ${newDirectory.path}");
+    }
+
+    return "${newDirectory.path}/$fileName";
   }
 }

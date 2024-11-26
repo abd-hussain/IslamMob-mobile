@@ -108,8 +108,7 @@ Widget _buildIndexTile(BuildContext context) {
       final bloc = context.read<QuranKareemBloc>();
       final currentPage = bloc.currentPageNumber;
       final sorahName =
-          QuranReferances.getSorahReferenceNameForLocalizationFromPageNumber(
-              currentPage);
+          QuranReferances.getSurahReferenceNameFromPageNumber(currentPage);
       final jozo2Name = QuranReferances.getJuzNumberFromPageNumber(currentPage);
 
       await navigator
@@ -144,7 +143,7 @@ Future<void> _handleNavigationResult(
   }
 
   if (value[ArgumentConstant.currentSowrahName] != null) {
-    final sorahPageNumber = QuranReferances.getPageNumberFromSorahReferenceName(
+    final sorahPageNumber = QuranReferances.getPageNumberFromSurahReferenceName(
         AppLocalizations.of(context)!.getKeyFromLocalizedString(
             value[ArgumentConstant.currentSowrahName]));
     if (sorahPageNumber != -1) {

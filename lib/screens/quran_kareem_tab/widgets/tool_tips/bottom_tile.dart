@@ -65,7 +65,7 @@ class _BottomTileState extends State<BottomTile>
               CustomText(
                 title: widget.title,
                 fontSize: 12,
-                textColor: Colors.white70,
+                color: Colors.white70,
                 fontWeight: FontWeight.bold,
               ),
             ],

@@ -195,9 +195,6 @@ class PrayNotificationSettingBloc
       Emitter<PrayNotificationSettingState> emit) {
     //TODO
 
-    LocalNotificationService.showInstantNotification(
-        "Instant Notification", "This shows an instant notifications");
-
     emit(state.copyWith(allowAllNotifications: event.status));
   }
 
@@ -208,10 +205,11 @@ class PrayNotificationSettingBloc
 
     DateTime scheduledDate = DateTime.now().add(const Duration(seconds: 5));
     LocalNotificationService.scheduleNotification(
-      0,
-      "Scheduled Notification",
-      "This notification is scheduled to appear after 5 seconds",
-      scheduledDate,
+      id: 0,
+      title: "Scheduled Notification",
+      body: "This notification is scheduled to appear after 5 seconds",
+      scheduledTime: scheduledDate,
+      soundType: NotificationSoundType.fajir,
     );
     //TODO
     emit(state.copyWith(allNotificationForToday: event.status));
@@ -236,9 +234,7 @@ class PrayNotificationSettingBloc
 
   FutureOr<void> _updateFajirNotification(_UpdateFajirNotification event,
       Emitter<PrayNotificationSettingState> emit) async {
-    print("XXxxx ${event.status}");
     await _box.put(LocalNotificationConstant.disableFajr, event.status);
-
     //TODO
     emit(state.copyWith(fajirNotification: event.status));
   }

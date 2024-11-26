@@ -153,8 +153,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     emit(state.copyWith(pageCount: currentPageNumber));
 
     final referanceSorahName =
-        QuranReferances.getSorahReferenceNameForLocalizationFromPageNumber(
-            currentPageNumber);
+        QuranReferances.getSurahReferenceNameFromPageNumber(currentPageNumber);
     add(QuranKareemEvent.updateSorahName(referanceSorahName));
 
     final referanceJozo2Name =

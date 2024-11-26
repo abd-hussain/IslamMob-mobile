@@ -54,7 +54,7 @@ class _TitleTableWidgetState extends State<TitleTableWidget> {
         child: CustomText(
           title: _phrases[_currentIndex],
           fontSize: 15,
-          textColor: const Color(0xff034061),
+          color: const Color(0xff034061),
           fontWeight: FontWeight.bold,
           textAlign: TextAlign.center,
         ),

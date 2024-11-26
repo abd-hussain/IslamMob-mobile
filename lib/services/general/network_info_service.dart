@@ -4,34 +4,33 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:islam_app/utils/exceptions.dart';
 
 class NetworkInfoService {
-  StreamController<bool> networkStateStreamControler =
-      StreamController.broadcast();
-  Connectivity connectivity = Connectivity();
+  final StreamController<bool> _networkStateController =
+      StreamController<bool>.broadcast();
+  final Connectivity _connectivity = Connectivity();
 
+  /// Initializes network connection monitoring.
   void initNetworkConnectionCheck() {
-    connectivity.onConnectivityChanged.distinct((previous, next) {
-      return previous != next;
-    }).listen((event) {
-      final isConnected = event.contains(ConnectivityResult.mobile) ||
-          event.contains(ConnectivityResult.wifi);
-      networkStateStreamControler.sink.add(isConnected);
+    _connectivity.onConnectivityChanged.listen((event) {
+      final isConnected = _isConnected(event);
+      _networkStateController.sink.add(isConnected);
     });
   }
 
-  Future<bool> checkConnectivityonLunching() async {
-    final List<ConnectivityResult> connectivityResult =
-        await connectivity.checkConnectivity();
+  /// Checks network connectivity on app launch.
+  Future<bool> checkConnectivityOnLaunch() async {
+    final connectivityResult = await _connectivity.checkConnectivity();
 
     if (_isConnected(connectivityResult)) {
-      final result = await _internetLookupCheck();
-      networkStateStreamControler.sink.add(result);
-      return result;
+      final isInternetAvailable = await _internetLookupCheck();
+      _networkStateController.sink.add(isInternetAvailable);
+      return isInternetAvailable;
     } else {
-      networkStateStreamControler.sink.add(false);
+      _networkStateController.sink.add(false);
       throw ConnectionException(message: 'No Internet Connection');
     }
   }
 
+  /// Determines if a given connectivity result indicates an active connection.
   bool _isConnected(List<ConnectivityResult> result) {
     return result.contains(ConnectivityResult.mobile) ||
         result.contains(ConnectivityResult.wifi) ||
@@ -40,21 +39,22 @@ class NetworkInfoService {
         result.contains(ConnectivityResult.other);
   }
 
+  /// Performs an Internet lookup check to confirm connectivity.
   Future<bool> _internetLookupCheck() async {
     try {
-      final value = await _lookup('google.com');
-
-      if (value.isNotEmpty && value[0].rawAddress.isNotEmpty) {
-        return true;
-      } else {
-        return false;
-      }
-    } catch (e) {
+      final lookupResult = await InternetAddress.lookup('google.com');
+      return lookupResult.isNotEmpty &&
+          lookupResult.first.rawAddress.isNotEmpty;
+    } catch (_) {
       return false;
     }
   }
 
-  Future<List<InternetAddress>> _lookup(String host) async {
-    return InternetAddress.lookup(host);
+  /// A stream providing real-time network state updates.
+  Stream<bool> get networkStateStream => _networkStateController.stream;
+
+  /// Disposes of resources used by the service.
+  void dispose() {
+    _networkStateController.close();
   }
 }

@@ -29,10 +29,10 @@ class NoPDFView extends StatelessWidget {
             CustomText(
               title: AppLocalizations.of(context)!.selectprintdetails,
               fontSize: 16,
-              maxLins: 2,
+              maxLines: 2,
               textAlign: TextAlign.center,
               fontWeight: FontWeight.bold,
-              textColor: const Color(0xff444444),
+              color: const Color(0xff444444),
             ),
             const SizedBox(height: 10),
             ElevatedButton(
@@ -54,7 +54,7 @@ class NoPDFView extends StatelessWidget {
                 title: AppLocalizations.of(context)!.selectprint,
                 fontSize: 16,
                 textAlign: TextAlign.center,
-                textColor: Colors.white,
+                color: Colors.white,
               ),
             )
           ],

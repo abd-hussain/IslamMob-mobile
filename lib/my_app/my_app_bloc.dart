@@ -42,7 +42,7 @@ class MyAppBloc {
 
   /// Initializes local notifications
   Future<void> _initializeLocalNotifications() async {
-    await LocalNotificationService.init();
+    await LocalNotificationService.initialize();
   }
 
   /// Initializes timezone data
@@ -87,6 +87,6 @@ class MyAppBloc {
   Future<bool> _hasInternetConnectivity() async {
     final networkInfoService = locator<NetworkInfoService>();
     networkInfoService.initNetworkConnectionCheck();
-    return networkInfoService.checkConnectivityonLunching();
+    return networkInfoService.checkConnectivityOnLaunch();
   }
 }

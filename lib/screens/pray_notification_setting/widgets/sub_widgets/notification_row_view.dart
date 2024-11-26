@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/models/app_model/pray_notification_settings.dart';
 import 'package:islam_app/screens/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:islam_app/utils/custom_switch.dart';
+import 'package:islam_app/shared_widgets/custom_switch.dart';
 
 class NotificationRowView extends StatelessWidget {
   final PrayerNotification prayerNotification;
@@ -30,7 +30,7 @@ class NotificationRowView extends StatelessWidget {
     return CustomText(
       title: prayerNotification.title,
       fontSize: 16,
-      textColor: const Color(0xff444444),
+      color: const Color(0xff444444),
       fontWeight: FontWeight.bold,
     );
   }
