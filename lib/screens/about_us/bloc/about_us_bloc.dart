@@ -12,78 +12,98 @@ part 'about_us_state.dart';
 part 'about_us_bloc.freezed.dart';
 
 class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
-  int _numRewardedLoadAttempts = 0;
-  AboutUsBloc() : super(const AboutUsState()) {
-    on<_UpdateRewardedAd>(_updateRewardedAd);
+  static const int _maxRewardedLoadAttempts = 3;
+  int _rewardedLoadAttempts = 0;
 
-    _createRewardedAd();
+  AboutUsBloc() : super(const AboutUsState()) {
+    on<_UpdateRewardedAd>(_handleUpdateRewardedAd);
+    _initializeRewardedAd();
   }
 
-  void _createRewardedAd() {
+  /// Initializes and loads a rewarded ad
+  void _initializeRewardedAd() {
     RewardedAd.load(
       adUnitId: AdHelper.rewardedAdUnitId,
       request: const AdRequest(),
-      rewardedAdLoadCallback:
-          RewardedAdLoadCallback(onAdLoaded: (RewardedAd rewardedAd) {
-        _numRewardedLoadAttempts = 0;
-        add(AboutUsEvent.updateRewardedAd(rewardedAd));
-      }, onAdFailedToLoad: (LoadAdError error) {
-        add(AboutUsEvent.updateRewardedAd(null));
-        _numRewardedLoadAttempts += 1;
-        if (_numRewardedLoadAttempts < 3) {
-          _createRewardedAd();
-        }
-      }),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (RewardedAd rewardedAd) {
+          _resetRewardedLoadAttempts();
+          add(AboutUsEvent.updateRewardedAd(rewardedAd));
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          _handleAdLoadFailure();
+        },
+      ),
     );
   }
 
-  void showRewardedAd(RewardedAd rewardedAd) {
-    rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
-      onAdShowedFullScreenContent: (RewardedAd ad) {
-        debugPrint('$ad onAdShowedFullScreenContent.');
-        FirebaseAnalytics.instance.logEvent(
-          name: "RewardedAd_AboutUsScreen",
-          parameters: {"status": "onAdShowedFullScreenContent"},
-        );
-      },
-      onAdDismissedFullScreenContent: (RewardedAd ad) {
-        debugPrint('$ad onAdDismissedFullScreenContent.');
-        FirebaseAnalytics.instance.logEvent(
-          name: "RewardedAd_AboutUsScreen",
-          parameters: {"status": "onAdDismissedFullScreenContent"},
-        );
-        ad.dispose();
-        _createRewardedAd();
-      },
-      onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
-        debugPrint('$ad onAdFailedToShowFullScreenContent: $error');
-        FirebaseAnalytics.instance.logEvent(
-          name: "RewardedAd_AboutUsScreen",
-          parameters: {
-            "status": "$ad onAdFailedToShowFullScreenContent: $error"
-          },
-        );
-        ad.dispose();
-        _createRewardedAd();
-      },
-    );
+  /// Resets the rewarded ad load attempts
+  void _resetRewardedLoadAttempts() {
+    _rewardedLoadAttempts = 0;
+  }
 
+  /// Handles a rewarded ad load failure
+  void _handleAdLoadFailure() {
+    _rewardedLoadAttempts++;
+    add(AboutUsEvent.updateRewardedAd(null));
+    if (_rewardedLoadAttempts < _maxRewardedLoadAttempts) {
+      _initializeRewardedAd();
+    }
+  }
+
+  /// Displays the rewarded ad
+  void showRewardedAd(RewardedAd rewardedAd) {
+    rewardedAd.fullScreenContentCallback = _createFullScreenContentCallback();
     rewardedAd.setImmersiveMode(true);
-    rewardedAd.show(onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
-      debugPrint(
-          '$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
-      FirebaseAnalytics.instance.logEvent(
-        name: "RewardedAd_AboutUsScreen",
-        parameters: {
-          "status":
-              "$ad with reward $RewardItem(${reward.amount}, ${reward.type})"
-        },
-      );
-    });
+    rewardedAd.show(
+      onUserEarnedReward: _handleUserEarnedReward,
+    );
     add(AboutUsEvent.updateRewardedAd(null));
   }
 
-  FutureOr<void> _updateRewardedAd(
+  /// Creates a full-screen content callback for the rewarded ad
+  FullScreenContentCallback<RewardedAd> _createFullScreenContentCallback() {
+    return FullScreenContentCallback(
+      onAdShowedFullScreenContent: (RewardedAd ad) => _logAdEvent(
+        ad,
+        "onAdShowedFullScreenContent",
+      ),
+      onAdDismissedFullScreenContent: (RewardedAd ad) {
+        _logAdEvent(ad, "onAdDismissedFullScreenContent");
+        ad.dispose();
+        _initializeRewardedAd();
+      },
+      onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
+        _logAdEvent(ad, "onAdFailedToShowFullScreenContent: $error");
+        ad.dispose();
+        _initializeRewardedAd();
+      },
+    );
+  }
+
+  /// Handles the user earning a reward
+  void _handleUserEarnedReward(AdWithoutView ad, RewardItem reward) {
+    debugPrint(
+      '$ad with reward RewardItem(${reward.amount}, ${reward.type})',
+    );
+    FirebaseAnalytics.instance.logEvent(
+      name: "RewardedAd_AboutUsScreen",
+      parameters: {
+        "status": "RewardItem(${reward.amount}, ${reward.type})",
+      },
+    );
+  }
+
+  /// Logs ad-related events
+  void _logAdEvent(RewardedAd ad, String status) {
+    debugPrint('$ad $status');
+    FirebaseAnalytics.instance.logEvent(
+      name: "RewardedAd_AboutUsScreen",
+      parameters: {"status": status},
+    );
+  }
+
+  FutureOr<void> _handleUpdateRewardedAd(
       _UpdateRewardedAd event, Emitter<AboutUsState> emit) {
     emit(state.copyWith(rewardedAd: event.value));
   }

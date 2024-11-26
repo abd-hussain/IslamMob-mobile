@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/screens/inboarding/widgets/notification/bloc/notifications_bloc.dart';
+import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/services/general/notification_service.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -36,32 +38,48 @@ class NotificationIdleView extends StatelessWidget {
           enableButton: true,
           buttonTitle: AppLocalizations.of(context)!.allowNotifications,
           onTap: () async {
-            final mainContext = context.read<NotificationsBloc>();
-            mainContext.add(
+            if (await locator<NetworkInfoService>()
+                    .checkConnectivityonLunching() ==
+                false) {
+              // ignore: use_build_context_synchronously
+              showNoInternetConnection(context);
+              return;
+            }
+
+            // ignore: use_build_context_synchronously
+            final notificationsBloc = context.read<NotificationsBloc>();
+
+            // Update status to loading
+            notificationsBloc.add(
               const NotificationsEvent.changeNotificationStatus(
                 status: NotificationsProcessStateLoading(),
               ),
             );
 
-            final bool notificationsDetails =
+            // Check and request notification permission
+            final hasPermission =
                 await NotificationService().checkAndRequestPermission();
 
-            if (notificationsDetails) {
-              mainContext.add(
-                const NotificationsEvent.changeNotificationStatus(
-                  status: NotificationsProcessStateHavePermission(),
-                ),
-              );
-            } else {
-              mainContext.add(
-                const NotificationsEvent.changeNotificationStatus(
-                  status: NotificationsProcessStateNoPermission(),
-                ),
-              );
-            }
+            // Update status based on permission result
+            final newStatus = hasPermission
+                ? const NotificationsProcessStateHavePermission()
+                : const NotificationsProcessStateNoPermission();
+
+            notificationsBloc.add(
+              NotificationsEvent.changeNotificationStatus(status: newStatus),
+            );
           },
         ),
       ],
+    );
+  }
+
+  void showNoInternetConnection(BuildContext context) {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    scaffoldMessenger.showSnackBar(
+      SnackBar(
+          content: Text(
+              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

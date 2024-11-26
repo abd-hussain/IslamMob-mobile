@@ -22,103 +22,95 @@ class InBoardingScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Expanded(child: SizedBox()),
-                  Image.asset(
-                    "assets/images/logoz/logo.png",
-                    width: 50,
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(
-                          title: AppLocalizations.of(context)!.appName,
-                          fontSize: 20,
-                          textColor: const Color(0xff292929),
-                          fontWeight: FontWeight.bold,
-                          textAlign: TextAlign.center,
-                          maxLins: 3,
-                        ),
-                        CustomText(
-                          title: AppLocalizations.of(context)!.appshortdesc,
-                          fontSize: 12,
-                          textColor: const Color(0xff292929),
-                          fontWeight: FontWeight.bold,
-                          textAlign: TextAlign.center,
-                          maxLins: 3,
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Expanded(child: SizedBox()),
-                ],
-              ),
+              _buildHeader(context),
               const SizedBox(height: 10),
-              Expanded(
-                child: BlocBuilder<InboardingBloc, InboardingState>(
-                  buildWhen: (previous, current) =>
-                      previous.inBoardingStage != current.inBoardingStage,
-                  builder: (context, state) {
-                    final mainContext = context.read<InboardingBloc>();
+              _buildBody(context),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-                    switch (state.inBoardingStage) {
-                      case 0:
-                        return LanguageInBoardingView(
-                          onSelectLanguage: (langCode) async {
-                            await mainContext.setLanguageInStorage(
-                                context, langCode);
-                            await mainContext.changeOnBoardingStage(1);
-                          },
-                        );
-                      case 1:
-                        return LocationInBoardingView(
-                          onSelectLocation: (
-                              {required city,
-                              required country,
-                              required latitude,
-                              required longitude,
-                              required street,
-                              required subCity,
-                              required thoroughfare}) async {
-                            mainContext.setLocationInStorage(
-                                country: country,
-                                city: city,
-                                subCity: subCity,
-                                latitude: latitude,
-                                longitude: longitude,
-                                street: street,
-                                thoroughfare: thoroughfare);
-                            await mainContext.changeOnBoardingStage(2);
-                          },
-                        );
-                      case 2:
-                        return NotificationInBoardingView(
-                          onSelect: (token) async {
-                            final navigator =
-                                Navigator.of(context, rootNavigator: true);
-                            if (token != null) {
-                              await mainContext
-                                  .setNotificationTokenInStorage(token);
-                            }
-                            await mainContext.finishInBoarding();
-                            await navigator.pushNamedAndRemoveUntil(
-                              RoutesConstants.mainContainer,
-                              (Route<dynamic> route) => false,
-                            );
-                          },
-                        );
-                      default:
-                        return const SizedBox.shrink();
-                    }
-                  },
-                ),
+  /// Builds the header section with the logo and app information
+  Widget _buildHeader(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Expanded(child: SizedBox()),
+        Image.asset(
+          "assets/images/logoz/logo.png",
+          width: 50,
+        ),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText(
+                title: AppLocalizations.of(context)!.appName,
+                fontSize: 20,
+                textColor: const Color(0xff292929),
+                fontWeight: FontWeight.bold,
+                textAlign: TextAlign.center,
+                maxLins: 3,
+              ),
+              CustomText(
+                title: AppLocalizations.of(context)!.appshortdesc,
+                fontSize: 12,
+                textColor: const Color(0xff292929),
+                fontWeight: FontWeight.bold,
+                textAlign: TextAlign.center,
+                maxLins: 3,
               ),
             ],
           ),
         ),
+        const Expanded(child: SizedBox()),
+      ],
+    );
+  }
+
+  /// Builds the main body of the onboarding screen
+  Widget _buildBody(BuildContext context) {
+    return Expanded(
+      child: BlocBuilder<InboardingBloc, InboardingState>(
+        buildWhen: (previous, current) =>
+            previous.inBoardingStage != current.inBoardingStage,
+        builder: (context, state) {
+          final bloc = context.read<InboardingBloc>();
+          switch (state.inBoardingStage) {
+            case 0:
+              return LanguageInBoardingView(
+                onSelectLanguage: (langCode) async {
+                  await bloc.setLanguage(context, langCode);
+                  await bloc.changeInBoardingStage(1);
+                },
+              );
+            case 1:
+              return LocationInBoardingView(
+                onSelectLocation: (location) async {
+                  bloc.setLocation(location);
+                  await bloc.changeInBoardingStage(2);
+                },
+              );
+            case 2:
+              return NotificationInBoardingView(
+                onSelect: (token) async {
+                  final navigator = Navigator.of(context, rootNavigator: true);
+                  if (token != null) {
+                    await bloc.setNotificationToken(token);
+                  }
+                  await bloc.finishInBoarding();
+                  await navigator.pushNamedAndRemoveUntil(
+                    RoutesConstants.mainContainer,
+                    (Route<dynamic> route) => false,
+                  );
+                },
+              );
+            default:
+              return const SizedBox.shrink();
+          }
+        },
       ),
     );
   }

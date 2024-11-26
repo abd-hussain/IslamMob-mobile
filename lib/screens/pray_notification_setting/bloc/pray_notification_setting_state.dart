@@ -4,16 +4,16 @@ part of 'pray_notification_setting_bloc.dart';
 class PrayNotificationSettingState with _$PrayNotificationSettingState {
   const factory PrayNotificationSettingState({
     @Default(false) bool allowAllNotifications,
-    @Default(false) bool nextPrayNotification,
     @Default(false) bool allNotificationForToday,
     @Default(false) bool allNotificationForThreeDay,
     @Default(false) bool allNotificationForWeekDay,
-    @Default(false) bool fajirNotification,
-    @Default(false) bool duhirNotification,
-    @Default(false) bool asrNotification,
-    @Default(false) bool magriebNotification,
-    @Default(false) bool ishaNotification,
-    @Default(false) bool adkarNotification,
+    @Default(true) bool fajirNotification,
+    @Default(true) bool duhirNotification,
+    @Default(true) bool asrNotification,
+    @Default(true) bool magriebNotification,
+    @Default(true) bool ishaNotification,
+    @Default(true) bool adkarNotification,
+    @Default(false) bool applicationNotification,
     @Default(PrayNotificationSettingProcessState.idl()) loadingStatus,
   }) = _PrayNotificationSettingState;
 }

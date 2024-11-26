@@ -7,6 +7,7 @@ import 'package:islam_app/screens/home_tab/widgets/notification_permission_view.
 import 'package:islam_app/screens/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
 import 'package:islam_app/shared_widgets/admob_banner.dart';
 
+//TODO: This tree need to be refactored
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 

@@ -45,7 +45,7 @@ class CollectionListOptionView extends StatelessWidget {
                       listOfOptions[index].icon,
                       size: 20,
                       color: listOfOptions[index].avaliable
-                          ? listOfOptions[index].iconColor
+                          ? const Color(0xff007F37)
                           : Colors.grey,
                     ),
                     const SizedBox(width: 8),
@@ -56,7 +56,7 @@ class CollectionListOptionView extends StatelessWidget {
                             title: listOfOptions[index].name,
                             fontSize: 16,
                             textColor: listOfOptions[index].avaliable
-                                ? listOfOptions[index].nameColor
+                                ? const Color(0xff292929)
                                 : Colors.grey,
                             fontWeight: FontWeight.bold),
                         if (listOfOptions[index].subtitle != "")
@@ -64,7 +64,7 @@ class CollectionListOptionView extends StatelessWidget {
                               title: listOfOptions[index].subtitle,
                               fontSize: 12,
                               textColor: listOfOptions[index].avaliable
-                                  ? listOfOptions[index].nameColor
+                                  ? const Color(0xff292929)
                                   : Colors.grey,
                               fontWeight: FontWeight.w500)
                         else

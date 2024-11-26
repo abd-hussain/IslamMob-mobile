@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/models/app_model/location.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/screens/inboarding/widgets/location/bloc/location_bloc.dart';
+import 'package:islam_app/services/general/network_info_service.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -35,43 +38,50 @@ class LocationIdleView extends StatelessWidget {
           enableButton: true,
           buttonTitle: AppLocalizations.of(context)!.allowgetlocation,
           onTap: () async {
-            final mainContext = context.read<LocationBloc>();
-            mainContext.add(
+            if (await locator<NetworkInfoService>()
+                    .checkConnectivityonLunching() ==
+                false) {
+              // ignore: use_build_context_synchronously
+              showNoInternetConnection(context);
+              return;
+            }
+
+            // ignore: use_build_context_synchronously
+            final locationBloc = context.read<LocationBloc>();
+
+            // Set state to loading
+            locationBloc.add(
               const LocationEvent.changeLocationStatus(
                 status: LocationProcessStateLoading(),
               ),
             );
+
+            // Request location details
             final locationDetails =
                 await LocationService().getLocationDetails();
 
             if (locationDetails.containsKey('error')) {
-              mainContext.add(
+              /// Handles the case when location permission is not granted
+              locationBloc.add(
                 const LocationEvent.changeLocationStatus(
                   status: LocationProcessStateNoPermission(),
                 ),
               );
             } else {
-              final countryName = locationDetails['country'] ?? "";
-              final cityName = locationDetails['city'] ?? "";
-              final subCityName = locationDetails['subCity'] ?? "";
-              final street = locationDetails['street'] ?? "";
-              final thoroughfare = locationDetails['thoroughfare'] ?? "";
-              final latitude = locationDetails['latitude'] ?? "";
-              final longitude = locationDetails['longitude'] ?? "";
-
-              mainContext.add(
-                LocationEvent.setCountryAndCityNames(
-                  cityName: cityName,
-                  countryName: countryName,
-                  subCityName: subCityName,
-                  street: street,
-                  latitude: latitude,
-                  longitude: longitude,
-                  thoroughfare: thoroughfare,
-                ),
+              final location = LocationModel(
+                country: locationDetails['country'] ?? "",
+                city: locationDetails['city'] ?? "",
+                subCity: locationDetails['subCity'] ?? "",
+                street: locationDetails['street'] ?? "",
+                latitude: locationDetails['latitude'] ?? "",
+                longitude: locationDetails['longitude'] ?? "",
+                thoroughfare: locationDetails['thoroughfare'] ?? "",
+              );
+              locationBloc.add(
+                LocationEvent.setCountryAndCityNames(location: location),
               );
 
-              mainContext.add(
+              locationBloc.add(
                 const LocationEvent.changeLocationStatus(
                   status: LocationProcessStateHavePermission(),
                 ),
@@ -80,6 +90,15 @@ class LocationIdleView extends StatelessWidget {
           },
         ),
       ],
+    );
+  }
+
+  void showNoInternetConnection(BuildContext context) {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    scaffoldMessenger.showSnackBar(
+      SnackBar(
+          content: Text(
+              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

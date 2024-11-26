@@ -33,7 +33,7 @@ mixin _$PrayCalculationSettingEvent {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -44,7 +44,7 @@ mixin _$PrayCalculationSettingEvent {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,7 +63,7 @@ mixin _$PrayCalculationSettingEvent {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -74,7 +74,7 @@ mixin _$PrayCalculationSettingEvent {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,7 +93,7 @@ mixin _$PrayCalculationSettingEvent {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -104,7 +104,7 @@ mixin _$PrayCalculationSettingEvent {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -316,7 +316,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -327,7 +327,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateFajirTime(fajirTime);
   }
@@ -349,7 +349,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -360,7 +360,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateFajirTime?.call(fajirTime);
   }
@@ -382,7 +382,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -393,7 +393,7 @@ class _$UpdateFajirTimeImpl implements _UpdateFajirTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateFajirTime != null) {
@@ -611,7 +611,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -622,7 +622,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateSunriseTime(sunriseTime);
   }
@@ -644,7 +644,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -655,7 +655,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateSunriseTime?.call(sunriseTime);
   }
@@ -677,7 +677,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -688,7 +688,7 @@ class _$UpdateSunriseTimeImpl implements _UpdateSunriseTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateSunriseTime != null) {
@@ -905,7 +905,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -916,7 +916,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateDuherTime(duherTime);
   }
@@ -938,7 +938,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -949,7 +949,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateDuherTime?.call(duherTime);
   }
@@ -971,7 +971,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -982,7 +982,7 @@ class _$UpdateDuherTimeImpl implements _UpdateDuherTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateDuherTime != null) {
@@ -1197,7 +1197,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -1208,7 +1208,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateAsrTime(asrTime);
   }
@@ -1230,7 +1230,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -1241,7 +1241,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateAsrTime?.call(asrTime);
   }
@@ -1263,7 +1263,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -1274,7 +1274,7 @@ class _$UpdateAsrTimeImpl implements _UpdateAsrTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateAsrTime != null) {
@@ -1491,7 +1491,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -1502,7 +1502,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateMegribTime(megribTime);
   }
@@ -1524,7 +1524,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -1535,7 +1535,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateMegribTime?.call(megribTime);
   }
@@ -1557,7 +1557,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -1568,7 +1568,7 @@ class _$UpdateMegribTimeImpl implements _UpdateMegribTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMegribTime != null) {
@@ -1785,7 +1785,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -1796,7 +1796,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateIshaTime(ishaTime);
   }
@@ -1818,7 +1818,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -1829,7 +1829,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateIshaTime?.call(ishaTime);
   }
@@ -1851,7 +1851,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -1862,7 +1862,7 @@ class _$UpdateIshaTimeImpl implements _UpdateIshaTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateIshaTime != null) {
@@ -2080,7 +2080,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -2091,7 +2091,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateMidleNighTime(midleNighTime);
   }
@@ -2113,7 +2113,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -2124,7 +2124,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateMidleNighTime?.call(midleNighTime);
   }
@@ -2146,7 +2146,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -2157,7 +2157,7 @@ class _$UpdateMidleNighTimeImpl implements _UpdateMidleNighTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMidleNighTime != null) {
@@ -2375,7 +2375,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -2386,7 +2386,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateLast3thTime(last3thTime);
   }
@@ -2408,7 +2408,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -2419,7 +2419,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateLast3thTime?.call(last3thTime);
   }
@@ -2441,7 +2441,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -2452,7 +2452,7 @@ class _$UpdateLast3thTimeImpl implements _UpdateLast3thTime {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateLast3thTime != null) {
@@ -2679,7 +2679,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -2690,7 +2690,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateMathhab(mathhab);
   }
@@ -2712,7 +2712,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -2723,7 +2723,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateMathhab?.call(mathhab);
   }
@@ -2745,7 +2745,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -2756,7 +2756,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateMathhab != null) {
@@ -2987,7 +2987,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -2998,7 +2998,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateCalculationMethod(method);
   }
@@ -3020,7 +3020,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -3031,7 +3031,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateCalculationMethod?.call(method);
   }
@@ -3053,7 +3053,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -3064,7 +3064,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateCalculationMethod != null) {
@@ -3281,7 +3281,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -3292,7 +3292,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateTimeZone(value);
   }
@@ -3314,7 +3314,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -3325,7 +3325,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateTimeZone?.call(value);
   }
@@ -3347,7 +3347,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -3358,7 +3358,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateTimeZone != null) {
@@ -3574,7 +3574,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -3585,7 +3585,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateButtonsStatus(status);
   }
@@ -3607,7 +3607,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -3618,7 +3618,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateButtonsStatus?.call(status);
   }
@@ -3640,7 +3640,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -3651,7 +3651,7 @@ class _$UpdateButtonsStatusImpl implements _UpdateButtonsStatus {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateButtonsStatus != null) {
@@ -3882,7 +3882,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -3893,7 +3893,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateApplicationAndDeviceTimeStatus(appTime, deviceTime);
   }
@@ -3915,7 +3915,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -3926,7 +3926,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateApplicationAndDeviceTimeStatus?.call(appTime, deviceTime);
   }
@@ -3948,7 +3948,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -3959,7 +3959,7 @@ class _$UpdateApplicationAndDeviceTimeStatusImpl
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateApplicationAndDeviceTimeStatus != null) {
@@ -4100,6 +4100,8 @@ abstract class _$$FactoryResetImplCopyWith<$Res> {
   factory _$$FactoryResetImplCopyWith(
           _$FactoryResetImpl value, $Res Function(_$FactoryResetImpl) then) =
       __$$FactoryResetImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool status});
 }
 
 /// @nodoc
@@ -4112,26 +4114,51 @@ class __$$FactoryResetImplCopyWithImpl<$Res>
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$FactoryResetImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$FactoryResetImpl implements _FactoryReset {
-  _$FactoryResetImpl();
+  _$FactoryResetImpl({required this.status});
+
+  @override
+  final bool status;
 
   @override
   String toString() {
-    return 'PrayCalculationSettingEvent.factoryReset()';
+    return 'PrayCalculationSettingEvent.factoryReset(status: $status)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FactoryResetImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$FactoryResetImpl &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, status);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FactoryResetImplCopyWith<_$FactoryResetImpl> get copyWith =>
+      __$$FactoryResetImplCopyWithImpl<_$FactoryResetImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4151,7 +4178,7 @@ class _$FactoryResetImpl implements _FactoryReset {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -4162,9 +4189,9 @@ class _$FactoryResetImpl implements _FactoryReset {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
-    return factoryReset();
+    return factoryReset(status);
   }
 
   @override
@@ -4184,7 +4211,7 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -4195,9 +4222,9 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
-    return factoryReset?.call();
+    return factoryReset?.call(status);
   }
 
   @override
@@ -4217,7 +4244,7 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -4228,11 +4255,11 @@ class _$FactoryResetImpl implements _FactoryReset {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (factoryReset != null) {
-      return factoryReset();
+      return factoryReset(status);
     }
     return orElse();
   }
@@ -4348,7 +4375,15 @@ class _$FactoryResetImpl implements _FactoryReset {
 }
 
 abstract class _FactoryReset implements PrayCalculationSettingEvent {
-  factory _FactoryReset() = _$FactoryResetImpl;
+  factory _FactoryReset({required final bool status}) = _$FactoryResetImpl;
+
+  bool get status;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FactoryResetImplCopyWith<_$FactoryResetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4436,7 +4471,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -4447,7 +4482,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return editFajirTimeManual(value);
   }
@@ -4469,7 +4504,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -4480,7 +4515,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return editFajirTimeManual?.call(value);
   }
@@ -4502,7 +4537,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -4513,7 +4548,7 @@ class _$EditFajirTimeManualImpl implements _EditFajirTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (editFajirTimeManual != null) {
@@ -4731,7 +4766,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -4742,7 +4777,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return editSunriseTimeManual(value);
   }
@@ -4764,7 +4799,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -4775,7 +4810,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return editSunriseTimeManual?.call(value);
   }
@@ -4797,7 +4832,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -4808,7 +4843,7 @@ class _$EditSunriseTimeManualImpl implements _EditSunriseTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (editSunriseTimeManual != null) {
@@ -5025,7 +5060,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -5036,7 +5071,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return editDuhirTimeManual(value);
   }
@@ -5058,7 +5093,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -5069,7 +5104,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return editDuhirTimeManual?.call(value);
   }
@@ -5091,7 +5126,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -5102,7 +5137,7 @@ class _$EditDuhirTimeManualImpl implements _EditDuhirTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (editDuhirTimeManual != null) {
@@ -5319,7 +5354,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -5330,7 +5365,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return editAsrTimeManual(value);
   }
@@ -5352,7 +5387,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -5363,7 +5398,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return editAsrTimeManual?.call(value);
   }
@@ -5385,7 +5420,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -5396,7 +5431,7 @@ class _$EditAsrTimeManualImpl implements _EditAsrTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (editAsrTimeManual != null) {
@@ -5614,7 +5649,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -5625,7 +5660,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return editMagrebTimeManual(value);
   }
@@ -5647,7 +5682,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -5658,7 +5693,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return editMagrebTimeManual?.call(value);
   }
@@ -5680,7 +5715,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -5691,7 +5726,7 @@ class _$EditMagrebTimeManualImpl implements _EditMagrebTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (editMagrebTimeManual != null) {
@@ -5908,7 +5943,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -5919,7 +5954,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return editIshaTimeManual(value);
   }
@@ -5941,7 +5976,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -5952,7 +5987,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return editIshaTimeManual?.call(value);
   }
@@ -5974,7 +6009,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -5985,7 +6020,7 @@ class _$EditIshaTimeManualImpl implements _EditIshaTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (editIshaTimeManual != null) {
@@ -6204,7 +6239,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -6215,7 +6250,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return editMidNightTimeManual(value);
   }
@@ -6237,7 +6272,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -6248,7 +6283,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return editMidNightTimeManual?.call(value);
   }
@@ -6270,7 +6305,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -6281,7 +6316,7 @@ class _$EditMidNightTimeManualImpl implements _EditMidNightTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (editMidNightTimeManual != null) {
@@ -6500,7 +6535,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -6511,7 +6546,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return editLast3thTimeTimeManual(value);
   }
@@ -6533,7 +6568,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -6544,7 +6579,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return editLast3thTimeTimeManual?.call(value);
   }
@@ -6566,7 +6601,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -6577,7 +6612,7 @@ class _$EditLast3thTimeTimeManualImpl implements _EditLast3thTimeTimeManual {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (editLast3thTimeTimeManual != null) {
@@ -6811,7 +6846,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -6822,7 +6857,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
     return updateHightLatitudeCaluclation(state);
   }
@@ -6844,7 +6879,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -6855,7 +6890,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
     return updateHightLatitudeCaluclation?.call(state);
   }
@@ -6877,7 +6912,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -6888,7 +6923,7 @@ class _$UpdateHightLatitudeCaluclationImpl
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (updateHightLatitudeCaluclation != null) {
@@ -7028,6 +7063,8 @@ abstract class _$$SaveChangesImplCopyWith<$Res> {
   factory _$$SaveChangesImplCopyWith(
           _$SaveChangesImpl value, $Res Function(_$SaveChangesImpl) then) =
       __$$SaveChangesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool status});
 }
 
 /// @nodoc
@@ -7040,26 +7077,51 @@ class __$$SaveChangesImplCopyWithImpl<$Res>
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$SaveChangesImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SaveChangesImpl implements _SaveChanges {
-  _$SaveChangesImpl();
+  _$SaveChangesImpl({required this.status});
+
+  @override
+  final bool status;
 
   @override
   String toString() {
-    return 'PrayCalculationSettingEvent.saveChanges()';
+    return 'PrayCalculationSettingEvent.saveChanges(status: $status)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SaveChangesImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SaveChangesImpl &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, status);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveChangesImplCopyWith<_$SaveChangesImpl> get copyWith =>
+      __$$SaveChangesImplCopyWithImpl<_$SaveChangesImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7079,7 +7141,7 @@ class _$SaveChangesImpl implements _SaveChanges {
     required TResult Function(bool status) updateButtonsStatus,
     required TResult Function(String appTime, String deviceTime)
         updateApplicationAndDeviceTimeStatus,
-    required TResult Function() factoryReset,
+    required TResult Function(bool status) factoryReset,
     required TResult Function(int value) editFajirTimeManual,
     required TResult Function(int value) editSunriseTimeManual,
     required TResult Function(int value) editDuhirTimeManual,
@@ -7090,9 +7152,9 @@ class _$SaveChangesImpl implements _SaveChanges {
     required TResult Function(int value) editLast3thTimeTimeManual,
     required TResult Function(HightLatitudeCaluclationState state)
         updateHightLatitudeCaluclation,
-    required TResult Function() saveChanges,
+    required TResult Function(bool status) saveChanges,
   }) {
-    return saveChanges();
+    return saveChanges(status);
   }
 
   @override
@@ -7112,7 +7174,7 @@ class _$SaveChangesImpl implements _SaveChanges {
     TResult? Function(bool status)? updateButtonsStatus,
     TResult? Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult? Function()? factoryReset,
+    TResult? Function(bool status)? factoryReset,
     TResult? Function(int value)? editFajirTimeManual,
     TResult? Function(int value)? editSunriseTimeManual,
     TResult? Function(int value)? editDuhirTimeManual,
@@ -7123,9 +7185,9 @@ class _$SaveChangesImpl implements _SaveChanges {
     TResult? Function(int value)? editLast3thTimeTimeManual,
     TResult? Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult? Function()? saveChanges,
+    TResult? Function(bool status)? saveChanges,
   }) {
-    return saveChanges?.call();
+    return saveChanges?.call(status);
   }
 
   @override
@@ -7145,7 +7207,7 @@ class _$SaveChangesImpl implements _SaveChanges {
     TResult Function(bool status)? updateButtonsStatus,
     TResult Function(String appTime, String deviceTime)?
         updateApplicationAndDeviceTimeStatus,
-    TResult Function()? factoryReset,
+    TResult Function(bool status)? factoryReset,
     TResult Function(int value)? editFajirTimeManual,
     TResult Function(int value)? editSunriseTimeManual,
     TResult Function(int value)? editDuhirTimeManual,
@@ -7156,11 +7218,11 @@ class _$SaveChangesImpl implements _SaveChanges {
     TResult Function(int value)? editLast3thTimeTimeManual,
     TResult Function(HightLatitudeCaluclationState state)?
         updateHightLatitudeCaluclation,
-    TResult Function()? saveChanges,
+    TResult Function(bool status)? saveChanges,
     required TResult orElse(),
   }) {
     if (saveChanges != null) {
-      return saveChanges();
+      return saveChanges(status);
     }
     return orElse();
   }
@@ -7276,7 +7338,15 @@ class _$SaveChangesImpl implements _SaveChanges {
 }
 
 abstract class _SaveChanges implements PrayCalculationSettingEvent {
-  factory _SaveChanges() = _$SaveChangesImpl;
+  factory _SaveChanges({required final bool status}) = _$SaveChangesImpl;
+
+  bool get status;
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SaveChangesImplCopyWith<_$SaveChangesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

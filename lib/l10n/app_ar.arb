@@ -344,7 +344,8 @@
     "notificationSettingAsr" : "إشعارات أذان العصر",
     "notificationSettingMagrieb" : "إشعارات أذان المغرب",
     "notificationSettingIsha" : "إشعارات أذان العشاء",
-    "notificationSettingAzkar" : "إشعارات الأذكار"
+    "notificationSettingAzkar" : "إشعارات الأذكار",
+    "notificationSettingApplication" : "إشعارات التطبيق"
 
 
 

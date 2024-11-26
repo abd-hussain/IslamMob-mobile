@@ -46,6 +46,10 @@ class PrayNotificationSettingEvent with _$PrayNotificationSettingEvent {
     required bool status,
   }) = _UpdateAdkarNotification;
 
+  const factory PrayNotificationSettingEvent.updateApplicationNotification({
+    required bool status,
+  }) = _UpdateApplicationNotification;
+
   const factory PrayNotificationSettingEvent.updateLoadingStatus({
     required bool status,
   }) = _UpdateLoadingStatus;

@@ -9,7 +9,7 @@ import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/screens/home_tab/widgets/home_header_view/bloc/home_header_bloc.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/day_time.dart';
-import 'package:islam_app/utils/pray_manager.dart';
+import 'package:islam_app/services/general/pray_manager.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
@@ -41,12 +41,22 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
     //TODO: this need to be fixed
     //TODO: Time is not equil other app
     return PrayManager(
-      coordinates: Coordinates(31.913932, 35.925581),
-      utcOffset: const Duration(hours: 2),
-      calculationMethod: CalculationMethod.ummAlQura,
-      madhab: Madhab.hanafi,
+      coordinates: Coordinates(_getLatitude(), _getLongitude()),
+      utcOffset: const Duration(hours: 3),
+      calculationMethod: CalculationMethod.jordan,
+      madhab: Madhab.shafi,
       specificDate: DateComponents(date.year, date.month, date.day),
     );
+  }
+
+  double _getLatitude() {
+    return double.parse(
+        _box.get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0"));
+  }
+
+  double _getLongitude() {
+    return double.parse(
+        _box.get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0"));
   }
 
   void _preparePrayerTimings() {

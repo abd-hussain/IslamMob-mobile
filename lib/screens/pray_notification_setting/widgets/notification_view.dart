@@ -10,25 +10,33 @@ class NotificationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 0.5,
-            blurRadius: 5,
-            offset: const Offset(0, 0.1),
-          ),
-        ],
-      ),
+      decoration: _containerDecoration(),
       child: Column(
-        children: [
-          for (final prayerNotification in prayerNotifications) ...[
-            NotificationRowView(prayerNotification: prayerNotification),
-            const Divider(height: 1, color: Colors.grey),
-          ],
-        ],
+        children: _buildNotificationRows(),
       ),
     );
+  }
+
+  BoxDecoration _containerDecoration() {
+    return BoxDecoration(
+      color: Colors.white,
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.withOpacity(0.5),
+          spreadRadius: 0.5,
+          blurRadius: 5,
+          offset: const Offset(0, 0.1),
+        ),
+      ],
+    );
+  }
+
+  List<Widget> _buildNotificationRows() {
+    return prayerNotifications
+        .expand((prayerNotification) => [
+              NotificationRowView(prayerNotification: prayerNotification),
+              const Divider(height: 1, color: Colors.grey),
+            ])
+        .toList();
   }
 }
