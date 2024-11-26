@@ -31,7 +31,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
                             title:
                                 "${AppLocalizations.of(context)!.quranSorah} ${AppLocalizations.of(context)!.getLocalizedString(state.sorahName)}",
                             fontSize: 14,
-                            textColor: Colors.white70,
+                            color: Colors.white70,
                             fontWeight: FontWeight.bold,
                           );
                         },
@@ -45,7 +45,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
                             title: AppLocalizations.of(context)!
                                 .getLocalizedString(state.jozo2Name),
                             fontSize: 14,
-                            textColor: Colors.white70,
+                            color: Colors.white70,
                             fontWeight: FontWeight.bold,
                           );
                         },
@@ -61,7 +61,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
                       return CustomText(
                         title: state.pageCount.toString(),
                         fontSize: 20,
-                        textColor: Colors.white70,
+                        color: Colors.white70,
                         fontWeight: FontWeight.bold,
                       );
                     },

@@ -17,7 +17,7 @@ class HttpRepository {
     Model? postBody,
     FormData? formData,
   }) async {
-    if (!await locator<NetworkInfoService>().checkConnectivityonLunching()) {
+    if (!await locator<NetworkInfoService>().checkConnectivityOnLaunch()) {
       throw ConnectionException(
           message: "Please check your internet connection");
     }

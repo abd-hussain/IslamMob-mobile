@@ -18,26 +18,24 @@ class NoInternetView extends StatelessWidget {
               title: AppLocalizations.of(context)!.internetconnection,
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              textColor: const Color(0xff444444),
+              color: const Color(0xff444444),
             ),
             CustomText(
               title: AppLocalizations.of(context)!
                   .intenetshouldbeenableforthispage,
               fontSize: 14,
-              maxLins: 2,
+              maxLines: 2,
               textAlign: TextAlign.center,
-              textColor: const Color(0xff444444),
+              color: const Color(0xff444444),
             ),
             ElevatedButton(
-              onPressed: () {
-                retryCallback();
-              },
+              onPressed: () => retryCallback(),
               child: CustomText(
                 title: AppLocalizations.of(context)!.titleofretry,
                 fontSize: 14,
-                maxLins: 2,
+                maxLines: 2,
                 textAlign: TextAlign.center,
-                textColor: Colors.white,
+                color: Colors.white,
               ),
             )
           ],

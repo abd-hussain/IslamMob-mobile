@@ -4,47 +4,27 @@ import 'package:geolocator/geolocator.dart';
 import 'package:islam_app/utils/logger.dart';
 
 class LocationService {
-  /// Get the current country, city, and sub-city
+  /// Retrieves detailed location information including country, city, and coordinates.
   Future<Map<String, String>> getLocationDetails() async {
-    if (!await _handleLocationPermission()) {
+    if (!await _checkLocationPermission()) {
       return {'error': 'No-Permission'};
     }
 
     try {
-      final Position position = await Geolocator.getCurrentPosition();
-      final placemarks = await placemarkFromCoordinates(
-        position.latitude,
-        position.longitude,
-      );
-
-      if (placemarks.isNotEmpty) {
-        final placemark = placemarks[0];
-        return {
-          'country': placemark.country ?? 'Unknown',
-          'city': placemark.locality ?? 'Unknown',
-          'subCity': placemark.subLocality ?? 'Unknown',
-          'street': placemark.street ?? 'Unknown',
-          'administrativeArea': placemark.administrativeArea ?? 'Unknown',
-          'subAdministrativeArea': placemark.subAdministrativeArea ?? 'Unknown',
-          'isoCountryCode': placemark.isoCountryCode ?? 'Unknown',
-          'thoroughfare': placemark.thoroughfare ?? 'Unknown',
-          'subThoroughfare': placemark.subThoroughfare ?? 'Unknown',
-          'name': placemark.name ?? 'Unknown',
-          'latitude': position.latitude.toString(),
-          'longitude': position.longitude.toString(),
-        };
-      }
+      final position = await Geolocator.getCurrentPosition();
+      return await _getPlacemarkDetails(position);
     } on PlatformException catch (e) {
-      await _logPlatformException(e);
+      _logPlatformException(e);
     } catch (e) {
       logDebugMessage(message: "Unexpected error: $e");
     }
     return {'error': 'Error retrieving location'};
   }
 
-  /// Handle location permissions
-  Future<bool> _handleLocationPermission() async {
+  /// Checks and requests location permissions.
+  Future<bool> _checkLocationPermission() async {
     if (!await Geolocator.isLocationServiceEnabled()) {
+      logDebugMessage(message: "Location services are disabled.");
       return false;
     }
 
@@ -53,12 +33,45 @@ class LocationService {
       permission = await Geolocator.requestPermission();
     }
 
-    return permission != LocationPermission.deniedForever &&
-        permission != LocationPermission.denied;
+    if (permission == LocationPermission.deniedForever) {
+      logDebugMessage(message: "Location permissions are permanently denied.");
+      return false;
+    }
+
+    return permission != LocationPermission.denied;
   }
 
-  /// Log platform exceptions
-  Future<void> _logPlatformException(PlatformException e) async {
-    logDebugMessage(message: e.message ?? "An error occurred");
+  /// Retrieves placemark details from coordinates.
+  Future<Map<String, String>> _getPlacemarkDetails(Position position) async {
+    final placemarks = await placemarkFromCoordinates(
+      position.latitude,
+      position.longitude,
+    );
+
+    if (placemarks.isNotEmpty) {
+      final placemark = placemarks.first;
+      return {
+        'country': placemark.country ?? 'Unknown',
+        'city': placemark.locality ?? 'Unknown',
+        'subCity': placemark.subLocality ?? 'Unknown',
+        'street': placemark.street ?? 'Unknown',
+        'administrativeArea': placemark.administrativeArea ?? 'Unknown',
+        'subAdministrativeArea': placemark.subAdministrativeArea ?? 'Unknown',
+        'isoCountryCode': placemark.isoCountryCode ?? 'Unknown',
+        'thoroughfare': placemark.thoroughfare ?? 'Unknown',
+        'subThoroughfare': placemark.subThoroughfare ?? 'Unknown',
+        'name': placemark.name ?? 'Unknown',
+        'latitude': position.latitude.toString(),
+        'longitude': position.longitude.toString(),
+      };
+    }
+
+    logDebugMessage(message: "No placemarks found for the given coordinates.");
+    return {'error': 'No placemarks found'};
+  }
+
+  /// Logs platform exceptions for debugging purposes.
+  void _logPlatformException(PlatformException e) {
+    logDebugMessage(message: e.message ?? "An unknown platform error occurred");
   }
 }

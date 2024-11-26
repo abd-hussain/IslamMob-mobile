@@ -90,7 +90,7 @@ class _BrightnessPopupState extends State<BrightnessPopup>
           child: CustomText(
             title: AppLocalizations.of(context)!.close,
             fontSize: 20,
-            textColor: Colors.white70,
+            color: Colors.white70,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -102,7 +102,7 @@ class _BrightnessPopupState extends State<BrightnessPopup>
           child: CustomText(
             title: AppLocalizations.of(context)!.resetbrightness,
             fontSize: 20,
-            textColor: Colors.white70,
+            color: Colors.white70,
             fontWeight: FontWeight.bold,
           ),
         ),

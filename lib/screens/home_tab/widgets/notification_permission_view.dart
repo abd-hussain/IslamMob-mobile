@@ -35,7 +35,7 @@ class NotificationPermissionView extends StatelessWidget {
                   CustomText(
                     title: AppLocalizations.of(context)!.allowNotifications,
                     fontSize: 16,
-                    textColor: const Color(0xff444444),
+                    color: const Color(0xff444444),
                     fontWeight: FontWeight.bold,
                   ),
                 ],
@@ -45,15 +45,14 @@ class NotificationPermissionView extends StatelessWidget {
                 title: AppLocalizations.of(context)!
                     .allowSendingNotificationsdetails,
                 fontSize: 14,
-                textColor: const Color(0xff444444),
-                maxLins: 10,
+                color: const Color(0xff444444),
+                maxLines: 10,
                 fontWeight: FontWeight.bold,
               ),
               CustomButton(
-                enableButton: true,
+                isEnabled: true,
                 padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-                buttonTitle:
-                    AppLocalizations.of(context)!.nolocationPermissionButton,
+                title: AppLocalizations.of(context)!.nolocationPermissionButton,
                 onTap: () async => await OpenMobileSettings().openAppSettings(),
               ),
             ],

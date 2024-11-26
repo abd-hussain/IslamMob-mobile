@@ -2,44 +2,50 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 
 class QuranReferances {
-  static final _box = Hive.box(DatabaseBoxConstant.userInfo);
+  static final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
+  /// Retrieves a field from the database or returns an empty map by default.
   static Map<dynamic, dynamic> _getDatabaseField(String fieldName) {
-    return _box.get(fieldName, defaultValue: {});
+    return _box.get(fieldName, defaultValue: <dynamic, dynamic>{});
   }
 
-  static String getSorahReferenceNameForLocalizationFromPageNumber(
-      int pageNumber) {
-    final sorahToPageNumbers =
+  /// Gets the Surah name for localization based on a given page number.
+  static String getSurahReferenceNameFromPageNumber(int pageNumber) {
+    final surahToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
-    return _getNearestLowerOrEqualKey(sorahToPageNumbers, pageNumber);
+    return _findNearestLowerOrEqualKey(surahToPageNumbers, pageNumber);
   }
 
-  static int getPageNumberFromSorahReferenceName(String sorahName) {
-    final sorahToPageNumbers =
+  /// Gets the page number from a given Surah reference name.
+  static int getPageNumberFromSurahReferenceName(String surahName) {
+    final surahToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
-    return sorahToPageNumbers[sorahName] ?? -1;
+    return surahToPageNumbers[surahName] ?? -1;
   }
 
-  static int getNumberOfPagesForTheSelectedPrint() {
-    final sorahToPageNumbers =
+  /// Gets the total number of pages for the selected Quran print.
+  static int getNumberOfPagesForSelectedPrint() {
+    final surahToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
-    return sorahToPageNumbers['quranSorahName114'] ?? -1;
+    return surahToPageNumbers['quranSorahName114'] ?? -1;
   }
 
+  /// Gets the Juz number based on a given page number.
   static String getJuzNumberFromPageNumber(int pageNumber) {
     final juzToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremJuz2ToPageNumbers);
-    return _getNearestLowerOrEqualKey(juzToPageNumbers, pageNumber);
+    return _findNearestLowerOrEqualKey(juzToPageNumbers, pageNumber);
   }
 
+  /// Gets the starting page number from a given Juz number.
   static int getPageNumberFromJuzNumber(String juzNumber) {
     final juzToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremJuz2ToPageNumbers);
     return juzToPageNumbers[juzNumber] ?? -1;
   }
 
-  static String _getNearestLowerOrEqualKey(
+  /// Finds the nearest lower or equal key in a map for a given page number.
+  static String _findNearestLowerOrEqualKey(
       Map<dynamic, dynamic> map, int pageNumber) {
     if (map.isEmpty) return '';
 
@@ -48,9 +54,10 @@ class QuranReferances {
 
     for (int i = sortedEntries.length - 1; i >= 0; i--) {
       if (sortedEntries[i].value <= pageNumber) {
-        return sortedEntries[i].key;
+        return sortedEntries[i].key.toString();
       }
     }
-    return ''; // Default if no matching key is found
+
+    return ''; // Default return if no matching key is found.
   }
 }

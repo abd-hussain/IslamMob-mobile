@@ -15,7 +15,7 @@ class SectionView extends StatelessWidget {
         CustomText(
           title: title,
           fontSize: 16,
-          textColor: const Color(0xff444444),
+          color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
         ),
         const SizedBox(height: 4),
@@ -25,8 +25,8 @@ class SectionView extends StatelessWidget {
             child: CustomText(
               title: desc,
               fontSize: 16,
-              textColor: const Color(0xff444444),
-              maxLins: 5,
+              color: const Color(0xff444444),
+              maxLines: 5,
             ),
           ),
         ),

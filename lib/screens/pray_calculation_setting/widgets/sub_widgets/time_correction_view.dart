@@ -38,9 +38,9 @@ class TimeCorrectionView extends StatelessWidget {
                 child: CustomText(
                   title: title,
                   fontSize: 14,
-                  textColor: const Color(0xff444444),
+                  color: const Color(0xff444444),
                   fontWeight: FontWeight.bold,
-                  maxLins: 2,
+                  maxLines: 2,
                 ),
               ),
               CounterView(

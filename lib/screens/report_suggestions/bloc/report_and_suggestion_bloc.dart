@@ -34,7 +34,7 @@ class ReportAndSuggestionBloc
   }
 
   Future<bool> _checkInternetConnectionStatus() async {
-    if (!await locator<NetworkInfoService>().checkConnectivityonLunching()) {
+    if (!await locator<NetworkInfoService>().checkConnectivityOnLaunch()) {
       add(ReportAndSuggestionEvent.updateInternetConnectionStatus(false));
       return false;
     } else {

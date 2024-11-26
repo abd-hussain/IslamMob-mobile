@@ -34,7 +34,7 @@ class FooterView extends StatelessWidget {
               const CustomText(
                 title: "|",
                 fontSize: 16,
-                textColor: Color(0xff444444),
+                color: Color(0xff444444),
                 fontWeight: FontWeight.bold,
               ),
               TextButton(
@@ -47,7 +47,7 @@ class FooterView extends StatelessWidget {
               const CustomText(
                 title: "|",
                 fontSize: 16,
-                textColor: Color(0xff444444),
+                color: Color(0xff444444),
                 fontWeight: FontWeight.bold,
               ),
               TextButton(
@@ -72,14 +72,14 @@ class FooterView extends StatelessWidget {
                   title:
                       "${AppLocalizations.of(context)!.version} ${snapshot.data}",
                   fontSize: 12,
-                  textColor: const Color(0xffBFBFBF),
+                  color: const Color(0xffBFBFBF),
                 );
               }),
           const SizedBox(height: 20),
           CustomText(
             title: AppLocalizations.of(context)!.rightsreserved,
             fontSize: 10,
-            textColor: const Color(0xff707070),
+            color: const Color(0xff707070),
           ),
           const SizedBox(height: 20),
         ],

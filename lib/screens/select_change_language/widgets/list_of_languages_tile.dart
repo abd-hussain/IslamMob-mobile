@@ -42,7 +42,7 @@ class ListOfLanguageTile extends StatelessWidget {
                   child: CustomText(
                     title: language.name,
                     fontSize: 16,
-                    textColor: const Color(0xff034061),
+                    color: const Color(0xff034061),
                   ),
                 ),
                 BlocBuilder<ChangeLanguageBloc, ChangeLanguageState>(

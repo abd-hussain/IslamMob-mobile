@@ -21,25 +21,25 @@ class NotificationIdleView extends StatelessWidget {
             title:
                 AppLocalizations.of(context)!.allowSendingNotificationsdetails,
             fontSize: 18,
-            textColor: const Color(0xff292929),
+            color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
             textAlign: TextAlign.center,
-            maxLins: 4,
+            maxLines: 4,
           ),
         ),
         CustomText(
           title: AppLocalizations.of(context)!.mawaqeetalsalahdetails2,
           fontSize: 14,
-          textColor: const Color(0xff292929),
+          color: const Color(0xff292929),
           textAlign: TextAlign.center,
         ),
         const Expanded(child: SizedBox()),
         CustomButton(
-          enableButton: true,
-          buttonTitle: AppLocalizations.of(context)!.allowNotifications,
+          isEnabled: true,
+          title: AppLocalizations.of(context)!.allowNotifications,
           onTap: () async {
             if (await locator<NetworkInfoService>()
-                    .checkConnectivityonLunching() ==
+                    .checkConnectivityOnLaunch() ==
                 false) {
               // ignore: use_build_context_synchronously
               showNoInternetConnection(context);

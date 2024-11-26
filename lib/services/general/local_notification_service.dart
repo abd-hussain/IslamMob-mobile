@@ -2,78 +2,101 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 
+enum NotificationSoundType {
+  fajir,
+  zuhr,
+  asr,
+  maghrib,
+  isha,
+}
+
 class LocalNotificationService {
-  static final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+  static final FlutterLocalNotificationsPlugin _notificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
-  static Future<void> init() async {
-    const AndroidInitializationSettings androidInitializationSettings =
+  /// Initializes the local notification service with platform-specific settings.
+  static Future<void> initialize() async {
+    const androidSettings =
         AndroidInitializationSettings("@mipmap/ic_launcher");
-    const DarwinInitializationSettings iOSInitializationSettings =
-        DarwinInitializationSettings();
+    const iOSSettings = DarwinInitializationSettings();
 
-    const InitializationSettings initializationSettings =
-        InitializationSettings(
-      android: androidInitializationSettings,
-      iOS: iOSInitializationSettings,
+    const initializationSettings = InitializationSettings(
+      android: androidSettings,
+      iOS: iOSSettings,
     );
 
-    await flutterLocalNotificationsPlugin.initialize(
+    await _notificationsPlugin.initialize(
       initializationSettings,
-      onDidReceiveNotificationResponse: _onDidReceiveNotification,
-      onDidReceiveBackgroundNotificationResponse: _onDidReceiveNotification,
+      onDidReceiveNotificationResponse: _handleNotificationResponse,
+      onDidReceiveBackgroundNotificationResponse: _handleNotificationResponse,
     );
 
-    await flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
-        ?.requestNotificationsPermission();
+    await _requestAndroidPermission();
   }
 
-  static Future<void> _onDidReceiveNotification(
-      NotificationResponse notificationResponse) async {
-    debugPrint("Notification receive");
+  /// Handles notification responses for both foreground and background events.
+  static Future<void> _handleNotificationResponse(
+      NotificationResponse response) async {
+    debugPrint("Notification received with payload: ${response.payload}");
   }
 
-  static Future<void> showInstantNotification(String title, String body) async {
-    const NotificationDetails platformChannelSpecifics = NotificationDetails(
-        android: AndroidNotificationDetails(
-          'instant_notification_channel_id',
-          'Instant Notifications',
-          importance: Importance.max,
-          priority: Priority.high,
-        ),
-        iOS: DarwinNotificationDetails());
+  /// Requests notification permission on Android devices.
+  static Future<void> _requestAndroidPermission() async {
+    final androidPlugin =
+        _notificationsPlugin.resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>();
+    if (androidPlugin != null) {
+      await androidPlugin.requestNotificationsPermission();
+    }
+  }
 
-    await flutterLocalNotificationsPlugin.show(
-      0,
-      title,
-      body,
-      platformChannelSpecifics,
-      payload: 'instant_notification',
+  /// Schedules a notification at the specified date and time.
+  static Future<void> scheduleNotification({
+    required int id,
+    required String title,
+    required String body,
+    required DateTime scheduledTime,
+    required NotificationSoundType soundType,
+  }) async {
+    final sound = _notificationFileName(soundType);
+    final notificationDetails = NotificationDetails(
+      android: AndroidNotificationDetails(
+        'reminder_channel',
+        'Reminder Notifications',
+        importance: Importance.high,
+        priority: Priority.high,
+        sound: RawResourceAndroidNotificationSound(
+            sound), // Without file extension
+      ),
+      iOS: DarwinNotificationDetails(
+        sound: '$sound.mp3', // Use the file extension
+      ),
     );
-  }
-
-  static Future<void> scheduleNotification(
-      int id, String title, String body, DateTime scheduledTime) async {
-    await flutterLocalNotificationsPlugin.zonedSchedule(
+    await _notificationsPlugin.zonedSchedule(
       id,
       title,
       body,
       tz.TZDateTime.from(scheduledTime, tz.local),
-      const NotificationDetails(
-        iOS: DarwinNotificationDetails(),
-        android: AndroidNotificationDetails(
-          'reminder_channel',
-          'Reminder Channel',
-          importance: Importance.high,
-          priority: Priority.high,
-        ),
-      ),
+      notificationDetails,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.dateAndTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
+  }
+
+  static String _notificationFileName(NotificationSoundType type) {
+    switch (type) {
+      case NotificationSoundType.fajir:
+        return 'fajir_azan';
+      case NotificationSoundType.zuhr:
+        return 'duher_azan';
+      case NotificationSoundType.asr:
+        return 'asr_azan';
+      case NotificationSoundType.maghrib:
+        return 'magreb_azan';
+      case NotificationSoundType.isha:
+        return 'isha_azan';
+    }
   }
 }

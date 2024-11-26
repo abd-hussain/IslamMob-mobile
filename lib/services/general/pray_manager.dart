@@ -2,6 +2,7 @@ import 'package:islam_mob_adhan/adhan.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/models/app_model/pray_timing.dart';
 import 'package:islam_app/screens/home_tab/widgets/home_header_view/bloc/home_header_bloc.dart';
+//TODO: PrayManager refactored
 
 class PrayManager {
   final Coordinates coordinates;
@@ -20,7 +21,7 @@ class PrayManager {
     this.specificDate,
   });
 
-  //TODO: All of this calculation is wrong
+  //TODO: All of this calculation is wrong، Time is not equil other app
 
   PrayTimingDateTimeModel getAllPrayTimeAsDateTime() {
     final date = specificDate ?? DateComponents.from(DateTime.now());

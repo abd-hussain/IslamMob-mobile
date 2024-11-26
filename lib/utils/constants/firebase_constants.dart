@@ -1,5 +1,4 @@
-class FirebaseConstants {
-  //Firestore Collections
+class FirebaseCollectionConstants {
   static const quranPrints = 'quran_prints';
   static const reports = 'reports';
 }

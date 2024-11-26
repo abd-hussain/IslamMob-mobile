@@ -34,14 +34,14 @@ class SalahBox extends StatelessWidget {
             CustomText(
               title: getSalahName(context: context, salahType: salahType),
               fontSize: 14,
-              textColor: const Color(0xff444444),
+              color: const Color(0xff444444),
               fontWeight: FontWeight.bold,
               textAlign: TextAlign.center,
             ),
             CustomText(
               title: salahTime,
               fontSize: 14,
-              textColor: const Color(0xff444444),
+              color: const Color(0xff444444),
               fontWeight: FontWeight.bold,
               textAlign: TextAlign.center,
             ),

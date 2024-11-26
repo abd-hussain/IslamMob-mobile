@@ -19,16 +19,16 @@ class MathhabView extends StatelessWidget {
             title: AppLocalizations.of(context)!.mathhab,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            textColor: const Color(0xff444444),
+            color: const Color(0xff444444),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           CustomText(
             title: AppLocalizations.of(context)!.mathhabdetails,
             fontSize: 14,
-            textColor: const Color(0xff444444),
+            color: const Color(0xff444444),
             textAlign: TextAlign.center,
-            maxLins: 2,
+            maxLines: 2,
           ),
           BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
             buildWhen: (previous, current) =>

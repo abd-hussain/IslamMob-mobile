@@ -20,10 +20,10 @@ class QuranPagesView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4),
       child: ListView.builder(
-        itemCount: QuranReferances.getNumberOfPagesForTheSelectedPrint(),
+        itemCount: QuranReferances.getNumberOfPagesForSelectedPrint(),
         itemBuilder: (context, index) {
-          final referanceSorahName = QuranReferances
-              .getSorahReferenceNameForLocalizationFromPageNumber(index + 1);
+          final referanceSorahName =
+              QuranReferances.getSurahReferenceNameFromPageNumber(index + 1);
           return PagesTileView(
             index: index,
             sowrahName: AppLocalizations.of(context)!

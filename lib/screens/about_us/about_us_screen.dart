@@ -59,13 +59,13 @@ class AboutUsScreen extends StatelessWidget {
               CustomText(
                 title: AppLocalizations.of(context)!.appName,
                 fontSize: 20,
-                textColor: const Color(0xff292929),
+                color: const Color(0xff292929),
                 fontWeight: FontWeight.bold,
               ),
               CustomText(
                 title: AppLocalizations.of(context)!.appshortdesc,
                 fontSize: 12,
-                textColor: const Color(0xff292929),
+                color: const Color(0xff292929),
                 fontWeight: FontWeight.bold,
               ),
             ],
@@ -98,9 +98,9 @@ class AboutUsScreen extends StatelessWidget {
                   child: CustomText(
                     title: desc,
                     fontSize: 14,
-                    textColor: const Color(0xff292929),
+                    color: const Color(0xff292929),
                     fontWeight: FontWeight.bold,
-                    maxLins: 8,
+                    maxLines: 8,
                   ),
                 ))
             .toList(),
@@ -115,9 +115,9 @@ class AboutUsScreen extends StatelessWidget {
       child: CustomText(
         title: AppLocalizations.of(context)!.appmaindesc2,
         fontSize: 14,
-        textColor: const Color(0xff292929),
+        color: const Color(0xff292929),
         fontWeight: FontWeight.bold,
-        maxLins: 3,
+        maxLines: 3,
       ),
     );
   }
@@ -176,7 +176,7 @@ class AboutUsScreen extends StatelessWidget {
                 title:
                     "${AppLocalizations.of(context)!.version} ${snapshot.data}",
                 fontSize: 14,
-                textColor: const Color(0xff292929),
+                color: const Color(0xff292929),
               );
             },
           ),
@@ -186,7 +186,7 @@ class AboutUsScreen extends StatelessWidget {
           child: CustomText(
             title: AppLocalizations.of(context)!.rightsreserved,
             fontSize: 10,
-            textColor: const Color(0xff707070),
+            color: const Color(0xff707070),
           ),
         ),
       ],
