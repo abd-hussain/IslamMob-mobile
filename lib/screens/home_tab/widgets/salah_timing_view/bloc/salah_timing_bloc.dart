@@ -72,7 +72,7 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
     for (var entry in daysOffset.entries) {
       final date = DateTime.now().add(Duration(days: entry.key));
       final prayManager = _getPrayManagerForDate(date);
-      final prayTiming = prayManager.getAllPrayTime();
+      final prayTiming = prayManager.getAllPrayTimeAsFormatedString();
 
       if (entry.key == 0) {
         final nextPrayType = prayManager.getNextPrayerType();

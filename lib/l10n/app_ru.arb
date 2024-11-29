@@ -345,7 +345,9 @@
     "notificationSettingMagrieb" : "Magrieb Adhan Notifications",
     "notificationSettingIsha" : "Isha Adhan Notifications",
     "notificationSettingAzkar" : "Azkar Notifications",
-    "notificationSettingApplication" : "Application Notifications"
+    "notificationSettingApplication" : "Application Notifications",
+    "azkarTitle" : "Azkar After Salah"
+
 
 
 }

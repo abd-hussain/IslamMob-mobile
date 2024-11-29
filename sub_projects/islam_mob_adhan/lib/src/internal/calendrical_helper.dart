@@ -1,41 +1,45 @@
 class CalendricalHelper {
-  /// The Julian Day for a given Gregorian date
-  /// @param year the year
-  /// @param month the month
-  /// @param day the day
-  /// @param hours hours
-  /// @return the julian day
+  /// Calculates the Julian Day for a given Gregorian date.
+  ///
+  /// - [year]: The year of the date.
+  /// - [month]: The month of the date.
+  /// - [day]: The day of the date.
+  /// - [hours]: Optional fractional hours (defaults to 0.0).
+  /// - Returns: The Julian Day as a `double`.
   static double julianDay(int year, int month, int day, {double hours = 0.0}) {
-    /* Equation from Astronomical Algorithms page 60 */
+    // Adjust for January and February as months 13 and 14 of the previous year
+    final adjustedYear = month > 2 ? year : year - 1;
+    final adjustedMonth = month > 2 ? month : month + 12;
+    final fractionalDay = day + (hours / 24);
 
-    // NOTE: Integer conversion is done intentionally for the purpose of decimal truncation
+    // Century and leap year adjustment
+    final century = adjustedYear ~/ 100;
+    final leapYearAdjustment = 2 - century + (century ~/ 4);
 
-    final Y = month > 2 ? year : year - 1;
-    final M = month > 2 ? month : month + 12;
-    final D = day + (hours / 24);
+    final julianDayNumber = (365.25 * (adjustedYear + 4716)).toInt();
+    final monthDays = (30.6001 * (adjustedMonth + 1)).toInt();
 
-    final A = Y ~/ 100;
-    final B = (2 - A + (A / 4)).toInt();
-
-    final i0 = (365.25 * (Y + 4716)).toInt();
-    final i1 = (30.6001 * (M + 1)).toInt();
-    return i0 + i1 + D + B - 1524.5;
+    return julianDayNumber +
+        monthDays +
+        fractionalDay +
+        leapYearAdjustment -
+        1524.5;
   }
 
-  /// The Julian Day for a given date
-  /// @param date the date
-  /// @return the julian day
+  /// Calculates the Julian Day for a given [DateTime].
+  ///
+  /// - [date]: The date to convert.
+  /// - Returns: The Julian Day as a `double`.
   static double julianDayByDate(DateTime date) {
-    final newDate = date;
-    return julianDay(newDate.year, newDate.month, newDate.day,
-        hours: (newDate.hour + newDate.minute) / 60.0);
+    final fractionalHours = date.hour + (date.minute / 60.0);
+    return julianDay(date.year, date.month, date.day, hours: fractionalHours);
   }
 
-  /// Julian century from the epoch.
-  /// @param JD the julian day
-  /// @return the julian century from the epoch
+  /// Calculates the Julian Century from the epoch for a given Julian Day.
+  ///
+  /// - [jd]: The Julian Day.
+  /// - Returns: The Julian Century as a `double`.
   static double julianCentury(double jd) {
-    /* Equation from Astronomical Algorithms page 163 */
     return (jd - 2451545.0) / 36525;
   }
 }

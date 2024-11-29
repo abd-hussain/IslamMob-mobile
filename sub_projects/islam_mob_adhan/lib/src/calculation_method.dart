@@ -1,143 +1,137 @@
 import 'calculation_parameters.dart';
 import 'prayer_adjustments.dart';
 
-/// Standard calculation methods for calculating prayer times
+/// Standard calculation methods for calculating prayer times.
 enum CalculationMethod {
-  /// Muslim World League
-  /// Uses Fajr angle of 18 and an Isha angle of 17
+  /// Muslim World League (MWL).
+  /// Fajr angle: 18° | Isha angle: 17°
   muslimWorldLeague,
 
-  /// Islamic Society of North America (ISNA)
-  /// Uses a Fajr angle of 15 and an Isha angle of 15.
+  /// Islamic Society of North America (ISNA).
+  /// Fajr angle: 15° | Isha angle: 15°
   northAmerica,
 
-  /// Egyptian General Authority of Survey
-  /// Uses Fajr angle of 19.5 and an Isha angle of 17.5
+  /// Egyptian General Authority of Survey.
+  /// Fajr angle: 19.5° | Isha angle: 17.5°
   egyptian,
 
-  /// Umm Al-Qura University, Makkah
-  /// Uses a Fajr angle of 18.5 and an Isha angle of 90 min.
-  /// Note: You should add a +30 minute custom adjustment of Isha during Ramadan.
+  /// Umm Al-Qura University, Makkah.
+  /// Fajr angle: 18.5° | Isha interval: 90 min.
   ummAlQura,
 
-  /// University of Islamic Sciences, Karachi
-  /// Uses Fajr angle of 18 and an Isha angle of 18
+  /// University of Islamic Sciences, Karachi.
+  /// Fajr angle: 18° | Isha angle: 18°
   karachi,
 
-  /// Institute of Geophysics, University of Tehran
-  /// Uses Fajr angle 17.7 , and Isha angles of 14 degrees.
-  /// Maghrib: 4.5 , Midnight: JAFARI
+  /// Institute of Geophysics, University of Tehran.
+  /// Fajr angle: 17.7° | Isha angle: 14° | Maghrib: 4.5 min.
   tehran,
 
-  /// Shia Ithna-Ashari, Leva Institute, Qum
-  /// Uses Fajr angle 16 , and Isha angles of 14 degrees.
-  /// Maghrib: 4 , Midnight: JAFARI
+  /// Shia Ithna-Ashari, Leva Institute, Qum.
+  /// Fajr angle: 16° | Isha angle: 14° | Maghrib: 4 min.
   jafari,
 
-  /// Gulf Region
-  /// Uses Fajr angle 19.5 , and Isha angles of 90 min
+  /// Gulf Region.
+  /// Fajr angle: 19.5° | Isha interval: 90 min.
   gulfRegion,
 
-  /// Kuwait
-  /// Uses a Fajr angle of 18 and an Isha angle of 17.5
+  /// Kuwait.
+  /// Fajr angle: 18° | Isha angle: 17.5°
   kuwait,
 
-  /// Qatar
-  /// Uses a Fajr angle of 18 and an Isha angle of 90 min
+  /// Qatar.
+  /// Fajr angle: 18° | Isha interval: 90 min.
   qatar,
 
-  /// Majlis Ugama Islam Singapura, Singapore
-  /// Uses a Fajr angle of 20 and an Isha angle of 18
+  /// Singapore.
+  /// Fajr angle: 20° | Isha angle: 18°
   singapore,
 
-  /// Union Organization Islamic de France
-  /// Uses a Fajr angle of 12 and an Isha angle of 12
+  /// France (Union Organization Islamic de France).
+  /// Fajr angle: 12° | Isha angle: 12°
   france,
 
-  /// Diyanet İşleri Başkanlığı, Turkey (experimental)
-  /// Uses a Fajr angle of 18 and an Isha angle of 17
+  /// Turkey (Diyanet İşleri Başkanlığı).
+  /// Fajr angle: 18° | Isha angle: 17°
   turkey,
 
-  /// Spiritual Administration of Muslims of Russia
-  /// Uses a Fajr angle of 16 and an Isha angle of 15
+  /// Russia (Spiritual Administration of Muslims of Russia).
+  /// Fajr angle: 16° | Isha angle: 15°
   russia,
 
-  /// Dubai
-  /// Uses Fajr and Isha angles of 18.2 degrees.
+  /// Dubai.
+  /// Fajr and Isha angles: 18.2°
   dubai,
 
-  /// Jabatan Kemajuan Islam Malaysia (JAKIM)
-  /// Uses a Fajr angle of 20 and an Isha angle of 18
+  /// Malaysia (JAKIM).
+  /// Fajr angle: 20° | Isha angle: 18°
   jakim,
 
-  /// TUNISIA
-  /// Uses a Fajr angle of 20 and an Isha angle of 18
+  /// Tunisia.
+  /// Fajr angle: 18° | Isha angle: 18°
   tunisia,
 
-  /// ALGERIA
-  /// Uses a Fajr angle of 18 and an Isha angle of 17
+  /// Algeria.
+  /// Fajr angle: 18° | Isha angle: 17°
   algeria,
 
-  /// KEMENAG: Kementerian Agama Republik Indonesia
-  /// Uses a Fajr angle of 20 and an Isha angle of 18
+  /// Indonesia (KEMENAG).
+  /// Fajr angle: 20° | Isha angle: 18°
   kemenag,
 
-  /// MOROCCO:
-  /// Uses a Fajr angle of 19 and an Isha angle of 17
+  /// Morocco.
+  /// Fajr angle: 19° | Isha angle: 17°
   morocco,
 
-  /// PORTUGAL: Comunidade Islamica de Lisboa
-  /// Uses a Fajr angle of 18 , Maghrib: 3 min and Isha: 77 min
+  /// Portugal (Comunidade Islamica de Lisboa).
+  /// Fajr angle: 18° | Maghrib: +3 min | Isha interval: 77 min.
   portugal,
 
-  /// JORDAN: Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan
-  /// Uses a Fajr angle of 18 , Maghrib: 5 min and Isha: 18
+  /// Jordan (Ministry of Awqaf, Islamic Affairs and Holy Places).
+  /// Fajr angle: 18° | Maghrib: +5 min | Isha angle: 18°
   jordan,
 
-  /// Moonsighting Committee Worldwide (Moonsighting.com)
+  /// Moonsighting Committee Worldwide (Moonsighting.com).
+  /// Fajr angle: 18° | Isha angle: 18°.
   moonSightingCommittee,
 
-  /// The default value for [CalculationParameters.method] when initializing a
-  /// [CalculationParameters] object. Sets a Fajr angle of 0 and an Isha angle of 0.
+  /// Default value for custom parameters.
+  /// Fajr angle: 0° | Isha angle: 0°
   other
 }
 
 extension CalculationMethodExtensions on CalculationMethod {
-  /// Returns the CalculationParameters for the given method.
+  /// Returns the [CalculationParameters] for the given calculation method.
   CalculationParameters getParameters() {
     switch (this) {
       case CalculationMethod.muslimWorldLeague:
         return CalculationParameters(
                 fajrAngle: 18.0, ishaAngle: 17.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.northAmerica:
         return CalculationParameters(
                 fajrAngle: 15.0, ishaAngle: 15.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.egyptian:
         return CalculationParameters(
                 fajrAngle: 19.5, ishaAngle: 17.5, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.ummAlQura:
         return CalculationParameters(
             fajrAngle: 18.5, ishaInterval: 90, method: this);
       case CalculationMethod.karachi:
         return CalculationParameters(
                 fajrAngle: 18.0, ishaAngle: 18.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.tehran:
         return CalculationParameters(
-            fajrAngle: 17.7, ishaAngle: 14, maghribAngle: 4.5, method: this);
+            fajrAngle: 17.7, ishaAngle: 14.0, maghribAngle: 4.5, method: this);
       case CalculationMethod.jafari:
         return CalculationParameters(
-            fajrAngle: 16, ishaAngle: 14, maghribAngle: 4, method: this);
+            fajrAngle: 16.0, ishaAngle: 14.0, maghribAngle: 4.0, method: this);
       case CalculationMethod.gulfRegion:
         return CalculationParameters(
-            fajrAngle: 19.5, ishaAngle: 90, method: this);
+            fajrAngle: 19.5, ishaInterval: 90, method: this);
       case CalculationMethod.kuwait:
         return CalculationParameters(
             fajrAngle: 18.0, ishaAngle: 17.5, method: this);
@@ -147,34 +141,33 @@ extension CalculationMethodExtensions on CalculationMethod {
       case CalculationMethod.singapore:
         return CalculationParameters(
                 fajrAngle: 20.0, ishaAngle: 18.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.france:
         return CalculationParameters(
             fajrAngle: 12.0, ishaAngle: 12.0, method: this);
       case CalculationMethod.turkey:
         return CalculationParameters(
                 fajrAngle: 18.0, ishaAngle: 17.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: -7, dhuhr: 5, asr: 4, maghrib: 7, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(
+                sunrise: -7, dhuhr: 5, asr: 4, maghrib: 7));
       case CalculationMethod.russia:
         return CalculationParameters(
                 fajrAngle: 16.0, ishaAngle: 15.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: -7, dhuhr: 5, asr: 4, maghrib: 7, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(
+                sunrise: -7, dhuhr: 5, asr: 4, maghrib: 7));
       case CalculationMethod.dubai:
         return CalculationParameters(
                 fajrAngle: 18.2, ishaAngle: 18.2, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: -3, dhuhr: 3, asr: 3, maghrib: 3, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(
+                sunrise: -3, dhuhr: 3, asr: 3, maghrib: 3));
       case CalculationMethod.jakim:
         return CalculationParameters(
                 fajrAngle: 20.0, ishaAngle: 18.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: -3, dhuhr: 3, asr: 3, maghrib: 3, isha: 0));
+            .withMethodAdjustments(const PrayerAdjustments(
+                sunrise: -3, dhuhr: 3, asr: 3, maghrib: 3));
       case CalculationMethod.tunisia:
         return CalculationParameters(
-            fajrAngle: 18.0, ishaAngle: 18, method: this);
+            fajrAngle: 18.0, ishaAngle: 18.0, method: this);
       case CalculationMethod.algeria:
         return CalculationParameters(
             fajrAngle: 18.0, ishaAngle: 17.0, method: this);
@@ -187,16 +180,16 @@ extension CalculationMethodExtensions on CalculationMethod {
       case CalculationMethod.portugal:
         return CalculationParameters(
                 fajrAngle: 18.0, ishaInterval: 77, method: this)
-            .withMethodAdjustments(PrayerAdjustments(maghrib: 3));
+            .withMethodAdjustments(const PrayerAdjustments(maghrib: 3));
       case CalculationMethod.jordan:
         return CalculationParameters(
                 fajrAngle: 18.0, ishaAngle: 18.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(maghrib: 5));
+            .withMethodAdjustments(const PrayerAdjustments(maghrib: 5));
       case CalculationMethod.moonSightingCommittee:
         return CalculationParameters(
                 fajrAngle: 18.0, ishaAngle: 18.0, method: this)
-            .withMethodAdjustments(PrayerAdjustments(
-                fajr: 0, sunrise: 0, dhuhr: 5, asr: 0, maghrib: 3, isha: 0));
+            .withMethodAdjustments(
+                const PrayerAdjustments(dhuhr: 5, maghrib: 3));
       case CalculationMethod.other:
         return CalculationParameters(
             fajrAngle: 0.0, ishaAngle: 0.0, method: this);

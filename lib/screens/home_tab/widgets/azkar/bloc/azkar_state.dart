@@ -4,6 +4,13 @@ part of 'azkar_bloc.dart';
 class AzkarState with _$AzkarState {
   const factory AzkarState({
     @Default(false) bool showAzkarView,
+    @Default(AzkarCounters()) AzkarCounters counters,
+  }) = _AzkarState;
+}
+
+@freezed
+class AzkarCounters with _$AzkarCounters {
+  const factory AzkarCounters({
     @Default(0) int counter1,
     @Default(0) int counter2,
     @Default(0) int counter3,
@@ -15,5 +22,5 @@ class AzkarState with _$AzkarState {
     @Default(0) int counter9,
     @Default(0) int counter10,
     @Default(0) int counter11,
-  }) = _AzkarState;
+  }) = _AzkarCounters;
 }

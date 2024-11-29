@@ -35,14 +35,16 @@ class ZekerView extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              CustomText(
-                title: title,
-                fontSize: 16,
-                color: const Color(0xff444444),
-                textAlign: TextAlign.center,
-                fontWeight: FontWeight.bold,
-              ),
+              if (title.isNotEmpty)
+                CustomText(
+                  title: title,
+                  fontSize: 16,
+                  color: const Color(0xff444444),
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                ),
               CustomText(
                 title: text,
                 fontSize: 20,
@@ -57,33 +59,37 @@ class ZekerView extends StatelessWidget {
                 color: Colors.grey,
               ),
               const SizedBox(height: 2),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomText(
-                    title: currentCount.toString(),
-                    fontSize: 18,
-                    color: const Color(0xff444444),
-                    fontWeight: FontWeight.bold,
-                  ),
-                  const CustomText(
-                    title: "/",
-                    fontSize: 12,
-                    color: Color(0xff444444),
-                    fontWeight: FontWeight.bold,
-                  ),
-                  CustomText(
-                    title: maxCount.toString(),
-                    fontSize: 12,
-                    color: const Color(0xff444444),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ],
-              )
+              footerView()
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Row footerView() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CustomText(
+          title: currentCount.toString(),
+          fontSize: 18,
+          color: const Color(0xff444444),
+          fontWeight: FontWeight.bold,
+        ),
+        const CustomText(
+          title: "/",
+          fontSize: 12,
+          color: Color(0xff444444),
+          fontWeight: FontWeight.bold,
+        ),
+        CustomText(
+          title: maxCount.toString(),
+          fontSize: 12,
+          color: const Color(0xff444444),
+          fontWeight: FontWeight.bold,
+        ),
+      ],
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/inboarding/widgets/language/bloc/language_bloc.dart';
 import 'package:islam_app/screens/inboarding/widgets/sub_widgets/language_tile.dart';
-import 'package:islam_app/screens/select_change_language/widgets/title_table_widget.dart';
+import 'package:islam_app/screens/change_language/widgets/title_table_widget.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/utils/constants/app_constant.dart';
 import 'package:lottie/lottie.dart';

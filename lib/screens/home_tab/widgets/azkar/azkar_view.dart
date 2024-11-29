@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/home_tab/widgets/azkar/bloc/azkar_bloc.dart';
+import 'package:islam_app/screens/home_tab/widgets/azkar/widgets/finish_view.dart';
 import 'package:islam_app/screens/home_tab/widgets/azkar/widgets/zeker_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AzkarView extends StatelessWidget {
   const AzkarView({super.key});
-  //TODO handle Azkar
 
   @override
   Widget build(BuildContext context) {
@@ -16,43 +17,43 @@ class AzkarView extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            _headerView(),
+            _headerView(context),
             const SizedBox(height: 10),
+            _buildFinishView(context),
             BlocBuilder<AzkarBloc, AzkarState>(
               buildWhen: (previous, current) =>
-                  previous.counter1 != current.counter1,
+                  previous.counters.counter1 != current.counters.counter1,
               builder: (context, state) {
                 const maxCount = 3;
-                if (maxCount == state.counter1) {
+                if (maxCount == state.counters.counter1) {
                   return const SizedBox.shrink();
                 }
                 return ZekerView(
-                  currentCount: state.counter1,
+                  currentCount: state.counters.counter1,
                   maxCount: maxCount,
-                  text: 'ٱسْتَغْفِرُ ٱللَّهَ',
+                  text: context.read<AzkarBloc>().azkarList[0],
                   onTap: () => context
                       .read<AzkarBloc>()
-                      .add(AzkarEvent.updateCounter1Status(state.counter1 + 1)),
+                      .add(const AzkarEvent.incrementCounter(1)),
                 );
               },
             ),
             const SizedBox(height: 10),
             BlocBuilder<AzkarBloc, AzkarState>(
               buildWhen: (previous, current) =>
-                  previous.counter2 != current.counter2,
+                  previous.counters.counter2 != current.counters.counter2,
               builder: (context, state) {
                 const maxCount = 1;
-                if (maxCount == state.counter2) {
+                if (maxCount == state.counters.counter2) {
                   return const SizedBox.shrink();
                 }
                 return ZekerView(
-                  currentCount: state.counter2,
+                  currentCount: state.counters.counter2,
                   maxCount: maxCount,
-                  text:
-                      'ٱللَّهُمَّ أَنتَ ٱلسَّلَامُ، وَمِنكَ ٱلسَّلَامُ، تَبَارَكتَ يَا ذَا ٱلْجَلَالِ وَٱلْإِكْرَامِ، لَا إِلٰهَ إِلَّا ٱللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّهِ، لَا إِلٰهَ إِلَّا ٱللَّهُ وَلَا نَعْبُدُ إِلَّا إِيَّاهُ، لَهُ ٱلنِّعْمَةُ وَلَهُ ٱلْفَضْلُ وَلَهُ ٱلثَّنَاءُ ٱلْحَسَنُ، لَا إِلٰهَ إِلَّا ٱللَّهُ مُخْلِصِينَ لَهُ ٱلدِّينَ وَلَوْ كَرِهَ ٱلْكَافِرُونَ، ٱللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ وَلَا مُعْطِيَ لِمَا مَنَعْتَ وَلَا يَنفَعُ ذَا ٱلْجَدِّ مِنْكَ ٱلْجَدُّ',
+                  text: context.read<AzkarBloc>().azkarList[1],
                   onTap: () => context
                       .read<AzkarBloc>()
-                      .add(AzkarEvent.updateCounter2Status(state.counter2 + 1)),
+                      .add(const AzkarEvent.incrementCounter(2)),
                 );
               },
             ),
@@ -63,19 +64,19 @@ class AzkarView extends StatelessWidget {
                 Expanded(
                   child: BlocBuilder<AzkarBloc, AzkarState>(
                     buildWhen: (previous, current) =>
-                        previous.counter3 != current.counter3,
+                        previous.counters.counter3 != current.counters.counter3,
                     builder: (context, state) {
                       const maxCount = 33;
-                      if (maxCount == state.counter3) {
+                      if (maxCount == state.counters.counter3) {
                         return const SizedBox.shrink();
                       }
                       return ZekerView(
-                        currentCount: state.counter3,
+                        currentCount: state.counters.counter3,
                         maxCount: maxCount,
-                        text: 'سُبْحَانَ اللَّهِ',
-                        onTap: () => context.read<AzkarBloc>().add(
-                            AzkarEvent.updateCounter3Status(
-                                state.counter3 + 1)),
+                        text: context.read<AzkarBloc>().azkarList[2],
+                        onTap: () => context
+                            .read<AzkarBloc>()
+                            .add(const AzkarEvent.incrementCounter(3)),
                       );
                     },
                   ),
@@ -84,19 +85,19 @@ class AzkarView extends StatelessWidget {
                 Expanded(
                   child: BlocBuilder<AzkarBloc, AzkarState>(
                     buildWhen: (previous, current) =>
-                        previous.counter4 != current.counter4,
+                        previous.counters.counter4 != current.counters.counter4,
                     builder: (context, state) {
                       const maxCount = 33;
-                      if (maxCount == state.counter4) {
+                      if (maxCount == state.counters.counter4) {
                         return const SizedBox.shrink();
                       }
                       return ZekerView(
-                        currentCount: state.counter4,
+                        currentCount: state.counters.counter4,
                         maxCount: maxCount,
-                        text: 'ٱلْحَمْدُ لِلَّهِ',
-                        onTap: () => context.read<AzkarBloc>().add(
-                            AzkarEvent.updateCounter4Status(
-                                state.counter4 + 1)),
+                        text: context.read<AzkarBloc>().azkarList[3],
+                        onTap: () => context
+                            .read<AzkarBloc>()
+                            .add(const AzkarEvent.incrementCounter(4)),
                       );
                     },
                   ),
@@ -105,19 +106,19 @@ class AzkarView extends StatelessWidget {
                 Expanded(
                   child: BlocBuilder<AzkarBloc, AzkarState>(
                     buildWhen: (previous, current) =>
-                        previous.counter5 != current.counter5,
+                        previous.counters.counter5 != current.counters.counter5,
                     builder: (context, state) {
                       const maxCount = 33;
-                      if (maxCount == state.counter5) {
+                      if (maxCount == state.counters.counter5) {
                         return const SizedBox.shrink();
                       }
                       return ZekerView(
-                        currentCount: state.counter5,
+                        currentCount: state.counters.counter5,
                         maxCount: maxCount,
-                        text: 'ٱللَّهُ أَكْبَرُ',
-                        onTap: () => context.read<AzkarBloc>().add(
-                            AzkarEvent.updateCounter5Status(
-                                state.counter5 + 1)),
+                        text: context.read<AzkarBloc>().azkarList[4],
+                        onTap: () => context
+                            .read<AzkarBloc>()
+                            .add(const AzkarEvent.incrementCounter(5)),
                       );
                     },
                   ),
@@ -127,121 +128,117 @@ class AzkarView extends StatelessWidget {
             const SizedBox(height: 10),
             BlocBuilder<AzkarBloc, AzkarState>(
               buildWhen: (previous, current) =>
-                  previous.counter6 != current.counter6,
+                  previous.counters.counter6 != current.counters.counter6,
               builder: (context, state) {
                 const maxCount = 1;
-                if (maxCount == state.counter6) {
+                if (maxCount == state.counters.counter6) {
                   return const SizedBox.shrink();
                 }
                 return ZekerView(
-                  currentCount: state.counter6,
+                  currentCount: state.counters.counter6,
                   maxCount: maxCount,
-                  text:
-                      'لَا إِلٰهَ إِلَّا ٱللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',
+                  text: context.read<AzkarBloc>().azkarList[5],
                   onTap: () => context
                       .read<AzkarBloc>()
-                      .add(AzkarEvent.updateCounter6Status(state.counter6 + 1)),
+                      .add(const AzkarEvent.incrementCounter(6)),
                 );
               },
             ),
             const SizedBox(height: 10),
             BlocBuilder<AzkarBloc, AzkarState>(
               buildWhen: (previous, current) =>
-                  previous.counter7 != current.counter7,
+                  previous.counters.counter7 != current.counters.counter7,
               builder: (context, state) {
                 const maxCount = 1;
-                if (maxCount == state.counter7) {
+                if (maxCount == state.counters.counter7) {
                   return const SizedBox.shrink();
                 }
                 return ZekerView(
-                  currentCount: state.counter7,
+                  currentCount: state.counters.counter7,
                   maxCount: maxCount,
-                  text:
-                      'لَا إِلٰهَ إِلَّا ٱللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ، يُحْيِي وَيُمِيتُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',
+                  text: context.read<AzkarBloc>().azkarList[6],
                   onTap: () => context
                       .read<AzkarBloc>()
-                      .add(AzkarEvent.updateCounter7Status(state.counter7 + 1)),
+                      .add(const AzkarEvent.incrementCounter(7)),
                 );
               },
             ),
             const SizedBox(height: 10),
             BlocBuilder<AzkarBloc, AzkarState>(
               buildWhen: (previous, current) =>
-                  previous.counter8 != current.counter8,
+                  previous.counters.counter8 != current.counters.counter8,
               builder: (context, state) {
                 const maxCount = 1;
-                if (maxCount == state.counter8) {
+                if (maxCount == state.counters.counter8) {
                   return const SizedBox.shrink();
                 }
                 return ZekerView(
-                  currentCount: state.counter8,
+                  currentCount: state.counters.counter8,
                   maxCount: maxCount,
-                  text:
-                      ' اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ',
+                  text: context.read<AzkarBloc>().azkarList[7],
                   onTap: () => context
                       .read<AzkarBloc>()
-                      .add(AzkarEvent.updateCounter8Status(state.counter8 + 1)),
+                      .add(const AzkarEvent.incrementCounter(8)),
                 );
               },
             ),
             const SizedBox(height: 10),
             BlocBuilder<AzkarBloc, AzkarState>(
               buildWhen: (previous, current) =>
-                  previous.counter9 != current.counter9,
+                  previous.counters.counter9 != current.counters.counter9,
               builder: (context, state) {
                 const maxCount = 1;
-                if (maxCount == state.counter9) {
+                if (maxCount == state.counters.counter9) {
                   return const SizedBox.shrink();
                 }
                 return ZekerView(
-                  currentCount: state.counter9,
+                  currentCount: state.counters.counter9,
                   maxCount: maxCount,
-                  title: "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
-                  text:
-                      'قُلۡ هُوَ ٱللَّهُ أَحَدٌ * ٱللَّهُ ٱلصَّمَدُ * لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ * وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ',
+                  title: context.read<AzkarBloc>().besemellah,
+                  text: context.read<AzkarBloc>().azkarList[8],
                   onTap: () => context
                       .read<AzkarBloc>()
-                      .add(AzkarEvent.updateCounter9Status(state.counter9 + 1)),
+                      .add(const AzkarEvent.incrementCounter(9)),
                 );
               },
             ),
             const SizedBox(height: 10),
             BlocBuilder<AzkarBloc, AzkarState>(
               buildWhen: (previous, current) =>
-                  previous.counter10 != current.counter10,
+                  previous.counters.counter10 != current.counters.counter10,
               builder: (context, state) {
                 const maxCount = 1;
-                if (maxCount == state.counter10) {
+                if (maxCount == state.counters.counter10) {
                   return const SizedBox.shrink();
                 }
                 return ZekerView(
-                  currentCount: state.counter10,
+                  currentCount: state.counters.counter10,
                   maxCount: maxCount,
-                  title: "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
-                  text:
-                      'قُلۡ أَعُوذُ بِرَبِّ ٱلۡفَلَقِ * مِن شَرِّ مَا خَلَقَ * وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِي ٱلۡعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
-                  onTap: () => context.read<AzkarBloc>().add(
-                      AzkarEvent.updateCounter10Status(state.counter10 + 1)),
+                  title: context.read<AzkarBloc>().besemellah,
+                  text: context.read<AzkarBloc>().azkarList[9],
+                  onTap: () => context
+                      .read<AzkarBloc>()
+                      .add(const AzkarEvent.incrementCounter(10)),
                 );
               },
             ),
             const SizedBox(height: 10),
             BlocBuilder<AzkarBloc, AzkarState>(
               buildWhen: (previous, current) =>
-                  previous.counter11 != current.counter11,
+                  previous.counters.counter11 != current.counters.counter11,
               builder: (context, state) {
                 const maxCount = 1;
-                if (maxCount == state.counter11) {
+                if (maxCount == state.counters.counter11) {
                   return const SizedBox.shrink();
                 }
                 return ZekerView(
-                  currentCount: state.counter11,
+                  currentCount: state.counters.counter11,
                   maxCount: maxCount,
-                  title: "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
-                  text:
-                      'قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاسِ * مَلِكِ ٱلنَّاسِ * إِلَٰهِ ٱلنَّاسِ * مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ * ٱلَّذِي يُوَسۡوِسُ فِي صُدُورِ ٱلنَّاسِ * مِنَ ٱلۡجِنَّةِ وَٱلنَّاسِ',
-                  onTap: () => context.read<AzkarBloc>().add(
-                      AzkarEvent.updateCounter11Status(state.counter11 + 1)),
+                  title: context.read<AzkarBloc>().besemellah,
+                  text: context.read<AzkarBloc>().azkarList[10],
+                  onTap: () => context
+                      .read<AzkarBloc>()
+                      .add(const AzkarEvent.incrementCounter(11)),
                 );
               },
             ),
@@ -251,7 +248,7 @@ class AzkarView extends StatelessWidget {
     );
   }
 
-  Widget _headerView() {
+  Widget _headerView(BuildContext context) {
     return Row(
       children: [
         Image.asset(
@@ -259,13 +256,21 @@ class AzkarView extends StatelessWidget {
           scale: 10,
         ),
         const SizedBox(width: 4),
-        const CustomText(
-          title: "Azkar After Salah", //TODO
+        CustomText(
+          title: AppLocalizations.of(context)!.azkarTitle,
           fontSize: 18,
-          color: Color(0xff444444),
+          color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
         ),
       ],
+    );
+  }
+
+  Widget _buildFinishView(BuildContext context) {
+    return BlocBuilder<AzkarBloc, AzkarState>(
+      builder: (context, state) => context.read<AzkarBloc>().isCounterFilled()
+          ? const AzkarFinishView()
+          : const SizedBox.shrink(),
     );
   }
 }
