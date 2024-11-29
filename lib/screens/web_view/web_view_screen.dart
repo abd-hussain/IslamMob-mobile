@@ -4,7 +4,6 @@ import 'package:islam_app/screens/web_view/bloc/web_view_bloc.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
-//TODO: This tree need to be refactored
 
 class WebViewScreen extends StatefulWidget {
   const WebViewScreen({super.key});

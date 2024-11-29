@@ -1,13 +1,19 @@
 extension AdhanDateTimeExtensions on DateTime {
-  DateTime copyWith(
-      {int? year,
-      int? month,
-      int? day,
-      int? hour,
-      int? minute,
-      int? second,
-      int? millisecond,
-      int? microsecond}) {
+  /// Creates a copy of this [DateTime] with specified fields replaced by new values.
+  ///
+  /// - [year], [month], [day], [hour], [minute], [second], [millisecond], [microsecond]:
+  ///   Optional parameters to override the respective components of the original [DateTime].
+  /// - Returns: A new [DateTime] instance with updated fields.
+  DateTime copyWith({
+    int? year,
+    int? month,
+    int? day,
+    int? hour,
+    int? minute,
+    int? second,
+    int? millisecond,
+    int? microsecond,
+  }) {
     return isUtc
         ? DateTime.utc(
             year ?? this.year,
@@ -31,8 +37,11 @@ extension AdhanDateTimeExtensions on DateTime {
           );
   }
 
+  /// Gets the day of the year for this [DateTime].
+  ///
+  /// For example, January 1st returns 1, and December 31st returns 365 (or 366 in a leap year).
   int get dayOfYear {
-    final yearStartDate = DateTime(year);
-    return difference(yearStartDate).inDays + 1;
+    final startOfYear = DateTime(year);
+    return difference(startOfYear).inDays + 1;
   }
 }

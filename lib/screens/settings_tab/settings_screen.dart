@@ -12,7 +12,6 @@ import 'package:islam_app/shared_widgets/admob_banner.dart';
 import 'package:islam_app/utils/constants/app_constant.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:share_plus/share_plus.dart';
-//TODO: This tree need to be refactored
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});

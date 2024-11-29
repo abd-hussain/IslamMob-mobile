@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loading_indicator/loading_indicator.dart';
-//TODO: This tree need to be refactored
 
 class SplashLoadingScreen extends StatelessWidget {
   const SplashLoadingScreen({super.key});

@@ -1,17 +1,18 @@
 import 'coordinates.dart';
 import 'internal/qibla_util.dart';
 
+/// Represents the Qibla direction for a given location.
 class Qibla {
-  static final Coordinates maka = Coordinates(21.4225241, 39.8261818);
+  /// The coordinates of the Kaaba in Makkah.
+  static final Coordinates makkah = Coordinates(21.4225241, 39.8261818);
 
-  late double _direction;
+  /// The Qibla direction in degrees (compass/clockwise).
+  late final double direction;
 
-  double get direction => _direction;
-
-  /// Calculate Qibla direction degree (Compass/Clockwise)
+  /// Constructs a [Qibla] instance and calculates the Qibla direction for the given location.
   ///
-  /// [coordinates] a Coordinates instance
+  /// - [coordinates]: The geographical coordinates of the location.
   Qibla(Coordinates coordinates) {
-    _direction = QiblaUtil.calculateQiblaDirection(coordinates);
+    direction = QiblaUtil.calculateQiblaDirection(coordinates);
   }
 }

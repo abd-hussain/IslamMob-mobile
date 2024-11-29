@@ -2,44 +2,46 @@ import 'prayer_times.dart';
 import 'data/calendar_util.dart';
 import 'data/date_components.dart';
 
+/// Represents Sunnah times, including the midpoint of the night and the last third of the night.
 class SunnahTimes {
-  /// The midpoint between Maghrib and Fajr
-  late DateTime _middleOfTheNight;
+  /// The midpoint of the night, calculated as the halfway point between Maghrib and Fajr.
+  late final DateTime middleOfTheNight;
 
-  /// The midpoint between Maghrib and Fajr
-  DateTime get middleOfTheNight => _middleOfTheNight;
+  /// The beginning of the last third of the night, a recommended time for Qiyam.
+  late final DateTime lastThirdOfTheNight;
 
-  /// The beginning of the last third of the period between Maghrib and Fajr,
-  /// a recommended time to perform Qiyam
-  late DateTime _lastThirdOfTheNight;
-
-  /// The beginning of the last third of the period between Maghrib and Fajr,
-  /// a recommended time to perform Qiyam
-  DateTime get lastThirdOfTheNight => _lastThirdOfTheNight;
-
-  /// Calculate SunnahTimes with PrayerTimes instance.
+  /// Constructs [SunnahTimes] using a [PrayerTimes] instance.
   ///
-  /// [prayerTimes] a PrayerTimes instance
+  /// - [prayerTimes]: An instance of [PrayerTimes] for calculating Sunnah times.
   SunnahTimes(PrayerTimes prayerTimes) {
-    final currentPrayerTimesDate =
+    // Resolve the current date and the next day's date for the given prayer times.
+    final currentDate =
         CalendarUtil.resolveTimeByDateComponents(prayerTimes.dateComponents);
-    final tomorrowPrayerTimesDate =
-        currentPrayerTimesDate.add(const Duration(days: 1));
-    final tomorrowPrayerTimes = PrayerTimes(
-        prayerTimes.coordinates,
-        DateComponents.from(tomorrowPrayerTimesDate),
-        prayerTimes.calculationParameters,
-        utcOffset: prayerTimes.utcOffset);
+    final tomorrowDate = currentDate.add(const Duration(days: 1));
 
+    // Calculate PrayerTimes for the next day.
+    final tomorrowPrayerTimes = PrayerTimes(
+      prayerTimes.coordinates,
+      DateComponents.from(tomorrowDate),
+      prayerTimes.calculationParameters,
+      utcOffset: prayerTimes.utcOffset,
+    );
+
+    // Calculate the duration of the night in seconds.
     final nightDurationInSeconds =
         (tomorrowPrayerTimes.fajr.millisecondsSinceEpoch -
                 prayerTimes.maghrib.millisecondsSinceEpoch) ~/
             1000;
 
-    _middleOfTheNight = CalendarUtil.roundedMinute(prayerTimes.maghrib
-        .add(Duration(seconds: nightDurationInSeconds ~/ 2.0)));
+    // Calculate the middle of the night.
+    middleOfTheNight = CalendarUtil.roundedMinute(
+      prayerTimes.maghrib.add(Duration(seconds: nightDurationInSeconds ~/ 2)),
+    );
 
-    _lastThirdOfTheNight = CalendarUtil.roundedMinute(prayerTimes.maghrib.add(
-        Duration(seconds: (nightDurationInSeconds * (2.0 / 3.0)).toInt())));
+    // Calculate the beginning of the last third of the night.
+    lastThirdOfTheNight = CalendarUtil.roundedMinute(
+      prayerTimes.maghrib
+          .add(Duration(seconds: (nightDurationInSeconds * 2 ~/ 3))),
+    );
   }
 }

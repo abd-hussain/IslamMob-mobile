@@ -1,91 +1,145 @@
 import 'dart:math';
 
-import '../coordinates.dart';
+import 'package:islam_mob_adhan/src/coordinates.dart';
 import 'astronomical.dart';
 import 'calendrical_helper.dart';
 import 'math.dart';
 import 'shadow_length.dart';
 import 'solar_coordinates.dart';
 
+/// Represents solar times, including transit, sunrise, sunset, and afternoon calculations.
 class SolarTime {
-  late double _transit;
-  double get transit => _transit;
+  /// The time of solar transit in hours (from midnight UTC).
+  late final double transit;
 
-  late double _sunrise;
-  double get sunrise => _sunrise;
+  /// The time of sunrise in hours (from midnight UTC).
+  late final double sunrise;
 
-  late double _sunset;
-  double get sunset => _sunset;
+  /// The time of sunset in hours (from midnight UTC).
+  late final double sunset;
 
-  late Coordinates _observer;
-  late SolarCoordinates _solar;
-  late SolarCoordinates _prevSolar;
-  late SolarCoordinates _nextSolar;
-  late double _approximateTransit;
+  /// The observer's coordinates.
+  late final Coordinates observer;
 
+  /// Solar coordinates for today.
+  late final SolarCoordinates solar;
+
+  /// Solar coordinates for the previous day.
+  late final SolarCoordinates prevSolar;
+
+  /// Solar coordinates for the next day.
+  late final SolarCoordinates nextSolar;
+
+  /// The approximate transit time.
+  late final double approximateTransit;
+
+  /// Constructs a [SolarTime] instance for the given date and observer's coordinates.
+  ///
+  /// - [today]: The current date.
+  /// - [coordinates]: The geographical coordinates of the observer.
   SolarTime(DateTime today, Coordinates coordinates) {
     final tomorrow = today.add(const Duration(days: 1));
-
     final yesterday = today.subtract(const Duration(days: 1));
 
-    _prevSolar = SolarCoordinates(CalendricalHelper.julianDayByDate(yesterday));
-    _solar = SolarCoordinates(CalendricalHelper.julianDayByDate(today));
-    _nextSolar = SolarCoordinates(CalendricalHelper.julianDayByDate(tomorrow));
+    // Calculate solar coordinates for three consecutive days.
+    prevSolar = SolarCoordinates(CalendricalHelper.julianDayByDate(yesterday));
+    solar = SolarCoordinates(CalendricalHelper.julianDayByDate(today));
+    nextSolar = SolarCoordinates(CalendricalHelper.julianDayByDate(tomorrow));
 
-    _approximateTransit =
-        Astronomical.approximateTransit(coordinates.longitude, _solar.apparentSiderealTime, _solar.rightAscension);
+    // Approximate solar transit.
+    approximateTransit = Astronomical.approximateTransit(
+      coordinates.longitude,
+      solar.apparentSiderealTime,
+      solar.rightAscension,
+    );
+
+    // Solar altitude for sunrise and sunset.
     const solarAltitude = -50.0 / 60.0;
 
-    _observer = coordinates;
-    _transit = Astronomical.correctedTransit(_approximateTransit, coordinates.longitude, _solar.apparentSiderealTime,
-        _solar.rightAscension, _prevSolar.rightAscension, _nextSolar.rightAscension);
-    _sunrise = Astronomical.correctedHourAngle(
-        _approximateTransit,
-        solarAltitude,
-        coordinates,
-        false,
-        _solar.apparentSiderealTime,
-        _solar.rightAscension,
-        _prevSolar.rightAscension,
-        _nextSolar.rightAscension,
-        _solar.declination,
-        _prevSolar.declination,
-        _nextSolar.declination);
-    _sunset = Astronomical.correctedHourAngle(
-        _approximateTransit,
-        solarAltitude,
-        coordinates,
-        true,
-        _solar.apparentSiderealTime,
-        _solar.rightAscension,
-        _prevSolar.rightAscension,
-        _nextSolar.rightAscension,
-        _solar.declination,
-        _prevSolar.declination,
-        _nextSolar.declination);
+    observer = coordinates;
+
+    // Calculate precise solar transit.
+    transit = Astronomical.correctedTransit(
+      approximateTransit,
+      coordinates.longitude,
+      solar.apparentSiderealTime,
+      solar.rightAscension,
+      prevSolar.rightAscension,
+      nextSolar.rightAscension,
+    );
+
+    // Calculate sunrise time.
+    sunrise = Astronomical.correctedHourAngle(
+      approximateTransit,
+      solarAltitude,
+      coordinates,
+      false,
+      solar.apparentSiderealTime,
+      solar.rightAscension,
+      prevSolar.rightAscension,
+      nextSolar.rightAscension,
+      solar.declination,
+      prevSolar.declination,
+      nextSolar.declination,
+    );
+
+    // Calculate sunset time.
+    sunset = Astronomical.correctedHourAngle(
+      approximateTransit,
+      solarAltitude,
+      coordinates,
+      true,
+      solar.apparentSiderealTime,
+      solar.rightAscension,
+      prevSolar.rightAscension,
+      nextSolar.rightAscension,
+      solar.declination,
+      prevSolar.declination,
+      nextSolar.declination,
+    );
   }
 
+  /// Calculates the hour angle for a given angle.
+  ///
+  /// - [angle]: The angle in degrees.
+  /// - [afterTransit]: `true` if the calculation is for the afternoon; otherwise, `false`.
+  /// - Returns: The hour angle in hours.
   double hourAngle(double angle, bool afterTransit) {
     return Astronomical.correctedHourAngle(
-        _approximateTransit,
-        angle,
-        _observer,
-        afterTransit,
-        _solar.apparentSiderealTime,
-        _solar.rightAscension,
-        _prevSolar.rightAscension,
-        _nextSolar.rightAscension,
-        _solar.declination,
-        _prevSolar.declination,
-        _nextSolar.declination);
+      approximateTransit,
+      angle,
+      observer,
+      afterTransit,
+      solar.apparentSiderealTime,
+      solar.rightAscension,
+      prevSolar.rightAscension,
+      nextSolar.rightAscension,
+      solar.declination,
+      prevSolar.declination,
+      nextSolar.declination,
+    );
   }
 
-  // hours from transit
+  /// Calculates the hours from solar transit for the afternoon based on shadow length.
+  ///
+  /// - [shadowLength]: The desired shadow length.
+  /// - Returns: The time in hours from solar transit.
   double afternoon(ShadowLength shadowLength) {
-    final tangent = (_observer.latitude - _solar.declination).abs();
-    final inverse = shadowLength.getShadowLength() + tan(radians(tangent));
-    final angle = degrees(atan(1.0 / inverse));
+    final shadowValue = shadowLength.value;
+    if (shadowValue <= 0) {
+      throw ArgumentError('Shadow length must be greater than zero.');
+    }
 
+    // Calculate the tangent of the absolute latitude-declination difference.
+    final latitudeDeclinationDifference =
+        (observer.latitude - solar.declination).abs();
+    final tangent = tan(degreesToRadians(latitudeDeclinationDifference));
+
+    // Calculate the angle for the given shadow length.
+    final inverse = shadowValue + tangent;
+    final angle = radiansToDegrees(atan(1.0 / inverse));
+
+    // Calculate the hour angle for the given angle.
     return hourAngle(angle, true);
   }
 }

@@ -2,22 +2,22 @@ class DateComponents {
   final int year;
   final int month;
   final int day;
-
-  @override
-  bool operator ==(other) {
-    return other is DateComponents &&
-        year == other.year &&
-        month == other.month &&
-        day == other.day;
-  }
-
   DateComponents(this.year, this.month, this.day);
 
-  /// Convenience method that returns a [DateComponents] from a given [DateTime]
+  /// Creates a [DateComponents] from a [DateTime] object.
   ///
-  /// [date] the date
-  /// return the [DateComponents] (according to the default device timezone)
-  static DateComponents from(DateTime date) {
-    return DateComponents(date.year, date.month, date.day);
-  }
+  /// Returns a [DateComponents] corresponding to the default device timezone.
+  factory DateComponents.from(DateTime date) =>
+      DateComponents(date.year, date.month, date.day);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DateComponents &&
+          runtimeType == other.runtimeType &&
+          year == other.year &&
+          month == other.month &&
+          day == other.day;
+  @override
+  int get hashCode => Object.hash(year, month, day);
 }

@@ -7,7 +7,7 @@ import 'package:islam_app/screens/pray_calculation_setting/pray_calculation_sett
 import 'package:islam_app/screens/pray_notification_setting/pray_notification_setting_screen.dart';
 import 'package:islam_app/screens/quran_pages_index/quran_pages_index_screen.dart';
 import 'package:islam_app/screens/quran_prints/quran_prints_screen.dart';
-import 'package:islam_app/screens/select_change_language/change_language_screen.dart';
+import 'package:islam_app/screens/change_language/change_language_screen.dart';
 import 'package:islam_app/screens/home_tab/home_screen.dart';
 import 'package:islam_app/screens/main_container/main_container.dart';
 import 'package:islam_app/screens/report_suggestions/report_suggestion_screen.dart';

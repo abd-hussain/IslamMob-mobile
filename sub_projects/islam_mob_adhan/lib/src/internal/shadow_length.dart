@@ -1,15 +1,14 @@
-import 'dart:core' as core;
-
 class ShadowLength {
-  final core.double _shadowLength;
+  final double _value;
 
-  ShadowLength._(this._shadowLength);
+  const ShadowLength._(this._value);
 
-  core.double getShadowLength() {
-    return _shadowLength;
-  }
+  /// Returns the shadow length value.
+  double get value => _value;
 
-  static ShadowLength get single => ShadowLength._(1.0);
+  /// Represents a shadow length of 1.0 (single shadow length).
+  static const ShadowLength single = ShadowLength._(1.0);
 
-  static ShadowLength get double => ShadowLength._(2.0);
+  /// Represents a shadow length of 2.0 (double shadow length).
+  static const ShadowLength doubleLength = ShadowLength._(2.0);
 }

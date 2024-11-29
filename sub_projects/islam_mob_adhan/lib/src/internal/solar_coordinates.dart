@@ -5,59 +5,72 @@ import 'calendrical_helper.dart';
 import 'double_util.dart';
 import 'math.dart';
 
+/// Represents the solar coordinates, including declination,
+/// right ascension, and apparent sidereal time.
 class SolarCoordinates {
-  /// The declination of the sun, the angle between
-  /// the rays of the Sun and the plane of the Earth's
-  /// equator, in degrees.
-  late double _declination;
-  double get declination => _declination;
+  /// The declination of the Sun, the angle between the Sun's rays
+  /// and the plane of the Earth's equator, in degrees.
+  late final double declination;
 
-  ///  Right ascension of the Sun, the angular distance on the
-  /// celestial equator from the vernal equinox to the hour circle,
-  /// in degrees.
-  late double _rightAscension;
-  double get rightAscension => _rightAscension;
+  /// The right ascension of the Sun, the angular distance on the celestial equator
+  /// from the vernal equinox to the hour circle, in degrees.
+  late final double rightAscension;
 
-  ///  Apparent sidereal time, the hour angle of the vernal
-  /// equinox, in degrees.
-  late double _apparentSiderealTime;
-  double get apparentSiderealTime => _apparentSiderealTime;
+  /// The apparent sidereal time, the hour angle of the vernal equinox, in degrees.
+  late final double apparentSiderealTime;
 
+  /// Constructs [SolarCoordinates] for a given Julian Day.
+  ///
+  /// - [julianDay]: The Julian Day for which solar coordinates are calculated.
   SolarCoordinates(double julianDay) {
     final T = CalendricalHelper.julianCentury(julianDay);
-    final l0 = Astronomical.meanSolarLongitude(/* julianCentury */ T);
-    final lp = Astronomical.meanLunarLongitude(/* julianCentury */ T);
-    final omega =
-        Astronomical.ascendingLunarNodeLongitude(/* julianCentury */ T);
-    final lambda = radians(Astronomical.apparentSolarLongitude(
-        /* julianCentury*/ T, /* meanLongitude */ l0));
 
-    final theta0 = Astronomical.meanSiderealTime(/* julianCentury */ T);
-    final deltaPsi = Astronomical.nutationInLongitude(
-        /* julianCentury */ T,
-        /* solarLongitude */ l0,
-        /* lunarLongitude */ lp,
-        /* ascendingNode */ omega);
-    final deltaEpsilon = Astronomical.nutationInObliquity(
-        /* julianCentury */ T,
-        /* solarLongitude */ l0,
-        /* lunarLongitude */ lp,
-        /* ascendingNode */ omega);
+    // Calculate key astronomical parameters.
+    final meanSolarLongitude = Astronomical.meanSolarLongitude(T);
+    final meanLunarLongitude = Astronomical.meanLunarLongitude(T);
+    final ascendingNode = Astronomical.ascendingLunarNodeLongitude(T);
+    final apparentSolarLongitude = degreesToRadians(
+      Astronomical.apparentSolarLongitude(T, meanSolarLongitude),
+    );
 
-    final epsilon0 =
-        Astronomical.meanObliquityOfTheEcliptic(/* julianCentury */ T);
-    final epsilonApp = radians(Astronomical.apparentObliquityOfTheEcliptic(
-        /* julianCentury */ T, /* meanObliquityOfTheEcliptic */ epsilon0));
+    final meanSiderealTime = Astronomical.meanSiderealTime(T);
+    final nutationInLongitude = Astronomical.nutationInLongitude(
+      T,
+      meanSolarLongitude,
+      meanLunarLongitude,
+      ascendingNode,
+    );
+    final nutationInObliquity = Astronomical.nutationInObliquity(
+      T,
+      meanSolarLongitude,
+      meanLunarLongitude,
+      ascendingNode,
+    );
 
-    /* Equation from Astronomical Algorithms page 165 */
-    _declination = degrees(asin(sin(epsilonApp) * sin(lambda)));
+    final meanObliquity = Astronomical.meanObliquityOfTheEcliptic(T);
+    final apparentObliquity = degreesToRadians(
+      Astronomical.apparentObliquityOfTheEcliptic(T, meanObliquity),
+    );
 
-    /* Equation from Astronomical Algorithms page 165 */
-    _rightAscension = DoubleUtil.unwindAngle(
-        degrees(atan2(cos(epsilonApp) * sin(lambda), cos(lambda))));
+    // Calculate declination using spherical trigonometry.
+    declination = radiansToDegrees(
+        asin(sin(apparentObliquity) * sin(apparentSolarLongitude)));
 
-    /* Equation from Astronomical Algorithms page 88 */
-    _apparentSiderealTime = theta0 +
-        (((deltaPsi * 3600) * cos(radians(epsilon0 + deltaEpsilon))) / 3600);
+    // Calculate right ascension.
+    rightAscension = DoubleUtil.unwindAngle(
+      radiansToDegrees(
+        atan2(
+          cos(apparentObliquity) * sin(apparentSolarLongitude),
+          cos(apparentSolarLongitude),
+        ),
+      ),
+    );
+
+    // Calculate apparent sidereal time.
+    apparentSiderealTime = meanSiderealTime +
+        (nutationInLongitude *
+                3600 *
+                cos(degreesToRadians(meanObliquity + nutationInObliquity))) /
+            3600;
   }
 }
