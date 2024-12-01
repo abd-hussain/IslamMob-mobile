@@ -7,4 +7,7 @@ class HomeTabEvent with _$HomeTabEvent {
 
   factory HomeTabEvent.updateShowingNotificationView(bool status) =
       _UpdateShowingNotificationView;
+
+  factory HomeTabEvent.updateNextPrayType(SalahTimeState nextPrayType) =
+      _UpdateNextPrayType;
 }

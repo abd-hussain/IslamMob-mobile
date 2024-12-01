@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,59 +19,143 @@ class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
     on<_UpdateSalahTypeAndTime>(_updateSalahTypeAndTime);
     _prepareNextSalahTypeAndTime();
   }
+
+  /// Local Hive box instance for storing/retrieving user settings.
   final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
+  /// Prepare the next Salah type and time by adding the appropriate event.
   void _prepareNextSalahTypeAndTime() {
-    //TODO: handle PrayManager
     final prayManager = PrayManager(
-      coordinates: Coordinates(_getLatitude(), _getLongitude()),
-      utcOffset: const Duration(hours: 3),
-      calculationMethod: CalculationMethod.jordan,
-      madhab: Madhab.shafi,
+      coordinates: _getCoordinates(),
+      utcOffset: _getDifferenceFromUTC(),
+      calculationMethod: _getSelectedCalculationMethod(),
+      madhab: _getMadhab(),
     );
 
-    add(
-      HomeHeaderEvent.updateSalahTypeAndTime(
-        nextPrayType: prayManager.getNextPrayerType(),
-        nextPrayDateTime: prayManager.getNextPrayerTime(),
-      ),
+    if (prayManager.getNextPrayerType() == const SalahTimeState.none()) {
+      final tommorrow = DateTime.now().add(const Duration(days: 1));
+      final nextDayPrayManager = PrayManager(
+        coordinates: _getCoordinates(),
+        utcOffset: _getDifferenceFromUTC(),
+        calculationMethod: _getSelectedCalculationMethod(),
+        madhab: _getMadhab(),
+        specificDate:
+            DateComponents(tommorrow.year, tommorrow.month, tommorrow.day),
+      );
+
+      add(
+        HomeHeaderEvent.updateSalahTypeAndTime(
+          nextPrayType: const SalahTimeState.fajir(),
+          nextPrayDateTime: nextDayPrayManager.getAllPrayTimeAsDateTime().fajir,
+        ),
+      );
+    } else {
+      add(
+        HomeHeaderEvent.updateSalahTypeAndTime(
+          nextPrayType: prayManager.getNextPrayerType(),
+          nextPrayDateTime: prayManager.getNextPrayerTime(),
+        ),
+      );
+    }
+  }
+
+  /// Retrieve the selected calculation method from the Hive box.
+  CalculationMethod _getSelectedCalculationMethod() {
+    final String selectedCalculationMethod = _box.get(
+      DatabaseFieldConstant.selectedCalculationMethod,
+      defaultValue: "",
+    );
+
+    return CalculationMethod.values.firstWhere(
+      (method) => method.name == selectedCalculationMethod,
+      orElse: () => CalculationMethod.jordan,
     );
   }
 
-  double _getLatitude() {
-    return double.parse(
-        _box.get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0"));
+  /// Retrieve the selected Madhab from the Hive box.
+  Madhab _getMadhab() {
+    final String selectedMadhab = _box.get(
+      DatabaseFieldConstant.selectedMadhab,
+      defaultValue: "shafi",
+    );
+    return selectedMadhab == "shafi" ? Madhab.shafi : Madhab.hanafi;
   }
 
-  double _getLongitude() {
-    return double.parse(
-        _box.get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0"));
+  /// Retrieve the selected coordinates (latitude and longitude) from the Hive box.
+  Coordinates _getCoordinates() {
+    final String selectedLatitude = _box.get(
+      DatabaseFieldConstant.selectedLatitude,
+      defaultValue: "0.0",
+    );
+    final String selectedLongitude = _box.get(
+      DatabaseFieldConstant.selectedLongitude,
+      defaultValue: "0.0",
+    );
+    return Coordinates(
+      double.tryParse(selectedLatitude) ?? 0.0,
+      double.tryParse(selectedLongitude) ?? 0.0,
+    );
   }
 
+  /// Retrieve the UTC offset, either from Hive or the device's timezone.
+  Duration _getDifferenceFromUTC() {
+    final String selectedDifferenceWithUTCHour = _box.get(
+      DatabaseFieldConstant.selectedDifferenceWithUTCHour,
+      defaultValue: "",
+    );
+    final String selectedDifferenceWithUTCMin = _box.get(
+      DatabaseFieldConstant.selectedDifferenceWithUTCMin,
+      defaultValue: "",
+    );
+
+    if (selectedDifferenceWithUTCHour.isEmpty) {
+      return DateTime.now().timeZoneOffset;
+    } else {
+      return Duration(
+          hours: int.tryParse(selectedDifferenceWithUTCHour) ?? 0,
+          minutes: int.tryParse(selectedDifferenceWithUTCMin) ?? 0);
+    }
+  }
+
+  /// Returns the current selected country from the Hive box.
   String currentCountry() {
-    return _box.get(DatabaseFieldConstant.selectedCountry);
+    return _box.get(DatabaseFieldConstant.selectedCountry, defaultValue: "");
   }
 
+  /// Returns the current selected city from the Hive box.
   String currentCity() {
-    return _box.get(DatabaseFieldConstant.selectedCity);
+    return _box.get(DatabaseFieldConstant.selectedCity, defaultValue: "");
   }
 
+  /// Returns the current selected sub-city from the Hive box.
   String currentSubCity() {
-    return _box.get(DatabaseFieldConstant.selectedSubCity);
+    return _box.get(DatabaseFieldConstant.selectedSubCity, defaultValue: "");
   }
 
+  /// Determines if the next Salah time is AM or PM.
   String knowTimingAMorPM() {
     return locator<DayTime>().getAmPm(state.nextPrayDateTime?.hour);
   }
 
+  /// Formats the next Salah time in 12-hour format.
   String getNextSalahTime() {
-    return "${locator<DayTime>().convertTo12HourFormat(state.nextPrayDateTime?.hour)}:${(state.nextPrayDateTime?.minute ?? "00").toString().padLeft(2, '0')}";
+    final hour =
+        locator<DayTime>().convertTo12HourFormat(state.nextPrayDateTime?.hour);
+    final minute =
+        (state.nextPrayDateTime?.minute ?? 0).toString().padLeft(2, '0');
+    return "$hour:$minute";
   }
 
+  /// Event handler to update the next Salah type and time in the state.
   FutureOr<void> _updateSalahTypeAndTime(
-      _UpdateSalahTypeAndTime event, Emitter<HomeHeaderState> emit) {
-    emit(state.copyWith(
+    _UpdateSalahTypeAndTime event,
+    Emitter<HomeHeaderState> emit,
+  ) {
+    emit(
+      state.copyWith(
         nextPrayType: event.nextPrayType,
-        nextPrayDateTime: event.nextPrayDateTime));
+        nextPrayDateTime: event.nextPrayDateTime,
+      ),
+    );
   }
 }

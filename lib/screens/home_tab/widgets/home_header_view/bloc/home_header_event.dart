@@ -4,6 +4,6 @@ part of 'home_header_bloc.dart';
 class HomeHeaderEvent with _$HomeHeaderEvent {
   factory HomeHeaderEvent.updateSalahTypeAndTime({
     required SalahTimeState nextPrayType,
-    required DateTime nextPrayDateTime,
+    required DateTime? nextPrayDateTime,
   }) = _UpdateSalahTypeAndTime;
 }

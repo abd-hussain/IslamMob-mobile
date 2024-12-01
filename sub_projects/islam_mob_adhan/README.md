@@ -34,7 +34,6 @@ main() {
   print(DateFormat.jm().format(prayerTimes.maghrib));
   print(DateFormat.jm().format(prayerTimes.isha));
 
-  print('---');
 
   // Custom Timezone Usage. (Most of you won't need this).
   print('NewYork Prayer Times');

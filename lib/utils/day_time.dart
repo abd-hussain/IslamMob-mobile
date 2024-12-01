@@ -25,8 +25,18 @@ class DayTime {
   /// Gets a [HijriCalendar] object by adding a specified number of days.
   HijriCalendar getHijriDateWithDayOffset({required int dayOffset}) {
     final hijriDate = HijriCalendar.now();
-    hijriDate.hDay += dayOffset;
-    return hijriDate;
+
+    // Convert the Hijri date to a DateTime for manipulation
+    final gregorianDate = HijriCalendar()
+        .hijriToGregorian(hijriDate.hYear, hijriDate.hMonth, hijriDate.hDay);
+
+    // Add the day offset to the Gregorian date
+    final updatedGregorianDate = gregorianDate.add(Duration(days: dayOffset));
+
+    // Convert back to Hijri calendar
+    final updatedHijriDate = HijriCalendar.fromDate(updatedGregorianDate);
+
+    return updatedHijriDate;
   }
 
   /// Gets the localized name of the day for a given [date].

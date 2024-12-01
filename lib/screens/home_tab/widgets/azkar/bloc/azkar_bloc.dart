@@ -2,95 +2,181 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:islam_app/models/app_model/azkar.dart';
+import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
 
 part 'azkar_event.dart';
 part 'azkar_state.dart';
 part 'azkar_bloc.freezed.dart';
 
 class AzkarBloc extends Bloc<AzkarEvent, AzkarState> {
-  AzkarBloc() : super(const AzkarState()) {
-    on<_UpdateShowingAzkarStatus>(_updateShowingAzkarStatus);
-    on<_ResetCounters>(_resetCounters);
-    on<_IncrementCounter>(_incrementCounter);
+  final SalahTimeState salahType;
+
+  AzkarBloc(this.salahType) : super(const AzkarState()) {
+    on<_UpdateShowingAzkarStatus>(_handleUpdateShowingAzkarStatus);
+    on<_ResetCounters>(_handleResetCounters);
+    on<_IncrementCounter>(_handleIncrementCounter);
+
+    _initializeAzkar(salahType);
   }
 
-  final String besemellah = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ";
+  // Constant for Bismillah
+  final String besemellah = "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم";
 
-  final List<String> azkarList = [
-    'ٱسْتَغْفِرُ ٱللَّهَ',
-    'ٱللَّهُمَّ أَنتَ ٱلسَّلَامُ، وَمِنكَ ٱلسَّلَامُ، تَبَارَكتَ يَا ذَا ٱلْجَلَالِ وَٱلْإِكْرَامِ، لَا إِلٰهَ إِلَّا ٱللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّهِ، لَا إِلٰهَ إِلَّا ٱللَّهُ وَلَا نَعْبُدُ إِلَّا إِيَّاهُ، لَهُ ٱلنِّعْمَةُ وَلَهُ ٱلْفَضْلُ وَلَهُ ٱلثَّنَاءُ ٱلْحَسَنُ، لَا إِلٰهَ إِلَّا ٱللَّهُ مُخْلِصِينَ لَهُ ٱلدِّينَ وَلَوْ كَرِهَ ٱلْكَافِرُونَ، ٱللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ وَلَا مُعْطِيَ لِمَا مَنَعْتَ وَلَا يَنفَعُ ذَا ٱلْجَدِّ مِنْكَ ٱلْجَدُّ',
-    'سُبْحَانَ اللَّهِ',
-    'ٱلْحَمْدُ لِلَّهِ',
-    'ٱللَّهُ أَكْبَرُ',
-    'لَا إِلٰهَ إِلَّا ٱللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',
-    'لَا إِلٰهَ إِلَّا ٱللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ، يُحْيِي وَيُمِيتُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',
-    'اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ',
-    'قُلۡ هُوَ ٱللَّهُ أَحَدٌ * ٱللَّهُ ٱلصَّمَدُ * لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ * وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ',
-    'قُلۡ أَعُوذُ بِرَبِّ ٱلۡفَلَقِ * مِن شَرِّ مَا خَلَقَ * وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِي ٱلۡعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
-    'قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاسِ * مَلِكِ ٱلنَّاسِ * إِلَٰهِ ٱلنَّاسِ * مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ * ٱلَّذِي يُوَسۡوِسُ فِي صُدُورِ ٱلنَّاسِ * مِنَ ٱلۡجِنَّةِ وَٱلنَّاسِ',
-  ];
+  final String aothBellah = "أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ";
 
-  FutureOr<void> _updateShowingAzkarStatus(
+  /// Initializes the Azkar list and triggers state update.
+  void _initializeAzkar(SalahTimeState salahType) {
+    add(AzkarEvent.updateShowingAzkarStatus(_buildAzkarList(salahType)));
+  }
+
+  /// Constructs the Azkar list.
+  List<AzkarModel> _buildAzkarList(SalahTimeState salahType) {
+    List<AzkarModel> list = [
+      AzkarModel(id: 1, title: '', desc: "أَسْـتَغْفِرُ الله", maxCount: 3),
+      AzkarModel(
+        id: 2,
+        title: '',
+        desc:
+            "اللّهُـمَّ أَنْـتَ السَّلامُ ، وَمِـنْكَ السَّلام ، تَبارَكْتَ يا ذا الجَـلالِ وَالإِكْـرام",
+        maxCount: 1,
+      ),
+      AzkarModel(
+        id: 3,
+        title: '',
+        desc:
+            "لا إلهَ إلاّ اللّهُ وحدَهُ لا شريكَ لهُ، لهُ المُـلْكُ ولهُ الحَمْد، وهوَ على كلّ شَيءٍ قَدير، اللّهُـمَّ لا مانِعَ لِما أَعْطَـيْت، وَلا مُعْطِـيَ لِما مَنَـعْت، وَلا يَنْفَـعُ ذا الجَـدِّ مِنْـكَ الجَـد",
+        maxCount: 1,
+      ),
+      AzkarModel(
+        id: 4,
+        title: '',
+        desc:
+            "لا إلهَ إلاّ اللّه, وحدَهُ لا شريكَ لهُ، لهُ الملكُ ولهُ الحَمد، وهوَ على كلّ شيءٍ قدير، لا حَـوْلَ وَلا قـوَّةَ إِلاّ بِاللهِ، لا إلهَ إلاّ اللّـه، وَلا نَعْـبُـدُ إِلاّ إيّـاه, لَهُ النِّعْـمَةُ وَلَهُ الفَضْل وَلَهُ الثَّـناءُ الحَـسَن، لا إلهَ إلاّ اللّهُ مخْلِصـينَ لَـهُ الدِّينَ وَلَوْ كَـرِهَ الكـافِرون",
+        maxCount: 1,
+      ),
+      AzkarModel(
+          id: 6,
+          title: '',
+          desc: "سُـبْحانَ اللهِ، والحَمْـدُ لله ، واللهُ أكْـبَر",
+          maxCount: 33),
+      AzkarModel(
+          id: 9,
+          title: '',
+          desc:
+              "لا إلهَ إلاّ اللّهُ وَحْـدَهُ لا شريكَ لهُ، لهُ الملكُ ولهُ الحَمْد، وهُوَ على كُلّ شَيءٍ قَـدير",
+          maxCount: 1),
+      AzkarModel(
+        id: 10,
+        title: besemellah,
+        desc:
+            "قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
+        maxCount: (salahType == const SalahTimeStateFajir() ||
+                salahType == const SalahTimeStateMaghrib())
+            ? 3
+            : 1,
+      ),
+      AzkarModel(
+        id: 11,
+        title: besemellah,
+        desc:
+            "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+        maxCount: (salahType == const SalahTimeStateFajir() ||
+                salahType == const SalahTimeStateMaghrib())
+            ? 3
+            : 1,
+      ),
+      AzkarModel(
+        id: 12,
+        title: besemellah,
+        desc:
+            "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
+        maxCount: (salahType == const SalahTimeStateFajir() ||
+                salahType == const SalahTimeStateMaghrib())
+            ? 3
+            : 1,
+      ),
+      AzkarModel(
+        id: 13,
+        title: aothBellah,
+        desc:
+            "اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]",
+        maxCount: 1,
+      ),
+    ];
+
+    if (salahType == const SalahTimeStateFajir() ||
+        salahType == const SalahTimeStateMaghrib()) {
+      list.add(AzkarModel(
+        id: 14,
+        title: "",
+        desc:
+            "لا إلهَ إلاّ اللّهُ وحْـدَهُ لا شريكَ لهُ، لهُ المُلكُ ولهُ الحَمْد، يُحيـي وَيُمـيتُ وهُوَ على كُلّ شيءٍ قدير",
+        maxCount: 10,
+      ));
+    }
+
+    if (salahType == const SalahTimeStateFajir()) {
+      list.add(AzkarModel(
+        id: 15,
+        title: "",
+        desc:
+            "اللّهُـمَّ إِنِّـي أَسْأَلُـكَ عِلْمـاً نافِعـاً وَرِزْقـاً طَيِّـباً ، وَعَمَـلاً مُتَقَـبَّلاً",
+        maxCount: 1,
+      ));
+    }
+
+    if (salahType == const SalahTimeStateFajir() ||
+        salahType == const SalahTimeStateMaghrib()) {
+      list.add(AzkarModel(
+        id: 16,
+        title: "",
+        desc: "اللَّهُمَّ أَجِرْنِي مِنْ النَّار",
+        maxCount: 7,
+      ));
+    }
+
+    list.add(AzkarModel(
+      id: 17,
+      title: "",
+      desc:
+          "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+      maxCount: 1,
+    ));
+
+    return list;
+  }
+
+  /// Checks if all counters are filled.
+  bool isCounterFilled() =>
+      state.azkarList.every((zeker) => zeker.currentCount >= zeker.maxCount);
+
+  /// Updates the Azkar list in the state.
+  FutureOr<void> _handleUpdateShowingAzkarStatus(
       _UpdateShowingAzkarStatus event, Emitter<AzkarState> emit) {
-    emit(state.copyWith(showAzkarView: event.status));
+    emit(state.copyWith(azkarList: event.azkarList));
   }
 
-  FutureOr<void> _incrementCounter(
-      _IncrementCounter event, Emitter<AzkarState> emit) {
-    final AzkarCounters? updatedCounters =
-        _updateCounter(state.counters, event.counterIndex, 1);
-    if (updatedCounters != null) {
-      emit(state.copyWith(counters: updatedCounters));
-    }
-  }
-
-  /// Helper method to update a specific counter dynamically
-  AzkarCounters? _updateCounter(
-      AzkarCounters counters, int counterIndex, int increment) {
-    switch (counterIndex) {
-      case 1:
-        return counters.copyWith(counter1: counters.counter1 + increment);
-      case 2:
-        return counters.copyWith(counter2: counters.counter2 + increment);
-      case 3:
-        return counters.copyWith(counter3: counters.counter3 + increment);
-      case 4:
-        return counters.copyWith(counter4: counters.counter4 + increment);
-      case 5:
-        return counters.copyWith(counter5: counters.counter5 + increment);
-      case 6:
-        return counters.copyWith(counter6: counters.counter6 + increment);
-      case 7:
-        return counters.copyWith(counter7: counters.counter7 + increment);
-      case 8:
-        return counters.copyWith(counter8: counters.counter8 + increment);
-      case 9:
-        return counters.copyWith(counter9: counters.counter9 + increment);
-      case 10:
-        return counters.copyWith(counter10: counters.counter10 + increment);
-      case 11:
-        return counters.copyWith(counter11: counters.counter11 + increment);
-      default:
-        return null; // Invalid index, no update
-    }
-  }
-
-  bool isCounterFilled() {
-    return state.counters.counter1 == 3 &&
-        state.counters.counter2 == 1 &&
-        state.counters.counter3 == 33 &&
-        state.counters.counter4 == 33 &&
-        state.counters.counter5 == 33 &&
-        state.counters.counter6 == 1 &&
-        state.counters.counter7 == 1 &&
-        state.counters.counter8 == 1 &&
-        state.counters.counter9 == 1 &&
-        state.counters.counter10 == 1 &&
-        state.counters.counter11 == 1;
-  }
-
-  FutureOr<void> _resetCounters(
+  /// Resets all counters to 0 and updates the state.
+  FutureOr<void> _handleResetCounters(
       _ResetCounters event, Emitter<AzkarState> emit) {
-    emit(state.copyWith(counters: const AzkarCounters()));
+    final List<AzkarModel> resetList = state.azkarList
+        .map(
+          (zeker) => zeker.copyWith(currentCount: 0),
+        )
+        .toList();
+    emit(state.copyWith(azkarList: resetList));
+  }
+
+  /// Increments the counter of a specific Azkar item.
+  FutureOr<void> _handleIncrementCounter(
+      _IncrementCounter event, Emitter<AzkarState> emit) {
+    final List<AzkarModel> updatedList = state.azkarList.map((zeker) {
+      if (zeker.id == event.zeker.id) {
+        return zeker.copyWith(currentCount: event.zeker.currentCount);
+      }
+      return zeker;
+    }).toList();
+    emit(state.copyWith(azkarList: updatedList));
   }
 }

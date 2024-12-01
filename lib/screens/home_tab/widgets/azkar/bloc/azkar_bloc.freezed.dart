@@ -18,23 +18,24 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AzkarEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateShowingAzkarStatus,
+    required TResult Function(List<AzkarModel> azkarList)
+        updateShowingAzkarStatus,
     required TResult Function() resetCounters,
-    required TResult Function(int counterIndex) incrementCounter,
+    required TResult Function(AzkarModel zeker) incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateShowingAzkarStatus,
+    TResult? Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
     TResult? Function()? resetCounters,
-    TResult? Function(int counterIndex)? incrementCounter,
+    TResult? Function(AzkarModel zeker)? incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateShowingAzkarStatus,
+    TResult Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
     TResult Function()? resetCounters,
-    TResult Function(int counterIndex)? incrementCounter,
+    TResult Function(AzkarModel zeker)? incrementCounter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -92,7 +93,7 @@ abstract class _$$UpdateShowingAzkarStatusImplCopyWith<$Res> {
           $Res Function(_$UpdateShowingAzkarStatusImpl) then) =
       __$$UpdateShowingAzkarStatusImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool status});
+  $Res call({List<AzkarModel> azkarList});
 }
 
 /// @nodoc
@@ -109,13 +110,13 @@ class __$$UpdateShowingAzkarStatusImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = null,
+    Object? azkarList = null,
   }) {
     return _then(_$UpdateShowingAzkarStatusImpl(
-      null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
+      null == azkarList
+          ? _value._azkarList
+          : azkarList // ignore: cast_nullable_to_non_nullable
+              as List<AzkarModel>,
     ));
   }
 }
@@ -123,14 +124,20 @@ class __$$UpdateShowingAzkarStatusImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateShowingAzkarStatusImpl implements _UpdateShowingAzkarStatus {
-  _$UpdateShowingAzkarStatusImpl(this.status);
+  _$UpdateShowingAzkarStatusImpl(final List<AzkarModel> azkarList)
+      : _azkarList = azkarList;
 
+  final List<AzkarModel> _azkarList;
   @override
-  final bool status;
+  List<AzkarModel> get azkarList {
+    if (_azkarList is EqualUnmodifiableListView) return _azkarList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_azkarList);
+  }
 
   @override
   String toString() {
-    return 'AzkarEvent.updateShowingAzkarStatus(status: $status)';
+    return 'AzkarEvent.updateShowingAzkarStatus(azkarList: $azkarList)';
   }
 
   @override
@@ -138,11 +145,13 @@ class _$UpdateShowingAzkarStatusImpl implements _UpdateShowingAzkarStatus {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateShowingAzkarStatusImpl &&
-            (identical(other.status, status) || other.status == status));
+            const DeepCollectionEquality()
+                .equals(other._azkarList, _azkarList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_azkarList));
 
   /// Create a copy of AzkarEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -156,33 +165,34 @@ class _$UpdateShowingAzkarStatusImpl implements _UpdateShowingAzkarStatus {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateShowingAzkarStatus,
+    required TResult Function(List<AzkarModel> azkarList)
+        updateShowingAzkarStatus,
     required TResult Function() resetCounters,
-    required TResult Function(int counterIndex) incrementCounter,
+    required TResult Function(AzkarModel zeker) incrementCounter,
   }) {
-    return updateShowingAzkarStatus(status);
+    return updateShowingAzkarStatus(azkarList);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateShowingAzkarStatus,
+    TResult? Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
     TResult? Function()? resetCounters,
-    TResult? Function(int counterIndex)? incrementCounter,
+    TResult? Function(AzkarModel zeker)? incrementCounter,
   }) {
-    return updateShowingAzkarStatus?.call(status);
+    return updateShowingAzkarStatus?.call(azkarList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateShowingAzkarStatus,
+    TResult Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
     TResult Function()? resetCounters,
-    TResult Function(int counterIndex)? incrementCounter,
+    TResult Function(AzkarModel zeker)? incrementCounter,
     required TResult orElse(),
   }) {
     if (updateShowingAzkarStatus != null) {
-      return updateShowingAzkarStatus(status);
+      return updateShowingAzkarStatus(azkarList);
     }
     return orElse();
   }
@@ -225,10 +235,10 @@ class _$UpdateShowingAzkarStatusImpl implements _UpdateShowingAzkarStatus {
 }
 
 abstract class _UpdateShowingAzkarStatus implements AzkarEvent {
-  factory _UpdateShowingAzkarStatus(final bool status) =
+  factory _UpdateShowingAzkarStatus(final List<AzkarModel> azkarList) =
       _$UpdateShowingAzkarStatusImpl;
 
-  bool get status;
+  List<AzkarModel> get azkarList;
 
   /// Create a copy of AzkarEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -278,9 +288,10 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateShowingAzkarStatus,
+    required TResult Function(List<AzkarModel> azkarList)
+        updateShowingAzkarStatus,
     required TResult Function() resetCounters,
-    required TResult Function(int counterIndex) incrementCounter,
+    required TResult Function(AzkarModel zeker) incrementCounter,
   }) {
     return resetCounters();
   }
@@ -288,9 +299,9 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateShowingAzkarStatus,
+    TResult? Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
     TResult? Function()? resetCounters,
-    TResult? Function(int counterIndex)? incrementCounter,
+    TResult? Function(AzkarModel zeker)? incrementCounter,
   }) {
     return resetCounters?.call();
   }
@@ -298,9 +309,9 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateShowingAzkarStatus,
+    TResult Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
     TResult Function()? resetCounters,
-    TResult Function(int counterIndex)? incrementCounter,
+    TResult Function(AzkarModel zeker)? incrementCounter,
     required TResult orElse(),
   }) {
     if (resetCounters != null) {
@@ -356,7 +367,7 @@ abstract class _$$IncrementCounterImplCopyWith<$Res> {
           $Res Function(_$IncrementCounterImpl) then) =
       __$$IncrementCounterImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int counterIndex});
+  $Res call({AzkarModel zeker});
 }
 
 /// @nodoc
@@ -372,13 +383,13 @@ class __$$IncrementCounterImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? counterIndex = null,
+    Object? zeker = null,
   }) {
     return _then(_$IncrementCounterImpl(
-      null == counterIndex
-          ? _value.counterIndex
-          : counterIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      null == zeker
+          ? _value.zeker
+          : zeker // ignore: cast_nullable_to_non_nullable
+              as AzkarModel,
     ));
   }
 }
@@ -386,14 +397,14 @@ class __$$IncrementCounterImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$IncrementCounterImpl implements _IncrementCounter {
-  const _$IncrementCounterImpl(this.counterIndex);
+  const _$IncrementCounterImpl(this.zeker);
 
   @override
-  final int counterIndex;
+  final AzkarModel zeker;
 
   @override
   String toString() {
-    return 'AzkarEvent.incrementCounter(counterIndex: $counterIndex)';
+    return 'AzkarEvent.incrementCounter(zeker: $zeker)';
   }
 
   @override
@@ -401,12 +412,11 @@ class _$IncrementCounterImpl implements _IncrementCounter {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IncrementCounterImpl &&
-            (identical(other.counterIndex, counterIndex) ||
-                other.counterIndex == counterIndex));
+            (identical(other.zeker, zeker) || other.zeker == zeker));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, counterIndex);
+  int get hashCode => Object.hash(runtimeType, zeker);
 
   /// Create a copy of AzkarEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -420,33 +430,34 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateShowingAzkarStatus,
+    required TResult Function(List<AzkarModel> azkarList)
+        updateShowingAzkarStatus,
     required TResult Function() resetCounters,
-    required TResult Function(int counterIndex) incrementCounter,
+    required TResult Function(AzkarModel zeker) incrementCounter,
   }) {
-    return incrementCounter(counterIndex);
+    return incrementCounter(zeker);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateShowingAzkarStatus,
+    TResult? Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
     TResult? Function()? resetCounters,
-    TResult? Function(int counterIndex)? incrementCounter,
+    TResult? Function(AzkarModel zeker)? incrementCounter,
   }) {
-    return incrementCounter?.call(counterIndex);
+    return incrementCounter?.call(zeker);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateShowingAzkarStatus,
+    TResult Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
     TResult Function()? resetCounters,
-    TResult Function(int counterIndex)? incrementCounter,
+    TResult Function(AzkarModel zeker)? incrementCounter,
     required TResult orElse(),
   }) {
     if (incrementCounter != null) {
-      return incrementCounter(counterIndex);
+      return incrementCounter(zeker);
     }
     return orElse();
   }
@@ -489,10 +500,10 @@ class _$IncrementCounterImpl implements _IncrementCounter {
 }
 
 abstract class _IncrementCounter implements AzkarEvent {
-  const factory _IncrementCounter(final int counterIndex) =
+  const factory _IncrementCounter(final AzkarModel zeker) =
       _$IncrementCounterImpl;
 
-  int get counterIndex;
+  AzkarModel get zeker;
 
   /// Create a copy of AzkarEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -504,7 +515,7 @@ abstract class _IncrementCounter implements AzkarEvent {
 /// @nodoc
 mixin _$AzkarState {
   bool get showAzkarView => throw _privateConstructorUsedError;
-  AzkarCounters get counters => throw _privateConstructorUsedError;
+  List<AzkarModel> get azkarList => throw _privateConstructorUsedError;
 
   /// Create a copy of AzkarState
   /// with the given fields replaced by the non-null parameter values.
@@ -519,9 +530,7 @@ abstract class $AzkarStateCopyWith<$Res> {
           AzkarState value, $Res Function(AzkarState) then) =
       _$AzkarStateCopyWithImpl<$Res, AzkarState>;
   @useResult
-  $Res call({bool showAzkarView, AzkarCounters counters});
-
-  $AzkarCountersCopyWith<$Res> get counters;
+  $Res call({bool showAzkarView, List<AzkarModel> azkarList});
 }
 
 /// @nodoc
@@ -540,28 +549,18 @@ class _$AzkarStateCopyWithImpl<$Res, $Val extends AzkarState>
   @override
   $Res call({
     Object? showAzkarView = null,
-    Object? counters = null,
+    Object? azkarList = null,
   }) {
     return _then(_value.copyWith(
       showAzkarView: null == showAzkarView
           ? _value.showAzkarView
           : showAzkarView // ignore: cast_nullable_to_non_nullable
               as bool,
-      counters: null == counters
-          ? _value.counters
-          : counters // ignore: cast_nullable_to_non_nullable
-              as AzkarCounters,
+      azkarList: null == azkarList
+          ? _value.azkarList
+          : azkarList // ignore: cast_nullable_to_non_nullable
+              as List<AzkarModel>,
     ) as $Val);
-  }
-
-  /// Create a copy of AzkarState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AzkarCountersCopyWith<$Res> get counters {
-    return $AzkarCountersCopyWith<$Res>(_value.counters, (value) {
-      return _then(_value.copyWith(counters: value) as $Val);
-    });
   }
 }
 
@@ -573,10 +572,7 @@ abstract class _$$AzkarStateImplCopyWith<$Res>
       __$$AzkarStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool showAzkarView, AzkarCounters counters});
-
-  @override
-  $AzkarCountersCopyWith<$Res> get counters;
+  $Res call({bool showAzkarView, List<AzkarModel> azkarList});
 }
 
 /// @nodoc
@@ -593,17 +589,17 @@ class __$$AzkarStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? showAzkarView = null,
-    Object? counters = null,
+    Object? azkarList = null,
   }) {
     return _then(_$AzkarStateImpl(
       showAzkarView: null == showAzkarView
           ? _value.showAzkarView
           : showAzkarView // ignore: cast_nullable_to_non_nullable
               as bool,
-      counters: null == counters
-          ? _value.counters
-          : counters // ignore: cast_nullable_to_non_nullable
-              as AzkarCounters,
+      azkarList: null == azkarList
+          ? _value._azkarList
+          : azkarList // ignore: cast_nullable_to_non_nullable
+              as List<AzkarModel>,
     ));
   }
 }
@@ -612,18 +608,24 @@ class __$$AzkarStateImplCopyWithImpl<$Res>
 
 class _$AzkarStateImpl implements _AzkarState {
   const _$AzkarStateImpl(
-      {this.showAzkarView = false, this.counters = const AzkarCounters()});
+      {this.showAzkarView = false, final List<AzkarModel> azkarList = const []})
+      : _azkarList = azkarList;
 
   @override
   @JsonKey()
   final bool showAzkarView;
+  final List<AzkarModel> _azkarList;
   @override
   @JsonKey()
-  final AzkarCounters counters;
+  List<AzkarModel> get azkarList {
+    if (_azkarList is EqualUnmodifiableListView) return _azkarList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_azkarList);
+  }
 
   @override
   String toString() {
-    return 'AzkarState(showAzkarView: $showAzkarView, counters: $counters)';
+    return 'AzkarState(showAzkarView: $showAzkarView, azkarList: $azkarList)';
   }
 
   @override
@@ -633,12 +635,13 @@ class _$AzkarStateImpl implements _AzkarState {
             other is _$AzkarStateImpl &&
             (identical(other.showAzkarView, showAzkarView) ||
                 other.showAzkarView == showAzkarView) &&
-            (identical(other.counters, counters) ||
-                other.counters == counters));
+            const DeepCollectionEquality()
+                .equals(other._azkarList, _azkarList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, showAzkarView, counters);
+  int get hashCode => Object.hash(runtimeType, showAzkarView,
+      const DeepCollectionEquality().hash(_azkarList));
 
   /// Create a copy of AzkarState
   /// with the given fields replaced by the non-null parameter values.
@@ -652,383 +655,17 @@ class _$AzkarStateImpl implements _AzkarState {
 abstract class _AzkarState implements AzkarState {
   const factory _AzkarState(
       {final bool showAzkarView,
-      final AzkarCounters counters}) = _$AzkarStateImpl;
+      final List<AzkarModel> azkarList}) = _$AzkarStateImpl;
 
   @override
   bool get showAzkarView;
   @override
-  AzkarCounters get counters;
+  List<AzkarModel> get azkarList;
 
   /// Create a copy of AzkarState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AzkarStateImplCopyWith<_$AzkarStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$AzkarCounters {
-  int get counter1 => throw _privateConstructorUsedError;
-  int get counter2 => throw _privateConstructorUsedError;
-  int get counter3 => throw _privateConstructorUsedError;
-  int get counter4 => throw _privateConstructorUsedError;
-  int get counter5 => throw _privateConstructorUsedError;
-  int get counter6 => throw _privateConstructorUsedError;
-  int get counter7 => throw _privateConstructorUsedError;
-  int get counter8 => throw _privateConstructorUsedError;
-  int get counter9 => throw _privateConstructorUsedError;
-  int get counter10 => throw _privateConstructorUsedError;
-  int get counter11 => throw _privateConstructorUsedError;
-
-  /// Create a copy of AzkarCounters
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AzkarCountersCopyWith<AzkarCounters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AzkarCountersCopyWith<$Res> {
-  factory $AzkarCountersCopyWith(
-          AzkarCounters value, $Res Function(AzkarCounters) then) =
-      _$AzkarCountersCopyWithImpl<$Res, AzkarCounters>;
-  @useResult
-  $Res call(
-      {int counter1,
-      int counter2,
-      int counter3,
-      int counter4,
-      int counter5,
-      int counter6,
-      int counter7,
-      int counter8,
-      int counter9,
-      int counter10,
-      int counter11});
-}
-
-/// @nodoc
-class _$AzkarCountersCopyWithImpl<$Res, $Val extends AzkarCounters>
-    implements $AzkarCountersCopyWith<$Res> {
-  _$AzkarCountersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AzkarCounters
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? counter1 = null,
-    Object? counter2 = null,
-    Object? counter3 = null,
-    Object? counter4 = null,
-    Object? counter5 = null,
-    Object? counter6 = null,
-    Object? counter7 = null,
-    Object? counter8 = null,
-    Object? counter9 = null,
-    Object? counter10 = null,
-    Object? counter11 = null,
-  }) {
-    return _then(_value.copyWith(
-      counter1: null == counter1
-          ? _value.counter1
-          : counter1 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter2: null == counter2
-          ? _value.counter2
-          : counter2 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter3: null == counter3
-          ? _value.counter3
-          : counter3 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter4: null == counter4
-          ? _value.counter4
-          : counter4 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter5: null == counter5
-          ? _value.counter5
-          : counter5 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter6: null == counter6
-          ? _value.counter6
-          : counter6 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter7: null == counter7
-          ? _value.counter7
-          : counter7 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter8: null == counter8
-          ? _value.counter8
-          : counter8 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter9: null == counter9
-          ? _value.counter9
-          : counter9 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter10: null == counter10
-          ? _value.counter10
-          : counter10 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter11: null == counter11
-          ? _value.counter11
-          : counter11 // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$AzkarCountersImplCopyWith<$Res>
-    implements $AzkarCountersCopyWith<$Res> {
-  factory _$$AzkarCountersImplCopyWith(
-          _$AzkarCountersImpl value, $Res Function(_$AzkarCountersImpl) then) =
-      __$$AzkarCountersImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {int counter1,
-      int counter2,
-      int counter3,
-      int counter4,
-      int counter5,
-      int counter6,
-      int counter7,
-      int counter8,
-      int counter9,
-      int counter10,
-      int counter11});
-}
-
-/// @nodoc
-class __$$AzkarCountersImplCopyWithImpl<$Res>
-    extends _$AzkarCountersCopyWithImpl<$Res, _$AzkarCountersImpl>
-    implements _$$AzkarCountersImplCopyWith<$Res> {
-  __$$AzkarCountersImplCopyWithImpl(
-      _$AzkarCountersImpl _value, $Res Function(_$AzkarCountersImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AzkarCounters
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? counter1 = null,
-    Object? counter2 = null,
-    Object? counter3 = null,
-    Object? counter4 = null,
-    Object? counter5 = null,
-    Object? counter6 = null,
-    Object? counter7 = null,
-    Object? counter8 = null,
-    Object? counter9 = null,
-    Object? counter10 = null,
-    Object? counter11 = null,
-  }) {
-    return _then(_$AzkarCountersImpl(
-      counter1: null == counter1
-          ? _value.counter1
-          : counter1 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter2: null == counter2
-          ? _value.counter2
-          : counter2 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter3: null == counter3
-          ? _value.counter3
-          : counter3 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter4: null == counter4
-          ? _value.counter4
-          : counter4 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter5: null == counter5
-          ? _value.counter5
-          : counter5 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter6: null == counter6
-          ? _value.counter6
-          : counter6 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter7: null == counter7
-          ? _value.counter7
-          : counter7 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter8: null == counter8
-          ? _value.counter8
-          : counter8 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter9: null == counter9
-          ? _value.counter9
-          : counter9 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter10: null == counter10
-          ? _value.counter10
-          : counter10 // ignore: cast_nullable_to_non_nullable
-              as int,
-      counter11: null == counter11
-          ? _value.counter11
-          : counter11 // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$AzkarCountersImpl implements _AzkarCounters {
-  const _$AzkarCountersImpl(
-      {this.counter1 = 0,
-      this.counter2 = 0,
-      this.counter3 = 0,
-      this.counter4 = 0,
-      this.counter5 = 0,
-      this.counter6 = 0,
-      this.counter7 = 0,
-      this.counter8 = 0,
-      this.counter9 = 0,
-      this.counter10 = 0,
-      this.counter11 = 0});
-
-  @override
-  @JsonKey()
-  final int counter1;
-  @override
-  @JsonKey()
-  final int counter2;
-  @override
-  @JsonKey()
-  final int counter3;
-  @override
-  @JsonKey()
-  final int counter4;
-  @override
-  @JsonKey()
-  final int counter5;
-  @override
-  @JsonKey()
-  final int counter6;
-  @override
-  @JsonKey()
-  final int counter7;
-  @override
-  @JsonKey()
-  final int counter8;
-  @override
-  @JsonKey()
-  final int counter9;
-  @override
-  @JsonKey()
-  final int counter10;
-  @override
-  @JsonKey()
-  final int counter11;
-
-  @override
-  String toString() {
-    return 'AzkarCounters(counter1: $counter1, counter2: $counter2, counter3: $counter3, counter4: $counter4, counter5: $counter5, counter6: $counter6, counter7: $counter7, counter8: $counter8, counter9: $counter9, counter10: $counter10, counter11: $counter11)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AzkarCountersImpl &&
-            (identical(other.counter1, counter1) ||
-                other.counter1 == counter1) &&
-            (identical(other.counter2, counter2) ||
-                other.counter2 == counter2) &&
-            (identical(other.counter3, counter3) ||
-                other.counter3 == counter3) &&
-            (identical(other.counter4, counter4) ||
-                other.counter4 == counter4) &&
-            (identical(other.counter5, counter5) ||
-                other.counter5 == counter5) &&
-            (identical(other.counter6, counter6) ||
-                other.counter6 == counter6) &&
-            (identical(other.counter7, counter7) ||
-                other.counter7 == counter7) &&
-            (identical(other.counter8, counter8) ||
-                other.counter8 == counter8) &&
-            (identical(other.counter9, counter9) ||
-                other.counter9 == counter9) &&
-            (identical(other.counter10, counter10) ||
-                other.counter10 == counter10) &&
-            (identical(other.counter11, counter11) ||
-                other.counter11 == counter11));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      counter1,
-      counter2,
-      counter3,
-      counter4,
-      counter5,
-      counter6,
-      counter7,
-      counter8,
-      counter9,
-      counter10,
-      counter11);
-
-  /// Create a copy of AzkarCounters
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AzkarCountersImplCopyWith<_$AzkarCountersImpl> get copyWith =>
-      __$$AzkarCountersImplCopyWithImpl<_$AzkarCountersImpl>(this, _$identity);
-}
-
-abstract class _AzkarCounters implements AzkarCounters {
-  const factory _AzkarCounters(
-      {final int counter1,
-      final int counter2,
-      final int counter3,
-      final int counter4,
-      final int counter5,
-      final int counter6,
-      final int counter7,
-      final int counter8,
-      final int counter9,
-      final int counter10,
-      final int counter11}) = _$AzkarCountersImpl;
-
-  @override
-  int get counter1;
-  @override
-  int get counter2;
-  @override
-  int get counter3;
-  @override
-  int get counter4;
-  @override
-  int get counter5;
-  @override
-  int get counter6;
-  @override
-  int get counter7;
-  @override
-  int get counter8;
-  @override
-  int get counter9;
-  @override
-  int get counter10;
-  @override
-  int get counter11;
-
-  /// Create a copy of AzkarCounters
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AzkarCountersImplCopyWith<_$AzkarCountersImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
