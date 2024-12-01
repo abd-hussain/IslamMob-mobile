@@ -1,16 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/models/app_model/pray_timing.dart';
-import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/screens/home_tab/widgets/home_header_view/bloc/home_header_bloc.dart';
+import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
-import 'package:islam_app/utils/day_time.dart';
 import 'package:islam_app/services/general/pray_manager.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 part 'salah_timing_event.dart';
@@ -19,145 +15,120 @@ part 'salah_timing_bloc.freezed.dart';
 
 class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
   SalahTimingBloc() : super(const SalahTimingState()) {
-    on<_UpdateSalahTimingEvent>(_updateSalahTimingEvent);
-    on<_UpdateCurrentSalahType>(_updateCurrentSalahType);
-
-    _preparePrayerTimings();
+    on<_UpdateSalahTimingForTheWeek>(_onUpdateSalahTimingForTheWeek);
+    on<_UpdateCurrentSalahType>(_onUpdateCurrentSalahType);
+    _initializePrayerTimings();
   }
-  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
-  final defuiltSalahModel = PrayTimingModel(
-    fajir: "00:00",
-    dhuhr: "00:00",
-    asr: "00:00",
-    maghrib: "00:00",
-    isha: "00:00",
-    sunrise: "00:00",
-    middleOfTheNight: "00:00",
-    lastThirdOfTheNight: "00:00",
-  );
+  final Box _userInfoBox = Hive.box(DatabaseBoxConstant.userInfo);
 
-  PrayManager _getPrayManagerForDate(DateTime date) {
-    //TODO: this need to be fixed
+  /// Initializes prayer timings for the week and updates the current Salah type.
+  void _initializePrayerTimings() {
+    final List<PrayTimingDateTimeModel> weeklyPrayerTimings =
+        _generateWeeklyPrayerTimings();
+
+    // Identify today's next prayer type.
+    _updateTodaySalahType();
+
+    // Update the prayer timings for the week.
+    add(SalahTimingEvent.updateSalahTimingForTheWeek(weeklyPrayerTimings));
+  }
+
+  /// Generates prayer timings for the current week (-3 to +4 days).
+  List<PrayTimingDateTimeModel> _generateWeeklyPrayerTimings() {
+    final List<PrayTimingDateTimeModel> prayerTimings = [];
+
+    for (int offset = -3; offset <= 4; offset++) {
+      final DateTime date = DateTime.now().add(Duration(days: offset));
+      final PrayManager prayManager = _createPrayManagerForDate(date);
+      final PrayTimingDateTimeModel timings =
+          prayManager.getAllPrayTimeAsDateTime();
+
+      prayerTimings.add(timings);
+    }
+
+    return prayerTimings;
+  }
+
+  /// Updates the current Salah type for today.
+  void _updateTodaySalahType() {
+    final DateTime today = DateTime.now();
+    final PrayManager todayPrayManager = _createPrayManagerForDate(today);
+    final SalahTimeState nextSalahType = todayPrayManager.getNextPrayerType();
+
+    add(SalahTimingEvent.updateCurrentSalahType(status: nextSalahType));
+  }
+
+  /// Creates a [PrayManager] instance for a specific date.
+  PrayManager _createPrayManagerForDate(DateTime date) {
     return PrayManager(
-      coordinates: Coordinates(_getLatitude(), _getLongitude()),
-      utcOffset: const Duration(hours: 3),
-      calculationMethod: CalculationMethod.jordan,
-      madhab: Madhab.shafi,
+      coordinates: _getCoordinates(),
+      utcOffset: _getUtcOffset(),
+      calculationMethod: _getCalculationMethod(),
+      madhab: _getMadhab(),
       specificDate: DateComponents(date.year, date.month, date.day),
     );
   }
 
-  double _getLatitude() {
-    return double.parse(
-        _box.get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0"));
+  /// Retrieves the coordinates (latitude and longitude) from the Hive box.
+  Coordinates _getCoordinates() {
+    final String latitude = _userInfoBox
+        .get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0");
+    final String longitude = _userInfoBox
+        .get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0");
+
+    return Coordinates(
+      double.tryParse(latitude) ?? 0.0,
+      double.tryParse(longitude) ?? 0.0,
+    );
   }
 
-  double _getLongitude() {
-    return double.parse(
-        _box.get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0"));
+  /// Retrieves the selected calculation method from the Hive box.
+  CalculationMethod _getCalculationMethod() {
+    final String selectedMethod = _userInfoBox
+        .get(DatabaseFieldConstant.selectedCalculationMethod, defaultValue: "");
+
+    return CalculationMethod.values.firstWhere(
+      (method) => method.name == selectedMethod,
+      orElse: () => CalculationMethod.jordan,
+    );
   }
 
-  void _preparePrayerTimings() {
-    final daysOffset = {
-      -3: (SalahTimingState state) => state.befor3DayPrayTiming,
-      -2: (SalahTimingState state) => state.befor2DayPrayTiming,
-      -1: (SalahTimingState state) => state.yesterdayPrayTiming,
-      0: (SalahTimingState state) => state.todayPrayTiming,
-      1: (SalahTimingState state) => state.tommorrowPrayTiming,
-      2: (SalahTimingState state) => state.after2DayPrayTiming,
-      3: (SalahTimingState state) => state.after3DayPrayTiming,
-    };
+  /// Retrieves the UTC offset, either from Hive or the device's timezone.
+  Duration _getUtcOffset() {
+    final String offsetHours = _userInfoBox.get(
+        DatabaseFieldConstant.selectedDifferenceWithUTCHour,
+        defaultValue: "");
+    final String offsetMinutes = _userInfoBox.get(
+        DatabaseFieldConstant.selectedDifferenceWithUTCMin,
+        defaultValue: "");
 
-    for (var entry in daysOffset.entries) {
-      final date = DateTime.now().add(Duration(days: entry.key));
-      final prayManager = _getPrayManagerForDate(date);
-      final prayTiming = prayManager.getAllPrayTimeAsFormatedString();
-
-      if (entry.key == 0) {
-        final nextPrayType = prayManager.getNextPrayerType();
-        add(SalahTimingEvent.updateCurrentSalahType(status: nextPrayType));
-      }
-
-      add(SalahTimingEvent.updateSalahTiming(entry.key, prayTiming));
+    if (offsetHours.isEmpty) {
+      return DateTime.now().timeZoneOffset;
+    } else {
+      return Duration(
+        hours: int.tryParse(offsetHours) ?? 0,
+        minutes: int.tryParse(offsetMinutes) ?? 0,
+      );
     }
   }
 
-  PrayTimingModel retrunCorrectPrayTiming(int index) {
-    final prayTimingMap = {
-      0: state.todayPrayTiming,
-      1: state.tommorrowPrayTiming,
-      2: state.after2DayPrayTiming,
-      3: state.after3DayPrayTiming,
-      -1: state.yesterdayPrayTiming,
-      -2: state.befor2DayPrayTiming,
-      -3: state.befor3DayPrayTiming,
-    };
-
-    return prayTimingMap[index] ?? defuiltSalahModel;
+  /// Retrieves the selected Madhab from the Hive box.
+  Madhab _getMadhab() {
+    final String madhab = _userInfoBox.get(DatabaseFieldConstant.selectedMadhab,
+        defaultValue: "shafi");
+    return madhab == "shafi" ? Madhab.shafi : Madhab.hanafi;
   }
 
-  String currentLanguageCode() {
-    return _box.get(DatabaseFieldConstant.selectedLanguage);
-  }
-
-  String getDateMelady(int index) {
-    return locator<DayTime>()
-        .formatDate(locator<DayTime>().getDateWithDayOffset(dayOffset: index));
-  }
-
-  String getDateHijri(int index) {
-    return locator<DayTime>().formatHijriDate(
-        locator<DayTime>().getHijriDateWithDayOffset(dayOffset: index));
-  }
-
-  String getDayName(BuildContext context, int index) {
-    return locator<DayTime>().getDayName(
-        context: context,
-        date: locator<DayTime>().getDateWithDayOffset(dayOffset: index));
-  }
-
-  String getTitleOfTheDay(BuildContext context, int index) {
-    final titles = {
-      -3: AppLocalizations.of(context)!.threedaybefore,
-      -2: AppLocalizations.of(context)!.twodaybefore,
-      -1: AppLocalizations.of(context)!.yesterday,
-      0: AppLocalizations.of(context)!.today,
-      1: AppLocalizations.of(context)!.tomorrow,
-      2: AppLocalizations.of(context)!.aftertwoday,
-      3: AppLocalizations.of(context)!.afterthreeday,
-    };
-
-    return titles[index] ?? '';
-  }
-
-  FutureOr<void> _updateCurrentSalahType(
+  /// Event handler for updating the current Salah type.
+  FutureOr<void> _onUpdateCurrentSalahType(
       _UpdateCurrentSalahType event, Emitter<SalahTimingState> emit) {
     emit(state.copyWith(currentSalahType: event.status));
   }
 
-  FutureOr<void> _updateSalahTimingEvent(
-      _UpdateSalahTimingEvent event, Emitter<SalahTimingState> emit) {
-    emit(
-      state.copyWith(
-        befor3DayPrayTiming: event.dayOffset == -3
-            ? event.prayTiming
-            : state.befor3DayPrayTiming,
-        befor2DayPrayTiming: event.dayOffset == -2
-            ? event.prayTiming
-            : state.befor2DayPrayTiming,
-        yesterdayPrayTiming: event.dayOffset == -1
-            ? event.prayTiming
-            : state.yesterdayPrayTiming,
-        todayPrayTiming:
-            event.dayOffset == 0 ? event.prayTiming : state.todayPrayTiming,
-        tommorrowPrayTiming:
-            event.dayOffset == 1 ? event.prayTiming : state.tommorrowPrayTiming,
-        after2DayPrayTiming:
-            event.dayOffset == 2 ? event.prayTiming : state.after2DayPrayTiming,
-        after3DayPrayTiming:
-            event.dayOffset == 3 ? event.prayTiming : state.after3DayPrayTiming,
-      ),
-    );
+  /// Event handler for updating the prayer timings for the week.
+  FutureOr<void> _onUpdateSalahTimingForTheWeek(
+      _UpdateSalahTimingForTheWeek event, Emitter<SalahTimingState> emit) {
+    emit(state.copyWith(prayTimeForWeek: event.prayTimeForWeek));
   }
 }

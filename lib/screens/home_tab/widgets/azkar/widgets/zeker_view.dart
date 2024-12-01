@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/models/app_model/azkar.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class ZekerView extends StatelessWidget {
-  final int maxCount;
-  final int currentCount;
-  final String title;
-  final String text;
+  final AzkarModel azkarModel;
   final Function() onTap;
-  const ZekerView(
-      {super.key,
-      required this.maxCount,
-      required this.text,
-      this.title = "",
-      required this.currentCount,
-      required this.onTap});
+  const ZekerView({super.key, required this.azkarModel, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -37,16 +29,16 @@ class ZekerView extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              if (title.isNotEmpty)
+              if (azkarModel.title.isNotEmpty)
                 CustomText(
-                  title: title,
+                  title: azkarModel.title,
                   fontSize: 16,
                   color: const Color(0xff444444),
                   textAlign: TextAlign.center,
                   fontWeight: FontWeight.bold,
                 ),
               CustomText(
-                title: text,
+                title: azkarModel.desc,
                 fontSize: 20,
                 color: const Color(0xff444444),
                 maxLines: 10,
@@ -72,7 +64,7 @@ class ZekerView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomText(
-          title: currentCount.toString(),
+          title: azkarModel.currentCount.toString(),
           fontSize: 18,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -84,7 +76,7 @@ class ZekerView extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
         CustomText(
-          title: maxCount.toString(),
+          title: azkarModel.maxCount.toString(),
           fontSize: 12,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,

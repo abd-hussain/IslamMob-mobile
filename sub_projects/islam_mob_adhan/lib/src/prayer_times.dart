@@ -284,30 +284,44 @@ class PrayerTimes {
   }
 
   /// Returns the next prayer based on the current time.
-  Prayer nextPrayer(DateTime date) {
-    if (date.isBefore(fajr)) return Prayer.fajr;
-    if (date.isBefore(sunrise)) return Prayer.sunrise;
-    if (date.isBefore(dhuhr)) return Prayer.dhuhr;
-    if (date.isBefore(asr)) return Prayer.asr;
-    if (date.isBefore(maghrib)) return Prayer.maghrib;
-    if (date.isBefore(isha)) return Prayer.isha;
-    return Prayer.fajr; // Next day's Fajr
+  Prayer nextPrayer({required DateTime currentTimeInUTC}) {
+    if (currentTimeInUTC.isBefore(fajr)) return Prayer.fajr;
+    if (currentTimeInUTC.isBefore(sunrise)) return Prayer.sunrise;
+    if (currentTimeInUTC.isBefore(dhuhr)) return Prayer.dhuhr;
+    if (currentTimeInUTC.isBefore(asr)) return Prayer.asr;
+    if (currentTimeInUTC.isBefore(maghrib)) return Prayer.maghrib;
+    if (currentTimeInUTC.isBefore(isha)) return Prayer.isha;
+    return Prayer.none;
   }
 
-  /// Returns the next prayer at the specified [time].
-  Prayer nextPrayerByDateTime(DateTime time) {
-    final when = time.millisecondsSinceEpoch;
-    if (isha.millisecondsSinceEpoch <= when)
-      return Prayer.fajr; // Next day's Fajr.
-    if (maghrib.millisecondsSinceEpoch <= when) return Prayer.isha;
-    if (asr.millisecondsSinceEpoch <= when) return Prayer.maghrib;
-    if (dhuhr.millisecondsSinceEpoch <= when) return Prayer.asr;
-    if (sunrise.millisecondsSinceEpoch <= when) return Prayer.dhuhr;
-    return Prayer.sunrise; // Default fallback for morning.
+  /// Returns the next prayer at the specified [time] UTC.
+  Prayer nextPrayerByDateTime({required DateTime currentTimeInUTC}) {
+    // Compare times directly using isBefore and isAfter
+    if (currentTimeInUTC.isBefore(fajr)) {
+      return Prayer.fajr; // Current time is before Fajr
+    }
+
+    if (currentTimeInUTC.isBefore(sunrise)) {
+      return Prayer.sunrise; // Current time is before Sunrise
+    }
+    if (currentTimeInUTC.isBefore(dhuhr)) {
+      return Prayer.dhuhr; // Current time is before Dhuhr
+    }
+    if (currentTimeInUTC.isBefore(asr)) {
+      return Prayer.asr; // Current time is before Asr
+    }
+    if (currentTimeInUTC.isBefore(maghrib)) {
+      return Prayer.maghrib; // Current time is before Maghrib
+    }
+    if (currentTimeInUTC.isBefore(isha)) {
+      return Prayer.isha; // Current time is before Isha
+    }
+
+    return Prayer.none;
   }
 
   /// Returns the time for the specified [prayer].
-  DateTime timeForPrayer(Prayer prayer) {
+  DateTime? timeForPrayer(Prayer prayer) {
     switch (prayer) {
       case Prayer.fajr:
         return fajr;
@@ -321,6 +335,8 @@ class PrayerTimes {
         return maghrib;
       case Prayer.isha:
         return isha;
+      case Prayer.none:
+        return null;
     }
   }
 }

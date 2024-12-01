@@ -1,7 +1,6 @@
+import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_mob_adhan/adhan.dart';
-import 'package:intl/intl.dart';
 import 'package:islam_app/models/app_model/pray_timing.dart';
-import 'package:islam_app/screens/home_tab/widgets/home_header_view/bloc/home_header_bloc.dart';
 
 /// A class for managing Islamic prayer times.
 class PrayManager {
@@ -59,8 +58,8 @@ class PrayManager {
     );
   }
 
-  /// Returns all prayer times as formatted strings in `PrayTimingModel`.
-  PrayTimingModel getAllPrayTimeAsFormatedString() {
+  /// Returns the `DateTime` for the next prayer.
+  DateTime? getNextPrayerTime() {
     final date = specificDate ?? DateComponents.from(DateTime.now());
     final params = calculationMethod.getParameters();
 
@@ -72,26 +71,17 @@ class PrayManager {
 
     final prayerTimes =
         PrayerTimes(coordinates, date, params, utcOffset: utcOffset);
-    final sunnahTimes = SunnahTimes(prayerTimes);
+    final currentTimeInUTC = DateTime.now().toUtc().add(utcOffset);
 
-    return PrayTimingModel(
-      fajir: DateFormat('hh:mm a').format(prayerTimes.fajr),
-      sunrise: DateFormat('hh:mm a').format(prayerTimes.sunrise),
-      dhuhr: DateFormat('hh:mm a').format(prayerTimes.dhuhr),
-      asr: DateFormat('hh:mm a').format(prayerTimes.asr),
-      maghrib: DateFormat('hh:mm a').format(prayerTimes.maghrib),
-      isha: DateFormat('hh:mm a').format(prayerTimes.isha),
-      middleOfTheNight:
-          DateFormat('hh:mm a').format(sunnahTimes.middleOfTheNight),
-      lastThirdOfTheNight:
-          DateFormat('hh:mm a').format(sunnahTimes.lastThirdOfTheNight),
-    );
+    // Get the next prayer
+    final nextPrayer =
+        prayerTimes.nextPrayerByDateTime(currentTimeInUTC: currentTimeInUTC);
+    return prayerTimes.timeForPrayer(nextPrayer);
   }
 
-  /// Returns the `DateTime` for the next prayer.
-  DateTime getNextPrayerTime() {
-    final now = DateTime.now();
-    final date = specificDate ?? DateComponents.from(now);
+  /// Returns the type of the next prayer as `SalahTimeState`.
+  SalahTimeState getNextPrayerType() {
+    final date = specificDate ?? DateComponents.from(DateTime.now());
     final params = calculationMethod.getParameters();
 
     // Set madhab and high latitude rule if provided
@@ -103,44 +93,26 @@ class PrayManager {
     final prayerTimes =
         PrayerTimes(coordinates, date, params, utcOffset: utcOffset);
 
+    final currentTimeInUTC = DateTime.now().toUtc().add(utcOffset);
+
     // Get the next prayer
-    final nextPrayer = prayerTimes.nextPrayerByDateTime(now);
-    return prayerTimes.timeForPrayer(nextPrayer);
-  }
-
-  /// Returns the type of the next prayer as `SalahTimeState`.
-  SalahTimeState getNextPrayerType() {
-    final now = DateTime.now();
-    final date = specificDate ?? DateComponents.from(now);
-    final params = calculationMethod.getParameters();
-
-    // Set madhab and high latitude rule if provided
-    params.madhab = madhab;
-    if (highLatitudeRule != null) {
-      params.highLatitudeRule = highLatitudeRule!;
+    final nextPrayer =
+        prayerTimes.nextPrayerByDateTime(currentTimeInUTC: currentTimeInUTC);
+    switch (nextPrayer) {
+      case Prayer.fajr:
+        return const SalahTimeStateFajir();
+      case Prayer.sunrise:
+        return const SalahTimeStateSunrise();
+      case Prayer.dhuhr:
+        return const SalahTimeStateZhur();
+      case Prayer.asr:
+        return const SalahTimeStateAsr();
+      case Prayer.maghrib:
+        return const SalahTimeStateMaghrib();
+      case Prayer.isha:
+        return const SalahTimeStateIsha();
+      case Prayer.none:
+        return const SalahTimeStateNone();
     }
-
-    final prayerTimes = PrayerTimes(coordinates, date, params,
-        utcOffset: const Duration(hours: 0));
-
-    // Create a map of prayer times with their corresponding states.
-    final prayerTimesList = [
-      {'name': const SalahTimeStateFajir(), 'time': prayerTimes.fajr},
-      {'name': const SalahTimeStateZhur(), 'time': prayerTimes.dhuhr},
-      {'name': const SalahTimeStateAsr(), 'time': prayerTimes.asr},
-      {'name': const SalahTimeStateMaghrib(), 'time': prayerTimes.maghrib},
-      {'name': const SalahTimeStateIsha(), 'time': prayerTimes.isha},
-    ];
-
-    // Find the next prayer type.
-    for (var prayer in prayerTimesList) {
-      final prayerTime = (prayer['time'] as DateTime).toUtc();
-      if (prayerTime.isAfter(now.toUtc())) {
-        return prayer['name'] as SalahTimeState;
-      }
-    }
-
-    // If all prayers are in the past, return Fajr for the next day.
-    return const SalahTimeStateFajir();
   }
 }

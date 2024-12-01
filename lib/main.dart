@@ -8,6 +8,10 @@ import 'package:islam_app/utils/logger.dart';
 
 //TODO:user shoudl choose his copy from inboarding depend on his language
 
+//TODO: Fill for the first time   _getCoordinates(), _getDifferenceFromUTC() _getSelectedCalculationMethod(), _getMadhab(),
+
+//TODO: if timer get zero then next salah time should be handled,
+
 void main() {
   logDebugMessage(message: 'Application Started ...');
   runApp(const MyApp());

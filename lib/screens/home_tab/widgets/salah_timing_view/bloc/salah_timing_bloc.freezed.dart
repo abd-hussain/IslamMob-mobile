@@ -18,42 +18,45 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SalahTimingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int dayOffset, PrayTimingModel prayTiming)
-        updateSalahTiming,
+    required TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)
+        updateSalahTimingForTheWeek,
     required TResult Function(SalahTimeState status) updateCurrentSalahType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int dayOffset, PrayTimingModel prayTiming)?
-        updateSalahTiming,
+    TResult? Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
+        updateSalahTimingForTheWeek,
     TResult? Function(SalahTimeState status)? updateCurrentSalahType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int dayOffset, PrayTimingModel prayTiming)?
-        updateSalahTiming,
+    TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
+        updateSalahTimingForTheWeek,
     TResult Function(SalahTimeState status)? updateCurrentSalahType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateSalahTimingEvent value) updateSalahTiming,
+    required TResult Function(_UpdateSalahTimingForTheWeek value)
+        updateSalahTimingForTheWeek,
     required TResult Function(_UpdateCurrentSalahType value)
         updateCurrentSalahType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateSalahTimingEvent value)? updateSalahTiming,
+    TResult? Function(_UpdateSalahTimingForTheWeek value)?
+        updateSalahTimingForTheWeek,
     TResult? Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateSalahTimingEvent value)? updateSalahTiming,
+    TResult Function(_UpdateSalahTimingForTheWeek value)?
+        updateSalahTimingForTheWeek,
     TResult Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
     required TResult orElse(),
   }) =>
@@ -82,22 +85,23 @@ class _$SalahTimingEventCopyWithImpl<$Res, $Val extends SalahTimingEvent>
 }
 
 /// @nodoc
-abstract class _$$UpdateSalahTimingEventImplCopyWith<$Res> {
-  factory _$$UpdateSalahTimingEventImplCopyWith(
-          _$UpdateSalahTimingEventImpl value,
-          $Res Function(_$UpdateSalahTimingEventImpl) then) =
-      __$$UpdateSalahTimingEventImplCopyWithImpl<$Res>;
+abstract class _$$UpdateSalahTimingForTheWeekImplCopyWith<$Res> {
+  factory _$$UpdateSalahTimingForTheWeekImplCopyWith(
+          _$UpdateSalahTimingForTheWeekImpl value,
+          $Res Function(_$UpdateSalahTimingForTheWeekImpl) then) =
+      __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int dayOffset, PrayTimingModel prayTiming});
+  $Res call({List<PrayTimingDateTimeModel> prayTimeForWeek});
 }
 
 /// @nodoc
-class __$$UpdateSalahTimingEventImplCopyWithImpl<$Res>
-    extends _$SalahTimingEventCopyWithImpl<$Res, _$UpdateSalahTimingEventImpl>
-    implements _$$UpdateSalahTimingEventImplCopyWith<$Res> {
-  __$$UpdateSalahTimingEventImplCopyWithImpl(
-      _$UpdateSalahTimingEventImpl _value,
-      $Res Function(_$UpdateSalahTimingEventImpl) _then)
+class __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<$Res>
+    extends _$SalahTimingEventCopyWithImpl<$Res,
+        _$UpdateSalahTimingForTheWeekImpl>
+    implements _$$UpdateSalahTimingForTheWeekImplCopyWith<$Res> {
+  __$$UpdateSalahTimingForTheWeekImplCopyWithImpl(
+      _$UpdateSalahTimingForTheWeekImpl _value,
+      $Res Function(_$UpdateSalahTimingForTheWeekImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SalahTimingEvent
@@ -105,91 +109,90 @@ class __$$UpdateSalahTimingEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dayOffset = null,
-    Object? prayTiming = null,
+    Object? prayTimeForWeek = null,
   }) {
-    return _then(_$UpdateSalahTimingEventImpl(
-      null == dayOffset
-          ? _value.dayOffset
-          : dayOffset // ignore: cast_nullable_to_non_nullable
-              as int,
-      null == prayTiming
-          ? _value.prayTiming
-          : prayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel,
+    return _then(_$UpdateSalahTimingForTheWeekImpl(
+      null == prayTimeForWeek
+          ? _value._prayTimeForWeek
+          : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
+              as List<PrayTimingDateTimeModel>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$UpdateSalahTimingEventImpl implements _UpdateSalahTimingEvent {
-  const _$UpdateSalahTimingEventImpl(this.dayOffset, this.prayTiming);
+class _$UpdateSalahTimingForTheWeekImpl
+    implements _UpdateSalahTimingForTheWeek {
+  const _$UpdateSalahTimingForTheWeekImpl(
+      final List<PrayTimingDateTimeModel> prayTimeForWeek)
+      : _prayTimeForWeek = prayTimeForWeek;
 
+  final List<PrayTimingDateTimeModel> _prayTimeForWeek;
   @override
-  final int dayOffset;
-// Offset from today (-3 for 3 days ago, +3 for 3 days ahead)
-  @override
-  final PrayTimingModel prayTiming;
+  List<PrayTimingDateTimeModel> get prayTimeForWeek {
+    if (_prayTimeForWeek is EqualUnmodifiableListView) return _prayTimeForWeek;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_prayTimeForWeek);
+  }
 
   @override
   String toString() {
-    return 'SalahTimingEvent.updateSalahTiming(dayOffset: $dayOffset, prayTiming: $prayTiming)';
+    return 'SalahTimingEvent.updateSalahTimingForTheWeek(prayTimeForWeek: $prayTimeForWeek)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateSalahTimingEventImpl &&
-            (identical(other.dayOffset, dayOffset) ||
-                other.dayOffset == dayOffset) &&
-            (identical(other.prayTiming, prayTiming) ||
-                other.prayTiming == prayTiming));
+            other is _$UpdateSalahTimingForTheWeekImpl &&
+            const DeepCollectionEquality()
+                .equals(other._prayTimeForWeek, _prayTimeForWeek));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, dayOffset, prayTiming);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_prayTimeForWeek));
 
   /// Create a copy of SalahTimingEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateSalahTimingEventImplCopyWith<_$UpdateSalahTimingEventImpl>
-      get copyWith => __$$UpdateSalahTimingEventImplCopyWithImpl<
-          _$UpdateSalahTimingEventImpl>(this, _$identity);
+  _$$UpdateSalahTimingForTheWeekImplCopyWith<_$UpdateSalahTimingForTheWeekImpl>
+      get copyWith => __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<
+          _$UpdateSalahTimingForTheWeekImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int dayOffset, PrayTimingModel prayTiming)
-        updateSalahTiming,
+    required TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)
+        updateSalahTimingForTheWeek,
     required TResult Function(SalahTimeState status) updateCurrentSalahType,
   }) {
-    return updateSalahTiming(dayOffset, prayTiming);
+    return updateSalahTimingForTheWeek(prayTimeForWeek);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int dayOffset, PrayTimingModel prayTiming)?
-        updateSalahTiming,
+    TResult? Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
+        updateSalahTimingForTheWeek,
     TResult? Function(SalahTimeState status)? updateCurrentSalahType,
   }) {
-    return updateSalahTiming?.call(dayOffset, prayTiming);
+    return updateSalahTimingForTheWeek?.call(prayTimeForWeek);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int dayOffset, PrayTimingModel prayTiming)?
-        updateSalahTiming,
+    TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
+        updateSalahTimingForTheWeek,
     TResult Function(SalahTimeState status)? updateCurrentSalahType,
     required TResult orElse(),
   }) {
-    if (updateSalahTiming != null) {
-      return updateSalahTiming(dayOffset, prayTiming);
+    if (updateSalahTimingForTheWeek != null) {
+      return updateSalahTimingForTheWeek(prayTimeForWeek);
     }
     return orElse();
   }
@@ -197,48 +200,50 @@ class _$UpdateSalahTimingEventImpl implements _UpdateSalahTimingEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateSalahTimingEvent value) updateSalahTiming,
+    required TResult Function(_UpdateSalahTimingForTheWeek value)
+        updateSalahTimingForTheWeek,
     required TResult Function(_UpdateCurrentSalahType value)
         updateCurrentSalahType,
   }) {
-    return updateSalahTiming(this);
+    return updateSalahTimingForTheWeek(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateSalahTimingEvent value)? updateSalahTiming,
+    TResult? Function(_UpdateSalahTimingForTheWeek value)?
+        updateSalahTimingForTheWeek,
     TResult? Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
   }) {
-    return updateSalahTiming?.call(this);
+    return updateSalahTimingForTheWeek?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateSalahTimingEvent value)? updateSalahTiming,
+    TResult Function(_UpdateSalahTimingForTheWeek value)?
+        updateSalahTimingForTheWeek,
     TResult Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
     required TResult orElse(),
   }) {
-    if (updateSalahTiming != null) {
-      return updateSalahTiming(this);
+    if (updateSalahTimingForTheWeek != null) {
+      return updateSalahTimingForTheWeek(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateSalahTimingEvent implements SalahTimingEvent {
-  const factory _UpdateSalahTimingEvent(
-          final int dayOffset, final PrayTimingModel prayTiming) =
-      _$UpdateSalahTimingEventImpl;
+abstract class _UpdateSalahTimingForTheWeek implements SalahTimingEvent {
+  const factory _UpdateSalahTimingForTheWeek(
+          final List<PrayTimingDateTimeModel> prayTimeForWeek) =
+      _$UpdateSalahTimingForTheWeekImpl;
 
-  int get dayOffset; // Offset from today (-3 for 3 days ago, +3 for 3 days ahead)
-  PrayTimingModel get prayTiming;
+  List<PrayTimingDateTimeModel> get prayTimeForWeek;
 
   /// Create a copy of SalahTimingEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateSalahTimingEventImplCopyWith<_$UpdateSalahTimingEventImpl>
+  _$$UpdateSalahTimingForTheWeekImplCopyWith<_$UpdateSalahTimingForTheWeekImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -325,8 +330,8 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int dayOffset, PrayTimingModel prayTiming)
-        updateSalahTiming,
+    required TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)
+        updateSalahTimingForTheWeek,
     required TResult Function(SalahTimeState status) updateCurrentSalahType,
   }) {
     return updateCurrentSalahType(status);
@@ -335,8 +340,8 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int dayOffset, PrayTimingModel prayTiming)?
-        updateSalahTiming,
+    TResult? Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
+        updateSalahTimingForTheWeek,
     TResult? Function(SalahTimeState status)? updateCurrentSalahType,
   }) {
     return updateCurrentSalahType?.call(status);
@@ -345,8 +350,8 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int dayOffset, PrayTimingModel prayTiming)?
-        updateSalahTiming,
+    TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
+        updateSalahTimingForTheWeek,
     TResult Function(SalahTimeState status)? updateCurrentSalahType,
     required TResult orElse(),
   }) {
@@ -359,7 +364,8 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateSalahTimingEvent value) updateSalahTiming,
+    required TResult Function(_UpdateSalahTimingForTheWeek value)
+        updateSalahTimingForTheWeek,
     required TResult Function(_UpdateCurrentSalahType value)
         updateCurrentSalahType,
   }) {
@@ -369,7 +375,8 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateSalahTimingEvent value)? updateSalahTiming,
+    TResult? Function(_UpdateSalahTimingForTheWeek value)?
+        updateSalahTimingForTheWeek,
     TResult? Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
   }) {
     return updateCurrentSalahType?.call(this);
@@ -378,7 +385,8 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateSalahTimingEvent value)? updateSalahTiming,
+    TResult Function(_UpdateSalahTimingForTheWeek value)?
+        updateSalahTimingForTheWeek,
     TResult Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
     required TResult orElse(),
   }) {
@@ -405,18 +413,7 @@ abstract class _UpdateCurrentSalahType implements SalahTimingEvent {
 /// @nodoc
 mixin _$SalahTimingState {
   SalahTimeState get currentSalahType => throw _privateConstructorUsedError;
-  PrayTimingModel? get befor3DayPrayTiming =>
-      throw _privateConstructorUsedError;
-  PrayTimingModel? get befor2DayPrayTiming =>
-      throw _privateConstructorUsedError;
-  PrayTimingModel? get yesterdayPrayTiming =>
-      throw _privateConstructorUsedError;
-  PrayTimingModel? get todayPrayTiming => throw _privateConstructorUsedError;
-  PrayTimingModel? get tommorrowPrayTiming =>
-      throw _privateConstructorUsedError;
-  PrayTimingModel? get after2DayPrayTiming =>
-      throw _privateConstructorUsedError;
-  PrayTimingModel? get after3DayPrayTiming =>
+  List<PrayTimingDateTimeModel> get prayTimeForWeek =>
       throw _privateConstructorUsedError;
 
   /// Create a copy of SalahTimingState
@@ -434,13 +431,7 @@ abstract class $SalahTimingStateCopyWith<$Res> {
   @useResult
   $Res call(
       {SalahTimeState currentSalahType,
-      PrayTimingModel? befor3DayPrayTiming,
-      PrayTimingModel? befor2DayPrayTiming,
-      PrayTimingModel? yesterdayPrayTiming,
-      PrayTimingModel? todayPrayTiming,
-      PrayTimingModel? tommorrowPrayTiming,
-      PrayTimingModel? after2DayPrayTiming,
-      PrayTimingModel? after3DayPrayTiming});
+      List<PrayTimingDateTimeModel> prayTimeForWeek});
 
   $SalahTimeStateCopyWith<$Res> get currentSalahType;
 }
@@ -461,47 +452,17 @@ class _$SalahTimingStateCopyWithImpl<$Res, $Val extends SalahTimingState>
   @override
   $Res call({
     Object? currentSalahType = null,
-    Object? befor3DayPrayTiming = freezed,
-    Object? befor2DayPrayTiming = freezed,
-    Object? yesterdayPrayTiming = freezed,
-    Object? todayPrayTiming = freezed,
-    Object? tommorrowPrayTiming = freezed,
-    Object? after2DayPrayTiming = freezed,
-    Object? after3DayPrayTiming = freezed,
+    Object? prayTimeForWeek = null,
   }) {
     return _then(_value.copyWith(
       currentSalahType: null == currentSalahType
           ? _value.currentSalahType
           : currentSalahType // ignore: cast_nullable_to_non_nullable
               as SalahTimeState,
-      befor3DayPrayTiming: freezed == befor3DayPrayTiming
-          ? _value.befor3DayPrayTiming
-          : befor3DayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      befor2DayPrayTiming: freezed == befor2DayPrayTiming
-          ? _value.befor2DayPrayTiming
-          : befor2DayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      yesterdayPrayTiming: freezed == yesterdayPrayTiming
-          ? _value.yesterdayPrayTiming
-          : yesterdayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      todayPrayTiming: freezed == todayPrayTiming
-          ? _value.todayPrayTiming
-          : todayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      tommorrowPrayTiming: freezed == tommorrowPrayTiming
-          ? _value.tommorrowPrayTiming
-          : tommorrowPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      after2DayPrayTiming: freezed == after2DayPrayTiming
-          ? _value.after2DayPrayTiming
-          : after2DayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      after3DayPrayTiming: freezed == after3DayPrayTiming
-          ? _value.after3DayPrayTiming
-          : after3DayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
+      prayTimeForWeek: null == prayTimeForWeek
+          ? _value.prayTimeForWeek
+          : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
+              as List<PrayTimingDateTimeModel>,
     ) as $Val);
   }
 
@@ -526,13 +487,7 @@ abstract class _$$SalahTimingStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {SalahTimeState currentSalahType,
-      PrayTimingModel? befor3DayPrayTiming,
-      PrayTimingModel? befor2DayPrayTiming,
-      PrayTimingModel? yesterdayPrayTiming,
-      PrayTimingModel? todayPrayTiming,
-      PrayTimingModel? tommorrowPrayTiming,
-      PrayTimingModel? after2DayPrayTiming,
-      PrayTimingModel? after3DayPrayTiming});
+      List<PrayTimingDateTimeModel> prayTimeForWeek});
 
   @override
   $SalahTimeStateCopyWith<$Res> get currentSalahType;
@@ -552,47 +507,17 @@ class __$$SalahTimingStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? currentSalahType = null,
-    Object? befor3DayPrayTiming = freezed,
-    Object? befor2DayPrayTiming = freezed,
-    Object? yesterdayPrayTiming = freezed,
-    Object? todayPrayTiming = freezed,
-    Object? tommorrowPrayTiming = freezed,
-    Object? after2DayPrayTiming = freezed,
-    Object? after3DayPrayTiming = freezed,
+    Object? prayTimeForWeek = null,
   }) {
     return _then(_$SalahTimingStateImpl(
       currentSalahType: null == currentSalahType
           ? _value.currentSalahType
           : currentSalahType // ignore: cast_nullable_to_non_nullable
               as SalahTimeState,
-      befor3DayPrayTiming: freezed == befor3DayPrayTiming
-          ? _value.befor3DayPrayTiming
-          : befor3DayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      befor2DayPrayTiming: freezed == befor2DayPrayTiming
-          ? _value.befor2DayPrayTiming
-          : befor2DayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      yesterdayPrayTiming: freezed == yesterdayPrayTiming
-          ? _value.yesterdayPrayTiming
-          : yesterdayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      todayPrayTiming: freezed == todayPrayTiming
-          ? _value.todayPrayTiming
-          : todayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      tommorrowPrayTiming: freezed == tommorrowPrayTiming
-          ? _value.tommorrowPrayTiming
-          : tommorrowPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      after2DayPrayTiming: freezed == after2DayPrayTiming
-          ? _value.after2DayPrayTiming
-          : after2DayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
-      after3DayPrayTiming: freezed == after3DayPrayTiming
-          ? _value.after3DayPrayTiming
-          : after3DayPrayTiming // ignore: cast_nullable_to_non_nullable
-              as PrayTimingModel?,
+      prayTimeForWeek: null == prayTimeForWeek
+          ? _value._prayTimeForWeek
+          : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
+              as List<PrayTimingDateTimeModel>,
     ));
   }
 }
@@ -601,36 +526,25 @@ class __$$SalahTimingStateImplCopyWithImpl<$Res>
 
 class _$SalahTimingStateImpl implements _SalahTimingState {
   const _$SalahTimingStateImpl(
-      {this.currentSalahType = const SalahTimeState.fajir(),
-      this.befor3DayPrayTiming,
-      this.befor2DayPrayTiming,
-      this.yesterdayPrayTiming,
-      this.todayPrayTiming,
-      this.tommorrowPrayTiming,
-      this.after2DayPrayTiming,
-      this.after3DayPrayTiming});
+      {this.currentSalahType = const SalahTimeState.none(),
+      final List<PrayTimingDateTimeModel> prayTimeForWeek = const []})
+      : _prayTimeForWeek = prayTimeForWeek;
 
   @override
   @JsonKey()
   final SalahTimeState currentSalahType;
+  final List<PrayTimingDateTimeModel> _prayTimeForWeek;
   @override
-  final PrayTimingModel? befor3DayPrayTiming;
-  @override
-  final PrayTimingModel? befor2DayPrayTiming;
-  @override
-  final PrayTimingModel? yesterdayPrayTiming;
-  @override
-  final PrayTimingModel? todayPrayTiming;
-  @override
-  final PrayTimingModel? tommorrowPrayTiming;
-  @override
-  final PrayTimingModel? after2DayPrayTiming;
-  @override
-  final PrayTimingModel? after3DayPrayTiming;
+  @JsonKey()
+  List<PrayTimingDateTimeModel> get prayTimeForWeek {
+    if (_prayTimeForWeek is EqualUnmodifiableListView) return _prayTimeForWeek;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_prayTimeForWeek);
+  }
 
   @override
   String toString() {
-    return 'SalahTimingState(currentSalahType: $currentSalahType, befor3DayPrayTiming: $befor3DayPrayTiming, befor2DayPrayTiming: $befor2DayPrayTiming, yesterdayPrayTiming: $yesterdayPrayTiming, todayPrayTiming: $todayPrayTiming, tommorrowPrayTiming: $tommorrowPrayTiming, after2DayPrayTiming: $after2DayPrayTiming, after3DayPrayTiming: $after3DayPrayTiming)';
+    return 'SalahTimingState(currentSalahType: $currentSalahType, prayTimeForWeek: $prayTimeForWeek)';
   }
 
   @override
@@ -640,33 +554,13 @@ class _$SalahTimingStateImpl implements _SalahTimingState {
             other is _$SalahTimingStateImpl &&
             (identical(other.currentSalahType, currentSalahType) ||
                 other.currentSalahType == currentSalahType) &&
-            (identical(other.befor3DayPrayTiming, befor3DayPrayTiming) ||
-                other.befor3DayPrayTiming == befor3DayPrayTiming) &&
-            (identical(other.befor2DayPrayTiming, befor2DayPrayTiming) ||
-                other.befor2DayPrayTiming == befor2DayPrayTiming) &&
-            (identical(other.yesterdayPrayTiming, yesterdayPrayTiming) ||
-                other.yesterdayPrayTiming == yesterdayPrayTiming) &&
-            (identical(other.todayPrayTiming, todayPrayTiming) ||
-                other.todayPrayTiming == todayPrayTiming) &&
-            (identical(other.tommorrowPrayTiming, tommorrowPrayTiming) ||
-                other.tommorrowPrayTiming == tommorrowPrayTiming) &&
-            (identical(other.after2DayPrayTiming, after2DayPrayTiming) ||
-                other.after2DayPrayTiming == after2DayPrayTiming) &&
-            (identical(other.after3DayPrayTiming, after3DayPrayTiming) ||
-                other.after3DayPrayTiming == after3DayPrayTiming));
+            const DeepCollectionEquality()
+                .equals(other._prayTimeForWeek, _prayTimeForWeek));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      currentSalahType,
-      befor3DayPrayTiming,
-      befor2DayPrayTiming,
-      yesterdayPrayTiming,
-      todayPrayTiming,
-      tommorrowPrayTiming,
-      after2DayPrayTiming,
-      after3DayPrayTiming);
+  int get hashCode => Object.hash(runtimeType, currentSalahType,
+      const DeepCollectionEquality().hash(_prayTimeForWeek));
 
   /// Create a copy of SalahTimingState
   /// with the given fields replaced by the non-null parameter values.
@@ -680,31 +574,14 @@ class _$SalahTimingStateImpl implements _SalahTimingState {
 
 abstract class _SalahTimingState implements SalahTimingState {
   const factory _SalahTimingState(
-      {final SalahTimeState currentSalahType,
-      final PrayTimingModel? befor3DayPrayTiming,
-      final PrayTimingModel? befor2DayPrayTiming,
-      final PrayTimingModel? yesterdayPrayTiming,
-      final PrayTimingModel? todayPrayTiming,
-      final PrayTimingModel? tommorrowPrayTiming,
-      final PrayTimingModel? after2DayPrayTiming,
-      final PrayTimingModel? after3DayPrayTiming}) = _$SalahTimingStateImpl;
+          {final SalahTimeState currentSalahType,
+          final List<PrayTimingDateTimeModel> prayTimeForWeek}) =
+      _$SalahTimingStateImpl;
 
   @override
   SalahTimeState get currentSalahType;
   @override
-  PrayTimingModel? get befor3DayPrayTiming;
-  @override
-  PrayTimingModel? get befor2DayPrayTiming;
-  @override
-  PrayTimingModel? get yesterdayPrayTiming;
-  @override
-  PrayTimingModel? get todayPrayTiming;
-  @override
-  PrayTimingModel? get tommorrowPrayTiming;
-  @override
-  PrayTimingModel? get after2DayPrayTiming;
-  @override
-  PrayTimingModel? get after3DayPrayTiming;
+  List<PrayTimingDateTimeModel> get prayTimeForWeek;
 
   /// Create a copy of SalahTimingState
   /// with the given fields replaced by the non-null parameter values.

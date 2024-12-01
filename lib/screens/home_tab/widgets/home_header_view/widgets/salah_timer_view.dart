@@ -19,14 +19,22 @@ class _SalahTimerViewState extends State<SalahTimerView> {
   @override
   void initState() {
     super.initState();
-    _remainingTime = widget.targetTime.difference(DateTime.now());
+
+    final now = DateTime.now();
+    final nowInUTCFormat = now.toUtc().add(now.timeZoneOffset);
+    _remainingTime = widget.targetTime.difference(nowInUTCFormat);
+
     _startTimer();
   }
 
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      final now = DateTime.now();
+      final nowInUTCFormat = now.toUtc().add(now.timeZoneOffset);
+
       setState(() {
-        _remainingTime = widget.targetTime.difference(DateTime.now());
+        _remainingTime = widget.targetTime.difference(nowInUTCFormat);
+
         if (_remainingTime.isNegative) {
           _timer.cancel();
         }
@@ -45,7 +53,7 @@ class _SalahTimerViewState extends State<SalahTimerView> {
     if (_remainingTime.isNegative) {
       return const CustomText(
         title: "00:00",
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: FontWeight.bold,
       );
     }
@@ -57,7 +65,7 @@ class _SalahTimerViewState extends State<SalahTimerView> {
     return CustomText(
       title:
           "${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}",
-      fontSize: 24,
+      fontSize: 20,
       fontWeight: FontWeight.bold,
     );
   }
