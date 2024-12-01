@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/bottom_help_bar.dart';
 import 'package:islam_app/screens/quran_kareem_tab/widgets/tool_tips/header_help_bar.dart';
+//TODO: This tree need to be refactored
 
 class HelpToolTipsView extends StatelessWidget {
   final Function(double) returnBrightness;

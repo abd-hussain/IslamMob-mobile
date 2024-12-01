@@ -1,6 +1,7 @@
 part of 'quran_kareem_bloc.dart';
 
 enum PageSide { left, right }
+//TODO: This tree need to be refactored
 
 @freezed
 class QuranKareemState with _$QuranKareemState {

@@ -11,7 +11,6 @@ class PrayNotificationSettingScreen extends StatelessWidget {
   const PrayNotificationSettingScreen({super.key});
 
 //TODO: local notification with timer such as other apps
-//TODO: design of disable should be change
 
   @override
   Widget build(BuildContext context) {

@@ -5,6 +5,7 @@ import 'package:islam_app/screens/inboarding/bloc/inboarding_bloc.dart';
 import 'package:islam_app/screens/inboarding/widgets/language/language_view.dart';
 import 'package:islam_app/screens/inboarding/widgets/location/location_view.dart';
 import 'package:islam_app/screens/inboarding/widgets/notification/notification_view.dart';
+import 'package:islam_app/screens/inboarding/widgets/quran_copy/quran_copy_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -89,11 +90,18 @@ class InBoardingScreen extends StatelessWidget {
             case 1:
               return LocationInBoardingView(
                 onSelectLocation: (location) async {
-                  bloc.setLocation(location);
+                  await bloc.setLocation(location);
                   await bloc.changeInBoardingStage(2);
                 },
               );
             case 2:
+              return QuranCopyView(
+                onSelect: (copyName) async {
+                  await bloc.setQuranCopy(copyName);
+                  await bloc.changeInBoardingStage(3);
+                },
+              );
+            case 3:
               return NotificationInBoardingView(
                 onSelect: (token) async {
                   final navigator = Navigator.of(context, rootNavigator: true);

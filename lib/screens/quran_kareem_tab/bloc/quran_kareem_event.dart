@@ -1,4 +1,5 @@
 part of 'quran_kareem_bloc.dart';
+//TODO: This tree need to be refactored
 
 @freezed
 class QuranKareemEvent with _$QuranKareemEvent {

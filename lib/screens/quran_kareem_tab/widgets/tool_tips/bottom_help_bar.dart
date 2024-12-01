@@ -13,6 +13,7 @@ import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_app/utils/extensions/localization.dart';
 import 'package:islam_app/utils/quran_referances.dart';
 import 'package:pdfx/pdfx.dart';
+//TODO: This tree need to be refactored
 
 class QuranBottomHelpBar extends StatelessWidget {
   final Function(double) returnBrightness;

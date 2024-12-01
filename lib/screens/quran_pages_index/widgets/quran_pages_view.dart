@@ -17,23 +17,30 @@ class QuranPagesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final totalPages = QuranReferances.getNumberOfPagesForSelectedPrint();
+
     return Padding(
       padding: const EdgeInsets.all(4),
       child: ListView.builder(
-        itemCount: QuranReferances.getNumberOfPagesForSelectedPrint(),
+        itemCount: totalPages,
         itemBuilder: (context, index) {
-          final referanceSorahName =
-              QuranReferances.getSurahReferenceNameFromPageNumber(index + 1);
+          final pageNumber = index + 1;
+          final surahReferenceName =
+              QuranReferances.getSurahReferenceNameFromPageNumber(pageNumber);
+          final surahName = AppLocalizations.of(context)!
+              .getLocalizedString(surahReferenceName);
+          final isCurrentPage = currentPageNumber == pageNumber;
+          final isBookmarked = context
+              .read<QuranPagesIndexBloc>()
+              .bookmarkedPages
+              .contains(pageNumber);
+
           return PagesTileView(
             index: index,
-            sowrahName: AppLocalizations.of(context)!
-                .getLocalizedString(referanceSorahName),
-            isCurrentPage: currentPageNumber == index + 1,
-            isBookedMarked: context
-                .read<QuranPagesIndexBloc>()
-                .listOfBookMarkedPages
-                .contains(index + 1),
-            onTap: () => onPageSelected(index + 1),
+            sowrahName: surahName,
+            isCurrentPage: isCurrentPage,
+            isBookedMarked: isBookmarked,
+            onTap: () => onPageSelected(pageNumber),
           );
         },
       ),

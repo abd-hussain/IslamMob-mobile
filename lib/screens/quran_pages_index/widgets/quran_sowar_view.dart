@@ -14,22 +14,25 @@ class QuranSowarView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list =
-        context.read<QuranPagesIndexBloc>().getAllSowarName(context: context);
+    final surahList =
+        context.read<QuranPagesIndexBloc>().getAllSurahNames(context: context);
+
     return Padding(
       padding: const EdgeInsets.all(4),
       child: ListView.builder(
-          itemCount: list.length,
+          itemCount: surahList.length,
           itemBuilder: (context, index) {
+            final surahName = surahList[index];
+            final isCurrent = currentSowrahName == surahName;
             return SowrahTileView(
               index: index,
-              sowrahName: list[index],
-              isCurrentPage: currentSowrahName == list[index],
-              sowrahType: context.read<QuranPagesIndexBloc>().getSorahType(
+              sowrahName: surahName,
+              isCurrentPage: isCurrent,
+              sowrahType: context.read<QuranPagesIndexBloc>().getSurahType(
                     context: context,
-                    sorahName: list[index],
+                    surahName: surahName,
                   ),
-              onTap: () => onSowrahSelected(list[index]),
+              onTap: () => onSowrahSelected(surahName),
             );
           }),
     );
