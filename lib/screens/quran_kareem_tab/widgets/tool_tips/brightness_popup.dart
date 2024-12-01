@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//TODO: This tree need to be refactored
 
 class BrightnessPopup extends StatefulWidget {
   final Function(double) returnBrightness;

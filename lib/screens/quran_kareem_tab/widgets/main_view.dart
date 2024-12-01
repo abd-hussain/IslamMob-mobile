@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/screens/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:pdfx/pdfx.dart';
+//TODO: This tree need to be refactored
 
 class QuranKareemMainView extends StatelessWidget {
   const QuranKareemMainView({super.key});

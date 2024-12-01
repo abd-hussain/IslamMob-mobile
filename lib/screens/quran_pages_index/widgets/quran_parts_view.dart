@@ -12,18 +12,20 @@ class QuranPartsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list =
-        context.read<QuranPagesIndexBloc>().getAllPartsName(context: context);
+    final partNames =
+        context.read<QuranPagesIndexBloc>().getAllJuzNames(context: context);
 
     return Padding(
       padding: const EdgeInsets.all(4),
       child: ListView.builder(
-          itemCount: list.length,
+          itemCount: partNames.length,
           itemBuilder: (context, index) {
+            final partName = partNames[index];
+            final isCurrent = currentPartName == partName;
             return PartTileView(
               index: index,
-              isCurrentPart: currentPartName == list[index],
-              partName: list[index],
+              partName: partName,
+              isCurrentPart: isCurrent,
               onTap: () => onPartSelected((index + 1).toString()),
             );
           }),

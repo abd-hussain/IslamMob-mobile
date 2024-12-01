@@ -15,6 +15,7 @@ import 'package:pdfx/pdfx.dart';
 part 'quran_kareem_event.dart';
 part 'quran_kareem_state.dart';
 part 'quran_kareem_bloc.freezed.dart';
+//TODO: This tree need to be refactored
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   final box = Hive.box(DatabaseBoxConstant.userInfo);

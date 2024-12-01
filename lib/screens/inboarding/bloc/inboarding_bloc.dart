@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/models/app_model/location.dart';
+import 'package:islam_app/models/app_model/quran_copy.dart';
 import 'package:islam_app/my_app/islam_mob_app/islam_mob_app.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 
@@ -75,6 +76,19 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
       DatabaseFieldConstant.selectedThoroughfare: location.thoroughfare,
     };
     await _updateMultipleStorage(locationData);
+  }
+
+  /// Updates location details in storage
+  Future<void> setQuranCopy(QuranCopy copyName) async {
+    final copyData = {
+      DatabaseFieldConstant.quranKaremPrintNameToUse: copyName.filePath,
+      DatabaseFieldConstant.quranKaremLastPageNumber: copyName.lastPageNumber,
+      DatabaseFieldConstant.quranKaremJuz2ToPageNumbers:
+          copyName.juz2ToPageNumbers,
+      DatabaseFieldConstant.quranKaremSorahToPageNumbers:
+          copyName.sorahToPageNumbers,
+    };
+    await _updateMultipleStorage(copyData);
   }
 
   /// Updates the notification token in storage
