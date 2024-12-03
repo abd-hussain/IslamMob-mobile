@@ -18,7 +18,7 @@ import flutter_local_notifications
 
     // Set notification delegate for iOS 10 and later
     if #available(iOS 10.0, *) {
-      UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+      UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
     }
 
     // Register FlutterDownloaderPlugin callback

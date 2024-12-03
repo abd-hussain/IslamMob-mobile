@@ -344,9 +344,13 @@
     "notificationSettingAsr" : "Asr Adhan Notifications",
     "notificationSettingMagrieb" : "Magrieb Adhan Notifications",
     "notificationSettingIsha" : "Isha Adhan Notifications",
-    "notificationSettingAzkar" : "Azkar Notifications",
     "notificationSettingApplication" : "Application Notifications",
-    "azkarTitle" : "Azkar After Salah"
+    "azkarTitle" : "Azkar After Salah",
+    "activateAgain" : "Activate Again",
+    "youfinishazkarTitle" : "You Finish Azkar",
+    "mayAllaAcept" : "May Allah accept it",
+    "notificationBeforeSalah15Minutes" : "15 Minutes Before Salah",
+    "notificationSettingSunrise" : "Sunrise Notification"
 
 
 

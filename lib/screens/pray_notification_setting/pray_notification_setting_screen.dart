@@ -41,12 +41,6 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: 10),
-                      NotificationView(
-                        prayerNotifications: context
-                            .read<PrayNotificationSettingBloc>()
-                            .allNotifications(context),
-                      ),
-                      const SizedBox(height: 10),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: CustomText(
