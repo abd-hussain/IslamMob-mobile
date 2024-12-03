@@ -19,131 +19,57 @@ mixin _$PrayNotificationSettingEvent {
   bool get status => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
+    required TResult Function(bool status, QuickNotificationType type)
+        quickNotificationSettings,
+    required TResult Function(bool status, PrayNotificationType type)
+        prayNotificationSettings,
+    required TResult Function(bool status) pushNotificationSetting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
+    TResult? Function(bool status, QuickNotificationType type)?
+        quickNotificationSettings,
+    TResult? Function(bool status, PrayNotificationType type)?
+        prayNotificationSettings,
+    TResult? Function(bool status)? pushNotificationSetting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
+    TResult Function(bool status, QuickNotificationType type)?
+        quickNotificationSettings,
+    TResult Function(bool status, PrayNotificationType type)?
+        prayNotificationSettings,
+    TResult Function(bool status)? pushNotificationSetting,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
+    required TResult Function(_QuickNotificationSettings value)
+        quickNotificationSettings,
+    required TResult Function(_PrayNotificationSettings value)
+        prayNotificationSettings,
+    required TResult Function(_PushNotificationSetting value)
+        pushNotificationSetting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult? Function(_QuickNotificationSettings value)?
+        quickNotificationSettings,
+    TResult? Function(_PrayNotificationSettings value)?
+        prayNotificationSettings,
+    TResult? Function(_PushNotificationSetting value)? pushNotificationSetting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult Function(_QuickNotificationSettings value)?
+        quickNotificationSettings,
+    TResult Function(_PrayNotificationSettings value)? prayNotificationSettings,
+    TResult Function(_PushNotificationSetting value)? pushNotificationSetting,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -194,25 +120,25 @@ class _$PrayNotificationSettingEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$UpdateAllowAllNotificationsImplCopyWith<$Res>
+abstract class _$$QuickNotificationSettingsImplCopyWith<$Res>
     implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateAllowAllNotificationsImplCopyWith(
-          _$UpdateAllowAllNotificationsImpl value,
-          $Res Function(_$UpdateAllowAllNotificationsImpl) then) =
-      __$$UpdateAllowAllNotificationsImplCopyWithImpl<$Res>;
+  factory _$$QuickNotificationSettingsImplCopyWith(
+          _$QuickNotificationSettingsImpl value,
+          $Res Function(_$QuickNotificationSettingsImpl) then) =
+      __$$QuickNotificationSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool status});
+  $Res call({bool status, QuickNotificationType type});
 }
 
 /// @nodoc
-class __$$UpdateAllowAllNotificationsImplCopyWithImpl<$Res>
+class __$$QuickNotificationSettingsImplCopyWithImpl<$Res>
     extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateAllowAllNotificationsImpl>
-    implements _$$UpdateAllowAllNotificationsImplCopyWith<$Res> {
-  __$$UpdateAllowAllNotificationsImplCopyWithImpl(
-      _$UpdateAllowAllNotificationsImpl _value,
-      $Res Function(_$UpdateAllowAllNotificationsImpl) _then)
+        _$QuickNotificationSettingsImpl>
+    implements _$$QuickNotificationSettingsImplCopyWith<$Res> {
+  __$$QuickNotificationSettingsImplCopyWithImpl(
+      _$QuickNotificationSettingsImpl _value,
+      $Res Function(_$QuickNotificationSettingsImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of PrayNotificationSettingEvent
@@ -221,110 +147,94 @@ class __$$UpdateAllowAllNotificationsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? type = null,
   }) {
-    return _then(_$UpdateAllowAllNotificationsImpl(
+    return _then(_$QuickNotificationSettingsImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as QuickNotificationType,
     ));
   }
 }
 
 /// @nodoc
 
-class _$UpdateAllowAllNotificationsImpl
-    implements _UpdateAllowAllNotifications {
-  const _$UpdateAllowAllNotificationsImpl({required this.status});
+class _$QuickNotificationSettingsImpl implements _QuickNotificationSettings {
+  const _$QuickNotificationSettingsImpl(
+      {required this.status, required this.type});
 
   @override
   final bool status;
+  @override
+  final QuickNotificationType type;
 
   @override
   String toString() {
-    return 'PrayNotificationSettingEvent.updateAllowAllNotifications(status: $status)';
+    return 'PrayNotificationSettingEvent.quickNotificationSettings(status: $status, type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateAllowAllNotificationsImpl &&
-            (identical(other.status, status) || other.status == status));
+            other is _$QuickNotificationSettingsImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode => Object.hash(runtimeType, status, type);
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateAllowAllNotificationsImplCopyWith<_$UpdateAllowAllNotificationsImpl>
-      get copyWith => __$$UpdateAllowAllNotificationsImplCopyWithImpl<
-          _$UpdateAllowAllNotificationsImpl>(this, _$identity);
+  _$$QuickNotificationSettingsImplCopyWith<_$QuickNotificationSettingsImpl>
+      get copyWith => __$$QuickNotificationSettingsImplCopyWithImpl<
+          _$QuickNotificationSettingsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
+    required TResult Function(bool status, QuickNotificationType type)
+        quickNotificationSettings,
+    required TResult Function(bool status, PrayNotificationType type)
+        prayNotificationSettings,
+    required TResult Function(bool status) pushNotificationSetting,
   }) {
-    return updateAllowAllNotifications(status);
+    return quickNotificationSettings(status, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
+    TResult? Function(bool status, QuickNotificationType type)?
+        quickNotificationSettings,
+    TResult? Function(bool status, PrayNotificationType type)?
+        prayNotificationSettings,
+    TResult? Function(bool status)? pushNotificationSetting,
   }) {
-    return updateAllowAllNotifications?.call(status);
+    return quickNotificationSettings?.call(status, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
+    TResult Function(bool status, QuickNotificationType type)?
+        quickNotificationSettings,
+    TResult Function(bool status, PrayNotificationType type)?
+        prayNotificationSettings,
+    TResult Function(bool status)? pushNotificationSetting,
     required TResult orElse(),
   }) {
-    if (updateAllowAllNotifications != null) {
-      return updateAllowAllNotifications(status);
+    if (quickNotificationSettings != null) {
+      return quickNotificationSettings(status, type);
     }
     return orElse();
   }
@@ -332,130 +242,83 @@ class _$UpdateAllowAllNotificationsImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
+    required TResult Function(_QuickNotificationSettings value)
+        quickNotificationSettings,
+    required TResult Function(_PrayNotificationSettings value)
+        prayNotificationSettings,
+    required TResult Function(_PushNotificationSetting value)
+        pushNotificationSetting,
   }) {
-    return updateAllowAllNotifications(this);
+    return quickNotificationSettings(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult? Function(_QuickNotificationSettings value)?
+        quickNotificationSettings,
+    TResult? Function(_PrayNotificationSettings value)?
+        prayNotificationSettings,
+    TResult? Function(_PushNotificationSetting value)? pushNotificationSetting,
   }) {
-    return updateAllowAllNotifications?.call(this);
+    return quickNotificationSettings?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult Function(_QuickNotificationSettings value)?
+        quickNotificationSettings,
+    TResult Function(_PrayNotificationSettings value)? prayNotificationSettings,
+    TResult Function(_PushNotificationSetting value)? pushNotificationSetting,
     required TResult orElse(),
   }) {
-    if (updateAllowAllNotifications != null) {
-      return updateAllowAllNotifications(this);
+    if (quickNotificationSettings != null) {
+      return quickNotificationSettings(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateAllowAllNotifications
+abstract class _QuickNotificationSettings
     implements PrayNotificationSettingEvent {
-  const factory _UpdateAllowAllNotifications({required final bool status}) =
-      _$UpdateAllowAllNotificationsImpl;
+  const factory _QuickNotificationSettings(
+          {required final bool status,
+          required final QuickNotificationType type}) =
+      _$QuickNotificationSettingsImpl;
 
   @override
   bool get status;
+  QuickNotificationType get type;
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateAllowAllNotificationsImplCopyWith<_$UpdateAllowAllNotificationsImpl>
+  _$$QuickNotificationSettingsImplCopyWith<_$QuickNotificationSettingsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateNextPrayNotificationImplCopyWith<$Res>
+abstract class _$$PrayNotificationSettingsImplCopyWith<$Res>
     implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateNextPrayNotificationImplCopyWith(
-          _$UpdateNextPrayNotificationImpl value,
-          $Res Function(_$UpdateNextPrayNotificationImpl) then) =
-      __$$UpdateNextPrayNotificationImplCopyWithImpl<$Res>;
+  factory _$$PrayNotificationSettingsImplCopyWith(
+          _$PrayNotificationSettingsImpl value,
+          $Res Function(_$PrayNotificationSettingsImpl) then) =
+      __$$PrayNotificationSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool status});
+  $Res call({bool status, PrayNotificationType type});
 }
 
 /// @nodoc
-class __$$UpdateNextPrayNotificationImplCopyWithImpl<$Res>
+class __$$PrayNotificationSettingsImplCopyWithImpl<$Res>
     extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateNextPrayNotificationImpl>
-    implements _$$UpdateNextPrayNotificationImplCopyWith<$Res> {
-  __$$UpdateNextPrayNotificationImplCopyWithImpl(
-      _$UpdateNextPrayNotificationImpl _value,
-      $Res Function(_$UpdateNextPrayNotificationImpl) _then)
+        _$PrayNotificationSettingsImpl>
+    implements _$$PrayNotificationSettingsImplCopyWith<$Res> {
+  __$$PrayNotificationSettingsImplCopyWithImpl(
+      _$PrayNotificationSettingsImpl _value,
+      $Res Function(_$PrayNotificationSettingsImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of PrayNotificationSettingEvent
@@ -464,109 +327,94 @@ class __$$UpdateNextPrayNotificationImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? type = null,
   }) {
-    return _then(_$UpdateNextPrayNotificationImpl(
+    return _then(_$PrayNotificationSettingsImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as PrayNotificationType,
     ));
   }
 }
 
 /// @nodoc
 
-class _$UpdateNextPrayNotificationImpl implements _UpdateNextPrayNotification {
-  const _$UpdateNextPrayNotificationImpl({required this.status});
+class _$PrayNotificationSettingsImpl implements _PrayNotificationSettings {
+  const _$PrayNotificationSettingsImpl(
+      {required this.status, required this.type});
 
   @override
   final bool status;
+  @override
+  final PrayNotificationType type;
 
   @override
   String toString() {
-    return 'PrayNotificationSettingEvent.updateNextPrayNotification(status: $status)';
+    return 'PrayNotificationSettingEvent.prayNotificationSettings(status: $status, type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateNextPrayNotificationImpl &&
-            (identical(other.status, status) || other.status == status));
+            other is _$PrayNotificationSettingsImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode => Object.hash(runtimeType, status, type);
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateNextPrayNotificationImplCopyWith<_$UpdateNextPrayNotificationImpl>
-      get copyWith => __$$UpdateNextPrayNotificationImplCopyWithImpl<
-          _$UpdateNextPrayNotificationImpl>(this, _$identity);
+  _$$PrayNotificationSettingsImplCopyWith<_$PrayNotificationSettingsImpl>
+      get copyWith => __$$PrayNotificationSettingsImplCopyWithImpl<
+          _$PrayNotificationSettingsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
+    required TResult Function(bool status, QuickNotificationType type)
+        quickNotificationSettings,
+    required TResult Function(bool status, PrayNotificationType type)
+        prayNotificationSettings,
+    required TResult Function(bool status) pushNotificationSetting,
   }) {
-    return updateNextPrayNotification(status);
+    return prayNotificationSettings(status, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
+    TResult? Function(bool status, QuickNotificationType type)?
+        quickNotificationSettings,
+    TResult? Function(bool status, PrayNotificationType type)?
+        prayNotificationSettings,
+    TResult? Function(bool status)? pushNotificationSetting,
   }) {
-    return updateNextPrayNotification?.call(status);
+    return prayNotificationSettings?.call(status, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
+    TResult Function(bool status, QuickNotificationType type)?
+        quickNotificationSettings,
+    TResult Function(bool status, PrayNotificationType type)?
+        prayNotificationSettings,
+    TResult Function(bool status)? pushNotificationSetting,
     required TResult orElse(),
   }) {
-    if (updateNextPrayNotification != null) {
-      return updateNextPrayNotification(status);
+    if (prayNotificationSettings != null) {
+      return prayNotificationSettings(status, type);
     }
     return orElse();
   }
@@ -574,130 +422,83 @@ class _$UpdateNextPrayNotificationImpl implements _UpdateNextPrayNotification {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
+    required TResult Function(_QuickNotificationSettings value)
+        quickNotificationSettings,
+    required TResult Function(_PrayNotificationSettings value)
+        prayNotificationSettings,
+    required TResult Function(_PushNotificationSetting value)
+        pushNotificationSetting,
   }) {
-    return updateNextPrayNotification(this);
+    return prayNotificationSettings(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult? Function(_QuickNotificationSettings value)?
+        quickNotificationSettings,
+    TResult? Function(_PrayNotificationSettings value)?
+        prayNotificationSettings,
+    TResult? Function(_PushNotificationSetting value)? pushNotificationSetting,
   }) {
-    return updateNextPrayNotification?.call(this);
+    return prayNotificationSettings?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult Function(_QuickNotificationSettings value)?
+        quickNotificationSettings,
+    TResult Function(_PrayNotificationSettings value)? prayNotificationSettings,
+    TResult Function(_PushNotificationSetting value)? pushNotificationSetting,
     required TResult orElse(),
   }) {
-    if (updateNextPrayNotification != null) {
-      return updateNextPrayNotification(this);
+    if (prayNotificationSettings != null) {
+      return prayNotificationSettings(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateNextPrayNotification
+abstract class _PrayNotificationSettings
     implements PrayNotificationSettingEvent {
-  const factory _UpdateNextPrayNotification({required final bool status}) =
-      _$UpdateNextPrayNotificationImpl;
+  const factory _PrayNotificationSettings(
+          {required final bool status,
+          required final PrayNotificationType type}) =
+      _$PrayNotificationSettingsImpl;
 
   @override
   bool get status;
+  PrayNotificationType get type;
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateNextPrayNotificationImplCopyWith<_$UpdateNextPrayNotificationImpl>
+  _$$PrayNotificationSettingsImplCopyWith<_$PrayNotificationSettingsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateAllNotificationForTodayImplCopyWith<$Res>
+abstract class _$$PushNotificationSettingImplCopyWith<$Res>
     implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateAllNotificationForTodayImplCopyWith(
-          _$UpdateAllNotificationForTodayImpl value,
-          $Res Function(_$UpdateAllNotificationForTodayImpl) then) =
-      __$$UpdateAllNotificationForTodayImplCopyWithImpl<$Res>;
+  factory _$$PushNotificationSettingImplCopyWith(
+          _$PushNotificationSettingImpl value,
+          $Res Function(_$PushNotificationSettingImpl) then) =
+      __$$PushNotificationSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool status});
 }
 
 /// @nodoc
-class __$$UpdateAllNotificationForTodayImplCopyWithImpl<$Res>
+class __$$PushNotificationSettingImplCopyWithImpl<$Res>
     extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateAllNotificationForTodayImpl>
-    implements _$$UpdateAllNotificationForTodayImplCopyWith<$Res> {
-  __$$UpdateAllNotificationForTodayImplCopyWithImpl(
-      _$UpdateAllNotificationForTodayImpl _value,
-      $Res Function(_$UpdateAllNotificationForTodayImpl) _then)
+        _$PushNotificationSettingImpl>
+    implements _$$PushNotificationSettingImplCopyWith<$Res> {
+  __$$PushNotificationSettingImplCopyWithImpl(
+      _$PushNotificationSettingImpl _value,
+      $Res Function(_$PushNotificationSettingImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of PrayNotificationSettingEvent
@@ -707,7 +508,7 @@ class __$$UpdateAllNotificationForTodayImplCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
   }) {
-    return _then(_$UpdateAllNotificationForTodayImpl(
+    return _then(_$PushNotificationSettingImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -718,23 +519,22 @@ class __$$UpdateAllNotificationForTodayImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateAllNotificationForTodayImpl
-    implements _UpdateAllNotificationForToday {
-  const _$UpdateAllNotificationForTodayImpl({required this.status});
+class _$PushNotificationSettingImpl implements _PushNotificationSetting {
+  const _$PushNotificationSettingImpl({required this.status});
 
   @override
   final bool status;
 
   @override
   String toString() {
-    return 'PrayNotificationSettingEvent.updateAllNotificationForToday(status: $status)';
+    return 'PrayNotificationSettingEvent.pushNotificationSetting(status: $status)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateAllNotificationForTodayImpl &&
+            other is _$PushNotificationSettingImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -746,71 +546,46 @@ class _$UpdateAllNotificationForTodayImpl
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateAllNotificationForTodayImplCopyWith<
-          _$UpdateAllNotificationForTodayImpl>
-      get copyWith => __$$UpdateAllNotificationForTodayImplCopyWithImpl<
-          _$UpdateAllNotificationForTodayImpl>(this, _$identity);
+  _$$PushNotificationSettingImplCopyWith<_$PushNotificationSettingImpl>
+      get copyWith => __$$PushNotificationSettingImplCopyWithImpl<
+          _$PushNotificationSettingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
+    required TResult Function(bool status, QuickNotificationType type)
+        quickNotificationSettings,
+    required TResult Function(bool status, PrayNotificationType type)
+        prayNotificationSettings,
+    required TResult Function(bool status) pushNotificationSetting,
   }) {
-    return updateAllNotificationForToday(status);
+    return pushNotificationSetting(status);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
+    TResult? Function(bool status, QuickNotificationType type)?
+        quickNotificationSettings,
+    TResult? Function(bool status, PrayNotificationType type)?
+        prayNotificationSettings,
+    TResult? Function(bool status)? pushNotificationSetting,
   }) {
-    return updateAllNotificationForToday?.call(status);
+    return pushNotificationSetting?.call(status);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
+    TResult Function(bool status, QuickNotificationType type)?
+        quickNotificationSettings,
+    TResult Function(bool status, PrayNotificationType type)?
+        prayNotificationSettings,
+    TResult Function(bool status)? pushNotificationSetting,
     required TResult orElse(),
   }) {
-    if (updateAllNotificationForToday != null) {
-      return updateAllNotificationForToday(status);
+    if (pushNotificationSetting != null) {
+      return pushNotificationSetting(status);
     }
     return orElse();
   }
@@ -818,98 +593,48 @@ class _$UpdateAllNotificationForTodayImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
+    required TResult Function(_QuickNotificationSettings value)
+        quickNotificationSettings,
+    required TResult Function(_PrayNotificationSettings value)
+        prayNotificationSettings,
+    required TResult Function(_PushNotificationSetting value)
+        pushNotificationSetting,
   }) {
-    return updateAllNotificationForToday(this);
+    return pushNotificationSetting(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult? Function(_QuickNotificationSettings value)?
+        quickNotificationSettings,
+    TResult? Function(_PrayNotificationSettings value)?
+        prayNotificationSettings,
+    TResult? Function(_PushNotificationSetting value)? pushNotificationSetting,
   }) {
-    return updateAllNotificationForToday?.call(this);
+    return pushNotificationSetting?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
+    TResult Function(_QuickNotificationSettings value)?
+        quickNotificationSettings,
+    TResult Function(_PrayNotificationSettings value)? prayNotificationSettings,
+    TResult Function(_PushNotificationSetting value)? pushNotificationSetting,
     required TResult orElse(),
   }) {
-    if (updateAllNotificationForToday != null) {
-      return updateAllNotificationForToday(this);
+    if (pushNotificationSetting != null) {
+      return pushNotificationSetting(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateAllNotificationForToday
+abstract class _PushNotificationSetting
     implements PrayNotificationSettingEvent {
-  const factory _UpdateAllNotificationForToday({required final bool status}) =
-      _$UpdateAllNotificationForTodayImpl;
+  const factory _PushNotificationSetting({required final bool status}) =
+      _$PushNotificationSettingImpl;
 
   @override
   bool get status;
@@ -918,2446 +643,22 @@ abstract class _UpdateAllNotificationForToday
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateAllNotificationForTodayImplCopyWith<
-          _$UpdateAllNotificationForTodayImpl>
+  _$$PushNotificationSettingImplCopyWith<_$PushNotificationSettingImpl>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateAllNotificationForThreeDayImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateAllNotificationForThreeDayImplCopyWith(
-          _$UpdateAllNotificationForThreeDayImpl value,
-          $Res Function(_$UpdateAllNotificationForThreeDayImpl) then) =
-      __$$UpdateAllNotificationForThreeDayImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateAllNotificationForThreeDayImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateAllNotificationForThreeDayImpl>
-    implements _$$UpdateAllNotificationForThreeDayImplCopyWith<$Res> {
-  __$$UpdateAllNotificationForThreeDayImplCopyWithImpl(
-      _$UpdateAllNotificationForThreeDayImpl _value,
-      $Res Function(_$UpdateAllNotificationForThreeDayImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateAllNotificationForThreeDayImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateAllNotificationForThreeDayImpl
-    implements _UpdateAllNotificationForThreeDay {
-  const _$UpdateAllNotificationForThreeDayImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateAllNotificationForThreeDay(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateAllNotificationForThreeDayImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateAllNotificationForThreeDayImplCopyWith<
-          _$UpdateAllNotificationForThreeDayImpl>
-      get copyWith => __$$UpdateAllNotificationForThreeDayImplCopyWithImpl<
-          _$UpdateAllNotificationForThreeDayImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateAllNotificationForThreeDay(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateAllNotificationForThreeDay?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateAllNotificationForThreeDay != null) {
-      return updateAllNotificationForThreeDay(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateAllNotificationForThreeDay(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateAllNotificationForThreeDay?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateAllNotificationForThreeDay != null) {
-      return updateAllNotificationForThreeDay(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateAllNotificationForThreeDay
-    implements PrayNotificationSettingEvent {
-  const factory _UpdateAllNotificationForThreeDay(
-      {required final bool status}) = _$UpdateAllNotificationForThreeDayImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateAllNotificationForThreeDayImplCopyWith<
-          _$UpdateAllNotificationForThreeDayImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateAllNotificationForWeekDayImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateAllNotificationForWeekDayImplCopyWith(
-          _$UpdateAllNotificationForWeekDayImpl value,
-          $Res Function(_$UpdateAllNotificationForWeekDayImpl) then) =
-      __$$UpdateAllNotificationForWeekDayImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateAllNotificationForWeekDayImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateAllNotificationForWeekDayImpl>
-    implements _$$UpdateAllNotificationForWeekDayImplCopyWith<$Res> {
-  __$$UpdateAllNotificationForWeekDayImplCopyWithImpl(
-      _$UpdateAllNotificationForWeekDayImpl _value,
-      $Res Function(_$UpdateAllNotificationForWeekDayImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateAllNotificationForWeekDayImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateAllNotificationForWeekDayImpl
-    implements _UpdateAllNotificationForWeekDay {
-  const _$UpdateAllNotificationForWeekDayImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateAllNotificationForWeekDay(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateAllNotificationForWeekDayImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateAllNotificationForWeekDayImplCopyWith<
-          _$UpdateAllNotificationForWeekDayImpl>
-      get copyWith => __$$UpdateAllNotificationForWeekDayImplCopyWithImpl<
-          _$UpdateAllNotificationForWeekDayImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateAllNotificationForWeekDay(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateAllNotificationForWeekDay?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateAllNotificationForWeekDay != null) {
-      return updateAllNotificationForWeekDay(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateAllNotificationForWeekDay(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateAllNotificationForWeekDay?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateAllNotificationForWeekDay != null) {
-      return updateAllNotificationForWeekDay(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateAllNotificationForWeekDay
-    implements PrayNotificationSettingEvent {
-  const factory _UpdateAllNotificationForWeekDay({required final bool status}) =
-      _$UpdateAllNotificationForWeekDayImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateAllNotificationForWeekDayImplCopyWith<
-          _$UpdateAllNotificationForWeekDayImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateFajirNotificationImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateFajirNotificationImplCopyWith(
-          _$UpdateFajirNotificationImpl value,
-          $Res Function(_$UpdateFajirNotificationImpl) then) =
-      __$$UpdateFajirNotificationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateFajirNotificationImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateFajirNotificationImpl>
-    implements _$$UpdateFajirNotificationImplCopyWith<$Res> {
-  __$$UpdateFajirNotificationImplCopyWithImpl(
-      _$UpdateFajirNotificationImpl _value,
-      $Res Function(_$UpdateFajirNotificationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateFajirNotificationImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateFajirNotificationImpl implements _UpdateFajirNotification {
-  const _$UpdateFajirNotificationImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateFajirNotification(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateFajirNotificationImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateFajirNotificationImplCopyWith<_$UpdateFajirNotificationImpl>
-      get copyWith => __$$UpdateFajirNotificationImplCopyWithImpl<
-          _$UpdateFajirNotificationImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateFajirNotification(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateFajirNotification?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateFajirNotification != null) {
-      return updateFajirNotification(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateFajirNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateFajirNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateFajirNotification != null) {
-      return updateFajirNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateFajirNotification
-    implements PrayNotificationSettingEvent {
-  const factory _UpdateFajirNotification({required final bool status}) =
-      _$UpdateFajirNotificationImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateFajirNotificationImplCopyWith<_$UpdateFajirNotificationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateDuhirNotificationImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateDuhirNotificationImplCopyWith(
-          _$UpdateDuhirNotificationImpl value,
-          $Res Function(_$UpdateDuhirNotificationImpl) then) =
-      __$$UpdateDuhirNotificationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateDuhirNotificationImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateDuhirNotificationImpl>
-    implements _$$UpdateDuhirNotificationImplCopyWith<$Res> {
-  __$$UpdateDuhirNotificationImplCopyWithImpl(
-      _$UpdateDuhirNotificationImpl _value,
-      $Res Function(_$UpdateDuhirNotificationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateDuhirNotificationImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateDuhirNotificationImpl implements _UpdateDuhirNotification {
-  const _$UpdateDuhirNotificationImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateDuhirNotification(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateDuhirNotificationImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateDuhirNotificationImplCopyWith<_$UpdateDuhirNotificationImpl>
-      get copyWith => __$$UpdateDuhirNotificationImplCopyWithImpl<
-          _$UpdateDuhirNotificationImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateDuhirNotification(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateDuhirNotification?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateDuhirNotification != null) {
-      return updateDuhirNotification(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateDuhirNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateDuhirNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateDuhirNotification != null) {
-      return updateDuhirNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateDuhirNotification
-    implements PrayNotificationSettingEvent {
-  const factory _UpdateDuhirNotification({required final bool status}) =
-      _$UpdateDuhirNotificationImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateDuhirNotificationImplCopyWith<_$UpdateDuhirNotificationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateAsrNotificationImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateAsrNotificationImplCopyWith(
-          _$UpdateAsrNotificationImpl value,
-          $Res Function(_$UpdateAsrNotificationImpl) then) =
-      __$$UpdateAsrNotificationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateAsrNotificationImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateAsrNotificationImpl>
-    implements _$$UpdateAsrNotificationImplCopyWith<$Res> {
-  __$$UpdateAsrNotificationImplCopyWithImpl(_$UpdateAsrNotificationImpl _value,
-      $Res Function(_$UpdateAsrNotificationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateAsrNotificationImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateAsrNotificationImpl implements _UpdateAsrNotification {
-  const _$UpdateAsrNotificationImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateAsrNotification(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateAsrNotificationImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateAsrNotificationImplCopyWith<_$UpdateAsrNotificationImpl>
-      get copyWith => __$$UpdateAsrNotificationImplCopyWithImpl<
-          _$UpdateAsrNotificationImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateAsrNotification(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateAsrNotification?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateAsrNotification != null) {
-      return updateAsrNotification(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateAsrNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateAsrNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateAsrNotification != null) {
-      return updateAsrNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateAsrNotification implements PrayNotificationSettingEvent {
-  const factory _UpdateAsrNotification({required final bool status}) =
-      _$UpdateAsrNotificationImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateAsrNotificationImplCopyWith<_$UpdateAsrNotificationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateMagriebNotificationImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateMagriebNotificationImplCopyWith(
-          _$UpdateMagriebNotificationImpl value,
-          $Res Function(_$UpdateMagriebNotificationImpl) then) =
-      __$$UpdateMagriebNotificationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateMagriebNotificationImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateMagriebNotificationImpl>
-    implements _$$UpdateMagriebNotificationImplCopyWith<$Res> {
-  __$$UpdateMagriebNotificationImplCopyWithImpl(
-      _$UpdateMagriebNotificationImpl _value,
-      $Res Function(_$UpdateMagriebNotificationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateMagriebNotificationImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateMagriebNotificationImpl implements _UpdateMagriebNotification {
-  const _$UpdateMagriebNotificationImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateMagriebNotification(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateMagriebNotificationImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateMagriebNotificationImplCopyWith<_$UpdateMagriebNotificationImpl>
-      get copyWith => __$$UpdateMagriebNotificationImplCopyWithImpl<
-          _$UpdateMagriebNotificationImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateMagriebNotification(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateMagriebNotification?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateMagriebNotification != null) {
-      return updateMagriebNotification(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateMagriebNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateMagriebNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateMagriebNotification != null) {
-      return updateMagriebNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateMagriebNotification
-    implements PrayNotificationSettingEvent {
-  const factory _UpdateMagriebNotification({required final bool status}) =
-      _$UpdateMagriebNotificationImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateMagriebNotificationImplCopyWith<_$UpdateMagriebNotificationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateIshaNotificationImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateIshaNotificationImplCopyWith(
-          _$UpdateIshaNotificationImpl value,
-          $Res Function(_$UpdateIshaNotificationImpl) then) =
-      __$$UpdateIshaNotificationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateIshaNotificationImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateIshaNotificationImpl>
-    implements _$$UpdateIshaNotificationImplCopyWith<$Res> {
-  __$$UpdateIshaNotificationImplCopyWithImpl(
-      _$UpdateIshaNotificationImpl _value,
-      $Res Function(_$UpdateIshaNotificationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateIshaNotificationImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateIshaNotificationImpl implements _UpdateIshaNotification {
-  const _$UpdateIshaNotificationImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateIshaNotification(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateIshaNotificationImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateIshaNotificationImplCopyWith<_$UpdateIshaNotificationImpl>
-      get copyWith => __$$UpdateIshaNotificationImplCopyWithImpl<
-          _$UpdateIshaNotificationImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateIshaNotification(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateIshaNotification?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateIshaNotification != null) {
-      return updateIshaNotification(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateIshaNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateIshaNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateIshaNotification != null) {
-      return updateIshaNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateIshaNotification implements PrayNotificationSettingEvent {
-  const factory _UpdateIshaNotification({required final bool status}) =
-      _$UpdateIshaNotificationImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateIshaNotificationImplCopyWith<_$UpdateIshaNotificationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateAdkarNotificationImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateAdkarNotificationImplCopyWith(
-          _$UpdateAdkarNotificationImpl value,
-          $Res Function(_$UpdateAdkarNotificationImpl) then) =
-      __$$UpdateAdkarNotificationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateAdkarNotificationImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateAdkarNotificationImpl>
-    implements _$$UpdateAdkarNotificationImplCopyWith<$Res> {
-  __$$UpdateAdkarNotificationImplCopyWithImpl(
-      _$UpdateAdkarNotificationImpl _value,
-      $Res Function(_$UpdateAdkarNotificationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateAdkarNotificationImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateAdkarNotificationImpl implements _UpdateAdkarNotification {
-  const _$UpdateAdkarNotificationImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateAdkarNotification(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateAdkarNotificationImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateAdkarNotificationImplCopyWith<_$UpdateAdkarNotificationImpl>
-      get copyWith => __$$UpdateAdkarNotificationImplCopyWithImpl<
-          _$UpdateAdkarNotificationImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateAdkarNotification(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateAdkarNotification?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateAdkarNotification != null) {
-      return updateAdkarNotification(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateAdkarNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateAdkarNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateAdkarNotification != null) {
-      return updateAdkarNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateAdkarNotification
-    implements PrayNotificationSettingEvent {
-  const factory _UpdateAdkarNotification({required final bool status}) =
-      _$UpdateAdkarNotificationImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateAdkarNotificationImplCopyWith<_$UpdateAdkarNotificationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateApplicationNotificationImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateApplicationNotificationImplCopyWith(
-          _$UpdateApplicationNotificationImpl value,
-          $Res Function(_$UpdateApplicationNotificationImpl) then) =
-      __$$UpdateApplicationNotificationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateApplicationNotificationImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateApplicationNotificationImpl>
-    implements _$$UpdateApplicationNotificationImplCopyWith<$Res> {
-  __$$UpdateApplicationNotificationImplCopyWithImpl(
-      _$UpdateApplicationNotificationImpl _value,
-      $Res Function(_$UpdateApplicationNotificationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateApplicationNotificationImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateApplicationNotificationImpl
-    implements _UpdateApplicationNotification {
-  const _$UpdateApplicationNotificationImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateApplicationNotification(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateApplicationNotificationImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateApplicationNotificationImplCopyWith<
-          _$UpdateApplicationNotificationImpl>
-      get copyWith => __$$UpdateApplicationNotificationImplCopyWithImpl<
-          _$UpdateApplicationNotificationImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateApplicationNotification(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateApplicationNotification?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateApplicationNotification != null) {
-      return updateApplicationNotification(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateApplicationNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateApplicationNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateApplicationNotification != null) {
-      return updateApplicationNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateApplicationNotification
-    implements PrayNotificationSettingEvent {
-  const factory _UpdateApplicationNotification({required final bool status}) =
-      _$UpdateApplicationNotificationImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateApplicationNotificationImplCopyWith<
-          _$UpdateApplicationNotificationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateLoadingStatusImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$UpdateLoadingStatusImplCopyWith(_$UpdateLoadingStatusImpl value,
-          $Res Function(_$UpdateLoadingStatusImpl) then) =
-      __$$UpdateLoadingStatusImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$UpdateLoadingStatusImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$UpdateLoadingStatusImpl>
-    implements _$$UpdateLoadingStatusImplCopyWith<$Res> {
-  __$$UpdateLoadingStatusImplCopyWithImpl(_$UpdateLoadingStatusImpl _value,
-      $Res Function(_$UpdateLoadingStatusImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateLoadingStatusImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
-  const _$UpdateLoadingStatusImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.updateLoadingStatus(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateLoadingStatusImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateLoadingStatusImplCopyWith<_$UpdateLoadingStatusImpl> get copyWith =>
-      __$$UpdateLoadingStatusImplCopyWithImpl<_$UpdateLoadingStatusImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) updateAllowAllNotifications,
-    required TResult Function(bool status) updateNextPrayNotification,
-    required TResult Function(bool status) updateAllNotificationForToday,
-    required TResult Function(bool status) updateAllNotificationForThreeDay,
-    required TResult Function(bool status) updateAllNotificationForWeekDay,
-    required TResult Function(bool status) updateFajirNotification,
-    required TResult Function(bool status) updateDuhirNotification,
-    required TResult Function(bool status) updateAsrNotification,
-    required TResult Function(bool status) updateMagriebNotification,
-    required TResult Function(bool status) updateIshaNotification,
-    required TResult Function(bool status) updateAdkarNotification,
-    required TResult Function(bool status) updateApplicationNotification,
-    required TResult Function(bool status) updateLoadingStatus,
-  }) {
-    return updateLoadingStatus(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? updateAllowAllNotifications,
-    TResult? Function(bool status)? updateNextPrayNotification,
-    TResult? Function(bool status)? updateAllNotificationForToday,
-    TResult? Function(bool status)? updateAllNotificationForThreeDay,
-    TResult? Function(bool status)? updateAllNotificationForWeekDay,
-    TResult? Function(bool status)? updateFajirNotification,
-    TResult? Function(bool status)? updateDuhirNotification,
-    TResult? Function(bool status)? updateAsrNotification,
-    TResult? Function(bool status)? updateMagriebNotification,
-    TResult? Function(bool status)? updateIshaNotification,
-    TResult? Function(bool status)? updateAdkarNotification,
-    TResult? Function(bool status)? updateApplicationNotification,
-    TResult? Function(bool status)? updateLoadingStatus,
-  }) {
-    return updateLoadingStatus?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? updateAllowAllNotifications,
-    TResult Function(bool status)? updateNextPrayNotification,
-    TResult Function(bool status)? updateAllNotificationForToday,
-    TResult Function(bool status)? updateAllNotificationForThreeDay,
-    TResult Function(bool status)? updateAllNotificationForWeekDay,
-    TResult Function(bool status)? updateFajirNotification,
-    TResult Function(bool status)? updateDuhirNotification,
-    TResult Function(bool status)? updateAsrNotification,
-    TResult Function(bool status)? updateMagriebNotification,
-    TResult Function(bool status)? updateIshaNotification,
-    TResult Function(bool status)? updateAdkarNotification,
-    TResult Function(bool status)? updateApplicationNotification,
-    TResult Function(bool status)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateLoadingStatus != null) {
-      return updateLoadingStatus(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateAllowAllNotifications value)
-        updateAllowAllNotifications,
-    required TResult Function(_UpdateNextPrayNotification value)
-        updateNextPrayNotification,
-    required TResult Function(_UpdateAllNotificationForToday value)
-        updateAllNotificationForToday,
-    required TResult Function(_UpdateAllNotificationForThreeDay value)
-        updateAllNotificationForThreeDay,
-    required TResult Function(_UpdateAllNotificationForWeekDay value)
-        updateAllNotificationForWeekDay,
-    required TResult Function(_UpdateFajirNotification value)
-        updateFajirNotification,
-    required TResult Function(_UpdateDuhirNotification value)
-        updateDuhirNotification,
-    required TResult Function(_UpdateAsrNotification value)
-        updateAsrNotification,
-    required TResult Function(_UpdateMagriebNotification value)
-        updateMagriebNotification,
-    required TResult Function(_UpdateIshaNotification value)
-        updateIshaNotification,
-    required TResult Function(_UpdateAdkarNotification value)
-        updateAdkarNotification,
-    required TResult Function(_UpdateApplicationNotification value)
-        updateApplicationNotification,
-    required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
-  }) {
-    return updateLoadingStatus(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult? Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult? Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult? Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult? Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult? Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult? Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult? Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult? Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult? Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult? Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult? Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult? Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-  }) {
-    return updateLoadingStatus?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateAllowAllNotifications value)?
-        updateAllowAllNotifications,
-    TResult Function(_UpdateNextPrayNotification value)?
-        updateNextPrayNotification,
-    TResult Function(_UpdateAllNotificationForToday value)?
-        updateAllNotificationForToday,
-    TResult Function(_UpdateAllNotificationForThreeDay value)?
-        updateAllNotificationForThreeDay,
-    TResult Function(_UpdateAllNotificationForWeekDay value)?
-        updateAllNotificationForWeekDay,
-    TResult Function(_UpdateFajirNotification value)? updateFajirNotification,
-    TResult Function(_UpdateDuhirNotification value)? updateDuhirNotification,
-    TResult Function(_UpdateAsrNotification value)? updateAsrNotification,
-    TResult Function(_UpdateMagriebNotification value)?
-        updateMagriebNotification,
-    TResult Function(_UpdateIshaNotification value)? updateIshaNotification,
-    TResult Function(_UpdateAdkarNotification value)? updateAdkarNotification,
-    TResult Function(_UpdateApplicationNotification value)?
-        updateApplicationNotification,
-    TResult Function(_UpdateLoadingStatus value)? updateLoadingStatus,
-    required TResult orElse(),
-  }) {
-    if (updateLoadingStatus != null) {
-      return updateLoadingStatus(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateLoadingStatus implements PrayNotificationSettingEvent {
-  const factory _UpdateLoadingStatus({required final bool status}) =
-      _$UpdateLoadingStatusImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateLoadingStatusImplCopyWith<_$UpdateLoadingStatusImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$PrayNotificationSettingState {
-  bool get allowAllNotifications => throw _privateConstructorUsedError;
   bool get allNotificationForToday => throw _privateConstructorUsedError;
   bool get allNotificationForThreeDay => throw _privateConstructorUsedError;
   bool get allNotificationForWeekDay => throw _privateConstructorUsedError;
-  bool get fajirNotification => throw _privateConstructorUsedError;
-  bool get duhirNotification => throw _privateConstructorUsedError;
-  bool get asrNotification => throw _privateConstructorUsedError;
-  bool get magriebNotification => throw _privateConstructorUsedError;
-  bool get ishaNotification => throw _privateConstructorUsedError;
-  bool get adkarNotification => throw _privateConstructorUsedError;
+  bool get fajir => throw _privateConstructorUsedError;
+  bool get duhir => throw _privateConstructorUsedError;
+  bool get asr => throw _privateConstructorUsedError;
+  bool get magrieb => throw _privateConstructorUsedError;
+  bool get isha => throw _privateConstructorUsedError;
+  bool get sunrise => throw _privateConstructorUsedError;
+  bool get before15Min => throw _privateConstructorUsedError;
   bool get applicationNotification => throw _privateConstructorUsedError;
   dynamic get loadingStatus => throw _privateConstructorUsedError;
 
@@ -3377,16 +678,16 @@ abstract class $PrayNotificationSettingStateCopyWith<$Res> {
           PrayNotificationSettingState>;
   @useResult
   $Res call(
-      {bool allowAllNotifications,
-      bool allNotificationForToday,
+      {bool allNotificationForToday,
       bool allNotificationForThreeDay,
       bool allNotificationForWeekDay,
-      bool fajirNotification,
-      bool duhirNotification,
-      bool asrNotification,
-      bool magriebNotification,
-      bool ishaNotification,
-      bool adkarNotification,
+      bool fajir,
+      bool duhir,
+      bool asr,
+      bool magrieb,
+      bool isha,
+      bool sunrise,
+      bool before15Min,
       bool applicationNotification,
       dynamic loadingStatus});
 }
@@ -3407,24 +708,20 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? allowAllNotifications = null,
     Object? allNotificationForToday = null,
     Object? allNotificationForThreeDay = null,
     Object? allNotificationForWeekDay = null,
-    Object? fajirNotification = null,
-    Object? duhirNotification = null,
-    Object? asrNotification = null,
-    Object? magriebNotification = null,
-    Object? ishaNotification = null,
-    Object? adkarNotification = null,
+    Object? fajir = null,
+    Object? duhir = null,
+    Object? asr = null,
+    Object? magrieb = null,
+    Object? isha = null,
+    Object? sunrise = null,
+    Object? before15Min = null,
     Object? applicationNotification = null,
     Object? loadingStatus = freezed,
   }) {
     return _then(_value.copyWith(
-      allowAllNotifications: null == allowAllNotifications
-          ? _value.allowAllNotifications
-          : allowAllNotifications // ignore: cast_nullable_to_non_nullable
-              as bool,
       allNotificationForToday: null == allNotificationForToday
           ? _value.allNotificationForToday
           : allNotificationForToday // ignore: cast_nullable_to_non_nullable
@@ -3437,29 +734,33 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
           ? _value.allNotificationForWeekDay
           : allNotificationForWeekDay // ignore: cast_nullable_to_non_nullable
               as bool,
-      fajirNotification: null == fajirNotification
-          ? _value.fajirNotification
-          : fajirNotification // ignore: cast_nullable_to_non_nullable
+      fajir: null == fajir
+          ? _value.fajir
+          : fajir // ignore: cast_nullable_to_non_nullable
               as bool,
-      duhirNotification: null == duhirNotification
-          ? _value.duhirNotification
-          : duhirNotification // ignore: cast_nullable_to_non_nullable
+      duhir: null == duhir
+          ? _value.duhir
+          : duhir // ignore: cast_nullable_to_non_nullable
               as bool,
-      asrNotification: null == asrNotification
-          ? _value.asrNotification
-          : asrNotification // ignore: cast_nullable_to_non_nullable
+      asr: null == asr
+          ? _value.asr
+          : asr // ignore: cast_nullable_to_non_nullable
               as bool,
-      magriebNotification: null == magriebNotification
-          ? _value.magriebNotification
-          : magriebNotification // ignore: cast_nullable_to_non_nullable
+      magrieb: null == magrieb
+          ? _value.magrieb
+          : magrieb // ignore: cast_nullable_to_non_nullable
               as bool,
-      ishaNotification: null == ishaNotification
-          ? _value.ishaNotification
-          : ishaNotification // ignore: cast_nullable_to_non_nullable
+      isha: null == isha
+          ? _value.isha
+          : isha // ignore: cast_nullable_to_non_nullable
               as bool,
-      adkarNotification: null == adkarNotification
-          ? _value.adkarNotification
-          : adkarNotification // ignore: cast_nullable_to_non_nullable
+      sunrise: null == sunrise
+          ? _value.sunrise
+          : sunrise // ignore: cast_nullable_to_non_nullable
+              as bool,
+      before15Min: null == before15Min
+          ? _value.before15Min
+          : before15Min // ignore: cast_nullable_to_non_nullable
               as bool,
       applicationNotification: null == applicationNotification
           ? _value.applicationNotification
@@ -3483,16 +784,16 @@ abstract class _$$PrayNotificationSettingStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool allowAllNotifications,
-      bool allNotificationForToday,
+      {bool allNotificationForToday,
       bool allNotificationForThreeDay,
       bool allNotificationForWeekDay,
-      bool fajirNotification,
-      bool duhirNotification,
-      bool asrNotification,
-      bool magriebNotification,
-      bool ishaNotification,
-      bool adkarNotification,
+      bool fajir,
+      bool duhir,
+      bool asr,
+      bool magrieb,
+      bool isha,
+      bool sunrise,
+      bool before15Min,
       bool applicationNotification,
       dynamic loadingStatus});
 }
@@ -3512,24 +813,20 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? allowAllNotifications = null,
     Object? allNotificationForToday = null,
     Object? allNotificationForThreeDay = null,
     Object? allNotificationForWeekDay = null,
-    Object? fajirNotification = null,
-    Object? duhirNotification = null,
-    Object? asrNotification = null,
-    Object? magriebNotification = null,
-    Object? ishaNotification = null,
-    Object? adkarNotification = null,
+    Object? fajir = null,
+    Object? duhir = null,
+    Object? asr = null,
+    Object? magrieb = null,
+    Object? isha = null,
+    Object? sunrise = null,
+    Object? before15Min = null,
     Object? applicationNotification = null,
     Object? loadingStatus = freezed,
   }) {
     return _then(_$PrayNotificationSettingStateImpl(
-      allowAllNotifications: null == allowAllNotifications
-          ? _value.allowAllNotifications
-          : allowAllNotifications // ignore: cast_nullable_to_non_nullable
-              as bool,
       allNotificationForToday: null == allNotificationForToday
           ? _value.allNotificationForToday
           : allNotificationForToday // ignore: cast_nullable_to_non_nullable
@@ -3542,29 +839,33 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
           ? _value.allNotificationForWeekDay
           : allNotificationForWeekDay // ignore: cast_nullable_to_non_nullable
               as bool,
-      fajirNotification: null == fajirNotification
-          ? _value.fajirNotification
-          : fajirNotification // ignore: cast_nullable_to_non_nullable
+      fajir: null == fajir
+          ? _value.fajir
+          : fajir // ignore: cast_nullable_to_non_nullable
               as bool,
-      duhirNotification: null == duhirNotification
-          ? _value.duhirNotification
-          : duhirNotification // ignore: cast_nullable_to_non_nullable
+      duhir: null == duhir
+          ? _value.duhir
+          : duhir // ignore: cast_nullable_to_non_nullable
               as bool,
-      asrNotification: null == asrNotification
-          ? _value.asrNotification
-          : asrNotification // ignore: cast_nullable_to_non_nullable
+      asr: null == asr
+          ? _value.asr
+          : asr // ignore: cast_nullable_to_non_nullable
               as bool,
-      magriebNotification: null == magriebNotification
-          ? _value.magriebNotification
-          : magriebNotification // ignore: cast_nullable_to_non_nullable
+      magrieb: null == magrieb
+          ? _value.magrieb
+          : magrieb // ignore: cast_nullable_to_non_nullable
               as bool,
-      ishaNotification: null == ishaNotification
-          ? _value.ishaNotification
-          : ishaNotification // ignore: cast_nullable_to_non_nullable
+      isha: null == isha
+          ? _value.isha
+          : isha // ignore: cast_nullable_to_non_nullable
               as bool,
-      adkarNotification: null == adkarNotification
-          ? _value.adkarNotification
-          : adkarNotification // ignore: cast_nullable_to_non_nullable
+      sunrise: null == sunrise
+          ? _value.sunrise
+          : sunrise // ignore: cast_nullable_to_non_nullable
+              as bool,
+      before15Min: null == before15Min
+          ? _value.before15Min
+          : before15Min // ignore: cast_nullable_to_non_nullable
               as bool,
       applicationNotification: null == applicationNotification
           ? _value.applicationNotification
@@ -3581,22 +882,19 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
 class _$PrayNotificationSettingStateImpl
     implements _PrayNotificationSettingState {
   const _$PrayNotificationSettingStateImpl(
-      {this.allowAllNotifications = false,
-      this.allNotificationForToday = false,
+      {this.allNotificationForToday = false,
       this.allNotificationForThreeDay = false,
       this.allNotificationForWeekDay = false,
-      this.fajirNotification = true,
-      this.duhirNotification = true,
-      this.asrNotification = true,
-      this.magriebNotification = true,
-      this.ishaNotification = true,
-      this.adkarNotification = true,
+      this.fajir = true,
+      this.duhir = true,
+      this.asr = true,
+      this.magrieb = true,
+      this.isha = true,
+      this.sunrise = true,
+      this.before15Min = true,
       this.applicationNotification = false,
       this.loadingStatus = const PrayNotificationSettingProcessState.idl()});
 
-  @override
-  @JsonKey()
-  final bool allowAllNotifications;
   @override
   @JsonKey()
   final bool allNotificationForToday;
@@ -3608,22 +906,25 @@ class _$PrayNotificationSettingStateImpl
   final bool allNotificationForWeekDay;
   @override
   @JsonKey()
-  final bool fajirNotification;
+  final bool fajir;
   @override
   @JsonKey()
-  final bool duhirNotification;
+  final bool duhir;
   @override
   @JsonKey()
-  final bool asrNotification;
+  final bool asr;
   @override
   @JsonKey()
-  final bool magriebNotification;
+  final bool magrieb;
   @override
   @JsonKey()
-  final bool ishaNotification;
+  final bool isha;
   @override
   @JsonKey()
-  final bool adkarNotification;
+  final bool sunrise;
+  @override
+  @JsonKey()
+  final bool before15Min;
   @override
   @JsonKey()
   final bool applicationNotification;
@@ -3633,7 +934,7 @@ class _$PrayNotificationSettingStateImpl
 
   @override
   String toString() {
-    return 'PrayNotificationSettingState(allowAllNotifications: $allowAllNotifications, allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajirNotification: $fajirNotification, duhirNotification: $duhirNotification, asrNotification: $asrNotification, magriebNotification: $magriebNotification, ishaNotification: $ishaNotification, adkarNotification: $adkarNotification, applicationNotification: $applicationNotification, loadingStatus: $loadingStatus)';
+    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunrise: $sunrise, before15Min: $before15Min, applicationNotification: $applicationNotification, loadingStatus: $loadingStatus)';
   }
 
   @override
@@ -3641,8 +942,6 @@ class _$PrayNotificationSettingStateImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PrayNotificationSettingStateImpl &&
-            (identical(other.allowAllNotifications, allowAllNotifications) ||
-                other.allowAllNotifications == allowAllNotifications) &&
             (identical(
                     other.allNotificationForToday, allNotificationForToday) ||
                 other.allNotificationForToday == allNotificationForToday) &&
@@ -3653,18 +952,14 @@ class _$PrayNotificationSettingStateImpl
             (identical(other.allNotificationForWeekDay,
                     allNotificationForWeekDay) ||
                 other.allNotificationForWeekDay == allNotificationForWeekDay) &&
-            (identical(other.fajirNotification, fajirNotification) ||
-                other.fajirNotification == fajirNotification) &&
-            (identical(other.duhirNotification, duhirNotification) ||
-                other.duhirNotification == duhirNotification) &&
-            (identical(other.asrNotification, asrNotification) ||
-                other.asrNotification == asrNotification) &&
-            (identical(other.magriebNotification, magriebNotification) ||
-                other.magriebNotification == magriebNotification) &&
-            (identical(other.ishaNotification, ishaNotification) ||
-                other.ishaNotification == ishaNotification) &&
-            (identical(other.adkarNotification, adkarNotification) ||
-                other.adkarNotification == adkarNotification) &&
+            (identical(other.fajir, fajir) || other.fajir == fajir) &&
+            (identical(other.duhir, duhir) || other.duhir == duhir) &&
+            (identical(other.asr, asr) || other.asr == asr) &&
+            (identical(other.magrieb, magrieb) || other.magrieb == magrieb) &&
+            (identical(other.isha, isha) || other.isha == isha) &&
+            (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
+            (identical(other.before15Min, before15Min) ||
+                other.before15Min == before15Min) &&
             (identical(
                     other.applicationNotification, applicationNotification) ||
                 other.applicationNotification == applicationNotification) &&
@@ -3675,16 +970,16 @@ class _$PrayNotificationSettingStateImpl
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      allowAllNotifications,
       allNotificationForToday,
       allNotificationForThreeDay,
       allNotificationForWeekDay,
-      fajirNotification,
-      duhirNotification,
-      asrNotification,
-      magriebNotification,
-      ishaNotification,
-      adkarNotification,
+      fajir,
+      duhir,
+      asr,
+      magrieb,
+      isha,
+      sunrise,
+      before15Min,
       applicationNotification,
       const DeepCollectionEquality().hash(loadingStatus));
 
@@ -3702,21 +997,19 @@ class _$PrayNotificationSettingStateImpl
 abstract class _PrayNotificationSettingState
     implements PrayNotificationSettingState {
   const factory _PrayNotificationSettingState(
-      {final bool allowAllNotifications,
-      final bool allNotificationForToday,
+      {final bool allNotificationForToday,
       final bool allNotificationForThreeDay,
       final bool allNotificationForWeekDay,
-      final bool fajirNotification,
-      final bool duhirNotification,
-      final bool asrNotification,
-      final bool magriebNotification,
-      final bool ishaNotification,
-      final bool adkarNotification,
+      final bool fajir,
+      final bool duhir,
+      final bool asr,
+      final bool magrieb,
+      final bool isha,
+      final bool sunrise,
+      final bool before15Min,
       final bool applicationNotification,
       final dynamic loadingStatus}) = _$PrayNotificationSettingStateImpl;
 
-  @override
-  bool get allowAllNotifications;
   @override
   bool get allNotificationForToday;
   @override
@@ -3724,17 +1017,19 @@ abstract class _PrayNotificationSettingState
   @override
   bool get allNotificationForWeekDay;
   @override
-  bool get fajirNotification;
+  bool get fajir;
   @override
-  bool get duhirNotification;
+  bool get duhir;
   @override
-  bool get asrNotification;
+  bool get asr;
   @override
-  bool get magriebNotification;
+  bool get magrieb;
   @override
-  bool get ishaNotification;
+  bool get isha;
   @override
-  bool get adkarNotification;
+  bool get sunrise;
+  @override
+  bool get before15Min;
   @override
   bool get applicationNotification;
   @override

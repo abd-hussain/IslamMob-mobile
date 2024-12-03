@@ -344,12 +344,13 @@
     "notificationSettingAsr" : "إشعارات أذان العصر",
     "notificationSettingMagrieb" : "إشعارات أذان المغرب",
     "notificationSettingIsha" : "إشعارات أذان العشاء",
-    "notificationSettingAzkar" : "إشعارات الأذكار",
     "notificationSettingApplication" : "إشعارات التطبيق",
     "azkarTitle" : "الأذكار بعد الصلاة",
     "activateAgain" : "تفعيل مرة أخرى",
     "youfinishazkarTitle" : "لقد انتهيت من الأذكار",
-    "mayAllaAcept" : "ٱللَّهُمَّ تَقَبَّلْ"
+    "mayAllaAcept" : "ٱللَّهُمَّ تَقَبَّلْ",
+    "notificationBeforeSalah15Minutes" : "15 دقائق قبل الصلاة",
+    "notificationSettingSunrise" : "إشعارات الشروق"
 
 
 

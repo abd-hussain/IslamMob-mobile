@@ -8,6 +8,8 @@ enum NotificationSoundType {
   asr,
   maghrib,
   isha,
+  before15Minutes,
+  sunrise,
 }
 
 class LocalNotificationService {
@@ -70,6 +72,9 @@ class LocalNotificationService {
       ),
       iOS: DarwinNotificationDetails(
         sound: '$sound.mp3', // Use the file extension
+        presentSound: true,
+        presentAlert: true,
+        presentBadge: true,
       ),
     );
     await _notificationsPlugin.zonedSchedule(
@@ -88,15 +93,19 @@ class LocalNotificationService {
   static String _notificationFileName(NotificationSoundType type) {
     switch (type) {
       case NotificationSoundType.fajir:
-        return 'fajir_azan';
+        return 'fajir';
       case NotificationSoundType.zuhr:
-        return 'duher_azan';
+        return 'duher';
       case NotificationSoundType.asr:
-        return 'asr_azan';
+        return 'asr';
       case NotificationSoundType.maghrib:
-        return 'magreb_azan';
+        return 'magreb';
       case NotificationSoundType.isha:
-        return 'isha_azan';
+        return 'isha';
+      case NotificationSoundType.before15Minutes:
+        return 'warning';
+      case NotificationSoundType.sunrise:
+        return 'sunrise';
     }
   }
 }

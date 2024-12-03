@@ -45,6 +45,5 @@ class LocalNotificationConstant {
   static const String disableMagrieb = "disableMagrieb";
   static const String disableIsha = "disableIsha";
 
-  static const String disableAzkar = "disableAzkar";
-  static const String disableApplication = "disableApplication";
+  static const String disablePushNotifications = "disablePushNotifications";
 }
