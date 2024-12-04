@@ -16,11 +16,6 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		BC1ADBC42CD2D1F3001FC392 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC1ADBC32CD2D1F3001FC392 /* GoogleService-Info.plist */; };
-		BCDC9A472CF6431B00C1DDD2 /* isha_azan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCDC9A452CF6431B00C1DDD2 /* isha_azan.mp3 */; };
-		BCDC9A482CF6431B00C1DDD2 /* duher_azan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCDC9A432CF6431B00C1DDD2 /* duher_azan.mp3 */; };
-		BCDC9A492CF6431B00C1DDD2 /* asr_azan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCDC9A422CF6431B00C1DDD2 /* asr_azan.mp3 */; };
-		BCDC9A4A2CF6431B00C1DDD2 /* fajir_azan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCDC9A442CF6431B00C1DDD2 /* fajir_azan.mp3 */; };
-		BCDC9A4B2CF6431B00C1DDD2 /* magreb_azan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BCDC9A462CF6431B00C1DDD2 /* magreb_azan.mp3 */; };
 		DE69A8AA3ABAD86D0641D724 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616E092C8A42D2CE8F0A9AAE /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,11 +67,6 @@
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC1ADBC32CD2D1F3001FC392 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCB1D10B2CD2C5B60072C5C5 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		BCDC9A422CF6431B00C1DDD2 /* asr_azan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = asr_azan.mp3; sourceTree = "<group>"; };
-		BCDC9A432CF6431B00C1DDD2 /* duher_azan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = duher_azan.mp3; sourceTree = "<group>"; };
-		BCDC9A442CF6431B00C1DDD2 /* fajir_azan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fajir_azan.mp3; sourceTree = "<group>"; };
-		BCDC9A452CF6431B00C1DDD2 /* isha_azan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = isha_azan.mp3; sourceTree = "<group>"; };
-		BCDC9A462CF6431B00C1DDD2 /* magreb_azan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = magreb_azan.mp3; sourceTree = "<group>"; };
 		BCFF23002CC01C6D00529A5B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CD144D971554C8F95DB5F2F1 /* Pods-RunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,11 +147,6 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				BCDC9A422CF6431B00C1DDD2 /* asr_azan.mp3 */,
-				BCDC9A432CF6431B00C1DDD2 /* duher_azan.mp3 */,
-				BCDC9A442CF6431B00C1DDD2 /* fajir_azan.mp3 */,
-				BCDC9A452CF6431B00C1DDD2 /* isha_azan.mp3 */,
-				BCDC9A462CF6431B00C1DDD2 /* magreb_azan.mp3 */,
 				BCB1D10B2CD2C5B60072C5C5 /* Runner.entitlements */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
@@ -286,11 +271,6 @@
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				BC1ADBC42CD2D1F3001FC392 /* GoogleService-Info.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
-				BCDC9A472CF6431B00C1DDD2 /* isha_azan.mp3 in Resources */,
-				BCDC9A482CF6431B00C1DDD2 /* duher_azan.mp3 in Resources */,
-				BCDC9A492CF6431B00C1DDD2 /* asr_azan.mp3 in Resources */,
-				BCDC9A4A2CF6431B00C1DDD2 /* fajir_azan.mp3 in Resources */,
-				BCDC9A4B2CF6431B00C1DDD2 /* magreb_azan.mp3 in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
