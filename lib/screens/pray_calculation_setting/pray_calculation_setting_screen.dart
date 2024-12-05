@@ -12,7 +12,6 @@ import 'package:islam_app/screens/pray_calculation_setting/widgets/time_zoon_vie
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
-//TODO: This tree need to be refactored
 
 class PrayCalculationSettingScreen extends StatelessWidget {
   const PrayCalculationSettingScreen({super.key});
@@ -23,7 +22,8 @@ class PrayCalculationSettingScreen extends StatelessWidget {
       create: (context) => PrayCalculationSettingBloc(),
       child: Scaffold(
         appBar: CustomAppBar(
-            title: AppLocalizations.of(context)!.prayCalculationSettings),
+          title: AppLocalizations.of(context)!.prayCalculationSettings,
+        ),
         body: SafeArea(
           child: Column(
             children: [
@@ -31,69 +31,82 @@ class PrayCalculationSettingScreen extends StatelessWidget {
               const SizedBox(height: 4),
               const PrayCalculationSubHeaderView(),
               const SizedBox(height: 8),
-              Expanded(
-                child: Container(
-                  color: Colors.grey[300],
-                  child: Swiper(
-                    itemCount: 5,
-                    pagination: const SwiperPagination(),
-                    controller: SwiperController(),
-                    itemBuilder: (BuildContext context, int index) {
-                      switch (index) {
-                        case 0:
-                          return const CalculationMethodView();
-                        case 1:
-                          return const MathhabView();
-                        case 2:
-                          return const TimeZoneView();
-                        case 3:
-                          return const EditPrayTimeMinutesView();
-                        case 4:
-                          return const PolesCalculationView();
-                        default:
-                          return const SizedBox.shrink();
-                      }
-                    },
-                  ),
-                ),
-              ),
+              _swiperSection(),
               const SizedBox(height: 10),
-              BlocBuilder<PrayCalculationSettingBloc,
-                  PrayCalculationSettingState>(
-                buildWhen: (previous, current) =>
-                    previous.buttonsStatus != current.buttonsStatus,
-                builder: (context, state) {
-                  return CustomButton(
-                    isEnabled: state.buttonsStatus,
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    title: AppLocalizations.of(context)!.save,
-                    onTap: () => context.read<PrayCalculationSettingBloc>().add(
-                          PrayCalculationSettingEvent.saveChanges(status: true),
-                        ),
-                  );
-                },
-              ),
-              const SizedBox(height: 10),
-              BlocBuilder<PrayCalculationSettingBloc,
-                  PrayCalculationSettingState>(
-                buildWhen: (previous, current) =>
-                    previous.buttonsStatus != current.buttonsStatus,
-                builder: (context, state) {
-                  return CustomButton(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    isEnabled: state.buttonsStatus,
-                    title: AppLocalizations.of(context)!.factoryReset,
-                    onTap: () => context.read<PrayCalculationSettingBloc>().add(
-                          PrayCalculationSettingEvent.factoryReset(
-                              status: true),
-                        ),
-                  );
-                },
-              ),
+              _buttonsSection(),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  // Swiper section for displaying the different calculation views
+  Widget _swiperSection() {
+    return Expanded(
+      child: Container(
+        color: Colors.grey[300],
+        child: Swiper(
+          itemCount: 5,
+          pagination: const SwiperPagination(),
+          controller: SwiperController(),
+          itemBuilder: (BuildContext context, int index) {
+            switch (index) {
+              case 0:
+                return const CalculationMethodView();
+              case 1:
+                return const MathhabView();
+              case 2:
+                return const TimeZoneView();
+              case 3:
+                return const EditPrayTimeMinutesView();
+              case 4:
+                return const PolesCalculationView();
+              default:
+                return const SizedBox.shrink();
+            }
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buttonsSection() {
+    return Column(
+      children: [
+        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
+          buildWhen: (previous, current) =>
+              previous.buttonsStatus != current.buttonsStatus,
+          builder: (context, state) {
+            return CustomButton(
+              isEnabled: state.buttonsStatus,
+              padding: const EdgeInsets.only(left: 16, right: 16),
+              title: AppLocalizations.of(context)!.save,
+              onTap: () {
+                context
+                    .read<PrayCalculationSettingBloc>()
+                    .add(PrayCalculationSettingEvent.saveChanges(status: true));
+                Navigator.pop(context);
+              },
+            );
+          },
+        ),
+        const SizedBox(height: 10),
+        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
+          buildWhen: (previous, current) =>
+              previous.buttonsStatus != current.buttonsStatus,
+          builder: (context, state) {
+            return CustomButton(
+              padding: const EdgeInsets.only(left: 16, right: 16),
+              isEnabled: state.buttonsStatus,
+              title: AppLocalizations.of(context)!.factoryReset,
+              onTap: () => context
+                  .read<PrayCalculationSettingBloc>()
+                  .add(PrayCalculationSettingEvent.factoryReset(status: true)),
+            );
+          },
+        ),
+      ],
     );
   }
 }

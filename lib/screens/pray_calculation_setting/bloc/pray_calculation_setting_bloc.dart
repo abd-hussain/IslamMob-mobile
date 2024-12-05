@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/screens/pray_calculation_setting/bloc/pray_calculation_enum.dart';
+import 'package:islam_app/services/general/pray_manager.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:intl/intl.dart';
-import 'package:islam_app/services/general/pray_manager.dart';
 
 part 'pray_calculation_setting_event.dart';
 part 'pray_calculation_setting_state.dart';
@@ -14,387 +14,504 @@ part 'pray_calculation_setting_bloc.freezed.dart';
 
 class PrayCalculationSettingBloc
     extends Bloc<PrayCalculationSettingEvent, PrayCalculationSettingState> {
-  PrayCalculationSettingBloc() : super(const PrayCalculationSettingState()) {
-    on<_UpdateFajirTime>(_updateFajirTime);
-    on<_UpdateSunriseTime>(_updateSunriseTime);
-    on<_UpdateDuherTime>(_updateDuherTime);
-    on<_UpdateAsrTime>(_updateAsrTime);
-    on<_UpdateMegribTime>(_updateMegribTime);
-    on<_UpdateIshaTime>(_updateIshaTime);
-    on<_UpdateMidleNighTime>(_updateMidleNighTime);
-    on<_UpdateLast3thTime>(_updateLast3thTime);
-    on<_UpdateMathhab>(_updateMathhab);
-    on<_UpdateCalculationMethod>(_updateCalculationMethod);
-    on<_UpdateTimeZone>(_updateTimeZone);
-    on<_FactoryReset>(_factoryReset);
-    on<_UpdateButtonsStatus>(_updateButtonsStatus);
-    on<_UpdateApplicationAndDeviceTimeStatus>(
-        _updateApplicationAndDeviceTimeStatus);
-    on<_EditFajirTimeManual>(_editFajirTimeManual);
-    on<_EditSunriseTimeManual>(_editSunriseTimeManual);
-    on<_EditDuhirTimeManual>(_editDuhirTimeManual);
-    on<_EditAsrTimeManual>(_editAsrTimeManual);
-    on<_EditMagrebTimeManual>(_editMagrebTimeManual);
-    on<_EditIshaTimeManual>(_editIshaTimeManual);
-    on<_EditMidNightTimeManual>(_editMidNightTimeManual);
-    on<_EditLast3thTimeTimeManual>(_editLast3thTimeTimeManual);
-    on<_UpdateHightLatitudeCaluclation>(_updateHightLatitudeCaluclation);
-    on<_SaveChanges>(_saveChanges);
-
-    _fillInitialData();
-    _prepareSalahTiming();
-  }
   final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
-  void _fillInitialData() {
-    //TODO
+  PrayCalculationSettingBloc() : super(const PrayCalculationSettingState()) {
+    on<_UpdateCalculationMethod>(_handleUpdateCalculationMethod);
+    on<_UpdateMathhab>(_handleUpdateMathhab);
+    on<_UpdateTimeZone>(_handleUpdateTimeZone);
+    on<_UpdateAzanTypeInMin>(_handleUpdateAzanTypeInMin);
+    on<_UpdateHightLatitudeCalculation>(_handleUpdateHighLatitudeCalculation);
+    on<_UpdateTimeOfPreview>(_handleUpdateTimeOfPreview);
+    on<_FactoryReset>(_handleFactoryReset);
+    on<_SaveChanges>(_handleSaveChanges);
+
+    _initialize();
   }
 
-  void _prepareSalahTiming({
-    Madhab madhab = Madhab.shafi,
-    HighLatitudeRule? highLatitudeRule,
-    CalculationMethod calculationMethod = CalculationMethod.jordan,
-    Duration utcOffset = const Duration(hours: 3),
-    Duration fajirOffset = const Duration(minutes: 0),
-    Duration sunriseOffset = const Duration(minutes: 0),
-    Duration dhuhrOffset = const Duration(minutes: 0),
-    Duration asrOffset = const Duration(minutes: 0),
-    Duration maghribOffset = const Duration(minutes: 0),
-    Duration ishaOffset = const Duration(minutes: 0),
-    Duration middleOfTheNightOffset = const Duration(minutes: 0),
-    Duration lastThirdOfTheNightOffset = const Duration(minutes: 0),
-  }) {
-    //TODO: handle PrayManager
-    // save previos pass value
+  void _initialize() {
+    final initialSettings = _getDefaultSettings();
+    initialSettings.forEach((key, defaultValue) {
+      _applySetting(key, _box.get(key, defaultValue: defaultValue));
+    });
+    _prepareSalahTiming();
+  }
+
+  Map<String, dynamic> _getDefaultSettings() => {
+        DatabaseFieldPrayCalculationConstant.selectedCalculationMethod: "",
+        DatabaseFieldPrayCalculationConstant.selectedMadhab: "",
+        DatabaseFieldPrayCalculationConstant.selectedTimeZone: "UTC +03:00",
+        DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin: 0,
+        DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin: 0,
+        DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin: 0,
+        DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin: 0,
+        DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin: 0,
+        DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin: 0,
+        DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin: 0,
+        DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin: 0,
+        DatabaseFieldPrayCalculationConstant.selectedHighLatitude: "",
+      };
+
+  // Apply Settings
+  void _applySetting(String key, dynamic value) {
+    final settingActions = {
+      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod: () {
+        final method = value.isEmpty
+            ? const CalculationMethodStateJordanAwqaf()
+            : _mapToCalculationMethod(value);
+        add(PrayCalculationSettingEvent.updateCalculationMethod(
+            method: method));
+      },
+      DatabaseFieldPrayCalculationConstant.selectedMadhab: () {
+        final mathhab =
+            value.isEmpty ? const MathhabStateShaafei() : _mapToMathhab(value);
+        add(PrayCalculationSettingEvent.updateMathhab(mathhab: mathhab));
+      },
+      DatabaseFieldPrayCalculationConstant.selectedTimeZone: () {
+        add(PrayCalculationSettingEvent.updateTimeZone(value: value));
+      },
+      DatabaseFieldPrayCalculationConstant.selectedHighLatitude: () {
+        final highLatitude = value.isEmpty
+            ? const HightLatitudeCaluclationStateNone()
+            : _mapToHighLatitude(value);
+        add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(
+            state: highLatitude));
+      },
+    };
+
+    if (settingActions.containsKey(key)) {
+      settingActions[key]?.call();
+    } else if (key.startsWith("selectedTime")) {
+      _applyAzanTypeSetting(key, value as int);
+    }
+  }
+
+  void _applyAzanTypeSetting(String key, int minutes) {
+    final azanType = _mapKeyToAzanType(key);
+    if (azanType != null) {
+      add(PrayCalculationSettingEvent.updateAzanTypeInMin(
+          minutes: minutes, azanType: azanType));
+    }
+  }
+
+  AzanTypeForEditMin? _mapKeyToAzanType(String key) {
+    switch (key) {
+      case DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin:
+        return AzanTypeForEditMin.fajir;
+      case DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin:
+        return AzanTypeForEditMin.sunrise;
+      case DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin:
+        return AzanTypeForEditMin.zhur;
+      case DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin:
+        return AzanTypeForEditMin.asr;
+      case DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin:
+        return AzanTypeForEditMin.maghrib;
+      case DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin:
+        return AzanTypeForEditMin.isha;
+      case DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin:
+        return AzanTypeForEditMin.midnight;
+      case DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin:
+        return AzanTypeForEditMin.last3th;
+      default:
+        return null;
+    }
+  }
+
+  MathhabState _mapToMathhab(String value) {
+    const mapping = {
+      "MathhabStateShaafei": MathhabStateShaafei(),
+      "MathhabStateHanafi": MathhabStateHanafi(),
+    };
+
+    return mapping[value] ?? const MathhabStateShaafei();
+  }
+
+  String _getMathhabString(MathhabState value) {
+    final mapping = {
+      const MathhabStateShaafei(): "MathhabStateShaafei",
+      const MathhabStateHanafi(): "MathhabStateHanafi",
+    };
+    return mapping[value] ?? "MathhabStateShaafei";
+  }
+
+  Madhab _retrieveMadhab() {
+    final mathhabMap = {
+      const MathhabStateHanafi(): Madhab.hanafi,
+      const MathhabStateShaafei(): Madhab.shafi,
+    };
+
+    return mathhabMap[state.mathhab] ??
+        Madhab.shafi; // Default fallback to Shafi if no match
+  }
+
+  HightLatitudeCaluclationState _mapToHighLatitude(String value) {
+    const mapping = {
+      "HightLatitudeCaluclationStateNone": HightLatitudeCaluclationStateNone(),
+      "HightLatitudeCaluclationStateAngleBasedMethod":
+          HightLatitudeCaluclationStateAngleBasedMethod(),
+      "HightLatitudeCaluclationStateMidnight":
+          HightLatitudeCaluclationStateMidnight(),
+      "HightLatitudeCaluclationStateSeventhPartOfTheNight":
+          HightLatitudeCaluclationStateSeventhPartOfTheNight(),
+    };
+
+    return mapping[value] ?? const HightLatitudeCaluclationStateNone();
+  }
+
+  String _getHightLatitudeCaluclationString(
+      HightLatitudeCaluclationState value) {
+    final mapping = {
+      const HightLatitudeCaluclationStateNone():
+          "HightLatitudeCaluclationStateNone",
+      const HightLatitudeCaluclationStateAngleBasedMethod():
+          "HightLatitudeCaluclationStateAngleBasedMethod",
+      const HightLatitudeCaluclationStateMidnight():
+          "HightLatitudeCaluclationStateMidnight",
+      const HightLatitudeCaluclationStateSeventhPartOfTheNight():
+          "HightLatitudeCaluclationStateSeventhPartOfTheNight",
+    };
+    return mapping[value] ?? "HightLatitudeCaluclationStateNone";
+  }
+
+  String _getCalculationMethodSring(CalculationMethodState value) {
+    final mapping = {
+      const CalculationMethodStateJordanAwqaf():
+          "CalculationMethodStateJordanAwqaf",
+      const CalculationMethodStateJafari(): "CalculationMethodStateJafari",
+      const CalculationMethodStateKarachi(): "CalculationMethodStateKarachi",
+      const CalculationMethodStateIslamicSocietyOfNorthAmerica():
+          "CalculationMethodStateIslamicSocietyOfNorthAmerica",
+      const CalculationMethodStateMuslimWorldLeague():
+          "CalculationMethodStateMuslimWorldLeague",
+      const CalculationMethodStateUmmAlQura():
+          "CalculationMethodStateUmmAlQura",
+      const CalculationMethodStateEgypt(): "CalculationMethodStateEgypt",
+      const CalculationMethodStateTehran(): "CalculationMethodStateTehran",
+      const CalculationMethodStateGulfRegion():
+          "CalculationMethodStateGulfRegion",
+      const CalculationMethodStateQatar(): "CalculationMethodStateQatar",
+      const CalculationMethodStateKuwait(): "CalculationMethodStateKuwait",
+      const CalculationMethodStateSingapore():
+          "CalculationMethodStateSingapore",
+      const CalculationMethodStateFrance(): "CalculationMethodStateFrance",
+      const CalculationMethodStateTurkey(): "CalculationMethodStateTurkey",
+      const CalculationMethodStateRussia(): "CalculationMethodStateRussia",
+      const CalculationMethodStateDubai(): "CalculationMethodStateDubai",
+      const CalculationMethodStateJAKIM(): "CalculationMethodStateJAKIM",
+      const CalculationMethodStateTunisia(): "CalculationMethodStateTunisia",
+      const CalculationMethodStateAlgeria(): "CalculationMethodStateAlgeria",
+      const CalculationMethodStateKEMENAG(): "CalculationMethodStateKEMENAG",
+      const CalculationMethodStateMorocco(): "CalculationMethodStateMorocco",
+      const CalculationMethodStateComunidadeIslamicaLisboa():
+          "CalculationMethodStateComunidadeIslamicaLisboa",
+    };
+    return mapping[value] ?? "CalculationMethodStateJordanAwqaf";
+  }
+
+  CalculationMethodState _mapToCalculationMethod(String value) {
+    final mapping = {
+      "CalculationMethodStateJordanAwqaf":
+          const CalculationMethodStateJordanAwqaf(),
+      "CalculationMethodStateJafari": const CalculationMethodStateJafari(),
+      "CalculationMethodStateKarachi": const CalculationMethodStateKarachi(),
+      "CalculationMethodStateIslamicSocietyOfNorthAmerica":
+          const CalculationMethodStateIslamicSocietyOfNorthAmerica(),
+      "CalculationMethodStateMuslimWorldLeague":
+          const CalculationMethodStateMuslimWorldLeague(),
+      "CalculationMethodStateUmmAlQura":
+          const CalculationMethodStateUmmAlQura(),
+      "CalculationMethodStateEgypt": const CalculationMethodStateEgypt(),
+      "CalculationMethodStateTehran": const CalculationMethodStateTehran(),
+      "CalculationMethodStateGulfRegion":
+          const CalculationMethodStateGulfRegion(),
+      "CalculationMethodStateQatar": const CalculationMethodStateQatar(),
+      "CalculationMethodStateKuwait": const CalculationMethodStateKuwait(),
+      "CalculationMethodStateSingapore":
+          const CalculationMethodStateSingapore(),
+      "CalculationMethodStateFrance": const CalculationMethodStateFrance(),
+      "CalculationMethodStateTurkey": const CalculationMethodStateTurkey(),
+      "CalculationMethodStateRussia": const CalculationMethodStateRussia(),
+      "CalculationMethodStateDubai": const CalculationMethodStateDubai(),
+      "CalculationMethodStateJAKIM": const CalculationMethodStateJAKIM(),
+      "CalculationMethodStateTunisia": const CalculationMethodStateTunisia(),
+      "CalculationMethodStateAlgeria": const CalculationMethodStateAlgeria(),
+      "CalculationMethodStateKEMENAG": const CalculationMethodStateKEMENAG(),
+      "CalculationMethodStateMorocco": const CalculationMethodStateMorocco(),
+      "CalculationMethodStateComunidadeIslamicaLisboa":
+          const CalculationMethodStateComunidadeIslamicaLisboa(),
+    };
+    return mapping[value] ?? const CalculationMethodStateJordanAwqaf();
+  }
+
+  /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
+  Coordinates _retrieveCoordinates() {
+    final String latitude =
+        _box.get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0");
+    final String longitude =
+        _box.get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0");
+
+    return Coordinates(
+      double.tryParse(latitude) ?? 0.0,
+      double.tryParse(longitude) ?? 0.0,
+    );
+  }
+
+  Duration _retrieveUtcOffset() {
+    const timeZoneOffsetMap = {
+      "UTC -12:00": Duration(hours: -12),
+      "UTC -11:00": Duration(hours: -11),
+      "UTC -10:00": Duration(hours: -10),
+      "UTC -09:30": Duration(hours: -9, minutes: -30),
+      "UTC -09:00": Duration(hours: -9),
+      "UTC -08:00": Duration(hours: -8),
+      "UTC -07:00": Duration(hours: -7),
+      "UTC -06:00": Duration(hours: -6),
+      "UTC -05:00": Duration(hours: -5),
+      "UTC -04:00": Duration(hours: -4),
+      "UTC -03:30": Duration(hours: -3, minutes: -30),
+      "UTC -03:00": Duration(hours: -3),
+      "UTC -02:00": Duration(hours: -2),
+      "UTC -01:00": Duration(hours: -1),
+      "UTC/GMT": Duration(hours: 0),
+      "UTC +01:00": Duration(hours: 1),
+      "UTC +02:00": Duration(hours: 2),
+      "UTC +03:00": Duration(hours: 3),
+      "UTC +03:30": Duration(hours: 3, minutes: 30),
+      "UTC +04:00": Duration(hours: 4),
+      "UTC +04:30": Duration(hours: 4, minutes: 30),
+      "UTC +05:00": Duration(hours: 5),
+      "UTC +05:30": Duration(hours: 5, minutes: 30),
+      "UTC +05:45": Duration(hours: 5, minutes: 45),
+      "UTC +06:00": Duration(hours: 6),
+      "UTC +06:30": Duration(hours: 6, minutes: 30),
+      "UTC +07:00": Duration(hours: 7),
+      "UTC +08:00": Duration(hours: 8),
+      "UTC +08:45": Duration(hours: 8, minutes: 45),
+      "UTC +09:00": Duration(hours: 9),
+      "UTC +09:30": Duration(hours: 9, minutes: 30),
+      "UTC +10:00": Duration(hours: 10),
+      "UTC +10:30": Duration(hours: 10, minutes: 30),
+      "UTC +11:00": Duration(hours: 11),
+      "UTC +12:00": Duration(hours: 12),
+      "UTC +12:45": Duration(hours: 12, minutes: 45),
+      "UTC +13:00": Duration(hours: 13),
+      "UTC +14:00": Duration(hours: 14),
+    };
+
+    return timeZoneOffsetMap[state.timeZone] ??
+        const Duration(hours: 3); // Default fallback
+  }
+
+  CalculationMethod _retrieveCalculationMethod() {
+    final calculationMethodMap = {
+      const CalculationMethodStateJafari(): CalculationMethod.jafari,
+      const CalculationMethodStateKarachi(): CalculationMethod.karachi,
+      const CalculationMethodStateIslamicSocietyOfNorthAmerica():
+          CalculationMethod.northAmerica,
+      const CalculationMethodStateMuslimWorldLeague():
+          CalculationMethod.muslimWorldLeague,
+      const CalculationMethodStateUmmAlQura(): CalculationMethod.ummAlQura,
+      const CalculationMethodStateEgypt(): CalculationMethod.egyptian,
+      const CalculationMethodStateTehran(): CalculationMethod.tehran,
+      const CalculationMethodStateGulfRegion(): CalculationMethod.gulfRegion,
+      const CalculationMethodStateKuwait(): CalculationMethod.kuwait,
+      const CalculationMethodStateQatar(): CalculationMethod.qatar,
+      const CalculationMethodStateSingapore(): CalculationMethod.singapore,
+      const CalculationMethodStateFrance(): CalculationMethod.france,
+      const CalculationMethodStateTurkey(): CalculationMethod.turkey,
+      const CalculationMethodStateRussia(): CalculationMethod.russia,
+      const CalculationMethodStateDubai(): CalculationMethod.dubai,
+      const CalculationMethodStateJAKIM(): CalculationMethod.jakim,
+      const CalculationMethodStateTunisia(): CalculationMethod.tunisia,
+      const CalculationMethodStateAlgeria(): CalculationMethod.algeria,
+      const CalculationMethodStateKEMENAG(): CalculationMethod.kemenag,
+      const CalculationMethodStateMorocco(): CalculationMethod.morocco,
+      const CalculationMethodStateComunidadeIslamicaLisboa():
+          CalculationMethod.portugal,
+      const CalculationMethodStateJordanAwqaf(): CalculationMethod.jordan,
+    };
+
+    return calculationMethodMap[state.calculationMethod] ??
+        CalculationMethod.jordan; // Default fallback
+  }
+
+  HighLatitudeRule? _retrieveHighLatitudeRule() {
+    final highLatitudeRuleMap = {
+      const HightLatitudeCaluclationStateAngleBasedMethod():
+          HighLatitudeRule.twilightAngle,
+      const HightLatitudeCaluclationStateMidnight():
+          HighLatitudeRule.middleOfTheNight,
+      const HightLatitudeCaluclationStateSeventhPartOfTheNight():
+          HighLatitudeRule.seventhOfTheNight,
+    };
+
+    return highLatitudeRuleMap[state.hightLatitudeCaluclation];
+  }
+
+  void _prepareSalahTiming() {
     final prayManager = PrayManager(
-        coordinates: Coordinates(_getLatitude(), _getLongitude()),
-        utcOffset: utcOffset,
-        calculationMethod: calculationMethod,
-        madhab: madhab,
-        highLatitudeRule: highLatitudeRule);
+        coordinates: _retrieveCoordinates(),
+        utcOffset: _retrieveUtcOffset(),
+        calculationMethod: _retrieveCalculationMethod(),
+        madhab: _retrieveMadhab(),
+        highLatitudeRule: _retrieveHighLatitudeRule());
 
     final currentTime = DateTime.now();
 
-    String formattedDeviceTime =
-        DateFormat('HH:mm').format(currentTime.toLocal());
-    String formattedApplicationTime =
-        DateFormat('HH:mm').format(currentTime.toUtc().add(utcOffset));
+    // Prepare device and application time
+    final deviceTime = currentTime.toLocal();
+    final applicationTime = currentTime.toUtc().add(_retrieveUtcOffset());
 
-    final model = prayManager.getAllPrayTimeAsDateTime();
+    // Get Salah timings from PrayManager
+    final timings = prayManager.getAllPrayTimeAsDateTime();
 
-    add(PrayCalculationSettingEvent.updateFajirTime(
-        fajirTime: DateFormat('hh:mm').format(model.fajir.add(fajirOffset))));
-    add(PrayCalculationSettingEvent.updateSunriseTime(
-        sunriseTime:
-            DateFormat('hh:mm').format(model.sunrise.add(sunriseOffset))));
-    add(PrayCalculationSettingEvent.updateDuherTime(
-        duherTime: DateFormat('hh:mm').format(model.dhuhr.add(dhuhrOffset))));
-    add(PrayCalculationSettingEvent.updateAsrTime(
-        asrTime: DateFormat('hh:mm').format(model.asr.add(asrOffset))));
-    add(PrayCalculationSettingEvent.updateMegribTime(
-        megribTime:
-            DateFormat('hh:mm').format(model.maghrib.add(maghribOffset))));
-    add(PrayCalculationSettingEvent.updateIshaTime(
-        ishaTime: DateFormat('hh:mm').format(model.isha.add(ishaOffset))));
-    add(PrayCalculationSettingEvent.updateMidleNighTime(
-        midleNighTime: DateFormat('hh:mm')
-            .format(model.middleOfTheNight.add(middleOfTheNightOffset))));
-    add(PrayCalculationSettingEvent.updateLast3thTime(
-        last3thTime: DateFormat('hh:mm')
-            .format(model.lastThirdOfTheNight.add(lastThirdOfTheNightOffset))));
-    add(PrayCalculationSettingEvent.updateApplicationAndDeviceTimeStatus(
-        deviceTime: formattedDeviceTime, appTime: formattedApplicationTime));
+    // Map Salah timings and their adjustments
+    final azanTimings = {
+      PreviewBoxes.fajir:
+          timings.fajir.add(Duration(minutes: state.editFajirTimeManual)),
+      PreviewBoxes.sunrise:
+          timings.sunrise.add(Duration(minutes: state.editSunriseTimeManual)),
+      PreviewBoxes.zhur:
+          timings.dhuhr.add(Duration(minutes: state.editDuhirTimeManual)),
+      PreviewBoxes.asr:
+          timings.asr.add(Duration(minutes: state.editAsrTimeManual)),
+      PreviewBoxes.maghrib:
+          timings.maghrib.add(Duration(minutes: state.editMagrebTimeManual)),
+      PreviewBoxes.isha:
+          timings.isha.add(Duration(minutes: state.editIshaTimeManual)),
+      PreviewBoxes.midnight: timings.middleOfTheNight
+          .add(Duration(minutes: state.editMidNightTimeManual)),
+      PreviewBoxes.last3th: timings.lastThirdOfTheNight
+          .add(Duration(minutes: state.editLast3thTimeTimeManual)),
+      PreviewBoxes.deviceTime: deviceTime,
+      PreviewBoxes.applicationTime: applicationTime,
+    };
 
-    add(PrayCalculationSettingEvent.factoryReset(status: true));
-    add(PrayCalculationSettingEvent.saveChanges(status: true));
+    // Dispatch updated timings
+    azanTimings.forEach((azanType, time) {
+      add(PrayCalculationSettingEvent.updateTimeOfPreview(
+          azanType: azanType, time: time));
+    });
   }
 
-  double _getLatitude() {
-    return double.parse(
-        _box.get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0"));
-  }
-
-  double _getLongitude() {
-    return double.parse(
-        _box.get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0"));
-  }
-
-  FutureOr<void> _updateFajirTime(
-      _UpdateFajirTime event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(fajirTime: event.fajirTime));
-  }
-
-  FutureOr<void> _updateSunriseTime(
-      _UpdateSunriseTime event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(sunriseTime: event.sunriseTime));
-  }
-
-  FutureOr<void> _updateDuherTime(
-      _UpdateDuherTime event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(duherTime: event.duherTime));
-  }
-
-  FutureOr<void> _updateAsrTime(
-      _UpdateAsrTime event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(asrTime: event.asrTime));
-  }
-
-  FutureOr<void> _updateMegribTime(
-      _UpdateMegribTime event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(megribTime: event.megribTime));
-  }
-
-  FutureOr<void> _updateIshaTime(
-      _UpdateIshaTime event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(ishaTime: event.ishaTime));
-  }
-
-  FutureOr<void> _updateMidleNighTime(
-      _UpdateMidleNighTime event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(midleNighTime: event.midleNighTime));
-  }
-
-  FutureOr<void> _updateLast3thTime(
-      _UpdateLast3thTime event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(last3thTime: event.last3thTime));
-  }
-
-  FutureOr<void> _updateMathhab(
+  FutureOr<void> _handleUpdateMathhab(
       _UpdateMathhab event, Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(
-        madhab: event.mathhab == const MathhabState.hanafi()
-            ? Madhab.hanafi
-            : Madhab.shafi);
-    emit(state.copyWith(mathhab: event.mathhab));
+    emit(state.copyWith(mathhab: event.mathhab, buttonsStatus: true));
+    _prepareSalahTiming();
   }
 
-  FutureOr<void> _updateCalculationMethod(_UpdateCalculationMethod event,
+  FutureOr<void> _handleUpdateCalculationMethod(_UpdateCalculationMethod event,
       Emitter<PrayCalculationSettingState> emit) {
-    switch (event.method) {
-      case CalculationMethodStateUmmAlQura _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.ummAlQura);
-      case CalculationMethodStateDubai _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.dubai);
-      case CalculationMethodStateKarachi _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.karachi);
-      case CalculationMethodStateMuslimWorldLeague _:
-        _prepareSalahTiming(
-            calculationMethod: CalculationMethod.muslimWorldLeague);
-      case CalculationMethodStateEgypt _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.egyptian);
-      case CalculationMethodStateKuwait _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.kuwait);
-      case CalculationMethodStateQatar _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.qatar);
-      case CalculationMethodStateTehran _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.tehran);
-      case CalculationMethodStateTurkey _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.turkey);
-      case CalculationMethodStateIslamicSocietyOfNorthAmerica _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.northAmerica);
-      case CalculationMethodStateSingapore _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.singapore);
-      case CalculationMethodStateGulfRegion _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.gulfRegion);
-      case CalculationMethodStateJafari _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.jafari);
-      case CalculationMethodStateFrance _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.france);
-      case CalculationMethodStateRussia _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.russia);
-      case CalculationMethodStateJAKIM _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.jakim);
-      case CalculationMethodStateTunisia _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.tunisia);
-      case CalculationMethodStateAlgeria _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.algeria);
-      case CalculationMethodStateMorocco _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.morocco);
-      case CalculationMethodStateKEMENAG _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.kemenag);
-      case CalculationMethodStateComunidadeIslamicaLisboa _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.portugal);
-      case CalculationMethodStateJordanAwqaf _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.jordan);
-      case CalculationMethodStateCustom _:
-        _prepareSalahTiming(calculationMethod: CalculationMethod.other);
-    }
-
-    emit(state.copyWith(calculationMethod: event.method));
+    emit(state.copyWith(calculationMethod: event.method, buttonsStatus: true));
+    _prepareSalahTiming();
   }
 
-  FutureOr<void> _updateTimeZone(
+  FutureOr<void> _handleUpdateTimeZone(
       _UpdateTimeZone event, Emitter<PrayCalculationSettingState> emit) {
-    switch (event.value) {
-      case "UTC -12:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -12));
-      case "UTC -11:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -11));
-      case "UTC -10:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -10));
-      case "UTC -09:30":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -9, minutes: -30));
-      case "UTC -09:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -9));
-      case "UTC -08:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -8));
-      case "UTC -07:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -7));
-      case "UTC -06:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -6));
-      case "UTC -05:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -5));
-      case "UTC -04:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -4));
-      case "UTC -03:30":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -3, minutes: -30));
-      case "UTC -03:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -3));
-      case "UTC -02:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -2));
-      case "UTC -01:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: -1));
-      case "UTC/GMT":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 0));
-      case "UTC +01:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 1));
-      case "UTC +02:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 2));
-      case "UTC +03:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 3));
-      case "UTC +03:30":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 3, minutes: 30));
-      case "UTC +04:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 4));
-      case "UTC +04:30":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 4, minutes: 30));
-      case "UTC +05:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 5));
-      case "UTC +05:30":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 5, minutes: 30));
-      case "UTC +05:45":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 5, minutes: 45));
-      case "UTC +06:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 6));
-      case "UTC +06:30":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 6, minutes: 30));
-      case "UTC +07:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 7));
-      case "UTC +08:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 8));
-      case "UTC +08:45":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 8, minutes: 45));
-      case "UTC +09:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 9));
-      case "UTC +09:30":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 9, minutes: 30));
-      case "UTC +10:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 10));
-      case "UTC +10:30":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 10, minutes: 30));
-      case "UTC +11:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 11));
-      case "UTC +12:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 12));
-      case "UTC +12:45":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 12, minutes: 45));
-      case "UTC +13:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 13));
-      case "UTC +14:00":
-        _prepareSalahTiming(utcOffset: const Duration(hours: 14));
-      default:
-        break;
-    }
-    emit(state.copyWith(timeZone: event.value));
+    emit(state.copyWith(timeZone: event.value, buttonsStatus: true));
+    _prepareSalahTiming();
   }
 
-  FutureOr<void> _updateButtonsStatus(
-      _UpdateButtonsStatus event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(buttonsStatus: event.status));
-  }
-
-  FutureOr<void> _updateApplicationAndDeviceTimeStatus(
-      _UpdateApplicationAndDeviceTimeStatus event,
+  FutureOr<void> _handleUpdateHighLatitudeCalculation(
+      _UpdateHightLatitudeCalculation event,
       Emitter<PrayCalculationSettingState> emit) {
     emit(state.copyWith(
-        applicationTime: event.appTime, deviceTime: event.deviceTime));
+        hightLatitudeCaluclation: event.state, buttonsStatus: true));
+    _prepareSalahTiming();
   }
 
-  FutureOr<void> _editFajirTimeManual(
-      _EditFajirTimeManual event, Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(fajirOffset: Duration(minutes: event.value));
-    emit(state.copyWith(editFajirTimeManual: event.value));
-  }
+  FutureOr<void> _handleUpdateAzanTypeInMin(
+      _UpdateAzanTypeInMin event, Emitter<PrayCalculationSettingState> emit) {
+    final updateMapping = {
+      AzanTypeForEditMin.fajir: (int minutes) =>
+          state.copyWith(editFajirTimeManual: minutes, buttonsStatus: true),
+      AzanTypeForEditMin.sunrise: (int minutes) =>
+          state.copyWith(editSunriseTimeManual: minutes, buttonsStatus: true),
+      AzanTypeForEditMin.zhur: (int minutes) =>
+          state.copyWith(editDuhirTimeManual: minutes, buttonsStatus: true),
+      AzanTypeForEditMin.asr: (int minutes) =>
+          state.copyWith(editAsrTimeManual: minutes, buttonsStatus: true),
+      AzanTypeForEditMin.maghrib: (int minutes) =>
+          state.copyWith(editMagrebTimeManual: minutes, buttonsStatus: true),
+      AzanTypeForEditMin.isha: (int minutes) =>
+          state.copyWith(editIshaTimeManual: minutes, buttonsStatus: true),
+      AzanTypeForEditMin.midnight: (int minutes) =>
+          state.copyWith(editMidNightTimeManual: minutes, buttonsStatus: true),
+      AzanTypeForEditMin.last3th: (int minutes) => state.copyWith(
+          editLast3thTimeTimeManual: minutes, buttonsStatus: true),
+    };
 
-  FutureOr<void> _editSunriseTimeManual(
-      _EditSunriseTimeManual event, Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(sunriseOffset: Duration(minutes: event.value));
-    emit(state.copyWith(editSunriseTimeManual: event.value));
-  }
+    final updatedState = updateMapping[event.azanType]?.call(event.minutes);
 
-  FutureOr<void> _editDuhirTimeManual(
-      _EditDuhirTimeManual event, Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(dhuhrOffset: Duration(minutes: event.value));
-    emit(state.copyWith(editDuhirTimeManual: event.value));
-  }
-
-  FutureOr<void> _editAsrTimeManual(
-      _EditAsrTimeManual event, Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(asrOffset: Duration(minutes: event.value));
-    emit(state.copyWith(editAsrTimeManual: event.value));
-  }
-
-  FutureOr<void> _editMagrebTimeManual(
-      _EditMagrebTimeManual event, Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(maghribOffset: Duration(minutes: event.value));
-    emit(state.copyWith(editMagrebTimeManual: event.value));
-  }
-
-  FutureOr<void> _editIshaTimeManual(
-      _EditIshaTimeManual event, Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(ishaOffset: Duration(minutes: event.value));
-    emit(state.copyWith(editIshaTimeManual: event.value));
-  }
-
-  FutureOr<void> _editMidNightTimeManual(_EditMidNightTimeManual event,
-      Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(middleOfTheNightOffset: Duration(minutes: event.value));
-    emit(state.copyWith(editMidNightTimeManual: event.value));
-  }
-
-  FutureOr<void> _editLast3thTimeTimeManual(_EditLast3thTimeTimeManual event,
-      Emitter<PrayCalculationSettingState> emit) {
-    _prepareSalahTiming(
-        lastThirdOfTheNightOffset: Duration(minutes: event.value));
-    emit(state.copyWith(editLast3thTimeTimeManual: event.value));
-  }
-
-  FutureOr<void> _updateHightLatitudeCaluclation(
-      _UpdateHightLatitudeCaluclation event,
-      Emitter<PrayCalculationSettingState> emit) {
-    switch (event.state) {
-      case HightLatitudeCaluclationStateNone():
-        _prepareSalahTiming(highLatitudeRule: null);
-      case HightLatitudeCaluclationStateAngleBasedMethod():
-        _prepareSalahTiming(highLatitudeRule: HighLatitudeRule.twilightAngle);
-      case HightLatitudeCaluclationStateMidnight():
-        _prepareSalahTiming(
-            highLatitudeRule: HighLatitudeRule.middleOfTheNight);
-      case HightLatitudeCaluclationStateSeventhPartOfTheNight():
-        _prepareSalahTiming(
-            highLatitudeRule: HighLatitudeRule.seventhOfTheNight);
+    if (updatedState != null) {
+      emit(updatedState);
+      _prepareSalahTiming();
     }
-    emit(state.copyWith(hightLatitudeCaluclation: event.state));
   }
 
-  FutureOr<void> _factoryReset(
+  FutureOr<void> _handleUpdateTimeOfPreview(
+      _UpdateTimeOfPreview event, Emitter<PrayCalculationSettingState> emit) {
+    final updateMapping = {
+      PreviewBoxes.fajir: (DateTime time) => state.copyWith(fajirTime: time),
+      PreviewBoxes.sunrise: (DateTime time) =>
+          state.copyWith(sunriseTime: time),
+      PreviewBoxes.zhur: (DateTime time) => state.copyWith(duherTime: time),
+      PreviewBoxes.asr: (DateTime time) => state.copyWith(asrTime: time),
+      PreviewBoxes.maghrib: (DateTime time) => state.copyWith(megribTime: time),
+      PreviewBoxes.isha: (DateTime time) => state.copyWith(ishaTime: time),
+      PreviewBoxes.midnight: (DateTime time) =>
+          state.copyWith(midleNighTime: time),
+      PreviewBoxes.last3th: (DateTime time) =>
+          state.copyWith(last3thTime: time),
+      PreviewBoxes.deviceTime: (DateTime time) =>
+          state.copyWith(deviceTime: time),
+      PreviewBoxes.applicationTime: (DateTime time) =>
+          state.copyWith(applicationTime: time),
+    };
+
+    final updatedState = updateMapping[event.azanType]?.call(event.time);
+
+    if (updatedState != null) {
+      emit(updatedState);
+    }
+  }
+
+  FutureOr<void> _handleFactoryReset(
       event, Emitter<PrayCalculationSettingState> emit) {
-    _fillInitialData();
+    _initialize();
     emit(state.copyWith(buttonsStatus: true));
   }
 
-  FutureOr<void> _saveChanges(
-      event, Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(buttonsStatus: true));
+  FutureOr<void> _handleSaveChanges(
+      event, Emitter<PrayCalculationSettingState> emit) async {
+    final saveMapping = {
+      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod:
+          _getCalculationMethodSring(state.calculationMethod),
+      DatabaseFieldPrayCalculationConstant.selectedMadhab:
+          _getMathhabString(state.mathhab),
+      DatabaseFieldPrayCalculationConstant.selectedTimeZone: state.timeZone,
+      DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin:
+          state.editFajirTimeManual,
+      DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin:
+          state.editSunriseTimeManual,
+      DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin:
+          state.editDuhirTimeManual,
+      DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin:
+          state.editAsrTimeManual,
+      DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin:
+          state.editMagrebTimeManual,
+      DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin:
+          state.editIshaTimeManual,
+      DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin:
+          state.editMidNightTimeManual,
+      DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin:
+          state.editLast3thTimeTimeManual,
+      DatabaseFieldPrayCalculationConstant.selectedHighLatitude:
+          _getHightLatitudeCaluclationString(state.hightLatitudeCaluclation),
+    };
+
+    for (final entry in saveMapping.entries) {
+      await _box.put(entry.key, entry.value);
+    }
   }
 }

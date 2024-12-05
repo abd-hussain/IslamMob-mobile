@@ -3,16 +3,16 @@ part of 'pray_calculation_setting_bloc.dart';
 @freezed
 class PrayCalculationSettingState with _$PrayCalculationSettingState {
   const factory PrayCalculationSettingState({
-    @Default("") String fajirTime,
-    @Default("") String sunriseTime,
-    @Default("") String duherTime,
-    @Default("") String asrTime,
-    @Default("") String megribTime,
-    @Default("") String ishaTime,
-    @Default("") String midleNighTime,
-    @Default("") String last3thTime,
-    @Default("") String applicationTime,
-    @Default("") String deviceTime,
+    DateTime? fajirTime,
+    DateTime? sunriseTime,
+    DateTime? duherTime,
+    DateTime? asrTime,
+    DateTime? megribTime,
+    DateTime? ishaTime,
+    DateTime? midleNighTime,
+    DateTime? last3thTime,
+    DateTime? applicationTime,
+    DateTime? deviceTime,
     @Default(false) bool buttonsStatus,
     @Default("UTC +03:00") String timeZone,
     @Default(0) int editFajirTimeManual,
@@ -86,5 +86,4 @@ sealed class CalculationMethodState with _$CalculationMethodState {
       CalculationMethodStateComunidadeIslamicaLisboa;
   const factory CalculationMethodState.jordanAwqaf() =
       CalculationMethodStateJordanAwqaf;
-  const factory CalculationMethodState.custom() = CalculationMethodStateCustom;
 }

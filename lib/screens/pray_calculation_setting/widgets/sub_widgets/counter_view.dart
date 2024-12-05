@@ -4,21 +4,46 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class CounterView extends StatefulWidget {
   final int initialValue;
-  final Function(int) onValueChanged;
-  const CounterView(
-      {super.key, required this.initialValue, required this.onValueChanged});
+  final ValueChanged<int> onValueChanged;
+
+  const CounterView({
+    super.key,
+    required this.initialValue,
+    required this.onValueChanged,
+  });
 
   @override
   State<CounterView> createState() => _CounterViewState();
 }
 
 class _CounterViewState extends State<CounterView> {
-  int _counter = 0;
+  late int _counter;
 
   @override
   void initState() {
-    _counter = widget.initialValue;
     super.initState();
+    _counter = widget.initialValue;
+  }
+
+  void _updateCounter(int value) {
+    setState(() {
+      _counter += value;
+    });
+    widget.onValueChanged(_counter);
+  }
+
+  Widget _buildCounterButton({
+    required IconData icon,
+    required VoidCallback? onPressed,
+  }) {
+    return IconButton(
+      onPressed: onPressed,
+      icon: Icon(
+        icon,
+        color: Colors.white,
+        size: 20,
+      ),
+    );
   }
 
   @override
@@ -30,45 +55,24 @@ class _CounterViewState extends State<CounterView> {
       ),
       child: Row(
         children: [
-          IconButton(
-            onPressed: () {
-              if (_counter == -99) {
-                return;
-              }
-              _counter--;
-              widget.onValueChanged(_counter);
-            },
-            icon: const Icon(
-              Ionicons.remove_circle_outline,
-              color: Colors.white,
-              size: 20,
-            ),
+          _buildCounterButton(
+            icon: Ionicons.remove_circle_outline,
+            onPressed: _counter > -99 ? () => _updateCounter(-1) : null,
           ),
           SizedBox(
             width: 30,
             child: Center(
               child: CustomText(
-                title: widget.initialValue.toString(),
+                title: _counter.toString(),
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
           ),
-          IconButton(
-            onPressed: () {
-              if (_counter == 99) {
-                return;
-              }
-              _counter++;
-
-              widget.onValueChanged(_counter);
-            },
-            icon: const Icon(
-              Ionicons.add_circle_outline,
-              color: Colors.white,
-              size: 20,
-            ),
+          _buildCounterButton(
+            icon: Ionicons.add_circle_outline,
+            onPressed: _counter < 99 ? () => _updateCounter(1) : null,
           ),
         ],
       ),

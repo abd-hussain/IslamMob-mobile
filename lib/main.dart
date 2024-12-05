@@ -9,6 +9,8 @@ import 'package:islam_app/utils/logger.dart';
 
 //TODO: if timer get zero then next salah time should be handled,
 
+//TODO: build calender taqweem
+
 void main() {
   logDebugMessage(message: 'Application Started ...');
   runApp(const MyApp());

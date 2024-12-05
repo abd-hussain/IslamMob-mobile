@@ -17,69 +17,73 @@ import 'package:islam_app/utils/constants/argument_constant.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/utils/constants/database_constant.dart';
 import 'package:path_provider/path_provider.dart';
-//TODO: This tree need to be refactored
 
 class QuranPrintsScreen extends StatelessWidget {
   const QuranPrintsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    bool isDetailsPage = _handleReadingArguments(
-            context: context,
-            arguments: ModalRoute.of(context)!.settings.arguments) ??
-        false;
+    final bool isDetailsPage = _getIsDetailsPage(context);
 
     return BlocProvider(
       create: (context) => QuranPrintsBloc(),
       child: Scaffold(
         appBar: CustomAppBar(title: AppLocalizations.of(context)!.quranprints),
-        body: BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
-          buildWhen: (previous, current) =>
-              previous.listOfPrints != current.listOfPrints ||
-              previous.internetConnectionStauts !=
-                  current.internetConnectionStauts,
-          builder: (context, state) {
-            if (state.internetConnectionStauts == false) {
-              return NoInternetView(
-                retryCallback: () => context.read<QuranPrintsBloc>().initial(),
-              );
-            }
-
-            if (state.listOfPrints == null) {
-              return const QuranListPrintsShimmer();
-            } else {
-              return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
-                buildWhen: (previous, current) =>
-                    previous.printsDownloading != current.printsDownloading,
-                builder: (context, state) {
-                  return ListView.builder(
-                    itemCount: state.listOfPrints!.length,
-                    itemBuilder: (context, index) {
-                      final printItem = state.listOfPrints![index];
-                      return PrintTileView(
-                        language: context
-                            .read<QuranPrintsBloc>()
-                            .getNameByLanguageCode(printItem.language ?? ""),
-                        title: printItem.nameReferance,
-                        description: printItem.description,
-                        previewImage: printItem.previewImage,
-                        downloadButtonAvaliable: !state.printsDownloading
-                            .contains(printItem.fieldName),
-                        useButtonAvaliable: state.printsDownloading
-                            .contains(printItem.fieldName),
-                        onDownloadPressed: () =>
-                            _handleDownloadPressed(context, printItem),
-                        onUsePressed: () => _handleUsePressed(
-                            context, printItem, isDetailsPage),
-                      );
-                    },
-                  );
-                },
-              );
-            }
-          },
-        ),
+        body: _buildBody(context, isDetailsPage),
       ),
+    );
+  }
+
+  Widget _buildBody(BuildContext context, bool isDetailsPage) {
+    return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
+      buildWhen: (previous, current) =>
+          previous.listOfPrints != current.listOfPrints ||
+          previous.internetConnectionStauts != current.internetConnectionStauts,
+      builder: (context, state) {
+        if (state.internetConnectionStauts == false) {
+          return NoInternetView(
+            retryCallback: () => context.read<QuranPrintsBloc>().initialize(),
+          );
+        } else if (state.listOfPrints == null) {
+          return const QuranListPrintsShimmer();
+        } else {
+          return _buildPrintsList(context, state, isDetailsPage);
+        }
+      },
+    );
+  }
+
+  Widget _buildPrintsList(
+      BuildContext context, QuranPrintsState state, bool isDetailsPage) {
+    return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
+      buildWhen: (previous, current) =>
+          previous.printsDownloading != current.printsDownloading,
+      builder: (context, _) {
+        return ListView.builder(
+          itemCount: state.listOfPrints!.length,
+          itemBuilder: (context, index) {
+            final printItem = state.listOfPrints![index];
+            return _buildPrintTile(context, printItem, state, isDetailsPage);
+          },
+        );
+      },
+    );
+  }
+
+  Widget _buildPrintTile(BuildContext context, QuranPrints printItem,
+      QuranPrintsState state, bool isDetailsPage) {
+    return PrintTileView(
+      language: context
+          .read<QuranPrintsBloc>()
+          .getNameByLanguageCode(printItem.language ?? ""),
+      title: printItem.nameReferance,
+      description: printItem.description,
+      previewImage: printItem.previewImage,
+      downloadButtonAvailable:
+          !state.printsDownloading.contains(printItem.fieldName),
+      useButtonAvailable: state.printsDownloading.contains(printItem.fieldName),
+      onDownloadPressed: () => _handleDownloadPressed(context, printItem),
+      onUsePressed: () => _handleUsePressed(context, printItem, isDetailsPage),
     );
   }
 
@@ -94,22 +98,7 @@ class QuranPrintsScreen extends StatelessWidget {
         builder: (_) => DownloadProgressDialog(
           fileUrl: printItem.attachmentLocation!,
           fileNameWithExtension: printItem.fieldName!,
-          filePathCallback: (_) {
-            FirebaseAnalytics.instance.logEvent(
-              name: "download file ",
-              parameters: {
-                "file": printItem.fieldName!,
-              },
-            );
-            final List<String> updatedList = List.from(
-                context.read<QuranPrintsBloc>().state.printsDownloading);
-            updatedList.add(printItem.fieldName!);
-
-            // Dispatch the event with the updated list
-            context
-                .read<QuranPrintsBloc>()
-                .add(QuranPrintsEvent.updatePrintsDownloading(updatedList));
-          },
+          filePathCallback: (_) => _onFileDownloaded(context, printItem),
         ),
       );
     } else if (context.mounted) {
@@ -120,11 +109,27 @@ class QuranPrintsScreen extends StatelessWidget {
     }
   }
 
+  void _onFileDownloaded(BuildContext context, QuranPrints printItem) {
+    FirebaseAnalytics.instance.logEvent(
+      name: "download_file",
+      parameters: {"file": printItem.fieldName ?? ""},
+    );
+
+    final updatedList = List<String>.from(
+        context.read<QuranPrintsBloc>().state.printsDownloading)
+      ..add(printItem.fieldName!);
+
+    context
+        .read<QuranPrintsBloc>()
+        .add(QuranPrintsEvent.updatePrintsDownloading(updatedList));
+  }
+
   Future<void> _handleUsePressed(
       BuildContext context, QuranPrints printItem, bool isDetailsPage) async {
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/${printItem.fieldName!}');
     final box = Hive.box(DatabaseBoxConstant.userInfo);
+
     await box.put(
         DatabaseFieldConstant.quranKaremPrintNameToUse, filePath.path);
     await box.put(DatabaseFieldConstant.quranKaremLastPageNumber, 1);
@@ -134,10 +139,8 @@ class QuranPrintsScreen extends StatelessWidget {
         printItem.sorahToPageNumbers);
 
     FirebaseAnalytics.instance.logEvent(
-      name: "use file ",
-      parameters: {
-        "file": printItem.fieldName!,
-      },
+      name: "use_file",
+      parameters: {"file": printItem.fieldName ?? ""},
     );
 
     if (context.mounted) {
@@ -153,10 +156,9 @@ class QuranPrintsScreen extends StatelessWidget {
     }
   }
 
-  bool? _handleReadingArguments(
-      {required BuildContext context, required Object? arguments}) {
+  bool _getIsDetailsPage(BuildContext context) {
     final arguments =
         ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    return arguments?[ArgumentConstant.isDetailsPage] as bool?;
+    return arguments?[ArgumentConstant.isDetailsPage] ?? false;
   }
 }

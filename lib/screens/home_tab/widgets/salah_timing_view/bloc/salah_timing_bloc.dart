@@ -85,8 +85,9 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
 
   /// Retrieves the selected calculation method from the Hive box.
   CalculationMethod _getCalculationMethod() {
-    final String selectedMethod = _userInfoBox
-        .get(DatabaseFieldConstant.selectedCalculationMethod, defaultValue: "");
+    final String selectedMethod = _userInfoBox.get(
+        DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
+        defaultValue: "");
 
     return CalculationMethod.values.firstWhere(
       (method) => method.name == selectedMethod,
@@ -115,7 +116,8 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
 
   /// Retrieves the selected Madhab from the Hive box.
   Madhab _getMadhab() {
-    final String madhab = _userInfoBox.get(DatabaseFieldConstant.selectedMadhab,
+    final String madhab = _userInfoBox.get(
+        DatabaseFieldPrayCalculationConstant.selectedMadhab,
         defaultValue: "shafi");
     return madhab == "shafi" ? Madhab.shafi : Madhab.hanafi;
   }

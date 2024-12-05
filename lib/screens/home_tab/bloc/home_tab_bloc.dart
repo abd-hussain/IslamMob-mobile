@@ -54,7 +54,7 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   /// Retrieves the selected calculation method from the Hive box.
   CalculationMethod _retrieveCalculationMethod() {
     final String selectedMethod = _box.get(
-      DatabaseFieldConstant.selectedCalculationMethod,
+      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
       defaultValue: "",
     );
 
@@ -98,8 +98,9 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
 
   /// Retrieves the selected Madhab from the Hive box.
   Madhab _retrieveMadhab() {
-    final String madhab =
-        _box.get(DatabaseFieldConstant.selectedMadhab, defaultValue: "shafi");
+    final String madhab = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedMadhab,
+        defaultValue: "shafi");
     return madhab == "shafi" ? Madhab.shafi : Madhab.hanafi;
   }
 

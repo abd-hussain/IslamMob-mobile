@@ -10,13 +10,15 @@ class PolesCalculationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           const SizedBox(height: 10),
           CustomText(
-            title: AppLocalizations.of(context)!.highLatitude,
+            title: localizations.highLatitude,
             fontSize: 20,
             fontWeight: FontWeight.bold,
             color: const Color(0xff444444),
@@ -24,107 +26,93 @@ class PolesCalculationView extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           CustomText(
-            title: AppLocalizations.of(context)!.highLatitudeDetails,
+            title: localizations.highLatitudeDetails,
             fontSize: 14,
             color: const Color(0xff444444),
             textAlign: TextAlign.center,
             maxLines: 2,
           ),
-          Expanded(
-            child: BlocBuilder<PrayCalculationSettingBloc,
-                PrayCalculationSettingState>(
-              buildWhen: (previous, current) =>
-                  previous.hightLatitudeCaluclation !=
-                  current.hightLatitudeCaluclation,
-              builder: (context, state) {
-                return CustomRadioButton(
-                  elevation: 2,
-                  horizontal: true,
-                  absoluteZeroSpacing: false,
-                  unSelectedColor: Colors.white,
-                  unSelectedBorderColor: const Color(0xff444444),
-                  selectedColor: const Color(0xff007F37),
-                  defaultSelected: getInitialHightLatitudeCalculation(
-                      context, state.hightLatitudeCaluclation),
-                  buttonLables: getHightLatitudeCalculationList(context),
-                  buttonValues: getHightLatitudeCalculationList(context),
-                  buttonTextStyle: const ButtonTextStyle(
-                    selectedColor: Colors.white,
-                    unSelectedColor: Color(0xff444444),
-                    textStyle: TextStyle(fontSize: 14),
-                  ),
-                  radioButtonValue: (value) {
-                    if (value ==
-                        AppLocalizations.of(context)!
-                            .hightLatitudeCaluclationNone) {
-                      context.read<PrayCalculationSettingBloc>().add(
-                            PrayCalculationSettingEvent
-                                .updateHightLatitudeCaluclation(
-                              state: const HightLatitudeCaluclationStateNone(),
-                            ),
-                          );
-                    } else if (value ==
-                        AppLocalizations.of(context)!
-                            .hightLatitudeCaluclationAngleBasedMethod) {
-                      context.read<PrayCalculationSettingBloc>().add(
-                            PrayCalculationSettingEvent
-                                .updateHightLatitudeCaluclation(
-                              state:
-                                  const HightLatitudeCaluclationStateAngleBasedMethod(),
-                            ),
-                          );
-                    } else if (value ==
-                        AppLocalizations.of(context)!
-                            .hightLatitudeCaluclationMidnight) {
-                      context.read<PrayCalculationSettingBloc>().add(
-                            PrayCalculationSettingEvent
-                                .updateHightLatitudeCaluclation(
-                              state:
-                                  const HightLatitudeCaluclationStateMidnight(),
-                            ),
-                          );
-                    } else if (value ==
-                        AppLocalizations.of(context)!
-                            .hightLatitudeCaluclationOneSeventh) {
-                      context.read<PrayCalculationSettingBloc>().add(
-                            PrayCalculationSettingEvent
-                                .updateHightLatitudeCaluclation(
-                              state:
-                                  const HightLatitudeCaluclationStateSeventhPartOfTheNight(),
-                            ),
-                          );
-                    }
-                  },
-                );
-              },
-            ),
-          ),
+          const SizedBox(height: 4),
+          Expanded(child: _buildCalculationSelector(context, localizations)),
         ],
       ),
     );
   }
 
-  String getInitialHightLatitudeCalculation(
-      BuildContext context, HightLatitudeCaluclationState method) {
-    switch (method) {
-      case HightLatitudeCaluclationStateNone():
-        return AppLocalizations.of(context)!.hightLatitudeCaluclationNone;
-      case HightLatitudeCaluclationStateAngleBasedMethod():
-        return AppLocalizations.of(context)!
-            .hightLatitudeCaluclationAngleBasedMethod;
-      case HightLatitudeCaluclationStateMidnight():
-        return AppLocalizations.of(context)!.hightLatitudeCaluclationMidnight;
-      case HightLatitudeCaluclationStateSeventhPartOfTheNight():
-        return AppLocalizations.of(context)!.hightLatitudeCaluclationOneSeventh;
-    }
+  Widget _buildCalculationSelector(
+      BuildContext context, AppLocalizations localizations) {
+    return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
+      buildWhen: (previous, current) =>
+          previous.hightLatitudeCaluclation != current.hightLatitudeCaluclation,
+      builder: (context, state) {
+        return CustomRadioButton(
+          elevation: 2,
+          horizontal: true,
+          absoluteZeroSpacing: false,
+          unSelectedColor: Colors.white,
+          unSelectedBorderColor: const Color(0xff444444),
+          selectedColor: const Color(0xff007F37),
+          defaultSelected: _getInitialCalculationMethod(
+              context, state.hightLatitudeCaluclation),
+          buttonLables: _getCalculationMethodList(localizations),
+          buttonValues: _getCalculationMethodList(localizations),
+          buttonTextStyle: const ButtonTextStyle(
+            selectedColor: Colors.white,
+            unSelectedColor: Color(0xff444444),
+            textStyle: TextStyle(fontSize: 14),
+          ),
+          radioButtonValue: (value) =>
+              _onCalculationChanged(context, value, localizations),
+        );
+      },
+    );
   }
 
-  List<String> getHightLatitudeCalculationList(BuildContext context) {
+  String _getInitialCalculationMethod(
+      BuildContext context, HightLatitudeCaluclationState method) {
+    final localizations = AppLocalizations.of(context)!;
+    return switch (method) {
+      HightLatitudeCaluclationStateNone() =>
+        localizations.hightLatitudeCaluclationNone,
+      HightLatitudeCaluclationStateAngleBasedMethod() =>
+        localizations.hightLatitudeCaluclationAngleBasedMethod,
+      HightLatitudeCaluclationStateMidnight() =>
+        localizations.hightLatitudeCaluclationMidnight,
+      HightLatitudeCaluclationStateSeventhPartOfTheNight() =>
+        localizations.hightLatitudeCaluclationOneSeventh,
+    };
+  }
+
+  List<String> _getCalculationMethodList(AppLocalizations localizations) {
     return [
-      AppLocalizations.of(context)!.hightLatitudeCaluclationNone,
-      AppLocalizations.of(context)!.hightLatitudeCaluclationAngleBasedMethod,
-      AppLocalizations.of(context)!.hightLatitudeCaluclationMidnight,
-      AppLocalizations.of(context)!.hightLatitudeCaluclationOneSeventh,
+      localizations.hightLatitudeCaluclationNone,
+      localizations.hightLatitudeCaluclationAngleBasedMethod,
+      localizations.hightLatitudeCaluclationMidnight,
+      localizations.hightLatitudeCaluclationOneSeventh,
     ];
+  }
+
+  void _onCalculationChanged(
+      BuildContext context, String value, AppLocalizations localizations) {
+    final bloc = context.read<PrayCalculationSettingBloc>();
+
+    if (value == localizations.hightLatitudeCaluclationNone) {
+      bloc.add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(
+        state: const HightLatitudeCaluclationStateNone(),
+      ));
+    } else if (value ==
+        localizations.hightLatitudeCaluclationAngleBasedMethod) {
+      bloc.add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(
+        state: const HightLatitudeCaluclationStateAngleBasedMethod(),
+      ));
+    } else if (value == localizations.hightLatitudeCaluclationMidnight) {
+      bloc.add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(
+        state: const HightLatitudeCaluclationStateMidnight(),
+      ));
+    } else if (value == localizations.hightLatitudeCaluclationOneSeventh) {
+      bloc.add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(
+        state: const HightLatitudeCaluclationStateSeventhPartOfTheNight(),
+      ));
+    }
   }
 }

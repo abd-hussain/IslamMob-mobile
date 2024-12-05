@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/screens/pray_calculation_setting/bloc/pray_calculation_enum.dart';
 import 'package:islam_app/screens/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/screens/pray_calculation_setting/widgets/sub_widgets/time_correction_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -10,13 +11,15 @@ class EditPrayTimeMinutesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           const SizedBox(height: 10),
           CustomText(
-            title: AppLocalizations.of(context)!.editPrayTimeMinManual,
+            title: localizations.editPrayTimeMinManual,
             fontSize: 20,
             fontWeight: FontWeight.bold,
             color: const Color(0xff444444),
@@ -24,7 +27,7 @@ class EditPrayTimeMinutesView extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           CustomText(
-            title: AppLocalizations.of(context)!.editPrayTimeMinManualDetails,
+            title: localizations.editPrayTimeMinManualDetails,
             fontSize: 14,
             color: const Color(0xff444444),
             textAlign: TextAlign.center,
@@ -35,149 +38,97 @@ class EditPrayTimeMinutesView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: ListView(
-                children: [
-                  BlocBuilder<PrayCalculationSettingBloc,
-                      PrayCalculationSettingState>(
-                    buildWhen: (previous, current) =>
-                        previous.editFajirTimeManual !=
-                        current.editFajirTimeManual,
-                    builder: (context, state) {
-                      return TimeCorrectionView(
-                        title:
-                            AppLocalizations.of(context)!.fajirCorrectionTitle,
-                        initialValue: state.editFajirTimeManual,
-                        onValueChanged: (intValue) => context
-                            .read<PrayCalculationSettingBloc>()
-                            .add(
-                                PrayCalculationSettingEvent.editFajirTimeManual(
-                                    value: intValue)),
-                      );
-                    },
-                  ),
-                  BlocBuilder<PrayCalculationSettingBloc,
-                      PrayCalculationSettingState>(
-                    buildWhen: (previous, current) =>
-                        previous.editSunriseTimeManual !=
-                        current.editSunriseTimeManual,
-                    builder: (context, state) {
-                      return TimeCorrectionView(
-                        title: AppLocalizations.of(context)!
-                            .sunriseCorrectionTitle,
-                        initialValue: state.editSunriseTimeManual,
-                        onValueChanged: (intValue) => context
-                            .read<PrayCalculationSettingBloc>()
-                            .add(PrayCalculationSettingEvent
-                                .editSunriseTimeManual(value: intValue)),
-                      );
-                    },
-                  ),
-                  BlocBuilder<PrayCalculationSettingBloc,
-                      PrayCalculationSettingState>(
-                    buildWhen: (previous, current) =>
-                        previous.editDuhirTimeManual !=
-                        current.editDuhirTimeManual,
-                    builder: (context, state) {
-                      return TimeCorrectionView(
-                        title:
-                            AppLocalizations.of(context)!.duhorCorrectionTitle,
-                        initialValue: state.editDuhirTimeManual,
-                        onValueChanged: (intValue) => context
-                            .read<PrayCalculationSettingBloc>()
-                            .add(
-                                PrayCalculationSettingEvent.editDuhirTimeManual(
-                                    value: intValue)),
-                      );
-                    },
-                  ),
-                  BlocBuilder<PrayCalculationSettingBloc,
-                      PrayCalculationSettingState>(
-                    buildWhen: (previous, current) =>
-                        previous.editAsrTimeManual != current.editAsrTimeManual,
-                    builder: (context, state) {
-                      return TimeCorrectionView(
-                        title: AppLocalizations.of(context)!.asrCorrectionTitle,
-                        initialValue: state.editAsrTimeManual,
-                        onValueChanged: (intValue) => context
-                            .read<PrayCalculationSettingBloc>()
-                            .add(PrayCalculationSettingEvent.editAsrTimeManual(
-                                value: intValue)),
-                      );
-                    },
-                  ),
-                  BlocBuilder<PrayCalculationSettingBloc,
-                      PrayCalculationSettingState>(
-                    buildWhen: (previous, current) =>
-                        previous.editMagrebTimeManual !=
-                        current.editMagrebTimeManual,
-                    builder: (context, state) {
-                      return TimeCorrectionView(
-                        title: AppLocalizations.of(context)!
-                            .maghribCorrectionTitle,
-                        initialValue: state.editMagrebTimeManual,
-                        onValueChanged: (intValue) => context
-                            .read<PrayCalculationSettingBloc>()
-                            .add(PrayCalculationSettingEvent
-                                .editMagrebTimeManual(value: intValue)),
-                      );
-                    },
-                  ),
-                  BlocBuilder<PrayCalculationSettingBloc,
-                      PrayCalculationSettingState>(
-                    buildWhen: (previous, current) =>
-                        previous.editIshaTimeManual !=
-                        current.editIshaTimeManual,
-                    builder: (context, state) {
-                      return TimeCorrectionView(
-                        title:
-                            AppLocalizations.of(context)!.ishaCorrectionTitle,
-                        initialValue: state.editIshaTimeManual,
-                        onValueChanged: (intValue) => context
-                            .read<PrayCalculationSettingBloc>()
-                            .add(PrayCalculationSettingEvent.editIshaTimeManual(
-                                value: intValue)),
-                      );
-                    },
-                  ),
-                  BlocBuilder<PrayCalculationSettingBloc,
-                      PrayCalculationSettingState>(
-                    buildWhen: (previous, current) =>
-                        previous.editMidNightTimeManual !=
-                        current.editMidNightTimeManual,
-                    builder: (context, state) {
-                      return TimeCorrectionView(
-                        title: AppLocalizations.of(context)!
-                            .midnightCorrectionTitle,
-                        initialValue: state.editMidNightTimeManual,
-                        onValueChanged: (intValue) => context
-                            .read<PrayCalculationSettingBloc>()
-                            .add(PrayCalculationSettingEvent
-                                .editMidNightTimeManual(value: intValue)),
-                      );
-                    },
-                  ),
-                  BlocBuilder<PrayCalculationSettingBloc,
-                      PrayCalculationSettingState>(
-                    buildWhen: (previous, current) =>
-                        previous.editLast3thTimeTimeManual !=
-                        current.editLast3thTimeTimeManual,
-                    builder: (context, state) {
-                      return TimeCorrectionView(
-                        title: AppLocalizations.of(context)!
-                            .lastThirdOfTheNightCorrectionTitle,
-                        initialValue: state.editLast3thTimeTimeManual,
-                        onValueChanged: (intValue) => context
-                            .read<PrayCalculationSettingBloc>()
-                            .add(PrayCalculationSettingEvent
-                                .editLast3thTimeTimeManual(value: intValue)),
-                      );
-                    },
-                  ),
-                ],
+                children: _buildTimeCorrectionViews(context, localizations),
               ),
             ),
-          )
+          ),
+          const SizedBox(height: 8),
         ],
       ),
     );
   }
+
+  List<Widget> _buildTimeCorrectionViews(
+      BuildContext context, AppLocalizations localizations) {
+    final corrections = [
+      _CorrectionData(
+        title: localizations.fajirCorrectionTitle,
+        getter: (state) => state.editFajirTimeManual,
+        type: AzanTypeForEditMin.fajir,
+      ),
+      _CorrectionData(
+        title: localizations.sunriseCorrectionTitle,
+        getter: (state) => state.editSunriseTimeManual,
+        type: AzanTypeForEditMin.sunrise,
+      ),
+      _CorrectionData(
+        title: localizations.duhorCorrectionTitle,
+        getter: (state) => state.editDuhirTimeManual,
+        type: AzanTypeForEditMin.zhur,
+      ),
+      _CorrectionData(
+        title: localizations.asrCorrectionTitle,
+        getter: (state) => state.editAsrTimeManual,
+        type: AzanTypeForEditMin.asr,
+      ),
+      _CorrectionData(
+        title: localizations.maghribCorrectionTitle,
+        getter: (state) => state.editMagrebTimeManual,
+        type: AzanTypeForEditMin.maghrib,
+      ),
+      _CorrectionData(
+        title: localizations.ishaCorrectionTitle,
+        getter: (state) => state.editIshaTimeManual,
+        type: AzanTypeForEditMin.isha,
+      ),
+      _CorrectionData(
+        title: localizations.midnightCorrectionTitle,
+        getter: (state) => state.editMidNightTimeManual,
+        type: AzanTypeForEditMin.midnight,
+      ),
+      _CorrectionData(
+        title: localizations.lastThirdOfTheNightCorrectionTitle,
+        getter: (state) => state.editLast3thTimeTimeManual,
+        type: AzanTypeForEditMin.last3th,
+      ),
+    ];
+
+    return corrections
+        .map((correction) => _buildTimeCorrectionBloc(context, correction))
+        .toList();
+  }
+
+  Widget _buildTimeCorrectionBloc(
+      BuildContext context, _CorrectionData correction) {
+    return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
+      buildWhen: (previous, current) =>
+          correction.getter(previous) != correction.getter(current),
+      builder: (context, state) {
+        return TimeCorrectionView(
+          title: correction.title,
+          initialValue: correction.getter(state),
+          onValueChanged: (value) {
+            context.read<PrayCalculationSettingBloc>().add(
+                  PrayCalculationSettingEvent.updateAzanTypeInMin(
+                    minutes: value,
+                    azanType: correction.type,
+                  ),
+                );
+          },
+        );
+      },
+    );
+  }
+}
+
+class _CorrectionData {
+  final String title;
+  final int Function(PrayCalculationSettingState state) getter;
+  final AzanTypeForEditMin type;
+
+  _CorrectionData({
+    required this.title,
+    required this.getter,
+    required this.type,
+  });
 }
