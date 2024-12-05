@@ -15,41 +15,38 @@ import 'package:pdfx/pdfx.dart';
 part 'quran_kareem_event.dart';
 part 'quran_kareem_state.dart';
 part 'quran_kareem_bloc.freezed.dart';
-//TODO: This tree need to be refactored
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
-  final box = Hive.box(DatabaseBoxConstant.userInfo);
+  final _box = Hive.box(DatabaseBoxConstant.userInfo);
   int _numRewardedLoadAttempts = 0;
-
   PdfController? pdfController;
+  int currentPageNumber = 0;
 
   QuranKareemBloc() : super(const QuranKareemState()) {
     on<_ShowHideHelpBar>(_showHideHelpBar);
     on<_UpdatePageCount>(_updatePageCount);
     on<_UpdateSorahName>(_updateSorahName);
     on<_UpdateJozo2Name>(_updateJozo2Name);
-
     on<_UpdateSidePage>(_updateSidePage);
     on<_UpdateBookMarkedPages>(_updateBookMarkedPages);
     on<_UpdateScreenBrigtness>(_updateScreenBrigtness);
     on<_UpdateRewardedAd>(_updateRewardedAd);
     on<_UpdateReadPDFFile>(_updateReadPDFFile);
 
-    initalMethod();
+    initialize();
   }
 
-  void initalMethod() async {
+  void initialize() async {
     await _setupFirstInitialPDF();
-    _getListOfBookMarkedPages();
+    _loadBookmarkedPages();
     _createRewardedAd();
   }
 
-  int currentPageNumber = 0;
-
+  // Load the initial PDF
   Future<void> _setupFirstInitialPDF() async {
-    final pageNumber = box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
+    final pageNumber = _box.get(DatabaseFieldConstant.quranKaremLastPageNumber,
         defaultValue: 1);
-    final printName = box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
+    final printName = _box.get(DatabaseFieldConstant.quranKaremPrintNameToUse,
         defaultValue: "");
 
     final file = File(printName);
@@ -59,9 +56,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
       pdfController = PdfController(
         viewportFraction: 1.1,
         document: PdfDocument.openFile(file.path),
-      );
-
-      pdfController?.initialPage = pageNumber;
+      )..initialPage = pageNumber;
 
       add(QuranKareemEvent.updateReadPDFFile(file.path));
       add(QuranKareemEvent.updatePageCount(pageNumber));
@@ -70,6 +65,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     }
   }
 
+  // Create and load the rewarded ad
   void _createRewardedAd() {
     RewardedAd.load(
       adUnitId: AdHelper.rewardedAdUnitId,
@@ -88,61 +84,67 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     );
   }
 
+  // Show the rewarded ad
   void showRewardedAd(RewardedAd rewardedAd) {
     rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
-      onAdShowedFullScreenContent: (RewardedAd ad) =>
-          debugPrint('ad onAdShowedFullScreenContent.'),
+      onAdShowedFullScreenContent: (_) {
+        debugPrint('Ad showed full screen content.');
+      },
       onAdDismissedFullScreenContent: (RewardedAd ad) {
-        debugPrint('$ad onAdDismissedFullScreenContent.');
-        FirebaseAnalytics.instance.logEvent(
-          name: "RewardedAd_Quran_tab",
-          parameters: {"status": "onAdDismissedFullScreenContent"},
-        );
-
-        ad.dispose();
-        _createRewardedAd();
+        debugPrint('$ad dismissed.');
+        _handleAdDismissal(ad);
       },
       onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
-        debugPrint('$ad onAdFailedToShowFullScreenContent: $error');
-        FirebaseAnalytics.instance.logEvent(
-          name: "RewardedAd_Quran_tab",
-          parameters: {"status": "onAdFailedToShowFullScreenContent"},
-        );
-        ad.dispose();
-        _createRewardedAd();
+        debugPrint('$ad failed to show: $error');
+        _handleAdDismissal(ad);
       },
     );
-
     rewardedAd.setImmersiveMode(true);
-    rewardedAd.show(onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
-      debugPrint(
-          '$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
-      FirebaseAnalytics.instance.logEvent(
-        name: "RewardedAd_Quran_tab",
-        parameters: {
-          "status":
-              "$ad with reward $RewardItem(${reward.amount}, ${reward.type})"
-        },
-      );
+    rewardedAd.show(onUserEarnedReward: (_, reward) {
+      _logAdReward(reward);
     });
     add(QuranKareemEvent.updateRewardedAd(null));
   }
 
-  void _getListOfBookMarkedPages() {
-    final List<dynamic> bookMarkedPages =
-        box.get(DatabaseFieldConstant.quranKaremBookMarkList, defaultValue: []);
+  // Handle the ad dismissal and load a new one
+  void _handleAdDismissal(RewardedAd ad) {
+    FirebaseAnalytics.instance.logEvent(
+      name: "RewardedAd_Quran_tab",
+      parameters: {"status": "onAdDismissedFullScreenContent"},
+    );
+    ad.dispose();
+    _createRewardedAd();
+  }
+
+  // Log the earned reward
+  void _logAdReward(RewardItem reward) {
+    debugPrint('Reward: $reward');
+    FirebaseAnalytics.instance.logEvent(
+      name: "RewardedAd_Quran_tab",
+      parameters: {
+        "status": "earned reward $reward",
+      },
+    );
+  }
+
+  // Load bookmarked pages from local storage
+  void _loadBookmarkedPages() {
+    final List<dynamic> bookMarkedPages = _box
+        .get(DatabaseFieldConstant.quranKaremBookMarkList, defaultValue: []);
 
     if (bookMarkedPages.isNotEmpty) {
-      List<int> intList = bookMarkedPages.cast<int>();
+      final intList = List<int>.from(bookMarkedPages);
       add(QuranKareemEvent.updateBookMarkedPages(intList));
     }
   }
 
+  // Change the help bar visibility
   void changeHelpBarShowingStatus() {
-    final bool status = state.showHelpBar;
+    final status = state.showHelpBar;
     add(QuranKareemEvent.showHideHelpBar(!status));
   }
 
+  // Event Handlers
   FutureOr<void> _showHideHelpBar(
       _ShowHideHelpBar event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(showHelpBar: event.status));
@@ -153,23 +155,24 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     currentPageNumber = event.pageCount;
     emit(state.copyWith(pageCount: currentPageNumber));
 
-    final referanceSorahName =
+    final sorahName =
         QuranReferances.getSurahReferenceNameFromPageNumber(currentPageNumber);
-    add(QuranKareemEvent.updateSorahName(referanceSorahName));
-
-    final referanceJozo2Name =
+    final jozo2Name =
         QuranReferances.getJuzNumberFromPageNumber(currentPageNumber);
-    add(QuranKareemEvent.updateJozo2Name(referanceJozo2Name));
+    add(QuranKareemEvent.updateSorahName(sorahName));
+    add(QuranKareemEvent.updateJozo2Name(jozo2Name));
 
-    add(QuranKareemEvent.updateSidePage(_getPageSide(event.pageCount)));
+    add(QuranKareemEvent.updateSidePage(_getPageSide(currentPageNumber)));
 
-    await box.put(
+    await _box.put(
         DatabaseFieldConstant.quranKaremLastPageNumber, event.pageCount);
   }
 
-  PageSide _getPageSide(int pageNumber) {
-    return pageNumber.isEven ? PageSide.left : PageSide.right;
-  }
+  // Get the page side (left or right)
+  QuranKareemStatePageSideState _getPageSide(int pageNumber) =>
+      pageNumber.isEven
+          ? const QuranKareemStatePageSideStateLeft()
+          : const QuranKareemStatePageSideStateRight();
 
   FutureOr<void> _updateSidePage(
       _UpdateSidePage event, Emitter<QuranKareemState> emit) {
@@ -178,7 +181,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   FutureOr<void> _updateBookMarkedPages(
       _UpdateBookMarkedPages event, Emitter<QuranKareemState> emit) async {
-    await box.put(DatabaseFieldConstant.quranKaremBookMarkList, event.list);
+    await _box.put(DatabaseFieldConstant.quranKaremBookMarkList, event.list);
     emit(state.copyWith(bookmarkedPages: event.list));
   }
 

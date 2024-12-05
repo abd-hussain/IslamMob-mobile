@@ -30,42 +30,47 @@ class CalculationMethodView extends StatelessWidget {
             textAlign: TextAlign.center,
             maxLines: 2,
           ),
+          const SizedBox(height: 4),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(bottom: 10),
-              child: BlocBuilder<PrayCalculationSettingBloc,
-                  PrayCalculationSettingState>(
-                buildWhen: (previous, current) =>
-                    previous.calculationMethod != current.calculationMethod,
-                builder: (context, state) {
-                  final calculationMethodList =
-                      _getCalculationMethodList(context);
-
-                  return CustomRadioButton(
-                    elevation: 2,
-                    horizontal: true,
-                    absoluteZeroSpacing: false,
-                    unSelectedColor: Colors.white,
-                    unSelectedBorderColor: const Color(0xff444444),
-                    selectedColor: const Color(0xff007F37),
-                    defaultSelected: _getInitialCalculationMethod(
-                        context, state.calculationMethod),
-                    buttonLables: calculationMethodList,
-                    buttonValues: calculationMethodList,
-                    buttonTextStyle: const ButtonTextStyle(
-                      selectedColor: Colors.white,
-                      unSelectedColor: Color(0xff444444),
-                      textStyle: TextStyle(fontSize: 14),
-                    ),
-                    radioButtonValue: (value) =>
-                        _onCalculationMethodSelected(context, value),
-                  );
-                },
-              ),
+              child: _buildCalculationMethodSelector(context),
             ),
           ),
+          const SizedBox(height: 8),
         ],
       ),
+    );
+  }
+
+  Widget _buildCalculationMethodSelector(BuildContext context) {
+    return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
+      buildWhen: (previous, current) =>
+          previous.calculationMethod != current.calculationMethod,
+      builder: (context, state) {
+        final calculationMethods = _getCalculationMethodList(context);
+        final defaultMethod =
+            _getInitialCalculationMethod(context, state.calculationMethod);
+
+        return CustomRadioButton(
+          elevation: 2,
+          horizontal: true,
+          absoluteZeroSpacing: false,
+          unSelectedColor: Colors.white,
+          unSelectedBorderColor: const Color(0xff444444),
+          selectedColor: const Color(0xff007F37),
+          defaultSelected: defaultMethod,
+          buttonLables: calculationMethods,
+          buttonValues: calculationMethods,
+          buttonTextStyle: const ButtonTextStyle(
+            selectedColor: Colors.white,
+            unSelectedColor: Color(0xff444444),
+            textStyle: TextStyle(fontSize: 14),
+          ),
+          radioButtonValue: (value) =>
+              _onCalculationMethodSelected(context, value),
+        );
+      },
     );
   }
 
@@ -75,9 +80,7 @@ class CalculationMethodView extends StatelessWidget {
         methodsMap.entries.firstWhere((entry) => entry.value == value).key;
 
     context.read<PrayCalculationSettingBloc>().add(
-          PrayCalculationSettingEvent.updateCalculationMethod(
-            method: entry,
-          ),
+          PrayCalculationSettingEvent.updateCalculationMethod(method: entry),
         );
   }
 
@@ -124,7 +127,6 @@ class CalculationMethodView extends StatelessWidget {
           localizations.calculationMethod21,
       const CalculationMethodState.jordanAwqaf():
           localizations.calculationMethod22,
-      const CalculationMethodState.custom(): localizations.calculationMethod23,
     };
   }
 }

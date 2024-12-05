@@ -11,73 +11,62 @@ class PrayCalculationHeaderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.fajirTime != current.fajirTime,
-          builder: (context, state) {
-            return SalahBox(
-              salahType: const SalahTimeStateFajir(),
-              salahTime: DateTime.now(), // state.fajirTime,//TODO
-              isCurrentSalah: false,
-            );
-          },
-        ),
-        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.sunriseTime != current.sunriseTime,
-          builder: (context, state) {
-            return SalahBox(
-              salahType: const SalahTimeStateSunrise(),
-              salahTime: DateTime.now(), // state.sunriseTime,//TODO
-              isCurrentSalah: false,
-            );
-          },
-        ),
-        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.duherTime != current.duherTime,
-          builder: (context, state) {
-            return SalahBox(
-              salahType: const SalahTimeStateZhur(),
-              salahTime: DateTime.now(), // state.duherTime,//TODO
-              isCurrentSalah: false,
-            );
-          },
-        ),
-        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) => previous.asrTime != current.asrTime,
-          builder: (context, state) {
-            return SalahBox(
-              salahType: const SalahTimeStateAsr(),
-              salahTime: DateTime.now(), // state.asrTime,//TODO
-              isCurrentSalah: false,
-            );
-          },
-        ),
-        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.megribTime != current.megribTime,
-          builder: (context, state) {
-            return SalahBox(
-              salahType: const SalahTimeStateMaghrib(),
-              salahTime: DateTime.now(), // state.megribTime,//TODO
-              isCurrentSalah: false,
-            );
-          },
-        ),
-        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.ishaTime != current.ishaTime,
-          builder: (context, state) {
-            return SalahBox(
-              salahType: const SalahTimeStateIsha(),
-              salahTime: DateTime.now(), // state.ishaTime,//TODO
-              isCurrentSalah: false,
-            );
-          },
-        ),
-      ],
+      children: _buildSalahBoxes(context),
     );
   }
+
+  List<Widget> _buildSalahBoxes(BuildContext context) {
+    final salahConfigs = [
+      _SalahConfig(
+        stateSelector: (state) => state.fajirTime,
+        salahType: const SalahTimeStateFajir(),
+      ),
+      _SalahConfig(
+        stateSelector: (state) => state.sunriseTime,
+        salahType: const SalahTimeStateSunrise(),
+      ),
+      _SalahConfig(
+        stateSelector: (state) => state.duherTime,
+        salahType: const SalahTimeStateZhur(),
+      ),
+      _SalahConfig(
+        stateSelector: (state) => state.asrTime,
+        salahType: const SalahTimeStateAsr(),
+      ),
+      _SalahConfig(
+        stateSelector: (state) => state.megribTime,
+        salahType: const SalahTimeStateMaghrib(),
+      ),
+      _SalahConfig(
+        stateSelector: (state) => state.ishaTime,
+        salahType: const SalahTimeStateIsha(),
+      ),
+    ];
+
+    return salahConfigs.map((config) {
+      return BlocBuilder<PrayCalculationSettingBloc,
+          PrayCalculationSettingState>(
+        buildWhen: (previous, current) =>
+            config.stateSelector(previous) != config.stateSelector(current),
+        builder: (context, state) {
+          final salahTime = config.stateSelector(state) ?? DateTime.now();
+          return SalahBox(
+            salahType: config.salahType,
+            salahTime: salahTime,
+            isCurrentSalah: false,
+          );
+        },
+      );
+    }).toList();
+  }
+}
+
+class _SalahConfig {
+  final DateTime? Function(PrayCalculationSettingState) stateSelector;
+  final SalahTimeState salahType;
+
+  _SalahConfig({
+    required this.stateSelector,
+    required this.salahType,
+  });
 }

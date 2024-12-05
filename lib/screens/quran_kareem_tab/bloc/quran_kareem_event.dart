@@ -1,11 +1,11 @@
 part of 'quran_kareem_bloc.dart';
-//TODO: This tree need to be refactored
 
 @freezed
 class QuranKareemEvent with _$QuranKareemEvent {
   factory QuranKareemEvent.showHideHelpBar(bool status) = _ShowHideHelpBar;
   factory QuranKareemEvent.updatePageCount(int pageCount) = _UpdatePageCount;
-  factory QuranKareemEvent.updateSidePage(PageSide side) = _UpdateSidePage;
+  factory QuranKareemEvent.updateSidePage(QuranKareemStatePageSideState side) =
+      _UpdateSidePage;
   factory QuranKareemEvent.updateBookMarkedPages(List<int> list) =
       _UpdateBookMarkedPages;
   factory QuranKareemEvent.updateScreenBrigtness(double value) =

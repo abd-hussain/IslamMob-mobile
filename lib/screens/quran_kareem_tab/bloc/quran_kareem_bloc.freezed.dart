@@ -20,7 +20,8 @@ mixin _$QuranKareemEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -33,7 +34,7 @@ mixin _$QuranKareemEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -46,7 +47,7 @@ mixin _$QuranKareemEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -192,7 +193,8 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -208,7 +210,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -224,7 +226,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -378,7 +380,8 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -394,7 +397,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -410,7 +413,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -498,7 +501,9 @@ abstract class _$$UpdateSidePageImplCopyWith<$Res> {
           $Res Function(_$UpdateSidePageImpl) then) =
       __$$UpdateSidePageImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({PageSide side});
+  $Res call({QuranKareemStatePageSideState side});
+
+  $QuranKareemStatePageSideStateCopyWith<$Res> get side;
 }
 
 /// @nodoc
@@ -520,8 +525,18 @@ class __$$UpdateSidePageImplCopyWithImpl<$Res>
       null == side
           ? _value.side
           : side // ignore: cast_nullable_to_non_nullable
-              as PageSide,
+              as QuranKareemStatePageSideState,
     ));
+  }
+
+  /// Create a copy of QuranKareemEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $QuranKareemStatePageSideStateCopyWith<$Res> get side {
+    return $QuranKareemStatePageSideStateCopyWith<$Res>(_value.side, (value) {
+      return _then(_value.copyWith(side: value));
+    });
   }
 }
 
@@ -531,7 +546,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   _$UpdateSidePageImpl(this.side);
 
   @override
-  final PageSide side;
+  final QuranKareemStatePageSideState side;
 
   @override
   String toString() {
@@ -563,7 +578,8 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -579,7 +595,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -595,7 +611,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -666,9 +682,10 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
 }
 
 abstract class _UpdateSidePage implements QuranKareemEvent {
-  factory _UpdateSidePage(final PageSide side) = _$UpdateSidePageImpl;
+  factory _UpdateSidePage(final QuranKareemStatePageSideState side) =
+      _$UpdateSidePageImpl;
 
-  PageSide get side;
+  QuranKareemStatePageSideState get side;
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -755,7 +772,8 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -771,7 +789,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -787,7 +805,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -942,7 +960,8 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -958,7 +977,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -974,7 +993,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -1128,7 +1147,8 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -1144,7 +1164,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -1160,7 +1180,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -1313,7 +1333,8 @@ class _$UpdateReadPDFFileImpl implements _UpdateReadPDFFile {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -1329,7 +1350,7 @@ class _$UpdateReadPDFFileImpl implements _UpdateReadPDFFile {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -1345,7 +1366,7 @@ class _$UpdateReadPDFFileImpl implements _UpdateReadPDFFile {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -1498,7 +1519,8 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -1514,7 +1536,7 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -1530,7 +1552,7 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -1683,7 +1705,8 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(PageSide side) updateSidePage,
+    required TResult Function(QuranKareemStatePageSideState side)
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(RewardedAd? value) updateRewardedAd,
@@ -1699,7 +1722,7 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
     TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(PageSide side)? updateSidePage,
+    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult? Function(List<int> list)? updateBookMarkedPages,
     TResult? Function(double value)? updateScreenBrigtness,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
@@ -1715,7 +1738,7 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
     TResult Function(int pageCount)? updatePageCount,
-    TResult Function(PageSide side)? updateSidePage,
+    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
     TResult Function(List<int> list)? updateBookMarkedPages,
     TResult Function(double value)? updateScreenBrigtness,
     TResult Function(RewardedAd? value)? updateRewardedAd,
@@ -1801,7 +1824,8 @@ abstract class _UpdateJozo2Name implements QuranKareemEvent {
 mixin _$QuranKareemState {
   bool get showHelpBar => throw _privateConstructorUsedError;
   int get pageCount => throw _privateConstructorUsedError;
-  PageSide get pageSide => throw _privateConstructorUsedError;
+  QuranKareemStatePageSideState get pageSide =>
+      throw _privateConstructorUsedError;
   List<int> get bookmarkedPages => throw _privateConstructorUsedError;
   double get brigtness => throw _privateConstructorUsedError;
   RewardedAd? get rewardedAd => throw _privateConstructorUsedError;
@@ -1825,13 +1849,15 @@ abstract class $QuranKareemStateCopyWith<$Res> {
   $Res call(
       {bool showHelpBar,
       int pageCount,
-      PageSide pageSide,
+      QuranKareemStatePageSideState pageSide,
       List<int> bookmarkedPages,
       double brigtness,
       RewardedAd? rewardedAd,
       String sourceFileOfPDF,
       String sorahName,
       String jozo2Name});
+
+  $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide;
 }
 
 /// @nodoc
@@ -1871,7 +1897,7 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
       pageSide: null == pageSide
           ? _value.pageSide
           : pageSide // ignore: cast_nullable_to_non_nullable
-              as PageSide,
+              as QuranKareemStatePageSideState,
       bookmarkedPages: null == bookmarkedPages
           ? _value.bookmarkedPages
           : bookmarkedPages // ignore: cast_nullable_to_non_nullable
@@ -1898,6 +1924,17 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
               as String,
     ) as $Val);
   }
+
+  /// Create a copy of QuranKareemState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide {
+    return $QuranKareemStatePageSideStateCopyWith<$Res>(_value.pageSide,
+        (value) {
+      return _then(_value.copyWith(pageSide: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -1911,13 +1948,16 @@ abstract class _$$QuranKareemStateImplCopyWith<$Res>
   $Res call(
       {bool showHelpBar,
       int pageCount,
-      PageSide pageSide,
+      QuranKareemStatePageSideState pageSide,
       List<int> bookmarkedPages,
       double brigtness,
       RewardedAd? rewardedAd,
       String sourceFileOfPDF,
       String sorahName,
       String jozo2Name});
+
+  @override
+  $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide;
 }
 
 /// @nodoc
@@ -1955,7 +1995,7 @@ class __$$QuranKareemStateImplCopyWithImpl<$Res>
       pageSide: null == pageSide
           ? _value.pageSide
           : pageSide // ignore: cast_nullable_to_non_nullable
-              as PageSide,
+              as QuranKareemStatePageSideState,
       bookmarkedPages: null == bookmarkedPages
           ? _value._bookmarkedPages
           : bookmarkedPages // ignore: cast_nullable_to_non_nullable
@@ -1990,7 +2030,7 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
   const _$QuranKareemStateImpl(
       {this.showHelpBar = false,
       this.pageCount = 1,
-      this.pageSide = PageSide.left,
+      this.pageSide = const QuranKareemStatePageSideState.left(),
       final List<int> bookmarkedPages = const [],
       this.brigtness = 0,
       this.rewardedAd,
@@ -2007,7 +2047,7 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
   final int pageCount;
   @override
   @JsonKey()
-  final PageSide pageSide;
+  final QuranKareemStatePageSideState pageSide;
   final List<int> _bookmarkedPages;
   @override
   @JsonKey()
@@ -2089,7 +2129,7 @@ abstract class _QuranKareemState implements QuranKareemState {
   const factory _QuranKareemState(
       {final bool showHelpBar,
       final int pageCount,
-      final PageSide pageSide,
+      final QuranKareemStatePageSideState pageSide,
       final List<int> bookmarkedPages,
       final double brigtness,
       final RewardedAd? rewardedAd,
@@ -2102,7 +2142,7 @@ abstract class _QuranKareemState implements QuranKareemState {
   @override
   int get pageCount;
   @override
-  PageSide get pageSide;
+  QuranKareemStatePageSideState get pageSide;
   @override
   List<int> get bookmarkedPages;
   @override
@@ -2122,4 +2162,294 @@ abstract class _QuranKareemState implements QuranKareemState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$QuranKareemStateImplCopyWith<_$QuranKareemStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$QuranKareemStatePageSideState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() left,
+    required TResult Function() right,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? left,
+    TResult? Function()? right,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? left,
+    TResult Function()? right,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QuranKareemStatePageSideStateLeft value) left,
+    required TResult Function(QuranKareemStatePageSideStateRight value) right,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QuranKareemStatePageSideStateLeft value)? left,
+    TResult? Function(QuranKareemStatePageSideStateRight value)? right,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QuranKareemStatePageSideStateLeft value)? left,
+    TResult Function(QuranKareemStatePageSideStateRight value)? right,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $QuranKareemStatePageSideStateCopyWith<$Res> {
+  factory $QuranKareemStatePageSideStateCopyWith(
+          QuranKareemStatePageSideState value,
+          $Res Function(QuranKareemStatePageSideState) then) =
+      _$QuranKareemStatePageSideStateCopyWithImpl<$Res,
+          QuranKareemStatePageSideState>;
+}
+
+/// @nodoc
+class _$QuranKareemStatePageSideStateCopyWithImpl<$Res,
+        $Val extends QuranKareemStatePageSideState>
+    implements $QuranKareemStatePageSideStateCopyWith<$Res> {
+  _$QuranKareemStatePageSideStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of QuranKareemStatePageSideState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$QuranKareemStatePageSideStateLeftImplCopyWith<$Res> {
+  factory _$$QuranKareemStatePageSideStateLeftImplCopyWith(
+          _$QuranKareemStatePageSideStateLeftImpl value,
+          $Res Function(_$QuranKareemStatePageSideStateLeftImpl) then) =
+      __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl<$Res>
+    extends _$QuranKareemStatePageSideStateCopyWithImpl<$Res,
+        _$QuranKareemStatePageSideStateLeftImpl>
+    implements _$$QuranKareemStatePageSideStateLeftImplCopyWith<$Res> {
+  __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl(
+      _$QuranKareemStatePageSideStateLeftImpl _value,
+      $Res Function(_$QuranKareemStatePageSideStateLeftImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QuranKareemStatePageSideState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$QuranKareemStatePageSideStateLeftImpl
+    implements QuranKareemStatePageSideStateLeft {
+  const _$QuranKareemStatePageSideStateLeftImpl();
+
+  @override
+  String toString() {
+    return 'QuranKareemStatePageSideState.left()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QuranKareemStatePageSideStateLeftImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() left,
+    required TResult Function() right,
+  }) {
+    return left();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? left,
+    TResult? Function()? right,
+  }) {
+    return left?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? left,
+    TResult Function()? right,
+    required TResult orElse(),
+  }) {
+    if (left != null) {
+      return left();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QuranKareemStatePageSideStateLeft value) left,
+    required TResult Function(QuranKareemStatePageSideStateRight value) right,
+  }) {
+    return left(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QuranKareemStatePageSideStateLeft value)? left,
+    TResult? Function(QuranKareemStatePageSideStateRight value)? right,
+  }) {
+    return left?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QuranKareemStatePageSideStateLeft value)? left,
+    TResult Function(QuranKareemStatePageSideStateRight value)? right,
+    required TResult orElse(),
+  }) {
+    if (left != null) {
+      return left(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class QuranKareemStatePageSideStateLeft
+    implements QuranKareemStatePageSideState {
+  const factory QuranKareemStatePageSideStateLeft() =
+      _$QuranKareemStatePageSideStateLeftImpl;
+}
+
+/// @nodoc
+abstract class _$$QuranKareemStatePageSideStateRightImplCopyWith<$Res> {
+  factory _$$QuranKareemStatePageSideStateRightImplCopyWith(
+          _$QuranKareemStatePageSideStateRightImpl value,
+          $Res Function(_$QuranKareemStatePageSideStateRightImpl) then) =
+      __$$QuranKareemStatePageSideStateRightImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$QuranKareemStatePageSideStateRightImplCopyWithImpl<$Res>
+    extends _$QuranKareemStatePageSideStateCopyWithImpl<$Res,
+        _$QuranKareemStatePageSideStateRightImpl>
+    implements _$$QuranKareemStatePageSideStateRightImplCopyWith<$Res> {
+  __$$QuranKareemStatePageSideStateRightImplCopyWithImpl(
+      _$QuranKareemStatePageSideStateRightImpl _value,
+      $Res Function(_$QuranKareemStatePageSideStateRightImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QuranKareemStatePageSideState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$QuranKareemStatePageSideStateRightImpl
+    implements QuranKareemStatePageSideStateRight {
+  const _$QuranKareemStatePageSideStateRightImpl();
+
+  @override
+  String toString() {
+    return 'QuranKareemStatePageSideState.right()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QuranKareemStatePageSideStateRightImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() left,
+    required TResult Function() right,
+  }) {
+    return right();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? left,
+    TResult? Function()? right,
+  }) {
+    return right?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? left,
+    TResult Function()? right,
+    required TResult orElse(),
+  }) {
+    if (right != null) {
+      return right();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QuranKareemStatePageSideStateLeft value) left,
+    required TResult Function(QuranKareemStatePageSideStateRight value) right,
+  }) {
+    return right(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QuranKareemStatePageSideStateLeft value)? left,
+    TResult? Function(QuranKareemStatePageSideStateRight value)? right,
+  }) {
+    return right?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QuranKareemStatePageSideStateLeft value)? left,
+    TResult Function(QuranKareemStatePageSideStateRight value)? right,
+    required TResult orElse(),
+  }) {
+    if (right != null) {
+      return right(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class QuranKareemStatePageSideStateRight
+    implements QuranKareemStatePageSideState {
+  const factory QuranKareemStatePageSideStateRight() =
+      _$QuranKareemStatePageSideStateRightImpl;
 }

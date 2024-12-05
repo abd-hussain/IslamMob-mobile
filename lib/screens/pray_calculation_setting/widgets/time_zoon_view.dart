@@ -10,13 +10,15 @@ class TimeZoneView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           const SizedBox(height: 10),
           CustomText(
-            title: AppLocalizations.of(context)!.timezone,
+            title: localizations.timezone,
             fontSize: 20,
             fontWeight: FontWeight.bold,
             color: const Color(0xff444444),
@@ -24,53 +26,53 @@ class TimeZoneView extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           CustomText(
-            title: AppLocalizations.of(context)!.timezoneDetails,
+            title: localizations.timezoneDetails,
             fontSize: 14,
             color: const Color(0xff444444),
             textAlign: TextAlign.center,
             maxLines: 2,
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: BlocBuilder<PrayCalculationSettingBloc,
-                  PrayCalculationSettingState>(
-                buildWhen: (previous, current) =>
-                    previous.timeZone != current.timeZone,
-                builder: (context, state) {
-                  return CustomRadioButton(
-                    elevation: 2,
-                    horizontal: true,
-                    absoluteZeroSpacing: false,
-                    unSelectedColor: Colors.white,
-                    unSelectedBorderColor: const Color(0xff444444),
-                    selectedColor: const Color(0xff007F37),
-                    defaultSelected: state.timeZone,
-                    buttonLables: getTimeZoneList(),
-                    buttonValues: getTimeZoneList(),
-                    buttonTextStyle: const ButtonTextStyle(
-                      selectedColor: Colors.white,
-                      unSelectedColor: Color(0xff444444),
-                      textStyle: TextStyle(fontSize: 14),
-                    ),
-                    radioButtonValue: (value) {
-                      context.read<PrayCalculationSettingBloc>().add(
-                            PrayCalculationSettingEvent.updateTimeZone(
-                              value: value,
-                            ),
-                          );
-                    },
-                  );
-                },
-              ),
-            ),
-          ),
+          const SizedBox(height: 4),
+          Expanded(child: _buildCalculationSelector(context, localizations)),
+          const SizedBox(height: 8),
         ],
       ),
     );
   }
 
-  List<String> getTimeZoneList() {
+  Widget _buildCalculationSelector(
+      BuildContext context, AppLocalizations localizations) {
+    return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
+      buildWhen: (previous, current) => previous.timeZone != current.timeZone,
+      builder: (context, state) {
+        return CustomRadioButton(
+          elevation: 2,
+          horizontal: true,
+          absoluteZeroSpacing: false,
+          unSelectedColor: Colors.white,
+          unSelectedBorderColor: const Color(0xff444444),
+          selectedColor: const Color(0xff007F37),
+          defaultSelected: state.timeZone,
+          buttonLables: _getTimeZoneList(),
+          buttonValues: _getTimeZoneList(),
+          buttonTextStyle: const ButtonTextStyle(
+            selectedColor: Colors.white,
+            unSelectedColor: Color(0xff444444),
+            textStyle: TextStyle(fontSize: 14),
+          ),
+          radioButtonValue: (value) {
+            context.read<PrayCalculationSettingBloc>().add(
+                  PrayCalculationSettingEvent.updateTimeZone(
+                    value: value,
+                  ),
+                );
+          },
+        );
+      },
+    );
+  }
+
+  List<String> _getTimeZoneList() {
     return [
       "UTC -12:00",
       "UTC -11:00",

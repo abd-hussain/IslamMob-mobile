@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-//TODO: This tree need to be refactored
 
 class QuranListPrintsShimmer extends StatelessWidget {
   const QuranListPrintsShimmer({super.key});
@@ -13,60 +12,50 @@ class QuranListPrintsShimmer extends StatelessWidget {
       child: ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
         itemCount: 3,
-        itemBuilder: (_, __) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-            child: Container(
-              color: Colors.white30,
-              height: 400,
-              child: Column(
-                children: <Widget>[
-                  const SizedBox(height: 10),
-                  Container(
-                    width: 120,
-                    height: 16,
-                    color: Colors.white,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30, right: 30),
-                    child: Container(
-                      width: double.infinity,
-                      height: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Expanded(child: Container()),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: Container(
-                      width: double.infinity,
-                      height: 50,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: Container(
-                      width: double.infinity,
-                      height: 50,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                ],
-              ),
-            ),
-          );
-        },
+        itemBuilder: (_, __) => _buildShimmerItem(),
+      ),
+    );
+  }
+
+  Widget _buildShimmerItem() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      child: Container(
+        color: Colors.white30,
+        height: 400,
+        child: Column(
+          children: [
+            const SizedBox(height: 10),
+            _buildShimmerBox(width: 120, height: 16),
+            const SizedBox(height: 8),
+            _buildShimmerBox(
+                width: double.infinity, height: 16, horizontalPadding: 8),
+            _buildShimmerBox(
+                width: double.infinity, height: 16, horizontalPadding: 30),
+            const Spacer(),
+            _buildShimmerBox(
+                width: double.infinity, height: 50, horizontalPadding: 16),
+            const SizedBox(height: 10),
+            _buildShimmerBox(
+                width: double.infinity, height: 50, horizontalPadding: 16),
+            const SizedBox(height: 10),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildShimmerBox({
+    required double width,
+    required double height,
+    double horizontalPadding = 0,
+  }) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+      child: Container(
+        width: width,
+        height: height,
+        color: Colors.white,
       ),
     );
   }

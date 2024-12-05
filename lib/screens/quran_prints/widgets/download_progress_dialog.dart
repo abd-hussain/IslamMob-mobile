@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/utils/download_file.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//TODO: This tree need to be refactored
 
 class DownloadProgressDialog extends StatefulWidget {
   final String fileUrl;
@@ -22,12 +21,13 @@ class DownloadProgressDialog extends StatefulWidget {
 
 class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
   double progress = 0.0;
-  CancelToken cancelToken = CancelToken();
+  late CancelToken cancelToken;
 
   @override
   void initState() {
-    _startDownload();
     super.initState();
+    cancelToken = CancelToken();
+    _startDownload();
   }
 
   @override
@@ -43,10 +43,10 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
       context: context,
       fileUrl: widget.fileUrl,
       fileNameWithExtension: widget.fileNameWithExtension,
-      progressCallback: (recivedBytes, totalBytes) {
+      progressCallback: (receivedBytes, totalBytes) {
         if (mounted) {
           setState(() {
-            progress = recivedBytes / totalBytes;
+            progress = receivedBytes / totalBytes;
           });
         }
       },
@@ -62,65 +62,79 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
 
   @override
   Widget build(BuildContext context) {
-    String downloadingProgress = (progress * 100).toInt().toString();
+    final String downloadingProgress = (progress * 100).toInt().toString();
 
     return AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(
-                AppLocalizations.of(context)!.downloading,
-                textAlign: TextAlign.center,
-                style:
-                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          LinearProgressIndicator(
-            value: progress,
-            backgroundColor: Colors.grey,
-            color: Colors.green,
-            minHeight: 10,
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                "$downloadingProgress %",
-                style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            child: Text(
-              AppLocalizations.of(context)!.downloadpopupmessage,
-              maxLines: 3,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          CustomButton(
-            isEnabled: true,
-            title: AppLocalizations.of(context)!.cancel,
-            color: Colors.redAccent,
-            onTap: () {
-              cancelToken.cancel(); // Cancel the download when pressing Cancel
-              Navigator.of(context).pop();
-            },
-          ),
+          _buildHeader(context),
+          _buildProgressIndicator(),
+          _buildProgressText(downloadingProgress),
+          _buildInfoMessage(context),
+          _buildCancelButton(context),
         ],
       ),
+    );
+  }
+
+  Widget _buildHeader(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      alignment: Alignment.center,
+      child: Text(
+        AppLocalizations.of(context)!.downloading,
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+
+  Widget _buildProgressIndicator() {
+    return LinearProgressIndicator(
+      value: progress,
+      backgroundColor: Colors.grey,
+      color: Colors.green,
+      minHeight: 10,
+    );
+  }
+
+  Widget _buildProgressText(String progressText) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      alignment: Alignment.bottomCenter,
+      child: Text(
+        "$progressText %",
+        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+
+  Widget _buildInfoMessage(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: Text(
+        AppLocalizations.of(context)!.downloadpopupmessage,
+        maxLines: 3,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCancelButton(BuildContext context) {
+    return CustomButton(
+      isEnabled: true,
+      title: AppLocalizations.of(context)!.cancel,
+      color: Colors.redAccent,
+      onTap: () {
+        cancelToken.cancel(); // Cancel the download when pressing Cancel
+        Navigator.of(context).pop();
+      },
     );
   }
 }

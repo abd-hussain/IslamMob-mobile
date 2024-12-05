@@ -62,7 +62,7 @@ class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
   /// Retrieve the selected calculation method from the Hive box.
   CalculationMethod _getSelectedCalculationMethod() {
     final String selectedCalculationMethod = _box.get(
-      DatabaseFieldConstant.selectedCalculationMethod,
+      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
       defaultValue: "",
     );
 
@@ -75,7 +75,7 @@ class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
   /// Retrieve the selected Madhab from the Hive box.
   Madhab _getMadhab() {
     final String selectedMadhab = _box.get(
-      DatabaseFieldConstant.selectedMadhab,
+      DatabaseFieldPrayCalculationConstant.selectedMadhab,
       defaultValue: "shafi",
     );
     return selectedMadhab == "shafi" ? Madhab.shafi : Madhab.hanafi;

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,137 +19,143 @@ import 'package:permission_handler/permission_handler.dart';
 part 'quran_prints_event.dart';
 part 'quran_prints_state.dart';
 part 'quran_prints_bloc.freezed.dart';
-//TODO: This tree need to be refactored
 
 class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   QuranPrintsBloc() : super(const QuranPrintsState()) {
-    on<_UpdatelistOfPrints>(_updatelistOfPrints);
-    on<_UpdateInternetConnectionStatus>(_updateInternetConnectionStatus);
-    on<_UpdatePrintsDownloading>(_updatePrintsDownloading);
+    on<_UpdatelistOfPrints>(_handleUpdateListOfPrints);
+    on<_UpdateInternetConnectionStatus>(_handleUpdateInternetConnectionStatus);
+    on<_UpdatePrintsDownloading>(_handleUpdatePrintsDownloading);
 
-    initial();
+    initialize();
   }
 
-  Future<void> initial() async {
-    _checkInternetConnectionStatus().then((value) async {
-      if (!await isFirebaseInitialized()) {
+  /// Initialization method
+  Future<void> initialize() async {
+    final hasInternet = await _checkInternetConnectionStatus();
+
+    if (hasInternet) {
+      if (!await _isFirebaseInitialized()) {
         await Firebase.initializeApp();
       }
-      _getListOfPrints();
-    });
-  }
-
-  Future<bool> isFirebaseInitialized() async {
-    return Firebase.apps.isNotEmpty;
-  }
-
-  Future<bool> _checkInternetConnectionStatus() async {
-    if (!await locator<NetworkInfoService>().checkConnectivityOnLaunch()) {
-      add(QuranPrintsEvent.updateInternetConnectionStatus(false));
-      return false;
-    } else {
-      add(QuranPrintsEvent.updateInternetConnectionStatus(true));
-      return true;
+      _fetchQuranPrints();
     }
   }
 
-  Future<void> _getListOfPrints() async {
+  /// Checks if Firebase is initialized
+  Future<bool> _isFirebaseInitialized() async {
+    return Firebase.apps.isNotEmpty;
+  }
+
+  /// Checks internet connection and updates the state
+  Future<bool> _checkInternetConnectionStatus() async {
+    final hasInternet =
+        await locator<NetworkInfoService>().checkConnectivityOnLaunch();
+
+    add(QuranPrintsEvent.updateInternetConnectionStatus(hasInternet));
+    return hasInternet;
+  }
+
+  /// Fetches the list of Quran prints
+  Future<void> _fetchQuranPrints() async {
     try {
       final documents = await locator<FirestoreService>().getAllDocuments(
         collectionName: FirebaseCollectionConstants.quranPrints,
       );
-      final listOfPrints = documents.map((doc) {
-        return QuranPrints(
-          nameReferance: doc["name_referance"] ?? "",
-          description: doc["description"] ?? "",
-          language: doc["language"] ?? "",
-          previewImage: doc["previewImage"] ?? "",
-          attachmentLocation: doc["attachmentLocation"] ?? "",
-          addedPagesAttachmentLocation:
-              doc["addedPagesAttachmentLocation"] ?? "",
-          fieldName: doc["fieldName"] ?? "",
-          juz2ToPageNumbers: doc["juz2ToPageNumbers"] ?? {},
-          sorahToPageNumbers: doc["sorahToPageNumbers"] ?? {},
-        );
-      }).toList();
+
+      final listOfPrints = _mapDocumentsToQuranPrints(documents);
 
       if (listOfPrints.isEmpty) {
         logDebugMessage(message: 'No documents found in the collection.');
         return;
       }
 
-      // Filter out prints with non-existent files and update downloading list
-      final downloadingList =
-          await _filterAndPrepareDownloadingList(listOfPrints);
+      final downloadingList = await _prepareDownloadingList(listOfPrints);
       add(QuranPrintsEvent.updatePrintsDownloading(downloadingList));
-
-      // Update the state with the full list of prints
       add(QuranPrintsEvent.updatelistOfPrints(listOfPrints));
     } catch (e) {
       logDebugMessage(message: 'Error fetching documents: $e');
     }
   }
 
-  Future<List<String>> _filterAndPrepareDownloadingList(
+  /// Maps Firestore documents to `QuranPrints` objects
+  List<QuranPrints> _mapDocumentsToQuranPrints(
+      List<QueryDocumentSnapshot<Object?>> documents) {
+    return documents.map((doc) {
+      return QuranPrints(
+        nameReferance: doc["name_referance"] ?? "",
+        description: doc["description"] ?? "",
+        language: doc["language"] ?? "",
+        previewImage: doc["previewImage"] ?? "",
+        attachmentLocation: doc["attachmentLocation"] ?? "",
+        addedPagesAttachmentLocation: doc["addedPagesAttachmentLocation"] ?? "",
+        fieldName: doc["fieldName"] ?? "",
+        juz2ToPageNumbers: doc["juz2ToPageNumbers"] ?? {},
+        sorahToPageNumbers: doc["sorahToPageNumbers"] ?? {},
+      );
+    }).toList();
+  }
+
+  /// Prepares the list of prints that are ready for downloading
+  Future<List<String>> _prepareDownloadingList(
       List<QuranPrints> listOfPrints) async {
     final downloadingList = <String>[];
 
-    for (final item in listOfPrints) {
-      final fieldName = item.fieldName ?? "";
-      if (await verifyIfFileExists(fieldName) &&
+    for (final printItem in listOfPrints) {
+      final fieldName = printItem.fieldName ?? "";
+
+      if (await _fileExists(fieldName) &&
           !state.printsDownloading.contains(fieldName)) {
         downloadingList.add(fieldName);
       }
     }
-
     return downloadingList;
   }
 
-  Future<bool> verifyIfFileExists(String fileName) async {
+  /// Checks if a file exists locally
+  Future<bool> _fileExists(String fileName) async {
     return await FileDownload().fileExists(fileName);
   }
 
+  /// Gets the display name for a language code
   String getNameByLanguageCode(String languageCode) {
-    for (var language in AppConstant.languages) {
-      if (language.languageCode == languageCode) {
-        return language.name;
-      }
-    }
-    return "";
+    return AppConstant.languages
+        .firstWhere(
+          (language) => language.languageCode == languageCode,
+          orElse: () => AppConstant.languages.first,
+        )
+        .name;
   }
 
+  /// Requests permission for storage access
   Future<bool> permissionRequest() async {
     final plugin = DeviceInfoPlugin();
     PermissionStatus? storageStatus;
 
     if (Platform.isAndroid) {
-      final android = await plugin.androidInfo;
+      final androidInfo = await plugin.androidInfo;
 
-      storageStatus = android.version.sdkInt < 33
+      storageStatus = androidInfo.version.sdkInt < 33
           ? await Permission.storage.request()
           : PermissionStatus.granted;
     } else {
       storageStatus = await Permission.storage.request();
     }
 
-    if (storageStatus.isGranted) {
-      return true;
-    } else {
-      return false;
-    }
+    return storageStatus.isGranted;
   }
 
-  FutureOr<void> _updatelistOfPrints(
+  /// Event handlers
+  FutureOr<void> _handleUpdateListOfPrints(
       _UpdatelistOfPrints event, Emitter<QuranPrintsState> emit) {
     emit(state.copyWith(listOfPrints: event.list));
   }
 
-  FutureOr<void> _updateInternetConnectionStatus(
+  FutureOr<void> _handleUpdateInternetConnectionStatus(
       _UpdateInternetConnectionStatus event, Emitter<QuranPrintsState> emit) {
     emit(state.copyWith(internetConnectionStauts: event.status));
   }
 
-  FutureOr<void> _updatePrintsDownloading(
+  FutureOr<void> _handleUpdatePrintsDownloading(
       _UpdatePrintsDownloading event, Emitter<QuranPrintsState> emit) {
     emit(state.copyWith(printsDownloading: event.print));
   }

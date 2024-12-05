@@ -64,9 +64,9 @@ class QuranCopyView extends StatelessWidget {
                 title: printItem.nameReferance,
                 description: printItem.description,
                 previewImage: printItem.previewImage,
-                downloadButtonAvaliable: !downloadState.printsDownloading
+                downloadButtonAvailable: !downloadState.printsDownloading
                     .contains(printItem.fieldName),
-                useButtonAvaliable: downloadState.printsDownloading
+                useButtonAvailable: downloadState.printsDownloading
                     .contains(printItem.fieldName),
                 onDownloadPressed: () =>
                     _handleDownloadPressed(context, printItem),
