@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/screens/about_us/about_us_screen.dart';
 import 'package:islam_app/screens/about_us/privacy_policy_screen.dart';
 import 'package:islam_app/screens/about_us/terms_condition_screen.dart';
+import 'package:islam_app/screens/calender/calender_screen.dart';
 import 'package:islam_app/screens/inboarding/inboarding_screen.dart';
 import 'package:islam_app/screens/pray_calculation_setting/pray_calculation_setting_screen.dart';
 import 'package:islam_app/screens/pray_notification_setting/pray_notification_setting_screen.dart';
@@ -31,6 +32,7 @@ class RoutesConstants {
   static const inBoardingScreen = 'inBoardingScreen';
   static const prayNotificationSettingScreen = 'prayNotificationSettingScreen';
   static const prayCalculationSettingScreen = 'prayCalculationSettingScreen';
+  static const calenderScreen = 'calenderScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -51,4 +53,5 @@ final Map<String, Widget> routes = {
       const PrayNotificationSettingScreen(),
   RoutesConstants.prayCalculationSettingScreen:
       const PrayCalculationSettingScreen(),
+  RoutesConstants.calenderScreen: const CalenderScreen(),
 };

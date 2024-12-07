@@ -97,7 +97,9 @@ class InBoardingScreen extends StatelessWidget {
             case 2:
               return QuranCopyView(
                 onSelect: (copyName) async {
-                  await bloc.setQuranCopy(copyName);
+                  if (copyName != null) {
+                    await bloc.setQuranCopy(copyName);
+                  }
                   await bloc.changeInBoardingStage(3);
                 },
               );

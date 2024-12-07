@@ -53,12 +53,6 @@ class LocationHavePermissionView extends StatelessWidget {
           textAlign: TextAlign.center,
           fontWeight: FontWeight.bold,
         ),
-        CustomText(
-          title: "${locationModel.latitude} - ${locationModel.longitude}",
-          fontSize: 10,
-          color: const Color(0xff292929),
-          textAlign: TextAlign.center,
-        ),
         CustomButton(
           isEnabled: true,
           title: AppLocalizations.of(context)!.locationPermissionSuccsesButton,

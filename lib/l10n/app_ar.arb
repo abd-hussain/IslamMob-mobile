@@ -337,7 +337,7 @@
     "notificationSettingOther" : "إعدادات الإشعارات الأخرى",
     "notificationSettingAllowAll" : "السماح بجميع الإشعارات",
     "notificationSettingTodayAll" : "تعطيل جميع الإشعارات لهذا اليوم",
-    "notificationSettingThreedayAll" : "تعطيل جميع الإشعارات لمدة ثلاثة أيام اليوم",
+    "notificationSettingThreedayAll" : "تعطيل جميع الإشعارات لمدة ثلاثة أيام",
     "notificationSettingWeekAll" : "تعطيل جميع الإشعارات لمدة أسبوع",
     "notificationSettingFajir" : "إشعارات أذان الفجر",
     "notificationSettingDuher" : "إشعارات أذان الظهر",
@@ -350,7 +350,12 @@
     "youfinishazkarTitle" : "لقد انتهيت من الأذكار",
     "mayAllaAcept" : "ٱللَّهُمَّ تَقَبَّلْ",
     "notificationBeforeSalah15Minutes" : "15 دقائق قبل الصلاة",
-    "notificationSettingSunrise" : "إشعارات الشروق"
+    "notificationSettingSunrise" : "إشعارات الشروق",
+    "calenderSettings" : "التقويم",
+    "day" : "اليوم",
+    "date" : "التاريخ",
+    "quicksettings" : "من هذه الشاشة يمكنك تحميل نسخة أو أكثر من القرآن الكريم لاستخدامها بدون انترنت داخل التطبيق",
+    "skip" : "تخطي"
 
 
 

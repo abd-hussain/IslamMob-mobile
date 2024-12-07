@@ -29,7 +29,7 @@ class PrintTileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
       child: ClipRect(
         child: Banner(
           message: language,
@@ -57,7 +57,7 @@ class PrintTileView extends StatelessWidget {
 
   BoxDecoration _buildContainerDecoration() {
     return BoxDecoration(
-      border: Border.all(color: const Color(0xff292929), width: 2),
+      border: Border.all(color: const Color(0xff292929), width: 1),
       borderRadius: const BorderRadius.all(Radius.circular(5)),
     );
   }
