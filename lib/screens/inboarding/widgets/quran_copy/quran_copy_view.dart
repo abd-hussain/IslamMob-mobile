@@ -9,13 +9,14 @@ import 'package:islam_app/screens/inboarding/widgets/quran_copy/bloc/quran_copy_
 import 'package:islam_app/screens/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/screens/quran_prints/widgets/print_tile_view.dart';
 import 'package:islam_app/screens/quran_prints/widgets/quran_print_list_shimmer.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranCopyView extends StatelessWidget {
-  final Function(QuranCopy copy) onSelect;
+  final Function(QuranCopy? copy) onSelect;
 
   const QuranCopyView({super.key, required this.onSelect});
 
@@ -41,9 +42,50 @@ class QuranCopyView extends StatelessWidget {
               return const QuranListPrintsShimmer();
             }
 
-            return _buildPrintList(context, state);
+            return Column(
+              children: [
+                _buildHeader(context),
+                Container(
+                  height: 1,
+                  color: const Color(0xffD9D9D9),
+                ),
+                Expanded(child: _buildPrintList(context, state)),
+              ],
+            );
           },
         ),
+      ),
+    );
+  }
+
+  /// Builds the header text widget
+  Widget _buildHeader(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      child: Row(
+        children: [
+          Expanded(
+            child: CustomText(
+              title: AppLocalizations.of(context)!.quicksettings,
+              fontSize: 16,
+              color: const Color(0xff444444),
+              maxLines: 6,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          OutlinedButton(
+            onPressed: () => onSelect(null),
+            style: OutlinedButton.styleFrom(
+              side: const BorderSide(color: Color(0xff007F37)),
+            ),
+            child: CustomText(
+              title: AppLocalizations.of(context)!.skip,
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: const Color(0xff007F37),
+            ),
+          ),
+        ],
       ),
     );
   }

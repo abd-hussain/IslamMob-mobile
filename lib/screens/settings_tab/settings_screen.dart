@@ -34,6 +34,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               TitleView(title: AppLocalizations.of(context)!.generalsettings),
               CollectionListOptionView(listOfOptions: [
                 ProfileOptions(
+                  icon: Icons.calendar_month,
+                  name: AppLocalizations.of(context)!.calenderSettings,
+                  onTap: () async =>
+                      await navigator.pushNamed(RoutesConstants.calenderScreen),
+                ),
+                ProfileOptions(
                   icon: Icons.translate,
                   name: AppLocalizations.of(context)!.changeSelectedLanguage,
                   onTap: () async => await navigator

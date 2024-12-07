@@ -2,11 +2,11 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/screens/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_app/screens/home_tab/widgets/salah_timing_view/bloc/salah_timing_bloc.dart';
 import 'package:islam_app/screens/home_tab/widgets/salah_timing_view/widgets/day_box.dart';
 import 'package:islam_app/screens/home_tab/widgets/salah_timing_view/widgets/salah_box.dart';
+import 'package:islam_app/shared_widgets/bottomsheet/setting_bottomsheet.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -223,9 +223,8 @@ class _SalahTimingViewState extends State<SalahTimingView> {
           child: Material(
             child: InkWell(
               onTap: () async {
-                final navigator = Navigator.of(context, rootNavigator: true);
-                await navigator
-                    .pushNamed(RoutesConstants.prayCalculationSettingScreen);
+                final bottomSheet = SettingBottomSheet();
+                await bottomSheet.showBottomSheet(context: context);
               },
               child: const Icon(
                 Icons.settings,

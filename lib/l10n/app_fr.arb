@@ -351,8 +351,12 @@
     "youfinishazkarTitle" : "You Finish Azkar",
     "mayAllaAcept" : "May Allah accept it",
     "notificationBeforeSalah15Minutes" : "15 Minutes Before Salah",
-    "notificationSettingSunrise" : "Sunrise Notification"
-
-
+    "notificationSettingSunrise" : "Sunrise Notification",
+    "calenderSettings" : "Calendar",
+    "day" : "Day",
+    "date" : "Date",
+    "quicksettings" : "Quick Settings",
+    "qurancopytitle" : "From this screen, you can download one or more copy of the Holy Quran to use it offline inside the application",
+    "skip" : "skip"
 
 }
