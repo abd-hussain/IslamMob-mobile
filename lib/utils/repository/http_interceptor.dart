@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:islam_app/utils/constants/database_constant.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/utils/exceptions.dart';
 import 'package:islam_app/utils/logger.dart';
 

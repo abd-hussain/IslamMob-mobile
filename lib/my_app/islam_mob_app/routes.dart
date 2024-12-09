@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/screens/about_us/about_us_screen.dart';
-import 'package:islam_app/screens/about_us/privacy_policy_screen.dart';
-import 'package:islam_app/screens/about_us/terms_condition_screen.dart';
-import 'package:islam_app/screens/calender/calender_screen.dart';
-import 'package:islam_app/screens/inboarding/inboarding_screen.dart';
-import 'package:islam_app/screens/pray_calculation_setting/pray_calculation_setting_screen.dart';
-import 'package:islam_app/screens/pray_notification_setting/pray_notification_setting_screen.dart';
-import 'package:islam_app/screens/quran_pages_index/quran_pages_index_screen.dart';
-import 'package:islam_app/screens/quran_prints/quran_prints_screen.dart';
-import 'package:islam_app/screens/change_language/change_language_screen.dart';
-import 'package:islam_app/screens/home_tab/home_screen.dart';
-import 'package:islam_app/screens/main_container/main_container.dart';
-import 'package:islam_app/screens/report_suggestions/report_suggestion_screen.dart';
-import 'package:islam_app/screens/quran_kareem_tab/quran_kareem_screen.dart';
-import 'package:islam_app/screens/settings_tab/settings_screen.dart';
-import 'package:islam_app/screens/web_view/web_view_screen.dart';
+import 'package:islam_app/presentation/about_us/about_us_screen.dart';
+import 'package:islam_app/presentation/about_us/privacy_policy_screen.dart';
+import 'package:islam_app/presentation/about_us/terms_condition_screen.dart';
+import 'package:islam_app/presentation/calender/calender_screen.dart';
+import 'package:islam_app/presentation/inboarding/inboarding_screen.dart';
+import 'package:islam_app/presentation/pray_calculation_setting/pray_calculation_setting_screen.dart';
+import 'package:islam_app/presentation/pray_notification_setting/pray_notification_setting_screen.dart';
+import 'package:islam_app/presentation/quran_pages_index/quran_pages_index_screen.dart';
+import 'package:islam_app/presentation/quran_prints/quran_prints_screen.dart';
+import 'package:islam_app/presentation/change_language/change_language_screen.dart';
+import 'package:islam_app/presentation/home_tab/home_screen.dart';
+import 'package:islam_app/presentation/main_container/main_container.dart';
+import 'package:islam_app/presentation/report_suggestions/report_suggestion_screen.dart';
+import 'package:islam_app/presentation/quran_kareem_tab/quran_kareem_screen.dart';
+import 'package:islam_app/presentation/settings_tab/settings_screen.dart';
+import 'package:islam_app/presentation/web_view/web_view_screen.dart';
 
 class RoutesConstants {
   static const changeLanguageScreen = 'changeLanguageScreen';
