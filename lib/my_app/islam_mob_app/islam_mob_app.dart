@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_gusture.dart';
-import 'package:islam_app/utils/constants/app_constant.dart';
-import 'package:islam_app/utils/constants/database_constant.dart';
+import 'package:islam_app/core/constants/app_constant.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

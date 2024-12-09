@@ -7,9 +7,9 @@ import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/services/general/local_notification_service.dart';
-import 'package:islam_app/services/general/network_info_service.dart';
-import 'package:islam_app/utils/constants/database_constant.dart';
+import 'package:islam_app/domain/repository/local_notifications.dart';
+import 'package:islam_app/domain/repository/network_info.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
 class MyAppBloc {
@@ -42,7 +42,7 @@ class MyAppBloc {
 
   /// Initializes local notifications
   Future<void> _initializeLocalNotifications() async {
-    await LocalNotificationService.initialize();
+    await LocalNotificationRepository.initialize();
   }
 
   /// Initializes timezone data
@@ -85,7 +85,7 @@ class MyAppBloc {
 
   /// Checks for internet connectivity during app initialization
   Future<bool> _hasInternetConnectivity() async {
-    final networkInfoService = locator<NetworkInfoService>();
+    final networkInfoService = locator<NetworkInfoRepository>();
     networkInfoService.initNetworkConnectionCheck();
     return networkInfoService.checkConnectivityOnLaunch();
   }

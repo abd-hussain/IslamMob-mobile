@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_performance/firebase_performance.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/services/general/network_info_service.dart';
-import 'package:islam_app/utils/constants/app_constant.dart';
+import 'package:islam_app/domain/repository/network_info.dart';
+import 'package:islam_app/core/constants/app_constant.dart';
 import 'package:islam_app/utils/exceptions.dart';
-import 'package:islam_app/utils/mixins.dart';
+import 'package:islam_app/core/mixins.dart';
 import 'package:islam_app/utils/repository/http_interceptor.dart';
 
 enum RequestType { get, post, delete, put }
@@ -17,7 +17,7 @@ class HttpRepository {
     Model? postBody,
     FormData? formData,
   }) async {
-    if (!await locator<NetworkInfoService>().checkConnectivityOnLaunch()) {
+    if (!await locator<NetworkInfoRepository>().checkConnectivityOnLaunch()) {
       throw ConnectionException(
           message: "Please check your internet connection");
     }
