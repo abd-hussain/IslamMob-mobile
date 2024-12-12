@@ -2,8 +2,8 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
-import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/bloc/salah_timing_bloc.dart';
+import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
+import 'package:islam_app/presentation/home_tab/bloc/salah_timing/salah_timing_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/day_box.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/salah_box.dart';
 import 'package:islam_app/shared_widgets/bottomsheet/setting_bottomsheet.dart';
@@ -23,7 +23,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
     return BlocProvider(
       create: (context) => SalahTimingBloc(),
       child: SizedBox(
-        height: 230,
+        height: 240,
         child: Swiper(
           itemCount: 7,
           index: 3,

@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
-import 'package:islam_app/domain/repository/pray_manager.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
-import 'package:islam_mob_adhan/adhan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -28,6 +27,7 @@ class PrayCalculationSettingBloc
 
     _initialize();
   }
+  PrayUsecase prayUsecase = PrayUsecase();
 
   void _initialize() {
     final initialSettings = _getDefaultSettings();
@@ -134,15 +134,14 @@ class PrayCalculationSettingBloc
     return mapping[value] ?? "MathhabStateShaafei";
   }
 
-  Madhab _retrieveMadhab() {
-    final mathhabMap = {
-      const MathhabStateHanafi(): Madhab.hanafi,
-      const MathhabStateShaafei(): Madhab.shafi,
-    };
+  // Madhab _retrieveMadhab() {
+  //   final mathhabMap = {
+  //     const MathhabStateHanafi(): Madhab.hanafi,
+  //     const MathhabStateShaafei(): Madhab.shafi,
+  //   };
 
-    return mathhabMap[state.mathhab] ??
-        Madhab.shafi; // Default fallback to Shafi if no match
-  }
+  //   return mathhabMap[state.mathhab] ?? Madhab.shafi; // Default fallback to Shafi if no match
+  // }
 
   HightLatitudeCaluclationState _mapToHighLatitude(String value) {
     const mapping = {
@@ -243,18 +242,16 @@ class PrayCalculationSettingBloc
     return mapping[value] ?? const CalculationMethodStateJordanAwqaf();
   }
 
-  /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
-  Coordinates _retrieveCoordinates() {
-    final String latitude =
-        _box.get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0");
-    final String longitude =
-        _box.get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0");
+  // /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
+  // Coordinates _retrieveCoordinates() {
+  //   final String latitude = _box.get(DatabaseFieldConstant.selectedLatitude, defaultValue: "0.0");
+  //   final String longitude = _box.get(DatabaseFieldConstant.selectedLongitude, defaultValue: "0.0");
 
-    return Coordinates(
-      double.tryParse(latitude) ?? 0.0,
-      double.tryParse(longitude) ?? 0.0,
-    );
-  }
+  //   return Coordinates(
+  //     double.tryParse(latitude) ?? 0.0,
+  //     double.tryParse(longitude) ?? 0.0,
+  //   );
+  // }
 
   Duration _retrieveUtcOffset() {
     const timeZoneOffsetMap = {
@@ -302,60 +299,46 @@ class PrayCalculationSettingBloc
         const Duration(hours: 3); // Default fallback
   }
 
-  CalculationMethod _retrieveCalculationMethod() {
-    final calculationMethodMap = {
-      const CalculationMethodStateJafari(): CalculationMethod.jafari,
-      const CalculationMethodStateKarachi(): CalculationMethod.karachi,
-      const CalculationMethodStateIslamicSocietyOfNorthAmerica():
-          CalculationMethod.northAmerica,
-      const CalculationMethodStateMuslimWorldLeague():
-          CalculationMethod.muslimWorldLeague,
-      const CalculationMethodStateUmmAlQura(): CalculationMethod.ummAlQura,
-      const CalculationMethodStateEgypt(): CalculationMethod.egyptian,
-      const CalculationMethodStateTehran(): CalculationMethod.tehran,
-      const CalculationMethodStateGulfRegion(): CalculationMethod.gulfRegion,
-      const CalculationMethodStateKuwait(): CalculationMethod.kuwait,
-      const CalculationMethodStateQatar(): CalculationMethod.qatar,
-      const CalculationMethodStateSingapore(): CalculationMethod.singapore,
-      const CalculationMethodStateFrance(): CalculationMethod.france,
-      const CalculationMethodStateTurkey(): CalculationMethod.turkey,
-      const CalculationMethodStateRussia(): CalculationMethod.russia,
-      const CalculationMethodStateDubai(): CalculationMethod.dubai,
-      const CalculationMethodStateJAKIM(): CalculationMethod.jakim,
-      const CalculationMethodStateTunisia(): CalculationMethod.tunisia,
-      const CalculationMethodStateAlgeria(): CalculationMethod.algeria,
-      const CalculationMethodStateKEMENAG(): CalculationMethod.kemenag,
-      const CalculationMethodStateMorocco(): CalculationMethod.morocco,
-      const CalculationMethodStateComunidadeIslamicaLisboa():
-          CalculationMethod.portugal,
-      const CalculationMethodStateJordanAwqaf(): CalculationMethod.jordan,
-    };
+  // CalculationMethod _retrieveCalculationMethod() {
+  //   final calculationMethodMap = {
+  //     const CalculationMethodStateJafari(): CalculationMethod.jafari,
+  //     const CalculationMethodStateKarachi(): CalculationMethod.karachi,
+  //     const CalculationMethodStateIslamicSocietyOfNorthAmerica(): CalculationMethod.northAmerica,
+  //     const CalculationMethodStateMuslimWorldLeague(): CalculationMethod.muslimWorldLeague,
+  //     const CalculationMethodStateUmmAlQura(): CalculationMethod.ummAlQura,
+  //     const CalculationMethodStateEgypt(): CalculationMethod.egyptian,
+  //     const CalculationMethodStateTehran(): CalculationMethod.tehran,
+  //     const CalculationMethodStateGulfRegion(): CalculationMethod.gulfRegion,
+  //     const CalculationMethodStateKuwait(): CalculationMethod.kuwait,
+  //     const CalculationMethodStateQatar(): CalculationMethod.qatar,
+  //     const CalculationMethodStateSingapore(): CalculationMethod.singapore,
+  //     const CalculationMethodStateFrance(): CalculationMethod.france,
+  //     const CalculationMethodStateTurkey(): CalculationMethod.turkey,
+  //     const CalculationMethodStateRussia(): CalculationMethod.russia,
+  //     const CalculationMethodStateDubai(): CalculationMethod.dubai,
+  //     const CalculationMethodStateJAKIM(): CalculationMethod.jakim,
+  //     const CalculationMethodStateTunisia(): CalculationMethod.tunisia,
+  //     const CalculationMethodStateAlgeria(): CalculationMethod.algeria,
+  //     const CalculationMethodStateKEMENAG(): CalculationMethod.kemenag,
+  //     const CalculationMethodStateMorocco(): CalculationMethod.morocco,
+  //     const CalculationMethodStateComunidadeIslamicaLisboa(): CalculationMethod.portugal,
+  //     const CalculationMethodStateJordanAwqaf(): CalculationMethod.jordan,
+  //   };
 
-    return calculationMethodMap[state.calculationMethod] ??
-        CalculationMethod.jordan; // Default fallback
-  }
+  //   return calculationMethodMap[state.calculationMethod] ?? CalculationMethod.jordan; // Default fallback
+  // }
 
-  HighLatitudeRule? _retrieveHighLatitudeRule() {
-    final highLatitudeRuleMap = {
-      const HightLatitudeCaluclationStateAngleBasedMethod():
-          HighLatitudeRule.twilightAngle,
-      const HightLatitudeCaluclationStateMidnight():
-          HighLatitudeRule.middleOfTheNight,
-      const HightLatitudeCaluclationStateSeventhPartOfTheNight():
-          HighLatitudeRule.seventhOfTheNight,
-    };
+  // HighLatitudeRule? _retrieveHighLatitudeRule() {
+  //   final highLatitudeRuleMap = {
+  //     const HightLatitudeCaluclationStateAngleBasedMethod(): HighLatitudeRule.twilightAngle,
+  //     const HightLatitudeCaluclationStateMidnight(): HighLatitudeRule.middleOfTheNight,
+  //     const HightLatitudeCaluclationStateSeventhPartOfTheNight(): HighLatitudeRule.seventhOfTheNight,
+  //   };
 
-    return highLatitudeRuleMap[state.hightLatitudeCaluclation];
-  }
+  //   return highLatitudeRuleMap[state.hightLatitudeCaluclation];
+  // }
 
   void _prepareSalahTiming() {
-    final prayManager = PrayManagerRepository(
-        coordinates: _retrieveCoordinates(),
-        utcOffset: _retrieveUtcOffset(),
-        calculationMethod: _retrieveCalculationMethod(),
-        madhab: _retrieveMadhab(),
-        highLatitudeRule: _retrieveHighLatitudeRule());
-
     final currentTime = DateTime.now();
 
     // Prepare device and application time
@@ -363,7 +346,7 @@ class PrayCalculationSettingBloc
     final applicationTime = currentTime.toUtc().add(_retrieveUtcOffset());
 
     // Get Salah timings from PrayManager
-    final timings = prayManager.getAllPrayTimeAsDateTimeForToday();
+    final timings = prayUsecase.getAllPrayTimeAsDateTimeForToday();
 
     // Map Salah timings and their adjustments
     final azanTimings = {

@@ -38,10 +38,9 @@ class AppConstant {
         selectButtonTitle: "Выбирать",
         languageCode: "ru"),
   ];
-
   static const String linkedinLink =
-      "http://www.linkedin.com/company/legalzhub/";
-  static const String facebookLink = "http://www.facebook.com/legalzhub/";
+      "http://www.linkedin.com/company/islammob/";
+  static const String facebookLink = "http://www.facebook.com/islam.mob.appl";
   static const String termsLink =
       "${AppConstant.applicationMainURL}static/web/terms.html";
   static const String privacypolicyLink =

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/location.dart';
-import 'package:islam_app/presentation/inboarding/widgets/location/bloc/location_bloc.dart';
+import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_have_permission_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_idle_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_nothave_permission_view.dart';

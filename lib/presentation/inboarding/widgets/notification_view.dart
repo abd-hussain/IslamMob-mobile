@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/presentation/inboarding/widgets/notification/bloc/notifications_bloc.dart';
+import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/notification_have_permission_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/notification_idle_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/notification_nothave_permission_view.dart';

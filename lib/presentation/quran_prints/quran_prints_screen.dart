@@ -11,6 +11,7 @@ import 'package:islam_app/presentation/quran_prints/widgets/download_progress_di
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/quran_print_list_shimmer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 import 'package:islam_app/core/constants/argument_constant.dart';
@@ -36,9 +37,6 @@ class QuranPrintsScreen extends StatelessWidget {
 
   Widget _buildBody(BuildContext context, bool isDetailsPage) {
     return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
-      buildWhen: (previous, current) =>
-          previous.listOfPrints != current.listOfPrints ||
-          previous.internetConnectionStauts != current.internetConnectionStauts,
       builder: (context, state) {
         if (state.internetConnectionStauts == false) {
           return NoInternetView(
@@ -59,12 +57,29 @@ class QuranPrintsScreen extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.printsDownloading != current.printsDownloading,
       builder: (context, _) {
-        return ListView.builder(
-          itemCount: state.listOfPrints!.length,
-          itemBuilder: (context, index) {
-            final printItem = state.listOfPrints![index];
-            return _buildPrintTile(context, printItem, state, isDetailsPage);
-          },
+        return Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: CustomText(
+                title: AppLocalizations.of(context)!.qurancopytitle,
+                fontSize: 16,
+                color: const Color(0xff444444),
+                maxLines: 6,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: state.listOfPrints!.length,
+                itemBuilder: (context, index) {
+                  final printItem = state.listOfPrints![index];
+                  return _buildPrintTile(
+                      context, printItem, state, isDetailsPage);
+                },
+              ),
+            ),
+          ],
         );
       },
     );

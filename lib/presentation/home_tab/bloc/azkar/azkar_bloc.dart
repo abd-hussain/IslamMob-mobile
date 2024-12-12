@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/azkar.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 
 part 'azkar_event.dart';
 part 'azkar_state.dart';

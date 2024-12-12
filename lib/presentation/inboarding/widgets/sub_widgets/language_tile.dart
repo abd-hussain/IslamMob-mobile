@@ -2,7 +2,7 @@ import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/language.dart';
-import 'package:islam_app/presentation/inboarding/widgets/language/bloc/language_bloc.dart';
+import 'package:islam_app/presentation/inboarding/bloc/language/language_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class LanguageTile extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/location.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/presentation/inboarding/widgets/location/bloc/location_bloc.dart';
+import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';

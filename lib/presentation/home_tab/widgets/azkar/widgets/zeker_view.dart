@@ -3,17 +3,23 @@ import 'package:islam_app/domain/model/azkar.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class ZekerView extends StatelessWidget {
+  final bool isDisabled;
   final AzkarModel azkarModel;
   final Function() onTap;
-  const ZekerView({super.key, required this.azkarModel, required this.onTap});
+  const ZekerView({
+    super.key,
+    required this.azkarModel,
+    required this.isDisabled,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onTap(),
+      onTap: () => isDisabled ? null : onTap(),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isDisabled ? const Color(0xffE0E0E0) : Colors.white,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
@@ -51,7 +57,7 @@ class ZekerView extends StatelessWidget {
                 color: Colors.grey,
               ),
               const SizedBox(height: 2),
-              footerView()
+              footerView(isDisabled),
             ],
           ),
         ),
@@ -59,7 +65,7 @@ class ZekerView extends StatelessWidget {
     );
   }
 
-  Row footerView() {
+  Row footerView(bool isDisabled) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -82,7 +88,9 @@ class ZekerView extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
         const SizedBox(width: 8),
-        const Icon(Icons.ads_click, color: Color(0xff444444))
+        isDisabled
+            ? const SizedBox.shrink()
+            : const Icon(Icons.ads_click, color: Color(0xff444444)),
       ],
     );
   }
