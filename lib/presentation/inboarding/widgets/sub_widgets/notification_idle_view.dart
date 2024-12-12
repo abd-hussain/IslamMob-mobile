@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/presentation/inboarding/widgets/notification/bloc/notifications_bloc.dart';
+import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/domain/repository/firebase_messages.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';

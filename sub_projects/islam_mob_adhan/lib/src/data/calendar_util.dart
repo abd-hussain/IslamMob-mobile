@@ -1,41 +1,42 @@
+import '../extensions/datetime.dart';
+
 import 'date_components.dart';
 
 class CalendarUtil {
-  /// Determines if a given year is a leap year.
+  /// Whether or not a year is a leap year (has 366 days)
   ///
-  /// A year is a leap year if it is divisible by 4, except for years divisible by 100
-  /// but not divisible by 400.
-  ///
-  /// - [year]: The year to check.
-  /// - Returns: `true` if the year is a leap year, otherwise `false`.
-  static bool isLeapYear(int year) =>
-      year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
-
-  /// Rounds the seconds of a [DateTime] to the nearest minute.
-  ///
-  /// The resulting [DateTime] has its seconds set to 0, and the minutes adjusted
-  /// based on whether the seconds are closer to 0 or 60.
-  ///
-  /// - [when]: The original date and time.
-  /// - Returns: A new [DateTime] instance with rounded minutes and seconds set to 0.
-  static DateTime roundedMinute(DateTime when) {
-    final roundedMinutes = when.minute + (when.second / 60).round();
-    return when.copyWith(minute: roundedMinutes, second: 0);
+  /// [year] the year
+  /// return [bool] whether or not its a leap year
+  static bool isLeapYear(int year) {
+    return year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0);
   }
 
-  /// Converts a [DateComponents] to a UTC [DateTime] at midnight.
+  /// Date and time with a rounded minute
   ///
-  /// - [components]: The date components (year, month, day).
-  /// - Returns: A UTC [DateTime] set to 00:00:00.
-  static DateTime resolveTimeByDateComponents(DateComponents components) =>
-      resolveTime(components.year, components.month, components.day);
+  /// This returns a date with the seconds rounded and added to the minute
+  /// [when] the date and time
+  /// return [DateTime] and time with 0 seconds and minutes including rounded seconds
+  static DateTime roundedMinute(DateTime when) {
+    final minute = when.minute;
+    final second = when.second;
+    return when.copyWith(minute: (minute + (second / 60).round()), second: 0);
+  }
 
-  /// Creates a UTC [DateTime] at midnight for the given date components.
+  /// Gets a UTC DateTime for the particular date
   ///
-  /// - [year]: The year.
-  /// - [month]: The month.
-  /// - [day]: The day.
-  /// - Returns: A UTC [DateTime] set to 00:00:00.
-  static DateTime resolveTime(int year, int month, int day) =>
-      DateTime.utc(year, month, day);
+  /// [components] the date components
+  /// return [DateTime] with a time set to 00:00:00 at utc
+  static DateTime resolveTimeByDateComponents(DateComponents components) {
+    return resolveTime(components.year, components.month, components.day);
+  }
+
+  /// Gets UTC DateTime for the particular date
+  ///
+  /// [year] the year
+  /// [month] the month
+  /// [day] the day
+  /// return [DateTime] with a time set to 00:00:00 at utc
+  static DateTime resolveTime(int year, int month, int day) {
+    return DateTime.utc(year, month, day, 0, 0, 0);
+  }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/azkar/azkar_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';

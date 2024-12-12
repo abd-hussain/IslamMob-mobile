@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
-import 'package:islam_app/presentation/inboarding/bloc/inboarding_bloc.dart';
-import 'package:islam_app/presentation/inboarding/widgets/language/language_view.dart';
-import 'package:islam_app/presentation/inboarding/widgets/location/location_view.dart';
-import 'package:islam_app/presentation/inboarding/widgets/notification/notification_view.dart';
-import 'package:islam_app/presentation/inboarding/widgets/quran_copy/quran_copy_view.dart';
+import 'package:islam_app/presentation/inboarding/bloc/inboarding/inboarding_bloc.dart';
+import 'package:islam_app/presentation/inboarding/widgets/language_view.dart';
+import 'package:islam_app/presentation/inboarding/widgets/location_view.dart';
+import 'package:islam_app/presentation/inboarding/widgets/notification_view.dart';
+import 'package:islam_app/presentation/inboarding/widgets/quran_copy_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

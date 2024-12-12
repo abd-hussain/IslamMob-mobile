@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/salah_box.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 

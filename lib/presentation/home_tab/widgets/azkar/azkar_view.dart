@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/azkar.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
-import 'package:islam_app/presentation/home_tab/widgets/azkar/bloc/azkar_bloc.dart';
+import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
+import 'package:islam_app/presentation/home_tab/bloc/azkar/azkar_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/azkar/widgets/finish_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/azkar/widgets/zeker_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -73,15 +73,11 @@ class AzkarView extends StatelessWidget {
           itemBuilder: (context, index) {
             final azkar = state.azkarList[index];
 
-            // Skip rendering if the max count is reached
-            if (azkar.currentCount >= azkar.maxCount) {
-              return const SizedBox.shrink();
-            }
-
             return Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: ZekerView(
                 azkarModel: azkar,
+                isDisabled: azkar.currentCount >= azkar.maxCount,
                 onTap: () => _incrementAzkar(context, azkar),
               ),
             );

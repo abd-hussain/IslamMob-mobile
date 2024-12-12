@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
-import 'package:islam_app/presentation/inboarding/widgets/quran_copy/bloc/quran_copy_bloc.dart';
+import 'package:islam_app/presentation/inboarding/bloc/quran_copy/quran_copy_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/quran_print_list_shimmer.dart';
@@ -66,7 +66,7 @@ class QuranCopyView extends StatelessWidget {
         children: [
           Expanded(
             child: CustomText(
-              title: AppLocalizations.of(context)!.quicksettings,
+              title: AppLocalizations.of(context)!.qurancopytitle,
               fontSize: 16,
               color: const Color(0xff444444),
               maxLines: 6,
