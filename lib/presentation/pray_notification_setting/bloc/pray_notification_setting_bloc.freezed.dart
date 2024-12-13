@@ -16,69 +16,53 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PrayNotificationSettingEvent {
-  bool get status => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status, QuickNotificationType type)
-        quickNotificationSettings,
+    required TResult Function() initialPrayNotificationSettings,
     required TResult Function(bool status, PrayNotificationType type)
-        prayNotificationSettings,
-    required TResult Function(bool status) pushNotificationSetting,
+        changePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status, QuickNotificationType type)?
-        quickNotificationSettings,
+    TResult? Function()? initialPrayNotificationSettings,
     TResult? Function(bool status, PrayNotificationType type)?
-        prayNotificationSettings,
-    TResult? Function(bool status)? pushNotificationSetting,
+        changePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status, QuickNotificationType type)?
-        quickNotificationSettings,
+    TResult Function()? initialPrayNotificationSettings,
     TResult Function(bool status, PrayNotificationType type)?
-        prayNotificationSettings,
-    TResult Function(bool status)? pushNotificationSetting,
+        changePrayNotificationSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_QuickNotificationSettings value)
-        quickNotificationSettings,
-    required TResult Function(_PrayNotificationSettings value)
-        prayNotificationSettings,
-    required TResult Function(_PushNotificationSetting value)
-        pushNotificationSetting,
+    required TResult Function(_InitialPrayNotificationSettings value)
+        initialPrayNotificationSettings,
+    required TResult Function(_ChangePrayNotificationSettings value)
+        changePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_QuickNotificationSettings value)?
-        quickNotificationSettings,
-    TResult? Function(_PrayNotificationSettings value)?
-        prayNotificationSettings,
-    TResult? Function(_PushNotificationSetting value)? pushNotificationSetting,
+    TResult? Function(_InitialPrayNotificationSettings value)?
+        initialPrayNotificationSettings,
+    TResult? Function(_ChangePrayNotificationSettings value)?
+        changePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_QuickNotificationSettings value)?
-        quickNotificationSettings,
-    TResult Function(_PrayNotificationSettings value)? prayNotificationSettings,
-    TResult Function(_PushNotificationSetting value)? pushNotificationSetting,
+    TResult Function(_InitialPrayNotificationSettings value)?
+        initialPrayNotificationSettings,
+    TResult Function(_ChangePrayNotificationSettings value)?
+        changePrayNotificationSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $PrayNotificationSettingEventCopyWith<PrayNotificationSettingEvent>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -88,8 +72,6 @@ abstract class $PrayNotificationSettingEventCopyWith<$Res> {
           $Res Function(PrayNotificationSettingEvent) then) =
       _$PrayNotificationSettingEventCopyWithImpl<$Res,
           PrayNotificationSettingEvent>;
-  @useResult
-  $Res call({bool status});
 }
 
 /// @nodoc
@@ -105,136 +87,81 @@ class _$PrayNotificationSettingEventCopyWithImpl<$Res,
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$QuickNotificationSettingsImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$QuickNotificationSettingsImplCopyWith(
-          _$QuickNotificationSettingsImpl value,
-          $Res Function(_$QuickNotificationSettingsImpl) then) =
-      __$$QuickNotificationSettingsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status, QuickNotificationType type});
+abstract class _$$InitialPrayNotificationSettingsImplCopyWith<$Res> {
+  factory _$$InitialPrayNotificationSettingsImplCopyWith(
+          _$InitialPrayNotificationSettingsImpl value,
+          $Res Function(_$InitialPrayNotificationSettingsImpl) then) =
+      __$$InitialPrayNotificationSettingsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$QuickNotificationSettingsImplCopyWithImpl<$Res>
+class __$$InitialPrayNotificationSettingsImplCopyWithImpl<$Res>
     extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$QuickNotificationSettingsImpl>
-    implements _$$QuickNotificationSettingsImplCopyWith<$Res> {
-  __$$QuickNotificationSettingsImplCopyWithImpl(
-      _$QuickNotificationSettingsImpl _value,
-      $Res Function(_$QuickNotificationSettingsImpl) _then)
+        _$InitialPrayNotificationSettingsImpl>
+    implements _$$InitialPrayNotificationSettingsImplCopyWith<$Res> {
+  __$$InitialPrayNotificationSettingsImplCopyWithImpl(
+      _$InitialPrayNotificationSettingsImpl _value,
+      $Res Function(_$InitialPrayNotificationSettingsImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-    Object? type = null,
-  }) {
-    return _then(_$QuickNotificationSettingsImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as QuickNotificationType,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$QuickNotificationSettingsImpl implements _QuickNotificationSettings {
-  const _$QuickNotificationSettingsImpl(
-      {required this.status, required this.type});
-
-  @override
-  final bool status;
-  @override
-  final QuickNotificationType type;
+class _$InitialPrayNotificationSettingsImpl
+    implements _InitialPrayNotificationSettings {
+  const _$InitialPrayNotificationSettingsImpl();
 
   @override
   String toString() {
-    return 'PrayNotificationSettingEvent.quickNotificationSettings(status: $status, type: $type)';
+    return 'PrayNotificationSettingEvent.initialPrayNotificationSettings()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuickNotificationSettingsImpl &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.type, type) || other.type == type));
+            other is _$InitialPrayNotificationSettingsImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, type);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$QuickNotificationSettingsImplCopyWith<_$QuickNotificationSettingsImpl>
-      get copyWith => __$$QuickNotificationSettingsImplCopyWithImpl<
-          _$QuickNotificationSettingsImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status, QuickNotificationType type)
-        quickNotificationSettings,
+    required TResult Function() initialPrayNotificationSettings,
     required TResult Function(bool status, PrayNotificationType type)
-        prayNotificationSettings,
-    required TResult Function(bool status) pushNotificationSetting,
+        changePrayNotificationSettings,
   }) {
-    return quickNotificationSettings(status, type);
+    return initialPrayNotificationSettings();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status, QuickNotificationType type)?
-        quickNotificationSettings,
+    TResult? Function()? initialPrayNotificationSettings,
     TResult? Function(bool status, PrayNotificationType type)?
-        prayNotificationSettings,
-    TResult? Function(bool status)? pushNotificationSetting,
+        changePrayNotificationSettings,
   }) {
-    return quickNotificationSettings?.call(status, type);
+    return initialPrayNotificationSettings?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status, QuickNotificationType type)?
-        quickNotificationSettings,
+    TResult Function()? initialPrayNotificationSettings,
     TResult Function(bool status, PrayNotificationType type)?
-        prayNotificationSettings,
-    TResult Function(bool status)? pushNotificationSetting,
+        changePrayNotificationSettings,
     required TResult orElse(),
   }) {
-    if (quickNotificationSettings != null) {
-      return quickNotificationSettings(status, type);
+    if (initialPrayNotificationSettings != null) {
+      return initialPrayNotificationSettings();
     }
     return orElse();
   }
@@ -242,83 +169,65 @@ class _$QuickNotificationSettingsImpl implements _QuickNotificationSettings {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_QuickNotificationSettings value)
-        quickNotificationSettings,
-    required TResult Function(_PrayNotificationSettings value)
-        prayNotificationSettings,
-    required TResult Function(_PushNotificationSetting value)
-        pushNotificationSetting,
+    required TResult Function(_InitialPrayNotificationSettings value)
+        initialPrayNotificationSettings,
+    required TResult Function(_ChangePrayNotificationSettings value)
+        changePrayNotificationSettings,
   }) {
-    return quickNotificationSettings(this);
+    return initialPrayNotificationSettings(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_QuickNotificationSettings value)?
-        quickNotificationSettings,
-    TResult? Function(_PrayNotificationSettings value)?
-        prayNotificationSettings,
-    TResult? Function(_PushNotificationSetting value)? pushNotificationSetting,
+    TResult? Function(_InitialPrayNotificationSettings value)?
+        initialPrayNotificationSettings,
+    TResult? Function(_ChangePrayNotificationSettings value)?
+        changePrayNotificationSettings,
   }) {
-    return quickNotificationSettings?.call(this);
+    return initialPrayNotificationSettings?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_QuickNotificationSettings value)?
-        quickNotificationSettings,
-    TResult Function(_PrayNotificationSettings value)? prayNotificationSettings,
-    TResult Function(_PushNotificationSetting value)? pushNotificationSetting,
+    TResult Function(_InitialPrayNotificationSettings value)?
+        initialPrayNotificationSettings,
+    TResult Function(_ChangePrayNotificationSettings value)?
+        changePrayNotificationSettings,
     required TResult orElse(),
   }) {
-    if (quickNotificationSettings != null) {
-      return quickNotificationSettings(this);
+    if (initialPrayNotificationSettings != null) {
+      return initialPrayNotificationSettings(this);
     }
     return orElse();
   }
 }
 
-abstract class _QuickNotificationSettings
+abstract class _InitialPrayNotificationSettings
     implements PrayNotificationSettingEvent {
-  const factory _QuickNotificationSettings(
-          {required final bool status,
-          required final QuickNotificationType type}) =
-      _$QuickNotificationSettingsImpl;
-
-  @override
-  bool get status;
-  QuickNotificationType get type;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$QuickNotificationSettingsImplCopyWith<_$QuickNotificationSettingsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  const factory _InitialPrayNotificationSettings() =
+      _$InitialPrayNotificationSettingsImpl;
 }
 
 /// @nodoc
-abstract class _$$PrayNotificationSettingsImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$PrayNotificationSettingsImplCopyWith(
-          _$PrayNotificationSettingsImpl value,
-          $Res Function(_$PrayNotificationSettingsImpl) then) =
-      __$$PrayNotificationSettingsImplCopyWithImpl<$Res>;
-  @override
+abstract class _$$ChangePrayNotificationSettingsImplCopyWith<$Res> {
+  factory _$$ChangePrayNotificationSettingsImplCopyWith(
+          _$ChangePrayNotificationSettingsImpl value,
+          $Res Function(_$ChangePrayNotificationSettingsImpl) then) =
+      __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool status, PrayNotificationType type});
 }
 
 /// @nodoc
-class __$$PrayNotificationSettingsImplCopyWithImpl<$Res>
+class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
     extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$PrayNotificationSettingsImpl>
-    implements _$$PrayNotificationSettingsImplCopyWith<$Res> {
-  __$$PrayNotificationSettingsImplCopyWithImpl(
-      _$PrayNotificationSettingsImpl _value,
-      $Res Function(_$PrayNotificationSettingsImpl) _then)
+        _$ChangePrayNotificationSettingsImpl>
+    implements _$$ChangePrayNotificationSettingsImplCopyWith<$Res> {
+  __$$ChangePrayNotificationSettingsImplCopyWithImpl(
+      _$ChangePrayNotificationSettingsImpl _value,
+      $Res Function(_$ChangePrayNotificationSettingsImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of PrayNotificationSettingEvent
@@ -329,7 +238,7 @@ class __$$PrayNotificationSettingsImplCopyWithImpl<$Res>
     Object? status = null,
     Object? type = null,
   }) {
-    return _then(_$PrayNotificationSettingsImpl(
+    return _then(_$ChangePrayNotificationSettingsImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -344,8 +253,9 @@ class __$$PrayNotificationSettingsImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PrayNotificationSettingsImpl implements _PrayNotificationSettings {
-  const _$PrayNotificationSettingsImpl(
+class _$ChangePrayNotificationSettingsImpl
+    implements _ChangePrayNotificationSettings {
+  const _$ChangePrayNotificationSettingsImpl(
       {required this.status, required this.type});
 
   @override
@@ -355,14 +265,14 @@ class _$PrayNotificationSettingsImpl implements _PrayNotificationSettings {
 
   @override
   String toString() {
-    return 'PrayNotificationSettingEvent.prayNotificationSettings(status: $status, type: $type)';
+    return 'PrayNotificationSettingEvent.changePrayNotificationSettings(status: $status, type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PrayNotificationSettingsImpl &&
+            other is _$ChangePrayNotificationSettingsImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.type, type) || other.type == type));
   }
@@ -375,46 +285,41 @@ class _$PrayNotificationSettingsImpl implements _PrayNotificationSettings {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PrayNotificationSettingsImplCopyWith<_$PrayNotificationSettingsImpl>
-      get copyWith => __$$PrayNotificationSettingsImplCopyWithImpl<
-          _$PrayNotificationSettingsImpl>(this, _$identity);
+  _$$ChangePrayNotificationSettingsImplCopyWith<
+          _$ChangePrayNotificationSettingsImpl>
+      get copyWith => __$$ChangePrayNotificationSettingsImplCopyWithImpl<
+          _$ChangePrayNotificationSettingsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool status, QuickNotificationType type)
-        quickNotificationSettings,
+    required TResult Function() initialPrayNotificationSettings,
     required TResult Function(bool status, PrayNotificationType type)
-        prayNotificationSettings,
-    required TResult Function(bool status) pushNotificationSetting,
+        changePrayNotificationSettings,
   }) {
-    return prayNotificationSettings(status, type);
+    return changePrayNotificationSettings(status, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status, QuickNotificationType type)?
-        quickNotificationSettings,
+    TResult? Function()? initialPrayNotificationSettings,
     TResult? Function(bool status, PrayNotificationType type)?
-        prayNotificationSettings,
-    TResult? Function(bool status)? pushNotificationSetting,
+        changePrayNotificationSettings,
   }) {
-    return prayNotificationSettings?.call(status, type);
+    return changePrayNotificationSettings?.call(status, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status, QuickNotificationType type)?
-        quickNotificationSettings,
+    TResult Function()? initialPrayNotificationSettings,
     TResult Function(bool status, PrayNotificationType type)?
-        prayNotificationSettings,
-    TResult Function(bool status)? pushNotificationSetting,
+        changePrayNotificationSettings,
     required TResult orElse(),
   }) {
-    if (prayNotificationSettings != null) {
-      return prayNotificationSettings(status, type);
+    if (changePrayNotificationSettings != null) {
+      return changePrayNotificationSettings(status, type);
     }
     return orElse();
   }
@@ -422,228 +327,56 @@ class _$PrayNotificationSettingsImpl implements _PrayNotificationSettings {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_QuickNotificationSettings value)
-        quickNotificationSettings,
-    required TResult Function(_PrayNotificationSettings value)
-        prayNotificationSettings,
-    required TResult Function(_PushNotificationSetting value)
-        pushNotificationSetting,
+    required TResult Function(_InitialPrayNotificationSettings value)
+        initialPrayNotificationSettings,
+    required TResult Function(_ChangePrayNotificationSettings value)
+        changePrayNotificationSettings,
   }) {
-    return prayNotificationSettings(this);
+    return changePrayNotificationSettings(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_QuickNotificationSettings value)?
-        quickNotificationSettings,
-    TResult? Function(_PrayNotificationSettings value)?
-        prayNotificationSettings,
-    TResult? Function(_PushNotificationSetting value)? pushNotificationSetting,
+    TResult? Function(_InitialPrayNotificationSettings value)?
+        initialPrayNotificationSettings,
+    TResult? Function(_ChangePrayNotificationSettings value)?
+        changePrayNotificationSettings,
   }) {
-    return prayNotificationSettings?.call(this);
+    return changePrayNotificationSettings?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_QuickNotificationSettings value)?
-        quickNotificationSettings,
-    TResult Function(_PrayNotificationSettings value)? prayNotificationSettings,
-    TResult Function(_PushNotificationSetting value)? pushNotificationSetting,
+    TResult Function(_InitialPrayNotificationSettings value)?
+        initialPrayNotificationSettings,
+    TResult Function(_ChangePrayNotificationSettings value)?
+        changePrayNotificationSettings,
     required TResult orElse(),
   }) {
-    if (prayNotificationSettings != null) {
-      return prayNotificationSettings(this);
+    if (changePrayNotificationSettings != null) {
+      return changePrayNotificationSettings(this);
     }
     return orElse();
   }
 }
 
-abstract class _PrayNotificationSettings
+abstract class _ChangePrayNotificationSettings
     implements PrayNotificationSettingEvent {
-  const factory _PrayNotificationSettings(
+  const factory _ChangePrayNotificationSettings(
           {required final bool status,
           required final PrayNotificationType type}) =
-      _$PrayNotificationSettingsImpl;
+      _$ChangePrayNotificationSettingsImpl;
 
-  @override
   bool get status;
   PrayNotificationType get type;
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PrayNotificationSettingsImplCopyWith<_$PrayNotificationSettingsImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PushNotificationSettingImplCopyWith<$Res>
-    implements $PrayNotificationSettingEventCopyWith<$Res> {
-  factory _$$PushNotificationSettingImplCopyWith(
-          _$PushNotificationSettingImpl value,
-          $Res Function(_$PushNotificationSettingImpl) then) =
-      __$$PushNotificationSettingImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$PushNotificationSettingImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
-        _$PushNotificationSettingImpl>
-    implements _$$PushNotificationSettingImplCopyWith<$Res> {
-  __$$PushNotificationSettingImplCopyWithImpl(
-      _$PushNotificationSettingImpl _value,
-      $Res Function(_$PushNotificationSettingImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$PushNotificationSettingImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PushNotificationSettingImpl implements _PushNotificationSetting {
-  const _$PushNotificationSettingImpl({required this.status});
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingEvent.pushNotificationSetting(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PushNotificationSettingImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PushNotificationSettingImplCopyWith<_$PushNotificationSettingImpl>
-      get copyWith => __$$PushNotificationSettingImplCopyWithImpl<
-          _$PushNotificationSettingImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status, QuickNotificationType type)
-        quickNotificationSettings,
-    required TResult Function(bool status, PrayNotificationType type)
-        prayNotificationSettings,
-    required TResult Function(bool status) pushNotificationSetting,
-  }) {
-    return pushNotificationSetting(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status, QuickNotificationType type)?
-        quickNotificationSettings,
-    TResult? Function(bool status, PrayNotificationType type)?
-        prayNotificationSettings,
-    TResult? Function(bool status)? pushNotificationSetting,
-  }) {
-    return pushNotificationSetting?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status, QuickNotificationType type)?
-        quickNotificationSettings,
-    TResult Function(bool status, PrayNotificationType type)?
-        prayNotificationSettings,
-    TResult Function(bool status)? pushNotificationSetting,
-    required TResult orElse(),
-  }) {
-    if (pushNotificationSetting != null) {
-      return pushNotificationSetting(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_QuickNotificationSettings value)
-        quickNotificationSettings,
-    required TResult Function(_PrayNotificationSettings value)
-        prayNotificationSettings,
-    required TResult Function(_PushNotificationSetting value)
-        pushNotificationSetting,
-  }) {
-    return pushNotificationSetting(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_QuickNotificationSettings value)?
-        quickNotificationSettings,
-    TResult? Function(_PrayNotificationSettings value)?
-        prayNotificationSettings,
-    TResult? Function(_PushNotificationSetting value)? pushNotificationSetting,
-  }) {
-    return pushNotificationSetting?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_QuickNotificationSettings value)?
-        quickNotificationSettings,
-    TResult Function(_PrayNotificationSettings value)? prayNotificationSettings,
-    TResult Function(_PushNotificationSetting value)? pushNotificationSetting,
-    required TResult orElse(),
-  }) {
-    if (pushNotificationSetting != null) {
-      return pushNotificationSetting(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PushNotificationSetting
-    implements PrayNotificationSettingEvent {
-  const factory _PushNotificationSetting({required final bool status}) =
-      _$PushNotificationSettingImpl;
-
-  @override
-  bool get status;
-
-  /// Create a copy of PrayNotificationSettingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PushNotificationSettingImplCopyWith<_$PushNotificationSettingImpl>
+  _$$ChangePrayNotificationSettingsImplCopyWith<
+          _$ChangePrayNotificationSettingsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -657,7 +390,8 @@ mixin _$PrayNotificationSettingState {
   bool get asr => throw _privateConstructorUsedError;
   bool get magrieb => throw _privateConstructorUsedError;
   bool get isha => throw _privateConstructorUsedError;
-  bool get sunrise => throw _privateConstructorUsedError;
+  bool get sunriseTime => throw _privateConstructorUsedError;
+  bool get sunrisePray => throw _privateConstructorUsedError;
   bool get before15Min => throw _privateConstructorUsedError;
   bool get applicationNotification => throw _privateConstructorUsedError;
   dynamic get loadingStatus => throw _privateConstructorUsedError;
@@ -686,7 +420,8 @@ abstract class $PrayNotificationSettingStateCopyWith<$Res> {
       bool asr,
       bool magrieb,
       bool isha,
-      bool sunrise,
+      bool sunriseTime,
+      bool sunrisePray,
       bool before15Min,
       bool applicationNotification,
       dynamic loadingStatus});
@@ -716,7 +451,8 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
     Object? asr = null,
     Object? magrieb = null,
     Object? isha = null,
-    Object? sunrise = null,
+    Object? sunriseTime = null,
+    Object? sunrisePray = null,
     Object? before15Min = null,
     Object? applicationNotification = null,
     Object? loadingStatus = freezed,
@@ -754,9 +490,13 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
           ? _value.isha
           : isha // ignore: cast_nullable_to_non_nullable
               as bool,
-      sunrise: null == sunrise
-          ? _value.sunrise
-          : sunrise // ignore: cast_nullable_to_non_nullable
+      sunriseTime: null == sunriseTime
+          ? _value.sunriseTime
+          : sunriseTime // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sunrisePray: null == sunrisePray
+          ? _value.sunrisePray
+          : sunrisePray // ignore: cast_nullable_to_non_nullable
               as bool,
       before15Min: null == before15Min
           ? _value.before15Min
@@ -792,7 +532,8 @@ abstract class _$$PrayNotificationSettingStateImplCopyWith<$Res>
       bool asr,
       bool magrieb,
       bool isha,
-      bool sunrise,
+      bool sunriseTime,
+      bool sunrisePray,
       bool before15Min,
       bool applicationNotification,
       dynamic loadingStatus});
@@ -821,7 +562,8 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
     Object? asr = null,
     Object? magrieb = null,
     Object? isha = null,
-    Object? sunrise = null,
+    Object? sunriseTime = null,
+    Object? sunrisePray = null,
     Object? before15Min = null,
     Object? applicationNotification = null,
     Object? loadingStatus = freezed,
@@ -859,9 +601,13 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
           ? _value.isha
           : isha // ignore: cast_nullable_to_non_nullable
               as bool,
-      sunrise: null == sunrise
-          ? _value.sunrise
-          : sunrise // ignore: cast_nullable_to_non_nullable
+      sunriseTime: null == sunriseTime
+          ? _value.sunriseTime
+          : sunriseTime // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sunrisePray: null == sunrisePray
+          ? _value.sunrisePray
+          : sunrisePray // ignore: cast_nullable_to_non_nullable
               as bool,
       before15Min: null == before15Min
           ? _value.before15Min
@@ -890,7 +636,8 @@ class _$PrayNotificationSettingStateImpl
       this.asr = true,
       this.magrieb = true,
       this.isha = true,
-      this.sunrise = true,
+      this.sunriseTime = true,
+      this.sunrisePray = true,
       this.before15Min = true,
       this.applicationNotification = false,
       this.loadingStatus = const PrayNotificationSettingProcessState.idl()});
@@ -921,7 +668,10 @@ class _$PrayNotificationSettingStateImpl
   final bool isha;
   @override
   @JsonKey()
-  final bool sunrise;
+  final bool sunriseTime;
+  @override
+  @JsonKey()
+  final bool sunrisePray;
   @override
   @JsonKey()
   final bool before15Min;
@@ -934,7 +684,7 @@ class _$PrayNotificationSettingStateImpl
 
   @override
   String toString() {
-    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunrise: $sunrise, before15Min: $before15Min, applicationNotification: $applicationNotification, loadingStatus: $loadingStatus)';
+    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunriseTime: $sunriseTime, sunrisePray: $sunrisePray, before15Min: $before15Min, applicationNotification: $applicationNotification, loadingStatus: $loadingStatus)';
   }
 
   @override
@@ -957,7 +707,10 @@ class _$PrayNotificationSettingStateImpl
             (identical(other.asr, asr) || other.asr == asr) &&
             (identical(other.magrieb, magrieb) || other.magrieb == magrieb) &&
             (identical(other.isha, isha) || other.isha == isha) &&
-            (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
+            (identical(other.sunriseTime, sunriseTime) ||
+                other.sunriseTime == sunriseTime) &&
+            (identical(other.sunrisePray, sunrisePray) ||
+                other.sunrisePray == sunrisePray) &&
             (identical(other.before15Min, before15Min) ||
                 other.before15Min == before15Min) &&
             (identical(
@@ -978,7 +731,8 @@ class _$PrayNotificationSettingStateImpl
       asr,
       magrieb,
       isha,
-      sunrise,
+      sunriseTime,
+      sunrisePray,
       before15Min,
       applicationNotification,
       const DeepCollectionEquality().hash(loadingStatus));
@@ -1005,7 +759,8 @@ abstract class _PrayNotificationSettingState
       final bool asr,
       final bool magrieb,
       final bool isha,
-      final bool sunrise,
+      final bool sunriseTime,
+      final bool sunrisePray,
       final bool before15Min,
       final bool applicationNotification,
       final dynamic loadingStatus}) = _$PrayNotificationSettingStateImpl;
@@ -1027,7 +782,9 @@ abstract class _PrayNotificationSettingState
   @override
   bool get isha;
   @override
-  bool get sunrise;
+  bool get sunriseTime;
+  @override
+  bool get sunrisePray;
   @override
   bool get before15Min;
   @override

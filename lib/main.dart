@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/my_app/my_app.dart';
 import 'package:islam_app/utils/logger.dart';
+//TODO: fix the event all over the app
 
 //TODO: local notification handle depend on athan
 
@@ -15,6 +16,17 @@ import 'package:islam_app/utils/logger.dart';
 //TODO: select location sometimes not working
 
 //TODO: whatsup, facebook
+
+// DateTime scheduledDate = DateTime.now().add(const Duration(seconds: 3));
+// LocalNotificationRepository.scheduleNotification(
+//   id: 0,
+//   title: "Scheduled Notification",
+//   body: "This notification is scheduled to appear after 5 seconds",
+//   scheduledTime: scheduledDate,
+//   soundType: NotificationSoundType.isha,
+// );
+
+//TODO: local notification with timer such as other apps
 
 void main() {
   logDebugMessage(message: 'Application Started ...');
