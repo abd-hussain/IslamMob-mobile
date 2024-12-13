@@ -1,15 +1,14 @@
-enum QuickNotificationType {
+enum PrayNotificationType {
   allNotificationForToday,
   allNotificationForThreeDay,
   allNotificationForWeekDay,
-}
-
-enum PrayNotificationType {
   fajir,
   duhir,
   asr,
   magrieb,
   isha,
-  sunrise,
+  sunriseTime,
+  sunrisePray,
   before15Min,
+  pushNotification,
 }

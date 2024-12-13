@@ -1,13 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:islam_app/domain/model/pray_notification_settings.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
-import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 
 part 'pray_notification_setting_event.dart';
@@ -19,198 +15,106 @@ class PrayNotificationSettingBloc
   final _box = Hive.box(DatabaseBoxConstant.userInfo);
 
   PrayNotificationSettingBloc() : super(const PrayNotificationSettingState()) {
-    on<_QuickNotificationSettings>(_quickNotificationSettings);
-    on<_PrayNotificationSettings>(_prayNotificationSettings);
-    on<_PushNotificationSetting>(_pushNotificationSetting);
-
-    _setupInitialValues();
+    on<_InitialPrayNotificationSettings>(_initialPrayNotificationSettings);
+    on<_ChangePrayNotificationSettings>(_changePrayNotificationSettings);
   }
 
-  _setupInitialValues() {
-    // final disableAllForToday = _box.get(LocalNotificationConstant.disableAllForToday, defaultValue: false);
-    // final disableAllForThreeDay = _box.get(LocalNotificationConstant.disableAllForThreeDay, defaultValue: false);
-    // final disableAllForWeek = _box.get(LocalNotificationConstant.disableAllForWeek, defaultValue: false);
+  FutureOr<void> _initialPrayNotificationSettings(
+      _InitialPrayNotificationSettings event,
+      Emitter<PrayNotificationSettingState> emit) {
+    final disableAllForToday = _box
+        .get(LocalNotificationConstant.disableAllForToday, defaultValue: false);
+    final disableAllForThreeDay = _box.get(
+        LocalNotificationConstant.disableAllForThreeDay,
+        defaultValue: false);
+    final disableAllForWeek = _box
+        .get(LocalNotificationConstant.disableAllForWeek, defaultValue: false);
+    final disableFajr =
+        _box.get(LocalNotificationConstant.disableFajr, defaultValue: true);
+    final disableDuher =
+        _box.get(LocalNotificationConstant.disableDuher, defaultValue: true);
+    final disableAsr =
+        _box.get(LocalNotificationConstant.disableAsr, defaultValue: true);
+    final disableMagrieb =
+        _box.get(LocalNotificationConstant.disableMagrieb, defaultValue: true);
+    final disableIsha =
+        _box.get(LocalNotificationConstant.disableIsha, defaultValue: true);
+    final disableSunriseTime = _box
+        .get(LocalNotificationConstant.disableSunriseTime, defaultValue: true);
+    final disableSunrisePray = _box
+        .get(LocalNotificationConstant.disableSunrisePray, defaultValue: true);
+    final disableNotificationBefore15Min = _box.get(
+        LocalNotificationConstant.disableNotificationBefore15Min,
+        defaultValue: true);
+    final disablePushNotifications = _box.get(
+        LocalNotificationConstant.disablePushNotifications,
+        defaultValue: true);
 
-    // final disableFajr = _box.get(LocalNotificationConstant.disableFajr, defaultValue: true);
-    // final disableDuher = _box.get(LocalNotificationConstant.disableDuher, defaultValue: true);
-    // final disableAsr = _box.get(LocalNotificationConstant.disableAsr, defaultValue: true);
-    // final disableMagrieb = _box.get(LocalNotificationConstant.disableMagrieb, defaultValue: true);
-    // final disableIsha = _box.get(LocalNotificationConstant.disableIsha, defaultValue: true);
-
-    // if (disableAllForToday == true) {
-    //   add(PrayNotificationSettingEvent.updateAllNotificationForToday(status: disableAllForToday));
-    // }
-
-    // if (disableAllForThreeDay == true) {
-    //   add(PrayNotificationSettingEvent.updateAllNotificationForThreeDay(status: disableAllForThreeDay));
-    // }
-    // if (disableAllForWeek == true) {
-    //   add(PrayNotificationSettingEvent.updateAllNotificationForWeekDay(status: disableAllForWeek));
-    // }
-
-    // add(PrayNotificationSettingEvent.updateFajirNotification(status: disableFajr));
-
-    // add(PrayNotificationSettingEvent.updateDuhirNotification(status: disableDuher));
-
-    // add(PrayNotificationSettingEvent.updateAsrNotification(status: disableAsr));
-
-    // add(PrayNotificationSettingEvent.updateMagriebNotification(status: disableMagrieb));
-
-    // add(PrayNotificationSettingEvent.updateIshaNotification(status: disableIsha));
-
-    // add(PrayNotificationSettingEvent.updateAdkarNotification(status: disableAzkar));
-
-    // if (disableApplication == true) {
-    //   add(PrayNotificationSettingEvent.updateApplicationNotification(status: disableApplication));
-    // }
-
-    //TODO
-  }
-
-  String getLanguage() {
-    return _box.get(DatabaseFieldConstant.selectedLanguage, defaultValue: "en");
-  }
-
-  List<PrayerNotification> quickNotifications(BuildContext context) => [
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingTodayAll,
-          notificationSelector: (state) => state.allNotificationForToday,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.quickNotificationSettings(
-            status: value,
-            type: QuickNotificationType.allNotificationForToday,
-          ),
-        ),
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingThreedayAll,
-          notificationSelector: (state) => state.allNotificationForThreeDay,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.quickNotificationSettings(
-            status: value,
-            type: QuickNotificationType.allNotificationForThreeDay,
-          ),
-        ),
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingWeekAll,
-          notificationSelector: (state) => state.allNotificationForWeekDay,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.quickNotificationSettings(
-            status: value,
-            type: QuickNotificationType.allNotificationForWeekDay,
-          ),
-        ),
-      ];
-
-  List<PrayerNotification> prayerNotifications(BuildContext context) => [
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingFajir,
-          notificationSelector: (state) => state.fajir,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.prayNotificationSettings(
-            status: value,
-            type: PrayNotificationType.fajir,
-          ),
-        ),
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingDuher,
-          notificationSelector: (state) => state.duhir,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.prayNotificationSettings(
-            status: value,
-            type: PrayNotificationType.duhir,
-          ),
-        ),
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingAsr,
-          notificationSelector: (state) => state.asr,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.prayNotificationSettings(
-            status: value,
-            type: PrayNotificationType.asr,
-          ),
-        ),
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingMagrieb,
-          notificationSelector: (state) => state.magrieb,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.prayNotificationSettings(
-            status: value,
-            type: PrayNotificationType.magrieb,
-          ),
-        ),
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingIsha,
-          notificationSelector: (state) => state.isha,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.prayNotificationSettings(
-            status: value,
-            type: PrayNotificationType.isha,
-          ),
-        ),
-      ];
-
-  List<PrayerNotification> otherNotifications(BuildContext context) => [
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingSunrise,
-          notificationSelector: (state) => state.sunrise,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.prayNotificationSettings(
-            status: value,
-            type: PrayNotificationType.sunrise,
-          ),
-        ),
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationBeforeSalah15Minutes,
-          notificationSelector: (state) => state.before15Min,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.prayNotificationSettings(
-            status: value,
-            type: PrayNotificationType.before15Min,
-          ),
-        ),
-        PrayerNotification(
-          title: AppLocalizations.of(context)!.notificationSettingApplication,
-          notificationSelector: (state) => state.applicationNotification,
-          eventCreator: (value) =>
-              PrayNotificationSettingEvent.pushNotificationSetting(
-            status: value,
-          ),
-        ),
-      ];
-
-  FutureOr<void> _quickNotificationSettings(_QuickNotificationSettings event,
-      Emitter<PrayNotificationSettingState> emit) async {
-    // await _box.put(LocalNotificationConstant.disableAllForWeek, event.status);
-    // await _box.put(LocalNotificationConstant.disableAllForThreeDay, event.status);
-    // await _box.put(LocalNotificationConstant.disableAllForToday, event.status);
-    DateTime scheduledDate = DateTime.now().add(const Duration(seconds: 3));
-    LocalNotificationRepository.scheduleNotification(
-      id: 0,
-      title: "Scheduled Notification",
-      body: "This notification is scheduled to appear after 5 seconds",
-      scheduledTime: scheduledDate,
-      soundType: NotificationSoundType.isha,
+    emit(
+      state.copyWith(
+        allNotificationForToday: disableAllForToday,
+        allNotificationForThreeDay: disableAllForThreeDay,
+        allNotificationForWeekDay: disableAllForWeek,
+        fajir: disableFajr,
+        duhir: disableDuher,
+        asr: disableAsr,
+        magrieb: disableMagrieb,
+        isha: disableIsha,
+        sunriseTime: disableSunriseTime,
+        sunrisePray: disableSunrisePray,
+        before15Min: disableNotificationBefore15Min,
+        applicationNotification: disablePushNotifications,
+      ),
     );
-    // emit(state.copyWith(allNotificationForToday: event.status));
-
-    //TODO
   }
 
-  FutureOr<void> _prayNotificationSettings(_PrayNotificationSettings event,
+  FutureOr<void> _changePrayNotificationSettings(
+      _ChangePrayNotificationSettings event,
       Emitter<PrayNotificationSettingState> emit) async {
-    // await _box.put(LocalNotificationConstant.disableIsha, event.status);
-    // await _box.put(LocalNotificationConstant.disableMagrieb, event.status);
-    // await _box.put(LocalNotificationConstant.disableAsr, event.status);
-    // await _box.put(LocalNotificationConstant.disableDuher, event.status);
-    // await _box.put(LocalNotificationConstant.disableFajr, event.status);
-
-    //TODO
-  }
-
-  FutureOr<void> _pushNotificationSetting(
-      event, Emitter<PrayNotificationSettingState> emit) async {
-    // await _box.put(LocalNotificationConstant.disablePushNotifications, event.status);
-
-    //TODO
+    switch (event.type) {
+      case PrayNotificationType.allNotificationForToday:
+        await _box.put(
+            LocalNotificationConstant.disableAllForToday, event.status);
+        emit(state.copyWith(allNotificationForToday: event.status));
+      case PrayNotificationType.allNotificationForThreeDay:
+        await _box.put(
+            LocalNotificationConstant.disableAllForThreeDay, event.status);
+        emit(state.copyWith(allNotificationForThreeDay: event.status));
+      case PrayNotificationType.allNotificationForWeekDay:
+        await _box.put(
+            LocalNotificationConstant.disableAllForWeek, event.status);
+        emit(state.copyWith(allNotificationForWeekDay: event.status));
+      case PrayNotificationType.fajir:
+        await _box.put(LocalNotificationConstant.disableFajr, event.status);
+        emit(state.copyWith(fajir: event.status));
+      case PrayNotificationType.duhir:
+        await _box.put(LocalNotificationConstant.disableDuher, event.status);
+        emit(state.copyWith(duhir: event.status));
+      case PrayNotificationType.asr:
+        await _box.put(LocalNotificationConstant.disableAsr, event.status);
+        emit(state.copyWith(asr: event.status));
+      case PrayNotificationType.magrieb:
+        await _box.put(LocalNotificationConstant.disableMagrieb, event.status);
+        emit(state.copyWith(magrieb: event.status));
+      case PrayNotificationType.isha:
+        await _box.put(LocalNotificationConstant.disableIsha, event.status);
+        emit(state.copyWith(isha: event.status));
+      case PrayNotificationType.sunriseTime:
+        await _box.put(
+            LocalNotificationConstant.disableSunriseTime, event.status);
+        emit(state.copyWith(sunriseTime: event.status));
+      case PrayNotificationType.sunrisePray:
+        await _box.put(
+            LocalNotificationConstant.disableSunrisePray, event.status);
+        emit(state.copyWith(sunrisePray: event.status));
+      case PrayNotificationType.before15Min:
+        await _box.put(LocalNotificationConstant.disableNotificationBefore15Min,
+            event.status);
+        emit(state.copyWith(before15Min: event.status));
+      case PrayNotificationType.pushNotification:
+        await _box.put(
+            LocalNotificationConstant.disablePushNotifications, event.status);
+        emit(state.copyWith(applicationNotification: event.status));
+    }
   }
 }

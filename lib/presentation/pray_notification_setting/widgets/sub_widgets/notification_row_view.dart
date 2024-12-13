@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/model/pray_notification_settings.dart';
-import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_switch.dart';
 
 class NotificationRowView extends StatelessWidget {
-  final PrayerNotification prayerNotification;
-  const NotificationRowView({super.key, required this.prayerNotification});
+  final String title;
+  final bool value;
+  final Function(bool) onChanged;
+  const NotificationRowView(
+      {super.key,
+      required this.title,
+      required this.value,
+      required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<PrayNotificationSettingBloc>();
-    final isRtl = _isRtlLanguage(bloc.getLanguage());
+    final isRtl = _isRtlLanguage();
 
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -28,7 +32,7 @@ class NotificationRowView extends StatelessWidget {
 
   Widget _buildNotificationTitle() {
     return CustomText(
-      title: prayerNotification.title,
+      title: title,
       fontSize: 16,
       color: const Color(0xff444444),
       fontWeight: FontWeight.bold,
@@ -36,28 +40,17 @@ class NotificationRowView extends StatelessWidget {
   }
 
   Widget _buildNotificationSwitch(BuildContext context, bool isRtl) {
-    return BlocBuilder<PrayNotificationSettingBloc,
-        PrayNotificationSettingState>(
-      buildWhen: (previous, current) =>
-          prayerNotification.notificationSelector(previous) !=
-          prayerNotification.notificationSelector(current),
-      builder: (context, state) {
-        final isEnabled = prayerNotification.notificationSelector(state);
-
-        return CustomSwitch(
-          value: isEnabled,
-          direction: isRtl ? Direction.rtl : Direction.ltr,
-          onChanged: (value) {
-            context.read<PrayNotificationSettingBloc>().add(
-                  prayerNotification.eventCreator(value),
-                );
-          },
-        );
-      },
+    return CustomSwitch(
+      value: value,
+      direction: isRtl ? Direction.rtl : Direction.ltr,
+      onChanged: (value) => onChanged(value),
     );
   }
 
-  bool _isRtlLanguage(String languageCode) {
+  bool _isRtlLanguage() {
+    final box = Hive.box(DatabaseBoxConstant.userInfo);
+    final String languageCode =
+        box.get(DatabaseFieldConstant.selectedLanguage, defaultValue: "en");
     return languageCode == "ar" || languageCode == "fa";
   }
 }

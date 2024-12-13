@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
-import 'package:islam_app/presentation/pray_notification_setting/widgets/notification_view.dart';
+import 'package:islam_app/presentation/pray_notification_setting/widgets/other_notification_view.dart';
+import 'package:islam_app/presentation/pray_notification_setting/widgets/pray_notification_view.dart';
+import 'package:islam_app/presentation/pray_notification_setting/widgets/quick_notification_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-//TODO: This tree need to be refactored
 
 class PrayNotificationSettingScreen extends StatelessWidget {
   const PrayNotificationSettingScreen({super.key});
 
-//TODO: local notification with timer such as other apps
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PrayNotificationSettingBloc(),
+      create: (context) => PrayNotificationSettingBloc()
+        ..add(const PrayNotificationSettingEvent
+            .initialPrayNotificationSettings()),
       child: Scaffold(
         appBar: CustomAppBar(
             title: AppLocalizations.of(context)!.notificationSettings),
@@ -52,11 +53,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                             color: const Color(0xff444444),
                           ),
                         ),
-                        NotificationView(
-                          prayerNotifications: context
-                              .read<PrayNotificationSettingBloc>()
-                              .quickNotifications(context),
-                        ),
+                        const QuickNotificationView(),
                         const SizedBox(height: 10),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -68,11 +65,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                             color: const Color(0xff444444),
                           ),
                         ),
-                        NotificationView(
-                          prayerNotifications: context
-                              .read<PrayNotificationSettingBloc>()
-                              .prayerNotifications(context),
-                        ),
+                        const PrayNotificationView(),
                         const SizedBox(height: 10),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -84,11 +77,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                             color: const Color(0xff444444),
                           ),
                         ),
-                        NotificationView(
-                          prayerNotifications: context
-                              .read<PrayNotificationSettingBloc>()
-                              .otherNotifications(context),
-                        ),
+                        const OtherNotificationView(),
                         const SizedBox(height: 5)
                       ],
                     ),

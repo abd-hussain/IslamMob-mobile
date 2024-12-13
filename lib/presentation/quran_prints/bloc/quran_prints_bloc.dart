@@ -158,7 +158,6 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   FutureOr<void> _handleUpdatePrintsDownloading(
       _UpdatePrintsDownloading event, Emitter<QuranPrintsState> emit) {
-    print("_handleUpdatePrintsDownloading called");
     emit(state.copyWith(printsDownloading: event.print));
   }
 }
