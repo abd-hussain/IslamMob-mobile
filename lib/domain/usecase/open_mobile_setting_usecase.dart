@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class OpenMobileSettings {
+class OpenMobileSettingUseCase {
   static const MethodChannel _platform =
       MethodChannel('com.islammob.app/settings');
 

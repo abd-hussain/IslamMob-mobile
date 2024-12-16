@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
@@ -11,7 +12,6 @@ import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/bright
 import 'package:islam_app/core/constants/argument_constant.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/utils/extensions/localization.dart';
-import 'package:islam_app/utils/quran_referances.dart';
 import 'package:pdfx/pdfx.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
@@ -110,13 +110,16 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   Future<void> _navigateToIndexScreen(BuildContext context) async {
+    QuranReferancesUsecase quranReferancesUsecase = QuranReferancesUsecase();
+
     final navigator = Navigator.of(context, rootNavigator: true);
     final bloc = context.read<QuranKareemBloc>();
     final currentPage = bloc.currentPageNumber;
 
     final sorahName =
-        QuranReferances.getSurahReferenceNameFromPageNumber(currentPage);
-    final jozo2Name = QuranReferances.getJuzNumberFromPageNumber(currentPage);
+        quranReferancesUsecase.getSurahReferenceNameFromPageNumber(currentPage);
+    final jozo2Name =
+        quranReferancesUsecase.getJuzNumberFromPageNumber(currentPage);
 
     final arguments = {
       ArgumentConstant.currentPageNumber: currentPage,
@@ -134,6 +137,8 @@ class QuranBottomHelpBar extends StatelessWidget {
 
   Future<void> _handleNavigationResult(
       BuildContext context, dynamic value) async {
+    QuranReferancesUsecase quranReferancesUsecase = QuranReferancesUsecase();
+
     if (value is! Map<String, dynamic> || !context.mounted) return;
 
     final bloc = context.read<QuranKareemBloc>();
@@ -146,7 +151,7 @@ class QuranBottomHelpBar extends StatelessWidget {
     }
 
     if (value[ArgumentConstant.currentPartNumber] != null) {
-      final jozo2PageNumber = QuranReferances.getPageNumberFromJuzNumber(
+      final jozo2PageNumber = quranReferancesUsecase.getPageNumberFromJuzNumber(
           value[ArgumentConstant.currentPartNumber]);
       bloc.add(QuranKareemEvent.updatePageCount(jozo2PageNumber));
       pdfController?.jumpToPage(jozo2PageNumber);
@@ -154,7 +159,7 @@ class QuranBottomHelpBar extends StatelessWidget {
 
     if (value[ArgumentConstant.currentSowrahName] != null) {
       final sorahPageNumber =
-          QuranReferances.getPageNumberFromSurahReferenceName(
+          quranReferancesUsecase.getPageNumberFromSurahReferenceName(
         AppLocalizations.of(context)!.getKeyFromLocalizedString(
             value[ArgumentConstant.currentSowrahName]),
       );

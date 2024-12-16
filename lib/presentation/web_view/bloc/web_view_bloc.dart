@@ -14,20 +14,13 @@ part 'web_view_bloc.freezed.dart';
 
 class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
   final Map<String, dynamic>? arguments;
+  WebViewXController? webviewController;
 
   WebViewBloc({required this.arguments}) : super(const WebViewState()) {
+    on<_InitalizeWebViewContent>(_initalizeWebViewContent);
     on<_UpdateWebViewContent>(_updateWebViewContent);
     on<_UpdateInternetConnectionStatus>(_updateInternetConnectionStatus);
-    initial();
   }
-
-  initial() {
-    _checkInternetConnectionStatus().then((value) {
-      _extractArguments();
-    });
-  }
-
-  WebViewXController? webviewController;
 
   void _extractArguments() {
     if (arguments != null) {
@@ -53,6 +46,13 @@ class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
       add(WebViewEvent.updateInternetConnectionStatus(true));
       return true;
     }
+  }
+
+  FutureOr<void> _initalizeWebViewContent(
+      _InitalizeWebViewContent event, Emitter<WebViewState> emit) {
+    _checkInternetConnectionStatus().then((value) {
+      _extractArguments();
+    });
   }
 
   FutureOr<void> _updateWebViewContent(

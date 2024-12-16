@@ -20,7 +20,8 @@ class CalenderScreen extends StatelessWidget {
     FirebaseAnalytics.instance.logEvent(name: "CalenderScreen");
 
     return BlocProvider(
-      create: (_) => CalenderBloc(),
+      create: (_) =>
+          CalenderBloc()..add(const CalenderEvent.prepareSalahTiming()),
       child: Scaffold(
         backgroundColor: backgroundColor,
         appBar: CustomAppBar(

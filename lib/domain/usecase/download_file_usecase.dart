@@ -1,17 +1,14 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:islam_app/utils/logger.dart';
-
 import 'package:path_provider/path_provider.dart';
 
-class FileDownload {
+class DownloadFileUsecase {
   final Dio dio = Dio();
 
   /// Starts downloading a file and provides progress and completion callbacks.
   Future<void> startDownloading({
-    required BuildContext context,
     required String fileNameWithExtension,
     required String fileUrl,
     required CancelToken cancelToken,
@@ -30,9 +27,6 @@ class FileDownload {
       );
       logDebugMessage(message: "Download Completed");
       finishCallback(filePath);
-      if (context.mounted) {
-        Navigator.pop(context);
-      }
     } catch (e) {
       logDebugMessage(message: "Download failed: $e");
     }

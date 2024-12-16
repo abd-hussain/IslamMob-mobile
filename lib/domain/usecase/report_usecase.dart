@@ -6,7 +6,7 @@ import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:islam_app/core/constants/firebase_constants.dart';
 
-class ReportService {
+class ReportUseCase {
   /// Adds a new report or suggestion to the Firestore database.
 
   Future<dynamic> addNewReportOrSuggestion(

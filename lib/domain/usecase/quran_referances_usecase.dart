@@ -1,7 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 
-class QuranReferances {
+class QuranReferancesUsecase {
   static final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
   /// Retrieves a field from the database or returns an empty map by default.
@@ -10,35 +10,35 @@ class QuranReferances {
   }
 
   /// Gets the Surah name for localization based on a given page number.
-  static String getSurahReferenceNameFromPageNumber(int pageNumber) {
+  String getSurahReferenceNameFromPageNumber(int pageNumber) {
     final surahToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
     return _findNearestLowerOrEqualKey(surahToPageNumbers, pageNumber);
   }
 
   /// Gets the page number from a given Surah reference name.
-  static int getPageNumberFromSurahReferenceName(String surahName) {
+  int getPageNumberFromSurahReferenceName(String surahName) {
     final surahToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
     return surahToPageNumbers[surahName] ?? -1;
   }
 
   /// Gets the total number of pages for the selected Quran print.
-  static int getNumberOfPagesForSelectedPrint() {
+  int getNumberOfPagesForSelectedPrint() {
     final surahToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremSorahToPageNumbers);
     return surahToPageNumbers['quranSorahName114'] ?? -1;
   }
 
   /// Gets the Juz number based on a given page number.
-  static String getJuzNumberFromPageNumber(int pageNumber) {
+  String getJuzNumberFromPageNumber(int pageNumber) {
     final juzToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremJuz2ToPageNumbers);
     return _findNearestLowerOrEqualKey(juzToPageNumbers, pageNumber);
   }
 
   /// Gets the starting page number from a given Juz number.
-  static int getPageNumberFromJuzNumber(String juzNumber) {
+  int getPageNumberFromJuzNumber(String juzNumber) {
     final juzToPageNumbers =
         _getDatabaseField(DatabaseFieldConstant.quranKaremJuz2ToPageNumbers);
     return juzToPageNumbers[juzNumber] ?? -1;

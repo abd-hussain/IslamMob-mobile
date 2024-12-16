@@ -16,9 +16,11 @@ class ListOfLanguageTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
       child: InkWell(
         onTap: () async {
-          context
-              .read<ChangeLanguageBloc>()
-              .add(ChangeLanguageEvent.changeSelectedLanguage(type: language));
+          context.read<ChangeLanguageBloc>().add(
+                ChangeLanguageEvent.changeSelectedCheckBoxLanguage(
+                  type: language,
+                ),
+              );
         },
         child: Container(
           height: 50,

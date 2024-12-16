@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/domain/usecase/open_mobile_setting_usecase.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/utils/open_mobile_settings.dart';
 
 class NotificationNothavePermissionView extends StatelessWidget {
   final Function() skipButton;
@@ -36,7 +36,7 @@ class NotificationNothavePermissionView extends StatelessWidget {
           isEnabled: true,
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
           title: AppLocalizations.of(context)!.nolocationPermissionButton,
-          onTap: () async => await OpenMobileSettings().openAppSettings(),
+          onTap: () async => await OpenMobileSettingUseCase().openAppSettings(),
         ),
         CustomButton(
           isEnabled: true,

@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$WebViewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initalizeWebViewContent,
     required TResult Function(String webViewUrl, String pageTitle)
         updateWebViewContent,
     required TResult Function(bool status) updateInternetConnectionStatus,
@@ -25,6 +26,7 @@ mixin _$WebViewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initalizeWebViewContent,
     TResult? Function(String webViewUrl, String pageTitle)?
         updateWebViewContent,
     TResult? Function(bool status)? updateInternetConnectionStatus,
@@ -32,6 +34,7 @@ mixin _$WebViewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initalizeWebViewContent,
     TResult Function(String webViewUrl, String pageTitle)? updateWebViewContent,
     TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
@@ -39,6 +42,8 @@ mixin _$WebViewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitalizeWebViewContent value)
+        initalizeWebViewContent,
     required TResult Function(_UpdateWebViewContent value) updateWebViewContent,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
@@ -46,6 +51,7 @@ mixin _$WebViewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitalizeWebViewContent value)? initalizeWebViewContent,
     TResult? Function(_UpdateWebViewContent value)? updateWebViewContent,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -53,6 +59,7 @@ mixin _$WebViewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitalizeWebViewContent value)? initalizeWebViewContent,
     TResult Function(_UpdateWebViewContent value)? updateWebViewContent,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -80,6 +87,126 @@ class _$WebViewEventCopyWithImpl<$Res, $Val extends WebViewEvent>
 
   /// Create a copy of WebViewEvent
   /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$InitalizeWebViewContentImplCopyWith<$Res> {
+  factory _$$InitalizeWebViewContentImplCopyWith(
+          _$InitalizeWebViewContentImpl value,
+          $Res Function(_$InitalizeWebViewContentImpl) then) =
+      __$$InitalizeWebViewContentImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitalizeWebViewContentImplCopyWithImpl<$Res>
+    extends _$WebViewEventCopyWithImpl<$Res, _$InitalizeWebViewContentImpl>
+    implements _$$InitalizeWebViewContentImplCopyWith<$Res> {
+  __$$InitalizeWebViewContentImplCopyWithImpl(
+      _$InitalizeWebViewContentImpl _value,
+      $Res Function(_$InitalizeWebViewContentImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of WebViewEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$InitalizeWebViewContentImpl implements _InitalizeWebViewContent {
+  const _$InitalizeWebViewContentImpl();
+
+  @override
+  String toString() {
+    return 'WebViewEvent.initalizeWebViewContent()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitalizeWebViewContentImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initalizeWebViewContent,
+    required TResult Function(String webViewUrl, String pageTitle)
+        updateWebViewContent,
+    required TResult Function(bool status) updateInternetConnectionStatus,
+  }) {
+    return initalizeWebViewContent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initalizeWebViewContent,
+    TResult? Function(String webViewUrl, String pageTitle)?
+        updateWebViewContent,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
+  }) {
+    return initalizeWebViewContent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initalizeWebViewContent,
+    TResult Function(String webViewUrl, String pageTitle)? updateWebViewContent,
+    TResult Function(bool status)? updateInternetConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (initalizeWebViewContent != null) {
+      return initalizeWebViewContent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitalizeWebViewContent value)
+        initalizeWebViewContent,
+    required TResult Function(_UpdateWebViewContent value) updateWebViewContent,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
+  }) {
+    return initalizeWebViewContent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitalizeWebViewContent value)? initalizeWebViewContent,
+    TResult? Function(_UpdateWebViewContent value)? updateWebViewContent,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
+  }) {
+    return initalizeWebViewContent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitalizeWebViewContent value)? initalizeWebViewContent,
+    TResult Function(_UpdateWebViewContent value)? updateWebViewContent,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (initalizeWebViewContent != null) {
+      return initalizeWebViewContent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitalizeWebViewContent implements WebViewEvent {
+  const factory _InitalizeWebViewContent() = _$InitalizeWebViewContentImpl;
 }
 
 /// @nodoc
@@ -163,6 +290,7 @@ class _$UpdateWebViewContentImpl implements _UpdateWebViewContent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initalizeWebViewContent,
     required TResult Function(String webViewUrl, String pageTitle)
         updateWebViewContent,
     required TResult Function(bool status) updateInternetConnectionStatus,
@@ -173,6 +301,7 @@ class _$UpdateWebViewContentImpl implements _UpdateWebViewContent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initalizeWebViewContent,
     TResult? Function(String webViewUrl, String pageTitle)?
         updateWebViewContent,
     TResult? Function(bool status)? updateInternetConnectionStatus,
@@ -183,6 +312,7 @@ class _$UpdateWebViewContentImpl implements _UpdateWebViewContent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initalizeWebViewContent,
     TResult Function(String webViewUrl, String pageTitle)? updateWebViewContent,
     TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
@@ -196,6 +326,8 @@ class _$UpdateWebViewContentImpl implements _UpdateWebViewContent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitalizeWebViewContent value)
+        initalizeWebViewContent,
     required TResult Function(_UpdateWebViewContent value) updateWebViewContent,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
@@ -206,6 +338,7 @@ class _$UpdateWebViewContentImpl implements _UpdateWebViewContent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitalizeWebViewContent value)? initalizeWebViewContent,
     TResult? Function(_UpdateWebViewContent value)? updateWebViewContent,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -216,6 +349,7 @@ class _$UpdateWebViewContentImpl implements _UpdateWebViewContent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitalizeWebViewContent value)? initalizeWebViewContent,
     TResult Function(_UpdateWebViewContent value)? updateWebViewContent,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -317,6 +451,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initalizeWebViewContent,
     required TResult Function(String webViewUrl, String pageTitle)
         updateWebViewContent,
     required TResult Function(bool status) updateInternetConnectionStatus,
@@ -327,6 +462,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initalizeWebViewContent,
     TResult? Function(String webViewUrl, String pageTitle)?
         updateWebViewContent,
     TResult? Function(bool status)? updateInternetConnectionStatus,
@@ -337,6 +473,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initalizeWebViewContent,
     TResult Function(String webViewUrl, String pageTitle)? updateWebViewContent,
     TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
@@ -350,6 +487,8 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitalizeWebViewContent value)
+        initalizeWebViewContent,
     required TResult Function(_UpdateWebViewContent value) updateWebViewContent,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
@@ -360,6 +499,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitalizeWebViewContent value)? initalizeWebViewContent,
     TResult? Function(_UpdateWebViewContent value)? updateWebViewContent,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -370,6 +510,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitalizeWebViewContent value)? initalizeWebViewContent,
     TResult Function(_UpdateWebViewContent value)? updateWebViewContent,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,

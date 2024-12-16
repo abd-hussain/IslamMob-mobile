@@ -6,12 +6,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
 import 'package:islam_app/core/constants/firebase_constants.dart';
-import 'package:islam_app/utils/download_file.dart';
 import 'package:islam_app/utils/logger.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -20,6 +20,7 @@ part 'quran_copy_state.dart';
 part 'quran_copy_bloc.freezed.dart';
 
 class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
+  final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
   QuranCopyBloc() : super(const QuranCopyState()) {
     on<_UpdatelistOfPrints>(_handleUpdateListOfPrints);
     on<_UpdateInternetConnectionStatus>(_handleInternetConnectionStatusUpdate);
@@ -101,7 +102,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
     for (final print in prints) {
       final fieldName = print.fieldName ?? "";
-      if (await FileDownload().fileExists(fieldName) &&
+      if (await downloadFileUsecase.fileExists(fieldName) &&
           !state.printsDownloading.contains(fieldName)) {
         downloadingList.add(fieldName);
       }

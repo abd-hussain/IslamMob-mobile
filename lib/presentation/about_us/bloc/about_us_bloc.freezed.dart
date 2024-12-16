@@ -16,44 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AboutUsEvent {
-  RewardedAd? get value => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initializeRewardedAd,
     required TResult Function(RewardedAd? value) updateRewardedAd,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initializeRewardedAd,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializeRewardedAd,
     TResult Function(RewardedAd? value)? updateRewardedAd,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitializeRewardedAd value) initializeRewardedAd,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitializeRewardedAd value)? initializeRewardedAd,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializeRewardedAd value)? initializeRewardedAd,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of AboutUsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AboutUsEventCopyWith<AboutUsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -62,8 +61,6 @@ abstract class $AboutUsEventCopyWith<$Res> {
   factory $AboutUsEventCopyWith(
           AboutUsEvent value, $Res Function(AboutUsEvent) then) =
       _$AboutUsEventCopyWithImpl<$Res, AboutUsEvent>;
-  @useResult
-  $Res call({RewardedAd? value});
 }
 
 /// @nodoc
@@ -78,27 +75,119 @@ class _$AboutUsEventCopyWithImpl<$Res, $Val extends AboutUsEvent>
 
   /// Create a copy of AboutUsEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = freezed,
-  }) {
-    return _then(_value.copyWith(
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as RewardedAd?,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$UpdateRewardedAdImplCopyWith<$Res>
-    implements $AboutUsEventCopyWith<$Res> {
+abstract class _$$InitializeRewardedAdImplCopyWith<$Res> {
+  factory _$$InitializeRewardedAdImplCopyWith(_$InitializeRewardedAdImpl value,
+          $Res Function(_$InitializeRewardedAdImpl) then) =
+      __$$InitializeRewardedAdImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitializeRewardedAdImplCopyWithImpl<$Res>
+    extends _$AboutUsEventCopyWithImpl<$Res, _$InitializeRewardedAdImpl>
+    implements _$$InitializeRewardedAdImplCopyWith<$Res> {
+  __$$InitializeRewardedAdImplCopyWithImpl(_$InitializeRewardedAdImpl _value,
+      $Res Function(_$InitializeRewardedAdImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AboutUsEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$InitializeRewardedAdImpl implements _InitializeRewardedAd {
+  _$InitializeRewardedAdImpl();
+
+  @override
+  String toString() {
+    return 'AboutUsEvent.initializeRewardedAd()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitializeRewardedAdImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializeRewardedAd,
+    required TResult Function(RewardedAd? value) updateRewardedAd,
+  }) {
+    return initializeRewardedAd();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initializeRewardedAd,
+    TResult? Function(RewardedAd? value)? updateRewardedAd,
+  }) {
+    return initializeRewardedAd?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializeRewardedAd,
+    TResult Function(RewardedAd? value)? updateRewardedAd,
+    required TResult orElse(),
+  }) {
+    if (initializeRewardedAd != null) {
+      return initializeRewardedAd();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitializeRewardedAd value) initializeRewardedAd,
+    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
+  }) {
+    return initializeRewardedAd(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitializeRewardedAd value)? initializeRewardedAd,
+    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
+  }) {
+    return initializeRewardedAd?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializeRewardedAd value)? initializeRewardedAd,
+    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
+    required TResult orElse(),
+  }) {
+    if (initializeRewardedAd != null) {
+      return initializeRewardedAd(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitializeRewardedAd implements AboutUsEvent {
+  factory _InitializeRewardedAd() = _$InitializeRewardedAdImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
   factory _$$UpdateRewardedAdImplCopyWith(_$UpdateRewardedAdImpl value,
           $Res Function(_$UpdateRewardedAdImpl) then) =
       __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({RewardedAd? value});
 }
@@ -163,6 +252,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initializeRewardedAd,
     required TResult Function(RewardedAd? value) updateRewardedAd,
   }) {
     return updateRewardedAd(value);
@@ -171,6 +261,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initializeRewardedAd,
     TResult? Function(RewardedAd? value)? updateRewardedAd,
   }) {
     return updateRewardedAd?.call(value);
@@ -179,6 +270,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializeRewardedAd,
     TResult Function(RewardedAd? value)? updateRewardedAd,
     required TResult orElse(),
   }) {
@@ -191,6 +283,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitializeRewardedAd value) initializeRewardedAd,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
   }) {
     return updateRewardedAd(this);
@@ -199,6 +292,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitializeRewardedAd value)? initializeRewardedAd,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
   }) {
     return updateRewardedAd?.call(this);
@@ -207,6 +301,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializeRewardedAd value)? initializeRewardedAd,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
     required TResult orElse(),
   }) {
@@ -220,12 +315,10 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
 abstract class _UpdateRewardedAd implements AboutUsEvent {
   factory _UpdateRewardedAd(final RewardedAd? value) = _$UpdateRewardedAdImpl;
 
-  @override
   RewardedAd? get value;
 
   /// Create a copy of AboutUsEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateRewardedAdImplCopyWith<_$UpdateRewardedAdImpl> get copyWith =>
       throw _privateConstructorUsedError;

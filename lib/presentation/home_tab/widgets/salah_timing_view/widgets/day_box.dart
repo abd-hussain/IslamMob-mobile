@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
-import 'package:islam_app/utils/day_time.dart';
 
 class DayBox extends StatelessWidget {
   final int index;
 
-  const DayBox({super.key, required this.index});
+  DayBox({super.key, required this.index});
+
+  final TimingUsecase timingUsecase = locator<TimingUsecase>();
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +50,8 @@ class DayBox extends StatelessWidget {
 
   /// Builds the Gregorian (Melady) date display.
   Widget _buildMeladyDate(int dayOffset) {
-    final meladyDate = locator<DayTime>().formatDate(
-        locator<DayTime>().getDateWithDayOffset(dayOffset: dayOffset));
+    final meladyDate = timingUsecase
+        .formatDate(timingUsecase.getDateWithDayOffset(dayOffset: dayOffset));
     return Expanded(
       child: CustomText(
         title: meladyDate,
@@ -63,8 +65,8 @@ class DayBox extends StatelessWidget {
 
   /// Builds the Hijri date display.
   Widget _buildHijriDate(int dayOffset) {
-    final hijriDate = locator<DayTime>().formatHijriDate(
-        locator<DayTime>().getHijriDateWithDayOffset(dayOffset: dayOffset));
+    final hijriDate = timingUsecase.formatHijriDate(
+        timingUsecase.getHijriDateWithDayOffset(dayOffset: dayOffset));
     return Expanded(
       child: CustomText(
         title: hijriDate,
@@ -88,9 +90,9 @@ class DayBox extends StatelessWidget {
   /// Builds the day title and name display.
   Widget _buildDayDetails(BuildContext context, int dayOffset) {
     final title = _getTitleOfTheDay(context, dayOffset);
-    final dayName = locator<DayTime>().getDayName(
+    final dayName = timingUsecase.getDayName(
       context: context,
-      date: locator<DayTime>().getDateWithDayOffset(dayOffset: dayOffset),
+      date: timingUsecase.getDateWithDayOffset(dayOffset: dayOffset),
     );
 
     return Expanded(
