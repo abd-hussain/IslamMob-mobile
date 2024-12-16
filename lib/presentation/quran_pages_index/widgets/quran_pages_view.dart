@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:islam_app/presentation/quran_pages_index/bloc/quran_pages_index_bloc.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/pages_tile_view.dart';
 import 'package:islam_app/utils/extensions/localization.dart';
-import 'package:islam_app/utils/quran_referances.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranPagesView extends StatelessWidget {
@@ -17,7 +17,10 @@ class QuranPagesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final totalPages = QuranReferances.getNumberOfPagesForSelectedPrint();
+    QuranReferancesUsecase quranReferancesUsecase = QuranReferancesUsecase();
+
+    final totalPages =
+        quranReferancesUsecase.getNumberOfPagesForSelectedPrint();
 
     return Padding(
       padding: const EdgeInsets.all(4),
@@ -25,8 +28,8 @@ class QuranPagesView extends StatelessWidget {
         itemCount: totalPages,
         itemBuilder: (context, index) {
           final pageNumber = index + 1;
-          final surahReferenceName =
-              QuranReferances.getSurahReferenceNameFromPageNumber(pageNumber);
+          final surahReferenceName = quranReferancesUsecase
+              .getSurahReferenceNameFromPageNumber(pageNumber);
           final surahName = AppLocalizations.of(context)!
               .getLocalizedString(surahReferenceName);
           final isCurrentPage = currentPageNumber == pageNumber;

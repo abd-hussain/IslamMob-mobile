@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/model/profile_options.dart';
+import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/about_us/bloc/about_us_bloc.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/collection_list_option.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:islam_app/utils/version.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
@@ -20,7 +20,8 @@ class AboutUsScreen extends StatelessWidget {
     final navigator = Navigator.of(context, rootNavigator: true);
 
     return BlocProvider(
-      create: (context) => AboutUsBloc(),
+      create: (context) =>
+          AboutUsBloc()..add(AboutUsEvent.initializeRewardedAd()),
       child: Scaffold(
         appBar: CustomAppBar(title: AppLocalizations.of(context)!.aboutus),
         body: SafeArea(
@@ -170,7 +171,7 @@ class AboutUsScreen extends StatelessWidget {
         Center(
           child: FutureBuilder<String>(
             initialData: "",
-            future: Version().getApplicationVersion(),
+            future: ApplicationVersionUsecase().getApplicationVersion(),
             builder: (context, snapshot) {
               return CustomText(
                 title:

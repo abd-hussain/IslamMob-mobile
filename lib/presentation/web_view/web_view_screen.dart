@@ -29,7 +29,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => _webViewBloc,
+      create: (context) =>
+          _webViewBloc..add(const WebViewEvent.initalizeWebViewContent()),
       child: BlocBuilder<WebViewBloc, WebViewState>(
         builder: (context, state) {
           return Scaffold(
@@ -38,9 +39,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
             ),
             body: (state.internetConnectionStauts == false)
                 ? NoInternetView(
-                    retryCallback: () {
-                      context.read<WebViewBloc>().initial();
-                    },
+                    retryCallback: () => context.read<WebViewBloc>().add(
+                          const WebViewEvent.initalizeWebViewContent(),
+                        ),
                   )
                 : WebViewAware(
                     child: WebViewX(

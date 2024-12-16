@@ -1,17 +1,15 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/usecase/download_file_usecase.dart';
+import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
-import 'package:islam_app/core/constants/firebase_constants.dart';
-import 'package:islam_app/utils/download_file.dart';
 import 'package:islam_app/utils/logger.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -21,24 +19,14 @@ part 'quran_prints_state.dart';
 part 'quran_prints_bloc.freezed.dart';
 
 class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
+  QuranPrintsUsecase quranPrintsUsecase = QuranPrintsUsecase();
+  final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
+
   QuranPrintsBloc() : super(const QuranPrintsState()) {
+    on<_InitializeFetchingData>(_initializeFetchingData);
     on<_UpdatelistOfPrints>(_handleUpdateListOfPrints);
     on<_UpdateInternetConnectionStatus>(_handleUpdateInternetConnectionStatus);
     on<_UpdatePrintsDownloading>(_handleUpdatePrintsDownloading);
-
-    initialize();
-  }
-
-  /// Initialization method
-  Future<void> initialize() async {
-    final hasInternet = await _checkInternetConnectionStatus();
-
-    if (hasInternet) {
-      if (!await _isFirebaseInitialized()) {
-        await Firebase.initializeApp();
-      }
-      _fetchQuranPrints();
-    }
   }
 
   /// Checks if Firebase is initialized
@@ -51,49 +39,22 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     final hasInternet =
         await locator<NetworkInfoRepository>().checkConnectivityOnLaunch();
 
-    add(QuranPrintsEvent.updateInternetConnectionStatus(hasInternet));
+    add(QuranPrintsEvent.updateInternetConnectionStatus(status: hasInternet));
     return hasInternet;
   }
 
   /// Fetches the list of Quran prints
   Future<void> _fetchQuranPrints() async {
-    try {
-      final documents =
-          await locator<FirebaseFirestoreRepository>().getAllDocuments(
-        collectionName: FirebaseCollectionConstants.quranPrints,
-      );
+    final listOfPrints = await quranPrintsUsecase.getQuranPrints();
 
-      final listOfPrints = _mapDocumentsToQuranPrints(documents);
-
-      if (listOfPrints.isEmpty) {
-        logDebugMessage(message: 'No documents found in the collection.');
-        return;
-      }
-
-      final downloadingList = await _prepareDownloadingList(listOfPrints);
-      add(QuranPrintsEvent.updatePrintsDownloading(downloadingList));
-      add(QuranPrintsEvent.updatelistOfPrints(listOfPrints));
-    } catch (e) {
-      logDebugMessage(message: 'Error fetching documents: $e');
+    if (listOfPrints.isEmpty) {
+      logDebugMessage(message: 'No documents found in the collection.');
+      return;
     }
-  }
 
-  /// Maps Firestore documents to `QuranPrints` objects
-  List<QuranPrints> _mapDocumentsToQuranPrints(
-      List<QueryDocumentSnapshot<Object?>> documents) {
-    return documents.map((doc) {
-      return QuranPrints(
-        nameReferance: doc["name_referance"] ?? "",
-        description: doc["description"] ?? "",
-        language: doc["language"] ?? "",
-        previewImage: doc["previewImage"] ?? "",
-        attachmentLocation: doc["attachmentLocation"] ?? "",
-        addedPagesAttachmentLocation: doc["addedPagesAttachmentLocation"] ?? "",
-        fieldName: doc["fieldName"] ?? "",
-        juz2ToPageNumbers: doc["juz2ToPageNumbers"] ?? {},
-        sorahToPageNumbers: doc["sorahToPageNumbers"] ?? {},
-      );
-    }).toList();
+    final downloadingList = await _prepareDownloadingList(listOfPrints);
+    add(QuranPrintsEvent.updatePrintsDownloading(print: downloadingList));
+    add(QuranPrintsEvent.updatelistOfPrints(list: listOfPrints));
   }
 
   /// Prepares the list of prints that are ready for downloading
@@ -114,7 +75,7 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   /// Checks if a file exists locally
   Future<bool> _fileExists(String fileName) async {
-    return await FileDownload().fileExists(fileName);
+    return await downloadFileUsecase.fileExists(fileName);
   }
 
   /// Gets the display name for a language code
@@ -146,6 +107,18 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   }
 
   /// Event handlers
+  FutureOr<void> _initializeFetchingData(
+      _InitializeFetchingData event, Emitter<QuranPrintsState> emit) async {
+    final hasInternet = await _checkInternetConnectionStatus();
+
+    if (hasInternet) {
+      if (!await _isFirebaseInitialized()) {
+        await Firebase.initializeApp();
+      }
+      _fetchQuranPrints();
+    }
+  }
+
   FutureOr<void> _handleUpdateListOfPrints(
       _UpdatelistOfPrints event, Emitter<QuranPrintsState> emit) {
     emit(state.copyWith(listOfPrints: event.list));

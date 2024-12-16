@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$QuranPrintsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initializeFetchingData,
     required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
     required TResult Function(bool status) updateInternetConnectionStatus,
     required TResult Function(List<String> print) updatePrintsDownloading,
@@ -25,6 +26,7 @@ mixin _$QuranPrintsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initializeFetchingData,
     TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult? Function(bool status)? updateInternetConnectionStatus,
     TResult? Function(List<String> print)? updatePrintsDownloading,
@@ -32,6 +34,7 @@ mixin _$QuranPrintsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializeFetchingData,
     TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult Function(bool status)? updateInternetConnectionStatus,
     TResult Function(List<String> print)? updatePrintsDownloading,
@@ -40,6 +43,8 @@ mixin _$QuranPrintsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitializeFetchingData value)
+        initializeFetchingData,
     required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
@@ -49,6 +54,7 @@ mixin _$QuranPrintsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitializeFetchingData value)? initializeFetchingData,
     TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -57,6 +63,7 @@ mixin _$QuranPrintsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializeFetchingData value)? initializeFetchingData,
     TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -88,6 +95,131 @@ class _$QuranPrintsEventCopyWithImpl<$Res, $Val extends QuranPrintsEvent>
 }
 
 /// @nodoc
+abstract class _$$InitializeFetchingDataImplCopyWith<$Res> {
+  factory _$$InitializeFetchingDataImplCopyWith(
+          _$InitializeFetchingDataImpl value,
+          $Res Function(_$InitializeFetchingDataImpl) then) =
+      __$$InitializeFetchingDataImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitializeFetchingDataImplCopyWithImpl<$Res>
+    extends _$QuranPrintsEventCopyWithImpl<$Res, _$InitializeFetchingDataImpl>
+    implements _$$InitializeFetchingDataImplCopyWith<$Res> {
+  __$$InitializeFetchingDataImplCopyWithImpl(
+      _$InitializeFetchingDataImpl _value,
+      $Res Function(_$InitializeFetchingDataImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QuranPrintsEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$InitializeFetchingDataImpl implements _InitializeFetchingData {
+  _$InitializeFetchingDataImpl();
+
+  @override
+  String toString() {
+    return 'QuranPrintsEvent.initializeFetchingData()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitializeFetchingDataImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializeFetchingData,
+    required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
+    required TResult Function(bool status) updateInternetConnectionStatus,
+    required TResult Function(List<String> print) updatePrintsDownloading,
+  }) {
+    return initializeFetchingData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initializeFetchingData,
+    TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
+    TResult? Function(bool status)? updateInternetConnectionStatus,
+    TResult? Function(List<String> print)? updatePrintsDownloading,
+  }) {
+    return initializeFetchingData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializeFetchingData,
+    TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
+    TResult Function(bool status)? updateInternetConnectionStatus,
+    TResult Function(List<String> print)? updatePrintsDownloading,
+    required TResult orElse(),
+  }) {
+    if (initializeFetchingData != null) {
+      return initializeFetchingData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitializeFetchingData value)
+        initializeFetchingData,
+    required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
+    required TResult Function(_UpdateInternetConnectionStatus value)
+        updateInternetConnectionStatus,
+    required TResult Function(_UpdatePrintsDownloading value)
+        updatePrintsDownloading,
+  }) {
+    return initializeFetchingData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitializeFetchingData value)? initializeFetchingData,
+    TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
+    TResult? Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
+    TResult? Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
+  }) {
+    return initializeFetchingData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializeFetchingData value)? initializeFetchingData,
+    TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
+    TResult Function(_UpdateInternetConnectionStatus value)?
+        updateInternetConnectionStatus,
+    TResult Function(_UpdatePrintsDownloading value)? updatePrintsDownloading,
+    required TResult orElse(),
+  }) {
+    if (initializeFetchingData != null) {
+      return initializeFetchingData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitializeFetchingData implements QuranPrintsEvent {
+  factory _InitializeFetchingData() = _$InitializeFetchingDataImpl;
+}
+
+/// @nodoc
 abstract class _$$UpdatelistOfPrintsImplCopyWith<$Res> {
   factory _$$UpdatelistOfPrintsImplCopyWith(_$UpdatelistOfPrintsImpl value,
           $Res Function(_$UpdatelistOfPrintsImpl) then) =
@@ -112,7 +244,7 @@ class __$$UpdatelistOfPrintsImplCopyWithImpl<$Res>
     Object? list = freezed,
   }) {
     return _then(_$UpdatelistOfPrintsImpl(
-      freezed == list
+      list: freezed == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
               as List<QuranPrints>?,
@@ -123,7 +255,8 @@ class __$$UpdatelistOfPrintsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
-  _$UpdatelistOfPrintsImpl(final List<QuranPrints>? list) : _list = list;
+  _$UpdatelistOfPrintsImpl({required final List<QuranPrints>? list})
+      : _list = list;
 
   final List<QuranPrints>? _list;
   @override
@@ -164,6 +297,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initializeFetchingData,
     required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
     required TResult Function(bool status) updateInternetConnectionStatus,
     required TResult Function(List<String> print) updatePrintsDownloading,
@@ -174,6 +308,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initializeFetchingData,
     TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult? Function(bool status)? updateInternetConnectionStatus,
     TResult? Function(List<String> print)? updatePrintsDownloading,
@@ -184,6 +319,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializeFetchingData,
     TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult Function(bool status)? updateInternetConnectionStatus,
     TResult Function(List<String> print)? updatePrintsDownloading,
@@ -198,6 +334,8 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitializeFetchingData value)
+        initializeFetchingData,
     required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
@@ -210,6 +348,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitializeFetchingData value)? initializeFetchingData,
     TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -221,6 +360,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializeFetchingData value)? initializeFetchingData,
     TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -235,7 +375,7 @@ class _$UpdatelistOfPrintsImpl implements _UpdatelistOfPrints {
 }
 
 abstract class _UpdatelistOfPrints implements QuranPrintsEvent {
-  factory _UpdatelistOfPrints(final List<QuranPrints>? list) =
+  factory _UpdatelistOfPrints({required final List<QuranPrints>? list}) =
       _$UpdatelistOfPrintsImpl;
 
   List<QuranPrints>? get list;
@@ -275,7 +415,7 @@ class __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>
     Object? status = null,
   }) {
     return _then(_$UpdateInternetConnectionStatusImpl(
-      null == status
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -287,7 +427,7 @@ class __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>
 
 class _$UpdateInternetConnectionStatusImpl
     implements _UpdateInternetConnectionStatus {
-  _$UpdateInternetConnectionStatusImpl(this.status);
+  _$UpdateInternetConnectionStatusImpl({required this.status});
 
   @override
   final bool status;
@@ -321,6 +461,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initializeFetchingData,
     required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
     required TResult Function(bool status) updateInternetConnectionStatus,
     required TResult Function(List<String> print) updatePrintsDownloading,
@@ -331,6 +472,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initializeFetchingData,
     TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult? Function(bool status)? updateInternetConnectionStatus,
     TResult? Function(List<String> print)? updatePrintsDownloading,
@@ -341,6 +483,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializeFetchingData,
     TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult Function(bool status)? updateInternetConnectionStatus,
     TResult Function(List<String> print)? updatePrintsDownloading,
@@ -355,6 +498,8 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitializeFetchingData value)
+        initializeFetchingData,
     required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
@@ -367,6 +512,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitializeFetchingData value)? initializeFetchingData,
     TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -378,6 +524,7 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializeFetchingData value)? initializeFetchingData,
     TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -392,7 +539,7 @@ class _$UpdateInternetConnectionStatusImpl
 }
 
 abstract class _UpdateInternetConnectionStatus implements QuranPrintsEvent {
-  factory _UpdateInternetConnectionStatus(final bool status) =
+  factory _UpdateInternetConnectionStatus({required final bool status}) =
       _$UpdateInternetConnectionStatusImpl;
 
   bool get status;
@@ -432,7 +579,7 @@ class __$$UpdatePrintsDownloadingImplCopyWithImpl<$Res>
     Object? print = null,
   }) {
     return _then(_$UpdatePrintsDownloadingImpl(
-      null == print
+      print: null == print
           ? _value._print
           : print // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -443,7 +590,8 @@ class __$$UpdatePrintsDownloadingImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
-  _$UpdatePrintsDownloadingImpl(final List<String> print) : _print = print;
+  _$UpdatePrintsDownloadingImpl({required final List<String> print})
+      : _print = print;
 
   final List<String> _print;
   @override
@@ -482,6 +630,7 @@ class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initializeFetchingData,
     required TResult Function(List<QuranPrints>? list) updatelistOfPrints,
     required TResult Function(bool status) updateInternetConnectionStatus,
     required TResult Function(List<String> print) updatePrintsDownloading,
@@ -492,6 +641,7 @@ class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initializeFetchingData,
     TResult? Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult? Function(bool status)? updateInternetConnectionStatus,
     TResult? Function(List<String> print)? updatePrintsDownloading,
@@ -502,6 +652,7 @@ class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializeFetchingData,
     TResult Function(List<QuranPrints>? list)? updatelistOfPrints,
     TResult Function(bool status)? updateInternetConnectionStatus,
     TResult Function(List<String> print)? updatePrintsDownloading,
@@ -516,6 +667,8 @@ class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_InitializeFetchingData value)
+        initializeFetchingData,
     required TResult Function(_UpdatelistOfPrints value) updatelistOfPrints,
     required TResult Function(_UpdateInternetConnectionStatus value)
         updateInternetConnectionStatus,
@@ -528,6 +681,7 @@ class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitializeFetchingData value)? initializeFetchingData,
     TResult? Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult? Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -539,6 +693,7 @@ class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializeFetchingData value)? initializeFetchingData,
     TResult Function(_UpdatelistOfPrints value)? updatelistOfPrints,
     TResult Function(_UpdateInternetConnectionStatus value)?
         updateInternetConnectionStatus,
@@ -553,7 +708,7 @@ class _$UpdatePrintsDownloadingImpl implements _UpdatePrintsDownloading {
 }
 
 abstract class _UpdatePrintsDownloading implements QuranPrintsEvent {
-  factory _UpdatePrintsDownloading(final List<String> print) =
+  factory _UpdatePrintsDownloading({required final List<String> print}) =
       _$UpdatePrintsDownloadingImpl;
 
   List<String> get print;

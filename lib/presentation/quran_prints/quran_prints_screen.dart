@@ -27,7 +27,10 @@ class QuranPrintsScreen extends StatelessWidget {
     final bool isDetailsPage = _getIsDetailsPage(context);
 
     return BlocProvider(
-      create: (context) => QuranPrintsBloc(),
+      create: (context) => QuranPrintsBloc()
+        ..add(
+          QuranPrintsEvent.initializeFetchingData(),
+        ),
       child: Scaffold(
         appBar: CustomAppBar(title: AppLocalizations.of(context)!.quranprints),
         body: _buildBody(context, isDetailsPage),
@@ -40,7 +43,9 @@ class QuranPrintsScreen extends StatelessWidget {
       builder: (context, state) {
         if (state.internetConnectionStauts == false) {
           return NoInternetView(
-            retryCallback: () => context.read<QuranPrintsBloc>().initialize(),
+            retryCallback: () => context.read<QuranPrintsBloc>().add(
+                  QuranPrintsEvent.initializeFetchingData(),
+                ),
           );
         } else if (state.listOfPrints == null) {
           return const QuranListPrintsShimmer();
@@ -136,7 +141,7 @@ class QuranPrintsScreen extends StatelessWidget {
 
     context
         .read<QuranPrintsBloc>()
-        .add(QuranPrintsEvent.updatePrintsDownloading(updatedList));
+        .add(QuranPrintsEvent.updatePrintsDownloading(print: updatedList));
   }
 
   Future<void> _handleUsePressed(

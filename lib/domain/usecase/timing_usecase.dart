@@ -3,7 +3,7 @@ import 'package:hijri/hijri_calendar.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class DayTime {
+class TimingUsecase {
   /// Returns the appropriate image path based on the current time.
   String getCurrentImageForTime() {
     final currentHour = DateTime.now().hour;
@@ -12,7 +12,7 @@ class DayTime {
         : "assets/images/days/moon.png";
   }
 
-  /// Formats a [DateTime] object to `dd/MM/yyyy`.
+  // /// Formats a [DateTime] object to `dd/MM/yyyy`.
   String formatDate(DateTime date) => DateFormat('dd/MM/yyyy').format(date);
 
   /// Formats a [HijriCalendar] object to `dd/MM/yyyy`.

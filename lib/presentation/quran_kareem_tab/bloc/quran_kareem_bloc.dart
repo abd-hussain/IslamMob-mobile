@@ -9,7 +9,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/utils/adds_helper.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
-import 'package:islam_app/utils/quran_referances.dart';
+import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:pdfx/pdfx.dart';
 
 part 'quran_kareem_event.dart';
@@ -21,6 +21,8 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   int _numRewardedLoadAttempts = 0;
   PdfController? pdfController;
   int currentPageNumber = 0;
+
+  QuranReferancesUsecase quranReferancesUsecase = QuranReferancesUsecase();
 
   QuranKareemBloc() : super(const QuranKareemState()) {
     on<_ShowHideHelpBar>(_showHideHelpBar);
@@ -155,10 +157,10 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     currentPageNumber = event.pageCount;
     emit(state.copyWith(pageCount: currentPageNumber));
 
-    final sorahName =
-        QuranReferances.getSurahReferenceNameFromPageNumber(currentPageNumber);
+    final sorahName = quranReferancesUsecase
+        .getSurahReferenceNameFromPageNumber(currentPageNumber);
     final jozo2Name =
-        QuranReferances.getJuzNumberFromPageNumber(currentPageNumber);
+        quranReferancesUsecase.getJuzNumberFromPageNumber(currentPageNumber);
     add(QuranKareemEvent.updateSorahName(sorahName));
     add(QuranKareemEvent.updateJozo2Name(jozo2Name));
 

@@ -1,11 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/domain/model/language.dart';
-import 'package:islam_app/my_app/islam_mob_app/islam_mob_app.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 
 part 'change_language_event.dart';
@@ -17,15 +15,17 @@ class ChangeLanguageBloc
   final _box = Hive.box(DatabaseBoxConstant.userInfo);
 
   ChangeLanguageBloc() : super(const ChangeLanguageState()) {
-    on<_ChangeSelectedLanguage>(_changeSelectedLanguage);
+    on<_ChangeSelectedCheckBoxLanguage>(_changeSelectedCheckBoxLanguage);
+    on<_PlaceNewLanguage>(_placeNewLanguage);
   }
-  FutureOr<void> _changeSelectedLanguage(
-      _ChangeSelectedLanguage event, Emitter<ChangeLanguageState> emit) {
+  FutureOr<void> _changeSelectedCheckBoxLanguage(
+      _ChangeSelectedCheckBoxLanguage event,
+      Emitter<ChangeLanguageState> emit) {
     emit(state.copyWith(selectedLanguage: event.type));
   }
 
-  void setLanguageInStorage(BuildContext context, String langCode) {
-    _box.put(DatabaseFieldConstant.selectedLanguage, langCode);
-    IslamMobApp.of(context)!.rebuild();
+  FutureOr<void> _placeNewLanguage(
+      _PlaceNewLanguage event, Emitter<ChangeLanguageState> emit) async {
+    await _box.put(DatabaseFieldConstant.selectedLanguage, event.langCode);
   }
 }

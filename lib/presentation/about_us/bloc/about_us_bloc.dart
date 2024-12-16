@@ -16,25 +16,8 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
   int _rewardedLoadAttempts = 0;
 
   AboutUsBloc() : super(const AboutUsState()) {
+    on<_InitializeRewardedAd>(_initializeRewardedAd);
     on<_UpdateRewardedAd>(_handleUpdateRewardedAd);
-    _initializeRewardedAd();
-  }
-
-  /// Initializes and loads a rewarded ad
-  void _initializeRewardedAd() {
-    RewardedAd.load(
-      adUnitId: AdHelper.rewardedAdUnitId,
-      request: const AdRequest(),
-      rewardedAdLoadCallback: RewardedAdLoadCallback(
-        onAdLoaded: (RewardedAd rewardedAd) {
-          _resetRewardedLoadAttempts();
-          add(AboutUsEvent.updateRewardedAd(rewardedAd));
-        },
-        onAdFailedToLoad: (LoadAdError error) {
-          _handleAdLoadFailure();
-        },
-      ),
-    );
   }
 
   /// Resets the rewarded ad load attempts
@@ -47,7 +30,7 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
     _rewardedLoadAttempts++;
     add(AboutUsEvent.updateRewardedAd(null));
     if (_rewardedLoadAttempts < _maxRewardedLoadAttempts) {
-      _initializeRewardedAd();
+      add(AboutUsEvent.initializeRewardedAd());
     }
   }
 
@@ -71,12 +54,12 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
       onAdDismissedFullScreenContent: (RewardedAd ad) {
         _logAdEvent(ad, "onAdDismissedFullScreenContent");
         ad.dispose();
-        _initializeRewardedAd();
+        add(AboutUsEvent.initializeRewardedAd());
       },
       onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
         _logAdEvent(ad, "onAdFailedToShowFullScreenContent: $error");
         ad.dispose();
-        _initializeRewardedAd();
+        add(AboutUsEvent.initializeRewardedAd());
       },
     );
   }
@@ -100,6 +83,23 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
     FirebaseAnalytics.instance.logEvent(
       name: "RewardedAd_AboutUsScreen",
       parameters: {"status": status},
+    );
+  }
+
+  FutureOr<void> _initializeRewardedAd(
+      _InitializeRewardedAd event, Emitter<AboutUsState> emit) {
+    RewardedAd.load(
+      adUnitId: AdHelper.rewardedAdUnitId,
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (RewardedAd rewardedAd) {
+          _resetRewardedLoadAttempts();
+          add(AboutUsEvent.updateRewardedAd(rewardedAd));
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          _handleAdLoadFailure();
+        },
+      ),
     );
   }
 

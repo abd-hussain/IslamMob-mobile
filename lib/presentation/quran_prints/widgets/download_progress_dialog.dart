@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
-import 'package:islam_app/utils/download_file.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DownloadProgressDialog extends StatefulWidget {
@@ -39,8 +39,9 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
   }
 
   void _startDownload() {
-    FileDownload().startDownloading(
-      context: context,
+    final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
+
+    downloadFileUsecase.startDownloading(
       fileUrl: widget.fileUrl,
       fileNameWithExtension: widget.fileNameWithExtension,
       progressCallback: (receivedBytes, totalBytes) {
@@ -53,6 +54,7 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
       finishCallback: (path) {
         if (mounted) {
           widget.filePathCallback(path);
+          Navigator.pop(context);
         }
       },
       cancelToken:

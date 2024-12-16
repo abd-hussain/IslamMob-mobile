@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/my_app/my_app.dart';
 import 'package:islam_app/utils/logger.dart';
-//TODO: fix the event all over the app
 
 //TODO: local notification handle depend on athan
-
-//TODO : seperate the code in usecases
 
 //TODO: add quran copy with defrent languages
 
@@ -17,6 +14,8 @@ import 'package:islam_app/utils/logger.dart';
 
 //TODO: whatsup, facebook
 
+//TODO: local notification with timer such as other apps
+
 // DateTime scheduledDate = DateTime.now().add(const Duration(seconds: 3));
 // LocalNotificationRepository.scheduleNotification(
 //   id: 0,
@@ -25,8 +24,6 @@ import 'package:islam_app/utils/logger.dart';
 //   scheduledTime: scheduledDate,
 //   soundType: NotificationSoundType.isha,
 // );
-
-//TODO: local notification with timer such as other apps
 
 void main() {
   logDebugMessage(message: 'Application Started ...');

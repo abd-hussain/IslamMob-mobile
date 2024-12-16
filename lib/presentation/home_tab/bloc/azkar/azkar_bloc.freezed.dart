@@ -18,22 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AzkarEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<AzkarModel> azkarList)
-        updateShowingAzkarStatus,
+    required TResult Function(SalahTimeState state) initializeAzkar,
     required TResult Function() resetCounters,
     required TResult Function(AzkarModel zeker) incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
+    TResult? Function(SalahTimeState state)? initializeAzkar,
     TResult? Function()? resetCounters,
     TResult? Function(AzkarModel zeker)? incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
+    TResult Function(SalahTimeState state)? initializeAzkar,
     TResult Function()? resetCounters,
     TResult Function(AzkarModel zeker)? incrementCounter,
     required TResult orElse(),
@@ -41,23 +40,21 @@ mixin _$AzkarEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateShowingAzkarStatus value)
-        updateShowingAzkarStatus,
+    required TResult Function(_InitializeAzkar value) initializeAzkar,
     required TResult Function(_ResetCounters value) resetCounters,
     required TResult Function(_IncrementCounter value) incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateShowingAzkarStatus value)?
-        updateShowingAzkarStatus,
+    TResult? Function(_InitializeAzkar value)? initializeAzkar,
     TResult? Function(_ResetCounters value)? resetCounters,
     TResult? Function(_IncrementCounter value)? incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateShowingAzkarStatus value)? updateShowingAzkarStatus,
+    TResult Function(_InitializeAzkar value)? initializeAzkar,
     TResult Function(_ResetCounters value)? resetCounters,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
@@ -87,22 +84,22 @@ class _$AzkarEventCopyWithImpl<$Res, $Val extends AzkarEvent>
 }
 
 /// @nodoc
-abstract class _$$UpdateShowingAzkarStatusImplCopyWith<$Res> {
-  factory _$$UpdateShowingAzkarStatusImplCopyWith(
-          _$UpdateShowingAzkarStatusImpl value,
-          $Res Function(_$UpdateShowingAzkarStatusImpl) then) =
-      __$$UpdateShowingAzkarStatusImplCopyWithImpl<$Res>;
+abstract class _$$InitializeAzkarImplCopyWith<$Res> {
+  factory _$$InitializeAzkarImplCopyWith(_$InitializeAzkarImpl value,
+          $Res Function(_$InitializeAzkarImpl) then) =
+      __$$InitializeAzkarImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<AzkarModel> azkarList});
+  $Res call({SalahTimeState state});
+
+  $SalahTimeStateCopyWith<$Res> get state;
 }
 
 /// @nodoc
-class __$$UpdateShowingAzkarStatusImplCopyWithImpl<$Res>
-    extends _$AzkarEventCopyWithImpl<$Res, _$UpdateShowingAzkarStatusImpl>
-    implements _$$UpdateShowingAzkarStatusImplCopyWith<$Res> {
-  __$$UpdateShowingAzkarStatusImplCopyWithImpl(
-      _$UpdateShowingAzkarStatusImpl _value,
-      $Res Function(_$UpdateShowingAzkarStatusImpl) _then)
+class __$$InitializeAzkarImplCopyWithImpl<$Res>
+    extends _$AzkarEventCopyWithImpl<$Res, _$InitializeAzkarImpl>
+    implements _$$InitializeAzkarImplCopyWith<$Res> {
+  __$$InitializeAzkarImplCopyWithImpl(
+      _$InitializeAzkarImpl _value, $Res Function(_$InitializeAzkarImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AzkarEvent
@@ -110,89 +107,90 @@ class __$$UpdateShowingAzkarStatusImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? azkarList = null,
+    Object? state = null,
   }) {
-    return _then(_$UpdateShowingAzkarStatusImpl(
-      null == azkarList
-          ? _value._azkarList
-          : azkarList // ignore: cast_nullable_to_non_nullable
-              as List<AzkarModel>,
+    return _then(_$InitializeAzkarImpl(
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as SalahTimeState,
     ));
+  }
+
+  /// Create a copy of AzkarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SalahTimeStateCopyWith<$Res> get state {
+    return $SalahTimeStateCopyWith<$Res>(_value.state, (value) {
+      return _then(_value.copyWith(state: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$UpdateShowingAzkarStatusImpl implements _UpdateShowingAzkarStatus {
-  _$UpdateShowingAzkarStatusImpl(final List<AzkarModel> azkarList)
-      : _azkarList = azkarList;
+class _$InitializeAzkarImpl implements _InitializeAzkar {
+  _$InitializeAzkarImpl({required this.state});
 
-  final List<AzkarModel> _azkarList;
   @override
-  List<AzkarModel> get azkarList {
-    if (_azkarList is EqualUnmodifiableListView) return _azkarList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_azkarList);
-  }
+  final SalahTimeState state;
 
   @override
   String toString() {
-    return 'AzkarEvent.updateShowingAzkarStatus(azkarList: $azkarList)';
+    return 'AzkarEvent.initializeAzkar(state: $state)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateShowingAzkarStatusImpl &&
-            const DeepCollectionEquality()
-                .equals(other._azkarList, _azkarList));
+            other is _$InitializeAzkarImpl &&
+            (identical(other.state, state) || other.state == state));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_azkarList));
+  int get hashCode => Object.hash(runtimeType, state);
 
   /// Create a copy of AzkarEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateShowingAzkarStatusImplCopyWith<_$UpdateShowingAzkarStatusImpl>
-      get copyWith => __$$UpdateShowingAzkarStatusImplCopyWithImpl<
-          _$UpdateShowingAzkarStatusImpl>(this, _$identity);
+  _$$InitializeAzkarImplCopyWith<_$InitializeAzkarImpl> get copyWith =>
+      __$$InitializeAzkarImplCopyWithImpl<_$InitializeAzkarImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<AzkarModel> azkarList)
-        updateShowingAzkarStatus,
+    required TResult Function(SalahTimeState state) initializeAzkar,
     required TResult Function() resetCounters,
     required TResult Function(AzkarModel zeker) incrementCounter,
   }) {
-    return updateShowingAzkarStatus(azkarList);
+    return initializeAzkar(state);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
+    TResult? Function(SalahTimeState state)? initializeAzkar,
     TResult? Function()? resetCounters,
     TResult? Function(AzkarModel zeker)? incrementCounter,
   }) {
-    return updateShowingAzkarStatus?.call(azkarList);
+    return initializeAzkar?.call(state);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
+    TResult Function(SalahTimeState state)? initializeAzkar,
     TResult Function()? resetCounters,
     TResult Function(AzkarModel zeker)? incrementCounter,
     required TResult orElse(),
   }) {
-    if (updateShowingAzkarStatus != null) {
-      return updateShowingAzkarStatus(azkarList);
+    if (initializeAzkar != null) {
+      return initializeAzkar(state);
     }
     return orElse();
   }
@@ -200,51 +198,49 @@ class _$UpdateShowingAzkarStatusImpl implements _UpdateShowingAzkarStatus {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateShowingAzkarStatus value)
-        updateShowingAzkarStatus,
+    required TResult Function(_InitializeAzkar value) initializeAzkar,
     required TResult Function(_ResetCounters value) resetCounters,
     required TResult Function(_IncrementCounter value) incrementCounter,
   }) {
-    return updateShowingAzkarStatus(this);
+    return initializeAzkar(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateShowingAzkarStatus value)?
-        updateShowingAzkarStatus,
+    TResult? Function(_InitializeAzkar value)? initializeAzkar,
     TResult? Function(_ResetCounters value)? resetCounters,
     TResult? Function(_IncrementCounter value)? incrementCounter,
   }) {
-    return updateShowingAzkarStatus?.call(this);
+    return initializeAzkar?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateShowingAzkarStatus value)? updateShowingAzkarStatus,
+    TResult Function(_InitializeAzkar value)? initializeAzkar,
     TResult Function(_ResetCounters value)? resetCounters,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
   }) {
-    if (updateShowingAzkarStatus != null) {
-      return updateShowingAzkarStatus(this);
+    if (initializeAzkar != null) {
+      return initializeAzkar(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateShowingAzkarStatus implements AzkarEvent {
-  factory _UpdateShowingAzkarStatus(final List<AzkarModel> azkarList) =
-      _$UpdateShowingAzkarStatusImpl;
+abstract class _InitializeAzkar implements AzkarEvent {
+  factory _InitializeAzkar({required final SalahTimeState state}) =
+      _$InitializeAzkarImpl;
 
-  List<AzkarModel> get azkarList;
+  SalahTimeState get state;
 
   /// Create a copy of AzkarEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateShowingAzkarStatusImplCopyWith<_$UpdateShowingAzkarStatusImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$InitializeAzkarImplCopyWith<_$InitializeAzkarImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -288,8 +284,7 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<AzkarModel> azkarList)
-        updateShowingAzkarStatus,
+    required TResult Function(SalahTimeState state) initializeAzkar,
     required TResult Function() resetCounters,
     required TResult Function(AzkarModel zeker) incrementCounter,
   }) {
@@ -299,7 +294,7 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
+    TResult? Function(SalahTimeState state)? initializeAzkar,
     TResult? Function()? resetCounters,
     TResult? Function(AzkarModel zeker)? incrementCounter,
   }) {
@@ -309,7 +304,7 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
+    TResult Function(SalahTimeState state)? initializeAzkar,
     TResult Function()? resetCounters,
     TResult Function(AzkarModel zeker)? incrementCounter,
     required TResult orElse(),
@@ -323,8 +318,7 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateShowingAzkarStatus value)
-        updateShowingAzkarStatus,
+    required TResult Function(_InitializeAzkar value) initializeAzkar,
     required TResult Function(_ResetCounters value) resetCounters,
     required TResult Function(_IncrementCounter value) incrementCounter,
   }) {
@@ -334,8 +328,7 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateShowingAzkarStatus value)?
-        updateShowingAzkarStatus,
+    TResult? Function(_InitializeAzkar value)? initializeAzkar,
     TResult? Function(_ResetCounters value)? resetCounters,
     TResult? Function(_IncrementCounter value)? incrementCounter,
   }) {
@@ -345,7 +338,7 @@ class _$ResetCountersImpl implements _ResetCounters {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateShowingAzkarStatus value)? updateShowingAzkarStatus,
+    TResult Function(_InitializeAzkar value)? initializeAzkar,
     TResult Function(_ResetCounters value)? resetCounters,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
@@ -430,8 +423,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<AzkarModel> azkarList)
-        updateShowingAzkarStatus,
+    required TResult Function(SalahTimeState state) initializeAzkar,
     required TResult Function() resetCounters,
     required TResult Function(AzkarModel zeker) incrementCounter,
   }) {
@@ -441,7 +433,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
+    TResult? Function(SalahTimeState state)? initializeAzkar,
     TResult? Function()? resetCounters,
     TResult? Function(AzkarModel zeker)? incrementCounter,
   }) {
@@ -451,7 +443,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<AzkarModel> azkarList)? updateShowingAzkarStatus,
+    TResult Function(SalahTimeState state)? initializeAzkar,
     TResult Function()? resetCounters,
     TResult Function(AzkarModel zeker)? incrementCounter,
     required TResult orElse(),
@@ -465,8 +457,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateShowingAzkarStatus value)
-        updateShowingAzkarStatus,
+    required TResult Function(_InitializeAzkar value) initializeAzkar,
     required TResult Function(_ResetCounters value) resetCounters,
     required TResult Function(_IncrementCounter value) incrementCounter,
   }) {
@@ -476,8 +467,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateShowingAzkarStatus value)?
-        updateShowingAzkarStatus,
+    TResult? Function(_InitializeAzkar value)? initializeAzkar,
     TResult? Function(_ResetCounters value)? resetCounters,
     TResult? Function(_IncrementCounter value)? incrementCounter,
   }) {
@@ -487,7 +477,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateShowingAzkarStatus value)? updateShowingAzkarStatus,
+    TResult Function(_InitializeAzkar value)? initializeAzkar,
     TResult Function(_ResetCounters value)? resetCounters,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),

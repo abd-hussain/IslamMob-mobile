@@ -8,7 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:islam_app/domain/model/report_request.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/domain/repository/network_info.dart';
-import 'package:islam_app/domain/usecase/report_service.dart';
+import 'package:islam_app/domain/usecase/report_usecase.dart';
 
 part 'report_and_suggestion_event.dart';
 part 'report_and_suggestion_state.dart';
@@ -16,6 +16,8 @@ part 'report_and_suggestion_bloc.freezed.dart';
 
 class ReportAndSuggestionBloc
     extends Bloc<ReportAndSuggestionEvent, ReportAndSuggestionState> {
+  TextEditingController textController = TextEditingController();
+
   ReportAndSuggestionBloc() : super(const ReportAndSuggestionState()) {
     on<_UpdateEnableSubmitBtn>(_updateEnableSubmitBtn);
     on<_UpdateLoadingStatus>(_updateLoadingStatus);
@@ -43,8 +45,6 @@ class ReportAndSuggestionBloc
     }
   }
 
-  TextEditingController textController = TextEditingController();
-
   void _validationFields() {
     add(const ReportAndSuggestionEvent.updateEnableSubmitBtn(status: false));
 
@@ -69,7 +69,7 @@ class ReportAndSuggestionBloc
       attach3: attach3,
     );
 
-    return locator<ReportService>().addNewReportOrSuggestion(reportData: model);
+    return locator<ReportUseCase>().addNewReportOrSuggestion(reportData: model);
   }
 
   FutureOr<void> _updateEnableSubmitBtn(

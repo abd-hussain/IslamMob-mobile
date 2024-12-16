@@ -16,45 +16,47 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ChangeLanguageEvent {
-  LanguageModel get type => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(LanguageModel type) changeSelectedLanguage,
+    required TResult Function(LanguageModel type)
+        changeSelectedCheckBoxLanguage,
+    required TResult Function(String langCode) placeNewLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LanguageModel type)? changeSelectedLanguage,
+    TResult? Function(LanguageModel type)? changeSelectedCheckBoxLanguage,
+    TResult? Function(String langCode)? placeNewLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LanguageModel type)? changeSelectedLanguage,
+    TResult Function(LanguageModel type)? changeSelectedCheckBoxLanguage,
+    TResult Function(String langCode)? placeNewLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ChangeSelectedLanguage value)
-        changeSelectedLanguage,
+    required TResult Function(_ChangeSelectedCheckBoxLanguage value)
+        changeSelectedCheckBoxLanguage,
+    required TResult Function(_PlaceNewLanguage value) placeNewLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult? Function(_ChangeSelectedCheckBoxLanguage value)?
+        changeSelectedCheckBoxLanguage,
+    TResult? Function(_PlaceNewLanguage value)? placeNewLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult Function(_ChangeSelectedCheckBoxLanguage value)?
+        changeSelectedCheckBoxLanguage,
+    TResult Function(_PlaceNewLanguage value)? placeNewLanguage,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of ChangeLanguageEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChangeLanguageEventCopyWith<ChangeLanguageEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -63,8 +65,6 @@ abstract class $ChangeLanguageEventCopyWith<$Res> {
   factory $ChangeLanguageEventCopyWith(
           ChangeLanguageEvent value, $Res Function(ChangeLanguageEvent) then) =
       _$ChangeLanguageEventCopyWithImpl<$Res, ChangeLanguageEvent>;
-  @useResult
-  $Res call({LanguageModel type});
 }
 
 /// @nodoc
@@ -79,40 +79,26 @@ class _$ChangeLanguageEventCopyWithImpl<$Res, $Val extends ChangeLanguageEvent>
 
   /// Create a copy of ChangeLanguageEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-  }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as LanguageModel,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$ChangeSelectedLanguageImplCopyWith<$Res>
-    implements $ChangeLanguageEventCopyWith<$Res> {
-  factory _$$ChangeSelectedLanguageImplCopyWith(
-          _$ChangeSelectedLanguageImpl value,
-          $Res Function(_$ChangeSelectedLanguageImpl) then) =
-      __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>;
-  @override
+abstract class _$$ChangeSelectedCheckBoxLanguageImplCopyWith<$Res> {
+  factory _$$ChangeSelectedCheckBoxLanguageImplCopyWith(
+          _$ChangeSelectedCheckBoxLanguageImpl value,
+          $Res Function(_$ChangeSelectedCheckBoxLanguageImpl) then) =
+      __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LanguageModel type});
 }
 
 /// @nodoc
-class __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>
+class __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<$Res>
     extends _$ChangeLanguageEventCopyWithImpl<$Res,
-        _$ChangeSelectedLanguageImpl>
-    implements _$$ChangeSelectedLanguageImplCopyWith<$Res> {
-  __$$ChangeSelectedLanguageImplCopyWithImpl(
-      _$ChangeSelectedLanguageImpl _value,
-      $Res Function(_$ChangeSelectedLanguageImpl) _then)
+        _$ChangeSelectedCheckBoxLanguageImpl>
+    implements _$$ChangeSelectedCheckBoxLanguageImplCopyWith<$Res> {
+  __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl(
+      _$ChangeSelectedCheckBoxLanguageImpl _value,
+      $Res Function(_$ChangeSelectedCheckBoxLanguageImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of ChangeLanguageEvent
@@ -122,7 +108,7 @@ class __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$ChangeSelectedLanguageImpl(
+    return _then(_$ChangeSelectedCheckBoxLanguageImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -133,22 +119,23 @@ class __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
-  const _$ChangeSelectedLanguageImpl({required this.type});
+class _$ChangeSelectedCheckBoxLanguageImpl
+    implements _ChangeSelectedCheckBoxLanguage {
+  const _$ChangeSelectedCheckBoxLanguageImpl({required this.type});
 
   @override
   final LanguageModel type;
 
   @override
   String toString() {
-    return 'ChangeLanguageEvent.changeSelectedLanguage(type: $type)';
+    return 'ChangeLanguageEvent.changeSelectedCheckBoxLanguage(type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeSelectedLanguageImpl &&
+            other is _$ChangeSelectedCheckBoxLanguageImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -160,34 +147,39 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangeSelectedLanguageImplCopyWith<_$ChangeSelectedLanguageImpl>
-      get copyWith => __$$ChangeSelectedLanguageImplCopyWithImpl<
-          _$ChangeSelectedLanguageImpl>(this, _$identity);
+  _$$ChangeSelectedCheckBoxLanguageImplCopyWith<
+          _$ChangeSelectedCheckBoxLanguageImpl>
+      get copyWith => __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<
+          _$ChangeSelectedCheckBoxLanguageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(LanguageModel type) changeSelectedLanguage,
+    required TResult Function(LanguageModel type)
+        changeSelectedCheckBoxLanguage,
+    required TResult Function(String langCode) placeNewLanguage,
   }) {
-    return changeSelectedLanguage(type);
+    return changeSelectedCheckBoxLanguage(type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LanguageModel type)? changeSelectedLanguage,
+    TResult? Function(LanguageModel type)? changeSelectedCheckBoxLanguage,
+    TResult? Function(String langCode)? placeNewLanguage,
   }) {
-    return changeSelectedLanguage?.call(type);
+    return changeSelectedCheckBoxLanguage?.call(type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LanguageModel type)? changeSelectedLanguage,
+    TResult Function(LanguageModel type)? changeSelectedCheckBoxLanguage,
+    TResult Function(String langCode)? placeNewLanguage,
     required TResult orElse(),
   }) {
-    if (changeSelectedLanguage != null) {
-      return changeSelectedLanguage(type);
+    if (changeSelectedCheckBoxLanguage != null) {
+      return changeSelectedCheckBoxLanguage(type);
     }
     return orElse();
   }
@@ -195,46 +187,198 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ChangeSelectedLanguage value)
-        changeSelectedLanguage,
+    required TResult Function(_ChangeSelectedCheckBoxLanguage value)
+        changeSelectedCheckBoxLanguage,
+    required TResult Function(_PlaceNewLanguage value) placeNewLanguage,
   }) {
-    return changeSelectedLanguage(this);
+    return changeSelectedCheckBoxLanguage(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult? Function(_ChangeSelectedCheckBoxLanguage value)?
+        changeSelectedCheckBoxLanguage,
+    TResult? Function(_PlaceNewLanguage value)? placeNewLanguage,
   }) {
-    return changeSelectedLanguage?.call(this);
+    return changeSelectedCheckBoxLanguage?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult Function(_ChangeSelectedCheckBoxLanguage value)?
+        changeSelectedCheckBoxLanguage,
+    TResult Function(_PlaceNewLanguage value)? placeNewLanguage,
     required TResult orElse(),
   }) {
-    if (changeSelectedLanguage != null) {
-      return changeSelectedLanguage(this);
+    if (changeSelectedCheckBoxLanguage != null) {
+      return changeSelectedCheckBoxLanguage(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangeSelectedLanguage implements ChangeLanguageEvent {
-  const factory _ChangeSelectedLanguage({required final LanguageModel type}) =
-      _$ChangeSelectedLanguageImpl;
+abstract class _ChangeSelectedCheckBoxLanguage implements ChangeLanguageEvent {
+  const factory _ChangeSelectedCheckBoxLanguage(
+          {required final LanguageModel type}) =
+      _$ChangeSelectedCheckBoxLanguageImpl;
 
-  @override
   LanguageModel get type;
 
   /// Create a copy of ChangeLanguageEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChangeSelectedLanguageImplCopyWith<_$ChangeSelectedLanguageImpl>
+  _$$ChangeSelectedCheckBoxLanguageImplCopyWith<
+          _$ChangeSelectedCheckBoxLanguageImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PlaceNewLanguageImplCopyWith<$Res> {
+  factory _$$PlaceNewLanguageImplCopyWith(_$PlaceNewLanguageImpl value,
+          $Res Function(_$PlaceNewLanguageImpl) then) =
+      __$$PlaceNewLanguageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String langCode});
+}
+
+/// @nodoc
+class __$$PlaceNewLanguageImplCopyWithImpl<$Res>
+    extends _$ChangeLanguageEventCopyWithImpl<$Res, _$PlaceNewLanguageImpl>
+    implements _$$PlaceNewLanguageImplCopyWith<$Res> {
+  __$$PlaceNewLanguageImplCopyWithImpl(_$PlaceNewLanguageImpl _value,
+      $Res Function(_$PlaceNewLanguageImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChangeLanguageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? langCode = null,
+  }) {
+    return _then(_$PlaceNewLanguageImpl(
+      langCode: null == langCode
+          ? _value.langCode
+          : langCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PlaceNewLanguageImpl implements _PlaceNewLanguage {
+  const _$PlaceNewLanguageImpl({required this.langCode});
+
+  @override
+  final String langCode;
+
+  @override
+  String toString() {
+    return 'ChangeLanguageEvent.placeNewLanguage(langCode: $langCode)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PlaceNewLanguageImpl &&
+            (identical(other.langCode, langCode) ||
+                other.langCode == langCode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, langCode);
+
+  /// Create a copy of ChangeLanguageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PlaceNewLanguageImplCopyWith<_$PlaceNewLanguageImpl> get copyWith =>
+      __$$PlaceNewLanguageImplCopyWithImpl<_$PlaceNewLanguageImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LanguageModel type)
+        changeSelectedCheckBoxLanguage,
+    required TResult Function(String langCode) placeNewLanguage,
+  }) {
+    return placeNewLanguage(langCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LanguageModel type)? changeSelectedCheckBoxLanguage,
+    TResult? Function(String langCode)? placeNewLanguage,
+  }) {
+    return placeNewLanguage?.call(langCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LanguageModel type)? changeSelectedCheckBoxLanguage,
+    TResult Function(String langCode)? placeNewLanguage,
+    required TResult orElse(),
+  }) {
+    if (placeNewLanguage != null) {
+      return placeNewLanguage(langCode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeSelectedCheckBoxLanguage value)
+        changeSelectedCheckBoxLanguage,
+    required TResult Function(_PlaceNewLanguage value) placeNewLanguage,
+  }) {
+    return placeNewLanguage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeSelectedCheckBoxLanguage value)?
+        changeSelectedCheckBoxLanguage,
+    TResult? Function(_PlaceNewLanguage value)? placeNewLanguage,
+  }) {
+    return placeNewLanguage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeSelectedCheckBoxLanguage value)?
+        changeSelectedCheckBoxLanguage,
+    TResult Function(_PlaceNewLanguage value)? placeNewLanguage,
+    required TResult orElse(),
+  }) {
+    if (placeNewLanguage != null) {
+      return placeNewLanguage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PlaceNewLanguage implements ChangeLanguageEvent {
+  const factory _PlaceNewLanguage({required final String langCode}) =
+      _$PlaceNewLanguageImpl;
+
+  String get langCode;
+
+  /// Create a copy of ChangeLanguageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PlaceNewLanguageImplCopyWith<_$PlaceNewLanguageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

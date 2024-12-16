@@ -15,7 +15,8 @@ class AzkarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AzkarBloc(salahType),
+      create: (context) =>
+          AzkarBloc()..add(AzkarEvent.initializeAzkar(state: salahType)),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Column(

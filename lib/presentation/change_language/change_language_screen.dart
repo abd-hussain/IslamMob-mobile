@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/my_app/islam_mob_app/islam_mob_app.dart';
 import 'package:islam_app/presentation/change_language/bloc/change_language_bloc.dart';
 import 'package:islam_app/presentation/change_language/widgets/list_of_languages_view.dart';
 import 'package:islam_app/presentation/change_language/widgets/title_table_widget.dart';
@@ -46,8 +47,12 @@ class ChangeLanguageScreen extends StatelessWidget {
           isEnabled: true,
           title: state.selectedLanguage!.selectButtonTitle,
           onTap: () {
-            context.read<ChangeLanguageBloc>().setLanguageInStorage(
-                context, state.selectedLanguage!.languageCode);
+            context.read<ChangeLanguageBloc>().add(
+                  ChangeLanguageEvent.placeNewLanguage(
+                    langCode: state.selectedLanguage!.languageCode,
+                  ),
+                );
+            IslamMobApp.of(context)!.rebuild();
             Navigator.pop(context);
           },
         );

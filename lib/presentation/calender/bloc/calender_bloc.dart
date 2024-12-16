@@ -11,28 +11,22 @@ part 'calender_bloc.freezed.dart';
 
 class CalenderBloc extends Bloc<CalenderEvent, CalenderState> {
   CalenderBloc() : super(const CalenderState()) {
-    on<_UpdateCalenderList>(_updateCalenderList);
-
-    _initialize();
+    on<_PrepareSalahTiming>(_prepareSalahTiming);
   }
   final PrayUsecase prayUsecase = PrayUsecase();
 
-  void _initialize() {
-    _prepareSalahTiming();
-  }
-
-  void _prepareSalahTiming() {
+  FutureOr<void> _prepareSalahTiming(
+      _PrepareSalahTiming event, Emitter<CalenderState> emit) {
     final List<CalenderModel> calenderData =
         prayUsecase.getAllPrayTimeAsDateTimeForMonth(
             fromDate: DateTime.now().subtract(const Duration(days: 15)),
             toDate: DateTime.now().add(const Duration(days: 15)));
 
-    add(CalenderEvent.updateCalenderList(
-        list: calenderData, status: const CalenderProcessStateSuccss()));
-  }
-
-  FutureOr<void> _updateCalenderList(
-      _UpdateCalenderList event, Emitter<CalenderState> emit) {
-    emit(state.copyWith(list: event.list, status: event.status));
+    if (calenderData.isEmpty) {
+      emit(state.copyWith(status: const CalenderProcessStateError()));
+    } else {
+      emit(state.copyWith(
+          list: calenderData, status: const CalenderProcessStateSuccss()));
+    }
   }
 }

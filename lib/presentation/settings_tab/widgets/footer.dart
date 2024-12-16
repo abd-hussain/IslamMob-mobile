@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
-import 'package:islam_app/utils/version.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FooterView extends StatelessWidget {
@@ -66,7 +66,7 @@ class FooterView extends StatelessWidget {
           const SizedBox(height: 16),
           FutureBuilder<String>(
               initialData: "",
-              future: Version().getApplicationVersion(),
+              future: ApplicationVersionUsecase().getApplicationVersion(),
               builder: (context, snapshot) {
                 return CustomText(
                   title:

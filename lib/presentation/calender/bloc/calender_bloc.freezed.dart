@@ -16,49 +16,37 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CalenderEvent {
-  List<CalenderModel> get list => throw _privateConstructorUsedError;
-  CalenderProcessState get status => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<CalenderModel> list, CalenderProcessState status)
-        updateCalenderList,
+    required TResult Function() prepareSalahTiming,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CalenderModel> list, CalenderProcessState status)?
-        updateCalenderList,
+    TResult? Function()? prepareSalahTiming,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CalenderModel> list, CalenderProcessState status)?
-        updateCalenderList,
+    TResult Function()? prepareSalahTiming,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateCalenderList value) updateCalenderList,
+    required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateCalenderList value)? updateCalenderList,
+    TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateCalenderList value)? updateCalenderList,
+    TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of CalenderEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CalenderEventCopyWith<CalenderEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -67,10 +55,6 @@ abstract class $CalenderEventCopyWith<$Res> {
   factory $CalenderEventCopyWith(
           CalenderEvent value, $Res Function(CalenderEvent) then) =
       _$CalenderEventCopyWithImpl<$Res, CalenderEvent>;
-  @useResult
-  $Res call({List<CalenderModel> list, CalenderProcessState status});
-
-  $CalenderProcessStateCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -85,151 +69,70 @@ class _$CalenderEventCopyWithImpl<$Res, $Val extends CalenderEvent>
 
   /// Create a copy of CalenderEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? list = null,
-    Object? status = null,
-  }) {
-    return _then(_value.copyWith(
-      list: null == list
-          ? _value.list
-          : list // ignore: cast_nullable_to_non_nullable
-              as List<CalenderModel>,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as CalenderProcessState,
-    ) as $Val);
-  }
-
-  /// Create a copy of CalenderEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CalenderProcessStateCopyWith<$Res> get status {
-    return $CalenderProcessStateCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$UpdateCalenderListImplCopyWith<$Res>
-    implements $CalenderEventCopyWith<$Res> {
-  factory _$$UpdateCalenderListImplCopyWith(_$UpdateCalenderListImpl value,
-          $Res Function(_$UpdateCalenderListImpl) then) =
-      __$$UpdateCalenderListImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<CalenderModel> list, CalenderProcessState status});
-
-  @override
-  $CalenderProcessStateCopyWith<$Res> get status;
+abstract class _$$PrepareSalahTimingImplCopyWith<$Res> {
+  factory _$$PrepareSalahTimingImplCopyWith(_$PrepareSalahTimingImpl value,
+          $Res Function(_$PrepareSalahTimingImpl) then) =
+      __$$PrepareSalahTimingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UpdateCalenderListImplCopyWithImpl<$Res>
-    extends _$CalenderEventCopyWithImpl<$Res, _$UpdateCalenderListImpl>
-    implements _$$UpdateCalenderListImplCopyWith<$Res> {
-  __$$UpdateCalenderListImplCopyWithImpl(_$UpdateCalenderListImpl _value,
-      $Res Function(_$UpdateCalenderListImpl) _then)
+class __$$PrepareSalahTimingImplCopyWithImpl<$Res>
+    extends _$CalenderEventCopyWithImpl<$Res, _$PrepareSalahTimingImpl>
+    implements _$$PrepareSalahTimingImplCopyWith<$Res> {
+  __$$PrepareSalahTimingImplCopyWithImpl(_$PrepareSalahTimingImpl _value,
+      $Res Function(_$PrepareSalahTimingImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of CalenderEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? list = null,
-    Object? status = null,
-  }) {
-    return _then(_$UpdateCalenderListImpl(
-      list: null == list
-          ? _value._list
-          : list // ignore: cast_nullable_to_non_nullable
-              as List<CalenderModel>,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as CalenderProcessState,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateCalenderListImpl implements _UpdateCalenderList {
-  const _$UpdateCalenderListImpl(
-      {required final List<CalenderModel> list, required this.status})
-      : _list = list;
-
-  final List<CalenderModel> _list;
-  @override
-  List<CalenderModel> get list {
-    if (_list is EqualUnmodifiableListView) return _list;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_list);
-  }
-
-  @override
-  final CalenderProcessState status;
+class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
+  const _$PrepareSalahTimingImpl();
 
   @override
   String toString() {
-    return 'CalenderEvent.updateCalenderList(list: $list, status: $status)';
+    return 'CalenderEvent.prepareSalahTiming()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateCalenderListImpl &&
-            const DeepCollectionEquality().equals(other._list, _list) &&
-            (identical(other.status, status) || other.status == status));
+        (other.runtimeType == runtimeType && other is _$PrepareSalahTimingImpl);
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_list), status);
-
-  /// Create a copy of CalenderEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateCalenderListImplCopyWith<_$UpdateCalenderListImpl> get copyWith =>
-      __$$UpdateCalenderListImplCopyWithImpl<_$UpdateCalenderListImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<CalenderModel> list, CalenderProcessState status)
-        updateCalenderList,
+    required TResult Function() prepareSalahTiming,
   }) {
-    return updateCalenderList(list, status);
+    return prepareSalahTiming();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CalenderModel> list, CalenderProcessState status)?
-        updateCalenderList,
+    TResult? Function()? prepareSalahTiming,
   }) {
-    return updateCalenderList?.call(list, status);
+    return prepareSalahTiming?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CalenderModel> list, CalenderProcessState status)?
-        updateCalenderList,
+    TResult Function()? prepareSalahTiming,
     required TResult orElse(),
   }) {
-    if (updateCalenderList != null) {
-      return updateCalenderList(list, status);
+    if (prepareSalahTiming != null) {
+      return prepareSalahTiming();
     }
     return orElse();
   }
@@ -237,48 +140,34 @@ class _$UpdateCalenderListImpl implements _UpdateCalenderList {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateCalenderList value) updateCalenderList,
+    required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
   }) {
-    return updateCalenderList(this);
+    return prepareSalahTiming(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateCalenderList value)? updateCalenderList,
+    TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
   }) {
-    return updateCalenderList?.call(this);
+    return prepareSalahTiming?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateCalenderList value)? updateCalenderList,
+    TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
     required TResult orElse(),
   }) {
-    if (updateCalenderList != null) {
-      return updateCalenderList(this);
+    if (prepareSalahTiming != null) {
+      return prepareSalahTiming(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateCalenderList implements CalenderEvent {
-  const factory _UpdateCalenderList(
-      {required final List<CalenderModel> list,
-      required final CalenderProcessState status}) = _$UpdateCalenderListImpl;
-
-  @override
-  List<CalenderModel> get list;
-  @override
-  CalenderProcessState get status;
-
-  /// Create a copy of CalenderEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateCalenderListImplCopyWith<_$UpdateCalenderListImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _PrepareSalahTiming implements CalenderEvent {
+  const factory _PrepareSalahTiming() = _$PrepareSalahTimingImpl;
 }
 
 /// @nodoc
