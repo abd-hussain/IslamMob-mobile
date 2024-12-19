@@ -6,15 +6,13 @@ import 'package:islam_app/utils/logger.dart';
 
 //TODO: add quran copy with defrent languages
 
-//TODO: Fill for the first time   _getCoordinates(), _getDifferenceFromUTC() _getSelectedCalculationMethod(), _getMadhab(),
-
 //TODO: if timer get zero then next salah time should be handled,
-
-//TODO: select location sometimes not working
 
 //TODO: whatsup, facebook
 
 //TODO: local notification with timer such as other apps
+
+//TODO: app should work without internet
 
 // DateTime scheduledDate = DateTime.now().add(const Duration(seconds: 3));
 // LocalNotificationRepository.scheduleNotification(

@@ -267,6 +267,7 @@
     "whyyoushouldallownotification" : "Why should you allow notifications?",
     "notificationPermissionSuccses" : "Notifications are enabled",
     "startyourjourney" : "Start your journey",
+    "startPreparingYourAccount" : "Start Preparing Your Account",
     "notificationSettings" : "Notification Settings",
     "shareapp" : "Share App",
     "prayCalculationSettings" : "Prayer Calculation Settings",
@@ -357,7 +358,8 @@
     "date" : "Date",
     "quicksettings" : "Quick Settings",
     "qurancopytitle" : "From this screen, you can download one or more copy of the Holy Quran to use it offline inside the application",
-    "skip" : "skip"
+    "skip" : "skip",
+    "setupAccount" : "Setup Account"
 
 
 

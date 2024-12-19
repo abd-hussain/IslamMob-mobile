@@ -56,11 +56,9 @@ class QuranPrintsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPrintsList(
-      BuildContext context, QuranPrintsState state, bool isDetailsPage) {
+  Widget _buildPrintsList(BuildContext context, QuranPrintsState state, bool isDetailsPage) {
     return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
-      buildWhen: (previous, current) =>
-          previous.printsDownloading != current.printsDownloading,
+      buildWhen: (previous, current) => previous.printsDownloading != current.printsDownloading,
       builder: (context, _) {
         return Column(
           children: [
@@ -79,8 +77,7 @@ class QuranPrintsScreen extends StatelessWidget {
                 itemCount: state.listOfPrints!.length,
                 itemBuilder: (context, index) {
                   final printItem = state.listOfPrints![index];
-                  return _buildPrintTile(
-                      context, printItem, state, isDetailsPage);
+                  return _buildPrintTile(context, printItem, state, isDetailsPage);
                 },
               ),
             ),
@@ -90,27 +87,21 @@ class QuranPrintsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPrintTile(BuildContext context, QuranPrints printItem,
-      QuranPrintsState state, bool isDetailsPage) {
+  Widget _buildPrintTile(BuildContext context, QuranPrints printItem, QuranPrintsState state, bool isDetailsPage) {
     return PrintTileView(
-      language: context
-          .read<QuranPrintsBloc>()
-          .getNameByLanguageCode(printItem.language ?? ""),
+      language: context.read<QuranPrintsBloc>().getNameByLanguageCode(printItem.language ?? ""),
       title: printItem.nameReferance,
       description: printItem.description,
       previewImage: printItem.previewImage,
-      downloadButtonAvailable:
-          !state.printsDownloading.contains(printItem.fieldName),
+      downloadButtonAvailable: !state.printsDownloading.contains(printItem.fieldName),
       useButtonAvailable: state.printsDownloading.contains(printItem.fieldName),
       onDownloadPressed: () => _handleDownloadPressed(context, printItem),
       onUsePressed: () => _handleUsePressed(context, printItem, isDetailsPage),
     );
   }
 
-  Future<void> _handleDownloadPressed(
-      BuildContext context, QuranPrints printItem) async {
-    final permissionGranted =
-        await context.read<QuranPrintsBloc>().permissionRequest();
+  Future<void> _handleDownloadPressed(BuildContext context, QuranPrints printItem) async {
+    final permissionGranted = await context.read<QuranPrintsBloc>().permissionRequest();
     if (permissionGranted && context.mounted) {
       showDialog(
         context: context,
@@ -135,28 +126,21 @@ class QuranPrintsScreen extends StatelessWidget {
       parameters: {"file": printItem.fieldName ?? ""},
     );
 
-    final updatedList = List<String>.from(
-        context.read<QuranPrintsBloc>().state.printsDownloading)
+    final updatedList = List<String>.from(context.read<QuranPrintsBloc>().state.printsDownloading)
       ..add(printItem.fieldName!);
 
-    context
-        .read<QuranPrintsBloc>()
-        .add(QuranPrintsEvent.updatePrintsDownloading(print: updatedList));
+    context.read<QuranPrintsBloc>().add(QuranPrintsEvent.updatePrintsDownloading(print: updatedList));
   }
 
-  Future<void> _handleUsePressed(
-      BuildContext context, QuranPrints printItem, bool isDetailsPage) async {
+  Future<void> _handleUsePressed(BuildContext context, QuranPrints printItem, bool isDetailsPage) async {
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/${printItem.fieldName!}');
     final box = Hive.box(DatabaseBoxConstant.userInfo);
 
-    await box.put(
-        DatabaseFieldConstant.quranKaremPrintNameToUse, filePath.path);
-    await box.put(DatabaseFieldConstant.quranKaremLastPageNumber, 1);
-    await box.put(DatabaseFieldConstant.quranKaremJuz2ToPageNumbers,
-        printItem.juz2ToPageNumbers);
-    await box.put(DatabaseFieldConstant.quranKaremSorahToPageNumbers,
-        printItem.sorahToPageNumbers);
+    await box.put(DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse, filePath.path);
+    await box.put(DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber, 1);
+    await box.put(DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers, printItem.juz2ToPageNumbers);
+    await box.put(DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers, printItem.sorahToPageNumbers);
 
     FirebaseAnalytics.instance.logEvent(
       name: "use_file",
@@ -167,8 +151,7 @@ class QuranPrintsScreen extends StatelessWidget {
       if (isDetailsPage) {
         Navigator.pop(context);
       } else {
-        await Navigator.of(context, rootNavigator: true)
-            .pushNamedAndRemoveUntil(
+        await Navigator.of(context, rootNavigator: true).pushNamedAndRemoveUntil(
           RoutesConstants.mainContainer,
           (route) => false,
         );
@@ -177,8 +160,7 @@ class QuranPrintsScreen extends StatelessWidget {
   }
 
   bool _getIsDetailsPage(BuildContext context) {
-    final arguments =
-        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    final arguments = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
     return arguments?[ArgumentConstant.isDetailsPage] ?? false;
   }
 }

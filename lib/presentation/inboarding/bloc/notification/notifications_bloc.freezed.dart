@@ -16,23 +16,25 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NotificationsEvent {
-  NotificationsProcessState get status => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(NotificationsProcessState status)
         changeNotificationStatus,
+    required TResult Function(String token) setupToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(NotificationsProcessState status)?
         changeNotificationStatus,
+    TResult? Function(String token)? setupToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(NotificationsProcessState status)?
         changeNotificationStatus,
+    TResult Function(String token)? setupToken,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,25 +42,22 @@ mixin _$NotificationsEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeNotificationStatus value)
         changeNotificationStatus,
+    required TResult Function(_SetupToken value) setupToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeNotificationStatus value)?
         changeNotificationStatus,
+    TResult? Function(_SetupToken value)? setupToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeNotificationStatus value)? changeNotificationStatus,
+    TResult Function(_SetupToken value)? setupToken,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of NotificationsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $NotificationsEventCopyWith<NotificationsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -67,10 +66,6 @@ abstract class $NotificationsEventCopyWith<$Res> {
   factory $NotificationsEventCopyWith(
           NotificationsEvent value, $Res Function(NotificationsEvent) then) =
       _$NotificationsEventCopyWithImpl<$Res, NotificationsEvent>;
-  @useResult
-  $Res call({NotificationsProcessState status});
-
-  $NotificationsProcessStateCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -85,42 +80,17 @@ class _$NotificationsEventCopyWithImpl<$Res, $Val extends NotificationsEvent>
 
   /// Create a copy of NotificationsEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as NotificationsProcessState,
-    ) as $Val);
-  }
-
-  /// Create a copy of NotificationsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NotificationsProcessStateCopyWith<$Res> get status {
-    return $NotificationsProcessStateCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$ChangeNotificationStatusImplCopyWith<$Res>
-    implements $NotificationsEventCopyWith<$Res> {
+abstract class _$$ChangeNotificationStatusImplCopyWith<$Res> {
   factory _$$ChangeNotificationStatusImplCopyWith(
           _$ChangeNotificationStatusImpl value,
           $Res Function(_$ChangeNotificationStatusImpl) then) =
       __$$ChangeNotificationStatusImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({NotificationsProcessState status});
 
-  @override
   $NotificationsProcessStateCopyWith<$Res> get status;
 }
 
@@ -147,6 +117,16 @@ class __$$ChangeNotificationStatusImplCopyWithImpl<$Res>
           : status // ignore: cast_nullable_to_non_nullable
               as NotificationsProcessState,
     ));
+  }
+
+  /// Create a copy of NotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationsProcessStateCopyWith<$Res> get status {
+    return $NotificationsProcessStateCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value));
+    });
   }
 }
 
@@ -188,6 +168,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   TResult when<TResult extends Object?>({
     required TResult Function(NotificationsProcessState status)
         changeNotificationStatus,
+    required TResult Function(String token) setupToken,
   }) {
     return changeNotificationStatus(status);
   }
@@ -197,6 +178,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(NotificationsProcessState status)?
         changeNotificationStatus,
+    TResult? Function(String token)? setupToken,
   }) {
     return changeNotificationStatus?.call(status);
   }
@@ -206,6 +188,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(NotificationsProcessState status)?
         changeNotificationStatus,
+    TResult Function(String token)? setupToken,
     required TResult orElse(),
   }) {
     if (changeNotificationStatus != null) {
@@ -219,6 +202,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeNotificationStatus value)
         changeNotificationStatus,
+    required TResult Function(_SetupToken value) setupToken,
   }) {
     return changeNotificationStatus(this);
   }
@@ -228,6 +212,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeNotificationStatus value)?
         changeNotificationStatus,
+    TResult? Function(_SetupToken value)? setupToken,
   }) {
     return changeNotificationStatus?.call(this);
   }
@@ -236,6 +221,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeNotificationStatus value)? changeNotificationStatus,
+    TResult Function(_SetupToken value)? setupToken,
     required TResult orElse(),
   }) {
     if (changeNotificationStatus != null) {
@@ -250,15 +236,158 @@ abstract class _ChangeNotificationStatus implements NotificationsEvent {
           {required final NotificationsProcessState status}) =
       _$ChangeNotificationStatusImpl;
 
-  @override
   NotificationsProcessState get status;
 
   /// Create a copy of NotificationsEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangeNotificationStatusImplCopyWith<_$ChangeNotificationStatusImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetupTokenImplCopyWith<$Res> {
+  factory _$$SetupTokenImplCopyWith(
+          _$SetupTokenImpl value, $Res Function(_$SetupTokenImpl) then) =
+      __$$SetupTokenImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String token});
+}
+
+/// @nodoc
+class __$$SetupTokenImplCopyWithImpl<$Res>
+    extends _$NotificationsEventCopyWithImpl<$Res, _$SetupTokenImpl>
+    implements _$$SetupTokenImplCopyWith<$Res> {
+  __$$SetupTokenImplCopyWithImpl(
+      _$SetupTokenImpl _value, $Res Function(_$SetupTokenImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? token = null,
+  }) {
+    return _then(_$SetupTokenImpl(
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetupTokenImpl implements _SetupToken {
+  const _$SetupTokenImpl({required this.token});
+
+  @override
+  final String token;
+
+  @override
+  String toString() {
+    return 'NotificationsEvent.setupToken(token: $token)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetupTokenImpl &&
+            (identical(other.token, token) || other.token == token));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, token);
+
+  /// Create a copy of NotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetupTokenImplCopyWith<_$SetupTokenImpl> get copyWith =>
+      __$$SetupTokenImplCopyWithImpl<_$SetupTokenImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(NotificationsProcessState status)
+        changeNotificationStatus,
+    required TResult Function(String token) setupToken,
+  }) {
+    return setupToken(token);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(NotificationsProcessState status)?
+        changeNotificationStatus,
+    TResult? Function(String token)? setupToken,
+  }) {
+    return setupToken?.call(token);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(NotificationsProcessState status)?
+        changeNotificationStatus,
+    TResult Function(String token)? setupToken,
+    required TResult orElse(),
+  }) {
+    if (setupToken != null) {
+      return setupToken(token);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeNotificationStatus value)
+        changeNotificationStatus,
+    required TResult Function(_SetupToken value) setupToken,
+  }) {
+    return setupToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeNotificationStatus value)?
+        changeNotificationStatus,
+    TResult? Function(_SetupToken value)? setupToken,
+  }) {
+    return setupToken?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeNotificationStatus value)? changeNotificationStatus,
+    TResult Function(_SetupToken value)? setupToken,
+    required TResult orElse(),
+  }) {
+    if (setupToken != null) {
+      return setupToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetupToken implements NotificationsEvent {
+  const factory _SetupToken({required final String token}) = _$SetupTokenImpl;
+
+  String get token;
+
+  /// Create a copy of NotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetupTokenImplCopyWith<_$SetupTokenImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

@@ -50,8 +50,7 @@ class DayBox extends StatelessWidget {
 
   /// Builds the Gregorian (Melady) date display.
   Widget _buildMeladyDate(int dayOffset) {
-    final meladyDate = timingUsecase
-        .formatDate(timingUsecase.getDateWithDayOffset(dayOffset: dayOffset));
+    final meladyDate = timingUsecase.formatDate(timingUsecase.getDateWithDayOffset(dayOffset: dayOffset));
     return Expanded(
       child: CustomText(
         title: meladyDate,
@@ -65,8 +64,7 @@ class DayBox extends StatelessWidget {
 
   /// Builds the Hijri date display.
   Widget _buildHijriDate(int dayOffset) {
-    final hijriDate = timingUsecase.formatHijriDate(
-        timingUsecase.getHijriDateWithDayOffset(dayOffset: dayOffset));
+    final hijriDate = timingUsecase.formatHijriDate(timingUsecase.getHijriDateWithDayOffset(dayOffset: dayOffset));
     return Expanded(
       child: CustomText(
         title: hijriDate,
@@ -135,7 +133,6 @@ class DayBox extends StatelessWidget {
   /// Retrieves the current language code from the Hive box.
   String _currentLanguageCode() {
     final box = Hive.box(DatabaseBoxConstant.userInfo);
-    return box.get(DatabaseFieldConstant.selectedLanguage, defaultValue: "en")
-        as String;
+    return box.get(DatabaseFieldConstant.userLanguageCode, defaultValue: "en") as String;
   }
 }

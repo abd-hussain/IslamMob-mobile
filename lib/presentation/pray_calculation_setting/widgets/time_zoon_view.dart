@@ -40,8 +40,7 @@ class TimeZoneView extends StatelessWidget {
     );
   }
 
-  Widget _buildCalculationSelector(
-      BuildContext context, AppLocalizations localizations) {
+  Widget _buildCalculationSelector(BuildContext context, AppLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) => previous.timeZone != current.timeZone,
       builder: (context, state) {
@@ -61,11 +60,11 @@ class TimeZoneView extends StatelessWidget {
             textStyle: TextStyle(fontSize: 14),
           ),
           radioButtonValue: (value) {
-            context.read<PrayCalculationSettingBloc>().add(
-                  PrayCalculationSettingEvent.updateTimeZone(
-                    value: value,
-                  ),
-                );
+            // context.read<PrayCalculationSettingBloc>().add(
+            //       PrayCalculationSettingEvent.updateTimeZone(
+            //         value: value,
+            //       ),
+            //     );
           },
         );
       },

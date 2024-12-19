@@ -5,6 +5,6 @@ class QuranCopyState with _$QuranCopyState {
   const factory QuranCopyState({
     List<QuranPrints>? listOfPrints,
     @Default(false) bool internetConnectionStauts,
-    @Default([]) List<String> printsDownloading,
+    @Default([]) List<String> printsAlreadyDownloaded,
   }) = _QuranCopyState;
 }

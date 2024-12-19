@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/model/location.dart';
+import 'package:islam_app/models/location.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/domain/repository/network_info.dart';
@@ -38,9 +38,7 @@ class LocationIdleView extends StatelessWidget {
           isEnabled: true,
           title: AppLocalizations.of(context)!.allowgetlocation,
           onTap: () async {
-            if (await locator<NetworkInfoRepository>()
-                    .checkConnectivityOnLaunch() ==
-                false) {
+            if (await locator<NetworkInfoRepository>().checkConnectivityOnLaunch() == false) {
               // ignore: use_build_context_synchronously
               showNoInternetConnection(context);
               return;
@@ -57,8 +55,7 @@ class LocationIdleView extends StatelessWidget {
             );
 
             // Request location details
-            final locationDetails =
-                await LocationRepository().getLocationDetails();
+            final locationDetails = await LocationRepository().getLocationDetails();
 
             if (locationDetails.containsKey('error')) {
               /// Handles the case when location permission is not granted
@@ -69,6 +66,7 @@ class LocationIdleView extends StatelessWidget {
               );
             } else {
               final location = LocationModel(
+                countryCode: locationDetails['isoCountryCode'] ?? "",
                 country: locationDetails['country'] ?? "",
                 city: locationDetails['city'] ?? "",
                 subCity: locationDetails['subCity'] ?? "",
@@ -96,9 +94,7 @@ class LocationIdleView extends StatelessWidget {
   void showNoInternetConnection(BuildContext context) {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
-      SnackBar(
-          content: Text(
-              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+      SnackBar(content: Text(AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

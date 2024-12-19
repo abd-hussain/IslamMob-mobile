@@ -20,18 +20,21 @@ mixin _$LocationEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(LocationModel location) setCountryAndCityNames,
     required TResult Function(LocationProcessState status) changeLocationStatus,
+    required TResult Function() setupLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LocationModel location)? setCountryAndCityNames,
     TResult? Function(LocationProcessState status)? changeLocationStatus,
+    TResult? Function()? setupLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LocationModel location)? setCountryAndCityNames,
     TResult Function(LocationProcessState status)? changeLocationStatus,
+    TResult Function()? setupLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +43,21 @@ mixin _$LocationEvent {
     required TResult Function(_SetCountryAndCityNames value)
         setCountryAndCityNames,
     required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
+    required TResult Function(_SetupLocation value) setupLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
     TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
+    TResult? Function(_SetupLocation value)? setupLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
     TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
+    TResult Function(_SetupLocation value)? setupLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -86,6 +92,8 @@ abstract class _$$SetCountryAndCityNamesImplCopyWith<$Res> {
       __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LocationModel location});
+
+  $LocationModelCopyWith<$Res> get location;
 }
 
 /// @nodoc
@@ -110,6 +118,16 @@ class __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>
           : location // ignore: cast_nullable_to_non_nullable
               as LocationModel,
     ));
+  }
+
+  /// Create a copy of LocationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LocationModelCopyWith<$Res> get location {
+    return $LocationModelCopyWith<$Res>(_value.location, (value) {
+      return _then(_value.copyWith(location: value));
+    });
   }
 }
 
@@ -152,6 +170,7 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
   TResult when<TResult extends Object?>({
     required TResult Function(LocationModel location) setCountryAndCityNames,
     required TResult Function(LocationProcessState status) changeLocationStatus,
+    required TResult Function() setupLocation,
   }) {
     return setCountryAndCityNames(location);
   }
@@ -161,6 +180,7 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LocationModel location)? setCountryAndCityNames,
     TResult? Function(LocationProcessState status)? changeLocationStatus,
+    TResult? Function()? setupLocation,
   }) {
     return setCountryAndCityNames?.call(location);
   }
@@ -170,6 +190,7 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LocationModel location)? setCountryAndCityNames,
     TResult Function(LocationProcessState status)? changeLocationStatus,
+    TResult Function()? setupLocation,
     required TResult orElse(),
   }) {
     if (setCountryAndCityNames != null) {
@@ -184,6 +205,7 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
     required TResult Function(_SetCountryAndCityNames value)
         setCountryAndCityNames,
     required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
+    required TResult Function(_SetupLocation value) setupLocation,
   }) {
     return setCountryAndCityNames(this);
   }
@@ -193,6 +215,7 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
     TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
+    TResult? Function(_SetupLocation value)? setupLocation,
   }) {
     return setCountryAndCityNames?.call(this);
   }
@@ -202,6 +225,7 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
     TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
+    TResult Function(_SetupLocation value)? setupLocation,
     required TResult orElse(),
   }) {
     if (setCountryAndCityNames != null) {
@@ -308,6 +332,7 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
   TResult when<TResult extends Object?>({
     required TResult Function(LocationModel location) setCountryAndCityNames,
     required TResult Function(LocationProcessState status) changeLocationStatus,
+    required TResult Function() setupLocation,
   }) {
     return changeLocationStatus(status);
   }
@@ -317,6 +342,7 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LocationModel location)? setCountryAndCityNames,
     TResult? Function(LocationProcessState status)? changeLocationStatus,
+    TResult? Function()? setupLocation,
   }) {
     return changeLocationStatus?.call(status);
   }
@@ -326,6 +352,7 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LocationModel location)? setCountryAndCityNames,
     TResult Function(LocationProcessState status)? changeLocationStatus,
+    TResult Function()? setupLocation,
     required TResult orElse(),
   }) {
     if (changeLocationStatus != null) {
@@ -340,6 +367,7 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
     required TResult Function(_SetCountryAndCityNames value)
         setCountryAndCityNames,
     required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
+    required TResult Function(_SetupLocation value) setupLocation,
   }) {
     return changeLocationStatus(this);
   }
@@ -349,6 +377,7 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
     TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
+    TResult? Function(_SetupLocation value)? setupLocation,
   }) {
     return changeLocationStatus?.call(this);
   }
@@ -358,6 +387,7 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
     TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
+    TResult Function(_SetupLocation value)? setupLocation,
     required TResult orElse(),
   }) {
     if (changeLocationStatus != null) {
@@ -382,14 +412,120 @@ abstract class _ChangeLocationStatus implements LocationEvent {
 }
 
 /// @nodoc
+abstract class _$$SetupLocationImplCopyWith<$Res> {
+  factory _$$SetupLocationImplCopyWith(
+          _$SetupLocationImpl value, $Res Function(_$SetupLocationImpl) then) =
+      __$$SetupLocationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SetupLocationImplCopyWithImpl<$Res>
+    extends _$LocationEventCopyWithImpl<$Res, _$SetupLocationImpl>
+    implements _$$SetupLocationImplCopyWith<$Res> {
+  __$$SetupLocationImplCopyWithImpl(
+      _$SetupLocationImpl _value, $Res Function(_$SetupLocationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LocationEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SetupLocationImpl implements _SetupLocation {
+  const _$SetupLocationImpl();
+
+  @override
+  String toString() {
+    return 'LocationEvent.setupLocation()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SetupLocationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LocationModel location) setCountryAndCityNames,
+    required TResult Function(LocationProcessState status) changeLocationStatus,
+    required TResult Function() setupLocation,
+  }) {
+    return setupLocation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LocationModel location)? setCountryAndCityNames,
+    TResult? Function(LocationProcessState status)? changeLocationStatus,
+    TResult? Function()? setupLocation,
+  }) {
+    return setupLocation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LocationModel location)? setCountryAndCityNames,
+    TResult Function(LocationProcessState status)? changeLocationStatus,
+    TResult Function()? setupLocation,
+    required TResult orElse(),
+  }) {
+    if (setupLocation != null) {
+      return setupLocation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SetCountryAndCityNames value)
+        setCountryAndCityNames,
+    required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
+    required TResult Function(_SetupLocation value) setupLocation,
+  }) {
+    return setupLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
+    TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
+    TResult? Function(_SetupLocation value)? setupLocation,
+  }) {
+    return setupLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
+    TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
+    TResult Function(_SetupLocation value)? setupLocation,
+    required TResult orElse(),
+  }) {
+    if (setupLocation != null) {
+      return setupLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetupLocation implements LocationEvent {
+  const factory _SetupLocation() = _$SetupLocationImpl;
+}
+
+/// @nodoc
 mixin _$LocationState {
-  String get countryName => throw _privateConstructorUsedError;
-  String get cityName => throw _privateConstructorUsedError;
-  String get subCityName => throw _privateConstructorUsedError;
-  String get street => throw _privateConstructorUsedError;
-  String get latitude => throw _privateConstructorUsedError;
-  String get longitude => throw _privateConstructorUsedError;
-  String get thoroughfare => throw _privateConstructorUsedError;
+  LocationModel? get location => throw _privateConstructorUsedError;
   LocationProcessState get status => throw _privateConstructorUsedError;
 
   /// Create a copy of LocationState
@@ -405,16 +541,9 @@ abstract class $LocationStateCopyWith<$Res> {
           LocationState value, $Res Function(LocationState) then) =
       _$LocationStateCopyWithImpl<$Res, LocationState>;
   @useResult
-  $Res call(
-      {String countryName,
-      String cityName,
-      String subCityName,
-      String street,
-      String latitude,
-      String longitude,
-      String thoroughfare,
-      LocationProcessState status});
+  $Res call({LocationModel? location, LocationProcessState status});
 
+  $LocationModelCopyWith<$Res>? get location;
   $LocationProcessStateCopyWith<$Res> get status;
 }
 
@@ -433,49 +562,33 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? countryName = null,
-    Object? cityName = null,
-    Object? subCityName = null,
-    Object? street = null,
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? thoroughfare = null,
+    Object? location = freezed,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
-      countryName: null == countryName
-          ? _value.countryName
-          : countryName // ignore: cast_nullable_to_non_nullable
-              as String,
-      cityName: null == cityName
-          ? _value.cityName
-          : cityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      subCityName: null == subCityName
-          ? _value.subCityName
-          : subCityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      street: null == street
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as String,
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as String,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as String,
-      thoroughfare: null == thoroughfare
-          ? _value.thoroughfare
-          : thoroughfare // ignore: cast_nullable_to_non_nullable
-              as String,
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LocationModel?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as LocationProcessState,
     ) as $Val);
+  }
+
+  /// Create a copy of LocationState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LocationModelCopyWith<$Res>? get location {
+    if (_value.location == null) {
+      return null;
+    }
+
+    return $LocationModelCopyWith<$Res>(_value.location!, (value) {
+      return _then(_value.copyWith(location: value) as $Val);
+    });
   }
 
   /// Create a copy of LocationState
@@ -497,16 +610,10 @@ abstract class _$$LocationStateImplCopyWith<$Res>
       __$$LocationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String countryName,
-      String cityName,
-      String subCityName,
-      String street,
-      String latitude,
-      String longitude,
-      String thoroughfare,
-      LocationProcessState status});
+  $Res call({LocationModel? location, LocationProcessState status});
 
+  @override
+  $LocationModelCopyWith<$Res>? get location;
   @override
   $LocationProcessStateCopyWith<$Res> get status;
 }
@@ -524,44 +631,14 @@ class __$$LocationStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? countryName = null,
-    Object? cityName = null,
-    Object? subCityName = null,
-    Object? street = null,
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? thoroughfare = null,
+    Object? location = freezed,
     Object? status = null,
   }) {
     return _then(_$LocationStateImpl(
-      countryName: null == countryName
-          ? _value.countryName
-          : countryName // ignore: cast_nullable_to_non_nullable
-              as String,
-      cityName: null == cityName
-          ? _value.cityName
-          : cityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      subCityName: null == subCityName
-          ? _value.subCityName
-          : subCityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      street: null == street
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as String,
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as String,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as String,
-      thoroughfare: null == thoroughfare
-          ? _value.thoroughfare
-          : thoroughfare // ignore: cast_nullable_to_non_nullable
-              as String,
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LocationModel?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -574,43 +651,17 @@ class __$$LocationStateImplCopyWithImpl<$Res>
 
 class _$LocationStateImpl implements _LocationState {
   const _$LocationStateImpl(
-      {this.countryName = "",
-      this.cityName = "",
-      this.subCityName = "",
-      this.street = "",
-      this.latitude = "",
-      this.longitude = "",
-      this.thoroughfare = "",
-      this.status = const LocationProcessState.idl()});
+      {this.location, this.status = const LocationProcessState.idl()});
 
   @override
-  @JsonKey()
-  final String countryName;
-  @override
-  @JsonKey()
-  final String cityName;
-  @override
-  @JsonKey()
-  final String subCityName;
-  @override
-  @JsonKey()
-  final String street;
-  @override
-  @JsonKey()
-  final String latitude;
-  @override
-  @JsonKey()
-  final String longitude;
-  @override
-  @JsonKey()
-  final String thoroughfare;
+  final LocationModel? location;
   @override
   @JsonKey()
   final LocationProcessState status;
 
   @override
   String toString() {
-    return 'LocationState(countryName: $countryName, cityName: $cityName, subCityName: $subCityName, street: $street, latitude: $latitude, longitude: $longitude, thoroughfare: $thoroughfare, status: $status)';
+    return 'LocationState(location: $location, status: $status)';
   }
 
   @override
@@ -618,25 +669,13 @@ class _$LocationStateImpl implements _LocationState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LocationStateImpl &&
-            (identical(other.countryName, countryName) ||
-                other.countryName == countryName) &&
-            (identical(other.cityName, cityName) ||
-                other.cityName == cityName) &&
-            (identical(other.subCityName, subCityName) ||
-                other.subCityName == subCityName) &&
-            (identical(other.street, street) || other.street == street) &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.thoroughfare, thoroughfare) ||
-                other.thoroughfare == thoroughfare) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, countryName, cityName,
-      subCityName, street, latitude, longitude, thoroughfare, status);
+  int get hashCode => Object.hash(runtimeType, location, status);
 
   /// Create a copy of LocationState
   /// with the given fields replaced by the non-null parameter values.
@@ -649,29 +688,11 @@ class _$LocationStateImpl implements _LocationState {
 
 abstract class _LocationState implements LocationState {
   const factory _LocationState(
-      {final String countryName,
-      final String cityName,
-      final String subCityName,
-      final String street,
-      final String latitude,
-      final String longitude,
-      final String thoroughfare,
+      {final LocationModel? location,
       final LocationProcessState status}) = _$LocationStateImpl;
 
   @override
-  String get countryName;
-  @override
-  String get cityName;
-  @override
-  String get subCityName;
-  @override
-  String get street;
-  @override
-  String get latitude;
-  @override
-  String get longitude;
-  @override
-  String get thoroughfare;
+  LocationModel? get location;
   @override
   LocationProcessState get status;
 

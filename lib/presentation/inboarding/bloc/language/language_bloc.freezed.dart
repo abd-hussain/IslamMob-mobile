@@ -16,20 +16,22 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LanguageEvent {
-  LanguageModel get type => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LanguageModel type) changeSelectedLanguage,
+    required TResult Function(BuildContext context) setupLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LanguageModel type)? changeSelectedLanguage,
+    TResult? Function(BuildContext context)? setupLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LanguageModel type)? changeSelectedLanguage,
+    TResult Function(BuildContext context)? setupLanguage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -37,24 +39,21 @@ mixin _$LanguageEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedLanguage value)
         changeSelectedLanguage,
+    required TResult Function(_SetupLanguage value) setupLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult? Function(_SetupLanguage value)? setupLanguage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult Function(_SetupLanguage value)? setupLanguage,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of LanguageEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LanguageEventCopyWith<LanguageEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -63,8 +62,6 @@ abstract class $LanguageEventCopyWith<$Res> {
   factory $LanguageEventCopyWith(
           LanguageEvent value, $Res Function(LanguageEvent) then) =
       _$LanguageEventCopyWithImpl<$Res, LanguageEvent>;
-  @useResult
-  $Res call({LanguageModel type});
 }
 
 /// @nodoc
@@ -79,30 +76,18 @@ class _$LanguageEventCopyWithImpl<$Res, $Val extends LanguageEvent>
 
   /// Create a copy of LanguageEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-  }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as LanguageModel,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$ChangeSelectedLanguageImplCopyWith<$Res>
-    implements $LanguageEventCopyWith<$Res> {
+abstract class _$$ChangeSelectedLanguageImplCopyWith<$Res> {
   factory _$$ChangeSelectedLanguageImplCopyWith(
           _$ChangeSelectedLanguageImpl value,
           $Res Function(_$ChangeSelectedLanguageImpl) then) =
       __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({LanguageModel type});
+
+  $LanguageModelCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -127,6 +112,16 @@ class __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>
           : type // ignore: cast_nullable_to_non_nullable
               as LanguageModel,
     ));
+  }
+
+  /// Create a copy of LanguageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LanguageModelCopyWith<$Res> get type {
+    return $LanguageModelCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
   }
 }
 
@@ -167,6 +162,7 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LanguageModel type) changeSelectedLanguage,
+    required TResult Function(BuildContext context) setupLanguage,
   }) {
     return changeSelectedLanguage(type);
   }
@@ -175,6 +171,7 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LanguageModel type)? changeSelectedLanguage,
+    TResult? Function(BuildContext context)? setupLanguage,
   }) {
     return changeSelectedLanguage?.call(type);
   }
@@ -183,6 +180,7 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LanguageModel type)? changeSelectedLanguage,
+    TResult Function(BuildContext context)? setupLanguage,
     required TResult orElse(),
   }) {
     if (changeSelectedLanguage != null) {
@@ -196,6 +194,7 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedLanguage value)
         changeSelectedLanguage,
+    required TResult Function(_SetupLanguage value) setupLanguage,
   }) {
     return changeSelectedLanguage(this);
   }
@@ -204,6 +203,7 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult? Function(_SetupLanguage value)? setupLanguage,
   }) {
     return changeSelectedLanguage?.call(this);
   }
@@ -212,6 +212,7 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult Function(_SetupLanguage value)? setupLanguage,
     required TResult orElse(),
   }) {
     if (changeSelectedLanguage != null) {
@@ -225,15 +226,155 @@ abstract class _ChangeSelectedLanguage implements LanguageEvent {
   const factory _ChangeSelectedLanguage({required final LanguageModel type}) =
       _$ChangeSelectedLanguageImpl;
 
-  @override
   LanguageModel get type;
 
   /// Create a copy of LanguageEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangeSelectedLanguageImplCopyWith<_$ChangeSelectedLanguageImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetupLanguageImplCopyWith<$Res> {
+  factory _$$SetupLanguageImplCopyWith(
+          _$SetupLanguageImpl value, $Res Function(_$SetupLanguageImpl) then) =
+      __$$SetupLanguageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$$SetupLanguageImplCopyWithImpl<$Res>
+    extends _$LanguageEventCopyWithImpl<$Res, _$SetupLanguageImpl>
+    implements _$$SetupLanguageImplCopyWith<$Res> {
+  __$$SetupLanguageImplCopyWithImpl(
+      _$SetupLanguageImpl _value, $Res Function(_$SetupLanguageImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LanguageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+  }) {
+    return _then(_$SetupLanguageImpl(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetupLanguageImpl implements _SetupLanguage {
+  const _$SetupLanguageImpl({required this.context});
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'LanguageEvent.setupLanguage(context: $context)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetupLanguageImpl &&
+            (identical(other.context, context) || other.context == context));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, context);
+
+  /// Create a copy of LanguageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetupLanguageImplCopyWith<_$SetupLanguageImpl> get copyWith =>
+      __$$SetupLanguageImplCopyWithImpl<_$SetupLanguageImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LanguageModel type) changeSelectedLanguage,
+    required TResult Function(BuildContext context) setupLanguage,
+  }) {
+    return setupLanguage(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LanguageModel type)? changeSelectedLanguage,
+    TResult? Function(BuildContext context)? setupLanguage,
+  }) {
+    return setupLanguage?.call(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LanguageModel type)? changeSelectedLanguage,
+    TResult Function(BuildContext context)? setupLanguage,
+    required TResult orElse(),
+  }) {
+    if (setupLanguage != null) {
+      return setupLanguage(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeSelectedLanguage value)
+        changeSelectedLanguage,
+    required TResult Function(_SetupLanguage value) setupLanguage,
+  }) {
+    return setupLanguage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult? Function(_SetupLanguage value)? setupLanguage,
+  }) {
+    return setupLanguage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
+    TResult Function(_SetupLanguage value)? setupLanguage,
+    required TResult orElse(),
+  }) {
+    if (setupLanguage != null) {
+      return setupLanguage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetupLanguage implements LanguageEvent {
+  const factory _SetupLanguage({required final BuildContext context}) =
+      _$SetupLanguageImpl;
+
+  BuildContext get context;
+
+  /// Create a copy of LanguageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetupLanguageImplCopyWith<_$SetupLanguageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -254,6 +395,8 @@ abstract class $LanguageStateCopyWith<$Res> {
       _$LanguageStateCopyWithImpl<$Res, LanguageState>;
   @useResult
   $Res call({LanguageModel? selectedLanguage});
+
+  $LanguageModelCopyWith<$Res>? get selectedLanguage;
 }
 
 /// @nodoc
@@ -280,6 +423,20 @@ class _$LanguageStateCopyWithImpl<$Res, $Val extends LanguageState>
               as LanguageModel?,
     ) as $Val);
   }
+
+  /// Create a copy of LanguageState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LanguageModelCopyWith<$Res>? get selectedLanguage {
+    if (_value.selectedLanguage == null) {
+      return null;
+    }
+
+    return $LanguageModelCopyWith<$Res>(_value.selectedLanguage!, (value) {
+      return _then(_value.copyWith(selectedLanguage: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -291,6 +448,9 @@ abstract class _$$LanguageStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call({LanguageModel? selectedLanguage});
+
+  @override
+  $LanguageModelCopyWith<$Res>? get selectedLanguage;
 }
 
 /// @nodoc

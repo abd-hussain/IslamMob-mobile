@@ -12,8 +12,7 @@ part 'quran_pages_index_event.dart';
 part 'quran_pages_index_state.dart';
 part 'quran_pages_index_bloc.freezed.dart';
 
-class QuranPagesIndexBloc
-    extends Bloc<QuranPagesIndexEvent, QuranPagesIndexState> {
+class QuranPagesIndexBloc extends Bloc<QuranPagesIndexEvent, QuranPagesIndexState> {
   QuranPagesIndexBloc() : super(const QuranPagesIndexState()) {
     on<_UpdateSelectedTab>(_updateSelectedTab);
     _loadBookmarkedPages();
@@ -24,8 +23,8 @@ class QuranPagesIndexBloc
 
   /// Loads the list of bookmarked pages from persistent storage.
   void _loadBookmarkedPages() {
-    final List<dynamic> storedBookmarks = _box
-        .get(DatabaseFieldConstant.quranKaremBookMarkList, defaultValue: []);
+    final List<dynamic> storedBookmarks =
+        _box.get(DatabaseFieldQuranCopyConstant.quranKaremBookMarkList, defaultValue: []);
     if (storedBookmarks.isNotEmpty) {
       bookmarkedPages = storedBookmarks.cast<int>();
     }
@@ -184,8 +183,7 @@ class QuranPagesIndexBloc
       ];
 
   /// Returns `SowrahType.makyeh` or `SowrahType.madanyeh`.
-  SowrahType getSurahType(
-      {required BuildContext context, required String surahName}) {
+  SowrahType getSurahType({required BuildContext context, required String surahName}) {
     final madaniyahSurahs = [
       AppLocalizations.of(context)!.quranSorahName2,
       AppLocalizations.of(context)!.quranSorahName3,
@@ -217,13 +215,10 @@ class QuranPagesIndexBloc
       AppLocalizations.of(context)!.quranSorahName110,
     ];
 
-    return madaniyahSurahs.contains(surahName)
-        ? SowrahType.madanyeh
-        : SowrahType.makyeh;
+    return madaniyahSurahs.contains(surahName) ? SowrahType.madanyeh : SowrahType.makyeh;
   }
 
-  FutureOr<void> _updateSelectedTab(
-      _UpdateSelectedTab event, Emitter<QuranPagesIndexState> emit) {
+  FutureOr<void> _updateSelectedTab(_UpdateSelectedTab event, Emitter<QuranPagesIndexState> emit) {
     emit(state.copyWith(selectedIndex: event.index));
   }
 }

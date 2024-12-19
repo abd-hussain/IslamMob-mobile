@@ -18,15 +18,16 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PrayCalculationSettingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -34,14 +35,16 @@ mixin _$PrayCalculationSettingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -49,13 +52,15 @@ mixin _$PrayCalculationSettingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -64,6 +69,7 @@ mixin _$PrayCalculationSettingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -78,6 +84,7 @@ mixin _$PrayCalculationSettingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -91,6 +98,7 @@ mixin _$PrayCalculationSettingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -127,6 +135,168 @@ class _$PrayCalculationSettingEventCopyWithImpl<$Res,
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$SetupImplCopyWith<$Res> {
+  factory _$$SetupImplCopyWith(
+          _$SetupImpl value, $Res Function(_$SetupImpl) then) =
+      __$$SetupImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SetupImplCopyWithImpl<$Res>
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res, _$SetupImpl>
+    implements _$$SetupImplCopyWith<$Res> {
+  __$$SetupImplCopyWithImpl(
+      _$SetupImpl _value, $Res Function(_$SetupImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SetupImpl implements _Setup {
+  _$SetupImpl();
+
+  @override
+  String toString() {
+    return 'PrayCalculationSettingEvent.setup()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SetupImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() setup,
+    required TResult Function(DateTime time, PreviewBoxes azanType)
+        updateTimeOfPreview,
+    required TResult Function(PrayCalculationMethodState method)
+        updateCalculationMethod,
+    required TResult Function(MathhabState mathhab) updateMathhab,
+    required TResult Function(Duration value) updateTimeZone,
+    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+        updateAzanTypeInMin,
+    required TResult Function(PrayHightLatitudeCaluclationState state)
+        updateHightLatitudeCalculation,
+    required TResult Function(bool status) saveChanges,
+    required TResult Function(bool status) factoryReset,
+  }) {
+    return setup();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
+    TResult? Function(DateTime time, PreviewBoxes azanType)?
+        updateTimeOfPreview,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
+    TResult? Function(MathhabState mathhab)? updateMathhab,
+    TResult? Function(Duration value)? updateTimeZone,
+    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+        updateAzanTypeInMin,
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
+        updateHightLatitudeCalculation,
+    TResult? Function(bool status)? saveChanges,
+    TResult? Function(bool status)? factoryReset,
+  }) {
+    return setup?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
+    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
+    TResult Function(MathhabState mathhab)? updateMathhab,
+    TResult Function(Duration value)? updateTimeZone,
+    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+        updateAzanTypeInMin,
+    TResult Function(PrayHightLatitudeCaluclationState state)?
+        updateHightLatitudeCalculation,
+    TResult Function(bool status)? saveChanges,
+    TResult Function(bool status)? factoryReset,
+    required TResult orElse(),
+  }) {
+    if (setup != null) {
+      return setup();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
+    required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
+    required TResult Function(_UpdateCalculationMethod value)
+        updateCalculationMethod,
+    required TResult Function(_UpdateMathhab value) updateMathhab,
+    required TResult Function(_UpdateTimeZone value) updateTimeZone,
+    required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
+    required TResult Function(_UpdateHightLatitudeCalculation value)
+        updateHightLatitudeCalculation,
+    required TResult Function(_SaveChanges value) saveChanges,
+    required TResult Function(_FactoryReset value) factoryReset,
+  }) {
+    return setup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
+    TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
+    TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult? Function(_UpdateMathhab value)? updateMathhab,
+    TResult? Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
+    TResult? Function(_UpdateHightLatitudeCalculation value)?
+        updateHightLatitudeCalculation,
+    TResult? Function(_SaveChanges value)? saveChanges,
+    TResult? Function(_FactoryReset value)? factoryReset,
+  }) {
+    return setup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
+    TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
+    TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
+    TResult Function(_UpdateMathhab value)? updateMathhab,
+    TResult Function(_UpdateTimeZone value)? updateTimeZone,
+    TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
+    TResult Function(_UpdateHightLatitudeCalculation value)?
+        updateHightLatitudeCalculation,
+    TResult Function(_SaveChanges value)? saveChanges,
+    TResult Function(_FactoryReset value)? factoryReset,
+    required TResult orElse(),
+  }) {
+    if (setup != null) {
+      return setup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Setup implements PrayCalculationSettingEvent {
+  factory _Setup() = _$SetupImpl;
 }
 
 /// @nodoc
@@ -208,15 +378,16 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -227,14 +398,16 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -245,13 +418,15 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -266,6 +441,7 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -283,6 +459,7 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -299,6 +476,7 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -339,9 +517,9 @@ abstract class _$$UpdateCalculationMethodImplCopyWith<$Res> {
           $Res Function(_$UpdateCalculationMethodImpl) then) =
       __$$UpdateCalculationMethodImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CalculationMethodState method});
+  $Res call({PrayCalculationMethodState method});
 
-  $CalculationMethodStateCopyWith<$Res> get method;
+  $PrayCalculationMethodStateCopyWith<$Res> get method;
 }
 
 /// @nodoc
@@ -365,7 +543,7 @@ class __$$UpdateCalculationMethodImplCopyWithImpl<$Res>
       method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as CalculationMethodState,
+              as PrayCalculationMethodState,
     ));
   }
 
@@ -373,8 +551,8 @@ class __$$UpdateCalculationMethodImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CalculationMethodStateCopyWith<$Res> get method {
-    return $CalculationMethodStateCopyWith<$Res>(_value.method, (value) {
+  $PrayCalculationMethodStateCopyWith<$Res> get method {
+    return $PrayCalculationMethodStateCopyWith<$Res>(_value.method, (value) {
       return _then(_value.copyWith(method: value));
     });
   }
@@ -386,7 +564,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   _$UpdateCalculationMethodImpl({required this.method});
 
   @override
-  final CalculationMethodState method;
+  final PrayCalculationMethodState method;
 
   @override
   String toString() {
@@ -416,15 +594,16 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -435,14 +614,16 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -453,13 +634,15 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -474,6 +657,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -491,6 +675,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -507,6 +692,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -527,10 +713,10 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
 
 abstract class _UpdateCalculationMethod implements PrayCalculationSettingEvent {
   factory _UpdateCalculationMethod(
-          {required final CalculationMethodState method}) =
+          {required final PrayCalculationMethodState method}) =
       _$UpdateCalculationMethodImpl;
 
-  CalculationMethodState get method;
+  PrayCalculationMethodState get method;
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -619,15 +805,16 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -638,14 +825,16 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -656,13 +845,15 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -677,6 +868,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -694,6 +886,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -710,6 +903,7 @@ class _$UpdateMathhabImpl implements _UpdateMathhab {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -747,7 +941,7 @@ abstract class _$$UpdateTimeZoneImplCopyWith<$Res> {
           $Res Function(_$UpdateTimeZoneImpl) then) =
       __$$UpdateTimeZoneImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String value});
+  $Res call({Duration value});
 }
 
 /// @nodoc
@@ -769,7 +963,7 @@ class __$$UpdateTimeZoneImplCopyWithImpl<$Res>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Duration,
     ));
   }
 }
@@ -780,7 +974,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   _$UpdateTimeZoneImpl({required this.value});
 
   @override
-  final String value;
+  final Duration value;
 
   @override
   String toString() {
@@ -810,15 +1004,16 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -829,14 +1024,16 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -847,13 +1044,15 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -868,6 +1067,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -885,6 +1085,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -901,6 +1102,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -920,9 +1122,10 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
 }
 
 abstract class _UpdateTimeZone implements PrayCalculationSettingEvent {
-  factory _UpdateTimeZone({required final String value}) = _$UpdateTimeZoneImpl;
+  factory _UpdateTimeZone({required final Duration value}) =
+      _$UpdateTimeZoneImpl;
 
-  String get value;
+  Duration get value;
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1010,15 +1213,16 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -1029,14 +1233,16 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -1047,13 +1253,15 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -1068,6 +1276,7 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -1085,6 +1294,7 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -1101,6 +1311,7 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -1141,9 +1352,9 @@ abstract class _$$UpdateHightLatitudeCalculationImplCopyWith<$Res> {
           $Res Function(_$UpdateHightLatitudeCalculationImpl) then) =
       __$$UpdateHightLatitudeCalculationImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({HightLatitudeCaluclationState state});
+  $Res call({PrayHightLatitudeCaluclationState state});
 
-  $HightLatitudeCaluclationStateCopyWith<$Res> get state;
+  $PrayHightLatitudeCaluclationStateCopyWith<$Res> get state;
 }
 
 /// @nodoc
@@ -1167,7 +1378,7 @@ class __$$UpdateHightLatitudeCalculationImplCopyWithImpl<$Res>
       state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as HightLatitudeCaluclationState,
+              as PrayHightLatitudeCaluclationState,
     ));
   }
 
@@ -1175,8 +1386,9 @@ class __$$UpdateHightLatitudeCalculationImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $HightLatitudeCaluclationStateCopyWith<$Res> get state {
-    return $HightLatitudeCaluclationStateCopyWith<$Res>(_value.state, (value) {
+  $PrayHightLatitudeCaluclationStateCopyWith<$Res> get state {
+    return $PrayHightLatitudeCaluclationStateCopyWith<$Res>(_value.state,
+        (value) {
       return _then(_value.copyWith(state: value));
     });
   }
@@ -1189,7 +1401,7 @@ class _$UpdateHightLatitudeCalculationImpl
   _$UpdateHightLatitudeCalculationImpl({required this.state});
 
   @override
-  final HightLatitudeCaluclationState state;
+  final PrayHightLatitudeCaluclationState state;
 
   @override
   String toString() {
@@ -1220,15 +1432,16 @@ class _$UpdateHightLatitudeCalculationImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -1239,14 +1452,16 @@ class _$UpdateHightLatitudeCalculationImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -1257,13 +1472,15 @@ class _$UpdateHightLatitudeCalculationImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -1278,6 +1495,7 @@ class _$UpdateHightLatitudeCalculationImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -1295,6 +1513,7 @@ class _$UpdateHightLatitudeCalculationImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -1311,6 +1530,7 @@ class _$UpdateHightLatitudeCalculationImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -1332,10 +1552,10 @@ class _$UpdateHightLatitudeCalculationImpl
 abstract class _UpdateHightLatitudeCalculation
     implements PrayCalculationSettingEvent {
   factory _UpdateHightLatitudeCalculation(
-          {required final HightLatitudeCaluclationState state}) =
+          {required final PrayHightLatitudeCaluclationState state}) =
       _$UpdateHightLatitudeCalculationImpl;
 
-  HightLatitudeCaluclationState get state;
+  PrayHightLatitudeCaluclationState get state;
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1413,15 +1633,16 @@ class _$SaveChangesImpl implements _SaveChanges {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -1432,14 +1653,16 @@ class _$SaveChangesImpl implements _SaveChanges {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -1450,13 +1673,15 @@ class _$SaveChangesImpl implements _SaveChanges {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -1471,6 +1696,7 @@ class _$SaveChangesImpl implements _SaveChanges {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -1488,6 +1714,7 @@ class _$SaveChangesImpl implements _SaveChanges {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -1504,6 +1731,7 @@ class _$SaveChangesImpl implements _SaveChanges {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -1602,15 +1830,16 @@ class _$FactoryResetImpl implements _FactoryReset {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() setup,
     required TResult Function(DateTime time, PreviewBoxes azanType)
         updateTimeOfPreview,
-    required TResult Function(CalculationMethodState method)
+    required TResult Function(PrayCalculationMethodState method)
         updateCalculationMethod,
     required TResult Function(MathhabState mathhab) updateMathhab,
-    required TResult Function(String value) updateTimeZone,
+    required TResult Function(Duration value) updateTimeZone,
     required TResult Function(int minutes, AzanTypeForEditMin azanType)
         updateAzanTypeInMin,
-    required TResult Function(HightLatitudeCaluclationState state)
+    required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
     required TResult Function(bool status) saveChanges,
     required TResult Function(bool status) factoryReset,
@@ -1621,14 +1850,16 @@ class _$FactoryResetImpl implements _FactoryReset {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? setup,
     TResult? Function(DateTime time, PreviewBoxes azanType)?
         updateTimeOfPreview,
-    TResult? Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult? Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult? Function(MathhabState mathhab)? updateMathhab,
-    TResult? Function(String value)? updateTimeZone,
+    TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult? Function(HightLatitudeCaluclationState state)?
+    TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult? Function(bool status)? saveChanges,
     TResult? Function(bool status)? factoryReset,
@@ -1639,13 +1870,15 @@ class _$FactoryResetImpl implements _FactoryReset {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? setup,
     TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(CalculationMethodState method)? updateCalculationMethod,
+    TResult Function(PrayCalculationMethodState method)?
+        updateCalculationMethod,
     TResult Function(MathhabState mathhab)? updateMathhab,
-    TResult Function(String value)? updateTimeZone,
+    TResult Function(Duration value)? updateTimeZone,
     TResult Function(int minutes, AzanTypeForEditMin azanType)?
         updateAzanTypeInMin,
-    TResult Function(HightLatitudeCaluclationState state)?
+    TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
     TResult Function(bool status)? saveChanges,
     TResult Function(bool status)? factoryReset,
@@ -1660,6 +1893,7 @@ class _$FactoryResetImpl implements _FactoryReset {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateCalculationMethod value)
         updateCalculationMethod,
@@ -1677,6 +1911,7 @@ class _$FactoryResetImpl implements _FactoryReset {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Setup value)? setup,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult? Function(_UpdateMathhab value)? updateMathhab,
@@ -1693,6 +1928,7 @@ class _$FactoryResetImpl implements _FactoryReset {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Setup value)? setup,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateCalculationMethod value)? updateCalculationMethod,
     TResult Function(_UpdateMathhab value)? updateMathhab,
@@ -1736,7 +1972,7 @@ mixin _$PrayCalculationSettingState {
   DateTime? get applicationTime => throw _privateConstructorUsedError;
   DateTime? get deviceTime => throw _privateConstructorUsedError;
   bool get buttonsStatus => throw _privateConstructorUsedError;
-  String get timeZone => throw _privateConstructorUsedError;
+  Duration get timeZone => throw _privateConstructorUsedError;
   int get editFajirTimeManual => throw _privateConstructorUsedError;
   int get editSunriseTimeManual => throw _privateConstructorUsedError;
   int get editDuhirTimeManual => throw _privateConstructorUsedError;
@@ -1746,9 +1982,9 @@ mixin _$PrayCalculationSettingState {
   int get editMidNightTimeManual => throw _privateConstructorUsedError;
   int get editLast3thTimeTimeManual => throw _privateConstructorUsedError;
   MathhabState get mathhab => throw _privateConstructorUsedError;
-  CalculationMethodState get calculationMethod =>
+  PrayCalculationMethodState get calculationMethod =>
       throw _privateConstructorUsedError;
-  HightLatitudeCaluclationState get hightLatitudeCaluclation =>
+  PrayHightLatitudeCaluclationState get hightLatitudeCaluclation =>
       throw _privateConstructorUsedError;
 
   /// Create a copy of PrayCalculationSettingState
@@ -1778,7 +2014,7 @@ abstract class $PrayCalculationSettingStateCopyWith<$Res> {
       DateTime? applicationTime,
       DateTime? deviceTime,
       bool buttonsStatus,
-      String timeZone,
+      Duration timeZone,
       int editFajirTimeManual,
       int editSunriseTimeManual,
       int editDuhirTimeManual,
@@ -1788,12 +2024,12 @@ abstract class $PrayCalculationSettingStateCopyWith<$Res> {
       int editMidNightTimeManual,
       int editLast3thTimeTimeManual,
       MathhabState mathhab,
-      CalculationMethodState calculationMethod,
-      HightLatitudeCaluclationState hightLatitudeCaluclation});
+      PrayCalculationMethodState calculationMethod,
+      PrayHightLatitudeCaluclationState hightLatitudeCaluclation});
 
   $MathhabStateCopyWith<$Res> get mathhab;
-  $CalculationMethodStateCopyWith<$Res> get calculationMethod;
-  $HightLatitudeCaluclationStateCopyWith<$Res> get hightLatitudeCaluclation;
+  $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod;
+  $PrayHightLatitudeCaluclationStateCopyWith<$Res> get hightLatitudeCaluclation;
 }
 
 /// @nodoc
@@ -1884,7 +2120,7 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
       timeZone: null == timeZone
           ? _value.timeZone
           : timeZone // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Duration,
       editFajirTimeManual: null == editFajirTimeManual
           ? _value.editFajirTimeManual
           : editFajirTimeManual // ignore: cast_nullable_to_non_nullable
@@ -1924,11 +2160,11 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
       calculationMethod: null == calculationMethod
           ? _value.calculationMethod
           : calculationMethod // ignore: cast_nullable_to_non_nullable
-              as CalculationMethodState,
+              as PrayCalculationMethodState,
       hightLatitudeCaluclation: null == hightLatitudeCaluclation
           ? _value.hightLatitudeCaluclation
           : hightLatitudeCaluclation // ignore: cast_nullable_to_non_nullable
-              as HightLatitudeCaluclationState,
+              as PrayHightLatitudeCaluclationState,
     ) as $Val);
   }
 
@@ -1946,8 +2182,8 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CalculationMethodStateCopyWith<$Res> get calculationMethod {
-    return $CalculationMethodStateCopyWith<$Res>(_value.calculationMethod,
+  $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod {
+    return $PrayCalculationMethodStateCopyWith<$Res>(_value.calculationMethod,
         (value) {
       return _then(_value.copyWith(calculationMethod: value) as $Val);
     });
@@ -1957,8 +2193,9 @@ class _$PrayCalculationSettingStateCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $HightLatitudeCaluclationStateCopyWith<$Res> get hightLatitudeCaluclation {
-    return $HightLatitudeCaluclationStateCopyWith<$Res>(
+  $PrayHightLatitudeCaluclationStateCopyWith<$Res>
+      get hightLatitudeCaluclation {
+    return $PrayHightLatitudeCaluclationStateCopyWith<$Res>(
         _value.hightLatitudeCaluclation, (value) {
       return _then(_value.copyWith(hightLatitudeCaluclation: value) as $Val);
     });
@@ -1986,7 +2223,7 @@ abstract class _$$PrayCalculationSettingStateImplCopyWith<$Res>
       DateTime? applicationTime,
       DateTime? deviceTime,
       bool buttonsStatus,
-      String timeZone,
+      Duration timeZone,
       int editFajirTimeManual,
       int editSunriseTimeManual,
       int editDuhirTimeManual,
@@ -1996,15 +2233,15 @@ abstract class _$$PrayCalculationSettingStateImplCopyWith<$Res>
       int editMidNightTimeManual,
       int editLast3thTimeTimeManual,
       MathhabState mathhab,
-      CalculationMethodState calculationMethod,
-      HightLatitudeCaluclationState hightLatitudeCaluclation});
+      PrayCalculationMethodState calculationMethod,
+      PrayHightLatitudeCaluclationState hightLatitudeCaluclation});
 
   @override
   $MathhabStateCopyWith<$Res> get mathhab;
   @override
-  $CalculationMethodStateCopyWith<$Res> get calculationMethod;
+  $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod;
   @override
-  $HightLatitudeCaluclationStateCopyWith<$Res> get hightLatitudeCaluclation;
+  $PrayHightLatitudeCaluclationStateCopyWith<$Res> get hightLatitudeCaluclation;
 }
 
 /// @nodoc
@@ -2094,7 +2331,7 @@ class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
       timeZone: null == timeZone
           ? _value.timeZone
           : timeZone // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Duration,
       editFajirTimeManual: null == editFajirTimeManual
           ? _value.editFajirTimeManual
           : editFajirTimeManual // ignore: cast_nullable_to_non_nullable
@@ -2134,11 +2371,11 @@ class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
       calculationMethod: null == calculationMethod
           ? _value.calculationMethod
           : calculationMethod // ignore: cast_nullable_to_non_nullable
-              as CalculationMethodState,
+              as PrayCalculationMethodState,
       hightLatitudeCaluclation: null == hightLatitudeCaluclation
           ? _value.hightLatitudeCaluclation
           : hightLatitudeCaluclation // ignore: cast_nullable_to_non_nullable
-              as HightLatitudeCaluclationState,
+              as PrayHightLatitudeCaluclationState,
     ));
   }
 }
@@ -2159,7 +2396,7 @@ class _$PrayCalculationSettingStateImpl
       this.applicationTime,
       this.deviceTime,
       this.buttonsStatus = false,
-      this.timeZone = "UTC +03:00",
+      this.timeZone = const Duration(hours: 3),
       this.editFajirTimeManual = 0,
       this.editSunriseTimeManual = 0,
       this.editDuhirTimeManual = 0,
@@ -2169,9 +2406,9 @@ class _$PrayCalculationSettingStateImpl
       this.editMidNightTimeManual = 0,
       this.editLast3thTimeTimeManual = 0,
       this.mathhab = const MathhabState.hanafi(),
-      this.calculationMethod = const CalculationMethodState.jordanAwqaf(),
+      this.calculationMethod = const PrayCalculationMethodState.jordanAwqaf(),
       this.hightLatitudeCaluclation =
-          const HightLatitudeCaluclationState.none()});
+          const PrayHightLatitudeCaluclationState.none()});
 
   @override
   final DateTime? fajirTime;
@@ -2198,7 +2435,7 @@ class _$PrayCalculationSettingStateImpl
   final bool buttonsStatus;
   @override
   @JsonKey()
-  final String timeZone;
+  final Duration timeZone;
   @override
   @JsonKey()
   final int editFajirTimeManual;
@@ -2228,10 +2465,10 @@ class _$PrayCalculationSettingStateImpl
   final MathhabState mathhab;
   @override
   @JsonKey()
-  final CalculationMethodState calculationMethod;
+  final PrayCalculationMethodState calculationMethod;
   @override
   @JsonKey()
-  final HightLatitudeCaluclationState hightLatitudeCaluclation;
+  final PrayHightLatitudeCaluclationState hightLatitudeCaluclation;
 
   @override
   String toString() {
@@ -2343,7 +2580,7 @@ abstract class _PrayCalculationSettingState
           final DateTime? applicationTime,
           final DateTime? deviceTime,
           final bool buttonsStatus,
-          final String timeZone,
+          final Duration timeZone,
           final int editFajirTimeManual,
           final int editSunriseTimeManual,
           final int editDuhirTimeManual,
@@ -2353,8 +2590,8 @@ abstract class _PrayCalculationSettingState
           final int editMidNightTimeManual,
           final int editLast3thTimeTimeManual,
           final MathhabState mathhab,
-          final CalculationMethodState calculationMethod,
-          final HightLatitudeCaluclationState hightLatitudeCaluclation}) =
+          final PrayCalculationMethodState calculationMethod,
+          final PrayHightLatitudeCaluclationState hightLatitudeCaluclation}) =
       _$PrayCalculationSettingStateImpl;
 
   @override
@@ -2380,7 +2617,7 @@ abstract class _PrayCalculationSettingState
   @override
   bool get buttonsStatus;
   @override
-  String get timeZone;
+  Duration get timeZone;
   @override
   int get editFajirTimeManual;
   @override
@@ -2400,9 +2637,9 @@ abstract class _PrayCalculationSettingState
   @override
   MathhabState get mathhab;
   @override
-  CalculationMethodState get calculationMethod;
+  PrayCalculationMethodState get calculationMethod;
   @override
-  HightLatitudeCaluclationState get hightLatitudeCaluclation;
+  PrayHightLatitudeCaluclationState get hightLatitudeCaluclation;
 
   /// Create a copy of PrayCalculationSettingState
   /// with the given fields replaced by the non-null parameter values.
@@ -2410,6487 +2647,4 @@ abstract class _PrayCalculationSettingState
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PrayCalculationSettingStateImplCopyWith<_$PrayCalculationSettingStateImpl>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$HightLatitudeCaluclationState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() none,
-    required TResult Function() angleBasedMethod,
-    required TResult Function() midnight,
-    required TResult Function() seventhPartOfTheNight,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? none,
-    TResult? Function()? angleBasedMethod,
-    TResult? Function()? midnight,
-    TResult? Function()? seventhPartOfTheNight,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? none,
-    TResult Function()? angleBasedMethod,
-    TResult Function()? midnight,
-    TResult Function()? seventhPartOfTheNight,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HightLatitudeCaluclationStateNone value) none,
-    required TResult Function(
-            HightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
-    required TResult Function(HightLatitudeCaluclationStateMidnight value)
-        midnight,
-    required TResult Function(
-            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HightLatitudeCaluclationStateCopyWith<$Res> {
-  factory $HightLatitudeCaluclationStateCopyWith(
-          HightLatitudeCaluclationState value,
-          $Res Function(HightLatitudeCaluclationState) then) =
-      _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
-          HightLatitudeCaluclationState>;
-}
-
-/// @nodoc
-class _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
-        $Val extends HightLatitudeCaluclationState>
-    implements $HightLatitudeCaluclationStateCopyWith<$Res> {
-  _$HightLatitudeCaluclationStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of HightLatitudeCaluclationState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$HightLatitudeCaluclationStateNoneImplCopyWith<$Res> {
-  factory _$$HightLatitudeCaluclationStateNoneImplCopyWith(
-          _$HightLatitudeCaluclationStateNoneImpl value,
-          $Res Function(_$HightLatitudeCaluclationStateNoneImpl) then) =
-      __$$HightLatitudeCaluclationStateNoneImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$HightLatitudeCaluclationStateNoneImplCopyWithImpl<$Res>
-    extends _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
-        _$HightLatitudeCaluclationStateNoneImpl>
-    implements _$$HightLatitudeCaluclationStateNoneImplCopyWith<$Res> {
-  __$$HightLatitudeCaluclationStateNoneImplCopyWithImpl(
-      _$HightLatitudeCaluclationStateNoneImpl _value,
-      $Res Function(_$HightLatitudeCaluclationStateNoneImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HightLatitudeCaluclationState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$HightLatitudeCaluclationStateNoneImpl
-    implements HightLatitudeCaluclationStateNone {
-  const _$HightLatitudeCaluclationStateNoneImpl();
-
-  @override
-  String toString() {
-    return 'HightLatitudeCaluclationState.none()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HightLatitudeCaluclationStateNoneImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() none,
-    required TResult Function() angleBasedMethod,
-    required TResult Function() midnight,
-    required TResult Function() seventhPartOfTheNight,
-  }) {
-    return none();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? none,
-    TResult? Function()? angleBasedMethod,
-    TResult? Function()? midnight,
-    TResult? Function()? seventhPartOfTheNight,
-  }) {
-    return none?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? none,
-    TResult Function()? angleBasedMethod,
-    TResult Function()? midnight,
-    TResult Function()? seventhPartOfTheNight,
-    required TResult orElse(),
-  }) {
-    if (none != null) {
-      return none();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HightLatitudeCaluclationStateNone value) none,
-    required TResult Function(
-            HightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
-    required TResult Function(HightLatitudeCaluclationStateMidnight value)
-        midnight,
-    required TResult Function(
-            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
-  }) {
-    return none(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-  }) {
-    return none?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-    required TResult orElse(),
-  }) {
-    if (none != null) {
-      return none(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HightLatitudeCaluclationStateNone
-    implements HightLatitudeCaluclationState {
-  const factory HightLatitudeCaluclationStateNone() =
-      _$HightLatitudeCaluclationStateNoneImpl;
-}
-
-/// @nodoc
-abstract class _$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWith<
-    $Res> {
-  factory _$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWith(
-          _$HightLatitudeCaluclationStateAngleBasedMethodImpl value,
-          $Res Function(_$HightLatitudeCaluclationStateAngleBasedMethodImpl)
-              then) =
-      __$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl<$Res>
-    extends _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
-        _$HightLatitudeCaluclationStateAngleBasedMethodImpl>
-    implements
-        _$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWith<$Res> {
-  __$$HightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl(
-      _$HightLatitudeCaluclationStateAngleBasedMethodImpl _value,
-      $Res Function(_$HightLatitudeCaluclationStateAngleBasedMethodImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HightLatitudeCaluclationState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$HightLatitudeCaluclationStateAngleBasedMethodImpl
-    implements HightLatitudeCaluclationStateAngleBasedMethod {
-  const _$HightLatitudeCaluclationStateAngleBasedMethodImpl();
-
-  @override
-  String toString() {
-    return 'HightLatitudeCaluclationState.angleBasedMethod()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HightLatitudeCaluclationStateAngleBasedMethodImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() none,
-    required TResult Function() angleBasedMethod,
-    required TResult Function() midnight,
-    required TResult Function() seventhPartOfTheNight,
-  }) {
-    return angleBasedMethod();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? none,
-    TResult? Function()? angleBasedMethod,
-    TResult? Function()? midnight,
-    TResult? Function()? seventhPartOfTheNight,
-  }) {
-    return angleBasedMethod?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? none,
-    TResult Function()? angleBasedMethod,
-    TResult Function()? midnight,
-    TResult Function()? seventhPartOfTheNight,
-    required TResult orElse(),
-  }) {
-    if (angleBasedMethod != null) {
-      return angleBasedMethod();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HightLatitudeCaluclationStateNone value) none,
-    required TResult Function(
-            HightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
-    required TResult Function(HightLatitudeCaluclationStateMidnight value)
-        midnight,
-    required TResult Function(
-            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
-  }) {
-    return angleBasedMethod(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-  }) {
-    return angleBasedMethod?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-    required TResult orElse(),
-  }) {
-    if (angleBasedMethod != null) {
-      return angleBasedMethod(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HightLatitudeCaluclationStateAngleBasedMethod
-    implements HightLatitudeCaluclationState {
-  const factory HightLatitudeCaluclationStateAngleBasedMethod() =
-      _$HightLatitudeCaluclationStateAngleBasedMethodImpl;
-}
-
-/// @nodoc
-abstract class _$$HightLatitudeCaluclationStateMidnightImplCopyWith<$Res> {
-  factory _$$HightLatitudeCaluclationStateMidnightImplCopyWith(
-          _$HightLatitudeCaluclationStateMidnightImpl value,
-          $Res Function(_$HightLatitudeCaluclationStateMidnightImpl) then) =
-      __$$HightLatitudeCaluclationStateMidnightImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$HightLatitudeCaluclationStateMidnightImplCopyWithImpl<$Res>
-    extends _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
-        _$HightLatitudeCaluclationStateMidnightImpl>
-    implements _$$HightLatitudeCaluclationStateMidnightImplCopyWith<$Res> {
-  __$$HightLatitudeCaluclationStateMidnightImplCopyWithImpl(
-      _$HightLatitudeCaluclationStateMidnightImpl _value,
-      $Res Function(_$HightLatitudeCaluclationStateMidnightImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HightLatitudeCaluclationState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$HightLatitudeCaluclationStateMidnightImpl
-    implements HightLatitudeCaluclationStateMidnight {
-  const _$HightLatitudeCaluclationStateMidnightImpl();
-
-  @override
-  String toString() {
-    return 'HightLatitudeCaluclationState.midnight()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HightLatitudeCaluclationStateMidnightImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() none,
-    required TResult Function() angleBasedMethod,
-    required TResult Function() midnight,
-    required TResult Function() seventhPartOfTheNight,
-  }) {
-    return midnight();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? none,
-    TResult? Function()? angleBasedMethod,
-    TResult? Function()? midnight,
-    TResult? Function()? seventhPartOfTheNight,
-  }) {
-    return midnight?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? none,
-    TResult Function()? angleBasedMethod,
-    TResult Function()? midnight,
-    TResult Function()? seventhPartOfTheNight,
-    required TResult orElse(),
-  }) {
-    if (midnight != null) {
-      return midnight();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HightLatitudeCaluclationStateNone value) none,
-    required TResult Function(
-            HightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
-    required TResult Function(HightLatitudeCaluclationStateMidnight value)
-        midnight,
-    required TResult Function(
-            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
-  }) {
-    return midnight(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-  }) {
-    return midnight?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-    required TResult orElse(),
-  }) {
-    if (midnight != null) {
-      return midnight(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HightLatitudeCaluclationStateMidnight
-    implements HightLatitudeCaluclationState {
-  const factory HightLatitudeCaluclationStateMidnight() =
-      _$HightLatitudeCaluclationStateMidnightImpl;
-}
-
-/// @nodoc
-abstract class _$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith<
-    $Res> {
-  factory _$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith(
-          _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl value,
-          $Res Function(
-                  _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl)
-              then) =
-      __$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl<
-          $Res>;
-}
-
-/// @nodoc
-class __$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl<
-        $Res>
-    extends _$HightLatitudeCaluclationStateCopyWithImpl<$Res,
-        _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl>
-    implements
-        _$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith<
-            $Res> {
-  __$$HightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl(
-      _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl _value,
-      $Res Function(_$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl)
-          _then)
-      : super(_value, _then);
-
-  /// Create a copy of HightLatitudeCaluclationState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl
-    implements HightLatitudeCaluclationStateSeventhPartOfTheNight {
-  const _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl();
-
-  @override
-  String toString() {
-    return 'HightLatitudeCaluclationState.seventhPartOfTheNight()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() none,
-    required TResult Function() angleBasedMethod,
-    required TResult Function() midnight,
-    required TResult Function() seventhPartOfTheNight,
-  }) {
-    return seventhPartOfTheNight();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? none,
-    TResult? Function()? angleBasedMethod,
-    TResult? Function()? midnight,
-    TResult? Function()? seventhPartOfTheNight,
-  }) {
-    return seventhPartOfTheNight?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? none,
-    TResult Function()? angleBasedMethod,
-    TResult Function()? midnight,
-    TResult Function()? seventhPartOfTheNight,
-    required TResult orElse(),
-  }) {
-    if (seventhPartOfTheNight != null) {
-      return seventhPartOfTheNight();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HightLatitudeCaluclationStateNone value) none,
-    required TResult Function(
-            HightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
-    required TResult Function(HightLatitudeCaluclationStateMidnight value)
-        midnight,
-    required TResult Function(
-            HightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
-  }) {
-    return seventhPartOfTheNight(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult? Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult? Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult? Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-  }) {
-    return seventhPartOfTheNight?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HightLatitudeCaluclationStateNone value)? none,
-    TResult Function(HightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
-    TResult Function(HightLatitudeCaluclationStateMidnight value)? midnight,
-    TResult Function(HightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-    required TResult orElse(),
-  }) {
-    if (seventhPartOfTheNight != null) {
-      return seventhPartOfTheNight(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HightLatitudeCaluclationStateSeventhPartOfTheNight
-    implements HightLatitudeCaluclationState {
-  const factory HightLatitudeCaluclationStateSeventhPartOfTheNight() =
-      _$HightLatitudeCaluclationStateSeventhPartOfTheNightImpl;
-}
-
-/// @nodoc
-mixin _$MathhabState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() hanafi,
-    required TResult Function() shaafei,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? hanafi,
-    TResult? Function()? shaafei,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? hanafi,
-    TResult Function()? shaafei,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(MathhabStateHanafi value) hanafi,
-    required TResult Function(MathhabStateShaafei value) shaafei,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(MathhabStateHanafi value)? hanafi,
-    TResult? Function(MathhabStateShaafei value)? shaafei,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(MathhabStateHanafi value)? hanafi,
-    TResult Function(MathhabStateShaafei value)? shaafei,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MathhabStateCopyWith<$Res> {
-  factory $MathhabStateCopyWith(
-          MathhabState value, $Res Function(MathhabState) then) =
-      _$MathhabStateCopyWithImpl<$Res, MathhabState>;
-}
-
-/// @nodoc
-class _$MathhabStateCopyWithImpl<$Res, $Val extends MathhabState>
-    implements $MathhabStateCopyWith<$Res> {
-  _$MathhabStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MathhabState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$MathhabStateHanafiImplCopyWith<$Res> {
-  factory _$$MathhabStateHanafiImplCopyWith(_$MathhabStateHanafiImpl value,
-          $Res Function(_$MathhabStateHanafiImpl) then) =
-      __$$MathhabStateHanafiImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$MathhabStateHanafiImplCopyWithImpl<$Res>
-    extends _$MathhabStateCopyWithImpl<$Res, _$MathhabStateHanafiImpl>
-    implements _$$MathhabStateHanafiImplCopyWith<$Res> {
-  __$$MathhabStateHanafiImplCopyWithImpl(_$MathhabStateHanafiImpl _value,
-      $Res Function(_$MathhabStateHanafiImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of MathhabState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$MathhabStateHanafiImpl implements MathhabStateHanafi {
-  const _$MathhabStateHanafiImpl();
-
-  @override
-  String toString() {
-    return 'MathhabState.hanafi()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$MathhabStateHanafiImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() hanafi,
-    required TResult Function() shaafei,
-  }) {
-    return hanafi();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? hanafi,
-    TResult? Function()? shaafei,
-  }) {
-    return hanafi?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? hanafi,
-    TResult Function()? shaafei,
-    required TResult orElse(),
-  }) {
-    if (hanafi != null) {
-      return hanafi();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(MathhabStateHanafi value) hanafi,
-    required TResult Function(MathhabStateShaafei value) shaafei,
-  }) {
-    return hanafi(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(MathhabStateHanafi value)? hanafi,
-    TResult? Function(MathhabStateShaafei value)? shaafei,
-  }) {
-    return hanafi?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(MathhabStateHanafi value)? hanafi,
-    TResult Function(MathhabStateShaafei value)? shaafei,
-    required TResult orElse(),
-  }) {
-    if (hanafi != null) {
-      return hanafi(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MathhabStateHanafi implements MathhabState {
-  const factory MathhabStateHanafi() = _$MathhabStateHanafiImpl;
-}
-
-/// @nodoc
-abstract class _$$MathhabStateShaafeiImplCopyWith<$Res> {
-  factory _$$MathhabStateShaafeiImplCopyWith(_$MathhabStateShaafeiImpl value,
-          $Res Function(_$MathhabStateShaafeiImpl) then) =
-      __$$MathhabStateShaafeiImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$MathhabStateShaafeiImplCopyWithImpl<$Res>
-    extends _$MathhabStateCopyWithImpl<$Res, _$MathhabStateShaafeiImpl>
-    implements _$$MathhabStateShaafeiImplCopyWith<$Res> {
-  __$$MathhabStateShaafeiImplCopyWithImpl(_$MathhabStateShaafeiImpl _value,
-      $Res Function(_$MathhabStateShaafeiImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of MathhabState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$MathhabStateShaafeiImpl implements MathhabStateShaafei {
-  const _$MathhabStateShaafeiImpl();
-
-  @override
-  String toString() {
-    return 'MathhabState.shaafei()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MathhabStateShaafeiImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() hanafi,
-    required TResult Function() shaafei,
-  }) {
-    return shaafei();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? hanafi,
-    TResult? Function()? shaafei,
-  }) {
-    return shaafei?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? hanafi,
-    TResult Function()? shaafei,
-    required TResult orElse(),
-  }) {
-    if (shaafei != null) {
-      return shaafei();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(MathhabStateHanafi value) hanafi,
-    required TResult Function(MathhabStateShaafei value) shaafei,
-  }) {
-    return shaafei(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(MathhabStateHanafi value)? hanafi,
-    TResult? Function(MathhabStateShaafei value)? shaafei,
-  }) {
-    return shaafei?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(MathhabStateHanafi value)? hanafi,
-    TResult Function(MathhabStateShaafei value)? shaafei,
-    required TResult orElse(),
-  }) {
-    if (shaafei != null) {
-      return shaafei(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MathhabStateShaafei implements MathhabState {
-  const factory MathhabStateShaafei() = _$MathhabStateShaafeiImpl;
-}
-
-/// @nodoc
-mixin _$CalculationMethodState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CalculationMethodStateCopyWith<$Res> {
-  factory $CalculationMethodStateCopyWith(CalculationMethodState value,
-          $Res Function(CalculationMethodState) then) =
-      _$CalculationMethodStateCopyWithImpl<$Res, CalculationMethodState>;
-}
-
-/// @nodoc
-class _$CalculationMethodStateCopyWithImpl<$Res,
-        $Val extends CalculationMethodState>
-    implements $CalculationMethodStateCopyWith<$Res> {
-  _$CalculationMethodStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateJafariImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateJafariImplCopyWith(
-          _$CalculationMethodStateJafariImpl value,
-          $Res Function(_$CalculationMethodStateJafariImpl) then) =
-      __$$CalculationMethodStateJafariImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateJafariImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateJafariImpl>
-    implements _$$CalculationMethodStateJafariImplCopyWith<$Res> {
-  __$$CalculationMethodStateJafariImplCopyWithImpl(
-      _$CalculationMethodStateJafariImpl _value,
-      $Res Function(_$CalculationMethodStateJafariImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateJafariImpl
-    implements CalculationMethodStateJafari {
-  const _$CalculationMethodStateJafariImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.jafari()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateJafariImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return jafari();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return jafari?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (jafari != null) {
-      return jafari();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return jafari(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return jafari?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (jafari != null) {
-      return jafari(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateJafari implements CalculationMethodState {
-  const factory CalculationMethodStateJafari() =
-      _$CalculationMethodStateJafariImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateKarachiImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateKarachiImplCopyWith(
-          _$CalculationMethodStateKarachiImpl value,
-          $Res Function(_$CalculationMethodStateKarachiImpl) then) =
-      __$$CalculationMethodStateKarachiImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateKarachiImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateKarachiImpl>
-    implements _$$CalculationMethodStateKarachiImplCopyWith<$Res> {
-  __$$CalculationMethodStateKarachiImplCopyWithImpl(
-      _$CalculationMethodStateKarachiImpl _value,
-      $Res Function(_$CalculationMethodStateKarachiImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateKarachiImpl
-    implements CalculationMethodStateKarachi {
-  const _$CalculationMethodStateKarachiImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.karachi()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateKarachiImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return karachi();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return karachi?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (karachi != null) {
-      return karachi();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return karachi(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return karachi?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (karachi != null) {
-      return karachi(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateKarachi implements CalculationMethodState {
-  const factory CalculationMethodStateKarachi() =
-      _$CalculationMethodStateKarachiImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWith<
-    $Res> {
-  factory _$$CalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWith(
-          _$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl value,
-          $Res Function(
-                  _$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl)
-              then) =
-      __$$CalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWithImpl<
-          $Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWithImpl<
-        $Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl>
-    implements
-        _$$CalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWith<
-            $Res> {
-  __$$CalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWithImpl(
-      _$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl _value,
-      $Res Function(_$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl)
-          _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl
-    implements CalculationMethodStateIslamicSocietyOfNorthAmerica {
-  const _$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.islamicSocietyOfNorthAmerica()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return islamicSocietyOfNorthAmerica();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return islamicSocietyOfNorthAmerica?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (islamicSocietyOfNorthAmerica != null) {
-      return islamicSocietyOfNorthAmerica();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return islamicSocietyOfNorthAmerica(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return islamicSocietyOfNorthAmerica?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (islamicSocietyOfNorthAmerica != null) {
-      return islamicSocietyOfNorthAmerica(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateIslamicSocietyOfNorthAmerica
-    implements CalculationMethodState {
-  const factory CalculationMethodStateIslamicSocietyOfNorthAmerica() =
-      _$CalculationMethodStateIslamicSocietyOfNorthAmericaImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateMuslimWorldLeagueImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateMuslimWorldLeagueImplCopyWith(
-          _$CalculationMethodStateMuslimWorldLeagueImpl value,
-          $Res Function(_$CalculationMethodStateMuslimWorldLeagueImpl) then) =
-      __$$CalculationMethodStateMuslimWorldLeagueImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateMuslimWorldLeagueImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateMuslimWorldLeagueImpl>
-    implements _$$CalculationMethodStateMuslimWorldLeagueImplCopyWith<$Res> {
-  __$$CalculationMethodStateMuslimWorldLeagueImplCopyWithImpl(
-      _$CalculationMethodStateMuslimWorldLeagueImpl _value,
-      $Res Function(_$CalculationMethodStateMuslimWorldLeagueImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateMuslimWorldLeagueImpl
-    implements CalculationMethodStateMuslimWorldLeague {
-  const _$CalculationMethodStateMuslimWorldLeagueImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.muslimWorldLeague()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateMuslimWorldLeagueImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return muslimWorldLeague();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return muslimWorldLeague?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (muslimWorldLeague != null) {
-      return muslimWorldLeague();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return muslimWorldLeague(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return muslimWorldLeague?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (muslimWorldLeague != null) {
-      return muslimWorldLeague(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateMuslimWorldLeague
-    implements CalculationMethodState {
-  const factory CalculationMethodStateMuslimWorldLeague() =
-      _$CalculationMethodStateMuslimWorldLeagueImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateUmmAlQuraImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateUmmAlQuraImplCopyWith(
-          _$CalculationMethodStateUmmAlQuraImpl value,
-          $Res Function(_$CalculationMethodStateUmmAlQuraImpl) then) =
-      __$$CalculationMethodStateUmmAlQuraImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateUmmAlQuraImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateUmmAlQuraImpl>
-    implements _$$CalculationMethodStateUmmAlQuraImplCopyWith<$Res> {
-  __$$CalculationMethodStateUmmAlQuraImplCopyWithImpl(
-      _$CalculationMethodStateUmmAlQuraImpl _value,
-      $Res Function(_$CalculationMethodStateUmmAlQuraImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateUmmAlQuraImpl
-    implements CalculationMethodStateUmmAlQura {
-  const _$CalculationMethodStateUmmAlQuraImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.ummAlQura()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateUmmAlQuraImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return ummAlQura();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return ummAlQura?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (ummAlQura != null) {
-      return ummAlQura();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return ummAlQura(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return ummAlQura?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (ummAlQura != null) {
-      return ummAlQura(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateUmmAlQura
-    implements CalculationMethodState {
-  const factory CalculationMethodStateUmmAlQura() =
-      _$CalculationMethodStateUmmAlQuraImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateEgyptImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateEgyptImplCopyWith(
-          _$CalculationMethodStateEgyptImpl value,
-          $Res Function(_$CalculationMethodStateEgyptImpl) then) =
-      __$$CalculationMethodStateEgyptImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateEgyptImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateEgyptImpl>
-    implements _$$CalculationMethodStateEgyptImplCopyWith<$Res> {
-  __$$CalculationMethodStateEgyptImplCopyWithImpl(
-      _$CalculationMethodStateEgyptImpl _value,
-      $Res Function(_$CalculationMethodStateEgyptImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateEgyptImpl implements CalculationMethodStateEgypt {
-  const _$CalculationMethodStateEgyptImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.egypt()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateEgyptImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return egypt();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return egypt?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (egypt != null) {
-      return egypt();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return egypt(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return egypt?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (egypt != null) {
-      return egypt(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateEgypt implements CalculationMethodState {
-  const factory CalculationMethodStateEgypt() =
-      _$CalculationMethodStateEgyptImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateTehranImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateTehranImplCopyWith(
-          _$CalculationMethodStateTehranImpl value,
-          $Res Function(_$CalculationMethodStateTehranImpl) then) =
-      __$$CalculationMethodStateTehranImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateTehranImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateTehranImpl>
-    implements _$$CalculationMethodStateTehranImplCopyWith<$Res> {
-  __$$CalculationMethodStateTehranImplCopyWithImpl(
-      _$CalculationMethodStateTehranImpl _value,
-      $Res Function(_$CalculationMethodStateTehranImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateTehranImpl
-    implements CalculationMethodStateTehran {
-  const _$CalculationMethodStateTehranImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.tehran()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateTehranImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return tehran();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return tehran?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (tehran != null) {
-      return tehran();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return tehran(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return tehran?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (tehran != null) {
-      return tehran(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateTehran implements CalculationMethodState {
-  const factory CalculationMethodStateTehran() =
-      _$CalculationMethodStateTehranImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateGulfRegionImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateGulfRegionImplCopyWith(
-          _$CalculationMethodStateGulfRegionImpl value,
-          $Res Function(_$CalculationMethodStateGulfRegionImpl) then) =
-      __$$CalculationMethodStateGulfRegionImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateGulfRegionImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateGulfRegionImpl>
-    implements _$$CalculationMethodStateGulfRegionImplCopyWith<$Res> {
-  __$$CalculationMethodStateGulfRegionImplCopyWithImpl(
-      _$CalculationMethodStateGulfRegionImpl _value,
-      $Res Function(_$CalculationMethodStateGulfRegionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateGulfRegionImpl
-    implements CalculationMethodStateGulfRegion {
-  const _$CalculationMethodStateGulfRegionImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.gulfRegion()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateGulfRegionImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return gulfRegion();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return gulfRegion?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (gulfRegion != null) {
-      return gulfRegion();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return gulfRegion(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return gulfRegion?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (gulfRegion != null) {
-      return gulfRegion(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateGulfRegion
-    implements CalculationMethodState {
-  const factory CalculationMethodStateGulfRegion() =
-      _$CalculationMethodStateGulfRegionImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateKuwaitImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateKuwaitImplCopyWith(
-          _$CalculationMethodStateKuwaitImpl value,
-          $Res Function(_$CalculationMethodStateKuwaitImpl) then) =
-      __$$CalculationMethodStateKuwaitImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateKuwaitImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateKuwaitImpl>
-    implements _$$CalculationMethodStateKuwaitImplCopyWith<$Res> {
-  __$$CalculationMethodStateKuwaitImplCopyWithImpl(
-      _$CalculationMethodStateKuwaitImpl _value,
-      $Res Function(_$CalculationMethodStateKuwaitImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateKuwaitImpl
-    implements CalculationMethodStateKuwait {
-  const _$CalculationMethodStateKuwaitImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.kuwait()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateKuwaitImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return kuwait();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return kuwait?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (kuwait != null) {
-      return kuwait();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return kuwait(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return kuwait?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (kuwait != null) {
-      return kuwait(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateKuwait implements CalculationMethodState {
-  const factory CalculationMethodStateKuwait() =
-      _$CalculationMethodStateKuwaitImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateQatarImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateQatarImplCopyWith(
-          _$CalculationMethodStateQatarImpl value,
-          $Res Function(_$CalculationMethodStateQatarImpl) then) =
-      __$$CalculationMethodStateQatarImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateQatarImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateQatarImpl>
-    implements _$$CalculationMethodStateQatarImplCopyWith<$Res> {
-  __$$CalculationMethodStateQatarImplCopyWithImpl(
-      _$CalculationMethodStateQatarImpl _value,
-      $Res Function(_$CalculationMethodStateQatarImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateQatarImpl implements CalculationMethodStateQatar {
-  const _$CalculationMethodStateQatarImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.qatar()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateQatarImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return qatar();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return qatar?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (qatar != null) {
-      return qatar();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return qatar(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return qatar?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (qatar != null) {
-      return qatar(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateQatar implements CalculationMethodState {
-  const factory CalculationMethodStateQatar() =
-      _$CalculationMethodStateQatarImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateSingaporeImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateSingaporeImplCopyWith(
-          _$CalculationMethodStateSingaporeImpl value,
-          $Res Function(_$CalculationMethodStateSingaporeImpl) then) =
-      __$$CalculationMethodStateSingaporeImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateSingaporeImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateSingaporeImpl>
-    implements _$$CalculationMethodStateSingaporeImplCopyWith<$Res> {
-  __$$CalculationMethodStateSingaporeImplCopyWithImpl(
-      _$CalculationMethodStateSingaporeImpl _value,
-      $Res Function(_$CalculationMethodStateSingaporeImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateSingaporeImpl
-    implements CalculationMethodStateSingapore {
-  const _$CalculationMethodStateSingaporeImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.singapore()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateSingaporeImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return singapore();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return singapore?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (singapore != null) {
-      return singapore();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return singapore(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return singapore?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (singapore != null) {
-      return singapore(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateSingapore
-    implements CalculationMethodState {
-  const factory CalculationMethodStateSingapore() =
-      _$CalculationMethodStateSingaporeImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateFranceImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateFranceImplCopyWith(
-          _$CalculationMethodStateFranceImpl value,
-          $Res Function(_$CalculationMethodStateFranceImpl) then) =
-      __$$CalculationMethodStateFranceImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateFranceImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateFranceImpl>
-    implements _$$CalculationMethodStateFranceImplCopyWith<$Res> {
-  __$$CalculationMethodStateFranceImplCopyWithImpl(
-      _$CalculationMethodStateFranceImpl _value,
-      $Res Function(_$CalculationMethodStateFranceImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateFranceImpl
-    implements CalculationMethodStateFrance {
-  const _$CalculationMethodStateFranceImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.france()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateFranceImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return france();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return france?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (france != null) {
-      return france();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return france(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return france?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (france != null) {
-      return france(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateFrance implements CalculationMethodState {
-  const factory CalculationMethodStateFrance() =
-      _$CalculationMethodStateFranceImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateTurkeyImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateTurkeyImplCopyWith(
-          _$CalculationMethodStateTurkeyImpl value,
-          $Res Function(_$CalculationMethodStateTurkeyImpl) then) =
-      __$$CalculationMethodStateTurkeyImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateTurkeyImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateTurkeyImpl>
-    implements _$$CalculationMethodStateTurkeyImplCopyWith<$Res> {
-  __$$CalculationMethodStateTurkeyImplCopyWithImpl(
-      _$CalculationMethodStateTurkeyImpl _value,
-      $Res Function(_$CalculationMethodStateTurkeyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateTurkeyImpl
-    implements CalculationMethodStateTurkey {
-  const _$CalculationMethodStateTurkeyImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.turkey()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateTurkeyImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return turkey();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return turkey?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (turkey != null) {
-      return turkey();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return turkey(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return turkey?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (turkey != null) {
-      return turkey(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateTurkey implements CalculationMethodState {
-  const factory CalculationMethodStateTurkey() =
-      _$CalculationMethodStateTurkeyImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateRussiaImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateRussiaImplCopyWith(
-          _$CalculationMethodStateRussiaImpl value,
-          $Res Function(_$CalculationMethodStateRussiaImpl) then) =
-      __$$CalculationMethodStateRussiaImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateRussiaImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateRussiaImpl>
-    implements _$$CalculationMethodStateRussiaImplCopyWith<$Res> {
-  __$$CalculationMethodStateRussiaImplCopyWithImpl(
-      _$CalculationMethodStateRussiaImpl _value,
-      $Res Function(_$CalculationMethodStateRussiaImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateRussiaImpl
-    implements CalculationMethodStateRussia {
-  const _$CalculationMethodStateRussiaImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.russia()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateRussiaImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return russia();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return russia?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (russia != null) {
-      return russia();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return russia(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return russia?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (russia != null) {
-      return russia(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateRussia implements CalculationMethodState {
-  const factory CalculationMethodStateRussia() =
-      _$CalculationMethodStateRussiaImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateDubaiImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateDubaiImplCopyWith(
-          _$CalculationMethodStateDubaiImpl value,
-          $Res Function(_$CalculationMethodStateDubaiImpl) then) =
-      __$$CalculationMethodStateDubaiImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateDubaiImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateDubaiImpl>
-    implements _$$CalculationMethodStateDubaiImplCopyWith<$Res> {
-  __$$CalculationMethodStateDubaiImplCopyWithImpl(
-      _$CalculationMethodStateDubaiImpl _value,
-      $Res Function(_$CalculationMethodStateDubaiImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateDubaiImpl implements CalculationMethodStateDubai {
-  const _$CalculationMethodStateDubaiImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.dubai()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateDubaiImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return dubai();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return dubai?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (dubai != null) {
-      return dubai();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return dubai(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return dubai?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (dubai != null) {
-      return dubai(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateDubai implements CalculationMethodState {
-  const factory CalculationMethodStateDubai() =
-      _$CalculationMethodStateDubaiImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateJAKIMImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateJAKIMImplCopyWith(
-          _$CalculationMethodStateJAKIMImpl value,
-          $Res Function(_$CalculationMethodStateJAKIMImpl) then) =
-      __$$CalculationMethodStateJAKIMImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateJAKIMImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateJAKIMImpl>
-    implements _$$CalculationMethodStateJAKIMImplCopyWith<$Res> {
-  __$$CalculationMethodStateJAKIMImplCopyWithImpl(
-      _$CalculationMethodStateJAKIMImpl _value,
-      $Res Function(_$CalculationMethodStateJAKIMImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateJAKIMImpl implements CalculationMethodStateJAKIM {
-  const _$CalculationMethodStateJAKIMImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.jAKIM()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateJAKIMImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return jAKIM();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return jAKIM?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (jAKIM != null) {
-      return jAKIM();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return jAKIM(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return jAKIM?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (jAKIM != null) {
-      return jAKIM(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateJAKIM implements CalculationMethodState {
-  const factory CalculationMethodStateJAKIM() =
-      _$CalculationMethodStateJAKIMImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateTunisiaImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateTunisiaImplCopyWith(
-          _$CalculationMethodStateTunisiaImpl value,
-          $Res Function(_$CalculationMethodStateTunisiaImpl) then) =
-      __$$CalculationMethodStateTunisiaImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateTunisiaImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateTunisiaImpl>
-    implements _$$CalculationMethodStateTunisiaImplCopyWith<$Res> {
-  __$$CalculationMethodStateTunisiaImplCopyWithImpl(
-      _$CalculationMethodStateTunisiaImpl _value,
-      $Res Function(_$CalculationMethodStateTunisiaImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateTunisiaImpl
-    implements CalculationMethodStateTunisia {
-  const _$CalculationMethodStateTunisiaImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.tunisia()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateTunisiaImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return tunisia();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return tunisia?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (tunisia != null) {
-      return tunisia();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return tunisia(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return tunisia?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (tunisia != null) {
-      return tunisia(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateTunisia implements CalculationMethodState {
-  const factory CalculationMethodStateTunisia() =
-      _$CalculationMethodStateTunisiaImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateAlgeriaImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateAlgeriaImplCopyWith(
-          _$CalculationMethodStateAlgeriaImpl value,
-          $Res Function(_$CalculationMethodStateAlgeriaImpl) then) =
-      __$$CalculationMethodStateAlgeriaImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateAlgeriaImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateAlgeriaImpl>
-    implements _$$CalculationMethodStateAlgeriaImplCopyWith<$Res> {
-  __$$CalculationMethodStateAlgeriaImplCopyWithImpl(
-      _$CalculationMethodStateAlgeriaImpl _value,
-      $Res Function(_$CalculationMethodStateAlgeriaImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateAlgeriaImpl
-    implements CalculationMethodStateAlgeria {
-  const _$CalculationMethodStateAlgeriaImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.algeria()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateAlgeriaImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return algeria();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return algeria?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (algeria != null) {
-      return algeria();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return algeria(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return algeria?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (algeria != null) {
-      return algeria(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateAlgeria implements CalculationMethodState {
-  const factory CalculationMethodStateAlgeria() =
-      _$CalculationMethodStateAlgeriaImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateKEMENAGImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateKEMENAGImplCopyWith(
-          _$CalculationMethodStateKEMENAGImpl value,
-          $Res Function(_$CalculationMethodStateKEMENAGImpl) then) =
-      __$$CalculationMethodStateKEMENAGImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateKEMENAGImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateKEMENAGImpl>
-    implements _$$CalculationMethodStateKEMENAGImplCopyWith<$Res> {
-  __$$CalculationMethodStateKEMENAGImplCopyWithImpl(
-      _$CalculationMethodStateKEMENAGImpl _value,
-      $Res Function(_$CalculationMethodStateKEMENAGImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateKEMENAGImpl
-    implements CalculationMethodStateKEMENAG {
-  const _$CalculationMethodStateKEMENAGImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.kEMENAG()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateKEMENAGImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return kEMENAG();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return kEMENAG?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (kEMENAG != null) {
-      return kEMENAG();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return kEMENAG(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return kEMENAG?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (kEMENAG != null) {
-      return kEMENAG(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateKEMENAG implements CalculationMethodState {
-  const factory CalculationMethodStateKEMENAG() =
-      _$CalculationMethodStateKEMENAGImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateMoroccoImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateMoroccoImplCopyWith(
-          _$CalculationMethodStateMoroccoImpl value,
-          $Res Function(_$CalculationMethodStateMoroccoImpl) then) =
-      __$$CalculationMethodStateMoroccoImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateMoroccoImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateMoroccoImpl>
-    implements _$$CalculationMethodStateMoroccoImplCopyWith<$Res> {
-  __$$CalculationMethodStateMoroccoImplCopyWithImpl(
-      _$CalculationMethodStateMoroccoImpl _value,
-      $Res Function(_$CalculationMethodStateMoroccoImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateMoroccoImpl
-    implements CalculationMethodStateMorocco {
-  const _$CalculationMethodStateMoroccoImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.morocco()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateMoroccoImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return morocco();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return morocco?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (morocco != null) {
-      return morocco();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return morocco(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return morocco?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (morocco != null) {
-      return morocco(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateMorocco implements CalculationMethodState {
-  const factory CalculationMethodStateMorocco() =
-      _$CalculationMethodStateMoroccoImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateComunidadeIslamicaLisboaImplCopyWith<
-    $Res> {
-  factory _$$CalculationMethodStateComunidadeIslamicaLisboaImplCopyWith(
-          _$CalculationMethodStateComunidadeIslamicaLisboaImpl value,
-          $Res Function(_$CalculationMethodStateComunidadeIslamicaLisboaImpl)
-              then) =
-      __$$CalculationMethodStateComunidadeIslamicaLisboaImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateComunidadeIslamicaLisboaImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateComunidadeIslamicaLisboaImpl>
-    implements
-        _$$CalculationMethodStateComunidadeIslamicaLisboaImplCopyWith<$Res> {
-  __$$CalculationMethodStateComunidadeIslamicaLisboaImplCopyWithImpl(
-      _$CalculationMethodStateComunidadeIslamicaLisboaImpl _value,
-      $Res Function(_$CalculationMethodStateComunidadeIslamicaLisboaImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateComunidadeIslamicaLisboaImpl
-    implements CalculationMethodStateComunidadeIslamicaLisboa {
-  const _$CalculationMethodStateComunidadeIslamicaLisboaImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.comunidadeIslamicaLisboa()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateComunidadeIslamicaLisboaImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return comunidadeIslamicaLisboa();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return comunidadeIslamicaLisboa?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (comunidadeIslamicaLisboa != null) {
-      return comunidadeIslamicaLisboa();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return comunidadeIslamicaLisboa(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return comunidadeIslamicaLisboa?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (comunidadeIslamicaLisboa != null) {
-      return comunidadeIslamicaLisboa(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateComunidadeIslamicaLisboa
-    implements CalculationMethodState {
-  const factory CalculationMethodStateComunidadeIslamicaLisboa() =
-      _$CalculationMethodStateComunidadeIslamicaLisboaImpl;
-}
-
-/// @nodoc
-abstract class _$$CalculationMethodStateJordanAwqafImplCopyWith<$Res> {
-  factory _$$CalculationMethodStateJordanAwqafImplCopyWith(
-          _$CalculationMethodStateJordanAwqafImpl value,
-          $Res Function(_$CalculationMethodStateJordanAwqafImpl) then) =
-      __$$CalculationMethodStateJordanAwqafImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CalculationMethodStateJordanAwqafImplCopyWithImpl<$Res>
-    extends _$CalculationMethodStateCopyWithImpl<$Res,
-        _$CalculationMethodStateJordanAwqafImpl>
-    implements _$$CalculationMethodStateJordanAwqafImplCopyWith<$Res> {
-  __$$CalculationMethodStateJordanAwqafImplCopyWithImpl(
-      _$CalculationMethodStateJordanAwqafImpl _value,
-      $Res Function(_$CalculationMethodStateJordanAwqafImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CalculationMethodState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CalculationMethodStateJordanAwqafImpl
-    implements CalculationMethodStateJordanAwqaf {
-  const _$CalculationMethodStateJordanAwqafImpl();
-
-  @override
-  String toString() {
-    return 'CalculationMethodState.jordanAwqaf()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CalculationMethodStateJordanAwqafImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() jafari,
-    required TResult Function() karachi,
-    required TResult Function() islamicSocietyOfNorthAmerica,
-    required TResult Function() muslimWorldLeague,
-    required TResult Function() ummAlQura,
-    required TResult Function() egypt,
-    required TResult Function() tehran,
-    required TResult Function() gulfRegion,
-    required TResult Function() kuwait,
-    required TResult Function() qatar,
-    required TResult Function() singapore,
-    required TResult Function() france,
-    required TResult Function() turkey,
-    required TResult Function() russia,
-    required TResult Function() dubai,
-    required TResult Function() jAKIM,
-    required TResult Function() tunisia,
-    required TResult Function() algeria,
-    required TResult Function() kEMENAG,
-    required TResult Function() morocco,
-    required TResult Function() comunidadeIslamicaLisboa,
-    required TResult Function() jordanAwqaf,
-  }) {
-    return jordanAwqaf();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jafari,
-    TResult? Function()? karachi,
-    TResult? Function()? islamicSocietyOfNorthAmerica,
-    TResult? Function()? muslimWorldLeague,
-    TResult? Function()? ummAlQura,
-    TResult? Function()? egypt,
-    TResult? Function()? tehran,
-    TResult? Function()? gulfRegion,
-    TResult? Function()? kuwait,
-    TResult? Function()? qatar,
-    TResult? Function()? singapore,
-    TResult? Function()? france,
-    TResult? Function()? turkey,
-    TResult? Function()? russia,
-    TResult? Function()? dubai,
-    TResult? Function()? jAKIM,
-    TResult? Function()? tunisia,
-    TResult? Function()? algeria,
-    TResult? Function()? kEMENAG,
-    TResult? Function()? morocco,
-    TResult? Function()? comunidadeIslamicaLisboa,
-    TResult? Function()? jordanAwqaf,
-  }) {
-    return jordanAwqaf?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jafari,
-    TResult Function()? karachi,
-    TResult Function()? islamicSocietyOfNorthAmerica,
-    TResult Function()? muslimWorldLeague,
-    TResult Function()? ummAlQura,
-    TResult Function()? egypt,
-    TResult Function()? tehran,
-    TResult Function()? gulfRegion,
-    TResult Function()? kuwait,
-    TResult Function()? qatar,
-    TResult Function()? singapore,
-    TResult Function()? france,
-    TResult Function()? turkey,
-    TResult Function()? russia,
-    TResult Function()? dubai,
-    TResult Function()? jAKIM,
-    TResult Function()? tunisia,
-    TResult Function()? algeria,
-    TResult Function()? kEMENAG,
-    TResult Function()? morocco,
-    TResult Function()? comunidadeIslamicaLisboa,
-    TResult Function()? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (jordanAwqaf != null) {
-      return jordanAwqaf();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(CalculationMethodStateJafari value) jafari,
-    required TResult Function(CalculationMethodStateKarachi value) karachi,
-    required TResult Function(
-            CalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
-    required TResult Function(CalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
-    required TResult Function(CalculationMethodStateUmmAlQura value) ummAlQura,
-    required TResult Function(CalculationMethodStateEgypt value) egypt,
-    required TResult Function(CalculationMethodStateTehran value) tehran,
-    required TResult Function(CalculationMethodStateGulfRegion value)
-        gulfRegion,
-    required TResult Function(CalculationMethodStateKuwait value) kuwait,
-    required TResult Function(CalculationMethodStateQatar value) qatar,
-    required TResult Function(CalculationMethodStateSingapore value) singapore,
-    required TResult Function(CalculationMethodStateFrance value) france,
-    required TResult Function(CalculationMethodStateTurkey value) turkey,
-    required TResult Function(CalculationMethodStateRussia value) russia,
-    required TResult Function(CalculationMethodStateDubai value) dubai,
-    required TResult Function(CalculationMethodStateJAKIM value) jAKIM,
-    required TResult Function(CalculationMethodStateTunisia value) tunisia,
-    required TResult Function(CalculationMethodStateAlgeria value) algeria,
-    required TResult Function(CalculationMethodStateKEMENAG value) kEMENAG,
-    required TResult Function(CalculationMethodStateMorocco value) morocco,
-    required TResult Function(
-            CalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
-    required TResult Function(CalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) {
-    return jordanAwqaf(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CalculationMethodStateJafari value)? jafari,
-    TResult? Function(CalculationMethodStateKarachi value)? karachi,
-    TResult? Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult? Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult? Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult? Function(CalculationMethodStateEgypt value)? egypt,
-    TResult? Function(CalculationMethodStateTehran value)? tehran,
-    TResult? Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult? Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult? Function(CalculationMethodStateQatar value)? qatar,
-    TResult? Function(CalculationMethodStateSingapore value)? singapore,
-    TResult? Function(CalculationMethodStateFrance value)? france,
-    TResult? Function(CalculationMethodStateTurkey value)? turkey,
-    TResult? Function(CalculationMethodStateRussia value)? russia,
-    TResult? Function(CalculationMethodStateDubai value)? dubai,
-    TResult? Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult? Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult? Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult? Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult? Function(CalculationMethodStateMorocco value)? morocco,
-    TResult? Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult? Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) {
-    return jordanAwqaf?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(CalculationMethodStateJafari value)? jafari,
-    TResult Function(CalculationMethodStateKarachi value)? karachi,
-    TResult Function(CalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
-    TResult Function(CalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
-    TResult Function(CalculationMethodStateUmmAlQura value)? ummAlQura,
-    TResult Function(CalculationMethodStateEgypt value)? egypt,
-    TResult Function(CalculationMethodStateTehran value)? tehran,
-    TResult Function(CalculationMethodStateGulfRegion value)? gulfRegion,
-    TResult Function(CalculationMethodStateKuwait value)? kuwait,
-    TResult Function(CalculationMethodStateQatar value)? qatar,
-    TResult Function(CalculationMethodStateSingapore value)? singapore,
-    TResult Function(CalculationMethodStateFrance value)? france,
-    TResult Function(CalculationMethodStateTurkey value)? turkey,
-    TResult Function(CalculationMethodStateRussia value)? russia,
-    TResult Function(CalculationMethodStateDubai value)? dubai,
-    TResult Function(CalculationMethodStateJAKIM value)? jAKIM,
-    TResult Function(CalculationMethodStateTunisia value)? tunisia,
-    TResult Function(CalculationMethodStateAlgeria value)? algeria,
-    TResult Function(CalculationMethodStateKEMENAG value)? kEMENAG,
-    TResult Function(CalculationMethodStateMorocco value)? morocco,
-    TResult Function(CalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
-    TResult Function(CalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-    required TResult orElse(),
-  }) {
-    if (jordanAwqaf != null) {
-      return jordanAwqaf(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CalculationMethodStateJordanAwqaf
-    implements CalculationMethodState {
-  const factory CalculationMethodStateJordanAwqaf() =
-      _$CalculationMethodStateJordanAwqafImpl;
 }

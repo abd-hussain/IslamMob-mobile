@@ -8,8 +8,8 @@ import 'package:islam_app/core/constants/app_constant.dart';
 import 'package:lottie/lottie.dart';
 
 class LanguageInBoardingView extends StatelessWidget {
-  final Function(String langCode) onSelectLanguage;
-  const LanguageInBoardingView({super.key, required this.onSelectLanguage});
+  final Function() doneSelection;
+  const LanguageInBoardingView({super.key, required this.doneSelection});
 
   @override
   Widget build(BuildContext context) {
@@ -49,15 +49,17 @@ class LanguageInBoardingView extends StatelessWidget {
   /// Builds the button to select a language
   Widget _buildSelectButton(BuildContext context) {
     return BlocBuilder<LanguageBloc, LanguageState>(
-      buildWhen: (previous, current) =>
-          previous.selectedLanguage != current.selectedLanguage,
+      buildWhen: (previous, current) => previous.selectedLanguage != current.selectedLanguage,
       builder: (context, state) {
         if (state.selectedLanguage == null) return const SizedBox();
 
         return CustomButton(
           isEnabled: true,
           title: state.selectedLanguage!.selectButtonTitle,
-          onTap: () => onSelectLanguage(state.selectedLanguage!.languageCode),
+          onTap: () {
+            context.read<LanguageBloc>().add(LanguageEvent.setupLanguage(context: context));
+            doneSelection();
+          },
         );
       },
     );

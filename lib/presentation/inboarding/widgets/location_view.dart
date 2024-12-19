@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/model/location.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_have_permission_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_idle_view.dart';
@@ -10,9 +9,8 @@ import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocationInBoardingView extends StatelessWidget {
-  final Function(LocationModel locationModel) onSelectLocation;
-
-  const LocationInBoardingView({super.key, required this.onSelectLocation});
+  final Function() doneSelection;
+  const LocationInBoardingView({super.key, required this.doneSelection});
 
   @override
   Widget build(BuildContext context) {
@@ -59,14 +57,14 @@ class LocationInBoardingView extends StatelessWidget {
       child: BlocBuilder<LocationBloc, LocationState>(
         buildWhen: (previous, current) => previous.status != current.status,
         builder: (context, state) {
-          return _buildStateContent(state);
+          return _buildStateContent(context, state);
         },
       ),
     );
   }
 
   /// Returns the content based on the state status
-  Widget _buildStateContent(LocationState state) {
+  Widget _buildStateContent(BuildContext context, LocationState state) {
     switch (state.status) {
       case LocationProcessStateIdl():
         return const LocationIdleView();
@@ -77,17 +75,12 @@ class LocationInBoardingView extends StatelessWidget {
       case LocationProcessStateNoPermission():
         return const LocationNothavePermissionView();
       case LocationProcessStateHavePermission():
-        final modelState = LocationModel(
-            country: state.countryName,
-            city: state.cityName,
-            subCity: state.subCityName,
-            latitude: state.latitude,
-            longitude: state.longitude,
-            street: state.street,
-            thoroughfare: state.thoroughfare);
         return LocationHavePermissionView(
-          locationModel: modelState,
-          onConfirmationPress: () => onSelectLocation(modelState),
+          locationModel: state.location!,
+          onConfirmationPress: () {
+            context.read<LocationBloc>().add(const LocationEvent.setupLocation());
+            doneSelection();
+          },
         );
       default:
         return const SizedBox.shrink(); // Fallback in case of unknown state
