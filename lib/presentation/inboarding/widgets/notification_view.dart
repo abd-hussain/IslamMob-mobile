@@ -9,9 +9,8 @@ import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationInBoardingView extends StatelessWidget {
-  final Function(String? token) onSelect;
-
-  const NotificationInBoardingView({super.key, required this.onSelect});
+  final Function() doneSelection;
+  const NotificationInBoardingView({super.key, required this.doneSelection});
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +57,14 @@ class NotificationInBoardingView extends StatelessWidget {
       child: BlocBuilder<NotificationsBloc, NotificationsState>(
         buildWhen: (previous, current) => previous.status != current.status,
         builder: (context, state) {
-          return _buildStateContent(state);
+          return _buildStateContent(context, state);
         },
       ),
     );
   }
 
   /// Returns the appropriate widget based on the notification state
-  Widget _buildStateContent(NotificationsState state) {
+  Widget _buildStateContent(BuildContext context, NotificationsState state) {
     switch (state.status) {
       case NotificationsProcessStateIdl():
         return const NotificationIdleView();
@@ -75,11 +74,16 @@ class NotificationInBoardingView extends StatelessWidget {
         );
       case NotificationsProcessStateNoPermission():
         return NotificationNothavePermissionView(
-          skipButton: () => onSelect(null),
+          skipButton: () => doneSelection(),
         );
       case NotificationsProcessStateHavePermission():
         return NotificationHavePermissionView(
-          onConfirmationPress: (token) => onSelect(token),
+          onConfirmationPress: (token) {
+            context.read<NotificationsBloc>().add(
+                  NotificationsEvent.setupToken(token: token),
+                );
+            doneSelection();
+          },
         );
       default:
         return const SizedBox.shrink(); // Fallback in case of unexpected state

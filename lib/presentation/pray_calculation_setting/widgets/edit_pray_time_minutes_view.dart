@@ -48,8 +48,7 @@ class EditPrayTimeMinutesView extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildTimeCorrectionViews(
-      BuildContext context, AppLocalizations localizations) {
+  List<Widget> _buildTimeCorrectionViews(BuildContext context, AppLocalizations localizations) {
     final corrections = [
       _CorrectionData(
         title: localizations.fajirCorrectionTitle,
@@ -93,16 +92,12 @@ class EditPrayTimeMinutesView extends StatelessWidget {
       ),
     ];
 
-    return corrections
-        .map((correction) => _buildTimeCorrectionBloc(context, correction))
-        .toList();
+    return corrections.map((correction) => _buildTimeCorrectionBloc(context, correction)).toList();
   }
 
-  Widget _buildTimeCorrectionBloc(
-      BuildContext context, _CorrectionData correction) {
+  Widget _buildTimeCorrectionBloc(BuildContext context, _CorrectionData correction) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) =>
-          correction.getter(previous) != correction.getter(current),
+      buildWhen: (previous, current) => correction.getter(previous) != correction.getter(current),
       builder: (context, state) {
         return TimeCorrectionView(
           title: correction.title,

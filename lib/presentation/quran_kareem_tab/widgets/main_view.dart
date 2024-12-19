@@ -23,15 +23,13 @@ class QuranKareemMainView extends StatelessWidget {
 
   Widget _buildPdfView(BuildContext context) {
     final box = Hive.box(DatabaseBoxConstant.userInfo);
-    final isReversed = box.get(DatabaseFieldConstant.selectedLanguage) != "ar";
+    final isReversed = box.get(DatabaseFieldConstant.userLanguageCode) != "ar";
 
     return PdfView(
       reverse: isReversed,
       controller: context.read<QuranKareemBloc>().pdfController!,
       onPageChanged: (index) {
-        context
-            .read<QuranKareemBloc>()
-            .add(QuranKareemEvent.updatePageCount(index));
+        context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(index));
       },
     );
   }

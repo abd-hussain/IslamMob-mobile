@@ -267,6 +267,7 @@
     "whyyoushouldallownotification" : "لماذا يجب عليك السماح بالإشعارات؟",
     "notificationPermissionSuccses" : "تم تفعيل الإشعارات بنجاح",
     "startyourjourney" : "ابدأ رحلتك الإسلامية",
+    "startPreparingYourAccount" : "التحضير لحسابك",
     "notificationSettings" : "إعدادات الإشعارات",
     "shareapp" : "مشاركة التطبيق",
     "prayCalculationSettings" : "حساب مواقيت الصلاة",
@@ -357,7 +358,8 @@
     "date" : "التاريخ",
     "quicksettings" : "اعدادات سريعه",
     "qurancopytitle" : "من هذه الشاشة يمكنك تحميل نسخة أو أكثر من القرآن الكريم لاستخدامها بدون اتصال بالإنترنت داخل التطبيق",
-    "skip" : "تخطي"
+    "skip" : "تخطي",
+    "setupAccount" : "إنشاء الحساب"
 
 
 

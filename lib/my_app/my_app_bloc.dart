@@ -7,7 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -23,7 +22,6 @@ class MyAppBloc {
     WidgetsFlutterBinding.ensureInitialized();
     await _initializeHive();
     await _initializeServices();
-    await _initializeLocalNotifications();
     _initializeTimeZones();
     await _initializeFirebaseAndAds();
     await _setPreferredOrientations();
@@ -38,11 +36,6 @@ class MyAppBloc {
   /// Sets up dependency injection locator
   Future<void> _initializeServices() async {
     await setupLocator();
-  }
-
-  /// Initializes local notifications
-  Future<void> _initializeLocalNotifications() async {
-    await LocalNotificationRepository.initialize();
   }
 
   /// Initializes timezone data

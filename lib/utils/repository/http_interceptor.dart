@@ -8,11 +8,10 @@ import 'package:islam_app/utils/logger.dart';
 
 class HttpInterceptor extends InterceptorsWrapper {
   @override
-  Future<void> onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
+  Future<void> onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     final box = Hive.box(DatabaseBoxConstant.userInfo);
     // final token = box.get(DatabaseFieldConstant.token);
-    final language = box.get(DatabaseFieldConstant.selectedLanguage);
+    final language = box.get(DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
 
     // // Set Authorization header if token exists
     // if (token != null && token.isNotEmpty) {
@@ -20,15 +19,13 @@ class HttpInterceptor extends InterceptorsWrapper {
     // }
 
     // Set language header
-    options.headers["lang"] =
-        language ?? 'en'; // Default to 'en' if language is not set
+    options.headers["lang"] = language;
 
     return handler.next(options);
   }
 
   @override
-  Future<void> onResponse(
-      Response response, ResponseInterceptorHandler handler) async {
+  Future<void> onResponse(Response response, ResponseInterceptorHandler handler) async {
     try {
       if (await _validateResponse(response)) {
         handler.next(response); // Pass the response to the next interceptor
@@ -44,8 +41,7 @@ class HttpInterceptor extends InterceptorsWrapper {
   }
 
   Future<bool> _validateResponse(Response response) async {
-    debugPrint(
-        "Request: ${response.requestOptions.path}, Status Code: ${response.statusCode}");
+    debugPrint("Request: ${response.requestOptions.path}, Status Code: ${response.statusCode}");
 
     switch (response.statusCode) {
       case 200:
@@ -54,16 +50,14 @@ class HttpInterceptor extends InterceptorsWrapper {
       case 403:
       case 404:
         _logError(response, "Client error occurred");
-        throw _buildDioException(
-            response, response.data["detail"] ?? response.data.toString());
+        throw _buildDioException(response, response.data["detail"] ?? response.data.toString());
 
       case 500:
         throw _buildDioException(response, "Server Down");
 
       default:
         _logError(response, "Unexpected error");
-        throw _buildDioException(response, response.data["detail"]["message"],
-            response.data["detail"]["request_id"]);
+        throw _buildDioException(response, response.data["detail"]["message"], response.data["detail"]["request_id"]);
     }
   }
 
@@ -74,8 +68,7 @@ class HttpInterceptor extends InterceptorsWrapper {
     );
   }
 
-  DioException _buildDioException(Response response, String message,
-      [String? requestId]) {
+  DioException _buildDioException(Response response, String message, [String? requestId]) {
     return DioException(
       error: HttpException(
         status: response.statusCode!,

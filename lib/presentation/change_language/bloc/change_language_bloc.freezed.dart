@@ -89,6 +89,8 @@ abstract class _$$ChangeSelectedCheckBoxLanguageImplCopyWith<$Res> {
       __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LanguageModel type});
+
+  $LanguageModelCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -114,6 +116,16 @@ class __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<$Res>
           : type // ignore: cast_nullable_to_non_nullable
               as LanguageModel,
     ));
+  }
+
+  /// Create a copy of ChangeLanguageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LanguageModelCopyWith<$Res> get type {
+    return $LanguageModelCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
   }
 }
 
@@ -399,6 +411,8 @@ abstract class $ChangeLanguageStateCopyWith<$Res> {
       _$ChangeLanguageStateCopyWithImpl<$Res, ChangeLanguageState>;
   @useResult
   $Res call({LanguageModel? selectedLanguage});
+
+  $LanguageModelCopyWith<$Res>? get selectedLanguage;
 }
 
 /// @nodoc
@@ -425,6 +439,20 @@ class _$ChangeLanguageStateCopyWithImpl<$Res, $Val extends ChangeLanguageState>
               as LanguageModel?,
     ) as $Val);
   }
+
+  /// Create a copy of ChangeLanguageState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LanguageModelCopyWith<$Res>? get selectedLanguage {
+    if (_value.selectedLanguage == null) {
+      return null;
+    }
+
+    return $LanguageModelCopyWith<$Res>(_value.selectedLanguage!, (value) {
+      return _then(_value.copyWith(selectedLanguage: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -436,6 +464,9 @@ abstract class _$$ChangeLanguageStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call({LanguageModel? selectedLanguage});
+
+  @override
+  $LanguageModelCopyWith<$Res>? get selectedLanguage;
 }
 
 /// @nodoc

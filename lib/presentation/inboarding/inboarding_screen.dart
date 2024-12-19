@@ -6,6 +6,7 @@ import 'package:islam_app/presentation/inboarding/widgets/language_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/location_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/notification_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/quran_copy_view.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -15,7 +16,7 @@ class InBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => InboardingBloc(),
+      create: (context) => InboardingBloc()..add(const InboardingEvent.initialStage()),
       child: Scaffold(
         backgroundColor: const Color(0xffF5F6F7),
         body: SafeArea(
@@ -75,48 +76,51 @@ class InBoardingScreen extends StatelessWidget {
   Widget _buildBody(BuildContext context) {
     return Expanded(
       child: BlocBuilder<InboardingBloc, InboardingState>(
-        buildWhen: (previous, current) =>
-            previous.inBoardingStage != current.inBoardingStage,
+        buildWhen: (previous, current) => ((previous.inBoardingStage != current.inBoardingStage) ||
+            (previous.finalizedInBoarding != current.finalizedInBoarding)),
         builder: (context, state) {
           final bloc = context.read<InboardingBloc>();
           switch (state.inBoardingStage) {
             case 0:
               return LanguageInBoardingView(
-                onSelectLanguage: (langCode) async {
-                  await bloc.setLanguage(context, langCode);
-                  await bloc.changeInBoardingStage(1);
-                },
+                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 1)),
               );
             case 1:
               return LocationInBoardingView(
-                onSelectLocation: (location) async {
-                  await bloc.setLocation(location);
-                  await bloc.changeInBoardingStage(2);
-                },
+                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 2)),
               );
             case 2:
               return QuranCopyView(
-                onSelect: (copyName) async {
-                  if (copyName != null) {
-                    await bloc.setQuranCopy(copyName);
-                  }
-                  await bloc.changeInBoardingStage(3);
-                },
+                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 3)),
               );
             case 3:
               return NotificationInBoardingView(
-                onSelect: (token) async {
-                  final navigator = Navigator.of(context, rootNavigator: true);
-                  if (token != null) {
-                    await bloc.setNotificationToken(token);
-                  }
-                  await bloc.finishInBoarding();
-                  await navigator.pushNamedAndRemoveUntil(
-                    RoutesConstants.mainContainer,
-                    (Route<dynamic> route) => false,
-                  );
-                },
+                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 4)),
               );
+            case 4:
+
+              //TODO: still navigating from notification to the loading screen take some time and need to investigate more
+              final navigator = Navigator.of(context, rootNavigator: true);
+
+              if (state.finalizedInBoarding) {
+                return Expanded(
+                  child: Center(
+                    child: CustomButton(
+                      isEnabled: true,
+                      title: AppLocalizations.of(context)!.startyourjourney,
+                      onTap: () async => await navigator.pushNamedAndRemoveUntil(
+                        RoutesConstants.mainContainer,
+                        (Route<dynamic> route) => false,
+                      ),
+                    ),
+                  ),
+                );
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(color: Color(0xff007F37)),
+                );
+              }
+
             default:
               return const SizedBox.shrink();
           }

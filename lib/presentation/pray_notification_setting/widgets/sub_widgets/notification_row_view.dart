@@ -8,11 +8,7 @@ class NotificationRowView extends StatelessWidget {
   final String title;
   final bool value;
   final Function(bool) onChanged;
-  const NotificationRowView(
-      {super.key,
-      required this.title,
-      required this.value,
-      required this.onChanged});
+  const NotificationRowView({super.key, required this.title, required this.value, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +45,7 @@ class NotificationRowView extends StatelessWidget {
 
   bool _isRtlLanguage() {
     final box = Hive.box(DatabaseBoxConstant.userInfo);
-    final String languageCode =
-        box.get(DatabaseFieldConstant.selectedLanguage, defaultValue: "en");
+    final String languageCode = box.get(DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
     return languageCode == "ar" || languageCode == "fa";
   }
 }

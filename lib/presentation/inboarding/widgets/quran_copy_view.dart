@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/presentation/inboarding/bloc/quran_copy/quran_copy_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
@@ -12,29 +9,27 @@ import 'package:islam_app/presentation/quran_prints/widgets/quran_print_list_shi
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranCopyView extends StatelessWidget {
-  final Function(QuranCopy? copy) onSelect;
+  final Function() doneSelection;
 
-  const QuranCopyView({super.key, required this.onSelect});
+  const QuranCopyView({super.key, required this.doneSelection});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => QuranCopyBloc(),
+      create: (context) => QuranCopyBloc()..add(QuranCopyEvent.getlistOfPrints()),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: BlocBuilder<QuranCopyBloc, QuranCopyState>(
           buildWhen: (previous, current) =>
               previous.listOfPrints != current.listOfPrints ||
-              previous.internetConnectionStauts !=
-                  current.internetConnectionStauts,
+              previous.internetConnectionStauts != current.internetConnectionStauts,
           builder: (context, state) {
             if (state.internetConnectionStauts == false) {
               return NoInternetView(
-                retryCallback: () => context.read<QuranCopyBloc>().initialize(),
+                retryCallback: () => context.read<QuranCopyBloc>().add(QuranCopyEvent.getlistOfPrints()),
               );
             }
 
@@ -74,7 +69,7 @@ class QuranCopyView extends StatelessWidget {
             ),
           ),
           OutlinedButton(
-            onPressed: () => onSelect(null),
+            onPressed: () => doneSelection(),
             style: OutlinedButton.styleFrom(
               side: const BorderSide(color: Color(0xff007F37)),
             ),
@@ -92,8 +87,7 @@ class QuranCopyView extends StatelessWidget {
 
   Widget _buildPrintList(BuildContext context, QuranCopyState state) {
     return BlocBuilder<QuranCopyBloc, QuranCopyState>(
-        buildWhen: (previous, current) =>
-            previous.printsDownloading != current.printsDownloading,
+        buildWhen: (previous, current) => previous.printsAlreadyDownloaded != current.printsAlreadyDownloaded,
         builder: (context, downloadState) {
           return ListView.builder(
             itemCount: state.listOfPrints!.length,
@@ -106,12 +100,9 @@ class QuranCopyView extends StatelessWidget {
                 title: printItem.nameReferance,
                 description: printItem.description,
                 previewImage: printItem.previewImage,
-                downloadButtonAvailable: !downloadState.printsDownloading
-                    .contains(printItem.fieldName),
-                useButtonAvailable: downloadState.printsDownloading
-                    .contains(printItem.fieldName),
-                onDownloadPressed: () =>
-                    _handleDownloadPressed(context, printItem),
+                downloadButtonAvailable: !downloadState.printsAlreadyDownloaded.contains(printItem.fieldName),
+                useButtonAvailable: downloadState.printsAlreadyDownloaded.contains(printItem.fieldName),
+                onDownloadPressed: () => _handleDownloadPressed(context, printItem),
                 onUsePressed: () => _handleUsePressed(context, printItem),
               );
             },
@@ -119,10 +110,8 @@ class QuranCopyView extends StatelessWidget {
         });
   }
 
-  Future<void> _handleDownloadPressed(
-      BuildContext context, QuranPrints printItem) async {
-    final hasPermission =
-        await context.read<QuranCopyBloc>().requestStoragePermission();
+  Future<void> _handleDownloadPressed(BuildContext context, QuranPrints printItem) async {
+    final hasPermission = await context.read<QuranCopyBloc>().requestStoragePermission();
 
     if (hasPermission && context.mounted) {
       _showDownloadDialog(context, printItem);
@@ -150,13 +139,10 @@ class QuranCopyView extends StatelessWidget {
   }
 
   void _updateDownloadState(BuildContext context, QuranPrints printItem) {
-    final List<String> updatedList =
-        List.from(context.read<QuranCopyBloc>().state.printsDownloading)
-          ..add(printItem.fieldName!);
+    final List<String> updatedList = List.from(context.read<QuranCopyBloc>().state.printsAlreadyDownloaded)
+      ..add(printItem.fieldName!);
 
-    context
-        .read<QuranCopyBloc>()
-        .add(QuranCopyEvent.updatePrintsDownloading(updatedList));
+    context.read<QuranCopyBloc>().add(QuranCopyEvent.updatePrintsDownloading(updatedList));
   }
 
   void _showPermissionWarning(BuildContext context) {
@@ -166,23 +152,8 @@ class QuranCopyView extends StatelessWidget {
     );
   }
 
-  Future<void> _handleUsePressed(
-      BuildContext context, QuranPrints printItem) async {
-    final Directory dir = await getApplicationDocumentsDirectory();
-    final filePath = Directory('${dir.path}/${printItem.fieldName!}');
-
-    FirebaseAnalytics.instance.logEvent(
-      name: "use_file",
-      parameters: {"file": printItem.fieldName!},
-    );
-
-    final copy = QuranCopy(
-      filePath: filePath.path,
-      lastPageNumber: 1,
-      juz2ToPageNumbers: printItem.juz2ToPageNumbers,
-      sorahToPageNumbers: printItem.sorahToPageNumbers,
-    );
-
-    onSelect(copy);
+  Future<void> _handleUsePressed(BuildContext context, QuranPrints printItem) async {
+    context.read<QuranCopyBloc>().add(QuranCopyEvent.setupCopy(printItem: printItem));
+    doneSelection();
   }
 }

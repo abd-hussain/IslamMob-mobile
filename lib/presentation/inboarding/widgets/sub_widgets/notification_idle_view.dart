@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/domain/repository/network_info.dart';
@@ -18,8 +19,7 @@ class NotificationIdleView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title:
-                AppLocalizations.of(context)!.allowSendingNotificationsdetails,
+            title: AppLocalizations.of(context)!.allowSendingNotificationsdetails,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -38,9 +38,7 @@ class NotificationIdleView extends StatelessWidget {
           isEnabled: true,
           title: AppLocalizations.of(context)!.allowNotifications,
           onTap: () async {
-            if (await locator<NetworkInfoRepository>()
-                    .checkConnectivityOnLaunch() ==
-                false) {
+            if (await locator<NetworkInfoRepository>().checkConnectivityOnLaunch() == false) {
               // ignore: use_build_context_synchronously
               showNoInternetConnection(context);
               return;
@@ -57,8 +55,8 @@ class NotificationIdleView extends StatelessWidget {
             );
 
             // Check and request notification permission
-            final hasPermission =
-                await FirebaseMessagesRepository().checkAndRequestPermission();
+            final hasPermission = await FirebaseMessagesRepository().checkAndRequestPermission();
+            await _initializeLocalNotifications();
 
             // Update status based on permission result
             final newStatus = hasPermission
@@ -74,12 +72,15 @@ class NotificationIdleView extends StatelessWidget {
     );
   }
 
+  /// Initializes local notifications
+  Future<void> _initializeLocalNotifications() async {
+    await LocalNotificationRepository.initialize();
+  }
+
   void showNoInternetConnection(BuildContext context) {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
-      SnackBar(
-          content: Text(
-              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+      SnackBar(content: Text(AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/calculation_method_view.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/edit_pray_time_minutes_view.dart';
-import 'package:islam_app/presentation/pray_calculation_setting/widgets/mathhab_view.dart';
+import 'package:islam_app/presentation/pray_calculation_setting/widgets/madhab_view.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/poles_calculation_view.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/pray_calculation_header_view.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/pray_calculation_subheader_view.dart';
@@ -13,13 +13,17 @@ import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 
+//TODO: this screen need to be checked
 class PrayCalculationSettingScreen extends StatelessWidget {
   const PrayCalculationSettingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PrayCalculationSettingBloc(),
+      create: (context) => PrayCalculationSettingBloc()
+        ..add(
+          PrayCalculationSettingEvent.setup(),
+        ),
       child: Scaffold(
         appBar: CustomAppBar(
           title: AppLocalizations.of(context)!.prayCalculationSettings,
@@ -55,7 +59,7 @@ class PrayCalculationSettingScreen extends StatelessWidget {
               case 0:
                 return const CalculationMethodView();
               case 1:
-                return const MathhabView();
+                return const MadhabView();
               case 2:
                 return const TimeZoneView();
               case 3:
@@ -75,17 +79,14 @@ class PrayCalculationSettingScreen extends StatelessWidget {
     return Column(
       children: [
         BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.buttonsStatus != current.buttonsStatus,
+          buildWhen: (previous, current) => previous.buttonsStatus != current.buttonsStatus,
           builder: (context, state) {
             return CustomButton(
               isEnabled: state.buttonsStatus,
               padding: const EdgeInsets.only(left: 16, right: 16),
               title: AppLocalizations.of(context)!.save,
               onTap: () {
-                context
-                    .read<PrayCalculationSettingBloc>()
-                    .add(PrayCalculationSettingEvent.saveChanges(status: true));
+                context.read<PrayCalculationSettingBloc>().add(PrayCalculationSettingEvent.saveChanges(status: true));
                 Navigator.pop(context);
               },
             );
@@ -93,8 +94,7 @@ class PrayCalculationSettingScreen extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.buttonsStatus != current.buttonsStatus,
+          buildWhen: (previous, current) => previous.buttonsStatus != current.buttonsStatus,
           builder: (context, state) {
             return CustomButton(
               padding: const EdgeInsets.only(left: 16, right: 16),

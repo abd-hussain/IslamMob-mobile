@@ -7,8 +7,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class NotificationHavePermissionView extends StatelessWidget {
   final Function(String token) onConfirmationPress;
 
-  const NotificationHavePermissionView(
-      {super.key, required this.onConfirmationPress});
+  const NotificationHavePermissionView({super.key, required this.onConfirmationPress});
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +26,9 @@ class NotificationHavePermissionView extends StatelessWidget {
         ),
         CustomButton(
           isEnabled: true,
-          title: AppLocalizations.of(context)!.startyourjourney,
+          title: AppLocalizations.of(context)!.startPreparingYourAccount,
           onTap: () async {
-            final String? notificationsDetails =
-                await FirebaseMessagesRepository().getNotificationToken();
+            final String? notificationsDetails = await FirebaseMessagesRepository().getNotificationToken();
             return onConfirmationPress(notificationsDetails ?? "");
           },
         ),

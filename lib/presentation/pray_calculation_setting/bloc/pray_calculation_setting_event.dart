@@ -2,13 +2,15 @@ part of 'pray_calculation_setting_bloc.dart';
 
 @freezed
 class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
+  factory PrayCalculationSettingEvent.setup() = _Setup;
+
   factory PrayCalculationSettingEvent.updateTimeOfPreview({
     required DateTime time,
     required PreviewBoxes azanType,
   }) = _UpdateTimeOfPreview;
 
   factory PrayCalculationSettingEvent.updateCalculationMethod({
-    required CalculationMethodState method,
+    required PrayCalculationMethodState method,
   }) = _UpdateCalculationMethod;
 
   factory PrayCalculationSettingEvent.updateMathhab({
@@ -16,7 +18,7 @@ class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
   }) = _UpdateMathhab;
 
   factory PrayCalculationSettingEvent.updateTimeZone({
-    required String value,
+    required Duration value,
   }) = _UpdateTimeZone;
 
   factory PrayCalculationSettingEvent.updateAzanTypeInMin({
@@ -25,7 +27,7 @@ class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
   }) = _UpdateAzanTypeInMin;
 
   factory PrayCalculationSettingEvent.updateHightLatitudeCalculation({
-    required HightLatitudeCaluclationState state,
+    required PrayHightLatitudeCaluclationState state,
   }) = _UpdateHightLatitudeCalculation;
 
   factory PrayCalculationSettingEvent.saveChanges({
