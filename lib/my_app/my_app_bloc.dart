@@ -80,6 +80,8 @@ class MyAppBloc {
   Future<bool> _hasInternetConnectivity() async {
     final networkInfoService = locator<NetworkInfoRepository>();
     networkInfoService.initNetworkConnectionCheck();
-    return networkInfoService.checkConnectivityOnLaunch();
+    return await networkInfoService.checkConnectivityOnLaunch() == true
+        ? true
+        : false;
   }
 }

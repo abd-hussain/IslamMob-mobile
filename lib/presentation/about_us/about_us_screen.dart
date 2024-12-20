@@ -20,7 +20,8 @@ class AboutUsScreen extends StatelessWidget {
     final navigator = Navigator.of(context, rootNavigator: true);
 
     return BlocProvider(
-      create: (context) => AboutUsBloc()..add(AboutUsEvent.initializeRewardedAd()),
+      create: (context) =>
+          AboutUsBloc()..add(AboutUsEvent.initializeRewardedAd()),
       child: Scaffold(
         appBar: CustomAppBar(title: AppLocalizations.of(context)!.aboutus),
         body: SafeArea(
@@ -127,7 +128,8 @@ class AboutUsScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: BlocBuilder<AboutUsBloc, AboutUsState>(
-        buildWhen: (previous, current) => previous.rewardedAd != current.rewardedAd,
+        buildWhen: (previous, current) =>
+            previous.rewardedAd != current.rewardedAd,
         builder: (context, state) {
           final listOfOptions = <ProfileOptions>[
             if (state.rewardedAd != null)
@@ -136,19 +138,23 @@ class AboutUsScreen extends StatelessWidget {
                 name: AppLocalizations.of(context)!.supportus,
                 onTap: () {
                   if (state.rewardedAd != null) {
-                    context.read<AboutUsBloc>().showRewardedAd(state.rewardedAd!);
+                    context
+                        .read<AboutUsBloc>()
+                        .showRewardedAd(state.rewardedAd!);
                   }
                 },
               ),
             ProfileOptions(
               icon: Ionicons.receipt,
               name: AppLocalizations.of(context)!.privacypolicy,
-              onTap: () async => await navigator.pushNamed(RoutesConstants.privacyPolicyScreen),
+              onTap: () async => await navigator
+                  .pushNamed(RoutesConstants.privacyPolicyScreen),
             ),
             ProfileOptions(
               icon: Ionicons.reader,
               name: AppLocalizations.of(context)!.termsandconditions,
-              onTap: () async => await navigator.pushNamed(RoutesConstants.termsConditionScreen),
+              onTap: () async => await navigator
+                  .pushNamed(RoutesConstants.termsConditionScreen),
             ),
           ];
 
@@ -168,7 +174,8 @@ class AboutUsScreen extends StatelessWidget {
             future: ApplicationVersionUsecase().getApplicationVersion(),
             builder: (context, snapshot) {
               return CustomText(
-                title: "${AppLocalizations.of(context)!.version} ${snapshot.data}",
+                title:
+                    "${AppLocalizations.of(context)!.version} ${snapshot.data}",
                 fontSize: 14,
                 color: const Color(0xff292929),
               );

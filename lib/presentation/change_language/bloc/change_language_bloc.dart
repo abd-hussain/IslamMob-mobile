@@ -10,7 +10,8 @@ part 'change_language_event.dart';
 part 'change_language_state.dart';
 part 'change_language_bloc.freezed.dart';
 
-class ChangeLanguageBloc extends Bloc<ChangeLanguageEvent, ChangeLanguageState> {
+class ChangeLanguageBloc
+    extends Bloc<ChangeLanguageEvent, ChangeLanguageState> {
   final _box = Hive.box(DatabaseBoxConstant.userInfo);
 
   ChangeLanguageBloc() : super(const ChangeLanguageState()) {
@@ -18,11 +19,13 @@ class ChangeLanguageBloc extends Bloc<ChangeLanguageEvent, ChangeLanguageState> 
     on<_PlaceNewLanguage>(_placeNewLanguage);
   }
   FutureOr<void> _changeSelectedCheckBoxLanguage(
-      _ChangeSelectedCheckBoxLanguage event, Emitter<ChangeLanguageState> emit) {
+      _ChangeSelectedCheckBoxLanguage event,
+      Emitter<ChangeLanguageState> emit) {
     emit(state.copyWith(selectedLanguage: event.type));
   }
 
-  FutureOr<void> _placeNewLanguage(_PlaceNewLanguage event, Emitter<ChangeLanguageState> emit) async {
+  FutureOr<void> _placeNewLanguage(
+      _PlaceNewLanguage event, Emitter<ChangeLanguageState> emit) async {
     await _box.put(DatabaseFieldConstant.userLanguageCode, event.langCode);
   }
 }

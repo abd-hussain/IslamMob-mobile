@@ -15,7 +15,8 @@ part 'pray_calculation_setting_event.dart';
 part 'pray_calculation_setting_state.dart';
 part 'pray_calculation_setting_bloc.freezed.dart';
 
-class PrayCalculationSettingBloc extends Bloc<PrayCalculationSettingEvent, PrayCalculationSettingState> {
+class PrayCalculationSettingBloc
+    extends Bloc<PrayCalculationSettingEvent, PrayCalculationSettingState> {
   final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
   // final PrayUsecase _prayUsecase = PrayUsecase();
   final PrayDBParser _prayDBParser = PrayDBParser();
@@ -40,9 +41,10 @@ class PrayCalculationSettingBloc extends Bloc<PrayCalculationSettingEvent, PrayC
       defaultValue: "PraynHightLatitudeCaluclatioState.none()",
     );
 
-    final PrayHightLatitudeCaluclationState highLatitude =
-        _prayDBParser.parseHighLatitudeRuleState(selectedPraynHightLatitudeCaluclation);
-    add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(state: highLatitude));
+    final PrayHightLatitudeCaluclationState highLatitude = _prayDBParser
+        .parseHighLatitudeRuleState(selectedPraynHightLatitudeCaluclation);
+    add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(
+        state: highLatitude));
   }
 
   /// Retrieves the Calculation Method, from Hive
@@ -54,7 +56,8 @@ class PrayCalculationSettingBloc extends Bloc<PrayCalculationSettingEvent, PrayC
 
     final PrayCalculationMethodState calculationMethod =
         _prayDBParser.parseCalculationMethodState(selectedCalculationMethod);
-    add(PrayCalculationSettingEvent.updateCalculationMethod(method: calculationMethod));
+    add(PrayCalculationSettingEvent.updateCalculationMethod(
+        method: calculationMethod));
   }
 
   /// Retrieves the Madhab, from Hive
@@ -70,10 +73,12 @@ class PrayCalculationSettingBloc extends Bloc<PrayCalculationSettingEvent, PrayC
 
   /// Retrieves the UTC offset, from Hive
   void _getDefaultSettingsUtcOffset() {
-    final String hourOffset =
-        _box.get(DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour, defaultValue: "");
-    final String minuteOffset =
-        _box.get(DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin, defaultValue: "");
+    final String hourOffset = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour,
+        defaultValue: "");
+    final String minuteOffset = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin,
+        defaultValue: "");
 
     if (hourOffset.isEmpty) {
       add(
@@ -108,7 +113,8 @@ class PrayCalculationSettingBloc extends Bloc<PrayCalculationSettingEvent, PrayC
       final value = _box.get(key, defaultValue: defaultValue);
       final azanType = _mapKeyToAzanType(key);
       if (azanType != null) {
-        add(PrayCalculationSettingEvent.updateAzanTypeInMin(azanType: azanType, minutes: int.parse(value)));
+        add(PrayCalculationSettingEvent.updateAzanTypeInMin(
+            azanType: azanType, minutes: int.parse(value)));
       }
     });
   }
@@ -383,7 +389,8 @@ class PrayCalculationSettingBloc extends Bloc<PrayCalculationSettingEvent, PrayC
   //   }
   // }
 
-  FutureOr<void> _setup(_Setup event, Emitter<PrayCalculationSettingState> emit) {
+  FutureOr<void> _setup(
+      _Setup event, Emitter<PrayCalculationSettingState> emit) {
     _getDefaultSettingsHighLatitudeRule();
     _getDefaultSettingsCalculationMethod();
     _getDefaultSettingsMadhab();

@@ -39,9 +39,11 @@ class MadhabView extends StatelessWidget {
     );
   }
 
-  Widget _buildMathhabSelector(BuildContext context, AppLocalizations localizations) {
+  Widget _buildMathhabSelector(
+      BuildContext context, AppLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) => previous.calculationMethod != current.calculationMethod,
+      buildWhen: (previous, current) =>
+          previous.calculationMethod != current.calculationMethod,
       builder: (context, state) {
         return CustomRadioButton(
           elevation: 2,
@@ -58,13 +60,15 @@ class MadhabView extends StatelessWidget {
             unSelectedColor: Color(0xff444444),
             textStyle: TextStyle(fontSize: 14),
           ),
-          radioButtonValue: (value) => _onMathhabChanged(context, value, localizations),
+          radioButtonValue: (value) =>
+              _onMathhabChanged(context, value, localizations),
         );
       },
     );
   }
 
-  void _onMathhabChanged(BuildContext context, dynamic value, AppLocalizations localizations) {
+  void _onMathhabChanged(
+      BuildContext context, dynamic value, AppLocalizations localizations) {
     final bloc = context.read<PrayCalculationSettingBloc>();
 
     if (value == localizations.mathhab1Shafi) {

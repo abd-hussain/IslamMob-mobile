@@ -9,18 +9,21 @@ part 'notifications_state.dart';
 part 'notifications_bloc.freezed.dart';
 
 class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
-  final SetupUserSettingUseCase setupUserSettingUseCase = SetupUserSettingUseCase();
+  final SetupUserSettingUseCase setupUserSettingUseCase =
+      SetupUserSettingUseCase();
 
   NotificationsBloc() : super(const NotificationsState()) {
     on<_ChangeNotificationStatus>(_changeNotificationStatus);
     on<_SetupToken>(_setupToken);
   }
 
-  FutureOr<void> _changeNotificationStatus(_ChangeNotificationStatus event, Emitter<NotificationsState> emit) {
+  FutureOr<void> _changeNotificationStatus(
+      _ChangeNotificationStatus event, Emitter<NotificationsState> emit) {
     emit(state.copyWith(status: event.status));
   }
 
-  FutureOr<void> _setupToken(_SetupToken event, Emitter<NotificationsState> emit) {
+  FutureOr<void> _setupToken(
+      _SetupToken event, Emitter<NotificationsState> emit) {
     setupUserSettingUseCase.setNotificationToken(event.token);
   }
 }

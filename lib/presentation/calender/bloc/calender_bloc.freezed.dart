@@ -19,32 +19,38 @@ mixin _$CalenderEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareSalahTiming,
+    required TResult Function() fillMonthName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareSalahTiming,
+    TResult? Function()? fillMonthName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareSalahTiming,
+    TResult Function()? fillMonthName,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
+    required TResult Function(_FillMonthName value) fillMonthName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult? Function(_FillMonthName value)? fillMonthName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult Function(_FillMonthName value)? fillMonthName,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareSalahTiming,
+    required TResult Function() fillMonthName,
   }) {
     return prepareSalahTiming();
   }
@@ -121,6 +128,7 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareSalahTiming,
+    TResult? Function()? fillMonthName,
   }) {
     return prepareSalahTiming?.call();
   }
@@ -129,6 +137,7 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareSalahTiming,
+    TResult Function()? fillMonthName,
     required TResult orElse(),
   }) {
     if (prepareSalahTiming != null) {
@@ -141,6 +150,7 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
+    required TResult Function(_FillMonthName value) fillMonthName,
   }) {
     return prepareSalahTiming(this);
   }
@@ -149,6 +159,7 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult? Function(_FillMonthName value)? fillMonthName,
   }) {
     return prepareSalahTiming?.call(this);
   }
@@ -157,6 +168,7 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult Function(_FillMonthName value)? fillMonthName,
     required TResult orElse(),
   }) {
     if (prepareSalahTiming != null) {
@@ -171,8 +183,114 @@ abstract class _PrepareSalahTiming implements CalenderEvent {
 }
 
 /// @nodoc
+abstract class _$$FillMonthNameImplCopyWith<$Res> {
+  factory _$$FillMonthNameImplCopyWith(
+          _$FillMonthNameImpl value, $Res Function(_$FillMonthNameImpl) then) =
+      __$$FillMonthNameImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FillMonthNameImplCopyWithImpl<$Res>
+    extends _$CalenderEventCopyWithImpl<$Res, _$FillMonthNameImpl>
+    implements _$$FillMonthNameImplCopyWith<$Res> {
+  __$$FillMonthNameImplCopyWithImpl(
+      _$FillMonthNameImpl _value, $Res Function(_$FillMonthNameImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CalenderEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FillMonthNameImpl implements _FillMonthName {
+  const _$FillMonthNameImpl();
+
+  @override
+  String toString() {
+    return 'CalenderEvent.fillMonthName()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FillMonthNameImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() prepareSalahTiming,
+    required TResult Function() fillMonthName,
+  }) {
+    return fillMonthName();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareSalahTiming,
+    TResult? Function()? fillMonthName,
+  }) {
+    return fillMonthName?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareSalahTiming,
+    TResult Function()? fillMonthName,
+    required TResult orElse(),
+  }) {
+    if (fillMonthName != null) {
+      return fillMonthName();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
+    required TResult Function(_FillMonthName value) fillMonthName,
+  }) {
+    return fillMonthName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult? Function(_FillMonthName value)? fillMonthName,
+  }) {
+    return fillMonthName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult Function(_FillMonthName value)? fillMonthName,
+    required TResult orElse(),
+  }) {
+    if (fillMonthName != null) {
+      return fillMonthName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FillMonthName implements CalenderEvent {
+  const factory _FillMonthName() = _$FillMonthNameImpl;
+}
+
+/// @nodoc
 mixin _$CalenderState {
   List<CalenderModel> get list => throw _privateConstructorUsedError;
+  String get monthName => throw _privateConstructorUsedError;
   CalenderProcessState get status => throw _privateConstructorUsedError;
 
   /// Create a copy of CalenderState
@@ -188,7 +306,10 @@ abstract class $CalenderStateCopyWith<$Res> {
           CalenderState value, $Res Function(CalenderState) then) =
       _$CalenderStateCopyWithImpl<$Res, CalenderState>;
   @useResult
-  $Res call({List<CalenderModel> list, CalenderProcessState status});
+  $Res call(
+      {List<CalenderModel> list,
+      String monthName,
+      CalenderProcessState status});
 
   $CalenderProcessStateCopyWith<$Res> get status;
 }
@@ -209,6 +330,7 @@ class _$CalenderStateCopyWithImpl<$Res, $Val extends CalenderState>
   @override
   $Res call({
     Object? list = null,
+    Object? monthName = null,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
@@ -216,6 +338,10 @@ class _$CalenderStateCopyWithImpl<$Res, $Val extends CalenderState>
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as List<CalenderModel>,
+      monthName: null == monthName
+          ? _value.monthName
+          : monthName // ignore: cast_nullable_to_non_nullable
+              as String,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -242,7 +368,10 @@ abstract class _$$CalenderStateImplCopyWith<$Res>
       __$$CalenderStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<CalenderModel> list, CalenderProcessState status});
+  $Res call(
+      {List<CalenderModel> list,
+      String monthName,
+      CalenderProcessState status});
 
   @override
   $CalenderProcessStateCopyWith<$Res> get status;
@@ -262,6 +391,7 @@ class __$$CalenderStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? list = null,
+    Object? monthName = null,
     Object? status = null,
   }) {
     return _then(_$CalenderStateImpl(
@@ -269,6 +399,10 @@ class __$$CalenderStateImplCopyWithImpl<$Res>
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
               as List<CalenderModel>,
+      monthName: null == monthName
+          ? _value.monthName
+          : monthName // ignore: cast_nullable_to_non_nullable
+              as String,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -282,6 +416,7 @@ class __$$CalenderStateImplCopyWithImpl<$Res>
 class _$CalenderStateImpl implements _CalenderState {
   const _$CalenderStateImpl(
       {final List<CalenderModel> list = const [],
+      this.monthName = "",
       this.status = const CalenderProcessState.loading()})
       : _list = list;
 
@@ -296,11 +431,14 @@ class _$CalenderStateImpl implements _CalenderState {
 
   @override
   @JsonKey()
+  final String monthName;
+  @override
+  @JsonKey()
   final CalenderProcessState status;
 
   @override
   String toString() {
-    return 'CalenderState(list: $list, status: $status)';
+    return 'CalenderState(list: $list, monthName: $monthName, status: $status)';
   }
 
   @override
@@ -309,12 +447,14 @@ class _$CalenderStateImpl implements _CalenderState {
         (other.runtimeType == runtimeType &&
             other is _$CalenderStateImpl &&
             const DeepCollectionEquality().equals(other._list, _list) &&
+            (identical(other.monthName, monthName) ||
+                other.monthName == monthName) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_list), status);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_list), monthName, status);
 
   /// Create a copy of CalenderState
   /// with the given fields replaced by the non-null parameter values.
@@ -328,10 +468,13 @@ class _$CalenderStateImpl implements _CalenderState {
 abstract class _CalenderState implements CalenderState {
   const factory _CalenderState(
       {final List<CalenderModel> list,
+      final String monthName,
       final CalenderProcessState status}) = _$CalenderStateImpl;
 
   @override
   List<CalenderModel> get list;
+  @override
+  String get monthName;
   @override
   CalenderProcessState get status;
 

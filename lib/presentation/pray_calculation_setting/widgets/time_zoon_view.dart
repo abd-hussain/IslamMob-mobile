@@ -40,7 +40,8 @@ class TimeZoneView extends StatelessWidget {
     );
   }
 
-  Widget _buildCalculationSelector(BuildContext context, AppLocalizations localizations) {
+  Widget _buildCalculationSelector(
+      BuildContext context, AppLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) => previous.timeZone != current.timeZone,
       builder: (context, state) {

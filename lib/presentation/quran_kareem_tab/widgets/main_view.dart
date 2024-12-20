@@ -29,7 +29,9 @@ class QuranKareemMainView extends StatelessWidget {
       reverse: isReversed,
       controller: context.read<QuranKareemBloc>().pdfController!,
       onPageChanged: (index) {
-        context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(index));
+        context
+            .read<QuranKareemBloc>()
+            .add(QuranKareemEvent.updatePageCount(index));
       },
     );
   }

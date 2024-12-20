@@ -42,9 +42,11 @@ class PrayCalculationSubHeaderView extends StatelessWidget {
 
   Widget _buildRow(BuildContext context, List<Widget> children) {
     return Row(
-      children:
-          children.map((child) => Expanded(child: child)).expand((child) => [child, const SizedBox(width: 4)]).toList()
-            ..removeLast(),
+      children: children
+          .map((child) => Expanded(child: child))
+          .expand((child) => [child, const SizedBox(width: 4)])
+          .toList()
+        ..removeLast(),
     );
   }
 }
@@ -76,8 +78,10 @@ class _TimeCard extends StatelessWidget {
               color: const Color(0xff444444),
               textAlign: TextAlign.center,
             ),
-            BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-              buildWhen: (previous, current) => timeSelector(previous) != timeSelector(current),
+            BlocBuilder<PrayCalculationSettingBloc,
+                PrayCalculationSettingState>(
+              buildWhen: (previous, current) =>
+                  timeSelector(previous) != timeSelector(current),
               builder: (context, state) {
                 final time = timeSelector(state) ?? DateTime.now();
                 return CustomText(

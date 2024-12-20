@@ -11,8 +11,10 @@ class DatabaseFieldQuranCopyConstant {
   static const String quranKaremPrintNameToUse = "quranKaremPrintNameToUse";
   static const String quranKaremLastPageNumber = "quranKaremLastPageNumber";
   static const String quranKaremBookMarkList = "quranKaremBookMarkList";
-  static const String quranKaremJuz2ToPageNumbers = "quranKaremJuz2ToPageNumbers";
-  static const String quranKaremSorahToPageNumbers = "quranKaremSorahToPageNumbers";
+  static const String quranKaremJuz2ToPageNumbers =
+      "quranKaremJuz2ToPageNumbers";
+  static const String quranKaremSorahToPageNumbers =
+      "quranKaremSorahToPageNumbers";
 }
 
 class DatabaseFieldInBoardingStageConstant {
@@ -33,7 +35,8 @@ class LocalNotificationConstant {
 
   static const String disableSunriseTime = "disableSunriseTime";
   static const String disableSunrisePray = "disableSunrisePray";
-  static const String disableNotificationBefore15Min = "disableNotificationBefore15Min";
+  static const String disableNotificationBefore15Min =
+      "disableNotificationBefore15Min";
 
   static const String disablePushNotifications = "disablePushNotifications";
 }
@@ -41,8 +44,10 @@ class LocalNotificationConstant {
 class DatabaseFieldPrayCalculationConstant {
   static const String selectedMadhab = "selectedMadhab";
   static const String selectedCalculationMethod = "selectedCalculationMethod";
-  static const String selectedDifferenceWithUTCHour = "selectedDifferenceWithUTCHour";
-  static const String selectedDifferenceWithUTCMin = "selectedDifferenceWithUTCMin";
+  static const String selectedDifferenceWithUTCHour =
+      "selectedDifferenceWithUTCHour";
+  static const String selectedDifferenceWithUTCMin =
+      "selectedDifferenceWithUTCMin";
   static const String selectedTimeFajirMin = "selectedTimeFajirMin";
   static const String selectedTimeSunriseMin = "selectedTimeSunriseMin";
   static const String selectedTimeZhurMin = "selectedTimeZhurMin";
@@ -50,7 +55,8 @@ class DatabaseFieldPrayCalculationConstant {
   static const String selectedTimeMaghribMin = "selectedTimeMaghribMin";
   static const String selectedTimeIshaMin = "selectedTimeIshaMin";
   static const String selectedTimeMidnightMin = "selectedTimeMidnightMin";
-  static const String selectedTimeLast3thOfNightMin = "selectedTimeLast3thOfNightMin";
+  static const String selectedTimeLast3thOfNightMin =
+      "selectedTimeLast3thOfNightMin";
   static const String selectedHighLatitude = "selectedHighLatitude";
 }
 

@@ -78,12 +78,7 @@ class NotificationInBoardingView extends StatelessWidget {
         );
       case NotificationsProcessStateHavePermission():
         return NotificationHavePermissionView(
-          onConfirmationPress: (token) {
-            context.read<NotificationsBloc>().add(
-                  NotificationsEvent.setupToken(token: token),
-                );
-            doneSelection();
-          },
+          onConfirmationPress: () => doneSelection(),
         );
       default:
         return const SizedBox.shrink(); // Fallback in case of unexpected state
