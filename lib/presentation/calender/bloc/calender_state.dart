@@ -4,6 +4,7 @@ part of 'calender_bloc.dart';
 class CalenderState with _$CalenderState {
   const factory CalenderState({
     @Default([]) List<CalenderModel> list,
+    @Default("") String monthName,
     @Default(CalenderProcessState.loading()) CalenderProcessState status,
   }) = _CalenderState;
 }

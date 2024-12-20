@@ -34,26 +34,23 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
   }
 
   /// Handles the event to change the inboarding stage
-  FutureOr<void> _changeInBoardingStage(_ChangeInBoardingStage event, Emitter<InboardingState> emit) async {
-    await _updateStorage(DatabaseFieldInBoardingStageConstant.inBoardingStage, event.stage);
+  FutureOr<void> _changeInBoardingStage(
+      _ChangeInBoardingStage event, Emitter<InboardingState> emit) async {
+    await _updateStorage(
+        DatabaseFieldInBoardingStageConstant.inBoardingStage, event.stage);
     emit(state.copyWith(inBoardingStage: event.stage));
-
-    if (event.stage == 4) {
-      add(const InboardingEvent.finalizeInBoarding());
-    }
   }
 
-  FutureOr<void> _initialInBoardingStage(_InitialInBoardingStage event, Emitter<InboardingState> emit) {
+  FutureOr<void> _initialInBoardingStage(
+      _InitialInBoardingStage event, Emitter<InboardingState> emit) {
     final stage = _getInBoardingStage();
     emit(state.copyWith(inBoardingStage: stage));
   }
 
-  FutureOr<void> _finalizeInBoarding(_FinalizeInBoarding event, Emitter<InboardingState> emit) async {
-    await setupUserSettingUseCase.setupUTCOffset();
-    await setupUserSettingUseCase.setupMadhabByCountryCode();
-    await setupUserSettingUseCase.setupPrayCalculationMethod();
-    await setupUserSettingUseCase.setupHighLatitudeRule();
-    await _updateStorage(DatabaseFieldInBoardingStageConstant.inBoardingfinished, true);
+  FutureOr<void> _finalizeInBoarding(
+      _FinalizeInBoarding event, Emitter<InboardingState> emit) async {
+    await _updateStorage(
+        DatabaseFieldInBoardingStageConstant.inBoardingfinished, true);
     emit(state.copyWith(finalizedInBoarding: true));
   }
 }

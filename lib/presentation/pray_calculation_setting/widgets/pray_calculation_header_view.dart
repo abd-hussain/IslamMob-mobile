@@ -44,8 +44,10 @@ class PrayCalculationHeaderView extends StatelessWidget {
     ];
 
     return salahConfigs.map((config) {
-      return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-        buildWhen: (previous, current) => config.stateSelector(previous) != config.stateSelector(current),
+      return BlocBuilder<PrayCalculationSettingBloc,
+          PrayCalculationSettingState>(
+        buildWhen: (previous, current) =>
+            config.stateSelector(previous) != config.stateSelector(current),
         builder: (context, state) {
           final salahTime = config.stateSelector(state) ?? DateTime.now();
           return SalahBox(

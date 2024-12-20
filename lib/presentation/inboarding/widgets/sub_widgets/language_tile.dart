@@ -16,12 +16,24 @@ class LanguageTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
       child: InkWell(
         onTap: () async {
-          context.read<LanguageBloc>().add(LanguageEvent.changeSelectedLanguage(type: language));
+          context
+              .read<LanguageBloc>()
+              .add(LanguageEvent.changeSelectedLanguage(type: language));
         },
         child: Container(
           height: 50,
           width: MediaQuery.of(context).size.width - 16,
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(5),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 5,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
           child: Padding(
             padding: const EdgeInsets.only(left: 8, right: 8),
             child: Row(
@@ -44,7 +56,8 @@ class LanguageTile extends StatelessWidget {
                 ),
                 BlocBuilder<LanguageBloc, LanguageState>(
                   buildWhen: (previous, current) {
-                    return previous.selectedLanguage != current.selectedLanguage;
+                    return previous.selectedLanguage !=
+                        current.selectedLanguage;
                   },
                   builder: (context, state) {
                     return Icon(

@@ -10,7 +10,8 @@ import 'package:islam_app/models/pray_calculation_method.dart';
 
 class SetupUserSettingUseCase {
   final Box _userBox = Hive.box(DatabaseBoxConstant.userInfo);
-  final PrayCountrySettingUsecase prayCountrySettingUsecase = PrayCountrySettingUsecase();
+  final PrayCountrySettingUsecase prayCountrySettingUsecase =
+      PrayCountrySettingUsecase();
 
   Future<void> setupHighLatitudeRule() async {
     final countryCode = _userBox.get(
@@ -19,10 +20,13 @@ class SetupUserSettingUseCase {
     ) as String;
 
     PrayHightLatitudeCaluclationState calculationMethod =
-        prayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode).hightLatitudeCaluclationState;
+        prayCountrySettingUsecase
+            .setupPraySettingByCountryCode(countryCode)
+            .hightLatitudeCaluclationState;
 
     await _updateMultipleStorage({
-      DatabaseFieldPrayCalculationConstant.selectedHighLatitude: calculationMethod.toString(),
+      DatabaseFieldPrayCalculationConstant.selectedHighLatitude:
+          calculationMethod.toString(),
     });
   }
 
@@ -32,11 +36,13 @@ class SetupUserSettingUseCase {
       defaultValue: "JO",
     ) as String;
 
-    PrayCalculationMethodState calculationMethod =
-        prayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode).calculationMethod;
+    PrayCalculationMethodState calculationMethod = prayCountrySettingUsecase
+        .setupPraySettingByCountryCode(countryCode)
+        .calculationMethod;
 
     await _updateMultipleStorage({
-      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod: calculationMethod.toString(),
+      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod:
+          calculationMethod.toString(),
     });
   }
 
@@ -46,10 +52,13 @@ class SetupUserSettingUseCase {
       defaultValue: "JO",
     ) as String;
 
-    MathhabState calculationMethod = prayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode).madhab;
+    MathhabState calculationMethod = prayCountrySettingUsecase
+        .setupPraySettingByCountryCode(countryCode)
+        .madhab;
 
     await _updateMultipleStorage({
-      DatabaseFieldPrayCalculationConstant.selectedMadhab: calculationMethod.toString(),
+      DatabaseFieldPrayCalculationConstant.selectedMadhab:
+          calculationMethod.toString(),
     });
   }
 
@@ -68,23 +77,30 @@ class SetupUserSettingUseCase {
     debugPrint('Current UTC Offset: hours: $hours, minutes: $minutes');
 
     await _updateMultipleStorage({
-      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour: hours.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin: minutes.toString()
+      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour:
+          hours.toString(),
+      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin:
+          minutes.toString()
     });
   }
 
   /// Updates the notification token in storage
   Future<void> setNotificationToken(String token) async {
-    await _updateMultipleStorage({DatabaseFieldConstant.notificationToken: token});
+    await _updateMultipleStorage(
+        {DatabaseFieldConstant.notificationToken: token});
   }
 
   /// Updates location details in storage
   Future<void> setQuranCopy(QuranCopy copyName) async {
     final copyData = {
-      DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse: copyName.filePath,
-      DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber: copyName.lastPageNumber.toString(),
-      DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers: copyName.juz2ToPageNumbers,
-      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers: copyName.sorahToPageNumbers,
+      DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse:
+          copyName.filePath,
+      DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber:
+          copyName.lastPageNumber.toString(),
+      DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers:
+          copyName.juz2ToPageNumbers,
+      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers:
+          copyName.sorahToPageNumbers,
     };
     await _updateMultipleStorage(copyData);
   }
@@ -107,7 +123,8 @@ class SetupUserSettingUseCase {
 
   /// Updates the selected language in storage and rebuilds the app
   Future<void> setLanguage(String langCode) async {
-    await _updateMultipleStorage({DatabaseFieldConstant.userLanguageCode: langCode});
+    await _updateMultipleStorage(
+        {DatabaseFieldConstant.userLanguageCode: langCode});
   }
 
   /// Updates multiple values in Hive storage

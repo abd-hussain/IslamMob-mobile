@@ -40,9 +40,11 @@ class PolesCalculationView extends StatelessWidget {
     );
   }
 
-  Widget _buildCalculationSelector(BuildContext context, AppLocalizations localizations) {
+  Widget _buildCalculationSelector(
+      BuildContext context, AppLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) => previous.hightLatitudeCaluclation != current.hightLatitudeCaluclation,
+      buildWhen: (previous, current) =>
+          previous.hightLatitudeCaluclation != current.hightLatitudeCaluclation,
       builder: (context, state) {
         return CustomRadioButton(
           elevation: 2,
@@ -51,7 +53,8 @@ class PolesCalculationView extends StatelessWidget {
           unSelectedColor: Colors.white,
           unSelectedBorderColor: const Color(0xff444444),
           selectedColor: const Color(0xff007F37),
-          defaultSelected: _getInitialCalculationMethod(context, state.hightLatitudeCaluclation),
+          defaultSelected: _getInitialCalculationMethod(
+              context, state.hightLatitudeCaluclation),
           buttonLables: _getCalculationMethodList(localizations),
           buttonValues: _getCalculationMethodList(localizations),
           buttonTextStyle: const ButtonTextStyle(
@@ -59,19 +62,25 @@ class PolesCalculationView extends StatelessWidget {
             unSelectedColor: Color(0xff444444),
             textStyle: TextStyle(fontSize: 14),
           ),
-          radioButtonValue: (value) => _onCalculationChanged(context, value, localizations),
+          radioButtonValue: (value) =>
+              _onCalculationChanged(context, value, localizations),
         );
       },
     );
   }
 
-  String _getInitialCalculationMethod(BuildContext context, PrayHightLatitudeCaluclationState method) {
+  String _getInitialCalculationMethod(
+      BuildContext context, PrayHightLatitudeCaluclationState method) {
     final localizations = AppLocalizations.of(context)!;
     return switch (method) {
-      PrayHightLatitudeCaluclationStateNone() => localizations.hightLatitudeCaluclationNone,
-      PrayHightLatitudeCaluclationStateAngleBasedMethod() => localizations.hightLatitudeCaluclationAngleBasedMethod,
-      PrayHightLatitudeCaluclationStateMidnight() => localizations.hightLatitudeCaluclationMidnight,
-      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight() => localizations.hightLatitudeCaluclationOneSeventh,
+      PrayHightLatitudeCaluclationStateNone() =>
+        localizations.hightLatitudeCaluclationNone,
+      PrayHightLatitudeCaluclationStateAngleBasedMethod() =>
+        localizations.hightLatitudeCaluclationAngleBasedMethod,
+      PrayHightLatitudeCaluclationStateMidnight() =>
+        localizations.hightLatitudeCaluclationMidnight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight() =>
+        localizations.hightLatitudeCaluclationOneSeventh,
     };
   }
 
@@ -84,14 +93,16 @@ class PolesCalculationView extends StatelessWidget {
     ];
   }
 
-  void _onCalculationChanged(BuildContext context, String value, AppLocalizations localizations) {
+  void _onCalculationChanged(
+      BuildContext context, String value, AppLocalizations localizations) {
     final bloc = context.read<PrayCalculationSettingBloc>();
 
     if (value == localizations.hightLatitudeCaluclationNone) {
       bloc.add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(
         state: const PrayHightLatitudeCaluclationStateNone(),
       ));
-    } else if (value == localizations.hightLatitudeCaluclationAngleBasedMethod) {
+    } else if (value ==
+        localizations.hightLatitudeCaluclationAngleBasedMethod) {
       bloc.add(PrayCalculationSettingEvent.updateHightLatitudeCalculation(
         state: const PrayHightLatitudeCaluclationStateAngleBasedMethod(),
       ));

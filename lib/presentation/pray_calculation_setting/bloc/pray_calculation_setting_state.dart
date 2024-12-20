@@ -24,7 +24,9 @@ class PrayCalculationSettingState with _$PrayCalculationSettingState {
     @Default(0) int editMidNightTimeManual,
     @Default(0) int editLast3thTimeTimeManual,
     @Default(MathhabState.hanafi()) MathhabState mathhab,
-    @Default(PrayCalculationMethodState.jordanAwqaf()) PrayCalculationMethodState calculationMethod,
-    @Default(PrayHightLatitudeCaluclationState.none()) PrayHightLatitudeCaluclationState hightLatitudeCaluclation,
+    @Default(PrayCalculationMethodState.jordanAwqaf())
+    PrayCalculationMethodState calculationMethod,
+    @Default(PrayHightLatitudeCaluclationState.none())
+    PrayHightLatitudeCaluclationState hightLatitudeCaluclation,
   }) = _PrayCalculationSettingState;
 }

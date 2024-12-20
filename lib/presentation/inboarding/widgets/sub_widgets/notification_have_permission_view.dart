@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/domain/repository/firebase_messages.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationHavePermissionView extends StatelessWidget {
-  final Function(String token) onConfirmationPress;
+  final Function() onConfirmationPress;
 
-  const NotificationHavePermissionView({super.key, required this.onConfirmationPress});
+  const NotificationHavePermissionView(
+      {super.key, required this.onConfirmationPress});
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +27,7 @@ class NotificationHavePermissionView extends StatelessWidget {
         CustomButton(
           isEnabled: true,
           title: AppLocalizations.of(context)!.startPreparingYourAccount,
-          onTap: () async {
-            final String? notificationsDetails = await FirebaseMessagesRepository().getNotificationToken();
-            return onConfirmationPress(notificationsDetails ?? "");
-          },
+          onTap: () => onConfirmationPress(),
         ),
       ],
     );

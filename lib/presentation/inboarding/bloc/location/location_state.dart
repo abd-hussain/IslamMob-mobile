@@ -12,6 +12,8 @@ class LocationState with _$LocationState {
 sealed class LocationProcessState with _$LocationProcessState {
   const factory LocationProcessState.idl() = LocationProcessStateIdl;
   const factory LocationProcessState.loading() = LocationProcessStateLoading;
-  const factory LocationProcessState.noPermission() = LocationProcessStateNoPermission;
-  const factory LocationProcessState.havePermission() = LocationProcessStateHavePermission;
+  const factory LocationProcessState.noPermission() =
+      LocationProcessStateNoPermission;
+  const factory LocationProcessState.havePermission() =
+      LocationProcessStateHavePermission;
 }

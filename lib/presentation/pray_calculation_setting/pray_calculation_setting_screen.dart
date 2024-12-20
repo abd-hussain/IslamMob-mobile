@@ -79,14 +79,17 @@ class PrayCalculationSettingScreen extends StatelessWidget {
     return Column(
       children: [
         BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) => previous.buttonsStatus != current.buttonsStatus,
+          buildWhen: (previous, current) =>
+              previous.buttonsStatus != current.buttonsStatus,
           builder: (context, state) {
             return CustomButton(
               isEnabled: state.buttonsStatus,
               padding: const EdgeInsets.only(left: 16, right: 16),
               title: AppLocalizations.of(context)!.save,
               onTap: () {
-                context.read<PrayCalculationSettingBloc>().add(PrayCalculationSettingEvent.saveChanges(status: true));
+                context
+                    .read<PrayCalculationSettingBloc>()
+                    .add(PrayCalculationSettingEvent.saveChanges(status: true));
                 Navigator.pop(context);
               },
             );
@@ -94,7 +97,8 @@ class PrayCalculationSettingScreen extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) => previous.buttonsStatus != current.buttonsStatus,
+          buildWhen: (previous, current) =>
+              previous.buttonsStatus != current.buttonsStatus,
           builder: (context, state) {
             return CustomButton(
               padding: const EdgeInsets.only(left: 16, right: 16),

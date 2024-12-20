@@ -8,8 +8,6 @@ import 'package:islam_app/utils/logger.dart';
 
 //TODO: if timer get zero then next salah time should be handled,
 
-//TODO: whatsup, facebook
-
 //TODO: local notification with timer such as other apps
 
 //TODO: app should work without internet

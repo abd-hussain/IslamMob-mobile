@@ -78,7 +78,9 @@ class NoPDFView extends StatelessWidget {
 
   void _loadMushafFile(BuildContext context) {
     final box = Hive.box(DatabaseBoxConstant.userInfo);
-    final printName = box.get(DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse) as String?;
+    final printName =
+        box.get(DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse)
+            as String?;
     if (printName == null || printName.isEmpty) {
       debugPrint("No print name found in database.");
       return;

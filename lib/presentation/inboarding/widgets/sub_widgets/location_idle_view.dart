@@ -38,7 +38,9 @@ class LocationIdleView extends StatelessWidget {
           isEnabled: true,
           title: AppLocalizations.of(context)!.allowgetlocation,
           onTap: () async {
-            if (await locator<NetworkInfoRepository>().checkConnectivityOnLaunch() == false) {
+            if (await locator<NetworkInfoRepository>()
+                    .checkConnectivityOnLaunch() ==
+                false) {
               // ignore: use_build_context_synchronously
               showNoInternetConnection(context);
               return;
@@ -55,7 +57,8 @@ class LocationIdleView extends StatelessWidget {
             );
 
             // Request location details
-            final locationDetails = await LocationRepository().getLocationDetails();
+            final locationDetails =
+                await LocationRepository().getLocationDetails();
 
             if (locationDetails.containsKey('error')) {
               /// Handles the case when location permission is not granted
@@ -94,7 +97,9 @@ class LocationIdleView extends StatelessWidget {
   void showNoInternetConnection(BuildContext context) {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+      SnackBar(
+          content: Text(
+              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

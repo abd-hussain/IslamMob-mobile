@@ -6,5 +6,6 @@ class NotificationsEvent with _$NotificationsEvent {
     required NotificationsProcessState status,
   }) = _ChangeNotificationStatus;
 
-  const factory NotificationsEvent.setupToken({required String token}) = _SetupToken;
+  const factory NotificationsEvent.setupToken({required String token}) =
+      _SetupToken;
 }
