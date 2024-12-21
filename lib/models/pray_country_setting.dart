@@ -8,7 +8,7 @@ part 'pray_country_setting.freezed.dart';
 class PrayCountrySetting with _$PrayCountrySetting {
   factory PrayCountrySetting({
     required String countryCode,
-    required MathhabState madhab,
+    required MadhabState madhab,
     required PrayCalculationMethodState calculationMethod,
     required PrayHightLatitudeCaluclationState hightLatitudeCaluclationState,
   }) = _PrayCountrySetting;

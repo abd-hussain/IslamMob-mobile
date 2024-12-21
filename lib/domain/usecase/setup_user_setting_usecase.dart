@@ -52,7 +52,7 @@ class SetupUserSettingUseCase {
       defaultValue: "JO",
     ) as String;
 
-    MathhabState calculationMethod = prayCountrySettingUsecase
+    MadhabState calculationMethod = prayCountrySettingUsecase
         .setupPraySettingByCountryCode(countryCode)
         .madhab;
 

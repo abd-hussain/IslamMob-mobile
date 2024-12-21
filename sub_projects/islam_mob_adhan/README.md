@@ -20,23 +20,23 @@ A simple usage example:
 import 'package:adhan/adhan.dart';
 
 main() {
-  print('My Prayer Times');
+  debugPrint('My Prayer Times');
   final myCoordinates = Coordinates(23.9088, 89.1220); // Replace with your own location lat, lng.
   final params = CalculationMethod.karachi.getParameters();
   params.madhab = Madhab.hanafi;
   final prayerTimes = PrayerTimes.today(myCoordinates, params);
 
-  print("---Today's Prayer Times in Your Local Timezone(${prayerTimes.fajr.timeZoneName})---");
-  print(DateFormat.jm().format(prayerTimes.fajr));
-  print(DateFormat.jm().format(prayerTimes.sunrise));
-  print(DateFormat.jm().format(prayerTimes.dhuhr));
-  print(DateFormat.jm().format(prayerTimes.asr));
-  print(DateFormat.jm().format(prayerTimes.maghrib));
-  print(DateFormat.jm().format(prayerTimes.isha));
+  debugPrint("---Today's Prayer Times in Your Local Timezone(${prayerTimes.fajr.timeZoneName})---");
+  debugPrint(DateFormat.jm().format(prayerTimes.fajr));
+  debugPrint(DateFormat.jm().format(prayerTimes.sunrise));
+  debugPrint(DateFormat.jm().format(prayerTimes.dhuhr));
+  debugPrint(DateFormat.jm().format(prayerTimes.asr));
+  debugPrint(DateFormat.jm().format(prayerTimes.maghrib));
+  debugPrint(DateFormat.jm().format(prayerTimes.isha));
 
 
   // Custom Timezone Usage. (Most of you won't need this).
-  print('NewYork Prayer Times');
+  debugPrint('NewYork Prayer Times');
   final newYork = Coordinates(35.7750, -78.6336);
   final nyUtcOffset = Duration(hours: -4);
   final nyDate = DateComponents(2015, 7, 12);
@@ -44,13 +44,13 @@ main() {
   nyParams.madhab = Madhab.hanafi;
   final nyPrayerTimes = PrayerTimes(newYork, nyDate, nyParams, utcOffset: nyUtcOffset);
 
-  print(nyPrayerTimes.fajr.timeZoneName);
-  print(DateFormat.jm().format(nyPrayerTimes.fajr));
-  print(DateFormat.jm().format(nyPrayerTimes.sunrise));
-  print(DateFormat.jm().format(nyPrayerTimes.dhuhr));
-  print(DateFormat.jm().format(nyPrayerTimes.asr));
-  print(DateFormat.jm().format(nyPrayerTimes.maghrib));
-  print(DateFormat.jm().format(nyPrayerTimes.isha));
+  debugPrint(nyPrayerTimes.fajr.timeZoneName);
+  debugPrint(DateFormat.jm().format(nyPrayerTimes.fajr));
+  debugPrint(DateFormat.jm().format(nyPrayerTimes.sunrise));
+  debugPrint(DateFormat.jm().format(nyPrayerTimes.dhuhr));
+  debugPrint(DateFormat.jm().format(nyPrayerTimes.asr));
+  debugPrint(DateFormat.jm().format(nyPrayerTimes.maghrib));
+  debugPrint(DateFormat.jm().format(nyPrayerTimes.isha));
 }
 ```
 ##### See [Flutter Example](https://github.com/iamriajul/adhan-dart/tree/master/example/adhan_example_flutter_app) Folder for Flutter Usage Example with Dynamic Location From GPS.

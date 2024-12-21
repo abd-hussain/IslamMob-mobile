@@ -1,6 +1,9 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/calculation_method_view.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/edit_pray_time_minutes_view.dart';
@@ -13,7 +16,6 @@ import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 
-//TODO: this screen need to be checked
 class PrayCalculationSettingScreen extends StatelessWidget {
   const PrayCalculationSettingScreen({super.key});
 
@@ -37,7 +39,7 @@ class PrayCalculationSettingScreen extends StatelessWidget {
               const SizedBox(height: 8),
               _swiperSection(),
               const SizedBox(height: 10),
-              _buttonsSection(),
+              _buttonsSection(context),
             ],
           ),
         ),
@@ -75,42 +77,46 @@ class PrayCalculationSettingScreen extends StatelessWidget {
     );
   }
 
-  Widget _buttonsSection() {
-    return Column(
-      children: [
-        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.buttonsStatus != current.buttonsStatus,
-          builder: (context, state) {
-            return CustomButton(
+  Widget _buttonsSection(BuildContext context) {
+    return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
+      buildWhen: (previous, current) =>
+          previous.buttonsStatus != current.buttonsStatus,
+      builder: (context, state) {
+        return Column(
+          children: [
+            CustomButton(
               isEnabled: state.buttonsStatus,
               padding: const EdgeInsets.only(left: 16, right: 16),
               title: AppLocalizations.of(context)!.save,
               onTap: () {
-                context
-                    .read<PrayCalculationSettingBloc>()
-                    .add(PrayCalculationSettingEvent.saveChanges(status: true));
+                context.read<PrayCalculationSettingBloc>().add(
+                      PrayCalculationSettingEvent.saveChanges(),
+                    );
                 Navigator.pop(context);
               },
-            );
-          },
-        ),
-        const SizedBox(height: 10),
-        BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-          buildWhen: (previous, current) =>
-              previous.buttonsStatus != current.buttonsStatus,
-          builder: (context, state) {
-            return CustomButton(
-              padding: const EdgeInsets.only(left: 16, right: 16),
-              isEnabled: state.buttonsStatus,
-              title: AppLocalizations.of(context)!.factoryReset,
-              onTap: () => context
-                  .read<PrayCalculationSettingBloc>()
-                  .add(PrayCalculationSettingEvent.factoryReset(status: true)),
-            );
-          },
-        ),
-      ],
+            ),
+            const SizedBox(height: 10),
+            CustomButton(
+                padding: const EdgeInsets.only(left: 16, right: 16),
+                isEnabled: true,
+                color: Colors.redAccent,
+                title: AppLocalizations.of(context)!.factoryReset,
+                onTap: () async {
+                  final Box box = Hive.box(DatabaseBoxConstant.userInfo);
+                  final navigator = Navigator.of(context, rootNavigator: true);
+
+                  await box.put(
+                      DatabaseFieldInBoardingStageConstant.inBoardingfinished,
+                      null);
+                  await box.put(
+                      DatabaseFieldInBoardingStageConstant.inBoardingStage, 0);
+                  await navigator.pushNamedAndRemoveUntil(
+                      RoutesConstants.inBoardingScreen,
+                      (Route<dynamic> route) => false);
+                }),
+          ],
+        );
+      },
     );
   }
 }

@@ -59,7 +59,7 @@ class PrayUsecase {
   Madhab _retrieveMadhab() {
     final String madhab = _box.get(
         DatabaseFieldPrayCalculationConstant.selectedMadhab,
-        defaultValue: "MathhabState.hanafi()");
+        defaultValue: "MadhabState.hanafi()");
     return _prayDBParser.parseMadhab(madhab);
   }
 

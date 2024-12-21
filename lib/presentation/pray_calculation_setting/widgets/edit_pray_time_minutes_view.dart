@@ -33,7 +33,7 @@ class EditPrayTimeMinutesView extends StatelessWidget {
             textAlign: TextAlign.center,
             maxLines: 2,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 4),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(bottom: 10),
