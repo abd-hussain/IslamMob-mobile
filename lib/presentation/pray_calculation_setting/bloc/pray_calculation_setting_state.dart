@@ -14,7 +14,6 @@ class PrayCalculationSettingState with _$PrayCalculationSettingState {
     DateTime? applicationTime,
     DateTime? deviceTime,
     @Default(false) bool buttonsStatus,
-    @Default(Duration(hours: 3)) Duration timeZone,
     @Default(0) int editFajirTimeManual,
     @Default(0) int editSunriseTimeManual,
     @Default(0) int editDuhirTimeManual,
@@ -23,7 +22,8 @@ class PrayCalculationSettingState with _$PrayCalculationSettingState {
     @Default(0) int editIshaTimeManual,
     @Default(0) int editMidNightTimeManual,
     @Default(0) int editLast3thTimeTimeManual,
-    @Default(MathhabState.hanafi()) MathhabState mathhab,
+    @Default(Duration(hours: 3)) Duration timeZone,
+    @Default(MadhabState.hanafi()) MadhabState madhab,
     @Default(PrayCalculationMethodState.jordanAwqaf())
     PrayCalculationMethodState calculationMethod,
     @Default(PrayHightLatitudeCaluclationState.none())

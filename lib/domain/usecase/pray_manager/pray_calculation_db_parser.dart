@@ -5,13 +5,13 @@ import 'package:islam_mob_adhan/adhan.dart';
 
 class PrayDBParser {
   final Map<String, Madhab> _madhabMap = {
-    "MathhabState.hanafi()": Madhab.hanafi,
-    "MathhabState.shafi()": Madhab.shafi,
+    "MadhabState.hanafi()": Madhab.hanafi,
+    "MadhabState.shafi()": Madhab.shafi,
   };
 
-  final Map<String, MathhabState> _madhabStateMap = {
-    "MathhabState.hanafi()": const MathhabState.hanafi(),
-    "MathhabState.shafi()": const MathhabState.shafi()
+  final Map<String, MadhabState> _madhabStateMap = {
+    "MadhabState.hanafi()": const MadhabState.hanafi(),
+    "MadhabState.shafi()": const MadhabState.shafi()
   };
 
   final Map<String, HighLatitudeRule?> _highLatitudeRuleMap = {
@@ -109,8 +109,9 @@ class PrayDBParser {
   };
 
   Madhab parseMadhab(String madhab) => _madhabMap[madhab] ?? Madhab.shafi;
-  MathhabState parseMadhabState(String madhab) =>
-      _madhabStateMap[madhab] ?? const MathhabState.shafi();
+
+  MadhabState parseMadhabState(String madhab) =>
+      _madhabStateMap[madhab] ?? const MadhabState.shafi();
 
   HighLatitudeRule? parseHighLatitudeRule(String highLatitudeRule) =>
       _highLatitudeRuleMap[highLatitudeRule];

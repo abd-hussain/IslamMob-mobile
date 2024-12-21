@@ -1,8 +1,9 @@
-import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/models/madhab.dart';
+import 'package:islam_app/models/madhab_setting.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
+import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -33,7 +34,14 @@ class MadhabView extends StatelessWidget {
             textAlign: TextAlign.center,
             maxLines: 2,
           ),
-          _buildMathhabSelector(context, localizations),
+          const SizedBox(height: 4),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: _buildMathhabSelector(context, localizations),
+            ),
+          ),
+          const SizedBox(height: 8),
         ],
       ),
     );
@@ -42,58 +50,41 @@ class MadhabView extends StatelessWidget {
   Widget _buildMathhabSelector(
       BuildContext context, AppLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) =>
-          previous.calculationMethod != current.calculationMethod,
+      buildWhen: (previous, current) => previous.madhab != current.madhab,
       builder: (context, state) {
-        return CustomRadioButton(
-          elevation: 2,
-          horizontal: true,
-          absoluteZeroSpacing: false,
-          unSelectedColor: Colors.white,
-          unSelectedBorderColor: const Color(0xff444444),
-          selectedColor: const Color(0xff007F37),
-          defaultSelected: _getInitialMathhab(context, state.mathhab),
-          buttonLables: _getMathhabList(localizations),
-          buttonValues: _getMathhabList(localizations),
-          buttonTextStyle: const ButtonTextStyle(
-            selectedColor: Colors.white,
-            unSelectedColor: Color(0xff444444),
-            textStyle: TextStyle(fontSize: 14),
-          ),
-          radioButtonValue: (value) =>
-              _onMathhabChanged(context, value, localizations),
+        final madhabList = _getMadhabList(localizations, state.madhab);
+
+        return ListView.builder(
+          itemCount: madhabList.length,
+          itemBuilder: (context, index) {
+            return CheckBoxTile(
+              title: madhabList[index].name,
+              isSelected: madhabList[index].isSelected,
+              onChanged: () => context.read<PrayCalculationSettingBloc>().add(
+                    PrayCalculationSettingEvent.updateMadhabMethod(
+                      madhab: madhabList[index].method,
+                    ),
+                  ),
+            );
+          },
         );
       },
     );
   }
 
-  void _onMathhabChanged(
-      BuildContext context, dynamic value, AppLocalizations localizations) {
-    final bloc = context.read<PrayCalculationSettingBloc>();
-
-    if (value == localizations.mathhab1Shafi) {
-      bloc.add(PrayCalculationSettingEvent.updateMathhab(
-        mathhab: const MathhabState.shafi(),
-      ));
-    } else {
-      bloc.add(PrayCalculationSettingEvent.updateMathhab(
-        mathhab: const MathhabState.hanafi(),
-      ));
-    }
-  }
-
-  String _getInitialMathhab(BuildContext context, MathhabState mathhab) {
-    final localizations = AppLocalizations.of(context)!;
-    return switch (mathhab) {
-      MathhabStateHanafi() => localizations.mathhab2Hanafi,
-      MathhabStateShafi() => localizations.mathhab1Shafi,
-    };
-  }
-
-  List<String> _getMathhabList(AppLocalizations localizations) {
+  List<MadhabSetting> _getMadhabList(
+      AppLocalizations localizations, MadhabState currentState) {
     return [
-      localizations.mathhab1Shafi,
-      localizations.mathhab2Hanafi,
+      MadhabSetting(
+        name: localizations.mathhab1Shafi,
+        method: const MadhabState.shafi(),
+        isSelected: currentState == const MadhabState.shafi(),
+      ),
+      MadhabSetting(
+        name: localizations.mathhab2Hanafi,
+        method: const MadhabState.hanafi(),
+        isSelected: currentState == const MadhabState.hanafi(),
+      ),
     ];
   }
 }

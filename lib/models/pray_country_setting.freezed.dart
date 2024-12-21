@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$PrayCountrySetting {
   String get countryCode => throw _privateConstructorUsedError;
-  MathhabState get madhab => throw _privateConstructorUsedError;
+  MadhabState get madhab => throw _privateConstructorUsedError;
   PrayCalculationMethodState get calculationMethod =>
       throw _privateConstructorUsedError;
   PrayHightLatitudeCaluclationState get hightLatitudeCaluclationState =>
@@ -38,11 +38,11 @@ abstract class $PrayCountrySettingCopyWith<$Res> {
   @useResult
   $Res call(
       {String countryCode,
-      MathhabState madhab,
+      MadhabState madhab,
       PrayCalculationMethodState calculationMethod,
       PrayHightLatitudeCaluclationState hightLatitudeCaluclationState});
 
-  $MathhabStateCopyWith<$Res> get madhab;
+  $MadhabStateCopyWith<$Res> get madhab;
   $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod;
   $PrayHightLatitudeCaluclationStateCopyWith<$Res>
       get hightLatitudeCaluclationState;
@@ -76,7 +76,7 @@ class _$PrayCountrySettingCopyWithImpl<$Res, $Val extends PrayCountrySetting>
       madhab: null == madhab
           ? _value.madhab
           : madhab // ignore: cast_nullable_to_non_nullable
-              as MathhabState,
+              as MadhabState,
       calculationMethod: null == calculationMethod
           ? _value.calculationMethod
           : calculationMethod // ignore: cast_nullable_to_non_nullable
@@ -92,8 +92,8 @@ class _$PrayCountrySettingCopyWithImpl<$Res, $Val extends PrayCountrySetting>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $MathhabStateCopyWith<$Res> get madhab {
-    return $MathhabStateCopyWith<$Res>(_value.madhab, (value) {
+  $MadhabStateCopyWith<$Res> get madhab {
+    return $MadhabStateCopyWith<$Res>(_value.madhab, (value) {
       return _then(_value.copyWith(madhab: value) as $Val);
     });
   }
@@ -133,12 +133,12 @@ abstract class _$$PrayCountrySettingImplCopyWith<$Res>
   @useResult
   $Res call(
       {String countryCode,
-      MathhabState madhab,
+      MadhabState madhab,
       PrayCalculationMethodState calculationMethod,
       PrayHightLatitudeCaluclationState hightLatitudeCaluclationState});
 
   @override
-  $MathhabStateCopyWith<$Res> get madhab;
+  $MadhabStateCopyWith<$Res> get madhab;
   @override
   $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod;
   @override
@@ -172,7 +172,7 @@ class __$$PrayCountrySettingImplCopyWithImpl<$Res>
       madhab: null == madhab
           ? _value.madhab
           : madhab // ignore: cast_nullable_to_non_nullable
-              as MathhabState,
+              as MadhabState,
       calculationMethod: null == calculationMethod
           ? _value.calculationMethod
           : calculationMethod // ignore: cast_nullable_to_non_nullable
@@ -197,7 +197,7 @@ class _$PrayCountrySettingImpl implements _PrayCountrySetting {
   @override
   final String countryCode;
   @override
-  final MathhabState madhab;
+  final MadhabState madhab;
   @override
   final PrayCalculationMethodState calculationMethod;
   @override
@@ -241,7 +241,7 @@ class _$PrayCountrySettingImpl implements _PrayCountrySetting {
 abstract class _PrayCountrySetting implements PrayCountrySetting {
   factory _PrayCountrySetting(
       {required final String countryCode,
-      required final MathhabState madhab,
+      required final MadhabState madhab,
       required final PrayCalculationMethodState calculationMethod,
       required final PrayHightLatitudeCaluclationState
           hightLatitudeCaluclationState}) = _$PrayCountrySettingImpl;
@@ -249,7 +249,7 @@ abstract class _PrayCountrySetting implements PrayCountrySetting {
   @override
   String get countryCode;
   @override
-  MathhabState get madhab;
+  MadhabState get madhab;
   @override
   PrayCalculationMethodState get calculationMethod;
   @override

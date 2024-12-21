@@ -1,7 +1,8 @@
-import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/models/time_zone_setting.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
+import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -33,7 +34,11 @@ class TimeZoneView extends StatelessWidget {
             maxLines: 2,
           ),
           const SizedBox(height: 4),
-          Expanded(child: _buildCalculationSelector(context, localizations)),
+          Expanded(
+              child: Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: _buildCalculationSelector(context, localizations),
+          )),
           const SizedBox(height: 8),
         ],
       ),
@@ -45,73 +50,218 @@ class TimeZoneView extends StatelessWidget {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) => previous.timeZone != current.timeZone,
       builder: (context, state) {
-        return CustomRadioButton(
-          elevation: 2,
-          horizontal: true,
-          absoluteZeroSpacing: false,
-          unSelectedColor: Colors.white,
-          unSelectedBorderColor: const Color(0xff444444),
-          selectedColor: const Color(0xff007F37),
-          defaultSelected: state.timeZone,
-          buttonLables: _getTimeZoneList(),
-          buttonValues: _getTimeZoneList(),
-          buttonTextStyle: const ButtonTextStyle(
-            selectedColor: Colors.white,
-            unSelectedColor: Color(0xff444444),
-            textStyle: TextStyle(fontSize: 14),
-          ),
-          radioButtonValue: (value) {
-            // context.read<PrayCalculationSettingBloc>().add(
-            //       PrayCalculationSettingEvent.updateTimeZone(
-            //         value: value,
-            //       ),
-            //     );
+        final timeZonesList = _getTimeZonesList(localizations, state.timeZone);
+        return ListView.builder(
+          itemCount: timeZonesList.length,
+          itemBuilder: (context, index) {
+            return CheckBoxTile(
+              title: timeZonesList[index].name,
+              isSelected: timeZonesList[index].isSelected,
+              onChanged: () => context.read<PrayCalculationSettingBloc>().add(
+                    PrayCalculationSettingEvent.updateTimeZone(
+                      value: timeZonesList[index].duration,
+                    ),
+                  ),
+            );
           },
         );
       },
     );
   }
 
-  List<String> _getTimeZoneList() {
+  List<TimeZoneSetting> _getTimeZonesList(
+      AppLocalizations localizations, Duration currentState) {
     return [
-      "UTC -12:00",
-      "UTC -11:00",
-      "UTC -10:00",
-      "UTC -09:30",
-      "UTC -09:00",
-      "UTC -08:00 ",
-      "UTC -07:00",
-      "UTC -06:00",
-      "UTC -05:00",
-      "UTC -04:00",
-      "UTC -03:30",
-      "UTC -03:00",
-      "UTC -02:00",
-      "UTC -01:00",
-      "UTC/GMT",
-      "UTC +01:00",
-      "UTC +02:00",
-      "UTC +03:00",
-      "UTC +03:30",
-      "UTC +04:00",
-      "UTC +04:30",
-      "UTC +05:00",
-      "UTC +05:30",
-      "UTC +05:45",
-      "UTC +06:00",
-      "UTC +06:30",
-      "UTC +07:00",
-      "UTC +08:00",
-      "UTC +08:45",
-      "UTC +09:00",
-      "UTC +09:30",
-      "UTC +10:00",
-      "UTC +10:30",
-      "UTC +11:00",
-      "UTC +12:00",
-      "UTC +12:45",
-      "UTC +13:00",
-      "UTC +14:00",
+      TimeZoneSetting(
+        name: "UTC -12:00",
+        duration: const Duration(hours: -12),
+        isSelected: currentState == const Duration(hours: -12),
+      ),
+      TimeZoneSetting(
+        name: "UTC -11:00",
+        duration: const Duration(hours: -11),
+        isSelected: currentState == const Duration(hours: -11),
+      ),
+      TimeZoneSetting(
+        name: "UTC -10:00",
+        duration: const Duration(hours: -10),
+        isSelected: currentState == const Duration(hours: -10),
+      ),
+      TimeZoneSetting(
+        name: "UTC -09:30",
+        duration: const Duration(hours: -9, minutes: -30),
+        isSelected: currentState == const Duration(hours: -09, minutes: -30),
+      ),
+      TimeZoneSetting(
+        name: "UTC -09:00",
+        duration: const Duration(hours: -9),
+        isSelected: currentState == const Duration(hours: -09),
+      ),
+      TimeZoneSetting(
+        name: "UTC -08:00",
+        duration: const Duration(hours: -8),
+        isSelected: currentState == const Duration(hours: -8),
+      ),
+      TimeZoneSetting(
+        name: "UTC -07:00",
+        duration: const Duration(hours: -7),
+        isSelected: currentState == const Duration(hours: -7),
+      ),
+      TimeZoneSetting(
+        name: "UTC -06:00",
+        duration: const Duration(hours: -6),
+        isSelected: currentState == const Duration(hours: -6),
+      ),
+      TimeZoneSetting(
+        name: "UTC -05:00",
+        duration: const Duration(hours: -5),
+        isSelected: currentState == const Duration(hours: -5),
+      ),
+      TimeZoneSetting(
+        name: "UTC -04:00",
+        duration: const Duration(hours: -4),
+        isSelected: currentState == const Duration(hours: -4),
+      ),
+      TimeZoneSetting(
+        name: "UTC -03:30",
+        duration: const Duration(hours: -3, minutes: -30),
+        isSelected: currentState == const Duration(hours: -3, minutes: -30),
+      ),
+      TimeZoneSetting(
+        name: "UTC -03:00",
+        duration: const Duration(hours: -3),
+        isSelected: currentState == const Duration(hours: -3),
+      ),
+      TimeZoneSetting(
+        name: "UTC -02:00",
+        duration: const Duration(hours: -2),
+        isSelected: currentState == const Duration(hours: -2),
+      ),
+      TimeZoneSetting(
+        name: "UTC -01:00",
+        duration: const Duration(hours: -1),
+        isSelected: currentState == const Duration(hours: -1),
+      ),
+      TimeZoneSetting(
+        name: "UTC/GMT",
+        duration: const Duration(hours: 0),
+        isSelected: currentState == const Duration(hours: 0),
+      ),
+      TimeZoneSetting(
+        name: "UTC +01:00",
+        duration: const Duration(hours: 1),
+        isSelected: currentState == const Duration(hours: 1),
+      ),
+      TimeZoneSetting(
+        name: "UTC +02:00",
+        duration: const Duration(hours: 2),
+        isSelected: currentState == const Duration(hours: 2),
+      ),
+      TimeZoneSetting(
+        name: "UTC +03:00",
+        duration: const Duration(hours: 3),
+        isSelected: currentState == const Duration(hours: 3),
+      ),
+      TimeZoneSetting(
+        name: "UTC +03:30",
+        duration: const Duration(hours: 3, minutes: 30),
+        isSelected: currentState == const Duration(hours: 3, minutes: 30),
+      ),
+      TimeZoneSetting(
+        name: "UTC +04:00",
+        duration: const Duration(hours: 4),
+        isSelected: currentState == const Duration(hours: 4),
+      ),
+      TimeZoneSetting(
+        name: "UTC +04:30",
+        duration: const Duration(hours: 4, minutes: 30),
+        isSelected: currentState == const Duration(hours: 4, minutes: 30),
+      ),
+      TimeZoneSetting(
+        name: "UTC +05:00",
+        duration: const Duration(hours: 5),
+        isSelected: currentState == const Duration(hours: 5),
+      ),
+      TimeZoneSetting(
+        name: "UTC +05:30",
+        duration: const Duration(hours: 5, minutes: 30),
+        isSelected: currentState == const Duration(hours: 5, minutes: 30),
+      ),
+      TimeZoneSetting(
+        name: "UTC +05:45",
+        duration: const Duration(hours: 5, minutes: 45),
+        isSelected: currentState == const Duration(hours: 5, minutes: 45),
+      ),
+      TimeZoneSetting(
+        name: "UTC +06:00",
+        duration: const Duration(hours: 6),
+        isSelected: currentState == const Duration(hours: 6),
+      ),
+      TimeZoneSetting(
+        name: "UTC +06:30",
+        duration: const Duration(hours: 6, minutes: 30),
+        isSelected: currentState == const Duration(hours: 6, minutes: 30),
+      ),
+      TimeZoneSetting(
+        name: "UTC +07:00",
+        duration: const Duration(hours: 7),
+        isSelected: currentState == const Duration(hours: 7),
+      ),
+      TimeZoneSetting(
+        name: "UTC +08:00",
+        duration: const Duration(hours: 8),
+        isSelected: currentState == const Duration(hours: 8),
+      ),
+      TimeZoneSetting(
+        name: "UTC +08:45",
+        duration: const Duration(hours: 8, minutes: 45),
+        isSelected: currentState == const Duration(hours: 8, minutes: 45),
+      ),
+      TimeZoneSetting(
+        name: "UTC +09:00",
+        duration: const Duration(hours: 9),
+        isSelected: currentState == const Duration(hours: 9),
+      ),
+      TimeZoneSetting(
+        name: "UTC +09:30",
+        duration: const Duration(hours: 9, minutes: 30),
+        isSelected: currentState == const Duration(hours: 9, minutes: 30),
+      ),
+      TimeZoneSetting(
+        name: "UTC +10:00",
+        duration: const Duration(hours: 10),
+        isSelected: currentState == const Duration(hours: 10),
+      ),
+      TimeZoneSetting(
+        name: "UTC +10:30",
+        duration: const Duration(hours: 10, minutes: 30),
+        isSelected: currentState == const Duration(hours: 10, minutes: 30),
+      ),
+      TimeZoneSetting(
+        name: "UTC +11:00",
+        duration: const Duration(hours: 11),
+        isSelected: currentState == const Duration(hours: 11),
+      ),
+      TimeZoneSetting(
+        name: "UTC +12:00",
+        duration: const Duration(hours: 12),
+        isSelected: currentState == const Duration(hours: 12),
+      ),
+      TimeZoneSetting(
+        name: "UTC +12:45",
+        duration: const Duration(hours: 12, minutes: 45),
+        isSelected: currentState == const Duration(hours: 12, minutes: 45),
+      ),
+      TimeZoneSetting(
+        name: "UTC +13:00",
+        duration: const Duration(hours: 13),
+        isSelected: currentState == const Duration(hours: 13),
+      ),
+      TimeZoneSetting(
+        name: "UTC +14:00",
+        duration: const Duration(hours: 14),
+        isSelected: currentState == const Duration(hours: 14),
+      ),
     ];
   }
 }
