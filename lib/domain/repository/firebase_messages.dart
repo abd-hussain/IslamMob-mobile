@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:islam_app/utils/logger.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -23,9 +24,17 @@ class FirebaseMessagesRepository {
     }
   }
 
+  /// Checks if Firebase is initialized.
+  Future<bool> _isFirebaseInitialized() async {
+    return Firebase.apps.isNotEmpty;
+  }
+
   /// Check and request notification permission
   Future<bool> checkAndRequestPermission() async {
     try {
+      if (!await _isFirebaseInitialized()) {
+        await Firebase.initializeApp();
+      }
       final isGranted = await _isNotificationPermissionGranted();
       if (!isGranted) {
         return await _requestNotificationPermission();

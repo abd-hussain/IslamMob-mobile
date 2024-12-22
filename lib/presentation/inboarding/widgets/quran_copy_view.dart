@@ -1,7 +1,7 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
 import 'package:islam_app/presentation/inboarding/bloc/quran_copy/quran_copy_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
@@ -138,7 +138,7 @@ class QuranCopyView extends StatelessWidget {
         fileUrl: printItem.attachmentLocation!,
         fileNameWithExtension: printItem.fieldName!,
         filePathCallback: (_) {
-          FirebaseAnalytics.instance.logEvent(
+          LogEventUsecase.logEvent(
             name: "download_file",
             parameters: {"file": printItem.fieldName!},
           );

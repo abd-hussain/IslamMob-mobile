@@ -3,17 +3,17 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/models/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/domain/repository/firebase_firestore.dart';
-import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
 import 'package:islam_app/core/constants/firebase_constants.dart';
 import 'package:islam_app/utils/logger.dart';
@@ -44,8 +44,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Checks the internet connection status and emits an event.
   Future<bool> _checkInternetConnection() async {
-    final isConnected =
-        await locator<NetworkInfoRepository>().checkConnectivityOnLaunch();
+    final isConnected = await NetworkUseCase.checkInternetConeection();
     add(QuranCopyEvent.updateInternetConnectionStatus(isConnected));
     return isConnected;
   }
@@ -126,7 +125,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/${event.printItem.fieldName!}');
 
-    FirebaseAnalytics.instance.logEvent(
+    LogEventUsecase.logEvent(
       name: "use_file",
       parameters: {"file": event.printItem.fieldName!},
     );

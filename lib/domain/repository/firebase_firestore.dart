@@ -3,8 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:islam_app/domain/model/firestore_options.dart';
-import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/domain/repository/network_info.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/utils/logger.dart';
 
 class FirebaseFirestoreRepository {
@@ -57,6 +56,6 @@ class FirebaseFirestoreRepository {
 
   /// Checks for network connectivity.
   Future<bool> _isConnected() async {
-    return await locator<NetworkInfoRepository>().checkConnectivityOnLaunch();
+    return await NetworkUseCase.checkInternetConeection();
   }
 }

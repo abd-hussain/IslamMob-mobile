@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:islam_app/domain/model/report_request.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/domain/usecase/report_usecase.dart';
 
 part 'report_and_suggestion_event.dart';
@@ -36,13 +36,9 @@ class ReportAndSuggestionBloc
   }
 
   Future<bool> _checkInternetConnectionStatus() async {
-    if (!await locator<NetworkInfoRepository>().checkConnectivityOnLaunch()) {
-      add(ReportAndSuggestionEvent.updateInternetConnectionStatus(false));
-      return false;
-    } else {
-      add(ReportAndSuggestionEvent.updateInternetConnectionStatus(true));
-      return true;
-    }
+    final bool isConncected = await NetworkUseCase.checkInternetConeection();
+    add(ReportAndSuggestionEvent.updateInternetConnectionStatus(isConncected));
+    return isConncected;
   }
 
   void _validationFields() {

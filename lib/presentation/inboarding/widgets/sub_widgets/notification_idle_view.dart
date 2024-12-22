@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
-import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
-import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/domain/repository/firebase_messages.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -39,9 +38,7 @@ class NotificationIdleView extends StatelessWidget {
           isEnabled: true,
           title: AppLocalizations.of(context)!.allowNotifications,
           onTap: () async {
-            if (await locator<NetworkInfoRepository>()
-                    .checkConnectivityOnLaunch() ==
-                false) {
+            if (await NetworkUseCase.checkInternetConeection() == false) {
               if (context.mounted) {
                 showNoInternetConnection(context);
               }
