@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
@@ -45,9 +45,13 @@ class MyAppBloc {
 
   /// Initializes Firebase and Mobile Ads if the device has internet connectivity
   Future<void> _initializeFirebaseAndAds() async {
-    if (await _hasInternetConnectivity()) {
-      await _initializeFirebase();
-      await _initializeMobileAds();
+    try {
+      if (await _hasInternetConnectivity()) {
+        await _initializeFirebase();
+        await _initializeMobileAds();
+      }
+    } catch (e) {
+      return;
     }
   }
 
@@ -78,10 +82,7 @@ class MyAppBloc {
 
   /// Checks for internet connectivity during app initialization
   Future<bool> _hasInternetConnectivity() async {
-    final networkInfoService = locator<NetworkInfoRepository>();
-    networkInfoService.initNetworkConnectionCheck();
-    return await networkInfoService.checkConnectivityOnLaunch() == true
-        ? true
-        : false;
+    NetworkUseCase.initialize();
+    return await NetworkUseCase.checkInternetConeection();
   }
 }

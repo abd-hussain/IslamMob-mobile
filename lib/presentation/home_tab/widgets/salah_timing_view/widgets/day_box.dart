@@ -12,7 +12,7 @@ class DayBox extends StatelessWidget {
 
   DayBox({super.key, required this.index});
 
-  final TimingUsecase timingUsecase = locator<TimingUsecase>();
+  final TimingUseCase timingUsecase = locator<TimingUseCase>();
 
   @override
   Widget build(BuildContext context) {

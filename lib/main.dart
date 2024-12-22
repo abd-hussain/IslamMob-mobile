@@ -6,9 +6,9 @@ import 'package:islam_app/utils/logger.dart';
 
 //TODO: add quran copy with defrent languages
 
-//TODO: if timer get zero then next salah time should be handled,
+//TODO: if timer get zero then next salah time should be handled, also when the use change the setting it should reflected directly
 
-//TODO: app should work without internet
+//TODO: selected PDF lost sometimes, need to fix it
 
 // DateTime scheduledDate = DateTime.now().add(const Duration(seconds: 3));
 // LocalNotificationRepository.scheduleNotification(

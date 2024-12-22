@@ -19,7 +19,6 @@ class NetworkInfoRepository {
   /// Checks network connectivity on app launch.
   Future<bool> checkConnectivityOnLaunch() async {
     final connectivityResult = await _connectivity.checkConnectivity();
-
     if (_isConnected(connectivityResult)) {
       final isInternetAvailable = await _internetLookupCheck();
       _networkStateController.sink.add(isInternetAvailable);

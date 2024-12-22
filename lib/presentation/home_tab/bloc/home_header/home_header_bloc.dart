@@ -15,7 +15,7 @@ part 'home_header_state.dart';
 part 'home_header_bloc.freezed.dart';
 
 class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
-  final TimingUsecase timingUsecase = locator<TimingUsecase>();
+  final TimingUseCase timingUsecase = locator<TimingUseCase>();
   HomeHeaderBloc() : super(const HomeHeaderState()) {
     on<_UpdateSalahTypeAndTime>(_updateSalahTypeAndTime);
     _prepareNextSalahTypeAndTime();

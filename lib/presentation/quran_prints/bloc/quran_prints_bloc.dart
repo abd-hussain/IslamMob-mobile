@@ -6,9 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
-import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
 import 'package:islam_app/utils/logger.dart';
 import 'package:device_info_plus/device_info_plus.dart';
@@ -36,8 +35,7 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   /// Checks internet connection and updates the state
   Future<bool> _checkInternetConnectionStatus() async {
-    final hasInternet =
-        await locator<NetworkInfoRepository>().checkConnectivityOnLaunch();
+    final hasInternet = await NetworkUseCase.checkInternetConeection();
 
     add(QuranPrintsEvent.updateInternetConnectionStatus(status: hasInternet));
     return hasInternet;

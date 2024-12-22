@@ -19,5 +19,5 @@ Future<void> setupLocator() async {
   locator.registerFactory<HttpInterceptor>(HttpInterceptor.new);
   locator.registerSingleton<HttpRepository>(HttpRepository());
   locator.registerFactory<MainContainerBloc>(MainContainerBloc.new);
-  locator.registerSingleton<TimingUsecase>(TimingUsecase());
+  locator.registerSingleton<TimingUseCase>(TimingUseCase());
 }

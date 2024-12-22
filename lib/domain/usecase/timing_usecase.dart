@@ -3,7 +3,7 @@ import 'package:hijri/hijri_calendar.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class TimingUsecase {
+class TimingUseCase {
   /// Returns the appropriate image path based on the current time.
   String getCurrentImageForTime() {
     final currentHour = DateTime.now().hour;

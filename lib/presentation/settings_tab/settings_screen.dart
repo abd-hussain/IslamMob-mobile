@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/models/profile_options.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/collection_list_option.dart';
@@ -72,7 +73,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ProfileOptions(
                     icon: Ionicons.sparkles,
                     name: AppLocalizations.of(context)!.rateapp,
-                    onTap: () {
+                    onTap: () async {
+                      final bool internetStatus =
+                          await NetworkUseCase.checkInternetConeection();
+
+                      if (internetStatus == false) {
+                        if (context.mounted) {
+                          showNoInternetConnection(context);
+                        }
+                        return;
+                      }
+
                       RateMyApp rateMyApp = RateMyApp(
                         googlePlayIdentifier: "com.islammob.app",
                         appStoreIdentifier: "id6670502375",
@@ -117,6 +128,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  void showNoInternetConnection(BuildContext context) {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    scaffoldMessenger.showSnackBar(
+      SnackBar(
+          content: Text(
+              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

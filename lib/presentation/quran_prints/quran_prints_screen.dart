@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/quran_prints/bloc/quran_prints_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
@@ -130,7 +130,7 @@ class QuranPrintsScreen extends StatelessWidget {
   }
 
   void _onFileDownloaded(BuildContext context, QuranPrints printItem) {
-    FirebaseAnalytics.instance.logEvent(
+    LogEventUsecase.logEvent(
       name: "download_file",
       parameters: {"file": printItem.fieldName ?? ""},
     );
@@ -158,7 +158,7 @@ class QuranPrintsScreen extends StatelessWidget {
     await box.put(DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers,
         printItem.sorahToPageNumbers);
 
-    FirebaseAnalytics.instance.logEvent(
+    LogEventUsecase.logEvent(
       name: "use_file",
       parameters: {"file": printItem.fieldName ?? ""},
     );

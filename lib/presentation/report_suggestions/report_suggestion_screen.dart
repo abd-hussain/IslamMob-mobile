@@ -1,6 +1,6 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
 import 'package:islam_app/presentation/report_suggestions/bloc/report_and_suggestion_bloc.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/attachments.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/footer.dart';
@@ -14,8 +14,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
   const ReportOrSuggestionScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalytics.instance.logEvent(name: "ReportOrSuggestionScreen");
-
+    LogEventUsecase.logEvent(name: "ReportOrSuggestionScreen");
     return BlocProvider(
       create: (context) => ReportAndSuggestionBloc(),
       child: GestureDetector(

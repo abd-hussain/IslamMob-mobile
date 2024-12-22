@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/models/location.dart';
-import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
-import 'package:islam_app/domain/repository/network_info.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -38,9 +37,7 @@ class LocationIdleView extends StatelessWidget {
           isEnabled: true,
           title: AppLocalizations.of(context)!.allowgetlocation,
           onTap: () async {
-            if (await locator<NetworkInfoRepository>()
-                    .checkConnectivityOnLaunch() ==
-                false) {
+            if (await NetworkUseCase.checkInternetConeection() == false) {
               // ignore: use_build_context_synchronously
               showNoInternetConnection(context);
               return;
