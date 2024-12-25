@@ -134,9 +134,7 @@ class LocalNotificationRepository {
         chronometerCountDown: true,
         colorized: true,
         actions: [
-          AndroidNotificationAction("1", AppLocalizations.of(context)!.openApp,
-              cancelNotification: false, titleColor: Colors.green),
-          AndroidNotificationAction("2", AppLocalizations.of(context)!.close,
+          AndroidNotificationAction("1", AppLocalizations.of(context)!.close,
               cancelNotification: true, titleColor: Colors.red),
         ],
       ),
