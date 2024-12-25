@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/models/profile_options.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
@@ -34,6 +35,36 @@ class _SettingsScreenState extends State<SettingsScreen> {
             children: [
               TitleView(title: AppLocalizations.of(context)!.generalsettings),
               CollectionListOptionView(listOfOptions: [
+                ProfileOptions(
+                  icon: Icons.textsms_sharp,
+                  name: "Test Notification Countdown",
+                  onTap: () async {
+                    //add code execution
+                    await LocalNotificationRepository
+                        .countdownNotificationForAndroid(
+                      nextSalahTime: "6:07 AM",
+                      minites: 120,
+                      type: NotificationType.fajir,
+                      context: context,
+                    );
+                  },
+                ),
+                ProfileOptions(
+                  icon: Icons.textsms_sharp,
+                  name: "Test Notification",
+                  onTap: () async {
+                    //add code execution
+                    DateTime scheduledDate =
+                        DateTime.now().add(const Duration(seconds: 5));
+
+                    await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
+                      scheduledTime: scheduledDate,
+                      type: NotificationType.before15Minutes,
+                      context: context,
+                    );
+                  },
+                ),
                 ProfileOptions(
                   icon: Icons.calendar_month,
                   name: AppLocalizations.of(context)!.calenderSettings,

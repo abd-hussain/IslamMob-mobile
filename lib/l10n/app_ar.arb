@@ -7,8 +7,6 @@
     "quranSettingRemoveBookMark" : "حذف إشارة",
     "quranSettingSupportUs" : "ادعمنا",
     "quranSettingMushaf" : "المصاحف",
-    "quranSettingParts" : "الأجزاء",
-    "quranSettingPages" : "الصفحات",
     "reportOrSuggestion" : "الإبلاغ عن مشكلة أو اقتراحها في التطبيق",
     "changeSelectedLanguage" : "تغيير اللغة",
     "quranJuz" : "الجزء رقم",
@@ -190,9 +188,6 @@
     "version" : "الاصدار",
     "rightsreserved" : "@ 2025 IslamMob. جميع الحقوق محفوظة.",
     "rateapp" : "تقييم التطبيق",
-    "whatsappnotinstalled" : "واتساب غير مثبت على الجهاز",
-    "linkedin" : "لينكد ان",
-    "facebook" : "فيس بوك",
     "rateapponstore" : "تقييم التطبيق على المتجر",
     "rateapponstoremessage" : "إذا أعجبك هذا التطبيق، فيرجى قضاء بعض الوقت في مراجعته! إنه يساعدنا حقًا ولا ينبغي أن يستغرق الأمر أكثر من دقيقة واحدة.",
     "later" : "لاحقاً",
@@ -255,10 +250,8 @@
     "whyyoushouldallowlocation": "لماذا يجب عليك السماح بالحصول على موقعك؟",
     "whyyoushouldallowlocationdetails": "بدون السماح بالحصول على موقعك، لن نتمكن من تحديد مواقيت الصلاة بشكل دقيق وفقا لموقعك",
     "nolocationPermissionButton" : "تفعيل من الاعدادات",
-    "nolocationPermissionButton2" : "البحث دون الاتصال بالانترنت",
     "locationPermissionSuccses" : "تم تفعيل الموقع بنجاح",
     "locationPermissionSuccsesButton" : "الموقع صحيح",
-    "locationPermissionSuccsesButtonError" : "الموقع غير صحيح",
     "allowSendingNotifications" : "السماح بإرسال الإشعارات",
     "allowSendingNotificationsdetails" : "إن تفعيل الإشعارات يسمح لنا بتذكيرك بالصلاة والختمة والأذكار وغيرها من الأحداث المهمة.",
     "allowNotifications" : "السماح بالإشعارات",
@@ -336,7 +329,6 @@
     "notificationSettingQuick" : "إعدادات الإشعارات السريعة",
     "notificationSettingPray" : "إعدادات إشعارات الصلاة",
     "notificationSettingOther" : "إعدادات الإشعارات الأخرى",
-    "notificationSettingAllowAll" : "السماح بجميع الإشعارات",
     "notificationSettingTodayAll" : "تعطيل جميع الإشعارات لهذا اليوم",
     "notificationSettingThreedayAll" : "تعطيل جميع الإشعارات لمدة ثلاثة أيام",
     "notificationSettingWeekAll" : "تعطيل جميع الإشعارات لمدة أسبوع",
@@ -359,13 +351,27 @@
     "quicksettings" : "اعدادات سريعه",
     "qurancopytitle" : "من هذه الشاشة يمكنك تحميل نسخة أو أكثر من القرآن الكريم لاستخدامها بدون اتصال بالإنترنت داخل التطبيق",
     "skip" : "تخطي",
-    "setupAccount" : "إنشاء الحساب"
-
-
-
-
-
-
+    "setupAccount" : "إنشاء الحساب",
+    "openApp" : "افتح التطبيق",
+    "rightNowSunriseMessage" : "حان الان موعد الشروق",
+    "rightNowWarningMessage" : "تنبيه لقرب الصلاة",
+    "rightNowIshaMessage" : "حان الان موعد صلاة العشاء",
+    "rightNowMagrebMessage" : "حان الان موعد صلاة المغرب",
+    "rightNowAsrMessage" : "حان الان موعد صلاة العصر",
+    "rightNowDuherMessage" : "حان الان موعد صلاة الظهر",
+    "rightNowFajirMessage" : "حان الان موعد صلاة الفجر",
+    "remeningTimeSunriseMessage" : "باقي للشروق",
+    "remeningTimeIshaMessage" : "باقي لصلاة العشاء",
+    "remeningTimeMagrebMessage" : "باقي لصلاة المغرب",
+    "remeningTimeAsrMessage" : "باقي لصلاة العصر",
+    "remeningTimeDuherMessage" : "باقي لصلاة الظهر",
+    "remeningTimeFajirMessage" : "باقي لصلاة الفجر",
+    "nextSalahTimeSunriseMessage" : "موعد الشروق",    
+    "nextSalahTimeIshaMessage" : "موعد صلاة العشاء",
+    "nextSalahTimeMagrebMessage" : "موعد صلاة المغرب",
+    "nextSalahTimeAsrMessage" : "موعد صلاة العصر",
+    "nextSalahTimeDuherMessage" : "موعد صلاة الظهر",
+    "nextSalahTimeFajirMessage" : "موعد صلاة الفجر"
 
 
 
