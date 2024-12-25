@@ -3,7 +3,7 @@ description: "A new Flutter project."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+55
+version: 1.0.0+56
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -70,14 +70,15 @@ dependencies:
   share_plus: ^10.1.2 
   flutter_local_notifications: ^18.0.1
   timezone: ^0.10.0
-  
+  workmanager: ^0.5.2
+  fpdart: ^1.1.1
+  # android_alarm_manager_plus: ^4.0.5
+
   # flutter_qiblah: ^3.0.4 #TODO
   # flutter_animate: ^4.5.0 #TODO
   # just_audio: ^0.9.42 #TODO
   # infinite_scroll_pagination: ^4.1.0 #TODO
   # sensors_plus: ^6.1.0 #TODO
-  # android_alarm_manager_plus: ^4.0.4 #TODO
-  # feedback: ^3.1.0 #TODO
 
 dev_dependencies:
   test: ^1.25.7

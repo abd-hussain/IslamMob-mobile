@@ -7,8 +7,6 @@
     "quranSettingRemoveBookMark" : "Remove Bookmark",
     "quranSettingSupportUs" : "Support Us",
     "quranSettingMushaf" : "Mus7af",
-    "quranSettingParts" : "Parts",
-    "quranSettingPages" : "Pages",
     "reportOrSuggestion" : "Report or Suggest issue in the app",
     "changeSelectedLanguage" : "Change Language",
     "quranJuz" : "Juz",
@@ -190,9 +188,6 @@
     "version" : "Version",
     "rightsreserved" : "@ 2025 IslamMob. All right reserved.",
     "rateapp" : "Rate Us",
-    "whatsappnotinstalled" : "WhatsApp is not installed on the device",
-    "linkedin" : "LinkedIn",
-    "facebook" : "Facebook",
     "rateapponstore" : "Rate Application on Store",
     "rateapponstoremessage" : "If you like this app, please take a little bit of your time to review it ! It really helps us and it shouldn't take you more than one minute.",
     "later" : "Later",
@@ -255,10 +250,8 @@
     "whyyoushouldallowlocation": "Why should you allow your site to be accessed?",
     "whyyoushouldallowlocationdetails": "Without allowing your location, we will not be able to accurately determine prayer times based on your location.",
     "nolocationPermissionButton" : "Activate from settings",
-    "nolocationPermissionButton2" : "Search offline",
     "locationPermissionSuccses" : "Your location is correct",
     "locationPermissionSuccsesButton" : "Continue",
-    "locationPermissionSuccsesButtonError" : "location is not correct",
     "allowSendingNotifications" : "Allow sending notifications",
     "allowSendingNotificationsdetails" : "Allowing notifications will allow us to remind you of prayer, Khatmat, Dhikr, and other important events.",
     "allowNotifications" : "Allow notifications",
@@ -336,7 +329,6 @@
     "notificationSettingQuick" : "Quick Notifications Settings",
     "notificationSettingPray" : "Pray Notifications Settings",
     "notificationSettingOther" : "Other Notifications Settings",
-    "notificationSettingAllowAll" : "Allow All Notifications",
     "notificationSettingTodayAll" : "Disable All Notifications For Today",
     "notificationSettingThreedayAll" : "Disable All Notifications For Three Today",
     "notificationSettingWeekAll" : "Disable All Notifications For One Week",
@@ -359,17 +351,26 @@
     "quicksettings" : "Quick Settings",
     "qurancopytitle" : "From this screen, you can download one or more copy of the Holy Quran to use it offline inside the application",
     "skip" : "skip",
-    "setupAccount" : "Setup Account"
-
-
-
-
-
-
-
-
-
-
-
+    "setupAccount" : "Setup Account",
+    "openApp" : "Open App",
+    "rightNowSunriseMessage" : "It's sunrise time now",
+    "rightNowWarningMessage" : "Be aware of the approaching prayer",
+    "rightNowIshaMessage" : "It's time for Isha prayer now",
+    "rightNowMagrebMessage" : "It's time for Magreb prayer now",
+    "rightNowAsrMessage" : "It's time for Asr prayer now",
+    "rightNowDuherMessage" : "It's time for Duher prayer now",
+    "rightNowFajirMessage" : "It's time for Fajir prayer now",
+    "remeningTimeSunriseMessage" : "Left to sunrise",
+    "remeningTimeIshaMessage" : "Left to Isha",
+    "remeningTimeMagrebMessage" : "Left to Magreb",
+    "remeningTimeAsrMessage" : "Left to Asr",
+    "remeningTimeDuherMessage" : "Left to Duher",
+    "remeningTimeFajirMessage" : "Left to Fajir",
+    "nextSalahTimeSunriseMessage" : "Sunrise time",    
+    "nextSalahTimeIshaMessage" : "Isha prayer time",
+    "nextSalahTimeMagrebMessage" : "Magreb prayer time",
+    "nextSalahTimeAsrMessage" : "Asr prayer time",
+    "nextSalahTimeDuherMessage" : "Duher prayer time",
+    "nextSalahTimeFajirMessage" : "Fajir prayer time"
 
 }

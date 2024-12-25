@@ -49,6 +49,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     final pageNumber = _box.get(
         DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
         defaultValue: 1);
+
     final printName = _box.get(
         DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
         defaultValue: "");
