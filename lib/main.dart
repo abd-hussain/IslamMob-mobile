@@ -5,7 +5,7 @@ import 'package:islam_app/utils/logger.dart';
 // import 'package:logger/logger.dart';
 // import 'package:workmanager/workmanager.dart';
 
-//TODO: local notification handle depend on athan.
+//TODO: find way to fire the local notification for all athan times
 
 //TODO: add quran copy with defrent languages
 
