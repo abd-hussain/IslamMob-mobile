@@ -16,10 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeHeaderEvent {
-  SalahTimeState get nextPrayType => throw _privateConstructorUsedError;
-  DateTime? get nextPrayDateTime => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() prepareNextSalahTypeAndTime,
     required TResult Function(
             SalahTimeState nextPrayType, DateTime? nextPrayDateTime)
         updateSalahTypeAndTime,
@@ -27,12 +26,14 @@ mixin _$HomeHeaderEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareNextSalahTypeAndTime,
     TResult? Function(SalahTimeState nextPrayType, DateTime? nextPrayDateTime)?
         updateSalahTypeAndTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareNextSalahTypeAndTime,
     TResult Function(SalahTimeState nextPrayType, DateTime? nextPrayDateTime)?
         updateSalahTypeAndTime,
     required TResult orElse(),
@@ -40,26 +41,26 @@ mixin _$HomeHeaderEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_PrepareNextSalahTypeAndTime value)
+        prepareNextSalahTypeAndTime,
     required TResult Function(_UpdateSalahTypeAndTime value)
         updateSalahTypeAndTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PrepareNextSalahTypeAndTime value)?
+        prepareNextSalahTypeAndTime,
     TResult? Function(_UpdateSalahTypeAndTime value)? updateSalahTypeAndTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PrepareNextSalahTypeAndTime value)?
+        prepareNextSalahTypeAndTime,
     TResult Function(_UpdateSalahTypeAndTime value)? updateSalahTypeAndTime,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of HomeHeaderEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $HomeHeaderEventCopyWith<HomeHeaderEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -68,10 +69,6 @@ abstract class $HomeHeaderEventCopyWith<$Res> {
   factory $HomeHeaderEventCopyWith(
           HomeHeaderEvent value, $Res Function(HomeHeaderEvent) then) =
       _$HomeHeaderEventCopyWithImpl<$Res, HomeHeaderEvent>;
-  @useResult
-  $Res call({SalahTimeState nextPrayType, DateTime? nextPrayDateTime});
-
-  $SalahTimeStateCopyWith<$Res> get nextPrayType;
 }
 
 /// @nodoc
@@ -86,47 +83,135 @@ class _$HomeHeaderEventCopyWithImpl<$Res, $Val extends HomeHeaderEvent>
 
   /// Create a copy of HomeHeaderEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? nextPrayType = null,
-    Object? nextPrayDateTime = freezed,
-  }) {
-    return _then(_value.copyWith(
-      nextPrayType: null == nextPrayType
-          ? _value.nextPrayType
-          : nextPrayType // ignore: cast_nullable_to_non_nullable
-              as SalahTimeState,
-      nextPrayDateTime: freezed == nextPrayDateTime
-          ? _value.nextPrayDateTime
-          : nextPrayDateTime // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
-  }
-
-  /// Create a copy of HomeHeaderEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SalahTimeStateCopyWith<$Res> get nextPrayType {
-    return $SalahTimeStateCopyWith<$Res>(_value.nextPrayType, (value) {
-      return _then(_value.copyWith(nextPrayType: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$UpdateSalahTypeAndTimeImplCopyWith<$Res>
-    implements $HomeHeaderEventCopyWith<$Res> {
+abstract class _$$PrepareNextSalahTypeAndTimeImplCopyWith<$Res> {
+  factory _$$PrepareNextSalahTypeAndTimeImplCopyWith(
+          _$PrepareNextSalahTypeAndTimeImpl value,
+          $Res Function(_$PrepareNextSalahTypeAndTimeImpl) then) =
+      __$$PrepareNextSalahTypeAndTimeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PrepareNextSalahTypeAndTimeImplCopyWithImpl<$Res>
+    extends _$HomeHeaderEventCopyWithImpl<$Res,
+        _$PrepareNextSalahTypeAndTimeImpl>
+    implements _$$PrepareNextSalahTypeAndTimeImplCopyWith<$Res> {
+  __$$PrepareNextSalahTypeAndTimeImplCopyWithImpl(
+      _$PrepareNextSalahTypeAndTimeImpl _value,
+      $Res Function(_$PrepareNextSalahTypeAndTimeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeHeaderEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$PrepareNextSalahTypeAndTimeImpl
+    implements _PrepareNextSalahTypeAndTime {
+  _$PrepareNextSalahTypeAndTimeImpl();
+
+  @override
+  String toString() {
+    return 'HomeHeaderEvent.prepareNextSalahTypeAndTime()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PrepareNextSalahTypeAndTimeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() prepareNextSalahTypeAndTime,
+    required TResult Function(
+            SalahTimeState nextPrayType, DateTime? nextPrayDateTime)
+        updateSalahTypeAndTime,
+  }) {
+    return prepareNextSalahTypeAndTime();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareNextSalahTypeAndTime,
+    TResult? Function(SalahTimeState nextPrayType, DateTime? nextPrayDateTime)?
+        updateSalahTypeAndTime,
+  }) {
+    return prepareNextSalahTypeAndTime?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareNextSalahTypeAndTime,
+    TResult Function(SalahTimeState nextPrayType, DateTime? nextPrayDateTime)?
+        updateSalahTypeAndTime,
+    required TResult orElse(),
+  }) {
+    if (prepareNextSalahTypeAndTime != null) {
+      return prepareNextSalahTypeAndTime();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PrepareNextSalahTypeAndTime value)
+        prepareNextSalahTypeAndTime,
+    required TResult Function(_UpdateSalahTypeAndTime value)
+        updateSalahTypeAndTime,
+  }) {
+    return prepareNextSalahTypeAndTime(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PrepareNextSalahTypeAndTime value)?
+        prepareNextSalahTypeAndTime,
+    TResult? Function(_UpdateSalahTypeAndTime value)? updateSalahTypeAndTime,
+  }) {
+    return prepareNextSalahTypeAndTime?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PrepareNextSalahTypeAndTime value)?
+        prepareNextSalahTypeAndTime,
+    TResult Function(_UpdateSalahTypeAndTime value)? updateSalahTypeAndTime,
+    required TResult orElse(),
+  }) {
+    if (prepareNextSalahTypeAndTime != null) {
+      return prepareNextSalahTypeAndTime(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PrepareNextSalahTypeAndTime implements HomeHeaderEvent {
+  factory _PrepareNextSalahTypeAndTime() = _$PrepareNextSalahTypeAndTimeImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateSalahTypeAndTimeImplCopyWith<$Res> {
   factory _$$UpdateSalahTypeAndTimeImplCopyWith(
           _$UpdateSalahTypeAndTimeImpl value,
           $Res Function(_$UpdateSalahTypeAndTimeImpl) then) =
       __$$UpdateSalahTypeAndTimeImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({SalahTimeState nextPrayType, DateTime? nextPrayDateTime});
 
-  @override
   $SalahTimeStateCopyWith<$Res> get nextPrayType;
 }
 
@@ -157,6 +242,16 @@ class __$$UpdateSalahTypeAndTimeImplCopyWithImpl<$Res>
           : nextPrayDateTime // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
+  }
+
+  /// Create a copy of HomeHeaderEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SalahTimeStateCopyWith<$Res> get nextPrayType {
+    return $SalahTimeStateCopyWith<$Res>(_value.nextPrayType, (value) {
+      return _then(_value.copyWith(nextPrayType: value));
+    });
   }
 }
 
@@ -202,6 +297,7 @@ class _$UpdateSalahTypeAndTimeImpl implements _UpdateSalahTypeAndTime {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() prepareNextSalahTypeAndTime,
     required TResult Function(
             SalahTimeState nextPrayType, DateTime? nextPrayDateTime)
         updateSalahTypeAndTime,
@@ -212,6 +308,7 @@ class _$UpdateSalahTypeAndTimeImpl implements _UpdateSalahTypeAndTime {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareNextSalahTypeAndTime,
     TResult? Function(SalahTimeState nextPrayType, DateTime? nextPrayDateTime)?
         updateSalahTypeAndTime,
   }) {
@@ -221,6 +318,7 @@ class _$UpdateSalahTypeAndTimeImpl implements _UpdateSalahTypeAndTime {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareNextSalahTypeAndTime,
     TResult Function(SalahTimeState nextPrayType, DateTime? nextPrayDateTime)?
         updateSalahTypeAndTime,
     required TResult orElse(),
@@ -234,6 +332,8 @@ class _$UpdateSalahTypeAndTimeImpl implements _UpdateSalahTypeAndTime {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_PrepareNextSalahTypeAndTime value)
+        prepareNextSalahTypeAndTime,
     required TResult Function(_UpdateSalahTypeAndTime value)
         updateSalahTypeAndTime,
   }) {
@@ -243,6 +343,8 @@ class _$UpdateSalahTypeAndTimeImpl implements _UpdateSalahTypeAndTime {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PrepareNextSalahTypeAndTime value)?
+        prepareNextSalahTypeAndTime,
     TResult? Function(_UpdateSalahTypeAndTime value)? updateSalahTypeAndTime,
   }) {
     return updateSalahTypeAndTime?.call(this);
@@ -251,6 +353,8 @@ class _$UpdateSalahTypeAndTimeImpl implements _UpdateSalahTypeAndTime {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PrepareNextSalahTypeAndTime value)?
+        prepareNextSalahTypeAndTime,
     TResult Function(_UpdateSalahTypeAndTime value)? updateSalahTypeAndTime,
     required TResult orElse(),
   }) {
@@ -267,14 +371,11 @@ abstract class _UpdateSalahTypeAndTime implements HomeHeaderEvent {
           required final DateTime? nextPrayDateTime}) =
       _$UpdateSalahTypeAndTimeImpl;
 
-  @override
   SalahTimeState get nextPrayType;
-  @override
   DateTime? get nextPrayDateTime;
 
   /// Create a copy of HomeHeaderEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateSalahTypeAndTimeImplCopyWith<_$UpdateSalahTypeAndTimeImpl>
       get copyWith => throw _privateConstructorUsedError;
