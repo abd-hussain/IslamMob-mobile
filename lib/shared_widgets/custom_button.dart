@@ -16,7 +16,7 @@ class CustomButton extends StatelessWidget {
     this.titleColor = Colors.white,
     required this.isEnabled,
     this.width,
-    this.color = const Color(0xff007F37),
+    this.color = const Color(0xff008480),
     required this.onTap,
     this.padding = const EdgeInsets.all(16),
   });

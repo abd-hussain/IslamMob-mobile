@@ -45,7 +45,7 @@ class LocationInBoardingView extends StatelessWidget {
     return CustomText(
       title: AppLocalizations.of(context)!.mawaqeetalsalah,
       fontSize: 20,
-      color: const Color(0xff007F37),
+      color: const Color(0xff008480),
       fontWeight: FontWeight.bold,
       textAlign: TextAlign.center,
     );
@@ -70,7 +70,7 @@ class LocationInBoardingView extends StatelessWidget {
         return const LocationIdleView();
       case LocationProcessStateLoading():
         return const Center(
-          child: CircularProgressIndicator(color: Color(0xff007F37)),
+          child: CircularProgressIndicator(color: Color(0xff008480)),
         );
       case LocationProcessStateNoPermission():
         return const LocationNothavePermissionView();

@@ -27,6 +27,25 @@ class FirebaseFirestoreRepository {
     return [];
   }
 
+  /// Fetches spesific documents from a Firestore collection.
+  Future<T?> getDataFromFireStoreDocument<T>(
+      FireStoreOptions<T> options) async {
+    if (await _isConnected()) {
+      try {
+        final document = await _firestoreInstance
+            .collection(options.collectionName!)
+            .doc(options.docName ?? "")
+            .get(const GetOptions());
+        return options.toModel!(document.data());
+      } on FirebaseException catch (error) {
+        logDebugMessage(
+          message: 'Unable to fetch data. Error: $error',
+        );
+      }
+    }
+    return null;
+  }
+
   /// Uploads a file to Firebase Storage and returns its download URL.
   Future<String> uploadFile({
     required File file,

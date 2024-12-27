@@ -371,5 +371,10 @@
     "nextSalahTimeMagrebMessage" : "Heure de la prière de Maghreb",
     "nextSalahTimeAsrMessage" : "Heure de la prière d'Asr",
     "nextSalahTimeDuherMessage" : "Heure de la prière de Duher",
-    "nextSalahTimeFajirMessage" : "Heure de la prière de Fajr"
+    "nextSalahTimeFajirMessage" : "Heure de la prière de Fajr",
+    "versionDialogUpdateNow": "Update Now",
+    "versionDialogSkipForNow": "Skip For Now",
+    "versionDialogUpdateAvailable" : "Update Available",
+    "versionDialogNewVersion": "New Version",
+    "versionDialogUpdateSecondeSubTitle" : "of Islam Mob is available now"
 }

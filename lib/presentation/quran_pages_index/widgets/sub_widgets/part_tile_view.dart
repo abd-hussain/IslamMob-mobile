@@ -54,7 +54,7 @@ class PartTileView extends StatelessWidget {
         child: CustomText(
           title: (index + 1).toString(),
           fontSize: 20,
-          color: isCurrentPart ? const Color(0xff007F37) : Colors.white,
+          color: isCurrentPart ? const Color(0xff008480) : Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -67,7 +67,7 @@ class PartTileView extends StatelessWidget {
       child: CustomText(
         title: partName,
         fontSize: 20,
-        color: isCurrentPart ? const Color(0xff007F37) : Colors.white,
+        color: isCurrentPart ? const Color(0xff008480) : Colors.white,
         fontWeight: FontWeight.bold,
       ),
     );

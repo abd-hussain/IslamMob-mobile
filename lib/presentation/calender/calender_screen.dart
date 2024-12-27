@@ -33,7 +33,7 @@ class CalenderScreen extends StatelessWidget {
             builder: (context, state) {
               if (state.status is CalenderProcessStateLoading) {
                 return const Center(
-                  child: CircularProgressIndicator(color: Color(0xff007F37)),
+                  child: CircularProgressIndicator(color: Color(0xff008480)),
                 );
               } else if (state.status is CalenderProcessStateError) {
                 return const Center(

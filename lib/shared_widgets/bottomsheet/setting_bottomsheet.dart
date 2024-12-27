@@ -34,21 +34,21 @@ class SettingBottomSheet {
               _buildSettingsButton(
                 context: context,
                 title: localize.calenderSettings,
-                color: const Color(0xff007F37),
+                color: const Color(0xff008480),
                 onPressed: () async =>
                     await navigator.pushNamed(RoutesConstants.calenderScreen),
               ),
               _buildSettingsButton(
                 context: context,
                 title: localize.prayCalculationSettings,
-                color: const Color(0xff007F37),
+                color: const Color(0xff008480),
                 onPressed: () async => await navigator
                     .pushNamed(RoutesConstants.prayCalculationSettingScreen),
               ),
               _buildSettingsButton(
                 context: context,
                 title: localize.notificationSettings,
-                color: const Color(0xff007F37),
+                color: const Color(0xff008480),
                 onPressed: () async => await navigator
                     .pushNamed(RoutesConstants.prayNotificationSettingScreen),
               ),

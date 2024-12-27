@@ -54,7 +54,7 @@ class NoPDFView extends StatelessWidget {
   Widget _buildSelectPrintButton(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xff007F37),
+        backgroundColor: const Color(0xff008480),
       ),
       onPressed: () => _navigateToPrintListScreen(context),
       child: CustomText(

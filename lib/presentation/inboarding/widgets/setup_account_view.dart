@@ -47,7 +47,7 @@ class SetupAccountView extends StatelessWidget {
     return CustomText(
       title: AppLocalizations.of(context)!.setupAccount,
       fontSize: 20,
-      color: const Color(0xff007F37),
+      color: const Color(0xff008480),
       fontWeight: FontWeight.bold,
       textAlign: TextAlign.center,
     );
@@ -69,7 +69,7 @@ class SetupAccountView extends StatelessWidget {
             );
           } else {
             return const Center(
-              child: CircularProgressIndicator(color: Color(0xff007F37)),
+              child: CircularProgressIndicator(color: Color(0xff008480)),
             );
           }
         });

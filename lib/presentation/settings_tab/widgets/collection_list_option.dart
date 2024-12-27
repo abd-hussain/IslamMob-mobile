@@ -45,7 +45,7 @@ class CollectionListOptionView extends StatelessWidget {
                       listOfOptions[index].icon,
                       size: 20,
                       color: listOfOptions[index].avaliable
-                          ? const Color(0xff007F37)
+                          ? const Color(0xff008480)
                           : Colors.grey,
                     ),
                     const SizedBox(width: 8),

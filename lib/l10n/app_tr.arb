@@ -371,5 +371,10 @@
     "nextSalahTimeMagrebMessage" : "Akşam namazı vakti",
     "nextSalahTimeAsrMessage" : "İkindi namazı vakti",
     "nextSalahTimeDuherMessage" : "Öğle namazı vakti",
-    "nextSalahTimeFajirMessage" : "Sabah namazı vakti"
+    "nextSalahTimeFajirMessage" : "Sabah namazı vakti",
+    "versionDialogUpdateNow": "Update Now",
+    "versionDialogSkipForNow": "Skip For Now",
+    "versionDialogUpdateAvailable" : "Update Available",
+    "versionDialogNewVersion": "New Version",
+    "versionDialogUpdateSecondeSubTitle" : "of Islam Mob is available now"
 }

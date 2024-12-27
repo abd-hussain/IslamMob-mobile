@@ -61,7 +61,7 @@ class QuranPagesIndexScreen extends StatelessWidget {
                   .add(QuranPagesIndexEvent.updateSelectedTab(index)),
               labelColor: Colors.white,
               unselectedLabelColor: Colors.grey[700],
-              indicatorColor: const Color(0xff007F37),
+              indicatorColor: const Color(0xff008480),
               indicatorWeight: 8,
               labelStyle: const TextStyle(
                 fontSize: 16,
