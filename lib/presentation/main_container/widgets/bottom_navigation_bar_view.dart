@@ -15,7 +15,7 @@ class BottomNavigationBarView extends StatelessWidget {
         return ConvexAppBar(
           initialActiveIndex: state.selectedIndex,
           backgroundColor: Colors.white,
-          activeColor: const Color(0xff007F37),
+          activeColor: const Color(0xff008480),
           color: const Color(0xff444444),
           height: 55,
           style: TabStyle.react,
@@ -43,22 +43,3 @@ class BottomNavigationBarView extends StatelessWidget {
     );
   }
 }
-
-// bottomNavigationBar: Builder(
-//   builder: (innerContext) => ConvexAppBar(
-//     initialActiveIndex: 1,
-//     backgroundColor: Colors.white,
-//     activeColor: const Color(0xff007F37),
-//     color: const Color(0xff444444),
-//     height: 55,
-//     style: TabStyle.react,
-//     items: [
-//       TabItem(icon: Icons.home, title: AppLocalizations.of(context)!.home),
-//       TabItem(icon: Icons.menu_book_rounded, title: AppLocalizations.of(context)!.qurankareem),
-//       TabItem(icon: Icons.settings, title: AppLocalizations.of(context)!.settings),
-//     ],
-//     onTap: (int index) {
-//       innerContext.read<MainContainerBloc>().add(MainContainerEvent.changeSelectedIndex(index));
-//     },
-//   ),
-// ),

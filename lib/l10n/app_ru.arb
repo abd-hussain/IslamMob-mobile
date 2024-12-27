@@ -371,5 +371,10 @@
     "nextSalahTimeMagrebMessage" : "Время молитвы Магриб",
     "nextSalahTimeAsrMessage" : "Время молитвы Аср",
     "nextSalahTimeDuherMessage" : "Время молитвы Зухр",
-    "nextSalahTimeFajirMessage" : "Время молитвы Фаджр"
+    "nextSalahTimeFajirMessage" : "Время молитвы Фаджр",
+    "versionDialogUpdateNow": "Update Now",
+    "versionDialogSkipForNow": "Skip For Now",
+    "versionDialogUpdateAvailable" : "Update Available",
+    "versionDialogNewVersion": "New Version",
+    "versionDialogUpdateSecondeSubTitle" : "of Islam Mob is available now"
 }

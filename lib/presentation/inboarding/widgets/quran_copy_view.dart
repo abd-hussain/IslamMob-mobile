@@ -75,13 +75,13 @@ class QuranCopyView extends StatelessWidget {
           OutlinedButton(
             onPressed: () => doneSelection(),
             style: OutlinedButton.styleFrom(
-              side: const BorderSide(color: Color(0xff007F37)),
+              side: const BorderSide(color: Color(0xff008480)),
             ),
             child: CustomText(
               title: AppLocalizations.of(context)!.skip,
               fontSize: 14,
               fontWeight: FontWeight.bold,
-              color: const Color(0xff007F37),
+              color: const Color(0xff008480),
             ),
           ),
         ],

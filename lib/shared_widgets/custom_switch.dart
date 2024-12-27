@@ -26,7 +26,7 @@ class CustomSwitch extends StatelessWidget {
         height: 25,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
-          color: value ? const Color(0xff34C759) : const Color(0xffDFE1E3),
+          color: value ? const Color(0xff008480) : const Color(0xffDFE1E3),
         ),
         child: Padding(
           padding: const EdgeInsets.all(2),

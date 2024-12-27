@@ -62,7 +62,7 @@ class SowrahTileView extends StatelessWidget {
         child: CustomText(
           title: (index + 1).toString(),
           fontSize: 20,
-          color: isCurrentPage ? const Color(0xff007F37) : Colors.white,
+          color: isCurrentPage ? const Color(0xff008480) : Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -75,7 +75,7 @@ class SowrahTileView extends StatelessWidget {
       child: CustomText(
         title: sowrahName,
         fontSize: 20,
-        color: isCurrentPage ? const Color(0xff007F37) : Colors.white,
+        color: isCurrentPage ? const Color(0xff008480) : Colors.white,
         fontWeight: FontWeight.bold,
       ),
     );

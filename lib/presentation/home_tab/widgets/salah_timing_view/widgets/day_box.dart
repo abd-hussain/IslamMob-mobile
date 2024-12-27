@@ -44,7 +44,7 @@ class DayBox extends StatelessWidget {
   Widget _buildArrowIcon({required bool isForward}) {
     return Icon(
       isForward ? Ionicons.arrow_forward_outline : Ionicons.arrow_back_outline,
-      color: const Color(0xff007F37),
+      color: const Color(0xff008480),
       size: 15,
     );
   }

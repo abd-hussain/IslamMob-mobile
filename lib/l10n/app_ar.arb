@@ -371,7 +371,12 @@
     "nextSalahTimeMagrebMessage" : "موعد صلاة المغرب",
     "nextSalahTimeAsrMessage" : "موعد صلاة العصر",
     "nextSalahTimeDuherMessage" : "موعد صلاة الظهر",
-    "nextSalahTimeFajirMessage" : "موعد صلاة الفجر"
+    "nextSalahTimeFajirMessage" : "موعد صلاة الفجر",
+    "versionDialogUpdateNow": "تحديث الآن",
+    "versionDialogSkipForNow": "تخطي الآن والتحديث لاحقًا",
+    "versionDialogUpdateAvailable" : "يتوفر تحديث جديد",
+    "versionDialogNewVersion": "إصدار جديد",
+    "versionDialogUpdateSecondeSubTitle" : "من Islam Mob متاح الآن"
 
 
 

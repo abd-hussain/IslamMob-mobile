@@ -124,7 +124,7 @@ class HomeHeaderView extends StatelessWidget {
         children: [
           const Icon(
             Icons.location_on,
-            color: Color(0xff007F37),
+            color: Color(0xff008480),
             size: 12,
           ),
           CustomText(
