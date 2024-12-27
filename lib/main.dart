@@ -7,10 +7,6 @@ import 'package:islam_app/utils/logger.dart';
 
 //TODO: find way to fire the local notification for all athan times
 
-//TODO: add quran copy with defrent languages
-
-//TODO: if timer get zero then next salah time should be handled, also when the use change the setting it should reflected directly
-
 void main() {
   logDebugMessage(message: 'Application Started ...');
   WidgetsFlutterBinding.ensureInitialized();

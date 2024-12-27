@@ -12,7 +12,8 @@ class HomeHeaderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeHeaderBloc(),
+      create: (context) =>
+          HomeHeaderBloc()..add(HomeHeaderEvent.prepareNextSalahTypeAndTime()),
       child: SliverAppBar(
         backgroundColor: const Color(0xff292929),
         expandedHeight: 250,
@@ -47,7 +48,7 @@ class HomeHeaderView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   _buildNextSalahInfo(context, state),
-                  _buildSalahTimer(state),
+                  _buildSalahTimer(homeHeaderBloc, state),
                   _buildNextSalahTime(homeHeaderBloc),
                   _buildLocationInfo(homeHeaderBloc),
                 ],
@@ -70,11 +71,15 @@ class HomeHeaderView extends StatelessWidget {
   }
 
   /// Builds the Salah timer view.
-  Widget _buildSalahTimer(HomeHeaderState state) {
+  Widget _buildSalahTimer(HomeHeaderBloc bloc, HomeHeaderState state) {
     return Container(
       decoration: _blackOverlayDecoration(),
       padding: const EdgeInsets.symmetric(horizontal: 5),
-      child: SalahTimerView(targetTime: state.nextPrayDateTime!),
+      child: SalahTimerView(
+          targetTime: state.nextPrayDateTime!,
+          onTimerFinished: () {
+            bloc.add(HomeHeaderEvent.prepareNextSalahTypeAndTime());
+          }),
     );
   }
 

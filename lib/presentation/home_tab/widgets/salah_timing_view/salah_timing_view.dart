@@ -23,7 +23,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
     return BlocProvider(
       create: (context) => SalahTimingBloc(),
       child: SizedBox(
-        height: 240,
+        height: 220,
         child: Swiper(
           itemCount: 7,
           index: 3,
@@ -44,10 +44,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
       child: Column(
         children: [
           DayBox(index: index),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: _buildSalahBoxes(context, index),
-          ),
+          _buildSalahBoxes(context, index),
           _buildAdditionalInfoRow(context, index),
         ],
       ),
@@ -67,46 +64,55 @@ class _SalahTimingViewState extends State<SalahTimingView> {
         final prayTimes = state.prayTimeForWeek[index];
         final currentSalah = state.currentSalahType;
 
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SalahBox(
-              salahType: const SalahTimeStateFajir(),
-              salahTime: prayTimes.fajir,
-              isCurrentSalah:
-                  (currentSalah == const SalahTimeStateFajir() && index == 3),
-            ),
-            SalahBox(
-              salahType: const SalahTimeStateSunrise(),
-              salahTime: prayTimes.sunrise,
-              isCurrentSalah:
-                  (currentSalah == const SalahTimeStateSunrise() && index == 3),
-            ),
-            SalahBox(
-              salahType: const SalahTimeStateZhur(),
-              salahTime: prayTimes.dhuhr,
-              isCurrentSalah:
-                  (currentSalah == const SalahTimeStateZhur() && index == 3),
-            ),
-            SalahBox(
-              salahType: const SalahTimeStateAsr(),
-              salahTime: prayTimes.asr,
-              isCurrentSalah:
-                  (currentSalah == const SalahTimeStateAsr() && index == 3),
-            ),
-            SalahBox(
-              salahType: const SalahTimeStateMaghrib(),
-              salahTime: prayTimes.maghrib,
-              isCurrentSalah:
-                  (currentSalah == const SalahTimeStateMaghrib() && index == 3),
-            ),
-            SalahBox(
-              salahType: const SalahTimeStateIsha(),
-              salahTime: prayTimes.isha,
-              isCurrentSalah:
-                  (currentSalah == const SalahTimeStateIsha() && index == 3),
-            ),
-          ],
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Row(
+            children: [
+              SalahBox(
+                salahType: const SalahTimeStateFajir(),
+                salahTime: prayTimes.fajir,
+                isCurrentSalah:
+                    (currentSalah == const SalahTimeStateFajir() && index == 3),
+              ),
+              const Expanded(child: SizedBox()),
+              SalahBox(
+                salahType: const SalahTimeStateSunrise(),
+                salahTime: prayTimes.sunrise,
+                isCurrentSalah:
+                    (currentSalah == const SalahTimeStateSunrise() &&
+                        index == 3),
+              ),
+              const Expanded(child: SizedBox()),
+              SalahBox(
+                salahType: const SalahTimeStateZhur(),
+                salahTime: prayTimes.dhuhr,
+                isCurrentSalah:
+                    (currentSalah == const SalahTimeStateZhur() && index == 3),
+              ),
+              const Expanded(child: SizedBox()),
+              SalahBox(
+                salahType: const SalahTimeStateAsr(),
+                salahTime: prayTimes.asr,
+                isCurrentSalah:
+                    (currentSalah == const SalahTimeStateAsr() && index == 3),
+              ),
+              const Expanded(child: SizedBox()),
+              SalahBox(
+                salahType: const SalahTimeStateMaghrib(),
+                salahTime: prayTimes.maghrib,
+                isCurrentSalah:
+                    (currentSalah == const SalahTimeStateMaghrib() &&
+                        index == 3),
+              ),
+              const Expanded(child: SizedBox()),
+              SalahBox(
+                salahType: const SalahTimeStateIsha(),
+                salahTime: prayTimes.isha,
+                isCurrentSalah:
+                    (currentSalah == const SalahTimeStateIsha() && index == 3),
+              ),
+            ],
+          ),
         );
       },
     );

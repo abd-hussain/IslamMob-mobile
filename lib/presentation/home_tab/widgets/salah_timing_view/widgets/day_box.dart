@@ -21,9 +21,9 @@ class DayBox extends StatelessWidget {
 
     return Container(
       color: Colors.white,
-      height: 55,
+      height: 40,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(left: 8, right: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -45,6 +45,7 @@ class DayBox extends StatelessWidget {
     return Icon(
       isForward ? Ionicons.arrow_forward_outline : Ionicons.arrow_back_outline,
       color: const Color(0xff007F37),
+      size: 15,
     );
   }
 
@@ -55,7 +56,7 @@ class DayBox extends StatelessWidget {
     return Expanded(
       child: CustomText(
         title: meladyDate,
-        fontSize: 13,
+        fontSize: 12,
         fontWeight: FontWeight.bold,
         color: const Color(0xff444444),
         textAlign: TextAlign.center,
@@ -70,7 +71,7 @@ class DayBox extends StatelessWidget {
     return Expanded(
       child: CustomText(
         title: hijriDate,
-        fontSize: 13,
+        fontSize: 12,
         fontWeight: FontWeight.bold,
         color: const Color(0xff444444),
         textAlign: TextAlign.center,
@@ -97,6 +98,7 @@ class DayBox extends StatelessWidget {
 
     return Expanded(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomText(
             title: title,

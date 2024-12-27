@@ -17,38 +17,14 @@ part 'home_header_bloc.freezed.dart';
 class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
   final TimingUseCase timingUsecase = locator<TimingUseCase>();
   HomeHeaderBloc() : super(const HomeHeaderState()) {
+    on<_PrepareNextSalahTypeAndTime>(_prepareNextSalahTypeAndTime);
     on<_UpdateSalahTypeAndTime>(_updateSalahTypeAndTime);
-    _prepareNextSalahTypeAndTime();
   }
 
   /// Local Hive box instance for storing/retrieving user settings.
   final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
   PrayUsecase prayUsecase = PrayUsecase();
-
-  /// Prepare the next Salah type and time by adding the appropriate event.
-  void _prepareNextSalahTypeAndTime() {
-    if (prayUsecase.getNextPrayType() == const SalahTimeState.none()) {
-      final tommorrow = DateTime.now().add(const Duration(days: 1));
-      prayUsecase = PrayUsecase(
-          specificDate:
-              DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
-      add(
-        HomeHeaderEvent.updateSalahTypeAndTime(
-          nextPrayType: const SalahTimeState.fajir(),
-          nextPrayDateTime:
-              prayUsecase.getAllPrayTimeAsDateTimeForToday().fajir,
-        ),
-      );
-    } else {
-      add(
-        HomeHeaderEvent.updateSalahTypeAndTime(
-          nextPrayType: prayUsecase.getNextPrayType(),
-          nextPrayDateTime: prayUsecase.getNextPrayTime(),
-        ),
-      );
-    }
-  }
 
   /// Returns the current selected country from the Hive box.
   String currentCountry() {
@@ -91,5 +67,30 @@ class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
         nextPrayDateTime: event.nextPrayDateTime,
       ),
     );
+  }
+
+  /// Prepare the next Salah type and time by adding the appropriate event.
+  FutureOr<void> _prepareNextSalahTypeAndTime(
+      _PrepareNextSalahTypeAndTime event, Emitter<HomeHeaderState> emit) {
+    if (prayUsecase.getNextPrayType() == const SalahTimeState.none()) {
+      final tommorrow = DateTime.now().add(const Duration(days: 1));
+      prayUsecase = PrayUsecase(
+          specificDate:
+              DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
+      add(
+        HomeHeaderEvent.updateSalahTypeAndTime(
+          nextPrayType: const SalahTimeState.fajir(),
+          nextPrayDateTime:
+              prayUsecase.getAllPrayTimeAsDateTimeForToday().fajir,
+        ),
+      );
+    } else {
+      add(
+        HomeHeaderEvent.updateSalahTypeAndTime(
+          nextPrayType: prayUsecase.getNextPrayType(),
+          nextPrayDateTime: prayUsecase.getNextPrayTime(),
+        ),
+      );
+    }
   }
 }

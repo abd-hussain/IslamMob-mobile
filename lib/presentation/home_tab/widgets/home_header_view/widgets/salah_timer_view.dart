@@ -5,8 +5,13 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class SalahTimerView extends StatefulWidget {
   final DateTime targetTime;
+  final Function() onTimerFinished;
 
-  const SalahTimerView({super.key, required this.targetTime});
+  const SalahTimerView({
+    super.key,
+    required this.targetTime,
+    required this.onTimerFinished,
+  });
 
   @override
   State<SalahTimerView> createState() => _SalahTimerViewState();
@@ -37,6 +42,7 @@ class _SalahTimerViewState extends State<SalahTimerView> {
 
         if (_remainingTime.isNegative) {
           _timer.cancel();
+          widget.onTimerFinished();
         }
       });
     });
