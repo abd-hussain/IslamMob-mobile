@@ -5,16 +5,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/log_event_usecase.dart';
-import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/quran_prints/bloc/quran_prints_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/quran_print_list_shimmer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:islam_app/core/constants/argument_constant.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:path_provider/path_provider.dart';
@@ -24,8 +22,6 @@ class QuranPrintsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDetailsPage = _getIsDetailsPage(context);
-
     return BlocProvider(
       create: (context) => QuranPrintsBloc()
         ..add(
@@ -33,12 +29,12 @@ class QuranPrintsScreen extends StatelessWidget {
         ),
       child: Scaffold(
         appBar: CustomAppBar(title: AppLocalizations.of(context)!.quranprints),
-        body: _buildBody(context, isDetailsPage),
+        body: _buildBody(context),
       ),
     );
   }
 
-  Widget _buildBody(BuildContext context, bool isDetailsPage) {
+  Widget _buildBody(BuildContext context) {
     return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
       builder: (context, state) {
         if (state.internetConnectionStauts == false) {
@@ -50,14 +46,13 @@ class QuranPrintsScreen extends StatelessWidget {
         } else if (state.listOfPrints == null) {
           return const QuranListPrintsShimmer();
         } else {
-          return _buildPrintsList(context, state, isDetailsPage);
+          return _buildPrintsList(context, state);
         }
       },
     );
   }
 
-  Widget _buildPrintsList(
-      BuildContext context, QuranPrintsState state, bool isDetailsPage) {
+  Widget _buildPrintsList(BuildContext context, QuranPrintsState state) {
     return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
       buildWhen: (previous, current) =>
           previous.printsDownloading != current.printsDownloading,
@@ -79,8 +74,7 @@ class QuranPrintsScreen extends StatelessWidget {
                 itemCount: state.listOfPrints!.length,
                 itemBuilder: (context, index) {
                   final printItem = state.listOfPrints![index];
-                  return _buildPrintTile(
-                      context, printItem, state, isDetailsPage);
+                  return _buildPrintTile(context, printItem, state);
                 },
               ),
             ),
@@ -90,8 +84,8 @@ class QuranPrintsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPrintTile(BuildContext context, QuranPrints printItem,
-      QuranPrintsState state, bool isDetailsPage) {
+  Widget _buildPrintTile(
+      BuildContext context, QuranPrints printItem, QuranPrintsState state) {
     return PrintTileView(
       language: context
           .read<QuranPrintsBloc>()
@@ -103,7 +97,7 @@ class QuranPrintsScreen extends StatelessWidget {
           !state.printsDownloading.contains(printItem.fieldName),
       useButtonAvailable: state.printsDownloading.contains(printItem.fieldName),
       onDownloadPressed: () => _handleDownloadPressed(context, printItem),
-      onUsePressed: () => _handleUsePressed(context, printItem, isDetailsPage),
+      onUsePressed: () => _handleUsePressed(context, printItem),
     );
   }
 
@@ -145,7 +139,7 @@ class QuranPrintsScreen extends StatelessWidget {
   }
 
   Future<void> _handleUsePressed(
-      BuildContext context, QuranPrints printItem, bool isDetailsPage) async {
+      BuildContext context, QuranPrints printItem) async {
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/${printItem.fieldName!}');
     final box = Hive.box(DatabaseBoxConstant.userInfo);
@@ -164,21 +158,7 @@ class QuranPrintsScreen extends StatelessWidget {
     );
 
     if (context.mounted) {
-      if (isDetailsPage) {
-        Navigator.pop(context);
-      } else {
-        await Navigator.of(context, rootNavigator: true)
-            .pushNamedAndRemoveUntil(
-          RoutesConstants.mainContainer,
-          (route) => false,
-        );
-      }
+      Navigator.pop(context, true);
     }
-  }
-
-  bool _getIsDetailsPage(BuildContext context) {
-    final arguments =
-        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    return arguments?[ArgumentConstant.isDetailsPage] ?? false;
   }
 }

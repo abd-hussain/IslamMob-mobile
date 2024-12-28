@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 
 class CustomToast {
   /// Displays a warning toast message with a custom design.

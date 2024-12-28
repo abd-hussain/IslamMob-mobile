@@ -5,9 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/core/constants/argument_constant.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:lottie/lottie.dart';
 
@@ -69,11 +68,14 @@ class NoPDFView extends StatelessWidget {
   Future<void> _navigateToPrintListScreen(BuildContext context) async {
     final navigator = Navigator.of(context, rootNavigator: true);
 
-    await navigator.pushNamed(
-      RoutesConstants.quranPrintListScreen,
-      arguments: {ArgumentConstant.isDetailsPage: true},
-      // ignore: use_build_context_synchronously
-    ).then((_) => _loadMushafFile(context));
+    await navigator
+        .pushNamed(RoutesConstants.quranPrintListScreen)
+        .then((value) {
+      if (value is bool && value) {
+        // ignore: use_build_context_synchronously
+        _loadMushafFile(context);
+      }
+    });
   }
 
   void _loadMushafFile(BuildContext context) {

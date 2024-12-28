@@ -1,7 +1,7 @@
+import 'package:custom_widgets/widgets/custom_button.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
-import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DownloadProgressDialog extends StatefulWidget {

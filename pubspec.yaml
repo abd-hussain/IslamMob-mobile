@@ -3,7 +3,7 @@ description: "A new Flutter project."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+59
+version: 1.0.0+60
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -27,7 +27,13 @@ dependencies:
 
   islam_mob_adhan:
     path: sub_projects/islam_mob_adhan
-  
+
+  azkar:
+    path: sub_projects/azkar
+
+  custom_widgets:
+    path: sub_projects/custom_widgets
+
   http: ^1.2.2
   dio: ^5.7.0
   logger: ^2.4.0
@@ -39,7 +45,6 @@ dependencies:
   connectivity_plus: ^6.0.5
   loading_indicator: ^3.1.1
   intl: ^0.19.0
-  google_fonts: ^6.2.1
   freezed: ^2.5.7
   freezed_annotation: ^2.4.4
   flutter_bloc: ^8.1.6

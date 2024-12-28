@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:open_store/open_store.dart';
 

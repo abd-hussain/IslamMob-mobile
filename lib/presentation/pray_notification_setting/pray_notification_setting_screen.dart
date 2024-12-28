@@ -6,7 +6,7 @@ import 'package:islam_app/presentation/pray_notification_setting/widgets/pray_no
 import 'package:islam_app/presentation/pray_notification_setting/widgets/quick_notification_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 
 class PrayNotificationSettingScreen extends StatelessWidget {
   const PrayNotificationSettingScreen({super.key});

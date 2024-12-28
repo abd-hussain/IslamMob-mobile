@@ -4,7 +4,7 @@ import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.da
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_have_permission_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_idle_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_nothave_permission_view.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

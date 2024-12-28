@@ -73,7 +73,8 @@ class PrayerTimes {
   }) {
     return PrayerTimes._(
       coordinates,
-      CalendarUtil.resolveTimeByDateComponents(DateComponents.from(DateTime.now())),
+      CalendarUtil.resolveTimeByDateComponents(
+          DateComponents.from(DateTime.now())),
       calculationParameters,
       utcOffset: utcOffset,
     );
@@ -164,12 +165,14 @@ class PrayerTimes {
   /// Calculates the time for Asr prayer.
   DateTime _calculateAsr(SolarTime solarTime, DateTime date) {
     final shadowLength = calculationParameters.madhab.shadowLength;
-    final timeComponents = TimeComponents.fromDouble(solarTime.afternoon(shadowLength));
+    final timeComponents =
+        TimeComponents.fromDouble(solarTime.afternoon(shadowLength));
     return timeComponents.applyToDate(date);
   }
 
   /// Calculates the time for Fajr prayer.
-  DateTime _calculateFajr(SolarTime solarTime, DateTime date, DateTime sunrise, DateTime sunset) {
+  DateTime _calculateFajr(
+      SolarTime solarTime, DateTime date, DateTime sunrise, DateTime sunset) {
     final fajrAngle = -calculationParameters.fajrAngle;
     final value = solarTime.hourAngle(fajrAngle, false);
 
@@ -180,14 +183,16 @@ class PrayerTimes {
 
     // High-latitude adjustments if Fajr time is invalid.
     final nightPortions = calculationParameters.nightPortions();
-    final nightLength = sunrise.millisecondsSinceEpoch - sunset.millisecondsSinceEpoch;
+    final nightLength =
+        sunrise.millisecondsSinceEpoch - sunset.millisecondsSinceEpoch;
     final nightFraction = (nightLength * nightPortions.fajr).toInt();
 
     return sunrise.add(Duration(milliseconds: -nightFraction));
   }
 
   /// Calculates the time for Maghrib prayer.
-  DateTime _calculateMaghrib(SolarTime solarTime, DateTime date, DateTime sunset) {
+  DateTime _calculateMaghrib(
+      SolarTime solarTime, DateTime date, DateTime sunset) {
     if (calculationParameters.maghribAngle != null) {
       final angleBasedMaghrib = TimeComponents.fromDouble(
         solarTime.hourAngle(-calculationParameters.maghribAngle!, true),
@@ -200,7 +205,8 @@ class PrayerTimes {
   }
 
   /// Calculates the time for Isha prayer.
-  DateTime _calculateIsha(SolarTime solarTime, DateTime date, DateTime sunset, DateTime sunrise) {
+  DateTime _calculateIsha(
+      SolarTime solarTime, DateTime date, DateTime sunset, DateTime sunrise) {
     if (calculationParameters.ishaInterval > 0) {
       return sunset.add(Duration(minutes: calculationParameters.ishaInterval));
     }
@@ -215,23 +221,28 @@ class PrayerTimes {
 
     // High-latitude adjustments if Isha time is invalid.
     final nightPortions = calculationParameters.nightPortions();
-    final nightLength = sunrise.millisecondsSinceEpoch - sunset.millisecondsSinceEpoch;
+    final nightLength =
+        sunrise.millisecondsSinceEpoch - sunset.millisecondsSinceEpoch;
     final nightFraction = (nightLength * nightPortions.isha).toInt();
 
     return sunset.add(Duration(milliseconds: nightFraction));
   }
 
   /// Applies adjustments to calculated prayer times.
-  void _applyAdjustments(
-      DateTime fajr, DateTime sunrise, DateTime dhuhr, DateTime asr, DateTime maghrib, DateTime isha) {
-    _fajr = _adjustTime(fajr, calculationParameters.adjustments.fajr, calculationParameters.methodAdjustments.fajr);
-    _sunrise = _adjustTime(
-        sunrise, calculationParameters.adjustments.sunrise, calculationParameters.methodAdjustments.sunrise);
-    _dhuhr = _adjustTime(dhuhr, calculationParameters.adjustments.dhuhr, calculationParameters.methodAdjustments.dhuhr);
-    _asr = _adjustTime(asr, calculationParameters.adjustments.asr, calculationParameters.methodAdjustments.asr);
-    _maghrib = _adjustTime(
-        maghrib, calculationParameters.adjustments.maghrib, calculationParameters.methodAdjustments.maghrib);
-    _isha = _adjustTime(isha, calculationParameters.adjustments.isha, calculationParameters.methodAdjustments.isha);
+  void _applyAdjustments(DateTime fajr, DateTime sunrise, DateTime dhuhr,
+      DateTime asr, DateTime maghrib, DateTime isha) {
+    _fajr = _adjustTime(fajr, calculationParameters.adjustments.fajr,
+        calculationParameters.methodAdjustments.fajr);
+    _sunrise = _adjustTime(sunrise, calculationParameters.adjustments.sunrise,
+        calculationParameters.methodAdjustments.sunrise);
+    _dhuhr = _adjustTime(dhuhr, calculationParameters.adjustments.dhuhr,
+        calculationParameters.methodAdjustments.dhuhr);
+    _asr = _adjustTime(asr, calculationParameters.adjustments.asr,
+        calculationParameters.methodAdjustments.asr);
+    _maghrib = _adjustTime(maghrib, calculationParameters.adjustments.maghrib,
+        calculationParameters.methodAdjustments.maghrib);
+    _isha = _adjustTime(isha, calculationParameters.adjustments.isha,
+        calculationParameters.methodAdjustments.isha);
 
     if (utcOffset != null) {
       _applyUtcOffset();
@@ -240,7 +251,9 @@ class PrayerTimes {
 
   /// Adjusts a prayer time with specified adjustments.
   DateTime _adjustTime(DateTime time, int adjustment, int methodAdjustment) {
-    return CalendarUtil.roundedMinute(time.add(Duration(minutes: adjustment + methodAdjustment))).toLocal();
+    return CalendarUtil.roundedMinute(
+            time.add(Duration(minutes: adjustment + methodAdjustment)))
+        .toLocal();
   }
 
   /// Applies the UTC offset to all prayer times.

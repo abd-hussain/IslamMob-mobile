@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/arrow_view.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 
 /// Enum representing the type of Sowrah: Makyeh or Madanyeh.
 enum SowrahType {

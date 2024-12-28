@@ -1,19 +1,20 @@
 import 'dart:async';
 
+import 'package:azkar/core/azkar_salah_time.dart';
+import 'package:azkar/domain/model.dart';
+import 'package:azkar/domain/usecase/azkar_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:islam_app/domain/model/azkar.dart';
-import 'package:islam_app/domain/usecase/azkar_usecase.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 
-part 'azkar_event.dart';
-part 'azkar_state.dart';
-part 'azkar_bloc.freezed.dart';
+part 'azkar_after_salah_event.dart';
+part 'azkar_after_salah_state.dart';
+part 'azkar_after_salah_bloc.freezed.dart';
 
-class AzkarBloc extends Bloc<AzkarEvent, AzkarState> {
+class AzkarAfterSalahBloc
+    extends Bloc<AzkarAfterSalahEvent, AzkarAfterSalahState> {
   AzkarUseCase azkarUseCase = AzkarUseCase();
 
-  AzkarBloc() : super(const AzkarState()) {
+  AzkarAfterSalahBloc() : super(const AzkarAfterSalahState()) {
     on<_InitializeAzkar>(_initializeAzkar);
     on<_ResetCounters>(_handleResetCounters);
     on<_IncrementCounter>(_handleIncrementCounter);
@@ -25,7 +26,7 @@ class AzkarBloc extends Bloc<AzkarEvent, AzkarState> {
 
   /// Resets all counters to 0 and updates the state.
   FutureOr<void> _handleResetCounters(
-      _ResetCounters event, Emitter<AzkarState> emit) {
+      _ResetCounters event, Emitter<AzkarAfterSalahState> emit) {
     final List<AzkarModel> resetList = state.azkarList
         .map((zeker) => zeker.copyWith(currentCount: 0))
         .toList();
@@ -34,7 +35,7 @@ class AzkarBloc extends Bloc<AzkarEvent, AzkarState> {
 
   /// Increments the counter of a specific Azkar item.
   FutureOr<void> _handleIncrementCounter(
-      _IncrementCounter event, Emitter<AzkarState> emit) {
+      _IncrementCounter event, Emitter<AzkarAfterSalahState> emit) {
     final List<AzkarModel> updatedList = state.azkarList.map((zeker) {
       if (zeker.id == event.zeker.id) {
         return zeker.copyWith(currentCount: event.zeker.currentCount);
@@ -45,7 +46,7 @@ class AzkarBloc extends Bloc<AzkarEvent, AzkarState> {
   }
 
   FutureOr<void> _initializeAzkar(
-      _InitializeAzkar event, Emitter<AzkarState> emit) {
+      _InitializeAzkar event, Emitter<AzkarAfterSalahState> emit) {
     final azkarList = azkarUseCase.azkarList(event.state);
     emit(state.copyWith(azkarList: azkarList));
   }

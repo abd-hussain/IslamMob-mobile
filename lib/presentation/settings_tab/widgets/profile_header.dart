@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});
