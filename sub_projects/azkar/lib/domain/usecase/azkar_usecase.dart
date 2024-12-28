@@ -1,5 +1,5 @@
-import 'package:islam_app/domain/model/azkar.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
+import 'package:azkar/core/azkar_salah_time.dart';
+import 'package:azkar/domain/model.dart';
 
 class AzkarUseCase {
   // Constant
@@ -126,9 +126,10 @@ class AzkarUseCase {
     );
   }
 
-  List<AzkarModel> azkarList(SalahTimeState salahType) {
-    final bool fajirOrMaghribSalah = salahType == const SalahTimeStateFajir() ||
-        salahType == const SalahTimeStateMaghrib();
+  List<AzkarModel> azkarList(AzkarSalahTimeState salahType) {
+    final bool fajirOrMaghribSalah =
+        salahType == const AzkarSalahTimeStateFajir() ||
+            salahType == const AzkarSalahTimeStateMaghrib();
 
     List<AzkarModel> list = [..._baseList];
 
@@ -139,7 +140,7 @@ class AzkarUseCase {
     list.addAll(_universalAzkar(fajirOrMaghribSalah));
 
     // Add Salah-specific Azkar
-    if (salahType == const SalahTimeStateFajir()) {
+    if (salahType == const AzkarSalahTimeStateFajir()) {
       list.add(_fajirSpecificAzkar());
     }
 

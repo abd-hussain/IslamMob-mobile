@@ -3,6 +3,8 @@ name: sub_projects
 
 packages:
   - sub_projects/islam_mob_adhan/*
+  - sub_projects/custom_widgets/*
+  - sub_projects/azkar/*
   - .
 
 scripts:

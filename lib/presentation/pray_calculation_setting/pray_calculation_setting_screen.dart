@@ -1,4 +1,5 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:custom_widgets/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -14,7 +15,6 @@ import 'package:islam_app/presentation/pray_calculation_setting/widgets/pray_cal
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/time_zoon_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/shared_widgets/custom_button.dart';
 
 class PrayCalculationSettingScreen extends StatelessWidget {
   const PrayCalculationSettingScreen({super.key});

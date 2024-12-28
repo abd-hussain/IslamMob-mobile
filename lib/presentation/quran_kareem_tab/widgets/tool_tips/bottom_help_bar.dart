@@ -180,11 +180,14 @@ class QuranBottomHelpBar extends StatelessWidget {
 
   Future<void> _navigateToMushafScreen(BuildContext context) async {
     final navigator = Navigator.of(context, rootNavigator: true);
-    await navigator.pushNamed(
-      RoutesConstants.quranPrintListScreen,
-      arguments: {ArgumentConstant.isDetailsPage: true},
-      // ignore: use_build_context_synchronously
-    ).then((_) => _loadMushafFile(context));
+    await navigator
+        .pushNamed(RoutesConstants.quranPrintListScreen)
+        .then((value) {
+      if (value is bool && value) {
+        // ignore: use_build_context_synchronously
+        _loadMushafFile(context);
+      }
+    });
   }
 
   void _loadMushafFile(BuildContext context) {

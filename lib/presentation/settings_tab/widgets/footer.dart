@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:custom_widgets/widgets/custom_text.dart';
 
 class FooterView extends StatelessWidget {
   const FooterView({super.key});
