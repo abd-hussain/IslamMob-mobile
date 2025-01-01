@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/sub_widgets/time_correction_view.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditPrayTimeMinutesView extends StatelessWidget {
@@ -48,7 +48,8 @@ class EditPrayTimeMinutesView extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildTimeCorrectionViews(BuildContext context, AppLocalizations localizations) {
+  List<Widget> _buildTimeCorrectionViews(
+      BuildContext context, AppLocalizations localizations) {
     final corrections = [
       _CorrectionData(
         title: localizations.fajirCorrectionTitle,
@@ -92,12 +93,16 @@ class EditPrayTimeMinutesView extends StatelessWidget {
       ),
     ];
 
-    return corrections.map((correction) => _buildTimeCorrectionBloc(context, correction)).toList();
+    return corrections
+        .map((correction) => _buildTimeCorrectionBloc(context, correction))
+        .toList();
   }
 
-  Widget _buildTimeCorrectionBloc(BuildContext context, _CorrectionData correction) {
+  Widget _buildTimeCorrectionBloc(
+      BuildContext context, _CorrectionData correction) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) => correction.getter(previous) != correction.getter(current),
+      buildWhen: (previous, current) =>
+          correction.getter(previous) != correction.getter(current),
       builder: (context, state) {
         return TimeCorrectionView(
           title: correction.title,

@@ -1,6 +1,6 @@
-import 'package:azkar/presentation/azkar_list/bloc/azkar_after_salah_bloc.dart';
-import 'package:custom_widgets/widgets/custom_button.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/presentation/home_tab/bloc/azkar_after_salah/azkar_after_salah_bloc.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

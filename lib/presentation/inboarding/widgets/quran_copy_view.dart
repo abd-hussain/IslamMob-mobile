@@ -6,7 +6,7 @@ import 'package:islam_app/presentation/inboarding/bloc/quran_copy/quran_copy_blo
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/quran_print_list_shimmer.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

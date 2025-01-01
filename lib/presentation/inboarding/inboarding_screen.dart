@@ -7,7 +7,7 @@ import 'package:islam_app/presentation/inboarding/widgets/location_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/notification_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/quran_copy_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/setup_account_view.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class InBoardingScreen extends StatelessWidget {

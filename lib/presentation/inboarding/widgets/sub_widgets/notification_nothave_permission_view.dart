@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/open_mobile_setting_usecase.dart';
-import 'package:custom_widgets/widgets/custom_button.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationNothavePermissionView extends StatelessWidget {

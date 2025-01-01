@@ -1,4 +1,4 @@
-import 'package:custom_widgets/widgets/custom_button.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/log_event_usecase.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/sub_widgets/counter_view.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class TimeCorrectionView extends StatelessWidget {
   final String title;

@@ -1,4 +1,4 @@
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class CheckBoxTile extends StatelessWidget {

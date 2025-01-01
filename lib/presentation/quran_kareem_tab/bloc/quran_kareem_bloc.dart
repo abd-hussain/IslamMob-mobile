@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/domain/usecase/log_event_usecase.dart';
-import 'package:islam_app/utils/adds_helper.dart';
 import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:pdfx/pdfx.dart';

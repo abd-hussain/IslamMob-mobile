@@ -1,9 +1,7 @@
 name: islam_app
-description: "A new Flutter project."
+publish_to: 'none' 
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
-version: 1.0.0+61
+version: 1.0.0+62
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -31,8 +29,8 @@ dependencies:
   azkar:
     path: sub_projects/azkar
 
-  custom_widgets:
-    path: sub_projects/custom_widgets
+  advertisments_manager:
+    path: sub_projects/advertisments_manager
 
   http: ^1.2.2
   dio: ^5.7.0
@@ -79,7 +77,8 @@ dependencies:
   fpdart: ^1.1.1
   flutter_svg: ^2.0.16
   open_store: ^0.5.0
-
+  google_fonts: ^6.2.1
+  
   # android_alarm_manager_plus: ^4.0.5
 
   # flutter_qiblah: ^3.0.4 #TODO

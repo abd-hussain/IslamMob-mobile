@@ -11,7 +11,7 @@ import 'package:islam_app/presentation/settings_tab/widgets/footer.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/profile_header.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
-import 'package:islam_app/shared_widgets/admob_banner.dart';
+import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:share_plus/share_plus.dart';

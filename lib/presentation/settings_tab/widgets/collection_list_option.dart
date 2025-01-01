@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/models/profile_options.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class CollectionListOptionView extends StatelessWidget {
   const CollectionListOptionView({super.key, required this.listOfOptions});

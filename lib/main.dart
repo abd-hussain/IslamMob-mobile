@@ -6,6 +6,7 @@ import 'package:islam_app/utils/logger.dart';
 // import 'package:workmanager/workmanager.dart';
 
 //TODO: find way to fire the local notification for all athan times
+//TODO: report issue after submitssion it keep loading
 
 void main() {
   logDebugMessage(message: 'Application Started ...');

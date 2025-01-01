@@ -7,7 +7,7 @@ import 'package:islam_app/presentation/home_tab/bloc/salah_timing/salah_timing_b
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/day_box.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/salah_box.dart';
 import 'package:islam_app/shared_widgets/bottomsheet/setting_bottomsheet.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SalahTimingView extends StatefulWidget {
