@@ -2,9 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
-import 'package:islam_app/domain/usecase/network_usecase.dart';
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/domain/usecase/next_salah_notifcation_counter_usecase.dart';
-import 'package:islam_app/models/profile_options.dart';
+import 'package:islam_app/domain/model/profile_options.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/collection_list_option.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/footer.dart';
@@ -12,7 +12,7 @@ import 'package:islam_app/presentation/settings_tab/widgets/profile_header.dart'
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
 import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:islam_app/core/constants/app_constant.dart';
+import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:share_plus/share_plus.dart';
 

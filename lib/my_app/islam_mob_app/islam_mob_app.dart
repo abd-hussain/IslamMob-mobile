@@ -1,9 +1,8 @@
+import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_gusture.dart';
-import 'package:islam_app/core/constants/app_constant.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
+import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -19,8 +18,6 @@ class IslamMobApp extends StatefulWidget {
 }
 
 class IslamMobAppState extends State<IslamMobApp> {
-  late final Box _userBox = Hive.box(DatabaseBoxConstant.userInfo);
-
   void rebuild() {
     setState(() {});
   }
@@ -41,8 +38,8 @@ class IslamMobAppState extends State<IslamMobApp> {
   }
 
   Locale _getLocale() {
-    final selectedLanguage =
-        _userBox.get(DatabaseFieldConstant.userLanguageCode, defaultValue: "");
+    final selectedLanguage = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "");
     return selectedLanguage != ""
         ? Locale(selectedLanguage)
         : const Locale("en");
@@ -86,8 +83,9 @@ class IslamMobAppState extends State<IslamMobApp> {
   }
 
   String _getInitialRoute() {
-    final onBoardingFinished =
-        _userBox.get(DatabaseFieldInBoardingStageConstant.inBoardingfinished);
+    final onBoardingFinished = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
+        defaultValue: null);
     return onBoardingFinished != null
         ? RoutesConstants.mainContainer
         : RoutesConstants.inBoardingScreen;

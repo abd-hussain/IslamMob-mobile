@@ -1,20 +1,20 @@
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/usecase/log_event_usecase.dart';
 import 'package:islam_app/presentation/report_suggestions/bloc/report_and_suggestion_bloc.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/attachments.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/footer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:islam_app/utils/exceptions.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 
 class ReportOrSuggestionScreen extends StatelessWidget {
   const ReportOrSuggestionScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    LogEventUsecase.logEvent(name: "ReportOrSuggestionScreen");
+    FirebaseAnalyticsRepository.logEvent(name: "ReportOrSuggestionScreen");
     return BlocProvider(
       create: (context) => ReportAndSuggestionBloc(),
       child: GestureDetector(

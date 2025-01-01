@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
-import 'package:islam_app/models/pray_timing.dart';
+import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class NotifyAdhanNotificationUsecase {

@@ -1,7 +1,7 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/usecase/log_event_usecase.dart';
-import 'package:islam_app/models/calender.dart';
+import 'package:islam_app/domain/model/calender.dart';
 import 'package:islam_app/presentation/calender/bloc/calender_bloc.dart';
 import 'package:islam_app/presentation/calender/widgets/calender_cell_view.dart';
 import 'package:islam_app/presentation/calender/widgets/calender_header_view.dart';
@@ -17,7 +17,7 @@ class CalenderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LogEventUsecase.logEvent(name: "CalenderScreen");
+    FirebaseAnalyticsRepository.logEvent(name: "CalenderScreen");
     return BlocProvider(
       create: (_) => CalenderBloc()
         ..add(const CalenderEvent.prepareSalahTiming())

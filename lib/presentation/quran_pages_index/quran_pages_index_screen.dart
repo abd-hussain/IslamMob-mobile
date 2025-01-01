@@ -6,7 +6,7 @@ import 'package:islam_app/presentation/quran_pages_index/widgets/quran_pages_vie
 import 'package:islam_app/presentation/quran_pages_index/widgets/quran_parts_view.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/quran_sowar_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:islam_app/core/constants/argument_constant.dart';
+import 'package:islam_app/domain/constants/argument_constant.dart';
 
 class QuranPagesIndexScreen extends StatelessWidget {
   const QuranPagesIndexScreen({super.key});

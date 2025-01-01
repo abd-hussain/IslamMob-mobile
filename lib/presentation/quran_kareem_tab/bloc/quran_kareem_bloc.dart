@@ -2,13 +2,12 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:advertisments_manager/advertisments_manager.dart';
+import 'package:database_manager/database_manager.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:islam_app/domain/usecase/log_event_usecase.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:pdfx/pdfx.dart';
 
@@ -17,7 +16,6 @@ part 'quran_kareem_state.dart';
 part 'quran_kareem_bloc.freezed.dart';
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
-  final _box = Hive.box(DatabaseBoxConstant.userInfo);
   int _numRewardedLoadAttempts = 0;
   PdfController? pdfController;
   int currentPageNumber = 0;
@@ -46,12 +44,12 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   // Load the initial PDF
   Future<void> _setupFirstInitialPDF() async {
-    final pageNumber = _box.get(
-        DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
+    final pageNumber = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
         defaultValue: 1);
 
-    final printName = _box.get(
-        DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
+    final printName = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
         defaultValue: "");
 
     final file = File(printName);
@@ -113,7 +111,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   // Handle the ad dismissal and load a new one
   void _handleAdDismissal(RewardedAd ad) {
-    LogEventUsecase.logEvent(
+    FirebaseAnalyticsRepository.logEvent(
       name: "RewardedAd_Quran_tab",
       parameters: {"status": "onAdDismissedFullScreenContent"},
     );
@@ -124,7 +122,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   // Log the earned reward
   void _logAdReward(RewardItem reward) {
     debugPrint('Reward: $reward');
-    LogEventUsecase.logEvent(
+    FirebaseAnalyticsRepository.logEvent(
       name: "RewardedAd_Quran_tab",
       parameters: {
         "status": "earned reward $reward",
@@ -134,8 +132,8 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   // Load bookmarked pages from local storage
   void _loadBookmarkedPages() {
-    final List<dynamic> bookMarkedPages = _box.get(
-        DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
+    final List<dynamic> bookMarkedPages = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
         defaultValue: []);
 
     if (bookMarkedPages.isNotEmpty) {
@@ -170,8 +168,9 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
     add(QuranKareemEvent.updateSidePage(_getPageSide(currentPageNumber)));
 
-    await _box.put(DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
-        event.pageCount);
+    await DataBaseManagerBase.saveInDatabase(
+        key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
+        value: event.pageCount);
   }
 
   // Get the page side (left or right)
@@ -187,8 +186,9 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   FutureOr<void> _updateBookMarkedPages(
       _UpdateBookMarkedPages event, Emitter<QuranKareemState> emit) async {
-    await _box.put(
-        DatabaseFieldQuranCopyConstant.quranKaremBookMarkList, event.list);
+    await DataBaseManagerBase.saveInDatabase(
+        key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
+        value: event.list);
     emit(state.copyWith(bookmarkedPages: event.list));
   }
 

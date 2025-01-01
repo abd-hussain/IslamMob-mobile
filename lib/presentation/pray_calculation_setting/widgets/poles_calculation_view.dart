@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/models/high_latitude_method.dart';
-import 'package:islam_app/models/high_latitude_setting.dart';
+import 'package:islam_app/domain/model/high_latitude_method.dart';
+import 'package:islam_app/domain/model/high_latitude_setting.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';

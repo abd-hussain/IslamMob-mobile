@@ -1,9 +1,9 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
-import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
-import 'package:islam_app/domain/repository/firebase_messages.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -57,7 +57,7 @@ class NotificationIdleView extends StatelessWidget {
 
             // Check and request notification permission
             final hasPermission =
-                await FirebaseMessagesRepository().checkAndRequestPermission();
+                await FirebaseMessagesRepository.checkAndRequestPermission();
             await _initializeLocalNotifications();
 
             // Update status based on permission result

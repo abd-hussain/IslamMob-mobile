@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/models/language.dart';
+import 'package:islam_app/domain/model/language.dart';
 import 'package:islam_app/presentation/change_language/widgets/list_of_languages_tile.dart';
-import 'package:islam_app/core/constants/app_constant.dart';
+import 'package:islam_app/domain/constants/app_constant.dart';
 
 class ListOfLanguagesView extends StatelessWidget {
   const ListOfLanguagesView({super.key});

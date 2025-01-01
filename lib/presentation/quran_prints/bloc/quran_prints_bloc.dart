@@ -1,16 +1,16 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
-import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
-import 'package:islam_app/core/constants/app_constant.dart';
-import 'package:islam_app/utils/logger.dart';
+import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:logger_manager/logger_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 part 'quran_prints_event.dart';
@@ -28,11 +28,6 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     on<_UpdatePrintsDownloading>(_handleUpdatePrintsDownloading);
   }
 
-  /// Checks if Firebase is initialized
-  Future<bool> _isFirebaseInitialized() async {
-    return Firebase.apps.isNotEmpty;
-  }
-
   /// Checks internet connection and updates the state
   Future<bool> _checkInternetConnectionStatus() async {
     final hasInternet = await NetworkUseCase.checkInternetConeection();
@@ -46,7 +41,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     final listOfPrints = await quranPrintsUsecase.getQuranPrints();
 
     if (listOfPrints.isEmpty) {
-      logDebugMessage(message: 'No documents found in the collection.');
+      LoggerManagerBase.logDebugMessage(
+          message: 'No documents found in the collection.');
       return;
     }
 
@@ -110,8 +106,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     final hasInternet = await _checkInternetConnectionStatus();
 
     if (hasInternet) {
-      if (!await _isFirebaseInitialized()) {
-        await Firebase.initializeApp();
+      if (!await FirebaseManagerBase.isFirebaseInitialized()) {
+        await FirebaseManagerBase.initialize();
       }
       _fetchQuranPrints();
     }

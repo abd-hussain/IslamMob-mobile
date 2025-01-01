@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:islam_app/domain/model/report_request.dart';
-import 'package:islam_app/domain/usecase/network_usecase.dart';
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/domain/usecase/report_usecase.dart';
 

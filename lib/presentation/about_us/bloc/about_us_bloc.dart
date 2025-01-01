@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:advertisments_manager/advertisments_manager.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:islam_app/domain/usecase/log_event_usecase.dart';
 
 part 'about_us_event.dart';
 part 'about_us_state.dart';
@@ -70,7 +70,7 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
       '$ad with reward RewardItem(${reward.amount}, ${reward.type})',
     );
 
-    LogEventUsecase.logEvent(
+    FirebaseAnalyticsRepository.logEvent(
       name: "RewardedAd_AboutUsScreen",
       parameters: {
         "status": "RewardItem(${reward.amount}, ${reward.type})",
@@ -81,7 +81,7 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
   /// Logs ad-related events
   void _logAdEvent(RewardedAd ad, String status) {
     debugPrint('$ad $status');
-    LogEventUsecase.logEvent(
+    FirebaseAnalyticsRepository.logEvent(
       name: "RewardedAd_AboutUsScreen",
       parameters: {"status": status},
     );
