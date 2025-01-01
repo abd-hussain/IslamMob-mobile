@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
+import 'package:islam_app/domain/model/salah_time_state.dart';
+import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class NextSalahNotificationCounterUsecase {
@@ -39,26 +40,7 @@ class NextSalahNotificationCounterUsecase {
       context: context,
       minites: minutes,
       nextSalahTime: DateFormat('hh:mm a').format(nextSalahTime),
-      type: getNextSalahNotificationType(nextSalahType),
+      type: SalahTimeStateParser.getNextSalahNotificationType(nextSalahType),
     );
-  }
-
-  NotificationType getNextSalahNotificationType(SalahTimeState state) {
-    switch (state) {
-      case SalahTimeStateFajir():
-        return NotificationType.fajir;
-      case SalahTimeStateSunrise():
-        return NotificationType.sunrise;
-      case SalahTimeStateZhur():
-        return NotificationType.zuhr;
-      case SalahTimeStateAsr():
-        return NotificationType.asr;
-      case SalahTimeStateMaghrib():
-        return NotificationType.maghrib;
-      case SalahTimeStateIsha():
-        return NotificationType.isha;
-      case SalahTimeStateNone():
-        return NotificationType.before15Minutes;
-    }
   }
 }

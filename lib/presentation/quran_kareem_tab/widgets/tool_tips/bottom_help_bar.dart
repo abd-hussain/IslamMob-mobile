@@ -1,7 +1,7 @@
 import 'dart:io';
+import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
@@ -9,9 +9,8 @@ import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.d
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
-import 'package:islam_app/core/constants/argument_constant.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
-import 'package:islam_app/utils/extensions/localization.dart';
+import 'package:islam_app/domain/constants/argument_constant.dart';
+import 'package:islam_app/domain/extensions/localization.dart';
 import 'package:pdfx/pdfx.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
@@ -191,9 +190,9 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   void _loadMushafFile(BuildContext context) {
-    final box = Hive.box(DatabaseBoxConstant.userInfo);
-    final printName =
-        box.get(DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse);
+    final printName = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
+        defaultValue: "");
     final file = File(printName);
 
     if (file.existsSync() && context.mounted) {

@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:islam_app/domain/usecase/log_event_usecase.dart';
-import 'package:islam_app/domain/usecase/network_usecase.dart';
-import 'package:islam_app/core/constants/app_constant.dart';
+import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 
 part 'web_view_event.dart';
 part 'web_view_state.dart';
@@ -27,7 +27,7 @@ class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
           webViewUrl: arguments?[AppConstant.webViewPageUrl] ?? "",
           pageTitle: arguments?[AppConstant.pageTitle] ?? ""));
 
-      LogEventUsecase.logEvent(
+      FirebaseAnalyticsRepository.logEvent(
         name: "WebViewScreen",
         parameters: {
           "webViewUrl": arguments?[AppConstant.webViewPageUrl] ?? "",

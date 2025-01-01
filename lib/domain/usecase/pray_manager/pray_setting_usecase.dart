@@ -1,9 +1,8 @@
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
+import 'package:database_manager/database_manager.dart';
 import 'package:islam_app/domain/repository/pray_manager.dart';
 import 'package:islam_app/domain/usecase/pray_manager/all_pray_time_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
-import 'package:islam_app/models/pray_timing.dart';
+import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class PraySettingUsecase {
@@ -19,7 +18,6 @@ class PraySettingUsecase {
   }) {
     _initalize();
   }
-  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
   late PrayManagerRepository _prayManager;
   final PrayDBParser _prayDBParser = PrayDBParser();
 
@@ -36,11 +34,11 @@ class PraySettingUsecase {
 
   /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
   Coordinates _retrieveCoordinates() {
-    final String latitude = _box.get(
-        DatabaseFieldLocationConstant.selectedLatitude,
+    final String latitude = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldLocationConstant.selectedLatitude,
         defaultValue: "0.0");
-    final String longitude = _box.get(
-        DatabaseFieldLocationConstant.selectedLongitude,
+    final String longitude = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldLocationConstant.selectedLongitude,
         defaultValue: "0.0");
 
     return Coordinates(

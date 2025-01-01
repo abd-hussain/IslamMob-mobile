@@ -1,6 +1,6 @@
-import 'package:islam_app/models/high_latitude_method.dart';
-import 'package:islam_app/models/madhab.dart';
-import 'package:islam_app/models/pray_calculation_method.dart';
+import 'package:islam_app/domain/model/high_latitude_method.dart';
+import 'package:islam_app/domain/model/madhab.dart';
+import 'package:islam_app/domain/model/pray_calculation_method.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class PrayDBParser {

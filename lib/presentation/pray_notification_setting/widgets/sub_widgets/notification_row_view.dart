@@ -1,6 +1,5 @@
+import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_switch.dart';
 
@@ -48,9 +47,8 @@ class NotificationRowView extends StatelessWidget {
   }
 
   bool _isRtlLanguage() {
-    final box = Hive.box(DatabaseBoxConstant.userInfo);
-    final String languageCode =
-        box.get(DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
+    final String languageCode = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
     return languageCode == "ar" || languageCode == "fa";
   }
 }

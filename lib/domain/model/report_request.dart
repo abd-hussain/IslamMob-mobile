@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:islam_app/core/mixins.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 
 class ReportRequest {
   String content;

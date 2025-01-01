@@ -1,12 +1,11 @@
 import 'dart:async';
 
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
+import 'package:database_manager/database_manager.dart';
 import 'package:islam_app/domain/usecase/get_user_setting_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_setting_usecase.dart';
-import 'package:islam_app/models/high_latitude_method.dart';
-import 'package:islam_app/models/madhab.dart';
-import 'package:islam_app/models/pray_calculation_method.dart';
+import 'package:islam_app/domain/model/high_latitude_method.dart';
+import 'package:islam_app/domain/model/madhab.dart';
+import 'package:islam_app/domain/model/pray_calculation_method.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -17,7 +16,6 @@ part 'pray_calculation_setting_bloc.freezed.dart';
 
 class PrayCalculationSettingBloc
     extends Bloc<PrayCalculationSettingEvent, PrayCalculationSettingState> {
-  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
   final GetUserSettingUseCase _getUserSettingUseCase = GetUserSettingUseCase();
 
   PrayCalculationSettingBloc() : super(const PrayCalculationSettingState()) {
@@ -217,7 +215,8 @@ class PrayCalculationSettingBloc
           state.hightLatitudeCaluclation.toString(),
     };
     for (final entry in saveMapping.entries) {
-      await _box.put(entry.key, entry.value);
+      await DataBaseManagerBase.saveInDatabase(
+          key: entry.key, value: entry.value);
     }
   }
 }

@@ -1,11 +1,8 @@
 import 'dart:io';
 
-import 'package:islam_app/core/constants/firebase_constants.dart';
-import 'package:islam_app/domain/model/firestore_options.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/domain/model/version.dart';
-import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
-import 'package:islam_app/my_app/locator.dart';
 
 enum VersionUpdate { mandatory, optional, noUpdate }
 
@@ -40,7 +37,7 @@ class VersionUseCase {
 
   /// Fetch the version object from Firestore based on the current platform.
   static Future<AppVersionModel?> _fetchVersionFromFirebase() async {
-    return locator<FirebaseFirestoreRepository>().getDataFromFireStoreDocument(
+    return FirebaseFirestoreRepository.getDataFromFireStoreDocument(
       FireStoreOptions(
         collectionName: FirebaseCollectionConstants.version,
         docName: _getPlatformId(),

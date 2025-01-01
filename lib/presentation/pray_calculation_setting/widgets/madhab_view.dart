@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/models/madhab.dart';
-import 'package:islam_app/models/madhab_setting.dart';
+import 'package:islam_app/domain/model/madhab.dart';
+import 'package:islam_app/domain/model/madhab_setting.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';

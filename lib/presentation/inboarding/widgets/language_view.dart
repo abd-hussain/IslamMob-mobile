@@ -4,7 +4,7 @@ import 'package:islam_app/presentation/inboarding/bloc/language/language_bloc.da
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/language_tile.dart';
 import 'package:islam_app/presentation/change_language/widgets/title_table_widget.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
-import 'package:islam_app/core/constants/app_constant.dart';
+import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:lottie/lottie.dart';
 
 class LanguageInBoardingView extends StatelessWidget {

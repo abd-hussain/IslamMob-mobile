@@ -1,12 +1,11 @@
 import 'dart:async';
 
+import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/sworah_tile_view.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
 
 part 'quran_pages_index_event.dart';
 part 'quran_pages_index_state.dart';
@@ -19,13 +18,12 @@ class QuranPagesIndexBloc
     _loadBookmarkedPages();
   }
 
-  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
   List<int> bookmarkedPages = [];
 
   /// Loads the list of bookmarked pages from persistent storage.
   void _loadBookmarkedPages() {
-    final List<dynamic> storedBookmarks = _box.get(
-        DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
+    final List<dynamic> storedBookmarks = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
         defaultValue: []);
     if (storedBookmarks.isNotEmpty) {
       bookmarkedPages = storedBookmarks.cast<int>();

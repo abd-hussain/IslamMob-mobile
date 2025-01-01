@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: logger_manager,custom_widgets,internet_connection_checkup
+dependency_overrides:
+  internet_connection_checkup:
+    path: ../internet_connection_checkup
+  logger_manager:
+    path: ../logger_manager

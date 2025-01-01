@@ -1,8 +1,8 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:islam_app/domain/usecase/log_event_usecase.dart';
-import 'package:islam_app/models/profile_options.dart';
+import 'package:islam_app/domain/model/profile_options.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/about_us/bloc/about_us_bloc.dart';
@@ -16,7 +16,7 @@ class AboutUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LogEventUsecase.logEvent(name: "AboutUsScreen");
+    FirebaseAnalyticsRepository.logEvent(name: "AboutUsScreen");
     final navigator = Navigator.of(context, rootNavigator: true);
 
     return BlocProvider(
