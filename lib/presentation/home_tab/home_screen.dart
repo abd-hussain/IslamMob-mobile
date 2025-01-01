@@ -1,12 +1,12 @@
-import 'package:azkar/core/azkar_salah_time.dart';
+import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/usecase/azkar_salah_time_state_parser.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
+import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/azkar_after_salah_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
-import 'package:islam_app/shared_widgets/admob_banner.dart';
-import 'package:azkar/presentation/azkar_list/azkar_after_salah_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -75,27 +75,9 @@ class HomeScreen extends StatelessWidget {
           previous.nextPrayType != current.nextPrayType,
       builder: (context, state) {
         return AzkarAfterSalahView(
-            salahType: getSalahTimeState(state.nextPrayType));
+            salahType: AzkarSalahTimeStateParser.getSalahTimeState(
+                state.nextPrayType));
       },
     );
-  }
-
-  AzkarSalahTimeState getSalahTimeState(SalahTimeState prayType) {
-    switch (prayType) {
-      case SalahTimeStateFajir():
-        return const AzkarSalahTimeState.fajir();
-      case SalahTimeStateSunrise():
-        return const AzkarSalahTimeState.sunrise();
-      case SalahTimeStateZhur():
-        return const AzkarSalahTimeState.zhur();
-      case SalahTimeStateAsr():
-        return const AzkarSalahTimeState.asr();
-      case SalahTimeStateMaghrib():
-        return const AzkarSalahTimeState.maghrib();
-      case SalahTimeStateIsha():
-        return const AzkarSalahTimeState.isha();
-      case SalahTimeStateNone():
-        return const AzkarSalahTimeState.none();
-    }
   }
 }

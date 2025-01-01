@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/models/language.dart';
 import 'package:islam_app/presentation/inboarding/bloc/language/language_bloc.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class LanguageTile extends StatelessWidget {
   const LanguageTile({super.key, required this.language});

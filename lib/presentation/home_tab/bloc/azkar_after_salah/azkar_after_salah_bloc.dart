@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:azkar/core/azkar_salah_time.dart';
-import 'package:azkar/domain/model.dart';
-import 'package:azkar/domain/usecase/azkar_usecase.dart';
+import 'package:azkar/azkar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,8 +10,6 @@ part 'azkar_after_salah_bloc.freezed.dart';
 
 class AzkarAfterSalahBloc
     extends Bloc<AzkarAfterSalahEvent, AzkarAfterSalahState> {
-  AzkarUseCase azkarUseCase = AzkarUseCase();
-
   AzkarAfterSalahBloc() : super(const AzkarAfterSalahState()) {
     on<_InitializeAzkar>(_initializeAzkar);
     on<_ResetCounters>(_handleResetCounters);
@@ -47,7 +43,7 @@ class AzkarAfterSalahBloc
 
   FutureOr<void> _initializeAzkar(
       _InitializeAzkar event, Emitter<AzkarAfterSalahState> emit) {
-    final azkarList = azkarUseCase.azkarList(event.state);
+    final azkarList = AzkarBase().azkarList(event.state);
     emit(state.copyWith(azkarList: azkarList));
   }
 }

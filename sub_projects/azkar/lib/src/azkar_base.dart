@@ -1,7 +1,7 @@
-import 'package:azkar/core/azkar_salah_time.dart';
-import 'package:azkar/domain/model.dart';
+import 'package:azkar/model/azkar.dart';
+import 'package:azkar/model/azkar_salah_time.dart';
 
-class AzkarUseCase {
+class AzkarBase {
   // Constant
   static String besemellah = "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم";
   static String aothBellah = "أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ";

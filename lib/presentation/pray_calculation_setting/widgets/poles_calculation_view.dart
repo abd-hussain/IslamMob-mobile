@@ -4,7 +4,7 @@ import 'package:islam_app/models/high_latitude_method.dart';
 import 'package:islam_app/models/high_latitude_setting.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
-import 'package:custom_widgets/widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PolesCalculationView extends StatelessWidget {
