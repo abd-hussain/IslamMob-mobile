@@ -1,8 +1,8 @@
 import 'package:database_manager/database_manager.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
-import 'package:islam_app/domain/model/high_latitude_method.dart';
-import 'package:islam_app/domain/model/madhab.dart';
-import 'package:islam_app/domain/model/pray_calculation_method.dart';
+import 'package:islam_app/domain/sealed/high_latitude_method.dart';
+import 'package:islam_app/domain/sealed/madhab.dart';
+import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
 
 class GetUserSettingUseCase {

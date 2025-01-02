@@ -1,14 +1,12 @@
-class LocalNotification {
-  final String rightNowMessage;
-  final String remeningTimeMessage;
-  final String nextSalahTime;
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'local_notification.freezed.dart';
 
-  final String soundFileName;
-
-  LocalNotification({
-    required this.remeningTimeMessage,
-    required this.rightNowMessage,
-    required this.nextSalahTime,
-    required this.soundFileName,
-  });
+@freezed
+class LocalNotification with _$LocalNotification {
+  factory LocalNotification({
+    required String rightNowMessage,
+    required String remeningTimeMessage,
+    required String nextSalahTime,
+    required String soundFileName,
+  }) = _LocalNotification;
 }

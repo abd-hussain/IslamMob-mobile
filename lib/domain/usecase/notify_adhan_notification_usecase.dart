@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
+import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
 import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_mob_adhan/adhan.dart';
@@ -66,14 +67,14 @@ class NotifyAdhanNotificationUsecase {
     await LocalNotificationRepository.scheduleNotification(
       id: 1,
       context: context,
-      type: NotificationType.before15Minutes,
+      type: const NotificationTypeState.before15Minutes(),
       scheduledTime: fajirPrayTime.subtract(const Duration(minutes: 15)),
     );
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
         id: 2,
         context: context,
-        type: NotificationType.fajir,
+        type: const NotificationTypeState.fajir(),
         scheduledTime: fajirPrayTime,
       );
     }
@@ -81,7 +82,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 3,
         context: context,
-        type: NotificationType.before15Minutes,
+        type: const NotificationTypeState.before15Minutes(),
         scheduledTime: sunrisePrayTime.subtract(const Duration(minutes: 15)),
       );
     }
@@ -89,7 +90,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 4,
         context: context,
-        type: NotificationType.sunrise,
+        type: const NotificationTypeState.sunrise(),
         scheduledTime: sunrisePrayTime,
       );
     }
@@ -97,7 +98,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 5,
         context: context,
-        type: NotificationType.before15Minutes,
+        type: const NotificationTypeState.before15Minutes(),
         scheduledTime: dhuhrPrayTime.subtract(const Duration(minutes: 15)),
       );
     }
@@ -105,7 +106,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 6,
         context: context,
-        type: NotificationType.zuhr,
+        type: const NotificationTypeState.zuhr(),
         scheduledTime: dhuhrPrayTime,
       );
     }
@@ -113,7 +114,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 7,
         context: context,
-        type: NotificationType.before15Minutes,
+        type: const NotificationTypeState.before15Minutes(),
         scheduledTime: asrPrayTime.subtract(const Duration(minutes: 15)),
       );
     }
@@ -121,7 +122,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 8,
         context: context,
-        type: NotificationType.asr,
+        type: const NotificationTypeState.asr(),
         scheduledTime: asrPrayTime,
       );
     }
@@ -129,7 +130,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 9,
         context: context,
-        type: NotificationType.before15Minutes,
+        type: const NotificationTypeState.before15Minutes(),
         scheduledTime: maghribPrayTime.subtract(const Duration(minutes: 15)),
       );
     }
@@ -137,7 +138,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 10,
         context: context,
-        type: NotificationType.maghrib,
+        type: const NotificationTypeState.maghrib(),
         scheduledTime: maghribPrayTime,
       );
     }
@@ -145,7 +146,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 11,
         context: context,
-        type: NotificationType.before15Minutes,
+        type: const NotificationTypeState.before15Minutes(),
         scheduledTime: ishaPrayTime.subtract(const Duration(minutes: 15)),
       );
     }
@@ -153,7 +154,7 @@ class NotifyAdhanNotificationUsecase {
       await LocalNotificationRepository.scheduleNotification(
         id: 12,
         context: context,
-        type: NotificationType.isha,
+        type: const NotificationTypeState.isha(),
         scheduledTime: ishaPrayTime,
       );
     }

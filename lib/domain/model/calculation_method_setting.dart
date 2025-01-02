@@ -1,4 +1,4 @@
-import 'package:islam_app/domain/model/pray_calculation_method.dart';
+import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'calculation_method_setting.freezed.dart';
 

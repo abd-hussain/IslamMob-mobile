@@ -1,37 +1,28 @@
 import 'dart:io';
-import 'package:firebase_manager/firebase_manager.dart';
 
-class ReportRequest {
-  String content;
-  File? attach1;
-  File? attach2;
-  File? attach3;
-  ReportRequest({
-    required this.content,
-    this.attach1,
-    this.attach2,
-    this.attach3,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'report_request.freezed.dart';
+part 'report_request.g.dart';
+
+@freezed
+class ReportRequest with _$ReportRequest {
+  factory ReportRequest({
+    required String content,
+    File? attach1,
+    File? attach2,
+    File? attach3,
+  }) = _ReportRequest;
 }
 
-class ReportRequestToFirebase extends Model {
-  String content;
-  String? attach1;
-  String? attach2;
-  String? attach3;
-  ReportRequestToFirebase({
-    required this.content,
-    this.attach1,
-    this.attach2,
-    this.attach3,
-  });
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      "content": content,
-      "attach1": attach1,
-      "attach2": attach2,
-      "attach3": attach3,
-    };
-  }
+@freezed
+class ReportRequestToFirebase with _$ReportRequestToFirebase {
+  factory ReportRequestToFirebase({
+    required String content,
+    String? attach1,
+    String? attach2,
+    String? attach3,
+  }) = _ReportRequestToFirebase;
+
+  factory ReportRequestToFirebase.fromJson(Map<String, dynamic> json) =>
+      _$ReportRequestToFirebaseFromJson(json);
 }

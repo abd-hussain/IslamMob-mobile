@@ -54,7 +54,7 @@ class ReportAndSuggestionBloc
     return image != null ? File(image.path) : null;
   }
 
-  Future<dynamic> callRequest(
+  Future<void> callRequest(
       {required File? attach1,
       required File? attach2,
       required File? attach3}) {

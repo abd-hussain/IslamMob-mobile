@@ -10,4 +10,3 @@ export 'src/firebase_firestore.dart';
 export 'src/firebase_messages.dart';
 export 'model/firestore_options.dart';
 export 'constants/firebase_constants.dart';
-export 'model/mixins.dart';

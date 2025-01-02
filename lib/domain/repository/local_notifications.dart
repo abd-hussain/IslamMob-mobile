@@ -1,33 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:islam_app/domain/model/local_notification.dart';
+import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-enum NotificationType {
-  fajir,
-  sunrise,
-  zuhr,
-  asr,
-  maghrib,
-  isha,
-  before15Minutes,
-}
 
 class LocalNotificationRepository {
   static final FlutterLocalNotificationsPlugin _notificationsPlugin =
       FlutterLocalNotificationsPlugin();
-  static const AndroidInitializationSettings initializationSettingsAndroid =
+  static const AndroidInitializationSettings _initializationSettingsAndroid =
       AndroidInitializationSettings('@mipmap/ic_launcher');
-  static const DarwinInitializationSettings initializationSettingsIOS =
+  static const DarwinInitializationSettings _initializationSettingsIOS =
       DarwinInitializationSettings();
 
   /// Initializes the local notification service with platform-specific settings.
   static Future<void> initialize() async {
     const InitializationSettings initializationSettings =
         InitializationSettings(
-      android: initializationSettingsAndroid,
-      iOS: initializationSettingsIOS,
+      android: _initializationSettingsAndroid,
+      iOS: _initializationSettingsIOS,
     );
 
     try {
@@ -66,7 +57,7 @@ class LocalNotificationRepository {
   static Future<void> scheduleNotification({
     required int id,
     required DateTime scheduledTime,
-    required NotificationType type,
+    required NotificationTypeState type,
     required BuildContext context,
   }) async {
     final details = _notificationDetails(context, type);
@@ -103,7 +94,7 @@ class LocalNotificationRepository {
     required BuildContext context,
     required int minites,
     required String nextSalahTime,
-    required NotificationType type,
+    required NotificationTypeState type,
   }) async {
     final details = _notificationDetails(context, type);
 
@@ -148,9 +139,9 @@ class LocalNotificationRepository {
   }
 
   static LocalNotification _notificationDetails(
-      BuildContext context, NotificationType type) {
+      BuildContext context, NotificationTypeState type) {
     switch (type) {
-      case NotificationType.fajir:
+      case NotificationTypeStateFajir():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowFajirMessage,
           soundFileName: "fajir",
@@ -159,7 +150,7 @@ class LocalNotificationRepository {
           nextSalahTime:
               AppLocalizations.of(context)!.nextSalahTimeFajirMessage,
         );
-      case NotificationType.zuhr:
+      case NotificationTypeStateZuhr():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowDuherMessage,
           soundFileName: "duher",
@@ -169,7 +160,7 @@ class LocalNotificationRepository {
               AppLocalizations.of(context)!.nextSalahTimeDuherMessage,
         );
 
-      case NotificationType.asr:
+      case NotificationTypeStateAsr():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowAsrMessage,
           soundFileName: "asr",
@@ -178,7 +169,7 @@ class LocalNotificationRepository {
           nextSalahTime: AppLocalizations.of(context)!.nextSalahTimeAsrMessage,
         );
 
-      case NotificationType.maghrib:
+      case NotificationTypeStateMaghrib():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowMagrebMessage,
           soundFileName: "magreb",
@@ -188,7 +179,7 @@ class LocalNotificationRepository {
               AppLocalizations.of(context)!.nextSalahTimeMagrebMessage,
         );
 
-      case NotificationType.isha:
+      case NotificationTypeStateIsha():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowIshaMessage,
           soundFileName: "isha",
@@ -197,7 +188,7 @@ class LocalNotificationRepository {
           nextSalahTime: AppLocalizations.of(context)!.nextSalahTimeIshaMessage,
         );
 
-      case NotificationType.before15Minutes:
+      case NotificationTypeStateBefore15Minutes():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowWarningMessage,
           soundFileName: "warning",
@@ -205,7 +196,7 @@ class LocalNotificationRepository {
           nextSalahTime: "",
         );
 
-      case NotificationType.sunrise:
+      case NotificationTypeStateSunrise():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowSunriseMessage,
           soundFileName: "sunrise",

@@ -1,5 +1,6 @@
 name: advertisments_manager
 version: 1.0.0
+publish_to: 'none' 
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -8,6 +9,9 @@ dependencies:
   flutter:
     sdk: flutter
   google_mobile_ads: ^5.1.0
+
+  firebase_manager:
+    path: ../firebase_manager
 
 dev_dependencies:
   lints: ^4.0.0

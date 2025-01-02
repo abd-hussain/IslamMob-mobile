@@ -126,17 +126,16 @@ class ReportOrSuggestionScreen extends StatelessWidget {
       context.read<ReportAndSuggestionBloc>().add(
           const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
       final navigator = Navigator.of(context);
+      final bloc = context.read<ReportAndSuggestionBloc>();
       await context.read<ReportAndSuggestionBloc>().callRequest(
             attach1: state.attach1,
             attach2: state.attach2,
             attach3: state.attach3,
           );
 
-      if (context.mounted) {
-        context.read<ReportAndSuggestionBloc>().add(
-            const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
-        navigator.pop();
-      }
+      bloc.add(
+          const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
+      navigator.pop();
     } on ConnectionException {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(

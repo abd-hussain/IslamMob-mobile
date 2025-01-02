@@ -1,3 +1,4 @@
+import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -129,19 +130,19 @@ class AboutUsScreen extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: BlocBuilder<AboutUsBloc, AboutUsState>(
         buildWhen: (previous, current) =>
-            previous.rewardedAd != current.rewardedAd,
+            previous.rewardedAdExsist != current.rewardedAdExsist,
         builder: (context, state) {
+          final bloc = context.read<AboutUsBloc>();
+
           final listOfOptions = <ProfileOptions>[
-            if (state.rewardedAd != null)
+            if (state.rewardedAdExsist)
               ProfileOptions(
                 icon: Ionicons.fitness,
                 name: AppLocalizations.of(context)!.supportus,
-                onTap: () {
-                  if (state.rewardedAd != null) {
-                    context
-                        .read<AboutUsBloc>()
-                        .showRewardedAd(state.rewardedAd!);
-                  }
+                onTap: () async {
+                  await RewarderAds.showRewardedAd();
+                  bloc.add(AboutUsEvent.updateRewardedAd(
+                      RewarderAds.mainRewardedAd != null));
                 },
               ),
             ProfileOptions(
