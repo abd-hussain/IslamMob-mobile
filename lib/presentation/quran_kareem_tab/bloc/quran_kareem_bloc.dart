@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:database_manager/database_manager.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -87,6 +88,8 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   // Event Handlers
   FutureOr<void> _showHideHelpBar(
       _ShowHideHelpBar event, Emitter<QuranKareemState> emit) {
+    FirebaseAnalyticsRepository.logEvent(name: "QuranShowHideHelpBar");
+
     emit(state.copyWith(showHelpBar: event.status));
   }
 

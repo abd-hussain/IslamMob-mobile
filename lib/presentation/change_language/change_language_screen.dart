@@ -1,3 +1,4 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +14,9 @@ class ChangeLanguageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseAnalyticsRepository.logEvent(
+      name: "ChangeLanguageScreen",
+    );
     return BlocProvider(
       create: (_) => ChangeLanguageBloc(),
       child: Scaffold(

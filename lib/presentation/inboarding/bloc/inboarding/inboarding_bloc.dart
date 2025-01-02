@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:database_manager/database_manager.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
@@ -32,6 +33,12 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
     await DataBaseManagerBase.saveInDatabase(
         key: DatabaseFieldInBoardingStageConstant.inBoardingStage,
         value: event.stage);
+
+    FirebaseAnalyticsRepository.logEvent(
+      name: "InBoardingStageUpdate",
+      parameters: {"inBoardingStage": event.stage},
+    );
+
     emit(state.copyWith(inBoardingStage: event.stage));
   }
 
@@ -46,6 +53,10 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
     await DataBaseManagerBase.saveInDatabase(
         key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
         value: true);
+
+    FirebaseAnalyticsRepository.logEvent(
+      name: "InBoardingFinalizeInBoarding",
+    );
     emit(state.copyWith(finalizedInBoarding: true));
   }
 }

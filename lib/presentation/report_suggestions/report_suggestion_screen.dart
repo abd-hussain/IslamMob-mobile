@@ -123,6 +123,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
   Future<void> _handleSubmit(
       BuildContext context, ReportAndSuggestionState state) async {
     try {
+      FirebaseAnalyticsRepository.logEvent(
+          name: "ReportOrSuggestionSubmitsion");
+
       context.read<ReportAndSuggestionBloc>().add(
           const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
       final navigator = Navigator.of(context);

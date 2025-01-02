@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:database_manager/database_manager.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
@@ -68,6 +69,14 @@ class PrayNotificationSettingBloc
   FutureOr<void> _changePrayNotificationSettings(
       _ChangePrayNotificationSettings event,
       Emitter<PrayNotificationSettingState> emit) async {
+    FirebaseAnalyticsRepository.logEvent(
+      name: "changePrayNotificationSettings",
+      parameters: {
+        "state": event.status,
+        "type": event.type.toString(),
+      },
+    );
+
     switch (event.type) {
       case PrayNotificationType.allNotificationForToday:
         await DataBaseManagerBase.saveInDatabase(

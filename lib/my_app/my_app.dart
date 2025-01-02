@@ -35,9 +35,4 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           return const SplashLoadingScreen(); // Default loading screen while initialization is ongoing.
         });
   }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 }

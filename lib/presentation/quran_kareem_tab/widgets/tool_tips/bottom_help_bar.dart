@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:database_manager/database_manager.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
@@ -54,6 +55,8 @@ class QuranBottomHelpBar extends StatelessWidget {
           title: AppLocalizations.of(context)!.quranSettingLighting,
           icon: Icons.sunny,
           onTap: () {
+            FirebaseAnalyticsRepository.logEvent(name: "QuranBrightnessShown");
+
             showDialog(
               context: context,
               barrierColor: const Color(0x01000000),
@@ -206,6 +209,8 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   Widget _buildSupportUsTile(BuildContext context) {
+    FirebaseAnalyticsRepository.logEvent(name: "QuranSupportUsShown");
+
     final bloc = context.read<QuranKareemBloc>();
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) =>

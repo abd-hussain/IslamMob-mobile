@@ -1,3 +1,4 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -21,6 +22,7 @@ class QuranPagesIndexScreen extends StatelessWidget {
         arguments[ArgumentConstant.currentPartName] ?? "";
     final int currentPageNumber =
         arguments[ArgumentConstant.currentPageNumber] ?? 0;
+    FirebaseAnalyticsRepository.logEvent(name: "QuranPagesIndexScreen");
 
     return BlocProvider(
       create: (context) => QuranPagesIndexBloc(),
@@ -109,43 +111,50 @@ class QuranPagesIndexScreen extends StatelessWidget {
     int currentPageNumber,
   ) {
     return BlocBuilder<QuranPagesIndexBloc, QuranPagesIndexState>(
-        buildWhen: (previous, current) =>
-            previous.selectedIndex != current.selectedIndex,
-        builder: (context, state) {
-          return TabBarView(
-            controller: TabController(
-              length: 3,
-              vsync: Scaffold.of(context),
-              initialIndex: state.selectedIndex,
+      buildWhen: (previous, current) =>
+          previous.selectedIndex != current.selectedIndex,
+      builder: (context, state) {
+        return TabBarView(
+          controller: TabController(
+            length: 3,
+            vsync: Scaffold.of(context),
+            initialIndex: state.selectedIndex,
+          ),
+          physics: const NeverScrollableScrollPhysics(),
+          children: [
+            QuranSowarView(
+              currentSowrahName: currentSowrahName,
+              onSowrahSelected: (sowrahName) {
+                FirebaseAnalyticsRepository.logEvent(
+                    name: "QuranSowarViewItemSelected");
+                Navigator.of(context).pop({
+                  ArgumentConstant.currentSowrahName: sowrahName,
+                });
+              },
             ),
-            physics: const NeverScrollableScrollPhysics(),
-            children: [
-              QuranSowarView(
-                currentSowrahName: currentSowrahName,
-                onSowrahSelected: (sowrahName) {
-                  Navigator.of(context).pop({
-                    ArgumentConstant.currentSowrahName: sowrahName,
-                  });
-                },
-              ),
-              QuranPartsView(
-                currentPartName: currentPartName,
-                onPartSelected: (partNumber) {
-                  Navigator.of(context).pop({
-                    ArgumentConstant.currentPartNumber: partNumber,
-                  });
-                },
-              ),
-              QuranPagesView(
-                currentPageNumber: currentPageNumber,
-                onPageSelected: (pageNumber) {
-                  Navigator.of(context).pop({
-                    ArgumentConstant.currentPageNumber: pageNumber,
-                  });
-                },
-              ),
-            ],
-          );
-        });
+            QuranPartsView(
+              currentPartName: currentPartName,
+              onPartSelected: (partNumber) {
+                FirebaseAnalyticsRepository.logEvent(
+                    name: "QuranPartsViewItemSelected");
+                Navigator.of(context).pop({
+                  ArgumentConstant.currentPartNumber: partNumber,
+                });
+              },
+            ),
+            QuranPagesView(
+              currentPageNumber: currentPageNumber,
+              onPageSelected: (pageNumber) {
+                FirebaseAnalyticsRepository.logEvent(
+                    name: "QuranPagesViewItemSelected");
+                Navigator.of(context).pop({
+                  ArgumentConstant.currentPageNumber: pageNumber,
+                });
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 }
