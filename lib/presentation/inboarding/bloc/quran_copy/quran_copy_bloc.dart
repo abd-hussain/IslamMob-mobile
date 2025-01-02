@@ -6,12 +6,12 @@ import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
+import 'package:islam_app/domain/constants/language_constant.dart';
 import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
 import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
-import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:logger_manager/logger_manager.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -72,10 +72,10 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Gets a language name by its code.
   String getLanguageNameByCode(String languageCode) {
-    return AppConstant.languages
+    return LanguageConstant.languages
         .firstWhere(
           (lang) => lang.languageCode == languageCode,
-          orElse: () => AppConstant.languages[0],
+          orElse: () => LanguageConstant.languages[0],
         )
         .name;
   }

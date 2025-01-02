@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/constants/language_constant.dart';
 import 'package:islam_app/presentation/inboarding/bloc/language/language_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/language_tile.dart';
 import 'package:islam_app/presentation/change_language/widgets/title_table_widget.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
-import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:lottie/lottie.dart';
 
 class LanguageInBoardingView extends StatelessWidget {
@@ -38,9 +38,9 @@ class LanguageInBoardingView extends StatelessWidget {
   Widget _buildLanguageList() {
     return Expanded(
       child: ListView.builder(
-        itemCount: AppConstant.languages.length,
+        itemCount: LanguageConstant.languages.length,
         itemBuilder: (context, index) {
-          return LanguageTile(language: AppConstant.languages[index]);
+          return LanguageTile(language: LanguageConstant.languages[index]);
         },
       ),
     );

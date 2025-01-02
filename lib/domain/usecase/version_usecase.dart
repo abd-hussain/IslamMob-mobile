@@ -7,7 +7,7 @@ import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 enum VersionUpdate { mandatory, optional, noUpdate }
 
 class VersionUseCase {
-  Future<VersionUpdate> getCurrentVersionUpdateStatus() async {
+  static Future<VersionUpdate> getCurrentVersionUpdateStatus() async {
     final AppVersionModel? firebaseVersionData =
         await _fetchVersionFromFirebase();
     final String currentVersion =
@@ -55,7 +55,7 @@ class VersionUseCase {
   }
 
   /// Converts a version string (e.g. "1.2.3") into an integer (e.g. 123).
-  int _parseVersionNumber(String version) {
+  static int _parseVersionNumber(String version) {
     return int.tryParse(version.replaceAll('.', '')) ?? 0;
   }
 }

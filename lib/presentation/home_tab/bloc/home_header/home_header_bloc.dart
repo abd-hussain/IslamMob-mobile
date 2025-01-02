@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
-import 'package:islam_app/domain/model/salah_time_state.dart';
+import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

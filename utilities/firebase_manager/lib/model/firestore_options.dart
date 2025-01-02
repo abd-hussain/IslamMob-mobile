@@ -1,5 +1,3 @@
-import 'package:firebase_manager/model/mixins.dart';
-
 class FireStoreOptions<T> {
   FireStoreOptions({
     this.collectionName,
@@ -9,6 +7,6 @@ class FireStoreOptions<T> {
   });
   final String? collectionName;
   final String? docName;
-  final Model<dynamic>? fromModel;
+  final Map<String, dynamic>? fromModel;
   final T Function(dynamic)? toModel;
 }

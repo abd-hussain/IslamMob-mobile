@@ -6,7 +6,7 @@ import 'package:islam_app/domain/repository/pray_manager.dart';
 import 'package:islam_app/domain/usecase/pray_manager/all_pray_time_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/next_pray_usecase.dart';
 import 'package:islam_app/domain/model/calender.dart';
-import 'package:islam_app/domain/model/salah_time_state.dart';
+import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class PrayUsecase {

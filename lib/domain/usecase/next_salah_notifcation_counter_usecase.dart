@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
-import 'package:islam_app/domain/model/salah_time_state.dart';
+import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 

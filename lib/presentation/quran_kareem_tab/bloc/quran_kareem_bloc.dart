@@ -3,11 +3,9 @@ import 'dart:io';
 
 import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:database_manager/database_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:pdfx/pdfx.dart';
 
@@ -16,7 +14,6 @@ part 'quran_kareem_state.dart';
 part 'quran_kareem_bloc.freezed.dart';
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
-  int _numRewardedLoadAttempts = 0;
   PdfController? pdfController;
   int currentPageNumber = 0;
 
@@ -39,7 +36,8 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   void initialize() async {
     await _setupFirstInitialPDF();
     _loadBookmarkedPages();
-    _createRewardedAd();
+    await RewarderAds.createRewardedAd();
+    add(QuranKareemEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
   }
 
   // Load the initial PDF
@@ -66,68 +64,6 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     } else {
       debugPrint("file does NOT exist at: ${file.path}");
     }
-  }
-
-  // Create and load the rewarded ad
-  void _createRewardedAd() {
-    RewardedAd.load(
-      adUnitId: AdHelper.rewardedAdUnitId,
-      request: const AdRequest(),
-      rewardedAdLoadCallback:
-          RewardedAdLoadCallback(onAdLoaded: (RewardedAd rewardedAd) {
-        _numRewardedLoadAttempts = 0;
-        add(QuranKareemEvent.updateRewardedAd(rewardedAd));
-      }, onAdFailedToLoad: (LoadAdError error) {
-        add(QuranKareemEvent.updateRewardedAd(null));
-        _numRewardedLoadAttempts += 1;
-        if (_numRewardedLoadAttempts < 3) {
-          _createRewardedAd();
-        }
-      }),
-    );
-  }
-
-  // Show the rewarded ad
-  void showRewardedAd(RewardedAd rewardedAd) {
-    rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
-      onAdShowedFullScreenContent: (_) {
-        debugPrint('Ad showed full screen content.');
-      },
-      onAdDismissedFullScreenContent: (RewardedAd ad) {
-        debugPrint('$ad dismissed.');
-        _handleAdDismissal(ad);
-      },
-      onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
-        debugPrint('$ad failed to show: $error');
-        _handleAdDismissal(ad);
-      },
-    );
-    rewardedAd.setImmersiveMode(true);
-    rewardedAd.show(onUserEarnedReward: (_, reward) {
-      _logAdReward(reward);
-    });
-    add(QuranKareemEvent.updateRewardedAd(null));
-  }
-
-  // Handle the ad dismissal and load a new one
-  void _handleAdDismissal(RewardedAd ad) {
-    FirebaseAnalyticsRepository.logEvent(
-      name: "RewardedAd_Quran_tab",
-      parameters: {"status": "onAdDismissedFullScreenContent"},
-    );
-    ad.dispose();
-    _createRewardedAd();
-  }
-
-  // Log the earned reward
-  void _logAdReward(RewardItem reward) {
-    debugPrint('Reward: $reward');
-    FirebaseAnalyticsRepository.logEvent(
-      name: "RewardedAd_Quran_tab",
-      parameters: {
-        "status": "earned reward $reward",
-      },
-    );
   }
 
   // Load bookmarked pages from local storage
@@ -199,7 +135,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   FutureOr<void> _updateRewardedAd(
       _UpdateRewardedAd event, Emitter<QuranKareemState> emit) {
-    emit(state.copyWith(rewardedAd: event.value));
+    emit(state.copyWith(rewardedAdExists: event.value));
   }
 
   FutureOr<void> _updateReadPDFFile(

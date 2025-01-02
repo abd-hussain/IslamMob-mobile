@@ -3,9 +3,9 @@ import 'package:database_manager/database_manager.dart';
 import 'package:islam_app/domain/model/location.dart';
 import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/usecase/pray_country_setting_usecase.dart';
-import 'package:islam_app/domain/model/high_latitude_method.dart';
-import 'package:islam_app/domain/model/madhab.dart';
-import 'package:islam_app/domain/model/pray_calculation_method.dart';
+import 'package:islam_app/domain/sealed/high_latitude_method.dart';
+import 'package:islam_app/domain/sealed/madhab.dart';
+import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 
 class SetupUserSettingUseCase {
   final PrayCountrySettingUsecase prayCountrySettingUsecase =

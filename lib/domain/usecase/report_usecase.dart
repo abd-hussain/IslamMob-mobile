@@ -24,7 +24,7 @@ class ReportUseCase {
         options: FireStoreOptions<ReportRequestToFirebase>(
       collectionName: FirebaseCollectionConstants.reports,
       docName: _generateDocumentName(),
-      fromModel: report,
+      fromModel: report.toJson(),
     ));
   }
 

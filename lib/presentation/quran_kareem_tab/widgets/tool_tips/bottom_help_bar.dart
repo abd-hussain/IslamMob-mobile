@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -205,18 +206,19 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   Widget _buildSupportUsTile(BuildContext context) {
+    final bloc = context.read<QuranKareemBloc>();
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) =>
-          previous.rewardedAd != current.rewardedAd,
+          previous.rewardedAdExists != current.rewardedAdExists,
       builder: (context, state) {
         return BottomTile(
           title: AppLocalizations.of(context)!.quranSettingSupportUs,
           icon: Icons.ads_click,
-          isIconBlinking: state.rewardedAd != null,
-          onTap: () {
-            if (state.rewardedAd != null) {
-              context.read<QuranKareemBloc>().showRewardedAd(state.rewardedAd!);
-            }
+          isIconBlinking: state.rewardedAdExists,
+          onTap: () async {
+            await RewarderAds.showRewardedAd();
+            bloc.add(QuranKareemEvent.updateRewardedAd(
+                RewarderAds.mainRewardedAd != null));
           },
         );
       },

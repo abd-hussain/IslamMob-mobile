@@ -1,6 +1,6 @@
 import 'package:azkar/azkar.dart';
-import 'package:islam_app/domain/model/salah_time_state.dart';
-import 'package:islam_app/domain/repository/local_notifications.dart';
+import 'package:islam_app/domain/sealed/local_notification.dart';
+import 'package:islam_app/domain/sealed/salah_time_state.dart';
 
 class SalahTimeStateParser {
   static AzkarSalahTimeState getSalahTimeState(SalahTimeState prayType) {
@@ -22,22 +22,23 @@ class SalahTimeStateParser {
     }
   }
 
-  static NotificationType getNextSalahNotificationType(SalahTimeState state) {
+  static NotificationTypeState getNextSalahNotificationType(
+      SalahTimeState state) {
     switch (state) {
       case SalahTimeStateFajir():
-        return NotificationType.fajir;
+        return const NotificationTypeState.fajir();
       case SalahTimeStateSunrise():
-        return NotificationType.sunrise;
+        return const NotificationTypeState.sunrise();
       case SalahTimeStateZhur():
-        return NotificationType.zuhr;
+        return const NotificationTypeState.zuhr();
       case SalahTimeStateAsr():
-        return NotificationType.asr;
+        return const NotificationTypeState.asr();
       case SalahTimeStateMaghrib():
-        return NotificationType.maghrib;
+        return const NotificationTypeState.maghrib();
       case SalahTimeStateIsha():
-        return NotificationType.isha;
+        return const NotificationTypeState.isha();
       case SalahTimeStateNone():
-        return NotificationType.before15Minutes;
+        return const NotificationTypeState.before15Minutes();
     }
   }
 }

@@ -1,10 +1,14 @@
-class AppVersionModel {
-  AppVersionModel({this.latestVersion, this.minSupportedVersion});
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'version.freezed.dart';
+part 'version.g.dart';
 
-  AppVersionModel.fromJson(Map<String, dynamic> json) {
-    latestVersion = json['latestVersion'];
-    minSupportedVersion = json['minSupportedVersion'];
-  }
-  String? latestVersion;
-  String? minSupportedVersion;
+@freezed
+class AppVersionModel with _$AppVersionModel {
+  factory AppVersionModel({
+    String? latestVersion,
+    String? minSupportedVersion,
+  }) = _AppVersionModel;
+
+  factory AppVersionModel.fromJson(Map<String, dynamic> json) =>
+      _$AppVersionModelFromJson(json);
 }

@@ -24,8 +24,9 @@ class DioBuilder {
   }
 
   DioBuilder withNativeAdapter() {
-    if (!Platform.environment.containsKey('FLUTTER_TEST'))
+    if (!Platform.environment.containsKey('FLUTTER_TEST')) {
       _clientAdapter = NativeAdapter();
+    }
     return this;
   }
 
