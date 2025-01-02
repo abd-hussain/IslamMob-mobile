@@ -8,7 +8,7 @@ import 'package:islam_app/domain/sealed/madhab.dart';
 import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 
 class SetupUserSettingUseCase {
-  final PrayCountrySettingUsecase prayCountrySettingUsecase =
+  final PrayCountrySettingUsecase _prayCountrySettingUsecase =
       PrayCountrySettingUsecase();
 
   Future<void> setupHighLatitudeRule() async {
@@ -18,7 +18,7 @@ class SetupUserSettingUseCase {
     );
 
     PrayHightLatitudeCaluclationState calculationMethod =
-        prayCountrySettingUsecase
+        _prayCountrySettingUsecase
             .setupPraySettingByCountryCode(countryCode)
             .hightLatitudeCaluclationState;
 
@@ -33,7 +33,7 @@ class SetupUserSettingUseCase {
       defaultValue: "JO",
     ) as String;
 
-    PrayCalculationMethodState calculationMethod = prayCountrySettingUsecase
+    PrayCalculationMethodState calculationMethod = _prayCountrySettingUsecase
         .setupPraySettingByCountryCode(countryCode)
         .calculationMethod;
 
@@ -48,7 +48,7 @@ class SetupUserSettingUseCase {
       defaultValue: "JO",
     ) as String;
 
-    MadhabState calculationMethod = prayCountrySettingUsecase
+    MadhabState calculationMethod = _prayCountrySettingUsecase
         .setupPraySettingByCountryCode(countryCode)
         .madhab;
 

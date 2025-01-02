@@ -21,6 +21,8 @@ class QuranPrintsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseAnalyticsRepository.logEvent(name: "QuranPrintsScreen");
+
     return BlocProvider(
       create: (context) => QuranPrintsBloc()
         ..add(

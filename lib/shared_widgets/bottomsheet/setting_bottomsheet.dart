@@ -81,9 +81,7 @@ class SettingBottomSheet {
             Navigator.pop(context);
             onPressed();
           },
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(color: color),
-          ),
+          style: OutlinedButton.styleFrom(side: BorderSide(color: color)),
           child: CustomText(
             title: title,
             fontSize: 14,

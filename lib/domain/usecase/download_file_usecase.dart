@@ -5,7 +5,7 @@ import 'package:logger_manager/logger_manager.dart';
 import 'package:path_provider/path_provider.dart';
 
 class DownloadFileUsecase {
-  final Dio dio = Dio();
+  final Dio _dio = Dio();
 
   /// Starts downloading a file and provides progress and completion callbacks.
   Future<void> startDownloading({
@@ -18,7 +18,7 @@ class DownloadFileUsecase {
     final String filePath = await _getFilePath(fileNameWithExtension);
 
     try {
-      await dio.download(
+      await _dio.download(
         fileUrl,
         filePath,
         cancelToken: cancelToken,

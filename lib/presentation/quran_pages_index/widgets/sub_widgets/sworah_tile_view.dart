@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/domain/sealed/sorah_type_state.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/arrow_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-
-/// Enum representing the type of Sowrah: Makyeh or Madanyeh.
-enum SowrahType {
-  makyeh,
-  madanyeh,
-}
 
 class SowrahTileView extends StatelessWidget {
   final VoidCallback onTap;
   final int index;
   final String sowrahName;
   final bool isCurrentPage;
-  final SowrahType sowrahType;
+  final SowrahTypeState sowrahType;
 
   const SowrahTileView(
       {super.key,
@@ -82,8 +77,8 @@ class SowrahTileView extends StatelessWidget {
   }
 
   /// Returns the icon representing the Sowrah type.
-  Widget _buildSowrahTypeIcon(SowrahType type) {
-    final imagePath = type == SowrahType.makyeh
+  Widget _buildSowrahTypeIcon(SowrahTypeState type) {
+    final imagePath = type == const SowrahTypeState.makyeh()
         ? "assets/images/sorah_type/macca.png"
         : "assets/images/sorah_type/madenah.png";
     return SizedBox(

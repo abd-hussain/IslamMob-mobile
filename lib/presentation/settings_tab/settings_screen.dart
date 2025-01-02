@@ -162,8 +162,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
       SnackBar(
-          content: Text(
-              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+        content: Text(
+            AppLocalizations.of(context)!.pleasecheckyourinternetconnection),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:country_flags/country_flags.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/language.dart';
@@ -16,6 +17,11 @@ class ListOfLanguageTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
       child: InkWell(
         onTap: () async {
+          FirebaseAnalyticsRepository.logEvent(
+              name: "ChangeLanguage",
+              parameters: {
+                "language": language.languageCode,
+              });
           context.read<ChangeLanguageBloc>().add(
                 ChangeLanguageEvent.changeSelectedCheckBoxLanguage(
                   type: language,

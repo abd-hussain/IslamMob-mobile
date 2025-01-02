@@ -6,15 +6,15 @@ import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class NotifyAdhanNotificationUsecase {
-  PrayUsecase prayUsecase = PrayUsecase();
+  PrayUsecase _prayUsecase = PrayUsecase();
 
   Future<void> prepareLocalNotificationForTomorrow(BuildContext context) async {
     final tommorrow = DateTime.now().add(const Duration(days: 1));
-    prayUsecase = PrayUsecase(
+    _prayUsecase = PrayUsecase(
         specificDate:
             DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
     PrayTimingDateTimeModel prayTimingDateTimeModel =
-        prayUsecase.getAllPrayTimeAsDateTimeForToday();
+        _prayUsecase.getAllPrayTimeAsDateTimeForToday();
 
     final fajirPrayTime = DateTime(
       tommorrow.year,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/sealed/madhab.dart';
-import 'package:islam_app/domain/model/madhab_setting.dart';
+import 'package:islam_app/domain/usecase/calculation_setting_usecase.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -52,7 +51,8 @@ class MadhabView extends StatelessWidget {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) => previous.madhab != current.madhab,
       builder: (context, state) {
-        final madhabList = _getMadhabList(localizations, state.madhab);
+        final madhabList = CalculationSettingUsecase.getMadhabList(
+            localizations, state.madhab);
 
         return ListView.builder(
           itemCount: madhabList.length,
@@ -70,21 +70,5 @@ class MadhabView extends StatelessWidget {
         );
       },
     );
-  }
-
-  List<MadhabSetting> _getMadhabList(
-      AppLocalizations localizations, MadhabState currentState) {
-    return [
-      MadhabSetting(
-        name: localizations.mathhab1Shafi,
-        method: const MadhabState.shafi(),
-        isSelected: currentState == const MadhabState.shafi(),
-      ),
-      MadhabSetting(
-        name: localizations.mathhab2Hanafi,
-        method: const MadhabState.hanafi(),
-        isSelected: currentState == const MadhabState.hanafi(),
-      ),
-    ];
   }
 }

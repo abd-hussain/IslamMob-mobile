@@ -7,19 +7,19 @@ import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class NextSalahNotificationCounterUsecase {
-  PrayUsecase prayUsecase = PrayUsecase();
+  PrayUsecase _prayUsecase = PrayUsecase();
 
   Future<void> handleNextSalahNotification(BuildContext context) async {
     DateTime nextSalahTime = DateTime.now();
     SalahTimeState nextSalahType = const SalahTimeState.fajir();
 
-    if (prayUsecase.getNextPrayType() == const SalahTimeState.none()) {
+    if (_prayUsecase.getNextPrayType() == const SalahTimeState.none()) {
       final tommorrow = DateTime.now().add(const Duration(days: 1));
 
-      prayUsecase = PrayUsecase(
+      _prayUsecase = PrayUsecase(
           specificDate:
               DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
-      final fajirDate = prayUsecase.getAllPrayTimeAsDateTimeForToday().fajir;
+      final fajirDate = _prayUsecase.getAllPrayTimeAsDateTimeForToday().fajir;
       nextSalahTime = DateTime(
         tommorrow.year,
         tommorrow.month,
@@ -28,8 +28,8 @@ class NextSalahNotificationCounterUsecase {
         fajirDate.minute,
       );
     } else {
-      nextSalahTime = prayUsecase.getNextPrayTime()!;
-      nextSalahType = prayUsecase.getNextPrayType();
+      nextSalahTime = _prayUsecase.getNextPrayTime()!;
+      nextSalahType = _prayUsecase.getNextPrayType();
     }
 
     Duration diff = nextSalahTime.difference(DateTime.now());

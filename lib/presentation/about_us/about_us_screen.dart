@@ -140,6 +140,8 @@ class AboutUsScreen extends StatelessWidget {
                 icon: Ionicons.fitness,
                 name: AppLocalizations.of(context)!.supportus,
                 onTap: () async {
+                  FirebaseAnalyticsRepository.logEvent(
+                      name: "showRewardedAdFromAboutScreen");
                   await RewarderAds.showRewardedAd();
                   bloc.add(AboutUsEvent.updateRewardedAd(
                       RewarderAds.mainRewardedAd != null));

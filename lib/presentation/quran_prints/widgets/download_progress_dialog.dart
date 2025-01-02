@@ -1,3 +1,4 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -134,6 +135,8 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
       title: AppLocalizations.of(context)!.cancel,
       color: Colors.redAccent,
       onTap: () {
+        FirebaseAnalyticsRepository.logEvent(
+            name: "QuranPrintsScreenCancelButton");
         cancelToken.cancel(); // Cancel the download when pressing Cancel
         Navigator.of(context).pop();
       },
