@@ -1,11 +1,12 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.0.0+65
+version: 1.0.0+66
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
-
+  flutter: ">=1.17.0"
+  
 dependencies:
   flutter:
     sdk: flutter

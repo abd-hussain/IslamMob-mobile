@@ -3,7 +3,6 @@ version: 0.0.1
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
-  flutter: ">=1.17.0"
 
 dependencies:
   freezed: ^2.5.7
