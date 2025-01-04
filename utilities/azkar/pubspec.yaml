@@ -2,7 +2,7 @@ name: azkar
 version: 0.0.1
 
 environment:
-  sdk: 3.5.4
+  sdk: 3.5.1
 
 dependencies:
   freezed: ^2.5.7
