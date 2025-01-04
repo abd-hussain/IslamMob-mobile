@@ -4,7 +4,7 @@ publish_to: 'none'
 version: 1.0.0+68
 
 environment:
-  sdk: 3.5.4
+  sdk: ">=3.3.4 <4.0.0"
   
 dependencies:
   flutter:
@@ -45,6 +45,9 @@ dependencies:
 
   location_manager:
     path: utilities/location_manager
+
+  firebase_manager:
+    path: utilities/firebase_manager
 
   dio: ^5.7.0
   async: ^2.11.0
