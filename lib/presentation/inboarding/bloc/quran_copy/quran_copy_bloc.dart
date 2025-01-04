@@ -16,7 +16,7 @@ import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
 import 'package:islam_app/core/constants/firebase_constants.dart';
-import 'package:islam_app/utils/logger.dart';
+import 'package:logger_manager/logger_manager.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -26,8 +26,7 @@ part 'quran_copy_bloc.freezed.dart';
 
 class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
   final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
-  final SetupUserSettingUseCase setupUserSettingUseCase =
-      SetupUserSettingUseCase();
+  final SetupUserSettingUseCase setupUserSettingUseCase = SetupUserSettingUseCase();
 
   QuranCopyBloc() : super(const QuranCopyState()) {
     on<_GetListOfPrints>(_getListOfPrints);
@@ -50,8 +49,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
   }
 
   /// Maps Firestore documents to a list of [QuranPrints].
-  List<QuranPrints> _mapDocumentsToPrints(
-      List<QueryDocumentSnapshot<Object?>> documents) {
+  List<QuranPrints> _mapDocumentsToPrints(List<QueryDocumentSnapshot<Object?>> documents) {
     return documents.map((doc) {
       return QuranPrints(
         nameReferance: doc["name_referance"] ?? "",
@@ -73,8 +71,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
     for (final print in prints) {
       final fieldName = print.fieldName ?? "";
-      if (await downloadFileUsecase.fileExists(fieldName) &&
-          !state.printsAlreadyDownloaded.contains(fieldName)) {
+      if (await downloadFileUsecase.fileExists(fieldName) && !state.printsAlreadyDownloaded.contains(fieldName)) {
         downloadingList.add(fieldName);
       }
     }
@@ -115,13 +112,11 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
   }
 
   /// Handles updating the list of downloading prints in the state.
-  void _handlePrintsDownloadingUpdate(
-      _UpdatePrintsDownloading event, Emitter<QuranCopyState> emit) {
+  void _handlePrintsDownloadingUpdate(_UpdatePrintsDownloading event, Emitter<QuranCopyState> emit) {
     emit(state.copyWith(printsAlreadyDownloaded: event.print));
   }
 
-  FutureOr<void> _handleSetupCopy(
-      _SetupCopy event, Emitter<QuranCopyState> emit) async {
+  FutureOr<void> _handleSetupCopy(_SetupCopy event, Emitter<QuranCopyState> emit) async {
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/${event.printItem.fieldName!}');
 
@@ -138,8 +133,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
     ));
   }
 
-  FutureOr<void> _getListOfPrints(
-      _GetListOfPrints event, Emitter<QuranCopyState> emit) async {
+  FutureOr<void> _getListOfPrints(_GetListOfPrints event, Emitter<QuranCopyState> emit) async {
     final hasInternet = await _checkInternetConnection();
     if (!hasInternet) return;
 
@@ -149,14 +143,12 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
     /// Fetches Quran prints from Firestore and updates the state.
     try {
-      final documents =
-          await locator<FirebaseFirestoreRepository>().getAllDocuments(
+      final documents = await locator<FirebaseFirestoreRepository>().getAllDocuments(
         collectionName: FirebaseCollectionConstants.quranPrints,
       );
 
       if (documents.isEmpty) {
-        logDebugMessage(
-            message: 'No documents found in the Quran prints collection.');
+        LoggerManagerBase.logDebugMessage(message: 'No documents found in the Quran prints collection.');
         return;
       }
 
@@ -168,7 +160,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
         printsAlreadyDownloaded: downloadedList,
       ));
     } catch (e) {
-      logDebugMessage(message: 'Error fetching Quran prints: $e');
+      LoggerManagerBase.logDebugMessage(message: 'Error fetching Quran prints: $e');
     }
   }
 }

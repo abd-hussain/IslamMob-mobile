@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:islam_app/utils/logger.dart';
+import 'package:logger_manager/logger_manager.dart';
 
 class LocationRepository {
   /// Retrieves detailed location information including country, city, and coordinates.
@@ -16,7 +16,7 @@ class LocationRepository {
     } on PlatformException catch (e) {
       _logPlatformException(e);
     } catch (e) {
-      logDebugMessage(message: "Unexpected error: $e");
+      LoggerManagerBase.logDebugMessage(message: "Unexpected error: $e");
     }
     return {'error': 'Error retrieving location'};
   }
@@ -24,7 +24,7 @@ class LocationRepository {
   /// Checks and requests location permissions.
   Future<bool> _checkLocationPermission() async {
     if (!await Geolocator.isLocationServiceEnabled()) {
-      logDebugMessage(message: "Location services are disabled.");
+      LoggerManagerBase.logDebugMessage(message: "Location services are disabled.");
       return false;
     }
 
@@ -34,7 +34,7 @@ class LocationRepository {
     }
 
     if (permission == LocationPermission.deniedForever) {
-      logDebugMessage(message: "Location permissions are permanently denied.");
+      LoggerManagerBase.logDebugMessage(message: "Location permissions are permanently denied.");
       return false;
     }
 
@@ -66,12 +66,12 @@ class LocationRepository {
       };
     }
 
-    logDebugMessage(message: "No placemarks found for the given coordinates.");
+    LoggerManagerBase.logDebugMessage(message: "No placemarks found for the given coordinates.");
     return {'error': 'No placemarks found'};
   }
 
   /// Logs platform exceptions for debugging purposes.
   void _logPlatformException(PlatformException e) {
-    logDebugMessage(message: e.message ?? "An unknown platform error occurred");
+    LoggerManagerBase.logDebugMessage(message: e.message ?? "An unknown platform error occurred");
   }
 }
