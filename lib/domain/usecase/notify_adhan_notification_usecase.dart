@@ -9,11 +9,8 @@ class NotifyAdhanNotificationUsecase {
 
   Future<void> prepareLocalNotificationForTomorrow(BuildContext context) async {
     final tommorrow = DateTime.now().add(const Duration(days: 1));
-    prayUsecase = PrayUsecase(
-        specificDate:
-            DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
-    PrayTimingDateTimeModel prayTimingDateTimeModel =
-        prayUsecase.getAllPrayTimeAsDateTimeForToday();
+    prayUsecase = PrayUsecase(specificDate: DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
+    PrayTimingDateTimeModel prayTimingDateTimeModel = prayUsecase.getAllPrayTimeAsDateTimeForToday();
 
     final fajirPrayTime = DateTime(
       tommorrow.year,

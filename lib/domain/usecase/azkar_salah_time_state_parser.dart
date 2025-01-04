@@ -1,4 +1,4 @@
-import 'package:azkar/azkar.dart';
+import 'package:azkar/model/azkar_salah_time.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 
 class AzkarSalahTimeStateParser {

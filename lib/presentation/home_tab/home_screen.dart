@@ -46,8 +46,7 @@ class HomeScreen extends StatelessWidget {
   /// Builds the spacer under the app bar when it is collapsed.
   Widget _buildAppBarSpacer() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.isBarExpanded != current.isBarExpanded,
+      buildWhen: (previous, current) => previous.isBarExpanded != current.isBarExpanded,
       builder: (context, state) {
         return SizedBox(height: state.isBarExpanded ? 0 : 75);
       },
@@ -57,13 +56,9 @@ class HomeScreen extends StatelessWidget {
   /// Builds the notification permission view when applicable.
   Widget _buildNotificationPermissionView() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.showAllowNotificationView !=
-          current.showAllowNotificationView,
+      buildWhen: (previous, current) => previous.showAllowNotificationView != current.showAllowNotificationView,
       builder: (context, state) {
-        return state.showAllowNotificationView
-            ? const NotificationPermissionView()
-            : const SizedBox.shrink();
+        return state.showAllowNotificationView ? const NotificationPermissionView() : const SizedBox.shrink();
       },
     );
   }
@@ -71,12 +66,9 @@ class HomeScreen extends StatelessWidget {
   /// Builds the Azkar view based on the next prayer type.
   Widget _buildAzkarView() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.nextPrayType != current.nextPrayType,
+      buildWhen: (previous, current) => previous.nextPrayType != current.nextPrayType,
       builder: (context, state) {
-        return AzkarAfterSalahView(
-            salahType: AzkarSalahTimeStateParser.getSalahTimeState(
-                state.nextPrayType));
+        return AzkarAfterSalahView(salahType: AzkarSalahTimeStateParser.getSalahTimeState(state.nextPrayType));
       },
     );
   }

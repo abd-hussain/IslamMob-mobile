@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.0.0+68
+version: 1.0.0+69
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -24,13 +24,13 @@ dependencies:
   firebase_storage: ^12.3.2
 
   islam_mob_adhan:
-    path: sub_projects/islam_mob_adhan
+    path: utilities/islam_mob_adhan
 
   azkar:
-    path: sub_projects/azkar
+    path: utilities/azkar
 
   advertisments_manager:
-    path: sub_projects/advertisments_manager
+    path: utilities/advertisments_manager
 
   http: ^1.2.2
   dio: ^5.7.0
