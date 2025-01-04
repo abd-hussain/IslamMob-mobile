@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:advertisments_manager/advertisments_manager.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -87,8 +88,7 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
     );
   }
 
-  FutureOr<void> _initializeRewardedAd(
-      _InitializeRewardedAd event, Emitter<AboutUsState> emit) {
+  FutureOr<void> _initializeRewardedAd(_InitializeRewardedAd event, Emitter<AboutUsState> emit) {
     RewardedAd.load(
       adUnitId: AdHelper.rewardedAdUnitId,
       request: const AdRequest(),
@@ -104,8 +104,7 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
     );
   }
 
-  FutureOr<void> _handleUpdateRewardedAd(
-      _UpdateRewardedAd event, Emitter<AboutUsState> emit) {
+  FutureOr<void> _handleUpdateRewardedAd(_UpdateRewardedAd event, Emitter<AboutUsState> emit) {
     emit(state.copyWith(rewardedAd: event.value));
   }
 }

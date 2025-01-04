@@ -1,3 +1,4 @@
+import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
@@ -11,7 +12,6 @@ import 'package:islam_app/presentation/settings_tab/widgets/footer.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/profile_header.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
-import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:islam_app/core/constants/app_constant.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:share_plus/share_plus.dart';
@@ -40,8 +40,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   icon: Icons.textsms_sharp,
                   name: "Test Notification Countdown",
                   onTap: () async {
-                    await NextSalahNotificationCounterUsecase()
-                        .handleNextSalahNotification(context);
+                    await NextSalahNotificationCounterUsecase().handleNextSalahNotification(context);
                   },
                 ),
                 ProfileOptions(
@@ -49,8 +48,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   name: "Test Notification",
                   onTap: () async {
                     //add code execution
-                    DateTime scheduledDate =
-                        DateTime.now().add(const Duration(seconds: 5));
+                    DateTime scheduledDate = DateTime.now().add(const Duration(seconds: 5));
 
                     await LocalNotificationRepository.scheduleNotification(
                       id: 0,
@@ -63,26 +61,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ProfileOptions(
                   icon: Icons.calendar_month,
                   name: AppLocalizations.of(context)!.calenderSettings,
-                  onTap: () async =>
-                      await navigator.pushNamed(RoutesConstants.calenderScreen),
+                  onTap: () async => await navigator.pushNamed(RoutesConstants.calenderScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.translate,
                   name: AppLocalizations.of(context)!.changeSelectedLanguage,
-                  onTap: () async => await navigator
-                      .pushNamed(RoutesConstants.changeLanguageScreen),
+                  onTap: () async => await navigator.pushNamed(RoutesConstants.changeLanguageScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.notification_important,
                   name: AppLocalizations.of(context)!.notificationSettings,
-                  onTap: () async => await navigator
-                      .pushNamed(RoutesConstants.prayNotificationSettingScreen),
+                  onTap: () async => await navigator.pushNamed(RoutesConstants.prayNotificationSettingScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.settings,
                   name: AppLocalizations.of(context)!.prayCalculationSettings,
-                  onTap: () async => await navigator
-                      .pushNamed(RoutesConstants.prayCalculationSettingScreen),
+                  onTap: () async => await navigator.pushNamed(RoutesConstants.prayCalculationSettingScreen),
                 ),
               ]),
               TitleView(title: AppLocalizations.of(context)!.reachouttous),
@@ -90,8 +84,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ProfileOptions(
                   icon: Icons.bug_report,
                   name: AppLocalizations.of(context)!.reportOrSuggestion,
-                  onTap: () async => await navigator
-                      .pushNamed(RoutesConstants.reportOrSuggestionScreen),
+                  onTap: () async => await navigator.pushNamed(RoutesConstants.reportOrSuggestionScreen),
                 ),
               ]),
               TitleView(title: AppLocalizations.of(context)!.support),
@@ -100,8 +93,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     icon: Ionicons.sparkles,
                     name: AppLocalizations.of(context)!.rateapp,
                     onTap: () async {
-                      final bool internetStatus =
-                          await NetworkUseCase.checkInternetConeection();
+                      final bool internetStatus = await NetworkUseCase.checkInternetConeection();
 
                       if (internetStatus == false) {
                         if (context.mounted) {
@@ -120,8 +112,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           await rateMyApp.showRateDialog(
                             context,
                             title: AppLocalizations.of(context)!.rateapponstore,
-                            message: AppLocalizations.of(context)!
-                                .rateapponstoremessage,
+                            message: AppLocalizations.of(context)!.rateapponstoremessage,
                             rateButton: AppLocalizations.of(context)!.rateapp,
                             laterButton: AppLocalizations.of(context)!.later,
                             noButton: AppLocalizations.of(context)!.close,
@@ -132,8 +123,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ProfileOptions(
                   icon: Ionicons.color_palette,
                   name: AppLocalizations.of(context)!.aboutus,
-                  onTap: () async =>
-                      await navigator.pushNamed(RoutesConstants.aboutUsScreen),
+                  onTap: () async => await navigator.pushNamed(RoutesConstants.aboutUsScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.share,
@@ -141,8 +131,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   onTap: () async {
                     await Share.share(
                         "${AppLocalizations.of(context)!.shareMessageBody} \n Android : ${AppConstant.androidAppLink} \n iOS : ${AppConstant.iOSAppLink}",
-                        subject:
-                            AppLocalizations.of(context)!.shareMessageTitle);
+                        subject: AppLocalizations.of(context)!.shareMessageTitle);
                   },
                 ),
               ]),
@@ -160,9 +149,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void showNoInternetConnection(BuildContext context) {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
-      SnackBar(
-          content: Text(
-              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+      SnackBar(content: Text(AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

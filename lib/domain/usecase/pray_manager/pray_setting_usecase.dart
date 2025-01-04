@@ -27,8 +27,7 @@ class PraySettingUsecase {
     _prayManager = PrayManagerRepository(
       coordinates: _retrieveCoordinates(),
       utcOffset: utcOffset,
-      calculationMethod:
-          _prayDBParser.parseCalculationMethod(calculationMethod),
+      calculationMethod: _prayDBParser.parseCalculationMethod(calculationMethod),
       madhab: _prayDBParser.parseMadhab(madhab),
       highLatitudeRule: _prayDBParser.parseHighLatitudeRule(highLatitudeRule),
     );
@@ -36,12 +35,8 @@ class PraySettingUsecase {
 
   /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
   Coordinates _retrieveCoordinates() {
-    final String latitude = _box.get(
-        DatabaseFieldLocationConstant.selectedLatitude,
-        defaultValue: "0.0");
-    final String longitude = _box.get(
-        DatabaseFieldLocationConstant.selectedLongitude,
-        defaultValue: "0.0");
+    final String latitude = _box.get(DatabaseFieldLocationConstant.selectedLatitude, defaultValue: "0.0");
+    final String longitude = _box.get(DatabaseFieldLocationConstant.selectedLongitude, defaultValue: "0.0");
 
     return Coordinates(
       double.tryParse(latitude) ?? 0.0,

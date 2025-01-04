@@ -1,6 +1,6 @@
 import 'package:islam_app/domain/repository/pray_manager.dart';
-import 'package:test/test.dart';
 import 'package:islam_mob_adhan/adhan.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('PrayManagerRepository', () {

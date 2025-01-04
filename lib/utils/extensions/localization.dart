@@ -4,8 +4,7 @@ extension AppLocalizationsExtension on AppLocalizations {
   String getLocalizedString(String key) {
     // Look up the localized string based on the provided key
     final localizedString = toJson()[key];
-    return localizedString ??
-        ''; // Returns an empty string if the key is not found
+    return localizedString ?? ''; // Returns an empty string if the key is not found
   }
 
   String getKeyFromLocalizedString(String value) {

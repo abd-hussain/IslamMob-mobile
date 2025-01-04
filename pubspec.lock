@@ -25,7 +25,7 @@ packages:
   advertisments_manager:
     dependency: "direct main"
     description:
-      path: "sub_projects/advertisments_manager"
+      path: "utilities/advertisments_manager"
       relative: true
     source: path
     version: "1.0.0"
@@ -72,7 +72,7 @@ packages:
   azkar:
     dependency: "direct main"
     description:
-      path: "sub_projects/azkar"
+      path: "utilities/azkar"
       relative: true
     source: path
     version: "0.0.1"
@@ -1051,7 +1051,7 @@ packages:
   islam_mob_adhan:
     dependency: "direct main"
     description:
-      path: "sub_projects/islam_mob_adhan"
+      path: "utilities/islam_mob_adhan"
       relative: true
     source: path
     version: "0.0.1"

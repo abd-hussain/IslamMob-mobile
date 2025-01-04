@@ -15,9 +15,7 @@ class NextSalahNotificationCounterUsecase {
     if (prayUsecase.getNextPrayType() == const SalahTimeState.none()) {
       final tommorrow = DateTime.now().add(const Duration(days: 1));
 
-      prayUsecase = PrayUsecase(
-          specificDate:
-              DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
+      prayUsecase = PrayUsecase(specificDate: DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
       final fajirDate = prayUsecase.getAllPrayTimeAsDateTimeForToday().fajir;
       nextSalahTime = DateTime(
         tommorrow.year,

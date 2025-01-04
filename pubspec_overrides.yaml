@@ -1,0 +1,8 @@
+# melos_managed_dependency_overrides: advertisments_manager,azkar,islam_mob_adhan
+dependency_overrides:
+  advertisments_manager:
+    path: utilities/advertisments_manager
+  azkar:
+    path: utilities/azkar
+  islam_mob_adhan:
+    path: utilities/islam_mob_adhan
