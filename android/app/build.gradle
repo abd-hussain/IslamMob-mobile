@@ -71,23 +71,6 @@ android {
            checkReleaseBuilds false
            disable 'InvalidPackage'
        }
-
-    applicationVariants.all { variant ->
-        def buildTypeName = variant.buildType.name
-        if (buildTypeName == "release") {
-            // The task to merge native libs for the Release build
-            variant.mergeNativeLibsProvider.configure {
-                dependsOn(variant.externalNativeBuildProvider)
-            }
-        }
-
-        // If you have a "profile" build type instead:
-        if (buildTypeName == "profile") {
-            variant.mergeNativeLibsProvider.configure {
-                dependsOn(variant.externalNativeBuildProvider)
-            }
-        }
-    }
 }
 
 flutter {
