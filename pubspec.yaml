@@ -32,11 +32,11 @@ dependencies:
   advertisments_manager:
     path: utilities/advertisments_manager
 
-  logger_manager:
-    path: utilities/logger_manager
+  # logger_manager:
+  #   path: utilities/logger_manager
 
-  api_client:
-    path: utilities/api_client
+  # api_client:
+  #   path: utilities/api_client
 
   # database_manager:
   #   path: utilities/database_manager
