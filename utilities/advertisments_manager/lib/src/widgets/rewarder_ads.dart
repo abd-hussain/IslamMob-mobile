@@ -1,7 +1,6 @@
 import 'package:advertisments_manager/src/core/adds_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 
 class RewarderAds {
   static RewardedAd? mainRewardedAd;
@@ -49,10 +48,6 @@ class RewarderAds {
 
   // Handle the ad dismissal and load a new one
   static void _handleAdDismissal(RewardedAd ad) {
-    FirebaseAnalyticsRepository.logEvent(
-      name: "RewardedAd_Quran_tab",
-      parameters: {"status": "onAdDismissedFullScreenContent"},
-    );
     ad.dispose();
     createRewardedAd();
   }
@@ -60,11 +55,5 @@ class RewarderAds {
   // Log the earned reward
   static void _logAdReward(RewardItem reward) {
     debugPrint('Reward: $reward');
-    FirebaseAnalyticsRepository.logEvent(
-      name: "RewardedAd_Quran_tab",
-      parameters: {
-        "status": "earned reward $reward",
-      },
-    );
   }
 }

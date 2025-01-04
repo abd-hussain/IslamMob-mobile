@@ -1,4 +1,4 @@
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/repository/firebase_analytics.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

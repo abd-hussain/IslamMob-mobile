@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:database_manager/database_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/repository/firebase_analytics.dart';
 import 'package:islam_app/domain/usecase/get_user_setting_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_setting_usecase.dart';
 import 'package:islam_app/domain/sealed/high_latitude_method.dart';

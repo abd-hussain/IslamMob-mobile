@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:database_manager/database_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/repository/firebase_analytics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';

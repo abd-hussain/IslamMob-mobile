@@ -244,7 +244,7 @@ packages:
     source: hosted
     version: "1.1.1"
   cloud_firestore:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: cloud_firestore
       sha256: bdc7607e9169ee3ce736bbbe6a81c2a6cb15c41379346b74f77f8e641211a17f
@@ -499,7 +499,7 @@ packages:
     source: hosted
     version: "0.9.3+3"
   firebase_analytics:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_analytics
       sha256: "2c4e7b548d41b46e8aa08bc3bd1163146be7e6d48f678f2e6dd3114994e42458"
@@ -523,7 +523,7 @@ packages:
     source: hosted
     version: "0.5.10+2"
   firebase_core:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_core
       sha256: e59141ff83e70a9ba571a1f8733c5598cf57e6e68037ab185581d7fc0a436738
@@ -547,7 +547,7 @@ packages:
     source: hosted
     version: "2.18.1"
   firebase_crashlytics:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_crashlytics
       sha256: "859c0f9c40f44b555fc44227c3506b4236b86e6680cafb837e1eef40e661956e"
@@ -562,15 +562,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.6.45"
-  firebase_manager:
-    dependency: "direct main"
-    description:
-      path: "utilities/firebase_manager"
-      relative: true
-    source: path
-    version: "1.0.0"
   firebase_messaging:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_messaging
       sha256: eb6e28a3a35deda61fe8634967c84215efc19133ba58d8e0fc6c9a2af2cba05e
@@ -594,7 +587,7 @@ packages:
     source: hosted
     version: "3.9.2"
   firebase_performance:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_performance
       sha256: "1d69118597e398e01fb3d18abc660499f09123726f85b6a4f67fd835ae43c1ca"
@@ -618,7 +611,7 @@ packages:
     source: hosted
     version: "0.1.7+3"
   firebase_remote_config:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_remote_config
       sha256: "10ecace220616349263c8b6b80760f302d4bc68e6a9db2800c615ab06853de46"
@@ -642,7 +635,7 @@ packages:
     source: hosted
     version: "1.7.3"
   firebase_storage:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_storage
       sha256: cc756e2330489b3adff4ccb91ea3cb4a06bebf59ff99d17ccf9bfb7541925def

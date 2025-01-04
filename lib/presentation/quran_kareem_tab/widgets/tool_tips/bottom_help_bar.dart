@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:database_manager/database_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/repository/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';

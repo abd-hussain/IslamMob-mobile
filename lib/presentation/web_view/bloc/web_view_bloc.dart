@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/repository/firebase_analytics.dart';
 
 part 'web_view_event.dart';
 part 'web_view_state.dart';
