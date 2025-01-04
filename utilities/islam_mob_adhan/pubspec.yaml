@@ -2,7 +2,7 @@ name: islam_mob_adhan
 version: 0.0.1
 
 environment:
-  sdk: 3.5.1
+  sdk: ">=3.3.4 <4.0.0"
 
 dev_dependencies:
   test: ^1.25.8

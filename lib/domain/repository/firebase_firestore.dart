@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:islam_app/domain/model/firestore_options.dart';
 import 'package:islam_app/domain/usecase/network_usecase.dart';
-import 'package:islam_app/utils/logger.dart';
+import 'package:logger_manager/logger_manager.dart';
 
 class FirebaseFirestoreRepository {
   final FirebaseFirestore _firestoreInstance = FirebaseFirestore.instance;
@@ -19,7 +19,7 @@ class FirebaseFirestoreRepository {
         final collection = _firestoreInstance.collection(collectionName);
         return (await collection.get()).docs;
       } on FirebaseException catch (error) {
-        logDebugMessage(
+        LoggerManagerBase.logDebugMessage(
           message: 'Unable to fetch data. Error: $error',
         );
       }
@@ -28,8 +28,7 @@ class FirebaseFirestoreRepository {
   }
 
   /// Fetches spesific documents from a Firestore collection.
-  Future<T?> getDataFromFireStoreDocument<T>(
-      FireStoreOptions<T> options) async {
+  Future<T?> getDataFromFireStoreDocument<T>(FireStoreOptions<T> options) async {
     if (await _isConnected()) {
       try {
         final document = await _firestoreInstance
@@ -38,7 +37,7 @@ class FirebaseFirestoreRepository {
             .get(const GetOptions());
         return options.toModel!(document.data());
       } on FirebaseException catch (error) {
-        logDebugMessage(
+        LoggerManagerBase.logDebugMessage(
           message: 'Unable to fetch data. Error: $error',
         );
       }
@@ -56,7 +55,7 @@ class FirebaseFirestoreRepository {
       await ref.putFile(file);
       return await ref.getDownloadURL();
     } catch (error) {
-      logDebugMessage(message: 'Error uploading file: $error');
+      LoggerManagerBase.logDebugMessage(message: 'Error uploading file: $error');
       return '';
     }
   }
@@ -69,7 +68,7 @@ class FirebaseFirestoreRepository {
       final collection = _firestoreInstance.collection(options.collectionName!);
       await collection.doc(options.docName).set(options.fromModel!.toJson());
     } catch (error) {
-      logDebugMessage(message: 'Error setting Firestore data: $error');
+      LoggerManagerBase.logDebugMessage(message: 'Error setting Firestore data: $error');
     }
   }
 

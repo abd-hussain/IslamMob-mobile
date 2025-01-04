@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:islam_app/utils/logger.dart';
+import 'package:logger_manager/logger_manager.dart';
 import 'package:path_provider/path_provider.dart';
 
 class DownloadFileUsecase {
@@ -25,10 +25,10 @@ class DownloadFileUsecase {
         onReceiveProgress: progressCallback,
         deleteOnError: true,
       );
-      logDebugMessage(message: "Download Completed");
+      LoggerManagerBase.logDebugMessage(message: "Download Completed");
       finishCallback(filePath);
     } catch (e) {
-      logDebugMessage(message: "Download failed: $e");
+      LoggerManagerBase.logDebugMessage(message: "Download failed: $e");
     }
   }
 
@@ -37,10 +37,10 @@ class DownloadFileUsecase {
     final newDirectory = Directory('${dir.path}/');
 
     if (await newDirectory.exists()) {
-      logDebugMessage(message: "Directory exists");
+      LoggerManagerBase.logDebugMessage(message: "Directory exists");
     } else {
       await newDirectory.create();
-      logDebugMessage(message: "Directory created");
+      LoggerManagerBase.logDebugMessage(message: "Directory created");
     }
 
     return "${newDirectory.path}$filename";
@@ -59,9 +59,9 @@ class DownloadFileUsecase {
 
     if (await file.exists()) {
       await file.delete();
-      logDebugMessage(message: "File deleted: $filePath");
+      LoggerManagerBase.logDebugMessage(message: "File deleted: $filePath");
     } else {
-      logDebugMessage(message: "File not found: $filePath");
+      LoggerManagerBase.logDebugMessage(message: "File not found: $filePath");
     }
   }
 
@@ -72,9 +72,9 @@ class DownloadFileUsecase {
 
     if (!await newDirectory.exists()) {
       await newDirectory.create();
-      logDebugMessage(message: "Directory created: ${newDirectory.path}");
+      LoggerManagerBase.logDebugMessage(message: "Directory created: ${newDirectory.path}");
     } else {
-      logDebugMessage(message: "Directory exists: ${newDirectory.path}");
+      LoggerManagerBase.logDebugMessage(message: "Directory exists: ${newDirectory.path}");
     }
 
     return "${newDirectory.path}/$fileName";

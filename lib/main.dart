@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/my_app/my_app.dart';
-import 'package:islam_app/utils/logger.dart';
+import 'package:logger_manager/logger_manager.dart';
 // import 'package:logger/logger.dart';
 // import 'package:workmanager/workmanager.dart';
 
@@ -9,7 +9,7 @@ import 'package:islam_app/utils/logger.dart';
 //TODO: report issue after submitssion it keep loading
 
 void main() {
-  logDebugMessage(message: 'Application Started ...');
+  LoggerManagerBase.logDebugMessage(message: 'Application Started ...');
   WidgetsFlutterBinding.ensureInitialized();
 
   // Workmanager().initialize(
