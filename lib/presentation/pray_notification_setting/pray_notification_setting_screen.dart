@@ -1,4 +1,4 @@
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/repository/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';

@@ -1,7 +1,9 @@
 import 'dart:io';
 
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/constants/firebase_constants.dart';
+import 'package:islam_app/domain/model/firestore_options.dart';
 import 'package:islam_app/domain/model/version.dart';
+import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 
 enum VersionUpdate { mandatory, optional, noUpdate }

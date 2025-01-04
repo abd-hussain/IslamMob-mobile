@@ -1,8 +1,9 @@
 import 'dart:io';
 
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/constants/firebase_constants.dart';
+import 'package:islam_app/domain/model/firestore_options.dart';
 import 'package:islam_app/domain/model/report_request.dart';
-import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/domain/repository/firebase_firestore.dart';
 
 class ReportUseCase {
   Future<void> addNewReportOrSuggestion(
@@ -42,7 +43,7 @@ class ReportUseCase {
     final String extension = _getFileExtension(attach.path);
     final String fileName = _generateFileName(extension);
 
-    return await locator<FirebaseFirestoreRepository>().uploadFile(
+    return await FirebaseFirestoreRepository().uploadFile(
       file: attach,
       fileName: fileName,
     );

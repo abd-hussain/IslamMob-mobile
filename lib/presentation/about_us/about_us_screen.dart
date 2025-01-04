@@ -1,9 +1,9 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/model/profile_options.dart';
+import 'package:islam_app/domain/repository/firebase_analytics.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/about_us/bloc/about_us_bloc.dart';

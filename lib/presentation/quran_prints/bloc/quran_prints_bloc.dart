@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/domain/constants/language_constant.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/repository/firebase_manager_base.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
 import 'package:device_info_plus/device_info_plus.dart';

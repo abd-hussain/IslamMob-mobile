@@ -1,5 +1,6 @@
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/constants/firebase_constants.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:logger_manager/logger_manager.dart';
 
 class QuranPrintsUsecase {

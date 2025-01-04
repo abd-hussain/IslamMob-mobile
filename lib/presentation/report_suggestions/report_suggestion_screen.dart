@@ -8,7 +8,7 @@ import 'package:islam_app/presentation/report_suggestions/widgets/footer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/repository/firebase_analytics.dart';
 
 class ReportOrSuggestionScreen extends StatelessWidget {
   const ReportOrSuggestionScreen({super.key});
