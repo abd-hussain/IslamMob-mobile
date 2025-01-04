@@ -8,7 +8,7 @@ import 'package:islam_app/presentation/report_suggestions/widgets/footer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:islam_app/domain/repository/firebase_analytics.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 
 class ReportOrSuggestionScreen extends StatelessWidget {
   const ReportOrSuggestionScreen({super.key});
@@ -26,8 +26,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
           body: BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
             buildWhen: (previous, current) =>
                 previous.loadingStatus != current.loadingStatus ||
-                previous.internetConnectionStauts !=
-                    current.internetConnectionStauts,
+                previous.internetConnectionStauts != current.internetConnectionStauts,
             builder: (context, status) {
               if (status.internetConnectionStauts == false) {
                 return _buildNoInternetView(context);
@@ -85,8 +84,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: TextField(
-              controller:
-                  context.read<ReportAndSuggestionBloc>().textController,
+              controller: context.read<ReportAndSuggestionBloc>().textController,
               decoration: InputDecoration(
                 hintText: AppLocalizations.of(context)!.feedbackmessage,
                 hintMaxLines: 2,
@@ -103,8 +101,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSubmitButton(
-      BuildContext context, ReportAndSuggestionState state) {
+  Widget _buildSubmitButton(BuildContext context, ReportAndSuggestionState state) {
     return BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
       buildWhen: (previous, current) =>
           previous.enableSubmitBtn != current.enableSubmitBtn ||
@@ -120,14 +117,11 @@ class ReportOrSuggestionScreen extends StatelessWidget {
     );
   }
 
-  Future<void> _handleSubmit(
-      BuildContext context, ReportAndSuggestionState state) async {
+  Future<void> _handleSubmit(BuildContext context, ReportAndSuggestionState state) async {
     try {
-      FirebaseAnalyticsRepository.logEvent(
-          name: "ReportOrSuggestionSubmitsion");
+      FirebaseAnalyticsRepository.logEvent(name: "ReportOrSuggestionSubmitsion");
 
-      context.read<ReportAndSuggestionBloc>().add(
-          const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
+      context.read<ReportAndSuggestionBloc>().add(const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
       final navigator = Navigator.of(context);
       final bloc = context.read<ReportAndSuggestionBloc>();
       await context.read<ReportAndSuggestionBloc>().callRequest(
@@ -136,8 +130,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
             attach3: state.attach3,
           );
 
-      bloc.add(
-          const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
+      bloc.add(const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
       navigator.pop();
     } on ConnectionException {
       if (context.mounted) {

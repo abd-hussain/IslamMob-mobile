@@ -1,6 +1,5 @@
-import 'package:islam_app/domain/constants/firebase_constants.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
-import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:logger_manager/logger_manager.dart';
 
 class QuranPrintsUsecase {
@@ -14,15 +13,13 @@ class QuranPrintsUsecase {
 
       return listOfPrints;
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(
-          message: 'Error fetching documents: $e');
+      LoggerManagerBase.logDebugMessage(message: 'Error fetching documents: $e');
       return [];
     }
   }
 
   /// Maps Firestore documents to `QuranPrints` objects
-  static List<QuranPrints> mapDocumentsToQuranPrints(
-      List<Map<String, dynamic>> documents) {
+  static List<QuranPrints> mapDocumentsToQuranPrints(List<Map<String, dynamic>> documents) {
     return documents.map((doc) {
       return QuranPrints(
         nameReferance: doc["name_referance"] ?? "",

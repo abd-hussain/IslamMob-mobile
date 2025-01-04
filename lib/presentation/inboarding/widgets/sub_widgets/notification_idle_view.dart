@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:islam_app/domain/repository/firebase_messages.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
@@ -18,8 +18,7 @@ class NotificationIdleView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title:
-                AppLocalizations.of(context)!.allowSendingNotificationsdetails,
+            title: AppLocalizations.of(context)!.allowSendingNotificationsdetails,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -56,8 +55,7 @@ class NotificationIdleView extends StatelessWidget {
             );
 
             // Check and request notification permission
-            final hasPermission =
-                await FirebaseMessagesRepository.checkAndRequestPermission();
+            final hasPermission = await FirebaseMessagesRepository.checkAndRequestPermission();
             await _initializeLocalNotifications();
 
             // Update status based on permission result
@@ -66,12 +64,10 @@ class NotificationIdleView extends StatelessWidget {
                 : const NotificationsProcessStateNoPermission();
 
             if (hasPermission) {
-              final String? notificationsDetails =
-                  await FirebaseMessagesRepository().getNotificationToken();
+              final String? notificationsDetails = await FirebaseMessagesRepository().getNotificationToken();
 
               notificationsBloc.add(
-                NotificationsEvent.setupToken(
-                    token: notificationsDetails ?? ""),
+                NotificationsEvent.setupToken(token: notificationsDetails ?? ""),
               );
             }
 
@@ -92,9 +88,7 @@ class NotificationIdleView extends StatelessWidget {
   void showNoInternetConnection(BuildContext context) {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
-      SnackBar(
-          content: Text(
-              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+      SnackBar(content: Text(AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

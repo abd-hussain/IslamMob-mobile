@@ -1,4 +1,4 @@
-import 'package:islam_app/domain/repository/firebase_analytics.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,8 +41,7 @@ class ChangeLanguageScreen extends StatelessWidget {
 
   Widget _buildConfirmButton(BuildContext context) {
     return BlocBuilder<ChangeLanguageBloc, ChangeLanguageState>(
-      buildWhen: (previous, current) =>
-          previous.selectedLanguage != current.selectedLanguage,
+      buildWhen: (previous, current) => previous.selectedLanguage != current.selectedLanguage,
       builder: (context, state) {
         if (state.selectedLanguage == null) {
           return const SizedBox.shrink();
