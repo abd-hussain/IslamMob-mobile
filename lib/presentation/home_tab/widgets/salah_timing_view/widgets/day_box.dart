@@ -1,10 +1,11 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 
 class DayBox extends StatelessWidget {
   final int index;
@@ -135,8 +136,8 @@ class DayBox extends StatelessWidget {
 
   /// Retrieves the current language code from the Hive box.
   String _currentLanguageCode() {
-    return DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode,
-        defaultValue: "en") as String;
+    final box = Hive.box(DatabaseBoxConstant.userInfo);
+    return box.get(DatabaseFieldConstant.userLanguageCode, defaultValue: "en")
+        as String;
   }
 }

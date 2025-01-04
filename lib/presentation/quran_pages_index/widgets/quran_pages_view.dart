@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:islam_app/presentation/quran_pages_index/bloc/quran_pages_index_bloc.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/pages_tile_view.dart';
-import 'package:islam_app/domain/extensions/localization.dart';
+import 'package:islam_app/utils/extensions/localization.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranPagesView extends StatelessWidget {

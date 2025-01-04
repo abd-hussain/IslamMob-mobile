@@ -1,9 +1,7 @@
 import 'dart:io';
-import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:database_manager/database_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
@@ -11,8 +9,9 @@ import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.d
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
-import 'package:islam_app/domain/constants/argument_constant.dart';
-import 'package:islam_app/domain/extensions/localization.dart';
+import 'package:islam_app/core/constants/argument_constant.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
+import 'package:islam_app/utils/extensions/localization.dart';
 import 'package:pdfx/pdfx.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
@@ -55,8 +54,6 @@ class QuranBottomHelpBar extends StatelessWidget {
           title: AppLocalizations.of(context)!.quranSettingLighting,
           icon: Icons.sunny,
           onTap: () {
-            FirebaseAnalyticsRepository.logEvent(name: "QuranBrightnessShown");
-
             showDialog(
               context: context,
               barrierColor: const Color(0x01000000),
@@ -74,7 +71,8 @@ class QuranBottomHelpBar extends StatelessWidget {
   Widget _buildBookmarkTile(BuildContext context) {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) =>
-          previous.pageCount != current.pageCount || previous.bookmarkedPages != current.bookmarkedPages,
+          previous.pageCount != current.pageCount ||
+          previous.bookmarkedPages != current.bookmarkedPages,
       builder: (context, state) {
         final isBookmarked = state.bookmarkedPages.contains(state.pageCount);
         return BottomTile(
@@ -83,20 +81,24 @@ class QuranBottomHelpBar extends StatelessWidget {
               : AppLocalizations.of(context)!.quranSettingAddBookMark,
           icon: isBookmarked ? Icons.bookmark_remove : Icons.bookmark_add,
           colorIcon: isBookmarked ? Colors.redAccent : Colors.white70,
-          onTap: () => _toggleBookmark(context, state.pageCount, state.bookmarkedPages),
+          onTap: () =>
+              _toggleBookmark(context, state.pageCount, state.bookmarkedPages),
         );
       },
     );
   }
 
-  void _toggleBookmark(BuildContext context, int pageCount, List<int> bookmarkedPages) {
+  void _toggleBookmark(
+      BuildContext context, int pageCount, List<int> bookmarkedPages) {
     final updatedList = List<int>.from(bookmarkedPages);
     if (updatedList.contains(pageCount)) {
       updatedList.remove(pageCount);
     } else {
       updatedList.add(pageCount);
     }
-    context.read<QuranKareemBloc>().add(QuranKareemEvent.updateBookMarkedPages(updatedList));
+    context
+        .read<QuranKareemBloc>()
+        .add(QuranKareemEvent.updateBookMarkedPages(updatedList));
   }
 
   Widget _buildIndexTile(BuildContext context) {
@@ -114,13 +116,17 @@ class QuranBottomHelpBar extends StatelessWidget {
     final bloc = context.read<QuranKareemBloc>();
     final currentPage = bloc.currentPageNumber;
 
-    final sorahName = quranReferancesUsecase.getSurahReferenceNameFromPageNumber(currentPage);
-    final jozo2Name = quranReferancesUsecase.getJuzNumberFromPageNumber(currentPage);
+    final sorahName =
+        quranReferancesUsecase.getSurahReferenceNameFromPageNumber(currentPage);
+    final jozo2Name =
+        quranReferancesUsecase.getJuzNumberFromPageNumber(currentPage);
 
     final arguments = {
       ArgumentConstant.currentPageNumber: currentPage,
-      ArgumentConstant.currentSowrahName: AppLocalizations.of(context)!.getLocalizedString(sorahName),
-      ArgumentConstant.currentPartName: AppLocalizations.of(context)!.getLocalizedString(jozo2Name),
+      ArgumentConstant.currentSowrahName:
+          AppLocalizations.of(context)!.getLocalizedString(sorahName),
+      ArgumentConstant.currentPartName:
+          AppLocalizations.of(context)!.getLocalizedString(jozo2Name),
     };
 
     await navigator
@@ -129,7 +135,8 @@ class QuranBottomHelpBar extends StatelessWidget {
         .then((value) => _handleNavigationResult(context, value));
   }
 
-  Future<void> _handleNavigationResult(BuildContext context, dynamic value) async {
+  Future<void> _handleNavigationResult(
+      BuildContext context, dynamic value) async {
     QuranReferancesUsecase quranReferancesUsecase = QuranReferancesUsecase();
 
     if (value is! Map<String, dynamic> || !context.mounted) return;
@@ -144,15 +151,17 @@ class QuranBottomHelpBar extends StatelessWidget {
     }
 
     if (value[ArgumentConstant.currentPartNumber] != null) {
-      final jozo2PageNumber =
-          quranReferancesUsecase.getPageNumberFromJuzNumber(value[ArgumentConstant.currentPartNumber]);
+      final jozo2PageNumber = quranReferancesUsecase.getPageNumberFromJuzNumber(
+          value[ArgumentConstant.currentPartNumber]);
       bloc.add(QuranKareemEvent.updatePageCount(jozo2PageNumber));
       pdfController?.jumpToPage(jozo2PageNumber);
     }
 
     if (value[ArgumentConstant.currentSowrahName] != null) {
-      final sorahPageNumber = quranReferancesUsecase.getPageNumberFromSurahReferenceName(
-        AppLocalizations.of(context)!.getKeyFromLocalizedString(value[ArgumentConstant.currentSowrahName]),
+      final sorahPageNumber =
+          quranReferancesUsecase.getPageNumberFromSurahReferenceName(
+        AppLocalizations.of(context)!.getKeyFromLocalizedString(
+            value[ArgumentConstant.currentSowrahName]),
       );
       if (sorahPageNumber != -1) {
         bloc.add(QuranKareemEvent.updatePageCount(sorahPageNumber));
@@ -171,7 +180,9 @@ class QuranBottomHelpBar extends StatelessWidget {
 
   Future<void> _navigateToMushafScreen(BuildContext context) async {
     final navigator = Navigator.of(context, rootNavigator: true);
-    await navigator.pushNamed(RoutesConstants.quranPrintListScreen).then((value) {
+    await navigator
+        .pushNamed(RoutesConstants.quranPrintListScreen)
+        .then((value) {
       if (value is bool && value) {
         // ignore: use_build_context_synchronously
         _loadMushafFile(context);
@@ -180,8 +191,9 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   void _loadMushafFile(BuildContext context) {
-    final printName = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse, defaultValue: "");
+    final box = Hive.box(DatabaseBoxConstant.userInfo);
+    final printName =
+        box.get(DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse);
     final file = File(printName);
 
     if (file.existsSync() && context.mounted) {
@@ -194,19 +206,18 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   Widget _buildSupportUsTile(BuildContext context) {
-    FirebaseAnalyticsRepository.logEvent(name: "QuranSupportUsShown");
-
-    final bloc = context.read<QuranKareemBloc>();
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
-      buildWhen: (previous, current) => previous.rewardedAdExists != current.rewardedAdExists,
+      buildWhen: (previous, current) =>
+          previous.rewardedAd != current.rewardedAd,
       builder: (context, state) {
         return BottomTile(
           title: AppLocalizations.of(context)!.quranSettingSupportUs,
           icon: Icons.ads_click,
-          isIconBlinking: state.rewardedAdExists,
-          onTap: () async {
-            await RewarderAds.showRewardedAd();
-            bloc.add(QuranKareemEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
+          isIconBlinking: state.rewardedAd != null,
+          onTap: () {
+            if (state.rewardedAd != null) {
+              context.read<QuranKareemBloc>().showRewardedAd(state.rewardedAd!);
+            }
           },
         );
       },

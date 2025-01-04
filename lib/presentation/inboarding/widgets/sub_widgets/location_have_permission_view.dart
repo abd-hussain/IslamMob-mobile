@@ -1,6 +1,6 @@
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:islam_app/domain/model/location.dart';
+import 'package:islam_app/models/location.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

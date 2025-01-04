@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:logger_manager/logger_manager.dart';
+import 'package:islam_app/utils/logger.dart';
 import 'package:path_provider/path_provider.dart';
 
 class DownloadFileUsecase {
-  final Dio _dio = Dio();
+  final Dio dio = Dio();
 
   /// Starts downloading a file and provides progress and completion callbacks.
   Future<void> startDownloading({
@@ -18,17 +18,17 @@ class DownloadFileUsecase {
     final String filePath = await _getFilePath(fileNameWithExtension);
 
     try {
-      await _dio.download(
+      await dio.download(
         fileUrl,
         filePath,
         cancelToken: cancelToken,
         onReceiveProgress: progressCallback,
         deleteOnError: true,
       );
-      LoggerManagerBase.logDebugMessage(message: "Download Completed");
+      logDebugMessage(message: "Download Completed");
       finishCallback(filePath);
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(message: "Download failed: $e");
+      logDebugMessage(message: "Download failed: $e");
     }
   }
 
@@ -37,10 +37,10 @@ class DownloadFileUsecase {
     final newDirectory = Directory('${dir.path}/');
 
     if (await newDirectory.exists()) {
-      LoggerManagerBase.logDebugMessage(message: "Directory exists");
+      logDebugMessage(message: "Directory exists");
     } else {
       await newDirectory.create();
-      LoggerManagerBase.logDebugMessage(message: "Directory created");
+      logDebugMessage(message: "Directory created");
     }
 
     return "${newDirectory.path}$filename";
@@ -59,9 +59,9 @@ class DownloadFileUsecase {
 
     if (await file.exists()) {
       await file.delete();
-      LoggerManagerBase.logDebugMessage(message: "File deleted: $filePath");
+      logDebugMessage(message: "File deleted: $filePath");
     } else {
-      LoggerManagerBase.logDebugMessage(message: "File not found: $filePath");
+      logDebugMessage(message: "File not found: $filePath");
     }
   }
 
@@ -72,11 +72,9 @@ class DownloadFileUsecase {
 
     if (!await newDirectory.exists()) {
       await newDirectory.create();
-      LoggerManagerBase.logDebugMessage(
-          message: "Directory created: ${newDirectory.path}");
+      logDebugMessage(message: "Directory created: ${newDirectory.path}");
     } else {
-      LoggerManagerBase.logDebugMessage(
-          message: "Directory exists: ${newDirectory.path}");
+      logDebugMessage(message: "Directory exists: ${newDirectory.path}");
     }
 
     return "${newDirectory.path}/$fileName";

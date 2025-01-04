@@ -1,11 +1,14 @@
-import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:async/async.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:database_manager/database_manager.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
 class MyAppBloc {
@@ -17,11 +20,17 @@ class MyAppBloc {
   /// Initializes the app by setting up dependencies and configurations
   Future<void> _initializeApp() async {
     WidgetsFlutterBinding.ensureInitialized();
-    await DataBaseManagerBase.initializeHive();
+    await _initializeHive();
     await _initializeServices();
     _initializeTimeZones();
     await _initializeFirebaseAndAds();
     await _setPreferredOrientations();
+  }
+
+  /// Initializes Hive and opens required boxes
+  Future<void> _initializeHive() async {
+    await Hive.initFlutter();
+    await Hive.openBox(DatabaseBoxConstant.userInfo);
   }
 
   /// Sets up dependency injection locator
@@ -38,12 +47,29 @@ class MyAppBloc {
   Future<void> _initializeFirebaseAndAds() async {
     try {
       if (await _hasInternetConnectivity()) {
-        await FirebaseManagerBase.initialize();
-        await AdvertismentsBase.initializeMobileAds();
+        await _initializeFirebase();
+        await _initializeMobileAds();
       }
     } catch (e) {
       return;
     }
+  }
+
+  /// Initializes Firebase
+  Future<void> _initializeFirebase() async {
+    await Firebase.initializeApp();
+
+    if (!kDebugMode) {
+      FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+    }
+  }
+
+  /// Initializes Google Mobile Ads
+  Future<void> _initializeMobileAds() async {
+    await MobileAds.instance.initialize();
+    await MobileAds.instance.updateRequestConfiguration(
+      RequestConfiguration(testDeviceIds: ['33BE2250B43518CCDA7DE426D04EE231']),
+    );
   }
 
   /// Sets the preferred screen orientations for the app

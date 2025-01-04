@@ -1,9 +1,8 @@
-import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:islam_app/domain/model/profile_options.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
+import 'package:islam_app/models/profile_options.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/about_us/bloc/about_us_bloc.dart';
@@ -17,11 +16,12 @@ class AboutUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalyticsRepository.logEvent(name: "AboutUsScreen");
+    LogEventUsecase.logEvent(name: "AboutUsScreen");
     final navigator = Navigator.of(context, rootNavigator: true);
 
     return BlocProvider(
-      create: (context) => AboutUsBloc()..add(AboutUsEvent.initializeRewardedAd()),
+      create: (context) =>
+          AboutUsBloc()..add(AboutUsEvent.initializeRewardedAd()),
       child: Scaffold(
         appBar: CustomAppBar(title: AppLocalizations.of(context)!.aboutus),
         body: SafeArea(
@@ -128,30 +128,33 @@ class AboutUsScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: BlocBuilder<AboutUsBloc, AboutUsState>(
-        buildWhen: (previous, current) => previous.rewardedAdExsist != current.rewardedAdExsist,
+        buildWhen: (previous, current) =>
+            previous.rewardedAd != current.rewardedAd,
         builder: (context, state) {
-          final bloc = context.read<AboutUsBloc>();
-
           final listOfOptions = <ProfileOptions>[
-            if (state.rewardedAdExsist)
+            if (state.rewardedAd != null)
               ProfileOptions(
                 icon: Ionicons.fitness,
                 name: AppLocalizations.of(context)!.supportus,
-                onTap: () async {
-                  FirebaseAnalyticsRepository.logEvent(name: "showRewardedAdFromAboutScreen");
-                  await RewarderAds.showRewardedAd();
-                  bloc.add(AboutUsEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
+                onTap: () {
+                  if (state.rewardedAd != null) {
+                    context
+                        .read<AboutUsBloc>()
+                        .showRewardedAd(state.rewardedAd!);
+                  }
                 },
               ),
             ProfileOptions(
               icon: Ionicons.receipt,
               name: AppLocalizations.of(context)!.privacypolicy,
-              onTap: () async => await navigator.pushNamed(RoutesConstants.privacyPolicyScreen),
+              onTap: () async => await navigator
+                  .pushNamed(RoutesConstants.privacyPolicyScreen),
             ),
             ProfileOptions(
               icon: Ionicons.reader,
               name: AppLocalizations.of(context)!.termsandconditions,
-              onTap: () async => await navigator.pushNamed(RoutesConstants.termsConditionScreen),
+              onTap: () async => await navigator
+                  .pushNamed(RoutesConstants.termsConditionScreen),
             ),
           ];
 
@@ -171,7 +174,8 @@ class AboutUsScreen extends StatelessWidget {
             future: ApplicationVersionUsecase().getApplicationVersion(),
             builder: (context, snapshot) {
               return CustomText(
-                title: "${AppLocalizations.of(context)!.version} ${snapshot.data}",
+                title:
+                    "${AppLocalizations.of(context)!.version} ${snapshot.data}",
                 fontSize: 14,
                 color: const Color(0xff292929),
               );

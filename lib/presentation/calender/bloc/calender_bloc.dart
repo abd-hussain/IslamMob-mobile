@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/hijri_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
-import 'package:islam_app/domain/model/calender.dart';
+import 'package:islam_app/models/calender.dart';
 
 part 'calender_event.dart';
 part 'calender_state.dart';

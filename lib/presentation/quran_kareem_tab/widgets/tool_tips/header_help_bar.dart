@@ -4,7 +4,7 @@ import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.d
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'dart:math' as math;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/domain/extensions/localization.dart';
+import 'package:islam_app/utils/extensions/localization.dart';
 
 class QuranHeaderHelpBar extends StatelessWidget {
   const QuranHeaderHelpBar({super.key});

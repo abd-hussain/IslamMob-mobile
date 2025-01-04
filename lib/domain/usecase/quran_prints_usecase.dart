@@ -1,25 +1,30 @@
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:islam_app/core/constants/firebase_constants.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
-import 'package:logger_manager/logger_manager.dart';
+import 'package:islam_app/domain/repository/firebase_firestore.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/utils/logger.dart';
 
 class QuranPrintsUsecase {
   Future<List<QuranPrints>> getQuranPrints() async {
     try {
-      final documents = await FirebaseFirestoreRepository.getAllDocuments(
+      final documents =
+          await locator<FirebaseFirestoreRepository>().getAllDocuments(
         collectionName: FirebaseCollectionConstants.quranPrints,
       );
 
-      final listOfPrints = mapDocumentsToQuranPrints(documents);
+      final listOfPrints = _mapDocumentsToQuranPrints(documents);
 
       return listOfPrints;
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(message: 'Error fetching documents: $e');
+      logDebugMessage(message: 'Error fetching documents: $e');
       return [];
     }
   }
 
   /// Maps Firestore documents to `QuranPrints` objects
-  static List<QuranPrints> mapDocumentsToQuranPrints(List<Map<String, dynamic>> documents) {
+  static List<QuranPrints> _mapDocumentsToQuranPrints(
+      List<QueryDocumentSnapshot<Object?>> documents) {
     return documents.map((doc) {
       return QuranPrints(
         nameReferance: doc["name_referance"] ?? "",

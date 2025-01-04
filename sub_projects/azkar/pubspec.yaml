@@ -1,0 +1,20 @@
+name: azkar
+version: 0.0.1
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  freezed: ^2.5.7
+  freezed_annotation: ^2.4.4
+
+dev_dependencies:
+  test: ^1.25.7
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.12
+  mocktail: ^1.0.4
+  melos: ^6.1.0
+  mockito: ^5.4.4

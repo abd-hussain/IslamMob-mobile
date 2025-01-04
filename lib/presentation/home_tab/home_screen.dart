@@ -1,7 +1,7 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
+import 'package:islam_app/domain/usecase/azkar_salah_time_state_parser.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/azkar_after_salah_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
@@ -75,8 +75,8 @@ class HomeScreen extends StatelessWidget {
           previous.nextPrayType != current.nextPrayType,
       builder: (context, state) {
         return AzkarAfterSalahView(
-            salahType:
-                SalahTimeStateParser.getSalahTimeState(state.nextPrayType));
+            salahType: AzkarSalahTimeStateParser.getSalahTimeState(
+                state.nextPrayType));
       },
     );
   }

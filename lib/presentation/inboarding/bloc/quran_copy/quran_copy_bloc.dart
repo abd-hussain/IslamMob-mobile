@@ -1,18 +1,22 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:islam_app/domain/constants/language_constant.dart';
-import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
-import 'package:islam_app/domain/model/quran_copy.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
+import 'package:islam_app/domain/usecase/network_usecase.dart';
+import 'package:islam_app/models/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
-import 'package:logger_manager/logger_manager.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/domain/repository/firebase_firestore.dart';
+import 'package:islam_app/core/constants/app_constant.dart';
+import 'package:islam_app/core/constants/firebase_constants.dart';
+import 'package:islam_app/utils/logger.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -22,8 +26,8 @@ part 'quran_copy_bloc.freezed.dart';
 
 class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
   final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
-  final SetupUserSettingUseCase setupUserSettingUseCase = SetupUserSettingUseCase();
-  final QuranPrintsUsecase quranPrintsUsecase = QuranPrintsUsecase();
+  final SetupUserSettingUseCase setupUserSettingUseCase =
+      SetupUserSettingUseCase();
 
   QuranCopyBloc() : super(const QuranCopyState()) {
     on<_GetListOfPrints>(_getListOfPrints);
@@ -33,11 +37,34 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
     on<_SetupCopy>(_handleSetupCopy);
   }
 
+  /// Checks if Firebase is initialized.
+  Future<bool> _isFirebaseInitialized() async {
+    return Firebase.apps.isNotEmpty;
+  }
+
   /// Checks the internet connection status and emits an event.
   Future<bool> _checkInternetConnection() async {
     final isConnected = await NetworkUseCase.checkInternetConeection();
     add(QuranCopyEvent.updateInternetConnectionStatus(isConnected));
     return isConnected;
+  }
+
+  /// Maps Firestore documents to a list of [QuranPrints].
+  List<QuranPrints> _mapDocumentsToPrints(
+      List<QueryDocumentSnapshot<Object?>> documents) {
+    return documents.map((doc) {
+      return QuranPrints(
+        nameReferance: doc["name_referance"] ?? "",
+        description: doc["description"] ?? "",
+        language: doc["language"] ?? "",
+        previewImage: doc["previewImage"] ?? "",
+        attachmentLocation: doc["attachmentLocation"] ?? "",
+        addedPagesAttachmentLocation: doc["addedPagesAttachmentLocation"] ?? "",
+        fieldName: doc["fieldName"] ?? "",
+        juz2ToPageNumbers: doc["juz2ToPageNumbers"] ?? {},
+        sorahToPageNumbers: doc["sorahToPageNumbers"] ?? {},
+      );
+    }).toList();
   }
 
   /// Prepares a list of prints ready for downloading by verifying file existence.
@@ -46,7 +73,8 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
     for (final print in prints) {
       final fieldName = print.fieldName ?? "";
-      if (await downloadFileUsecase.fileExists(fieldName) && !state.printsAlreadyDownloaded.contains(fieldName)) {
+      if (await downloadFileUsecase.fileExists(fieldName) &&
+          !state.printsAlreadyDownloaded.contains(fieldName)) {
         downloadingList.add(fieldName);
       }
     }
@@ -70,10 +98,10 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Gets a language name by its code.
   String getLanguageNameByCode(String languageCode) {
-    return LanguageConstant.languages
+    return AppConstant.languages
         .firstWhere(
           (lang) => lang.languageCode == languageCode,
-          orElse: () => LanguageConstant.languages[0],
+          orElse: () => AppConstant.languages[0],
         )
         .name;
   }
@@ -87,15 +115,17 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
   }
 
   /// Handles updating the list of downloading prints in the state.
-  void _handlePrintsDownloadingUpdate(_UpdatePrintsDownloading event, Emitter<QuranCopyState> emit) {
+  void _handlePrintsDownloadingUpdate(
+      _UpdatePrintsDownloading event, Emitter<QuranCopyState> emit) {
     emit(state.copyWith(printsAlreadyDownloaded: event.print));
   }
 
-  FutureOr<void> _handleSetupCopy(_SetupCopy event, Emitter<QuranCopyState> emit) async {
+  FutureOr<void> _handleSetupCopy(
+      _SetupCopy event, Emitter<QuranCopyState> emit) async {
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/${event.printItem.fieldName!}');
 
-    FirebaseAnalyticsRepository.logEvent(
+    LogEventUsecase.logEvent(
       name: "use_file",
       parameters: {"file": event.printItem.fieldName!},
     );
@@ -108,26 +138,37 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
     ));
   }
 
-  FutureOr<void> _getListOfPrints(_GetListOfPrints event, Emitter<QuranCopyState> emit) async {
+  FutureOr<void> _getListOfPrints(
+      _GetListOfPrints event, Emitter<QuranCopyState> emit) async {
     final hasInternet = await _checkInternetConnection();
     if (!hasInternet) return;
 
-    if (!await FirebaseManagerBase.isFirebaseInitialized()) {
-      await FirebaseManagerBase.initialize();
+    if (!await _isFirebaseInitialized()) {
+      await Firebase.initializeApp();
     }
 
-    final listOfPrints = await quranPrintsUsecase.getQuranPrints();
+    /// Fetches Quran prints from Firestore and updates the state.
+    try {
+      final documents =
+          await locator<FirebaseFirestoreRepository>().getAllDocuments(
+        collectionName: FirebaseCollectionConstants.quranPrints,
+      );
 
-    if (listOfPrints.isEmpty) {
-      LoggerManagerBase.logDebugMessage(message: 'No documents found in the collection.');
-      return;
+      if (documents.isEmpty) {
+        logDebugMessage(
+            message: 'No documents found in the Quran prints collection.');
+        return;
+      }
+
+      final prints = _mapDocumentsToPrints(documents);
+      final downloadedList = await _prepareDownloadingList(prints);
+
+      emit(state.copyWith(
+        listOfPrints: prints,
+        printsAlreadyDownloaded: downloadedList,
+      ));
+    } catch (e) {
+      logDebugMessage(message: 'Error fetching Quran prints: $e');
     }
-
-    final downloadedList = await _prepareDownloadingList(listOfPrints);
-
-    emit(state.copyWith(
-      listOfPrints: listOfPrints,
-      printsAlreadyDownloaded: downloadedList,
-    ));
   }
 }

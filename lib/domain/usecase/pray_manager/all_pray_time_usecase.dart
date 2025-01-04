@@ -1,14 +1,16 @@
-import 'package:database_manager/database_manager.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/domain/usecase/hijri_usecase.dart';
-import 'package:islam_app/domain/model/pray_timing.dart';
+import 'package:islam_app/models/pray_timing.dart';
 import 'package:islam_app/domain/repository/pray_manager.dart';
-import 'package:islam_app/domain/model/calender.dart';
+import 'package:islam_app/models/calender.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class AllPrayTimeUsecase {
   final PrayManagerRepository prayManager;
   AllPrayTimeUsecase(this.prayManager);
+  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
 
   PrayTimingDateTimeModel getAllPrayTimeAsDateTimeForToday() {
     final prayerTimes = prayManager.getPrayerTimes();
@@ -81,67 +83,65 @@ class AllPrayTimeUsecase {
   }
 
   Duration _fajirAddedMinutes() {
-    final String selectedTimeFajirMin = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin,
+    final String selectedTimeFajirMin = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin,
         defaultValue: "0");
 
     return Duration(minutes: int.tryParse(selectedTimeFajirMin) ?? 0);
   }
 
   Duration _sunriseAddedMinutes() {
-    final String selectedTimeSunriseMin = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin,
+    final String selectedTimeSunriseMin = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin,
         defaultValue: "0");
 
     return Duration(minutes: int.tryParse(selectedTimeSunriseMin) ?? 0);
   }
 
   Duration _zhurAddedMinutes() {
-    final String selectedTimeZhurMin = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin,
+    final String selectedTimeZhurMin = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin,
         defaultValue: "0");
 
     return Duration(minutes: int.tryParse(selectedTimeZhurMin) ?? 0);
   }
 
   Duration _asrAddedMinutes() {
-    final String selectedTimeAsrMin = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin,
+    final String selectedTimeAsrMin = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin,
         defaultValue: "0");
 
     return Duration(minutes: int.tryParse(selectedTimeAsrMin) ?? 0);
   }
 
   Duration _maghribAddedMinutes() {
-    final String selectedTimeMaghribMin = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin,
+    final String selectedTimeMaghribMin = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin,
         defaultValue: "0");
 
     return Duration(minutes: int.tryParse(selectedTimeMaghribMin) ?? 0);
   }
 
   Duration _ishaAddedMinutes() {
-    final String selectedTimeIshaMin = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin,
+    final String selectedTimeIshaMin = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin,
         defaultValue: "0");
 
     return Duration(minutes: int.tryParse(selectedTimeIshaMin) ?? 0);
   }
 
   Duration _middleOfTheNightAddedMinutes() {
-    final String selectedTimeMidnightMin = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin,
+    final String selectedTimeMidnightMin = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin,
         defaultValue: "0");
 
     return Duration(minutes: int.tryParse(selectedTimeMidnightMin) ?? 0);
   }
 
   Duration _lastThirdOfTheNightAddedMinutes() {
-    final String selectedTimeLast3thOfNightMin =
-        DataBaseManagerBase.getFromDatabase(
-            key: DatabaseFieldPrayCalculationConstant
-                .selectedTimeLast3thOfNightMin,
-            defaultValue: "0");
+    final String selectedTimeLast3thOfNightMin = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin,
+        defaultValue: "0");
 
     return Duration(minutes: int.tryParse(selectedTimeLast3thOfNightMin) ?? 0);
   }

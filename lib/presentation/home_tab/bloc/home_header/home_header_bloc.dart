@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
-import 'package:islam_app/domain/sealed/salah_time_state.dart';
+import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:database_manager/database_manager.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 
 part 'home_header_event.dart';
 part 'home_header_state.dart';
@@ -20,24 +21,27 @@ class HomeHeaderBloc extends Bloc<HomeHeaderEvent, HomeHeaderState> {
     on<_UpdateSalahTypeAndTime>(_updateSalahTypeAndTime);
   }
 
+  /// Local Hive box instance for storing/retrieving user settings.
+  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
+
   PrayUsecase prayUsecase = PrayUsecase();
 
   /// Returns the current selected country from the Hive box.
   String currentCountry() {
-    return DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldLocationConstant.selectedCountry, defaultValue: "");
+    return _box.get(DatabaseFieldLocationConstant.selectedCountry,
+        defaultValue: "");
   }
 
   /// Returns the current selected city from the Hive box.
   String currentCity() {
-    return DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldLocationConstant.selectedCity, defaultValue: "");
+    return _box.get(DatabaseFieldLocationConstant.selectedCity,
+        defaultValue: "");
   }
 
   /// Returns the current selected sub-city from the Hive box.
   String currentSubCity() {
-    return DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldLocationConstant.selectedSubCity, defaultValue: "");
+    return _box.get(DatabaseFieldLocationConstant.selectedSubCity,
+        defaultValue: "");
   }
 
   /// Determines if the next Salah time is AM or PM.

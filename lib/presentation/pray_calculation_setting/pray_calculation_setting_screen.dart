@@ -1,9 +1,9 @@
 import 'package:card_swiper/card_swiper.dart';
-import 'package:database_manager/database_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/calculation_method_view.dart';
@@ -21,8 +21,6 @@ class PrayCalculationSettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalyticsRepository.logEvent(name: "PrayCalculationSettingScreen");
-
     return BlocProvider(
       create: (context) => PrayCalculationSettingBloc()
         ..add(
@@ -81,7 +79,8 @@ class PrayCalculationSettingScreen extends StatelessWidget {
 
   Widget _buttonsSection(BuildContext context) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) => previous.buttonsStatus != current.buttonsStatus,
+      buildWhen: (previous, current) =>
+          previous.buttonsStatus != current.buttonsStatus,
       builder: (context, state) {
         return Column(
           children: [
@@ -103,13 +102,17 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                 color: Colors.redAccent,
                 title: AppLocalizations.of(context)!.factoryReset,
                 onTap: () async {
+                  final Box box = Hive.box(DatabaseBoxConstant.userInfo);
                   final navigator = Navigator.of(context, rootNavigator: true);
-                  await DataBaseManagerBase.saveMultipleInDatabase(data: {
-                    DatabaseFieldInBoardingStageConstant.inBoardingfinished: null,
-                    DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,
-                  });
+
+                  await box.put(
+                      DatabaseFieldInBoardingStageConstant.inBoardingfinished,
+                      null);
+                  await box.put(
+                      DatabaseFieldInBoardingStageConstant.inBoardingStage, 0);
                   await navigator.pushNamedAndRemoveUntil(
-                      RoutesConstants.inBoardingScreen, (Route<dynamic> route) => false);
+                      RoutesConstants.inBoardingScreen,
+                      (Route<dynamic> route) => false);
                 }),
           ],
         );

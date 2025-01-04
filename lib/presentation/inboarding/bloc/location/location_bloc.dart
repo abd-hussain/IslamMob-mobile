@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:islam_app/domain/model/location.dart';
+import 'package:islam_app/models/location.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 
 part 'location_event.dart';

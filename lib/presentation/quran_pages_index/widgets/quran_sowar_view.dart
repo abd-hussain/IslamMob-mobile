@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/domain/usecase/quran_pages_index_usecase.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/presentation/quran_pages_index/bloc/quran_pages_index_bloc.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/sworah_tile_view.dart';
 
 class QuranSowarView extends StatelessWidget {
@@ -13,7 +14,8 @@ class QuranSowarView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final surahList = QuranPagesIndexUseCase.getAllSurahNames(context: context);
+    final surahList =
+        context.read<QuranPagesIndexBloc>().getAllSurahNames(context: context);
 
     return Padding(
       padding: const EdgeInsets.all(4),
@@ -26,10 +28,10 @@ class QuranSowarView extends StatelessWidget {
               index: index,
               sowrahName: surahName,
               isCurrentPage: isCurrent,
-              sowrahType: QuranPagesIndexUseCase.getSurahType(
-                context: context,
-                surahName: surahName,
-              ),
+              sowrahType: context.read<QuranPagesIndexBloc>().getSurahType(
+                    context: context,
+                    surahName: surahName,
+                  ),
               onTap: () => onSowrahSelected(surahName),
             );
           }),

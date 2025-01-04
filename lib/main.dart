@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 // import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/my_app/my_app.dart';
-import 'package:logger_manager/logger_manager.dart';
+import 'package:islam_app/utils/logger.dart';
+// import 'package:logger/logger.dart';
 // import 'package:workmanager/workmanager.dart';
 
 //TODO: find way to fire the local notification for all athan times
+//TODO: report issue after submitssion it keep loading
 
 void main() {
-  LoggerManagerBase.logDebugMessage(message: 'Application Started ...');
+  logDebugMessage(message: 'Application Started ...');
   WidgetsFlutterBinding.ensureInitialized();
 
   // Workmanager().initialize(
