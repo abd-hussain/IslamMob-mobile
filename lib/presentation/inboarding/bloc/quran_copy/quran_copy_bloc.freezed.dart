@@ -551,8 +551,6 @@ abstract class _$$SetupCopyImplCopyWith<$Res> {
       __$$SetupCopyImplCopyWithImpl<$Res>;
   @useResult
   $Res call({QuranPrints printItem});
-
-  $QuranPrintsCopyWith<$Res> get printItem;
 }
 
 /// @nodoc
@@ -576,16 +574,6 @@ class __$$SetupCopyImplCopyWithImpl<$Res>
           : printItem // ignore: cast_nullable_to_non_nullable
               as QuranPrints,
     ));
-  }
-
-  /// Create a copy of QuranCopyEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $QuranPrintsCopyWith<$Res> get printItem {
-    return $QuranPrintsCopyWith<$Res>(_value.printItem, (value) {
-      return _then(_value.copyWith(printItem: value));
-    });
   }
 }
 

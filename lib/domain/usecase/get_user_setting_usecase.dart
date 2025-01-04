@@ -1,18 +1,19 @@
-import 'package:database_manager/database_manager.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
-import 'package:islam_app/domain/sealed/high_latitude_method.dart';
-import 'package:islam_app/domain/sealed/madhab.dart';
-import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
+import 'package:islam_app/models/high_latitude_method.dart';
+import 'package:islam_app/models/madhab.dart';
+import 'package:islam_app/models/pray_calculation_method.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
 
 class GetUserSettingUseCase {
+  final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
   final PrayDBParser _prayDBParser = PrayDBParser();
 
   /// Retrieves the HighLatitude Rule, from Hive
   PrayHightLatitudeCaluclationState savedHighLatitudeRule() {
-    final String selectedPraynHightLatitudeCaluclation =
-        DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
+    final String selectedPraynHightLatitudeCaluclation = _box.get(
+      DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
       defaultValue: "PraynHightLatitudeCaluclatioState.none()",
     );
 
@@ -23,9 +24,8 @@ class GetUserSettingUseCase {
 
   /// Retrieves the Calculation Method, from Hive
   PrayCalculationMethodState savedCalculationMethod() {
-    final String selectedCalculationMethod =
-        DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
+    final String selectedCalculationMethod = _box.get(
+      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
       defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
     );
 
@@ -37,8 +37,8 @@ class GetUserSettingUseCase {
 
   /// Retrieves the Madhab, from Hive
   MadhabState savedMadhab() {
-    final String selectedMadhab = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
+    final String selectedMadhab = _box.get(
+      DatabaseFieldPrayCalculationConstant.selectedMadhab,
       defaultValue: "MadhabState.hanafi()",
     );
 
@@ -48,11 +48,11 @@ class GetUserSettingUseCase {
 
   /// Retrieves the UTC offset, from Hive
   Duration savedUtcOffset() {
-    final String hourOffset = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour,
+    final String hourOffset = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour,
         defaultValue: "");
-    final String minuteOffset = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin,
+    final String minuteOffset = _box.get(
+        DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin,
         defaultValue: "");
 
     if (hourOffset.isEmpty) {
@@ -79,8 +79,7 @@ class GetUserSettingUseCase {
     final Map<AzanTypeForEditMin, int> minutesEdited = {};
 
     getDefaultMinEditSettings.forEach((key, defaultValue) {
-      final value = DataBaseManagerBase.getFromDatabase(
-          key: key, defaultValue: defaultValue);
+      final value = _box.get(key, defaultValue: defaultValue);
       final azanType = _mapKeyToAzanType(key);
       if (azanType != null) {
         minutesEdited[azanType] = int.tryParse(value) ?? 0;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/domain/usecase/quran_pages_index_usecase.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/presentation/quran_pages_index/bloc/quran_pages_index_bloc.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/part_tile_view.dart';
 
 class QuranPartsView extends StatelessWidget {
@@ -11,7 +12,8 @@ class QuranPartsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final partNames = QuranPagesIndexUseCase.getAllJuzNames(context: context);
+    final partNames =
+        context.read<QuranPagesIndexBloc>().getAllJuzNames(context: context);
 
     return Padding(
       padding: const EdgeInsets.all(4),

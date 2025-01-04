@@ -19,7 +19,7 @@ class MainContainer extends StatefulWidget {
 class _MainContainerState extends State<MainContainer> {
   @override
   void didChangeDependencies() {
-    VersionUseCase.getCurrentVersionUpdateStatus().then((status) async {
+    VersionUseCase().getCurrentVersionUpdateStatus().then((status) async {
       if (status != VersionUpdate.noUpdate) {
         // ignore: use_build_context_synchronously
         await _showVersionUpdateDialog(context, status);

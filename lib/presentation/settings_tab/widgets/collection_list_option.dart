@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/domain/model/profile_options.dart';
+import 'package:islam_app/models/profile_options.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class CollectionListOptionView extends StatelessWidget {

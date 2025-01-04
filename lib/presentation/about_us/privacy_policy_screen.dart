@@ -1,5 +1,5 @@
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
 import 'package:islam_app/presentation/about_us/widgets/section_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -9,7 +9,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalyticsRepository.logEvent(name: "PrivacyPolicyScreen");
+    LogEventUsecase.logEvent(name: "PrivacyPolicyScreen");
 
     final localization = AppLocalizations.of(context)!;
 

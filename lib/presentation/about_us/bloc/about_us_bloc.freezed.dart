@@ -19,19 +19,19 @@ mixin _$AboutUsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initializeRewardedAd,
-    required TResult Function(bool value) updateRewardedAd,
+    required TResult Function(RewardedAd? value) updateRewardedAd,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initializeRewardedAd,
-    TResult? Function(bool value)? updateRewardedAd,
+    TResult? Function(RewardedAd? value)? updateRewardedAd,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initializeRewardedAd,
-    TResult Function(bool value)? updateRewardedAd,
+    TResult Function(RewardedAd? value)? updateRewardedAd,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,7 +120,7 @@ class _$InitializeRewardedAdImpl implements _InitializeRewardedAd {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initializeRewardedAd,
-    required TResult Function(bool value) updateRewardedAd,
+    required TResult Function(RewardedAd? value) updateRewardedAd,
   }) {
     return initializeRewardedAd();
   }
@@ -129,7 +129,7 @@ class _$InitializeRewardedAdImpl implements _InitializeRewardedAd {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initializeRewardedAd,
-    TResult? Function(bool value)? updateRewardedAd,
+    TResult? Function(RewardedAd? value)? updateRewardedAd,
   }) {
     return initializeRewardedAd?.call();
   }
@@ -138,7 +138,7 @@ class _$InitializeRewardedAdImpl implements _InitializeRewardedAd {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initializeRewardedAd,
-    TResult Function(bool value)? updateRewardedAd,
+    TResult Function(RewardedAd? value)? updateRewardedAd,
     required TResult orElse(),
   }) {
     if (initializeRewardedAd != null) {
@@ -189,7 +189,7 @@ abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
           $Res Function(_$UpdateRewardedAdImpl) then) =
       __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool value});
+  $Res call({RewardedAd? value});
 }
 
 /// @nodoc
@@ -205,13 +205,13 @@ class __$$UpdateRewardedAdImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = null,
+    Object? value = freezed,
   }) {
     return _then(_$UpdateRewardedAdImpl(
-      null == value
+      freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as RewardedAd?,
     ));
   }
 }
@@ -222,7 +222,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   _$UpdateRewardedAdImpl(this.value);
 
   @override
-  final bool value;
+  final RewardedAd? value;
 
   @override
   String toString() {
@@ -253,7 +253,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initializeRewardedAd,
-    required TResult Function(bool value) updateRewardedAd,
+    required TResult Function(RewardedAd? value) updateRewardedAd,
   }) {
     return updateRewardedAd(value);
   }
@@ -262,7 +262,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initializeRewardedAd,
-    TResult? Function(bool value)? updateRewardedAd,
+    TResult? Function(RewardedAd? value)? updateRewardedAd,
   }) {
     return updateRewardedAd?.call(value);
   }
@@ -271,7 +271,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initializeRewardedAd,
-    TResult Function(bool value)? updateRewardedAd,
+    TResult Function(RewardedAd? value)? updateRewardedAd,
     required TResult orElse(),
   }) {
     if (updateRewardedAd != null) {
@@ -313,9 +313,9 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
 }
 
 abstract class _UpdateRewardedAd implements AboutUsEvent {
-  factory _UpdateRewardedAd(final bool value) = _$UpdateRewardedAdImpl;
+  factory _UpdateRewardedAd(final RewardedAd? value) = _$UpdateRewardedAdImpl;
 
-  bool get value;
+  RewardedAd? get value;
 
   /// Create a copy of AboutUsEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -326,7 +326,7 @@ abstract class _UpdateRewardedAd implements AboutUsEvent {
 
 /// @nodoc
 mixin _$AboutUsState {
-  bool get rewardedAdExsist => throw _privateConstructorUsedError;
+  RewardedAd? get rewardedAd => throw _privateConstructorUsedError;
 
   /// Create a copy of AboutUsState
   /// with the given fields replaced by the non-null parameter values.
@@ -341,7 +341,7 @@ abstract class $AboutUsStateCopyWith<$Res> {
           AboutUsState value, $Res Function(AboutUsState) then) =
       _$AboutUsStateCopyWithImpl<$Res, AboutUsState>;
   @useResult
-  $Res call({bool rewardedAdExsist});
+  $Res call({RewardedAd? rewardedAd});
 }
 
 /// @nodoc
@@ -359,13 +359,13 @@ class _$AboutUsStateCopyWithImpl<$Res, $Val extends AboutUsState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rewardedAdExsist = null,
+    Object? rewardedAd = freezed,
   }) {
     return _then(_value.copyWith(
-      rewardedAdExsist: null == rewardedAdExsist
-          ? _value.rewardedAdExsist
-          : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
-              as bool,
+      rewardedAd: freezed == rewardedAd
+          ? _value.rewardedAd
+          : rewardedAd // ignore: cast_nullable_to_non_nullable
+              as RewardedAd?,
     ) as $Val);
   }
 }
@@ -378,7 +378,7 @@ abstract class _$$AboutUsStateImplCopyWith<$Res>
       __$$AboutUsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool rewardedAdExsist});
+  $Res call({RewardedAd? rewardedAd});
 }
 
 /// @nodoc
@@ -394,13 +394,13 @@ class __$$AboutUsStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rewardedAdExsist = null,
+    Object? rewardedAd = freezed,
   }) {
     return _then(_$AboutUsStateImpl(
-      rewardedAdExsist: null == rewardedAdExsist
-          ? _value.rewardedAdExsist
-          : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
-              as bool,
+      rewardedAd: freezed == rewardedAd
+          ? _value.rewardedAd
+          : rewardedAd // ignore: cast_nullable_to_non_nullable
+              as RewardedAd?,
     ));
   }
 }
@@ -408,15 +408,14 @@ class __$$AboutUsStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AboutUsStateImpl implements _AboutUsState {
-  const _$AboutUsStateImpl({this.rewardedAdExsist = false});
+  const _$AboutUsStateImpl({this.rewardedAd});
 
   @override
-  @JsonKey()
-  final bool rewardedAdExsist;
+  final RewardedAd? rewardedAd;
 
   @override
   String toString() {
-    return 'AboutUsState(rewardedAdExsist: $rewardedAdExsist)';
+    return 'AboutUsState(rewardedAd: $rewardedAd)';
   }
 
   @override
@@ -424,12 +423,12 @@ class _$AboutUsStateImpl implements _AboutUsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AboutUsStateImpl &&
-            (identical(other.rewardedAdExsist, rewardedAdExsist) ||
-                other.rewardedAdExsist == rewardedAdExsist));
+            (identical(other.rewardedAd, rewardedAd) ||
+                other.rewardedAd == rewardedAd));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, rewardedAdExsist);
+  int get hashCode => Object.hash(runtimeType, rewardedAd);
 
   /// Create a copy of AboutUsState
   /// with the given fields replaced by the non-null parameter values.
@@ -441,11 +440,11 @@ class _$AboutUsStateImpl implements _AboutUsState {
 }
 
 abstract class _AboutUsState implements AboutUsState {
-  const factory _AboutUsState({final bool rewardedAdExsist}) =
+  const factory _AboutUsState({final RewardedAd? rewardedAd}) =
       _$AboutUsStateImpl;
 
   @override
-  bool get rewardedAdExsist;
+  RewardedAd? get rewardedAd;
 
   /// Create a copy of AboutUsState
   /// with the given fields replaced by the non-null parameter values.

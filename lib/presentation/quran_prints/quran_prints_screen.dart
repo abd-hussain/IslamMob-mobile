@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:database_manager/database_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
 import 'package:islam_app/presentation/quran_prints/bloc/quran_prints_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
@@ -14,6 +14,7 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:path_provider/path_provider.dart';
 
 class QuranPrintsScreen extends StatelessWidget {
@@ -21,8 +22,6 @@ class QuranPrintsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalyticsRepository.logEvent(name: "QuranPrintsScreen");
-
     return BlocProvider(
       create: (context) => QuranPrintsBloc()
         ..add(
@@ -55,7 +54,8 @@ class QuranPrintsScreen extends StatelessWidget {
 
   Widget _buildPrintsList(BuildContext context, QuranPrintsState state) {
     return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
-      buildWhen: (previous, current) => previous.printsDownloading != current.printsDownloading,
+      buildWhen: (previous, current) =>
+          previous.printsDownloading != current.printsDownloading,
       builder: (context, _) {
         return Column(
           children: [
@@ -84,21 +84,27 @@ class QuranPrintsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPrintTile(BuildContext context, QuranPrints printItem, QuranPrintsState state) {
+  Widget _buildPrintTile(
+      BuildContext context, QuranPrints printItem, QuranPrintsState state) {
     return PrintTileView(
-      language: context.read<QuranPrintsBloc>().getNameByLanguageCode(printItem.language ?? ""),
+      language: context
+          .read<QuranPrintsBloc>()
+          .getNameByLanguageCode(printItem.language ?? ""),
       title: printItem.nameReferance,
       description: printItem.description,
       previewImage: printItem.previewImage,
-      downloadButtonAvailable: !state.printsDownloading.contains(printItem.fieldName),
+      downloadButtonAvailable:
+          !state.printsDownloading.contains(printItem.fieldName),
       useButtonAvailable: state.printsDownloading.contains(printItem.fieldName),
       onDownloadPressed: () => _handleDownloadPressed(context, printItem),
       onUsePressed: () => _handleUsePressed(context, printItem),
     );
   }
 
-  Future<void> _handleDownloadPressed(BuildContext context, QuranPrints printItem) async {
-    final permissionGranted = await context.read<QuranPrintsBloc>().permissionRequest();
+  Future<void> _handleDownloadPressed(
+      BuildContext context, QuranPrints printItem) async {
+    final permissionGranted =
+        await context.read<QuranPrintsBloc>().permissionRequest();
     if (permissionGranted && context.mounted) {
       showDialog(
         context: context,
@@ -118,29 +124,35 @@ class QuranPrintsScreen extends StatelessWidget {
   }
 
   void _onFileDownloaded(BuildContext context, QuranPrints printItem) {
-    FirebaseAnalyticsRepository.logEvent(
+    LogEventUsecase.logEvent(
       name: "download_file",
       parameters: {"file": printItem.fieldName ?? ""},
     );
 
-    final updatedList = List<String>.from(context.read<QuranPrintsBloc>().state.printsDownloading)
+    final updatedList = List<String>.from(
+        context.read<QuranPrintsBloc>().state.printsDownloading)
       ..add(printItem.fieldName!);
 
-    context.read<QuranPrintsBloc>().add(QuranPrintsEvent.updatePrintsDownloading(print: updatedList));
+    context
+        .read<QuranPrintsBloc>()
+        .add(QuranPrintsEvent.updatePrintsDownloading(print: updatedList));
   }
 
-  Future<void> _handleUsePressed(BuildContext context, QuranPrints printItem) async {
+  Future<void> _handleUsePressed(
+      BuildContext context, QuranPrints printItem) async {
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/${printItem.fieldName!}');
+    final box = Hive.box(DatabaseBoxConstant.userInfo);
 
-    await DataBaseManagerBase.saveMultipleInDatabase(data: {
-      DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse: filePath.path,
-      DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber: 1,
-      DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers: printItem.juz2ToPageNumbers,
-      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers: printItem.sorahToPageNumbers,
-    });
+    await box.put(
+        DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse, filePath.path);
+    await box.put(DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber, 1);
+    await box.put(DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers,
+        printItem.juz2ToPageNumbers);
+    await box.put(DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers,
+        printItem.sorahToPageNumbers);
 
-    FirebaseAnalyticsRepository.logEvent(
+    LogEventUsecase.logEvent(
       name: "use_file",
       parameters: {"file": printItem.fieldName ?? ""},
     );

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class TitleView extends StatelessWidget {
-  final String title;
   const TitleView({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {

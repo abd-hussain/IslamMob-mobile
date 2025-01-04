@@ -1,10 +1,12 @@
-import 'package:database_manager/database_manager.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 
 class QuranReferancesUsecase {
+  static final Box _box = Hive.box(DatabaseBoxConstant.userInfo);
+
   /// Retrieves a field from the database or returns an empty map by default.
   static Map<dynamic, dynamic> _getDatabaseField(String fieldName) {
-    return DataBaseManagerBase.getFromDatabase(
-        key: fieldName, defaultValue: <dynamic, dynamic>{});
+    return _box.get(fieldName, defaultValue: <dynamic, dynamic>{});
   }
 
   /// Gets the Surah name for localization based on a given page number.

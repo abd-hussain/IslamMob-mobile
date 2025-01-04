@@ -2,11 +2,13 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:database_manager/database_manager.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:islam_app/domain/usecase/log_event_usecase.dart';
+import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:pdfx/pdfx.dart';
 
@@ -15,6 +17,8 @@ part 'quran_kareem_state.dart';
 part 'quran_kareem_bloc.freezed.dart';
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
+  final _box = Hive.box(DatabaseBoxConstant.userInfo);
+  int _numRewardedLoadAttempts = 0;
   PdfController? pdfController;
   int currentPageNumber = 0;
 
@@ -37,17 +41,18 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   void initialize() async {
     await _setupFirstInitialPDF();
     _loadBookmarkedPages();
-    await RewarderAds.createRewardedAd();
-    add(QuranKareemEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
+    _createRewardedAd();
   }
 
   // Load the initial PDF
   Future<void> _setupFirstInitialPDF() async {
-    final pageNumber = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber, defaultValue: 1);
+    final pageNumber = _box.get(
+        DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
+        defaultValue: 1);
 
-    final printName = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse, defaultValue: "");
+    final printName = _box.get(
+        DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
+        defaultValue: "");
 
     final file = File(printName);
     if (file.existsSync()) {
@@ -65,10 +70,73 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     }
   }
 
+  // Create and load the rewarded ad
+  void _createRewardedAd() {
+    RewardedAd.load(
+      adUnitId: AdHelper.rewardedAdUnitId,
+      request: const AdRequest(),
+      rewardedAdLoadCallback:
+          RewardedAdLoadCallback(onAdLoaded: (RewardedAd rewardedAd) {
+        _numRewardedLoadAttempts = 0;
+        add(QuranKareemEvent.updateRewardedAd(rewardedAd));
+      }, onAdFailedToLoad: (LoadAdError error) {
+        add(QuranKareemEvent.updateRewardedAd(null));
+        _numRewardedLoadAttempts += 1;
+        if (_numRewardedLoadAttempts < 3) {
+          _createRewardedAd();
+        }
+      }),
+    );
+  }
+
+  // Show the rewarded ad
+  void showRewardedAd(RewardedAd rewardedAd) {
+    rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
+      onAdShowedFullScreenContent: (_) {
+        debugPrint('Ad showed full screen content.');
+      },
+      onAdDismissedFullScreenContent: (RewardedAd ad) {
+        debugPrint('$ad dismissed.');
+        _handleAdDismissal(ad);
+      },
+      onAdFailedToShowFullScreenContent: (RewardedAd ad, AdError error) {
+        debugPrint('$ad failed to show: $error');
+        _handleAdDismissal(ad);
+      },
+    );
+    rewardedAd.setImmersiveMode(true);
+    rewardedAd.show(onUserEarnedReward: (_, reward) {
+      _logAdReward(reward);
+    });
+    add(QuranKareemEvent.updateRewardedAd(null));
+  }
+
+  // Handle the ad dismissal and load a new one
+  void _handleAdDismissal(RewardedAd ad) {
+    LogEventUsecase.logEvent(
+      name: "RewardedAd_Quran_tab",
+      parameters: {"status": "onAdDismissedFullScreenContent"},
+    );
+    ad.dispose();
+    _createRewardedAd();
+  }
+
+  // Log the earned reward
+  void _logAdReward(RewardItem reward) {
+    debugPrint('Reward: $reward');
+    LogEventUsecase.logEvent(
+      name: "RewardedAd_Quran_tab",
+      parameters: {
+        "status": "earned reward $reward",
+      },
+    );
+  }
+
   // Load bookmarked pages from local storage
   void _loadBookmarkedPages() {
-    final List<dynamic> bookMarkedPages = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList, defaultValue: []);
+    final List<dynamic> bookMarkedPages = _box.get(
+        DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
+        defaultValue: []);
 
     if (bookMarkedPages.isNotEmpty) {
       final intList = List<int>.from(bookMarkedPages);
@@ -83,59 +151,70 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   }
 
   // Event Handlers
-  FutureOr<void> _showHideHelpBar(_ShowHideHelpBar event, Emitter<QuranKareemState> emit) {
-    FirebaseAnalyticsRepository.logEvent(name: "QuranShowHideHelpBar");
-
+  FutureOr<void> _showHideHelpBar(
+      _ShowHideHelpBar event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(showHelpBar: event.status));
   }
 
-  FutureOr<void> _updatePageCount(_UpdatePageCount event, Emitter<QuranKareemState> emit) async {
+  FutureOr<void> _updatePageCount(
+      _UpdatePageCount event, Emitter<QuranKareemState> emit) async {
     currentPageNumber = event.pageCount;
     emit(state.copyWith(pageCount: currentPageNumber));
 
-    final sorahName = quranReferancesUsecase.getSurahReferenceNameFromPageNumber(currentPageNumber);
-    final jozo2Name = quranReferancesUsecase.getJuzNumberFromPageNumber(currentPageNumber);
+    final sorahName = quranReferancesUsecase
+        .getSurahReferenceNameFromPageNumber(currentPageNumber);
+    final jozo2Name =
+        quranReferancesUsecase.getJuzNumberFromPageNumber(currentPageNumber);
     add(QuranKareemEvent.updateSorahName(sorahName));
     add(QuranKareemEvent.updateJozo2Name(jozo2Name));
 
     add(QuranKareemEvent.updateSidePage(_getPageSide(currentPageNumber)));
 
-    await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber, value: event.pageCount);
+    await _box.put(DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
+        event.pageCount);
   }
 
   // Get the page side (left or right)
   QuranKareemStatePageSideState _getPageSide(int pageNumber) =>
-      pageNumber.isEven ? const QuranKareemStatePageSideStateLeft() : const QuranKareemStatePageSideStateRight();
+      pageNumber.isEven
+          ? const QuranKareemStatePageSideStateLeft()
+          : const QuranKareemStatePageSideStateRight();
 
-  FutureOr<void> _updateSidePage(_UpdateSidePage event, Emitter<QuranKareemState> emit) {
+  FutureOr<void> _updateSidePage(
+      _UpdateSidePage event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(pageSide: event.side));
   }
 
-  FutureOr<void> _updateBookMarkedPages(_UpdateBookMarkedPages event, Emitter<QuranKareemState> emit) async {
-    await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList, value: event.list);
+  FutureOr<void> _updateBookMarkedPages(
+      _UpdateBookMarkedPages event, Emitter<QuranKareemState> emit) async {
+    await _box.put(
+        DatabaseFieldQuranCopyConstant.quranKaremBookMarkList, event.list);
     emit(state.copyWith(bookmarkedPages: event.list));
   }
 
-  FutureOr<void> _updateScreenBrigtness(_UpdateScreenBrigtness event, Emitter<QuranKareemState> emit) {
+  FutureOr<void> _updateScreenBrigtness(
+      _UpdateScreenBrigtness event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(brigtness: event.value));
   }
 
-  FutureOr<void> _updateRewardedAd(_UpdateRewardedAd event, Emitter<QuranKareemState> emit) {
-    emit(state.copyWith(rewardedAdExists: event.value));
+  FutureOr<void> _updateRewardedAd(
+      _UpdateRewardedAd event, Emitter<QuranKareemState> emit) {
+    emit(state.copyWith(rewardedAd: event.value));
   }
 
-  FutureOr<void> _updateReadPDFFile(_UpdateReadPDFFile event, Emitter<QuranKareemState> emit) {
+  FutureOr<void> _updateReadPDFFile(
+      _UpdateReadPDFFile event, Emitter<QuranKareemState> emit) {
     add(QuranKareemEvent.showHideHelpBar(true));
     emit(state.copyWith(sourceFileOfPDF: event.value));
   }
 
-  FutureOr<void> _updateSorahName(_UpdateSorahName event, Emitter<QuranKareemState> emit) {
+  FutureOr<void> _updateSorahName(
+      _UpdateSorahName event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(sorahName: event.value));
   }
 
-  FutureOr<void> _updateJozo2Name(_UpdateJozo2Name event, Emitter<QuranKareemState> emit) {
+  FutureOr<void> _updateJozo2Name(
+      _UpdateJozo2Name event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(jozo2Name: event.value));
   }
 }

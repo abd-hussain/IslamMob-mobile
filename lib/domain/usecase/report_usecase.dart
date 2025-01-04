@@ -1,10 +1,16 @@
 import 'dart:io';
 
+import 'package:islam_app/domain/model/firestore_options.dart';
 import 'package:islam_app/domain/model/report_request.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/domain/repository/firebase_firestore.dart';
+import 'package:islam_app/core/constants/firebase_constants.dart';
 
 class ReportUseCase {
-  Future<void> addNewReportOrSuggestion({required ReportRequest reportData}) async {
+  /// Adds a new report or suggestion to the Firestore database.
+
+  Future<dynamic> addNewReportOrSuggestion(
+      {required ReportRequest reportData}) async {
     final attachments = await _uploadAttachments([
       reportData.attach1,
       reportData.attach2,
@@ -18,11 +24,11 @@ class ReportUseCase {
       attach3: attachments[2],
     );
 
-    await FirebaseFirestoreRepository.setData(
+    await locator<FirebaseFirestoreRepository>().setData(
         options: FireStoreOptions<ReportRequestToFirebase>(
       collectionName: FirebaseCollectionConstants.reports,
       docName: _generateDocumentName(),
-      fromModel: report.toJson(),
+      fromModel: report,
     ));
   }
 
@@ -40,7 +46,7 @@ class ReportUseCase {
     final String extension = _getFileExtension(attach.path);
     final String fileName = _generateFileName(extension);
 
-    return await FirebaseFirestoreRepository().uploadFile(
+    return await locator<FirebaseFirestoreRepository>().uploadFile(
       file: attach,
       fileName: fileName,
     );

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
-import 'package:islam_app/domain/sealed/salah_time_state.dart';
 
 part 'home_tab_event.dart';
 part 'home_tab_state.dart';

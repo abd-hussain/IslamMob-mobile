@@ -1,8 +1,10 @@
 
-name: utilities
+name: sub_projects
 
 packages:
-  - utilities/**
+  - sub_projects/islam_mob_adhan/*
+  - sub_projects/custom_widgets/*
+  - sub_projects/azkar/*
   - .
 
 scripts:
@@ -14,6 +16,3 @@ scripts:
 command:
   bootstrap:
     usePubspecOverrides: true
-  clean:
-    hooks:
-      post: melos exec --flutter -c 1 -- flutter clean

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-enum Direction { ltr, rtl }
+enum Direction {
+  ltr,
+  rtl,
+}
 
 class CustomSwitch extends StatelessWidget {
   final bool value;

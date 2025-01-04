@@ -9,7 +9,7 @@ class QuranKareemState with _$QuranKareemState {
     QuranKareemStatePageSideState pageSide,
     @Default([]) List<int> bookmarkedPages,
     @Default(0) double brigtness,
-    @Default(false) bool rewardedAdExists,
+    RewardedAd? rewardedAd,
     @Default("") String sourceFileOfPDF,
     @Default("") String sorahName,
     @Default("") String jozo2Name,

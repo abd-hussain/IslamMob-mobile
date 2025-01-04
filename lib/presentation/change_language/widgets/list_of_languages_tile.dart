@@ -1,8 +1,7 @@
 import 'package:country_flags/country_flags.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/model/language.dart';
+import 'package:islam_app/models/language.dart';
 import 'package:islam_app/presentation/change_language/bloc/change_language_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
@@ -17,9 +16,6 @@ class ListOfLanguageTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
       child: InkWell(
         onTap: () async {
-          FirebaseAnalyticsRepository.logEvent(name: "ChangeLanguage", parameters: {
-            "language": language.languageCode,
-          });
           context.read<ChangeLanguageBloc>().add(
                 ChangeLanguageEvent.changeSelectedCheckBoxLanguage(
                   type: language,
@@ -29,7 +25,8 @@ class ListOfLanguageTile extends StatelessWidget {
         child: Container(
           height: 50,
           width: MediaQuery.of(context).size.width - 16,
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(5)),
           child: Padding(
             padding: const EdgeInsets.only(left: 8, right: 8),
             child: Row(
@@ -52,7 +49,8 @@ class ListOfLanguageTile extends StatelessWidget {
                 ),
                 BlocBuilder<ChangeLanguageBloc, ChangeLanguageState>(
                   buildWhen: (previous, current) {
-                    return previous.selectedLanguage != current.selectedLanguage;
+                    return previous.selectedLanguage !=
+                        current.selectedLanguage;
                   },
                   builder: (context, state) {
                     return Icon(
