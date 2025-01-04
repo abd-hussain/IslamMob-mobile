@@ -1,30 +1,24 @@
 import 'dart:io';
 
-import 'package:islam_app/domain/constants/firebase_constants.dart';
-import 'package:islam_app/domain/model/firestore_options.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/domain/model/version.dart';
-import 'package:islam_app/domain/repository/firebase_firestore.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 
 enum VersionUpdate { mandatory, optional, noUpdate }
 
 class VersionUseCase {
   static Future<VersionUpdate> getCurrentVersionUpdateStatus() async {
-    final AppVersionModel? firebaseVersionData =
-        await _fetchVersionFromFirebase();
-    final String currentVersion =
-        await ApplicationVersionUsecase().getApplicationVersion();
+    final AppVersionModel? firebaseVersionData = await _fetchVersionFromFirebase();
+    final String currentVersion = await ApplicationVersionUsecase().getApplicationVersion();
     // Default version update status
     VersionUpdate updateStatus = VersionUpdate.noUpdate;
 
     // Early return if any version info is null or missing
-    if (firebaseVersionData?.latestVersion == null ||
-        firebaseVersionData?.minSupportedVersion == null) {
+    if (firebaseVersionData?.latestVersion == null || firebaseVersionData?.minSupportedVersion == null) {
       return updateStatus;
     }
 
-    final int minSupported =
-        _parseVersionNumber(firebaseVersionData!.minSupportedVersion!);
+    final int minSupported = _parseVersionNumber(firebaseVersionData!.minSupportedVersion!);
     final int latest = _parseVersionNumber(firebaseVersionData.latestVersion!);
     final int current = _parseVersionNumber(currentVersion);
 

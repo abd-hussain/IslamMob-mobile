@@ -1,13 +1,10 @@
 import 'dart:io';
 
-import 'package:islam_app/domain/constants/firebase_constants.dart';
-import 'package:islam_app/domain/model/firestore_options.dart';
 import 'package:islam_app/domain/model/report_request.dart';
-import 'package:islam_app/domain/repository/firebase_firestore.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 
 class ReportUseCase {
-  Future<void> addNewReportOrSuggestion(
-      {required ReportRequest reportData}) async {
+  Future<void> addNewReportOrSuggestion({required ReportRequest reportData}) async {
     final attachments = await _uploadAttachments([
       reportData.attach1,
       reportData.attach2,

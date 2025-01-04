@@ -1,4 +1,4 @@
-import 'package:islam_app/domain/repository/firebase_analytics.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
@@ -17,20 +17,15 @@ class PrayNotificationSettingScreen extends StatelessWidget {
     FirebaseAnalyticsRepository.logEvent(name: "PrayNotificationSettingScreen");
 
     return BlocProvider(
-      create: (context) => PrayNotificationSettingBloc()
-        ..add(const PrayNotificationSettingEvent
-            .initialPrayNotificationSettings()),
+      create: (context) =>
+          PrayNotificationSettingBloc()..add(const PrayNotificationSettingEvent.initialPrayNotificationSettings()),
       child: Scaffold(
-        appBar: CustomAppBar(
-            title: AppLocalizations.of(context)!.notificationSettings),
+        appBar: CustomAppBar(title: AppLocalizations.of(context)!.notificationSettings),
         body: SafeArea(
-          child: BlocBuilder<PrayNotificationSettingBloc,
-                  PrayNotificationSettingState>(
-              buildWhen: (previous, current) =>
-                  previous.loadingStatus != current.loadingStatus,
+          child: BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
+              buildWhen: (previous, current) => previous.loadingStatus != current.loadingStatus,
               builder: (context, state) {
-                if (state.loadingStatus ==
-                    const PrayNotificationSettingProcessState.loading()) {
+                if (state.loadingStatus == const PrayNotificationSettingProcessState.loading()) {
                   return const SizedBox(
                     child: Center(
                       child: CircularProgressIndicator(
@@ -49,8 +44,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: CustomText(
-                            title: AppLocalizations.of(context)!
-                                .notificationSettingQuick,
+                            title: AppLocalizations.of(context)!.notificationSettingQuick,
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xff444444),
@@ -61,8 +55,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: CustomText(
-                            title: AppLocalizations.of(context)!
-                                .notificationSettingPray,
+                            title: AppLocalizations.of(context)!.notificationSettingPray,
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xff444444),
@@ -73,8 +66,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: CustomText(
-                            title: AppLocalizations.of(context)!
-                                .notificationSettingOther,
+                            title: AppLocalizations.of(context)!.notificationSettingOther,
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xff444444),

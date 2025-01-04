@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:database_manager/database_manager.dart';
-import 'package:islam_app/domain/repository/firebase_analytics.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
@@ -28,11 +28,9 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
   }
 
   /// Handles the event to change the inboarding stage
-  FutureOr<void> _changeInBoardingStage(
-      _ChangeInBoardingStage event, Emitter<InboardingState> emit) async {
+  FutureOr<void> _changeInBoardingStage(_ChangeInBoardingStage event, Emitter<InboardingState> emit) async {
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldInBoardingStageConstant.inBoardingStage,
-        value: event.stage);
+        key: DatabaseFieldInBoardingStageConstant.inBoardingStage, value: event.stage);
 
     FirebaseAnalyticsRepository.logEvent(
       name: "InBoardingStageUpdate",
@@ -42,17 +40,13 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
     emit(state.copyWith(inBoardingStage: event.stage));
   }
 
-  FutureOr<void> _initialInBoardingStage(
-      _InitialInBoardingStage event, Emitter<InboardingState> emit) {
+  FutureOr<void> _initialInBoardingStage(_InitialInBoardingStage event, Emitter<InboardingState> emit) {
     final stage = _getInBoardingStage();
     emit(state.copyWith(inBoardingStage: stage));
   }
 
-  FutureOr<void> _finalizeInBoarding(
-      _FinalizeInBoarding event, Emitter<InboardingState> emit) async {
-    await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
-        value: true);
+  FutureOr<void> _finalizeInBoarding(_FinalizeInBoarding event, Emitter<InboardingState> emit) async {
+    await DataBaseManagerBase.saveInDatabase(key: DatabaseFieldInBoardingStageConstant.inBoardingfinished, value: true);
 
     FirebaseAnalyticsRepository.logEvent(
       name: "InBoardingFinalizeInBoarding",

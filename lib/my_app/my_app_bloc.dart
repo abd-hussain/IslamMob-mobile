@@ -3,7 +3,7 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:islam_app/domain/repository/firebase_manager_base.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:database_manager/database_manager.dart';
 import 'package:timezone/data/latest.dart' as tz;
