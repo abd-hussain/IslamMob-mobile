@@ -10,38 +10,43 @@ part 'pray_notification_setting_event.dart';
 part 'pray_notification_setting_state.dart';
 part 'pray_notification_setting_bloc.freezed.dart';
 
-class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, PrayNotificationSettingState> {
+class PrayNotificationSettingBloc
+    extends Bloc<PrayNotificationSettingEvent, PrayNotificationSettingState> {
   PrayNotificationSettingBloc() : super(const PrayNotificationSettingState()) {
     on<_InitialPrayNotificationSettings>(_initialPrayNotificationSettings);
     on<_ChangePrayNotificationSettings>(_changePrayNotificationSettings);
   }
 
   FutureOr<void> _initialPrayNotificationSettings(
-      _InitialPrayNotificationSettings event, Emitter<PrayNotificationSettingState> emit) {
-    final disableAllForToday =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForToday, defaultValue: false);
-    final disableAllForThreeDay =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForThreeDay, defaultValue: false);
-    final disableAllForWeek =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForWeek, defaultValue: false);
-    final disableFajr =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableFajr, defaultValue: true);
-    final disableDuher =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableDuher, defaultValue: true);
-    final disableAsr =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAsr, defaultValue: true);
-    final disableMagrieb =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableMagrieb, defaultValue: true);
-    final disableIsha =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableIsha, defaultValue: true);
-    final disableSunriseTime =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableSunriseTime, defaultValue: true);
-    final disableSunrisePray =
-        DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableSunrisePray, defaultValue: true);
+      _InitialPrayNotificationSettings event,
+      Emitter<PrayNotificationSettingState> emit) {
+    final disableAllForToday = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableAllForToday, defaultValue: false);
+    final disableAllForThreeDay = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableAllForThreeDay,
+        defaultValue: false);
+    final disableAllForWeek = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableAllForWeek, defaultValue: false);
+    final disableFajr = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableFajr, defaultValue: true);
+    final disableDuher = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableDuher, defaultValue: true);
+    final disableAsr = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableAsr, defaultValue: true);
+    final disableMagrieb = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableMagrieb, defaultValue: true);
+    final disableIsha = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableIsha, defaultValue: true);
+    final disableSunriseTime = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableSunriseTime, defaultValue: true);
+    final disableSunrisePray = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableSunrisePray, defaultValue: true);
     final disableNotificationBefore15Min = DataBaseManagerBase.getFromDatabase(
-        key: LocalNotificationConstant.disableNotificationBefore15Min, defaultValue: true);
+        key: LocalNotificationConstant.disableNotificationBefore15Min,
+        defaultValue: true);
     final disablePushNotifications = DataBaseManagerBase.getFromDatabase(
-        key: LocalNotificationConstant.disablePushNotifications, defaultValue: true);
+        key: LocalNotificationConstant.disablePushNotifications,
+        defaultValue: true);
 
     emit(
       state.copyWith(
@@ -62,7 +67,8 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
   }
 
   FutureOr<void> _changePrayNotificationSettings(
-      _ChangePrayNotificationSettings event, Emitter<PrayNotificationSettingState> emit) async {
+      _ChangePrayNotificationSettings event,
+      Emitter<PrayNotificationSettingState> emit) async {
     FirebaseAnalyticsRepository.logEvent(
       name: "changePrayNotificationSettings",
       parameters: {
@@ -74,45 +80,58 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
     switch (event.type) {
       case PrayNotificationType.allNotificationForToday:
         await DataBaseManagerBase.saveInDatabase(
-            key: LocalNotificationConstant.disableAllForToday, value: event.status);
+            key: LocalNotificationConstant.disableAllForToday,
+            value: event.status);
         emit(state.copyWith(allNotificationForToday: event.status));
       case PrayNotificationType.allNotificationForThreeDay:
         await DataBaseManagerBase.saveInDatabase(
-            key: LocalNotificationConstant.disableAllForThreeDay, value: event.status);
+            key: LocalNotificationConstant.disableAllForThreeDay,
+            value: event.status);
         emit(state.copyWith(allNotificationForThreeDay: event.status));
       case PrayNotificationType.allNotificationForWeekDay:
-        await DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForWeek, value: event.status);
+        await DataBaseManagerBase.saveInDatabase(
+            key: LocalNotificationConstant.disableAllForWeek,
+            value: event.status);
         emit(state.copyWith(allNotificationForWeekDay: event.status));
       case PrayNotificationType.fajir:
-        await DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableFajr, value: event.status);
+        await DataBaseManagerBase.saveInDatabase(
+            key: LocalNotificationConstant.disableFajr, value: event.status);
         emit(state.copyWith(fajir: event.status));
       case PrayNotificationType.duhir:
-        await DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableDuher, value: event.status);
+        await DataBaseManagerBase.saveInDatabase(
+            key: LocalNotificationConstant.disableDuher, value: event.status);
         emit(state.copyWith(duhir: event.status));
       case PrayNotificationType.asr:
-        await DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAsr, value: event.status);
+        await DataBaseManagerBase.saveInDatabase(
+            key: LocalNotificationConstant.disableAsr, value: event.status);
         emit(state.copyWith(asr: event.status));
       case PrayNotificationType.magrieb:
-        await DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableMagrieb, value: event.status);
+        await DataBaseManagerBase.saveInDatabase(
+            key: LocalNotificationConstant.disableMagrieb, value: event.status);
         emit(state.copyWith(magrieb: event.status));
       case PrayNotificationType.isha:
-        await DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableIsha, value: event.status);
+        await DataBaseManagerBase.saveInDatabase(
+            key: LocalNotificationConstant.disableIsha, value: event.status);
         emit(state.copyWith(isha: event.status));
       case PrayNotificationType.sunriseTime:
         await DataBaseManagerBase.saveInDatabase(
-            key: LocalNotificationConstant.disableSunriseTime, value: event.status);
+            key: LocalNotificationConstant.disableSunriseTime,
+            value: event.status);
         emit(state.copyWith(sunriseTime: event.status));
       case PrayNotificationType.sunrisePray:
         await DataBaseManagerBase.saveInDatabase(
-            key: LocalNotificationConstant.disableSunrisePray, value: event.status);
+            key: LocalNotificationConstant.disableSunrisePray,
+            value: event.status);
         emit(state.copyWith(sunrisePray: event.status));
       case PrayNotificationType.before15Min:
         await DataBaseManagerBase.saveInDatabase(
-            key: LocalNotificationConstant.disableNotificationBefore15Min, value: event.status);
+            key: LocalNotificationConstant.disableNotificationBefore15Min,
+            value: event.status);
         emit(state.copyWith(before15Min: event.status));
       case PrayNotificationType.pushNotification:
         await DataBaseManagerBase.saveInDatabase(
-            key: LocalNotificationConstant.disablePushNotifications, value: event.status);
+            key: LocalNotificationConstant.disablePushNotifications,
+            value: event.status);
         emit(state.copyWith(applicationNotification: event.status));
     }
   }

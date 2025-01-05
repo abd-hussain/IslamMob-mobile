@@ -17,3 +17,6 @@ command:
   clean:
     hooks:
       post: melos exec --flutter -c 1 -- flutter clean
+  format:
+    hooks:
+      post: melos exec --flutter -c 1 -- dart format lib

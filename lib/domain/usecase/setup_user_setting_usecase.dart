@@ -89,7 +89,7 @@ class SetupUserSettingUseCase {
   Future<void> setQuranCopy(QuranCopy copyName) async {
     final copyData = {
       DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse:
-          copyName.filePath,
+          copyName.fileName,
       DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber:
           copyName.lastPageNumber.toString(),
       DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers:

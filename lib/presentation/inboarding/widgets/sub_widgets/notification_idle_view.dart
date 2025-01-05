@@ -18,7 +18,8 @@ class NotificationIdleView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: AppLocalizations.of(context)!.allowSendingNotificationsdetails,
+            title:
+                AppLocalizations.of(context)!.allowSendingNotificationsdetails,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -55,7 +56,8 @@ class NotificationIdleView extends StatelessWidget {
             );
 
             // Check and request notification permission
-            final hasPermission = await FirebaseMessagesRepository.checkAndRequestPermission();
+            final hasPermission =
+                await FirebaseMessagesRepository.checkAndRequestPermission();
             await _initializeLocalNotifications();
 
             // Update status based on permission result
@@ -64,10 +66,12 @@ class NotificationIdleView extends StatelessWidget {
                 : const NotificationsProcessStateNoPermission();
 
             if (hasPermission) {
-              final String? notificationsDetails = await FirebaseMessagesRepository().getNotificationToken();
+              final String? notificationsDetails =
+                  await FirebaseMessagesRepository().getNotificationToken();
 
               notificationsBloc.add(
-                NotificationsEvent.setupToken(token: notificationsDetails ?? ""),
+                NotificationsEvent.setupToken(
+                    token: notificationsDetails ?? ""),
               );
             }
 
@@ -88,7 +92,9 @@ class NotificationIdleView extends StatelessWidget {
   void showNoInternetConnection(BuildContext context) {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+      SnackBar(
+          content: Text(
+              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
     );
   }
 }

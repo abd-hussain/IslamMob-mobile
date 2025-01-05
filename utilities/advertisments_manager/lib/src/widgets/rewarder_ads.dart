@@ -10,7 +10,8 @@ class RewarderAds {
       await RewardedAd.load(
         adUnitId: AdHelper.rewardedAdUnitId,
         request: const AdRequest(),
-        rewardedAdLoadCallback: RewardedAdLoadCallback(onAdLoaded: (RewardedAd rewardedAd) {
+        rewardedAdLoadCallback:
+            RewardedAdLoadCallback(onAdLoaded: (RewardedAd rewardedAd) {
           mainRewardedAd = rewardedAd;
         }, onAdFailedToLoad: (LoadAdError error) {
           mainRewardedAd = null;

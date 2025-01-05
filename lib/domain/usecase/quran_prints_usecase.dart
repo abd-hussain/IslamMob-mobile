@@ -13,13 +13,15 @@ class QuranPrintsUsecase {
 
       return listOfPrints;
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(message: 'Error fetching documents: $e');
+      LoggerManagerBase.logDebugMessage(
+          message: 'Error fetching documents: $e');
       return [];
     }
   }
 
   /// Maps Firestore documents to `QuranPrints` objects
-  static List<QuranPrints> mapDocumentsToQuranPrints(List<Map<String, dynamic>> documents) {
+  static List<QuranPrints> mapDocumentsToQuranPrints(
+      List<Map<String, dynamic>> documents) {
     return documents.map((doc) {
       return QuranPrints(
         nameReferance: doc["name_referance"] ?? "",
