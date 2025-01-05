@@ -1,7 +1,7 @@
-import 'package:islam_app/models/high_latitude_method.dart';
-import 'package:islam_app/models/madhab.dart';
-import 'package:islam_app/models/pray_calculation_method.dart';
-import 'package:islam_app/models/pray_country_setting.dart';
+import 'package:islam_app/domain/sealed/high_latitude_method.dart';
+import 'package:islam_app/domain/sealed/madhab.dart';
+import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
+import 'package:islam_app/domain/model/pray_country_setting.dart';
 
 class PrayCountrySettingUsecase {
   static List<PrayCountrySetting> list = [

@@ -2,9 +2,8 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:islam_app/models/language.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
+import 'package:islam_app/domain/model/language.dart';
+import 'package:database_manager/database_manager.dart';
 
 part 'change_language_event.dart';
 part 'change_language_state.dart';
@@ -12,8 +11,6 @@ part 'change_language_bloc.freezed.dart';
 
 class ChangeLanguageBloc
     extends Bloc<ChangeLanguageEvent, ChangeLanguageState> {
-  final _box = Hive.box(DatabaseBoxConstant.userInfo);
-
   ChangeLanguageBloc() : super(const ChangeLanguageState()) {
     on<_ChangeSelectedCheckBoxLanguage>(_changeSelectedCheckBoxLanguage);
     on<_PlaceNewLanguage>(_placeNewLanguage);
@@ -26,6 +23,7 @@ class ChangeLanguageBloc
 
   FutureOr<void> _placeNewLanguage(
       _PlaceNewLanguage event, Emitter<ChangeLanguageState> emit) async {
-    await _box.put(DatabaseFieldConstant.userLanguageCode, event.langCode);
+    await DataBaseManagerBase.saveInDatabase(
+        key: DatabaseFieldConstant.userLanguageCode, value: event.langCode);
   }
 }

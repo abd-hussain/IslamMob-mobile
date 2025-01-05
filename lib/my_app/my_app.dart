@@ -21,20 +21,18 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
-              LoggerManagerBase.logDebugMessage(message: "Error during app initialization: ${snapshot.error}");
+              LoggerManagerBase.logDebugMessage(
+                  message:
+                      "Error during app initialization: ${snapshot.error}");
               return const SplashLoadingScreen(); // Optional: Show an error-specific screen here.
             }
 
-            LoggerManagerBase.logDebugMessage(message: 'App initialization completed successfully!');
+            LoggerManagerBase.logDebugMessage(
+                message: 'App initialization completed successfully!');
             return const IslamMobApp();
           }
 
           return const SplashLoadingScreen(); // Default loading screen while initialization is ongoing.
         });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 }

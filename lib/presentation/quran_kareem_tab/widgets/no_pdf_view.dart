@@ -1,13 +1,12 @@
 import 'dart:io';
 
+import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:lottie/lottie.dart';
 
 class NoPDFView extends StatelessWidget {
@@ -79,10 +78,9 @@ class NoPDFView extends StatelessWidget {
   }
 
   void _loadMushafFile(BuildContext context) {
-    final box = Hive.box(DatabaseBoxConstant.userInfo);
-    final printName =
-        box.get(DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse)
-            as String?;
+    final printName = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
+        defaultValue: "");
     if (printName == null || printName.isEmpty) {
       debugPrint("No print name found in database.");
       return;

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 part 'pray_calculation_method.freezed.dart';
 
 @freezed

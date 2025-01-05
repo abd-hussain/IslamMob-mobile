@@ -1,5 +1,4 @@
 import 'package:azkar/azkar.dart';
-
 import 'package:flutter/material.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
@@ -89,7 +88,9 @@ class ZekerView extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
         const SizedBox(width: 8),
-        isDisabled ? const SizedBox.shrink() : const Icon(Icons.ads_click, color: Color(0xff444444)),
+        isDisabled
+            ? const SizedBox.shrink()
+            : const Icon(Icons.ads_click, color: Color(0xff444444)),
       ],
     );
   }

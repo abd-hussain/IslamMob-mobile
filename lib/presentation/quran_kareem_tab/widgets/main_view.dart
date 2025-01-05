@@ -1,8 +1,7 @@
+import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
-import 'package:islam_app/core/constants/database_constant.dart';
 import 'package:pdfx/pdfx.dart';
 
 class QuranKareemMainView extends StatelessWidget {
@@ -22,8 +21,9 @@ class QuranKareemMainView extends StatelessWidget {
   }
 
   Widget _buildPdfView(BuildContext context) {
-    final box = Hive.box(DatabaseBoxConstant.userInfo);
-    final isReversed = box.get(DatabaseFieldConstant.userLanguageCode) != "ar";
+    final isReversed = DataBaseManagerBase.getFromDatabase(
+            key: DatabaseFieldConstant.userLanguageCode, defaultValue: "") !=
+        "ar";
 
     return PdfView(
       reverse: isReversed,
