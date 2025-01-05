@@ -4,6 +4,7 @@ part 'quran_copy.freezed.dart';
 @freezed
 class QuranCopy with _$QuranCopy {
   factory QuranCopy({
+    required String fileName,
     required String filePath,
     required int lastPageNumber,
     required Map<String, dynamic>? juz2ToPageNumbers,

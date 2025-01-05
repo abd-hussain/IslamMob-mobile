@@ -233,7 +233,8 @@ void main() {
           ),
         );
 
-        final result = await apiClient.delete<Map<String, dynamic>>('/path').run();
+        final result =
+            await apiClient.delete<Map<String, dynamic>>('/path').run();
 
         verify(
           () => mockDio.delete<Map<String, dynamic>>(
@@ -264,7 +265,8 @@ void main() {
           ),
         );
 
-        final result = await apiClient.delete<Map<String, dynamic>>('/path').run();
+        final result =
+            await apiClient.delete<Map<String, dynamic>>('/path').run();
 
         verify(
           () => mockDio.delete<Map<String, dynamic>>(
@@ -292,7 +294,8 @@ void main() {
           ),
         );
 
-        final result = await apiClient.delete<Map<String, dynamic>>('/path').run();
+        final result =
+            await apiClient.delete<Map<String, dynamic>>('/path').run();
 
         verify(
           () => mockDio.delete<Map<String, dynamic>>(
@@ -324,7 +327,8 @@ void main() {
           ),
         );
 
-        final result = await apiClient.patch<Map<String, dynamic>>('/path', data: {'key': 'value'}).run();
+        final result = await apiClient
+            .patch<Map<String, dynamic>>('/path', data: {'key': 'value'}).run();
 
         verify(
           () => mockDio.patch<Map<String, dynamic>>(
@@ -363,7 +367,8 @@ void main() {
           ),
         );
 
-        final result = await apiClient.put<Map<String, dynamic>>('/path', data: {'key': 'value'}).run();
+        final result = await apiClient
+            .put<Map<String, dynamic>>('/path', data: {'key': 'value'}).run();
 
         verify(
           () => mockDio.put<Map<String, dynamic>>(

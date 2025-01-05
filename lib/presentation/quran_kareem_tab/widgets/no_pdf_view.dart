@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/usecase/load_file_from_document_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -77,15 +77,14 @@ class NoPDFView extends StatelessWidget {
     });
   }
 
-  void _loadMushafFile(BuildContext context) {
-    final printName = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
-        defaultValue: "");
-    if (printName == null || printName.isEmpty) {
+  Future<void> _loadMushafFile(BuildContext context) async {
+    final filePath = await LoadFileFromDocumentUseCase().call();
+
+    if (filePath == null || filePath.isEmpty) {
       debugPrint("No print name found in database.");
       return;
     }
-    final file = File(printName);
+    final file = File(filePath);
 
     if (file.existsSync() && context.mounted) {
       context.read<QuranKareemBloc>().initialize();

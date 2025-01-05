@@ -12,7 +12,8 @@ void main() {
     late HighLatitudeRule? highLatitudeRule;
 
     setUp(() {
-      coordinates = Coordinates(31.963158, 35.930359); // Amman, Jordan coordinates
+      coordinates =
+          Coordinates(31.963158, 35.930359); // Amman, Jordan coordinates
       utcOffset = const Duration(hours: 3);
       calculationMethod = CalculationMethod.muslimWorldLeague;
       madhab = Madhab.shafi;

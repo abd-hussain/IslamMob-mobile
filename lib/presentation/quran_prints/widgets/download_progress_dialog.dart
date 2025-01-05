@@ -58,7 +58,8 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
           Navigator.pop(context);
         }
       },
-      cancelToken: cancelToken, // Pass the cancel token to manage download cancellation
+      cancelToken:
+          cancelToken, // Pass the cancel token to manage download cancellation
     );
   }
 
@@ -134,7 +135,8 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
       title: AppLocalizations.of(context)!.cancel,
       color: Colors.redAccent,
       onTap: () {
-        FirebaseAnalyticsRepository.logEvent(name: "QuranPrintsScreenCancelButton");
+        FirebaseAnalyticsRepository.logEvent(
+            name: "QuranPrintsScreenCancelButton");
         cancelToken.cancel(); // Cancel the download when pressing Cancel
         Navigator.of(context).pop();
       },

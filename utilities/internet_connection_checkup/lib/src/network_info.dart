@@ -4,7 +4,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checkup/core/exceptions.dart';
 
 class NetworkInfoRepository {
-  final StreamController<bool> _networkStateController = StreamController<bool>.broadcast();
+  final StreamController<bool> _networkStateController =
+      StreamController<bool>.broadcast();
   final Connectivity _connectivity = Connectivity();
 
   /// Initializes network connection monitoring.
@@ -41,7 +42,8 @@ class NetworkInfoRepository {
   Future<bool> _internetLookupCheck() async {
     try {
       final lookupResult = await InternetAddress.lookup('google.com');
-      return lookupResult.isNotEmpty && lookupResult.first.rawAddress.isNotEmpty;
+      return lookupResult.isNotEmpty &&
+          lookupResult.first.rawAddress.isNotEmpty;
     } catch (_) {
       return false;
     }

@@ -4,7 +4,8 @@ import 'package:islam_app/domain/model/report_request.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 
 class ReportUseCase {
-  Future<void> addNewReportOrSuggestion({required ReportRequest reportData}) async {
+  Future<void> addNewReportOrSuggestion(
+      {required ReportRequest reportData}) async {
     final attachments = await _uploadAttachments([
       reportData.attach1,
       reportData.attach2,

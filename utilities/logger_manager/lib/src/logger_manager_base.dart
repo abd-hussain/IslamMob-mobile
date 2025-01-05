@@ -7,7 +7,8 @@ class LoggerManagerBase {
     logger.d(message);
   }
 
-  static dynamic logErrorMessage({required dynamic error, required String message}) {
+  static dynamic logErrorMessage(
+      {required dynamic error, required String message}) {
     logger.e("## ERROR - $message", error: error);
   }
 }
