@@ -1,7 +1,7 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/usecase/azkar_salah_time_state_parser.dart';
+import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/azkar_after_salah_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
@@ -46,7 +46,8 @@ class HomeScreen extends StatelessWidget {
   /// Builds the spacer under the app bar when it is collapsed.
   Widget _buildAppBarSpacer() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) => previous.isBarExpanded != current.isBarExpanded,
+      buildWhen: (previous, current) =>
+          previous.isBarExpanded != current.isBarExpanded,
       builder: (context, state) {
         return SizedBox(height: state.isBarExpanded ? 0 : 75);
       },
@@ -56,9 +57,13 @@ class HomeScreen extends StatelessWidget {
   /// Builds the notification permission view when applicable.
   Widget _buildNotificationPermissionView() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) => previous.showAllowNotificationView != current.showAllowNotificationView,
+      buildWhen: (previous, current) =>
+          previous.showAllowNotificationView !=
+          current.showAllowNotificationView,
       builder: (context, state) {
-        return state.showAllowNotificationView ? const NotificationPermissionView() : const SizedBox.shrink();
+        return state.showAllowNotificationView
+            ? const NotificationPermissionView()
+            : const SizedBox.shrink();
       },
     );
   }
@@ -66,9 +71,12 @@ class HomeScreen extends StatelessWidget {
   /// Builds the Azkar view based on the next prayer type.
   Widget _buildAzkarView() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) => previous.nextPrayType != current.nextPrayType,
+      buildWhen: (previous, current) =>
+          previous.nextPrayType != current.nextPrayType,
       builder: (context, state) {
-        return AzkarAfterSalahView(salahType: AzkarSalahTimeStateParser.getSalahTimeState(state.nextPrayType));
+        return AzkarAfterSalahView(
+            salahType:
+                SalahTimeStateParser.getSalahTimeState(state.nextPrayType));
       },
     );
   }

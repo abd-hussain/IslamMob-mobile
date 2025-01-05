@@ -53,7 +53,8 @@ class PrayManagerRepository {
     final currentTimeInUTC = DateTime.now().toUtc().add(utcOffset);
 
     // Get the next prayer and its time
-    final nextPrayer = prayerTimes.nextPrayerByDateTime(currentTimeInUTC: currentTimeInUTC);
+    final nextPrayer =
+        prayerTimes.nextPrayerByDateTime(currentTimeInUTC: currentTimeInUTC);
     final nextPrayerTime = prayerTimes.timeForPrayer(nextPrayer);
 
     // Return both as a map

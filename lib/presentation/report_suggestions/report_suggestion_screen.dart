@@ -1,20 +1,20 @@
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/usecase/log_event_usecase.dart';
 import 'package:islam_app/presentation/report_suggestions/bloc/report_and_suggestion_bloc.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/attachments.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/footer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:islam_app/utils/exceptions.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 
 class ReportOrSuggestionScreen extends StatelessWidget {
   const ReportOrSuggestionScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    LogEventUsecase.logEvent(name: "ReportOrSuggestionScreen");
+    FirebaseAnalyticsRepository.logEvent(name: "ReportOrSuggestionScreen");
     return BlocProvider(
       create: (context) => ReportAndSuggestionBloc(),
       child: GestureDetector(
@@ -26,8 +26,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
           body: BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
             buildWhen: (previous, current) =>
                 previous.loadingStatus != current.loadingStatus ||
-                previous.internetConnectionStauts !=
-                    current.internetConnectionStauts,
+                previous.internetConnectionStauts != current.internetConnectionStauts,
             builder: (context, status) {
               if (status.internetConnectionStauts == false) {
                 return _buildNoInternetView(context);
@@ -85,8 +84,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: TextField(
-              controller:
-                  context.read<ReportAndSuggestionBloc>().textController,
+              controller: context.read<ReportAndSuggestionBloc>().textController,
               decoration: InputDecoration(
                 hintText: AppLocalizations.of(context)!.feedbackmessage,
                 hintMaxLines: 2,
@@ -103,8 +101,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSubmitButton(
-      BuildContext context, ReportAndSuggestionState state) {
+  Widget _buildSubmitButton(BuildContext context, ReportAndSuggestionState state) {
     return BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
       buildWhen: (previous, current) =>
           previous.enableSubmitBtn != current.enableSubmitBtn ||
@@ -120,23 +117,21 @@ class ReportOrSuggestionScreen extends StatelessWidget {
     );
   }
 
-  Future<void> _handleSubmit(
-      BuildContext context, ReportAndSuggestionState state) async {
+  Future<void> _handleSubmit(BuildContext context, ReportAndSuggestionState state) async {
     try {
-      context.read<ReportAndSuggestionBloc>().add(
-          const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
+      FirebaseAnalyticsRepository.logEvent(name: "ReportOrSuggestionSubmitsion");
+
+      context.read<ReportAndSuggestionBloc>().add(const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
       final navigator = Navigator.of(context);
+      final bloc = context.read<ReportAndSuggestionBloc>();
       await context.read<ReportAndSuggestionBloc>().callRequest(
             attach1: state.attach1,
             attach2: state.attach2,
             attach3: state.attach3,
           );
 
-      if (context.mounted) {
-        context.read<ReportAndSuggestionBloc>().add(
-            const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
-        navigator.pop();
-      }
+      bloc.add(const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
+      navigator.pop();
     } on ConnectionException {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(

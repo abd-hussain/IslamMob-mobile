@@ -1,4 +1,4 @@
-import 'package:islam_app/models/high_latitude_method.dart';
+import 'package:islam_app/domain/sealed/high_latitude_method.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'high_latitude_setting.freezed.dart';
 
