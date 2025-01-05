@@ -5,7 +5,7 @@ import 'package:logger_manager/logger_manager.dart';
 // import 'package:workmanager/workmanager.dart';
 
 //TODO: find way to fire the local notification for all athan times
-
+//TODO: selected print lost when app is closed
 void main() {
   LoggerManagerBase.logDebugMessage(message: 'Application Started ...');
   WidgetsFlutterBinding.ensureInitialized();
