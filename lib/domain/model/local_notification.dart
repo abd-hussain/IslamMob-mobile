@@ -7,6 +7,7 @@ class LocalNotification with _$LocalNotification {
     required String rightNowMessage,
     required String remeningTimeMessage,
     required String nextSalahTime,
-    required String soundFileName,
+    required String? soundFileName,
+    required bool isItForCountdown,
   }) = _LocalNotification;
 }

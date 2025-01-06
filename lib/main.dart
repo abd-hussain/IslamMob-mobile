@@ -4,9 +4,11 @@ import 'package:islam_app/my_app/my_app.dart';
 import 'package:logger_manager/logger_manager.dart';
 // import 'package:workmanager/workmanager.dart';
 
-//TODO: find way to fire the local notification for all athan times
-//TODO: next adhan should be after the current adhan (timer issue)
-
+//TODO: local notification sound not working
+//TODO: local notification id understand the usgage
+//TODO: cancel all of the scheduled notification when app is open
+//TODO: fire a new notification schaduled when app is open
+//TODO: add description to the notification as title specially for long message
 void main() {
   LoggerManagerBase.logDebugMessage(message: 'Application Started ...');
   WidgetsFlutterBinding.ensureInitialized();

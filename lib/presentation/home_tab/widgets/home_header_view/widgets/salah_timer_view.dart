@@ -24,12 +24,31 @@ class _SalahTimerViewState extends State<SalahTimerView> {
   @override
   void initState() {
     super.initState();
+    _initTimer();
+  }
 
+  @override
+  void didUpdateWidget(covariant SalahTimerView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    // If targetTime changed, reset the timer
+    if (oldWidget.targetTime != widget.targetTime) {
+      _timer.cancel();
+      _initTimer();
+    }
+  }
+
+  void _initTimer() {
+    _updateRemainingTime();
+    _startTimer();
+  }
+
+  void _updateRemainingTime() {
     final now = DateTime.now();
     final nowInUTCFormat = now.toUtc().add(now.timeZoneOffset);
-    _remainingTime = widget.targetTime.difference(nowInUTCFormat);
-
-    _startTimer();
+    setState(() {
+      _remainingTime = widget.targetTime.difference(nowInUTCFormat);
+    });
   }
 
   void _startTimer() {

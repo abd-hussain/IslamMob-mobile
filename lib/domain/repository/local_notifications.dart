@@ -98,6 +98,10 @@ class LocalNotificationRepository {
   }) async {
     final details = _notificationDetails(context, type);
 
+    if (details.isItForCountdown == false) {
+      return;
+    }
+
     final notificationDetails = NotificationDetails(
       android: AndroidNotificationDetails(
         'salah_channel_id', // channel id
@@ -149,6 +153,7 @@ class LocalNotificationRepository {
               AppLocalizations.of(context)!.remeningTimeFajirMessage,
           nextSalahTime:
               AppLocalizations.of(context)!.nextSalahTimeFajirMessage,
+          isItForCountdown: true,
         );
       case NotificationTypeStateZuhr():
         return LocalNotification(
@@ -158,8 +163,8 @@ class LocalNotificationRepository {
               AppLocalizations.of(context)!.remeningTimeDuherMessage,
           nextSalahTime:
               AppLocalizations.of(context)!.nextSalahTimeDuherMessage,
+          isItForCountdown: true,
         );
-
       case NotificationTypeStateAsr():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowAsrMessage,
@@ -167,6 +172,7 @@ class LocalNotificationRepository {
           remeningTimeMessage:
               AppLocalizations.of(context)!.remeningTimeAsrMessage,
           nextSalahTime: AppLocalizations.of(context)!.nextSalahTimeAsrMessage,
+          isItForCountdown: true,
         );
 
       case NotificationTypeStateMaghrib():
@@ -177,6 +183,7 @@ class LocalNotificationRepository {
               AppLocalizations.of(context)!.remeningTimeMagrebMessage,
           nextSalahTime:
               AppLocalizations.of(context)!.nextSalahTimeMagrebMessage,
+          isItForCountdown: true,
         );
 
       case NotificationTypeStateIsha():
@@ -186,6 +193,7 @@ class LocalNotificationRepository {
           remeningTimeMessage:
               AppLocalizations.of(context)!.remeningTimeIshaMessage,
           nextSalahTime: AppLocalizations.of(context)!.nextSalahTimeIshaMessage,
+          isItForCountdown: true,
         );
 
       case NotificationTypeStateBefore15Minutes():
@@ -194,6 +202,7 @@ class LocalNotificationRepository {
           soundFileName: "warning",
           remeningTimeMessage: "",
           nextSalahTime: "",
+          isItForCountdown: false,
         );
 
       case NotificationTypeStateSunrise():
@@ -204,6 +213,52 @@ class LocalNotificationRepository {
               AppLocalizations.of(context)!.remeningTimeSunriseMessage,
           nextSalahTime:
               AppLocalizations.of(context)!.nextSalahTimeSunriseMessage,
+          isItForCountdown: true,
+        );
+      case NotificationTypeReminderjom3aSoratAlKahfReminder():
+        return LocalNotification(
+          rightNowMessage:
+              AppLocalizations.of(context)!.rightNowJom3AlkahfReminderMessage,
+          soundFileName: null,
+          remeningTimeMessage: "",
+          nextSalahTime: "",
+          isItForCountdown: false,
+        );
+      case NotificationTypeStateJom3aLastHourForDoaa():
+        return LocalNotification(
+          rightNowMessage:
+              AppLocalizations.of(context)!.rightNowJom3adoaaTimeMessage,
+          soundFileName: null,
+          remeningTimeMessage: "",
+          nextSalahTime: "",
+          isItForCountdown: false,
+        );
+      case NotificationTypeStateMidnight():
+        return LocalNotification(
+          rightNowMessage:
+              AppLocalizations.of(context)!.rightNowMidnightTimeMessage,
+          soundFileName: null,
+          remeningTimeMessage: "",
+          nextSalahTime: "",
+          isItForCountdown: false,
+        );
+      case NotificationTypeReminderToOpenTheApp1():
+        return LocalNotification(
+          rightNowMessage:
+              AppLocalizations.of(context)!.reminderToOpenTheApp1Message,
+          soundFileName: null,
+          remeningTimeMessage: "",
+          nextSalahTime: "",
+          isItForCountdown: false,
+        );
+      case NotificationTypeReminderToOpenTheApp2():
+        return LocalNotification(
+          rightNowMessage:
+              AppLocalizations.of(context)!.reminderToOpenTheApp2Message,
+          soundFileName: null,
+          remeningTimeMessage: "",
+          nextSalahTime: "",
+          isItForCountdown: false,
         );
     }
   }

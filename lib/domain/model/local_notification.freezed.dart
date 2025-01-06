@@ -19,7 +19,8 @@ mixin _$LocalNotification {
   String get rightNowMessage => throw _privateConstructorUsedError;
   String get remeningTimeMessage => throw _privateConstructorUsedError;
   String get nextSalahTime => throw _privateConstructorUsedError;
-  String get soundFileName => throw _privateConstructorUsedError;
+  String? get soundFileName => throw _privateConstructorUsedError;
+  bool get isItForCountdown => throw _privateConstructorUsedError;
 
   /// Create a copy of LocalNotification
   /// with the given fields replaced by the non-null parameter values.
@@ -38,7 +39,8 @@ abstract class $LocalNotificationCopyWith<$Res> {
       {String rightNowMessage,
       String remeningTimeMessage,
       String nextSalahTime,
-      String soundFileName});
+      String? soundFileName,
+      bool isItForCountdown});
 }
 
 /// @nodoc
@@ -59,7 +61,8 @@ class _$LocalNotificationCopyWithImpl<$Res, $Val extends LocalNotification>
     Object? rightNowMessage = null,
     Object? remeningTimeMessage = null,
     Object? nextSalahTime = null,
-    Object? soundFileName = null,
+    Object? soundFileName = freezed,
+    Object? isItForCountdown = null,
   }) {
     return _then(_value.copyWith(
       rightNowMessage: null == rightNowMessage
@@ -74,10 +77,14 @@ class _$LocalNotificationCopyWithImpl<$Res, $Val extends LocalNotification>
           ? _value.nextSalahTime
           : nextSalahTime // ignore: cast_nullable_to_non_nullable
               as String,
-      soundFileName: null == soundFileName
+      soundFileName: freezed == soundFileName
           ? _value.soundFileName
           : soundFileName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      isItForCountdown: null == isItForCountdown
+          ? _value.isItForCountdown
+          : isItForCountdown // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -94,7 +101,8 @@ abstract class _$$LocalNotificationImplCopyWith<$Res>
       {String rightNowMessage,
       String remeningTimeMessage,
       String nextSalahTime,
-      String soundFileName});
+      String? soundFileName,
+      bool isItForCountdown});
 }
 
 /// @nodoc
@@ -113,7 +121,8 @@ class __$$LocalNotificationImplCopyWithImpl<$Res>
     Object? rightNowMessage = null,
     Object? remeningTimeMessage = null,
     Object? nextSalahTime = null,
-    Object? soundFileName = null,
+    Object? soundFileName = freezed,
+    Object? isItForCountdown = null,
   }) {
     return _then(_$LocalNotificationImpl(
       rightNowMessage: null == rightNowMessage
@@ -128,10 +137,14 @@ class __$$LocalNotificationImplCopyWithImpl<$Res>
           ? _value.nextSalahTime
           : nextSalahTime // ignore: cast_nullable_to_non_nullable
               as String,
-      soundFileName: null == soundFileName
+      soundFileName: freezed == soundFileName
           ? _value.soundFileName
           : soundFileName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      isItForCountdown: null == isItForCountdown
+          ? _value.isItForCountdown
+          : isItForCountdown // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -143,7 +156,8 @@ class _$LocalNotificationImpl implements _LocalNotification {
       {required this.rightNowMessage,
       required this.remeningTimeMessage,
       required this.nextSalahTime,
-      required this.soundFileName});
+      required this.soundFileName,
+      required this.isItForCountdown});
 
   @override
   final String rightNowMessage;
@@ -152,11 +166,13 @@ class _$LocalNotificationImpl implements _LocalNotification {
   @override
   final String nextSalahTime;
   @override
-  final String soundFileName;
+  final String? soundFileName;
+  @override
+  final bool isItForCountdown;
 
   @override
   String toString() {
-    return 'LocalNotification(rightNowMessage: $rightNowMessage, remeningTimeMessage: $remeningTimeMessage, nextSalahTime: $nextSalahTime, soundFileName: $soundFileName)';
+    return 'LocalNotification(rightNowMessage: $rightNowMessage, remeningTimeMessage: $remeningTimeMessage, nextSalahTime: $nextSalahTime, soundFileName: $soundFileName, isItForCountdown: $isItForCountdown)';
   }
 
   @override
@@ -171,12 +187,14 @@ class _$LocalNotificationImpl implements _LocalNotification {
             (identical(other.nextSalahTime, nextSalahTime) ||
                 other.nextSalahTime == nextSalahTime) &&
             (identical(other.soundFileName, soundFileName) ||
-                other.soundFileName == soundFileName));
+                other.soundFileName == soundFileName) &&
+            (identical(other.isItForCountdown, isItForCountdown) ||
+                other.isItForCountdown == isItForCountdown));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, rightNowMessage,
-      remeningTimeMessage, nextSalahTime, soundFileName);
+      remeningTimeMessage, nextSalahTime, soundFileName, isItForCountdown);
 
   /// Create a copy of LocalNotification
   /// with the given fields replaced by the non-null parameter values.
@@ -193,7 +211,8 @@ abstract class _LocalNotification implements LocalNotification {
       {required final String rightNowMessage,
       required final String remeningTimeMessage,
       required final String nextSalahTime,
-      required final String soundFileName}) = _$LocalNotificationImpl;
+      required final String? soundFileName,
+      required final bool isItForCountdown}) = _$LocalNotificationImpl;
 
   @override
   String get rightNowMessage;
@@ -202,7 +221,9 @@ abstract class _LocalNotification implements LocalNotification {
   @override
   String get nextSalahTime;
   @override
-  String get soundFileName;
+  String? get soundFileName;
+  @override
+  bool get isItForCountdown;
 
   /// Create a copy of LocalNotification
   /// with the given fields replaced by the non-null parameter values.
