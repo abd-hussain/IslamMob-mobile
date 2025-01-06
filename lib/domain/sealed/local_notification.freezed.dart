@@ -25,6 +25,11 @@ mixin _$NotificationTypeState {
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +41,11 @@ mixin _$NotificationTypeState {
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +57,11 @@ mixin _$NotificationTypeState {
     TResult Function()? maghrib,
     TResult Function()? isha,
     TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +75,16 @@ mixin _$NotificationTypeState {
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
         before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +97,15 @@ mixin _$NotificationTypeState {
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,6 +118,15 @@ mixin _$NotificationTypeState {
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -163,6 +206,11 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
   }) {
     return fajir();
   }
@@ -177,6 +225,11 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
   }) {
     return fajir?.call();
   }
@@ -191,6 +244,11 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     TResult Function()? maghrib,
     TResult Function()? isha,
     TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (fajir != null) {
@@ -210,6 +268,16 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
         before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
   }) {
     return fajir(this);
   }
@@ -225,6 +293,15 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
   }) {
     return fajir?.call(this);
   }
@@ -240,6 +317,15 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (fajir != null) {
@@ -306,6 +392,11 @@ class _$NotificationTypeStateSunriseImpl
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
   }) {
     return sunrise();
   }
@@ -320,6 +411,11 @@ class _$NotificationTypeStateSunriseImpl
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
   }) {
     return sunrise?.call();
   }
@@ -334,6 +430,11 @@ class _$NotificationTypeStateSunriseImpl
     TResult Function()? maghrib,
     TResult Function()? isha,
     TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (sunrise != null) {
@@ -353,6 +454,16 @@ class _$NotificationTypeStateSunriseImpl
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
         before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
   }) {
     return sunrise(this);
   }
@@ -368,6 +479,15 @@ class _$NotificationTypeStateSunriseImpl
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
   }) {
     return sunrise?.call(this);
   }
@@ -383,6 +503,15 @@ class _$NotificationTypeStateSunriseImpl
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (sunrise != null) {
@@ -449,6 +578,11 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
   }) {
     return zuhr();
   }
@@ -463,6 +597,11 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
   }) {
     return zuhr?.call();
   }
@@ -477,6 +616,11 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     TResult Function()? maghrib,
     TResult Function()? isha,
     TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (zuhr != null) {
@@ -496,6 +640,16 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
         before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
   }) {
     return zuhr(this);
   }
@@ -511,6 +665,15 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
   }) {
     return zuhr?.call(this);
   }
@@ -526,6 +689,15 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (zuhr != null) {
@@ -591,6 +763,11 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
   }) {
     return asr();
   }
@@ -605,6 +782,11 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
   }) {
     return asr?.call();
   }
@@ -619,6 +801,11 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     TResult Function()? maghrib,
     TResult Function()? isha,
     TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (asr != null) {
@@ -638,6 +825,16 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
         before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
   }) {
     return asr(this);
   }
@@ -653,6 +850,15 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
   }) {
     return asr?.call(this);
   }
@@ -668,6 +874,15 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (asr != null) {
@@ -734,6 +949,11 @@ class _$NotificationTypeStateMaghribImpl
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
   }) {
     return maghrib();
   }
@@ -748,6 +968,11 @@ class _$NotificationTypeStateMaghribImpl
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
   }) {
     return maghrib?.call();
   }
@@ -762,6 +987,11 @@ class _$NotificationTypeStateMaghribImpl
     TResult Function()? maghrib,
     TResult Function()? isha,
     TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (maghrib != null) {
@@ -781,6 +1011,16 @@ class _$NotificationTypeStateMaghribImpl
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
         before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
   }) {
     return maghrib(this);
   }
@@ -796,6 +1036,15 @@ class _$NotificationTypeStateMaghribImpl
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
   }) {
     return maghrib?.call(this);
   }
@@ -811,6 +1060,15 @@ class _$NotificationTypeStateMaghribImpl
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (maghrib != null) {
@@ -877,6 +1135,11 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
   }) {
     return isha();
   }
@@ -891,6 +1154,11 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
   }) {
     return isha?.call();
   }
@@ -905,6 +1173,11 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     TResult Function()? maghrib,
     TResult Function()? isha,
     TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (isha != null) {
@@ -924,6 +1197,16 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
         before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
   }) {
     return isha(this);
   }
@@ -939,6 +1222,15 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
   }) {
     return isha?.call(this);
   }
@@ -954,6 +1246,15 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (isha != null) {
@@ -1020,6 +1321,11 @@ class _$NotificationTypeStateBefore15MinutesImpl
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
   }) {
     return before15Minutes();
   }
@@ -1034,6 +1340,11 @@ class _$NotificationTypeStateBefore15MinutesImpl
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
   }) {
     return before15Minutes?.call();
   }
@@ -1048,6 +1359,11 @@ class _$NotificationTypeStateBefore15MinutesImpl
     TResult Function()? maghrib,
     TResult Function()? isha,
     TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (before15Minutes != null) {
@@ -1067,6 +1383,16 @@ class _$NotificationTypeStateBefore15MinutesImpl
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
         before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
   }) {
     return before15Minutes(this);
   }
@@ -1082,6 +1408,15 @@ class _$NotificationTypeStateBefore15MinutesImpl
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
   }) {
     return before15Minutes?.call(this);
   }
@@ -1097,6 +1432,15 @@ class _$NotificationTypeStateBefore15MinutesImpl
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
         before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (before15Minutes != null) {
@@ -1110,4 +1454,948 @@ abstract class NotificationTypeStateBefore15Minutes
     implements NotificationTypeState {
   const factory NotificationTypeStateBefore15Minutes() =
       _$NotificationTypeStateBefore15MinutesImpl;
+}
+
+/// @nodoc
+abstract class _$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWith<$Res> {
+  factory _$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWith(
+          _$NotificationTypeStateJom3aLastHourForDoaaImpl value,
+          $Res Function(_$NotificationTypeStateJom3aLastHourForDoaaImpl) then) =
+      __$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWithImpl<$Res>
+    extends _$NotificationTypeStateCopyWithImpl<$Res,
+        _$NotificationTypeStateJom3aLastHourForDoaaImpl>
+    implements _$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWith<$Res> {
+  __$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWithImpl(
+      _$NotificationTypeStateJom3aLastHourForDoaaImpl _value,
+      $Res Function(_$NotificationTypeStateJom3aLastHourForDoaaImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationTypeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NotificationTypeStateJom3aLastHourForDoaaImpl
+    implements NotificationTypeStateJom3aLastHourForDoaa {
+  const _$NotificationTypeStateJom3aLastHourForDoaaImpl();
+
+  @override
+  String toString() {
+    return 'NotificationTypeState.jom3aLastHourForDoaa()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationTypeStateJom3aLastHourForDoaaImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fajir,
+    required TResult Function() sunrise,
+    required TResult Function() zuhr,
+    required TResult Function() asr,
+    required TResult Function() maghrib,
+    required TResult Function() isha,
+    required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
+  }) {
+    return jom3aLastHourForDoaa();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fajir,
+    TResult? Function()? sunrise,
+    TResult? Function()? zuhr,
+    TResult? Function()? asr,
+    TResult? Function()? maghrib,
+    TResult? Function()? isha,
+    TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
+  }) {
+    return jom3aLastHourForDoaa?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fajir,
+    TResult Function()? sunrise,
+    TResult Function()? zuhr,
+    TResult Function()? asr,
+    TResult Function()? maghrib,
+    TResult Function()? isha,
+    TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (jom3aLastHourForDoaa != null) {
+      return jom3aLastHourForDoaa();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationTypeStateFajir value) fajir,
+    required TResult Function(NotificationTypeStateSunrise value) sunrise,
+    required TResult Function(NotificationTypeStateZuhr value) zuhr,
+    required TResult Function(NotificationTypeStateAsr value) asr,
+    required TResult Function(NotificationTypeStateMaghrib value) maghrib,
+    required TResult Function(NotificationTypeStateIsha value) isha,
+    required TResult Function(NotificationTypeStateBefore15Minutes value)
+        before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
+  }) {
+    return jom3aLastHourForDoaa(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationTypeStateFajir value)? fajir,
+    TResult? Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult? Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult? Function(NotificationTypeStateAsr value)? asr,
+    TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult? Function(NotificationTypeStateIsha value)? isha,
+    TResult? Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+  }) {
+    return jom3aLastHourForDoaa?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationTypeStateFajir value)? fajir,
+    TResult Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult Function(NotificationTypeStateAsr value)? asr,
+    TResult Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult Function(NotificationTypeStateIsha value)? isha,
+    TResult Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (jom3aLastHourForDoaa != null) {
+      return jom3aLastHourForDoaa(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationTypeStateJom3aLastHourForDoaa
+    implements NotificationTypeState {
+  const factory NotificationTypeStateJom3aLastHourForDoaa() =
+      _$NotificationTypeStateJom3aLastHourForDoaaImpl;
+}
+
+/// @nodoc
+abstract class _$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWith<
+    $Res> {
+  factory _$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWith(
+          _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl value,
+          $Res Function(_$NotificationTypeReminderjom3aSoratAlKahfReminderImpl)
+              then) =
+      __$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWithImpl<
+          $Res>;
+}
+
+/// @nodoc
+class __$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWithImpl<$Res>
+    extends _$NotificationTypeStateCopyWithImpl<$Res,
+        _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl>
+    implements
+        _$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWith<$Res> {
+  __$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWithImpl(
+      _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl _value,
+      $Res Function(_$NotificationTypeReminderjom3aSoratAlKahfReminderImpl)
+          _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationTypeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl
+    implements NotificationTypeReminderjom3aSoratAlKahfReminder {
+  const _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl();
+
+  @override
+  String toString() {
+    return 'NotificationTypeState.jom3aSoratAlKahfReminder()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fajir,
+    required TResult Function() sunrise,
+    required TResult Function() zuhr,
+    required TResult Function() asr,
+    required TResult Function() maghrib,
+    required TResult Function() isha,
+    required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
+  }) {
+    return jom3aSoratAlKahfReminder();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fajir,
+    TResult? Function()? sunrise,
+    TResult? Function()? zuhr,
+    TResult? Function()? asr,
+    TResult? Function()? maghrib,
+    TResult? Function()? isha,
+    TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
+  }) {
+    return jom3aSoratAlKahfReminder?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fajir,
+    TResult Function()? sunrise,
+    TResult Function()? zuhr,
+    TResult Function()? asr,
+    TResult Function()? maghrib,
+    TResult Function()? isha,
+    TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (jom3aSoratAlKahfReminder != null) {
+      return jom3aSoratAlKahfReminder();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationTypeStateFajir value) fajir,
+    required TResult Function(NotificationTypeStateSunrise value) sunrise,
+    required TResult Function(NotificationTypeStateZuhr value) zuhr,
+    required TResult Function(NotificationTypeStateAsr value) asr,
+    required TResult Function(NotificationTypeStateMaghrib value) maghrib,
+    required TResult Function(NotificationTypeStateIsha value) isha,
+    required TResult Function(NotificationTypeStateBefore15Minutes value)
+        before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
+  }) {
+    return jom3aSoratAlKahfReminder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationTypeStateFajir value)? fajir,
+    TResult? Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult? Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult? Function(NotificationTypeStateAsr value)? asr,
+    TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult? Function(NotificationTypeStateIsha value)? isha,
+    TResult? Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+  }) {
+    return jom3aSoratAlKahfReminder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationTypeStateFajir value)? fajir,
+    TResult Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult Function(NotificationTypeStateAsr value)? asr,
+    TResult Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult Function(NotificationTypeStateIsha value)? isha,
+    TResult Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (jom3aSoratAlKahfReminder != null) {
+      return jom3aSoratAlKahfReminder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationTypeReminderjom3aSoratAlKahfReminder
+    implements NotificationTypeState {
+  const factory NotificationTypeReminderjom3aSoratAlKahfReminder() =
+      _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl;
+}
+
+/// @nodoc
+abstract class _$$NotificationTypeStateMidnightImplCopyWith<$Res> {
+  factory _$$NotificationTypeStateMidnightImplCopyWith(
+          _$NotificationTypeStateMidnightImpl value,
+          $Res Function(_$NotificationTypeStateMidnightImpl) then) =
+      __$$NotificationTypeStateMidnightImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NotificationTypeStateMidnightImplCopyWithImpl<$Res>
+    extends _$NotificationTypeStateCopyWithImpl<$Res,
+        _$NotificationTypeStateMidnightImpl>
+    implements _$$NotificationTypeStateMidnightImplCopyWith<$Res> {
+  __$$NotificationTypeStateMidnightImplCopyWithImpl(
+      _$NotificationTypeStateMidnightImpl _value,
+      $Res Function(_$NotificationTypeStateMidnightImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationTypeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NotificationTypeStateMidnightImpl
+    implements NotificationTypeStateMidnight {
+  const _$NotificationTypeStateMidnightImpl();
+
+  @override
+  String toString() {
+    return 'NotificationTypeState.midnight()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationTypeStateMidnightImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fajir,
+    required TResult Function() sunrise,
+    required TResult Function() zuhr,
+    required TResult Function() asr,
+    required TResult Function() maghrib,
+    required TResult Function() isha,
+    required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
+  }) {
+    return midnight();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fajir,
+    TResult? Function()? sunrise,
+    TResult? Function()? zuhr,
+    TResult? Function()? asr,
+    TResult? Function()? maghrib,
+    TResult? Function()? isha,
+    TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
+  }) {
+    return midnight?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fajir,
+    TResult Function()? sunrise,
+    TResult Function()? zuhr,
+    TResult Function()? asr,
+    TResult Function()? maghrib,
+    TResult Function()? isha,
+    TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (midnight != null) {
+      return midnight();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationTypeStateFajir value) fajir,
+    required TResult Function(NotificationTypeStateSunrise value) sunrise,
+    required TResult Function(NotificationTypeStateZuhr value) zuhr,
+    required TResult Function(NotificationTypeStateAsr value) asr,
+    required TResult Function(NotificationTypeStateMaghrib value) maghrib,
+    required TResult Function(NotificationTypeStateIsha value) isha,
+    required TResult Function(NotificationTypeStateBefore15Minutes value)
+        before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
+  }) {
+    return midnight(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationTypeStateFajir value)? fajir,
+    TResult? Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult? Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult? Function(NotificationTypeStateAsr value)? asr,
+    TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult? Function(NotificationTypeStateIsha value)? isha,
+    TResult? Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+  }) {
+    return midnight?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationTypeStateFajir value)? fajir,
+    TResult Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult Function(NotificationTypeStateAsr value)? asr,
+    TResult Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult Function(NotificationTypeStateIsha value)? isha,
+    TResult Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (midnight != null) {
+      return midnight(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationTypeStateMidnight implements NotificationTypeState {
+  const factory NotificationTypeStateMidnight() =
+      _$NotificationTypeStateMidnightImpl;
+}
+
+/// @nodoc
+abstract class _$$NotificationTypeReminderToOpenTheApp1ImplCopyWith<$Res> {
+  factory _$$NotificationTypeReminderToOpenTheApp1ImplCopyWith(
+          _$NotificationTypeReminderToOpenTheApp1Impl value,
+          $Res Function(_$NotificationTypeReminderToOpenTheApp1Impl) then) =
+      __$$NotificationTypeReminderToOpenTheApp1ImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NotificationTypeReminderToOpenTheApp1ImplCopyWithImpl<$Res>
+    extends _$NotificationTypeStateCopyWithImpl<$Res,
+        _$NotificationTypeReminderToOpenTheApp1Impl>
+    implements _$$NotificationTypeReminderToOpenTheApp1ImplCopyWith<$Res> {
+  __$$NotificationTypeReminderToOpenTheApp1ImplCopyWithImpl(
+      _$NotificationTypeReminderToOpenTheApp1Impl _value,
+      $Res Function(_$NotificationTypeReminderToOpenTheApp1Impl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationTypeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NotificationTypeReminderToOpenTheApp1Impl
+    implements NotificationTypeReminderToOpenTheApp1 {
+  const _$NotificationTypeReminderToOpenTheApp1Impl();
+
+  @override
+  String toString() {
+    return 'NotificationTypeState.reminderToOpenTheApp1()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationTypeReminderToOpenTheApp1Impl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fajir,
+    required TResult Function() sunrise,
+    required TResult Function() zuhr,
+    required TResult Function() asr,
+    required TResult Function() maghrib,
+    required TResult Function() isha,
+    required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
+  }) {
+    return reminderToOpenTheApp1();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fajir,
+    TResult? Function()? sunrise,
+    TResult? Function()? zuhr,
+    TResult? Function()? asr,
+    TResult? Function()? maghrib,
+    TResult? Function()? isha,
+    TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
+  }) {
+    return reminderToOpenTheApp1?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fajir,
+    TResult Function()? sunrise,
+    TResult Function()? zuhr,
+    TResult Function()? asr,
+    TResult Function()? maghrib,
+    TResult Function()? isha,
+    TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (reminderToOpenTheApp1 != null) {
+      return reminderToOpenTheApp1();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationTypeStateFajir value) fajir,
+    required TResult Function(NotificationTypeStateSunrise value) sunrise,
+    required TResult Function(NotificationTypeStateZuhr value) zuhr,
+    required TResult Function(NotificationTypeStateAsr value) asr,
+    required TResult Function(NotificationTypeStateMaghrib value) maghrib,
+    required TResult Function(NotificationTypeStateIsha value) isha,
+    required TResult Function(NotificationTypeStateBefore15Minutes value)
+        before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
+  }) {
+    return reminderToOpenTheApp1(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationTypeStateFajir value)? fajir,
+    TResult? Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult? Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult? Function(NotificationTypeStateAsr value)? asr,
+    TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult? Function(NotificationTypeStateIsha value)? isha,
+    TResult? Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+  }) {
+    return reminderToOpenTheApp1?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationTypeStateFajir value)? fajir,
+    TResult Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult Function(NotificationTypeStateAsr value)? asr,
+    TResult Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult Function(NotificationTypeStateIsha value)? isha,
+    TResult Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (reminderToOpenTheApp1 != null) {
+      return reminderToOpenTheApp1(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationTypeReminderToOpenTheApp1
+    implements NotificationTypeState {
+  const factory NotificationTypeReminderToOpenTheApp1() =
+      _$NotificationTypeReminderToOpenTheApp1Impl;
+}
+
+/// @nodoc
+abstract class _$$NotificationTypeReminderToOpenTheApp2ImplCopyWith<$Res> {
+  factory _$$NotificationTypeReminderToOpenTheApp2ImplCopyWith(
+          _$NotificationTypeReminderToOpenTheApp2Impl value,
+          $Res Function(_$NotificationTypeReminderToOpenTheApp2Impl) then) =
+      __$$NotificationTypeReminderToOpenTheApp2ImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NotificationTypeReminderToOpenTheApp2ImplCopyWithImpl<$Res>
+    extends _$NotificationTypeStateCopyWithImpl<$Res,
+        _$NotificationTypeReminderToOpenTheApp2Impl>
+    implements _$$NotificationTypeReminderToOpenTheApp2ImplCopyWith<$Res> {
+  __$$NotificationTypeReminderToOpenTheApp2ImplCopyWithImpl(
+      _$NotificationTypeReminderToOpenTheApp2Impl _value,
+      $Res Function(_$NotificationTypeReminderToOpenTheApp2Impl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationTypeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NotificationTypeReminderToOpenTheApp2Impl
+    implements NotificationTypeReminderToOpenTheApp2 {
+  const _$NotificationTypeReminderToOpenTheApp2Impl();
+
+  @override
+  String toString() {
+    return 'NotificationTypeState.reminderToOpenTheApp2()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationTypeReminderToOpenTheApp2Impl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fajir,
+    required TResult Function() sunrise,
+    required TResult Function() zuhr,
+    required TResult Function() asr,
+    required TResult Function() maghrib,
+    required TResult Function() isha,
+    required TResult Function() before15Minutes,
+    required TResult Function() jom3aLastHourForDoaa,
+    required TResult Function() jom3aSoratAlKahfReminder,
+    required TResult Function() midnight,
+    required TResult Function() reminderToOpenTheApp1,
+    required TResult Function() reminderToOpenTheApp2,
+  }) {
+    return reminderToOpenTheApp2();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fajir,
+    TResult? Function()? sunrise,
+    TResult? Function()? zuhr,
+    TResult? Function()? asr,
+    TResult? Function()? maghrib,
+    TResult? Function()? isha,
+    TResult? Function()? before15Minutes,
+    TResult? Function()? jom3aLastHourForDoaa,
+    TResult? Function()? jom3aSoratAlKahfReminder,
+    TResult? Function()? midnight,
+    TResult? Function()? reminderToOpenTheApp1,
+    TResult? Function()? reminderToOpenTheApp2,
+  }) {
+    return reminderToOpenTheApp2?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fajir,
+    TResult Function()? sunrise,
+    TResult Function()? zuhr,
+    TResult Function()? asr,
+    TResult Function()? maghrib,
+    TResult Function()? isha,
+    TResult Function()? before15Minutes,
+    TResult Function()? jom3aLastHourForDoaa,
+    TResult Function()? jom3aSoratAlKahfReminder,
+    TResult Function()? midnight,
+    TResult Function()? reminderToOpenTheApp1,
+    TResult Function()? reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (reminderToOpenTheApp2 != null) {
+      return reminderToOpenTheApp2();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotificationTypeStateFajir value) fajir,
+    required TResult Function(NotificationTypeStateSunrise value) sunrise,
+    required TResult Function(NotificationTypeStateZuhr value) zuhr,
+    required TResult Function(NotificationTypeStateAsr value) asr,
+    required TResult Function(NotificationTypeStateMaghrib value) maghrib,
+    required TResult Function(NotificationTypeStateIsha value) isha,
+    required TResult Function(NotificationTypeStateBefore15Minutes value)
+        before15Minutes,
+    required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
+        jom3aLastHourForDoaa,
+    required TResult Function(
+            NotificationTypeReminderjom3aSoratAlKahfReminder value)
+        jom3aSoratAlKahfReminder,
+    required TResult Function(NotificationTypeStateMidnight value) midnight,
+    required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
+        reminderToOpenTheApp1,
+    required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
+        reminderToOpenTheApp2,
+  }) {
+    return reminderToOpenTheApp2(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationTypeStateFajir value)? fajir,
+    TResult? Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult? Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult? Function(NotificationTypeStateAsr value)? asr,
+    TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult? Function(NotificationTypeStateIsha value)? isha,
+    TResult? Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult? Function(NotificationTypeStateMidnight value)? midnight,
+    TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+  }) {
+    return reminderToOpenTheApp2?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationTypeStateFajir value)? fajir,
+    TResult Function(NotificationTypeStateSunrise value)? sunrise,
+    TResult Function(NotificationTypeStateZuhr value)? zuhr,
+    TResult Function(NotificationTypeStateAsr value)? asr,
+    TResult Function(NotificationTypeStateMaghrib value)? maghrib,
+    TResult Function(NotificationTypeStateIsha value)? isha,
+    TResult Function(NotificationTypeStateBefore15Minutes value)?
+        before15Minutes,
+    TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
+        jom3aLastHourForDoaa,
+    TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
+        jom3aSoratAlKahfReminder,
+    TResult Function(NotificationTypeStateMidnight value)? midnight,
+    TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
+        reminderToOpenTheApp1,
+    TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
+        reminderToOpenTheApp2,
+    required TResult orElse(),
+  }) {
+    if (reminderToOpenTheApp2 != null) {
+      return reminderToOpenTheApp2(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotificationTypeReminderToOpenTheApp2
+    implements NotificationTypeState {
+  const factory NotificationTypeReminderToOpenTheApp2() =
+      _$NotificationTypeReminderToOpenTheApp2Impl;
 }
