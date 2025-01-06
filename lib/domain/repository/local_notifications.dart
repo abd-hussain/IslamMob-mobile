@@ -4,6 +4,7 @@ import 'package:islam_app/domain/model/local_notification.dart';
 import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'dart:math';
 
 class LocalNotificationRepository {
   static final FlutterLocalNotificationsPlugin _notificationsPlugin =
@@ -55,7 +56,6 @@ class LocalNotificationRepository {
 
   /// Schedules a notification at the specified date and time.
   static Future<void> scheduleNotification({
-    required int id,
     required DateTime scheduledTime,
     required NotificationTypeState type,
     required BuildContext context,
@@ -78,7 +78,7 @@ class LocalNotificationRepository {
       ),
     );
     await _notificationsPlugin.zonedSchedule(
-      id,
+      _generateUniqueId(),
       details.rightNowMessage,
       null,
       tz.TZDateTime.from(scheduledTime, tz.local),
@@ -88,6 +88,18 @@ class LocalNotificationRepository {
       matchDateTimeComponents: DateTimeComponents.dateAndTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
+  }
+
+  static int _generateUniqueId() {
+    final random = Random.secure();
+    final timestamp = DateTime.now().millisecondsSinceEpoch;
+
+    // Generate up to 20 bits (1,048,576 possibilities)
+    final randomBits = random.nextInt(1 << 20);
+
+    // Shift the timestamp left 20 bits and combine (XOR or OR)
+    // This keeps the random portion in the lower bits.
+    return (timestamp << 20) ^ randomBits;
   }
 
   static Future<void> countdownNotificationForAndroid({
@@ -135,7 +147,7 @@ class LocalNotificationRepository {
       ),
     );
     await _notificationsPlugin.show(
-      1,
+      _generateUniqueId(),
       null,
       null,
       notificationDetails,

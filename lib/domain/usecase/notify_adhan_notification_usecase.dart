@@ -53,8 +53,11 @@ class NotifyAdhanNotificationUsecase {
 
   Future<void> prepareLocalNotificationForTomorrow(BuildContext context) async {
     final tommorrow = DateTime.now().add(const Duration(days: 1));
-    _prayUsecase = PrayUsecase(specificDate: DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
-    PrayTimingDateTimeModel prayTimingDateTimeModel = _prayUsecase.getAllPrayTimeAsDateTimeForToday();
+    _prayUsecase = PrayUsecase(
+        specificDate:
+            DateComponents(tommorrow.year, tommorrow.month, tommorrow.day));
+    PrayTimingDateTimeModel prayTimingDateTimeModel =
+        _prayUsecase.getAllPrayTimeAsDateTimeForToday();
 
     final fajirPrayTime = DateTime(
       tommorrow.year,
@@ -105,14 +108,12 @@ class NotifyAdhanNotificationUsecase {
     );
 
     await LocalNotificationRepository.scheduleNotification(
-      id: 1,
       context: context,
       type: const NotificationTypeState.before15Minutes(),
       scheduledTime: fajirPrayTime.subtract(const Duration(minutes: 15)),
     );
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 2,
         context: context,
         type: const NotificationTypeState.fajir(),
         scheduledTime: fajirPrayTime,
@@ -120,7 +121,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 3,
         context: context,
         type: const NotificationTypeState.sunrise(),
         scheduledTime: sunrisePrayTime,
@@ -128,7 +128,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 4,
         context: context,
         type: const NotificationTypeState.before15Minutes(),
         scheduledTime: dhuhrPrayTime.subtract(const Duration(minutes: 15)),
@@ -136,7 +135,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 5,
         context: context,
         type: const NotificationTypeState.zuhr(),
         scheduledTime: dhuhrPrayTime,
@@ -144,7 +142,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 6,
         context: context,
         type: const NotificationTypeState.before15Minutes(),
         scheduledTime: asrPrayTime.subtract(const Duration(minutes: 15)),
@@ -152,7 +149,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 7,
         context: context,
         type: const NotificationTypeState.asr(),
         scheduledTime: asrPrayTime,
@@ -160,7 +156,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 8,
         context: context,
         type: const NotificationTypeState.before15Minutes(),
         scheduledTime: maghribPrayTime.subtract(const Duration(minutes: 15)),
@@ -168,7 +163,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 9,
         context: context,
         type: const NotificationTypeState.maghrib(),
         scheduledTime: maghribPrayTime,
@@ -176,7 +170,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 10,
         context: context,
         type: const NotificationTypeState.before15Minutes(),
         scheduledTime: ishaPrayTime.subtract(const Duration(minutes: 15)),
@@ -184,7 +177,6 @@ class NotifyAdhanNotificationUsecase {
     }
     if (context.mounted) {
       await LocalNotificationRepository.scheduleNotification(
-        id: 11,
         context: context,
         type: const NotificationTypeState.isha(),
         scheduledTime: ishaPrayTime,
