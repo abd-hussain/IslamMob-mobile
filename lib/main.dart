@@ -5,7 +5,6 @@ import 'package:logger_manager/logger_manager.dart';
 // import 'package:workmanager/workmanager.dart';
 
 //TODO: local notification sound not working
-//TODO: local notification id understand the usgage
 //TODO: cancel all of the scheduled notification when app is open
 //TODO: fire a new notification schaduled when app is open
 //TODO: add description to the notification as title specially for long message
