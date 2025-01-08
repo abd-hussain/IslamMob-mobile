@@ -50,7 +50,7 @@ class LocalNotificationRepository {
   }
 
   /// Schedules a notification at the specified date and time.
-  static Future<void> scheduleNotification({
+  Future<void> scheduleNotification({
     required DateTime scheduledTime,
     required NotificationTypeState type,
     required BuildContext context,
