@@ -8,17 +8,13 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class LocalNotificationRepository {
   static final FlutterLocalNotificationsPlugin _notificationsPlugin =
       FlutterLocalNotificationsPlugin();
-  static const AndroidInitializationSettings _initializationSettingsAndroid =
-      AndroidInitializationSettings('@mipmap/ic_launcher');
-  static const DarwinInitializationSettings _initializationSettingsIOS =
-      DarwinInitializationSettings();
 
   /// Initializes the local notification service with platform-specific settings.
   static Future<void> initialize() async {
     const InitializationSettings initializationSettings =
         InitializationSettings(
-      android: _initializationSettingsAndroid,
-      iOS: _initializationSettingsIOS,
+      android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+      iOS: DarwinInitializationSettings(),
     );
 
     try {
@@ -64,15 +60,16 @@ class LocalNotificationRepository {
     String? iOSSoundFileName;
     String? androidSoundFileName;
 
+    // Reference without the file extension
     if (details.soundFileName != null) {
-      iOSSoundFileName = '${details.soundFileName}.mp3';
-      androidSoundFileName = details.soundFileName;
+      iOSSoundFileName = '${details.soundFileName}.wav'; // For iOS
+      androidSoundFileName = details.soundFileName; // For Android
     }
 
     final notificationDetails = NotificationDetails(
       android: AndroidNotificationDetails(
-        'reminder_channel',
-        'Reminder Notifications',
+        '$androidSoundFileName _channel',
+        'Adhan Notifications',
         importance: Importance.high,
         priority: Priority.high,
         sound: androidSoundFileName != null
@@ -150,6 +147,11 @@ class LocalNotificationRepository {
       null,
       notificationDetails,
     );
+  }
+
+  /// Cancels all scheduled notifications.
+  Future<void> cancelAllNotifications() async {
+    await _notificationsPlugin.cancelAll();
   }
 
   static LocalNotification _notificationDetails(

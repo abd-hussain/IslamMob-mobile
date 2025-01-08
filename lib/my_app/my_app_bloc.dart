@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:database_manager/database_manager.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -21,6 +22,8 @@ class MyAppBloc {
     await _initializeServices();
     _initializeTimeZones();
     await _initializeFirebaseAndAds();
+
+    await SetupLocalNotificationWhenAppOpenUseCase().call();
     await _setPreferredOrientations();
   }
 
