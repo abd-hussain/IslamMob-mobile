@@ -5,6 +5,7 @@ part 'local_notification.freezed.dart';
 class LocalNotification with _$LocalNotification {
   factory LocalNotification({
     required String rightNowMessage,
+    required String description,
     required String remeningTimeMessage,
     required String nextSalahTime,
     required String? soundFileName,

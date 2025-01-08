@@ -53,6 +53,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.before15Minutes(),
                       context: context,
@@ -67,6 +68,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.fajir(),
                       context: context,
@@ -81,6 +83,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.sunrise(),
                       context: context,
@@ -95,6 +98,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.zuhr(),
                       context: context,
@@ -109,6 +113,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.asr(),
                       context: context,
@@ -123,6 +128,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.maghrib(),
                       context: context,
@@ -137,6 +143,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.isha(),
                       context: context,
@@ -151,6 +158,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.reminderToOpenTheApp1(),
                       context: context,
@@ -165,6 +173,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.reminderToOpenTheApp2(),
                       context: context,
@@ -179,6 +188,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.midnight(),
                       context: context,
@@ -193,6 +203,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState
                           .jom3aSoratAlKahfReminder(),
@@ -208,6 +219,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
                     await LocalNotificationRepository.scheduleNotification(
+                      id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.jom3aLastHourForDoaa(),
                       context: context,
