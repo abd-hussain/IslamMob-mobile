@@ -13,8 +13,6 @@ import 'package:islam_mob_adhan/adhan.dart';
 
 2-  reminder for the setup
 
-3- last reminder for the setup 
-
 
 
 55 + 3 ‎ = 58	
@@ -38,11 +36,12 @@ Aser - 5
 Magreb - 5
 Aisha - 5
 
-Reminder to setup - 3
+Reminder to setup - 2
 
 Midnight - 5
 
 Jom3aa do3aaa - 1
+Jom3aa al kahf - 1
 
 
 25+30+3+5+1 = 64
