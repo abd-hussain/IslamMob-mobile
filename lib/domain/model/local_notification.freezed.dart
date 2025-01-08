@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$LocalNotification {
   String get rightNowMessage => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String get remeningTimeMessage => throw _privateConstructorUsedError;
   String get nextSalahTime => throw _privateConstructorUsedError;
   String? get soundFileName => throw _privateConstructorUsedError;
@@ -37,6 +38,7 @@ abstract class $LocalNotificationCopyWith<$Res> {
   @useResult
   $Res call(
       {String rightNowMessage,
+      String description,
       String remeningTimeMessage,
       String nextSalahTime,
       String? soundFileName,
@@ -59,6 +61,7 @@ class _$LocalNotificationCopyWithImpl<$Res, $Val extends LocalNotification>
   @override
   $Res call({
     Object? rightNowMessage = null,
+    Object? description = null,
     Object? remeningTimeMessage = null,
     Object? nextSalahTime = null,
     Object? soundFileName = freezed,
@@ -68,6 +71,10 @@ class _$LocalNotificationCopyWithImpl<$Res, $Val extends LocalNotification>
       rightNowMessage: null == rightNowMessage
           ? _value.rightNowMessage
           : rightNowMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       remeningTimeMessage: null == remeningTimeMessage
           ? _value.remeningTimeMessage
@@ -99,6 +106,7 @@ abstract class _$$LocalNotificationImplCopyWith<$Res>
   @useResult
   $Res call(
       {String rightNowMessage,
+      String description,
       String remeningTimeMessage,
       String nextSalahTime,
       String? soundFileName,
@@ -119,6 +127,7 @@ class __$$LocalNotificationImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? rightNowMessage = null,
+    Object? description = null,
     Object? remeningTimeMessage = null,
     Object? nextSalahTime = null,
     Object? soundFileName = freezed,
@@ -128,6 +137,10 @@ class __$$LocalNotificationImplCopyWithImpl<$Res>
       rightNowMessage: null == rightNowMessage
           ? _value.rightNowMessage
           : rightNowMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       remeningTimeMessage: null == remeningTimeMessage
           ? _value.remeningTimeMessage
@@ -154,6 +167,7 @@ class __$$LocalNotificationImplCopyWithImpl<$Res>
 class _$LocalNotificationImpl implements _LocalNotification {
   _$LocalNotificationImpl(
       {required this.rightNowMessage,
+      required this.description,
       required this.remeningTimeMessage,
       required this.nextSalahTime,
       required this.soundFileName,
@@ -161,6 +175,8 @@ class _$LocalNotificationImpl implements _LocalNotification {
 
   @override
   final String rightNowMessage;
+  @override
+  final String description;
   @override
   final String remeningTimeMessage;
   @override
@@ -172,7 +188,7 @@ class _$LocalNotificationImpl implements _LocalNotification {
 
   @override
   String toString() {
-    return 'LocalNotification(rightNowMessage: $rightNowMessage, remeningTimeMessage: $remeningTimeMessage, nextSalahTime: $nextSalahTime, soundFileName: $soundFileName, isItForCountdown: $isItForCountdown)';
+    return 'LocalNotification(rightNowMessage: $rightNowMessage, description: $description, remeningTimeMessage: $remeningTimeMessage, nextSalahTime: $nextSalahTime, soundFileName: $soundFileName, isItForCountdown: $isItForCountdown)';
   }
 
   @override
@@ -182,6 +198,8 @@ class _$LocalNotificationImpl implements _LocalNotification {
             other is _$LocalNotificationImpl &&
             (identical(other.rightNowMessage, rightNowMessage) ||
                 other.rightNowMessage == rightNowMessage) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.remeningTimeMessage, remeningTimeMessage) ||
                 other.remeningTimeMessage == remeningTimeMessage) &&
             (identical(other.nextSalahTime, nextSalahTime) ||
@@ -193,7 +211,7 @@ class _$LocalNotificationImpl implements _LocalNotification {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, rightNowMessage,
+  int get hashCode => Object.hash(runtimeType, rightNowMessage, description,
       remeningTimeMessage, nextSalahTime, soundFileName, isItForCountdown);
 
   /// Create a copy of LocalNotification
@@ -209,6 +227,7 @@ class _$LocalNotificationImpl implements _LocalNotification {
 abstract class _LocalNotification implements LocalNotification {
   factory _LocalNotification(
       {required final String rightNowMessage,
+      required final String description,
       required final String remeningTimeMessage,
       required final String nextSalahTime,
       required final String? soundFileName,
@@ -216,6 +235,8 @@ abstract class _LocalNotification implements LocalNotification {
 
   @override
   String get rightNowMessage;
+  @override
+  String get description;
   @override
   String get remeningTimeMessage;
   @override

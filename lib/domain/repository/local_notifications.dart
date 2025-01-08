@@ -4,7 +4,6 @@ import 'package:islam_app/domain/model/local_notification.dart';
 import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'dart:math';
 
 class LocalNotificationRepository {
   static final FlutterLocalNotificationsPlugin _notificationsPlugin =
@@ -59,28 +58,38 @@ class LocalNotificationRepository {
     required DateTime scheduledTime,
     required NotificationTypeState type,
     required BuildContext context,
+    required int id,
   }) async {
     final details = _notificationDetails(context, type);
+    String? iOSSoundFileName;
+    String? androidSoundFileName;
+
+    if (details.soundFileName != null) {
+      iOSSoundFileName = '${details.soundFileName}.mp3';
+      androidSoundFileName = details.soundFileName;
+    }
+
     final notificationDetails = NotificationDetails(
       android: AndroidNotificationDetails(
         'reminder_channel',
         'Reminder Notifications',
         importance: Importance.high,
         priority: Priority.high,
-        sound: RawResourceAndroidNotificationSound(
-            details.soundFileName), // Without file extension
+        sound: androidSoundFileName != null
+            ? RawResourceAndroidNotificationSound(androidSoundFileName)
+            : null, // Without file extension
       ),
       iOS: DarwinNotificationDetails(
-        sound: '${details.soundFileName}.mp3', // Use the file extension
+        sound: iOSSoundFileName,
         presentSound: true,
         presentAlert: true,
         presentBadge: true,
       ),
     );
     await _notificationsPlugin.zonedSchedule(
-      _generateUniqueId(),
+      id,
       details.rightNowMessage,
-      null,
+      details.description,
       tz.TZDateTime.from(scheduledTime, tz.local),
       notificationDetails,
       uiLocalNotificationDateInterpretation:
@@ -90,23 +99,12 @@ class LocalNotificationRepository {
     );
   }
 
-  static int _generateUniqueId() {
-    final random = Random.secure();
-    final timestamp = DateTime.now().millisecondsSinceEpoch;
-
-    // Generate up to 20 bits (1,048,576 possibilities)
-    final randomBits = random.nextInt(1 << 20);
-
-    // Shift the timestamp left 20 bits and combine (XOR or OR)
-    // This keeps the random portion in the lower bits.
-    return (timestamp << 20) ^ randomBits;
-  }
-
   static Future<void> countdownNotificationForAndroid({
     required BuildContext context,
     required int minites,
     required String nextSalahTime,
     required NotificationTypeState type,
+    required int id,
   }) async {
     final details = _notificationDetails(context, type);
 
@@ -147,7 +145,7 @@ class LocalNotificationRepository {
       ),
     );
     await _notificationsPlugin.show(
-      _generateUniqueId(),
+      id,
       null,
       null,
       notificationDetails,
@@ -160,6 +158,7 @@ class LocalNotificationRepository {
       case NotificationTypeStateFajir():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowFajirMessage,
+          description: "",
           soundFileName: "fajir",
           remeningTimeMessage:
               AppLocalizations.of(context)!.remeningTimeFajirMessage,
@@ -170,6 +169,7 @@ class LocalNotificationRepository {
       case NotificationTypeStateZuhr():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowDuherMessage,
+          description: "",
           soundFileName: "duher",
           remeningTimeMessage:
               AppLocalizations.of(context)!.remeningTimeDuherMessage,
@@ -180,6 +180,7 @@ class LocalNotificationRepository {
       case NotificationTypeStateAsr():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowAsrMessage,
+          description: "",
           soundFileName: "asr",
           remeningTimeMessage:
               AppLocalizations.of(context)!.remeningTimeAsrMessage,
@@ -190,6 +191,7 @@ class LocalNotificationRepository {
       case NotificationTypeStateMaghrib():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowMagrebMessage,
+          description: "",
           soundFileName: "magreb",
           remeningTimeMessage:
               AppLocalizations.of(context)!.remeningTimeMagrebMessage,
@@ -201,6 +203,7 @@ class LocalNotificationRepository {
       case NotificationTypeStateIsha():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowIshaMessage,
+          description: "",
           soundFileName: "isha",
           remeningTimeMessage:
               AppLocalizations.of(context)!.remeningTimeIshaMessage,
@@ -211,6 +214,7 @@ class LocalNotificationRepository {
       case NotificationTypeStateBefore15Minutes():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowWarningMessage,
+          description: "",
           soundFileName: "warning",
           remeningTimeMessage: "",
           nextSalahTime: "",
@@ -220,6 +224,7 @@ class LocalNotificationRepository {
       case NotificationTypeStateSunrise():
         return LocalNotification(
           rightNowMessage: AppLocalizations.of(context)!.rightNowSunriseMessage,
+          description: "",
           soundFileName: "sunrise",
           remeningTimeMessage:
               AppLocalizations.of(context)!.remeningTimeSunriseMessage,
@@ -230,7 +235,8 @@ class LocalNotificationRepository {
       case NotificationTypeReminderjom3aSoratAlKahfReminder():
         return LocalNotification(
           rightNowMessage:
-              AppLocalizations.of(context)!.rightNowJom3AlkahfReminderMessage,
+              AppLocalizations.of(context)!.jom3AlkahfReminderTitle,
+          description: AppLocalizations.of(context)!.jom3AlkahfReminderMessage,
           soundFileName: null,
           remeningTimeMessage: "",
           nextSalahTime: "",
@@ -238,8 +244,8 @@ class LocalNotificationRepository {
         );
       case NotificationTypeStateJom3aLastHourForDoaa():
         return LocalNotification(
-          rightNowMessage:
-              AppLocalizations.of(context)!.rightNowJom3adoaaTimeMessage,
+          rightNowMessage: AppLocalizations.of(context)!.jom3aDoaaTimeTitle,
+          description: AppLocalizations.of(context)!.jom3adoaaTimeMessage,
           soundFileName: null,
           remeningTimeMessage: "",
           nextSalahTime: "",
@@ -247,8 +253,8 @@ class LocalNotificationRepository {
         );
       case NotificationTypeStateMidnight():
         return LocalNotification(
-          rightNowMessage:
-              AppLocalizations.of(context)!.rightNowMidnightTimeMessage,
+          rightNowMessage: AppLocalizations.of(context)!.midnightTimeTitle,
+          description: AppLocalizations.of(context)!.midnightTimeMessage,
           soundFileName: null,
           remeningTimeMessage: "",
           nextSalahTime: "",
@@ -257,6 +263,8 @@ class LocalNotificationRepository {
       case NotificationTypeReminderToOpenTheApp1():
         return LocalNotification(
           rightNowMessage:
+              AppLocalizations.of(context)!.reminderToOpenTheApp1Title,
+          description:
               AppLocalizations.of(context)!.reminderToOpenTheApp1Message,
           soundFileName: null,
           remeningTimeMessage: "",
@@ -266,6 +274,8 @@ class LocalNotificationRepository {
       case NotificationTypeReminderToOpenTheApp2():
         return LocalNotification(
           rightNowMessage:
+              AppLocalizations.of(context)!.reminderToOpenTheApp2Title,
+          description:
               AppLocalizations.of(context)!.reminderToOpenTheApp2Message,
           soundFileName: null,
           remeningTimeMessage: "",
