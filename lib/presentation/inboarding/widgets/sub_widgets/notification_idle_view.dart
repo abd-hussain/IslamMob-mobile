@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
-import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -88,7 +87,6 @@ class NotificationIdleView extends StatelessWidget {
   /// Initializes local notifications
   Future<void> _initializeLocalNotifications() async {
     await LocalNotificationRepository.initialize();
-    await SetupLocalNotificationWhenAppOpenUseCase().call();
   }
 
   void showNoInternetConnection(BuildContext context) {

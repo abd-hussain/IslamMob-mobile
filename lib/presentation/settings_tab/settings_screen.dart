@@ -52,7 +52,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.before15Minutes(),
@@ -67,7 +67,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.fajir(),
@@ -82,7 +82,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.sunrise(),
@@ -97,7 +97,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.zuhr(),
@@ -112,7 +112,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.asr(),
@@ -127,7 +127,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.maghrib(),
@@ -142,7 +142,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.isha(),
@@ -157,7 +157,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.reminderToOpenTheApp1(),
@@ -172,7 +172,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.reminderToOpenTheApp2(),
@@ -187,7 +187,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.midnight(),
@@ -202,7 +202,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState
@@ -218,7 +218,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     //add code execution
                     DateTime scheduledDate =
                         DateTime.now().add(const Duration(seconds: 5));
-                    await LocalNotificationRepository.scheduleNotification(
+                    await LocalNotificationRepository().scheduleNotification(
                       id: 0,
                       scheduledTime: scheduledDate,
                       type: const NotificationTypeState.jom3aLastHourForDoaa(),

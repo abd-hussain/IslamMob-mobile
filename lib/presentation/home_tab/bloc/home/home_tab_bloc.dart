@@ -22,7 +22,7 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   final PrayUsecase prayUsecase = PrayUsecase();
 
   /// Initializes the Bloc listeners and data.
-  void _initializeBloc() {
+  void _initializeBloc() async {
     _initializePrayerTimings();
     scrollController.addListener(_scrollListener);
   }
