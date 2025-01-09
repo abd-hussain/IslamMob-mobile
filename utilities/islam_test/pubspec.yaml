@@ -1,0 +1,19 @@
+name: islam_test
+description: A package that provide utilities to make testing easier
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: 3.5.4
+
+# Add regular dependencies here.
+dependencies:
+  flutter:
+   sdk: flutter
+  flutter_test:
+    sdk: flutter
+  golden_toolkit: ^0.15.0
+
+dev_dependencies:
+  dependency_validator: 4.1.0
+  flutter_lints: ^4.0.0

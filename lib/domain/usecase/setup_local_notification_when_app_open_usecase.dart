@@ -28,7 +28,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
 
     // Get pray timings for the next 5 days
     final prayTimingDateTimeModels = _getNext5DaysPrayingTime();
-
+    print("prayTimingDateTimeModels: $prayTimingDateTimeModels");
     // Schedule notifications for each day
     for (final prayTimingDateTimeModel in prayTimingDateTimeModels) {
       await _setupLocalNotificationForDate(
@@ -68,23 +68,23 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     //   beforeType: const NotificationTypeState.before15Minutes(),
     // );
 
-    // 4. Asr //TODO
-    // await _schedulePrayerNotifications(
-    //   // ignore: use_build_context_synchronously
-    //   context: context,
-    //   mainTime: model.asr,
-    //   mainType: const NotificationTypeState.asr(),
-    //   beforeType: const NotificationTypeState.before15Minutes(),
-    // );
+    // 4. Asr
+    await _schedulePrayerNotifications(
+      // ignore: use_build_context_synchronously
+      context: context,
+      mainTime: model.asr,
+      mainType: const NotificationTypeState.asr(),
+      beforeType: const NotificationTypeState.before15Minutes(),
+    );
 
-    // 5. Maghrib //TODO
-    // await _schedulePrayerNotifications(
-    //   // ignore: use_build_context_synchronously
-    //   context: context,
-    //   mainTime: model.maghrib,
-    //   mainType: const NotificationTypeState.maghrib(),
-    //   beforeType: const NotificationTypeState.before15Minutes(),
-    // );
+    // 5. Maghrib
+    await _schedulePrayerNotifications(
+      // ignore: use_build_context_synchronously
+      context: context,
+      mainTime: model.maghrib,
+      mainType: const NotificationTypeState.maghrib(),
+      beforeType: const NotificationTypeState.before15Minutes(),
+    );
 
     // 6. Isha //TODO
     // await _schedulePrayerNotifications(
@@ -104,8 +104,8 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     );
 
     // 8. Special notifications for Friday (e.g., reading Al-Kahf, last hour do3aa)
-    // ignore: use_build_context_synchronously //TODO
-    // await _scheduleFridayNotifications(context, model);
+    // ignore: use_build_context_synchronously
+    await _scheduleFridayNotifications(context, model);
   }
 
   /// Helper method to schedule the main prayer time + "15 minutes before" if still in the future.
