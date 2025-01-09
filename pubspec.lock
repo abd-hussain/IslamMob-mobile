@@ -76,6 +76,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  bdd_steps:
+    dependency: "direct main"
+    description:
+      path: "utilities/bdd_steps"
+      relative: true
+    source: path
+    version: "1.0.0"
   bloc:
     dependency: transitive
     description:
@@ -128,10 +135,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_runner
-      sha256: "028819cfb90051c6b5440c7e574d1896f8037e3c96cf17aaeb054c9311cfbf4d"
+      sha256: dd09dd4e2b078992f42aac7f1a622f01882a8492fef08486b27ddde929c19f04
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.13"
+    version: "2.4.12"
   build_runner_core:
     dependency: transitive
     description:
@@ -379,6 +386,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.10"
+  dependency_validator:
+    dependency: "direct dev"
+    description:
+      name: dependency_validator
+      sha256: "16906f2137a312d0ffe754aee156436563a63d6ab7faaded83d401b5385d5d35"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.0"
   device_info_plus:
     dependency: "direct main"
     description:
@@ -886,6 +901,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  golden_toolkit:
+    dependency: transitive
+    description:
+      name: golden_toolkit
+      sha256: "8f74adab33154fe7b731395782797021f97d2edc52f7bfb85ff4f1b5c4a215f0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.15.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -1068,6 +1091,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  islam_test:
+    dependency: "direct main"
+    description:
+      path: "utilities/islam_test"
+      relative: true
+    source: path
+    version: "1.0.0"
   jovial_misc:
     dependency: transitive
     description:
@@ -2184,5 +2214,5 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
-  dart: ">=3.5.0 <4.0.0"
+  dart: "3.5.4"
   flutter: ">=3.24.0"

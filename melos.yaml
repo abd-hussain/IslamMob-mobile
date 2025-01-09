@@ -6,14 +6,110 @@ packages:
   - .
 
 scripts:
-  analyze:
-    exec: dart analyze .
-  pub-get:
-    run: melos exec -- "flutter pub get"
+  analyze_changes:
+    run: |
+      melos analyze --fatal-infos --diff=origin/main...HEAD --include-dependents
+    description: Run `flutter analyze` on changed packages.
+
+  update_goldens:
+    run: melos exec -c 1 -- flutter test --update-goldens
+    packageFilters:
+      dirExists: 
+        - test
+    description: Re-generate all golden test files
+  
+  update_goldens_changes:
+    run: |
+      melos exec -c 1 --diff=origin/main...HEAD -- "flutter test --update-goldens"
+    packageFilters:
+      dirExists: 
+        - test
+    description: Update goldens for changed packages.
+  
+  fix_check:
+    run: melos exec -- "dart fix --dry-run"
+    description: Run `dart fix` checks on all packages.
+
+  test:
+    run: |
+      melos exec -c 1 --fail-fast -- "flutter test --no-pub"
+    packageFilters:
+      dirExists: 
+        - test
+    description: Run `flutter test` checks on all packages.
+
+  test_changes:
+    run: |
+      melos exec -c 1 --fail-fast --diff=origin/main...HEAD --include-dependents -- "flutter test --no-pub"
+    description: Run `flutter test` checks on changed packages.
+
+  format_check_changes:
+    run: melos exec --diff=origin/main...HEAD -- "bash $MELOS_ROOT_PATH/scripts/format.sh --set-exit-if-changed"
+    description: Run `dart format` checks on changed packages.
+
+  format_check:
+    run: melos exec -- "bash $MELOS_ROOT_PATH/scripts/format.sh --set-exit-if-changed"
+    description: Run `dart format` checks on all packages.
+
+  format:
+    run: melos exec -- "bash $MELOS_ROOT_PATH/scripts/format.sh"
+    description: Runs `dart format` on all packages.
+
+  dependency_validator:
+    run: melos exec -c 1 -- "dart run dependency_validator"
+    description: Run `dart run dependency_validator` checks on all packages.
+
+  dependency_validator_changes:
+    run: melos exec -c 1 --diff=origin/main...HEAD --include-dependents -- "dart run dependency_validator"
+    description: Run `dart run dependency_validator` checks on changed packages.
+
+  autogen:
+    run: melos exec -c 1 -- "dart run build_runner build --delete-conflicting-outputs"
+    packageFilters:
+      dependsOn: 
+        - "build_runner"
+    description: Run `dart run build_runner build --delete-conflicting-outputs`
+
+  autogen_watch:
+    run: melos exec -c 1 -- "dart run build_runner watch --delete-conflicting-outputs"
+    packageFilters:
+      dependsOn: 
+        - "build_runner"
+    description: Run `dart run build_runner watch --delete-conflicting-outputs`
+
+  autogen_changes:
+    run: melos exec -c 1 -- "dart run build_runner build --delete-conflicting-outputs"
+    packageFilters:
+      dependsOn: 
+        - "build_runner"
+      diff: origin/main...HEAD
+    description: Run `dart run build_runner build --delete-conflicting-outputs`
 
 command:
   bootstrap:
     usePubspecOverrides: true
+
+    environment:
+      sdk: 3.5.4
+      flutter: 3.24.5
+    
+    dependencies:
+      get_it: 7.7.0
+      flutter_bloc: 8.1.6
+      freezed_annotation: 2.4.4
+      json_annotation: 4.9.0
+      dio: 5.7.0
+      intl: 0.19.0
+
+    dev_dependencies:
+      build_runner: 2.4.12
+      dependency_validator: 4.1.0
+      freezed: 2.5.7
+      flutter_gen_runner: 5.8.0
+      json_serializable: 6.8.0
+      mocktail: 1.0.4
+      flutter_lints: ^4.0.0
+
   clean:
     hooks:
       post: melos exec --flutter -c 1 -- flutter clean

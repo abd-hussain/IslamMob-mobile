@@ -2,7 +2,7 @@ name: islam_mob_adhan
 version: 0.0.1
 
 environment:
-  sdk: ">=3.3.4 <4.0.0"
+  sdk: 3.5.4
 
 dev_dependencies:
   test: ^1.25.8
@@ -13,3 +13,4 @@ dev_dependencies:
   path: ^1.9.1
   timezone: ^0.10.0
   flutter_lints: ^4.0.0
+  dependency_validator: 4.1.0

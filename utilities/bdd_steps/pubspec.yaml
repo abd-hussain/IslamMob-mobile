@@ -1,0 +1,17 @@
+name: bdd_steps
+description: BDD Steps
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: 3.5.4
+
+# Add regular dependencies here.
+dependencies:
+  flutter_test:
+    sdk: flutter
+  golden_toolkit: ^0.15.0
+
+dev_dependencies:
+  lints: ^4.0.0
+  dependency_validator: 4.1.0
