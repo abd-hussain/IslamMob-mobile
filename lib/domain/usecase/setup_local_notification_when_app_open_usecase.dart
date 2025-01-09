@@ -3,16 +3,15 @@ import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:islam_app/domain/usecase/notify_adhan_notification_usecase.dart';
-// until now 61,
+// until now 64,
 // i handle all salah times notification 5 x 5 = 25
 // i handle all Before salah times notification 5 x 5 = 25
 // i handle sunrise 5
 // i handle midnight 5
 // 1 jom3aa al kahf
 // 1 jom3a do3aa
-
-// remaning //TODO
 // 2 notifications reminder
+
 class SetupLocalNotificationWhenAppOpenUseCase {
   final LocalNotificationRepository _localNotificationRepository =
       LocalNotificationRepository();
@@ -28,7 +27,6 @@ class SetupLocalNotificationWhenAppOpenUseCase {
 
     // Get pray timings for the next 5 days
     final prayTimingDateTimeModels = _getNext5DaysPrayingTime();
-    print("prayTimingDateTimeModels: $prayTimingDateTimeModels");
     // Schedule notifications for each day
     for (final prayTimingDateTimeModel in prayTimingDateTimeModels) {
       await _setupLocalNotificationForDate(
@@ -37,36 +35,42 @@ class SetupLocalNotificationWhenAppOpenUseCase {
         model: prayTimingDateTimeModel,
       );
     }
+
+    await _handleReminderNotifications(
+      // ignore: use_build_context_synchronously
+      context: context,
+      lastDate: DateTime.now(),
+    );
   }
 
   Future<void> _setupLocalNotificationForDate({
     required BuildContext context,
     required PrayTimingDateTimeModel model,
   }) async {
-    // 1. Fajr //TODO
-    // await _schedulePrayerNotifications(
-    //   context: context,
-    //   mainTime: model.fajir,
-    //   mainType: const NotificationTypeState.fajir(),
-    //   beforeType: const NotificationTypeState.before15Minutes(),
-    // );
+    // 1. Fajr
+    await _schedulePrayerNotifications(
+      context: context,
+      mainTime: model.fajir,
+      mainType: const NotificationTypeState.fajir(),
+      beforeType: const NotificationTypeState.before15Minutes(),
+    );
 
-    // 2. Sunrise //TODO
-    // await _scheduleSingleTimeNotification(
-    //   // ignore: use_build_context_synchronously
-    //   context: context,
-    //   time: model.sunrise,
-    //   type: const NotificationTypeState.sunrise(),
-    // );
+    // 2. Sunrise
+    await _scheduleSingleTimeNotification(
+      // ignore: use_build_context_synchronously
+      context: context,
+      time: model.sunrise,
+      type: const NotificationTypeState.sunrise(),
+    );
 
-    // 3. Dhuhr //TODO
-    // await _schedulePrayerNotifications(
-    //   // ignore: use_build_context_synchronously
-    //   context: context,
-    //   mainTime: model.dhuhr,
-    //   mainType: const NotificationTypeState.zuhr(),
-    //   beforeType: const NotificationTypeState.before15Minutes(),
-    // );
+    // 3. Dhuhr
+    await _schedulePrayerNotifications(
+      // ignore: use_build_context_synchronously
+      context: context,
+      mainTime: model.dhuhr,
+      mainType: const NotificationTypeState.zuhr(),
+      beforeType: const NotificationTypeState.before15Minutes(),
+    );
 
     // 4. Asr
     await _schedulePrayerNotifications(
@@ -86,14 +90,14 @@ class SetupLocalNotificationWhenAppOpenUseCase {
       beforeType: const NotificationTypeState.before15Minutes(),
     );
 
-    // 6. Isha //TODO
-    // await _schedulePrayerNotifications(
-    //   // ignore: use_build_context_synchronously
-    //   context: context,
-    //   mainTime: model.isha,
-    //   mainType: const NotificationTypeState.isha(),
-    //   beforeType: const NotificationTypeState.before15Minutes(),
-    // );
+    // 6. Isha
+    await _schedulePrayerNotifications(
+      // ignore: use_build_context_synchronously
+      context: context,
+      mainTime: model.isha,
+      mainType: const NotificationTypeState.isha(),
+      beforeType: const NotificationTypeState.before15Minutes(),
+    );
 
     // 7. Last Third of the Night
     await _scheduleSingleTimeNotification(
@@ -197,5 +201,22 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     final ms2 = d2.millisecondsSinceEpoch;
     final averageMs = ((ms1 + ms2) / 2).floor();
     return DateTime.fromMillisecondsSinceEpoch(averageMs);
+  }
+
+  Future<void> _handleReminderNotifications(
+      {required BuildContext context, required DateTime lastDate}) async {
+    // Reminder to read Surat Al-Kahf
+    await _scheduleSingleTimeNotification(
+      context: context,
+      time: lastDate.add(const Duration(hours: 5)),
+      type: const NotificationTypeState.reminderToOpenTheApp1(),
+    );
+
+    await _scheduleSingleTimeNotification(
+      // ignore: use_build_context_synchronously
+      context: context,
+      time: lastDate.add(const Duration(hours: 10)),
+      type: const NotificationTypeState.reminderToOpenTheApp2(),
+    );
   }
 }
