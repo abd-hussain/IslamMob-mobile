@@ -90,7 +90,7 @@ command:
     usePubspecOverrides: true
 
     environment:
-      sdk: 3.5.4
+      sdk: ">=3.3.4 <4.0.0"
       flutter: 3.24.5
     
     dependencies:
