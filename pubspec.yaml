@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.0.0+83
+version: 1.0.0+84
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -25,9 +25,6 @@ dependencies:
   logger_manager:
     path: utilities/logger_manager
 
-  # api_client:
-  #   path: utilities/api_client
-
   database_manager:
     path: utilities/database_manager
 
@@ -40,11 +37,14 @@ dependencies:
   firebase_manager:
     path: utilities/firebase_manager
 
-  # islam_test:
-  #   path: utilities/islam_test
+  api_client:
+    path: utilities/api_client
 
-  # bdd_steps:
-  #   path: utilities/bdd_steps
+  islam_test:
+    path: utilities/islam_test
+
+  bdd_steps:
+    path: utilities/bdd_steps
 
   http: ^1.2.2
   dio: 5.7.0
@@ -105,7 +105,7 @@ dev_dependencies:
   mocktail: 1.0.4
   melos: ^6.1.0
   mockito: ^5.4.4
-  # dependency_validator: 4.1.0
+  dependency_validator: 4.1.0
 
 flutter:
   generate: true

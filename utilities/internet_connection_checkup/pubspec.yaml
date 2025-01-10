@@ -1,17 +1,19 @@
 name: internet_connection_checkup
 version: 1.0.0
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
 environment:
   sdk: ">=3.3.4 <4.0.0"
 
 dependencies:
   connectivity_plus: ^6.0.5
 
+  logger_manager:
+    path: ../../utilities/logger_manager
+
 dev_dependencies:
   lints: ^4.0.0
-  json_serializable: 6.8.0
-  mockito: ^5.4.4
+  test: ^1.24.0
+  mocktail: 1.0.4
   dependency_validator: 4.1.0
 
 flutter:
