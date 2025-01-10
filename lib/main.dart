@@ -4,6 +4,7 @@ import 'package:logger_manager/logger_manager.dart';
 
 //TODO: handle countdown notification for android
 //TODO: theres a case where the location shown invalid or empty
+//TODO: Remoinder Notification send in wrong time
 
 void main() {
   LoggerManagerBase.logDebugMessage(message: 'Application Started ...');
