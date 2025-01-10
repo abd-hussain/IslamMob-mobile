@@ -1,1 +1,0 @@
-{dependency_overrides: {logger_manager: {path: ../logger_manager}}}
