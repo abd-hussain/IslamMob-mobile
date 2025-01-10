@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.0.0+84
+version: 1.0.0+85
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -37,8 +37,8 @@ dependencies:
   firebase_manager:
     path: utilities/firebase_manager
 
-  api_client:
-    path: utilities/api_client
+  # api_client: // commented out because it's not used in the app and piplines filed on android
+  #   path: utilities/api_client
 
   islam_test:
     path: utilities/islam_test
