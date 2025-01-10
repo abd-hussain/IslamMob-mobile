@@ -16,4 +16,4 @@ dependencies:
 
 dev_dependencies:
   dependency_validator: 4.1.0
-  flutter_lints: ^4.0.0
+  lints: ^4.0.0
