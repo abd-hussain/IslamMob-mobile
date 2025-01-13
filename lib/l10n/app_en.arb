@@ -391,7 +391,12 @@
     "sharepopuptitle" : "The Messenger of Allah (ﷺ) said: Whoever guides someone to goodness will have a reward like the one who does it",
     "notificationSettingJomAlkahf" : "Friday reminder notifications for Surah Al-Kahf",
     "notificationSettingJom3aDoaa" : "Friday reminder notifications for du’aa (supplication)",
-    "notificationSettingQeyamAlLayel" : "Night prayer reminder notifications (Qiyam al-Layl)"
+    "notificationSettingQeyamAlLayel" : "Night prayer reminder notifications (Qiyam al-Layl)",
+    "donatepopuptitle" : "Support the team",
+    "donatepopupmessage" : "This program is non-profit. We cover operating costs by displaying ads, so it’s important to receive this support to ensure continuity",
+    "openAdvertisment" : "Show advertisement",
+    "noAdsToShow" : "No advertisement to show now",
+    "donatepopupmessage2" : "May Allah reward you"
 
 
 

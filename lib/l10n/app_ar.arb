@@ -391,7 +391,11 @@
     "sharepopuptitle" : "قَالَ رَسُولُ اللَّه ﷺ: مَنْ دَلَّ عَلَى خَيْرٍ فَلهُ مثلُ أَجْرِ فَاعِلِهِ",
     "notificationSettingJomAlkahf" : "إشعارات التذكير بسورة الكهف يوم الجمعة",
     "notificationSettingJom3aDoaa" : "إشعارات التذكير بالدعاء يوم الجمعة",
-    "notificationSettingQeyamAlLayel" : "إشعارات التذكير بقيام الليل"
-
+    "notificationSettingQeyamAlLayel" : "إشعارات التذكير بقيام الليل",
+    "donatepopuptitle" : "دعم فريق العمل",
+    "donatepopupmessage" : "هذا البرنامج هوه غير ربحي و نحن نجني مصاريف التشغيل من خلال عرض الاعلانات خلاله ، فمن المهم الحصول على هذا الدعم لضمان الاستمراريه",
+    "openAdvertisment" : "عرض اعلان" ,
+    "noAdsToShow" : "لا يوجد إعلان لعرضه الان",
+    "donatepopupmessage2" : "جزاك الله خيرا"
 
 }
