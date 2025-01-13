@@ -396,6 +396,11 @@
     "donatepopupmessage" : "Ce programme est à but non lucratif. Nous couvrons les coûts de fonctionnement en affichant des publicités. Il est donc important d’obtenir ce soutien pour assurer la continuité",
     "openAdvertisment" : "Afficher la publicité",
     "noAdsToShow" : "Aucune publicité à afficher pour le moment",
-    "donatepopupmessage2" : "Qu’Allah te récompense en bien"
+    "donatepopupmessage2" : "Qu’Allah te récompense en bien",
+    "qiblaFinder" : "Localisateur de la Qibla",
+    "allowLocations" : "Autoriser l’accès à la localisation",
+    "allowLocationDetails" : "Activer la localisation nous permet de calculer avec précision les horaires de prière, ce qui est très important pour l’application",
+    "changeLocationSettings" : "Changer l’emplacement"
+
 
 }

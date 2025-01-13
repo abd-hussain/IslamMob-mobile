@@ -6,6 +6,7 @@ import 'package:islam_app/presentation/calender/calender_screen.dart';
 import 'package:islam_app/presentation/inboarding/inboarding_screen.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/pray_calculation_setting_screen.dart';
 import 'package:islam_app/presentation/pray_notification_setting/pray_notification_setting_screen.dart';
+import 'package:islam_app/presentation/qibla_finder/qibla_finder_screen.dart';
 import 'package:islam_app/presentation/quran_pages_index/quran_pages_index_screen.dart';
 import 'package:islam_app/presentation/quran_prints/quran_prints_screen.dart';
 import 'package:islam_app/presentation/change_language/change_language_screen.dart';
@@ -33,6 +34,7 @@ class RoutesConstants {
   static const prayNotificationSettingScreen = 'prayNotificationSettingScreen';
   static const prayCalculationSettingScreen = 'prayCalculationSettingScreen';
   static const calenderScreen = 'calenderScreen';
+  static const qiblaFinderScreen = 'qiblaFinderScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -54,4 +56,5 @@ final Map<String, Widget> routes = {
   RoutesConstants.prayCalculationSettingScreen:
       const PrayCalculationSettingScreen(),
   RoutesConstants.calenderScreen: const CalenderScreen(),
+  RoutesConstants.qiblaFinderScreen: const QiblaFinderScreen(),
 };

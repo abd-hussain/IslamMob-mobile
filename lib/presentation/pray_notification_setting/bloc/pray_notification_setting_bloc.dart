@@ -153,8 +153,8 @@ class PrayNotificationSettingBloc
         emit(state.copyWith(applicationNotification: event.status));
     }
 
-    // ignore: use_build_context_synchronously
     await SetupLocalNotificationWhenAppOpenUseCase()
+        // ignore: use_build_context_synchronously
         .call(context: event.context);
   }
 }

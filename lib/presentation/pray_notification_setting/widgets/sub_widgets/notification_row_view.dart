@@ -30,11 +30,14 @@ class NotificationRowView extends StatelessWidget {
   }
 
   Widget _buildNotificationTitle() {
-    return CustomText(
-      title: title,
-      fontSize: 16,
-      color: const Color(0xff444444),
-      fontWeight: FontWeight.bold,
+    return Expanded(
+      child: CustomText(
+        title: title,
+        fontSize: 16,
+        maxLines: 2,
+        color: const Color(0xff444444),
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 

@@ -396,5 +396,10 @@
     "donatepopupmessage" : "Bu program kâr amacı gütmez. İşletme masraflarını reklamlardan karşılıyoruz, bu yüzden sürekliliği sağlamak için bu desteği almak önemlidir",
     "openAdvertisment" : "Reklamı göster",
     "noAdsToShow" : "Şu anda gösterilecek reklam yok",
-    "donatepopupmessage2" : "Allah seni hayırla mükafatlandırsın"
+    "donatepopupmessage2" : "Allah seni hayırla mükafatlandırsın",
+    "qiblaFinder" : "Kıble Bulucu",
+    "allowLocations" : "Konum erişimine izin ver",
+    "allowLocationDetails" : "Konumu etkinleştirmek, namaz vakitlerini doğru bir şekilde hesaplamamızı sağlar ve bu uygulama için çok önemlidir",
+    "changeLocationSettings" : "Konumu Değiştir"
+
 }
