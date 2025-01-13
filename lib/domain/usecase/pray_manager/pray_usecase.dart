@@ -1,4 +1,5 @@
 import 'package:database_manager/database_manager.dart';
+import 'package:hijri/hijri_calendar.dart';
 import 'package:islam_app/domain/usecase/hijri_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
 import 'package:islam_app/domain/model/pray_timing.dart';
@@ -40,9 +41,9 @@ class PrayUsecase {
     return AllPrayTimeUsecase(_prayManager).getAllPrayTimeAsDateTimeForToday();
   }
 
-  List<CalenderModel> getAllPrayTimeAsDateTimeForThisMonth() {
-    final hijriDate = HijriUsecase.getHijriDateForThisDate(DateTime.now());
-    var last = HijriUsecase.getLastDayNumberForThisMonth();
+  List<CalenderModel> getAllPrayTimeAsDateTimeForPassedMonth(
+      HijriCalendar hijriDate) {
+    var last = HijriUsecase.getLastDayNumberForThisMonth(hijriDate);
 
     final fromDate =
         hijriDate.hijriToGregorian(hijriDate.hYear, hijriDate.hMonth, 1);

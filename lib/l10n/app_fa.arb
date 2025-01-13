@@ -337,7 +337,7 @@
     "notificationSettingAsr": "اعلان‌های اذان عصر",
     "notificationSettingMagrieb": "اعلان‌های اذان مغرب",
     "notificationSettingIsha": "اعلان‌های اذان عشا",
-    "notificationSettingApplication": "اعلان‌های برنامه",
+    "notificationSettingApplication": "اعلان‌های خارجی برنامه",
     "azkarTitle": "اذکار پس از نماز",
     "activateAgain": "فعال‌سازی مجدد",
     "youfinishazkarTitle": "شما اذکار را به پایان رساندید",
@@ -382,9 +382,15 @@
     "nextSalahTimeAsrMessage" : "زمان نماز عصر",
     "nextSalahTimeDuherMessage" : "زمان نماز ظهر",
     "nextSalahTimeFajirMessage" : "زمان نماز صبح",
-    "versionDialogUpdateNow": "Update Now",
-    "versionDialogSkipForNow": "Skip For Now",
-    "versionDialogUpdateAvailable" : "Update Available",
-    "versionDialogNewVersion": "New Version",
-    "versionDialogUpdateSecondeSubTitle" : "of Islam Mob is available now"
+    "versionDialogUpdateNow": "اکنون به‌روزرسانی کنید",
+    "versionDialogSkipForNow": "فعلاً رد کردن",
+    "versionDialogUpdateAvailable": "به‌روزرسانی موجود است",
+    "versionDialogNewVersion": "نسخه جدید",
+    "versionDialogUpdateSecondeSubTitle": "از اسلام موب اکنون در دسترس است",
+    "sharepopupmessage" : "برنامه را همین حالا با دوستان و اقوام خود به اشتراک بگذارید و ان‌شاءالله پاداش خواهید گرفت",
+    "sharepopuptitle" : "پیامبر خدا (ﷺ) فرمود: هر کس کسی را به کار خیری راهنمایی کند، پاداشی مانند پاداش انجام‌دهنده آن خواهد داشت",
+    "notificationSettingJomAlkahf" : "اعلان‌های یادآوری سوره کهف در روز جمعه",
+    "notificationSettingJom3aDoaa" : "اعلان‌های یادآوری دعا در روز جمعه",
+    "notificationSettingQeyamAlLayel" : "اعلان‌های یادآوری قیام اللیل"
+
 }

@@ -337,7 +337,7 @@
     "notificationSettingAsr" : "إشعارات أذان العصر",
     "notificationSettingMagrieb" : "إشعارات أذان المغرب",
     "notificationSettingIsha" : "إشعارات أذان العشاء",
-    "notificationSettingApplication" : "إشعارات التطبيق",
+    "notificationSettingApplication" : "إشعارات التطبيق الخارجية",
     "azkarTitle" : "الأذكار بعد الصلاة",
     "activateAgain" : "تفعيل مرة أخرى",
     "youfinishazkarTitle" : "لقد انتهيت من الأذكار",
@@ -386,8 +386,12 @@
     "versionDialogSkipForNow": "تخطي الآن والتحديث لاحقًا",
     "versionDialogUpdateAvailable" : "يتوفر تحديث جديد",
     "versionDialogNewVersion": "إصدار جديد",
-    "versionDialogUpdateSecondeSubTitle" : "من Islam Mob متاح الآن"
-
+    "versionDialogUpdateSecondeSubTitle" : "من Islam Mob متاح الآن",
+    "sharepopupmessage" : "شارك التطبيق الان مع أصدقائك وأقاربك ولك الأجر ان شاء الله",
+    "sharepopuptitle" : "قَالَ رَسُولُ اللَّه ﷺ: مَنْ دَلَّ عَلَى خَيْرٍ فَلهُ مثلُ أَجْرِ فَاعِلِهِ",
+    "notificationSettingJomAlkahf" : "إشعارات التذكير بسورة الكهف يوم الجمعة",
+    "notificationSettingJom3aDoaa" : "إشعارات التذكير بالدعاء يوم الجمعة",
+    "notificationSettingQeyamAlLayel" : "إشعارات التذكير بقيام الليل"
 
 
 }

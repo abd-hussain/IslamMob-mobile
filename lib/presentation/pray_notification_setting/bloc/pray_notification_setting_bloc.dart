@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
 
 part 'pray_notification_setting_event.dart';
@@ -39,14 +41,18 @@ class PrayNotificationSettingBloc
         key: LocalNotificationConstant.disableIsha, defaultValue: true);
     final disableSunriseTime = DataBaseManagerBase.getFromDatabase(
         key: LocalNotificationConstant.disableSunriseTime, defaultValue: true);
-    final disableSunrisePray = DataBaseManagerBase.getFromDatabase(
-        key: LocalNotificationConstant.disableSunrisePray, defaultValue: true);
+    final disableJom3aAlkahf = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableJom3aAlkahf, defaultValue: true);
+    final disableJom3aDo3aa = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableJom3aDo3aa, defaultValue: true);
     final disableNotificationBefore15Min = DataBaseManagerBase.getFromDatabase(
         key: LocalNotificationConstant.disableNotificationBefore15Min,
         defaultValue: true);
     final disablePushNotifications = DataBaseManagerBase.getFromDatabase(
         key: LocalNotificationConstant.disablePushNotifications,
         defaultValue: true);
+    final disableQeyamAlLayel = DataBaseManagerBase.getFromDatabase(
+        key: LocalNotificationConstant.disableQeyamAlLayel, defaultValue: true);
 
     emit(
       state.copyWith(
@@ -59,7 +65,9 @@ class PrayNotificationSettingBloc
         magrieb: disableMagrieb,
         isha: disableIsha,
         sunriseTime: disableSunriseTime,
-        sunrisePray: disableSunrisePray,
+        jom3aAlkahf: disableJom3aAlkahf,
+        jom3aDo3aa: disableJom3aDo3aa,
+        qeyamAlLayel: disableQeyamAlLayel,
         before15Min: disableNotificationBefore15Min,
         applicationNotification: disablePushNotifications,
       ),
@@ -118,21 +126,35 @@ class PrayNotificationSettingBloc
             key: LocalNotificationConstant.disableSunriseTime,
             value: event.status);
         emit(state.copyWith(sunriseTime: event.status));
-      case PrayNotificationType.sunrisePray:
+      case PrayNotificationType.jom3aAlkahf:
         await DataBaseManagerBase.saveInDatabase(
-            key: LocalNotificationConstant.disableSunrisePray,
+            key: LocalNotificationConstant.disableJom3aAlkahf,
             value: event.status);
-        emit(state.copyWith(sunrisePray: event.status));
+        emit(state.copyWith(jom3aAlkahf: event.status));
+      case PrayNotificationType.jom3aDo3aa:
+        await DataBaseManagerBase.saveInDatabase(
+            key: LocalNotificationConstant.disableJom3aDo3aa,
+            value: event.status);
+        emit(state.copyWith(jom3aDo3aa: event.status));
       case PrayNotificationType.before15Min:
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableNotificationBefore15Min,
             value: event.status);
         emit(state.copyWith(before15Min: event.status));
+      case PrayNotificationType.qeyamAlLayel:
+        await DataBaseManagerBase.saveInDatabase(
+            key: LocalNotificationConstant.disableQeyamAlLayel,
+            value: event.status);
+        emit(state.copyWith(qeyamAlLayel: event.status));
       case PrayNotificationType.pushNotification:
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disablePushNotifications,
             value: event.status);
         emit(state.copyWith(applicationNotification: event.status));
     }
+
+    // ignore: use_build_context_synchronously
+    await SetupLocalNotificationWhenAppOpenUseCase()
+        .call(context: event.context);
   }
 }

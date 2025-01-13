@@ -46,6 +46,7 @@ class QuickNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.allNotificationForToday,
                     ),
                   );
@@ -66,6 +67,7 @@ class QuickNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.allNotificationForThreeDay,
                     ),
                   );
@@ -86,6 +88,7 @@ class QuickNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.allNotificationForWeekDay,
                     ),
                   );

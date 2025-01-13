@@ -36,7 +36,7 @@ class NextSalahNotificationCounterUsecase {
     // 2. Convert that duration to minutes
     int minutes = diff.inMinutes;
 
-    return await LocalNotificationRepository.countdownNotificationForAndroid(
+    return await LocalNotificationRepository().countdownNotificationForAndroid(
       id: 0,
       context: context,
       minites: minutes,

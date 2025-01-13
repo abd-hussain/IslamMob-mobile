@@ -10,7 +10,30 @@ class HijriUsecase {
     return HijriCalendar.fromDate(date);
   }
 
-  static int getLastDayNumberForThisMonth() {
-    return HijriCalendar.now().lengthOfMonth;
+  static HijriCalendar getHijriDateFromMonthName(String monthName) {
+    final hijriDateNow = HijriCalendar.fromDate(DateTime.now());
+    hijriDateNow.hMonth = getMonthNames().indexOf(monthName) + 1;
+    return hijriDateNow;
+  }
+
+  static int getLastDayNumberForThisMonth(HijriCalendar date) {
+    return date.lengthOfMonth;
+  }
+
+  static List<String> getMonthNames() {
+    return [
+      'Muharram',
+      'Safar',
+      'Rabi\' Al-Awwal',
+      'Rabi\' Al-Thani',
+      'Jumada Al-Awwal',
+      'Jumada Al-Thani',
+      'Rajab',
+      'Sha\'aban',
+      'Ramadan',
+      'Shawwal',
+      'Dhu Al-Qi\'dah',
+      'Dhu Al-Hijjah'
+    ];
   }
 }

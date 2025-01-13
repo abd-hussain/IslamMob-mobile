@@ -14,9 +14,50 @@ class QuranHeaderHelpBar extends StatelessWidget {
     return Column(
       children: [
         _buildHeaderBar(context),
-        const SizedBox(height: 12),
-        _buildPageSideIndicator(),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(width: 10),
+            const Expanded(child: SizedBox()),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: _buildPageSideIndicator(),
+              ),
+            ),
+            Expanded(
+              child: Center(
+                child: _buildPageBookmarkIndicator(),
+              ),
+            ),
+            const SizedBox(width: 10),
+          ],
+        ),
       ],
+    );
+  }
+
+  Widget _buildPageBookmarkIndicator() {
+    return BlocBuilder<QuranKareemBloc, QuranKareemState>(
+      buildWhen: (previous, current) =>
+          previous.pageCount != current.pageCount ||
+          previous.bookmarkedPages != current.bookmarkedPages,
+      builder: (context, state) {
+        final isBookmarked = state.bookmarkedPages.contains(state.pageCount);
+        return isBookmarked
+            ? Container(
+                decoration: BoxDecoration(
+                  color: Colors.red.withOpacity(0.5),
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
+                ),
+                width: 25,
+                height: 100,
+              )
+            : const SizedBox();
+      },
     );
   }
 

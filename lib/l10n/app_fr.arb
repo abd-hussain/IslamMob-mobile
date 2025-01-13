@@ -337,7 +337,7 @@
     "notificationSettingAsr" : "Notifications Adhan Asr",
     "notificationSettingMagrieb" : "Notifications Adhan Maghrib",
     "notificationSettingIsha" : "Notifications Adhan Isha",
-    "notificationSettingApplication" : "Notifications de l'application",
+    "notificationSettingApplication" : "Notifications externes de l’application",
     "azkarTitle" : "Azkar après la prière",
     "activateAgain" : "Réactiver",
     "youfinishazkarTitle" : "Vous avez terminé l'Azkar",
@@ -382,9 +382,15 @@
     "nextSalahTimeAsrMessage" : "Heure de la prière d'Asr",
     "nextSalahTimeDuherMessage" : "Heure de la prière de Duher",
     "nextSalahTimeFajirMessage" : "Heure de la prière de Fajr",
-    "versionDialogUpdateNow": "Update Now",
-    "versionDialogSkipForNow": "Skip For Now",
-    "versionDialogUpdateAvailable" : "Update Available",
-    "versionDialogNewVersion": "New Version",
-    "versionDialogUpdateSecondeSubTitle" : "of Islam Mob is available now"
+    "versionDialogUpdateNow": "Mettre à jour maintenant",
+    "versionDialogSkipForNow": "Passer pour l'instant",
+    "versionDialogUpdateAvailable": "Mise à jour disponible",
+    "versionDialogNewVersion": "Nouvelle version",
+    "versionDialogUpdateSecondeSubTitle": "de Islam Mob est maintenant disponible",
+    "sharepopupmessage" : "Partagez l'application maintenant avec vos amis et votre famille, et vous serez récompensé, si Dieu le veut",
+    "sharepopuptitle" : "Le Messager d'Allah (ﷺ) a dit : Celui qui guide quelqu'un vers le bien aura une récompense égale à celle de celui qui le fait",
+    "notificationSettingJomAlkahf" : "Notifications de rappel pour la sourate Al-Kahf le vendredi",
+    "notificationSettingJom3aDoaa" : "Notifications de rappel pour la prière (du’aa) le vendredi",
+    "notificationSettingQeyamAlLayel" : "Notifications de rappel pour la prière nocturne (Qiyam al-Layl)"
+
 }

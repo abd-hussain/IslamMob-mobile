@@ -15,25 +15,75 @@ class CalenderBloc extends Bloc<CalenderEvent, CalenderState> {
 
   CalenderBloc() : super(const CalenderState()) {
     on<_PrepareSalahTiming>(_prepareSalahTiming);
-    on<_FillMonthName>(_fillMonthName);
+    on<_FillMonthNameFirstTime>(_fillMonthNameFirstTime);
+    on<_NextMonth>(_nextMonth);
+    on<_PreviousMonth>(_previousMonth);
   }
 
   FutureOr<void> _prepareSalahTiming(
       _PrepareSalahTiming event, Emitter<CalenderState> emit) {
+    final hijriDate = HijriUsecase.getHijriDateForThisDate(DateTime.now());
     final List<CalenderModel> calenderData =
-        prayUsecase.getAllPrayTimeAsDateTimeForThisMonth();
+        prayUsecase.getAllPrayTimeAsDateTimeForPassedMonth(hijriDate);
 
     if (calenderData.isEmpty) {
       emit(state.copyWith(status: const CalenderProcessStateError()));
     } else {
-      emit(state.copyWith(
-          list: calenderData, status: const CalenderProcessStateSuccss()));
+      emit(
+        state.copyWith(
+          list: calenderData,
+          status: const CalenderProcessStateSuccss(),
+        ),
+      );
     }
   }
 
-  FutureOr<void> _fillMonthName(
-      _FillMonthName event, Emitter<CalenderState> emit) {
+  FutureOr<void> _fillMonthNameFirstTime(
+      _FillMonthNameFirstTime event, Emitter<CalenderState> emit) {
     final String monthName = HijriUsecase.getThisMonthHijriDateName();
     emit(state.copyWith(monthName: monthName));
+  }
+
+  FutureOr<void> _nextMonth(_NextMonth event, Emitter<CalenderState> emit) {
+    final List<String> monthNames = HijriUsecase.getMonthNames();
+    final int currentIndex = monthNames.indexOf(event.currentMonthName);
+
+    if (currentIndex >= 0 && currentIndex < monthNames.length - 1) {
+      _updateMonthAndData(monthNames[currentIndex + 1], emit);
+    }
+  }
+
+  FutureOr<void> _previousMonth(
+      _PreviousMonth event, Emitter<CalenderState> emit) {
+    final List<String> monthNames = HijriUsecase.getMonthNames();
+    final int currentIndex = monthNames.indexOf(event.currentMonthName);
+    if (currentIndex > 0) {
+      _updateMonthAndData(monthNames[currentIndex - 1], emit);
+    }
+  }
+
+  /// Updates the [monthName] in the state and fetches corresponding data.
+  void _updateMonthAndData(String newMonthName, Emitter<CalenderState> emit) {
+    // Set the new month name in the state
+    emit(state.copyWith(monthName: newMonthName));
+
+    // Fetch Hijri date based on the new month name
+    final hijriDate = HijriUsecase.getHijriDateFromMonthName(newMonthName);
+
+    // Retrieve prayer time data for the selected month
+    final List<CalenderModel> calenderData =
+        prayUsecase.getAllPrayTimeAsDateTimeForPassedMonth(hijriDate);
+
+    // Emit success or error state based on the data availability
+    if (calenderData.isEmpty) {
+      emit(state.copyWith(status: const CalenderProcessStateError()));
+    } else {
+      emit(
+        state.copyWith(
+          list: calenderData,
+          status: const CalenderProcessStateSuccss(),
+        ),
+      );
+    }
   }
 }

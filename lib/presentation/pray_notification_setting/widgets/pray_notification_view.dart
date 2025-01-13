@@ -45,6 +45,7 @@ class PrayNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.fajir,
                     ),
                   );
@@ -63,6 +64,7 @@ class PrayNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.duhir,
                     ),
                   );
@@ -81,6 +83,7 @@ class PrayNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.asr,
                     ),
                   );
@@ -99,6 +102,7 @@ class PrayNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.magrieb,
                     ),
                   );
@@ -117,6 +121,7 @@ class PrayNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.isha,
                     ),
                   );

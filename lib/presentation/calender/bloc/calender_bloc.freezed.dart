@@ -19,38 +19,51 @@ mixin _$CalenderEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareSalahTiming,
-    required TResult Function() fillMonthName,
+    required TResult Function() fillMonthNameFirstTime,
+    required TResult Function(String currentMonthName) nextMonth,
+    required TResult Function(String currentMonthName) previousMonth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareSalahTiming,
-    TResult? Function()? fillMonthName,
+    TResult? Function()? fillMonthNameFirstTime,
+    TResult? Function(String currentMonthName)? nextMonth,
+    TResult? Function(String currentMonthName)? previousMonth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareSalahTiming,
-    TResult Function()? fillMonthName,
+    TResult Function()? fillMonthNameFirstTime,
+    TResult Function(String currentMonthName)? nextMonth,
+    TResult Function(String currentMonthName)? previousMonth,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
-    required TResult Function(_FillMonthName value) fillMonthName,
+    required TResult Function(_FillMonthNameFirstTime value)
+        fillMonthNameFirstTime,
+    required TResult Function(_NextMonth value) nextMonth,
+    required TResult Function(_PreviousMonth value) previousMonth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
-    TResult? Function(_FillMonthName value)? fillMonthName,
+    TResult? Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult? Function(_NextMonth value)? nextMonth,
+    TResult? Function(_PreviousMonth value)? previousMonth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
-    TResult Function(_FillMonthName value)? fillMonthName,
+    TResult Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult Function(_NextMonth value)? nextMonth,
+    TResult Function(_PreviousMonth value)? previousMonth,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,7 +132,9 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareSalahTiming,
-    required TResult Function() fillMonthName,
+    required TResult Function() fillMonthNameFirstTime,
+    required TResult Function(String currentMonthName) nextMonth,
+    required TResult Function(String currentMonthName) previousMonth,
   }) {
     return prepareSalahTiming();
   }
@@ -128,7 +143,9 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareSalahTiming,
-    TResult? Function()? fillMonthName,
+    TResult? Function()? fillMonthNameFirstTime,
+    TResult? Function(String currentMonthName)? nextMonth,
+    TResult? Function(String currentMonthName)? previousMonth,
   }) {
     return prepareSalahTiming?.call();
   }
@@ -137,7 +154,9 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareSalahTiming,
-    TResult Function()? fillMonthName,
+    TResult Function()? fillMonthNameFirstTime,
+    TResult Function(String currentMonthName)? nextMonth,
+    TResult Function(String currentMonthName)? previousMonth,
     required TResult orElse(),
   }) {
     if (prepareSalahTiming != null) {
@@ -150,7 +169,10 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
-    required TResult Function(_FillMonthName value) fillMonthName,
+    required TResult Function(_FillMonthNameFirstTime value)
+        fillMonthNameFirstTime,
+    required TResult Function(_NextMonth value) nextMonth,
+    required TResult Function(_PreviousMonth value) previousMonth,
   }) {
     return prepareSalahTiming(this);
   }
@@ -159,7 +181,9 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
-    TResult? Function(_FillMonthName value)? fillMonthName,
+    TResult? Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult? Function(_NextMonth value)? nextMonth,
+    TResult? Function(_PreviousMonth value)? previousMonth,
   }) {
     return prepareSalahTiming?.call(this);
   }
@@ -168,7 +192,9 @@ class _$PrepareSalahTimingImpl implements _PrepareSalahTiming {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
-    TResult Function(_FillMonthName value)? fillMonthName,
+    TResult Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult Function(_NextMonth value)? nextMonth,
+    TResult Function(_PreviousMonth value)? previousMonth,
     required TResult orElse(),
   }) {
     if (prepareSalahTiming != null) {
@@ -183,18 +209,20 @@ abstract class _PrepareSalahTiming implements CalenderEvent {
 }
 
 /// @nodoc
-abstract class _$$FillMonthNameImplCopyWith<$Res> {
-  factory _$$FillMonthNameImplCopyWith(
-          _$FillMonthNameImpl value, $Res Function(_$FillMonthNameImpl) then) =
-      __$$FillMonthNameImplCopyWithImpl<$Res>;
+abstract class _$$FillMonthNameFirstTimeImplCopyWith<$Res> {
+  factory _$$FillMonthNameFirstTimeImplCopyWith(
+          _$FillMonthNameFirstTimeImpl value,
+          $Res Function(_$FillMonthNameFirstTimeImpl) then) =
+      __$$FillMonthNameFirstTimeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FillMonthNameImplCopyWithImpl<$Res>
-    extends _$CalenderEventCopyWithImpl<$Res, _$FillMonthNameImpl>
-    implements _$$FillMonthNameImplCopyWith<$Res> {
-  __$$FillMonthNameImplCopyWithImpl(
-      _$FillMonthNameImpl _value, $Res Function(_$FillMonthNameImpl) _then)
+class __$$FillMonthNameFirstTimeImplCopyWithImpl<$Res>
+    extends _$CalenderEventCopyWithImpl<$Res, _$FillMonthNameFirstTimeImpl>
+    implements _$$FillMonthNameFirstTimeImplCopyWith<$Res> {
+  __$$FillMonthNameFirstTimeImplCopyWithImpl(
+      _$FillMonthNameFirstTimeImpl _value,
+      $Res Function(_$FillMonthNameFirstTimeImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of CalenderEvent
@@ -203,18 +231,19 @@ class __$$FillMonthNameImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FillMonthNameImpl implements _FillMonthName {
-  const _$FillMonthNameImpl();
+class _$FillMonthNameFirstTimeImpl implements _FillMonthNameFirstTime {
+  const _$FillMonthNameFirstTimeImpl();
 
   @override
   String toString() {
-    return 'CalenderEvent.fillMonthName()';
+    return 'CalenderEvent.fillMonthNameFirstTime()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FillMonthNameImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$FillMonthNameFirstTimeImpl);
   }
 
   @override
@@ -224,29 +253,35 @@ class _$FillMonthNameImpl implements _FillMonthName {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareSalahTiming,
-    required TResult Function() fillMonthName,
+    required TResult Function() fillMonthNameFirstTime,
+    required TResult Function(String currentMonthName) nextMonth,
+    required TResult Function(String currentMonthName) previousMonth,
   }) {
-    return fillMonthName();
+    return fillMonthNameFirstTime();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareSalahTiming,
-    TResult? Function()? fillMonthName,
+    TResult? Function()? fillMonthNameFirstTime,
+    TResult? Function(String currentMonthName)? nextMonth,
+    TResult? Function(String currentMonthName)? previousMonth,
   }) {
-    return fillMonthName?.call();
+    return fillMonthNameFirstTime?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareSalahTiming,
-    TResult Function()? fillMonthName,
+    TResult Function()? fillMonthNameFirstTime,
+    TResult Function(String currentMonthName)? nextMonth,
+    TResult Function(String currentMonthName)? previousMonth,
     required TResult orElse(),
   }) {
-    if (fillMonthName != null) {
-      return fillMonthName();
+    if (fillMonthNameFirstTime != null) {
+      return fillMonthNameFirstTime();
     }
     return orElse();
   }
@@ -255,36 +290,352 @@ class _$FillMonthNameImpl implements _FillMonthName {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
-    required TResult Function(_FillMonthName value) fillMonthName,
+    required TResult Function(_FillMonthNameFirstTime value)
+        fillMonthNameFirstTime,
+    required TResult Function(_NextMonth value) nextMonth,
+    required TResult Function(_PreviousMonth value) previousMonth,
   }) {
-    return fillMonthName(this);
+    return fillMonthNameFirstTime(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
-    TResult? Function(_FillMonthName value)? fillMonthName,
+    TResult? Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult? Function(_NextMonth value)? nextMonth,
+    TResult? Function(_PreviousMonth value)? previousMonth,
   }) {
-    return fillMonthName?.call(this);
+    return fillMonthNameFirstTime?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
-    TResult Function(_FillMonthName value)? fillMonthName,
+    TResult Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult Function(_NextMonth value)? nextMonth,
+    TResult Function(_PreviousMonth value)? previousMonth,
     required TResult orElse(),
   }) {
-    if (fillMonthName != null) {
-      return fillMonthName(this);
+    if (fillMonthNameFirstTime != null) {
+      return fillMonthNameFirstTime(this);
     }
     return orElse();
   }
 }
 
-abstract class _FillMonthName implements CalenderEvent {
-  const factory _FillMonthName() = _$FillMonthNameImpl;
+abstract class _FillMonthNameFirstTime implements CalenderEvent {
+  const factory _FillMonthNameFirstTime() = _$FillMonthNameFirstTimeImpl;
+}
+
+/// @nodoc
+abstract class _$$NextMonthImplCopyWith<$Res> {
+  factory _$$NextMonthImplCopyWith(
+          _$NextMonthImpl value, $Res Function(_$NextMonthImpl) then) =
+      __$$NextMonthImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String currentMonthName});
+}
+
+/// @nodoc
+class __$$NextMonthImplCopyWithImpl<$Res>
+    extends _$CalenderEventCopyWithImpl<$Res, _$NextMonthImpl>
+    implements _$$NextMonthImplCopyWith<$Res> {
+  __$$NextMonthImplCopyWithImpl(
+      _$NextMonthImpl _value, $Res Function(_$NextMonthImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CalenderEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentMonthName = null,
+  }) {
+    return _then(_$NextMonthImpl(
+      null == currentMonthName
+          ? _value.currentMonthName
+          : currentMonthName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NextMonthImpl implements _NextMonth {
+  const _$NextMonthImpl(this.currentMonthName);
+
+  @override
+  final String currentMonthName;
+
+  @override
+  String toString() {
+    return 'CalenderEvent.nextMonth(currentMonthName: $currentMonthName)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NextMonthImpl &&
+            (identical(other.currentMonthName, currentMonthName) ||
+                other.currentMonthName == currentMonthName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, currentMonthName);
+
+  /// Create a copy of CalenderEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NextMonthImplCopyWith<_$NextMonthImpl> get copyWith =>
+      __$$NextMonthImplCopyWithImpl<_$NextMonthImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() prepareSalahTiming,
+    required TResult Function() fillMonthNameFirstTime,
+    required TResult Function(String currentMonthName) nextMonth,
+    required TResult Function(String currentMonthName) previousMonth,
+  }) {
+    return nextMonth(currentMonthName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareSalahTiming,
+    TResult? Function()? fillMonthNameFirstTime,
+    TResult? Function(String currentMonthName)? nextMonth,
+    TResult? Function(String currentMonthName)? previousMonth,
+  }) {
+    return nextMonth?.call(currentMonthName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareSalahTiming,
+    TResult Function()? fillMonthNameFirstTime,
+    TResult Function(String currentMonthName)? nextMonth,
+    TResult Function(String currentMonthName)? previousMonth,
+    required TResult orElse(),
+  }) {
+    if (nextMonth != null) {
+      return nextMonth(currentMonthName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
+    required TResult Function(_FillMonthNameFirstTime value)
+        fillMonthNameFirstTime,
+    required TResult Function(_NextMonth value) nextMonth,
+    required TResult Function(_PreviousMonth value) previousMonth,
+  }) {
+    return nextMonth(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult? Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult? Function(_NextMonth value)? nextMonth,
+    TResult? Function(_PreviousMonth value)? previousMonth,
+  }) {
+    return nextMonth?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult Function(_NextMonth value)? nextMonth,
+    TResult Function(_PreviousMonth value)? previousMonth,
+    required TResult orElse(),
+  }) {
+    if (nextMonth != null) {
+      return nextMonth(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NextMonth implements CalenderEvent {
+  const factory _NextMonth(final String currentMonthName) = _$NextMonthImpl;
+
+  String get currentMonthName;
+
+  /// Create a copy of CalenderEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NextMonthImplCopyWith<_$NextMonthImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PreviousMonthImplCopyWith<$Res> {
+  factory _$$PreviousMonthImplCopyWith(
+          _$PreviousMonthImpl value, $Res Function(_$PreviousMonthImpl) then) =
+      __$$PreviousMonthImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String currentMonthName});
+}
+
+/// @nodoc
+class __$$PreviousMonthImplCopyWithImpl<$Res>
+    extends _$CalenderEventCopyWithImpl<$Res, _$PreviousMonthImpl>
+    implements _$$PreviousMonthImplCopyWith<$Res> {
+  __$$PreviousMonthImplCopyWithImpl(
+      _$PreviousMonthImpl _value, $Res Function(_$PreviousMonthImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CalenderEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentMonthName = null,
+  }) {
+    return _then(_$PreviousMonthImpl(
+      null == currentMonthName
+          ? _value.currentMonthName
+          : currentMonthName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PreviousMonthImpl implements _PreviousMonth {
+  const _$PreviousMonthImpl(this.currentMonthName);
+
+  @override
+  final String currentMonthName;
+
+  @override
+  String toString() {
+    return 'CalenderEvent.previousMonth(currentMonthName: $currentMonthName)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PreviousMonthImpl &&
+            (identical(other.currentMonthName, currentMonthName) ||
+                other.currentMonthName == currentMonthName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, currentMonthName);
+
+  /// Create a copy of CalenderEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PreviousMonthImplCopyWith<_$PreviousMonthImpl> get copyWith =>
+      __$$PreviousMonthImplCopyWithImpl<_$PreviousMonthImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() prepareSalahTiming,
+    required TResult Function() fillMonthNameFirstTime,
+    required TResult Function(String currentMonthName) nextMonth,
+    required TResult Function(String currentMonthName) previousMonth,
+  }) {
+    return previousMonth(currentMonthName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareSalahTiming,
+    TResult? Function()? fillMonthNameFirstTime,
+    TResult? Function(String currentMonthName)? nextMonth,
+    TResult? Function(String currentMonthName)? previousMonth,
+  }) {
+    return previousMonth?.call(currentMonthName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareSalahTiming,
+    TResult Function()? fillMonthNameFirstTime,
+    TResult Function(String currentMonthName)? nextMonth,
+    TResult Function(String currentMonthName)? previousMonth,
+    required TResult orElse(),
+  }) {
+    if (previousMonth != null) {
+      return previousMonth(currentMonthName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PrepareSalahTiming value) prepareSalahTiming,
+    required TResult Function(_FillMonthNameFirstTime value)
+        fillMonthNameFirstTime,
+    required TResult Function(_NextMonth value) nextMonth,
+    required TResult Function(_PreviousMonth value) previousMonth,
+  }) {
+    return previousMonth(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult? Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult? Function(_NextMonth value)? nextMonth,
+    TResult? Function(_PreviousMonth value)? previousMonth,
+  }) {
+    return previousMonth?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PrepareSalahTiming value)? prepareSalahTiming,
+    TResult Function(_FillMonthNameFirstTime value)? fillMonthNameFirstTime,
+    TResult Function(_NextMonth value)? nextMonth,
+    TResult Function(_PreviousMonth value)? previousMonth,
+    required TResult orElse(),
+  }) {
+    if (previousMonth != null) {
+      return previousMonth(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PreviousMonth implements CalenderEvent {
+  const factory _PreviousMonth(final String currentMonthName) =
+      _$PreviousMonthImpl;
+
+  String get currentMonthName;
+
+  /// Create a copy of CalenderEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PreviousMonthImplCopyWith<_$PreviousMonthImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
