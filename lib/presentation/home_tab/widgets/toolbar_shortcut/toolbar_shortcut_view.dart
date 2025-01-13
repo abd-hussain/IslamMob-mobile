@@ -1,8 +1,10 @@
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_cell.dart';
+import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/dialogs/support_us/support_dialog.dart';
 
@@ -24,7 +26,11 @@ class ToolbarShortcutView extends StatelessWidget {
                 title: "Holy Quran",
                 imagePath: "assets/images/toolbar/quran.png",
                 onTap: () {
-                  //TODO:
+                  final bloc = context.read<MainContainerBloc>();
+                  bloc.appBarKey.currentState!.animateTo(1);
+                  bloc.add(
+                    MainContainerEvent.changeSelectedIndex(1),
+                  );
                 },
               ),
             ),
@@ -43,8 +49,10 @@ class ToolbarShortcutView extends StatelessWidget {
               child: ToolbarCell(
                 title: "Qibla",
                 imagePath: "assets/images/toolbar/qibla.png",
-                onTap: () {
-                  //TODO:
+                onTap: () async {
+                  FirebaseAnalyticsRepository.logEvent(
+                      name: "QiblaFinderScreenFromHomeToolBar");
+                  await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
                 },
               ),
             ),

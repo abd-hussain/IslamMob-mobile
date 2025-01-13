@@ -20,6 +20,7 @@ mixin _$HomeTabEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) updateExpandedStatus,
     required TResult Function(bool status) updateShowingNotificationView,
+    required TResult Function(bool status) updateShowingLocationView,
     required TResult Function(SalahTimeState nextPrayType) updateNextPrayType,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$HomeTabEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? updateExpandedStatus,
     TResult? Function(bool status)? updateShowingNotificationView,
+    TResult? Function(bool status)? updateShowingLocationView,
     TResult? Function(SalahTimeState nextPrayType)? updateNextPrayType,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$HomeTabEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? updateExpandedStatus,
     TResult Function(bool status)? updateShowingNotificationView,
+    TResult Function(bool status)? updateShowingLocationView,
     TResult Function(SalahTimeState nextPrayType)? updateNextPrayType,
     required TResult orElse(),
   }) =>
@@ -43,6 +46,8 @@ mixin _$HomeTabEvent {
     required TResult Function(_UpdateExpandedStatus value) updateExpandedStatus,
     required TResult Function(_UpdateShowingNotificationView value)
         updateShowingNotificationView,
+    required TResult Function(_UpdateShowingLocationView value)
+        updateShowingLocationView,
     required TResult Function(_UpdateNextPrayType value) updateNextPrayType,
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +56,8 @@ mixin _$HomeTabEvent {
     TResult? Function(_UpdateExpandedStatus value)? updateExpandedStatus,
     TResult? Function(_UpdateShowingNotificationView value)?
         updateShowingNotificationView,
+    TResult? Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
     TResult? Function(_UpdateNextPrayType value)? updateNextPrayType,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +66,8 @@ mixin _$HomeTabEvent {
     TResult Function(_UpdateExpandedStatus value)? updateExpandedStatus,
     TResult Function(_UpdateShowingNotificationView value)?
         updateShowingNotificationView,
+    TResult Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
     TResult Function(_UpdateNextPrayType value)? updateNextPrayType,
     required TResult orElse(),
   }) =>
@@ -158,6 +167,7 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) updateExpandedStatus,
     required TResult Function(bool status) updateShowingNotificationView,
+    required TResult Function(bool status) updateShowingLocationView,
     required TResult Function(SalahTimeState nextPrayType) updateNextPrayType,
   }) {
     return updateExpandedStatus(status);
@@ -168,6 +178,7 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? updateExpandedStatus,
     TResult? Function(bool status)? updateShowingNotificationView,
+    TResult? Function(bool status)? updateShowingLocationView,
     TResult? Function(SalahTimeState nextPrayType)? updateNextPrayType,
   }) {
     return updateExpandedStatus?.call(status);
@@ -178,6 +189,7 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? updateExpandedStatus,
     TResult Function(bool status)? updateShowingNotificationView,
+    TResult Function(bool status)? updateShowingLocationView,
     TResult Function(SalahTimeState nextPrayType)? updateNextPrayType,
     required TResult orElse(),
   }) {
@@ -193,6 +205,8 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
     required TResult Function(_UpdateExpandedStatus value) updateExpandedStatus,
     required TResult Function(_UpdateShowingNotificationView value)
         updateShowingNotificationView,
+    required TResult Function(_UpdateShowingLocationView value)
+        updateShowingLocationView,
     required TResult Function(_UpdateNextPrayType value) updateNextPrayType,
   }) {
     return updateExpandedStatus(this);
@@ -204,6 +218,8 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
     TResult? Function(_UpdateExpandedStatus value)? updateExpandedStatus,
     TResult? Function(_UpdateShowingNotificationView value)?
         updateShowingNotificationView,
+    TResult? Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
     TResult? Function(_UpdateNextPrayType value)? updateNextPrayType,
   }) {
     return updateExpandedStatus?.call(this);
@@ -215,6 +231,8 @@ class _$UpdateExpandedStatusImpl implements _UpdateExpandedStatus {
     TResult Function(_UpdateExpandedStatus value)? updateExpandedStatus,
     TResult Function(_UpdateShowingNotificationView value)?
         updateShowingNotificationView,
+    TResult Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
     TResult Function(_UpdateNextPrayType value)? updateNextPrayType,
     required TResult orElse(),
   }) {
@@ -313,6 +331,7 @@ class _$UpdateShowingNotificationViewImpl
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) updateExpandedStatus,
     required TResult Function(bool status) updateShowingNotificationView,
+    required TResult Function(bool status) updateShowingLocationView,
     required TResult Function(SalahTimeState nextPrayType) updateNextPrayType,
   }) {
     return updateShowingNotificationView(status);
@@ -323,6 +342,7 @@ class _$UpdateShowingNotificationViewImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? updateExpandedStatus,
     TResult? Function(bool status)? updateShowingNotificationView,
+    TResult? Function(bool status)? updateShowingLocationView,
     TResult? Function(SalahTimeState nextPrayType)? updateNextPrayType,
   }) {
     return updateShowingNotificationView?.call(status);
@@ -333,6 +353,7 @@ class _$UpdateShowingNotificationViewImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? updateExpandedStatus,
     TResult Function(bool status)? updateShowingNotificationView,
+    TResult Function(bool status)? updateShowingLocationView,
     TResult Function(SalahTimeState nextPrayType)? updateNextPrayType,
     required TResult orElse(),
   }) {
@@ -348,6 +369,8 @@ class _$UpdateShowingNotificationViewImpl
     required TResult Function(_UpdateExpandedStatus value) updateExpandedStatus,
     required TResult Function(_UpdateShowingNotificationView value)
         updateShowingNotificationView,
+    required TResult Function(_UpdateShowingLocationView value)
+        updateShowingLocationView,
     required TResult Function(_UpdateNextPrayType value) updateNextPrayType,
   }) {
     return updateShowingNotificationView(this);
@@ -359,6 +382,8 @@ class _$UpdateShowingNotificationViewImpl
     TResult? Function(_UpdateExpandedStatus value)? updateExpandedStatus,
     TResult? Function(_UpdateShowingNotificationView value)?
         updateShowingNotificationView,
+    TResult? Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
     TResult? Function(_UpdateNextPrayType value)? updateNextPrayType,
   }) {
     return updateShowingNotificationView?.call(this);
@@ -370,6 +395,8 @@ class _$UpdateShowingNotificationViewImpl
     TResult Function(_UpdateExpandedStatus value)? updateExpandedStatus,
     TResult Function(_UpdateShowingNotificationView value)?
         updateShowingNotificationView,
+    TResult Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
     TResult Function(_UpdateNextPrayType value)? updateNextPrayType,
     required TResult orElse(),
   }) {
@@ -391,6 +418,168 @@ abstract class _UpdateShowingNotificationView implements HomeTabEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateShowingNotificationViewImplCopyWith<
           _$UpdateShowingNotificationViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateShowingLocationViewImplCopyWith<$Res> {
+  factory _$$UpdateShowingLocationViewImplCopyWith(
+          _$UpdateShowingLocationViewImpl value,
+          $Res Function(_$UpdateShowingLocationViewImpl) then) =
+      __$$UpdateShowingLocationViewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool status});
+}
+
+/// @nodoc
+class __$$UpdateShowingLocationViewImplCopyWithImpl<$Res>
+    extends _$HomeTabEventCopyWithImpl<$Res, _$UpdateShowingLocationViewImpl>
+    implements _$$UpdateShowingLocationViewImplCopyWith<$Res> {
+  __$$UpdateShowingLocationViewImplCopyWithImpl(
+      _$UpdateShowingLocationViewImpl _value,
+      $Res Function(_$UpdateShowingLocationViewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeTabEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$UpdateShowingLocationViewImpl(
+      null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateShowingLocationViewImpl implements _UpdateShowingLocationView {
+  _$UpdateShowingLocationViewImpl(this.status);
+
+  @override
+  final bool status;
+
+  @override
+  String toString() {
+    return 'HomeTabEvent.updateShowingLocationView(status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateShowingLocationViewImpl &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, status);
+
+  /// Create a copy of HomeTabEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateShowingLocationViewImplCopyWith<_$UpdateShowingLocationViewImpl>
+      get copyWith => __$$UpdateShowingLocationViewImplCopyWithImpl<
+          _$UpdateShowingLocationViewImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool status) updateExpandedStatus,
+    required TResult Function(bool status) updateShowingNotificationView,
+    required TResult Function(bool status) updateShowingLocationView,
+    required TResult Function(SalahTimeState nextPrayType) updateNextPrayType,
+  }) {
+    return updateShowingLocationView(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool status)? updateExpandedStatus,
+    TResult? Function(bool status)? updateShowingNotificationView,
+    TResult? Function(bool status)? updateShowingLocationView,
+    TResult? Function(SalahTimeState nextPrayType)? updateNextPrayType,
+  }) {
+    return updateShowingLocationView?.call(status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool status)? updateExpandedStatus,
+    TResult Function(bool status)? updateShowingNotificationView,
+    TResult Function(bool status)? updateShowingLocationView,
+    TResult Function(SalahTimeState nextPrayType)? updateNextPrayType,
+    required TResult orElse(),
+  }) {
+    if (updateShowingLocationView != null) {
+      return updateShowingLocationView(status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateExpandedStatus value) updateExpandedStatus,
+    required TResult Function(_UpdateShowingNotificationView value)
+        updateShowingNotificationView,
+    required TResult Function(_UpdateShowingLocationView value)
+        updateShowingLocationView,
+    required TResult Function(_UpdateNextPrayType value) updateNextPrayType,
+  }) {
+    return updateShowingLocationView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateExpandedStatus value)? updateExpandedStatus,
+    TResult? Function(_UpdateShowingNotificationView value)?
+        updateShowingNotificationView,
+    TResult? Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
+    TResult? Function(_UpdateNextPrayType value)? updateNextPrayType,
+  }) {
+    return updateShowingLocationView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateExpandedStatus value)? updateExpandedStatus,
+    TResult Function(_UpdateShowingNotificationView value)?
+        updateShowingNotificationView,
+    TResult Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
+    TResult Function(_UpdateNextPrayType value)? updateNextPrayType,
+    required TResult orElse(),
+  }) {
+    if (updateShowingLocationView != null) {
+      return updateShowingLocationView(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateShowingLocationView implements HomeTabEvent {
+  factory _UpdateShowingLocationView(final bool status) =
+      _$UpdateShowingLocationViewImpl;
+
+  bool get status;
+
+  /// Create a copy of HomeTabEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateShowingLocationViewImplCopyWith<_$UpdateShowingLocationViewImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -478,6 +667,7 @@ class _$UpdateNextPrayTypeImpl implements _UpdateNextPrayType {
   TResult when<TResult extends Object?>({
     required TResult Function(bool status) updateExpandedStatus,
     required TResult Function(bool status) updateShowingNotificationView,
+    required TResult Function(bool status) updateShowingLocationView,
     required TResult Function(SalahTimeState nextPrayType) updateNextPrayType,
   }) {
     return updateNextPrayType(nextPrayType);
@@ -488,6 +678,7 @@ class _$UpdateNextPrayTypeImpl implements _UpdateNextPrayType {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? updateExpandedStatus,
     TResult? Function(bool status)? updateShowingNotificationView,
+    TResult? Function(bool status)? updateShowingLocationView,
     TResult? Function(SalahTimeState nextPrayType)? updateNextPrayType,
   }) {
     return updateNextPrayType?.call(nextPrayType);
@@ -498,6 +689,7 @@ class _$UpdateNextPrayTypeImpl implements _UpdateNextPrayType {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? updateExpandedStatus,
     TResult Function(bool status)? updateShowingNotificationView,
+    TResult Function(bool status)? updateShowingLocationView,
     TResult Function(SalahTimeState nextPrayType)? updateNextPrayType,
     required TResult orElse(),
   }) {
@@ -513,6 +705,8 @@ class _$UpdateNextPrayTypeImpl implements _UpdateNextPrayType {
     required TResult Function(_UpdateExpandedStatus value) updateExpandedStatus,
     required TResult Function(_UpdateShowingNotificationView value)
         updateShowingNotificationView,
+    required TResult Function(_UpdateShowingLocationView value)
+        updateShowingLocationView,
     required TResult Function(_UpdateNextPrayType value) updateNextPrayType,
   }) {
     return updateNextPrayType(this);
@@ -524,6 +718,8 @@ class _$UpdateNextPrayTypeImpl implements _UpdateNextPrayType {
     TResult? Function(_UpdateExpandedStatus value)? updateExpandedStatus,
     TResult? Function(_UpdateShowingNotificationView value)?
         updateShowingNotificationView,
+    TResult? Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
     TResult? Function(_UpdateNextPrayType value)? updateNextPrayType,
   }) {
     return updateNextPrayType?.call(this);
@@ -535,6 +731,8 @@ class _$UpdateNextPrayTypeImpl implements _UpdateNextPrayType {
     TResult Function(_UpdateExpandedStatus value)? updateExpandedStatus,
     TResult Function(_UpdateShowingNotificationView value)?
         updateShowingNotificationView,
+    TResult Function(_UpdateShowingLocationView value)?
+        updateShowingLocationView,
     TResult Function(_UpdateNextPrayType value)? updateNextPrayType,
     required TResult orElse(),
   }) {
@@ -562,6 +760,7 @@ abstract class _UpdateNextPrayType implements HomeTabEvent {
 mixin _$HomeTabState {
   bool get isBarExpanded => throw _privateConstructorUsedError;
   bool get showAllowNotificationView => throw _privateConstructorUsedError;
+  bool get showAllowLocationView => throw _privateConstructorUsedError;
   SalahTimeState get nextPrayType => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeTabState
@@ -580,6 +779,7 @@ abstract class $HomeTabStateCopyWith<$Res> {
   $Res call(
       {bool isBarExpanded,
       bool showAllowNotificationView,
+      bool showAllowLocationView,
       SalahTimeState nextPrayType});
 
   $SalahTimeStateCopyWith<$Res> get nextPrayType;
@@ -602,6 +802,7 @@ class _$HomeTabStateCopyWithImpl<$Res, $Val extends HomeTabState>
   $Res call({
     Object? isBarExpanded = null,
     Object? showAllowNotificationView = null,
+    Object? showAllowLocationView = null,
     Object? nextPrayType = null,
   }) {
     return _then(_value.copyWith(
@@ -612,6 +813,10 @@ class _$HomeTabStateCopyWithImpl<$Res, $Val extends HomeTabState>
       showAllowNotificationView: null == showAllowNotificationView
           ? _value.showAllowNotificationView
           : showAllowNotificationView // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showAllowLocationView: null == showAllowLocationView
+          ? _value.showAllowLocationView
+          : showAllowLocationView // ignore: cast_nullable_to_non_nullable
               as bool,
       nextPrayType: null == nextPrayType
           ? _value.nextPrayType
@@ -642,6 +847,7 @@ abstract class _$$HomeTabStateImplCopyWith<$Res>
   $Res call(
       {bool isBarExpanded,
       bool showAllowNotificationView,
+      bool showAllowLocationView,
       SalahTimeState nextPrayType});
 
   @override
@@ -663,6 +869,7 @@ class __$$HomeTabStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isBarExpanded = null,
     Object? showAllowNotificationView = null,
+    Object? showAllowLocationView = null,
     Object? nextPrayType = null,
   }) {
     return _then(_$HomeTabStateImpl(
@@ -673,6 +880,10 @@ class __$$HomeTabStateImplCopyWithImpl<$Res>
       showAllowNotificationView: null == showAllowNotificationView
           ? _value.showAllowNotificationView
           : showAllowNotificationView // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showAllowLocationView: null == showAllowLocationView
+          ? _value.showAllowLocationView
+          : showAllowLocationView // ignore: cast_nullable_to_non_nullable
               as bool,
       nextPrayType: null == nextPrayType
           ? _value.nextPrayType
@@ -688,6 +899,7 @@ class _$HomeTabStateImpl implements _HomeTabState {
   const _$HomeTabStateImpl(
       {this.isBarExpanded = true,
       this.showAllowNotificationView = false,
+      this.showAllowLocationView = false,
       this.nextPrayType = const SalahTimeState.none()});
 
   @override
@@ -698,11 +910,14 @@ class _$HomeTabStateImpl implements _HomeTabState {
   final bool showAllowNotificationView;
   @override
   @JsonKey()
+  final bool showAllowLocationView;
+  @override
+  @JsonKey()
   final SalahTimeState nextPrayType;
 
   @override
   String toString() {
-    return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView, nextPrayType: $nextPrayType)';
+    return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView, showAllowLocationView: $showAllowLocationView, nextPrayType: $nextPrayType)';
   }
 
   @override
@@ -715,13 +930,15 @@ class _$HomeTabStateImpl implements _HomeTabState {
             (identical(other.showAllowNotificationView,
                     showAllowNotificationView) ||
                 other.showAllowNotificationView == showAllowNotificationView) &&
+            (identical(other.showAllowLocationView, showAllowLocationView) ||
+                other.showAllowLocationView == showAllowLocationView) &&
             (identical(other.nextPrayType, nextPrayType) ||
                 other.nextPrayType == nextPrayType));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, isBarExpanded, showAllowNotificationView, nextPrayType);
+  int get hashCode => Object.hash(runtimeType, isBarExpanded,
+      showAllowNotificationView, showAllowLocationView, nextPrayType);
 
   /// Create a copy of HomeTabState
   /// with the given fields replaced by the non-null parameter values.
@@ -736,12 +953,15 @@ abstract class _HomeTabState implements HomeTabState {
   const factory _HomeTabState(
       {final bool isBarExpanded,
       final bool showAllowNotificationView,
+      final bool showAllowLocationView,
       final SalahTimeState nextPrayType}) = _$HomeTabStateImpl;
 
   @override
   bool get isBarExpanded;
   @override
   bool get showAllowNotificationView;
+  @override
+  bool get showAllowLocationView;
   @override
   SalahTimeState get nextPrayType;
 

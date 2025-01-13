@@ -6,7 +6,7 @@ import 'package:logger_manager/logger_manager.dart';
 class LocationManagerBase {
   /// Retrieves detailed location information including country, city, and coordinates.
   Future<Map<String, String>> getLocationDetails() async {
-    if (!await _checkLocationPermission()) {
+    if (!await checkLocationPermission()) {
       return {'error': 'No-Permission'};
     }
 
@@ -22,7 +22,7 @@ class LocationManagerBase {
   }
 
   /// Checks and requests location permissions.
-  Future<bool> _checkLocationPermission() async {
+  Future<bool> checkLocationPermission() async {
     if (!await Geolocator.isLocationServiceEnabled()) {
       LoggerManagerBase.logDebugMessage(
           message: "Location services are disabled.");

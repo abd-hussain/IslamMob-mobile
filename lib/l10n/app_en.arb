@@ -396,7 +396,13 @@
     "donatepopupmessage" : "This program is non-profit. We cover operating costs by displaying ads, so it’s important to receive this support to ensure continuity",
     "openAdvertisment" : "Show advertisement",
     "noAdsToShow" : "No advertisement to show now",
-    "donatepopupmessage2" : "May Allah reward you"
+    "donatepopupmessage2" : "May Allah reward you",
+    "qiblaFinder" : "Qibla Finder",
+    "allowLocations" : "Allow access to location",
+    "allowLocationDetails" : "Enabling location allows us to accurately calculate prayer times, which is very important for the app",
+    "changeLocationSettings" : "Change Location"
+
+
 
 
 

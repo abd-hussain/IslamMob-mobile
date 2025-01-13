@@ -1,3 +1,4 @@
+import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -44,6 +45,22 @@ class SettingBottomSheet {
                 color: const Color(0xff008480),
                 onPressed: () async => await navigator
                     .pushNamed(RoutesConstants.prayNotificationSettingScreen),
+              ),
+              _buildSettingsButton(
+                context: context,
+                title: localize.changeLocationSettings,
+                color: const Color(0xff008480),
+                onPressed: () async {
+                  final navigator = Navigator.of(context, rootNavigator: true);
+                  await DataBaseManagerBase.saveMultipleInDatabase(data: {
+                    DatabaseFieldInBoardingStageConstant.inBoardingfinished:
+                        null,
+                    DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,
+                  });
+                  await navigator.pushNamedAndRemoveUntil(
+                      RoutesConstants.inBoardingScreen,
+                      (Route<dynamic> route) => false);
+                },
               ),
               _buildSettingsButton(
                 context: context,

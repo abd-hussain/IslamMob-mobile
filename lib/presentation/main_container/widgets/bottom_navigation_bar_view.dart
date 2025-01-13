@@ -15,6 +15,7 @@ class BottomNavigationBarView extends StatelessWidget {
         return ConvexAppBar(
           initialActiveIndex: state.selectedIndex,
           backgroundColor: Colors.white,
+          key: context.read<MainContainerBloc>().appBarKey,
           activeColor: const Color(0xff008480),
           color: const Color(0xff444444),
           height: 55,

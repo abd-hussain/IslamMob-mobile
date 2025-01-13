@@ -8,6 +8,9 @@ class HomeTabEvent with _$HomeTabEvent {
   factory HomeTabEvent.updateShowingNotificationView(bool status) =
       _UpdateShowingNotificationView;
 
+  factory HomeTabEvent.updateShowingLocationView(bool status) =
+      _UpdateShowingLocationView;
+
   factory HomeTabEvent.updateNextPrayType(SalahTimeState nextPrayType) =
       _UpdateNextPrayType;
 }

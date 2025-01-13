@@ -6,6 +6,7 @@ import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_
 import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/azkar_after_salah_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
+import 'package:islam_app/presentation/home_tab/widgets/location_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_shortcut_view.dart';
@@ -36,6 +37,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 0.3),
                 const ToolbarShortcutView(),
                 _buildNotificationPermissionView(),
+                _buildLocationPermissionView(),
                 const AddMobBanner(),
                 _buildAzkarView(),
                 const AddMobBanner(),
@@ -81,6 +83,19 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) {
         return state.showAllowNotificationView
             ? const NotificationPermissionView()
+            : const SizedBox.shrink();
+      },
+    );
+  }
+
+  /// Builds the location permission view when applicable.
+  Widget _buildLocationPermissionView() {
+    return BlocBuilder<HomeTabBloc, HomeTabState>(
+      buildWhen: (previous, current) =>
+          previous.showAllowLocationView != current.showAllowLocationView,
+      builder: (context, state) {
+        return state.showAllowLocationView
+            ? const LocationPermissionView()
             : const SizedBox.shrink();
       },
     );
