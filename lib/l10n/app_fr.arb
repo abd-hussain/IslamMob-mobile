@@ -391,6 +391,11 @@
     "sharepopuptitle" : "Le Messager d'Allah (ﷺ) a dit : Celui qui guide quelqu'un vers le bien aura une récompense égale à celle de celui qui le fait",
     "notificationSettingJomAlkahf" : "Notifications de rappel pour la sourate Al-Kahf le vendredi",
     "notificationSettingJom3aDoaa" : "Notifications de rappel pour la prière (du’aa) le vendredi",
-    "notificationSettingQeyamAlLayel" : "Notifications de rappel pour la prière nocturne (Qiyam al-Layl)"
+    "notificationSettingQeyamAlLayel" : "Notifications de rappel pour la prière nocturne (Qiyam al-Layl)",
+    "donatepopuptitle" : "Soutenir l’équipe",
+    "donatepopupmessage" : "Ce programme est à but non lucratif. Nous couvrons les coûts de fonctionnement en affichant des publicités. Il est donc important d’obtenir ce soutien pour assurer la continuité",
+    "openAdvertisment" : "Afficher la publicité",
+    "noAdsToShow" : "Aucune publicité à afficher pour le moment",
+    "donatepopupmessage2" : "Qu’Allah te récompense en bien"
 
 }

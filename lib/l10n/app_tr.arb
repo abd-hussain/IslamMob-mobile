@@ -391,5 +391,10 @@
     "sharepopuptitle" : "Allah’ın Elçisi (ﷺ) buyurdu: Kim bir hayra vesile olursa, onu yapanın sevabı kadar sevap alır",
     "notificationSettingJomAlkahf" : "Friday reminder notifications for Surah Al-Kahf",
     "notificationSettingJom3aDoaa" : "Friday reminder notifications for du’aa (supplication)",
-    "notificationSettingQeyamAlLayel" : "Night prayer reminder notifications (Qiyam al-Layl)"
+    "notificationSettingQeyamAlLayel" : "Night prayer reminder notifications (Qiyam al-Layl)",
+    "donatepopuptitle" : "Ekibi destekle",
+    "donatepopupmessage" : "Bu program kâr amacı gütmez. İşletme masraflarını reklamlardan karşılıyoruz, bu yüzden sürekliliği sağlamak için bu desteği almak önemlidir",
+    "openAdvertisment" : "Reklamı göster",
+    "noAdsToShow" : "Şu anda gösterilecek reklam yok",
+    "donatepopupmessage2" : "Allah seni hayırla mükafatlandırsın"
 }

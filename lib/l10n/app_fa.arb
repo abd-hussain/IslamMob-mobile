@@ -391,6 +391,11 @@
     "sharepopuptitle" : "پیامبر خدا (ﷺ) فرمود: هر کس کسی را به کار خیری راهنمایی کند، پاداشی مانند پاداش انجام‌دهنده آن خواهد داشت",
     "notificationSettingJomAlkahf" : "اعلان‌های یادآوری سوره کهف در روز جمعه",
     "notificationSettingJom3aDoaa" : "اعلان‌های یادآوری دعا در روز جمعه",
-    "notificationSettingQeyamAlLayel" : "اعلان‌های یادآوری قیام اللیل"
+    "notificationSettingQeyamAlLayel" : "اعلان‌های یادآوری قیام اللیل",
+    "donatepopuptitle" : "حمایت از تیم",
+    "donatepopupmessage" : "این برنامه غیرانتفاعی است. ما هزینه‌های اجرایی را با نمایش تبلیغات تأمین می‌کنیم، بنابراین دریافت این حمایت برای تضمین تداوم آن مهم است",
+    "openAdvertisment" : "نمایش آگهی",
+    "noAdsToShow" : "در حال حاضر هیچ آگهی‌ای برای نمایش وجود ندارد",
+    "donatepopupmessage2" : "خدا به شما پاداش نیک عطا کند"
 
 }

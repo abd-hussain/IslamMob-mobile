@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_cell.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
+import 'package:islam_app/shared_widgets/dialogs/support_us/support_dialog.dart';
 
 class ToolbarShortcutView extends StatelessWidget {
   const ToolbarShortcutView({super.key});
@@ -62,8 +63,10 @@ class ToolbarShortcutView extends StatelessWidget {
               child: ToolbarCell(
                 title: "Support Us",
                 imagePath: "assets/images/toolbar/donate.png",
-                onTap: () {
-                  //TODO:
+                onTap: () async {
+                  FirebaseAnalyticsRepository.logEvent(
+                      name: "SupportUsFromHomeToolBar");
+                  await SupportUsDialog().dialog(context: context);
                 },
               ),
             ),
