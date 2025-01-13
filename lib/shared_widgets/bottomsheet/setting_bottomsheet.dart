@@ -33,13 +33,6 @@ class SettingBottomSheet {
               const SizedBox(height: 16),
               _buildSettingsButton(
                 context: context,
-                title: localize.calenderSettings,
-                color: const Color(0xff008480),
-                onPressed: () async =>
-                    await navigator.pushNamed(RoutesConstants.calenderScreen),
-              ),
-              _buildSettingsButton(
-                context: context,
                 title: localize.prayCalculationSettings,
                 color: const Color(0xff008480),
                 onPressed: () async => await navigator

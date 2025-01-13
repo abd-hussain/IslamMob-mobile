@@ -1,3 +1,4 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
@@ -11,9 +12,8 @@ import 'package:islam_app/presentation/settings_tab/widgets/profile_header.dart'
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
 import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:islam_app/domain/constants/app_constant.dart';
+import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:rate_my_app/rate_my_app.dart';
-import 'package:share_plus/share_plus.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -46,8 +46,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ProfileOptions(
                   icon: Icons.calendar_month,
                   name: AppLocalizations.of(context)!.calenderSettings,
-                  onTap: () async =>
-                      await navigator.pushNamed(RoutesConstants.calenderScreen),
+                  onTap: () async {
+                    FirebaseAnalyticsRepository.logEvent(
+                        name: "CalenderScreenFromSettingsScreen");
+                    await navigator.pushNamed(RoutesConstants.calenderScreen);
+                  },
                 ),
                 ProfileOptions(
                   icon: Icons.translate,
@@ -122,10 +125,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   icon: Icons.share,
                   name: AppLocalizations.of(context)!.shareapp,
                   onTap: () async {
-                    await Share.share(
-                        "${AppLocalizations.of(context)!.shareMessageBody} \n Android : ${AppConstant.androidAppLink} \n iOS : ${AppConstant.iOSAppLink}",
-                        subject:
-                            AppLocalizations.of(context)!.shareMessageTitle);
+                    FirebaseAnalyticsRepository.logEvent(
+                        name: "ShareAppFromSettingsScreen");
+                    await ShareDialog().dialog(context: context);
                   },
                 ),
               ]),

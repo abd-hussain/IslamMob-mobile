@@ -35,7 +35,7 @@ class AzkarAfterSalahView extends StatelessWidget {
   Widget _buildHeader(BuildContext context) {
     return Row(
       children: [
-        Image.asset("assets/images/azkar.png", scale: 10),
+        Image.asset("assets/images/toolbar/azkar.png", scale: 10),
         const SizedBox(width: 4),
         CustomText(
           title: AppLocalizations.of(context)!.azkarTitle,

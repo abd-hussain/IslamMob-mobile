@@ -19,21 +19,24 @@ mixin _$PrayNotificationSettingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(bool status, PrayNotificationType type)
+    required TResult Function(
+            bool status, PrayNotificationType type, BuildContext context)
         changePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(bool status, PrayNotificationType type)?
+    TResult? Function(
+            bool status, PrayNotificationType type, BuildContext context)?
         changePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(bool status, PrayNotificationType type)?
+    TResult Function(
+            bool status, PrayNotificationType type, BuildContext context)?
         changePrayNotificationSettings,
     required TResult orElse(),
   }) =>
@@ -136,7 +139,8 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(bool status, PrayNotificationType type)
+    required TResult Function(
+            bool status, PrayNotificationType type, BuildContext context)
         changePrayNotificationSettings,
   }) {
     return initialPrayNotificationSettings();
@@ -146,7 +150,8 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(bool status, PrayNotificationType type)?
+    TResult? Function(
+            bool status, PrayNotificationType type, BuildContext context)?
         changePrayNotificationSettings,
   }) {
     return initialPrayNotificationSettings?.call();
@@ -156,7 +161,8 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(bool status, PrayNotificationType type)?
+    TResult Function(
+            bool status, PrayNotificationType type, BuildContext context)?
         changePrayNotificationSettings,
     required TResult orElse(),
   }) {
@@ -217,7 +223,7 @@ abstract class _$$ChangePrayNotificationSettingsImplCopyWith<$Res> {
           $Res Function(_$ChangePrayNotificationSettingsImpl) then) =
       __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool status, PrayNotificationType type});
+  $Res call({bool status, PrayNotificationType type, BuildContext context});
 }
 
 /// @nodoc
@@ -237,6 +243,7 @@ class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? type = null,
+    Object? context = null,
   }) {
     return _then(_$ChangePrayNotificationSettingsImpl(
       status: null == status
@@ -247,6 +254,10 @@ class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PrayNotificationType,
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
     ));
   }
 }
@@ -256,16 +267,18 @@ class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
 class _$ChangePrayNotificationSettingsImpl
     implements _ChangePrayNotificationSettings {
   const _$ChangePrayNotificationSettingsImpl(
-      {required this.status, required this.type});
+      {required this.status, required this.type, required this.context});
 
   @override
   final bool status;
   @override
   final PrayNotificationType type;
+  @override
+  final BuildContext context;
 
   @override
   String toString() {
-    return 'PrayNotificationSettingEvent.changePrayNotificationSettings(status: $status, type: $type)';
+    return 'PrayNotificationSettingEvent.changePrayNotificationSettings(status: $status, type: $type, context: $context)';
   }
 
   @override
@@ -274,11 +287,12 @@ class _$ChangePrayNotificationSettingsImpl
         (other.runtimeType == runtimeType &&
             other is _$ChangePrayNotificationSettingsImpl &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.context, context) || other.context == context));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, type);
+  int get hashCode => Object.hash(runtimeType, status, type, context);
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -294,32 +308,35 @@ class _$ChangePrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(bool status, PrayNotificationType type)
+    required TResult Function(
+            bool status, PrayNotificationType type, BuildContext context)
         changePrayNotificationSettings,
   }) {
-    return changePrayNotificationSettings(status, type);
+    return changePrayNotificationSettings(status, type, context);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(bool status, PrayNotificationType type)?
+    TResult? Function(
+            bool status, PrayNotificationType type, BuildContext context)?
         changePrayNotificationSettings,
   }) {
-    return changePrayNotificationSettings?.call(status, type);
+    return changePrayNotificationSettings?.call(status, type, context);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(bool status, PrayNotificationType type)?
+    TResult Function(
+            bool status, PrayNotificationType type, BuildContext context)?
         changePrayNotificationSettings,
     required TResult orElse(),
   }) {
     if (changePrayNotificationSettings != null) {
-      return changePrayNotificationSettings(status, type);
+      return changePrayNotificationSettings(status, type, context);
     }
     return orElse();
   }
@@ -366,11 +383,13 @@ abstract class _ChangePrayNotificationSettings
     implements PrayNotificationSettingEvent {
   const factory _ChangePrayNotificationSettings(
           {required final bool status,
-          required final PrayNotificationType type}) =
+          required final PrayNotificationType type,
+          required final BuildContext context}) =
       _$ChangePrayNotificationSettingsImpl;
 
   bool get status;
   PrayNotificationType get type;
+  BuildContext get context;
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -391,7 +410,9 @@ mixin _$PrayNotificationSettingState {
   bool get magrieb => throw _privateConstructorUsedError;
   bool get isha => throw _privateConstructorUsedError;
   bool get sunriseTime => throw _privateConstructorUsedError;
-  bool get sunrisePray => throw _privateConstructorUsedError;
+  bool get jom3aAlkahf => throw _privateConstructorUsedError;
+  bool get jom3aDo3aa => throw _privateConstructorUsedError;
+  bool get qeyamAlLayel => throw _privateConstructorUsedError;
   bool get before15Min => throw _privateConstructorUsedError;
   bool get applicationNotification => throw _privateConstructorUsedError;
   dynamic get loadingStatus => throw _privateConstructorUsedError;
@@ -421,7 +442,9 @@ abstract class $PrayNotificationSettingStateCopyWith<$Res> {
       bool magrieb,
       bool isha,
       bool sunriseTime,
-      bool sunrisePray,
+      bool jom3aAlkahf,
+      bool jom3aDo3aa,
+      bool qeyamAlLayel,
       bool before15Min,
       bool applicationNotification,
       dynamic loadingStatus});
@@ -452,7 +475,9 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
     Object? magrieb = null,
     Object? isha = null,
     Object? sunriseTime = null,
-    Object? sunrisePray = null,
+    Object? jom3aAlkahf = null,
+    Object? jom3aDo3aa = null,
+    Object? qeyamAlLayel = null,
     Object? before15Min = null,
     Object? applicationNotification = null,
     Object? loadingStatus = freezed,
@@ -494,9 +519,17 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
           ? _value.sunriseTime
           : sunriseTime // ignore: cast_nullable_to_non_nullable
               as bool,
-      sunrisePray: null == sunrisePray
-          ? _value.sunrisePray
-          : sunrisePray // ignore: cast_nullable_to_non_nullable
+      jom3aAlkahf: null == jom3aAlkahf
+          ? _value.jom3aAlkahf
+          : jom3aAlkahf // ignore: cast_nullable_to_non_nullable
+              as bool,
+      jom3aDo3aa: null == jom3aDo3aa
+          ? _value.jom3aDo3aa
+          : jom3aDo3aa // ignore: cast_nullable_to_non_nullable
+              as bool,
+      qeyamAlLayel: null == qeyamAlLayel
+          ? _value.qeyamAlLayel
+          : qeyamAlLayel // ignore: cast_nullable_to_non_nullable
               as bool,
       before15Min: null == before15Min
           ? _value.before15Min
@@ -533,7 +566,9 @@ abstract class _$$PrayNotificationSettingStateImplCopyWith<$Res>
       bool magrieb,
       bool isha,
       bool sunriseTime,
-      bool sunrisePray,
+      bool jom3aAlkahf,
+      bool jom3aDo3aa,
+      bool qeyamAlLayel,
       bool before15Min,
       bool applicationNotification,
       dynamic loadingStatus});
@@ -563,7 +598,9 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
     Object? magrieb = null,
     Object? isha = null,
     Object? sunriseTime = null,
-    Object? sunrisePray = null,
+    Object? jom3aAlkahf = null,
+    Object? jom3aDo3aa = null,
+    Object? qeyamAlLayel = null,
     Object? before15Min = null,
     Object? applicationNotification = null,
     Object? loadingStatus = freezed,
@@ -605,9 +642,17 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
           ? _value.sunriseTime
           : sunriseTime // ignore: cast_nullable_to_non_nullable
               as bool,
-      sunrisePray: null == sunrisePray
-          ? _value.sunrisePray
-          : sunrisePray // ignore: cast_nullable_to_non_nullable
+      jom3aAlkahf: null == jom3aAlkahf
+          ? _value.jom3aAlkahf
+          : jom3aAlkahf // ignore: cast_nullable_to_non_nullable
+              as bool,
+      jom3aDo3aa: null == jom3aDo3aa
+          ? _value.jom3aDo3aa
+          : jom3aDo3aa // ignore: cast_nullable_to_non_nullable
+              as bool,
+      qeyamAlLayel: null == qeyamAlLayel
+          ? _value.qeyamAlLayel
+          : qeyamAlLayel // ignore: cast_nullable_to_non_nullable
               as bool,
       before15Min: null == before15Min
           ? _value.before15Min
@@ -637,7 +682,9 @@ class _$PrayNotificationSettingStateImpl
       this.magrieb = true,
       this.isha = true,
       this.sunriseTime = true,
-      this.sunrisePray = true,
+      this.jom3aAlkahf = true,
+      this.jom3aDo3aa = true,
+      this.qeyamAlLayel = true,
       this.before15Min = true,
       this.applicationNotification = false,
       this.loadingStatus = const PrayNotificationSettingProcessState.idl()});
@@ -671,7 +718,13 @@ class _$PrayNotificationSettingStateImpl
   final bool sunriseTime;
   @override
   @JsonKey()
-  final bool sunrisePray;
+  final bool jom3aAlkahf;
+  @override
+  @JsonKey()
+  final bool jom3aDo3aa;
+  @override
+  @JsonKey()
+  final bool qeyamAlLayel;
   @override
   @JsonKey()
   final bool before15Min;
@@ -684,7 +737,7 @@ class _$PrayNotificationSettingStateImpl
 
   @override
   String toString() {
-    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunriseTime: $sunriseTime, sunrisePray: $sunrisePray, before15Min: $before15Min, applicationNotification: $applicationNotification, loadingStatus: $loadingStatus)';
+    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunriseTime: $sunriseTime, jom3aAlkahf: $jom3aAlkahf, jom3aDo3aa: $jom3aDo3aa, qeyamAlLayel: $qeyamAlLayel, before15Min: $before15Min, applicationNotification: $applicationNotification, loadingStatus: $loadingStatus)';
   }
 
   @override
@@ -709,8 +762,12 @@ class _$PrayNotificationSettingStateImpl
             (identical(other.isha, isha) || other.isha == isha) &&
             (identical(other.sunriseTime, sunriseTime) ||
                 other.sunriseTime == sunriseTime) &&
-            (identical(other.sunrisePray, sunrisePray) ||
-                other.sunrisePray == sunrisePray) &&
+            (identical(other.jom3aAlkahf, jom3aAlkahf) ||
+                other.jom3aAlkahf == jom3aAlkahf) &&
+            (identical(other.jom3aDo3aa, jom3aDo3aa) ||
+                other.jom3aDo3aa == jom3aDo3aa) &&
+            (identical(other.qeyamAlLayel, qeyamAlLayel) ||
+                other.qeyamAlLayel == qeyamAlLayel) &&
             (identical(other.before15Min, before15Min) ||
                 other.before15Min == before15Min) &&
             (identical(
@@ -732,7 +789,9 @@ class _$PrayNotificationSettingStateImpl
       magrieb,
       isha,
       sunriseTime,
-      sunrisePray,
+      jom3aAlkahf,
+      jom3aDo3aa,
+      qeyamAlLayel,
       before15Min,
       applicationNotification,
       const DeepCollectionEquality().hash(loadingStatus));
@@ -760,7 +819,9 @@ abstract class _PrayNotificationSettingState
       final bool magrieb,
       final bool isha,
       final bool sunriseTime,
-      final bool sunrisePray,
+      final bool jom3aAlkahf,
+      final bool jom3aDo3aa,
+      final bool qeyamAlLayel,
       final bool before15Min,
       final bool applicationNotification,
       final dynamic loadingStatus}) = _$PrayNotificationSettingStateImpl;
@@ -784,7 +845,11 @@ abstract class _PrayNotificationSettingState
   @override
   bool get sunriseTime;
   @override
-  bool get sunrisePray;
+  bool get jom3aAlkahf;
+  @override
+  bool get jom3aDo3aa;
+  @override
+  bool get qeyamAlLayel;
   @override
   bool get before15Min;
   @override

@@ -8,6 +8,7 @@ import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/azkar_
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
+import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_shortcut_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,6 +33,8 @@ class HomeScreen extends StatelessWidget {
               children: [
                 _buildAppBarSpacer(),
                 const SalahTimingView(),
+                const SizedBox(height: 0.3),
+                const ToolbarShortcutView(),
                 _buildNotificationPermissionView(),
                 const AddMobBanner(),
                 _buildAzkarView(),
@@ -56,6 +59,19 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  /// Builds the Azkar view based on the next prayer type.
+  Widget _buildAzkarView() {
+    return BlocBuilder<HomeTabBloc, HomeTabState>(
+      buildWhen: (previous, current) =>
+          previous.nextPrayType != current.nextPrayType,
+      builder: (context, state) {
+        return AzkarAfterSalahView(
+            salahType:
+                SalahTimeStateParser.getSalahTimeState(state.nextPrayType));
+      },
+    );
+  }
+
   /// Builds the notification permission view when applicable.
   Widget _buildNotificationPermissionView() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
@@ -66,19 +82,6 @@ class HomeScreen extends StatelessWidget {
         return state.showAllowNotificationView
             ? const NotificationPermissionView()
             : const SizedBox.shrink();
-      },
-    );
-  }
-
-  /// Builds the Azkar view based on the next prayer type.
-  Widget _buildAzkarView() {
-    return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.nextPrayType != current.nextPrayType,
-      builder: (context, state) {
-        return AzkarAfterSalahView(
-            salahType:
-                SalahTimeStateParser.getSalahTimeState(state.nextPrayType));
       },
     );
   }

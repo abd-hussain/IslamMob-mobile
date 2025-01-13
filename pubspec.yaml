@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.0.0+86
+version: 1.0.0+87
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -115,6 +115,7 @@ flutter:
   - assets/images/logoz/
   - assets/images/sorah_type/
   - assets/images/days/
+  - assets/images/toolbar/
   - assets/lottie/
 
 

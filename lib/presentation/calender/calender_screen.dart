@@ -1,10 +1,10 @@
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/calender.dart';
 import 'package:islam_app/presentation/calender/bloc/calender_bloc.dart';
 import 'package:islam_app/presentation/calender/widgets/calender_cell_view.dart';
 import 'package:islam_app/presentation/calender/widgets/calender_header_view.dart';
+import 'package:islam_app/presentation/calender/widgets/month_selection_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -17,11 +17,10 @@ class CalenderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalyticsRepository.logEvent(name: "CalenderScreen");
     return BlocProvider(
       create: (_) => CalenderBloc()
         ..add(const CalenderEvent.prepareSalahTiming())
-        ..add(const CalenderEvent.fillMonthName()),
+        ..add(const CalenderEvent.fillMonthNameFirstTime()),
       child: Scaffold(
         backgroundColor: backgroundColor,
         appBar: CustomAppBar(
@@ -43,32 +42,10 @@ class CalenderScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Stack(
+                      alignment: Alignment.topCenter,
                       children: [
                         Image.asset("assets/images/calender.png"),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.grey[400]!,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: BlocBuilder<CalenderBloc, CalenderState>(
-                                buildWhen: (previous, current) =>
-                                    previous.monthName != current.monthName,
-                                builder: (context, state) {
-                                  return CustomText(
-                                    title: state.monthName,
-                                    fontSize: 14,
-                                    color: const Color(0xff444444),
-                                    fontWeight: FontWeight.bold,
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
+                        const Positioned(top: 8, child: MonthSelectionView()),
                       ],
                     ),
                     const CalenderHeaderView(),

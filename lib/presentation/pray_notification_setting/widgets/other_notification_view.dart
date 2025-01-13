@@ -46,6 +46,7 @@ class OtherNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.sunriseTime,
                     ),
                   );
@@ -56,17 +57,58 @@ class OtherNotificationView extends StatelessWidget {
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
         buildWhen: (previous, current) =>
-            previous.sunrisePray != current.sunrisePray,
+            previous.jom3aAlkahf != current.jom3aAlkahf,
         builder: (context, state) {
           return NotificationRowView(
-            title:
-                AppLocalizations.of(context)!.notificationSettingSunrisePrayer,
-            value: state.sunrisePray,
+            title: AppLocalizations.of(context)!.notificationSettingJomAlkahf,
+            value: state.jom3aAlkahf,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      type: PrayNotificationType.sunrisePray,
+                      context: context,
+                      type: PrayNotificationType.jom3aAlkahf,
+                    ),
+                  );
+            },
+          );
+        },
+      ),
+      const Divider(height: 1, color: Colors.grey),
+      BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
+        buildWhen: (previous, current) =>
+            previous.jom3aDo3aa != current.jom3aDo3aa,
+        builder: (context, state) {
+          return NotificationRowView(
+            title: AppLocalizations.of(context)!.notificationSettingJom3aDoaa,
+            value: state.jom3aDo3aa,
+            onChanged: (value) {
+              context.read<PrayNotificationSettingBloc>().add(
+                    PrayNotificationSettingEvent.changePrayNotificationSettings(
+                      status: value,
+                      context: context,
+                      type: PrayNotificationType.jom3aDo3aa,
+                    ),
+                  );
+            },
+          );
+        },
+      ),
+      const Divider(height: 1, color: Colors.grey),
+      BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
+        buildWhen: (previous, current) =>
+            previous.qeyamAlLayel != current.qeyamAlLayel,
+        builder: (context, state) {
+          return NotificationRowView(
+            title:
+                AppLocalizations.of(context)!.notificationSettingQeyamAlLayel,
+            value: state.qeyamAlLayel,
+            onChanged: (value) {
+              context.read<PrayNotificationSettingBloc>().add(
+                    PrayNotificationSettingEvent.changePrayNotificationSettings(
+                      status: value,
+                      context: context,
+                      type: PrayNotificationType.qeyamAlLayel,
                     ),
                   );
             },
@@ -86,6 +128,7 @@ class OtherNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.before15Min,
                     ),
                   );
@@ -105,6 +148,7 @@ class OtherNotificationView extends StatelessWidget {
               context.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
+                      context: context,
                       type: PrayNotificationType.pushNotification,
                     ),
                   );

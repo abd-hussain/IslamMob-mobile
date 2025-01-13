@@ -10,7 +10,10 @@ class LocalNotificationConstant {
   static const String disableIsha = "disableIsha";
 
   static const String disableSunriseTime = "disableSunriseTime";
-  static const String disableSunrisePray = "disableSunrisePray";
+  static const String disableJom3aAlkahf = "disableJom3aAlkahf";
+  static const String disableJom3aDo3aa = "disableJom3aDo3aa";
+  static const String disableQeyamAlLayel = "disableQeyamAlLayel";
+
   static const String disableNotificationBefore15Min =
       "disableNotificationBefore15Min";
 

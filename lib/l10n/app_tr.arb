@@ -337,7 +337,7 @@
     "notificationSettingAsr" : "İkindi Ezanı Bildirimleri",
     "notificationSettingMagrieb" : "Akşam Ezanı Bildirimleri",
     "notificationSettingIsha" : "Yatsı Ezanı Bildirimleri",
-    "notificationSettingApplication" : "Uygulama Bildirimleri",
+    "notificationSettingApplication" : "Harici uygulama bildirimleri",
     "azkarTitle" : "Namaz Sonrası Zikirler",
     "activateAgain" : "Tekrar Etkinleştir",
     "youfinishazkarTitle" : "Zikirleri Tamamladınız",
@@ -382,9 +382,14 @@
     "nextSalahTimeAsrMessage" : "İkindi namazı vakti",
     "nextSalahTimeDuherMessage" : "Öğle namazı vakti",
     "nextSalahTimeFajirMessage" : "Sabah namazı vakti",
-    "versionDialogUpdateNow": "Update Now",
-    "versionDialogSkipForNow": "Skip For Now",
-    "versionDialogUpdateAvailable" : "Update Available",
-    "versionDialogNewVersion": "New Version",
-    "versionDialogUpdateSecondeSubTitle" : "of Islam Mob is available now"
+    "versionDialogUpdateNow": "Şimdi Güncelle",
+    "versionDialogSkipForNow": "Şimdilik Atla",
+    "versionDialogUpdateAvailable": "Güncelleme Mevcut",
+    "versionDialogNewVersion": "Yeni Sürüm",
+    "versionDialogUpdateSecondeSubTitle": "Islam Mob'un yeni sürümü şimdi mevcut",
+    "sharepopupmessage" : "Uygulamayı şimdi arkadaşlarınız ve akrabalarınızla paylaşın, inşallah sevap kazanırsınız",
+    "sharepopuptitle" : "Allah’ın Elçisi (ﷺ) buyurdu: Kim bir hayra vesile olursa, onu yapanın sevabı kadar sevap alır",
+    "notificationSettingJomAlkahf" : "Friday reminder notifications for Surah Al-Kahf",
+    "notificationSettingJom3aDoaa" : "Friday reminder notifications for du’aa (supplication)",
+    "notificationSettingQeyamAlLayel" : "Night prayer reminder notifications (Qiyam al-Layl)"
 }

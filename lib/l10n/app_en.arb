@@ -337,7 +337,7 @@
     "notificationSettingAsr" : "Asr Adhan Notifications",
     "notificationSettingMagrieb" : "Magrieb Adhan Notifications",
     "notificationSettingIsha" : "Isha Adhan Notifications",
-    "notificationSettingApplication" : "Application Notifications",
+    "notificationSettingApplication" : "External Application Notifications",
     "azkarTitle" : "Azkar After Salah",
     "activateAgain" : "Activate Again",
     "youfinishazkarTitle" : "You Finish Azkar",
@@ -386,7 +386,13 @@
     "versionDialogSkipForNow": "Skip For Now",
     "versionDialogUpdateAvailable" : "Update Available",
     "versionDialogNewVersion": "New Version",
-    "versionDialogUpdateSecondeSubTitle" : "of Islam Mob is available now"
+    "versionDialogUpdateSecondeSubTitle" : "of Islam Mob is available now",
+    "sharepopupmessage" : "Share the app now with your friends and family, and you will be rewarded, God willing",
+    "sharepopuptitle" : "The Messenger of Allah (ﷺ) said: Whoever guides someone to goodness will have a reward like the one who does it",
+    "notificationSettingJomAlkahf" : "Friday reminder notifications for Surah Al-Kahf",
+    "notificationSettingJom3aDoaa" : "Friday reminder notifications for du’aa (supplication)",
+    "notificationSettingQeyamAlLayel" : "Night prayer reminder notifications (Qiyam al-Layl)"
+
 
 
 

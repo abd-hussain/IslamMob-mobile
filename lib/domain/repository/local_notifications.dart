@@ -96,7 +96,7 @@ class LocalNotificationRepository {
     );
   }
 
-  static Future<void> countdownNotificationForAndroid({
+  Future<void> countdownNotificationForAndroid({
     required BuildContext context,
     required int minites,
     required String nextSalahTime,
@@ -108,15 +108,19 @@ class LocalNotificationRepository {
     if (details.isItForCountdown == false) {
       return;
     }
+    String? androidSoundFileName;
+    // Reference without the file extension
+    if (details.soundFileName != null) {
+      androidSoundFileName = details.soundFileName; // For Android
+    }
 
     final notificationDetails = NotificationDetails(
       android: AndroidNotificationDetails(
-        'salah_channel_id', // channel id
-        'Salah Notifications', // channel name
+        '$androidSoundFileName _channel_countdown',
+        'Adhan Countdown Notifications',
         channelDescription: 'Shows upcoming salah times',
         importance: Importance.max,
         priority: Priority.high,
-        // If you want ongoing (non-dismissable) notifications:
         ongoing: true,
         autoCancel: false,
         styleInformation: BigTextStyleInformation(

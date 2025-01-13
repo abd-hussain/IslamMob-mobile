@@ -8,7 +8,9 @@ enum PrayNotificationType {
   magrieb,
   isha,
   sunriseTime,
-  sunrisePray,
+  jom3aAlkahf,
+  jom3aDo3aa,
+  qeyamAlLayel,
   before15Min,
   pushNotification,
 }
