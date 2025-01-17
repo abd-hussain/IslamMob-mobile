@@ -3,7 +3,7 @@
 # Run `pod lib lint flutter_qiblah.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'qibla_finder'
+  s.name             = 'flutter_qiblah'
   s.version          = '0.0.1'
   s.summary          = 'Flutter Qiblah is a package that allows you to display Qiblah direction in you app with support for both Android and iOS'
   s.description      = <<-DESC

@@ -15,8 +15,8 @@ dependencies:
   vector_math: ^2.1.4
   geolocator: ^13.0.1
 
-  location_manager:
-    path: ../../utilities/location_manager
+  # location_manager:
+  #   path: ../../utilities/location_manager
 
 dev_dependencies:
   lints: ^4.0.0
@@ -30,5 +30,5 @@ flutter:
       android:
         package: ml.medyas.flutter_qiblah
         pluginClass: FlutterQiblahPlugin
-      ios:
-        pluginClass: FlutterQiblahPlugin
+      # ios:
+      #   pluginClass: FlutterQiblahPlugin
