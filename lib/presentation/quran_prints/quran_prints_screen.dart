@@ -1,8 +1,9 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 import 'package:islam_app/presentation/quran_prints/bloc/quran_prints_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
@@ -140,14 +141,13 @@ class QuranPrintsScreen extends StatelessWidget {
       BuildContext context, QuranPrints printItem) async {
     final String fileName = printItem.fieldName!;
 
-    await DataBaseManagerBase.saveMultipleInDatabase(data: {
-      DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse: fileName,
-      DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber: 1,
-      DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers:
-          printItem.juz2ToPageNumbers,
-      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers:
-          printItem.sorahToPageNumbers,
-    });
+    await SetupUserSettingUseCase().setQuranCopyInDB(
+      QuranCopy(
+          fileName: fileName,
+          lastPageNumber: "1",
+          juz2ToPageNumbers: printItem.juz2ToPageNumbers,
+          sorahToPageNumbers: printItem.sorahToPageNumbers),
+    );
 
     FirebaseAnalyticsRepository.logEvent(
       name: "use_file",

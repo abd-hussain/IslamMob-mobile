@@ -48,9 +48,6 @@ class PrayNotificationSettingBloc
     final disableNotificationBefore15Min = DataBaseManagerBase.getFromDatabase(
         key: LocalNotificationConstant.disableNotificationBefore15Min,
         defaultValue: true);
-    final disablePushNotifications = DataBaseManagerBase.getFromDatabase(
-        key: LocalNotificationConstant.disablePushNotifications,
-        defaultValue: true);
     final disableQeyamAlLayel = DataBaseManagerBase.getFromDatabase(
         key: LocalNotificationConstant.disableQeyamAlLayel, defaultValue: true);
 
@@ -69,7 +66,6 @@ class PrayNotificationSettingBloc
         jom3aDo3aa: disableJom3aDo3aa,
         qeyamAlLayel: disableQeyamAlLayel,
         before15Min: disableNotificationBefore15Min,
-        applicationNotification: disablePushNotifications,
       ),
     );
   }
@@ -146,11 +142,6 @@ class PrayNotificationSettingBloc
             key: LocalNotificationConstant.disableQeyamAlLayel,
             value: event.status);
         emit(state.copyWith(qeyamAlLayel: event.status));
-      case PrayNotificationType.pushNotification:
-        await DataBaseManagerBase.saveInDatabase(
-            key: LocalNotificationConstant.disablePushNotifications,
-            value: event.status);
-        emit(state.copyWith(applicationNotification: event.status));
     }
 
     await SetupLocalNotificationWhenAppOpenUseCase()

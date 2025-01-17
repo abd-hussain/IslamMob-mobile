@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/sealed/local_notification.dart';
@@ -35,6 +36,8 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   /// We'll store the maximum time we schedule a prayer notification,
   /// so the final 2 reminders can come *after* that.
   DateTime? _lastScheduledTime;
+
+  bool nextCounttdownNotificationScheduled = false;
 
   /// Entry method: cancels existing notifications, then schedules new ones.
   Future<void> call({required BuildContext context}) async {
@@ -296,18 +299,26 @@ class SetupLocalNotificationWhenAppOpenUseCase {
       }
 
       // Optionally handle countdown on Android
-      //TODO: handle countdown notification for android
-
-      if (Platform.isAndroid) {
-        // final diff = time.difference(DateTime.now());
-        // final minutes = diff.inMinutes;
-        // await _localNotificationRepository.countdownNotificationForAndroid(
-        //   id: _notificationCount++,
-        //   context: context,
-        //   minites: minutes,
-        //   nextSalahTime: DateFormat('hh:mm a').format(time),
-        //   type: type,
-        // );
+      if (Platform.isAndroid && !nextCounttdownNotificationScheduled) {
+        if (Platform.isAndroid && !nextCounttdownNotificationScheduled) {
+          if (type == const NotificationTypeStateFajir() ||
+              type == const NotificationTypeStateZuhr() ||
+              type == const NotificationTypeStateAsr() ||
+              type == const NotificationTypeStateMaghrib() ||
+              type == const NotificationTypeStateIsha()) {
+            final diff = time.difference(DateTime.now());
+            final minutes = diff.inMinutes;
+            await _localNotificationRepository.countdownNotificationForAndroid(
+              id: _notificationCount++,
+              // ignore: use_build_context_synchronously
+              context: context,
+              minites: minutes,
+              nextSalahTime: DateFormat('hh:mm a').format(time),
+              type: type,
+            );
+            nextCounttdownNotificationScheduled = true;
+          }
+        }
       }
       return 1;
     }

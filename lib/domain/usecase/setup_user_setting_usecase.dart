@@ -86,18 +86,18 @@ class SetupUserSettingUseCase {
   }
 
   /// Updates location details in storage
-  Future<void> setQuranCopy(QuranCopy copyName) async {
+  Future<void> setQuranCopyInDB(QuranCopy copyName) async {
     final copyData = {
       DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse:
           copyName.fileName,
       DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber:
-          copyName.lastPageNumber.toString(),
+          copyName.lastPageNumber,
       DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers:
           copyName.juz2ToPageNumbers,
       DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers:
           copyName.sorahToPageNumbers,
     };
-    await DataBaseManagerBase.saveMultipleInDatabase(data: copyData);
+    return await DataBaseManagerBase.saveMultipleInDatabase(data: copyData);
   }
 
   /// Updates location details in storage

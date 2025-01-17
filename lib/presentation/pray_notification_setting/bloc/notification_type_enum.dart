@@ -12,5 +12,4 @@ enum PrayNotificationType {
   jom3aDo3aa,
   qeyamAlLayel,
   before15Min,
-  pushNotification,
 }

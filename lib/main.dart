@@ -4,7 +4,6 @@ import 'package:logger_manager/logger_manager.dart';
 
 //TODO: make the download faster zip is not a soluation
 //TODO: theres a defrent in magreeb, zhur, sunrise time always
-//TODO: handle push notification , test and allow user to disable it
 
 void main() {
   LoggerManagerBase.logDebugMessage(message: 'Application Started ...');

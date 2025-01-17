@@ -13,7 +13,6 @@ import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 import 'package:logger_manager/logger_manager.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 part 'quran_copy_event.dart';
@@ -98,18 +97,14 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
       _SetupCopy event, Emitter<QuranCopyState> emit) async {
     final String fileName = event.printItem.fieldName!;
 
-    final Directory dir = await getApplicationDocumentsDirectory();
-    final filePath = Directory('${dir.path}/$fileName');
-
     FirebaseAnalyticsRepository.logEvent(
       name: "use_file",
       parameters: {"file": event.printItem.fieldName!},
     );
 
-    await setupUserSettingUseCase.setQuranCopy(QuranCopy(
+    await setupUserSettingUseCase.setQuranCopyInDB(QuranCopy(
       fileName: fileName,
-      filePath: filePath.path,
-      lastPageNumber: 1,
+      lastPageNumber: "1",
       juz2ToPageNumbers: event.printItem.juz2ToPageNumbers,
       sorahToPageNumbers: event.printItem.sorahToPageNumbers,
     ));

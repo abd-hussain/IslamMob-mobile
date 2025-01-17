@@ -105,22 +105,22 @@ class LocalNotificationRepository {
   }) async {
     final details = _notificationDetails(context, type);
 
+    // If it's not meant to be a countdown, bail out
     if (details.isItForCountdown == false) {
       return;
-    }
-    String? androidSoundFileName;
-    // Reference without the file extension
-    if (details.soundFileName != null) {
-      androidSoundFileName = details.soundFileName; // For Android
     }
 
     final notificationDetails = NotificationDetails(
       android: AndroidNotificationDetails(
-        '$androidSoundFileName _channel_countdown',
+        '${details.soundFileName} _channel_countdown',
         'Adhan Countdown Notifications',
         channelDescription: 'Shows upcoming salah times',
-        importance: Importance.max,
-        priority: Priority.high,
+        importance: Importance.low,
+        priority: Priority.low,
+        // Turn off sound and vibration
+        playSound: false,
+        sound: null,
+        enableVibration: false,
         ongoing: true,
         autoCancel: false,
         styleInformation: BigTextStyleInformation(
@@ -140,8 +140,12 @@ class LocalNotificationRepository {
         chronometerCountDown: true,
         colorized: true,
         actions: [
-          AndroidNotificationAction("1", AppLocalizations.of(context)!.close,
-              cancelNotification: true, titleColor: Colors.red),
+          AndroidNotificationAction(
+            "1",
+            AppLocalizations.of(context)!.close,
+            cancelNotification: true,
+            titleColor: Colors.red,
+          ),
         ],
       ),
     );

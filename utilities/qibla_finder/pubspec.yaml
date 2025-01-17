@@ -1,0 +1,34 @@
+name: qibla_finder
+description: Qiblah Finder is a package that allows you to display Qiblah direction in you app with support for both Android and iOS
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_compass_v2: ^1.0.3
+  stream_transform: ^2.1.1
+  vector_math: ^2.1.4
+  geolocator: ^13.0.1
+
+  location_manager:
+    path: ../../utilities/location_manager
+
+dev_dependencies:
+  lints: ^4.0.0
+  json_serializable: 6.8.0
+  dependency_validator: 4.1.0
+
+flutter:
+  uses-material-design: true
+  plugin:
+    platforms:
+      android:
+        package: ml.medyas.flutter_qiblah
+        pluginClass: FlutterQiblahPlugin
+      ios:
+        pluginClass: FlutterQiblahPlugin

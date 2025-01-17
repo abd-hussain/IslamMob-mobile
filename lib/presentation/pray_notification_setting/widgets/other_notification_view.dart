@@ -137,26 +137,6 @@ class OtherNotificationView extends StatelessWidget {
         },
       ),
       const Divider(height: 1, color: Colors.grey),
-      BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.applicationNotification != current.applicationNotification,
-        builder: (context, state) {
-          return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingApplication,
-            value: state.applicationNotification,
-            onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      context: context,
-                      type: PrayNotificationType.pushNotification,
-                    ),
-                  );
-            },
-          );
-        },
-      ),
-      const Divider(height: 1, color: Colors.grey),
     ];
   }
 }

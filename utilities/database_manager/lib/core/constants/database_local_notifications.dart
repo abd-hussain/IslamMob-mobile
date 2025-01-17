@@ -16,6 +16,4 @@ class LocalNotificationConstant {
 
   static const String disableNotificationBefore15Min =
       "disableNotificationBefore15Min";
-
-  static const String disablePushNotifications = "disablePushNotifications";
 }
