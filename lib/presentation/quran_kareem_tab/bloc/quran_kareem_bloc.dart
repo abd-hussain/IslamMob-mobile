@@ -46,7 +46,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   Future<void> _setupFirstInitialPDF() async {
     final pageNumber = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
-        defaultValue: 1);
+        defaultValue: "1");
 
     final filePath = await LoadFileFromDocumentUseCase().call();
 
@@ -58,14 +58,15 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
     if (file.existsSync()) {
       debugPrint("file exists at: ${file.path}");
+      final int intPageNumber = int.parse(pageNumber);
 
       pdfController = PdfController(
         viewportFraction: 1.1,
         document: PdfDocument.openFile(file.path),
-      )..initialPage = pageNumber;
+      )..initialPage = intPageNumber;
 
       add(QuranKareemEvent.updateReadPDFFile(file.path));
-      add(QuranKareemEvent.updatePageCount(pageNumber));
+      add(QuranKareemEvent.updatePageCount(intPageNumber));
     } else {
       debugPrint("file does NOT exist at: ${file.path}");
     }
@@ -113,7 +114,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
     await DataBaseManagerBase.saveInDatabase(
         key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
-        value: event.pageCount);
+        value: event.pageCount.toString());
   }
 
   // Get the page side (left or right)

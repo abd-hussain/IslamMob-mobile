@@ -17,8 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$QuranCopy {
   String get fileName => throw _privateConstructorUsedError;
-  String get filePath => throw _privateConstructorUsedError;
-  int get lastPageNumber => throw _privateConstructorUsedError;
+  String get lastPageNumber => throw _privateConstructorUsedError;
   Map<String, dynamic>? get juz2ToPageNumbers =>
       throw _privateConstructorUsedError;
   Map<String, dynamic>? get sorahToPageNumbers =>
@@ -38,8 +37,7 @@ abstract class $QuranCopyCopyWith<$Res> {
   @useResult
   $Res call(
       {String fileName,
-      String filePath,
-      int lastPageNumber,
+      String lastPageNumber,
       Map<String, dynamic>? juz2ToPageNumbers,
       Map<String, dynamic>? sorahToPageNumbers});
 }
@@ -60,7 +58,6 @@ class _$QuranCopyCopyWithImpl<$Res, $Val extends QuranCopy>
   @override
   $Res call({
     Object? fileName = null,
-    Object? filePath = null,
     Object? lastPageNumber = null,
     Object? juz2ToPageNumbers = freezed,
     Object? sorahToPageNumbers = freezed,
@@ -70,14 +67,10 @@ class _$QuranCopyCopyWithImpl<$Res, $Val extends QuranCopy>
           ? _value.fileName
           : fileName // ignore: cast_nullable_to_non_nullable
               as String,
-      filePath: null == filePath
-          ? _value.filePath
-          : filePath // ignore: cast_nullable_to_non_nullable
-              as String,
       lastPageNumber: null == lastPageNumber
           ? _value.lastPageNumber
           : lastPageNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       juz2ToPageNumbers: freezed == juz2ToPageNumbers
           ? _value.juz2ToPageNumbers
           : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
@@ -100,8 +93,7 @@ abstract class _$$QuranCopyImplCopyWith<$Res>
   @useResult
   $Res call(
       {String fileName,
-      String filePath,
-      int lastPageNumber,
+      String lastPageNumber,
       Map<String, dynamic>? juz2ToPageNumbers,
       Map<String, dynamic>? sorahToPageNumbers});
 }
@@ -120,7 +112,6 @@ class __$$QuranCopyImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? fileName = null,
-    Object? filePath = null,
     Object? lastPageNumber = null,
     Object? juz2ToPageNumbers = freezed,
     Object? sorahToPageNumbers = freezed,
@@ -130,14 +121,10 @@ class __$$QuranCopyImplCopyWithImpl<$Res>
           ? _value.fileName
           : fileName // ignore: cast_nullable_to_non_nullable
               as String,
-      filePath: null == filePath
-          ? _value.filePath
-          : filePath // ignore: cast_nullable_to_non_nullable
-              as String,
       lastPageNumber: null == lastPageNumber
           ? _value.lastPageNumber
           : lastPageNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       juz2ToPageNumbers: freezed == juz2ToPageNumbers
           ? _value._juz2ToPageNumbers
           : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
@@ -155,7 +142,6 @@ class __$$QuranCopyImplCopyWithImpl<$Res>
 class _$QuranCopyImpl implements _QuranCopy {
   _$QuranCopyImpl(
       {required this.fileName,
-      required this.filePath,
       required this.lastPageNumber,
       required final Map<String, dynamic>? juz2ToPageNumbers,
       required final Map<String, dynamic>? sorahToPageNumbers})
@@ -165,9 +151,7 @@ class _$QuranCopyImpl implements _QuranCopy {
   @override
   final String fileName;
   @override
-  final String filePath;
-  @override
-  final int lastPageNumber;
+  final String lastPageNumber;
   final Map<String, dynamic>? _juz2ToPageNumbers;
   @override
   Map<String, dynamic>? get juz2ToPageNumbers {
@@ -192,7 +176,7 @@ class _$QuranCopyImpl implements _QuranCopy {
 
   @override
   String toString() {
-    return 'QuranCopy(fileName: $fileName, filePath: $filePath, lastPageNumber: $lastPageNumber, juz2ToPageNumbers: $juz2ToPageNumbers, sorahToPageNumbers: $sorahToPageNumbers)';
+    return 'QuranCopy(fileName: $fileName, lastPageNumber: $lastPageNumber, juz2ToPageNumbers: $juz2ToPageNumbers, sorahToPageNumbers: $sorahToPageNumbers)';
   }
 
   @override
@@ -202,8 +186,6 @@ class _$QuranCopyImpl implements _QuranCopy {
             other is _$QuranCopyImpl &&
             (identical(other.fileName, fileName) ||
                 other.fileName == fileName) &&
-            (identical(other.filePath, filePath) ||
-                other.filePath == filePath) &&
             (identical(other.lastPageNumber, lastPageNumber) ||
                 other.lastPageNumber == lastPageNumber) &&
             const DeepCollectionEquality()
@@ -216,7 +198,6 @@ class _$QuranCopyImpl implements _QuranCopy {
   int get hashCode => Object.hash(
       runtimeType,
       fileName,
-      filePath,
       lastPageNumber,
       const DeepCollectionEquality().hash(_juz2ToPageNumbers),
       const DeepCollectionEquality().hash(_sorahToPageNumbers));
@@ -233,8 +214,7 @@ class _$QuranCopyImpl implements _QuranCopy {
 abstract class _QuranCopy implements QuranCopy {
   factory _QuranCopy(
           {required final String fileName,
-          required final String filePath,
-          required final int lastPageNumber,
+          required final String lastPageNumber,
           required final Map<String, dynamic>? juz2ToPageNumbers,
           required final Map<String, dynamic>? sorahToPageNumbers}) =
       _$QuranCopyImpl;
@@ -242,9 +222,7 @@ abstract class _QuranCopy implements QuranCopy {
   @override
   String get fileName;
   @override
-  String get filePath;
-  @override
-  int get lastPageNumber;
+  String get lastPageNumber;
   @override
   Map<String, dynamic>? get juz2ToPageNumbers;
   @override

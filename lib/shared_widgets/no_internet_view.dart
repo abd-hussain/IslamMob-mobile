@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -14,12 +15,19 @@ class NoInternetView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SvgPicture.asset(
+              'assets/images/internet.svg',
+              height: 100,
+              width: 100,
+            ),
+            const SizedBox(height: 8),
             CustomText(
               title: AppLocalizations.of(context)!.internetconnection,
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: const Color(0xff444444),
             ),
+            const SizedBox(height: 8),
             CustomText(
               title: AppLocalizations.of(context)!
                   .intenetshouldbeenableforthispage,

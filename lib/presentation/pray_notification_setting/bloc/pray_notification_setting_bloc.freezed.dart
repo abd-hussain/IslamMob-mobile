@@ -414,7 +414,6 @@ mixin _$PrayNotificationSettingState {
   bool get jom3aDo3aa => throw _privateConstructorUsedError;
   bool get qeyamAlLayel => throw _privateConstructorUsedError;
   bool get before15Min => throw _privateConstructorUsedError;
-  bool get applicationNotification => throw _privateConstructorUsedError;
   dynamic get loadingStatus => throw _privateConstructorUsedError;
 
   /// Create a copy of PrayNotificationSettingState
@@ -446,7 +445,6 @@ abstract class $PrayNotificationSettingStateCopyWith<$Res> {
       bool jom3aDo3aa,
       bool qeyamAlLayel,
       bool before15Min,
-      bool applicationNotification,
       dynamic loadingStatus});
 }
 
@@ -479,7 +477,6 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
     Object? jom3aDo3aa = null,
     Object? qeyamAlLayel = null,
     Object? before15Min = null,
-    Object? applicationNotification = null,
     Object? loadingStatus = freezed,
   }) {
     return _then(_value.copyWith(
@@ -535,10 +532,6 @@ class _$PrayNotificationSettingStateCopyWithImpl<$Res,
           ? _value.before15Min
           : before15Min // ignore: cast_nullable_to_non_nullable
               as bool,
-      applicationNotification: null == applicationNotification
-          ? _value.applicationNotification
-          : applicationNotification // ignore: cast_nullable_to_non_nullable
-              as bool,
       loadingStatus: freezed == loadingStatus
           ? _value.loadingStatus
           : loadingStatus // ignore: cast_nullable_to_non_nullable
@@ -570,7 +563,6 @@ abstract class _$$PrayNotificationSettingStateImplCopyWith<$Res>
       bool jom3aDo3aa,
       bool qeyamAlLayel,
       bool before15Min,
-      bool applicationNotification,
       dynamic loadingStatus});
 }
 
@@ -602,7 +594,6 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
     Object? jom3aDo3aa = null,
     Object? qeyamAlLayel = null,
     Object? before15Min = null,
-    Object? applicationNotification = null,
     Object? loadingStatus = freezed,
   }) {
     return _then(_$PrayNotificationSettingStateImpl(
@@ -658,10 +649,6 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
           ? _value.before15Min
           : before15Min // ignore: cast_nullable_to_non_nullable
               as bool,
-      applicationNotification: null == applicationNotification
-          ? _value.applicationNotification
-          : applicationNotification // ignore: cast_nullable_to_non_nullable
-              as bool,
       loadingStatus:
           freezed == loadingStatus ? _value.loadingStatus! : loadingStatus,
     ));
@@ -686,7 +673,6 @@ class _$PrayNotificationSettingStateImpl
       this.jom3aDo3aa = true,
       this.qeyamAlLayel = true,
       this.before15Min = true,
-      this.applicationNotification = false,
       this.loadingStatus = const PrayNotificationSettingProcessState.idl()});
 
   @override
@@ -730,14 +716,11 @@ class _$PrayNotificationSettingStateImpl
   final bool before15Min;
   @override
   @JsonKey()
-  final bool applicationNotification;
-  @override
-  @JsonKey()
   final dynamic loadingStatus;
 
   @override
   String toString() {
-    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunriseTime: $sunriseTime, jom3aAlkahf: $jom3aAlkahf, jom3aDo3aa: $jom3aDo3aa, qeyamAlLayel: $qeyamAlLayel, before15Min: $before15Min, applicationNotification: $applicationNotification, loadingStatus: $loadingStatus)';
+    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunriseTime: $sunriseTime, jom3aAlkahf: $jom3aAlkahf, jom3aDo3aa: $jom3aDo3aa, qeyamAlLayel: $qeyamAlLayel, before15Min: $before15Min, loadingStatus: $loadingStatus)';
   }
 
   @override
@@ -770,9 +753,6 @@ class _$PrayNotificationSettingStateImpl
                 other.qeyamAlLayel == qeyamAlLayel) &&
             (identical(other.before15Min, before15Min) ||
                 other.before15Min == before15Min) &&
-            (identical(
-                    other.applicationNotification, applicationNotification) ||
-                other.applicationNotification == applicationNotification) &&
             const DeepCollectionEquality()
                 .equals(other.loadingStatus, loadingStatus));
   }
@@ -793,7 +773,6 @@ class _$PrayNotificationSettingStateImpl
       jom3aDo3aa,
       qeyamAlLayel,
       before15Min,
-      applicationNotification,
       const DeepCollectionEquality().hash(loadingStatus));
 
   /// Create a copy of PrayNotificationSettingState
@@ -823,7 +802,6 @@ abstract class _PrayNotificationSettingState
       final bool jom3aDo3aa,
       final bool qeyamAlLayel,
       final bool before15Min,
-      final bool applicationNotification,
       final dynamic loadingStatus}) = _$PrayNotificationSettingStateImpl;
 
   @override
@@ -852,8 +830,6 @@ abstract class _PrayNotificationSettingState
   bool get qeyamAlLayel;
   @override
   bool get before15Min;
-  @override
-  bool get applicationNotification;
   @override
   dynamic get loadingStatus;
 

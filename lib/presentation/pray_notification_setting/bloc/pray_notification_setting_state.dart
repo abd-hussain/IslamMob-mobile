@@ -16,7 +16,6 @@ class PrayNotificationSettingState with _$PrayNotificationSettingState {
     @Default(true) bool jom3aDo3aa,
     @Default(true) bool qeyamAlLayel,
     @Default(true) bool before15Min,
-    @Default(false) bool applicationNotification,
     @Default(PrayNotificationSettingProcessState.idl()) loadingStatus,
   }) = _PrayNotificationSettingState;
 }

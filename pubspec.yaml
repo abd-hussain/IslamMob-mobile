@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.0.0+89
+version: 1.0.0+90
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -46,6 +46,9 @@ dependencies:
   bdd_steps:
     path: utilities/bdd_steps
 
+  qibla_finder:
+    path: utilities/qibla_finder
+
   http: ^1.2.2
   dio: 5.7.0
   async: ^2.11.0
@@ -83,7 +86,8 @@ dependencies:
   flutter_svg: ^2.0.16
   open_store: ^0.5.0
   google_fonts: ^6.2.1
-  
+  # google_maps_flutter: ^2.5.3
+  geolocator: ^13.0.1
 
   # flutter_animate: ^4.5.0 #TODO
   # infinite_scroll_pagination: ^4.1.0 #TODO
@@ -116,6 +120,7 @@ flutter:
   - assets/images/sorah_type/
   - assets/images/days/
   - assets/images/toolbar/
+  - assets/images/qibla/
   - assets/lottie/
 
 
