@@ -350,7 +350,6 @@
     "quicksettings" : "اعدادات سريعه",
     "qurancopytitle" : "من هذه الشاشة يمكنك تحميل نسخة أو أكثر من القرآن الكريم لاستخدامها بدون اتصال بالإنترنت داخل التطبيق",
     "skip" : "تخطي",
-    "setupAccount" : "إنشاء الحساب",
     "openApp" : "افتح التطبيق",
     "jom3AlkahfReminderTitle" : "فضل قراءة سورة الكهف يوم الجمعة",
     "jom3AlkahfReminderMessage" : "«من قرأ سورة الكهف يوم الجمعة أضاء له من النور فيما بينه وبين البيت العتيق.» اغتنم هذا الوقت المبارك بالإكثار من التلاوة والدعاء",
@@ -399,6 +398,9 @@
     "qiblaFinder" : "موقع القبلة",
     "allowLocations" : "السماح بالحصول على الموقع",
     "allowLocationDetails" : "إن تفعيل الموقع يسمح لنا بحساب اوقات الصلاة بالشكل الصحيح وذلك مهم جدا للتطبيق",
-    "changeLocationSettings" : "تغيير الموقع"
+    "changeLocationSettings" : "تغيير الموقع",
+    "onboardingSetupAccountMessage1" : "الحمد لله، أنت جاهز للبدء!",
+    "onboardingSetupAccountMessage2" : "نسأل الله أن يتقبل جهودك وييسر لك هذه الرحلة",
+    "onboardingSetupAccountMessage3" : "نرجو ألا تنسانا في دعائك. نعدك بالاستمرار في التحسين وخدمتك بشكل أفضل"
 
 }

@@ -7,54 +7,76 @@ import 'package:geolocator/geolocator.dart';
 import 'package:qibla_finder/src/utils.dart';
 import 'package:stream_transform/stream_transform.dart' show CombineLatest;
 
-/// [FlutterQiblah] is a singleton class that provides assess to compass events,
-/// check for sensor support in Android
-/// Get current  location
-/// Get Qiblah direction
+/// A singleton that manages Qiblah direction calculations.
+///
+/// Exposes:
+///  - A method to check device sensor support on Android.
+///  - A method to request location permissions.
+///  - A method to check if location services are enabled & permission status.
+///  - A stream that merges compass data with location data, providing
+///    real-time Qiblah direction.
 class QiblahFinder {
   static const MethodChannel _channel =
       MethodChannel('ml.medyas.flutter_qiblah');
 
-  static final QiblahFinder _instance = QiblahFinder._();
+  // Singleton instance
+  static final QiblahFinder _instance = QiblahFinder._internal();
 
-  Stream<QiblahDirection>? _qiblahStream;
+  // Private constructor
+  QiblahFinder._internal();
 
-  QiblahFinder._();
-
+  // Factory constructor returning the same instance
   factory QiblahFinder() => _instance;
 
-  /// Check Android device sensor support
+  // Internal reference to QiblahDirection stream
+  Stream<QiblahDirection>? _qiblahStream;
+
+  /// Check whether the current Android device supports the required sensors.
+  ///
+  /// On Android, calls a native method. On other platforms, returns [true].
   static Future<bool?> androidDeviceSensorSupport() async {
     if (Platform.isAndroid) {
-      return await _channel.invokeMethod("androidSupportSensor");
+      return await _channel.invokeMethod<bool>('androidSupportSensor');
     } else {
       return true;
     }
   }
 
-  /// Request Location permission, return GeolocationStatus object
-  static Future<LocationPermission> requestPermissions() =>
-      Geolocator.requestPermission();
+  /// Request location permission from the user.
+  ///
+  /// Returns [LocationPermission], which indicates if permission was granted.
+  static Future<LocationPermission> requestPermissions() {
+    return Geolocator.requestPermission();
+  }
 
-  /// get location status: GPS enabled and the permission status with GeolocationStatus
+  /// Checks if location services are enabled and retrieves the current
+  /// [LocationPermission] status.
   static Future<LocationStatus> checkLocationStatus() async {
     final status = await Geolocator.checkPermission();
     final enabled = await Geolocator.isLocationServiceEnabled();
     return LocationStatus(enabled, status);
   }
 
-  /// Provides a stream of Map with current compass and Qiblah direction
-  /// {"qiblah": QIBLAH, "direction": DIRECTION}
-  /// Direction varies from 0-360, 0 being north.
-  /// Qiblah varies from 0-360, offset from direction(North)
+  /// Provides a stream of [QiblahDirection].
+  ///
+  /// This stream merges:
+  ///  - The compass heading (0-360, where 0 = north),
+  ///  - The device’s current [Position].
+  ///
+  /// It computes:
+  ///  - The offset from north to the Kaaba,
+  ///  - The Qiblah direction combining heading + offset.
   static Stream<QiblahDirection> get qiblahStream {
-    _instance._qiblahStream ??= _merge<CompassEvent, Position>(
+    // If stream is not already created, create it
+    _instance._qiblahStream ??= _combineCompassAndLocation(
       FlutterCompass.events!,
+      // If you only need one location fix, you can keep the sink.close().
+      // Otherwise, remove sink.close() to continue receiving location changes.
       Geolocator.getPositionStream().transform(
         StreamTransformer<Position, Position>.fromHandlers(
-          handleData: (Position position, EventSink<Position> sink) {
+          handleData: (position, sink) {
             sink.add(position);
-            sink.close();
+            // sink.close(); // Comment out to allow continuous location updates
           },
         ),
       ),
@@ -63,59 +85,66 @@ class QiblahFinder {
     return _instance._qiblahStream!;
   }
 
-  /// Merge the compass stream with location updates, and calculate the Qiblah direction
-  /// return a Stream<Map<String, dynamic>> containing compass and Qiblah direction
-  /// Direction varies from 0-360, 0 being north.
-  /// Qiblah varies from 0-360, offset from direction(North)
-  static Stream<QiblahDirection> _merge<A, B>(
-    Stream<A> streamA,
-    Stream<B> streamB,
-  ) =>
-      streamA.combineLatest<B, QiblahDirection>(
-        streamB,
-        (dir, pos) {
-          final position = pos as Position;
-          final event = dir as CompassEvent;
+  /// Merges the [CompassEvent] stream with the [Position] stream
+  /// and calculates Qiblah direction on each update.
+  static Stream<QiblahDirection> _combineCompassAndLocation(
+    Stream<CompassEvent> compassStream,
+    Stream<Position> positionStream,
+  ) {
+    return compassStream.combineLatest<Position, QiblahDirection>(
+      positionStream,
+      (compassEvent, position) {
+        final int heading = (compassEvent.heading ?? 0.0).toInt();
 
-          // Calculate the Qiblah offset to North
-          final offSet = Utils.getOffsetFromNorth(
-            position.latitude,
-            position.longitude,
-          );
+        // Calculate the offset from North to Kaaba (0-360)
+        final offset = Utils.getOffsetFromNorth(
+          position.latitude,
+          position.longitude,
+        ).toInt();
 
-          // Adjust Qiblah direction based on North direction
-          final qiblah = (event.heading ?? 0.0) + (360 - offSet);
+        // The final Qiblah direction from the device heading.
+        // Example usage: rotate your widget by -(qiblahDirection.qiblah) in radians
+        final qiblah = (heading + (360 - offset)).toInt();
 
-          return QiblahDirection(qiblah, event.heading ?? 0.0, offSet);
-        },
-      );
+        return QiblahDirection(
+          qiblah: qiblah,
+          direction: heading,
+          offset: offset,
+        );
+      },
+    );
+  }
 
-  /// Close compass stream, and set Qiblah stream to null
+  /// Call this to dispose the internal Qiblah stream reference.
+  ///
+  /// The next call to [qiblahStream] re-creates the stream from scratch.
   void dispose() {
     _qiblahStream = null;
   }
 }
 
-/// Location Status class, contains the GPS status(Enabled or not) and GeolocationStatus
+/// Represents whether location services are enabled and the current
+/// [LocationPermission] status.
 class LocationStatus {
   final bool enabled;
   final LocationPermission status;
 
-  const LocationStatus(
-    this.enabled,
-    this.status,
-  );
+  const LocationStatus(this.enabled, this.status);
 }
 
-/// Containing Qiblah, Direction and offset
+/// Holds the Qiblah direction and related angles.
+///
+/// [qiblah]    - The Qiblah angle from north in degrees
+/// [direction] - The device’s heading in degrees (0 = north)
+/// [offset]    - The offset from the user’s location to Kaaba in degrees (0-360)
 class QiblahDirection {
-  final double qiblah;
-  final double direction;
-  final double offset;
+  final int qiblah;
+  final int direction;
+  final int offset;
 
-  const QiblahDirection(
-    this.qiblah,
-    this.direction,
-    this.offset,
-  );
+  const QiblahDirection({
+    required this.qiblah,
+    required this.direction,
+    required this.offset,
+  });
 }

@@ -350,7 +350,6 @@
     "quicksettings" : "Quick Settings",
     "qurancopytitle" : "From this screen, you can download one or more copy of the Holy Quran to use it offline inside the application",
     "skip" : "skip",
-    "setupAccount" : "Setup Account",
     "openApp" : "Open App",
     "jom3aDoaaTimeTitle" : "The Hour of Answered Prayers on Friday",
     "jom3adoaaTimeMessage" : "Do not miss the hour of acceptance; increase your supplications and send blessings upon the Prophet ﷺ. During this hour, there is no Muslim servant who asks Allah for anything without Him granting it.",
@@ -399,7 +398,10 @@
     "qiblaFinder" : "Qibla Finder",
     "allowLocations" : "Allow access to location",
     "allowLocationDetails" : "Enabling location allows us to accurately calculate prayer times, which is very important for the app",
-    "changeLocationSettings" : "Change Location"
+    "changeLocationSettings" : "Change Location",
+    "onboardingSetupAccountMessage1" : "Alhamdulillah, you’re ready to begin!",
+    "onboardingSetupAccountMessage2" : "May Allah accept your efforts and grant you ease on this journey",
+    "onboardingSetupAccountMessage3" : "Please keep us in your prayers. We promise to keep improving and serving you better"
 
 
 

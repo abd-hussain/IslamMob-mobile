@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/presentation/inboarding/bloc/setup_account/setup_account_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SetupAccountView extends StatelessWidget {
@@ -20,7 +19,7 @@ class SetupAccountView extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                _buildAnimation(),
+                _buildAnimation(context),
                 const SizedBox(height: 20),
                 _buildHeader(context),
                 _buildStateView(context),
@@ -33,23 +32,45 @@ class SetupAccountView extends StatelessWidget {
   }
 
   /// Builds the header animation
-  Widget _buildAnimation() {
+  Widget _buildAnimation(BuildContext context) {
     return Center(
-      child: Lottie.asset(
-        'assets/lottie/Animation - 1734423039934.json',
-        width: 200,
+      child: Image.asset(
+        'assets/images/readyToGo.png',
+        width: MediaQuery.of(context).size.width * 0.8,
       ),
     );
   }
 
   /// Builds the header text
   Widget _buildHeader(BuildContext context) {
-    return CustomText(
-      title: AppLocalizations.of(context)!.setupAccount,
-      fontSize: 20,
-      color: const Color(0xff008480),
-      fontWeight: FontWeight.bold,
-      textAlign: TextAlign.center,
+    return Column(
+      children: [
+        CustomText(
+          title: AppLocalizations.of(context)!.onboardingSetupAccountMessage1,
+          fontSize: 16,
+          color: const Color(0xff444444),
+          fontWeight: FontWeight.bold,
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: 20),
+        CustomText(
+          title: AppLocalizations.of(context)!.onboardingSetupAccountMessage2,
+          fontSize: 20,
+          color: const Color(0xff008480),
+          fontWeight: FontWeight.bold,
+          textAlign: TextAlign.center,
+          maxLines: 3,
+        ),
+        const SizedBox(height: 20),
+        CustomText(
+          title: AppLocalizations.of(context)!.onboardingSetupAccountMessage3,
+          fontSize: 16,
+          color: const Color(0xff444444),
+          fontWeight: FontWeight.bold,
+          textAlign: TextAlign.center,
+          maxLines: 3,
+        ),
+      ],
     );
   }
 

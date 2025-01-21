@@ -10,7 +10,7 @@ class LocalNotificationRepository {
       FlutterLocalNotificationsPlugin();
 
   /// Initializes the local notification service with platform-specific settings.
-  static Future<void> initialize() async {
+  Future<void> initialize() async {
     const InitializationSettings initializationSettings =
         InitializationSettings(
       android: AndroidInitializationSettings('@mipmap/ic_launcher'),
@@ -159,7 +159,7 @@ class LocalNotificationRepository {
 
   /// Cancels all scheduled notifications.
   Future<void> cancelAllNotifications() async {
-    await _notificationsPlugin.cancelAll();
+    return await _notificationsPlugin.cancelAll();
   }
 
   static LocalNotification _notificationDetails(

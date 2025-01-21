@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:islam_app/domain/usecase/next_salah_notifcation_counter_usecase.dart';
 import 'package:islam_app/domain/model/profile_options.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/collection_list_option.dart';
@@ -35,14 +34,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             children: [
               TitleView(title: AppLocalizations.of(context)!.generalsettings),
               CollectionListOptionView(listOfOptions: [
-                ProfileOptions(
-                  icon: Icons.textsms_sharp,
-                  name: "Test Notification Countdown",
-                  onTap: () async {
-                    await NextSalahNotificationCounterUsecase()
-                        .handleNextSalahNotification(context);
-                  },
-                ),
                 ProfileOptions(
                   icon: Icons.calendar_month,
                   name: AppLocalizations.of(context)!.calenderSettings,
