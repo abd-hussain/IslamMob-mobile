@@ -350,7 +350,6 @@
     "quicksettings" : "Paramètres rapides",
     "qurancopytitle" : "Depuis cet écran, vous pouvez télécharger une ou plusieurs copies du Saint Coran pour une utilisation hors ligne dans l'application",
     "skip" : "Passer",
-    "setupAccount" : "Configurer le compte",
     "openApp" : "Ouvrir l'application",
     "jom3aDoaaTimeTitle" : "L’heure de l’exaucement (des prières) le vendredi",
     "jom3adoaaTimeMessage" : "Ne manquez pas l’heure de l’exaucement ; multipliez vos invocations et priez pour le Prophète ﷺ. Pendant cette heure, aucun serviteur musulman qui demande quelque chose à Allah ne repart sans qu’Il ne le lui accorde.",
@@ -399,7 +398,10 @@
     "qiblaFinder" : "Localisateur de la Qibla",
     "allowLocations" : "Autoriser l’accès à la localisation",
     "allowLocationDetails" : "Activer la localisation nous permet de calculer avec précision les horaires de prière, ce qui est très important pour l’application",
-    "changeLocationSettings" : "Changer l’emplacement"
+    "changeLocationSettings" : "Changer l’emplacement",
+    "onboardingSetupAccountMessage1" : "Alhamdulillah, vous êtes prêt(e) à commencer !",
+    "onboardingSetupAccountMessage2" : "Qu’Allah accepte vos efforts et vous facilite sur ce chemin",
+    "onboardingSetupAccountMessage3" : "S’il vous plaît, gardez-nous dans vos prières. Nous promettons de continuer à nous améliorer et à mieux vous servir"
 
 
 }

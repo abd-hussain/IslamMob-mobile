@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math' show pi;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:qibla_finder/qibla_finder.dart';
@@ -94,26 +95,21 @@ class QiblahCompassWidget extends StatelessWidget {
                 children: [
                   Transform.rotate(
                     angle: (qiblahDirection.direction * (pi / 180) * -1),
-                    child: Container(
-                      color: Colors.red,
-                      height: 100,
-                      width: 100,
+                    child: SvgPicture.asset(
+                      'assets/images/qibla/compass.svg',
+                      width: MediaQuery.of(context).size.width - 150,
                     ),
-                    // child: SvgPicture.asset(
-                    //   'assets/images/qibla/compass.svg',
-                    //   width: MediaQuery.of(context).size.width - 150,
-                    // ),
                   ),
-                  //             // Transform.rotate(
-                  //             //   angle: (qiblahDirection.qiblah * (pi / 180) * -1),
-                  //             //   alignment: Alignment.center,
-                  //             //   child: SvgPicture.asset(
-                  //             //     'assets/images/qibla/needle.svg',
-                  //             //     fit: BoxFit.contain,
-                  //             //     height: 300,
-                  //             //     alignment: Alignment.center,
-                  //             //   ),
-                  //             // ),
+                  Transform.rotate(
+                    angle: (qiblahDirection.qiblah * (pi / 180) * -1),
+                    alignment: Alignment.center,
+                    child: SvgPicture.asset(
+                      'assets/images/qibla/needle.svg',
+                      fit: BoxFit.contain,
+                      height: 300,
+                      alignment: Alignment.center,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -146,8 +142,7 @@ class QiblahCompassWidget extends StatelessWidget {
                               size: 12,
                             ),
                             CustomText(
-                              title:
-                                  "${qiblahDirection.offset.toStringAsFixed(3)}°",
+                              title: "${qiblahDirection.offset}°",
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xff444444),
@@ -182,8 +177,7 @@ class QiblahCompassWidget extends StatelessWidget {
                     child: Column(
                       children: [
                         CustomText(
-                          title:
-                              "${qiblahDirection.direction.toStringAsFixed(1)}°",
+                          title: "${qiblahDirection.direction}°",
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xff444444),
@@ -199,11 +193,6 @@ class QiblahCompassWidget extends StatelessWidget {
                 ),
               ],
             ),
-
-            // Positioned(
-            //   bottom: 8,
-            //   child: Text("${qiblahDirection.offset.toStringAsFixed(3)}°"),
-            // ),
           ],
         );
       },

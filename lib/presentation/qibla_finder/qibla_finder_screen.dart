@@ -54,7 +54,6 @@ class QiblaFinderScreen extends StatelessWidget {
           //       // } else if (state.status is QiblaFinderProcessStateError) {
           //       //   return const Center(child: CustomText(title: "Something Wrong", fontSize: 14));
           //       // } else {
-          //TODO: implement QiblaFinderScreen
           //       // return Center(
           //       //   child: Text(Qibla(Qibla.makkah).direction.toString()),
           //       // );

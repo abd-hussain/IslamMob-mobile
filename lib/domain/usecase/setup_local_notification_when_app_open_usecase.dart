@@ -7,6 +7,7 @@ import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:islam_app/domain/usecase/notify_adhan_notification_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 
 /// This UseCase schedules up to 64 local notifications:
 /// - Up to 62 notifications for prayers:
@@ -18,8 +19,7 @@ import 'package:islam_app/domain/usecase/notify_adhan_notification_usecase.dart'
 /// - 2 final reminders, scheduled after the last prayer notification.
 ///
 class SetupLocalNotificationWhenAppOpenUseCase {
-  final LocalNotificationRepository _localNotificationRepository =
-      LocalNotificationRepository();
+  final _localNotificationRepository = locator<LocalNotificationRepository>();
   final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase =
       NotifyAdhanNotificationUsecase();
 

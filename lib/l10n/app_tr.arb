@@ -350,7 +350,6 @@
     "quicksettings" : "Hızlı Ayarlar",
     "qurancopytitle" : "Bu ekrandan, uygulama içinde çevrimdışı kullanmak üzere bir veya birden fazla Kur'an kopyası indirebilirsiniz",
     "skip" : "Geç",
-    "setupAccount" : "Hesabı Kur",
     "openApp" : "Uygulamayı Aç",
     "jom3aDoaaTimeTitle" : "Cuma Günü Duanın Kabul Edildiği Saat",
     "jom3adoaaTimeMessage" : "Duaların kabul olduğu vakti kaçırmayın; duayı ve Peygamber’e (ﷺ) salât ve selam getirmeyi artırın. O vakitte hiçbir Müslüman kul, Allah’tan bir şey istemez ki Allah ona vermesin.",
@@ -399,6 +398,9 @@
     "qiblaFinder" : "Kıble Bulucu",
     "allowLocations" : "Konum erişimine izin ver",
     "allowLocationDetails" : "Konumu etkinleştirmek, namaz vakitlerini doğru bir şekilde hesaplamamızı sağlar ve bu uygulama için çok önemlidir",
-    "changeLocationSettings" : "Konumu Değiştir"
+    "changeLocationSettings" : "Konumu Değiştir",
+    "onboardingSetupAccountMessage1" : "Elhamdülillah, başlamaya hazırsınız!",
+    "onboardingSetupAccountMessage2" : "Allah çabalarınızı kabul etsin ve bu yolculuğu sizin için kolay kılsın",
+    "onboardingSetupAccountMessage3" : "Lütfen dualarınızda bizi unutmayın. Kendimizi geliştirmeye ve size daha iyi hizmet etmeye söz veriyoruz"
 
 }

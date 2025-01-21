@@ -4,6 +4,7 @@ import 'package:logger_manager/logger_manager.dart';
 
 //TODO: make the download faster zip is not a soluation
 //TODO: theres a defrent in magreeb, zhur, sunrise time always
+//TODO: Qibla direction is not correct
 
 void main() {
   LoggerManagerBase.logDebugMessage(message: 'Application Started ...');
