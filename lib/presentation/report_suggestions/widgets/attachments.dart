@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/report_suggestions/bloc/report_and_suggestion_bloc.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/attachmen_bottom_sheet.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ReportSuggestionAttachment extends StatelessWidget {
   const ReportSuggestionAttachment({super.key});
@@ -19,22 +19,19 @@ class ReportSuggestionAttachment extends StatelessWidget {
           _buildAttachmentItem(
             context,
             stateSelector: (state) => state.attach1,
-            updateEvent: (image) =>
-                ReportAndSuggestionEvent.updateAttachment1(value: image),
+            updateEvent: (image) => ReportAndSuggestionEvent.updateAttachment1(value: image),
           ),
           const SizedBox(width: 8),
           _buildAttachmentItem(
             context,
             stateSelector: (state) => state.attach2,
-            updateEvent: (image) =>
-                ReportAndSuggestionEvent.updateAttachment2(value: image),
+            updateEvent: (image) => ReportAndSuggestionEvent.updateAttachment2(value: image),
           ),
           const SizedBox(width: 8),
           _buildAttachmentItem(
             context,
             stateSelector: (state) => state.attach3,
-            updateEvent: (image) =>
-                ReportAndSuggestionEvent.updateAttachment3(value: image),
+            updateEvent: (image) => ReportAndSuggestionEvent.updateAttachment3(value: image),
           ),
           const Expanded(child: SizedBox()),
         ],
@@ -48,8 +45,7 @@ class ReportSuggestionAttachment extends StatelessWidget {
     required ReportAndSuggestionEvent Function(File?) updateEvent,
   }) {
     return BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
-      buildWhen: (previous, current) =>
-          stateSelector(previous) != stateSelector(current),
+      buildWhen: (previous, current) => stateSelector(previous) != stateSelector(current),
       builder: (context, state) {
         final attachment = stateSelector(state);
         return InkWell(
@@ -96,8 +92,8 @@ class ReportSuggestionAttachment extends StatelessWidget {
     AttachmentBottomSheetsUtil().addImageBottomSheet(
       context: context,
       image: attachment != null,
-      title1: AppLocalizations.of(context)!.photosetting,
-      title2: AppLocalizations.of(context)!.setphoto,
+      title1: IslamMobLocalizations.of(context).photosetting,
+      title2: IslamMobLocalizations.of(context).setphoto,
       deleteCallBack: () {
         bloc.add(updateEvent(null));
         Navigator.pop(context);

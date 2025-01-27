@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
@@ -36,11 +36,10 @@ class OtherNotificationView extends StatelessWidget {
   List<Widget> _buildNotificationRows() {
     return [
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.sunriseTime != current.sunriseTime,
+        buildWhen: (previous, current) => previous.sunriseTime != current.sunriseTime,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingSunriseTime,
+            title: IslamMobLocalizations.of(context).notificationSettingSunriseTime,
             value: state.sunriseTime,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -56,11 +55,10 @@ class OtherNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.jom3aAlkahf != current.jom3aAlkahf,
+        buildWhen: (previous, current) => previous.jom3aAlkahf != current.jom3aAlkahf,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingJomAlkahf,
+            title: IslamMobLocalizations.of(context).notificationSettingJomAlkahf,
             value: state.jom3aAlkahf,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -76,11 +74,10 @@ class OtherNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.jom3aDo3aa != current.jom3aDo3aa,
+        buildWhen: (previous, current) => previous.jom3aDo3aa != current.jom3aDo3aa,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingJom3aDoaa,
+            title: IslamMobLocalizations.of(context).notificationSettingJom3aDoaa,
             value: state.jom3aDo3aa,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -96,12 +93,10 @@ class OtherNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.qeyamAlLayel != current.qeyamAlLayel,
+        buildWhen: (previous, current) => previous.qeyamAlLayel != current.qeyamAlLayel,
         builder: (context, state) {
           return NotificationRowView(
-            title:
-                AppLocalizations.of(context)!.notificationSettingQeyamAlLayel,
+            title: IslamMobLocalizations.of(context).notificationSettingQeyamAlLayel,
             value: state.qeyamAlLayel,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -117,12 +112,10 @@ class OtherNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.before15Min != current.before15Min,
+        buildWhen: (previous, current) => previous.before15Min != current.before15Min,
         builder: (context, state) {
           return NotificationRowView(
-            title:
-                AppLocalizations.of(context)!.notificationBeforeSalah15Minutes,
+            title: IslamMobLocalizations.of(context).notificationBeforeSalah15Minutes,
             value: state.before15Min,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(

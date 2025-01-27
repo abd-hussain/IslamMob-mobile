@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PrayCalculationSubHeaderView extends StatelessWidget {
   const PrayCalculationSubHeaderView({super.key});
@@ -16,22 +16,22 @@ class PrayCalculationSubHeaderView extends StatelessWidget {
         children: [
           _buildRow(context, [
             _TimeCard(
-              title: AppLocalizations.of(context)!.midnight,
+              title: IslamMobLocalizations.of(context).midnight,
               timeSelector: (state) => state.midleNighTime,
             ),
             _TimeCard(
-              title: AppLocalizations.of(context)!.last3ofnight,
+              title: IslamMobLocalizations.of(context).last3ofnight,
               timeSelector: (state) => state.last3thTime,
             ),
           ]),
           const SizedBox(height: 4),
           _buildRow(context, [
             _TimeCard(
-              title: AppLocalizations.of(context)!.deviceTime,
+              title: IslamMobLocalizations.of(context).deviceTime,
               timeSelector: (state) => state.deviceTime,
             ),
             _TimeCard(
-              title: AppLocalizations.of(context)!.applicationTime,
+              title: IslamMobLocalizations.of(context).applicationTime,
               timeSelector: (state) => state.applicationTime,
             ),
           ]),
@@ -42,11 +42,9 @@ class PrayCalculationSubHeaderView extends StatelessWidget {
 
   Widget _buildRow(BuildContext context, List<Widget> children) {
     return Row(
-      children: children
-          .map((child) => Expanded(child: child))
-          .expand((child) => [child, const SizedBox(width: 4)])
-          .toList()
-        ..removeLast(),
+      children:
+          children.map((child) => Expanded(child: child)).expand((child) => [child, const SizedBox(width: 4)]).toList()
+            ..removeLast(),
     );
   }
 }
@@ -68,7 +66,7 @@ class _TimeCard extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             CustomText(
@@ -78,10 +76,8 @@ class _TimeCard extends StatelessWidget {
               color: const Color(0xff444444),
               textAlign: TextAlign.center,
             ),
-            BlocBuilder<PrayCalculationSettingBloc,
-                PrayCalculationSettingState>(
-              buildWhen: (previous, current) =>
-                  timeSelector(previous) != timeSelector(current),
+            BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
+              buildWhen: (previous, current) => timeSelector(previous) != timeSelector(current),
               builder: (context, state) {
                 final time = timeSelector(state) ?? DateTime.now();
                 return CustomText(

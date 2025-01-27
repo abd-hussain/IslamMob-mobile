@@ -1,4 +1,4 @@
-import 'internal/shadow_length.dart';
+import 'package:islam_mob_adhan/src/internal/shadow_length.dart';
 
 /// Represents the Madhab (Islamic school of thought) for calculating Asr prayer time.
 enum Madhab {

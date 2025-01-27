@@ -31,7 +31,7 @@ void main() {
             data: 'success',
             statusCode: 200,
             statusMessage: 'OK',
-            requestOptions: RequestOptions(path: ''),
+            requestOptions: RequestOptions(),
           ),
         );
 
@@ -122,7 +122,7 @@ void main() {
             data: {'message': 'success'},
             statusCode: 201,
             statusMessage: 'Created',
-            requestOptions: RequestOptions(path: ''),
+            requestOptions: RequestOptions(),
           ),
         );
 
@@ -229,12 +229,11 @@ void main() {
             statusCode: 204,
             data: {},
             statusMessage: 'No Content',
-            requestOptions: RequestOptions(path: ''),
+            requestOptions: RequestOptions(),
           ),
         );
 
-        final result =
-            await apiClient.delete<Map<String, dynamic>>('/path').run();
+        final result = await apiClient.delete<Map<String, dynamic>>('/path').run();
 
         verify(
           () => mockDio.delete<Map<String, dynamic>>(
@@ -265,8 +264,7 @@ void main() {
           ),
         );
 
-        final result =
-            await apiClient.delete<Map<String, dynamic>>('/path').run();
+        final result = await apiClient.delete<Map<String, dynamic>>('/path').run();
 
         verify(
           () => mockDio.delete<Map<String, dynamic>>(
@@ -294,8 +292,7 @@ void main() {
           ),
         );
 
-        final result =
-            await apiClient.delete<Map<String, dynamic>>('/path').run();
+        final result = await apiClient.delete<Map<String, dynamic>>('/path').run();
 
         verify(
           () => mockDio.delete<Map<String, dynamic>>(
@@ -323,12 +320,11 @@ void main() {
             statusCode: 200,
             data: {'message': 'success'},
             statusMessage: 'OK',
-            requestOptions: RequestOptions(path: ''),
+            requestOptions: RequestOptions(),
           ),
         );
 
-        final result = await apiClient
-            .patch<Map<String, dynamic>>('/path', data: {'key': 'value'}).run();
+        final result = await apiClient.patch<Map<String, dynamic>>('/path', data: {'key': 'value'}).run();
 
         verify(
           () => mockDio.patch<Map<String, dynamic>>(
@@ -363,12 +359,11 @@ void main() {
             statusCode: 200,
             data: {'updated': true},
             statusMessage: 'OK',
-            requestOptions: RequestOptions(path: ''),
+            requestOptions: RequestOptions(),
           ),
         );
 
-        final result = await apiClient
-            .put<Map<String, dynamic>>('/path', data: {'key': 'value'}).run();
+        final result = await apiClient.put<Map<String, dynamic>>('/path', data: {'key': 'value'}).run();
 
         verify(
           () => mockDio.put<Map<String, dynamic>>(

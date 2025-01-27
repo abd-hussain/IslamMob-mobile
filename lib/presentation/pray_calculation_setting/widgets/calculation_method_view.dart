@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/calculation_setting_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CalculationMethodView extends StatelessWidget {
   const CalculationMethodView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = IslamMobLocalizations.of(context);
 
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Column(
         children: [
           const SizedBox(height: 10),
@@ -46,15 +46,12 @@ class CalculationMethodView extends StatelessWidget {
     );
   }
 
-  Widget _buildCalculationMethodSelector(
-      BuildContext context, AppLocalizations localizations) {
+  Widget _buildCalculationMethodSelector(BuildContext context, IslamMobLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) =>
-          previous.calculationMethod != current.calculationMethod,
+      buildWhen: (previous, current) => previous.calculationMethod != current.calculationMethod,
       builder: (context, state) {
         final calculationMethodsList =
-            CalculationSettingUsecase.getCalculationMethodsList(
-                localizations, state.calculationMethod);
+            CalculationSettingUsecase.getCalculationMethodsList(localizations, state.calculationMethod);
 
         return ListView.builder(
           itemCount: calculationMethodsList.length,

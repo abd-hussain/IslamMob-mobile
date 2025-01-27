@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
           width: width,
           child: Center(
             child: Text(
-              title == "Submit" ? AppLocalizations.of(context)!.submit : title,
+              title == "Submit" ? IslamMobLocalizations.of(context).submit : title,
               style: TextStyle(
                 color: titleColor,
                 fontSize: 16,

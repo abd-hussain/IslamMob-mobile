@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BrightnessPopup extends StatefulWidget {
   final ValueChanged<double> returnBrightness;
@@ -16,8 +16,7 @@ class BrightnessPopup extends StatefulWidget {
   State<BrightnessPopup> createState() => _BrightnessPopupState();
 }
 
-class _BrightnessPopupState extends State<BrightnessPopup>
-    with SingleTickerProviderStateMixin {
+class _BrightnessPopupState extends State<BrightnessPopup> with SingleTickerProviderStateMixin {
   late final AnimationController _animationController;
 
   @override
@@ -62,7 +61,7 @@ class _BrightnessPopupState extends State<BrightnessPopup>
     return Container(
       height: 20,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 0.1),
+        border: Border.all(width: 0.1),
         gradient: const LinearGradient(colors: [
           Colors.black,
           Colors.grey,
@@ -99,7 +98,7 @@ class _BrightnessPopupState extends State<BrightnessPopup>
       TextButton(
         onPressed: () => Navigator.of(context).pop(),
         child: CustomText(
-          title: AppLocalizations.of(context)!.close,
+          title: IslamMobLocalizations.of(context).close,
           fontSize: 20,
           color: Colors.white70,
           fontWeight: FontWeight.bold,
@@ -111,7 +110,7 @@ class _BrightnessPopupState extends State<BrightnessPopup>
           widget.returnBrightness(0);
         },
         child: CustomText(
-          title: AppLocalizations.of(context)!.resetbrightness,
+          title: IslamMobLocalizations.of(context).resetbrightness,
           fontSize: 20,
           color: Colors.white70,
           fontWeight: FontWeight.bold,

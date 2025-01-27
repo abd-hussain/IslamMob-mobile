@@ -27,8 +27,7 @@ class Utils {
     //    for the difference in longitude.
     double offsetDegrees = degrees(
       atan(
-        sin(_kaabaLon - loRad) /
-            (cos(laRad) * tan(_kaabaLat) - sin(laRad) * cos(_kaabaLon - loRad)),
+        sin(_kaabaLon - loRad) / (cos(laRad) * tan(_kaabaLat) - sin(laRad) * cos(_kaabaLon - loRad)),
       ),
     );
 
@@ -37,34 +36,26 @@ class Utils {
     //    Then we apply additional 180° if the angle is in certain ranges.
     if (laRad > _kaabaLat) {
       // Device is north of Kaaba's latitude
-      final bool outOfRangeEastOrWest =
-          (loRad > _kaabaLon || loRad < radians(-180.0) + _kaabaLon);
+      final bool outOfRangeEastOrWest = loRad > _kaabaLon || loRad < radians(-180) + _kaabaLon;
 
       // Condition A
-      if (outOfRangeEastOrWest &&
-          offsetDegrees > 0.0 &&
-          offsetDegrees <= 90.0) {
+      if (outOfRangeEastOrWest && offsetDegrees > 0.0 && offsetDegrees <= 90.0) {
         offsetDegrees += 180.0;
       }
 
       // Condition B
-      else if (!outOfRangeEastOrWest &&
-          offsetDegrees > -90.0 &&
-          offsetDegrees < 0.0) {
+      else if (!outOfRangeEastOrWest && offsetDegrees > -90.0 && offsetDegrees < 0.0) {
         offsetDegrees += 180.0;
       }
     } else if (laRad < _kaabaLat) {
       // Device is south of Kaaba's latitude
-      final bool outOfRangeEastOrWest =
-          (loRad > _kaabaLon || loRad < radians(-180.0) + _kaabaLon);
+      final bool outOfRangeEastOrWest = loRad > _kaabaLon || loRad < radians(-180) + _kaabaLon;
       // Condition C
       if (outOfRangeEastOrWest && offsetDegrees > 0.0 && offsetDegrees < 90.0) {
         offsetDegrees += 180.0;
       }
       // Condition D
-      else if (!outOfRangeEastOrWest &&
-          offsetDegrees > -90.0 &&
-          offsetDegrees <= 0.0) {
+      else if (!outOfRangeEastOrWest && offsetDegrees > -90.0 && offsetDegrees <= 0.0) {
         offsetDegrees += 180.0;
       }
     }

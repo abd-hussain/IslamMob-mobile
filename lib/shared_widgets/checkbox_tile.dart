@@ -1,5 +1,5 @@
-import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class CheckBoxTile extends StatelessWidget {
   final String title;
@@ -17,7 +17,7 @@ class CheckBoxTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
       child: InkWell(
-        onTap: () => onChanged(),
+        onTap: onChanged,
         child: Container(
           height: 50,
           decoration: BoxDecoration(
@@ -45,9 +45,7 @@ class CheckBoxTile extends StatelessWidget {
                   ),
                 ),
                 Icon(
-                  isSelected
-                      ? Icons.check_box_outlined
-                      : Icons.check_box_outline_blank_rounded,
+                  isSelected ? Icons.check_box_outlined : Icons.check_box_outline_blank_rounded,
                   size: 25,
                 )
               ],

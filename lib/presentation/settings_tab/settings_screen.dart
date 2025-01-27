@@ -1,16 +1,16 @@
+import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/model/profile_options.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/collection_list_option.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/footer.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/profile_header.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
-import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
@@ -25,6 +25,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     final navigator = Navigator.of(context, rootNavigator: true);
+    final localize = IslamMobLocalizations.of(context);
 
     return Column(
       children: [
@@ -32,53 +33,47 @@ class _SettingsScreenState extends State<SettingsScreen> {
         Expanded(
           child: ListView(
             children: [
-              TitleView(title: AppLocalizations.of(context)!.generalsettings),
+              TitleView(title: localize.generalsettings),
               CollectionListOptionView(listOfOptions: [
                 ProfileOptions(
                   icon: Icons.calendar_month,
-                  name: AppLocalizations.of(context)!.calenderSettings,
+                  name: localize.calenderSettings,
                   onTap: () async {
-                    FirebaseAnalyticsRepository.logEvent(
-                        name: "CalenderScreenFromSettingsScreen");
+                    await FirebaseAnalyticsRepository.logEvent(name: "CalenderScreenFromSettingsScreen");
                     await navigator.pushNamed(RoutesConstants.calenderScreen);
                   },
                 ),
                 ProfileOptions(
                   icon: Icons.translate,
-                  name: AppLocalizations.of(context)!.changeSelectedLanguage,
-                  onTap: () async => await navigator
-                      .pushNamed(RoutesConstants.changeLanguageScreen),
+                  name: localize.changeSelectedLanguage,
+                  onTap: () async => navigator.pushNamed(RoutesConstants.changeLanguageScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.notification_important,
-                  name: AppLocalizations.of(context)!.notificationSettings,
-                  onTap: () async => await navigator
-                      .pushNamed(RoutesConstants.prayNotificationSettingScreen),
+                  name: localize.notificationSettings,
+                  onTap: () async => navigator.pushNamed(RoutesConstants.prayNotificationSettingScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.settings,
-                  name: AppLocalizations.of(context)!.prayCalculationSettings,
-                  onTap: () async => await navigator
-                      .pushNamed(RoutesConstants.prayCalculationSettingScreen),
+                  name: localize.prayCalculationSettings,
+                  onTap: () async => navigator.pushNamed(RoutesConstants.prayCalculationSettingScreen),
                 ),
               ]),
-              TitleView(title: AppLocalizations.of(context)!.reachouttous),
+              TitleView(title: localize.reachouttous),
               CollectionListOptionView(listOfOptions: [
                 ProfileOptions(
                   icon: Icons.bug_report,
-                  name: AppLocalizations.of(context)!.reportOrSuggestion,
-                  onTap: () async => await navigator
-                      .pushNamed(RoutesConstants.reportOrSuggestionScreen),
+                  name: localize.reportOrSuggestion,
+                  onTap: () async => navigator.pushNamed(RoutesConstants.reportOrSuggestionScreen),
                 ),
               ]),
-              TitleView(title: AppLocalizations.of(context)!.support),
+              TitleView(title: localize.support),
               CollectionListOptionView(listOfOptions: [
                 ProfileOptions(
                     icon: Ionicons.sparkles,
-                    name: AppLocalizations.of(context)!.rateapp,
+                    name: localize.rateapp,
                     onTap: () async {
-                      final bool internetStatus =
-                          await NetworkUseCase.checkInternetConeection();
+                      final bool internetStatus = await NetworkUseCase.checkInternetConeection();
 
                       if (internetStatus == false) {
                         if (context.mounted) {
@@ -87,37 +82,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         return;
                       }
 
-                      RateMyApp rateMyApp = RateMyApp(
+                      final RateMyApp rateMyApp = RateMyApp(
                         googlePlayIdentifier: "com.islammob.app",
                         appStoreIdentifier: "id6670502375",
                       );
 
-                      rateMyApp.init().then((_) {
+                      await rateMyApp.init().then((_) {
                         WidgetsBinding.instance.addPostFrameCallback((_) async {
                           await rateMyApp.showRateDialog(
                             context,
-                            title: AppLocalizations.of(context)!.rateapponstore,
-                            message: AppLocalizations.of(context)!
-                                .rateapponstoremessage,
-                            rateButton: AppLocalizations.of(context)!.rateapp,
-                            laterButton: AppLocalizations.of(context)!.later,
-                            noButton: AppLocalizations.of(context)!.close,
+                            title: localize.rateapponstore,
+                            message: localize.rateapponstoremessage,
+                            rateButton: localize.rateapp,
+                            laterButton: localize.later,
+                            noButton: localize.close,
                           );
                         });
                       });
                     }),
                 ProfileOptions(
                   icon: Ionicons.color_palette,
-                  name: AppLocalizations.of(context)!.aboutus,
-                  onTap: () async =>
-                      await navigator.pushNamed(RoutesConstants.aboutUsScreen),
+                  name: localize.aboutus,
+                  onTap: () async => navigator.pushNamed(RoutesConstants.aboutUsScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.share,
-                  name: AppLocalizations.of(context)!.shareapp,
+                  name: localize.shareapp,
                   onTap: () async {
-                    FirebaseAnalyticsRepository.logEvent(
-                        name: "ShareAppFromSettingsScreen");
+                    await FirebaseAnalyticsRepository.logEvent(name: "ShareAppFromSettingsScreen");
                     await ShareDialog().dialog(context: context);
                   },
                 ),
@@ -137,8 +129,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
       SnackBar(
-        content: Text(
-            AppLocalizations.of(context)!.pleasecheckyourinternetconnection),
+        content: Text(IslamMobLocalizations.of(context).pleasecheckyourinternetconnection),
       ),
     );
   }

@@ -25,6 +25,8 @@ void main() {
 
     expect(myDate.copyWith(), DateTime(2020, 1, 1, 1, 1, 1, 1, 1));
     expect(
-        myDate.toUtc().copyWith(), DateTime(2020, 1, 1, 1, 1, 1, 1, 1).toUtc());
+      myDate.toUtc().copyWith(),
+      DateTime(2020, 1, 1, 1, 1, 1, 1, 1).toUtc(),
+    );
   });
 }

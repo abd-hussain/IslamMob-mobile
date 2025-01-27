@@ -155,7 +155,7 @@ class _$ProfileOptionsImpl implements _ProfileOptions {
   _$ProfileOptionsImpl(
       {required this.icon,
       required this.name,
-      this.subtitle = "",
+      this.subtitle = '',
       this.avaliable = true,
       required this.onTap});
 

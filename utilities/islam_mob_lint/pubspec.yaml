@@ -1,0 +1,14 @@
+name: islam_mob_lint
+description: "A new Flutter package project."
+publish_to: "none"
+version: 0.0.1
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+
+dependencies:
+  leancode_lint: ^14.0.0
+
+dev_dependencies:
+  dependency_validator: 4.1.0
+

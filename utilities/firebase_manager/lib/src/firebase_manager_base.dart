@@ -8,7 +8,7 @@ class FirebaseManagerBase {
     await Firebase.initializeApp();
 
     if (!kDebugMode) {
-      FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+      await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
     }
   }
 

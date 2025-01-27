@@ -1,10 +1,12 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'dart:math' as math;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/domain/extensions/localization.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class QuranHeaderHelpBar extends StatelessWidget {
   const QuranHeaderHelpBar({super.key});
@@ -40,8 +42,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
   Widget _buildPageBookmarkIndicator() {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) =>
-          previous.pageCount != current.pageCount ||
-          previous.bookmarkedPages != current.bookmarkedPages,
+          previous.pageCount != current.pageCount || previous.bookmarkedPages != current.bookmarkedPages,
       builder: (context, state) {
         final isBookmarked = state.bookmarkedPages.contains(state.pageCount);
         return isBookmarked
@@ -77,7 +78,6 @@ class QuranHeaderHelpBar extends StatelessWidget {
 
   Widget _buildSorahAndJozo2Row(BuildContext context) {
     return Align(
-      alignment: Alignment.center,
       child: Row(
         children: [
           _buildSorahName(context),
@@ -93,7 +93,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
       buildWhen: (previous, current) => previous.sorahName != current.sorahName,
       builder: (context, state) {
         return CustomText(
-          title: "${AppLocalizations.of(context)!.quranSorah} "
+          title: "${IslamMobLocalizations.of(context).quranSorah} "
               "${AppLocalizations.of(context)!.getLocalizedString(state.sorahName)}",
           fontSize: 14,
           color: Colors.white70,
@@ -108,8 +108,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
       buildWhen: (previous, current) => previous.jozo2Name != current.jozo2Name,
       builder: (context, state) {
         return CustomText(
-          title:
-              AppLocalizations.of(context)!.getLocalizedString(state.jozo2Name),
+          title: AppLocalizations.of(context)!.getLocalizedString(state.jozo2Name),
           fontSize: 14,
           color: Colors.white70,
           fontWeight: FontWeight.bold,
@@ -120,10 +119,8 @@ class QuranHeaderHelpBar extends StatelessWidget {
 
   Widget _buildPageCountCenter(BuildContext context) {
     return Align(
-      alignment: Alignment.center,
       child: BlocBuilder<QuranKareemBloc, QuranKareemState>(
-        buildWhen: (previous, current) =>
-            previous.pageCount != current.pageCount,
+        buildWhen: (previous, current) => previous.pageCount != current.pageCount,
         builder: (context, state) {
           return CustomText(
             title: state.pageCount.toString(),
@@ -143,15 +140,12 @@ class QuranHeaderHelpBar extends StatelessWidget {
         height: 60,
         color: Colors.black.withOpacity(0.8),
         child: BlocBuilder<QuranKareemBloc, QuranKareemState>(
-          buildWhen: (previous, current) =>
-              previous.pageSide != current.pageSide,
+          buildWhen: (previous, current) => previous.pageSide != current.pageSide,
           builder: (context, state) {
             return Transform(
               alignment: Alignment.center,
               transform: Matrix4.rotationY(
-                state.pageSide == const QuranKareemStatePageSideStateLeft()
-                    ? math.pi
-                    : 0,
+                state.pageSide == const QuranKareemStatePageSideStateLeft() ? math.pi : 0,
               ),
               child: const Icon(
                 Icons.menu_book_rounded,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/notification_have_permission_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/notification_idle_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/notification_nothave_permission_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:lottie/lottie.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationInBoardingView extends StatelessWidget {
   final Function() doneSelection;
@@ -17,7 +17,7 @@ class NotificationInBoardingView extends StatelessWidget {
     return BlocProvider(
       create: (context) => NotificationsBloc(),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             _buildAnimation(),
@@ -43,7 +43,7 @@ class NotificationInBoardingView extends StatelessWidget {
   /// Builds the header text widget
   Widget _buildHeader(BuildContext context) {
     return CustomText(
-      title: AppLocalizations.of(context)!.allowSendingNotifications,
+      title: IslamMobLocalizations.of(context).allowSendingNotifications,
       fontSize: 20,
       color: const Color(0xff008480),
       fontWeight: FontWeight.bold,
@@ -56,9 +56,7 @@ class NotificationInBoardingView extends StatelessWidget {
     return Expanded(
       child: BlocBuilder<NotificationsBloc, NotificationsState>(
         buildWhen: (previous, current) => previous.status != current.status,
-        builder: (context, state) {
-          return _buildStateContent(context, state);
-        },
+        builder: _buildStateContent,
       ),
     );
   }
@@ -74,11 +72,11 @@ class NotificationInBoardingView extends StatelessWidget {
         );
       case NotificationsProcessStateNoPermission():
         return NotificationNothavePermissionView(
-          skipButton: () => doneSelection(),
+          skipButton: doneSelection,
         );
       case NotificationsProcessStateHavePermission():
         return NotificationHavePermissionView(
-          onConfirmationPress: () => doneSelection(),
+          onConfirmationPress: doneSelection,
         );
       default:
         return const SizedBox.shrink(); // Fallback in case of unexpected state

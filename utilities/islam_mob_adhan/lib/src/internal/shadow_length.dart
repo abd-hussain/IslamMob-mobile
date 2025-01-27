@@ -7,8 +7,8 @@ class ShadowLength {
   double get value => _value;
 
   /// Represents a shadow length of 1.0 (single shadow length).
-  static const ShadowLength single = ShadowLength._(1.0);
+  static const ShadowLength single = ShadowLength._(1);
 
   /// Represents a shadow length of 2.0 (double shadow length).
-  static const ShadowLength doubleLength = ShadowLength._(2.0);
+  static const ShadowLength doubleLength = ShadowLength._(2);
 }

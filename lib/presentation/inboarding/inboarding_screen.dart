@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/inboarding/bloc/inboarding/inboarding_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/language_view.dart';
@@ -8,7 +9,6 @@ import 'package:islam_app/presentation/inboarding/widgets/notification_view.dart
 import 'package:islam_app/presentation/inboarding/widgets/quran_copy_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/setup_account_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class InBoardingScreen extends StatelessWidget {
   const InBoardingScreen({super.key});
@@ -16,8 +16,7 @@ class InBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          InboardingBloc()..add(const InboardingEvent.initialStage()),
+      create: (context) => InboardingBloc()..add(const InboardingEvent.initialStage()),
       child: Scaffold(
         backgroundColor: const Color(0xffF5F6F7),
         body: SafeArea(
@@ -50,7 +49,7 @@ class InBoardingScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                title: AppLocalizations.of(context)!.appName,
+                title: IslamMobLocalizations.of(context).appName,
                 fontSize: 20,
                 color: const Color(0xff292929),
                 fontWeight: FontWeight.bold,
@@ -58,7 +57,7 @@ class InBoardingScreen extends StatelessWidget {
                 maxLines: 3,
               ),
               CustomText(
-                title: AppLocalizations.of(context)!.appshortdesc,
+                title: IslamMobLocalizations.of(context).appshortdesc,
                 fontSize: 12,
                 color: const Color(0xff292929),
                 fontWeight: FontWeight.bold,
@@ -78,30 +77,26 @@ class InBoardingScreen extends StatelessWidget {
     return Expanded(
       child: BlocBuilder<InboardingBloc, InboardingState>(
         buildWhen: (previous, current) =>
-            ((previous.inBoardingStage != current.inBoardingStage) ||
-                (previous.finalizedInBoarding != current.finalizedInBoarding)),
+            (previous.inBoardingStage != current.inBoardingStage) ||
+            (previous.finalizedInBoarding != current.finalizedInBoarding),
         builder: (context, state) {
           final bloc = context.read<InboardingBloc>();
           switch (state.inBoardingStage) {
             case 0:
               return LanguageInBoardingView(
-                doneSelection: () => bloc
-                    .add(const InboardingEvent.changeInBoardingStage(stage: 1)),
+                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 1)),
               );
             case 1:
               return LocationInBoardingView(
-                doneSelection: () => bloc
-                    .add(const InboardingEvent.changeInBoardingStage(stage: 2)),
+                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 2)),
               );
             case 2:
               return QuranCopyView(
-                doneSelection: () => bloc
-                    .add(const InboardingEvent.changeInBoardingStage(stage: 3)),
+                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 3)),
               );
             case 3:
               return NotificationInBoardingView(
-                doneSelection: () => bloc
-                    .add(const InboardingEvent.changeInBoardingStage(stage: 4)),
+                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 4)),
               );
             case 4:
               return SetupAccountView(

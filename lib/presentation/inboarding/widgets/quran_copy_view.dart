@@ -2,6 +2,7 @@ import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/quran_copy/quran_copy_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
@@ -9,7 +10,6 @@ import 'package:islam_app/presentation/quran_prints/widgets/quran_print_list_shi
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranCopyView extends StatelessWidget {
   final Function() doneSelection;
@@ -19,21 +19,17 @@ class QuranCopyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          QuranCopyBloc()..add(QuranCopyEvent.getlistOfPrints()),
+      create: (context) => QuranCopyBloc()..add(QuranCopyEvent.getlistOfPrints()),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: BlocBuilder<QuranCopyBloc, QuranCopyState>(
           buildWhen: (previous, current) =>
               previous.listOfPrints != current.listOfPrints ||
-              previous.internetConnectionStauts !=
-                  current.internetConnectionStauts,
+              previous.internetConnectionStauts != current.internetConnectionStauts,
           builder: (context, state) {
             if (state.internetConnectionStauts == false) {
               return NoInternetView(
-                retryCallback: () => context
-                    .read<QuranCopyBloc>()
-                    .add(QuranCopyEvent.getlistOfPrints()),
+                retryCallback: () => context.read<QuranCopyBloc>().add(QuranCopyEvent.getlistOfPrints()),
               );
             }
 
@@ -65,7 +61,7 @@ class QuranCopyView extends StatelessWidget {
         children: [
           Expanded(
             child: CustomText(
-              title: AppLocalizations.of(context)!.qurancopytitle,
+              title: IslamMobLocalizations.of(context).qurancopytitle,
               fontSize: 16,
               color: const Color(0xff444444),
               maxLines: 6,
@@ -73,12 +69,12 @@ class QuranCopyView extends StatelessWidget {
             ),
           ),
           OutlinedButton(
-            onPressed: () => doneSelection(),
+            onPressed: doneSelection,
             style: OutlinedButton.styleFrom(
               side: const BorderSide(color: Color(0xff008480)),
             ),
             child: CustomText(
-              title: AppLocalizations.of(context)!.skip,
+              title: IslamMobLocalizations.of(context).skip,
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: const Color(0xff008480),
@@ -91,8 +87,7 @@ class QuranCopyView extends StatelessWidget {
 
   Widget _buildPrintList(BuildContext context, QuranCopyState state) {
     return BlocBuilder<QuranCopyBloc, QuranCopyState>(
-        buildWhen: (previous, current) =>
-            previous.printsAlreadyDownloaded != current.printsAlreadyDownloaded,
+        buildWhen: (previous, current) => previous.printsAlreadyDownloaded != current.printsAlreadyDownloaded,
         builder: (context, downloadState) {
           return ListView.builder(
             itemCount: state.listOfPrints!.length,
@@ -105,12 +100,9 @@ class QuranCopyView extends StatelessWidget {
                 title: printItem.nameReferance,
                 description: printItem.description,
                 previewImage: printItem.previewImage,
-                downloadButtonAvailable: !downloadState.printsAlreadyDownloaded
-                    .contains(printItem.fieldName),
-                useButtonAvailable: downloadState.printsAlreadyDownloaded
-                    .contains(printItem.fieldName),
-                onDownloadPressed: () =>
-                    _handleDownloadPressed(context, printItem),
+                downloadButtonAvailable: !downloadState.printsAlreadyDownloaded.contains(printItem.fieldName),
+                useButtonAvailable: downloadState.printsAlreadyDownloaded.contains(printItem.fieldName),
+                onDownloadPressed: () => _handleDownloadPressed(context, printItem),
                 onUsePressed: () => _handleUsePressed(context, printItem),
               );
             },
@@ -118,10 +110,8 @@ class QuranCopyView extends StatelessWidget {
         });
   }
 
-  Future<void> _handleDownloadPressed(
-      BuildContext context, QuranPrints printItem) async {
-    final hasPermission =
-        await context.read<QuranCopyBloc>().requestStoragePermission();
+  Future<void> _handleDownloadPressed(BuildContext context, QuranPrints printItem) async {
+    final hasPermission = await context.read<QuranCopyBloc>().requestStoragePermission();
 
     if (hasPermission && context.mounted) {
       _showDownloadDialog(context, printItem);
@@ -149,27 +139,21 @@ class QuranCopyView extends StatelessWidget {
   }
 
   void _updateDownloadState(BuildContext context, QuranPrints printItem) {
-    final List<String> updatedList =
-        List.from(context.read<QuranCopyBloc>().state.printsAlreadyDownloaded)
-          ..add(printItem.fieldName!);
+    final List<String> updatedList = List.from(context.read<QuranCopyBloc>().state.printsAlreadyDownloaded)
+      ..add(printItem.fieldName!);
 
-    context
-        .read<QuranCopyBloc>()
-        .add(QuranCopyEvent.updatePrintsDownloading(updatedList));
+    context.read<QuranCopyBloc>().add(QuranCopyEvent.updatePrintsDownloading(updatedList));
   }
 
   void _showPermissionWarning(BuildContext context) {
     CustomToast.showWarningToast(
       context: context,
-      message: AppLocalizations.of(context)!.downloadnopermission,
+      message: IslamMobLocalizations.of(context).downloadnopermission,
     );
   }
 
-  Future<void> _handleUsePressed(
-      BuildContext context, QuranPrints printItem) async {
-    context
-        .read<QuranCopyBloc>()
-        .add(QuranCopyEvent.setupCopy(printItem: printItem));
+  Future<void> _handleUsePressed(BuildContext context, QuranPrints printItem) async {
+    context.read<QuranCopyBloc>().add(QuranCopyEvent.setupCopy(printItem: printItem));
     doneSelection();
   }
 }

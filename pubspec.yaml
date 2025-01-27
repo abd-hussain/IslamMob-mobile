@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.0.0+92
+version: 1.0.0+93
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -40,22 +40,15 @@ dependencies:
   # api_client: // commented out because it's not used in the app and piplines filed on android
   #   path: utilities/api_client
 
-  islam_test:
-    path: utilities/islam_test
-
-  bdd_steps:
-    path: utilities/bdd_steps
-
   qibla_finder:
     path: utilities/qibla_finder
 
-  http: ^1.2.2
-  dio: 5.7.0
+  http: ^1.2.2 #TODO
+  dio: 5.7.0 #TODO
   async: ^2.11.0
   get_it: 7.7.0
   loading_indicator: ^3.1.1
   intl: 0.19.0
-  freezed: ^2.5.7
   freezed_annotation: 2.4.4
   flutter_bloc: 8.1.6
   permission_handler: ^11.3.1
@@ -82,16 +75,17 @@ dependencies:
   share_plus: ^10.1.2 
   flutter_local_notifications: ^18.0.1
   timezone: ^0.10.0
-  # fpdart: ^1.1.1
+  fpdart: ^1.1.1
   flutter_svg: ^2.0.16
   open_store: ^0.5.0
   google_fonts: ^6.2.1
   # google_maps_flutter: ^2.5.3
-  geolocator: ^13.0.1
+  geolocator: ^13.0.1 #TODO
+  bloc_concurrency: 0.2.5 #TODO
 
   # flutter_animate: ^4.5.0 #TODO
   # infinite_scroll_pagination: ^4.1.0 #TODO
-
+  #TODO : handle lint common for all projects
   # just_audio: ^0.9.28
   # flutter_spinkit: ^5.2.1
     # flutter_qiblah: ^3.0.4 #TODO
@@ -102,14 +96,22 @@ dev_dependencies:
   test: ^1.25.7
   flutter_test:
     sdk: flutter
-  hive_generator: ^2.0.1
+  hive_generator: ^2.0.1 #TODO
   build_runner: 2.4.12
-  flutter_lints: ^4.0.0
+  islam_mob_lint:
+    path: utilities/islam_mob_lint
   json_serializable: 6.8.0
   mocktail: 1.0.4
   melos: ^6.1.0
   mockito: ^5.4.4
   dependency_validator: 4.1.0
+  flutter_gen_runner: 5.8.0
+  freezed: 2.5.7
+  bdd_widget_test: ^1.7.3
+  bdd_steps:
+    path: utilities/bdd_steps
+  islam_test:
+    path: utilities/islam_test
 
 flutter:
   generate: true
@@ -123,5 +125,22 @@ flutter:
   - assets/images/qibla/
   - assets/lottie/
 
+  fonts:
+    - family: Uthman
+      fonts:
+        - asset: assets/fonts/Uthman-Taha-Naskh-Regular.otf
+        - asset: assets/fonts/Uthman-Taha-Naskh-Bold.otf
+          weight: 700
+    - family: Jameel
+      fonts:
+        - asset: assets/fonts/jameel.ttf
 
-
+flutter_gen:
+  output: lib/assets/
+  assets:
+    exclude:
+      - resources/mocks/**/*
+    outputs:
+      package_parameter_enabled: true
+  integrations:
+    flutter_svg: true

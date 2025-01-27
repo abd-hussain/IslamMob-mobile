@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/domain/sealed/salah_time_state.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/home_tab/bloc/salah_timing/salah_timing_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/day_box.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/salah_box.dart';
 import 'package:islam_app/shared_widgets/bottomsheet/setting_bottomsheet.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SalahTimingView extends StatefulWidget {
   const SalahTimingView({super.key});
@@ -30,16 +30,14 @@ class _SalahTimingViewState extends State<SalahTimingView> {
           loop: false,
           pagination: const SwiperPagination(),
           controller: SwiperController(),
-          itemBuilder: (context, index) {
-            return _buildDayTimingView(context, index);
-          },
+          itemBuilder: _buildDayTimingView,
         ),
       ),
     );
   }
 
   Widget _buildDayTimingView(BuildContext context, int index) {
-    return Container(
+    return ColoredBox(
       color: const Color(0xff292929),
       child: Column(
         children: [
@@ -54,8 +52,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
   Widget _buildSalahBoxes(BuildContext context, int index) {
     return BlocBuilder<SalahTimingBloc, SalahTimingState>(
       buildWhen: (previous, current) =>
-          previous.prayTimeForWeek != current.prayTimeForWeek ||
-          previous.currentSalahType != current.currentSalahType,
+          previous.prayTimeForWeek != current.prayTimeForWeek || previous.currentSalahType != current.currentSalahType,
       builder: (context, state) {
         if (state.prayTimeForWeek.isEmpty) {
           return const SizedBox.shrink();
@@ -71,45 +68,37 @@ class _SalahTimingViewState extends State<SalahTimingView> {
               SalahBox(
                 salahType: const SalahTimeStateFajir(),
                 salahTime: prayTimes.fajir,
-                isCurrentSalah:
-                    (currentSalah == const SalahTimeStateFajir() && index == 3),
+                isCurrentSalah: currentSalah == const SalahTimeStateFajir() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateSunrise(),
                 salahTime: prayTimes.sunrise,
-                isCurrentSalah:
-                    (currentSalah == const SalahTimeStateSunrise() &&
-                        index == 3),
+                isCurrentSalah: currentSalah == const SalahTimeStateSunrise() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateZhur(),
                 salahTime: prayTimes.dhuhr,
-                isCurrentSalah:
-                    (currentSalah == const SalahTimeStateZhur() && index == 3),
+                isCurrentSalah: currentSalah == const SalahTimeStateZhur() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateAsr(),
                 salahTime: prayTimes.asr,
-                isCurrentSalah:
-                    (currentSalah == const SalahTimeStateAsr() && index == 3),
+                isCurrentSalah: currentSalah == const SalahTimeStateAsr() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateMaghrib(),
                 salahTime: prayTimes.maghrib,
-                isCurrentSalah:
-                    (currentSalah == const SalahTimeStateMaghrib() &&
-                        index == 3),
+                isCurrentSalah: currentSalah == const SalahTimeStateMaghrib() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateIsha(),
                 salahTime: prayTimes.isha,
-                isCurrentSalah:
-                    (currentSalah == const SalahTimeStateIsha() && index == 3),
+                isCurrentSalah: currentSalah == const SalahTimeStateIsha() && index == 3,
               ),
             ],
           ),
@@ -120,8 +109,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
 
   Widget _buildAdditionalInfoRow(BuildContext context, int index) {
     return BlocBuilder<SalahTimingBloc, SalahTimingState>(
-      buildWhen: (previous, current) =>
-          previous.prayTimeForWeek != current.prayTimeForWeek,
+      buildWhen: (previous, current) => previous.prayTimeForWeek != current.prayTimeForWeek,
       builder: (context, state) {
         if (state.prayTimeForWeek.isEmpty) {
           return const SizedBox.shrink();
@@ -135,8 +123,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
             children: [
               _buildMidnightInfo(context, prayTimes.middleOfTheNight),
               _buildSettingsButton(context),
-              _buildLastThirdOfNightInfo(
-                  context, prayTimes.lastThirdOfTheNight),
+              _buildLastThirdOfNightInfo(context, prayTimes.lastThirdOfTheNight),
             ],
           ),
         );
@@ -147,7 +134,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
   Widget _buildMidnightInfo(BuildContext context, DateTime time) {
     return Expanded(
       child: _buildInfoBox(
-        title: AppLocalizations.of(context)!.midnight,
+        title: IslamMobLocalizations.of(context).midnight,
         time: time,
       ),
     );
@@ -156,7 +143,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
   Widget _buildLastThirdOfNightInfo(BuildContext context, DateTime time) {
     return Expanded(
       child: _buildInfoBox(
-        title: AppLocalizations.of(context)!.last3ofnight,
+        title: IslamMobLocalizations.of(context).last3ofnight,
         time: time,
       ),
     );
@@ -172,7 +159,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             CustomText(
@@ -215,7 +202,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
 
   Widget _buildSettingsButton(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.grey[100],

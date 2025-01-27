@@ -66,7 +66,6 @@ class _CounterViewState extends State<CounterView> {
                 title: _counter.toString(),
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
               ),
             ),
           ),

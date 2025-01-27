@@ -7,7 +7,7 @@ class ProfileOptions with _$ProfileOptions {
   factory ProfileOptions({
     required IconData icon,
     required String name,
-    @Default("") String subtitle,
+    @Default('') String subtitle,
     @Default(true) bool avaliable,
     required VoidCallback onTap,
   }) = _ProfileOptions;

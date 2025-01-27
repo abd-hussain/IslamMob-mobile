@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/correction_min_time.dart';
 import 'package:islam_app/domain/usecase/calculation_setting_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/sub_widgets/time_correction_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditPrayTimeMinutesView extends StatelessWidget {
   const EditPrayTimeMinutesView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = IslamMobLocalizations.of(context);
 
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Column(
         children: [
           const SizedBox(height: 10),
@@ -49,18 +49,15 @@ class EditPrayTimeMinutesView extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildTimeCorrectionViews(
-      BuildContext context, AppLocalizations localizations) {
+  List<Widget> _buildTimeCorrectionViews(BuildContext context, IslamMobLocalizations localizations) {
     return CalculationSettingUsecase.getCorrectionMinTimeDataList(localizations)
         .map((correction) => _buildTimeCorrectionBloc(context, correction))
         .toList();
   }
 
-  Widget _buildTimeCorrectionBloc(
-      BuildContext context, CorrectionMinTimeData correction) {
+  Widget _buildTimeCorrectionBloc(BuildContext context, CorrectionMinTimeData correction) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) =>
-          correction.getter(previous) != correction.getter(current),
+      buildWhen: (previous, current) => correction.getter(previous) != correction.getter(current),
       builder: (context, state) {
         return TimeCorrectionView(
           title: correction.title,

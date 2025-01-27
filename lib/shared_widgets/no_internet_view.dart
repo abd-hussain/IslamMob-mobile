@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NoInternetView extends StatelessWidget {
   final Function() retryCallback;
@@ -22,28 +22,26 @@ class NoInternetView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             CustomText(
-              title: AppLocalizations.of(context)!.internetconnection,
+              title: IslamMobLocalizations.of(context).internetconnection,
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: const Color(0xff444444),
             ),
             const SizedBox(height: 8),
             CustomText(
-              title: AppLocalizations.of(context)!
-                  .intenetshouldbeenableforthispage,
+              title: IslamMobLocalizations.of(context).intenetshouldbeenableforthispage,
               fontSize: 14,
               maxLines: 2,
               textAlign: TextAlign.center,
               color: const Color(0xff444444),
             ),
             ElevatedButton(
-              onPressed: () => retryCallback(),
+              onPressed: retryCallback,
               child: CustomText(
-                title: AppLocalizations.of(context)!.titleofretry,
+                title: IslamMobLocalizations.of(context).titleofretry,
                 fontSize: 14,
                 maxLines: 2,
                 textAlign: TextAlign.center,
-                color: Colors.white,
               ),
             )
           ],

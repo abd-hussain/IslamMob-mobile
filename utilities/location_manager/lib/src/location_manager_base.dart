@@ -16,7 +16,7 @@ class LocationManagerBase {
     } on PlatformException catch (e) {
       _logPlatformException(e);
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(message: "Unexpected error: $e");
+      LoggerManagerBase.logDebugMessage(message: 'Unexpected error: $e');
     }
     return {'error': 'Error retrieving location'};
   }
@@ -24,19 +24,17 @@ class LocationManagerBase {
   /// Checks and requests location permissions.
   Future<bool> checkLocationPermission() async {
     if (!await Geolocator.isLocationServiceEnabled()) {
-      LoggerManagerBase.logDebugMessage(
-          message: "Location services are disabled.");
+      LoggerManagerBase.logDebugMessage(message: 'Location services are disabled.');
       return false;
     }
 
-    LocationPermission permission = await Geolocator.checkPermission();
+    var permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
     }
 
     if (permission == LocationPermission.deniedForever) {
-      LoggerManagerBase.logDebugMessage(
-          message: "Location permissions are permanently denied.");
+      LoggerManagerBase.logDebugMessage(message: 'Location permissions are permanently denied.');
       return false;
     }
 
@@ -68,14 +66,12 @@ class LocationManagerBase {
       };
     }
 
-    LoggerManagerBase.logDebugMessage(
-        message: "No placemarks found for the given coordinates.");
+    LoggerManagerBase.logDebugMessage(message: 'No placemarks found for the given coordinates.');
     return {'error': 'No placemarks found'};
   }
 
   /// Logs platform exceptions for debugging purposes.
   void _logPlatformException(PlatformException e) {
-    LoggerManagerBase.logDebugMessage(
-        message: e.message ?? "An unknown platform error occurred");
+    LoggerManagerBase.logDebugMessage(message: e.message ?? 'An unknown platform error occurred');
   }
 }

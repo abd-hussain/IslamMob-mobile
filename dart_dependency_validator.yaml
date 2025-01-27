@@ -1,1 +1,4 @@
 allow_pins: true
+ignore:
+  - vector_graphics
+  - json_annotation

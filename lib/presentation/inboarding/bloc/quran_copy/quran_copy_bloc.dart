@@ -7,22 +7,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/domain/constants/language_constant.dart';
-import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
 import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
+import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 import 'package:logger_manager/logger_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+part 'quran_copy_bloc.freezed.dart';
 part 'quran_copy_event.dart';
 part 'quran_copy_state.dart';
-part 'quran_copy_bloc.freezed.dart';
 
 class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
   final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
-  final SetupUserSettingUseCase setupUserSettingUseCase =
-      SetupUserSettingUseCase();
+  final SetupUserSettingUseCase setupUserSettingUseCase = SetupUserSettingUseCase();
   final QuranPrintsUsecase quranPrintsUsecase = QuranPrintsUsecase();
 
   QuranCopyBloc() : super(const QuranCopyState()) {
@@ -46,8 +45,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
     for (final print in prints) {
       final fieldName = print.fieldName ?? "";
-      if (await downloadFileUsecase.fileExists(fieldName) &&
-          !state.printsAlreadyDownloaded.contains(fieldName)) {
+      if (await downloadFileUsecase.fileExists(fieldName) && !state.printsAlreadyDownloaded.contains(fieldName)) {
         downloadingList.add(fieldName);
       }
     }
@@ -88,16 +86,14 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
   }
 
   /// Handles updating the list of downloading prints in the state.
-  void _handlePrintsDownloadingUpdate(
-      _UpdatePrintsDownloading event, Emitter<QuranCopyState> emit) {
+  void _handlePrintsDownloadingUpdate(_UpdatePrintsDownloading event, Emitter<QuranCopyState> emit) {
     emit(state.copyWith(printsAlreadyDownloaded: event.print));
   }
 
-  FutureOr<void> _handleSetupCopy(
-      _SetupCopy event, Emitter<QuranCopyState> emit) async {
+  FutureOr<void> _handleSetupCopy(_SetupCopy event, Emitter<QuranCopyState> emit) async {
     final String fileName = event.printItem.fieldName!;
 
-    FirebaseAnalyticsRepository.logEvent(
+    await FirebaseAnalyticsRepository.logEvent(
       name: "use_file",
       parameters: {"file": event.printItem.fieldName!},
     );
@@ -110,8 +106,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
     ));
   }
 
-  FutureOr<void> _getListOfPrints(
-      _GetListOfPrints event, Emitter<QuranCopyState> emit) async {
+  FutureOr<void> _getListOfPrints(_GetListOfPrints event, Emitter<QuranCopyState> emit) async {
     final hasInternet = await _checkInternetConnection();
     if (!hasInternet) return;
 
@@ -122,8 +117,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
     final listOfPrints = await quranPrintsUsecase.getQuranPrints();
 
     if (listOfPrints.isEmpty) {
-      LoggerManagerBase.logDebugMessage(
-          message: 'No documents found in the collection.');
+      LoggerManagerBase.logDebugMessage(message: 'No documents found in the collection.');
       return;
     }
 

@@ -6,8 +6,9 @@ import 'package:path_provider/path_provider.dart';
 class LoadFileFromDocumentUseCase {
   Future<String?> call() async {
     final printName = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
-        defaultValue: "");
+      key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
+      defaultValue: "",
+    );
     final Directory dir = await getApplicationDocumentsDirectory();
     final filePath = Directory('${dir.path}/$printName');
 

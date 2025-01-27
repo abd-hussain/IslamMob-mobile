@@ -1,14 +1,14 @@
-import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:islam_app/shared_widgets/custom_button.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/report_suggestions/bloc/report_and_suggestion_bloc.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/attachments.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/footer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 
 class ReportOrSuggestionScreen extends StatelessWidget {
   const ReportOrSuggestionScreen({super.key});
@@ -21,13 +21,12 @@ class ReportOrSuggestionScreen extends StatelessWidget {
         onTap: () => FocusScope.of(context).unfocus(),
         child: Scaffold(
           appBar: CustomAppBar(
-            title: AppLocalizations.of(context)!.reportandsuggestiontitle,
+            title: IslamMobLocalizations.of(context).reportandsuggestiontitle,
           ),
           body: BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
             buildWhen: (previous, current) =>
                 previous.loadingStatus != current.loadingStatus ||
-                previous.internetConnectionStauts !=
-                    current.internetConnectionStauts,
+                previous.internetConnectionStauts != current.internetConnectionStauts,
             builder: (context, status) {
               if (status.internetConnectionStauts == false) {
                 return _buildNoInternetView(context);
@@ -85,10 +84,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: TextField(
-              controller:
-                  context.read<ReportAndSuggestionBloc>().textController,
+              controller: context.read<ReportAndSuggestionBloc>().textController,
               decoration: InputDecoration(
-                hintText: AppLocalizations.of(context)!.feedbackmessage,
+                hintText: IslamMobLocalizations.of(context).feedbackmessage,
                 hintMaxLines: 2,
                 hintStyle: const TextStyle(fontSize: 15),
                 enabledBorder: InputBorder.none,
@@ -103,8 +101,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSubmitButton(
-      BuildContext context, ReportAndSuggestionState state) {
+  Widget _buildSubmitButton(BuildContext context, ReportAndSuggestionState state) {
     return BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
       buildWhen: (previous, current) =>
           previous.enableSubmitBtn != current.enableSubmitBtn ||
@@ -120,14 +117,11 @@ class ReportOrSuggestionScreen extends StatelessWidget {
     );
   }
 
-  Future<void> _handleSubmit(
-      BuildContext context, ReportAndSuggestionState state) async {
+  Future<void> _handleSubmit(BuildContext context, ReportAndSuggestionState state) async {
     try {
-      FirebaseAnalyticsRepository.logEvent(
-          name: "ReportOrSuggestionSubmitsion");
+      await FirebaseAnalyticsRepository.logEvent(name: "ReportOrSuggestionSubmitsion");
 
-      context.read<ReportAndSuggestionBloc>().add(
-          const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
+      context.read<ReportAndSuggestionBloc>().add(const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
       final navigator = Navigator.of(context);
       final bloc = context.read<ReportAndSuggestionBloc>();
       await context.read<ReportAndSuggestionBloc>().callRequest(
@@ -136,15 +130,14 @@ class ReportOrSuggestionScreen extends StatelessWidget {
             attach3: state.attach3,
           );
 
-      bloc.add(
-          const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
+      bloc.add(const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
       navigator.pop();
     } on ConnectionException {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              AppLocalizations.of(context)!.pleasecheckyourinternetconnection,
+              IslamMobLocalizations.of(context).pleasecheckyourinternetconnection,
             ),
           ),
         );

@@ -26,7 +26,7 @@ class _AddMobBannerState extends State<AddMobBanner> {
       size: AdSize.banner,
       listener: BannerAdListener(
         onAdLoaded: (_) => _onAdLoaded(),
-        onAdFailedToLoad: (ad, error) => _onAdFailedToLoad(ad, error),
+        onAdFailedToLoad: _onAdFailedToLoad,
       ),
     )..load();
   }

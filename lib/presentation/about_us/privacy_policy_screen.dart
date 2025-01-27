@@ -1,8 +1,8 @@
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/about_us/widgets/section_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({super.key});
@@ -11,12 +11,12 @@ class PrivacyPolicyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "PrivacyPolicyScreen");
 
-    final localization = AppLocalizations.of(context)!;
+    final localization = IslamMobLocalizations.of(context);
 
     return Scaffold(
-      appBar: CustomAppBar(title: AppLocalizations.of(context)!.privacypolicy),
+      appBar: CustomAppBar(title: localization.privacypolicy),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

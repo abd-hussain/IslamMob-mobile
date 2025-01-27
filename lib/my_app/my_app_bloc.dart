@@ -1,11 +1,11 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:async/async.dart';
+import 'package:database_manager/database_manager.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
 class MyAppBloc {
@@ -58,6 +58,6 @@ class MyAppBloc {
   /// Checks for internet connectivity during app initialization
   Future<bool> _hasInternetConnectivity() async {
     NetworkUseCase.initialize();
-    return await NetworkUseCase.checkInternetConeection();
+    return NetworkUseCase.checkInternetConeection();
   }
 }

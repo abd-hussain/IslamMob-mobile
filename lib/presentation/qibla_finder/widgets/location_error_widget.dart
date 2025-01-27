@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/open_mobile_setting_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocationErrorWidget extends StatelessWidget {
   const LocationErrorWidget({super.key});
@@ -22,7 +22,7 @@ class LocationErrorWidget extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           CustomText(
-            title: AppLocalizations.of(context)!.allowLocations,
+            title: IslamMobLocalizations.of(context).allowLocations,
             fontSize: 16,
             color: const Color(0xffb00020),
             fontWeight: FontWeight.bold,
@@ -38,7 +38,7 @@ class LocationErrorWidget extends StatelessWidget {
 
   Widget _buildDescription(BuildContext context) {
     return CustomText(
-      title: AppLocalizations.of(context)!.allowLocationDetails,
+      title: IslamMobLocalizations.of(context).allowLocationDetails,
       fontSize: 14,
       color: const Color(0xffb00020),
       maxLines: 10,
@@ -51,7 +51,7 @@ class LocationErrorWidget extends StatelessWidget {
     return CustomButton(
       isEnabled: true,
       padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-      title: AppLocalizations.of(context)!.nolocationPermissionButton,
+      title: IslamMobLocalizations.of(context).nolocationPermissionButton,
       onTap: () async {
         await OpenMobileSettingUseCase().openAppSettings();
       },

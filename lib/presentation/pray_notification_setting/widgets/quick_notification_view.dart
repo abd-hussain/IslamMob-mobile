@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
@@ -36,11 +36,10 @@ class QuickNotificationView extends StatelessWidget {
   List<Widget> _buildNotificationRows(BuildContext context) {
     return [
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.allNotificationForToday != current.allNotificationForToday,
+        buildWhen: (previous, current) => previous.allNotificationForToday != current.allNotificationForToday,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingTodayAll,
+            title: IslamMobLocalizations.of(context).notificationSettingTodayAll,
             value: state.allNotificationForToday,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -56,12 +55,10 @@ class QuickNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.allNotificationForThreeDay !=
-            current.allNotificationForThreeDay,
+        buildWhen: (previous, current) => previous.allNotificationForThreeDay != current.allNotificationForThreeDay,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingThreedayAll,
+            title: IslamMobLocalizations.of(context).notificationSettingThreedayAll,
             value: state.allNotificationForThreeDay,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -77,12 +74,10 @@ class QuickNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.allNotificationForWeekDay !=
-            current.allNotificationForWeekDay,
+        buildWhen: (previous, current) => previous.allNotificationForWeekDay != current.allNotificationForWeekDay,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingWeekAll,
+            title: IslamMobLocalizations.of(context).notificationSettingWeekAll,
             value: state.allNotificationForWeekDay,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(

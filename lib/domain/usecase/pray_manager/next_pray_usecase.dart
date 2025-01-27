@@ -1,5 +1,5 @@
-import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/domain/repository/pray_manager.dart';
+import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class NextPrayUsecase {

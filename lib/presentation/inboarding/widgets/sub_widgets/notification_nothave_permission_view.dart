@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/open_mobile_setting_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationNothavePermissionView extends StatelessWidget {
   final Function() skipButton;
-  const NotificationNothavePermissionView(
-      {super.key, required this.skipButton});
+  const NotificationNothavePermissionView({super.key, required this.skipButton});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class NotificationNothavePermissionView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: AppLocalizations.of(context)!.whyyoushouldallownotification,
+            title: IslamMobLocalizations.of(context).whyyoushouldallownotification,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -25,8 +24,7 @@ class NotificationNothavePermissionView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: AppLocalizations.of(context)!
-              .whyyoushouldallownotificationdetails,
+          title: IslamMobLocalizations.of(context).whyyoushouldallownotificationdetails,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,
@@ -35,16 +33,16 @@ class NotificationNothavePermissionView extends StatelessWidget {
         CustomButton(
           isEnabled: true,
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-          title: AppLocalizations.of(context)!.nolocationPermissionButton,
-          onTap: () async => await OpenMobileSettingUseCase().openAppSettings(),
+          title: IslamMobLocalizations.of(context).nolocationPermissionButton,
+          onTap: () async => OpenMobileSettingUseCase().openAppSettings(),
         ),
         CustomButton(
           isEnabled: true,
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-          title: AppLocalizations.of(context)!.notNowNotifications,
+          title: IslamMobLocalizations.of(context).notNowNotifications,
           titleColor: const Color(0xff292929),
           color: Colors.grey,
-          onTap: () => skipButton(),
+          onTap: skipButton,
         ),
       ],
     );

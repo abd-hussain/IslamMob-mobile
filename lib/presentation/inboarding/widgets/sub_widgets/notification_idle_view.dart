@@ -1,13 +1,13 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationIdleView extends StatelessWidget {
   const NotificationIdleView({super.key});
@@ -19,8 +19,7 @@ class NotificationIdleView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title:
-                AppLocalizations.of(context)!.allowSendingNotificationsdetails,
+            title: IslamMobLocalizations.of(context).allowSendingNotificationsdetails,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -29,7 +28,7 @@ class NotificationIdleView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: AppLocalizations.of(context)!.mawaqeetalsalahdetails2,
+          title: IslamMobLocalizations.of(context).mawaqeetalsalahdetails2,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,
@@ -37,7 +36,7 @@ class NotificationIdleView extends StatelessWidget {
         const Expanded(child: SizedBox()),
         CustomButton(
           isEnabled: true,
-          title: AppLocalizations.of(context)!.allowNotifications,
+          title: IslamMobLocalizations.of(context).allowNotifications,
           onTap: () async {
             if (await NetworkUseCase.checkInternetConeection() == false) {
               if (context.mounted) {
@@ -57,8 +56,7 @@ class NotificationIdleView extends StatelessWidget {
             );
 
             // Check and request notification permission
-            final hasPermission =
-                await FirebaseMessagesRepository.checkAndRequestPermission();
+            final hasPermission = await FirebaseMessagesRepository.checkAndRequestPermission();
             await _initializeLocalNotifications();
 
             // Update status based on permission result
@@ -67,12 +65,10 @@ class NotificationIdleView extends StatelessWidget {
                 : const NotificationsProcessStateNoPermission();
 
             if (hasPermission) {
-              final String? notificationsDetails =
-                  await FirebaseMessagesRepository().getNotificationToken();
+              final String? notificationsDetails = await FirebaseMessagesRepository().getNotificationToken();
 
               notificationsBloc.add(
-                NotificationsEvent.setupToken(
-                    token: notificationsDetails ?? ""),
+                NotificationsEvent.setupToken(token: notificationsDetails ?? ""),
               );
             }
 
@@ -93,9 +89,7 @@ class NotificationIdleView extends StatelessWidget {
   void showNoInternetConnection(BuildContext context) {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
-      SnackBar(
-          content: Text(
-              AppLocalizations.of(context)!.pleasecheckyourinternetconnection)),
+      SnackBar(content: Text(IslamMobLocalizations.of(context).pleasecheckyourinternetconnection)),
     );
   }
 }

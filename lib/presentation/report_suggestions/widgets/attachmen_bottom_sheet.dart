@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AttachmentBottomSheetsUtil {
   Future addImageBottomSheet(
@@ -11,6 +11,8 @@ class AttachmentBottomSheetsUtil {
       required VoidCallback galleryCallBack,
       required VoidCallback cameraCallBack,
       required VoidCallback deleteCallBack}) {
+    final localize = IslamMobLocalizations.of(context);
+
     return showModalBottomSheet(
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
@@ -44,8 +46,7 @@ class AttachmentBottomSheetsUtil {
                           ),
                           const SizedBox(width: 10),
                           CustomText(
-                            title: AppLocalizations.of(context)!
-                                .pickimageremoveimage,
+                            title: localize.pickimageremoveimage,
                             color: Colors.red,
                             fontSize: 16,
                           ),
@@ -88,8 +89,7 @@ class AttachmentBottomSheetsUtil {
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: CustomText(
-                                      title: AppLocalizations.of(context)!
-                                          .pickimagefromstudio,
+                                      title: localize.pickimagefromstudio,
                                       fontSize: 16,
                                       color: const Color(0xff444444),
                                     ),
@@ -121,8 +121,7 @@ class AttachmentBottomSheetsUtil {
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: CustomText(
-                                      title: AppLocalizations.of(context)!
-                                          .pickimagefromcamera,
+                                      title: localize.pickimagefromcamera,
                                       fontSize: 16,
                                       color: const Color(0xff444444),
                                     ),

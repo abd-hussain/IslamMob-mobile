@@ -16,8 +16,7 @@ class AzkarBase {
     AzkarModel(
       id: 2,
       title: '',
-      desc:
-          "اللّهُـمَّ أَنْـتَ السَّلامُ ، وَمِـنْكَ السَّلام ، تَبارَكْتَ يا ذا الجَـلالِ وَالإِكْـرام",
+      desc: "اللّهُـمَّ أَنْـتَ السَّلامُ ، وَمِـنْكَ السَّلام ، تَبارَكْتَ يا ذا الجَـلالِ وَالإِكْـرام",
       maxCount: 1,
     ),
     AzkarModel(
@@ -43,8 +42,7 @@ class AzkarBase {
     AzkarModel(
       id: 6,
       title: '',
-      desc:
-          "لا إلهَ إلاّ اللّهُ وَحْـدَهُ لا شريكَ لهُ، لهُ الملكُ ولهُ الحَمْد، وهُوَ على كُلّ شَيءٍ قَـدير",
+      desc: "لا إلهَ إلاّ اللّهُ وَحْـدَهُ لا شريكَ لهُ، لهُ الملكُ ولهُ الحَمْد، وهُوَ على كُلّ شَيءٍ قَـدير",
       maxCount: 1,
     ),
   ];
@@ -77,7 +75,7 @@ class AzkarBase {
   }
 
   List<AzkarModel> _universalAzkar(bool fajirOrMaghribSalah) {
-    List<AzkarModel> azkar = [
+    final List<AzkarModel> azkar = [
       AzkarModel(
         id: 10,
         title: aothBellah,
@@ -88,8 +86,7 @@ class AzkarBase {
       AzkarModel(
         id: 14,
         title: '',
-        desc:
-            "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+        desc: "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
         maxCount: 1,
       ),
     ];
@@ -120,18 +117,16 @@ class AzkarBase {
     return AzkarModel(
       id: 12,
       title: '',
-      desc:
-          "اللّهُـمَّ إِنِّـي أَسْأَلُـكَ عِلْمـاً نافِعـاً وَرِزْقـاً طَيِّـباً ، وَعَمَـلاً مُتَقَـبَّلاً",
+      desc: "اللّهُـمَّ إِنِّـي أَسْأَلُـكَ عِلْمـاً نافِعـاً وَرِزْقـاً طَيِّـباً ، وَعَمَـلاً مُتَقَـبَّلاً",
       maxCount: 1,
     );
   }
 
   List<AzkarModel> azkarList(AzkarSalahTimeState salahType) {
     final bool fajirOrMaghribSalah =
-        salahType == const AzkarSalahTimeStateFajir() ||
-            salahType == const AzkarSalahTimeStateMaghrib();
+        salahType == const AzkarSalahTimeStateFajir() || salahType == const AzkarSalahTimeStateMaghrib();
 
-    List<AzkarModel> list = [..._baseList];
+    final List<AzkarModel> list = [..._baseList];
 
     // Add time-based Azkar
     list.addAll(_timeBasedAzkar(fajirOrMaghribSalah));

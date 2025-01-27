@@ -1,8 +1,8 @@
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/about_us/widgets/section_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TermsConditionScreen extends StatelessWidget {
   const TermsConditionScreen({super.key});
@@ -10,12 +10,12 @@ class TermsConditionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "TermsConditionScreen");
-    final localization = AppLocalizations.of(context)!;
+    final localization = IslamMobLocalizations.of(context);
 
     return Scaffold(
       appBar: CustomAppBar(title: localization.termsandconditions),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

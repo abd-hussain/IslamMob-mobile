@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
@@ -16,12 +16,11 @@ class ProfileHeader extends StatelessWidget {
         padding: const EdgeInsets.only(left: 16, right: 16),
         child: Row(
           children: [
-            Image.asset(locator<TimingUseCase>().getCurrentImageForTime(),
-                width: 32, height: 32),
+            Image.asset(locator<TimingUseCase>().getCurrentImageForTime(), width: 32, height: 32),
             const SizedBox(width: 16),
             Expanded(
               child: CustomText(
-                title: AppLocalizations.of(context)!.welcomeback,
+                title: IslamMobLocalizations.of(context).welcomeback,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
