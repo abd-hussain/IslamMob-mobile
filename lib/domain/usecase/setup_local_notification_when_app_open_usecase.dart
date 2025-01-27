@@ -20,8 +20,7 @@ import 'package:islam_app/my_app/locator.dart';
 ///
 class SetupLocalNotificationWhenAppOpenUseCase {
   final _localNotificationRepository = locator<LocalNotificationRepository>();
-  final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase =
-      NotifyAdhanNotificationUsecase();
+  final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase = NotifyAdhanNotificationUsecase();
 
   // How many notifications we want from prayer-related scheduling.
   // The last 2 are the final "open the app" reminders.
@@ -30,8 +29,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   // How far we extend scheduling if we have not reached 62 notifications yet.
   static const int maxDayCount = 14; // e.g., up to 2 weeks
 
-  int _notificationCount =
-      0; // will increment each time we schedule a notification
+  int _notificationCount = 0; // will increment each time we schedule a notification
 
   /// We'll store the maximum time we schedule a prayer notification,
   /// so the final 2 reminders can come *after* that.
@@ -49,8 +47,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     int scheduledPrayerNotifications = 0;
     int dayIndex = 0;
 
-    while (scheduledPrayerNotifications < maxPrayerNotifications &&
-        dayIndex < maxDayCount) {
+    while (scheduledPrayerNotifications < maxPrayerNotifications && dayIndex < maxDayCount) {
       final targetDate = now.add(Duration(days: dayIndex));
 
       // Possibly skip day if user disabled notifications for "today," "3 days," or "week"
@@ -60,8 +57,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
       }
 
       // Get prayer timing for this specific day
-      final prayTimingForDay = _notifyAdhanNotificationUsecase
-          .getPrayTimingForSpesificDates(listOfDates: [targetDate]);
+      final prayTimingForDay = _notifyAdhanNotificationUsecase.getPrayTimingForSpesificDates(listOfDates: [targetDate]);
       if (prayTimingForDay.isNotEmpty) {
         // Schedules notifications for this day, returns how many got scheduled
         final dayCount = await _scheduleDailyNotifications(
@@ -206,7 +202,6 @@ class SetupLocalNotificationWhenAppOpenUseCase {
 
     // 2. Main prayer time
     count += await _scheduleSingleTimeNotification(
-      // ignore: use_build_context_synchronously
       context: context,
       time: mainTime,
       type: mainType,

@@ -1,5 +1,6 @@
-import 'package:islam_app/domain/sealed/madhab.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:islam_app/domain/sealed/madhab.dart';
+
 part 'madhab_setting.freezed.dart';
 
 @freezed

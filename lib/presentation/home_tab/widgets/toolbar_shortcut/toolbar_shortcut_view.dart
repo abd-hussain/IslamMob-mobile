@@ -1,7 +1,7 @@
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_cell.dart';
 import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.dart';
@@ -13,7 +13,7 @@ class ToolbarShortcutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localize = AppLocalizations.of(context)!;
+    final localize = IslamMobLocalizations.of(context);
     final navigator = Navigator.of(context, rootNavigator: true);
     return Container(
       decoration: _containerDecoration(),
@@ -39,8 +39,7 @@ class ToolbarShortcutView extends StatelessWidget {
                 title: localize.calenderSettings,
                 imagePath: "assets/images/toolbar/calender.png",
                 onTap: () async {
-                  FirebaseAnalyticsRepository.logEvent(
-                      name: "CalenderScreenFromHomeToolBar");
+                  await FirebaseAnalyticsRepository.logEvent(name: "CalenderScreenFromHomeToolBar");
                   await navigator.pushNamed(RoutesConstants.calenderScreen);
                 },
               ),
@@ -50,8 +49,7 @@ class ToolbarShortcutView extends StatelessWidget {
                 title: "Qibla",
                 imagePath: "assets/images/toolbar/qibla.png",
                 onTap: () async {
-                  FirebaseAnalyticsRepository.logEvent(
-                      name: "QiblaFinderScreenFromHomeToolBar");
+                  await FirebaseAnalyticsRepository.logEvent(name: "QiblaFinderScreenFromHomeToolBar");
                   await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
                 },
               ),
@@ -61,8 +59,7 @@ class ToolbarShortcutView extends StatelessWidget {
                 title: localize.shareapp,
                 imagePath: "assets/images/toolbar/share.png",
                 onTap: () async {
-                  FirebaseAnalyticsRepository.logEvent(
-                      name: "ShareAppFromHomeToolBar");
+                  await FirebaseAnalyticsRepository.logEvent(name: "ShareAppFromHomeToolBar");
                   await ShareDialog().dialog(context: context);
                 },
               ),
@@ -72,8 +69,7 @@ class ToolbarShortcutView extends StatelessWidget {
                 title: "Support Us",
                 imagePath: "assets/images/toolbar/donate.png",
                 onTap: () async {
-                  FirebaseAnalyticsRepository.logEvent(
-                      name: "SupportUsFromHomeToolBar");
+                  await FirebaseAnalyticsRepository.logEvent(name: "SupportUsFromHomeToolBar");
                   await SupportUsDialog().dialog(context: context);
                 },
               ),

@@ -1,11 +1,11 @@
 import 'dart:math';
 
 import 'package:islam_mob_adhan/src/coordinates.dart';
-import 'astronomical.dart';
-import 'calendrical_helper.dart';
-import 'math.dart';
-import 'shadow_length.dart';
-import 'solar_coordinates.dart';
+import 'package:islam_mob_adhan/src/internal/astronomical.dart';
+import 'package:islam_mob_adhan/src/internal/calendrical_helper.dart';
+import 'package:islam_mob_adhan/src/internal/math.dart';
+import 'package:islam_mob_adhan/src/internal/shadow_length.dart';
+import 'package:islam_mob_adhan/src/internal/solar_coordinates.dart';
 
 /// Represents solar times, including transit, sunrise, sunset, and afternoon calculations.
 class SolarTime {
@@ -131,8 +131,7 @@ class SolarTime {
     }
 
     // Calculate the tangent of the absolute latitude-declination difference.
-    final latitudeDeclinationDifference =
-        (observer.latitude - solar.declination).abs();
+    final latitudeDeclinationDifference = (observer.latitude - solar.declination).abs();
     final tangent = tan(degreesToRadians(latitudeDeclinationDifference));
 
     // Calculate the angle for the given shadow length.

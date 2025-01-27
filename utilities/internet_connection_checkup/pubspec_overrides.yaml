@@ -1,4 +1,6 @@
-# melos_managed_dependency_overrides: logger_manager
+# melos_managed_dependency_overrides: logger_manager,islam_mob_lint
 dependency_overrides:
   logger_manager:
     path: ../logger_manager
+  islam_mob_lint:
+    path: ../islam_mob_lint

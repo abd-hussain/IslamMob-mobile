@@ -1,9 +1,9 @@
-import 'package:firebase_manager/firebase_manager.dart';
-import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
 
 class DownloadProgressDialog extends StatefulWidget {
   final String fileUrl;
@@ -21,7 +21,7 @@ class DownloadProgressDialog extends StatefulWidget {
 }
 
 class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
-  double progress = 0.0;
+  double progress = 0;
   late CancelToken cancelToken;
 
   @override
@@ -58,8 +58,7 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
           Navigator.pop(context);
         }
       },
-      cancelToken:
-          cancelToken, // Pass the cancel token to manage download cancellation
+      cancelToken: cancelToken, // Pass the cancel token to manage download cancellation
     );
   }
 
@@ -87,7 +86,7 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
       margin: const EdgeInsets.symmetric(vertical: 8),
       alignment: Alignment.center,
       child: Text(
-        AppLocalizations.of(context)!.downloading,
+        IslamMobLocalizations.of(context).downloading,
         textAlign: TextAlign.center,
         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -118,7 +117,7 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
-        AppLocalizations.of(context)!.downloadpopupmessage,
+        IslamMobLocalizations.of(context).downloadpopupmessage,
         maxLines: 3,
         textAlign: TextAlign.center,
         style: const TextStyle(
@@ -132,11 +131,10 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
   Widget _buildCancelButton(BuildContext context) {
     return CustomButton(
       isEnabled: true,
-      title: AppLocalizations.of(context)!.cancel,
+      title: IslamMobLocalizations.of(context).cancel,
       color: Colors.redAccent,
       onTap: () {
-        FirebaseAnalyticsRepository.logEvent(
-            name: "QuranPrintsScreenCancelButton");
+        FirebaseAnalyticsRepository.logEvent(name: "QuranPrintsScreenCancelButton");
         cancelToken.cancel(); // Cancel the download when pressing Cancel
         Navigator.of(context).pop();
       },

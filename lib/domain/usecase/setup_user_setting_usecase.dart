@@ -1,15 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:database_manager/database_manager.dart';
+import 'package:flutter/material.dart';
 import 'package:islam_app/domain/model/location.dart';
 import 'package:islam_app/domain/model/quran_copy.dart';
-import 'package:islam_app/domain/usecase/pray_country_setting_usecase.dart';
 import 'package:islam_app/domain/sealed/high_latitude_method.dart';
 import 'package:islam_app/domain/sealed/madhab.dart';
 import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
+import 'package:islam_app/domain/usecase/pray_country_setting_usecase.dart';
 
 class SetupUserSettingUseCase {
-  final PrayCountrySettingUsecase _prayCountrySettingUsecase =
-      PrayCountrySettingUsecase();
+  final PrayCountrySettingUsecase _prayCountrySettingUsecase = PrayCountrySettingUsecase();
 
   Future<void> setupHighLatitudeRule() async {
     final countryCode = DataBaseManagerBase.getFromDatabase(
@@ -17,44 +16,36 @@ class SetupUserSettingUseCase {
       defaultValue: "JO",
     );
 
-    PrayHightLatitudeCaluclationState calculationMethod =
-        _prayCountrySettingUsecase
-            .setupPraySettingByCountryCode(countryCode)
-            .hightLatitudeCaluclationState;
+    final PrayHightLatitudeCaluclationState calculationMethod =
+        _prayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode).hightLatitudeCaluclationState;
 
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
-        value: calculationMethod.toString());
+        key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude, value: calculationMethod.toString());
   }
 
   Future<void> setupPrayCalculationMethod() async {
     final countryCode = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldLocationConstant.selectedCountryCode,
       defaultValue: "JO",
-    ) as String;
+    );
 
-    PrayCalculationMethodState calculationMethod = _prayCountrySettingUsecase
-        .setupPraySettingByCountryCode(countryCode)
-        .calculationMethod;
+    final PrayCalculationMethodState calculationMethod =
+        _prayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode).calculationMethod;
 
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
-        value: calculationMethod.toString());
+        key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod, value: calculationMethod.toString());
   }
 
   Future<void> setupMadhabByCountryCode() async {
     final countryCode = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldLocationConstant.selectedCountryCode,
       defaultValue: "JO",
-    ) as String;
+    );
 
-    MadhabState calculationMethod = _prayCountrySettingUsecase
-        .setupPraySettingByCountryCode(countryCode)
-        .madhab;
+    final MadhabState calculationMethod = _prayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode).madhab;
 
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
-        value: calculationMethod.toString());
+        key: DatabaseFieldPrayCalculationConstant.selectedMadhab, value: calculationMethod.toString());
   }
 
   /// Updates UTC Offset in storage
@@ -72,32 +63,25 @@ class SetupUserSettingUseCase {
     debugPrint('Current UTC Offset: hours: $hours, minutes: $minutes');
 
     await DataBaseManagerBase.saveMultipleInDatabase(data: {
-      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour:
-          hours.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin:
-          minutes.toString()
+      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour: hours.toString(),
+      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin: minutes.toString()
     });
   }
 
   /// Updates the notification token in storage
   Future<void> setNotificationToken(String token) async {
-    await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldConstant.notificationToken, value: token);
+    await DataBaseManagerBase.saveInDatabase(key: DatabaseFieldConstant.notificationToken, value: token);
   }
 
   /// Updates location details in storage
   Future<void> setQuranCopyInDB(QuranCopy copyName) async {
     final copyData = {
-      DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse:
-          copyName.fileName,
-      DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber:
-          copyName.lastPageNumber,
-      DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers:
-          copyName.juz2ToPageNumbers,
-      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers:
-          copyName.sorahToPageNumbers,
+      DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse: copyName.fileName,
+      DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber: copyName.lastPageNumber,
+      DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers: copyName.juz2ToPageNumbers,
+      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers: copyName.sorahToPageNumbers,
     };
-    return await DataBaseManagerBase.saveMultipleInDatabase(data: copyData);
+    return DataBaseManagerBase.saveMultipleInDatabase(data: copyData);
   }
 
   /// Updates location details in storage
@@ -118,7 +102,6 @@ class SetupUserSettingUseCase {
 
   /// Updates the selected language in storage and rebuilds the app
   Future<void> setLanguage(String langCode) async {
-    await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldConstant.userLanguageCode, value: langCode);
+    await DataBaseManagerBase.saveInDatabase(key: DatabaseFieldConstant.userLanguageCode, value: langCode);
   }
 }

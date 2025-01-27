@@ -2,9 +2,9 @@ import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DayBox extends StatelessWidget {
   final int index;
@@ -50,8 +50,7 @@ class DayBox extends StatelessWidget {
 
   /// Builds the Gregorian (Melady) date display.
   Widget _buildMeladyDate(int dayOffset) {
-    final meladyDate = timingUsecase
-        .formatDate(timingUsecase.getDateWithDayOffset(dayOffset: dayOffset));
+    final meladyDate = timingUsecase.formatDate(timingUsecase.getDateWithDayOffset(dayOffset: dayOffset));
     return Expanded(
       child: CustomText(
         title: meladyDate,
@@ -65,8 +64,7 @@ class DayBox extends StatelessWidget {
 
   /// Builds the Hijri date display.
   Widget _buildHijriDate(int dayOffset) {
-    final hijriDate = timingUsecase.formatHijriDate(
-        timingUsecase.getHijriDateWithDayOffset(dayOffset: dayOffset));
+    final hijriDate = timingUsecase.formatHijriDate(timingUsecase.getHijriDateWithDayOffset(dayOffset: dayOffset));
     return Expanded(
       child: CustomText(
         title: hijriDate,
@@ -120,14 +118,16 @@ class DayBox extends StatelessWidget {
 
   /// Retrieves the title of the day based on its offset.
   String _getTitleOfTheDay(BuildContext context, int dayOffset) {
+    final localization = IslamMobLocalizations.of(context);
+
     final titles = {
-      0: AppLocalizations.of(context)!.threedaybefore,
-      1: AppLocalizations.of(context)!.twodaybefore,
-      2: AppLocalizations.of(context)!.yesterday,
-      3: AppLocalizations.of(context)!.today,
-      4: AppLocalizations.of(context)!.tomorrow,
-      5: AppLocalizations.of(context)!.aftertwoday,
-      6: AppLocalizations.of(context)!.afterthreeday,
+      0: localization.threedaybefore,
+      1: localization.twodaybefore,
+      2: localization.yesterday,
+      3: localization.today,
+      4: localization.tomorrow,
+      5: localization.aftertwoday,
+      6: localization.afterthreeday,
     };
 
     return titles[index] ?? '';
@@ -135,8 +135,6 @@ class DayBox extends StatelessWidget {
 
   /// Retrieves the current language code from the Hive box.
   String _currentLanguageCode() {
-    return DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode,
-        defaultValue: "en") as String;
+    return DataBaseManagerBase.getFromDatabase(key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
   }
 }

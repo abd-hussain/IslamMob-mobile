@@ -8,19 +8,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  geolocator: ^13.0.2
   geocoding: ^3.0.0
+  geolocator: ^13.0.2
 
   logger_manager:
     path: ../../utilities/logger_manager
 
 dev_dependencies:
   build_runner: 2.4.12
-  lints: ^4.0.0
+  dependency_validator: 4.1.0
+  islam_mob_lint:
+    path: ../islam_mob_lint
   json_serializable: 6.8.0
   mockito: ^5.4.4
-  dependency_validator: 4.1.0
 
 flutter:
   uses-material-design: true

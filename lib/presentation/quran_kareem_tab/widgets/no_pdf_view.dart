@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/load_file_from_document_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:lottie/lottie.dart';
 
 class NoPDFView extends StatelessWidget {
@@ -40,7 +40,7 @@ class NoPDFView extends StatelessWidget {
 
   Widget _buildInstructionText(BuildContext context) {
     return CustomText(
-      title: AppLocalizations.of(context)!.selectprintdetails,
+      title: IslamMobLocalizations.of(context).selectprintdetails,
       fontSize: 16,
       maxLines: 2,
       textAlign: TextAlign.center,
@@ -56,10 +56,9 @@ class NoPDFView extends StatelessWidget {
       ),
       onPressed: () => _navigateToPrintListScreen(context),
       child: CustomText(
-        title: AppLocalizations.of(context)!.selectprint,
+        title: IslamMobLocalizations.of(context).selectprint,
         fontSize: 16,
         textAlign: TextAlign.center,
-        color: Colors.white,
       ),
     );
   }
@@ -67,9 +66,7 @@ class NoPDFView extends StatelessWidget {
   Future<void> _navigateToPrintListScreen(BuildContext context) async {
     final navigator = Navigator.of(context, rootNavigator: true);
 
-    await navigator
-        .pushNamed(RoutesConstants.quranPrintListScreen)
-        .then((value) {
+    await navigator.pushNamed(RoutesConstants.quranPrintListScreen).then((value) {
       if (value is bool && value) {
         // ignore: use_build_context_synchronously
         _loadMushafFile(context);
@@ -87,7 +84,7 @@ class NoPDFView extends StatelessWidget {
     final file = File(filePath);
 
     if (file.existsSync() && context.mounted) {
-      context.read<QuranKareemBloc>().initialize();
+      await context.read<QuranKareemBloc>().initialize();
     } else {
       debugPrint("File does NOT exist at: ${file.path}");
     }

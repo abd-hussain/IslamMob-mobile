@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hijri/hijri_calendar.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 
 class TimingUseCase {
   /// Returns the appropriate image path based on the current time.
   String getCurrentImageForTime() {
     final currentHour = DateTime.now().hour;
-    return (currentHour > 8 && currentHour < 18)
-        ? "assets/images/days/sun.png"
-        : "assets/images/days/moon.png";
+    return (currentHour > 8 && currentHour < 18) ? "assets/images/days/sun.png" : "assets/images/days/moon.png";
   }
 
   // /// Formats a [DateTime] object to `dd/MM/yyyy`.
@@ -19,16 +17,14 @@ class TimingUseCase {
   String formatHijriDate(HijriCalendar date) => date.toFormat("dd/MM/yyyy");
 
   /// Gets a [DateTime] object by adding a specified number of days.
-  DateTime getDateWithDayOffset({required int dayOffset}) =>
-      DateTime.now().add(Duration(days: dayOffset));
+  DateTime getDateWithDayOffset({required int dayOffset}) => DateTime.now().add(Duration(days: dayOffset));
 
   /// Gets a [HijriCalendar] object by adding a specified number of days.
   HijriCalendar getHijriDateWithDayOffset({required int dayOffset}) {
     final hijriDate = HijriCalendar.now();
 
     // Convert the Hijri date to a DateTime for manipulation
-    final gregorianDate = HijriCalendar()
-        .hijriToGregorian(hijriDate.hYear, hijriDate.hMonth, hijriDate.hDay);
+    final gregorianDate = HijriCalendar().hijriToGregorian(hijriDate.hYear, hijriDate.hMonth, hijriDate.hDay);
 
     // Add the day offset to the Gregorian date
     final updatedGregorianDate = gregorianDate.add(Duration(days: dayOffset));
@@ -43,7 +39,7 @@ class TimingUseCase {
   String getDayName({required BuildContext context, required DateTime date}) {
     final dayName = DateFormat('EEEE').format(date);
 
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = IslamMobLocalizations.of(context);
     switch (dayName) {
       case "Sunday":
         return localizations.sunday;

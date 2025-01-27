@@ -1,9 +1,9 @@
-import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/setup_account/setup_account_bloc.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SetupAccountView extends StatelessWidget {
   final Function() doneSelection;
@@ -16,7 +16,7 @@ class SetupAccountView extends StatelessWidget {
       child: Builder(
         builder: (context) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: Column(
               children: [
                 _buildAnimation(context),
@@ -46,7 +46,7 @@ class SetupAccountView extends StatelessWidget {
     return Column(
       children: [
         CustomText(
-          title: AppLocalizations.of(context)!.onboardingSetupAccountMessage1,
+          title: IslamMobLocalizations.of(context).onboardingSetupAccountMessage1,
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -54,7 +54,7 @@ class SetupAccountView extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         CustomText(
-          title: AppLocalizations.of(context)!.onboardingSetupAccountMessage2,
+          title: IslamMobLocalizations.of(context).onboardingSetupAccountMessage2,
           fontSize: 20,
           color: const Color(0xff008480),
           fontWeight: FontWeight.bold,
@@ -63,7 +63,7 @@ class SetupAccountView extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         CustomText(
-          title: AppLocalizations.of(context)!.onboardingSetupAccountMessage3,
+          title: IslamMobLocalizations.of(context).onboardingSetupAccountMessage3,
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -83,7 +83,7 @@ class SetupAccountView extends StatelessWidget {
               child: Center(
                 child: CustomButton(
                   isEnabled: true,
-                  title: AppLocalizations.of(context)!.startyourjourney,
+                  title: IslamMobLocalizations.of(context).startyourjourney,
                   onTap: () async => doneSelection(),
                 ),
               ),

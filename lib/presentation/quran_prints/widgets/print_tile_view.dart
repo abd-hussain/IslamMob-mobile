@@ -1,8 +1,8 @@
-import 'package:islam_app/shared_widgets/custom_button.dart';
-import 'package:flutter/material.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class PrintTileView extends StatelessWidget {
   final String language;
@@ -57,7 +57,7 @@ class PrintTileView extends StatelessWidget {
 
   BoxDecoration _buildContainerDecoration() {
     return BoxDecoration(
-      border: Border.all(color: const Color(0xff292929), width: 1),
+      border: Border.all(color: const Color(0xff292929)),
       borderRadius: const BorderRadius.all(Radius.circular(5)),
     );
   }
@@ -73,7 +73,7 @@ class PrintTileView extends StatelessWidget {
 
   Widget _buildDescription() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: CustomText(
         title: description ?? "",
         fontSize: 16,
@@ -86,7 +86,7 @@ class PrintTileView extends StatelessWidget {
 
   Widget _buildPreviewImage() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: CachedNetworkImage(
         imageUrl: previewImage ?? "",
         placeholder: (context, url) => const CircularProgressIndicator(),
@@ -99,7 +99,7 @@ class PrintTileView extends StatelessWidget {
     return CustomButton(
       isEnabled: downloadButtonAvailable,
       padding: const EdgeInsets.all(8),
-      title: AppLocalizations.of(context)!.download,
+      title: IslamMobLocalizations.of(context).download,
       onTap: onDownloadPressed,
     );
   }
@@ -108,7 +108,7 @@ class PrintTileView extends StatelessWidget {
     return CustomButton(
       isEnabled: useButtonAvailable,
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-      title: AppLocalizations.of(context)!.use,
+      title: IslamMobLocalizations.of(context).use,
       onTap: onUsePressed,
     );
   }

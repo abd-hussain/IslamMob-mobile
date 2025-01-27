@@ -15,7 +15,7 @@ class CalenderCellView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       color: color,
       child: Padding(
         padding: const EdgeInsets.all(4),
@@ -28,14 +28,15 @@ class CalenderCellView extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: const Color(0xff444444),
             ),
-            title2 != null
-                ? CustomText(
-                    title: title2!,
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xff444444),
-                  )
-                : const SizedBox.shrink(),
+            if (title2 != null)
+              CustomText(
+                title: title2!,
+                fontSize: 10,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xff444444),
+              )
+            else
+              const SizedBox.shrink(),
           ],
         ),
       ),

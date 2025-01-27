@@ -1,9 +1,9 @@
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islam_app/domain/constants/app_constant.dart';
-import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:open_store/open_store.dart';
 
 class VersionDialogWidget extends StatelessWidget {
@@ -24,7 +24,7 @@ class VersionDialogWidget extends StatelessWidget {
       ),
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -45,8 +45,7 @@ class VersionDialogWidget extends StatelessWidget {
                       CustomText(
                         maxLines: 3,
                         textAlign: TextAlign.center,
-                        title: AppLocalizations.of(context)!
-                            .versionDialogUpdateAvailable,
+                        title: IslamMobLocalizations.of(context).versionDialogUpdateAvailable,
                         color: const Color(0xff191C1F),
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -56,7 +55,7 @@ class VersionDialogWidget extends StatelessWidget {
                         maxLines: 3,
                         textAlign: TextAlign.center,
                         title:
-                            "${AppLocalizations.of(context)!.versionDialogNewVersion} $version ${AppLocalizations.of(context)!.versionDialogUpdateSecondeSubTitle}",
+                            "${IslamMobLocalizations.of(context).versionDialogNewVersion} $version ${IslamMobLocalizations.of(context).versionDialogUpdateSecondeSubTitle}",
                         fontSize: 14,
                         color: const Color(0xff191C1F),
                       ),
@@ -68,9 +67,8 @@ class VersionDialogWidget extends StatelessWidget {
                     color: const Color(0xff008480),
                     child: InkWell(
                       onTap: () async {
-                        FirebaseAnalyticsRepository.logEvent(
-                            name: "OpenStoreFromVersionDialog",
-                            parameters: {"version": version});
+                        await FirebaseAnalyticsRepository.logEvent(
+                            name: "OpenStoreFromVersionDialog", parameters: {"version": version});
 
                         await OpenStore.instance.open(
                           appStoreId: AppConstant.iOSAppId,
@@ -82,9 +80,7 @@ class VersionDialogWidget extends StatelessWidget {
                         child: Container(
                           alignment: Alignment.center,
                           child: CustomText(
-                            title: AppLocalizations.of(context)!
-                                .versionDialogUpdateNow,
-                            color: Colors.white,
+                            title: IslamMobLocalizations.of(context).versionDialogUpdateNow,
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
@@ -97,16 +93,14 @@ class VersionDialogWidget extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         FirebaseAnalyticsRepository.logEvent(
-                            name: "DismissVersionDialog",
-                            parameters: {"version": version});
+                            name: "DismissVersionDialog", parameters: {"version": version});
 
                         Navigator.of(context, rootNavigator: true).pop();
                       },
                       child: Container(
                         alignment: Alignment.center,
                         child: CustomText(
-                          title: AppLocalizations.of(context)!
-                              .versionDialogSkipForNow,
+                          title: IslamMobLocalizations.of(context).versionDialogSkipForNow,
                           color: const Color(0xff0059FF),
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

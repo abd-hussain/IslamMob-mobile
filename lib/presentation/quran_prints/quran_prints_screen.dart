@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/quran_prints/bloc/quran_prints_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/print_tile_view.dart';
@@ -12,7 +13,6 @@ import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranPrintsScreen extends StatelessWidget {
   const QuranPrintsScreen({super.key});
@@ -27,7 +27,7 @@ class QuranPrintsScreen extends StatelessWidget {
           QuranPrintsEvent.initializeFetchingData(),
         ),
       child: Scaffold(
-        appBar: CustomAppBar(title: AppLocalizations.of(context)!.quranprints),
+        appBar: CustomAppBar(title: IslamMobLocalizations.of(context).quranprints),
         body: _buildBody(context),
       ),
     );
@@ -53,15 +53,14 @@ class QuranPrintsScreen extends StatelessWidget {
 
   Widget _buildPrintsList(BuildContext context, QuranPrintsState state) {
     return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
-      buildWhen: (previous, current) =>
-          previous.printsDownloading != current.printsDownloading,
+      buildWhen: (previous, current) => previous.printsDownloading != current.printsDownloading,
       builder: (context, _) {
         return Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(16),
               child: CustomText(
-                title: AppLocalizations.of(context)!.qurancopytitle,
+                title: IslamMobLocalizations.of(context).qurancopytitle,
                 fontSize: 16,
                 color: const Color(0xff444444),
                 maxLines: 6,
@@ -83,29 +82,23 @@ class QuranPrintsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPrintTile(
-      BuildContext context, QuranPrints printItem, QuranPrintsState state) {
+  Widget _buildPrintTile(BuildContext context, QuranPrints printItem, QuranPrintsState state) {
     return PrintTileView(
-      language: context
-          .read<QuranPrintsBloc>()
-          .getNameByLanguageCode(printItem.language ?? ""),
+      language: context.read<QuranPrintsBloc>().getNameByLanguageCode(printItem.language ?? ""),
       title: printItem.nameReferance,
       description: printItem.description,
       previewImage: printItem.previewImage,
-      downloadButtonAvailable:
-          !state.printsDownloading.contains(printItem.fieldName),
+      downloadButtonAvailable: !state.printsDownloading.contains(printItem.fieldName),
       useButtonAvailable: state.printsDownloading.contains(printItem.fieldName),
       onDownloadPressed: () => _handleDownloadPressed(context, printItem),
       onUsePressed: () => _handleUsePressed(context, printItem),
     );
   }
 
-  Future<void> _handleDownloadPressed(
-      BuildContext context, QuranPrints printItem) async {
-    final permissionGranted =
-        await context.read<QuranPrintsBloc>().permissionRequest();
+  Future<void> _handleDownloadPressed(BuildContext context, QuranPrints printItem) async {
+    final permissionGranted = await context.read<QuranPrintsBloc>().permissionRequest();
     if (permissionGranted && context.mounted) {
-      showDialog(
+      await showDialog(
         context: context,
         barrierDismissible: false,
         builder: (_) => DownloadProgressDialog(
@@ -117,7 +110,7 @@ class QuranPrintsScreen extends StatelessWidget {
     } else if (context.mounted) {
       CustomToast.showWarningToast(
         context: context,
-        message: AppLocalizations.of(context)!.downloadnopermission,
+        message: IslamMobLocalizations.of(context).downloadnopermission,
       );
     }
   }
@@ -128,17 +121,13 @@ class QuranPrintsScreen extends StatelessWidget {
       parameters: {"file": printItem.fieldName ?? ""},
     );
 
-    final updatedList = List<String>.from(
-        context.read<QuranPrintsBloc>().state.printsDownloading)
+    final updatedList = List<String>.from(context.read<QuranPrintsBloc>().state.printsDownloading)
       ..add(printItem.fieldName!);
 
-    context
-        .read<QuranPrintsBloc>()
-        .add(QuranPrintsEvent.updatePrintsDownloading(print: updatedList));
+    context.read<QuranPrintsBloc>().add(QuranPrintsEvent.updatePrintsDownloading(print: updatedList));
   }
 
-  Future<void> _handleUsePressed(
-      BuildContext context, QuranPrints printItem) async {
+  Future<void> _handleUsePressed(BuildContext context, QuranPrints printItem) async {
     final String fileName = printItem.fieldName!;
 
     await SetupUserSettingUseCase().setQuranCopyInDB(
@@ -149,7 +138,7 @@ class QuranPrintsScreen extends StatelessWidget {
           sorahToPageNumbers: printItem.sorahToPageNumbers),
     );
 
-    FirebaseAnalyticsRepository.logEvent(
+    await FirebaseAnalyticsRepository.logEvent(
       name: "use_file",
       parameters: {"file": printItem.fieldName ?? ""},
     );

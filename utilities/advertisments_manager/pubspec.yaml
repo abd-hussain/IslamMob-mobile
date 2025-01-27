@@ -10,7 +10,8 @@ dependencies:
   google_mobile_ads: ^5.1.0
 
 dev_dependencies:
-  lints: ^4.0.0
+  islam_mob_lint:
+    path: ../islam_mob_lint
   mockito: ^5.4.4
   dependency_validator: 4.1.0
 

@@ -21,8 +21,7 @@ class BottomTile extends StatefulWidget {
   State<BottomTile> createState() => _BottomTileState();
 }
 
-class _BottomTileState extends State<BottomTile>
-    with SingleTickerProviderStateMixin {
+class _BottomTileState extends State<BottomTile> with SingleTickerProviderStateMixin {
   late final AnimationController _animationController;
   late final Animation<Color?> _colorAnimation;
 
@@ -57,7 +56,7 @@ class _BottomTileState extends State<BottomTile>
       onTap: widget.onTap,
       child: Container(
         color: Colors.black.withOpacity(0.5),
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Row(
           children: [
             _buildIcon(),

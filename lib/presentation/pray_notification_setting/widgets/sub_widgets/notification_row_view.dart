@@ -1,17 +1,13 @@
 import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_switch.dart';
+import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class NotificationRowView extends StatelessWidget {
   final String title;
   final bool value;
   final Function(bool) onChanged;
-  const NotificationRowView(
-      {super.key,
-      required this.title,
-      required this.value,
-      required this.onChanged});
+  const NotificationRowView({super.key, required this.title, required this.value, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +41,13 @@ class NotificationRowView extends StatelessWidget {
     return CustomSwitch(
       value: value,
       direction: isRtl ? Direction.rtl : Direction.ltr,
-      onChanged: (value) => onChanged(value),
+      onChanged: onChanged,
     );
   }
 
   bool _isRtlLanguage() {
-    final String languageCode = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
+    final String languageCode =
+        DataBaseManagerBase.getFromDatabase(key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
     return languageCode == "ar" || languageCode == "fa";
   }
 }

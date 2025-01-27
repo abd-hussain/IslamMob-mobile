@@ -13,7 +13,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lints: ^4.0.0
+  islam_mob_lint:
+    path: ../islam_mob_lint
   json_serializable: 6.8.0
   mocktail: 1.0.4
   dependency_validator: 4.1.0

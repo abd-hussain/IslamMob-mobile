@@ -1,12 +1,12 @@
 import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingBottomSheet {
   Future<void> showBottomSheet({required BuildContext context}) {
-    final localize = AppLocalizations.of(context)!;
+    final localize = IslamMobLocalizations.of(context);
     final navigator = Navigator.of(context, rootNavigator: true);
 
     return showModalBottomSheet(
@@ -14,7 +14,6 @@ class SettingBottomSheet {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
       ),
-      enableDrag: true,
       useRootNavigator: true,
       backgroundColor: const Color(0xff292929),
       context: context,
@@ -36,15 +35,13 @@ class SettingBottomSheet {
                 context: context,
                 title: localize.prayCalculationSettings,
                 color: const Color(0xff008480),
-                onPressed: () async => await navigator
-                    .pushNamed(RoutesConstants.prayCalculationSettingScreen),
+                onPressed: () async => navigator.pushNamed(RoutesConstants.prayCalculationSettingScreen),
               ),
               _buildSettingsButton(
                 context: context,
                 title: localize.notificationSettings,
                 color: const Color(0xff008480),
-                onPressed: () async => await navigator
-                    .pushNamed(RoutesConstants.prayNotificationSettingScreen),
+                onPressed: () async => navigator.pushNamed(RoutesConstants.prayNotificationSettingScreen),
               ),
               _buildSettingsButton(
                 context: context,
@@ -53,13 +50,11 @@ class SettingBottomSheet {
                 onPressed: () async {
                   final navigator = Navigator.of(context, rootNavigator: true);
                   await DataBaseManagerBase.saveMultipleInDatabase(data: {
-                    DatabaseFieldInBoardingStageConstant.inBoardingfinished:
-                        null,
+                    DatabaseFieldInBoardingStageConstant.inBoardingfinished: null,
                     DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,
                   });
                   await navigator.pushNamedAndRemoveUntil(
-                      RoutesConstants.inBoardingScreen,
-                      (Route<dynamic> route) => false);
+                      RoutesConstants.inBoardingScreen, (Route<dynamic> route) => false);
                 },
               ),
               _buildSettingsButton(

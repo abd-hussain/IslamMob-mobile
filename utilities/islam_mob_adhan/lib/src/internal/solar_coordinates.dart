@@ -1,9 +1,9 @@
 import 'dart:math';
 
-import 'astronomical.dart';
-import 'calendrical_helper.dart';
-import 'double_util.dart';
-import 'math.dart';
+import 'package:islam_mob_adhan/src/internal/astronomical.dart';
+import 'package:islam_mob_adhan/src/internal/calendrical_helper.dart';
+import 'package:islam_mob_adhan/src/internal/double_util.dart';
+import 'package:islam_mob_adhan/src/internal/math.dart';
 
 /// Represents the solar coordinates, including declination,
 /// right ascension, and apparent sidereal time.
@@ -53,8 +53,7 @@ class SolarCoordinates {
     );
 
     // Calculate declination using spherical trigonometry.
-    declination = radiansToDegrees(
-        asin(sin(apparentObliquity) * sin(apparentSolarLongitude)));
+    declination = radiansToDegrees(asin(sin(apparentObliquity) * sin(apparentSolarLongitude)));
 
     // Calculate right ascension.
     rightAscension = DoubleUtil.unwindAngle(
@@ -68,9 +67,6 @@ class SolarCoordinates {
 
     // Calculate apparent sidereal time.
     apparentSiderealTime = meanSiderealTime +
-        (nutationInLongitude *
-                3600 *
-                cos(degreesToRadians(meanObliquity + nutationInObliquity))) /
-            3600;
+        (nutationInLongitude * 3600 * cos(degreesToRadians(meanObliquity + nutationInObliquity))) / 3600;
   }
 }

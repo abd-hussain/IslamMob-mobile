@@ -1,8 +1,8 @@
-import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/open_mobile_setting_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationPermissionView extends StatelessWidget {
   const NotificationPermissionView({super.key});
@@ -10,7 +10,7 @@ class NotificationPermissionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: _buildNotificationContainer(context),
     );
   }
@@ -19,7 +19,7 @@ class NotificationPermissionView extends StatelessWidget {
     return Container(
       decoration: _containerDecoration(),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             _buildHeader(context),
@@ -53,7 +53,7 @@ class NotificationPermissionView extends StatelessWidget {
         const Icon(Icons.notifications_active_outlined),
         const SizedBox(width: 4),
         CustomText(
-          title: AppLocalizations.of(context)!.allowNotifications,
+          title: IslamMobLocalizations.of(context).allowNotifications,
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -64,7 +64,7 @@ class NotificationPermissionView extends StatelessWidget {
 
   Widget _buildDescription(BuildContext context) {
     return CustomText(
-      title: AppLocalizations.of(context)!.allowSendingNotificationsdetails,
+      title: IslamMobLocalizations.of(context).allowSendingNotificationsdetails,
       fontSize: 14,
       color: const Color(0xff444444),
       maxLines: 10,
@@ -76,7 +76,7 @@ class NotificationPermissionView extends StatelessWidget {
     return CustomButton(
       isEnabled: true,
       padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-      title: AppLocalizations.of(context)!.nolocationPermissionButton,
+      title: IslamMobLocalizations.of(context).nolocationPermissionButton,
       onTap: () async {
         await OpenMobileSettingUseCase().openAppSettings();
       },

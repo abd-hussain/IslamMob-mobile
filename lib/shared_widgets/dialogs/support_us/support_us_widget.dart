@@ -2,7 +2,7 @@ import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/dialogs/support_us/bloc/support_us_dialog_bloc.dart';
 
@@ -11,18 +11,17 @@ class SupportUsDialogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localize = AppLocalizations.of(context)!;
+    final localize = IslamMobLocalizations.of(context);
 
     return BlocProvider(
-      create: (context) => SupportUsDialogBloc()
-        ..add(SupportUsDialogEvent.initializeRewardedAd()),
+      create: (context) => SupportUsDialogBloc()..add(SupportUsDialogEvent.initializeRewardedAd()),
       child: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         width: double.infinity,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -63,8 +62,7 @@ class SupportUsDialogWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     BlocBuilder<SupportUsDialogBloc, SupportUsDialogState>(
-                      buildWhen: (previous, current) =>
-                          previous.rewardedAdExsist != current.rewardedAdExsist,
+                      buildWhen: (previous, current) => previous.rewardedAdExsist != current.rewardedAdExsist,
                       builder: (context, state) {
                         return Material(
                           borderRadius: BorderRadius.circular(5),
@@ -72,25 +70,20 @@ class SupportUsDialogWidget extends StatelessWidget {
                           child: (state.rewardedAdExsist)
                               ? InkWell(
                                   onTap: () async {
-                                    Navigator.of(context, rootNavigator: true)
-                                        .pop();
-                                    FirebaseAnalyticsRepository.logEvent(
-                                        name: "showRewardedAdFromPopup");
+                                    Navigator.of(context, rootNavigator: true).pop();
+                                    await FirebaseAnalyticsRepository.logEvent(name: "showRewardedAdFromPopup");
                                     await RewarderAds.showRewardedAd();
                                     // ignore: use_build_context_synchronously
-                                    context.read<SupportUsDialogBloc>().add(
-                                        SupportUsDialogEvent.updateRewardedAd(
-                                            RewarderAds.mainRewardedAd !=
-                                                null));
+                                    context
+                                        .read<SupportUsDialogBloc>()
+                                        .add(SupportUsDialogEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
                                   },
                                   child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 14, bottom: 14),
+                                    padding: const EdgeInsets.only(top: 14, bottom: 14),
                                     child: Container(
                                       alignment: Alignment.center,
                                       child: CustomText(
                                         title: localize.openAdvertisment,
-                                        color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -110,8 +103,7 @@ class SupportUsDialogWidget extends StatelessWidget {
                     const SizedBox(height: 16),
                     InkWell(
                       onTap: () {
-                        FirebaseAnalyticsRepository.logEvent(
-                            name: "DismissSupportUsDialog");
+                        FirebaseAnalyticsRepository.logEvent(name: "DismissSupportUsDialog");
                         Navigator.of(context, rootNavigator: true).pop();
                       },
                       child: Container(

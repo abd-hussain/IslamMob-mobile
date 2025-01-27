@@ -16,27 +16,26 @@ import 'package:stream_transform/stream_transform.dart' show CombineLatest;
 ///  - A stream that merges compass data with location data, providing
 ///    real-time Qiblah direction.
 class QiblahFinder {
-  static const MethodChannel _channel =
-      MethodChannel('ml.medyas.flutter_qiblah');
+  static const MethodChannel _channel = MethodChannel('ml.medyas.flutter_qiblah');
 
   // Singleton instance
   static final QiblahFinder _instance = QiblahFinder._internal();
 
-  // Private constructor
-  QiblahFinder._internal();
-
   // Factory constructor returning the same instance
   factory QiblahFinder() => _instance;
+
+  // Private constructor
+  QiblahFinder._internal();
 
   // Internal reference to QiblahDirection stream
   Stream<QiblahDirection>? _qiblahStream;
 
   /// Check whether the current Android device supports the required sensors.
   ///
-  /// On Android, calls a native method. On other platforms, returns [true].
+  /// On Android, calls a native method. On other platforms, returns [ true ].
   static Future<bool?> androidDeviceSensorSupport() async {
     if (Platform.isAndroid) {
-      return await _channel.invokeMethod<bool>('androidSupportSensor');
+      return _channel.invokeMethod<bool>('androidSupportSensor');
     } else {
       return true;
     }
@@ -104,7 +103,7 @@ class QiblahFinder {
 
         // The final Qiblah direction from the device heading.
         // Example usage: rotate your widget by -(qiblahDirection.qiblah) in radians
-        final qiblah = (heading + (360 - offset)).toInt();
+        final qiblah = heading + (360 - offset);
 
         return QiblahDirection(
           qiblah: qiblah,

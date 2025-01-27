@@ -7,8 +7,7 @@ import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:logger_manager/logger_manager.dart';
 
 class FirebaseFirestoreRepository {
-  static final FirebaseFirestore _firestoreInstance =
-      FirebaseFirestore.instance;
+  static final FirebaseFirestore _firestoreInstance = FirebaseFirestore.instance;
   final FirebaseStorage _storageInstance = FirebaseStorage.instance;
 
   /// Fetches all documents from a Firestore collection.
@@ -19,8 +18,7 @@ class FirebaseFirestoreRepository {
       try {
         final collection = _firestoreInstance.collection(collectionName);
 
-        final List<Map<String, dynamic>> documents =
-            (await collection.get()).docs.map((doc) => doc.data()).toList();
+        final List<Map<String, dynamic>> documents = (await collection.get()).docs.map((doc) => doc.data()).toList();
 
         return documents;
       } on FirebaseException catch (error) {
@@ -33,8 +31,7 @@ class FirebaseFirestoreRepository {
   }
 
   /// Fetches spesific documents from a Firestore collection.
-  static Future<T?> getDataFromFireStoreDocument<T>(
-      FireStoreOptions<T> options) async {
+  static Future<T?> getDataFromFireStoreDocument<T>(FireStoreOptions<T> options) async {
     if (await _isConnected()) {
       try {
         final document = await _firestoreInstance
@@ -61,8 +58,7 @@ class FirebaseFirestoreRepository {
       await ref.putFile(file);
       return await ref.getDownloadURL();
     } catch (error) {
-      LoggerManagerBase.logDebugMessage(
-          message: 'Error uploading file: $error');
+      LoggerManagerBase.logDebugMessage(message: 'Error uploading file: $error');
       return '';
     }
   }
@@ -75,13 +71,12 @@ class FirebaseFirestoreRepository {
       final collection = _firestoreInstance.collection(options.collectionName!);
       await collection.doc(options.docName).set(options.fromModel!);
     } catch (error) {
-      LoggerManagerBase.logDebugMessage(
-          message: 'Error setting Firestore data: $error');
+      LoggerManagerBase.logDebugMessage(message: 'Error setting Firestore data: $error');
     }
   }
 
   /// Checks for network connectivity.
   static Future<bool> _isConnected() async {
-    return await NetworkUseCase.checkInternetConeection();
+    return NetworkUseCase.checkInternetConeection();
   }
 }

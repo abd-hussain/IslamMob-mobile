@@ -15,7 +15,7 @@ class DownloadFileUsecase {
     required Function(int receivedBytes, int totalBytes) progressCallback,
     required Function(String filePath) finishCallback,
   }) async {
-    final String filePath = await _getFilePath(fileNameWithExtension);
+    final filePath = await _getFilePath(fileNameWithExtension);
 
     try {
       await _dio.download(
@@ -23,12 +23,11 @@ class DownloadFileUsecase {
         filePath,
         cancelToken: cancelToken,
         onReceiveProgress: progressCallback,
-        deleteOnError: true,
       );
-      LoggerManagerBase.logDebugMessage(message: "Download Completed");
+      LoggerManagerBase.logDebugMessage(message: 'Download Completed');
       finishCallback(filePath);
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(message: "Download failed: $e");
+      LoggerManagerBase.logDebugMessage(message: 'Download failed: $e');
     }
   }
 
@@ -37,10 +36,10 @@ class DownloadFileUsecase {
     final newDirectory = Directory('${dir.path}/');
 
     if (await newDirectory.exists()) {
-      LoggerManagerBase.logDebugMessage(message: "Directory exists");
+      LoggerManagerBase.logDebugMessage(message: 'Directory exists');
     } else {
       await newDirectory.create();
-      LoggerManagerBase.logDebugMessage(message: "Directory created");
+      LoggerManagerBase.logDebugMessage(message: 'Directory created');
     }
 
     return "${newDirectory.path}$filename";
@@ -59,9 +58,9 @@ class DownloadFileUsecase {
 
     if (await file.exists()) {
       await file.delete();
-      LoggerManagerBase.logDebugMessage(message: "File deleted: $filePath");
+      LoggerManagerBase.logDebugMessage(message: 'File deleted: $filePath');
     } else {
-      LoggerManagerBase.logDebugMessage(message: "File not found: $filePath");
+      LoggerManagerBase.logDebugMessage(message: 'File not found: $filePath');
     }
   }
 
@@ -72,13 +71,11 @@ class DownloadFileUsecase {
 
     if (!await newDirectory.exists()) {
       await newDirectory.create();
-      LoggerManagerBase.logDebugMessage(
-          message: "Directory created: ${newDirectory.path}");
+      LoggerManagerBase.logDebugMessage(message: 'Directory created: ${newDirectory.path}');
     } else {
-      LoggerManagerBase.logDebugMessage(
-          message: "Directory exists: ${newDirectory.path}");
+      LoggerManagerBase.logDebugMessage(message: 'Directory exists: ${newDirectory.path}');
     }
 
-    return "${newDirectory.path}/$fileName";
+    return '${newDirectory.path}/$fileName';
   }
 }

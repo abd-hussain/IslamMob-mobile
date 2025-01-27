@@ -1,11 +1,11 @@
-import 'calculation_method.dart';
-import 'high_latitude_rule.dart';
-import 'madhab.dart';
-import 'prayer_adjustments.dart';
+import 'package:islam_mob_adhan/src/calculation_method.dart';
+import 'package:islam_mob_adhan/src/high_latitude_rule.dart';
+import 'package:islam_mob_adhan/src/madhab.dart';
+import 'package:islam_mob_adhan/src/prayer_adjustments.dart';
 
 /// Parameters used for customizing PrayerTime calculations.
 ///
-/// For convenience, you can use [CalculationMethod.getParameters] to obtain
+/// For convenience, you can use CalculationMethod.getParameters to obtain
 /// pre-configured parameters based on one of the available [CalculationMethod].
 class CalculationParameters {
   /// The method used for prayer time calculations.

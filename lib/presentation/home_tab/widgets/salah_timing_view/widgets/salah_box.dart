@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/domain/sealed/salah_time_state.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SalahBox extends StatelessWidget {
   final SalahTimeState salahType;
@@ -84,19 +84,21 @@ class SalahBox extends StatelessWidget {
 
   /// Returns the localized name of the Salah based on its type.
   String _getSalahName(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     switch (salahType) {
       case SalahTimeStateFajir():
-        return AppLocalizations.of(context)!.fajr;
+        return localization.fajr;
       case SalahTimeStateSunrise():
-        return AppLocalizations.of(context)!.sherooq;
+        return localization.sherooq;
       case SalahTimeStateZhur():
-        return AppLocalizations.of(context)!.zhur;
+        return localization.zhur;
       case SalahTimeStateAsr():
-        return AppLocalizations.of(context)!.asr;
+        return localization.asr;
       case SalahTimeStateMaghrib():
-        return AppLocalizations.of(context)!.maghrib;
+        return localization.maghrib;
       case SalahTimeStateIsha():
-        return AppLocalizations.of(context)!.isha;
+        return localization.isha;
       case SalahTimeStateNone():
         return "";
     }

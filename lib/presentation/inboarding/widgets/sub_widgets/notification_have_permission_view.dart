@@ -1,13 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationHavePermissionView extends StatelessWidget {
   final Function() onConfirmationPress;
 
-  const NotificationHavePermissionView(
-      {super.key, required this.onConfirmationPress});
+  const NotificationHavePermissionView({super.key, required this.onConfirmationPress});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class NotificationHavePermissionView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: AppLocalizations.of(context)!.notificationPermissionSuccses,
+            title: IslamMobLocalizations.of(context).notificationPermissionSuccses,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -26,8 +25,8 @@ class NotificationHavePermissionView extends StatelessWidget {
         ),
         CustomButton(
           isEnabled: true,
-          title: AppLocalizations.of(context)!.startPreparingYourAccount,
-          onTap: () => onConfirmationPress(),
+          title: IslamMobLocalizations.of(context).startPreparingYourAccount,
+          onTap: onConfirmationPress,
         ),
       ],
     );

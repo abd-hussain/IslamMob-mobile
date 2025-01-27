@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class FooterView extends StatelessWidget {
@@ -18,15 +18,14 @@ class FooterView extends StatelessWidget {
               future: ApplicationVersionUsecase().getApplicationVersion(),
               builder: (context, snapshot) {
                 return CustomText(
-                  title:
-                      "${AppLocalizations.of(context)!.version} ${snapshot.data}",
+                  title: "${IslamMobLocalizations.of(context).version} ${snapshot.data}",
                   fontSize: 12,
                   color: const Color(0xffBFBFBF),
                 );
               }),
           const SizedBox(height: 20),
           CustomText(
-            title: AppLocalizations.of(context)!.rightsreserved,
+            title: IslamMobLocalizations.of(context).rightsreserved,
             fontSize: 10,
             color: const Color(0xff707070),
           ),

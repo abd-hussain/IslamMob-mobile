@@ -1,6 +1,8 @@
-# melos_managed_dependency_overrides: logger_manager,internet_connection_checkup
+# melos_managed_dependency_overrides: logger_manager,internet_connection_checkup,islam_mob_lint
 dependency_overrides:
   logger_manager:
     path: ../logger_manager
   internet_connection_checkup:
     path: ../internet_connection_checkup
+  islam_mob_lint:
+    path: ../islam_mob_lint

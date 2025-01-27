@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/constants/language_constant.dart';
+import 'package:islam_app/presentation/change_language/widgets/title_table_widget.dart';
 import 'package:islam_app/presentation/inboarding/bloc/language/language_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/language_tile.dart';
-import 'package:islam_app/presentation/change_language/widgets/title_table_widget.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:lottie/lottie.dart';
 
@@ -49,8 +49,7 @@ class LanguageInBoardingView extends StatelessWidget {
   /// Builds the button to select a language
   Widget _buildSelectButton(BuildContext context) {
     return BlocBuilder<LanguageBloc, LanguageState>(
-      buildWhen: (previous, current) =>
-          previous.selectedLanguage != current.selectedLanguage,
+      buildWhen: (previous, current) => previous.selectedLanguage != current.selectedLanguage,
       builder: (context, state) {
         if (state.selectedLanguage == null) return const SizedBox();
 
@@ -58,9 +57,7 @@ class LanguageInBoardingView extends StatelessWidget {
           isEnabled: true,
           title: state.selectedLanguage!.selectButtonTitle,
           onTap: () {
-            context
-                .read<LanguageBloc>()
-                .add(LanguageEvent.setupLanguage(context: context));
+            context.read<LanguageBloc>().add(LanguageEvent.setupLanguage(context: context));
             doneSelection();
           },
         );

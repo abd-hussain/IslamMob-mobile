@@ -36,20 +36,23 @@ class ZekerView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (azkarModel.title.isNotEmpty)
-                CustomText(
-                  title: azkarModel.title,
-                  fontSize: 16,
-                  color: const Color(0xff444444),
+                Text(
+                  azkarModel.title,
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                        color: const Color(0xff444444),
+                        fontFamily: 'Jameel',
+                      ),
                   textAlign: TextAlign.center,
-                  fontWeight: FontWeight.bold,
                 ),
-              CustomText(
-                title: azkarModel.desc,
-                fontSize: 20,
-                color: const Color(0xff444444),
-                maxLines: 10,
+              Text(
+                azkarModel.desc,
+                style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                      color: const Color(0xff444444),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontFamily: 'Uthman',
+                    ),
                 textAlign: TextAlign.center,
-                fontWeight: FontWeight.bold,
               ),
               const SizedBox(height: 10),
               Container(
@@ -88,9 +91,7 @@ class ZekerView extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
         const SizedBox(width: 8),
-        isDisabled
-            ? const SizedBox.shrink()
-            : const Icon(Icons.ads_click, color: Color(0xff444444)),
+        if (isDisabled) const SizedBox.shrink() else const Icon(Icons.ads_click, color: Color(0xff444444)),
       ],
     );
   }

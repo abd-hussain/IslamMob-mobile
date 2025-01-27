@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/open_mobile_setting_usecase.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocationNothavePermissionView extends StatelessWidget {
   const LocationNothavePermissionView({super.key});
@@ -14,7 +14,7 @@ class LocationNothavePermissionView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: AppLocalizations.of(context)!.whyyoushouldallowlocation,
+            title: IslamMobLocalizations.of(context).whyyoushouldallowlocation,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -23,7 +23,7 @@ class LocationNothavePermissionView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: AppLocalizations.of(context)!.whyyoushouldallowlocationdetails,
+          title: IslamMobLocalizations.of(context).whyyoushouldallowlocationdetails,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,
@@ -32,8 +32,8 @@ class LocationNothavePermissionView extends StatelessWidget {
         CustomButton(
           isEnabled: true,
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-          title: AppLocalizations.of(context)!.nolocationPermissionButton,
-          onTap: () async => await OpenMobileSettingUseCase().openAppSettings(),
+          title: IslamMobLocalizations.of(context).nolocationPermissionButton,
+          onTap: () async => OpenMobileSettingUseCase().openAppSettings(),
         ),
       ],
     );

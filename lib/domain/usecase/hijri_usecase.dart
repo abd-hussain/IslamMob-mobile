@@ -33,7 +33,7 @@ class HijriUsecase {
       'Ramadan',
       'Shawwal',
       'Dhu Al-Qi\'dah',
-      'Dhu Al-Hijjah'
+      'Dhu Al-Hijjah',
     ];
   }
 }

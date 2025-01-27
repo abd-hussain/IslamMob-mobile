@@ -11,7 +11,8 @@ dependencies:
     path: ../../utilities/logger_manager
 
 dev_dependencies:
-  lints: ^4.0.0
+  islam_mob_lint:
+    path: ../islam_mob_lint
   test: ^1.24.0
   mocktail: 1.0.4
   dependency_validator: 4.1.0

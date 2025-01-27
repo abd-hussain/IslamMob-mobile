@@ -1,8 +1,8 @@
-import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/model/location.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocationHavePermissionView extends StatelessWidget {
   final LocationModel locationModel;
@@ -21,7 +21,7 @@ class LocationHavePermissionView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: AppLocalizations.of(context)!.locationPermissionSuccses,
+            title: IslamMobLocalizations.of(context).locationPermissionSuccses,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -36,16 +36,17 @@ class LocationHavePermissionView extends StatelessWidget {
           textAlign: TextAlign.center,
           fontWeight: FontWeight.bold,
         ),
-        locationModel.subCity != ""
-            ? CustomText(
-                title: locationModel.subCity,
-                fontSize: 16,
-                color: const Color(0xff292929),
-                textAlign: TextAlign.center,
-                fontWeight: FontWeight.bold,
-                maxLines: 2,
-              )
-            : const SizedBox.shrink(),
+        if (locationModel.subCity != "")
+          CustomText(
+            title: locationModel.subCity,
+            fontSize: 16,
+            color: const Color(0xff292929),
+            textAlign: TextAlign.center,
+            fontWeight: FontWeight.bold,
+            maxLines: 2,
+          )
+        else
+          const SizedBox.shrink(),
         CustomText(
           title: locationModel.thoroughfare,
           fontSize: 16,
@@ -55,8 +56,8 @@ class LocationHavePermissionView extends StatelessWidget {
         ),
         CustomButton(
           isEnabled: true,
-          title: AppLocalizations.of(context)!.locationPermissionSuccsesButton,
-          onTap: () => onConfirmationPress(),
+          title: IslamMobLocalizations.of(context).locationPermissionSuccsesButton,
+          onTap: onConfirmationPress,
         ),
       ],
     );

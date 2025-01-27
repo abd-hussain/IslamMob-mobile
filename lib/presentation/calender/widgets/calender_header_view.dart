@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CalenderHeaderView extends StatelessWidget {
   const CalenderHeaderView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final localize = AppLocalizations.of(context)!;
+    final localize = IslamMobLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.only(left: 8, right: 8),
       child: Container(
         height: 25,
         decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+          borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
           color: Colors.grey[400],
         ),
         child: Row(

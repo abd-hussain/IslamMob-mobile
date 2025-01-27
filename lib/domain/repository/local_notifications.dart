@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:islam_app/domain/model/local_notification.dart';
 import 'package:islam_app/domain/sealed/local_notification.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocalNotificationRepository {
-  static final FlutterLocalNotificationsPlugin _notificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  static final FlutterLocalNotificationsPlugin _notificationsPlugin = FlutterLocalNotificationsPlugin();
 
   /// Initializes the local notification service with platform-specific settings.
   Future<void> initialize() async {
-    const InitializationSettings initializationSettings =
-        InitializationSettings(
+    const initializationSettings = InitializationSettings(
       android: AndroidInitializationSettings('@mipmap/ic_launcher'),
       iOS: DarwinInitializationSettings(),
     );
@@ -26,24 +24,22 @@ class LocalNotificationRepository {
         onDidReceiveBackgroundNotificationResponse: _notificationTapBackground,
       );
 
-      debugPrint("Notification Initialized Successfully!");
+      debugPrint('Notification Initialized Successfully!');
     } catch (e) {
-      debugPrint("Error initializing notifications: $e");
+      debugPrint('Error initializing notifications: $e');
     }
   }
 
   /// Handles notification responses for both foreground and background events.
   @pragma('vm:entry-point')
-  static Future<void> _notificationTapBackground(
-      NotificationResponse response) async {
-    debugPrint("Notification received with payload: ${response.payload}");
+  static Future<void> _notificationTapBackground(NotificationResponse response) async {
+    debugPrint('Notification received with payload: ${response.payload}');
   }
 
   /// Requests notification permission on Android devices.
   static Future<void> _requestAndroidPermission() async {
     final androidPlugin =
-        _notificationsPlugin.resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>();
+        _notificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
     if (androidPlugin != null) {
       await androidPlugin.requestNotificationsPermission();
     }
@@ -89,8 +85,7 @@ class LocalNotificationRepository {
       details.description,
       tz.TZDateTime.from(scheduledTime, tz.local),
       notificationDetails,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
+      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.dateAndTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
@@ -119,13 +114,12 @@ class LocalNotificationRepository {
         priority: Priority.low,
         // Turn off sound and vibration
         playSound: false,
-        sound: null,
         enableVibration: false,
         ongoing: true,
         autoCancel: false,
         styleInformation: BigTextStyleInformation(
-          "",
-          contentTitle: "${details.nextSalahTime} $nextSalahTime",
+          '',
+          contentTitle: '${details.nextSalahTime} $nextSalahTime',
           htmlFormatContentTitle: true,
           htmlFormatBigText: true,
           htmlFormatTitle: true,
@@ -141,9 +135,8 @@ class LocalNotificationRepository {
         colorized: true,
         actions: [
           AndroidNotificationAction(
-            "1",
-            AppLocalizations.of(context)!.close,
-            cancelNotification: true,
+            '1',
+            IslamMobLocalizations.of(context).close,
             titleColor: Colors.red,
           ),
         ],
@@ -159,137 +152,123 @@ class LocalNotificationRepository {
 
   /// Cancels all scheduled notifications.
   Future<void> cancelAllNotifications() async {
-    return await _notificationsPlugin.cancelAll();
+    return _notificationsPlugin.cancelAll();
   }
 
-  static LocalNotification _notificationDetails(
-      BuildContext context, NotificationTypeState type) {
+  static LocalNotification _notificationDetails(BuildContext context, NotificationTypeState type) {
+    final localize = IslamMobLocalizations.of(context);
+
     switch (type) {
       case NotificationTypeStateFajir():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.rightNowFajirMessage,
-          description: "",
-          soundFileName: "fajir",
-          remeningTimeMessage:
-              AppLocalizations.of(context)!.remeningTimeFajirMessage,
-          nextSalahTime:
-              AppLocalizations.of(context)!.nextSalahTimeFajirMessage,
+          rightNowMessage: localize.rightNowFajirMessage,
+          description: '',
+          soundFileName: 'fajir',
+          remeningTimeMessage: localize.remeningTimeFajirMessage,
+          nextSalahTime: localize.nextSalahTimeFajirMessage,
           isItForCountdown: true,
         );
       case NotificationTypeStateZuhr():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.rightNowDuherMessage,
-          description: "",
-          soundFileName: "duher",
-          remeningTimeMessage:
-              AppLocalizations.of(context)!.remeningTimeDuherMessage,
-          nextSalahTime:
-              AppLocalizations.of(context)!.nextSalahTimeDuherMessage,
+          rightNowMessage: localize.rightNowDuherMessage,
+          description: '',
+          soundFileName: 'duher',
+          remeningTimeMessage: localize.remeningTimeDuherMessage,
+          nextSalahTime: localize.nextSalahTimeDuherMessage,
           isItForCountdown: true,
         );
       case NotificationTypeStateAsr():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.rightNowAsrMessage,
-          description: "",
-          soundFileName: "asr",
-          remeningTimeMessage:
-              AppLocalizations.of(context)!.remeningTimeAsrMessage,
-          nextSalahTime: AppLocalizations.of(context)!.nextSalahTimeAsrMessage,
+          rightNowMessage: localize.rightNowAsrMessage,
+          description: '',
+          soundFileName: 'asr',
+          remeningTimeMessage: localize.remeningTimeAsrMessage,
+          nextSalahTime: localize.nextSalahTimeAsrMessage,
           isItForCountdown: true,
         );
 
       case NotificationTypeStateMaghrib():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.rightNowMagrebMessage,
-          description: "",
-          soundFileName: "magreb",
-          remeningTimeMessage:
-              AppLocalizations.of(context)!.remeningTimeMagrebMessage,
-          nextSalahTime:
-              AppLocalizations.of(context)!.nextSalahTimeMagrebMessage,
+          rightNowMessage: localize.rightNowMagrebMessage,
+          description: '',
+          soundFileName: 'magreb',
+          remeningTimeMessage: localize.remeningTimeMagrebMessage,
+          nextSalahTime: localize.nextSalahTimeMagrebMessage,
           isItForCountdown: true,
         );
 
       case NotificationTypeStateIsha():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.rightNowIshaMessage,
-          description: "",
-          soundFileName: "isha",
-          remeningTimeMessage:
-              AppLocalizations.of(context)!.remeningTimeIshaMessage,
-          nextSalahTime: AppLocalizations.of(context)!.nextSalahTimeIshaMessage,
+          rightNowMessage: localize.rightNowIshaMessage,
+          description: '',
+          soundFileName: 'isha',
+          remeningTimeMessage: localize.remeningTimeIshaMessage,
+          nextSalahTime: localize.nextSalahTimeIshaMessage,
           isItForCountdown: true,
         );
 
       case NotificationTypeStateBefore15Minutes():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.rightNowWarningMessage,
-          description: "",
-          soundFileName: "warning",
-          remeningTimeMessage: "",
-          nextSalahTime: "",
+          rightNowMessage: localize.rightNowWarningMessage,
+          description: '',
+          soundFileName: 'warning',
+          remeningTimeMessage: '',
+          nextSalahTime: '',
           isItForCountdown: false,
         );
 
       case NotificationTypeStateSunrise():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.rightNowSunriseMessage,
-          description: "",
-          soundFileName: "sunrise",
-          remeningTimeMessage:
-              AppLocalizations.of(context)!.remeningTimeSunriseMessage,
-          nextSalahTime:
-              AppLocalizations.of(context)!.nextSalahTimeSunriseMessage,
+          rightNowMessage: localize.rightNowSunriseMessage,
+          description: '',
+          soundFileName: 'sunrise',
+          remeningTimeMessage: localize.remeningTimeSunriseMessage,
+          nextSalahTime: localize.nextSalahTimeSunriseMessage,
           isItForCountdown: true,
         );
       case NotificationTypeReminderjom3aSoratAlKahfReminder():
         return LocalNotification(
-          rightNowMessage:
-              AppLocalizations.of(context)!.jom3AlkahfReminderTitle,
-          description: AppLocalizations.of(context)!.jom3AlkahfReminderMessage,
+          rightNowMessage: localize.jom3AlkahfReminderTitle,
+          description: localize.jom3AlkahfReminderMessage,
           soundFileName: null,
-          remeningTimeMessage: "",
-          nextSalahTime: "",
+          remeningTimeMessage: '',
+          nextSalahTime: '',
           isItForCountdown: false,
         );
       case NotificationTypeStateJom3aLastHourForDoaa():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.jom3aDoaaTimeTitle,
-          description: AppLocalizations.of(context)!.jom3adoaaTimeMessage,
+          rightNowMessage: localize.jom3aDoaaTimeTitle,
+          description: localize.jom3adoaaTimeMessage,
           soundFileName: null,
-          remeningTimeMessage: "",
-          nextSalahTime: "",
+          remeningTimeMessage: '',
+          nextSalahTime: '',
           isItForCountdown: false,
         );
       case NotificationTypeStateMidnight():
         return LocalNotification(
-          rightNowMessage: AppLocalizations.of(context)!.midnightTimeTitle,
-          description: AppLocalizations.of(context)!.midnightTimeMessage,
+          rightNowMessage: localize.midnightTimeTitle,
+          description: localize.midnightTimeMessage,
           soundFileName: null,
-          remeningTimeMessage: "",
-          nextSalahTime: "",
+          remeningTimeMessage: '',
+          nextSalahTime: '',
           isItForCountdown: false,
         );
       case NotificationTypeReminderToOpenTheApp1():
         return LocalNotification(
-          rightNowMessage:
-              AppLocalizations.of(context)!.reminderToOpenTheApp1Title,
-          description:
-              AppLocalizations.of(context)!.reminderToOpenTheApp1Message,
+          rightNowMessage: localize.reminderToOpenTheApp1Title,
+          description: localize.reminderToOpenTheApp1Message,
           soundFileName: null,
-          remeningTimeMessage: "",
-          nextSalahTime: "",
+          remeningTimeMessage: '',
+          nextSalahTime: '',
           isItForCountdown: false,
         );
       case NotificationTypeReminderToOpenTheApp2():
         return LocalNotification(
-          rightNowMessage:
-              AppLocalizations.of(context)!.reminderToOpenTheApp2Title,
-          description:
-              AppLocalizations.of(context)!.reminderToOpenTheApp2Message,
+          rightNowMessage: localize.reminderToOpenTheApp2Title,
+          description: localize.reminderToOpenTheApp2Message,
           soundFileName: null,
-          remeningTimeMessage: "",
-          nextSalahTime: "",
+          remeningTimeMessage: '',
+          nextSalahTime: '',
           isItForCountdown: false,
         );
     }

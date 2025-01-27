@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
@@ -39,7 +39,7 @@ class PrayNotificationView extends StatelessWidget {
         buildWhen: (previous, current) => previous.fajir != current.fajir,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingFajir,
+            title: IslamMobLocalizations.of(context).notificationSettingFajir,
             value: state.fajir,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -58,7 +58,7 @@ class PrayNotificationView extends StatelessWidget {
         buildWhen: (previous, current) => previous.duhir != current.duhir,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingDuher,
+            title: IslamMobLocalizations.of(context).notificationSettingDuher,
             value: state.duhir,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -77,7 +77,7 @@ class PrayNotificationView extends StatelessWidget {
         buildWhen: (previous, current) => previous.asr != current.asr,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingAsr,
+            title: IslamMobLocalizations.of(context).notificationSettingAsr,
             value: state.asr,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -96,7 +96,7 @@ class PrayNotificationView extends StatelessWidget {
         buildWhen: (previous, current) => previous.magrieb != current.magrieb,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingMagrieb,
+            title: IslamMobLocalizations.of(context).notificationSettingMagrieb,
             value: state.magrieb,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -115,7 +115,7 @@ class PrayNotificationView extends StatelessWidget {
         buildWhen: (previous, current) => previous.isha != current.isha,
         builder: (context, state) {
           return NotificationRowView(
-            title: AppLocalizations.of(context)!.notificationSettingIsha,
+            title: IslamMobLocalizations.of(context).notificationSettingIsha,
             value: state.isha,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(

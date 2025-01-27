@@ -1,8 +1,8 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 /// Builds the bottom navigation bar with tabs.
 class BottomNavigationBarView extends StatelessWidget {
@@ -23,15 +23,15 @@ class BottomNavigationBarView extends StatelessWidget {
           items: [
             TabItem(
               icon: Icons.home,
-              title: AppLocalizations.of(context)!.home,
+              title: IslamMobLocalizations.of(context).home,
             ),
             TabItem(
               icon: Icons.menu_book_rounded,
-              title: AppLocalizations.of(context)!.qurankareem,
+              title: IslamMobLocalizations.of(context).qurankareem,
             ),
             TabItem(
               icon: Icons.settings,
-              title: AppLocalizations.of(context)!.settings,
+              title: IslamMobLocalizations.of(context).settings,
             ),
           ],
           onTap: (int index) {

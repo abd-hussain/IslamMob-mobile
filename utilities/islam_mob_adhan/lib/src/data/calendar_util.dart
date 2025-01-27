@@ -1,6 +1,5 @@
-import '../extensions/datetime.dart';
-
-import 'date_components.dart';
+import 'package:islam_mob_adhan/src/data/date_components.dart';
+import 'package:islam_mob_adhan/src/extensions/datetime.dart';
 
 class CalendarUtil {
   /// Whether or not a year is a leap year (has 366 days)
@@ -19,7 +18,7 @@ class CalendarUtil {
   static DateTime roundedMinute(DateTime when) {
     final minute = when.minute;
     final second = when.second;
-    return when.copyWith(minute: (minute + (second / 60).round()), second: 0);
+    return when.copyWith(minute: minute + (second / 60).round(), second: 0);
   }
 
   /// Gets a UTC DateTime for the particular date
@@ -37,6 +36,6 @@ class CalendarUtil {
   /// [day] the day
   /// return [DateTime] with a time set to 00:00:00 at utc
   static DateTime resolveTime(int year, int month, int day) {
-    return DateTime.utc(year, month, day, 0, 0, 0);
+    return DateTime.utc(year, month, day);
   }
 }

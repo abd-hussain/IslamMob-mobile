@@ -1,8 +1,8 @@
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/constants/app_constant.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ShareAppDialogWidget extends StatelessWidget {
@@ -10,7 +10,7 @@ class ShareAppDialogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localize = AppLocalizations.of(context)!;
+    final localize = IslamMobLocalizations.of(context);
 
     return Container(
       decoration: const BoxDecoration(
@@ -18,7 +18,7 @@ class ShareAppDialogWidget extends StatelessWidget {
       ),
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -56,7 +56,7 @@ class ShareAppDialogWidget extends StatelessWidget {
                       onTap: () async {
                         Navigator.of(context, rootNavigator: true).pop();
                         await Share.share(
-                          "${AppLocalizations.of(context)!.shareMessageBody} \n Android : ${AppConstant.androidAppLink} \n iOS : ${AppConstant.iOSAppLink}",
+                          "${localize.shareMessageBody} \n Android : ${AppConstant.androidAppLink} \n iOS : ${AppConstant.iOSAppLink}",
                           subject: localize.shareMessageTitle,
                         );
                       },
@@ -66,7 +66,6 @@ class ShareAppDialogWidget extends StatelessWidget {
                           alignment: Alignment.center,
                           child: CustomText(
                             title: localize.shareapp,
-                            color: Colors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
@@ -77,8 +76,7 @@ class ShareAppDialogWidget extends StatelessWidget {
                   const SizedBox(height: 16),
                   InkWell(
                     onTap: () {
-                      FirebaseAnalyticsRepository.logEvent(
-                          name: "DismissShareDialog");
+                      FirebaseAnalyticsRepository.logEvent(name: "DismissShareDialog");
                       Navigator.of(context, rootNavigator: true).pop();
                     },
                     child: Container(

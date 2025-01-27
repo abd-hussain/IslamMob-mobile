@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_have_permission_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_idle_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_nothave_permission_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:lottie/lottie.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocationInBoardingView extends StatelessWidget {
   final Function() doneSelection;
@@ -17,7 +17,7 @@ class LocationInBoardingView extends StatelessWidget {
     return BlocProvider(
       create: (context) => LocationBloc(),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             _buildAnimation(),
@@ -43,7 +43,7 @@ class LocationInBoardingView extends StatelessWidget {
   /// Builds the header text
   Widget _buildHeader(BuildContext context) {
     return CustomText(
-      title: AppLocalizations.of(context)!.mawaqeetalsalah,
+      title: IslamMobLocalizations.of(context).mawaqeetalsalah,
       fontSize: 20,
       color: const Color(0xff008480),
       fontWeight: FontWeight.bold,
@@ -56,9 +56,7 @@ class LocationInBoardingView extends StatelessWidget {
     return Expanded(
       child: BlocBuilder<LocationBloc, LocationState>(
         buildWhen: (previous, current) => previous.status != current.status,
-        builder: (context, state) {
-          return _buildStateContent(context, state);
-        },
+        builder: _buildStateContent,
       ),
     );
   }
@@ -78,9 +76,7 @@ class LocationInBoardingView extends StatelessWidget {
         return LocationHavePermissionView(
           locationModel: state.location!,
           onConfirmationPress: () {
-            context
-                .read<LocationBloc>()
-                .add(const LocationEvent.setupLocation());
+            context.read<LocationBloc>().add(const LocationEvent.setupLocation());
             doneSelection();
           },
         );

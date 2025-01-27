@@ -25,9 +25,9 @@ class PagesTileView extends StatelessWidget {
         height: 60,
         color: const Color(0xff292929),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: InkWell(
-            onTap: () => onTap(),
+            onTap: onTap,
             child: Row(
               children: [
                 _buildPageNumber(context),

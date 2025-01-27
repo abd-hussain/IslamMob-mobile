@@ -28,13 +28,11 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
   }
 
   /// Handles the event to change the inboarding stage
-  FutureOr<void> _changeInBoardingStage(
-      _ChangeInBoardingStage event, Emitter<InboardingState> emit) async {
+  FutureOr<void> _changeInBoardingStage(_ChangeInBoardingStage event, Emitter<InboardingState> emit) async {
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldInBoardingStageConstant.inBoardingStage,
-        value: event.stage);
+        key: DatabaseFieldInBoardingStageConstant.inBoardingStage, value: event.stage);
 
-    FirebaseAnalyticsRepository.logEvent(
+    await FirebaseAnalyticsRepository.logEvent(
       name: "InBoardingStageUpdate",
       parameters: {"inBoardingStage": event.stage},
     );
@@ -42,19 +40,15 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
     emit(state.copyWith(inBoardingStage: event.stage));
   }
 
-  FutureOr<void> _initialInBoardingStage(
-      _InitialInBoardingStage event, Emitter<InboardingState> emit) {
+  FutureOr<void> _initialInBoardingStage(_InitialInBoardingStage event, Emitter<InboardingState> emit) {
     final stage = _getInBoardingStage();
     emit(state.copyWith(inBoardingStage: stage));
   }
 
-  FutureOr<void> _finalizeInBoarding(
-      _FinalizeInBoarding event, Emitter<InboardingState> emit) async {
-    await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
-        value: true);
+  FutureOr<void> _finalizeInBoarding(_FinalizeInBoarding event, Emitter<InboardingState> emit) async {
+    await DataBaseManagerBase.saveInDatabase(key: DatabaseFieldInBoardingStageConstant.inBoardingfinished, value: true);
 
-    FirebaseAnalyticsRepository.logEvent(
+    await FirebaseAnalyticsRepository.logEvent(
       name: "InBoardingFinalizeInBoarding",
     );
     emit(state.copyWith(finalizedInBoarding: true));

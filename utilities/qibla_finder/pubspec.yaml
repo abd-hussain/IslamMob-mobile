@@ -19,7 +19,8 @@ dependencies:
   #   path: ../../utilities/location_manager
 
 dev_dependencies:
-  lints: ^4.0.0
+  islam_mob_lint:
+    path: ../islam_mob_lint
   json_serializable: 6.8.0
   dependency_validator: 4.1.0
 
