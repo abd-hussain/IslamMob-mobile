@@ -1,11 +1,10 @@
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 
-extension AppLocalizationsExtension on AppLocalizations {
+extension AppLocalizationsExtension on IslamMobLocalizations {
   String getLocalizedString(String key) {
     // Look up the localized string based on the provided key
     final localizedString = toJson()[key];
-    return localizedString ??
-        ''; // Returns an empty string if the key is not found
+    return localizedString ?? ''; // Returns an empty string if the key is not found
   }
 
   String getKeyFromLocalizedString(String value) {
@@ -18,7 +17,7 @@ extension AppLocalizationsExtension on AppLocalizations {
   }
 }
 
-extension AppLocalizationsJson on AppLocalizations {
+extension AppLocalizationsJson on IslamMobLocalizations {
   Map<String, String> toJson() {
     return {
       'quranSorahName1': quranSorahName1,
