@@ -24,7 +24,10 @@ jobs:
           with:
             flutter-version: '3.24.1'
             channel: 'stable'
-            cache: true
+            cache: false
+
+        - name: 🗳️ Flutter gen-l10n
+          run: flutter gen-l10n
 
         - name: 🗳️ Flutter Pub Get
           run: flutter pub get
@@ -79,7 +82,10 @@ jobs:
           with:
             flutter-version: '3.24.1'
             channel: 'stable'
-            cache: true
+            cache: false
+
+        - name: 🗳️ Flutter gen-l10n
+          run: flutter gen-l10n
 
         - name: 🗳️ Flutter Pub Get
           run: flutter pub get
