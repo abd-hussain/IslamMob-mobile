@@ -17,7 +17,6 @@ command:
       get_it: 7.7.0
       flutter_bloc: 8.1.6
       freezed_annotation: 2.4.4
-      json_annotation: 4.9.0
       dio: 5.7.0
       intl: 0.19.0
 

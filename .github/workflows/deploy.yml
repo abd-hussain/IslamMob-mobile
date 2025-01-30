@@ -26,10 +26,10 @@ jobs:
             channel: 'stable'
             cache: true
 
-        - name: Flutter Pub Get
+        - name: 🗳️ Flutter Pub Get
           run: flutter pub get
 
-        - name: Generate code (Optional)
+        - name: 🗃️ Generate code (Optional)
           run: flutter pub run build_runner build --delete-conflicting-outputs
             
         - name: 🔑 Set up key.properties
@@ -81,13 +81,13 @@ jobs:
             channel: 'stable'
             cache: true
 
-        - name: Flutter Pub Get
+        - name: 🗳️ Flutter Pub Get
           run: flutter pub get
   
-        - name: Generate code (Optional)
+        - name: 🗃️ Generate code (Optional)
           run: flutter pub run build_runner build --delete-conflicting-outputs
 
-        - name: Set up App Store Connect
+        - name: 🧰 Set up App Store Connect
           run: |
             echo "${{ secrets.APPSTORE_CONNECT }}" | base64 --decode > ios/app_store_connect.json
 
