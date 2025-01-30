@@ -7,7 +7,9 @@ class TimingUseCase {
   /// Returns the appropriate image path based on the current time.
   String getCurrentImageForTime() {
     final currentHour = DateTime.now().hour;
-    return (currentHour > 8 && currentHour < 18) ? "assets/images/days/sun.png" : "assets/images/days/moon.png";
+    return (currentHour > 8 && currentHour < 18)
+        ? "assets/images/days/sun.png"
+        : "assets/images/days/moon.png";
   }
 
   // /// Formats a [DateTime] object to `dd/MM/yyyy`.
@@ -17,14 +19,16 @@ class TimingUseCase {
   String formatHijriDate(HijriCalendar date) => date.toFormat("dd/MM/yyyy");
 
   /// Gets a [DateTime] object by adding a specified number of days.
-  DateTime getDateWithDayOffset({required int dayOffset}) => DateTime.now().add(Duration(days: dayOffset));
+  DateTime getDateWithDayOffset({required int dayOffset}) =>
+      DateTime.now().add(Duration(days: dayOffset));
 
   /// Gets a [HijriCalendar] object by adding a specified number of days.
   HijriCalendar getHijriDateWithDayOffset({required int dayOffset}) {
     final hijriDate = HijriCalendar.now();
 
     // Convert the Hijri date to a DateTime for manipulation
-    final gregorianDate = HijriCalendar().hijriToGregorian(hijriDate.hYear, hijriDate.hMonth, hijriDate.hDay);
+    final gregorianDate = HijriCalendar()
+        .hijriToGregorian(hijriDate.hYear, hijriDate.hMonth, hijriDate.hDay);
 
     // Add the day offset to the Gregorian date
     final updatedGregorianDate = gregorianDate.add(Duration(days: dayOffset));

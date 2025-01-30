@@ -15,7 +15,8 @@ class SunnahTimes {
   /// - [prayerTimes]: An instance of [PrayerTimes] for calculating Sunnah times.
   SunnahTimes(PrayerTimes prayerTimes) {
     // Resolve the current date and the next day's date for the given prayer times.
-    final currentDate = CalendarUtil.resolveTimeByDateComponents(prayerTimes.dateComponents);
+    final currentDate =
+        CalendarUtil.resolveTimeByDateComponents(prayerTimes.dateComponents);
     final tomorrowDate = currentDate.add(const Duration(days: 1));
 
     // Calculate PrayerTimes for the next day.
@@ -28,7 +29,9 @@ class SunnahTimes {
 
     // Calculate the duration of the night in seconds.
     final nightDurationInSeconds =
-        (tomorrowPrayerTimes.fajr.millisecondsSinceEpoch - prayerTimes.maghrib.millisecondsSinceEpoch) ~/ 1000;
+        (tomorrowPrayerTimes.fajr.millisecondsSinceEpoch -
+                prayerTimes.maghrib.millisecondsSinceEpoch) ~/
+            1000;
 
     // Calculate the middle of the night.
     middleOfTheNight = CalendarUtil.roundedMinute(
@@ -37,7 +40,8 @@ class SunnahTimes {
 
     // Calculate the beginning of the last third of the night.
     lastThirdOfTheNight = CalendarUtil.roundedMinute(
-      prayerTimes.maghrib.add(Duration(seconds: nightDurationInSeconds * 2 ~/ 3)),
+      prayerTimes.maghrib
+          .add(Duration(seconds: nightDurationInSeconds * 2 ~/ 3)),
     );
   }
 }

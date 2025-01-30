@@ -21,7 +21,8 @@ class BottomTile extends StatefulWidget {
   State<BottomTile> createState() => _BottomTileState();
 }
 
-class _BottomTileState extends State<BottomTile> with SingleTickerProviderStateMixin {
+class _BottomTileState extends State<BottomTile>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _animationController;
   late final Animation<Color?> _colorAnimation;
 

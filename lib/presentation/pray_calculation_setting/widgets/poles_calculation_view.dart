@@ -45,12 +45,15 @@ class PolesCalculationView extends StatelessWidget {
     );
   }
 
-  Widget _buildCalculationSelector(BuildContext context, IslamMobLocalizations localizations) {
+  Widget _buildCalculationSelector(
+      BuildContext context, IslamMobLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) => previous.hightLatitudeCaluclation != current.hightLatitudeCaluclation,
+      buildWhen: (previous, current) =>
+          previous.hightLatitudeCaluclation != current.hightLatitudeCaluclation,
       builder: (context, state) {
         final hightLatitudeCaluclationList =
-            CalculationSettingUsecase.getHightLatitudeCaluclationList(localizations, state.hightLatitudeCaluclation);
+            CalculationSettingUsecase.getHightLatitudeCaluclationList(
+                localizations, state.hightLatitudeCaluclation);
 
         return ListView.builder(
           itemCount: hightLatitudeCaluclationList.length,

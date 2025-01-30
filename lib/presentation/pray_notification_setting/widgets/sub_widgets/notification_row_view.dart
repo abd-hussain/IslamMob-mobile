@@ -7,7 +7,11 @@ class NotificationRowView extends StatelessWidget {
   final String title;
   final bool value;
   final Function(bool) onChanged;
-  const NotificationRowView({super.key, required this.title, required this.value, required this.onChanged});
+  const NotificationRowView(
+      {super.key,
+      required this.title,
+      required this.value,
+      required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +50,8 @@ class NotificationRowView extends StatelessWidget {
   }
 
   bool _isRtlLanguage() {
-    final String languageCode =
-        DataBaseManagerBase.getFromDatabase(key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
+    final String languageCode = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
     return languageCode == "ar" || languageCode == "fa";
   }
 }

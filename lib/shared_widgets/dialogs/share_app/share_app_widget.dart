@@ -76,7 +76,8 @@ class ShareAppDialogWidget extends StatelessWidget {
                   const SizedBox(height: 16),
                   InkWell(
                     onTap: () {
-                      FirebaseAnalyticsRepository.logEvent(name: "DismissShareDialog");
+                      FirebaseAnalyticsRepository.logEvent(
+                          name: "DismissShareDialog");
                       Navigator.of(context, rootNavigator: true).pop();
                     },
                     child: Container(

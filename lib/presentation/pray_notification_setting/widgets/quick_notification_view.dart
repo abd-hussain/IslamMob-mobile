@@ -36,10 +36,12 @@ class QuickNotificationView extends StatelessWidget {
   List<Widget> _buildNotificationRows(BuildContext context) {
     return [
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) => previous.allNotificationForToday != current.allNotificationForToday,
+        buildWhen: (previous, current) =>
+            previous.allNotificationForToday != current.allNotificationForToday,
         builder: (context, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context).notificationSettingTodayAll,
+            title:
+                IslamMobLocalizations.of(context).notificationSettingTodayAll,
             value: state.allNotificationForToday,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -55,10 +57,13 @@ class QuickNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) => previous.allNotificationForThreeDay != current.allNotificationForThreeDay,
+        buildWhen: (previous, current) =>
+            previous.allNotificationForThreeDay !=
+            current.allNotificationForThreeDay,
         builder: (context, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context).notificationSettingThreedayAll,
+            title: IslamMobLocalizations.of(context)
+                .notificationSettingThreedayAll,
             value: state.allNotificationForThreeDay,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -74,7 +79,9 @@ class QuickNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) => previous.allNotificationForWeekDay != current.allNotificationForWeekDay,
+        buildWhen: (previous, current) =>
+            previous.allNotificationForWeekDay !=
+            current.allNotificationForWeekDay,
         builder: (context, state) {
           return NotificationRowView(
             title: IslamMobLocalizations.of(context).notificationSettingWeekAll,

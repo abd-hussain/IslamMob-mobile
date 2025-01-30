@@ -38,9 +38,11 @@ class IslamMobAppState extends State<IslamMobApp> {
   }
 
   Locale _getLocale() {
-    final selectedLanguage =
-        DataBaseManagerBase.getFromDatabase(key: DatabaseFieldConstant.userLanguageCode, defaultValue: "");
-    return selectedLanguage != "" ? Locale(selectedLanguage) : const Locale("en");
+    final selectedLanguage = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "");
+    return selectedLanguage != ""
+        ? Locale(selectedLanguage)
+        : const Locale("en");
   }
 
   List<LocalizationsDelegate<dynamic>> _localizationDelegates() {
@@ -82,7 +84,10 @@ class IslamMobAppState extends State<IslamMobApp> {
 
   String _getInitialRoute() {
     final bool? onBoardingFinished = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldInBoardingStageConstant.inBoardingfinished, defaultValue: null);
-    return onBoardingFinished != null ? RoutesConstants.mainContainer : RoutesConstants.inBoardingScreen;
+        key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
+        defaultValue: null);
+    return onBoardingFinished != null
+        ? RoutesConstants.mainContainer
+        : RoutesConstants.inBoardingScreen;
   }
 }

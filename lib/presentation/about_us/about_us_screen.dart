@@ -21,7 +21,8 @@ class AboutUsScreen extends StatelessWidget {
     final navigator = Navigator.of(context, rootNavigator: true);
 
     return BlocProvider(
-      create: (context) => AboutUsBloc()..add(AboutUsEvent.initializeRewardedAd()),
+      create: (context) =>
+          AboutUsBloc()..add(AboutUsEvent.initializeRewardedAd()),
       child: Scaffold(
         appBar: CustomAppBar(title: IslamMobLocalizations.of(context).aboutus),
         body: SafeArea(
@@ -128,7 +129,8 @@ class AboutUsScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: BlocBuilder<AboutUsBloc, AboutUsState>(
-        buildWhen: (previous, current) => previous.rewardedAdExsist != current.rewardedAdExsist,
+        buildWhen: (previous, current) =>
+            previous.rewardedAdExsist != current.rewardedAdExsist,
         builder: (context, state) {
           final bloc = context.read<AboutUsBloc>();
 
@@ -138,20 +140,24 @@ class AboutUsScreen extends StatelessWidget {
                 icon: Ionicons.fitness,
                 name: IslamMobLocalizations.of(context).supportus,
                 onTap: () async {
-                  await FirebaseAnalyticsRepository.logEvent(name: "showRewardedAdFromAboutScreen");
+                  await FirebaseAnalyticsRepository.logEvent(
+                      name: "showRewardedAdFromAboutScreen");
                   await RewarderAds.showRewardedAd();
-                  bloc.add(AboutUsEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
+                  bloc.add(AboutUsEvent.updateRewardedAd(
+                      RewarderAds.mainRewardedAd != null));
                 },
               ),
             ProfileOptions(
               icon: Ionicons.receipt,
               name: IslamMobLocalizations.of(context).privacypolicy,
-              onTap: () async => navigator.pushNamed(RoutesConstants.privacyPolicyScreen),
+              onTap: () async =>
+                  navigator.pushNamed(RoutesConstants.privacyPolicyScreen),
             ),
             ProfileOptions(
               icon: Ionicons.reader,
               name: IslamMobLocalizations.of(context).termsandconditions,
-              onTap: () async => navigator.pushNamed(RoutesConstants.termsConditionScreen),
+              onTap: () async =>
+                  navigator.pushNamed(RoutesConstants.termsConditionScreen),
             ),
           ];
 
@@ -171,7 +177,8 @@ class AboutUsScreen extends StatelessWidget {
             future: ApplicationVersionUsecase().getApplicationVersion(),
             builder: (context, snapshot) {
               return CustomText(
-                title: "${IslamMobLocalizations.of(context).version} ${snapshot.data}",
+                title:
+                    "${IslamMobLocalizations.of(context).version} ${snapshot.data}",
                 fontSize: 14,
                 color: const Color(0xff292929),
               );

@@ -8,8 +8,10 @@ class ShareDialog {
         context: context,
         builder: (BuildContext context) {
           return Dialog(
-            insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            insetPadding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             child: const ShareAppDialogWidget(),
           );
         });

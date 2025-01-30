@@ -14,7 +14,8 @@ part 'report_and_suggestion_bloc.freezed.dart';
 part 'report_and_suggestion_event.dart';
 part 'report_and_suggestion_state.dart';
 
-class ReportAndSuggestionBloc extends Bloc<ReportAndSuggestionEvent, ReportAndSuggestionState> {
+class ReportAndSuggestionBloc
+    extends Bloc<ReportAndSuggestionEvent, ReportAndSuggestionState> {
   TextEditingController textController = TextEditingController();
 
   ReportAndSuggestionBloc() : super(const ReportAndSuggestionState()) {
@@ -53,7 +54,10 @@ class ReportAndSuggestionBloc extends Bloc<ReportAndSuggestionEvent, ReportAndSu
     return image != null ? File(image.path) : null;
   }
 
-  Future<void> callRequest({required File? attach1, required File? attach2, required File? attach3}) {
+  Future<void> callRequest(
+      {required File? attach1,
+      required File? attach2,
+      required File? attach3}) {
     final model = ReportRequest(
       content: textController.text,
       attach1: attach1,
@@ -64,28 +68,34 @@ class ReportAndSuggestionBloc extends Bloc<ReportAndSuggestionEvent, ReportAndSu
     return locator<ReportUseCase>().addNewReportOrSuggestion(reportData: model);
   }
 
-  FutureOr<void> _updateEnableSubmitBtn(event, Emitter<ReportAndSuggestionState> emit) {
+  FutureOr<void> _updateEnableSubmitBtn(
+      event, Emitter<ReportAndSuggestionState> emit) {
     emit(state.copyWith(enableSubmitBtn: event.status));
   }
 
-  FutureOr<void> _updateLoadingStatus(_UpdateLoadingStatus event, Emitter<ReportAndSuggestionState> emit) {
+  FutureOr<void> _updateLoadingStatus(
+      _UpdateLoadingStatus event, Emitter<ReportAndSuggestionState> emit) {
     emit(state.copyWith(loadingStatus: event.status));
   }
 
-  FutureOr<void> _updateAttachment1(_UpdateAttachment1 event, Emitter<ReportAndSuggestionState> emit) {
+  FutureOr<void> _updateAttachment1(
+      _UpdateAttachment1 event, Emitter<ReportAndSuggestionState> emit) {
     emit(state.copyWith(attach1: event.value));
   }
 
-  FutureOr<void> _updateAttachment2(_UpdateAttachment2 event, Emitter<ReportAndSuggestionState> emit) {
+  FutureOr<void> _updateAttachment2(
+      _UpdateAttachment2 event, Emitter<ReportAndSuggestionState> emit) {
     emit(state.copyWith(attach2: event.value));
   }
 
-  FutureOr<void> _updateAttachment3(_UpdateAttachment3 event, Emitter<ReportAndSuggestionState> emit) {
+  FutureOr<void> _updateAttachment3(
+      _UpdateAttachment3 event, Emitter<ReportAndSuggestionState> emit) {
     emit(state.copyWith(attach3: event.value));
   }
 
   FutureOr<void> _updateInternetConnectionStatus(
-      _UpdateInternetConnectionStatus event, Emitter<ReportAndSuggestionState> emit) {
+      _UpdateInternetConnectionStatus event,
+      Emitter<ReportAndSuggestionState> emit) {
     emit(state.copyWith(internetConnectionStauts: event.status));
   }
 }

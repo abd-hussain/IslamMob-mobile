@@ -14,7 +14,8 @@ class MonthSelectionView extends StatelessWidget {
         color: Colors.grey[400],
       ),
       child: BlocBuilder<CalenderBloc, CalenderState>(
-        buildWhen: (previous, current) => previous.monthName != current.monthName,
+        buildWhen: (previous, current) =>
+            previous.monthName != current.monthName,
         builder: (context, state) {
           return Row(
             children: [
@@ -22,7 +23,9 @@ class MonthSelectionView extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 child: InkWell(
                   onTap: () {
-                    context.read<CalenderBloc>().add(CalenderEvent.previousMonth(state.monthName));
+                    context
+                        .read<CalenderBloc>()
+                        .add(CalenderEvent.previousMonth(state.monthName));
                   },
                   child: const Icon(
                     Icons.arrow_back_ios,
@@ -50,7 +53,9 @@ class MonthSelectionView extends StatelessWidget {
                   color: Colors.transparent,
                   child: InkWell(
                     onTap: () {
-                      context.read<CalenderBloc>().add(CalenderEvent.nextMonth(state.monthName));
+                      context
+                          .read<CalenderBloc>()
+                          .add(CalenderEvent.nextMonth(state.monthName));
                     },
                     child: const Icon(
                       Icons.arrow_forward_ios,

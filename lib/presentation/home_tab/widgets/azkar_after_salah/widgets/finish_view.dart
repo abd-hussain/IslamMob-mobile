@@ -27,7 +27,9 @@ class AzkarFinishView extends StatelessWidget {
         CustomButton(
           isEnabled: true,
           title: IslamMobLocalizations.of(context).activateAgain,
-          onTap: () => context.read<AzkarAfterSalahBloc>().add(const AzkarAfterSalahEvent.resetCounters()),
+          onTap: () => context
+              .read<AzkarAfterSalahBloc>()
+              .add(const AzkarAfterSalahEvent.resetCounters()),
         ),
       ],
     );

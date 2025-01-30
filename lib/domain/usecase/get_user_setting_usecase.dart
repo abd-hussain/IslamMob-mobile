@@ -10,19 +10,21 @@ class GetUserSettingUseCase {
 
   /// Retrieves the HighLatitude Rule, from Hive
   PrayHightLatitudeCaluclationState savedHighLatitudeRule() {
-    final String selectedPraynHightLatitudeCaluclation = DataBaseManagerBase.getFromDatabase(
+    final String selectedPraynHightLatitudeCaluclation =
+        DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
       defaultValue: "PraynHightLatitudeCaluclatioState.none()",
     );
 
-    final PrayHightLatitudeCaluclationState highLatitude =
-        _prayDBParser.parseHighLatitudeRuleState(selectedPraynHightLatitudeCaluclation);
+    final PrayHightLatitudeCaluclationState highLatitude = _prayDBParser
+        .parseHighLatitudeRuleState(selectedPraynHightLatitudeCaluclation);
     return highLatitude;
   }
 
   /// Retrieves the Calculation Method, from Hive
   PrayCalculationMethodState savedCalculationMethod() {
-    final String selectedCalculationMethod = DataBaseManagerBase.getFromDatabase(
+    final String selectedCalculationMethod =
+        DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
       defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
     );
@@ -81,7 +83,8 @@ class GetUserSettingUseCase {
     final Map<AzanTypeForEditMin, int> minutesEdited = {};
 
     getDefaultMinEditSettings.forEach((key, defaultValue) {
-      final value = DataBaseManagerBase.getFromDatabase(key: key, defaultValue: defaultValue);
+      final value = DataBaseManagerBase.getFromDatabase(
+          key: key, defaultValue: defaultValue);
       final azanType = _mapKeyToAzanType(key);
       if (azanType != null) {
         minutesEdited[azanType] = int.tryParse(value) ?? 0;

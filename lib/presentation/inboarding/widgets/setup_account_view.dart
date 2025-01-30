@@ -46,7 +46,8 @@ class SetupAccountView extends StatelessWidget {
     return Column(
       children: [
         CustomText(
-          title: IslamMobLocalizations.of(context).onboardingSetupAccountMessage1,
+          title:
+              IslamMobLocalizations.of(context).onboardingSetupAccountMessage1,
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -54,7 +55,8 @@ class SetupAccountView extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         CustomText(
-          title: IslamMobLocalizations.of(context).onboardingSetupAccountMessage2,
+          title:
+              IslamMobLocalizations.of(context).onboardingSetupAccountMessage2,
           fontSize: 20,
           color: const Color(0xff008480),
           fontWeight: FontWeight.bold,
@@ -63,7 +65,8 @@ class SetupAccountView extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         CustomText(
-          title: IslamMobLocalizations.of(context).onboardingSetupAccountMessage3,
+          title:
+              IslamMobLocalizations.of(context).onboardingSetupAccountMessage3,
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,

@@ -45,7 +45,8 @@ class VersionDialogWidget extends StatelessWidget {
                       CustomText(
                         maxLines: 3,
                         textAlign: TextAlign.center,
-                        title: IslamMobLocalizations.of(context).versionDialogUpdateAvailable,
+                        title: IslamMobLocalizations.of(context)
+                            .versionDialogUpdateAvailable,
                         color: const Color(0xff191C1F),
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -68,7 +69,8 @@ class VersionDialogWidget extends StatelessWidget {
                     child: InkWell(
                       onTap: () async {
                         await FirebaseAnalyticsRepository.logEvent(
-                            name: "OpenStoreFromVersionDialog", parameters: {"version": version});
+                            name: "OpenStoreFromVersionDialog",
+                            parameters: {"version": version});
 
                         await OpenStore.instance.open(
                           appStoreId: AppConstant.iOSAppId,
@@ -80,7 +82,8 @@ class VersionDialogWidget extends StatelessWidget {
                         child: Container(
                           alignment: Alignment.center,
                           child: CustomText(
-                            title: IslamMobLocalizations.of(context).versionDialogUpdateNow,
+                            title: IslamMobLocalizations.of(context)
+                                .versionDialogUpdateNow,
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
@@ -93,14 +96,16 @@ class VersionDialogWidget extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         FirebaseAnalyticsRepository.logEvent(
-                            name: "DismissVersionDialog", parameters: {"version": version});
+                            name: "DismissVersionDialog",
+                            parameters: {"version": version});
 
                         Navigator.of(context, rootNavigator: true).pop();
                       },
                       child: Container(
                         alignment: Alignment.center,
                         child: CustomText(
-                          title: IslamMobLocalizations.of(context).versionDialogSkipForNow,
+                          title: IslamMobLocalizations.of(context)
+                              .versionDialogSkipForNow,
                           color: const Color(0xff0059FF),
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

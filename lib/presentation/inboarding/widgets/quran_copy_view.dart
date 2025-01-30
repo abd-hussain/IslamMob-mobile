@@ -19,17 +19,21 @@ class QuranCopyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => QuranCopyBloc()..add(QuranCopyEvent.getlistOfPrints()),
+      create: (context) =>
+          QuranCopyBloc()..add(QuranCopyEvent.getlistOfPrints()),
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: BlocBuilder<QuranCopyBloc, QuranCopyState>(
           buildWhen: (previous, current) =>
               previous.listOfPrints != current.listOfPrints ||
-              previous.internetConnectionStauts != current.internetConnectionStauts,
+              previous.internetConnectionStauts !=
+                  current.internetConnectionStauts,
           builder: (context, state) {
             if (state.internetConnectionStauts == false) {
               return NoInternetView(
-                retryCallback: () => context.read<QuranCopyBloc>().add(QuranCopyEvent.getlistOfPrints()),
+                retryCallback: () => context
+                    .read<QuranCopyBloc>()
+                    .add(QuranCopyEvent.getlistOfPrints()),
               );
             }
 
@@ -87,7 +91,8 @@ class QuranCopyView extends StatelessWidget {
 
   Widget _buildPrintList(BuildContext context, QuranCopyState state) {
     return BlocBuilder<QuranCopyBloc, QuranCopyState>(
-        buildWhen: (previous, current) => previous.printsAlreadyDownloaded != current.printsAlreadyDownloaded,
+        buildWhen: (previous, current) =>
+            previous.printsAlreadyDownloaded != current.printsAlreadyDownloaded,
         builder: (context, downloadState) {
           return ListView.builder(
             itemCount: state.listOfPrints!.length,
@@ -100,9 +105,12 @@ class QuranCopyView extends StatelessWidget {
                 title: printItem.nameReferance,
                 description: printItem.description,
                 previewImage: printItem.previewImage,
-                downloadButtonAvailable: !downloadState.printsAlreadyDownloaded.contains(printItem.fieldName),
-                useButtonAvailable: downloadState.printsAlreadyDownloaded.contains(printItem.fieldName),
-                onDownloadPressed: () => _handleDownloadPressed(context, printItem),
+                downloadButtonAvailable: !downloadState.printsAlreadyDownloaded
+                    .contains(printItem.fieldName),
+                useButtonAvailable: downloadState.printsAlreadyDownloaded
+                    .contains(printItem.fieldName),
+                onDownloadPressed: () =>
+                    _handleDownloadPressed(context, printItem),
                 onUsePressed: () => _handleUsePressed(context, printItem),
               );
             },
@@ -110,8 +118,10 @@ class QuranCopyView extends StatelessWidget {
         });
   }
 
-  Future<void> _handleDownloadPressed(BuildContext context, QuranPrints printItem) async {
-    final hasPermission = await context.read<QuranCopyBloc>().requestStoragePermission();
+  Future<void> _handleDownloadPressed(
+      BuildContext context, QuranPrints printItem) async {
+    final hasPermission =
+        await context.read<QuranCopyBloc>().requestStoragePermission();
 
     if (hasPermission && context.mounted) {
       _showDownloadDialog(context, printItem);
@@ -139,10 +149,13 @@ class QuranCopyView extends StatelessWidget {
   }
 
   void _updateDownloadState(BuildContext context, QuranPrints printItem) {
-    final List<String> updatedList = List.from(context.read<QuranCopyBloc>().state.printsAlreadyDownloaded)
-      ..add(printItem.fieldName!);
+    final List<String> updatedList =
+        List.from(context.read<QuranCopyBloc>().state.printsAlreadyDownloaded)
+          ..add(printItem.fieldName!);
 
-    context.read<QuranCopyBloc>().add(QuranCopyEvent.updatePrintsDownloading(updatedList));
+    context
+        .read<QuranCopyBloc>()
+        .add(QuranCopyEvent.updatePrintsDownloading(updatedList));
   }
 
   void _showPermissionWarning(BuildContext context) {
@@ -152,8 +165,11 @@ class QuranCopyView extends StatelessWidget {
     );
   }
 
-  Future<void> _handleUsePressed(BuildContext context, QuranPrints printItem) async {
-    context.read<QuranCopyBloc>().add(QuranCopyEvent.setupCopy(printItem: printItem));
+  Future<void> _handleUsePressed(
+      BuildContext context, QuranPrints printItem) async {
+    context
+        .read<QuranCopyBloc>()
+        .add(QuranCopyEvent.setupCopy(printItem: printItem));
     doneSelection();
   }
 }

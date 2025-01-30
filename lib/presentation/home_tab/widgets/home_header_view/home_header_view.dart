@@ -12,7 +12,8 @@ class HomeHeaderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeHeaderBloc()..add(HomeHeaderEvent.prepareNextSalahTypeAndTime()),
+      create: (context) =>
+          HomeHeaderBloc()..add(HomeHeaderEvent.prepareNextSalahTypeAndTime()),
       child: SliverAppBar(
         backgroundColor: const Color(0xff292929),
         expandedHeight: 250,
@@ -36,7 +37,8 @@ class HomeHeaderView extends StatelessWidget {
 
     return BlocBuilder<HomeHeaderBloc, HomeHeaderState>(
       buildWhen: (previous, current) =>
-          previous.nextPrayType != current.nextPrayType || previous.nextPrayDateTime != current.nextPrayDateTime,
+          previous.nextPrayType != current.nextPrayType ||
+          previous.nextPrayDateTime != current.nextPrayDateTime,
       builder: (context, state) {
         return state.nextPrayDateTime == null
             ? const SizedBox.shrink()
@@ -124,7 +126,8 @@ class HomeHeaderView extends StatelessWidget {
             size: 12,
           ),
           CustomText(
-            title: "${bloc.currentSubCity()}, ${bloc.currentCity()}, ${bloc.currentCountry()}",
+            title:
+                "${bloc.currentSubCity()}, ${bloc.currentCity()}, ${bloc.currentCountry()}",
             fontSize: 10,
           ),
         ],
@@ -144,7 +147,8 @@ class HomeHeaderView extends StatelessWidget {
   }
 
   /// Helper method to get Salah name localized.
-  String _getSalahName({required BuildContext context, required SalahTimeState salahType}) {
+  String _getSalahName(
+      {required BuildContext context, required SalahTimeState salahType}) {
     final localization = IslamMobLocalizations.of(context);
     switch (salahType) {
       case SalahTimeStateFajir():

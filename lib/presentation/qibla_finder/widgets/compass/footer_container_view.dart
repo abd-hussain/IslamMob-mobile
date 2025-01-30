@@ -4,7 +4,8 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 class FooterContainerView extends StatelessWidget {
   final String title;
   final String value;
-  const FooterContainerView({super.key, required this.title, required this.value});
+  const FooterContainerView(
+      {super.key, required this.title, required this.value});
 
   @override
   Widget build(BuildContext context) {

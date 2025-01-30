@@ -19,19 +19,22 @@ class ReportSuggestionAttachment extends StatelessWidget {
           _buildAttachmentItem(
             context,
             stateSelector: (state) => state.attach1,
-            updateEvent: (image) => ReportAndSuggestionEvent.updateAttachment1(value: image),
+            updateEvent: (image) =>
+                ReportAndSuggestionEvent.updateAttachment1(value: image),
           ),
           const SizedBox(width: 8),
           _buildAttachmentItem(
             context,
             stateSelector: (state) => state.attach2,
-            updateEvent: (image) => ReportAndSuggestionEvent.updateAttachment2(value: image),
+            updateEvent: (image) =>
+                ReportAndSuggestionEvent.updateAttachment2(value: image),
           ),
           const SizedBox(width: 8),
           _buildAttachmentItem(
             context,
             stateSelector: (state) => state.attach3,
-            updateEvent: (image) => ReportAndSuggestionEvent.updateAttachment3(value: image),
+            updateEvent: (image) =>
+                ReportAndSuggestionEvent.updateAttachment3(value: image),
           ),
           const Expanded(child: SizedBox()),
         ],
@@ -45,7 +48,8 @@ class ReportSuggestionAttachment extends StatelessWidget {
     required ReportAndSuggestionEvent Function(File?) updateEvent,
   }) {
     return BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
-      buildWhen: (previous, current) => stateSelector(previous) != stateSelector(current),
+      buildWhen: (previous, current) =>
+          stateSelector(previous) != stateSelector(current),
       builder: (context, state) {
         final attachment = stateSelector(state);
         return InkWell(

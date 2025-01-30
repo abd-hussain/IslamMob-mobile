@@ -29,7 +29,8 @@ class NoInternetView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             CustomText(
-              title: IslamMobLocalizations.of(context).intenetshouldbeenableforthispage,
+              title: IslamMobLocalizations.of(context)
+                  .intenetshouldbeenableforthispage,
               fontSize: 14,
               maxLines: 2,
               textAlign: TextAlign.center,

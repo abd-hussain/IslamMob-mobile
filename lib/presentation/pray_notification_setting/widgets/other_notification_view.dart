@@ -36,10 +36,12 @@ class OtherNotificationView extends StatelessWidget {
   List<Widget> _buildNotificationRows() {
     return [
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) => previous.sunriseTime != current.sunriseTime,
+        buildWhen: (previous, current) =>
+            previous.sunriseTime != current.sunriseTime,
         builder: (context, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context).notificationSettingSunriseTime,
+            title: IslamMobLocalizations.of(context)
+                .notificationSettingSunriseTime,
             value: state.sunriseTime,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -55,10 +57,12 @@ class OtherNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) => previous.jom3aAlkahf != current.jom3aAlkahf,
+        buildWhen: (previous, current) =>
+            previous.jom3aAlkahf != current.jom3aAlkahf,
         builder: (context, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context).notificationSettingJomAlkahf,
+            title:
+                IslamMobLocalizations.of(context).notificationSettingJomAlkahf,
             value: state.jom3aAlkahf,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -74,10 +78,12 @@ class OtherNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) => previous.jom3aDo3aa != current.jom3aDo3aa,
+        buildWhen: (previous, current) =>
+            previous.jom3aDo3aa != current.jom3aDo3aa,
         builder: (context, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context).notificationSettingJom3aDoaa,
+            title:
+                IslamMobLocalizations.of(context).notificationSettingJom3aDoaa,
             value: state.jom3aDo3aa,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -93,10 +99,12 @@ class OtherNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) => previous.qeyamAlLayel != current.qeyamAlLayel,
+        buildWhen: (previous, current) =>
+            previous.qeyamAlLayel != current.qeyamAlLayel,
         builder: (context, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context).notificationSettingQeyamAlLayel,
+            title: IslamMobLocalizations.of(context)
+                .notificationSettingQeyamAlLayel,
             value: state.qeyamAlLayel,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(
@@ -112,10 +120,12 @@ class OtherNotificationView extends StatelessWidget {
       ),
       const Divider(height: 1, color: Colors.grey),
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) => previous.before15Min != current.before15Min,
+        buildWhen: (previous, current) =>
+            previous.before15Min != current.before15Min,
         builder: (context, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context).notificationBeforeSalah15Minutes,
+            title: IslamMobLocalizations.of(context)
+                .notificationBeforeSalah15Minutes,
             value: state.before15Min,
             onChanged: (value) {
               context.read<PrayNotificationSettingBloc>().add(

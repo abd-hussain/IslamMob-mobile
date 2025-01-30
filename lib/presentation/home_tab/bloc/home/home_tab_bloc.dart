@@ -37,8 +37,10 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   }
 
   Future<void> _fetchPermissions() async {
-    final bool locationStatus = await LocationManagerBase().checkLocationPermission();
-    final PermissionStatus notificationStatus = await Permission.notification.status;
+    final bool locationStatus =
+        await LocationManagerBase().checkLocationPermission();
+    final PermissionStatus notificationStatus =
+        await Permission.notification.status;
 
     if (locationStatus) {
       add(HomeTabEvent.updateShowingLocationView(false));
@@ -56,7 +58,8 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   /// Listens to scroll changes and updates the expanded status.
   void _scrollListener() {
     const double expandedHeight = 250;
-    final bool isExpanded = scrollController.hasClients && scrollController.offset < expandedHeight;
+    final bool isExpanded =
+        scrollController.hasClients && scrollController.offset < expandedHeight;
 
     if (isExpanded != state.isBarExpanded) {
       add(HomeTabEvent.updateExpandedStatus(isExpanded));
@@ -64,22 +67,26 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   }
 
   /// Handles updating the app bar's expanded status.
-  FutureOr<void> _handleExpandedStatusUpdate(_UpdateExpandedStatus event, Emitter<HomeTabState> emit) {
+  FutureOr<void> _handleExpandedStatusUpdate(
+      _UpdateExpandedStatus event, Emitter<HomeTabState> emit) {
     emit(state.copyWith(isBarExpanded: event.status));
   }
 
   /// Handles showing or hiding the notification view.
-  FutureOr<void> _handleNotificationViewUpdate(_UpdateShowingNotificationView event, Emitter<HomeTabState> emit) {
+  FutureOr<void> _handleNotificationViewUpdate(
+      _UpdateShowingNotificationView event, Emitter<HomeTabState> emit) {
     emit(state.copyWith(showAllowNotificationView: event.status));
   }
 
   /// Handles showing or hiding the location view.
-  FutureOr<void> _handleLocationViewUpdate(_UpdateShowingLocationView event, Emitter<HomeTabState> emit) {
+  FutureOr<void> _handleLocationViewUpdate(
+      _UpdateShowingLocationView event, Emitter<HomeTabState> emit) {
     emit(state.copyWith(showAllowLocationView: event.status));
   }
 
   /// Handles updating the next prayer type.
-  FutureOr<void> _handleNextPrayTypeUpdate(_UpdateNextPrayType event, Emitter<HomeTabState> emit) {
+  FutureOr<void> _handleNextPrayTypeUpdate(
+      _UpdateNextPrayType event, Emitter<HomeTabState> emit) {
     emit(state.copyWith(nextPrayType: event.nextPrayType));
   }
 
