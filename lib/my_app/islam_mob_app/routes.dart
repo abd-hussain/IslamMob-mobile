@@ -51,8 +51,10 @@ final Map<String, Widget> routes = {
   RoutesConstants.termsConditionScreen: const TermsConditionScreen(),
   RoutesConstants.privacyPolicyScreen: const PrivacyPolicyScreen(),
   RoutesConstants.inBoardingScreen: const InBoardingScreen(),
-  RoutesConstants.prayNotificationSettingScreen: const PrayNotificationSettingScreen(),
-  RoutesConstants.prayCalculationSettingScreen: const PrayCalculationSettingScreen(),
+  RoutesConstants.prayNotificationSettingScreen:
+      const PrayNotificationSettingScreen(),
+  RoutesConstants.prayCalculationSettingScreen:
+      const PrayCalculationSettingScreen(),
   RoutesConstants.calenderScreen: const CalenderScreen(),
   RoutesConstants.qiblaFinderScreen: const QiblaFinderScreen(),
 };

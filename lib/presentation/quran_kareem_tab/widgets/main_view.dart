@@ -21,14 +21,17 @@ class QuranKareemMainView extends StatelessWidget {
   }
 
   Widget _buildPdfView(BuildContext context) {
-    final isReversed =
-        DataBaseManagerBase.getFromDatabase(key: DatabaseFieldConstant.userLanguageCode, defaultValue: "") != "ar";
+    final isReversed = DataBaseManagerBase.getFromDatabase(
+            key: DatabaseFieldConstant.userLanguageCode, defaultValue: "") !=
+        "ar";
 
     return PdfView(
       reverse: isReversed,
       controller: context.read<QuranKareemBloc>().pdfController!,
       onPageChanged: (index) {
-        context.read<QuranKareemBloc>().add(QuranKareemEvent.updatePageCount(index));
+        context
+            .read<QuranKareemBloc>()
+            .add(QuranKareemEvent.updatePageCount(index));
       },
     );
   }

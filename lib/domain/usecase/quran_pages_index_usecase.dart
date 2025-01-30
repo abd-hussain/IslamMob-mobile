@@ -156,7 +156,8 @@ class QuranPagesIndexUseCase {
       ];
 
   /// Returns `SowrahType.makyeh` or `SowrahType.madanyeh`.
-  static SowrahTypeState getSurahType({required BuildContext context, required String surahName}) {
+  static SowrahTypeState getSurahType(
+      {required BuildContext context, required String surahName}) {
     final madaniyahSurahs = [
       IslamMobLocalizations.of(context).quranSorahName2,
       IslamMobLocalizations.of(context).quranSorahName3,
@@ -188,6 +189,8 @@ class QuranPagesIndexUseCase {
       IslamMobLocalizations.of(context).quranSorahName110,
     ];
 
-    return madaniyahSurahs.contains(surahName) ? const SowrahTypeState.madanyeh() : const SowrahTypeState.makyeh();
+    return madaniyahSurahs.contains(surahName)
+        ? const SowrahTypeState.madanyeh()
+        : const SowrahTypeState.makyeh();
   }
 }

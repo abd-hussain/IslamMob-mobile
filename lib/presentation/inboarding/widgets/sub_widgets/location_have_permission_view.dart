@@ -56,7 +56,8 @@ class LocationHavePermissionView extends StatelessWidget {
         ),
         CustomButton(
           isEnabled: true,
-          title: IslamMobLocalizations.of(context).locationPermissionSuccsesButton,
+          title:
+              IslamMobLocalizations.of(context).locationPermissionSuccsesButton,
           onTap: onConfirmationPress,
         ),
       ],

@@ -5,7 +5,8 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 class CustomToast {
   /// Displays a warning toast message with a custom design.
 
-  static void showWarningToast({required BuildContext context, required String message}) {
+  static void showWarningToast(
+      {required BuildContext context, required String message}) {
     final fToast = FToast()..init(context);
 
     fToast.showToast(

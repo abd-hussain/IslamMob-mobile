@@ -13,12 +13,17 @@ void main() {
 
     parameters = CalculationParameters(fajrAngle: 18, ishaAngle: 18)
       ..highLatitudeRule = HighLatitudeRule.seventhOfTheNight;
-    expect(almostEqualD(parameters.nightPortions().fajr, 1.0 / 7.0, 0.001), isTrue);
-    expect(almostEqualD(parameters.nightPortions().isha, 1.0 / 7.0, 0.001), isTrue);
+    expect(almostEqualD(parameters.nightPortions().fajr, 1.0 / 7.0, 0.001),
+        isTrue);
+    expect(almostEqualD(parameters.nightPortions().isha, 1.0 / 7.0, 0.001),
+        isTrue);
 
-    parameters = CalculationParameters(fajrAngle: 10, ishaAngle: 15)..highLatitudeRule = HighLatitudeRule.twilightAngle;
-    expect(almostEqualD(parameters.nightPortions().fajr, 10.0 / 60.0, 0.001), isTrue);
-    expect(almostEqualD(parameters.nightPortions().isha, 15.0 / 60.0, 0.001), isTrue);
+    parameters = CalculationParameters(fajrAngle: 10, ishaAngle: 15)
+      ..highLatitudeRule = HighLatitudeRule.twilightAngle;
+    expect(almostEqualD(parameters.nightPortions().fajr, 10.0 / 60.0, 0.001),
+        isTrue);
+    expect(almostEqualD(parameters.nightPortions().isha, 15.0 / 60.0, 0.001),
+        isTrue);
 
     parameters.highLatitudeRule = null;
     expect(() => parameters.nightPortions(), throwsFormatException);

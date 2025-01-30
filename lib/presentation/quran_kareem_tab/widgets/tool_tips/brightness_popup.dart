@@ -16,7 +16,8 @@ class BrightnessPopup extends StatefulWidget {
   State<BrightnessPopup> createState() => _BrightnessPopupState();
 }
 
-class _BrightnessPopupState extends State<BrightnessPopup> with SingleTickerProviderStateMixin {
+class _BrightnessPopupState extends State<BrightnessPopup>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _animationController;
 
   @override

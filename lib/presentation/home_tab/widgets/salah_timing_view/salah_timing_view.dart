@@ -52,7 +52,8 @@ class _SalahTimingViewState extends State<SalahTimingView> {
   Widget _buildSalahBoxes(BuildContext context, int index) {
     return BlocBuilder<SalahTimingBloc, SalahTimingState>(
       buildWhen: (previous, current) =>
-          previous.prayTimeForWeek != current.prayTimeForWeek || previous.currentSalahType != current.currentSalahType,
+          previous.prayTimeForWeek != current.prayTimeForWeek ||
+          previous.currentSalahType != current.currentSalahType,
       builder: (context, state) {
         if (state.prayTimeForWeek.isEmpty) {
           return const SizedBox.shrink();
@@ -68,37 +69,43 @@ class _SalahTimingViewState extends State<SalahTimingView> {
               SalahBox(
                 salahType: const SalahTimeStateFajir(),
                 salahTime: prayTimes.fajir,
-                isCurrentSalah: currentSalah == const SalahTimeStateFajir() && index == 3,
+                isCurrentSalah:
+                    currentSalah == const SalahTimeStateFajir() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateSunrise(),
                 salahTime: prayTimes.sunrise,
-                isCurrentSalah: currentSalah == const SalahTimeStateSunrise() && index == 3,
+                isCurrentSalah:
+                    currentSalah == const SalahTimeStateSunrise() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateZhur(),
                 salahTime: prayTimes.dhuhr,
-                isCurrentSalah: currentSalah == const SalahTimeStateZhur() && index == 3,
+                isCurrentSalah:
+                    currentSalah == const SalahTimeStateZhur() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateAsr(),
                 salahTime: prayTimes.asr,
-                isCurrentSalah: currentSalah == const SalahTimeStateAsr() && index == 3,
+                isCurrentSalah:
+                    currentSalah == const SalahTimeStateAsr() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateMaghrib(),
                 salahTime: prayTimes.maghrib,
-                isCurrentSalah: currentSalah == const SalahTimeStateMaghrib() && index == 3,
+                isCurrentSalah:
+                    currentSalah == const SalahTimeStateMaghrib() && index == 3,
               ),
               const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateIsha(),
                 salahTime: prayTimes.isha,
-                isCurrentSalah: currentSalah == const SalahTimeStateIsha() && index == 3,
+                isCurrentSalah:
+                    currentSalah == const SalahTimeStateIsha() && index == 3,
               ),
             ],
           ),
@@ -109,7 +116,8 @@ class _SalahTimingViewState extends State<SalahTimingView> {
 
   Widget _buildAdditionalInfoRow(BuildContext context, int index) {
     return BlocBuilder<SalahTimingBloc, SalahTimingState>(
-      buildWhen: (previous, current) => previous.prayTimeForWeek != current.prayTimeForWeek,
+      buildWhen: (previous, current) =>
+          previous.prayTimeForWeek != current.prayTimeForWeek,
       builder: (context, state) {
         if (state.prayTimeForWeek.isEmpty) {
           return const SizedBox.shrink();
@@ -123,7 +131,8 @@ class _SalahTimingViewState extends State<SalahTimingView> {
             children: [
               _buildMidnightInfo(context, prayTimes.middleOfTheNight),
               _buildSettingsButton(context),
-              _buildLastThirdOfNightInfo(context, prayTimes.lastThirdOfTheNight),
+              _buildLastThirdOfNightInfo(
+                  context, prayTimes.lastThirdOfTheNight),
             ],
           ),
         );

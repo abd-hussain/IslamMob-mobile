@@ -35,7 +35,8 @@ class CalenderScreen extends StatelessWidget {
                   child: CircularProgressIndicator(color: Color(0xff008480)),
                 );
               } else if (state.status is CalenderProcessStateError) {
-                return const Center(child: CustomText(title: "Something Wrong", fontSize: 14));
+                return const Center(
+                    child: CustomText(title: "Something Wrong", fontSize: 14));
               } else {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,13 +50,15 @@ class CalenderScreen extends StatelessWidget {
                     ),
                     const CalenderHeaderView(),
                     BlocBuilder<CalenderBloc, CalenderState>(
-                      buildWhen: (previous, current) => previous.list != current.list,
+                      buildWhen: (previous, current) =>
+                          previous.list != current.list,
                       builder: (context, state) {
                         return Expanded(
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: GridView.builder(
-                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 7, // Number of columns
                                 mainAxisSpacing: 2,
                                 childAspectRatio: 1.8, // Adjust based on design
@@ -67,7 +70,8 @@ class CalenderScreen extends StatelessWidget {
                                 final calender = state.list[rowIndex];
                                 return _buildCell(calender, colIndex);
                               },
-                              itemCount: state.list.length * 7, // Each row has 8 cells
+                              itemCount:
+                                  state.list.length * 7, // Each row has 8 cells
                             ),
                           ),
                         );
@@ -87,24 +91,34 @@ class CalenderScreen extends StatelessWidget {
   Widget _buildCell(CalenderModel calender, int colIndex) {
     switch (colIndex) {
       case 0:
-        return CalenderCellView(title: calender.dayName, color: calender.isToday ? Colors.redAccent : Colors.white);
+        return CalenderCellView(
+            title: calender.dayName,
+            color: calender.isToday ? Colors.redAccent : Colors.white);
       case 1:
         return CalenderCellView(
             title: calender.dateMilady,
             title2: calender.dateHijri,
             color: calender.isToday ? Colors.redAccent : Colors.grey[400]!);
       case 2:
-        return CalenderCellView(title: calender.fajirTime, color: calender.isToday ? Colors.redAccent : Colors.white);
+        return CalenderCellView(
+            title: calender.fajirTime,
+            color: calender.isToday ? Colors.redAccent : Colors.white);
       case 3:
         return CalenderCellView(
-            title: calender.zhurTime, color: calender.isToday ? Colors.redAccent : Colors.grey[400]!);
+            title: calender.zhurTime,
+            color: calender.isToday ? Colors.redAccent : Colors.grey[400]!);
       case 4:
-        return CalenderCellView(title: calender.asrTime, color: calender.isToday ? Colors.redAccent : Colors.white);
+        return CalenderCellView(
+            title: calender.asrTime,
+            color: calender.isToday ? Colors.redAccent : Colors.white);
       case 5:
         return CalenderCellView(
-            title: calender.magribTime, color: calender.isToday ? Colors.redAccent : Colors.grey[400]!);
+            title: calender.magribTime,
+            color: calender.isToday ? Colors.redAccent : Colors.grey[400]!);
       case 6:
-        return CalenderCellView(title: calender.ishaTime, color: calender.isToday ? Colors.redAccent : Colors.white);
+        return CalenderCellView(
+            title: calender.ishaTime,
+            color: calender.isToday ? Colors.redAccent : Colors.white);
       default:
         return const SizedBox.shrink();
     }

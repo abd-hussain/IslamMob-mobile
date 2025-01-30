@@ -35,13 +35,15 @@ class SettingBottomSheet {
                 context: context,
                 title: localize.prayCalculationSettings,
                 color: const Color(0xff008480),
-                onPressed: () async => navigator.pushNamed(RoutesConstants.prayCalculationSettingScreen),
+                onPressed: () async => navigator
+                    .pushNamed(RoutesConstants.prayCalculationSettingScreen),
               ),
               _buildSettingsButton(
                 context: context,
                 title: localize.notificationSettings,
                 color: const Color(0xff008480),
-                onPressed: () async => navigator.pushNamed(RoutesConstants.prayNotificationSettingScreen),
+                onPressed: () async => navigator
+                    .pushNamed(RoutesConstants.prayNotificationSettingScreen),
               ),
               _buildSettingsButton(
                 context: context,
@@ -50,11 +52,13 @@ class SettingBottomSheet {
                 onPressed: () async {
                   final navigator = Navigator.of(context, rootNavigator: true);
                   await DataBaseManagerBase.saveMultipleInDatabase(data: {
-                    DatabaseFieldInBoardingStageConstant.inBoardingfinished: null,
+                    DatabaseFieldInBoardingStageConstant.inBoardingfinished:
+                        null,
                     DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,
                   });
                   await navigator.pushNamedAndRemoveUntil(
-                      RoutesConstants.inBoardingScreen, (Route<dynamic> route) => false);
+                      RoutesConstants.inBoardingScreen,
+                      (Route<dynamic> route) => false);
                 },
               ),
               _buildSettingsButton(

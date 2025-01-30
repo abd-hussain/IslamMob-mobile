@@ -6,7 +6,8 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 class LocalNotificationRepository {
-  static final FlutterLocalNotificationsPlugin _notificationsPlugin = FlutterLocalNotificationsPlugin();
+  static final FlutterLocalNotificationsPlugin _notificationsPlugin =
+      FlutterLocalNotificationsPlugin();
 
   /// Initializes the local notification service with platform-specific settings.
   Future<void> initialize() async {
@@ -32,14 +33,16 @@ class LocalNotificationRepository {
 
   /// Handles notification responses for both foreground and background events.
   @pragma('vm:entry-point')
-  static Future<void> _notificationTapBackground(NotificationResponse response) async {
+  static Future<void> _notificationTapBackground(
+      NotificationResponse response) async {
     debugPrint('Notification received with payload: ${response.payload}');
   }
 
   /// Requests notification permission on Android devices.
   static Future<void> _requestAndroidPermission() async {
     final androidPlugin =
-        _notificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
+        _notificationsPlugin.resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>();
     if (androidPlugin != null) {
       await androidPlugin.requestNotificationsPermission();
     }
@@ -85,7 +88,8 @@ class LocalNotificationRepository {
       details.description,
       tz.TZDateTime.from(scheduledTime, tz.local),
       notificationDetails,
-      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.dateAndTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
@@ -155,7 +159,8 @@ class LocalNotificationRepository {
     return _notificationsPlugin.cancelAll();
   }
 
-  static LocalNotification _notificationDetails(BuildContext context, NotificationTypeState type) {
+  static LocalNotification _notificationDetails(
+      BuildContext context, NotificationTypeState type) {
     final localize = IslamMobLocalizations.of(context);
 
     switch (type) {

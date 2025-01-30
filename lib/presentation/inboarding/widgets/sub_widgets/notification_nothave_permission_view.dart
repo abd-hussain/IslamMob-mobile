@@ -6,7 +6,8 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class NotificationNothavePermissionView extends StatelessWidget {
   final Function() skipButton;
-  const NotificationNothavePermissionView({super.key, required this.skipButton});
+  const NotificationNothavePermissionView(
+      {super.key, required this.skipButton});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,8 @@ class NotificationNothavePermissionView extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: IslamMobLocalizations.of(context).whyyoushouldallownotification,
+            title:
+                IslamMobLocalizations.of(context).whyyoushouldallownotification,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -24,7 +26,8 @@ class NotificationNothavePermissionView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: IslamMobLocalizations.of(context).whyyoushouldallownotificationdetails,
+          title: IslamMobLocalizations.of(context)
+              .whyyoushouldallownotificationdetails,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,

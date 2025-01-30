@@ -16,7 +16,8 @@ class InBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => InboardingBloc()..add(const InboardingEvent.initialStage()),
+      create: (context) =>
+          InboardingBloc()..add(const InboardingEvent.initialStage()),
       child: Scaffold(
         backgroundColor: const Color(0xffF5F6F7),
         body: SafeArea(
@@ -84,19 +85,23 @@ class InBoardingScreen extends StatelessWidget {
           switch (state.inBoardingStage) {
             case 0:
               return LanguageInBoardingView(
-                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 1)),
+                doneSelection: () => bloc
+                    .add(const InboardingEvent.changeInBoardingStage(stage: 1)),
               );
             case 1:
               return LocationInBoardingView(
-                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 2)),
+                doneSelection: () => bloc
+                    .add(const InboardingEvent.changeInBoardingStage(stage: 2)),
               );
             case 2:
               return QuranCopyView(
-                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 3)),
+                doneSelection: () => bloc
+                    .add(const InboardingEvent.changeInBoardingStage(stage: 3)),
               );
             case 3:
               return NotificationInBoardingView(
-                doneSelection: () => bloc.add(const InboardingEvent.changeInBoardingStage(stage: 4)),
+                doneSelection: () => bloc
+                    .add(const InboardingEvent.changeInBoardingStage(stage: 4)),
               );
             case 4:
               return SetupAccountView(

@@ -39,24 +39,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   icon: Icons.calendar_month,
                   name: localize.calenderSettings,
                   onTap: () async {
-                    await FirebaseAnalyticsRepository.logEvent(name: "CalenderScreenFromSettingsScreen");
+                    await FirebaseAnalyticsRepository.logEvent(
+                        name: "CalenderScreenFromSettingsScreen");
                     await navigator.pushNamed(RoutesConstants.calenderScreen);
                   },
                 ),
                 ProfileOptions(
                   icon: Icons.translate,
                   name: localize.changeSelectedLanguage,
-                  onTap: () async => navigator.pushNamed(RoutesConstants.changeLanguageScreen),
+                  onTap: () async =>
+                      navigator.pushNamed(RoutesConstants.changeLanguageScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.notification_important,
                   name: localize.notificationSettings,
-                  onTap: () async => navigator.pushNamed(RoutesConstants.prayNotificationSettingScreen),
+                  onTap: () async => navigator
+                      .pushNamed(RoutesConstants.prayNotificationSettingScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.settings,
                   name: localize.prayCalculationSettings,
-                  onTap: () async => navigator.pushNamed(RoutesConstants.prayCalculationSettingScreen),
+                  onTap: () async => navigator
+                      .pushNamed(RoutesConstants.prayCalculationSettingScreen),
                 ),
               ]),
               TitleView(title: localize.reachouttous),
@@ -64,7 +68,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ProfileOptions(
                   icon: Icons.bug_report,
                   name: localize.reportOrSuggestion,
-                  onTap: () async => navigator.pushNamed(RoutesConstants.reportOrSuggestionScreen),
+                  onTap: () async => navigator
+                      .pushNamed(RoutesConstants.reportOrSuggestionScreen),
                 ),
               ]),
               TitleView(title: localize.support),
@@ -73,7 +78,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     icon: Ionicons.sparkles,
                     name: localize.rateapp,
                     onTap: () async {
-                      final bool internetStatus = await NetworkUseCase.checkInternetConeection();
+                      final bool internetStatus =
+                          await NetworkUseCase.checkInternetConeection();
 
                       if (internetStatus == false) {
                         if (context.mounted) {
@@ -103,13 +109,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ProfileOptions(
                   icon: Ionicons.color_palette,
                   name: localize.aboutus,
-                  onTap: () async => navigator.pushNamed(RoutesConstants.aboutUsScreen),
+                  onTap: () async =>
+                      navigator.pushNamed(RoutesConstants.aboutUsScreen),
                 ),
                 ProfileOptions(
                   icon: Icons.share,
                   name: localize.shareapp,
                   onTap: () async {
-                    await FirebaseAnalyticsRepository.logEvent(name: "ShareAppFromSettingsScreen");
+                    await FirebaseAnalyticsRepository.logEvent(
+                        name: "ShareAppFromSettingsScreen");
                     await ShareDialog().dialog(context: context);
                   },
                 ),
@@ -129,7 +137,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     scaffoldMessenger.showSnackBar(
       SnackBar(
-        content: Text(IslamMobLocalizations.of(context).pleasecheckyourinternetconnection),
+        content: Text(IslamMobLocalizations.of(context)
+            .pleasecheckyourinternetconnection),
       ),
     );
   }

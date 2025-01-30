@@ -23,7 +23,8 @@ class LocationNothavePermissionView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: IslamMobLocalizations.of(context).whyyoushouldallowlocationdetails,
+          title: IslamMobLocalizations.of(context)
+              .whyyoushouldallowlocationdetails,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,

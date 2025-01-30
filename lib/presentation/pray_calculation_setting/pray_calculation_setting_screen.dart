@@ -81,7 +81,8 @@ class PrayCalculationSettingScreen extends StatelessWidget {
 
   Widget _buttonsSection(BuildContext context) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) => previous.buttonsStatus != current.buttonsStatus,
+      buildWhen: (previous, current) =>
+          previous.buttonsStatus != current.buttonsStatus,
       builder: (context, state) {
         return Column(
           children: [
@@ -105,11 +106,13 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                 onTap: () async {
                   final navigator = Navigator.of(context, rootNavigator: true);
                   await DataBaseManagerBase.saveMultipleInDatabase(data: {
-                    DatabaseFieldInBoardingStageConstant.inBoardingfinished: null,
+                    DatabaseFieldInBoardingStageConstant.inBoardingfinished:
+                        null,
                     DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,
                   });
                   await navigator.pushNamedAndRemoveUntil(
-                      RoutesConstants.inBoardingScreen, (Route<dynamic> route) => false);
+                      RoutesConstants.inBoardingScreen,
+                      (Route<dynamic> route) => false);
                 }),
           ],
         );

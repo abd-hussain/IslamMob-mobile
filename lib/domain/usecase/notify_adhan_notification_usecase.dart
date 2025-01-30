@@ -5,12 +5,15 @@ import 'package:islam_mob_adhan/adhan.dart';
 class NotifyAdhanNotificationUsecase {
   PrayUsecase _prayUsecase = PrayUsecase();
 
-  List<PrayTimingDateTimeModel> getPrayTimingForSpesificDates({required List<DateTime> listOfDates}) {
+  List<PrayTimingDateTimeModel> getPrayTimingForSpesificDates(
+      {required List<DateTime> listOfDates}) {
     final List<PrayTimingDateTimeModel> prayTimingDateTimeModels = [];
 
     for (final date in listOfDates) {
-      _prayUsecase = PrayUsecase(specificDate: DateComponents(date.year, date.month, date.day));
-      final PrayTimingDateTimeModel prayTimingDateTimeModel = _prayUsecase.getAllPrayTimeAsDateTimeForToday();
+      _prayUsecase = PrayUsecase(
+          specificDate: DateComponents(date.year, date.month, date.day));
+      final PrayTimingDateTimeModel prayTimingDateTimeModel =
+          _prayUsecase.getAllPrayTimeAsDateTimeForToday();
 
       final fajirPrayTime = DateTime(
         date.year,

@@ -11,5 +11,6 @@ Future<void> setupLocator() async {
   locator.registerFactory<ReportUseCase>(ReportUseCase.new);
   locator.registerFactory<MainContainerBloc>(MainContainerBloc.new);
   locator.registerSingleton<TimingUseCase>(TimingUseCase());
-  locator.registerSingleton<LocalNotificationRepository>(LocalNotificationRepository());
+  locator.registerSingleton<LocalNotificationRepository>(
+      LocalNotificationRepository());
 }

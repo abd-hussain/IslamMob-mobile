@@ -36,7 +36,9 @@ class CustomButton extends StatelessWidget {
           width: width,
           child: Center(
             child: Text(
-              title == "Submit" ? IslamMobLocalizations.of(context).submit : title,
+              title == "Submit"
+                  ? IslamMobLocalizations.of(context).submit
+                  : title,
               style: TextStyle(
                 color: titleColor,
                 fontSize: 16,

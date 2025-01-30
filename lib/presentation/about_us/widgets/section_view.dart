@@ -4,7 +4,8 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 class SectionView extends StatelessWidget {
   final String title;
   final List<String> descriptions;
-  const SectionView({super.key, required this.title, required this.descriptions});
+  const SectionView(
+      {super.key, required this.title, required this.descriptions});
 
   @override
   Widget build(BuildContext context) {

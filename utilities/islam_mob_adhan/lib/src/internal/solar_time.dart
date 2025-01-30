@@ -131,7 +131,8 @@ class SolarTime {
     }
 
     // Calculate the tangent of the absolute latitude-declination difference.
-    final latitudeDeclinationDifference = (observer.latitude - solar.declination).abs();
+    final latitudeDeclinationDifference =
+        (observer.latitude - solar.declination).abs();
     final tangent = tan(degreesToRadians(latitudeDeclinationDifference));
 
     // Calculate the angle for the given shadow length.

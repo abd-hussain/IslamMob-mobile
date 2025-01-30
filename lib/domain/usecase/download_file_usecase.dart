@@ -71,9 +71,11 @@ class DownloadFileUsecase {
 
     if (!await newDirectory.exists()) {
       await newDirectory.create();
-      LoggerManagerBase.logDebugMessage(message: 'Directory created: ${newDirectory.path}');
+      LoggerManagerBase.logDebugMessage(
+          message: 'Directory created: ${newDirectory.path}');
     } else {
-      LoggerManagerBase.logDebugMessage(message: 'Directory exists: ${newDirectory.path}');
+      LoggerManagerBase.logDebugMessage(
+          message: 'Directory exists: ${newDirectory.path}');
     }
 
     return '${newDirectory.path}/$fileName';

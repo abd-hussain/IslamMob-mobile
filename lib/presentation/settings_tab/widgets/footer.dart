@@ -18,7 +18,8 @@ class FooterView extends StatelessWidget {
               future: ApplicationVersionUsecase().getApplicationVersion(),
               builder: (context, snapshot) {
                 return CustomText(
-                  title: "${IslamMobLocalizations.of(context).version} ${snapshot.data}",
+                  title:
+                      "${IslamMobLocalizations.of(context).version} ${snapshot.data}",
                   fontSize: 12,
                   color: const Color(0xffBFBFBF),
                 );

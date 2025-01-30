@@ -41,7 +41,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     final listOfPrints = await quranPrintsUsecase.getQuranPrints();
 
     if (listOfPrints.isEmpty) {
-      LoggerManagerBase.logDebugMessage(message: 'No documents found in the collection.');
+      LoggerManagerBase.logDebugMessage(
+          message: 'No documents found in the collection.');
       return;
     }
 
@@ -51,13 +52,15 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   }
 
   /// Prepares the list of prints that are ready for downloading
-  Future<List<String>> _prepareDownloadingList(List<QuranPrints> listOfPrints) async {
+  Future<List<String>> _prepareDownloadingList(
+      List<QuranPrints> listOfPrints) async {
     final downloadingList = <String>[];
 
     for (final printItem in listOfPrints) {
       final fieldName = printItem.fieldName ?? "";
 
-      if (await _fileExists(fieldName) && !state.printsDownloading.contains(fieldName)) {
+      if (await _fileExists(fieldName) &&
+          !state.printsDownloading.contains(fieldName)) {
         downloadingList.add(fieldName);
       }
     }
@@ -87,7 +90,9 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     if (Platform.isAndroid) {
       final androidInfo = await plugin.androidInfo;
 
-      storageStatus = androidInfo.version.sdkInt < 33 ? await Permission.storage.request() : PermissionStatus.granted;
+      storageStatus = androidInfo.version.sdkInt < 33
+          ? await Permission.storage.request()
+          : PermissionStatus.granted;
     } else {
       storageStatus = await Permission.storage.request();
     }
@@ -96,7 +101,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   }
 
   /// Event handlers
-  FutureOr<void> _initializeFetchingData(_InitializeFetchingData event, Emitter<QuranPrintsState> emit) async {
+  FutureOr<void> _initializeFetchingData(
+      _InitializeFetchingData event, Emitter<QuranPrintsState> emit) async {
     final hasInternet = await _checkInternetConnectionStatus();
 
     if (hasInternet) {
@@ -107,7 +113,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     }
   }
 
-  FutureOr<void> _handleUpdateListOfPrints(_UpdatelistOfPrints event, Emitter<QuranPrintsState> emit) {
+  FutureOr<void> _handleUpdateListOfPrints(
+      _UpdatelistOfPrints event, Emitter<QuranPrintsState> emit) {
     emit(state.copyWith(listOfPrints: event.list));
   }
 
@@ -116,7 +123,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     emit(state.copyWith(internetConnectionStauts: event.status));
   }
 
-  FutureOr<void> _handleUpdatePrintsDownloading(_UpdatePrintsDownloading event, Emitter<QuranPrintsState> emit) {
+  FutureOr<void> _handleUpdatePrintsDownloading(
+      _UpdatePrintsDownloading event, Emitter<QuranPrintsState> emit) {
     emit(state.copyWith(printsDownloading: event.print));
   }
 }

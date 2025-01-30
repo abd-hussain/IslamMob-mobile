@@ -49,7 +49,8 @@ class LanguageInBoardingView extends StatelessWidget {
   /// Builds the button to select a language
   Widget _buildSelectButton(BuildContext context) {
     return BlocBuilder<LanguageBloc, LanguageState>(
-      buildWhen: (previous, current) => previous.selectedLanguage != current.selectedLanguage,
+      buildWhen: (previous, current) =>
+          previous.selectedLanguage != current.selectedLanguage,
       builder: (context, state) {
         if (state.selectedLanguage == null) return const SizedBox();
 
@@ -57,7 +58,9 @@ class LanguageInBoardingView extends StatelessWidget {
           isEnabled: true,
           title: state.selectedLanguage!.selectButtonTitle,
           onTap: () {
-            context.read<LanguageBloc>().add(LanguageEvent.setupLanguage(context: context));
+            context
+                .read<LanguageBloc>()
+                .add(LanguageEvent.setupLanguage(context: context));
             doneSelection();
           },
         );

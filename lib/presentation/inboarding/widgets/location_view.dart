@@ -76,7 +76,9 @@ class LocationInBoardingView extends StatelessWidget {
         return LocationHavePermissionView(
           locationModel: state.location!,
           onConfirmationPress: () {
-            context.read<LocationBloc>().add(const LocationEvent.setupLocation());
+            context
+                .read<LocationBloc>()
+                .add(const LocationEvent.setupLocation());
             doneSelection();
           },
         );

@@ -46,12 +46,15 @@ class CalculationMethodView extends StatelessWidget {
     );
   }
 
-  Widget _buildCalculationMethodSelector(BuildContext context, IslamMobLocalizations localizations) {
+  Widget _buildCalculationMethodSelector(
+      BuildContext context, IslamMobLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
-      buildWhen: (previous, current) => previous.calculationMethod != current.calculationMethod,
+      buildWhen: (previous, current) =>
+          previous.calculationMethod != current.calculationMethod,
       builder: (context, state) {
         final calculationMethodsList =
-            CalculationSettingUsecase.getCalculationMethodsList(localizations, state.calculationMethod);
+            CalculationSettingUsecase.getCalculationMethodsList(
+                localizations, state.calculationMethod);
 
         return ListView.builder(
           itemCount: calculationMethodsList.length,

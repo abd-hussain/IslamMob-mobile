@@ -66,7 +66,9 @@ class NoPDFView extends StatelessWidget {
   Future<void> _navigateToPrintListScreen(BuildContext context) async {
     final navigator = Navigator.of(context, rootNavigator: true);
 
-    await navigator.pushNamed(RoutesConstants.quranPrintListScreen).then((value) {
+    await navigator
+        .pushNamed(RoutesConstants.quranPrintListScreen)
+        .then((value) {
       if (value is bool && value) {
         // ignore: use_build_context_synchronously
         _loadMushafFile(context);

@@ -45,11 +45,13 @@ class TimeZoneView extends StatelessWidget {
     );
   }
 
-  Widget _buildCalculationSelector(BuildContext context, IslamMobLocalizations localizations) {
+  Widget _buildCalculationSelector(
+      BuildContext context, IslamMobLocalizations localizations) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) => previous.timeZone != current.timeZone,
       builder: (context, state) {
-        final timeZonesList = CalculationSettingUsecase.getTimeZonesList(localizations, state.timeZone);
+        final timeZonesList = CalculationSettingUsecase.getTimeZonesList(
+            localizations, state.timeZone);
         return ListView.builder(
           itemCount: timeZonesList.length,
           itemBuilder: (context, index) {

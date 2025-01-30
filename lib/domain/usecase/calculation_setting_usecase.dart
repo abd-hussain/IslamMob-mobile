@@ -12,7 +12,8 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
 
 class CalculationSettingUsecase {
-  static List<TimeZoneSetting> getTimeZonesList(IslamMobLocalizations localizations, Duration currentState) {
+  static List<TimeZoneSetting> getTimeZonesList(
+      IslamMobLocalizations localizations, Duration currentState) {
     return [
       TimeZoneSetting(
         name: 'UTC -12:00',
@@ -207,7 +208,8 @@ class CalculationSettingUsecase {
     ];
   }
 
-  static List<MadhabSetting> getMadhabList(IslamMobLocalizations localizations, MadhabState currentState) {
+  static List<MadhabSetting> getMadhabList(
+      IslamMobLocalizations localizations, MadhabState currentState) {
     return [
       MadhabSetting(
         name: localizations.mathhab1Shafi,
@@ -240,17 +242,20 @@ class CalculationSettingUsecase {
       CalculationMethodSetting(
         name: localizations.calculationMethod3,
         method: const PrayCalculationMethodState.islamicSocietyOfNorthAmerica(),
-        isSelected: currentState == const PrayCalculationMethodState.islamicSocietyOfNorthAmerica(),
+        isSelected: currentState ==
+            const PrayCalculationMethodState.islamicSocietyOfNorthAmerica(),
       ),
       CalculationMethodSetting(
         name: localizations.calculationMethod4,
         method: const PrayCalculationMethodState.muslimWorldLeague(),
-        isSelected: currentState == const PrayCalculationMethodState.muslimWorldLeague(),
+        isSelected: currentState ==
+            const PrayCalculationMethodState.muslimWorldLeague(),
       ),
       CalculationMethodSetting(
         name: localizations.calculationMethod5,
         method: const PrayCalculationMethodState.ummAlQura(),
-        isSelected: currentState == const PrayCalculationMethodState.ummAlQura(),
+        isSelected:
+            currentState == const PrayCalculationMethodState.ummAlQura(),
       ),
       CalculationMethodSetting(
         name: localizations.calculationMethod6,
@@ -265,7 +270,8 @@ class CalculationSettingUsecase {
       CalculationMethodSetting(
         name: localizations.calculationMethod8,
         method: const PrayCalculationMethodState.gulfRegion(),
-        isSelected: currentState == const PrayCalculationMethodState.gulfRegion(),
+        isSelected:
+            currentState == const PrayCalculationMethodState.gulfRegion(),
       ),
       CalculationMethodSetting(
         name: localizations.calculationMethod9,
@@ -280,7 +286,8 @@ class CalculationSettingUsecase {
       CalculationMethodSetting(
         name: localizations.calculationMethod11,
         method: const PrayCalculationMethodState.singapore(),
-        isSelected: currentState == const PrayCalculationMethodState.singapore(),
+        isSelected:
+            currentState == const PrayCalculationMethodState.singapore(),
       ),
       CalculationMethodSetting(
         name: localizations.calculationMethod12,
@@ -330,12 +337,14 @@ class CalculationSettingUsecase {
       CalculationMethodSetting(
         name: localizations.calculationMethod21,
         method: const PrayCalculationMethodState.comunidadeIslamicaLisboa(),
-        isSelected: currentState == const PrayCalculationMethodState.comunidadeIslamicaLisboa(),
+        isSelected: currentState ==
+            const PrayCalculationMethodState.comunidadeIslamicaLisboa(),
       ),
       CalculationMethodSetting(
         name: localizations.calculationMethod22,
         method: const PrayCalculationMethodState.jordanAwqaf(),
-        isSelected: currentState == const PrayCalculationMethodState.jordanAwqaf(),
+        isSelected:
+            currentState == const PrayCalculationMethodState.jordanAwqaf(),
       ),
     ];
   }
@@ -348,22 +357,26 @@ class CalculationSettingUsecase {
       HighLatitudeSetting(
         name: localizations.hightLatitudeCaluclationNone,
         method: const PrayHightLatitudeCaluclationState.none(),
-        isSelected: currentState == const PrayHightLatitudeCaluclationState.none(),
+        isSelected:
+            currentState == const PrayHightLatitudeCaluclationState.none(),
       ),
       HighLatitudeSetting(
         name: localizations.hightLatitudeCaluclationAngleBasedMethod,
         method: const PrayHightLatitudeCaluclationState.angleBasedMethod(),
-        isSelected: currentState == const PrayHightLatitudeCaluclationState.angleBasedMethod(),
+        isSelected: currentState ==
+            const PrayHightLatitudeCaluclationState.angleBasedMethod(),
       ),
       HighLatitudeSetting(
         name: localizations.hightLatitudeCaluclationMidnight,
         method: const PrayHightLatitudeCaluclationState.midnight(),
-        isSelected: currentState == const PrayHightLatitudeCaluclationState.midnight(),
+        isSelected:
+            currentState == const PrayHightLatitudeCaluclationState.midnight(),
       ),
       HighLatitudeSetting(
         name: localizations.hightLatitudeCaluclationOneSeventh,
         method: const PrayHightLatitudeCaluclationState.seventhPartOfTheNight(),
-        isSelected: currentState == const PrayHightLatitudeCaluclationState.seventhPartOfTheNight(),
+        isSelected: currentState ==
+            const PrayHightLatitudeCaluclationState.seventhPartOfTheNight(),
       ),
     ];
   }
@@ -397,7 +410,8 @@ class CalculationSettingUsecase {
     ];
   }
 
-  static List<CorrectionMinTimeData> getCorrectionMinTimeDataList(IslamMobLocalizations localizations) {
+  static List<CorrectionMinTimeData> getCorrectionMinTimeDataList(
+      IslamMobLocalizations localizations) {
     return [
       CorrectionMinTimeData(
         title: localizations.fajirCorrectionTitle,

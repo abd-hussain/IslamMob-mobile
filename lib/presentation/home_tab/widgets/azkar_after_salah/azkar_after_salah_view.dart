@@ -14,7 +14,8 @@ class AzkarAfterSalahView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AzkarAfterSalahBloc()..add(AzkarAfterSalahEvent.initializeAzkar(state: salahType)),
+      create: (context) => AzkarAfterSalahBloc()
+        ..add(AzkarAfterSalahEvent.initializeAzkar(state: salahType)),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Column(
@@ -89,6 +90,8 @@ class AzkarAfterSalahView extends StatelessWidget {
   /// Handles incrementing the Azkar count and emitting the update event.
   void _incrementAzkar(BuildContext context, AzkarModel azkar) {
     final updatedAzkar = azkar.copyWith(currentCount: azkar.currentCount + 1);
-    context.read<AzkarAfterSalahBloc>().add(AzkarAfterSalahEvent.incrementCounter(updatedAzkar));
+    context
+        .read<AzkarAfterSalahBloc>()
+        .add(AzkarAfterSalahEvent.incrementCounter(updatedAzkar));
   }
 }

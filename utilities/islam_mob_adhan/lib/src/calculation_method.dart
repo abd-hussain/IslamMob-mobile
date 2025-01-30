@@ -111,57 +111,76 @@ extension CalculationMethodExtensions on CalculationMethod {
         return CalculationParameters(fajrAngle: 15, ishaAngle: 15, method: this)
             .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.egyptian:
-        return CalculationParameters(fajrAngle: 19.5, ishaAngle: 17.5, method: this)
+        return CalculationParameters(
+                fajrAngle: 19.5, ishaAngle: 17.5, method: this)
             .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.ummAlQura:
-        return CalculationParameters(fajrAngle: 18.5, ishaInterval: 90, method: this);
+        return CalculationParameters(
+            fajrAngle: 18.5, ishaInterval: 90, method: this);
       case CalculationMethod.karachi:
         return CalculationParameters(fajrAngle: 18, ishaAngle: 18, method: this)
             .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.tehran:
-        return CalculationParameters(fajrAngle: 17.7, ishaAngle: 14, maghribAngle: 4.5, method: this);
+        return CalculationParameters(
+            fajrAngle: 17.7, ishaAngle: 14, maghribAngle: 4.5, method: this);
       case CalculationMethod.jafari:
-        return CalculationParameters(fajrAngle: 16, ishaAngle: 14, maghribAngle: 4, method: this);
+        return CalculationParameters(
+            fajrAngle: 16, ishaAngle: 14, maghribAngle: 4, method: this);
       case CalculationMethod.gulfRegion:
-        return CalculationParameters(fajrAngle: 19.5, ishaInterval: 90, method: this);
+        return CalculationParameters(
+            fajrAngle: 19.5, ishaInterval: 90, method: this);
       case CalculationMethod.kuwait:
-        return CalculationParameters(fajrAngle: 18, ishaAngle: 17.5, method: this);
+        return CalculationParameters(
+            fajrAngle: 18, ishaAngle: 17.5, method: this);
       case CalculationMethod.qatar:
-        return CalculationParameters(fajrAngle: 18, ishaInterval: 90, method: this);
+        return CalculationParameters(
+            fajrAngle: 18, ishaInterval: 90, method: this);
       case CalculationMethod.singapore:
         return CalculationParameters(fajrAngle: 20, ishaAngle: 18, method: this)
             .withMethodAdjustments(const PrayerAdjustments(dhuhr: 1));
       case CalculationMethod.france:
-        return CalculationParameters(fajrAngle: 12, ishaAngle: 12, method: this);
+        return CalculationParameters(
+            fajrAngle: 12, ishaAngle: 12, method: this);
       case CalculationMethod.turkey:
         return CalculationParameters(fajrAngle: 18, ishaAngle: 17, method: this)
-            .withMethodAdjustments(const PrayerAdjustments(sunrise: -7, dhuhr: 5, asr: 4, maghrib: 7));
+            .withMethodAdjustments(const PrayerAdjustments(
+                sunrise: -7, dhuhr: 5, asr: 4, maghrib: 7));
       case CalculationMethod.russia:
         return CalculationParameters(fajrAngle: 16, ishaAngle: 15, method: this)
-            .withMethodAdjustments(const PrayerAdjustments(sunrise: -7, dhuhr: 5, asr: 4, maghrib: 7));
+            .withMethodAdjustments(const PrayerAdjustments(
+                sunrise: -7, dhuhr: 5, asr: 4, maghrib: 7));
       case CalculationMethod.dubai:
-        return CalculationParameters(fajrAngle: 18.2, ishaAngle: 18.2, method: this)
-            .withMethodAdjustments(const PrayerAdjustments(sunrise: -3, dhuhr: 3, asr: 3, maghrib: 3));
+        return CalculationParameters(
+                fajrAngle: 18.2, ishaAngle: 18.2, method: this)
+            .withMethodAdjustments(const PrayerAdjustments(
+                sunrise: -3, dhuhr: 3, asr: 3, maghrib: 3));
       case CalculationMethod.jakim:
         return CalculationParameters(fajrAngle: 20, ishaAngle: 18, method: this)
-            .withMethodAdjustments(const PrayerAdjustments(sunrise: -3, dhuhr: 3, asr: 3, maghrib: 3));
+            .withMethodAdjustments(const PrayerAdjustments(
+                sunrise: -3, dhuhr: 3, asr: 3, maghrib: 3));
       case CalculationMethod.tunisia:
-        return CalculationParameters(fajrAngle: 18, ishaAngle: 18, method: this);
+        return CalculationParameters(
+            fajrAngle: 18, ishaAngle: 18, method: this);
       case CalculationMethod.algeria:
-        return CalculationParameters(fajrAngle: 18, ishaAngle: 17, method: this);
+        return CalculationParameters(
+            fajrAngle: 18, ishaAngle: 17, method: this);
       case CalculationMethod.kemenag:
-        return CalculationParameters(fajrAngle: 20, ishaAngle: 18, method: this);
+        return CalculationParameters(
+            fajrAngle: 20, ishaAngle: 18, method: this);
       case CalculationMethod.morocco:
-        return CalculationParameters(fajrAngle: 19, ishaAngle: 17, method: this);
+        return CalculationParameters(
+            fajrAngle: 19, ishaAngle: 17, method: this);
       case CalculationMethod.portugal:
-        return CalculationParameters(fajrAngle: 18, ishaInterval: 77, method: this)
+        return CalculationParameters(
+                fajrAngle: 18, ishaInterval: 77, method: this)
             .withMethodAdjustments(const PrayerAdjustments(maghrib: 3));
       case CalculationMethod.jordan:
         return CalculationParameters(fajrAngle: 18, ishaAngle: 18, method: this)
             .withMethodAdjustments(const PrayerAdjustments(maghrib: 5));
       case CalculationMethod.moonSightingCommittee:
         return CalculationParameters(fajrAngle: 18, ishaAngle: 18, method: this)
-            .withMethodAdjustments(const PrayerAdjustments(dhuhr: 5, maghrib: 3));
+            .withMethodAdjustments(
+                const PrayerAdjustments(dhuhr: 5, maghrib: 3));
       case CalculationMethod.other:
         return CalculationParameters(fajrAngle: 0, ishaAngle: 0, method: this);
     }

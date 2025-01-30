@@ -16,7 +16,8 @@ import 'package:stream_transform/stream_transform.dart' show CombineLatest;
 ///  - A stream that merges compass data with location data, providing
 ///    real-time Qiblah direction.
 class QiblahFinder {
-  static const MethodChannel _channel = MethodChannel('ml.medyas.flutter_qiblah');
+  static const MethodChannel _channel =
+      MethodChannel('ml.medyas.flutter_qiblah');
 
   // Singleton instance
   static final QiblahFinder _instance = QiblahFinder._internal();

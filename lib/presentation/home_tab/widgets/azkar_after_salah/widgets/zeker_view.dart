@@ -91,7 +91,10 @@ class ZekerView extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
         const SizedBox(width: 8),
-        if (isDisabled) const SizedBox.shrink() else const Icon(Icons.ads_click, color: Color(0xff444444)),
+        if (isDisabled)
+          const SizedBox.shrink()
+        else
+          const Icon(Icons.ads_click, color: Color(0xff444444)),
       ],
     );
   }

@@ -59,7 +59,8 @@ class _QiblahCompassState extends State<QiblahCompass> {
 
   Future<LocationStatus> _checkLocationStatus() async {
     final locationStatus = await QiblahFinder.checkLocationStatus();
-    if (locationStatus.enabled && locationStatus.status == LocationPermission.denied) {
+    if (locationStatus.enabled &&
+        locationStatus.status == LocationPermission.denied) {
       await QiblahFinder.requestPermissions();
       return QiblahFinder.checkLocationStatus();
     } else {
