@@ -31,7 +31,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get quranSettingMushaf => 'Mushaf';
 
   @override
-  String get reportOrSuggestion => 'Signaler ou suggérer un problème dans l\'application';
+  String get reportOrSuggestion =>
+      'Signaler ou suggérer un problème dans l\'application';
 
   @override
   String get changeSelectedLanguage => 'Changer la langue';
@@ -385,16 +386,19 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get quranSorah => 'Sourate';
 
   @override
-  String get reportFooterText => 'Nous lisons tous les commentaires avec attention, mais il se peut que nous ne répondions pas à chaque suggestion individuellement.';
+  String get reportFooterText =>
+      'Nous lisons tous les commentaires avec attention, mais il se peut que nous ne répondions pas à chaque suggestion individuellement.';
 
   @override
   String get reportandsuggestiontitle => 'Signaler un problème - Suggestion';
 
   @override
-  String get feedbackmessage => 'Vos commentaires sont importants pour nous. Veuillez décrire votre problème ici';
+  String get feedbackmessage =>
+      'Vos commentaires sont importants pour nous. Veuillez décrire votre problème ici';
 
   @override
-  String get pleasecheckyourinternetconnection => 'Veuillez vérifier votre connexion Internet';
+  String get pleasecheckyourinternetconnection =>
+      'Veuillez vérifier votre connexion Internet';
 
   @override
   String get pickimageremoveimage => 'Supprimer l\'image';
@@ -526,10 +530,12 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get use => 'Utiliser';
 
   @override
-  String get downloadpopupmessage => 'Le téléchargement peut prendre un certain temps, selon votre connexion Internet. Veuillez patienter...';
+  String get downloadpopupmessage =>
+      'Le téléchargement peut prendre un certain temps, selon votre connexion Internet. Veuillez patienter...';
 
   @override
-  String get downloadnopermission => 'Aucune autorisation de lecture ou d\'écriture';
+  String get downloadnopermission =>
+      'Aucune autorisation de lecture ou d\'écriture';
 
   @override
   String get internetconnection => 'Pas de connexion Internet';
@@ -538,13 +544,15 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get titleofretry => 'Réessayer';
 
   @override
-  String get intenetshouldbeenableforthispage => 'Pour utiliser cette fonctionnalité, vous devez être connecté à Internet';
+  String get intenetshouldbeenableforthispage =>
+      'Pour utiliser cette fonctionnalité, vous devez être connecté à Internet';
 
   @override
   String get selectprint => 'Sélectionner l\'édition';
 
   @override
-  String get selectprintdetails => 'Pour pouvoir lire, vous devez télécharger ou choisir une édition spécifique';
+  String get selectprintdetails =>
+      'Pour pouvoir lire, vous devez télécharger ou choisir une édition spécifique';
 
   @override
   String get home => 'Accueil';
@@ -577,7 +585,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get rateapponstore => 'Évaluer l\'application sur le Store';
 
   @override
-  String get rateapponstoremessage => 'Si vous aimez cette application, veuillez prendre un peu de votre temps pour l\'évaluer ! Cela nous aide vraiment et ne devrait pas vous prendre plus d\'une minute.';
+  String get rateapponstoremessage =>
+      'Si vous aimez cette application, veuillez prendre un peu de votre temps pour l\'évaluer ! Cela nous aide vraiment et ne devrait pas vous prendre plus d\'une minute.';
 
   @override
   String get later => 'Plus tard';
@@ -592,7 +601,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get aboutus => 'À propos de nous';
 
   @override
-  String get appmaindesc => 'Islam-Mob est une application magnifiquement conçue et intuitive, adaptée aux besoins des musulmans du monde entier. Grâce à son interface élégante et sa convivialité, que vous soyez à la maison ou en déplacement, Islam-Mob vous aide à rester connecté à votre foi avec facilité et commodité.';
+  String get appmaindesc =>
+      'Islam-Mob est une application magnifiquement conçue et intuitive, adaptée aux besoins des musulmans du monde entier. Grâce à son interface élégante et sa convivialité, que vous soyez à la maison ou en déplacement, Islam-Mob vous aide à rester connecté à votre foi avec facilité et commodité.';
 
   @override
   String get about1 => '🕌 Douas & Azkar';
@@ -616,7 +626,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get about7 => '📚 Articles & Ressources islamiques';
 
   @override
-  String get appmaindesc2 => 'Islam-Mob est plus qu\'une application ; c\'est votre compagnon fidèle dans chaque aspect de votre parcours islamique.';
+  String get appmaindesc2 =>
+      'Islam-Mob est plus qu\'une application ; c\'est votre compagnon fidèle dans chaque aspect de votre parcours islamique.';
 
   @override
   String get supportus => 'Soutenez-nous';
@@ -625,37 +636,44 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get termstitle1 => '1. Introduction';
 
   @override
-  String get termsdesc1 => 'Bienvenue sur Islam_Mob. En accédant à cette application ou en l\'utilisant, vous acceptez de respecter ces conditions générales. Si vous n\'êtes pas d\'accord, veuillez ne pas utiliser l\'application.';
+  String get termsdesc1 =>
+      'Bienvenue sur Islam_Mob. En accédant à cette application ou en l\'utilisant, vous acceptez de respecter ces conditions générales. Si vous n\'êtes pas d\'accord, veuillez ne pas utiliser l\'application.';
 
   @override
   String get termstitle2 => '2. Utilisation de l\'application';
 
   @override
-  String get termsdesc2 => 'Islam_Mob fournit un contenu islamique, y compris le Coran, des prières et d\'autres ressources. Ce contenu est destiné à un usage personnel et non commercial. Toute distribution ou exploitation commerciale non autorisée est interdite.';
+  String get termsdesc2 =>
+      'Islam_Mob fournit un contenu islamique, y compris le Coran, des prières et d\'autres ressources. Ce contenu est destiné à un usage personnel et non commercial. Toute distribution ou exploitation commerciale non autorisée est interdite.';
 
   @override
   String get termstitle3 => '3. Comptes utilisateurs';
 
   @override
-  String get termsdesc31 => '- Inscription : Les utilisateurs peuvent être amenés à créer un compte pour accéder à certaines fonctionnalités. Assurez-vous que les informations fournies sont exactes et à jour.';
+  String get termsdesc31 =>
+      '- Inscription : Les utilisateurs peuvent être amenés à créer un compte pour accéder à certaines fonctionnalités. Assurez-vous que les informations fournies sont exactes et à jour.';
 
   @override
-  String get termsdesc32 => '- Sécurité : Vous êtes responsable de la confidentialité de vos identifiants de compte et de toutes les activités qui y sont associées.';
+  String get termsdesc32 =>
+      '- Sécurité : Vous êtes responsable de la confidentialité de vos identifiants de compte et de toutes les activités qui y sont associées.';
 
   @override
-  String get termsdesc33 => '- Résiliation : Islam_Mob se réserve le droit de suspendre ou de résilier les comptes qui enfreignent ces conditions ou s\'engagent dans des activités non autorisées.';
+  String get termsdesc33 =>
+      '- Résiliation : Islam_Mob se réserve le droit de suspendre ou de résilier les comptes qui enfreignent ces conditions ou s\'engagent dans des activités non autorisées.';
 
   @override
   String get termstitle4 => '4. Politique de confidentialité';
 
   @override
-  String get termsdesc4 => 'Nous nous engageons à protéger votre vie privée. Veuillez consulter notre politique de confidentialité pour comprendre comment nous recueillons, utilisons et protégeons vos informations.';
+  String get termsdesc4 =>
+      'Nous nous engageons à protéger votre vie privée. Veuillez consulter notre politique de confidentialité pour comprendre comment nous recueillons, utilisons et protégeons vos informations.';
 
   @override
   String get termstitle5 => '5. Propriété intellectuelle';
 
   @override
-  String get termsdesc5 => 'Tout le contenu de Islam_Mob, y compris les textes, graphiques, logos et logiciels, est la propriété de Islam_Mob ou de ses fournisseurs de contenu et est protégé par les lois sur la propriété intellectuelle. Toute utilisation non autorisée de ce contenu est interdite.';
+  String get termsdesc5 =>
+      'Tout le contenu de Islam_Mob, y compris les textes, graphiques, logos et logiciels, est la propriété de Islam_Mob ou de ses fournisseurs de contenu et est protégé par les lois sur la propriété intellectuelle. Toute utilisation non autorisée de ce contenu est interdite.';
 
   @override
   String get termstitle6 => '6. Conduite de l\'utilisateur';
@@ -664,25 +682,30 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get termsdesc61 => 'Les utilisateurs s\'engagent à ne pas :';
 
   @override
-  String get termsdesc62 => '- Se livrer à des activités qui enfreignent les lois ou réglementations en vigueur.';
+  String get termsdesc62 =>
+      '- Se livrer à des activités qui enfreignent les lois ou réglementations en vigueur.';
 
   @override
-  String get termsdesc63 => '- Publier ou transmettre un contenu nuisible, offensant ou inapproprié.';
+  String get termsdesc63 =>
+      '- Publier ou transmettre un contenu nuisible, offensant ou inapproprié.';
 
   @override
-  String get termsdesc64 => '- Tenter de perturber le fonctionnement ou la sécurité de l\'application.';
+  String get termsdesc64 =>
+      '- Tenter de perturber le fonctionnement ou la sécurité de l\'application.';
 
   @override
   String get termstitle7 => '7. Limitation de responsabilité';
 
   @override
-  String get termsdesc7 => 'Islam_Mob est fourni « tel quel » sans aucune garantie d\'aucune sorte. Nous ne sommes pas responsables des dommages résultant de l\'utilisation ou de l\'incapacité à utiliser l\'application.';
+  String get termsdesc7 =>
+      'Islam_Mob est fourni « tel quel » sans aucune garantie d\'aucune sorte. Nous ne sommes pas responsables des dommages résultant de l\'utilisation ou de l\'incapacité à utiliser l\'application.';
 
   @override
   String get termstitle8 => '8. Modifications des conditions';
 
   @override
-  String get termsdesc8 => 'Nous pouvons mettre à jour ces conditions générales périodiquement. L\'utilisation continue de l\'application après les modifications indique l\'acceptation des nouvelles conditions.';
+  String get termsdesc8 =>
+      'Nous pouvons mettre à jour ces conditions générales périodiquement. L\'utilisation continue de l\'application après les modifications indique l\'acceptation des nouvelles conditions.';
 
   @override
   String get quranSettingIndex => 'Index';
@@ -742,19 +765,23 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get mawaqeetalsalah => 'Heures de prière';
 
   @override
-  String get mawaqeetalsalahdetails => 'Autorisez l\'accès à votre localisation pour déterminer avec précision les heures de prière en fonction de votre position';
+  String get mawaqeetalsalahdetails =>
+      'Autorisez l\'accès à votre localisation pour déterminer avec précision les heures de prière en fonction de votre position';
 
   @override
-  String get mawaqeetalsalahdetails2 => 'Vous pourrez changer cela plus tard dans les paramètres';
+  String get mawaqeetalsalahdetails2 =>
+      'Vous pourrez changer cela plus tard dans les paramètres';
 
   @override
   String get allowgetlocation => 'Autoriser l\'accès à votre position';
 
   @override
-  String get whyyoushouldallowlocation => 'Pourquoi autoriser l\'accès à votre position ?';
+  String get whyyoushouldallowlocation =>
+      'Pourquoi autoriser l\'accès à votre position ?';
 
   @override
-  String get whyyoushouldallowlocationdetails => 'Sans l\'autorisation d\'accéder à votre localisation, nous ne pourrons pas déterminer avec précision les heures de prière selon votre emplacement.';
+  String get whyyoushouldallowlocationdetails =>
+      'Sans l\'autorisation d\'accéder à votre localisation, nous ne pourrons pas déterminer avec précision les heures de prière selon votre emplacement.';
 
   @override
   String get nolocationPermissionButton => 'Activer depuis les paramètres';
@@ -769,19 +796,23 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get allowSendingNotifications => 'Autoriser l\'envoi de notifications';
 
   @override
-  String get allowSendingNotificationsdetails => 'Autoriser les notifications nous permettra de vous rappeler la prière, la Khatma, le Dhikr et d\'autres événements importants.';
+  String get allowSendingNotificationsdetails =>
+      'Autoriser les notifications nous permettra de vous rappeler la prière, la Khatma, le Dhikr et d\'autres événements importants.';
 
   @override
   String get allowNotifications => 'Autoriser les notifications';
 
   @override
-  String get notNowNotifications => 'Pas maintenant, je l\'autoriserai plus tard';
+  String get notNowNotifications =>
+      'Pas maintenant, je l\'autoriserai plus tard';
 
   @override
-  String get whyyoushouldallownotificationdetails => 'Sans autoriser les notifications, vous ne recevrez pas d\'alertes importantes concernant les prières, la Khatma, le Dhikr et d\'autres événements essentiels.';
+  String get whyyoushouldallownotificationdetails =>
+      'Sans autoriser les notifications, vous ne recevrez pas d\'alertes importantes concernant les prières, la Khatma, le Dhikr et d\'autres événements essentiels.';
 
   @override
-  String get whyyoushouldallownotification => 'Pourquoi autoriser les notifications ?';
+  String get whyyoushouldallownotification =>
+      'Pourquoi autoriser les notifications ?';
 
   @override
   String get notificationPermissionSuccses => 'Les notifications sont activées';
@@ -832,13 +863,15 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get shareMessageTitle => '🌿 Élevez votre âme avec IslamMob';
 
   @override
-  String get shareMessageBody => '🌿 Lisez, rappelez-vous et élevez votre âme avec IslamMob, 📖 une application complète qui vous apporte le Coran, les supplications quotidiennes, les prières et bien plus encore 💡 Facile à utiliser, elle inspire la spiritualité et remplit votre cœur de paix ☘ 🌷 Téléchargez dès maintenant et rapprochez-vous d\'Allah';
+  String get shareMessageBody =>
+      '🌿 Lisez, rappelez-vous et élevez votre âme avec IslamMob, 📖 une application complète qui vous apporte le Coran, les supplications quotidiennes, les prières et bien plus encore 💡 Facile à utiliser, elle inspire la spiritualité et remplit votre cœur de paix ☘ 🌷 Téléchargez dès maintenant et rapprochez-vous d\'Allah';
 
   @override
   String get mathhab => 'Madhhab';
 
   @override
-  String get mathhabdetails => 'Modifiera l\'heure de la prière Asr d\'une heure (degré)';
+  String get mathhabdetails =>
+      'Modifiera l\'heure de la prière Asr d\'une heure (degré)';
 
   @override
   String get mathhab1Shafi => 'Chaféite';
@@ -850,7 +883,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get calculationMethod => 'Méthode de calcul';
 
   @override
-  String get calculationMethodDetails => 'Modifie les heures de Fajr et d\'Isha selon le degré ou l\'angle de Fajr et Isha';
+  String get calculationMethodDetails =>
+      'Modifie les heures de Fajr et d\'Isha selon le degré ou l\'angle de Fajr et Isha';
 
   @override
   String get calculationMethod1 => 'Jafari / Shia Ithna-Ashari';
@@ -871,7 +905,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get calculationMethod6 => 'Egyptian General Authority of Survey';
 
   @override
-  String get calculationMethod7 => 'Institute of Geophysics, University of Téhéran';
+  String get calculationMethod7 =>
+      'Institute of Geophysics, University of Téhéran';
 
   @override
   String get calculationMethod8 => 'Région du Golfe';
@@ -892,7 +927,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get calculationMethod13 => 'Diyanet İşleri Başkanlığı, Turquie';
 
   @override
-  String get calculationMethod14 => 'Administration spirituelle des musulmans de Russie';
+  String get calculationMethod14 =>
+      'Administration spirituelle des musulmans de Russie';
 
   @override
   String get calculationMethod15 => 'Dubaï';
@@ -907,7 +943,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get calculationMethod18 => 'Algérie';
 
   @override
-  String get calculationMethod19 => 'KEMENAG - Ministère des Affaires religieuses de la République d\'Indonésie';
+  String get calculationMethod19 =>
+      'KEMENAG - Ministère des Affaires religieuses de la République d\'Indonésie';
 
   @override
   String get calculationMethod20 => 'Maroc';
@@ -916,7 +953,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get calculationMethod21 => 'Comunidade Islamica de Lisboa';
 
   @override
-  String get calculationMethod22 => 'Ministère des Waqfs, des Affaires islamiques et des Lieux saints, Jordanie';
+  String get calculationMethod22 =>
+      'Ministère des Waqfs, des Affaires islamiques et des Lieux saints, Jordanie';
 
   @override
   String get calculationMethod23 => 'Personnalisé';
@@ -943,7 +981,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get highLatitude => 'Latitude élevée';
 
   @override
-  String get highLatitudeDetails => 'Méthode de calcul dans les régions à latitude élevée';
+  String get highLatitudeDetails =>
+      'Méthode de calcul dans les régions à latitude élevée';
 
   @override
   String get hightLatitudeCaluclationNone => 'Aucune';
@@ -958,10 +997,12 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get hightLatitudeCaluclationOneSeventh => '1/7 de la nuit';
 
   @override
-  String get editPrayTimeMinManual => 'Modifier l\'heure de la prière en minutes, manuellement';
+  String get editPrayTimeMinManual =>
+      'Modifier l\'heure de la prière en minutes, manuellement';
 
   @override
-  String get editPrayTimeMinManualDetails => 'Ajuster l\'heure de la prière en minutes, manuellement par degré';
+  String get editPrayTimeMinManualDetails =>
+      'Ajuster l\'heure de la prière en minutes, manuellement par degré';
 
   @override
   String get fajirCorrectionTitle => 'Correction Fajr (minutes)';
@@ -985,7 +1026,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get midnightCorrectionTitle => 'Correction Minuit (minutes)';
 
   @override
-  String get lastThirdOfTheNightCorrectionTitle => 'Correction Dernier 1/3 de la nuit (minutes)';
+  String get lastThirdOfTheNightCorrectionTitle =>
+      'Correction Dernier 1/3 de la nuit (minutes)';
 
   @override
   String get notificationSettingQuick => 'Paramètres rapides de notification';
@@ -997,13 +1039,16 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get notificationSettingOther => 'Autres paramètres de notification';
 
   @override
-  String get notificationSettingTodayAll => 'Désactiver toutes les notifications pour aujourd\'hui';
+  String get notificationSettingTodayAll =>
+      'Désactiver toutes les notifications pour aujourd\'hui';
 
   @override
-  String get notificationSettingThreedayAll => 'Désactiver toutes les notifications pour trois jours';
+  String get notificationSettingThreedayAll =>
+      'Désactiver toutes les notifications pour trois jours';
 
   @override
-  String get notificationSettingWeekAll => 'Désactiver toutes les notifications pour une semaine';
+  String get notificationSettingWeekAll =>
+      'Désactiver toutes les notifications pour une semaine';
 
   @override
   String get notificationSettingFajir => 'Notifications Adhan Fajr';
@@ -1036,10 +1081,12 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get notificationBeforeSalah15Minutes => '15 minutes avant la prière';
 
   @override
-  String get notificationSettingSunriseTime => 'Notification de l\'heure du lever du soleil';
+  String get notificationSettingSunriseTime =>
+      'Notification de l\'heure du lever du soleil';
 
   @override
-  String get notificationSettingSunrisePrayer => 'Notification de la prière à l\'heure du lever du soleil';
+  String get notificationSettingSunrisePrayer =>
+      'Notification de la prière à l\'heure du lever du soleil';
 
   @override
   String get calenderSettings => 'Calendrier';
@@ -1054,7 +1101,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get quicksettings => 'Paramètres rapides';
 
   @override
-  String get qurancopytitle => 'Depuis cet écran, vous pouvez télécharger une ou plusieurs copies du Saint Coran pour une utilisation hors ligne dans l\'application';
+  String get qurancopytitle =>
+      'Depuis cet écran, vous pouvez télécharger une ou plusieurs copies du Saint Coran pour une utilisation hors ligne dans l\'application';
 
   @override
   String get skip => 'Passer';
@@ -1063,40 +1111,49 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get openApp => 'Ouvrir l\'application';
 
   @override
-  String get jom3aDoaaTimeTitle => 'L’heure de l’exaucement (des prières) le vendredi';
+  String get jom3aDoaaTimeTitle =>
+      'L’heure de l’exaucement (des prières) le vendredi';
 
   @override
-  String get jom3adoaaTimeMessage => 'Ne manquez pas l’heure de l’exaucement ; multipliez vos invocations et priez pour le Prophète ﷺ. Pendant cette heure, aucun serviteur musulman qui demande quelque chose à Allah ne repart sans qu’Il ne le lui accorde.';
+  String get jom3adoaaTimeMessage =>
+      'Ne manquez pas l’heure de l’exaucement ; multipliez vos invocations et priez pour le Prophète ﷺ. Pendant cette heure, aucun serviteur musulman qui demande quelque chose à Allah ne repart sans qu’Il ne le lui accorde.';
 
   @override
-  String get jom3AlkahfReminderTitle => 'La vertu de lire la sourate Al-Kahf le vendredi';
+  String get jom3AlkahfReminderTitle =>
+      'La vertu de lire la sourate Al-Kahf le vendredi';
 
   @override
-  String get jom3AlkahfReminderMessage => '« Celui qui récite la sourate Al-Kahf le vendredi bénéficiera d’une lumière qui s’étend entre lui et la Maison Sacrée (Kaaba). Profitez de ce moment béni en récitant davantage le Coran et en multipliant vos invocations. »';
+  String get jom3AlkahfReminderMessage =>
+      '« Celui qui récite la sourate Al-Kahf le vendredi bénéficiera d’une lumière qui s’étend entre lui et la Maison Sacrée (Kaaba). Profitez de ce moment béni en récitant davantage le Coran et en multipliant vos invocations. »';
 
   @override
-  String get midnightTimeTitle => 'Ne manquez pas la prière nocturne (Qiyam al-Layl) !';
+  String get midnightTimeTitle =>
+      'Ne manquez pas la prière nocturne (Qiyam al-Layl) !';
 
   @override
-  String get midnightTimeMessage => 'Le Messager d’Allah (paix et bénédictions sur lui) a dit : « Le Seigneur est le plus proche de Son serviteur dans la dernière partie de la nuit. » Profitez de ces heures pour faire des invocations et prier, car ce sont des portes de la miséricorde grand ouvertes.';
+  String get midnightTimeMessage =>
+      'Le Messager d’Allah (paix et bénédictions sur lui) a dit : « Le Seigneur est le plus proche de Son serviteur dans la dernière partie de la nuit. » Profitez de ces heures pour faire des invocations et prier, car ce sont des portes de la miséricorde grand ouvertes.';
 
   @override
   String get reminderToOpenTheApp1Title => 'Invocations après la prière';
 
   @override
-  String get reminderToOpenTheApp1Message => 'N’oubliez pas d’ouvrir l’application pour lire les adhkars et les invocations après votre prière ; elles procurent sérénité au cœur et paix à l’âme.';
+  String get reminderToOpenTheApp1Message =>
+      'N’oubliez pas d’ouvrir l’application pour lire les adhkars et les invocations après votre prière ; elles procurent sérénité au cœur et paix à l’âme.';
 
   @override
   String get reminderToOpenTheApp2Title => 'Activer les notifications à venir';
 
   @override
-  String get reminderToOpenTheApp2Message => 'Il vous suffit d’ouvrir l’application pour garantir la continuité des alertes d’adhan et des prières futures—aucun réglage supplémentaire n’est nécessaire !';
+  String get reminderToOpenTheApp2Message =>
+      'Il vous suffit d’ouvrir l’application pour garantir la continuité des alertes d’adhan et des prières futures—aucun réglage supplémentaire n’est nécessaire !';
 
   @override
   String get rightNowSunriseMessage => 'C\'est l\'heure du lever du soleil';
 
   @override
-  String get rightNowWarningMessage => 'Soyez conscient de la prière qui approche';
+  String get rightNowWarningMessage =>
+      'Soyez conscient de la prière qui approche';
 
   @override
   String get rightNowIshaMessage => 'C\'est l\'heure de la prière d\'Isha';
@@ -1114,7 +1171,8 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get rightNowFajirMessage => 'C\'est l\'heure de la prière de Fajr';
 
   @override
-  String get remeningTimeSunriseMessage => 'Temps restant avant le lever du soleil';
+  String get remeningTimeSunriseMessage =>
+      'Temps restant avant le lever du soleil';
 
   @override
   String get remeningTimeIshaMessage => 'Temps restant avant Isha';
@@ -1162,28 +1220,35 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get versionDialogNewVersion => 'Nouvelle version';
 
   @override
-  String get versionDialogUpdateSecondeSubTitle => 'de Islam Mob est maintenant disponible';
+  String get versionDialogUpdateSecondeSubTitle =>
+      'de Islam Mob est maintenant disponible';
 
   @override
-  String get sharepopupmessage => 'Partagez l\'application maintenant avec vos amis et votre famille, et vous serez récompensé, si Dieu le veut';
+  String get sharepopupmessage =>
+      'Partagez l\'application maintenant avec vos amis et votre famille, et vous serez récompensé, si Dieu le veut';
 
   @override
-  String get sharepopuptitle => 'Le Messager d\'Allah (ﷺ) a dit : Celui qui guide quelqu\'un vers le bien aura une récompense égale à celle de celui qui le fait';
+  String get sharepopuptitle =>
+      'Le Messager d\'Allah (ﷺ) a dit : Celui qui guide quelqu\'un vers le bien aura une récompense égale à celle de celui qui le fait';
 
   @override
-  String get notificationSettingJomAlkahf => 'Notifications de rappel pour la sourate Al-Kahf le vendredi';
+  String get notificationSettingJomAlkahf =>
+      'Notifications de rappel pour la sourate Al-Kahf le vendredi';
 
   @override
-  String get notificationSettingJom3aDoaa => 'Notifications de rappel pour la prière (du’aa) le vendredi';
+  String get notificationSettingJom3aDoaa =>
+      'Notifications de rappel pour la prière (du’aa) le vendredi';
 
   @override
-  String get notificationSettingQeyamAlLayel => 'Notifications de rappel pour la prière nocturne (Qiyam al-Layl)';
+  String get notificationSettingQeyamAlLayel =>
+      'Notifications de rappel pour la prière nocturne (Qiyam al-Layl)';
 
   @override
   String get donatepopuptitle => 'Soutenir l’équipe';
 
   @override
-  String get donatepopupmessage => 'Ce programme est à but non lucratif. Nous couvrons les coûts de fonctionnement en affichant des publicités. Il est donc important d’obtenir ce soutien pour assurer la continuité';
+  String get donatepopupmessage =>
+      'Ce programme est à but non lucratif. Nous couvrons les coûts de fonctionnement en affichant des publicités. Il est donc important d’obtenir ce soutien pour assurer la continuité';
 
   @override
   String get openAdvertisment => 'Afficher la publicité';
@@ -1201,17 +1266,21 @@ class IslamMobLocalizationsFr extends IslamMobLocalizations {
   String get allowLocations => 'Autoriser l’accès à la localisation';
 
   @override
-  String get allowLocationDetails => 'Activer la localisation nous permet de calculer avec précision les horaires de prière, ce qui est très important pour l’application';
+  String get allowLocationDetails =>
+      'Activer la localisation nous permet de calculer avec précision les horaires de prière, ce qui est très important pour l’application';
 
   @override
   String get changeLocationSettings => 'Changer l’emplacement';
 
   @override
-  String get onboardingSetupAccountMessage1 => 'Alhamdulillah, vous êtes prêt(e) à commencer !';
+  String get onboardingSetupAccountMessage1 =>
+      'Alhamdulillah, vous êtes prêt(e) à commencer !';
 
   @override
-  String get onboardingSetupAccountMessage2 => 'Qu’Allah accepte vos efforts et vous facilite sur ce chemin';
+  String get onboardingSetupAccountMessage2 =>
+      'Qu’Allah accepte vos efforts et vous facilite sur ce chemin';
 
   @override
-  String get onboardingSetupAccountMessage3 => 'S’il vous plaît, gardez-nous dans vos prières. Nous promettons de continuer à nous améliorer et à mieux vous servir';
+  String get onboardingSetupAccountMessage3 =>
+      'S’il vous plaît, gardez-nous dans vos prières. Nous promettons de continuer à nous améliorer et à mieux vous servir';
 }

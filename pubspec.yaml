@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.0.0+94
+version: 1.0.0+95
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -81,7 +81,6 @@ dependencies:
   google_fonts: ^6.2.1
   # google_maps_flutter: ^2.5.3
   geolocator: ^13.0.1 #TODO
-  bloc_concurrency: 0.2.5 #TODO
 
   # flutter_animate: ^4.5.0 #TODO
   # infinite_scroll_pagination: ^4.1.0 #TODO

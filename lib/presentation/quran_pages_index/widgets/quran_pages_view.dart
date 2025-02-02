@@ -10,13 +10,18 @@ class QuranPagesView extends StatelessWidget {
   final int currentPageNumber;
   final Function(int selectedPageNumber) onPageSelected;
 
-  const QuranPagesView({super.key, required this.currentPageNumber, required this.onPageSelected});
+  const QuranPagesView(
+      {super.key,
+      required this.currentPageNumber,
+      required this.onPageSelected});
 
   @override
   Widget build(BuildContext context) {
-    final QuranReferancesUsecase quranReferancesUsecase = QuranReferancesUsecase();
+    final QuranReferancesUsecase quranReferancesUsecase =
+        QuranReferancesUsecase();
 
-    final totalPages = quranReferancesUsecase.getNumberOfPagesForSelectedPrint();
+    final totalPages =
+        quranReferancesUsecase.getNumberOfPagesForSelectedPrint();
 
     return Padding(
       padding: const EdgeInsets.all(4),
@@ -24,10 +29,15 @@ class QuranPagesView extends StatelessWidget {
         itemCount: totalPages,
         itemBuilder: (context, index) {
           final pageNumber = index + 1;
-          final surahReferenceName = quranReferancesUsecase.getSurahReferenceNameFromPageNumber(pageNumber);
-          final surahName = IslamMobLocalizations.of(context).getLocalizedString(surahReferenceName);
+          final surahReferenceName = quranReferancesUsecase
+              .getSurahReferenceNameFromPageNumber(pageNumber);
+          final surahName = IslamMobLocalizations.of(context)
+              .getLocalizedString(surahReferenceName);
           final isCurrentPage = currentPageNumber == pageNumber;
-          final isBookmarked = context.read<QuranPagesIndexBloc>().bookmarkedPages.contains(pageNumber);
+          final isBookmarked = context
+              .read<QuranPagesIndexBloc>()
+              .bookmarkedPages
+              .contains(pageNumber);
 
           return PagesTileView(
             index: index,

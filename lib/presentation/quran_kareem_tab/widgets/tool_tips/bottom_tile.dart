@@ -89,11 +89,14 @@ class _BottomTileState extends State<BottomTile>
   }
 
   Widget _buildTitle() {
-    return CustomText(
-      title: widget.title,
-      fontSize: 12,
-      color: Colors.white70,
-      fontWeight: FontWeight.bold,
+    return Expanded(
+      child: CustomText(
+        title: widget.title,
+        fontSize: 12,
+        maxLines: 2,
+        color: Colors.white70,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }
