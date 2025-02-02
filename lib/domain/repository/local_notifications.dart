@@ -17,13 +17,25 @@ class LocalNotificationRepository {
     );
 
     try {
+      // First: request Android permission as you already do
       await _requestAndroidPermission();
+      // await _requestiOSPermission();
 
       await _notificationsPlugin.initialize(
         initializationSettings,
         onDidReceiveNotificationResponse: _notificationTapBackground,
         onDidReceiveBackgroundNotificationResponse: _notificationTapBackground,
       );
+
+      // **Now** explicitly request iOS permission:
+      await _notificationsPlugin
+          .resolvePlatformSpecificImplementation<
+              IOSFlutterLocalNotificationsPlugin>()
+          ?.requestPermissions(
+            alert: true,
+            badge: true,
+            sound: true,
+          );
 
       debugPrint('Notification Initialized Successfully!');
     } catch (e) {
