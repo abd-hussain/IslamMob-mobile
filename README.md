@@ -53,3 +53,39 @@ Key Regions and Language Distribution:
 	•	Sub-Saharan Africa: Hausa, Swahili
 	•	Central Asia: Persian, Russian
 The languages used by Muslims are influenced by regional demographics, and while Arabic is central for religious purposes, local languages dominate daily communication.
+
+
+## TODO features:
+- [ ] Support new languages
+- [ ] Button inside Quran to move to next BookMark
+- [ ] Qibla Finder
+- [ ] Hesen AL Moslem
+- [ ] Download PDF should happen in background thread will the user navigating inside
+- [ ] Place For Donate
+- [ ] Place For Questioners
+- [ ] Place For Suggestions
+- [ ] Doaa 
+- [ ] Education Place (Omrah, Hajj , Wodoo2, salaaah, al shahadeh, asma2 allah al husna, zakah, doaa 5etm al quran  etc)
+- [ ] Umah Spcial Media Feed
+- [ ] Hasanaat Calculator
+- [ ] Notification settings and voice setting
+- [ ] Quran Voice 
+- [ ] Doaa & Azkar Voice
+- [ ] External Phone widget to show pray time
+- [ ] Muslim Library (paid and free books)
+- [ ] Muslim Library (paid and free books)
+- [ ] Hadeeth Place
+- [ ] Tasbeeh Place
+- [ ] Daily weerd
+- [ ] Live session with Sheikh
+- [ ] tasmee3 place
+- [ ] whatsapp Qoats place (images , videos)
+- [ ] fasting calculator
+- [ ] place for articles
+
+## TODO Tichnical:
+- [ ] add golden widget test
+- [ ] check and change location on each lunch for the application
+- [ ] add Widget test
+- [ ] handle fvmrc
+- [ ] handle dependency_validator 
