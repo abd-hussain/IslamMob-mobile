@@ -9,6 +9,7 @@ import 'package:islam_app/domain/sealed/madhab.dart';
 import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_app/domain/usecase/get_user_setting_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_setting_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
 
 part 'pray_calculation_setting_bloc.freezed.dart';
@@ -17,7 +18,8 @@ part 'pray_calculation_setting_state.dart';
 
 class PrayCalculationSettingBloc
     extends Bloc<PrayCalculationSettingEvent, PrayCalculationSettingState> {
-  final GetUserSettingUseCase _getUserSettingUseCase = GetUserSettingUseCase();
+  final GetUserSettingUseCase _getUserSettingUseCase =
+      locator<GetUserSettingUseCase>();
 
   PrayCalculationSettingBloc() : super(const PrayCalculationSettingState()) {
     on<_Setup>(_setup);

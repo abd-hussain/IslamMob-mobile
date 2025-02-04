@@ -12,8 +12,6 @@ part 'language_state.dart';
 part 'language_bloc.freezed.dart';
 
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
-  SetupUserSettingUseCase setupUserSettingUseCase = SetupUserSettingUseCase();
-
   LanguageBloc() : super(const LanguageState()) {
     on<_ChangeSelectedLanguage>(_changeSelectedLanguage);
     on<_SetupLanguage>(_setupLanguage);
@@ -26,7 +24,7 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
 
   FutureOr<void> _setupLanguage(
       _SetupLanguage event, Emitter<LanguageState> emit) {
-    setupUserSettingUseCase.setLanguage(state.selectedLanguage!.languageCode);
+    SetupUserSettingUseCase.setLanguage(state.selectedLanguage!.languageCode);
     // Rebuilds the app after language change
     IslamMobApp.of(event.context)?.rebuild();
   }

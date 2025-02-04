@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'madhab.freezed.dart';
+part 'freezed/madhab.freezed.dart';
 
 @freezed
 sealed class MadhabState with _$MadhabState {

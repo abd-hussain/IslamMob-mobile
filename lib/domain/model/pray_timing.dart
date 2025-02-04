@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'pray_timing.freezed.dart';
+part 'freezed/pray_timing.freezed.dart';
 
 @freezed
 class PrayTimingModel with _$PrayTimingModel {

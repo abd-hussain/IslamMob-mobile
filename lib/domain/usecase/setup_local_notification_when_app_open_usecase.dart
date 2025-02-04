@@ -21,7 +21,7 @@ import 'package:islam_app/my_app/locator.dart';
 class SetupLocalNotificationWhenAppOpenUseCase {
   final _localNotificationRepository = locator<LocalNotificationRepository>();
   final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase =
-      NotifyAdhanNotificationUsecase();
+      locator<NotifyAdhanNotificationUsecase>();
 
   // How many notifications we want from prayer-related scheduling.
   // The last 2 are the final "open the app" reminders.

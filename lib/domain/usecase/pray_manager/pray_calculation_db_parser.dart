@@ -4,17 +4,17 @@ import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 class PrayDBParser {
-  final Map<String, Madhab> _madhabMap = {
+  static final Map<String, Madhab> _madhabMap = {
     "MadhabState.hanafi()": Madhab.hanafi,
     "MadhabState.shafi()": Madhab.shafi,
   };
 
-  final Map<String, MadhabState> _madhabStateMap = {
+  static final Map<String, MadhabState> _madhabStateMap = {
     "MadhabState.hanafi()": const MadhabState.hanafi(),
     "MadhabState.shafi()": const MadhabState.shafi(),
   };
 
-  final Map<String, HighLatitudeRule?> _highLatitudeRuleMap = {
+  static final Map<String, HighLatitudeRule?> _highLatitudeRuleMap = {
     "PrayHightLatitudeCaluclationState.midnight()":
         HighLatitudeRule.middleOfTheNight,
     "PrayHightLatitudeCaluclationState.seventhPartOfTheNight()":
@@ -23,7 +23,7 @@ class PrayDBParser {
         HighLatitudeRule.twilightAngle,
   };
 
-  final Map<String, PrayHightLatitudeCaluclationState>
+  static final Map<String, PrayHightLatitudeCaluclationState>
       _highLatitudeRuleStateMap = {
     "PrayHightLatitudeCaluclationState.midnight()":
         const PrayHightLatitudeCaluclationState.midnight(),
@@ -33,7 +33,7 @@ class PrayDBParser {
         const PrayHightLatitudeCaluclationState.angleBasedMethod(),
   };
 
-  final Map<String, CalculationMethod> _calculationMethodMap = {
+  static final Map<String, CalculationMethod> _calculationMethodMap = {
     "PrayCalculationMethodState.jordanAwqaf()": CalculationMethod.jordan,
     "PrayCalculationMethodState.jafari()": CalculationMethod.jafari,
     "PrayCalculationMethodState.karachi()": CalculationMethod.karachi,
@@ -61,7 +61,8 @@ class PrayDBParser {
         CalculationMethod.portugal,
   };
 
-  final Map<String, PrayCalculationMethodState> _calculationMethodStateMap = {
+  static final Map<String, PrayCalculationMethodState>
+      _calculationMethodStateMap = {
     "PrayCalculationMethodState.jordanAwqaf()":
         const PrayCalculationMethodState.jordanAwqaf(),
     "PrayCalculationMethodState.jafari()":
@@ -108,22 +109,23 @@ class PrayDBParser {
         const PrayCalculationMethodState.comunidadeIslamicaLisboa(),
   };
 
-  Madhab parseMadhab(String madhab) => _madhabMap[madhab] ?? Madhab.shafi;
+  static Madhab parseMadhab(String madhab) =>
+      _madhabMap[madhab] ?? Madhab.shafi;
 
-  MadhabState parseMadhabState(String madhab) =>
+  static MadhabState parseMadhabState(String madhab) =>
       _madhabStateMap[madhab] ?? const MadhabState.shafi();
 
-  HighLatitudeRule? parseHighLatitudeRule(String highLatitudeRule) =>
+  static HighLatitudeRule? parseHighLatitudeRule(String highLatitudeRule) =>
       _highLatitudeRuleMap[highLatitudeRule];
-  PrayHightLatitudeCaluclationState parseHighLatitudeRuleState(
+  static PrayHightLatitudeCaluclationState parseHighLatitudeRuleState(
           String highLatitudeRule) =>
       _highLatitudeRuleStateMap[highLatitudeRule] ??
       const PrayHightLatitudeCaluclationState.none();
 
-  CalculationMethod parseCalculationMethod(String calculationMethod) =>
+  static CalculationMethod parseCalculationMethod(String calculationMethod) =>
       _calculationMethodMap[calculationMethod] ?? CalculationMethod.jordan;
 
-  PrayCalculationMethodState parseCalculationMethodState(
+  static PrayCalculationMethodState parseCalculationMethodState(
           String calculationMethod) =>
       _calculationMethodStateMap[calculationMethod] ??
       const PrayCalculationMethodState.jordanAwqaf();

@@ -11,6 +11,7 @@ import 'package:islam_app/domain/usecase/load_file_from_document_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
@@ -114,17 +115,14 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   Future<void> _navigateToIndexScreen(BuildContext context) async {
-    final QuranReferancesUsecase quranReferancesUsecase =
-        QuranReferancesUsecase();
-
     final navigator = Navigator.of(context, rootNavigator: true);
     final bloc = context.read<QuranKareemBloc>();
     final currentPage = bloc.currentPageNumber;
 
     final sorahName =
-        quranReferancesUsecase.getSurahReferenceNameFromPageNumber(currentPage);
+        QuranReferancesUsecase.getSurahReferenceNameFromPageNumber(currentPage);
     final jozo2Name =
-        quranReferancesUsecase.getJuzNumberFromPageNumber(currentPage);
+        QuranReferancesUsecase.getJuzNumberFromPageNumber(currentPage);
 
     final arguments = {
       ArgumentConstant.currentPageNumber: currentPage,
@@ -142,9 +140,6 @@ class QuranBottomHelpBar extends StatelessWidget {
 
   Future<void> _handleNavigationResult(
       BuildContext context, dynamic value) async {
-    final QuranReferancesUsecase quranReferancesUsecase =
-        QuranReferancesUsecase();
-
     if (value is! Map<String, dynamic> || !context.mounted) return;
 
     final bloc = context.read<QuranKareemBloc>();
@@ -157,7 +152,7 @@ class QuranBottomHelpBar extends StatelessWidget {
     }
 
     if (value[ArgumentConstant.currentPartNumber] != null) {
-      final jozo2PageNumber = quranReferancesUsecase.getPageNumberFromJuzNumber(
+      final jozo2PageNumber = QuranReferancesUsecase.getPageNumberFromJuzNumber(
           value[ArgumentConstant.currentPartNumber]);
       bloc.add(QuranKareemEvent.updatePageCount(jozo2PageNumber));
       pdfController?.jumpToPage(jozo2PageNumber);
@@ -165,7 +160,7 @@ class QuranBottomHelpBar extends StatelessWidget {
 
     if (value[ArgumentConstant.currentSowrahName] != null) {
       final sorahPageNumber =
-          quranReferancesUsecase.getPageNumberFromSurahReferenceName(
+          QuranReferancesUsecase.getPageNumberFromSurahReferenceName(
         IslamMobLocalizations.of(context).getKeyFromLocalizedString(
             value[ArgumentConstant.currentSowrahName]),
       );
@@ -197,7 +192,7 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   Future<void> _loadMushafFile(BuildContext context) async {
-    final filePath = await LoadFileFromDocumentUseCase().call();
+    final filePath = await locator<LoadFileFromDocumentUseCase>().call();
 
     if (filePath == null || filePath.isEmpty) {
       debugPrint("No print name found in database.");

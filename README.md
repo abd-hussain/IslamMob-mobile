@@ -82,8 +82,9 @@ The languages used by Muslims are influenced by regional demographics, and while
 - [ ] whatsapp Qoats place (images , videos)
 - [ ] fasting calculator
 - [ ] place for articles
+- [ ] after finish tasbeeh scrollup 
 
-## TODO Tichnical:
+## TODO Technical:
 - [ ] add golden widget test
 - [ ] check and change location on each lunch for the application
 - [ ] add Widget test

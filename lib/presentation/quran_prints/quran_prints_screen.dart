@@ -142,7 +142,7 @@ class QuranPrintsScreen extends StatelessWidget {
       BuildContext context, QuranPrints printItem) async {
     final String fileName = printItem.fieldName!;
 
-    await SetupUserSettingUseCase().setQuranCopyInDB(
+    await SetupUserSettingUseCase.setQuranCopyInDB(
       QuranCopy(
           fileName: fileName,
           lastPageNumber: "1",

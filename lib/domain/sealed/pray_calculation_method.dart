@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'pray_calculation_method.freezed.dart';
+part 'freezed/pray_calculation_method.freezed.dart';
 
 @freezed
 sealed class PrayCalculationMethodState with _$PrayCalculationMethodState {

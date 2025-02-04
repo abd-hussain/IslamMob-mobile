@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'quran_prints.freezed.dart';
+part 'freezed/quran_prints.freezed.dart';
 
 @freezed
 class QuranPrints with _$QuranPrints {

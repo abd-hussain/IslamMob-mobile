@@ -12,6 +12,7 @@ import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:logger_manager/logger_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -20,10 +21,9 @@ part 'quran_copy_event.dart';
 part 'quran_copy_state.dart';
 
 class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
-  final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
-  final SetupUserSettingUseCase setupUserSettingUseCase =
-      SetupUserSettingUseCase();
-  final QuranPrintsUsecase quranPrintsUsecase = QuranPrintsUsecase();
+  final DownloadFileUsecase downloadFileUsecase =
+      locator<DownloadFileUsecase>();
+  final QuranPrintsUsecase quranPrintsUsecase = locator<QuranPrintsUsecase>();
 
   QuranCopyBloc() : super(const QuranCopyState()) {
     on<_GetListOfPrints>(_getListOfPrints);
@@ -105,7 +105,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
       parameters: {"file": event.printItem.fieldName!},
     );
 
-    await setupUserSettingUseCase.setQuranCopyInDB(QuranCopy(
+    await SetupUserSettingUseCase.setQuranCopyInDB(QuranCopy(
       fileName: fileName,
       lastPageNumber: "1",
       juz2ToPageNumbers: event.printItem.juz2ToPageNumbers,

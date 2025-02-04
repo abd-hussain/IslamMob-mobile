@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'salah_time_state.freezed.dart';
+part 'freezed/salah_time_state.freezed.dart';
 
 @freezed
 sealed class SalahTimeState with _$SalahTimeState {

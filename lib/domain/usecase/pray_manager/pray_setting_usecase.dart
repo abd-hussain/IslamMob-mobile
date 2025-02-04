@@ -19,16 +19,14 @@ class PraySettingUsecase {
     _initalize();
   }
   late PrayManagerRepository _prayManager;
-  final PrayDBParser _prayDBParser = PrayDBParser();
 
   void _initalize() {
     _prayManager = PrayManagerRepository(
       coordinates: _retrieveCoordinates(),
       utcOffset: utcOffset,
-      calculationMethod:
-          _prayDBParser.parseCalculationMethod(calculationMethod),
-      madhab: _prayDBParser.parseMadhab(madhab),
-      highLatitudeRule: _prayDBParser.parseHighLatitudeRule(highLatitudeRule),
+      calculationMethod: PrayDBParser.parseCalculationMethod(calculationMethod),
+      madhab: PrayDBParser.parseMadhab(madhab),
+      highLatitudeRule: PrayDBParser.parseHighLatitudeRule(highLatitudeRule),
     );
   }
 

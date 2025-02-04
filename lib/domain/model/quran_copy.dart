@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'quran_copy.freezed.dart';
+part 'freezed/quran_copy.freezed.dart';
 
 @freezed
 class QuranCopy with _$QuranCopy {

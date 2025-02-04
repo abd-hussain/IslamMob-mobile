@@ -6,8 +6,6 @@ import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
 
 class GetUserSettingUseCase {
-  final PrayDBParser _prayDBParser = PrayDBParser();
-
   /// Retrieves the HighLatitude Rule, from Hive
   PrayHightLatitudeCaluclationState savedHighLatitudeRule() {
     final String selectedPraynHightLatitudeCaluclation =
@@ -16,8 +14,9 @@ class GetUserSettingUseCase {
       defaultValue: "PraynHightLatitudeCaluclatioState.none()",
     );
 
-    final PrayHightLatitudeCaluclationState highLatitude = _prayDBParser
-        .parseHighLatitudeRuleState(selectedPraynHightLatitudeCaluclation);
+    final PrayHightLatitudeCaluclationState highLatitude =
+        PrayDBParser.parseHighLatitudeRuleState(
+            selectedPraynHightLatitudeCaluclation);
     return highLatitude;
   }
 
@@ -30,7 +29,7 @@ class GetUserSettingUseCase {
     );
 
     final PrayCalculationMethodState calculationMethod =
-        _prayDBParser.parseCalculationMethodState(selectedCalculationMethod);
+        PrayDBParser.parseCalculationMethodState(selectedCalculationMethod);
 
     return calculationMethod;
   }
@@ -42,7 +41,7 @@ class GetUserSettingUseCase {
       defaultValue: "MadhabState.hanafi()",
     );
 
-    final MadhabState madhab = _prayDBParser.parseMadhabState(selectedMadhab);
+    final MadhabState madhab = PrayDBParser.parseMadhabState(selectedMadhab);
     return madhab;
   }
 

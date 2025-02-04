@@ -9,17 +9,15 @@ part 'setup_account_state.dart';
 part 'setup_account_bloc.freezed.dart';
 
 class SetupAccountBloc extends Bloc<SetupAccountEvent, SetupAccountState> {
-  SetupUserSettingUseCase setupUserSettingUseCase = SetupUserSettingUseCase();
-
   SetupAccountBloc() : super(const SetupAccountState()) {
     on<_Setup>(_setup);
   }
 
   Future<void> setupAccount() async {
-    await setupUserSettingUseCase.setupUTCOffset();
-    await setupUserSettingUseCase.setupMadhabByCountryCode();
-    await setupUserSettingUseCase.setupPrayCalculationMethod();
-    await setupUserSettingUseCase.setupHighLatitudeRule();
+    await SetupUserSettingUseCase.setupUTCOffset();
+    await SetupUserSettingUseCase.setupMadhabByCountryCode();
+    await SetupUserSettingUseCase.setupPrayCalculationMethod();
+    await SetupUserSettingUseCase.setupHighLatitudeRule();
   }
 
   FutureOr<void> _setup(_Setup event, Emitter<SetupAccountState> emit) async {

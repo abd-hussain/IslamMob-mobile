@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/domain/model/version.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 
 enum VersionUpdate { mandatory, optional, noUpdate }
 
@@ -11,7 +12,7 @@ class VersionUseCase {
     final AppVersionModel? firebaseVersionData =
         await _fetchVersionFromFirebase();
     final String currentVersion =
-        await ApplicationVersionUsecase().getApplicationVersion();
+        await locator<ApplicationVersionUsecase>().getApplicationVersion();
     // Default version update status
     VersionUpdate updateStatus = VersionUpdate.noUpdate;
 

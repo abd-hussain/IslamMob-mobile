@@ -78,7 +78,7 @@ class LocationPermissionView extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
       title: IslamMobLocalizations.of(context).nolocationPermissionButton,
       onTap: () async {
-        await OpenMobileSettingUseCase().openAppSettings();
+        await OpenMobileSettingUseCase.openAppSettings();
       },
     );
   }

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'version.freezed.dart';
-part 'version.g.dart';
+part 'freezed/version.freezed.dart';
+part 'freezed/version.g.dart';
 
 @freezed
 class AppVersionModel with _$AppVersionModel {

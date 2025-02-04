@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/load_file_from_document_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:lottie/lottie.dart';
@@ -77,7 +78,7 @@ class NoPDFView extends StatelessWidget {
   }
 
   Future<void> _loadMushafFile(BuildContext context) async {
-    final filePath = await LoadFileFromDocumentUseCase().call();
+    final filePath = await locator<LoadFileFromDocumentUseCase>().call();
 
     if (filePath == null || filePath.isEmpty) {
       debugPrint("No print name found in database.");

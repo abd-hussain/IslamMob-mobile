@@ -3,6 +3,7 @@ import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 
 class DownloadProgressDialog extends StatefulWidget {
@@ -40,7 +41,8 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
   }
 
   void _startDownload() {
-    final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
+    final DownloadFileUsecase downloadFileUsecase =
+        locator<DownloadFileUsecase>();
 
     downloadFileUsecase.startDownloading(
       fileUrl: widget.fileUrl,

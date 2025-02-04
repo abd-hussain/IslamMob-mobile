@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/load_file_from_document_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:pdfx/pdfx.dart';
 
 part 'quran_kareem_event.dart';
@@ -18,8 +19,6 @@ part 'quran_kareem_bloc.freezed.dart';
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   PdfController? pdfController;
   int currentPageNumber = 0;
-
-  QuranReferancesUsecase quranReferancesUsecase = QuranReferancesUsecase();
 
   QuranKareemBloc() : super(const QuranKareemState()) {
     on<_ShowHideHelpBar>(_showHideHelpBar);
@@ -48,7 +47,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
         key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
         defaultValue: "1");
 
-    final filePath = await LoadFileFromDocumentUseCase().call();
+    final filePath = await locator<LoadFileFromDocumentUseCase>().call();
 
     if (filePath == null || filePath.isEmpty) {
       debugPrint("No print name found in database.");
@@ -103,10 +102,11 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     currentPageNumber = event.pageCount;
     emit(state.copyWith(pageCount: currentPageNumber));
 
-    final sorahName = quranReferancesUsecase
-        .getSurahReferenceNameFromPageNumber(currentPageNumber);
+    final sorahName =
+        QuranReferancesUsecase.getSurahReferenceNameFromPageNumber(
+            currentPageNumber);
     final jozo2Name =
-        quranReferancesUsecase.getJuzNumberFromPageNumber(currentPageNumber);
+        QuranReferancesUsecase.getJuzNumberFromPageNumber(currentPageNumber);
     add(QuranKareemEvent.updateSorahName(sorahName));
     add(QuranKareemEvent.updateJozo2Name(jozo2Name));
 

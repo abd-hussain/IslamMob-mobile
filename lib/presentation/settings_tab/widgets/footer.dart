@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class FooterView extends StatelessWidget {
@@ -15,7 +16,8 @@ class FooterView extends StatelessWidget {
           const SizedBox(height: 16),
           FutureBuilder<String>(
               initialData: "",
-              future: ApplicationVersionUsecase().getApplicationVersion(),
+              future:
+                  locator<ApplicationVersionUsecase>().getApplicationVersion(),
               builder: (context, snapshot) {
                 return CustomText(
                   title:
