@@ -10,6 +10,7 @@ import 'package:islam_app/domain/constants/language_constant.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:logger_manager/logger_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -18,8 +19,9 @@ part 'quran_prints_event.dart';
 part 'quran_prints_state.dart';
 
 class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
-  QuranPrintsUsecase quranPrintsUsecase = QuranPrintsUsecase();
-  final DownloadFileUsecase downloadFileUsecase = DownloadFileUsecase();
+  QuranPrintsUsecase quranPrintsUsecase = locator<QuranPrintsUsecase>();
+  final DownloadFileUsecase downloadFileUsecase =
+      locator<DownloadFileUsecase>();
 
   QuranPrintsBloc() : super(const QuranPrintsState()) {
     on<_InitializeFetchingData>(_initializeFetchingData);

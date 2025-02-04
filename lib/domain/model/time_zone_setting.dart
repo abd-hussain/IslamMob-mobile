@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'time_zone_setting.freezed.dart';
+part 'freezed/time_zone_setting.freezed.dart';
 
 @freezed
 class TimeZoneSetting with _$TimeZoneSetting {

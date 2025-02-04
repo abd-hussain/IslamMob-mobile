@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'high_latitude_method.freezed.dart';
+part 'freezed/high_latitude_method.freezed.dart';
 
 @freezed
 sealed class PrayHightLatitudeCaluclationState

@@ -8,18 +8,14 @@ import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_app/domain/usecase/pray_country_setting_usecase.dart';
 
 class SetupUserSettingUseCase {
-  final PrayCountrySettingUsecase _prayCountrySettingUsecase =
-      PrayCountrySettingUsecase();
-
-  Future<void> setupHighLatitudeRule() async {
+  static Future<void> setupHighLatitudeRule() async {
     final countryCode = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldLocationConstant.selectedCountryCode,
       defaultValue: "JO",
     );
 
     final PrayHightLatitudeCaluclationState calculationMethod =
-        _prayCountrySettingUsecase
-            .setupPraySettingByCountryCode(countryCode)
+        PrayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode)
             .hightLatitudeCaluclationState;
 
     await DataBaseManagerBase.saveInDatabase(
@@ -27,15 +23,14 @@ class SetupUserSettingUseCase {
         value: calculationMethod.toString());
   }
 
-  Future<void> setupPrayCalculationMethod() async {
+  static Future<void> setupPrayCalculationMethod() async {
     final countryCode = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldLocationConstant.selectedCountryCode,
       defaultValue: "JO",
     );
 
     final PrayCalculationMethodState calculationMethod =
-        _prayCountrySettingUsecase
-            .setupPraySettingByCountryCode(countryCode)
+        PrayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode)
             .calculationMethod;
 
     await DataBaseManagerBase.saveInDatabase(
@@ -43,15 +38,15 @@ class SetupUserSettingUseCase {
         value: calculationMethod.toString());
   }
 
-  Future<void> setupMadhabByCountryCode() async {
+  static Future<void> setupMadhabByCountryCode() async {
     final countryCode = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldLocationConstant.selectedCountryCode,
       defaultValue: "JO",
     );
 
-    final MadhabState calculationMethod = _prayCountrySettingUsecase
-        .setupPraySettingByCountryCode(countryCode)
-        .madhab;
+    final MadhabState calculationMethod =
+        PrayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode)
+            .madhab;
 
     await DataBaseManagerBase.saveInDatabase(
         key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
@@ -59,7 +54,7 @@ class SetupUserSettingUseCase {
   }
 
   /// Updates UTC Offset in storage
-  Future<void> setupUTCOffset() async {
+  static Future<void> setupUTCOffset() async {
     // Get the current DateTime
     final now = DateTime.now();
 
@@ -81,13 +76,13 @@ class SetupUserSettingUseCase {
   }
 
   /// Updates the notification token in storage
-  Future<void> setNotificationToken(String token) async {
+  static Future<void> setNotificationToken(String token) async {
     await DataBaseManagerBase.saveInDatabase(
         key: DatabaseFieldConstant.notificationToken, value: token);
   }
 
   /// Updates location details in storage
-  Future<void> setQuranCopyInDB(QuranCopy copyName) async {
+  static Future<void> setQuranCopyInDB(QuranCopy copyName) async {
     final copyData = {
       DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse:
           copyName.fileName,
@@ -102,7 +97,7 @@ class SetupUserSettingUseCase {
   }
 
   /// Updates location details in storage
-  Future<void> setLocation(LocationModel location) async {
+  static Future<void> setLocation(LocationModel location) async {
     final locationData = {
       DatabaseFieldLocationConstant.selectedCountryCode: location.countryCode,
       DatabaseFieldLocationConstant.selectedCountry: location.country,
@@ -118,7 +113,7 @@ class SetupUserSettingUseCase {
   }
 
   /// Updates the selected language in storage and rebuilds the app
-  Future<void> setLanguage(String langCode) async {
+  static Future<void> setLanguage(String langCode) async {
     await DataBaseManagerBase.saveInDatabase(
         key: DatabaseFieldConstant.userLanguageCode, value: langCode);
   }

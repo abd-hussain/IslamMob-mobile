@@ -1299,7 +1299,7 @@ class PrayCountrySettingUsecase {
     ),
   ];
 
-  PrayCountrySetting setupPraySettingByCountryCode(String countryCode) {
+  static PrayCountrySetting setupPraySettingByCountryCode(String countryCode) {
     final normalizedCode = countryCode.toUpperCase();
 
     for (final item in list) {

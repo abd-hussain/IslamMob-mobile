@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'sorah_type_state.freezed.dart';
+part 'freezed/sorah_type_state.freezed.dart';
 
 @freezed
 sealed class SowrahTypeState with _$SowrahTypeState {

@@ -17,11 +17,8 @@ class QuranPagesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final QuranReferancesUsecase quranReferancesUsecase =
-        QuranReferancesUsecase();
-
     final totalPages =
-        quranReferancesUsecase.getNumberOfPagesForSelectedPrint();
+        QuranReferancesUsecase.getNumberOfPagesForSelectedPrint();
 
     return Padding(
       padding: const EdgeInsets.all(4),
@@ -29,8 +26,9 @@ class QuranPagesView extends StatelessWidget {
         itemCount: totalPages,
         itemBuilder: (context, index) {
           final pageNumber = index + 1;
-          final surahReferenceName = quranReferancesUsecase
-              .getSurahReferenceNameFromPageNumber(pageNumber);
+          final surahReferenceName =
+              QuranReferancesUsecase.getSurahReferenceNameFromPageNumber(
+                  pageNumber);
           final surahName = IslamMobLocalizations.of(context)
               .getLocalizedString(surahReferenceName);
           final isCurrentPage = currentPageNumber == pageNumber;

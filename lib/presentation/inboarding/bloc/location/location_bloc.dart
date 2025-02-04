@@ -10,8 +10,6 @@ part 'location_state.dart';
 part 'location_bloc.freezed.dart';
 
 class LocationBloc extends Bloc<LocationEvent, LocationState> {
-  SetupUserSettingUseCase setupUserSettingUseCase = SetupUserSettingUseCase();
-
   LocationBloc() : super(const LocationState()) {
     on<_SetCountryAndCityNames>(_setCountryAndCityNames);
     on<_ChangeLocationStatus>(_changeLocationStatus);
@@ -29,6 +27,6 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
   }
 
   FutureOr<void> _setupLocation(event, Emitter<LocationState> emit) async {
-    await setupUserSettingUseCase.setLocation(state.location!);
+    await SetupUserSettingUseCase.setLocation(state.location!);
   }
 }

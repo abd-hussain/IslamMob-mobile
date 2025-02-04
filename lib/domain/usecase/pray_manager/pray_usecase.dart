@@ -16,7 +16,6 @@ class PrayUsecase {
     _initalize();
   }
   late PrayManagerRepository _prayManager;
-  final PrayDBParser _prayDBParser = PrayDBParser();
 
   void _initalize() {
     _prayManager = PrayManagerRepository(
@@ -60,7 +59,7 @@ class PrayUsecase {
     final String madhab = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
         defaultValue: "MadhabState.hanafi()");
-    return _prayDBParser.parseMadhab(madhab);
+    return PrayDBParser.parseMadhab(madhab);
   }
 
   /// Retrieves the selected calculation method from the Hive box.
@@ -70,7 +69,7 @@ class PrayUsecase {
       defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
     );
 
-    return _prayDBParser.parseCalculationMethod(selectedMethod);
+    return PrayDBParser.parseCalculationMethod(selectedMethod);
   }
 
   HighLatitudeRule? _retrieveHighLatitudeRule() {
@@ -79,7 +78,7 @@ class PrayUsecase {
       defaultValue: "PrayHightLatitudeCaluclationState.none()",
     );
 
-    return _prayDBParser.parseHighLatitudeRule(selectedMethod);
+    return PrayDBParser.parseHighLatitudeRule(selectedMethod);
   }
 
   /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.

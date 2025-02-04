@@ -7,6 +7,7 @@ import 'package:islam_app/domain/model/profile_options.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/about_us/bloc/about_us_bloc.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/collection_list_option.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
@@ -174,7 +175,8 @@ class AboutUsScreen extends StatelessWidget {
         Center(
           child: FutureBuilder<String>(
             initialData: "",
-            future: ApplicationVersionUsecase().getApplicationVersion(),
+            future:
+                locator<ApplicationVersionUsecase>().getApplicationVersion(),
             builder: (context, snapshot) {
               return CustomText(
                 title:

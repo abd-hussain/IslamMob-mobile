@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'local_notification.freezed.dart';
+part 'freezed/local_notification.freezed.dart';
 
 @freezed
 sealed class NotificationTypeState with _$NotificationTypeState {

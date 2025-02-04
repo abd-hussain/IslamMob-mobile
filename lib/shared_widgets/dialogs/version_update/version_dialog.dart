@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/dialogs/version_update/version_update_widget.dart';
 
 class VersionDialog {
   Future<Widget?> dialog(
       {required BuildContext context, required bool isOptional}) async {
     final String currentVersion =
-        await ApplicationVersionUsecase().getApplicationVersion();
+        await locator<ApplicationVersionUsecase>().getApplicationVersion();
 
     if (context.mounted) {
       return showDialog(

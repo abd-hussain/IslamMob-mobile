@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
 
 part 'pray_notification_setting_event.dart';
@@ -144,7 +145,7 @@ class PrayNotificationSettingBloc
         emit(state.copyWith(qeyamAlLayel: event.status));
     }
 
-    await SetupLocalNotificationWhenAppOpenUseCase()
+    await locator<SetupLocalNotificationWhenAppOpenUseCase>()
         // ignore: use_build_context_synchronously
         .call(context: event.context);
   }

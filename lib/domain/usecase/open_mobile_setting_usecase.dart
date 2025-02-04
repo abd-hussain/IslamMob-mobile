@@ -7,7 +7,7 @@ class OpenMobileSettingUseCase {
       MethodChannel('com.islammob.app/settings');
 
   /// Opens the application settings on iOS or Android.
-  Future<void> openAppSettings() async {
+  static Future<void> openAppSettings() async {
     try {
       if (Platform.isIOS) {
         await _openIosSettings();
@@ -22,7 +22,7 @@ class OpenMobileSettingUseCase {
   }
 
   /// Opens the application settings on iOS.
-  Future<void> _openIosSettings() async {
+  static Future<void> _openIosSettings() async {
     const String settingsUrl = 'app-settings:';
     final Uri settingsUri = Uri.parse(settingsUrl);
 
@@ -34,7 +34,7 @@ class OpenMobileSettingUseCase {
   }
 
   /// Opens the application settings on Android.
-  Future<void> _openAndroidSettings() async {
+  static Future<void> _openAndroidSettings() async {
     try {
       await _platform.invokeMethod('openAppSettings');
     } on PlatformException catch (e) {

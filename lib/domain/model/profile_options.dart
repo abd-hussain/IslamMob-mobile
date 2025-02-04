@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'profile_options.freezed.dart';
+part 'freezed/profile_options.freezed.dart';
 
 @freezed
 class ProfileOptions with _$ProfileOptions {

@@ -9,9 +9,6 @@ part 'notifications_state.dart';
 part 'notifications_bloc.freezed.dart';
 
 class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
-  final SetupUserSettingUseCase setupUserSettingUseCase =
-      SetupUserSettingUseCase();
-
   NotificationsBloc() : super(const NotificationsState()) {
     on<_ChangeNotificationStatus>(_changeNotificationStatus);
     on<_SetupToken>(_setupToken);
@@ -24,6 +21,6 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
   FutureOr<void> _setupToken(
       _SetupToken event, Emitter<NotificationsState> emit) {
-    setupUserSettingUseCase.setNotificationToken(event.token);
+    SetupUserSettingUseCase.setNotificationToken(event.token);
   }
 }
