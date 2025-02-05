@@ -28,6 +28,8 @@ class PrintTileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
       child: ClipRect(
@@ -45,8 +47,8 @@ class PrintTileView extends StatelessWidget {
                 _buildTitle(),
                 _buildDescription(),
                 _buildPreviewImage(),
-                _buildDownloadButton(context),
-                _buildUseButton(context),
+                _buildDownloadButton(context, localize),
+                _buildUseButton(context, localize),
               ],
             ),
           ),
@@ -95,20 +97,21 @@ class PrintTileView extends StatelessWidget {
     );
   }
 
-  Widget _buildDownloadButton(BuildContext context) {
+  Widget _buildDownloadButton(
+      BuildContext context, IslamMobLocalizations localize) {
     return CustomButton(
       isEnabled: downloadButtonAvailable,
       padding: const EdgeInsets.all(8),
-      title: IslamMobLocalizations.of(context).download,
+      title: localize.download,
       onTap: onDownloadPressed,
     );
   }
 
-  Widget _buildUseButton(BuildContext context) {
+  Widget _buildUseButton(BuildContext context, IslamMobLocalizations localize) {
     return CustomButton(
       isEnabled: useButtonAvailable,
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-      title: IslamMobLocalizations.of(context).use,
+      title: localize.use,
       onTap: onUsePressed,
     );
   }

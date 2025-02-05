@@ -6,6 +6,7 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 import 'package:location_manager/location_manager.dart';
 
 class LocationIdleView extends StatelessWidget {
@@ -13,12 +14,14 @@ class LocationIdleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: IslamMobLocalizations.of(context).mawaqeetalsalahdetails,
+            title: localization.mawaqeetalsalahdetails,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -27,7 +30,7 @@ class LocationIdleView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: IslamMobLocalizations.of(context).mawaqeetalsalahdetails2,
+          title: localization.mawaqeetalsalahdetails2,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,
@@ -35,11 +38,11 @@ class LocationIdleView extends StatelessWidget {
         const Expanded(child: SizedBox()),
         CustomButton(
           isEnabled: true,
-          title: IslamMobLocalizations.of(context).allowgetlocation,
+          title: localization.allowgetlocation,
           onTap: () async {
             if (await NetworkUseCase.checkInternetConeection() == false) {
               // ignore: use_build_context_synchronously
-              showNoInternetConnection(context);
+              NoInternetToast.show(context);
               return;
             }
 
@@ -88,15 +91,6 @@ class LocationIdleView extends StatelessWidget {
           },
         ),
       ],
-    );
-  }
-
-  void showNoInternetConnection(BuildContext context) {
-    final scaffoldMessenger = ScaffoldMessenger.of(context);
-    scaffoldMessenger.showSnackBar(
-      SnackBar(
-          content: Text(IslamMobLocalizations.of(context)
-              .pleasecheckyourinternetconnection)),
     );
   }
 }

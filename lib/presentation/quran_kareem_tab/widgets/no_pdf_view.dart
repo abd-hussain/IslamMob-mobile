@@ -15,6 +15,8 @@ class NoPDFView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return Center(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -23,9 +25,9 @@ class NoPDFView extends StatelessWidget {
           children: [
             _buildLottieAnimation(),
             const SizedBox(height: 10),
-            _buildInstructionText(context),
+            _buildInstructionText(context, localize),
             const SizedBox(height: 10),
-            _buildSelectPrintButton(context),
+            _buildSelectPrintButton(context, localize),
           ],
         ),
       ),
@@ -39,9 +41,10 @@ class NoPDFView extends StatelessWidget {
     );
   }
 
-  Widget _buildInstructionText(BuildContext context) {
+  Widget _buildInstructionText(
+      BuildContext context, IslamMobLocalizations localize) {
     return CustomText(
-      title: IslamMobLocalizations.of(context).selectprintdetails,
+      title: localize.selectprintdetails,
       fontSize: 16,
       maxLines: 2,
       textAlign: TextAlign.center,
@@ -50,14 +53,15 @@ class NoPDFView extends StatelessWidget {
     );
   }
 
-  Widget _buildSelectPrintButton(BuildContext context) {
+  Widget _buildSelectPrintButton(
+      BuildContext context, IslamMobLocalizations localize) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xff008480),
       ),
       onPressed: () => _navigateToPrintListScreen(context),
       child: CustomText(
-        title: IslamMobLocalizations.of(context).selectprint,
+        title: localize.selectprint,
         fontSize: 16,
         textAlign: TextAlign.center,
       ),

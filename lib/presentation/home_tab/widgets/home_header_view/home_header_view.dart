@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/sealed/salah_time_state.dart';
+import 'package:islam_app/domain/usecase/salah_box_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home_header/home_header_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/widgets/salah_timer_view.dart';
@@ -62,7 +62,7 @@ class HomeHeaderView extends StatelessWidget {
       padding: const EdgeInsets.only(left: 5, right: 5, top: 2),
       child: CustomText(
         title:
-            "${_getSalahName(context: context, salahType: state.nextPrayType)} ${IslamMobLocalizations.of(context).after}",
+            "${SalahBoxUseCase.getSalahName(context, state.nextPrayType)} ${IslamMobLocalizations.of(context).after}",
         fontSize: 12,
       ),
     );
@@ -144,28 +144,6 @@ class HomeHeaderView extends StatelessWidget {
         fit: BoxFit.cover,
       ),
     );
-  }
-
-  /// Helper method to get Salah name localized.
-  String _getSalahName(
-      {required BuildContext context, required SalahTimeState salahType}) {
-    final localization = IslamMobLocalizations.of(context);
-    switch (salahType) {
-      case SalahTimeStateFajir():
-        return localization.fajr;
-      case SalahTimeStateSunrise():
-        return localization.sherooq;
-      case SalahTimeStateZhur():
-        return localization.zhur;
-      case SalahTimeStateAsr():
-        return localization.asr;
-      case SalahTimeStateMaghrib():
-        return localization.maghrib;
-      case SalahTimeStateIsha():
-        return localization.isha;
-      case SalahTimeStateNone():
-        return "";
-    }
   }
 
   /// Creates a common decoration for black overlay containers.

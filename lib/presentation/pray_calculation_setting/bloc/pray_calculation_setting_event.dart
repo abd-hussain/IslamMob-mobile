@@ -22,12 +22,12 @@ class PrayCalculationSettingEvent with _$PrayCalculationSettingEvent {
 
   factory PrayCalculationSettingEvent.updateTimeOfPreview({
     required DateTime time,
-    required PreviewBoxes azanType,
+    required PreviewBoxesState azanType,
   }) = _UpdateTimeOfPreview;
 
   factory PrayCalculationSettingEvent.updateAzanTypeInMin({
     required int minutes,
-    required AzanTypeForEditMin azanType,
+    required AzanTypeForEditMinState azanType,
   }) = _UpdateAzanTypeInMin;
 
   factory PrayCalculationSettingEvent.saveChanges() = _SaveChanges;

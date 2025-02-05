@@ -27,7 +27,6 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   QuranCopyBloc() : super(const QuranCopyState()) {
     on<_GetListOfPrints>(_getListOfPrints);
-
     on<_UpdateInternetConnectionStatus>(_handleInternetConnectionStatusUpdate);
     on<_UpdatePrintsDownloading>(_handlePrintsDownloadingUpdate);
     on<_SetupCopy>(_handleSetupCopy);
@@ -42,6 +41,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Prepares a list of prints ready for downloading by verifying file existence.
   Future<List<String>> _prepareDownloadingList(List<QuranPrints> prints) async {
+    // TODO: move this to usecase
     final downloadingList = <String>[];
 
     for (final print in prints) {
@@ -57,6 +57,8 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Requests storage permission based on platform and device SDK.
   Future<bool> requestStoragePermission() async {
+    // TODO: move this to usecase
+
     final plugin = DeviceInfoPlugin();
     PermissionStatus? storageStatus;
 
@@ -74,6 +76,8 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Gets a language name by its code.
   String getLanguageNameByCode(String languageCode) {
+    // TODO: move this to usecase
+
     return LanguageConstant.languages
         .firstWhere(
           (lang) => lang.languageCode == languageCode,

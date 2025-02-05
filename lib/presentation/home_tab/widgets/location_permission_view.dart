@@ -16,16 +16,18 @@ class LocationPermissionView extends StatelessWidget {
   }
 
   Widget _buildLocationContainer(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return Container(
       decoration: _containerDecoration(),
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [
-            _buildHeader(context),
+            _buildHeader(context, localize),
             const SizedBox(height: 4),
-            _buildDescription(context),
-            _buildSettingsButton(context),
+            _buildDescription(context, localize),
+            _buildSettingsButton(context, localize),
           ],
         ),
       ),
@@ -47,13 +49,13 @@ class LocationPermissionView extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader(BuildContext context) {
+  Widget _buildHeader(BuildContext context, IslamMobLocalizations localize) {
     return Row(
       children: [
         const Icon(Icons.location_pin),
         const SizedBox(width: 4),
         CustomText(
-          title: IslamMobLocalizations.of(context).allowLocations,
+          title: localize.allowLocations,
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -62,9 +64,10 @@ class LocationPermissionView extends StatelessWidget {
     );
   }
 
-  Widget _buildDescription(BuildContext context) {
+  Widget _buildDescription(
+      BuildContext context, IslamMobLocalizations localize) {
     return CustomText(
-      title: IslamMobLocalizations.of(context).allowLocationDetails,
+      title: localize.allowLocationDetails,
       fontSize: 14,
       color: const Color(0xff444444),
       maxLines: 10,
@@ -72,11 +75,12 @@ class LocationPermissionView extends StatelessWidget {
     );
   }
 
-  Widget _buildSettingsButton(BuildContext context) {
+  Widget _buildSettingsButton(
+      BuildContext context, IslamMobLocalizations localize) {
     return CustomButton(
       isEnabled: true,
       padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-      title: IslamMobLocalizations.of(context).nolocationPermissionButton,
+      title: localize.nolocationPermissionButton,
       onTap: () async {
         await OpenMobileSettingUseCase.openAppSettings();
       },

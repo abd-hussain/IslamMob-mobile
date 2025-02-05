@@ -37,6 +37,8 @@ class InBoardingScreen extends StatelessWidget {
 
   /// Builds the header section with the logo and app information
   Widget _buildHeader(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -50,7 +52,7 @@ class InBoardingScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                title: IslamMobLocalizations.of(context).appName,
+                title: localization.appName,
                 fontSize: 20,
                 color: const Color(0xff292929),
                 fontWeight: FontWeight.bold,
@@ -58,7 +60,7 @@ class InBoardingScreen extends StatelessWidget {
                 maxLines: 3,
               ),
               CustomText(
-                title: IslamMobLocalizations.of(context).appshortdesc,
+                title: localization.appshortdesc,
                 fontSize: 12,
                 color: const Color(0xff292929),
                 fontWeight: FontWeight.bold,

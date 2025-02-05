@@ -9,6 +9,8 @@ class FooterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return Padding(
       padding: const EdgeInsets.only(left: 8, right: 8),
       child: Column(
@@ -20,15 +22,14 @@ class FooterView extends StatelessWidget {
                   locator<ApplicationVersionUsecase>().getApplicationVersion(),
               builder: (context, snapshot) {
                 return CustomText(
-                  title:
-                      "${IslamMobLocalizations.of(context).version} ${snapshot.data}",
+                  title: "${localize.version} ${snapshot.data}",
                   fontSize: 12,
                   color: const Color(0xffBFBFBF),
                 );
               }),
           const SizedBox(height: 20),
           CustomText(
-            title: IslamMobLocalizations.of(context).rightsreserved,
+            title: localize.rightsreserved,
             fontSize: 10,
             color: const Color(0xff707070),
           ),

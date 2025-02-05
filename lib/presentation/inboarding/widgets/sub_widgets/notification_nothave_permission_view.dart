@@ -11,13 +11,14 @@ class NotificationNothavePermissionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title:
-                IslamMobLocalizations.of(context).whyyoushouldallownotification,
+            title: localization.whyyoushouldallownotification,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -26,8 +27,7 @@ class NotificationNothavePermissionView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: IslamMobLocalizations.of(context)
-              .whyyoushouldallownotificationdetails,
+          title: localization.whyyoushouldallownotificationdetails,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,
@@ -36,13 +36,13 @@ class NotificationNothavePermissionView extends StatelessWidget {
         CustomButton(
           isEnabled: true,
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-          title: IslamMobLocalizations.of(context).nolocationPermissionButton,
+          title: localization.nolocationPermissionButton,
           onTap: () async => OpenMobileSettingUseCase.openAppSettings(),
         ),
         CustomButton(
           isEnabled: true,
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-          title: IslamMobLocalizations.of(context).notNowNotifications,
+          title: localization.notNowNotifications,
           titleColor: const Color(0xff292929),
           color: Colors.grey,
           onTap: skipButton,

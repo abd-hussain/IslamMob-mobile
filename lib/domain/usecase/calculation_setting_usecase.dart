@@ -9,7 +9,7 @@ import 'package:islam_app/domain/sealed/madhab.dart';
 import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
-import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
+import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_sealed.dart';
 
 class CalculationSettingUsecase {
   static List<TimeZoneSetting> getTimeZonesList(
@@ -416,42 +416,42 @@ class CalculationSettingUsecase {
       CorrectionMinTimeData(
         title: localizations.fajirCorrectionTitle,
         getter: (state) => state.editFajirTimeManual,
-        type: AzanTypeForEditMin.fajir,
+        type: const AzanTypeForEditMinState.fajir(),
       ),
       CorrectionMinTimeData(
         title: localizations.sunriseCorrectionTitle,
         getter: (state) => state.editSunriseTimeManual,
-        type: AzanTypeForEditMin.sunrise,
+        type: const AzanTypeForEditMinState.sunrise(),
       ),
       CorrectionMinTimeData(
         title: localizations.duhorCorrectionTitle,
         getter: (state) => state.editDuhirTimeManual,
-        type: AzanTypeForEditMin.zhur,
+        type: const AzanTypeForEditMinState.zhur(),
       ),
       CorrectionMinTimeData(
         title: localizations.asrCorrectionTitle,
         getter: (state) => state.editAsrTimeManual,
-        type: AzanTypeForEditMin.asr,
+        type: const AzanTypeForEditMinState.asr(),
       ),
       CorrectionMinTimeData(
         title: localizations.maghribCorrectionTitle,
         getter: (state) => state.editMagrebTimeManual,
-        type: AzanTypeForEditMin.maghrib,
+        type: const AzanTypeForEditMinState.magrieb(),
       ),
       CorrectionMinTimeData(
         title: localizations.ishaCorrectionTitle,
         getter: (state) => state.editIshaTimeManual,
-        type: AzanTypeForEditMin.isha,
+        type: const AzanTypeForEditMinState.isha(),
       ),
       CorrectionMinTimeData(
         title: localizations.midnightCorrectionTitle,
         getter: (state) => state.editMidNightTimeManual,
-        type: AzanTypeForEditMin.midnight,
+        type: const AzanTypeForEditMinState.midnight(),
       ),
       CorrectionMinTimeData(
         title: localizations.lastThirdOfTheNightCorrectionTitle,
         getter: (state) => state.editLast3thTimeTimeManual,
-        type: AzanTypeForEditMin.last3th,
+        type: const AzanTypeForEditMinState.last3th(),
       ),
     ];
   }

@@ -16,12 +16,14 @@ class LocationHavePermissionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: IslamMobLocalizations.of(context).locationPermissionSuccses,
+            title: localization.locationPermissionSuccses,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -56,8 +58,7 @@ class LocationHavePermissionView extends StatelessWidget {
         ),
         CustomButton(
           isEnabled: true,
-          title:
-              IslamMobLocalizations.of(context).locationPermissionSuccsesButton,
+          title: localization.locationPermissionSuccsesButton,
           onTap: onConfirmationPress,
         ),
       ],

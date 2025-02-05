@@ -25,9 +25,9 @@ mixin _$PrayCalculationSettingEvent {
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) =>
@@ -41,9 +41,9 @@ mixin _$PrayCalculationSettingEvent {
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) =>
@@ -57,8 +57,9 @@ mixin _$PrayCalculationSettingEvent {
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
@@ -179,9 +180,9 @@ class _$SetupImpl implements _Setup {
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
@@ -198,9 +199,9 @@ class _$SetupImpl implements _Setup {
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
@@ -217,8 +218,9 @@ class _$SetupImpl implements _Setup {
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
@@ -378,9 +380,9 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
@@ -397,9 +399,9 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
@@ -416,8 +418,9 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
@@ -585,9 +588,9 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
@@ -604,9 +607,9 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
@@ -623,8 +626,9 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
@@ -778,9 +782,9 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
@@ -797,9 +801,9 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
@@ -816,8 +820,9 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
@@ -989,9 +994,9 @@ class _$UpdateHightLatitudeCalculationImpl
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
@@ -1008,9 +1013,9 @@ class _$UpdateHightLatitudeCalculationImpl
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
@@ -1027,8 +1032,9 @@ class _$UpdateHightLatitudeCalculationImpl
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
@@ -1115,7 +1121,9 @@ abstract class _$$UpdateTimeOfPreviewImplCopyWith<$Res> {
           $Res Function(_$UpdateTimeOfPreviewImpl) then) =
       __$$UpdateTimeOfPreviewImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DateTime time, PreviewBoxes azanType});
+  $Res call({DateTime time, PreviewBoxesState azanType});
+
+  $PreviewBoxesStateCopyWith<$Res> get azanType;
 }
 
 /// @nodoc
@@ -1143,8 +1151,18 @@ class __$$UpdateTimeOfPreviewImplCopyWithImpl<$Res>
       azanType: null == azanType
           ? _value.azanType
           : azanType // ignore: cast_nullable_to_non_nullable
-              as PreviewBoxes,
+              as PreviewBoxesState,
     ));
+  }
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PreviewBoxesStateCopyWith<$Res> get azanType {
+    return $PreviewBoxesStateCopyWith<$Res>(_value.azanType, (value) {
+      return _then(_value.copyWith(azanType: value));
+    });
   }
 }
 
@@ -1156,7 +1174,7 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   @override
   final DateTime time;
   @override
-  final PreviewBoxes azanType;
+  final PreviewBoxesState azanType;
 
   @override
   String toString() {
@@ -1195,9 +1213,9 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
@@ -1214,9 +1232,9 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
@@ -1233,8 +1251,9 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
@@ -1302,10 +1321,10 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
 abstract class _UpdateTimeOfPreview implements PrayCalculationSettingEvent {
   factory _UpdateTimeOfPreview(
       {required final DateTime time,
-      required final PreviewBoxes azanType}) = _$UpdateTimeOfPreviewImpl;
+      required final PreviewBoxesState azanType}) = _$UpdateTimeOfPreviewImpl;
 
   DateTime get time;
-  PreviewBoxes get azanType;
+  PreviewBoxesState get azanType;
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1320,7 +1339,9 @@ abstract class _$$UpdateAzanTypeInMinImplCopyWith<$Res> {
           $Res Function(_$UpdateAzanTypeInMinImpl) then) =
       __$$UpdateAzanTypeInMinImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int minutes, AzanTypeForEditMin azanType});
+  $Res call({int minutes, AzanTypeForEditMinState azanType});
+
+  $AzanTypeForEditMinStateCopyWith<$Res> get azanType;
 }
 
 /// @nodoc
@@ -1348,8 +1369,18 @@ class __$$UpdateAzanTypeInMinImplCopyWithImpl<$Res>
       azanType: null == azanType
           ? _value.azanType
           : azanType // ignore: cast_nullable_to_non_nullable
-              as AzanTypeForEditMin,
+              as AzanTypeForEditMinState,
     ));
+  }
+
+  /// Create a copy of PrayCalculationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AzanTypeForEditMinStateCopyWith<$Res> get azanType {
+    return $AzanTypeForEditMinStateCopyWith<$Res>(_value.azanType, (value) {
+      return _then(_value.copyWith(azanType: value));
+    });
   }
 }
 
@@ -1361,7 +1392,7 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   @override
   final int minutes;
   @override
-  final AzanTypeForEditMin azanType;
+  final AzanTypeForEditMinState azanType;
 
   @override
   String toString() {
@@ -1400,9 +1431,9 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
@@ -1419,9 +1450,9 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
@@ -1438,8 +1469,9 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
@@ -1506,11 +1538,12 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
 
 abstract class _UpdateAzanTypeInMin implements PrayCalculationSettingEvent {
   factory _UpdateAzanTypeInMin(
-      {required final int minutes,
-      required final AzanTypeForEditMin azanType}) = _$UpdateAzanTypeInMinImpl;
+          {required final int minutes,
+          required final AzanTypeForEditMinState azanType}) =
+      _$UpdateAzanTypeInMinImpl;
 
   int get minutes;
-  AzanTypeForEditMin get azanType;
+  AzanTypeForEditMinState get azanType;
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1567,9 +1600,9 @@ class _$SaveChangesImpl implements _SaveChanges {
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
         updateHightLatitudeCalculation,
-    required TResult Function(DateTime time, PreviewBoxes azanType)
+    required TResult Function(DateTime time, PreviewBoxesState azanType)
         updateTimeOfPreview,
-    required TResult Function(int minutes, AzanTypeForEditMin azanType)
+    required TResult Function(int minutes, AzanTypeForEditMinState azanType)
         updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
@@ -1586,9 +1619,9 @@ class _$SaveChangesImpl implements _SaveChanges {
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult? Function(DateTime time, PreviewBoxes azanType)?
+    TResult? Function(DateTime time, PreviewBoxesState azanType)?
         updateTimeOfPreview,
-    TResult? Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
@@ -1605,8 +1638,9 @@ class _$SaveChangesImpl implements _SaveChanges {
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
         updateHightLatitudeCalculation,
-    TResult Function(DateTime time, PreviewBoxes azanType)? updateTimeOfPreview,
-    TResult Function(int minutes, AzanTypeForEditMin azanType)?
+    TResult Function(DateTime time, PreviewBoxesState azanType)?
+        updateTimeOfPreview,
+    TResult Function(int minutes, AzanTypeForEditMinState azanType)?
         updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),

@@ -10,7 +10,7 @@ import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_app/domain/usecase/get_user_setting_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_setting_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
+import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_sealed.dart';
 
 part 'pray_calculation_setting_bloc.freezed.dart';
 part 'pray_calculation_setting_event.dart';
@@ -50,24 +50,24 @@ class PrayCalculationSettingBloc
 
     // Map Salah timings and their adjustments
     final azanTimings = {
-      PreviewBoxes.fajir:
+      const PreviewBoxesState.fajir():
           timings.fajir.add(Duration(minutes: state.editFajirTimeManual)),
-      PreviewBoxes.sunrise:
+      const PreviewBoxesState.sunrise():
           timings.sunrise.add(Duration(minutes: state.editSunriseTimeManual)),
-      PreviewBoxes.zhur:
+      const PreviewBoxesState.zhur():
           timings.dhuhr.add(Duration(minutes: state.editDuhirTimeManual)),
-      PreviewBoxes.asr:
+      const PreviewBoxesState.asr():
           timings.asr.add(Duration(minutes: state.editAsrTimeManual)),
-      PreviewBoxes.maghrib:
+      const PreviewBoxesState.magrieb():
           timings.maghrib.add(Duration(minutes: state.editMagrebTimeManual)),
-      PreviewBoxes.isha:
+      const PreviewBoxesState.isha():
           timings.isha.add(Duration(minutes: state.editIshaTimeManual)),
-      PreviewBoxes.midnight: timings.middleOfTheNight
+      const PreviewBoxesState.midnight(): timings.middleOfTheNight
           .add(Duration(minutes: state.editMidNightTimeManual)),
-      PreviewBoxes.last3th: timings.lastThirdOfTheNight
+      const PreviewBoxesState.last3th(): timings.lastThirdOfTheNight
           .add(Duration(minutes: state.editLast3thTimeTimeManual)),
-      PreviewBoxes.deviceTime: deviceTime,
-      PreviewBoxes.applicationTime: applicationTime,
+      const PreviewBoxesState.deviceTime(): deviceTime,
+      const PreviewBoxesState.applicationTime(): applicationTime,
     };
 
     // Dispatch updated timings
@@ -92,14 +92,22 @@ class PrayCalculationSettingBloc
       hightLatitudeCaluclation: highLatitudeRule,
       madhab: madhab,
       timeZone: duration,
-      editFajirTimeManual: minutesEdited[AzanTypeForEditMin.fajir] ?? 0,
-      editSunriseTimeManual: minutesEdited[AzanTypeForEditMin.sunrise] ?? 0,
-      editDuhirTimeManual: minutesEdited[AzanTypeForEditMin.zhur] ?? 0,
-      editAsrTimeManual: minutesEdited[AzanTypeForEditMin.asr] ?? 0,
-      editMagrebTimeManual: minutesEdited[AzanTypeForEditMin.maghrib] ?? 0,
-      editIshaTimeManual: minutesEdited[AzanTypeForEditMin.isha] ?? 0,
-      editMidNightTimeManual: minutesEdited[AzanTypeForEditMin.midnight] ?? 0,
-      editLast3thTimeTimeManual: minutesEdited[AzanTypeForEditMin.last3th] ?? 0,
+      editFajirTimeManual:
+          minutesEdited[const AzanTypeForEditMinState.fajir()] ?? 0,
+      editSunriseTimeManual:
+          minutesEdited[const AzanTypeForEditMinState.sunrise()] ?? 0,
+      editDuhirTimeManual:
+          minutesEdited[const AzanTypeForEditMinState.zhur()] ?? 0,
+      editAsrTimeManual:
+          minutesEdited[const AzanTypeForEditMinState.asr()] ?? 0,
+      editMagrebTimeManual:
+          minutesEdited[const AzanTypeForEditMinState.magrieb()] ?? 0,
+      editIshaTimeManual:
+          minutesEdited[const AzanTypeForEditMinState.isha()] ?? 0,
+      editMidNightTimeManual:
+          minutesEdited[const AzanTypeForEditMinState.midnight()] ?? 0,
+      editLast3thTimeTimeManual:
+          minutesEdited[const AzanTypeForEditMinState.last3th()] ?? 0,
     ));
 
     _prepareSalahTiming();
@@ -134,21 +142,21 @@ class PrayCalculationSettingBloc
   FutureOr<void> _handleUpdateAzanTypeInMin(
       _UpdateAzanTypeInMin event, Emitter<PrayCalculationSettingState> emit) {
     final updateMapping = {
-      AzanTypeForEditMin.fajir: (int minutes) =>
+      const AzanTypeForEditMinState.fajir(): (int minutes) =>
           state.copyWith(editFajirTimeManual: minutes, buttonsStatus: true),
-      AzanTypeForEditMin.sunrise: (int minutes) =>
+      const AzanTypeForEditMinState.sunrise(): (int minutes) =>
           state.copyWith(editSunriseTimeManual: minutes, buttonsStatus: true),
-      AzanTypeForEditMin.zhur: (int minutes) =>
+      const AzanTypeForEditMinState.zhur(): (int minutes) =>
           state.copyWith(editDuhirTimeManual: minutes, buttonsStatus: true),
-      AzanTypeForEditMin.asr: (int minutes) =>
+      const AzanTypeForEditMinState.asr(): (int minutes) =>
           state.copyWith(editAsrTimeManual: minutes, buttonsStatus: true),
-      AzanTypeForEditMin.maghrib: (int minutes) =>
+      const AzanTypeForEditMinState.magrieb(): (int minutes) =>
           state.copyWith(editMagrebTimeManual: minutes, buttonsStatus: true),
-      AzanTypeForEditMin.isha: (int minutes) =>
+      const AzanTypeForEditMinState.isha(): (int minutes) =>
           state.copyWith(editIshaTimeManual: minutes, buttonsStatus: true),
-      AzanTypeForEditMin.midnight: (int minutes) =>
+      const AzanTypeForEditMinState.midnight(): (int minutes) =>
           state.copyWith(editMidNightTimeManual: minutes, buttonsStatus: true),
-      AzanTypeForEditMin.last3th: (int minutes) => state.copyWith(
+      const AzanTypeForEditMinState.last3th(): (int minutes) => state.copyWith(
           editLast3thTimeTimeManual: minutes, buttonsStatus: true),
     };
 
@@ -163,20 +171,25 @@ class PrayCalculationSettingBloc
   FutureOr<void> _updateTimeOfPreview(
       _UpdateTimeOfPreview event, Emitter<PrayCalculationSettingState> emit) {
     final updateMapping = {
-      PreviewBoxes.fajir: (DateTime time) => state.copyWith(fajirTime: time),
-      PreviewBoxes.sunrise: (DateTime time) =>
+      const PreviewBoxesState.fajir(): (DateTime time) =>
+          state.copyWith(fajirTime: time),
+      const PreviewBoxesState.sunrise(): (DateTime time) =>
           state.copyWith(sunriseTime: time),
-      PreviewBoxes.zhur: (DateTime time) => state.copyWith(duherTime: time),
-      PreviewBoxes.asr: (DateTime time) => state.copyWith(asrTime: time),
-      PreviewBoxes.maghrib: (DateTime time) => state.copyWith(megribTime: time),
-      PreviewBoxes.isha: (DateTime time) => state.copyWith(ishaTime: time),
-      PreviewBoxes.midnight: (DateTime time) =>
+      const PreviewBoxesState.zhur(): (DateTime time) =>
+          state.copyWith(duherTime: time),
+      const PreviewBoxesState.asr(): (DateTime time) =>
+          state.copyWith(asrTime: time),
+      const PreviewBoxesState.magrieb(): (DateTime time) =>
+          state.copyWith(megribTime: time),
+      const PreviewBoxesState.isha(): (DateTime time) =>
+          state.copyWith(ishaTime: time),
+      const PreviewBoxesState.midnight(): (DateTime time) =>
           state.copyWith(midleNighTime: time),
-      PreviewBoxes.last3th: (DateTime time) =>
+      const PreviewBoxesState.last3th(): (DateTime time) =>
           state.copyWith(last3thTime: time),
-      PreviewBoxes.deviceTime: (DateTime time) =>
+      const PreviewBoxesState.deviceTime(): (DateTime time) =>
           state.copyWith(deviceTime: time),
-      PreviewBoxes.applicationTime: (DateTime time) =>
+      const PreviewBoxesState.applicationTime(): (DateTime time) =>
           state.copyWith(applicationTime: time),
     };
 

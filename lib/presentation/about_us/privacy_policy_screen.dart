@@ -10,7 +10,6 @@ class PrivacyPolicyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "PrivacyPolicyScreen");
-
     final localization = IslamMobLocalizations.of(context);
 
     return Scaffold(

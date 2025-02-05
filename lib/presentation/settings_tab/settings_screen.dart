@@ -12,6 +12,7 @@ import 'package:islam_app/presentation/settings_tab/widgets/footer.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/profile_header.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
+import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -83,7 +84,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                       if (internetStatus == false) {
                         if (context.mounted) {
-                          showNoInternetConnection(context);
+                          NoInternetToast.show(context);
                         }
                         return;
                       }
@@ -130,16 +131,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ),
       ],
-    );
-  }
-
-  void showNoInternetConnection(BuildContext context) {
-    final scaffoldMessenger = ScaffoldMessenger.of(context);
-    scaffoldMessenger.showSnackBar(
-      SnackBar(
-        content: Text(IslamMobLocalizations.of(context)
-            .pleasecheckyourinternetconnection),
-      ),
     );
   }
 }

@@ -56,6 +56,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   /// Prepares the list of prints that are ready for downloading
   Future<List<String>> _prepareDownloadingList(
       List<QuranPrints> listOfPrints) async {
+    //TODO: move this to usecase
+
     final downloadingList = <String>[];
 
     for (final printItem in listOfPrints) {
@@ -76,6 +78,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   /// Gets the display name for a language code
   String getNameByLanguageCode(String languageCode) {
+    //TODO: move this to usecase
+
     return LanguageConstant.languages
         .firstWhere(
           (language) => language.languageCode == languageCode,
@@ -86,6 +90,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   /// Requests permission for storage access
   Future<bool> permissionRequest() async {
+    //TODO: move this to usecase
+
     final plugin = DeviceInfoPlugin();
     PermissionStatus? storageStatus;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
-import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
+import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_sealed.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
 
@@ -48,7 +48,7 @@ class QuickNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.allNotificationForToday,
+                      type: const AllNotificationForToday(),
                     ),
                   );
             },
@@ -70,7 +70,7 @@ class QuickNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.allNotificationForThreeDay,
+                      type: const AllNotificationForThreeDay(),
                     ),
                   );
             },
@@ -91,7 +91,7 @@ class QuickNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.allNotificationForWeekDay,
+                      type: const AllNotificationForWeekDay(),
                     ),
                   );
             },

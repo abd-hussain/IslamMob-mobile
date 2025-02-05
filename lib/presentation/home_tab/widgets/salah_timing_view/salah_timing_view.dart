@@ -124,15 +124,16 @@ class _SalahTimingViewState extends State<SalahTimingView> {
         }
 
         final prayTimes = state.prayTimeForWeek[index];
+        final localize = IslamMobLocalizations.of(context);
 
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Row(
             children: [
-              _buildMidnightInfo(context, prayTimes.middleOfTheNight),
+              _buildMidnightInfo(context, prayTimes.middleOfTheNight, localize),
               _buildSettingsButton(context),
               _buildLastThirdOfNightInfo(
-                  context, prayTimes.lastThirdOfTheNight),
+                  context, prayTimes.lastThirdOfTheNight, localize),
             ],
           ),
         );
@@ -140,19 +141,21 @@ class _SalahTimingViewState extends State<SalahTimingView> {
     );
   }
 
-  Widget _buildMidnightInfo(BuildContext context, DateTime time) {
+  Widget _buildMidnightInfo(
+      BuildContext context, DateTime time, IslamMobLocalizations localize) {
     return Expanded(
       child: _buildInfoBox(
-        title: IslamMobLocalizations.of(context).midnight,
+        title: localize.midnight,
         time: time,
       ),
     );
   }
 
-  Widget _buildLastThirdOfNightInfo(BuildContext context, DateTime time) {
+  Widget _buildLastThirdOfNightInfo(
+      BuildContext context, DateTime time, IslamMobLocalizations localize) {
     return Expanded(
       child: _buildInfoBox(
-        title: IslamMobLocalizations.of(context).last3ofnight,
+        title: localize.last3ofnight,
         time: time,
       ),
     );

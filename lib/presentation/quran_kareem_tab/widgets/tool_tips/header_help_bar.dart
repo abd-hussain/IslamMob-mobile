@@ -77,24 +77,26 @@ class QuranHeaderHelpBar extends StatelessWidget {
   }
 
   Widget _buildSorahAndJozo2Row(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return Align(
       child: Row(
         children: [
-          _buildSorahName(context),
+          _buildSorahName(context, localize),
           const Spacer(),
-          _buildJozo2Name(context),
+          _buildJozo2Name(context, localize),
         ],
       ),
     );
   }
 
-  Widget _buildSorahName(BuildContext context) {
+  Widget _buildSorahName(BuildContext context, IslamMobLocalizations localize) {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) => previous.sorahName != current.sorahName,
       builder: (context, state) {
         return CustomText(
-          title: "${IslamMobLocalizations.of(context).quranSorah} "
-              "${IslamMobLocalizations.of(context).getLocalizedString(state.sorahName)}",
+          title: "${localize.quranSorah} "
+              "${localize.getLocalizedString(state.sorahName)}",
           fontSize: 14,
           color: Colors.white70,
           fontWeight: FontWeight.bold,
@@ -103,13 +105,12 @@ class QuranHeaderHelpBar extends StatelessWidget {
     );
   }
 
-  Widget _buildJozo2Name(BuildContext context) {
+  Widget _buildJozo2Name(BuildContext context, IslamMobLocalizations localize) {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) => previous.jozo2Name != current.jozo2Name,
       builder: (context, state) {
         return CustomText(
-          title: IslamMobLocalizations.of(context)
-              .getLocalizedString(state.jozo2Name),
+          title: localize.getLocalizedString(state.jozo2Name),
           fontSize: 14,
           color: Colors.white70,
           fontWeight: FontWeight.bold,

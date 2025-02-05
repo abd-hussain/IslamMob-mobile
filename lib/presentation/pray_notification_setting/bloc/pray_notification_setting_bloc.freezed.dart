@@ -20,7 +20,7 @@ mixin _$PrayNotificationSettingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
     required TResult Function(
-            bool status, PrayNotificationType type, BuildContext context)
+            bool status, PrayNotificationTypeState type, BuildContext context)
         changePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$PrayNotificationSettingEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
     TResult? Function(
-            bool status, PrayNotificationType type, BuildContext context)?
+            bool status, PrayNotificationTypeState type, BuildContext context)?
         changePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$PrayNotificationSettingEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
     TResult Function(
-            bool status, PrayNotificationType type, BuildContext context)?
+            bool status, PrayNotificationTypeState type, BuildContext context)?
         changePrayNotificationSettings,
     required TResult orElse(),
   }) =>
@@ -140,7 +140,7 @@ class _$InitialPrayNotificationSettingsImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
     required TResult Function(
-            bool status, PrayNotificationType type, BuildContext context)
+            bool status, PrayNotificationTypeState type, BuildContext context)
         changePrayNotificationSettings,
   }) {
     return initialPrayNotificationSettings();
@@ -151,7 +151,7 @@ class _$InitialPrayNotificationSettingsImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
     TResult? Function(
-            bool status, PrayNotificationType type, BuildContext context)?
+            bool status, PrayNotificationTypeState type, BuildContext context)?
         changePrayNotificationSettings,
   }) {
     return initialPrayNotificationSettings?.call();
@@ -162,7 +162,7 @@ class _$InitialPrayNotificationSettingsImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
     TResult Function(
-            bool status, PrayNotificationType type, BuildContext context)?
+            bool status, PrayNotificationTypeState type, BuildContext context)?
         changePrayNotificationSettings,
     required TResult orElse(),
   }) {
@@ -223,7 +223,10 @@ abstract class _$$ChangePrayNotificationSettingsImplCopyWith<$Res> {
           $Res Function(_$ChangePrayNotificationSettingsImpl) then) =
       __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool status, PrayNotificationType type, BuildContext context});
+  $Res call(
+      {bool status, PrayNotificationTypeState type, BuildContext context});
+
+  $PrayNotificationTypeStateCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -253,12 +256,22 @@ class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as PrayNotificationType,
+              as PrayNotificationTypeState,
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
               as BuildContext,
     ));
+  }
+
+  /// Create a copy of PrayNotificationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PrayNotificationTypeStateCopyWith<$Res> get type {
+    return $PrayNotificationTypeStateCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
   }
 }
 
@@ -272,7 +285,7 @@ class _$ChangePrayNotificationSettingsImpl
   @override
   final bool status;
   @override
-  final PrayNotificationType type;
+  final PrayNotificationTypeState type;
   @override
   final BuildContext context;
 
@@ -309,7 +322,7 @@ class _$ChangePrayNotificationSettingsImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
     required TResult Function(
-            bool status, PrayNotificationType type, BuildContext context)
+            bool status, PrayNotificationTypeState type, BuildContext context)
         changePrayNotificationSettings,
   }) {
     return changePrayNotificationSettings(status, type, context);
@@ -320,7 +333,7 @@ class _$ChangePrayNotificationSettingsImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
     TResult? Function(
-            bool status, PrayNotificationType type, BuildContext context)?
+            bool status, PrayNotificationTypeState type, BuildContext context)?
         changePrayNotificationSettings,
   }) {
     return changePrayNotificationSettings?.call(status, type, context);
@@ -331,7 +344,7 @@ class _$ChangePrayNotificationSettingsImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
     TResult Function(
-            bool status, PrayNotificationType type, BuildContext context)?
+            bool status, PrayNotificationTypeState type, BuildContext context)?
         changePrayNotificationSettings,
     required TResult orElse(),
   }) {
@@ -383,12 +396,12 @@ abstract class _ChangePrayNotificationSettings
     implements PrayNotificationSettingEvent {
   const factory _ChangePrayNotificationSettings(
           {required final bool status,
-          required final PrayNotificationType type,
+          required final PrayNotificationTypeState type,
           required final BuildContext context}) =
       _$ChangePrayNotificationSettingsImpl;
 
   bool get status;
-  PrayNotificationType get type;
+  PrayNotificationTypeState get type;
   BuildContext get context;
 
   /// Create a copy of PrayNotificationSettingEvent

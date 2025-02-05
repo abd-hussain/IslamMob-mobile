@@ -20,23 +20,24 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "AboutUsScreen");
     final navigator = Navigator.of(context, rootNavigator: true);
+    final localize = IslamMobLocalizations.of(context);
 
     return BlocProvider(
       create: (context) =>
           AboutUsBloc()..add(AboutUsEvent.initializeRewardedAd()),
       child: Scaffold(
-        appBar: CustomAppBar(title: IslamMobLocalizations.of(context).aboutus),
+        appBar: CustomAppBar(title: localize.aboutus),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildHeader(context),
-                _buildAppDescriptions(context),
+                _buildHeader(context, localize),
+                _buildAppDescriptions(context, localize),
                 const SizedBox(height: 8),
-                _buildSecondaryDescription(context),
-                _buildProfileOptions(context, navigator),
-                _buildVersionInfo(context),
+                _buildSecondaryDescription(context, localize),
+                _buildProfileOptions(context, navigator, localize),
+                _buildVersionInfo(context, localize),
                 const SizedBox(height: 20),
               ],
             ),
@@ -47,7 +48,7 @@ class AboutUsScreen extends StatelessWidget {
   }
 
   /// Builds the header with logo and app information
-  Widget _buildHeader(BuildContext context) {
+  Widget _buildHeader(BuildContext context, IslamMobLocalizations localize) {
     return Row(
       children: [
         Image.asset(
@@ -60,13 +61,13 @@ class AboutUsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                title: IslamMobLocalizations.of(context).appName,
+                title: localize.appName,
                 fontSize: 20,
                 color: const Color(0xff292929),
                 fontWeight: FontWeight.bold,
               ),
               CustomText(
-                title: IslamMobLocalizations.of(context).appshortdesc,
+                title: localize.appshortdesc,
                 fontSize: 12,
                 color: const Color(0xff292929),
                 fontWeight: FontWeight.bold,
@@ -79,16 +80,17 @@ class AboutUsScreen extends StatelessWidget {
   }
 
   /// Builds the main app descriptions
-  Widget _buildAppDescriptions(BuildContext context) {
+  Widget _buildAppDescriptions(
+      BuildContext context, IslamMobLocalizations localize) {
     final descriptions = [
-      IslamMobLocalizations.of(context).appmaindesc,
-      IslamMobLocalizations.of(context).about1,
-      IslamMobLocalizations.of(context).about2,
-      IslamMobLocalizations.of(context).about3,
-      IslamMobLocalizations.of(context).about4,
-      IslamMobLocalizations.of(context).about5,
-      IslamMobLocalizations.of(context).about6,
-      IslamMobLocalizations.of(context).about7,
+      localize.appmaindesc,
+      localize.about1,
+      localize.about2,
+      localize.about3,
+      localize.about4,
+      localize.about5,
+      localize.about6,
+      localize.about7,
     ];
 
     return Padding(
@@ -112,11 +114,12 @@ class AboutUsScreen extends StatelessWidget {
   }
 
   /// Builds the secondary app description
-  Widget _buildSecondaryDescription(BuildContext context) {
+  Widget _buildSecondaryDescription(
+      BuildContext context, IslamMobLocalizations localize) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomText(
-        title: IslamMobLocalizations.of(context).appmaindesc2,
+        title: localize.appmaindesc2,
         fontSize: 14,
         color: const Color(0xff292929),
         fontWeight: FontWeight.bold,
@@ -126,7 +129,8 @@ class AboutUsScreen extends StatelessWidget {
   }
 
   /// Builds the profile options list
-  Widget _buildProfileOptions(BuildContext context, NavigatorState navigator) {
+  Widget _buildProfileOptions(BuildContext context, NavigatorState navigator,
+      IslamMobLocalizations localize) {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: BlocBuilder<AboutUsBloc, AboutUsState>(
@@ -139,7 +143,7 @@ class AboutUsScreen extends StatelessWidget {
             if (state.rewardedAdExsist)
               ProfileOptions(
                 icon: Ionicons.fitness,
-                name: IslamMobLocalizations.of(context).supportus,
+                name: localize.supportus,
                 onTap: () async {
                   await FirebaseAnalyticsRepository.logEvent(
                       name: "showRewardedAdFromAboutScreen");
@@ -150,13 +154,13 @@ class AboutUsScreen extends StatelessWidget {
               ),
             ProfileOptions(
               icon: Ionicons.receipt,
-              name: IslamMobLocalizations.of(context).privacypolicy,
+              name: localize.privacypolicy,
               onTap: () async =>
                   navigator.pushNamed(RoutesConstants.privacyPolicyScreen),
             ),
             ProfileOptions(
               icon: Ionicons.reader,
-              name: IslamMobLocalizations.of(context).termsandconditions,
+              name: localize.termsandconditions,
               onTap: () async =>
                   navigator.pushNamed(RoutesConstants.termsConditionScreen),
             ),
@@ -169,7 +173,8 @@ class AboutUsScreen extends StatelessWidget {
   }
 
   /// Builds the version info and rights reserved text
-  Widget _buildVersionInfo(BuildContext context) {
+  Widget _buildVersionInfo(
+      BuildContext context, IslamMobLocalizations localize) {
     return Column(
       children: [
         Center(
@@ -179,8 +184,7 @@ class AboutUsScreen extends StatelessWidget {
                 locator<ApplicationVersionUsecase>().getApplicationVersion(),
             builder: (context, snapshot) {
               return CustomText(
-                title:
-                    "${IslamMobLocalizations.of(context).version} ${snapshot.data}",
+                title: "${localize.version} ${snapshot.data}",
                 fontSize: 14,
                 color: const Color(0xff292929),
               );
@@ -190,7 +194,7 @@ class AboutUsScreen extends StatelessWidget {
         const SizedBox(height: 5),
         Center(
           child: CustomText(
-            title: IslamMobLocalizations.of(context).rightsreserved,
+            title: localize.rightsreserved,
             fontSize: 10,
             color: const Color(0xff707070),
           ),

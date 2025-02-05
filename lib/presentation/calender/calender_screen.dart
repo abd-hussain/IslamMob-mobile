@@ -92,33 +92,40 @@ class CalenderScreen extends StatelessWidget {
     switch (colIndex) {
       case 0:
         return CalenderCellView(
-            title: calender.dayName,
-            color: calender.isToday ? Colors.redAccent : Colors.white);
+          title: calender.dayName,
+          color: calender.isToday ? Colors.redAccent : Colors.white,
+        );
       case 1:
         return CalenderCellView(
-            title: calender.dateMilady,
-            title2: calender.dateHijri,
-            color: calender.isToday ? Colors.redAccent : Colors.grey[400]!);
+          title: calender.dateMilady,
+          title2: calender.dateHijri,
+          color: calender.isToday ? Colors.redAccent : Colors.grey[400]!,
+        );
       case 2:
         return CalenderCellView(
-            title: calender.fajirTime,
-            color: calender.isToday ? Colors.redAccent : Colors.white);
+          title: calender.fajirTime,
+          color: calender.isToday ? Colors.redAccent : Colors.white,
+        );
       case 3:
         return CalenderCellView(
-            title: calender.zhurTime,
-            color: calender.isToday ? Colors.redAccent : Colors.grey[400]!);
+          title: calender.zhurTime,
+          color: calender.isToday ? Colors.redAccent : Colors.grey[400]!,
+        );
       case 4:
         return CalenderCellView(
-            title: calender.asrTime,
-            color: calender.isToday ? Colors.redAccent : Colors.white);
+          title: calender.asrTime,
+          color: calender.isToday ? Colors.redAccent : Colors.white,
+        );
       case 5:
         return CalenderCellView(
-            title: calender.magribTime,
-            color: calender.isToday ? Colors.redAccent : Colors.grey[400]!);
+          title: calender.magribTime,
+          color: calender.isToday ? Colors.redAccent : Colors.grey[400]!,
+        );
       case 6:
         return CalenderCellView(
-            title: calender.ishaTime,
-            color: calender.isToday ? Colors.redAccent : Colors.white);
+          title: calender.ishaTime,
+          color: calender.isToday ? Colors.redAccent : Colors.white,
+        );
       default:
         return const SizedBox.shrink();
     }

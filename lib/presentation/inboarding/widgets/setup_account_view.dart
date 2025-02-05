@@ -15,14 +15,15 @@ class SetupAccountView extends StatelessWidget {
       create: (context) => SetupAccountBloc(),
       child: Builder(
         builder: (context) {
+          final localization = IslamMobLocalizations.of(context);
           return Padding(
             padding: const EdgeInsets.all(8),
             child: Column(
               children: [
                 _buildAnimation(context),
                 const SizedBox(height: 20),
-                _buildHeader(context),
-                _buildStateView(context),
+                _buildHeader(context, localization),
+                _buildStateView(context, localization),
               ],
             ),
           );
@@ -42,12 +43,12 @@ class SetupAccountView extends StatelessWidget {
   }
 
   /// Builds the header text
-  Widget _buildHeader(BuildContext context) {
+  Widget _buildHeader(
+      BuildContext context, IslamMobLocalizations localization) {
     return Column(
       children: [
         CustomText(
-          title:
-              IslamMobLocalizations.of(context).onboardingSetupAccountMessage1,
+          title: localization.onboardingSetupAccountMessage1,
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -55,8 +56,7 @@ class SetupAccountView extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         CustomText(
-          title:
-              IslamMobLocalizations.of(context).onboardingSetupAccountMessage2,
+          title: localization.onboardingSetupAccountMessage2,
           fontSize: 20,
           color: const Color(0xff008480),
           fontWeight: FontWeight.bold,
@@ -65,8 +65,7 @@ class SetupAccountView extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         CustomText(
-          title:
-              IslamMobLocalizations.of(context).onboardingSetupAccountMessage3,
+          title: localization.onboardingSetupAccountMessage3,
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -77,7 +76,8 @@ class SetupAccountView extends StatelessWidget {
     );
   }
 
-  Widget _buildStateView(BuildContext context) {
+  Widget _buildStateView(
+      BuildContext context, IslamMobLocalizations localization) {
     return FutureBuilder(
         future: context.read<SetupAccountBloc>().setupAccount(),
         builder: (context, snapshot) {
@@ -86,7 +86,7 @@ class SetupAccountView extends StatelessWidget {
               child: Center(
                 child: CustomButton(
                   isEnabled: true,
-                  title: IslamMobLocalizations.of(context).startyourjourney,
+                  title: localization.startyourjourney,
                   onTap: () async => doneSelection(),
                 ),
               ),

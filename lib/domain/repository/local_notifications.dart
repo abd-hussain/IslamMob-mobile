@@ -67,7 +67,8 @@ class LocalNotificationRepository {
     required BuildContext context,
     required int id,
   }) async {
-    final details = _notificationDetails(context, type);
+    final localize = IslamMobLocalizations.of(context);
+    final details = _notificationDetails(context, type, localize);
     String? iOSSoundFileName;
     String? androidSoundFileName;
 
@@ -114,7 +115,8 @@ class LocalNotificationRepository {
     required NotificationTypeState type,
     required int id,
   }) async {
-    final details = _notificationDetails(context, type);
+    final localize = IslamMobLocalizations.of(context);
+    final details = _notificationDetails(context, type, localize);
 
     // If it's not meant to be a countdown, bail out
     if (details.isItForCountdown == false) {
@@ -152,7 +154,7 @@ class LocalNotificationRepository {
         actions: [
           AndroidNotificationAction(
             '1',
-            IslamMobLocalizations.of(context).close,
+            localize.close,
             titleColor: Colors.red,
           ),
         ],
@@ -171,10 +173,8 @@ class LocalNotificationRepository {
     return _notificationsPlugin.cancelAll();
   }
 
-  static LocalNotification _notificationDetails(
-      BuildContext context, NotificationTypeState type) {
-    final localize = IslamMobLocalizations.of(context);
-
+  static LocalNotification _notificationDetails(BuildContext context,
+      NotificationTypeState type, IslamMobLocalizations localize) {
     switch (type) {
       case NotificationTypeStateFajir():
         return LocalNotification(

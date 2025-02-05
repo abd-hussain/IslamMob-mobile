@@ -59,13 +59,15 @@ class QuranCopyView extends StatelessWidget {
 
   /// Builds the header text widget
   Widget _buildHeader(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: Row(
         children: [
           Expanded(
             child: CustomText(
-              title: IslamMobLocalizations.of(context).qurancopytitle,
+              title: localization.qurancopytitle,
               fontSize: 16,
               color: const Color(0xff444444),
               maxLines: 6,
@@ -78,7 +80,7 @@ class QuranCopyView extends StatelessWidget {
               side: const BorderSide(color: Color(0xff008480)),
             ),
             child: CustomText(
-              title: IslamMobLocalizations.of(context).skip,
+              title: localization.skip,
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: const Color(0xff008480),

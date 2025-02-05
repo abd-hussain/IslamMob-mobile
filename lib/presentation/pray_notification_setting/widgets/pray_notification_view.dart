@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
-import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
+import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_sealed.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
 
@@ -46,7 +46,7 @@ class PrayNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.fajir,
+                      type: const Fajir(),
                     ),
                   );
             },
@@ -65,7 +65,7 @@ class PrayNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.duhir,
+                      type: const Duhir(),
                     ),
                   );
             },
@@ -84,7 +84,7 @@ class PrayNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.asr,
+                      type: const Asr(),
                     ),
                   );
             },
@@ -103,7 +103,7 @@ class PrayNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.magrieb,
+                      type: const Magrieb(),
                     ),
                   );
             },
@@ -122,7 +122,7 @@ class PrayNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.isha,
+                      type: const Isha(),
                     ),
                   );
             },

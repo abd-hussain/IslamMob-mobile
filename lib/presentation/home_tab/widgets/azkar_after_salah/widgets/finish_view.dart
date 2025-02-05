@@ -10,23 +10,25 @@ class AzkarFinishView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return Column(
       children: [
         CustomText(
-          title: IslamMobLocalizations.of(context).youfinishazkarTitle,
+          title: localize.youfinishazkarTitle,
           fontSize: 14,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
         ),
         CustomText(
-          title: IslamMobLocalizations.of(context).mayAllaAcept,
+          title: localize.mayAllaAcept,
           fontSize: 20,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
         ),
         CustomButton(
           isEnabled: true,
-          title: IslamMobLocalizations.of(context).activateAgain,
+          title: localize.activateAgain,
           onTap: () => context
               .read<AzkarAfterSalahBloc>()
               .add(const AzkarAfterSalahEvent.resetCounters()),

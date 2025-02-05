@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$CorrectionMinTimeData {
   String get title => throw _privateConstructorUsedError;
-  AzanTypeForEditMin get type => throw _privateConstructorUsedError;
+  AzanTypeForEditMinState get type => throw _privateConstructorUsedError;
   int Function(PrayCalculationSettingState) get getter =>
       throw _privateConstructorUsedError;
 
@@ -36,7 +36,7 @@ abstract class $CorrectionMinTimeDataCopyWith<$Res> {
   @useResult
   $Res call(
       {String title,
-      AzanTypeForEditMin type,
+      AzanTypeForEditMinState type,
       int Function(PrayCalculationSettingState) getter});
 }
 
@@ -68,7 +68,7 @@ class _$CorrectionMinTimeDataCopyWithImpl<$Res,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AzanTypeForEditMin,
+              as AzanTypeForEditMinState,
       getter: null == getter
           ? _value.getter
           : getter // ignore: cast_nullable_to_non_nullable
@@ -88,7 +88,7 @@ abstract class _$$CorrectionMinTimeDataImplCopyWith<$Res>
   @useResult
   $Res call(
       {String title,
-      AzanTypeForEditMin type,
+      AzanTypeForEditMinState type,
       int Function(PrayCalculationSettingState) getter});
 }
 
@@ -118,7 +118,7 @@ class __$$CorrectionMinTimeDataImplCopyWithImpl<$Res>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AzanTypeForEditMin,
+              as AzanTypeForEditMinState,
       getter: null == getter
           ? _value.getter
           : getter // ignore: cast_nullable_to_non_nullable
@@ -136,7 +136,7 @@ class _$CorrectionMinTimeDataImpl implements _CorrectionMinTimeData {
   @override
   final String title;
   @override
-  final AzanTypeForEditMin type;
+  final AzanTypeForEditMinState type;
   @override
   final int Function(PrayCalculationSettingState) getter;
 
@@ -171,14 +171,14 @@ class _$CorrectionMinTimeDataImpl implements _CorrectionMinTimeData {
 abstract class _CorrectionMinTimeData implements CorrectionMinTimeData {
   factory _CorrectionMinTimeData(
           {required final String title,
-          required final AzanTypeForEditMin type,
+          required final AzanTypeForEditMinState type,
           required final int Function(PrayCalculationSettingState) getter}) =
       _$CorrectionMinTimeDataImpl;
 
   @override
   String get title;
   @override
-  AzanTypeForEditMin get type;
+  AzanTypeForEditMinState get type;
   @override
   int Function(PrayCalculationSettingState) get getter;
 

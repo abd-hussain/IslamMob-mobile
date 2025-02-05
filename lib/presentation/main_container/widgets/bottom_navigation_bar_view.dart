@@ -12,6 +12,8 @@ class BottomNavigationBarView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MainContainerBloc, MainContainerState>(
       builder: (context, state) {
+        final localization = IslamMobLocalizations.of(context);
+
         return ConvexAppBar(
           initialActiveIndex: state.selectedIndex,
           backgroundColor: Colors.white,
@@ -23,15 +25,15 @@ class BottomNavigationBarView extends StatelessWidget {
           items: [
             TabItem(
               icon: Icons.home,
-              title: IslamMobLocalizations.of(context).home,
+              title: localization.home,
             ),
             TabItem(
               icon: Icons.menu_book_rounded,
-              title: IslamMobLocalizations.of(context).qurankareem,
+              title: localization.qurankareem,
             ),
             TabItem(
               icon: Icons.settings,
-              title: IslamMobLocalizations.of(context).settings,
+              title: localization.settings,
             ),
           ],
           onTap: (int index) {
