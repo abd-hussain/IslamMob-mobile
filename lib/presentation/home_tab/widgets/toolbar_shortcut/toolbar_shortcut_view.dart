@@ -23,7 +23,7 @@ class ToolbarShortcutView extends StatelessWidget {
           children: [
             Expanded(
               child: ToolbarCell(
-                title: "Holy Quran",
+                title: localize.qurankareem,
                 imagePath: "assets/images/toolbar/quran.png",
                 onTap: () {
                   final bloc = context.read<MainContainerBloc>();
@@ -69,7 +69,7 @@ class ToolbarShortcutView extends StatelessWidget {
             ),
             Expanded(
               child: ToolbarCell(
-                title: "Support Us",
+                title: localize.quranSettingSupportUs,
                 imagePath: "assets/images/toolbar/donate.png",
                 onTap: () async {
                   await FirebaseAnalyticsRepository.logEvent(

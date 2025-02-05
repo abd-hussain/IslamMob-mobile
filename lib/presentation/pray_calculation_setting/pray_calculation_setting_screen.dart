@@ -80,6 +80,8 @@ class PrayCalculationSettingScreen extends StatelessWidget {
   }
 
   Widget _buttonsSection(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) =>
           previous.buttonsStatus != current.buttonsStatus,
@@ -89,7 +91,7 @@ class PrayCalculationSettingScreen extends StatelessWidget {
             CustomButton(
               isEnabled: state.buttonsStatus,
               padding: const EdgeInsets.only(left: 16, right: 16),
-              title: IslamMobLocalizations.of(context).save,
+              title: localization.save,
               onTap: () {
                 context.read<PrayCalculationSettingBloc>().add(
                       PrayCalculationSettingEvent.saveChanges(),
@@ -102,7 +104,7 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 16, right: 16),
                 isEnabled: true,
                 color: Colors.redAccent,
-                title: IslamMobLocalizations.of(context).factoryReset,
+                title: localization.factoryReset,
                 onTap: () async {
                   final navigator = Navigator.of(context, rootNavigator: true);
                   await DataBaseManagerBase.saveMultipleInDatabase(data: {

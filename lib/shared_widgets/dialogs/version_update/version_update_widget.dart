@@ -18,6 +18,7 @@ class VersionDialogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -45,8 +46,7 @@ class VersionDialogWidget extends StatelessWidget {
                       CustomText(
                         maxLines: 3,
                         textAlign: TextAlign.center,
-                        title: IslamMobLocalizations.of(context)
-                            .versionDialogUpdateAvailable,
+                        title: localize.versionDialogUpdateAvailable,
                         color: const Color(0xff191C1F),
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -56,7 +56,7 @@ class VersionDialogWidget extends StatelessWidget {
                         maxLines: 3,
                         textAlign: TextAlign.center,
                         title:
-                            "${IslamMobLocalizations.of(context).versionDialogNewVersion} $version ${IslamMobLocalizations.of(context).versionDialogUpdateSecondeSubTitle}",
+                            "${localize.versionDialogNewVersion} $version ${localize.versionDialogUpdateSecondeSubTitle}",
                         fontSize: 14,
                         color: const Color(0xff191C1F),
                       ),
@@ -82,8 +82,7 @@ class VersionDialogWidget extends StatelessWidget {
                         child: Container(
                           alignment: Alignment.center,
                           child: CustomText(
-                            title: IslamMobLocalizations.of(context)
-                                .versionDialogUpdateNow,
+                            title: localize.versionDialogUpdateNow,
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
@@ -104,8 +103,7 @@ class VersionDialogWidget extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.center,
                         child: CustomText(
-                          title: IslamMobLocalizations.of(context)
-                              .versionDialogSkipForNow,
+                          title: localize.versionDialogSkipForNow,
                           color: const Color(0xff0059FF),
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

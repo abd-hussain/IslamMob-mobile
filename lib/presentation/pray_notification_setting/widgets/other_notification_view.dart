@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
-import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
+import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_sealed.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
 
@@ -48,7 +48,7 @@ class OtherNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.sunriseTime,
+                      type: const SunriseTime(),
                     ),
                   );
             },
@@ -69,7 +69,7 @@ class OtherNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.jom3aAlkahf,
+                      type: const Jom3aAlkahf(),
                     ),
                   );
             },
@@ -90,7 +90,7 @@ class OtherNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.jom3aDo3aa,
+                      type: const Jom3aDo3aa(),
                     ),
                   );
             },
@@ -111,7 +111,7 @@ class OtherNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.qeyamAlLayel,
+                      type: const QeyamAlLayel(),
                     ),
                   );
             },
@@ -132,7 +132,7 @@ class OtherNotificationView extends StatelessWidget {
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
                       context: context,
-                      type: PrayNotificationType.before15Min,
+                      type: const Before15Min(),
                     ),
                   );
             },

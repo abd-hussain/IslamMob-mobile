@@ -43,11 +43,13 @@ class QuranPagesIndexScreen extends StatelessWidget {
 
   /// Builds the AppBar with a title and TabBar.
   AppBar _buildAppBar(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return AppBar(
       backgroundColor: const Color(0xff292929),
       iconTheme: const IconThemeData(color: Colors.white),
       title: CustomText(
-        title: IslamMobLocalizations.of(context).quranSettingIndex,
+        title: localize.quranSettingIndex,
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
@@ -75,21 +77,21 @@ class QuranPagesIndexScreen extends StatelessWidget {
               ),
               tabs: [
                 Tab(
-                  text: IslamMobLocalizations.of(context).quranSowarIndex,
+                  text: localize.quranSowarIndex,
                   icon: const Icon(
                     Icons.copy_sharp,
                     size: 20,
                   ),
                 ),
                 Tab(
-                  text: IslamMobLocalizations.of(context).quranPartsIndex,
+                  text: localize.quranPartsIndex,
                   icon: const Icon(
                     Icons.pie_chart_rounded,
                     size: 20,
                   ),
                 ),
                 Tab(
-                  text: IslamMobLocalizations.of(context).quranpages,
+                  text: localize.quranpages,
                   icon: const Icon(
                     Icons.pageview,
                     size: 20,

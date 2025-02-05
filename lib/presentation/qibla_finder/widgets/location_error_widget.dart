@@ -10,6 +10,7 @@ class LocationErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const errorColor = Color(0xffb00020);
+    final localize = IslamMobLocalizations.of(context);
 
     return Center(
       child: Column(
@@ -22,23 +23,24 @@ class LocationErrorWidget extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           CustomText(
-            title: IslamMobLocalizations.of(context).allowLocations,
+            title: localize.allowLocations,
             fontSize: 16,
             color: const Color(0xffb00020),
             fontWeight: FontWeight.bold,
           ),
           const SizedBox(height: 8),
-          _buildDescription(context),
+          _buildDescription(context, localize),
           const SizedBox(height: 16),
-          _buildSettingsButton(context),
+          _buildSettingsButton(context, localize),
         ],
       ),
     );
   }
 
-  Widget _buildDescription(BuildContext context) {
+  Widget _buildDescription(
+      BuildContext context, IslamMobLocalizations localize) {
     return CustomText(
-      title: IslamMobLocalizations.of(context).allowLocationDetails,
+      title: localize.allowLocationDetails,
       fontSize: 14,
       color: const Color(0xffb00020),
       maxLines: 10,
@@ -47,11 +49,12 @@ class LocationErrorWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildSettingsButton(BuildContext context) {
+  Widget _buildSettingsButton(
+      BuildContext context, IslamMobLocalizations localize) {
     return CustomButton(
       isEnabled: true,
       padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-      title: IslamMobLocalizations.of(context).nolocationPermissionButton,
+      title: localize.nolocationPermissionButton,
       onTap: () async {
         await OpenMobileSettingUseCase.openAppSettings();
       },

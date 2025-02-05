@@ -8,6 +8,7 @@ import 'package:islam_app/presentation/report_suggestions/widgets/attachments.da
 import 'package:islam_app/presentation/report_suggestions/widgets/footer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
+import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 
 class ReportOrSuggestionScreen extends StatelessWidget {
@@ -15,13 +16,15 @@ class ReportOrSuggestionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "ReportOrSuggestionScreen");
+    final localize = IslamMobLocalizations.of(context);
+
     return BlocProvider(
       create: (context) => ReportAndSuggestionBloc(),
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Scaffold(
           appBar: CustomAppBar(
-            title: IslamMobLocalizations.of(context).reportandsuggestiontitle,
+            title: localize.reportandsuggestiontitle,
           ),
           body: BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
             buildWhen: (previous, current) =>
@@ -37,7 +40,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
                 return _buildLoadingIndicator();
               }
 
-              return _buildContent(context, status);
+              return _buildContent(context, status, localize);
             },
           ),
         ),
@@ -61,12 +64,16 @@ class ReportOrSuggestionScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildContent(BuildContext context, ReportAndSuggestionState state) {
+  Widget _buildContent(
+    BuildContext context,
+    ReportAndSuggestionState state,
+    IslamMobLocalizations localize,
+  ) {
     return SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildFeedbackInput(context),
+          _buildFeedbackInput(context, localize),
           const ReportSuggestionAttachment(),
           _buildSubmitButton(context, state),
           const ReportSuggestionFooterView(),
@@ -76,7 +83,8 @@ class ReportOrSuggestionScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildFeedbackInput(BuildContext context) {
+  Widget _buildFeedbackInput(
+      BuildContext context, IslamMobLocalizations localize) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(8),
@@ -88,7 +96,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
               controller:
                   context.read<ReportAndSuggestionBloc>().textController,
               decoration: InputDecoration(
-                hintText: IslamMobLocalizations.of(context).feedbackmessage,
+                hintText: localize.feedbackmessage,
                 hintMaxLines: 2,
                 hintStyle: const TextStyle(fontSize: 15),
                 enabledBorder: InputBorder.none,
@@ -104,7 +112,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
   }
 
   Widget _buildSubmitButton(
-      BuildContext context, ReportAndSuggestionState state) {
+    BuildContext context,
+    ReportAndSuggestionState state,
+  ) {
     return BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
       buildWhen: (previous, current) =>
           previous.enableSubmitBtn != current.enableSubmitBtn ||
@@ -121,7 +131,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
   }
 
   Future<void> _handleSubmit(
-      BuildContext context, ReportAndSuggestionState state) async {
+    BuildContext context,
+    ReportAndSuggestionState state,
+  ) async {
     try {
       await FirebaseAnalyticsRepository.logEvent(
           name: "ReportOrSuggestionSubmitsion");
@@ -141,14 +153,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
       navigator.pop();
     } on ConnectionException {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              IslamMobLocalizations.of(context)
-                  .pleasecheckyourinternetconnection,
-            ),
-          ),
-        );
+        NoInternetToast.show(context);
       }
     }
   }

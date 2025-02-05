@@ -26,6 +26,8 @@ class QuranBottomHelpBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return Container(
       color: Colors.black.withOpacity(0.6),
       height: 95,
@@ -38,23 +40,24 @@ class QuranBottomHelpBar extends StatelessWidget {
           childAspectRatio: 3,
         ),
         children: [
-          _buildBrightnessTile(context),
-          _buildBookmarkTile(context),
-          _buildIndexTile(context),
-          _buildMushafTile(context),
+          _buildBrightnessTile(context, localize),
+          _buildBookmarkTile(context, localize),
+          _buildIndexTile(context, localize),
+          _buildMushafTile(context, localize),
           _buildSpacerTile(),
-          _buildSupportUsTile(context),
+          _buildSupportUsTile(context, localize),
         ],
       ),
     );
   }
 
-  Widget _buildBrightnessTile(BuildContext context) {
+  Widget _buildBrightnessTile(
+      BuildContext context, IslamMobLocalizations localize) {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) => previous.brigtness != current.brigtness,
       builder: (context, state) {
         return BottomTile(
-          title: IslamMobLocalizations.of(context).quranSettingLighting,
+          title: localize.quranSettingLighting,
           icon: Icons.sunny,
           onTap: () {
             FirebaseAnalyticsRepository.logEvent(name: "QuranBrightnessShown");
@@ -73,7 +76,8 @@ class QuranBottomHelpBar extends StatelessWidget {
     );
   }
 
-  Widget _buildBookmarkTile(BuildContext context) {
+  Widget _buildBookmarkTile(
+      BuildContext context, IslamMobLocalizations localize) {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) =>
           previous.pageCount != current.pageCount ||
@@ -82,8 +86,8 @@ class QuranBottomHelpBar extends StatelessWidget {
         final isBookmarked = state.bookmarkedPages.contains(state.pageCount);
         return BottomTile(
           title: isBookmarked
-              ? IslamMobLocalizations.of(context).quranSettingRemoveBookMark
-              : IslamMobLocalizations.of(context).quranSettingAddBookMark,
+              ? localize.quranSettingRemoveBookMark
+              : localize.quranSettingAddBookMark,
           icon: isBookmarked ? Icons.bookmark_remove : Icons.bookmark_add,
           colorIcon: isBookmarked ? Colors.redAccent : Colors.white70,
           onTap: () =>
@@ -106,15 +110,16 @@ class QuranBottomHelpBar extends StatelessWidget {
         .add(QuranKareemEvent.updateBookMarkedPages(updatedList));
   }
 
-  Widget _buildIndexTile(BuildContext context) {
+  Widget _buildIndexTile(BuildContext context, IslamMobLocalizations localize) {
     return BottomTile(
-      title: IslamMobLocalizations.of(context).quranSettingIndex,
+      title: localize.quranSettingIndex,
       icon: Ionicons.book,
-      onTap: () => _navigateToIndexScreen(context),
+      onTap: () => _navigateToIndexScreen(context, localize),
     );
   }
 
-  Future<void> _navigateToIndexScreen(BuildContext context) async {
+  Future<void> _navigateToIndexScreen(
+      BuildContext context, IslamMobLocalizations localize) async {
     final navigator = Navigator.of(context, rootNavigator: true);
     final bloc = context.read<QuranKareemBloc>();
     final currentPage = bloc.currentPageNumber;
@@ -127,19 +132,18 @@ class QuranBottomHelpBar extends StatelessWidget {
     final arguments = {
       ArgumentConstant.currentPageNumber: currentPage,
       ArgumentConstant.currentSowrahName:
-          IslamMobLocalizations.of(context).getLocalizedString(sorahName),
-      ArgumentConstant.currentPartName:
-          IslamMobLocalizations.of(context).getLocalizedString(jozo2Name),
+          localize.getLocalizedString(sorahName),
+      ArgumentConstant.currentPartName: localize.getLocalizedString(jozo2Name),
     };
 
     await navigator
         .pushNamed(RoutesConstants.quranPagesIndexScreen, arguments: arguments)
         // ignore: use_build_context_synchronously
-        .then((value) => _handleNavigationResult(context, value));
+        .then((value) => _handleNavigationResult(context, value, localize));
   }
 
-  Future<void> _handleNavigationResult(
-      BuildContext context, dynamic value) async {
+  Future<void> _handleNavigationResult(BuildContext context, dynamic value,
+      IslamMobLocalizations localize) async {
     if (value is! Map<String, dynamic> || !context.mounted) return;
 
     final bloc = context.read<QuranKareemBloc>();
@@ -161,7 +165,7 @@ class QuranBottomHelpBar extends StatelessWidget {
     if (value[ArgumentConstant.currentSowrahName] != null) {
       final sorahPageNumber =
           QuranReferancesUsecase.getPageNumberFromSurahReferenceName(
-        IslamMobLocalizations.of(context).getKeyFromLocalizedString(
+        localize.getKeyFromLocalizedString(
             value[ArgumentConstant.currentSowrahName]),
       );
       if (sorahPageNumber != -1) {
@@ -171,9 +175,10 @@ class QuranBottomHelpBar extends StatelessWidget {
     }
   }
 
-  Widget _buildMushafTile(BuildContext context) {
+  Widget _buildMushafTile(
+      BuildContext context, IslamMobLocalizations localize) {
     return BottomTile(
-      title: IslamMobLocalizations.of(context).quranSettingMushaf,
+      title: localize.quranSettingMushaf,
       icon: Icons.library_books,
       onTap: () => _navigateToMushafScreen(context),
     );
@@ -210,7 +215,8 @@ class QuranBottomHelpBar extends StatelessWidget {
     }
   }
 
-  Widget _buildSupportUsTile(BuildContext context) {
+  Widget _buildSupportUsTile(
+      BuildContext context, IslamMobLocalizations localize) {
     FirebaseAnalyticsRepository.logEvent(name: "QuranSupportUsShown");
 
     final bloc = context.read<QuranKareemBloc>();
@@ -219,7 +225,7 @@ class QuranBottomHelpBar extends StatelessWidget {
           previous.rewardedAdExists != current.rewardedAdExists,
       builder: (context, state) {
         return BottomTile(
-          title: IslamMobLocalizations.of(context).quranSettingSupportUs,
+          title: localize.quranSettingSupportUs,
           icon: Icons.ads_click,
           isIconBlinking: state.rewardedAdExists,
           onTap: () async {

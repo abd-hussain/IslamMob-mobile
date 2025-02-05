@@ -95,11 +95,13 @@ class _BrightnessPopupState extends State<BrightnessPopup>
   }
 
   List<Widget> _buildActions(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return [
       TextButton(
         onPressed: () => Navigator.of(context).pop(),
         child: CustomText(
-          title: IslamMobLocalizations.of(context).close,
+          title: localize.close,
           fontSize: 20,
           color: Colors.white70,
           fontWeight: FontWeight.bold,
@@ -111,7 +113,7 @@ class _BrightnessPopupState extends State<BrightnessPopup>
           widget.returnBrightness(0);
         },
         child: CustomText(
-          title: IslamMobLocalizations.of(context).resetbrightness,
+          title: localize.resetbrightness,
           fontSize: 20,
           color: Colors.white70,
           fontWeight: FontWeight.bold,

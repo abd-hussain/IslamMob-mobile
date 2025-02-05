@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
+import 'package:islam_app/domain/usecase/pray_manager/pray_week_usecase.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
 part 'salah_timing_bloc.freezed.dart';
@@ -23,30 +24,13 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
   /// Initializes prayer timings for the week and updates the current Salah type.
   void _initializePrayerTimings() {
     final List<PrayTimingDateTimeModel> weeklyPrayerTimings =
-        _generateWeeklyPrayerTimings();
+        PrayWeekUsecase.generateWeeklyPrayerTimings(prayUsecase);
 
     // Identify today's next prayer type.
     _updateTodaySalahType();
 
     // Update the prayer timings for the week.
     add(SalahTimingEvent.updateSalahTimingForTheWeek(weeklyPrayerTimings));
-  }
-
-  /// Generates prayer timings for the current week (-3 to +4 days).
-  List<PrayTimingDateTimeModel> _generateWeeklyPrayerTimings() {
-    final List<PrayTimingDateTimeModel> prayerTimings = [];
-
-    for (int offset = -3; offset <= 4; offset++) {
-      final DateTime date = DateTime.now().add(Duration(days: offset));
-      prayUsecase = PrayUsecase(
-          specificDate: DateComponents(date.year, date.month, date.day));
-      final PrayTimingDateTimeModel timings =
-          prayUsecase.getAllPrayTimeAsDateTimeForToday();
-
-      prayerTimings.add(timings);
-    }
-
-    return prayerTimings;
   }
 
   /// Updates the current Salah type for today.

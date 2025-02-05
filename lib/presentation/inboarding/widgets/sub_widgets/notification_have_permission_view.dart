@@ -11,13 +11,14 @@ class NotificationHavePermissionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title:
-                IslamMobLocalizations.of(context).notificationPermissionSuccses,
+            title: localization.notificationPermissionSuccses,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -27,7 +28,7 @@ class NotificationHavePermissionView extends StatelessWidget {
         ),
         CustomButton(
           isEnabled: true,
-          title: IslamMobLocalizations.of(context).startPreparingYourAccount,
+          title: localization.startPreparingYourAccount,
           onTap: onConfirmationPress,
         ),
       ],

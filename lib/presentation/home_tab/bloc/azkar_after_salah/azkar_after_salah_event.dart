@@ -5,9 +5,6 @@ class AzkarAfterSalahEvent with _$AzkarAfterSalahEvent {
   factory AzkarAfterSalahEvent.initializeAzkar(
       {required AzkarSalahTimeState state}) = _InitializeAzkar;
 
-  // factory AzkarEvent.updateShowingAzkarStatus(List<AzkarModel> azkarList) =
-  //     _UpdateShowingAzkarStatus;
-
   /// Event to reset all counters to their default values
   const factory AzkarAfterSalahEvent.resetCounters() = _ResetCounters;
 

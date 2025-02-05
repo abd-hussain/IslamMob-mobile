@@ -9,12 +9,14 @@ class LocationNothavePermissionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: IslamMobLocalizations.of(context).whyyoushouldallowlocation,
+            title: localization.whyyoushouldallowlocation,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -23,8 +25,7 @@ class LocationNothavePermissionView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: IslamMobLocalizations.of(context)
-              .whyyoushouldallowlocationdetails,
+          title: localization.whyyoushouldallowlocationdetails,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,
@@ -33,7 +34,7 @@ class LocationNothavePermissionView extends StatelessWidget {
         CustomButton(
           isEnabled: true,
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-          title: IslamMobLocalizations.of(context).nolocationPermissionButton,
+          title: localization.nolocationPermissionButton,
           onTap: () async => OpenMobileSettingUseCase.openAppSettings(),
         ),
       ],

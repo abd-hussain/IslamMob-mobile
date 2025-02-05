@@ -1,8 +1,8 @@
 import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:islam_app/domain/usecase/salah_box_usecase.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
-import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
@@ -89,7 +89,7 @@ class DayBox extends StatelessWidget {
 
   /// Builds the day title and name display.
   Widget _buildDayDetails(BuildContext context, int dayOffset) {
-    final title = _getTitleOfTheDay(context, dayOffset);
+    final title = SalahBoxUseCase.getTitleOfTheDay(context, index);
     final dayName = timingUsecase.getDayName(
       context: context,
       date: timingUsecase.getDateWithDayOffset(dayOffset: dayOffset),
@@ -116,23 +116,6 @@ class DayBox extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  /// Retrieves the title of the day based on its offset.
-  String _getTitleOfTheDay(BuildContext context, int dayOffset) {
-    final localization = IslamMobLocalizations.of(context);
-
-    final titles = {
-      0: localization.threedaybefore,
-      1: localization.twodaybefore,
-      2: localization.yesterday,
-      3: localization.today,
-      4: localization.tomorrow,
-      5: localization.aftertwoday,
-      6: localization.afterthreeday,
-    };
-
-    return titles[index] ?? '';
   }
 
   /// Retrieves the current language code from the Hive box.

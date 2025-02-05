@@ -9,6 +9,8 @@ class NoInternetView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localize = IslamMobLocalizations.of(context);
+
     return Center(
       child: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
@@ -22,15 +24,14 @@ class NoInternetView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             CustomText(
-              title: IslamMobLocalizations.of(context).internetconnection,
+              title: localize.internetconnection,
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: const Color(0xff444444),
             ),
             const SizedBox(height: 8),
             CustomText(
-              title: IslamMobLocalizations.of(context)
-                  .intenetshouldbeenableforthispage,
+              title: localize.intenetshouldbeenableforthispage,
               fontSize: 14,
               maxLines: 2,
               textAlign: TextAlign.center,
@@ -39,7 +40,7 @@ class NoInternetView extends StatelessWidget {
             ElevatedButton(
               onPressed: retryCallback,
               child: CustomText(
-                title: IslamMobLocalizations.of(context).titleofretry,
+                title: localize.titleofretry,
                 fontSize: 14,
                 maxLines: 2,
                 textAlign: TextAlign.center,

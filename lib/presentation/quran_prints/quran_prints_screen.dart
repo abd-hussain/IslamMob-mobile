@@ -20,6 +20,7 @@ class QuranPrintsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "QuranPrintsScreen");
+    final localize = IslamMobLocalizations.of(context);
 
     return BlocProvider(
       create: (context) => QuranPrintsBloc()
@@ -27,14 +28,13 @@ class QuranPrintsScreen extends StatelessWidget {
           QuranPrintsEvent.initializeFetchingData(),
         ),
       child: Scaffold(
-        appBar:
-            CustomAppBar(title: IslamMobLocalizations.of(context).quranprints),
-        body: _buildBody(context),
+        appBar: CustomAppBar(title: localize.quranprints),
+        body: _buildBody(context, localize),
       ),
     );
   }
 
-  Widget _buildBody(BuildContext context) {
+  Widget _buildBody(BuildContext context, IslamMobLocalizations localize) {
     return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
       builder: (context, state) {
         if (state.internetConnectionStauts == false) {
@@ -46,13 +46,17 @@ class QuranPrintsScreen extends StatelessWidget {
         } else if (state.listOfPrints == null) {
           return const QuranListPrintsShimmer();
         } else {
-          return _buildPrintsList(context, state);
+          return _buildPrintsList(context, state, localize);
         }
       },
     );
   }
 
-  Widget _buildPrintsList(BuildContext context, QuranPrintsState state) {
+  Widget _buildPrintsList(
+    BuildContext context,
+    QuranPrintsState state,
+    IslamMobLocalizations localize,
+  ) {
     return BlocBuilder<QuranPrintsBloc, QuranPrintsState>(
       buildWhen: (previous, current) =>
           previous.printsDownloading != current.printsDownloading,
@@ -62,7 +66,7 @@ class QuranPrintsScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16),
               child: CustomText(
-                title: IslamMobLocalizations.of(context).qurancopytitle,
+                title: localize.qurancopytitle,
                 fontSize: 16,
                 color: const Color(0xff444444),
                 maxLines: 6,
@@ -74,7 +78,7 @@ class QuranPrintsScreen extends StatelessWidget {
                 itemCount: state.listOfPrints!.length,
                 itemBuilder: (context, index) {
                   final printItem = state.listOfPrints![index];
-                  return _buildPrintTile(context, printItem, state);
+                  return _buildPrintTile(context, printItem, state, localize);
                 },
               ),
             ),
@@ -84,8 +88,8 @@ class QuranPrintsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPrintTile(
-      BuildContext context, QuranPrints printItem, QuranPrintsState state) {
+  Widget _buildPrintTile(BuildContext context, QuranPrints printItem,
+      QuranPrintsState state, IslamMobLocalizations localize) {
     return PrintTileView(
       language: context
           .read<QuranPrintsBloc>()
@@ -96,13 +100,17 @@ class QuranPrintsScreen extends StatelessWidget {
       downloadButtonAvailable:
           !state.printsDownloading.contains(printItem.fieldName),
       useButtonAvailable: state.printsDownloading.contains(printItem.fieldName),
-      onDownloadPressed: () => _handleDownloadPressed(context, printItem),
+      onDownloadPressed: () =>
+          _handleDownloadPressed(context, printItem, localize),
       onUsePressed: () => _handleUsePressed(context, printItem),
     );
   }
 
   Future<void> _handleDownloadPressed(
-      BuildContext context, QuranPrints printItem) async {
+    BuildContext context,
+    QuranPrints printItem,
+    IslamMobLocalizations localize,
+  ) async {
     final permissionGranted =
         await context.read<QuranPrintsBloc>().permissionRequest();
     if (permissionGranted && context.mounted) {
@@ -118,7 +126,7 @@ class QuranPrintsScreen extends StatelessWidget {
     } else if (context.mounted) {
       CustomToast.showWarningToast(
         context: context,
-        message: IslamMobLocalizations.of(context).downloadnopermission,
+        message: localize.downloadnopermission,
       );
     }
   }

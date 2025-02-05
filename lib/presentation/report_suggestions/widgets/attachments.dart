@@ -93,11 +93,13 @@ class ReportSuggestionAttachment extends StatelessWidget {
     required ReportAndSuggestionEvent Function(File?) updateEvent,
   }) {
     final bloc = context.read<ReportAndSuggestionBloc>();
+    final localize = IslamMobLocalizations.of(context);
+
     AttachmentBottomSheetsUtil().addImageBottomSheet(
       context: context,
       image: attachment != null,
-      title1: IslamMobLocalizations.of(context).photosetting,
-      title2: IslamMobLocalizations.of(context).setphoto,
+      title1: localize.photosetting,
+      title2: localize.setphoto,
       deleteCallBack: () {
         bloc.add(updateEvent(null));
         Navigator.pop(context);

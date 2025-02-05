@@ -10,28 +10,30 @@ class PrayCalculationSubHeaderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Padding(
       padding: const EdgeInsets.only(left: 8, right: 8),
       child: Column(
         children: [
           _buildRow(context, [
             _TimeCard(
-              title: IslamMobLocalizations.of(context).midnight,
+              title: localization.midnight,
               timeSelector: (state) => state.midleNighTime,
             ),
             _TimeCard(
-              title: IslamMobLocalizations.of(context).last3ofnight,
+              title: localization.last3ofnight,
               timeSelector: (state) => state.last3thTime,
             ),
           ]),
           const SizedBox(height: 4),
           _buildRow(context, [
             _TimeCard(
-              title: IslamMobLocalizations.of(context).deviceTime,
+              title: localization.deviceTime,
               timeSelector: (state) => state.deviceTime,
             ),
             _TimeCard(
-              title: IslamMobLocalizations.of(context).applicationTime,
+              title: localization.applicationTime,
               timeSelector: (state) => state.applicationTime,
             ),
           ]),

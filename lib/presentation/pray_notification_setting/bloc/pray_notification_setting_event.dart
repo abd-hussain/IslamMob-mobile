@@ -7,7 +7,7 @@ class PrayNotificationSettingEvent with _$PrayNotificationSettingEvent {
 
   const factory PrayNotificationSettingEvent.changePrayNotificationSettings({
     required bool status,
-    required PrayNotificationType type,
+    required PrayNotificationTypeState type,
     required BuildContext context,
   }) = _ChangePrayNotificationSettings;
 }

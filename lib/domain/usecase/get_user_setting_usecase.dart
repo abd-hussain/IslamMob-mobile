@@ -3,7 +3,7 @@ import 'package:islam_app/domain/sealed/high_latitude_method.dart';
 import 'package:islam_app/domain/sealed/madhab.dart';
 import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
-import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_enum.dart';
+import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_sealed.dart';
 
 class GetUserSettingUseCase {
   /// Retrieves the HighLatitude Rule, from Hive
@@ -67,7 +67,7 @@ class GetUserSettingUseCase {
     }
   }
 
-  Map<AzanTypeForEditMin, int> savedMinutesEdited() {
+  Map<AzanTypeForEditMinState, int> savedMinutesEdited() {
     final Map<String, dynamic> getDefaultMinEditSettings = {
       DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin: "0",
       DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin: "0",
@@ -79,7 +79,7 @@ class GetUserSettingUseCase {
       DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin: "0",
     };
 
-    final Map<AzanTypeForEditMin, int> minutesEdited = {};
+    final Map<AzanTypeForEditMinState, int> minutesEdited = {};
 
     getDefaultMinEditSettings.forEach((key, defaultValue) {
       final value = DataBaseManagerBase.getFromDatabase(
@@ -93,24 +93,24 @@ class GetUserSettingUseCase {
     return minutesEdited;
   }
 
-  AzanTypeForEditMin? _mapKeyToAzanType(String key) {
+  AzanTypeForEditMinState? _mapKeyToAzanType(String key) {
     switch (key) {
       case DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin:
-        return AzanTypeForEditMin.fajir;
+        return const AzanTypeForEditMinState.fajir();
       case DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin:
-        return AzanTypeForEditMin.sunrise;
+        return const AzanTypeForEditMinState.sunrise();
       case DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin:
-        return AzanTypeForEditMin.zhur;
+        return const AzanTypeForEditMinState.zhur();
       case DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin:
-        return AzanTypeForEditMin.asr;
+        return const AzanTypeForEditMinState.asr();
       case DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin:
-        return AzanTypeForEditMin.maghrib;
+        return const AzanTypeForEditMinState.magrieb();
       case DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin:
-        return AzanTypeForEditMin.isha;
+        return const AzanTypeForEditMinState.isha();
       case DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin:
-        return AzanTypeForEditMin.midnight;
+        return const AzanTypeForEditMinState.midnight();
       case DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin:
-        return AzanTypeForEditMin.last3th;
+        return const AzanTypeForEditMinState.last3th();
       default:
         return null;
     }

@@ -68,28 +68,29 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
   @override
   Widget build(BuildContext context) {
     final String downloadingProgress = (progress * 100).toInt().toString();
+    final localize = IslamMobLocalizations.of(context);
 
     return AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildHeader(context),
+          _buildHeader(context, localize),
           _buildProgressIndicator(),
           _buildProgressText(downloadingProgress),
-          _buildInfoMessage(context),
-          _buildCancelButton(context),
+          _buildInfoMessage(context, localize),
+          _buildCancelButton(context, localize),
         ],
       ),
     );
   }
 
-  Widget _buildHeader(BuildContext context) {
+  Widget _buildHeader(BuildContext context, IslamMobLocalizations localize) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       alignment: Alignment.center,
       child: Text(
-        IslamMobLocalizations.of(context).downloading,
+        localize.downloading,
         textAlign: TextAlign.center,
         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -116,11 +117,12 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
     );
   }
 
-  Widget _buildInfoMessage(BuildContext context) {
+  Widget _buildInfoMessage(
+      BuildContext context, IslamMobLocalizations localize) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
-        IslamMobLocalizations.of(context).downloadpopupmessage,
+        localize.downloadpopupmessage,
         maxLines: 3,
         textAlign: TextAlign.center,
         style: const TextStyle(
@@ -131,10 +133,11 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
     );
   }
 
-  Widget _buildCancelButton(BuildContext context) {
+  Widget _buildCancelButton(
+      BuildContext context, IslamMobLocalizations localize) {
     return CustomButton(
       isEnabled: true,
-      title: IslamMobLocalizations.of(context).cancel,
+      title: localize.cancel,
       color: Colors.redAccent,
       onTap: () {
         FirebaseAnalyticsRepository.logEvent(

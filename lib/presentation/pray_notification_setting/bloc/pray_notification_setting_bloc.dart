@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_enum.dart';
+import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_sealed.dart';
 
 part 'pray_notification_setting_event.dart';
 part 'pray_notification_setting_state.dart';
@@ -83,62 +83,62 @@ class PrayNotificationSettingBloc
     );
 
     switch (event.type) {
-      case PrayNotificationType.allNotificationForToday:
+      case AllNotificationForToday():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableAllForToday,
             value: event.status);
         emit(state.copyWith(allNotificationForToday: event.status));
-      case PrayNotificationType.allNotificationForThreeDay:
+      case AllNotificationForThreeDay():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableAllForThreeDay,
             value: event.status);
         emit(state.copyWith(allNotificationForThreeDay: event.status));
-      case PrayNotificationType.allNotificationForWeekDay:
+      case AllNotificationForWeekDay():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableAllForWeek,
             value: event.status);
         emit(state.copyWith(allNotificationForWeekDay: event.status));
-      case PrayNotificationType.fajir:
+      case Fajir():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableFajr, value: event.status);
         emit(state.copyWith(fajir: event.status));
-      case PrayNotificationType.duhir:
+      case Duhir():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableDuher, value: event.status);
         emit(state.copyWith(duhir: event.status));
-      case PrayNotificationType.asr:
+      case Asr():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableAsr, value: event.status);
         emit(state.copyWith(asr: event.status));
-      case PrayNotificationType.magrieb:
+      case Magrieb():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableMagrieb, value: event.status);
         emit(state.copyWith(magrieb: event.status));
-      case PrayNotificationType.isha:
+      case Isha():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableIsha, value: event.status);
         emit(state.copyWith(isha: event.status));
-      case PrayNotificationType.sunriseTime:
+      case SunriseTime():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableSunriseTime,
             value: event.status);
         emit(state.copyWith(sunriseTime: event.status));
-      case PrayNotificationType.jom3aAlkahf:
+      case Jom3aAlkahf():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableJom3aAlkahf,
             value: event.status);
         emit(state.copyWith(jom3aAlkahf: event.status));
-      case PrayNotificationType.jom3aDo3aa:
+      case Jom3aDo3aa():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableJom3aDo3aa,
             value: event.status);
         emit(state.copyWith(jom3aDo3aa: event.status));
-      case PrayNotificationType.before15Min:
+      case Before15Min():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableNotificationBefore15Min,
             value: event.status);
         emit(state.copyWith(before15Min: event.status));
-      case PrayNotificationType.qeyamAlLayel:
+      case QeyamAlLayel():
         await DataBaseManagerBase.saveInDatabase(
             key: LocalNotificationConstant.disableQeyamAlLayel,
             value: event.status);

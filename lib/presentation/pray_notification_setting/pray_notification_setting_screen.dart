@@ -15,14 +15,14 @@ class PrayNotificationSettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "PrayNotificationSettingScreen");
+    final localization = IslamMobLocalizations.of(context);
 
     return BlocProvider(
       create: (context) => PrayNotificationSettingBloc()
         ..add(const PrayNotificationSettingEvent
             .initialPrayNotificationSettings()),
       child: Scaffold(
-        appBar: CustomAppBar(
-            title: IslamMobLocalizations.of(context).notificationSettings),
+        appBar: CustomAppBar(title: localization.notificationSettings),
         body: SafeArea(
           child: BlocBuilder<PrayNotificationSettingBloc,
                   PrayNotificationSettingState>(
@@ -49,8 +49,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8),
                           child: CustomText(
-                            title: IslamMobLocalizations.of(context)
-                                .notificationSettingQuick,
+                            title: localization.notificationSettingQuick,
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xff444444),
@@ -61,8 +60,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8),
                           child: CustomText(
-                            title: IslamMobLocalizations.of(context)
-                                .notificationSettingPray,
+                            title: localization.notificationSettingPray,
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xff444444),
@@ -73,8 +71,7 @@ class PrayNotificationSettingScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8),
                           child: CustomText(
-                            title: IslamMobLocalizations.of(context)
-                                .notificationSettingOther,
+                            title: localization.notificationSettingOther,
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xff444444),

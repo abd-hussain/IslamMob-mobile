@@ -8,19 +8,21 @@ import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 
 class NotificationIdleView extends StatelessWidget {
   const NotificationIdleView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(16),
           child: CustomText(
-            title: IslamMobLocalizations.of(context)
-                .allowSendingNotificationsdetails,
+            title: localization.allowSendingNotificationsdetails,
             fontSize: 18,
             color: const Color(0xff292929),
             fontWeight: FontWeight.bold,
@@ -29,7 +31,7 @@ class NotificationIdleView extends StatelessWidget {
           ),
         ),
         CustomText(
-          title: IslamMobLocalizations.of(context).mawaqeetalsalahdetails2,
+          title: localization.mawaqeetalsalahdetails2,
           fontSize: 14,
           color: const Color(0xff292929),
           textAlign: TextAlign.center,
@@ -37,11 +39,11 @@ class NotificationIdleView extends StatelessWidget {
         const Expanded(child: SizedBox()),
         CustomButton(
           isEnabled: true,
-          title: IslamMobLocalizations.of(context).allowNotifications,
+          title: localization.allowNotifications,
           onTap: () async {
             if (await NetworkUseCase.checkInternetConeection() == false) {
               if (context.mounted) {
-                showNoInternetConnection(context);
+                NoInternetToast.show(context);
               }
               return;
             }
@@ -88,14 +90,5 @@ class NotificationIdleView extends StatelessWidget {
   /// Initializes local notifications
   Future<void> _initializeLocalNotifications() async {
     await locator<LocalNotificationRepository>().initialize();
-  }
-
-  void showNoInternetConnection(BuildContext context) {
-    final scaffoldMessenger = ScaffoldMessenger.of(context);
-    scaffoldMessenger.showSnackBar(
-      SnackBar(
-          content: Text(IslamMobLocalizations.of(context)
-              .pleasecheckyourinternetconnection)),
-    );
   }
 }
