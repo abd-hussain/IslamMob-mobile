@@ -176,7 +176,7 @@ extension CalculationMethodExtensions on CalculationMethod {
             .withMethodAdjustments(const PrayerAdjustments(maghrib: 3));
       case CalculationMethod.jordan:
         return CalculationParameters(fajrAngle: 18, ishaAngle: 18, method: this)
-            .withMethodAdjustments(const PrayerAdjustments(maghrib: 5));
+            .withMethodAdjustments(const PrayerAdjustments(maghrib: 4));
       case CalculationMethod.moonSightingCommittee:
         return CalculationParameters(fajrAngle: 18, ishaAngle: 18, method: this)
             .withMethodAdjustments(

@@ -4,17 +4,12 @@ import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
-import 'package:islam_app/my_app/locator.dart';
 
 part 'inboarding_event.dart';
 part 'inboarding_state.dart';
 part 'inboarding_bloc.freezed.dart';
 
 class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
-  SetupUserSettingUseCase setupUserSettingUseCase =
-      locator<SetupUserSettingUseCase>();
-
   InboardingBloc() : super(const InboardingState()) {
     on<_InitialInBoardingStage>(_initialInBoardingStage);
     on<_ChangeInBoardingStage>(_changeInBoardingStage);

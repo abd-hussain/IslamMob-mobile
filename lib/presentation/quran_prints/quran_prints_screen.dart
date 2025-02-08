@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
+import 'package:islam_app/domain/usecase/storage_permission_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/quran_prints/bloc/quran_prints_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
@@ -93,7 +94,7 @@ class QuranPrintsScreen extends StatelessWidget {
     return PrintTileView(
       language: context
           .read<QuranPrintsBloc>()
-          .getNameByLanguageCode(printItem.language ?? ""),
+          .getLanguageNameByCode(printItem.language ?? ""),
       title: printItem.nameReferance,
       description: printItem.description,
       previewImage: printItem.previewImage,
@@ -111,9 +112,10 @@ class QuranPrintsScreen extends StatelessWidget {
     QuranPrints printItem,
     IslamMobLocalizations localize,
   ) async {
-    final permissionGranted =
-        await context.read<QuranPrintsBloc>().permissionRequest();
-    if (permissionGranted && context.mounted) {
+    final hasPermission =
+        await StoragePermissionUseCase.requestStoragePermission();
+
+    if (hasPermission && context.mounted) {
       await showDialog(
         context: context,
         barrierDismissible: false,

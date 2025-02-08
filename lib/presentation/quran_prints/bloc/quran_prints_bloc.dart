@@ -1,18 +1,14 @@
 import 'dart:async';
-import 'dart:io';
 
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:islam_app/domain/constants/language_constant.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:logger_manager/logger_manager.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 part 'quran_prints_bloc.freezed.dart';
 part 'quran_prints_event.dart';
@@ -56,8 +52,6 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   /// Prepares the list of prints that are ready for downloading
   Future<List<String>> _prepareDownloadingList(
       List<QuranPrints> listOfPrints) async {
-    //TODO: move this to usecase
-
     final downloadingList = <String>[];
 
     for (final printItem in listOfPrints) {
@@ -77,35 +71,9 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   }
 
   /// Gets the display name for a language code
-  String getNameByLanguageCode(String languageCode) {
-    //TODO: move this to usecase
 
-    return LanguageConstant.languages
-        .firstWhere(
-          (language) => language.languageCode == languageCode,
-          orElse: () => LanguageConstant.languages.first,
-        )
-        .name;
-  }
-
-  /// Requests permission for storage access
-  Future<bool> permissionRequest() async {
-    //TODO: move this to usecase
-
-    final plugin = DeviceInfoPlugin();
-    PermissionStatus? storageStatus;
-
-    if (Platform.isAndroid) {
-      final androidInfo = await plugin.androidInfo;
-
-      storageStatus = androidInfo.version.sdkInt < 33
-          ? await Permission.storage.request()
-          : PermissionStatus.granted;
-    } else {
-      storageStatus = await Permission.storage.request();
-    }
-
-    return storageStatus.isGranted;
+  String getLanguageNameByCode(String languageCode) {
+    return quranPrintsUsecase.getLanguageNameByCode(languageCode);
   }
 
   /// Event handlers
