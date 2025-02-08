@@ -2,6 +2,7 @@ import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
+import 'package:islam_app/domain/usecase/storage_permission_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/quran_copy/quran_copy_bloc.dart';
 import 'package:islam_app/presentation/quran_prints/widgets/download_progress_dialog.dart';
@@ -123,7 +124,7 @@ class QuranCopyView extends StatelessWidget {
   Future<void> _handleDownloadPressed(
       BuildContext context, QuranPrints printItem) async {
     final hasPermission =
-        await context.read<QuranCopyBloc>().requestStoragePermission();
+        await StoragePermissionUseCase.requestStoragePermission();
 
     if (hasPermission && context.mounted) {
       _showDownloadDialog(context, printItem);

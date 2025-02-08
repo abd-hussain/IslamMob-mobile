@@ -1,4 +1,5 @@
 import 'package:firebase_manager/firebase_manager.dart';
+import 'package:islam_app/domain/constants/language_constant.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:logger_manager/logger_manager.dart';
 
@@ -35,5 +36,15 @@ class QuranPrintsUsecase {
         sorahToPageNumbers: doc["sorahToPageNumbers"] ?? {},
       );
     }).toList();
+  }
+
+  /// Gets a language name by its code.
+  String getLanguageNameByCode(String languageCode) {
+    return LanguageConstant.languages
+        .firstWhere(
+          (lang) => lang.languageCode == languageCode,
+          orElse: () => LanguageConstant.languages.first,
+        )
+        .name;
   }
 }

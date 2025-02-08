@@ -1,12 +1,9 @@
 import 'dart:async';
-import 'dart:io';
 
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:islam_app/domain/constants/language_constant.dart';
 import 'package:islam_app/domain/model/quran_copy.dart';
 import 'package:islam_app/domain/model/quran_prints.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
@@ -14,7 +11,6 @@ import 'package:islam_app/domain/usecase/quran_prints_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:logger_manager/logger_manager.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 part 'quran_copy_bloc.freezed.dart';
 part 'quran_copy_event.dart';
@@ -41,7 +37,6 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Prepares a list of prints ready for downloading by verifying file existence.
   Future<List<String>> _prepareDownloadingList(List<QuranPrints> prints) async {
-    // TODO: move this to usecase
     final downloadingList = <String>[];
 
     for (final print in prints) {
@@ -55,35 +50,9 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
     return downloadingList;
   }
 
-  /// Requests storage permission based on platform and device SDK.
-  Future<bool> requestStoragePermission() async {
-    // TODO: move this to usecase
-
-    final plugin = DeviceInfoPlugin();
-    PermissionStatus? storageStatus;
-
-    if (Platform.isAndroid) {
-      final androidInfo = await plugin.androidInfo;
-      storageStatus = androidInfo.version.sdkInt < 33
-          ? await Permission.storage.request()
-          : PermissionStatus.granted;
-    } else {
-      storageStatus = await Permission.storage.request();
-    }
-
-    return storageStatus.isGranted;
-  }
-
   /// Gets a language name by its code.
   String getLanguageNameByCode(String languageCode) {
-    // TODO: move this to usecase
-
-    return LanguageConstant.languages
-        .firstWhere(
-          (lang) => lang.languageCode == languageCode,
-          orElse: () => LanguageConstant.languages[0],
-        )
-        .name;
+    return quranPrintsUsecase.getLanguageNameByCode(languageCode);
   }
 
   /// Handles updating the internet connection status in the state.
