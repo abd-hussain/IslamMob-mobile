@@ -86,7 +86,7 @@ dependencies {
     implementation("com.google.firebase:firebase-perf-ktx")
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'com.android.installreferrer:installreferrer:2.1'
-    implementation 'com.android.support:multidex:2.0.1' // or latest stable
+    implementation "androidx.appcompat:appcompat:1.6.1"
 }
 
 
