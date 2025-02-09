@@ -62,6 +62,9 @@ jobs:
           run: |
               flutter clean
               rm -rf pubspec.lock
+        
+        - name: 🔎 Remove Gradle cache
+          run: rm -rf $HOME/.gradle/caches
     
         - name: 🛠️ Build and Deploy
           run: |
