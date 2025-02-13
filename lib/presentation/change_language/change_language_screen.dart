@@ -39,7 +39,8 @@ class ChangeLanguageScreen extends StatelessWidget {
 
   Widget _buildConfirmButton(BuildContext context) {
     return BlocBuilder<ChangeLanguageBloc, ChangeLanguageState>(
-      buildWhen: (previous, current) => previous.selectedLanguage != current.selectedLanguage,
+      buildWhen: (previous, current) =>
+          previous.selectedLanguage != current.selectedLanguage,
       builder: (context, state) {
         if (state.selectedLanguage == null) {
           return const SizedBox.shrink();

@@ -57,21 +57,21 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We Need This Permission to hear your voice when you talk to the client</string>
 	<key>NSMotionUsageDescription</key>
-	<string>motion</string>
+	<string>IslamMob uses your device's motion data to accurately detect orientation and assist with Qibla direction features.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow access to gallery in order to register your profile pictures</string>
 	<key>NSRemindersUsageDescription</key>
-	<string>reminders</string>
+	<string>IslamMob uses Reminders so you can schedule prayer-time alerts and other important Islamic events, ensuring you never miss a prayer.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app needs access to location when open.</string>
+	<string>IslamMob uses your location to calculate accurate prayer times, find the Qibla direction, and display local mosque information.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We use your location to provide better service and content tailored to your area.</string>
+	<string>IslamMob uses your location to calculate accurate prayer times, find the Qibla direction, and display local mosque information.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app needs access to location when in the background.</string>
+	<string>IslamMob uses your location to calculate accurate prayer times, find the Qibla direction, and display local mosque information.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>speech</string>
+	<string>IslamMob uses speech recognition to let you create voice notes and perform hands-free actions for a more convenient user experience.</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>appTrackingTransparency</string>
+	<string>This identifier will be used to deliver personalized ads to you</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
