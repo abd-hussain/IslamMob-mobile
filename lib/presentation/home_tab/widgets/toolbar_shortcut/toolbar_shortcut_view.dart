@@ -47,6 +47,16 @@ class ToolbarShortcutView extends StatelessWidget {
             ),
             // Expanded(
             //   child: ToolbarCell(
+            //     title: localize.hesenAlMuslim,
+            //     imagePath: "assets/images/toolbar/azkar.png",
+            //     onTap: () async {
+            //       await FirebaseAnalyticsRepository.logEvent(name: "HesenAlMuslimScreenFromHomeToolBar");
+            //       await navigator.pushNamed(RoutesConstants.hisnAlMuslimScreen);
+            //     },
+            //   ),
+            // ),
+            // Expanded(
+            //   child: ToolbarCell(
             //     title: "Qibla",
             //     imagePath: "assets/images/toolbar/qibla.png",
             //     onTap: () async {

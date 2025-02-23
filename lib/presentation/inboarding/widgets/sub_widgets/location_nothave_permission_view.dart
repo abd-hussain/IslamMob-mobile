@@ -5,7 +5,11 @@ import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class LocationNothavePermissionView extends StatelessWidget {
-  const LocationNothavePermissionView({super.key});
+  final Function() openManualSelection;
+  const LocationNothavePermissionView({
+    super.key,
+    required this.openManualSelection,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +40,12 @@ class LocationNothavePermissionView extends StatelessWidget {
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
           title: localization.nolocationPermissionButton,
           onTap: () async => OpenMobileSettingUseCase.openAppSettings(),
+        ),
+        CustomButton(
+          isEnabled: true,
+          padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+          title: localization.selectLocationManually,
+          onTap: openManualSelection,
         ),
       ],
     );

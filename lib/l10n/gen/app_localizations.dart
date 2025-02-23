@@ -2516,6 +2516,306 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Please keep us in your prayers. We promise to keep improving and serving you better'**
   String get onboardingSetupAccountMessage3;
+
+  /// No description provided for @hesenAlMuslim.
+  ///
+  /// In en, this message translates to:
+  /// **'Hisn Al Muslim'**
+  String get hesenAlMuslim;
+
+  /// No description provided for @selectLocationManuallyDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'since you don’t want to allow location, we will use the location that you will select in here, please note Adhan and dates be wrong and that\'s happen because you select that manually'**
+  String get selectLocationManuallyDetails;
+
+  /// No description provided for @choose.
+  ///
+  /// In en, this message translates to:
+  /// **'choose'**
+  String get choose;
+
+  /// No description provided for @afghanistan.
+  ///
+  /// In en, this message translates to:
+  /// **'Afghanistan'**
+  String get afghanistan;
+
+  /// No description provided for @albania.
+  ///
+  /// In en, this message translates to:
+  /// **'Albania'**
+  String get albania;
+
+  /// No description provided for @algeria.
+  ///
+  /// In en, this message translates to:
+  /// **'Algeria'**
+  String get algeria;
+
+  /// No description provided for @azerbaijan.
+  ///
+  /// In en, this message translates to:
+  /// **'Azerbaijan'**
+  String get azerbaijan;
+
+  /// No description provided for @bahrain.
+  ///
+  /// In en, this message translates to:
+  /// **'Bahrain'**
+  String get bahrain;
+
+  /// No description provided for @bangladesh.
+  ///
+  /// In en, this message translates to:
+  /// **'Bangladesh'**
+  String get bangladesh;
+
+  /// No description provided for @brunei.
+  ///
+  /// In en, this message translates to:
+  /// **'Brunei'**
+  String get brunei;
+
+  /// No description provided for @burkinaFaso.
+  ///
+  /// In en, this message translates to:
+  /// **'burkina Faso'**
+  String get burkinaFaso;
+
+  /// No description provided for @chad.
+  ///
+  /// In en, this message translates to:
+  /// **'Chad'**
+  String get chad;
+
+  /// No description provided for @comoros.
+  ///
+  /// In en, this message translates to:
+  /// **'Comoros'**
+  String get comoros;
+
+  /// No description provided for @djibouti.
+  ///
+  /// In en, this message translates to:
+  /// **'Djibouti'**
+  String get djibouti;
+
+  /// No description provided for @egypt.
+  ///
+  /// In en, this message translates to:
+  /// **'Egypt'**
+  String get egypt;
+
+  /// No description provided for @gambia.
+  ///
+  /// In en, this message translates to:
+  /// **'Gambia'**
+  String get gambia;
+
+  /// No description provided for @guinea.
+  ///
+  /// In en, this message translates to:
+  /// **'Guinea'**
+  String get guinea;
+
+  /// No description provided for @indonesia.
+  ///
+  /// In en, this message translates to:
+  /// **'Indonesia'**
+  String get indonesia;
+
+  /// No description provided for @iran.
+  ///
+  /// In en, this message translates to:
+  /// **'Iran'**
+  String get iran;
+
+  /// No description provided for @iraq.
+  ///
+  /// In en, this message translates to:
+  /// **'Iraq'**
+  String get iraq;
+
+  /// No description provided for @jordan.
+  ///
+  /// In en, this message translates to:
+  /// **'Jordan'**
+  String get jordan;
+
+  /// No description provided for @kazakhstan.
+  ///
+  /// In en, this message translates to:
+  /// **'Kazakhstan'**
+  String get kazakhstan;
+
+  /// No description provided for @kuwait.
+  ///
+  /// In en, this message translates to:
+  /// **'Kuwait'**
+  String get kuwait;
+
+  /// No description provided for @kyrgyzstan.
+  ///
+  /// In en, this message translates to:
+  /// **'Kyrgyzstan'**
+  String get kyrgyzstan;
+
+  /// No description provided for @lebanon.
+  ///
+  /// In en, this message translates to:
+  /// **'Lebanon'**
+  String get lebanon;
+
+  /// No description provided for @libya.
+  ///
+  /// In en, this message translates to:
+  /// **'Libya'**
+  String get libya;
+
+  /// No description provided for @malaysia.
+  ///
+  /// In en, this message translates to:
+  /// **'Malaysia'**
+  String get malaysia;
+
+  /// No description provided for @maldives.
+  ///
+  /// In en, this message translates to:
+  /// **'Maldives'**
+  String get maldives;
+
+  /// No description provided for @mali.
+  ///
+  /// In en, this message translates to:
+  /// **'Mali'**
+  String get mali;
+
+  /// No description provided for @mauritania.
+  ///
+  /// In en, this message translates to:
+  /// **'Mauritania'**
+  String get mauritania;
+
+  /// No description provided for @morocco.
+  ///
+  /// In en, this message translates to:
+  /// **'Morocco'**
+  String get morocco;
+
+  /// No description provided for @nigeria.
+  ///
+  /// In en, this message translates to:
+  /// **'Nigeria'**
+  String get nigeria;
+
+  /// No description provided for @oman.
+  ///
+  /// In en, this message translates to:
+  /// **'Oman'**
+  String get oman;
+
+  /// No description provided for @pakistan.
+  ///
+  /// In en, this message translates to:
+  /// **'Pakistan'**
+  String get pakistan;
+
+  /// No description provided for @palestine.
+  ///
+  /// In en, this message translates to:
+  /// **'Palestine'**
+  String get palestine;
+
+  /// No description provided for @qatar.
+  ///
+  /// In en, this message translates to:
+  /// **'Qatar'**
+  String get qatar;
+
+  /// No description provided for @saudiArabia.
+  ///
+  /// In en, this message translates to:
+  /// **'Saudi Arabia'**
+  String get saudiArabia;
+
+  /// No description provided for @senegal.
+  ///
+  /// In en, this message translates to:
+  /// **'Senegal'**
+  String get senegal;
+
+  /// No description provided for @somalia.
+  ///
+  /// In en, this message translates to:
+  /// **'Somalia'**
+  String get somalia;
+
+  /// No description provided for @sudan.
+  ///
+  /// In en, this message translates to:
+  /// **'Sudan'**
+  String get sudan;
+
+  /// No description provided for @syria.
+  ///
+  /// In en, this message translates to:
+  /// **'Syria'**
+  String get syria;
+
+  /// No description provided for @tajikistan.
+  ///
+  /// In en, this message translates to:
+  /// **'Tajikistan'**
+  String get tajikistan;
+
+  /// No description provided for @tunisia.
+  ///
+  /// In en, this message translates to:
+  /// **'Tunisia'**
+  String get tunisia;
+
+  /// No description provided for @turkey.
+  ///
+  /// In en, this message translates to:
+  /// **'Turkey'**
+  String get turkey;
+
+  /// No description provided for @turkmenistan.
+  ///
+  /// In en, this message translates to:
+  /// **'Turkmenistan'**
+  String get turkmenistan;
+
+  /// No description provided for @unitedArabEmirates.
+  ///
+  /// In en, this message translates to:
+  /// **'United Arab Emirates'**
+  String get unitedArabEmirates;
+
+  /// No description provided for @uzbekistan.
+  ///
+  /// In en, this message translates to:
+  /// **'Uzbekistan'**
+  String get uzbekistan;
+
+  /// No description provided for @yemen.
+  ///
+  /// In en, this message translates to:
+  /// **'Yemen'**
+  String get yemen;
+
+  /// No description provided for @other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get other;
+
+  /// No description provided for @selectLocationManually.
+  ///
+  /// In en, this message translates to:
+  /// **'Select location manually'**
+  String get selectLocationManually;
 }
 
 class _IslamMobLocalizationsDelegate extends LocalizationsDelegate<IslamMobLocalizations> {

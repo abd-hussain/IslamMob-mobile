@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'freezed/language.freezed.dart';
+part 'language.freezed.dart';
 
 @freezed
 class LanguageModel with _$LanguageModel {

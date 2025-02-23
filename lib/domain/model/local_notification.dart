@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'freezed/local_notification.freezed.dart';
+part 'local_notification.freezed.dart';
 
 @freezed
 class LocalNotification with _$LocalNotification {

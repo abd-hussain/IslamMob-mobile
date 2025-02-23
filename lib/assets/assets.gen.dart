@@ -34,6 +34,10 @@ class $AssetsImagesGen {
   AssetGenImage get donatePopup =>
       const AssetGenImage('assets/images/donate_popup.png');
 
+  /// File path: assets/images/hisnalmuslim.png
+  AssetGenImage get hisnalmuslim =>
+      const AssetGenImage('assets/images/hisnalmuslim.png');
+
   /// File path: assets/images/internet.svg
   SvgGenImage get internet => const SvgGenImage('assets/images/internet.svg');
 
@@ -67,6 +71,7 @@ class $AssetsImagesGen {
         background,
         calender,
         donatePopup,
+        hisnalmuslim,
         internet,
         readyToGo,
         sharePopoup,
@@ -207,9 +212,13 @@ class $AssetsImagesToolbarGen {
   AssetGenImage get share =>
       const AssetGenImage('assets/images/toolbar/share.png');
 
+  /// File path: assets/images/toolbar/tasbeeh.png
+  AssetGenImage get tasbeeh =>
+      const AssetGenImage('assets/images/toolbar/tasbeeh.png');
+
   /// List of all assets
   List<AssetGenImage> get values =>
-      [azkar, calender, donate, qibla, quran, share];
+      [azkar, calender, donate, qibla, quran, share, tasbeeh];
 }
 
 class Assets {

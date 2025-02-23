@@ -711,6 +711,7 @@ mixin _$LocationProcessState {
     required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() noPermission,
+    required TResult Function() locationManually,
     required TResult Function() havePermission,
   }) =>
       throw _privateConstructorUsedError;
@@ -719,6 +720,7 @@ mixin _$LocationProcessState {
     TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? noPermission,
+    TResult? Function()? locationManually,
     TResult? Function()? havePermission,
   }) =>
       throw _privateConstructorUsedError;
@@ -727,6 +729,7 @@ mixin _$LocationProcessState {
     TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? noPermission,
+    TResult Function()? locationManually,
     TResult Function()? havePermission,
     required TResult orElse(),
   }) =>
@@ -737,6 +740,8 @@ mixin _$LocationProcessState {
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
         noPermission,
+    required TResult Function(LocationProcessStateLocationManually value)
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
         havePermission,
   }) =>
@@ -746,6 +751,8 @@ mixin _$LocationProcessState {
     TResult? Function(LocationProcessStateIdl value)? idl,
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult? Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) =>
       throw _privateConstructorUsedError;
@@ -754,6 +761,8 @@ mixin _$LocationProcessState {
     TResult Function(LocationProcessStateIdl value)? idl,
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) =>
@@ -830,6 +839,7 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() noPermission,
+    required TResult Function() locationManually,
     required TResult Function() havePermission,
   }) {
     return idl();
@@ -841,6 +851,7 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? noPermission,
+    TResult? Function()? locationManually,
     TResult? Function()? havePermission,
   }) {
     return idl?.call();
@@ -852,6 +863,7 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? noPermission,
+    TResult Function()? locationManually,
     TResult Function()? havePermission,
     required TResult orElse(),
   }) {
@@ -868,6 +880,8 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
         noPermission,
+    required TResult Function(LocationProcessStateLocationManually value)
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
         havePermission,
   }) {
@@ -880,6 +894,8 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     TResult? Function(LocationProcessStateIdl value)? idl,
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult? Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return idl?.call(this);
@@ -891,6 +907,8 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     TResult Function(LocationProcessStateIdl value)? idl,
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {
@@ -953,6 +971,7 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() noPermission,
+    required TResult Function() locationManually,
     required TResult Function() havePermission,
   }) {
     return loading();
@@ -964,6 +983,7 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? noPermission,
+    TResult? Function()? locationManually,
     TResult? Function()? havePermission,
   }) {
     return loading?.call();
@@ -975,6 +995,7 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? noPermission,
+    TResult Function()? locationManually,
     TResult Function()? havePermission,
     required TResult orElse(),
   }) {
@@ -991,6 +1012,8 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
         noPermission,
+    required TResult Function(LocationProcessStateLocationManually value)
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
         havePermission,
   }) {
@@ -1003,6 +1026,8 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     TResult? Function(LocationProcessStateIdl value)? idl,
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult? Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return loading?.call(this);
@@ -1014,6 +1039,8 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     TResult Function(LocationProcessStateIdl value)? idl,
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {
@@ -1078,6 +1105,7 @@ class _$LocationProcessStateNoPermissionImpl
     required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() noPermission,
+    required TResult Function() locationManually,
     required TResult Function() havePermission,
   }) {
     return noPermission();
@@ -1089,6 +1117,7 @@ class _$LocationProcessStateNoPermissionImpl
     TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? noPermission,
+    TResult? Function()? locationManually,
     TResult? Function()? havePermission,
   }) {
     return noPermission?.call();
@@ -1100,6 +1129,7 @@ class _$LocationProcessStateNoPermissionImpl
     TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? noPermission,
+    TResult Function()? locationManually,
     TResult Function()? havePermission,
     required TResult orElse(),
   }) {
@@ -1116,6 +1146,8 @@ class _$LocationProcessStateNoPermissionImpl
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
         noPermission,
+    required TResult Function(LocationProcessStateLocationManually value)
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
         havePermission,
   }) {
@@ -1128,6 +1160,8 @@ class _$LocationProcessStateNoPermissionImpl
     TResult? Function(LocationProcessStateIdl value)? idl,
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult? Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return noPermission?.call(this);
@@ -1139,6 +1173,8 @@ class _$LocationProcessStateNoPermissionImpl
     TResult Function(LocationProcessStateIdl value)? idl,
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {
@@ -1153,6 +1189,141 @@ abstract class LocationProcessStateNoPermission
     implements LocationProcessState {
   const factory LocationProcessStateNoPermission() =
       _$LocationProcessStateNoPermissionImpl;
+}
+
+/// @nodoc
+abstract class _$$LocationProcessStateLocationManuallyImplCopyWith<$Res> {
+  factory _$$LocationProcessStateLocationManuallyImplCopyWith(
+          _$LocationProcessStateLocationManuallyImpl value,
+          $Res Function(_$LocationProcessStateLocationManuallyImpl) then) =
+      __$$LocationProcessStateLocationManuallyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LocationProcessStateLocationManuallyImplCopyWithImpl<$Res>
+    extends _$LocationProcessStateCopyWithImpl<$Res,
+        _$LocationProcessStateLocationManuallyImpl>
+    implements _$$LocationProcessStateLocationManuallyImplCopyWith<$Res> {
+  __$$LocationProcessStateLocationManuallyImplCopyWithImpl(
+      _$LocationProcessStateLocationManuallyImpl _value,
+      $Res Function(_$LocationProcessStateLocationManuallyImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LocationProcessState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LocationProcessStateLocationManuallyImpl
+    implements LocationProcessStateLocationManually {
+  const _$LocationProcessStateLocationManuallyImpl();
+
+  @override
+  String toString() {
+    return 'LocationProcessState.locationManually()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocationProcessStateLocationManuallyImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idl,
+    required TResult Function() loading,
+    required TResult Function() noPermission,
+    required TResult Function() locationManually,
+    required TResult Function() havePermission,
+  }) {
+    return locationManually();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idl,
+    TResult? Function()? loading,
+    TResult? Function()? noPermission,
+    TResult? Function()? locationManually,
+    TResult? Function()? havePermission,
+  }) {
+    return locationManually?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idl,
+    TResult Function()? loading,
+    TResult Function()? noPermission,
+    TResult Function()? locationManually,
+    TResult Function()? havePermission,
+    required TResult orElse(),
+  }) {
+    if (locationManually != null) {
+      return locationManually();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationProcessStateIdl value) idl,
+    required TResult Function(LocationProcessStateLoading value) loading,
+    required TResult Function(LocationProcessStateNoPermission value)
+        noPermission,
+    required TResult Function(LocationProcessStateLocationManually value)
+        locationManually,
+    required TResult Function(LocationProcessStateHavePermission value)
+        havePermission,
+  }) {
+    return locationManually(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LocationProcessStateIdl value)? idl,
+    TResult? Function(LocationProcessStateLoading value)? loading,
+    TResult? Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult? Function(LocationProcessStateLocationManually value)?
+        locationManually,
+    TResult? Function(LocationProcessStateHavePermission value)? havePermission,
+  }) {
+    return locationManually?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationProcessStateIdl value)? idl,
+    TResult Function(LocationProcessStateLoading value)? loading,
+    TResult Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult Function(LocationProcessStateLocationManually value)?
+        locationManually,
+    TResult Function(LocationProcessStateHavePermission value)? havePermission,
+    required TResult orElse(),
+  }) {
+    if (locationManually != null) {
+      return locationManually(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocationProcessStateLocationManually
+    implements LocationProcessState {
+  const factory LocationProcessStateLocationManually() =
+      _$LocationProcessStateLocationManuallyImpl;
 }
 
 /// @nodoc
@@ -1204,6 +1375,7 @@ class _$LocationProcessStateHavePermissionImpl
     required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() noPermission,
+    required TResult Function() locationManually,
     required TResult Function() havePermission,
   }) {
     return havePermission();
@@ -1215,6 +1387,7 @@ class _$LocationProcessStateHavePermissionImpl
     TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? noPermission,
+    TResult? Function()? locationManually,
     TResult? Function()? havePermission,
   }) {
     return havePermission?.call();
@@ -1226,6 +1399,7 @@ class _$LocationProcessStateHavePermissionImpl
     TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? noPermission,
+    TResult Function()? locationManually,
     TResult Function()? havePermission,
     required TResult orElse(),
   }) {
@@ -1242,6 +1416,8 @@ class _$LocationProcessStateHavePermissionImpl
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
         noPermission,
+    required TResult Function(LocationProcessStateLocationManually value)
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
         havePermission,
   }) {
@@ -1254,6 +1430,8 @@ class _$LocationProcessStateHavePermissionImpl
     TResult? Function(LocationProcessStateIdl value)? idl,
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult? Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return havePermission?.call(this);
@@ -1265,6 +1443,8 @@ class _$LocationProcessStateHavePermissionImpl
     TResult Function(LocationProcessStateIdl value)? idl,
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
+    TResult Function(LocationProcessStateLocationManually value)?
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {

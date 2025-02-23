@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of '../madhab_setting.dart';
+part of 'calculation_method_setting.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,40 +15,41 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$MadhabSetting {
+mixin _$CalculationMethodSetting {
   String get name => throw _privateConstructorUsedError;
-  MadhabState get method => throw _privateConstructorUsedError;
+  PrayCalculationMethodState get method => throw _privateConstructorUsedError;
   bool get isSelected => throw _privateConstructorUsedError;
 
-  /// Create a copy of MadhabSetting
+  /// Create a copy of CalculationMethodSetting
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MadhabSettingCopyWith<MadhabSetting> get copyWith =>
+  $CalculationMethodSettingCopyWith<CalculationMethodSetting> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MadhabSettingCopyWith<$Res> {
-  factory $MadhabSettingCopyWith(
-          MadhabSetting value, $Res Function(MadhabSetting) then) =
-      _$MadhabSettingCopyWithImpl<$Res, MadhabSetting>;
+abstract class $CalculationMethodSettingCopyWith<$Res> {
+  factory $CalculationMethodSettingCopyWith(CalculationMethodSetting value,
+          $Res Function(CalculationMethodSetting) then) =
+      _$CalculationMethodSettingCopyWithImpl<$Res, CalculationMethodSetting>;
   @useResult
-  $Res call({String name, MadhabState method, bool isSelected});
+  $Res call({String name, PrayCalculationMethodState method, bool isSelected});
 
-  $MadhabStateCopyWith<$Res> get method;
+  $PrayCalculationMethodStateCopyWith<$Res> get method;
 }
 
 /// @nodoc
-class _$MadhabSettingCopyWithImpl<$Res, $Val extends MadhabSetting>
-    implements $MadhabSettingCopyWith<$Res> {
-  _$MadhabSettingCopyWithImpl(this._value, this._then);
+class _$CalculationMethodSettingCopyWithImpl<$Res,
+        $Val extends CalculationMethodSetting>
+    implements $CalculationMethodSettingCopyWith<$Res> {
+  _$CalculationMethodSettingCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MadhabSetting
+  /// Create a copy of CalculationMethodSetting
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -65,7 +66,7 @@ class _$MadhabSettingCopyWithImpl<$Res, $Val extends MadhabSetting>
       method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as MadhabState,
+              as PrayCalculationMethodState,
       isSelected: null == isSelected
           ? _value.isSelected
           : isSelected // ignore: cast_nullable_to_non_nullable
@@ -73,40 +74,43 @@ class _$MadhabSettingCopyWithImpl<$Res, $Val extends MadhabSetting>
     ) as $Val);
   }
 
-  /// Create a copy of MadhabSetting
+  /// Create a copy of CalculationMethodSetting
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $MadhabStateCopyWith<$Res> get method {
-    return $MadhabStateCopyWith<$Res>(_value.method, (value) {
+  $PrayCalculationMethodStateCopyWith<$Res> get method {
+    return $PrayCalculationMethodStateCopyWith<$Res>(_value.method, (value) {
       return _then(_value.copyWith(method: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$MadhabSettingImplCopyWith<$Res>
-    implements $MadhabSettingCopyWith<$Res> {
-  factory _$$MadhabSettingImplCopyWith(
-          _$MadhabSettingImpl value, $Res Function(_$MadhabSettingImpl) then) =
-      __$$MadhabSettingImplCopyWithImpl<$Res>;
+abstract class _$$CalculationMethodSettingImplCopyWith<$Res>
+    implements $CalculationMethodSettingCopyWith<$Res> {
+  factory _$$CalculationMethodSettingImplCopyWith(
+          _$CalculationMethodSettingImpl value,
+          $Res Function(_$CalculationMethodSettingImpl) then) =
+      __$$CalculationMethodSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, MadhabState method, bool isSelected});
+  $Res call({String name, PrayCalculationMethodState method, bool isSelected});
 
   @override
-  $MadhabStateCopyWith<$Res> get method;
+  $PrayCalculationMethodStateCopyWith<$Res> get method;
 }
 
 /// @nodoc
-class __$$MadhabSettingImplCopyWithImpl<$Res>
-    extends _$MadhabSettingCopyWithImpl<$Res, _$MadhabSettingImpl>
-    implements _$$MadhabSettingImplCopyWith<$Res> {
-  __$$MadhabSettingImplCopyWithImpl(
-      _$MadhabSettingImpl _value, $Res Function(_$MadhabSettingImpl) _then)
+class __$$CalculationMethodSettingImplCopyWithImpl<$Res>
+    extends _$CalculationMethodSettingCopyWithImpl<$Res,
+        _$CalculationMethodSettingImpl>
+    implements _$$CalculationMethodSettingImplCopyWith<$Res> {
+  __$$CalculationMethodSettingImplCopyWithImpl(
+      _$CalculationMethodSettingImpl _value,
+      $Res Function(_$CalculationMethodSettingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MadhabSetting
+  /// Create a copy of CalculationMethodSetting
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -115,7 +119,7 @@ class __$$MadhabSettingImplCopyWithImpl<$Res>
     Object? method = null,
     Object? isSelected = null,
   }) {
-    return _then(_$MadhabSettingImpl(
+    return _then(_$CalculationMethodSettingImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -123,7 +127,7 @@ class __$$MadhabSettingImplCopyWithImpl<$Res>
       method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as MadhabState,
+              as PrayCalculationMethodState,
       isSelected: null == isSelected
           ? _value.isSelected
           : isSelected // ignore: cast_nullable_to_non_nullable
@@ -134,27 +138,27 @@ class __$$MadhabSettingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MadhabSettingImpl implements _MadhabSetting {
-  _$MadhabSettingImpl(
+class _$CalculationMethodSettingImpl implements _CalculationMethodSetting {
+  _$CalculationMethodSettingImpl(
       {required this.name, required this.method, required this.isSelected});
 
   @override
   final String name;
   @override
-  final MadhabState method;
+  final PrayCalculationMethodState method;
   @override
   final bool isSelected;
 
   @override
   String toString() {
-    return 'MadhabSetting(name: $name, method: $method, isSelected: $isSelected)';
+    return 'CalculationMethodSetting(name: $name, method: $method, isSelected: $isSelected)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MadhabSettingImpl &&
+            other is _$CalculationMethodSettingImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.method, method) || other.method == method) &&
             (identical(other.isSelected, isSelected) ||
@@ -164,32 +168,33 @@ class _$MadhabSettingImpl implements _MadhabSetting {
   @override
   int get hashCode => Object.hash(runtimeType, name, method, isSelected);
 
-  /// Create a copy of MadhabSetting
+  /// Create a copy of CalculationMethodSetting
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MadhabSettingImplCopyWith<_$MadhabSettingImpl> get copyWith =>
-      __$$MadhabSettingImplCopyWithImpl<_$MadhabSettingImpl>(this, _$identity);
+  _$$CalculationMethodSettingImplCopyWith<_$CalculationMethodSettingImpl>
+      get copyWith => __$$CalculationMethodSettingImplCopyWithImpl<
+          _$CalculationMethodSettingImpl>(this, _$identity);
 }
 
-abstract class _MadhabSetting implements MadhabSetting {
-  factory _MadhabSetting(
+abstract class _CalculationMethodSetting implements CalculationMethodSetting {
+  factory _CalculationMethodSetting(
       {required final String name,
-      required final MadhabState method,
-      required final bool isSelected}) = _$MadhabSettingImpl;
+      required final PrayCalculationMethodState method,
+      required final bool isSelected}) = _$CalculationMethodSettingImpl;
 
   @override
   String get name;
   @override
-  MadhabState get method;
+  PrayCalculationMethodState get method;
   @override
   bool get isSelected;
 
-  /// Create a copy of MadhabSetting
+  /// Create a copy of CalculationMethodSetting
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MadhabSettingImplCopyWith<_$MadhabSettingImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CalculationMethodSettingImplCopyWith<_$CalculationMethodSettingImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
