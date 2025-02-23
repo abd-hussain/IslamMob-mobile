@@ -1214,4 +1214,154 @@ class IslamMobLocalizationsTr extends IslamMobLocalizations {
 
   @override
   String get onboardingSetupAccountMessage3 => 'Lütfen dualarınızda bizi unutmayın. Kendimizi geliştirmeye ve size daha iyi hizmet etmeye söz veriyoruz';
+
+  @override
+  String get hesenAlMuslim => 'Hisn el-Müslim';
+
+  @override
+  String get selectLocationManuallyDetails => 'Konuma izin vermek istemediğiniz için, burada seçeceğiniz konumu kullanacağız, lütfen ezan ve tarihlerin yanlış olabileceğini ve bunun manuel olarak seçtiğiniz için olduğunu unutmayın';
+
+  @override
+  String get choose => 'seçmek';
+
+  @override
+  String get afghanistan => 'Afganistan';
+
+  @override
+  String get albania => 'Arnavutluk';
+
+  @override
+  String get algeria => 'Cezayir';
+
+  @override
+  String get azerbaijan => 'Azerbaycan';
+
+  @override
+  String get bahrain => 'Bahreyn';
+
+  @override
+  String get bangladesh => 'Bangladeş';
+
+  @override
+  String get brunei => 'Brunei';
+
+  @override
+  String get burkinaFaso => 'Burkina Faso';
+
+  @override
+  String get chad => 'Çad';
+
+  @override
+  String get comoros => 'Komorlar';
+
+  @override
+  String get djibouti => 'Cibuti';
+
+  @override
+  String get egypt => 'Mısır';
+
+  @override
+  String get gambia => 'Gambiya';
+
+  @override
+  String get guinea => 'Gine';
+
+  @override
+  String get indonesia => 'Endonezya';
+
+  @override
+  String get iran => 'İran';
+
+  @override
+  String get iraq => 'Irak';
+
+  @override
+  String get jordan => 'Ürdün';
+
+  @override
+  String get kazakhstan => 'Kazakistan';
+
+  @override
+  String get kuwait => 'Kuveyt';
+
+  @override
+  String get kyrgyzstan => 'Kırgızistan';
+
+  @override
+  String get lebanon => 'Lübnan';
+
+  @override
+  String get libya => 'Libya';
+
+  @override
+  String get malaysia => 'Malezya';
+
+  @override
+  String get maldives => 'Maldivler';
+
+  @override
+  String get mali => 'Mali';
+
+  @override
+  String get mauritania => 'Moritanya';
+
+  @override
+  String get morocco => 'Fas';
+
+  @override
+  String get nigeria => 'Nijerya';
+
+  @override
+  String get oman => 'Umman';
+
+  @override
+  String get pakistan => 'Pakistan';
+
+  @override
+  String get palestine => 'Filistin';
+
+  @override
+  String get qatar => 'Katar';
+
+  @override
+  String get saudiArabia => 'Suudi Arabistan';
+
+  @override
+  String get senegal => 'Senegal';
+
+  @override
+  String get somalia => 'Somali';
+
+  @override
+  String get sudan => 'Sudan';
+
+  @override
+  String get syria => 'Suriye';
+
+  @override
+  String get tajikistan => 'Tacikistan';
+
+  @override
+  String get tunisia => 'Tunus';
+
+  @override
+  String get turkey => 'Türkiye';
+
+  @override
+  String get turkmenistan => 'Türkmenistan';
+
+  @override
+  String get unitedArabEmirates => 'Birleşik Arap Emirlikleri';
+
+  @override
+  String get uzbekistan => 'Özbekistan';
+
+  @override
+  String get yemen => 'Yemen';
+
+  @override
+  String get other => 'Diğer';
+
+  @override
+  String get selectLocationManually => 'Konumu Manuel Olarak Seçin';
 }

@@ -1214,4 +1214,154 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get onboardingSetupAccountMessage3 => 'Please keep us in your prayers. We promise to keep improving and serving you better';
+
+  @override
+  String get hesenAlMuslim => 'Hisn Al Muslim';
+
+  @override
+  String get selectLocationManuallyDetails => 'since you don’t want to allow location, we will use the location that you will select in here, please note Adhan and dates be wrong and that\'s happen because you select that manually';
+
+  @override
+  String get choose => 'choose';
+
+  @override
+  String get afghanistan => 'Afghanistan';
+
+  @override
+  String get albania => 'Albania';
+
+  @override
+  String get algeria => 'Algeria';
+
+  @override
+  String get azerbaijan => 'Azerbaijan';
+
+  @override
+  String get bahrain => 'Bahrain';
+
+  @override
+  String get bangladesh => 'Bangladesh';
+
+  @override
+  String get brunei => 'Brunei';
+
+  @override
+  String get burkinaFaso => 'burkina Faso';
+
+  @override
+  String get chad => 'Chad';
+
+  @override
+  String get comoros => 'Comoros';
+
+  @override
+  String get djibouti => 'Djibouti';
+
+  @override
+  String get egypt => 'Egypt';
+
+  @override
+  String get gambia => 'Gambia';
+
+  @override
+  String get guinea => 'Guinea';
+
+  @override
+  String get indonesia => 'Indonesia';
+
+  @override
+  String get iran => 'Iran';
+
+  @override
+  String get iraq => 'Iraq';
+
+  @override
+  String get jordan => 'Jordan';
+
+  @override
+  String get kazakhstan => 'Kazakhstan';
+
+  @override
+  String get kuwait => 'Kuwait';
+
+  @override
+  String get kyrgyzstan => 'Kyrgyzstan';
+
+  @override
+  String get lebanon => 'Lebanon';
+
+  @override
+  String get libya => 'Libya';
+
+  @override
+  String get malaysia => 'Malaysia';
+
+  @override
+  String get maldives => 'Maldives';
+
+  @override
+  String get mali => 'Mali';
+
+  @override
+  String get mauritania => 'Mauritania';
+
+  @override
+  String get morocco => 'Morocco';
+
+  @override
+  String get nigeria => 'Nigeria';
+
+  @override
+  String get oman => 'Oman';
+
+  @override
+  String get pakistan => 'Pakistan';
+
+  @override
+  String get palestine => 'Palestine';
+
+  @override
+  String get qatar => 'Qatar';
+
+  @override
+  String get saudiArabia => 'Saudi Arabia';
+
+  @override
+  String get senegal => 'Senegal';
+
+  @override
+  String get somalia => 'Somalia';
+
+  @override
+  String get sudan => 'Sudan';
+
+  @override
+  String get syria => 'Syria';
+
+  @override
+  String get tajikistan => 'Tajikistan';
+
+  @override
+  String get tunisia => 'Tunisia';
+
+  @override
+  String get turkey => 'Turkey';
+
+  @override
+  String get turkmenistan => 'Turkmenistan';
+
+  @override
+  String get unitedArabEmirates => 'United Arab Emirates';
+
+  @override
+  String get uzbekistan => 'Uzbekistan';
+
+  @override
+  String get yemen => 'Yemen';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String get selectLocationManually => 'Select location manually';
 }

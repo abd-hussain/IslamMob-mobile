@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'freezed/report_request.freezed.dart';
-part 'freezed/report_request.g.dart';
+part 'report_request.freezed.dart';
+part 'report_request.g.dart';
 
 @freezed
 class ReportRequest with _$ReportRequest {

@@ -1,5 +1,4 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:async/async.dart';
 import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
@@ -38,8 +37,6 @@ class MyAppBloc {
 
   /// Initializes Firebase and Mobile Ads if the device has internet connectivity
   Future<void> _initializeFirebaseAndAds() async {
-    await AppTrackingTransparency.requestTrackingAuthorization();
-
     try {
       if (await _hasInternetConnectivity()) {
         await FirebaseManagerBase.initialize();

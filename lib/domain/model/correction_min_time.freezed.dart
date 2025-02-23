@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of '../correction_min_time.dart';
+part of 'correction_min_time.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -38,6 +38,8 @@ abstract class $CorrectionMinTimeDataCopyWith<$Res> {
       {String title,
       AzanTypeForEditMinState type,
       int Function(PrayCalculationSettingState) getter});
+
+  $AzanTypeForEditMinStateCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -75,6 +77,16 @@ class _$CorrectionMinTimeDataCopyWithImpl<$Res,
               as int Function(PrayCalculationSettingState),
     ) as $Val);
   }
+
+  /// Create a copy of CorrectionMinTimeData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AzanTypeForEditMinStateCopyWith<$Res> get type {
+    return $AzanTypeForEditMinStateCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -90,6 +102,9 @@ abstract class _$$CorrectionMinTimeDataImplCopyWith<$Res>
       {String title,
       AzanTypeForEditMinState type,
       int Function(PrayCalculationSettingState) getter});
+
+  @override
+  $AzanTypeForEditMinStateCopyWith<$Res> get type;
 }
 
 /// @nodoc

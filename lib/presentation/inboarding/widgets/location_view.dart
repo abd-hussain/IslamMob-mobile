@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/model/location.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_have_permission_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_idle_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_nothave_permission_view.dart';
+import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_select_manual_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:lottie/lottie.dart';
 
@@ -71,7 +73,35 @@ class LocationInBoardingView extends StatelessWidget {
           child: CircularProgressIndicator(color: Color(0xff008480)),
         );
       case LocationProcessStateNoPermission():
-        return const LocationNothavePermissionView();
+        return LocationNothavePermissionView(
+          openManualSelection: () => context.read<LocationBloc>().add(
+                const LocationEvent.changeLocationStatus(
+                  status: LocationProcessStateLocationManually(),
+                ),
+              ),
+        );
+      case LocationProcessStateLocationManually():
+        return LocationSelectManualView(
+          onSelectManualLocation: (countryName, lat, long) {
+            context.read<LocationBloc>().add(
+                  LocationEvent.setCountryAndCityNames(
+                      location: LocationModel(
+                    countryCode: "",
+                    country: countryName,
+                    city: countryName,
+                    subCity: countryName,
+                    street: "",
+                    latitude: lat,
+                    longitude: long,
+                    thoroughfare: "",
+                  )),
+                );
+            context
+                .read<LocationBloc>()
+                .add(const LocationEvent.setupLocation());
+            doneSelection();
+          },
+        );
       case LocationProcessStateHavePermission():
         return LocationHavePermissionView(
           locationModel: state.location!,
