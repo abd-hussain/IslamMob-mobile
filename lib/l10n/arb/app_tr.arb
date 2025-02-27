@@ -451,6 +451,8 @@
     "uzbekistan": "Özbekistan",
     "yemen": "Yemen",
     "other": "Diğer",
-    "selectLocationManually" : "Konumu Manuel Olarak Seçin"
+    "selectLocationManually" : "Konumu Manuel Olarak Seçin",
+    "all" : "hepsi",
+    "favorites" : "favoriler"
 
 }

@@ -188,10 +188,6 @@ class $AssetsImagesSorahTypeGen {
 class $AssetsImagesToolbarGen {
   const $AssetsImagesToolbarGen();
 
-  /// File path: assets/images/toolbar/azkar.png
-  AssetGenImage get azkar =>
-      const AssetGenImage('assets/images/toolbar/azkar.png');
-
   /// File path: assets/images/toolbar/calender.png
   AssetGenImage get calender =>
       const AssetGenImage('assets/images/toolbar/calender.png');
@@ -199,6 +195,10 @@ class $AssetsImagesToolbarGen {
   /// File path: assets/images/toolbar/donate.png
   AssetGenImage get donate =>
       const AssetGenImage('assets/images/toolbar/donate.png');
+
+  /// File path: assets/images/toolbar/hesenAlMuslim.png
+  AssetGenImage get hesenAlMuslim =>
+      const AssetGenImage('assets/images/toolbar/hesenAlMuslim.png');
 
   /// File path: assets/images/toolbar/qibla.png
   AssetGenImage get qibla =>
@@ -218,7 +218,7 @@ class $AssetsImagesToolbarGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [azkar, calender, donate, qibla, quran, share, tasbeeh];
+      [calender, donate, hesenAlMuslim, qibla, quran, share, tasbeeh];
 }
 
 class Assets {
