@@ -451,6 +451,8 @@
     "uzbekistan" : "أوزبكستان",
     "yemen" : "اليمن",
     "other" : "غير ذلك",
-    "selectLocationManually" : "اختر الموقع يدويا"
+    "selectLocationManually" : "اختر الموقع يدويا",
+    "all" : "الكل",
+    "favorites" : "المفضله"
 
 }

@@ -451,7 +451,9 @@
     "uzbekistan": "Ouzbékistan",
     "yemen": "Yémen",
     "other": "Autre",
-    "selectLocationManually" : "Sélectionner l'emplacement manuellement"
+    "selectLocationManually" : "Sélectionner l'emplacement manuellement",
+    "all" : "tous",
+    "favorites" : "favoris"
 
 
 }

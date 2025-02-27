@@ -4,7 +4,8 @@ import 'package:islam_app/presentation/about_us/privacy_policy_screen.dart';
 import 'package:islam_app/presentation/about_us/terms_condition_screen.dart';
 import 'package:islam_app/presentation/calender/calender_screen.dart';
 import 'package:islam_app/presentation/change_language/change_language_screen.dart';
-import 'package:islam_app/presentation/hisn_al_muslim/hisn_al_muslim_screen.dart';
+import 'package:islam_app/presentation/hisn_al_muslim/details/hisn_al_muslim_details_screen.dart';
+import 'package:islam_app/presentation/hisn_al_muslim/main_list/hisn_al_muslim_list_screen.dart';
 import 'package:islam_app/presentation/home_tab/home_screen.dart';
 import 'package:islam_app/presentation/inboarding/inboarding_screen.dart';
 import 'package:islam_app/presentation/main_container/main_container.dart';
@@ -36,7 +37,8 @@ class RoutesConstants {
   static const prayCalculationSettingScreen = 'prayCalculationSettingScreen';
   static const calenderScreen = 'calenderScreen';
   static const qiblaFinderScreen = 'qiblaFinderScreen';
-  static const hisnAlMuslimScreen = 'hisnAlMuslimScreen';
+  static const hisnAlMuslimListScreen = 'hisnAlMuslimListScreen';
+  static const hisnAlMuslimDetailsScreen = 'hisnAlMuslimDetailsScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -59,5 +61,6 @@ final Map<String, Widget> routes = {
       const PrayCalculationSettingScreen(),
   RoutesConstants.calenderScreen: const CalenderScreen(),
   RoutesConstants.qiblaFinderScreen: const QiblaFinderScreen(),
-  RoutesConstants.hisnAlMuslimScreen: const HisnAlMuslimScreen(),
+  RoutesConstants.hisnAlMuslimListScreen: const HisnAlMuslimListScreen(),
+  RoutesConstants.hisnAlMuslimDetailsScreen: const HisnAlMuslimDetailsScreen(),
 };

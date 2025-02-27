@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+class CustomTextField extends StatelessWidget {
+  final TextEditingController controller;
+  final String hintText;
+  final IconData? prefixIcon;
+
+  const CustomTextField({
+    super.key,
+    required this.controller,
+    required this.hintText,
+    required this.prefixIcon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: TextField(
+        autocorrect: false,
+        enableSuggestions: false,
+        enableInteractiveSelection: false,
+        controller: controller,
+        style: const TextStyle(
+          fontWeight: FontWeight.w300,
+          color: Color(0xff191C1F),
+          fontSize: 16,
+        ),
+        decoration: InputDecoration(
+          hintText: hintText,
+          fillColor: Colors.white,
+          prefixIcon: Icon(prefixIcon),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: const BorderSide(color: Color(0xff444444), width: 2),
+          ),
+          border: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey, width: 1),
+          ),
+        ),
+      ),
+    );
+  }
+}
