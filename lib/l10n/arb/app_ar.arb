@@ -453,6 +453,8 @@
     "other" : "غير ذلك",
     "selectLocationManually" : "اختر الموقع يدويا",
     "all" : "الكل",
-    "favorites" : "المفضله"
+    "favorites" : "المفضله",
+    "noItemToShow" : "لا يوجد عناصر لعرضها",
+    "searchField" : "بحث ..."
 
 }

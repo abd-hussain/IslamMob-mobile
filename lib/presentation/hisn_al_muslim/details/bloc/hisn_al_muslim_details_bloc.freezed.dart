@@ -16,37 +16,44 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HisnAlMuslimDetailsEvent {
+  HisnAlMuslimModel? get item => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(HisnAlMuslimModel? item) fillInitialValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(HisnAlMuslimModel? item)? fillInitialValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(HisnAlMuslimModel? item)? fillInitialValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_FillInitialValue value) fillInitialValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_FillInitialValue value)? fillInitialValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_FillInitialValue value)? fillInitialValue,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $HisnAlMuslimDetailsEventCopyWith<HisnAlMuslimDetailsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -55,6 +62,10 @@ abstract class $HisnAlMuslimDetailsEventCopyWith<$Res> {
   factory $HisnAlMuslimDetailsEventCopyWith(HisnAlMuslimDetailsEvent value,
           $Res Function(HisnAlMuslimDetailsEvent) then) =
       _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, HisnAlMuslimDetailsEvent>;
+  @useResult
+  $Res call({HisnAlMuslimModel? item});
+
+  $HisnAlMuslimModelCopyWith<$Res>? get item;
 }
 
 /// @nodoc
@@ -70,70 +81,129 @@ class _$HisnAlMuslimDetailsEventCopyWithImpl<$Res,
 
   /// Create a copy of HisnAlMuslimDetailsEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = freezed,
+  }) {
+    return _then(_value.copyWith(
+      item: freezed == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as HisnAlMuslimModel?,
+    ) as $Val);
+  }
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $HisnAlMuslimModelCopyWith<$Res>? get item {
+    if (_value.item == null) {
+      return null;
+    }
+
+    return $HisnAlMuslimModelCopyWith<$Res>(_value.item!, (value) {
+      return _then(_value.copyWith(item: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
+abstract class _$$FillInitialValueImplCopyWith<$Res>
+    implements $HisnAlMuslimDetailsEventCopyWith<$Res> {
+  factory _$$FillInitialValueImplCopyWith(_$FillInitialValueImpl value,
+          $Res Function(_$FillInitialValueImpl) then) =
+      __$$FillInitialValueImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({HisnAlMuslimModel? item});
+
+  @override
+  $HisnAlMuslimModelCopyWith<$Res>? get item;
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+class __$$FillInitialValueImplCopyWithImpl<$Res>
+    extends _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, _$FillInitialValueImpl>
+    implements _$$FillInitialValueImplCopyWith<$Res> {
+  __$$FillInitialValueImplCopyWithImpl(_$FillInitialValueImpl _value,
+      $Res Function(_$FillInitialValueImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HisnAlMuslimDetailsEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = freezed,
+  }) {
+    return _then(_$FillInitialValueImpl(
+      freezed == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as HisnAlMuslimModel?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
+class _$FillInitialValueImpl implements _FillInitialValue {
+  const _$FillInitialValueImpl(this.item);
+
+  @override
+  final HisnAlMuslimModel? item;
 
   @override
   String toString() {
-    return 'HisnAlMuslimDetailsEvent.started()';
+    return 'HisnAlMuslimDetailsEvent.fillInitialValue(item: $item)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$FillInitialValueImpl &&
+            (identical(other.item, item) || other.item == item));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, item);
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FillInitialValueImplCopyWith<_$FillInitialValueImpl> get copyWith =>
+      __$$FillInitialValueImplCopyWithImpl<_$FillInitialValueImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(HisnAlMuslimModel? item) fillInitialValue,
   }) {
-    return started();
+    return fillInitialValue(item);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(HisnAlMuslimModel? item)? fillInitialValue,
   }) {
-    return started?.call();
+    return fillInitialValue?.call(item);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(HisnAlMuslimModel? item)? fillInitialValue,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (fillInitialValue != null) {
+      return fillInitialValue(item);
     }
     return orElse();
   }
@@ -141,69 +211,55 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_FillInitialValue value) fillInitialValue,
   }) {
-    return started(this);
+    return fillInitialValue(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_FillInitialValue value)? fillInitialValue,
   }) {
-    return started?.call(this);
+    return fillInitialValue?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_FillInitialValue value)? fillInitialValue,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (fillInitialValue != null) {
+      return fillInitialValue(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements HisnAlMuslimDetailsEvent {
-  const factory _Started() = _$StartedImpl;
+abstract class _FillInitialValue implements HisnAlMuslimDetailsEvent {
+  const factory _FillInitialValue(final HisnAlMuslimModel? item) =
+      _$FillInitialValueImpl;
+
+  @override
+  HisnAlMuslimModel? get item;
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FillInitialValueImplCopyWith<_$FillInitialValueImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$HisnAlMuslimDetailsState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  HisnAlMuslimModel? get item => throw _privateConstructorUsedError;
+
+  /// Create a copy of HisnAlMuslimDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $HisnAlMuslimDetailsStateCopyWith<HisnAlMuslimDetailsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -212,6 +268,10 @@ abstract class $HisnAlMuslimDetailsStateCopyWith<$Res> {
   factory $HisnAlMuslimDetailsStateCopyWith(HisnAlMuslimDetailsState value,
           $Res Function(HisnAlMuslimDetailsState) then) =
       _$HisnAlMuslimDetailsStateCopyWithImpl<$Res, HisnAlMuslimDetailsState>;
+  @useResult
+  $Res call({HisnAlMuslimModel? item});
+
+  $HisnAlMuslimModelCopyWith<$Res>? get item;
 }
 
 /// @nodoc
@@ -227,103 +287,120 @@ class _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = freezed,
+  }) {
+    return _then(_value.copyWith(
+      item: freezed == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as HisnAlMuslimModel?,
+    ) as $Val);
+  }
+
+  /// Create a copy of HisnAlMuslimDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $HisnAlMuslimModelCopyWith<$Res>? get item {
+    if (_value.item == null) {
+      return null;
+    }
+
+    return $HisnAlMuslimModelCopyWith<$Res>(_value.item!, (value) {
+      return _then(_value.copyWith(item: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$HisnAlMuslimDetailsStateImplCopyWith<$Res>
+    implements $HisnAlMuslimDetailsStateCopyWith<$Res> {
+  factory _$$HisnAlMuslimDetailsStateImplCopyWith(
+          _$HisnAlMuslimDetailsStateImpl value,
+          $Res Function(_$HisnAlMuslimDetailsStateImpl) then) =
+      __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({HisnAlMuslimModel? item});
+
+  @override
+  $HisnAlMuslimModelCopyWith<$Res>? get item;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HisnAlMuslimDetailsStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>
+    extends _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
+        _$HisnAlMuslimDetailsStateImpl>
+    implements _$$HisnAlMuslimDetailsStateImplCopyWith<$Res> {
+  __$$HisnAlMuslimDetailsStateImplCopyWithImpl(
+      _$HisnAlMuslimDetailsStateImpl _value,
+      $Res Function(_$HisnAlMuslimDetailsStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = freezed,
+  }) {
+    return _then(_$HisnAlMuslimDetailsStateImpl(
+      item: freezed == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as HisnAlMuslimModel?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
+  const _$HisnAlMuslimDetailsStateImpl({this.item});
+
+  @override
+  final HisnAlMuslimModel? item;
 
   @override
   String toString() {
-    return 'HisnAlMuslimDetailsState.initial()';
+    return 'HisnAlMuslimDetailsState(item: $item)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$HisnAlMuslimDetailsStateImpl &&
+            (identical(other.item, item) || other.item == item));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, item);
 
+  /// Create a copy of HisnAlMuslimDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  @pragma('vm:prefer-inline')
+  _$$HisnAlMuslimDetailsStateImplCopyWith<_$HisnAlMuslimDetailsStateImpl>
+      get copyWith => __$$HisnAlMuslimDetailsStateImplCopyWithImpl<
+          _$HisnAlMuslimDetailsStateImpl>(this, _$identity);
 }
 
-abstract class _Initial implements HisnAlMuslimDetailsState {
-  const factory _Initial() = _$InitialImpl;
+abstract class _HisnAlMuslimDetailsState implements HisnAlMuslimDetailsState {
+  const factory _HisnAlMuslimDetailsState({final HisnAlMuslimModel? item}) =
+      _$HisnAlMuslimDetailsStateImpl;
+
+  @override
+  HisnAlMuslimModel? get item;
+
+  /// Create a copy of HisnAlMuslimDetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HisnAlMuslimDetailsStateImplCopyWith<_$HisnAlMuslimDetailsStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -2,8 +2,20 @@ import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+enum AdsBannerSize {
+  banner,
+  fullBanner,
+  largeBanner,
+  leaderboard,
+  mediumRectangle,
+}
+
 class AddMobBanner extends StatefulWidget {
-  const AddMobBanner({super.key});
+  final AdsBannerSize size;
+  const AddMobBanner({
+    super.key,
+    this.size = AdsBannerSize.banner,
+  });
 
   @override
   State<AddMobBanner> createState() => _AddMobBannerState();
@@ -23,12 +35,27 @@ class _AddMobBannerState extends State<AddMobBanner> {
     _bannerAd = BannerAd(
       adUnitId: AdHelper.bannerAdUnitId,
       request: const AdRequest(),
-      size: AdSize.banner,
+      size: _bannerSize(widget.size),
       listener: BannerAdListener(
         onAdLoaded: (_) => _onAdLoaded(),
         onAdFailedToLoad: _onAdFailedToLoad,
       ),
     )..load();
+  }
+
+  AdSize _bannerSize(AdsBannerSize size) {
+    switch (size) {
+      case AdsBannerSize.banner:
+        return AdSize.banner;
+      case AdsBannerSize.fullBanner:
+        return AdSize.fullBanner;
+      case AdsBannerSize.largeBanner:
+        return AdSize.largeBanner;
+      case AdsBannerSize.leaderboard:
+        return AdSize.leaderboard;
+      case AdsBannerSize.mediumRectangle:
+        return AdSize.mediumRectangle;
+    }
   }
 
   void _onAdLoaded() {

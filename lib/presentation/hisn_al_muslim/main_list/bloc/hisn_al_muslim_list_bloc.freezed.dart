@@ -18,39 +18,51 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HisnAlMuslimListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getListOfAzkar,
     required TResult Function(int index) updateSelectedTab,
+    required TResult Function(HisnAlMuslimModel item) addRemoveItemToFavorite,
+    required TResult Function(String value) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? getListOfAzkar,
     TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult? Function(String value)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getListOfAzkar,
     TResult Function(int index)? updateSelectedTab,
+    TResult Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult Function(String value)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetListOfAzkar value) getListOfAzkar,
     required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_AddItemToFavorite value) addRemoveItemToFavorite,
+    required TResult Function(_Search value) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_GetListOfAzkar value)? getListOfAzkar,
     TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult? Function(_Search value)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetListOfAzkar value)? getListOfAzkar,
     TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,18 +91,18 @@ class _$HisnAlMuslimListEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
+abstract class _$$GetListOfAzkarImplCopyWith<$Res> {
+  factory _$$GetListOfAzkarImplCopyWith(_$GetListOfAzkarImpl value,
+          $Res Function(_$GetListOfAzkarImpl) then) =
+      __$$GetListOfAzkarImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$HisnAlMuslimListEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+class __$$GetListOfAzkarImplCopyWithImpl<$Res>
+    extends _$HisnAlMuslimListEventCopyWithImpl<$Res, _$GetListOfAzkarImpl>
+    implements _$$GetListOfAzkarImplCopyWith<$Res> {
+  __$$GetListOfAzkarImplCopyWithImpl(
+      _$GetListOfAzkarImpl _value, $Res Function(_$GetListOfAzkarImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HisnAlMuslimListEvent
@@ -99,18 +111,18 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
+class _$GetListOfAzkarImpl implements _GetListOfAzkar {
+  const _$GetListOfAzkarImpl();
 
   @override
   String toString() {
-    return 'HisnAlMuslimListEvent.started()';
+    return 'HisnAlMuslimListEvent.getListOfAzkar()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType && other is _$GetListOfAzkarImpl);
   }
 
   @override
@@ -119,30 +131,36 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getListOfAzkar,
     required TResult Function(int index) updateSelectedTab,
+    required TResult Function(HisnAlMuslimModel item) addRemoveItemToFavorite,
+    required TResult Function(String value) search,
   }) {
-    return started();
+    return getListOfAzkar();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? getListOfAzkar,
     TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult? Function(String value)? search,
   }) {
-    return started?.call();
+    return getListOfAzkar?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getListOfAzkar,
     TResult Function(int index)? updateSelectedTab,
+    TResult Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult Function(String value)? search,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (getListOfAzkar != null) {
+      return getListOfAzkar();
     }
     return orElse();
   }
@@ -150,37 +168,43 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetListOfAzkar value) getListOfAzkar,
     required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_AddItemToFavorite value) addRemoveItemToFavorite,
+    required TResult Function(_Search value) search,
   }) {
-    return started(this);
+    return getListOfAzkar(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_GetListOfAzkar value)? getListOfAzkar,
     TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult? Function(_Search value)? search,
   }) {
-    return started?.call(this);
+    return getListOfAzkar?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetListOfAzkar value)? getListOfAzkar,
     TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (getListOfAzkar != null) {
+      return getListOfAzkar(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements HisnAlMuslimListEvent {
-  const factory _Started() = _$StartedImpl;
+abstract class _GetListOfAzkar implements HisnAlMuslimListEvent {
+  const factory _GetListOfAzkar() = _$GetListOfAzkarImpl;
 }
 
 /// @nodoc
@@ -252,8 +276,10 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getListOfAzkar,
     required TResult Function(int index) updateSelectedTab,
+    required TResult Function(HisnAlMuslimModel item) addRemoveItemToFavorite,
+    required TResult Function(String value) search,
   }) {
     return updateSelectedTab(index);
   }
@@ -261,8 +287,10 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? getListOfAzkar,
     TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult? Function(String value)? search,
   }) {
     return updateSelectedTab?.call(index);
   }
@@ -270,8 +298,10 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getListOfAzkar,
     TResult Function(int index)? updateSelectedTab,
+    TResult Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult Function(String value)? search,
     required TResult orElse(),
   }) {
     if (updateSelectedTab != null) {
@@ -283,8 +313,10 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetListOfAzkar value) getListOfAzkar,
     required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_AddItemToFavorite value) addRemoveItemToFavorite,
+    required TResult Function(_Search value) search,
   }) {
     return updateSelectedTab(this);
   }
@@ -292,8 +324,10 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_GetListOfAzkar value)? getListOfAzkar,
     TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult? Function(_Search value)? search,
   }) {
     return updateSelectedTab?.call(this);
   }
@@ -301,8 +335,10 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetListOfAzkar value)? getListOfAzkar,
     TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
     if (updateSelectedTab != null) {
@@ -321,6 +357,324 @@ abstract class _UpdateSelectedTab implements HisnAlMuslimListEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateSelectedTabImplCopyWith<_$UpdateSelectedTabImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddItemToFavoriteImplCopyWith<$Res> {
+  factory _$$AddItemToFavoriteImplCopyWith(_$AddItemToFavoriteImpl value,
+          $Res Function(_$AddItemToFavoriteImpl) then) =
+      __$$AddItemToFavoriteImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({HisnAlMuslimModel item});
+
+  $HisnAlMuslimModelCopyWith<$Res> get item;
+}
+
+/// @nodoc
+class __$$AddItemToFavoriteImplCopyWithImpl<$Res>
+    extends _$HisnAlMuslimListEventCopyWithImpl<$Res, _$AddItemToFavoriteImpl>
+    implements _$$AddItemToFavoriteImplCopyWith<$Res> {
+  __$$AddItemToFavoriteImplCopyWithImpl(_$AddItemToFavoriteImpl _value,
+      $Res Function(_$AddItemToFavoriteImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HisnAlMuslimListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = null,
+  }) {
+    return _then(_$AddItemToFavoriteImpl(
+      null == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as HisnAlMuslimModel,
+    ));
+  }
+
+  /// Create a copy of HisnAlMuslimListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $HisnAlMuslimModelCopyWith<$Res> get item {
+    return $HisnAlMuslimModelCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddItemToFavoriteImpl implements _AddItemToFavorite {
+  const _$AddItemToFavoriteImpl(this.item);
+
+  @override
+  final HisnAlMuslimModel item;
+
+  @override
+  String toString() {
+    return 'HisnAlMuslimListEvent.addRemoveItemToFavorite(item: $item)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddItemToFavoriteImpl &&
+            (identical(other.item, item) || other.item == item));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, item);
+
+  /// Create a copy of HisnAlMuslimListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddItemToFavoriteImplCopyWith<_$AddItemToFavoriteImpl> get copyWith =>
+      __$$AddItemToFavoriteImplCopyWithImpl<_$AddItemToFavoriteImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListOfAzkar,
+    required TResult Function(int index) updateSelectedTab,
+    required TResult Function(HisnAlMuslimModel item) addRemoveItemToFavorite,
+    required TResult Function(String value) search,
+  }) {
+    return addRemoveItemToFavorite(item);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListOfAzkar,
+    TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult? Function(String value)? search,
+  }) {
+    return addRemoveItemToFavorite?.call(item);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListOfAzkar,
+    TResult Function(int index)? updateSelectedTab,
+    TResult Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult Function(String value)? search,
+    required TResult orElse(),
+  }) {
+    if (addRemoveItemToFavorite != null) {
+      return addRemoveItemToFavorite(item);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetListOfAzkar value) getListOfAzkar,
+    required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_AddItemToFavorite value) addRemoveItemToFavorite,
+    required TResult Function(_Search value) search,
+  }) {
+    return addRemoveItemToFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetListOfAzkar value)? getListOfAzkar,
+    TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult? Function(_Search value)? search,
+  }) {
+    return addRemoveItemToFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetListOfAzkar value)? getListOfAzkar,
+    TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult Function(_Search value)? search,
+    required TResult orElse(),
+  }) {
+    if (addRemoveItemToFavorite != null) {
+      return addRemoveItemToFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddItemToFavorite implements HisnAlMuslimListEvent {
+  const factory _AddItemToFavorite(final HisnAlMuslimModel item) =
+      _$AddItemToFavoriteImpl;
+
+  HisnAlMuslimModel get item;
+
+  /// Create a copy of HisnAlMuslimListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddItemToFavoriteImplCopyWith<_$AddItemToFavoriteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchImplCopyWith<$Res> {
+  factory _$$SearchImplCopyWith(
+          _$SearchImpl value, $Res Function(_$SearchImpl) then) =
+      __$$SearchImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$SearchImplCopyWithImpl<$Res>
+    extends _$HisnAlMuslimListEventCopyWithImpl<$Res, _$SearchImpl>
+    implements _$$SearchImplCopyWith<$Res> {
+  __$$SearchImplCopyWithImpl(
+      _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HisnAlMuslimListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$SearchImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchImpl implements _Search {
+  const _$SearchImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'HisnAlMuslimListEvent.search(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  /// Create a copy of HisnAlMuslimListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getListOfAzkar,
+    required TResult Function(int index) updateSelectedTab,
+    required TResult Function(HisnAlMuslimModel item) addRemoveItemToFavorite,
+    required TResult Function(String value) search,
+  }) {
+    return search(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getListOfAzkar,
+    TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult? Function(String value)? search,
+  }) {
+    return search?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getListOfAzkar,
+    TResult Function(int index)? updateSelectedTab,
+    TResult Function(HisnAlMuslimModel item)? addRemoveItemToFavorite,
+    TResult Function(String value)? search,
+    required TResult orElse(),
+  }) {
+    if (search != null) {
+      return search(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetListOfAzkar value) getListOfAzkar,
+    required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_AddItemToFavorite value) addRemoveItemToFavorite,
+    required TResult Function(_Search value) search,
+  }) {
+    return search(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetListOfAzkar value)? getListOfAzkar,
+    TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult? Function(_Search value)? search,
+  }) {
+    return search?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetListOfAzkar value)? getListOfAzkar,
+    TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_AddItemToFavorite value)? addRemoveItemToFavorite,
+    TResult Function(_Search value)? search,
+    required TResult orElse(),
+  }) {
+    if (search != null) {
+      return search(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Search implements HisnAlMuslimListEvent {
+  const factory _Search(final String value) = _$SearchImpl;
+
+  String get value;
+
+  /// Create a copy of HisnAlMuslimListEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -4,5 +4,6 @@ part of 'quran_pages_index_bloc.dart';
 class QuranPagesIndexState with _$QuranPagesIndexState {
   const factory QuranPagesIndexState({
     @Default(0) int selectedIndex,
+    @Default([]) List<String> sowarList,
   }) = _QuranPagesIndexState;
 }

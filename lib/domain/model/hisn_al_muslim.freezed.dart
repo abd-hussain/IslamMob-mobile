@@ -16,10 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HisnAlMuslimModel {
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  int get currentCounter => throw _privateConstructorUsedError;
-  int get totalCounter => throw _privateConstructorUsedError;
+  List<HisnAlMuslimDetailsModel> get list => throw _privateConstructorUsedError;
+  bool get isFavorite => throw _privateConstructorUsedError;
 
   /// Create a copy of HisnAlMuslimModel
   /// with the given fields replaced by the non-null parameter values.
@@ -35,7 +35,10 @@ abstract class $HisnAlMuslimModelCopyWith<$Res> {
       _$HisnAlMuslimModelCopyWithImpl<$Res, HisnAlMuslimModel>;
   @useResult
   $Res call(
-      {String title, String description, int currentCounter, int totalCounter});
+      {int id,
+      String title,
+      List<HisnAlMuslimDetailsModel> list,
+      bool isFavorite});
 }
 
 /// @nodoc
@@ -53,28 +56,28 @@ class _$HisnAlMuslimModelCopyWithImpl<$Res, $Val extends HisnAlMuslimModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
-    Object? description = null,
-    Object? currentCounter = null,
-    Object? totalCounter = null,
+    Object? list = null,
+    Object? isFavorite = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      currentCounter: null == currentCounter
-          ? _value.currentCounter
-          : currentCounter // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalCounter: null == totalCounter
-          ? _value.totalCounter
-          : totalCounter // ignore: cast_nullable_to_non_nullable
-              as int,
+      list: null == list
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<HisnAlMuslimDetailsModel>,
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -88,7 +91,10 @@ abstract class _$$HisnAlMuslimModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title, String description, int currentCounter, int totalCounter});
+      {int id,
+      String title,
+      List<HisnAlMuslimDetailsModel> list,
+      bool isFavorite});
 }
 
 /// @nodoc
@@ -104,28 +110,28 @@ class __$$HisnAlMuslimModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
-    Object? description = null,
-    Object? currentCounter = null,
-    Object? totalCounter = null,
+    Object? list = null,
+    Object? isFavorite = null,
   }) {
     return _then(_$HisnAlMuslimModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      currentCounter: null == currentCounter
-          ? _value.currentCounter
-          : currentCounter // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalCounter: null == totalCounter
-          ? _value.totalCounter
-          : totalCounter // ignore: cast_nullable_to_non_nullable
-              as int,
+      list: null == list
+          ? _value._list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<HisnAlMuslimDetailsModel>,
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -134,23 +140,31 @@ class __$$HisnAlMuslimModelImplCopyWithImpl<$Res>
 
 class _$HisnAlMuslimModelImpl implements _HisnAlMuslimModel {
   _$HisnAlMuslimModelImpl(
-      {required this.title,
-      required this.description,
-      required this.currentCounter,
-      required this.totalCounter});
+      {required this.id,
+      required this.title,
+      required final List<HisnAlMuslimDetailsModel> list,
+      this.isFavorite = false})
+      : _list = list;
 
   @override
+  final int id;
+  @override
   final String title;
+  final List<HisnAlMuslimDetailsModel> _list;
   @override
-  final String description;
+  List<HisnAlMuslimDetailsModel> get list {
+    if (_list is EqualUnmodifiableListView) return _list;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_list);
+  }
+
   @override
-  final int currentCounter;
-  @override
-  final int totalCounter;
+  @JsonKey()
+  final bool isFavorite;
 
   @override
   String toString() {
-    return 'HisnAlMuslimModel(title: $title, description: $description, currentCounter: $currentCounter, totalCounter: $totalCounter)';
+    return 'HisnAlMuslimModel(id: $id, title: $title, list: $list, isFavorite: $isFavorite)';
   }
 
   @override
@@ -158,18 +172,16 @@ class _$HisnAlMuslimModelImpl implements _HisnAlMuslimModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HisnAlMuslimModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.currentCounter, currentCounter) ||
-                other.currentCounter == currentCounter) &&
-            (identical(other.totalCounter, totalCounter) ||
-                other.totalCounter == totalCounter));
+            const DeepCollectionEquality().equals(other._list, _list) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, title, description, currentCounter, totalCounter);
+  int get hashCode => Object.hash(runtimeType, id, title,
+      const DeepCollectionEquality().hash(_list), isFavorite);
 
   /// Create a copy of HisnAlMuslimModel
   /// with the given fields replaced by the non-null parameter values.
@@ -183,19 +195,19 @@ class _$HisnAlMuslimModelImpl implements _HisnAlMuslimModel {
 
 abstract class _HisnAlMuslimModel implements HisnAlMuslimModel {
   factory _HisnAlMuslimModel(
-      {required final String title,
-      required final String description,
-      required final int currentCounter,
-      required final int totalCounter}) = _$HisnAlMuslimModelImpl;
+      {required final int id,
+      required final String title,
+      required final List<HisnAlMuslimDetailsModel> list,
+      final bool isFavorite}) = _$HisnAlMuslimModelImpl;
 
+  @override
+  int get id;
   @override
   String get title;
   @override
-  String get description;
+  List<HisnAlMuslimDetailsModel> get list;
   @override
-  int get currentCounter;
-  @override
-  int get totalCounter;
+  bool get isFavorite;
 
   /// Create a copy of HisnAlMuslimModel
   /// with the given fields replaced by the non-null parameter values.
