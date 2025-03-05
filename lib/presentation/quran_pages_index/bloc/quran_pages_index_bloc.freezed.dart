@@ -16,44 +16,49 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$QuranPagesIndexEvent {
-  int get index => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int index) updateSelectedTab,
+    required TResult Function(BuildContext context) getSowarList,
+    required TResult Function(BuildContext context, String value) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(BuildContext context)? getSowarList,
+    TResult? Function(BuildContext context, String value)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int index)? updateSelectedTab,
+    TResult Function(BuildContext context)? getSowarList,
+    TResult Function(BuildContext context, String value)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_GetSowarList value) getSowarList,
+    required TResult Function(_Search value) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_GetSowarList value)? getSowarList,
+    TResult? Function(_Search value)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_GetSowarList value)? getSowarList,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of QuranPagesIndexEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $QuranPagesIndexEventCopyWith<QuranPagesIndexEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -62,8 +67,6 @@ abstract class $QuranPagesIndexEventCopyWith<$Res> {
   factory $QuranPagesIndexEventCopyWith(QuranPagesIndexEvent value,
           $Res Function(QuranPagesIndexEvent) then) =
       _$QuranPagesIndexEventCopyWithImpl<$Res, QuranPagesIndexEvent>;
-  @useResult
-  $Res call({int index});
 }
 
 /// @nodoc
@@ -79,27 +82,13 @@ class _$QuranPagesIndexEventCopyWithImpl<$Res,
 
   /// Create a copy of QuranPagesIndexEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? index = null,
-  }) {
-    return _then(_value.copyWith(
-      index: null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$UpdateSelectedTabImplCopyWith<$Res>
-    implements $QuranPagesIndexEventCopyWith<$Res> {
+abstract class _$$UpdateSelectedTabImplCopyWith<$Res> {
   factory _$$UpdateSelectedTabImplCopyWith(_$UpdateSelectedTabImpl value,
           $Res Function(_$UpdateSelectedTabImpl) then) =
       __$$UpdateSelectedTabImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({int index});
 }
@@ -165,6 +154,8 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int index) updateSelectedTab,
+    required TResult Function(BuildContext context) getSowarList,
+    required TResult Function(BuildContext context, String value) search,
   }) {
     return updateSelectedTab(index);
   }
@@ -173,6 +164,8 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(BuildContext context)? getSowarList,
+    TResult? Function(BuildContext context, String value)? search,
   }) {
     return updateSelectedTab?.call(index);
   }
@@ -181,6 +174,8 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int index)? updateSelectedTab,
+    TResult Function(BuildContext context)? getSowarList,
+    TResult Function(BuildContext context, String value)? search,
     required TResult orElse(),
   }) {
     if (updateSelectedTab != null) {
@@ -193,6 +188,8 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_GetSowarList value) getSowarList,
+    required TResult Function(_Search value) search,
   }) {
     return updateSelectedTab(this);
   }
@@ -201,6 +198,8 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_GetSowarList value)? getSowarList,
+    TResult? Function(_Search value)? search,
   }) {
     return updateSelectedTab?.call(this);
   }
@@ -209,6 +208,8 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_GetSowarList value)? getSowarList,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
     if (updateSelectedTab != null) {
@@ -221,20 +222,321 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
 abstract class _UpdateSelectedTab implements QuranPagesIndexEvent {
   factory _UpdateSelectedTab(final int index) = _$UpdateSelectedTabImpl;
 
-  @override
   int get index;
 
   /// Create a copy of QuranPagesIndexEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateSelectedTabImplCopyWith<_$UpdateSelectedTabImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$GetSowarListImplCopyWith<$Res> {
+  factory _$$GetSowarListImplCopyWith(
+          _$GetSowarListImpl value, $Res Function(_$GetSowarListImpl) then) =
+      __$$GetSowarListImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$$GetSowarListImplCopyWithImpl<$Res>
+    extends _$QuranPagesIndexEventCopyWithImpl<$Res, _$GetSowarListImpl>
+    implements _$$GetSowarListImplCopyWith<$Res> {
+  __$$GetSowarListImplCopyWithImpl(
+      _$GetSowarListImpl _value, $Res Function(_$GetSowarListImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QuranPagesIndexEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+  }) {
+    return _then(_$GetSowarListImpl(
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetSowarListImpl implements _GetSowarList {
+  _$GetSowarListImpl(this.context);
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'QuranPagesIndexEvent.getSowarList(context: $context)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSowarListImpl &&
+            (identical(other.context, context) || other.context == context));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, context);
+
+  /// Create a copy of QuranPagesIndexEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSowarListImplCopyWith<_$GetSowarListImpl> get copyWith =>
+      __$$GetSowarListImplCopyWithImpl<_$GetSowarListImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int index) updateSelectedTab,
+    required TResult Function(BuildContext context) getSowarList,
+    required TResult Function(BuildContext context, String value) search,
+  }) {
+    return getSowarList(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(BuildContext context)? getSowarList,
+    TResult? Function(BuildContext context, String value)? search,
+  }) {
+    return getSowarList?.call(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int index)? updateSelectedTab,
+    TResult Function(BuildContext context)? getSowarList,
+    TResult Function(BuildContext context, String value)? search,
+    required TResult orElse(),
+  }) {
+    if (getSowarList != null) {
+      return getSowarList(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_GetSowarList value) getSowarList,
+    required TResult Function(_Search value) search,
+  }) {
+    return getSowarList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_GetSowarList value)? getSowarList,
+    TResult? Function(_Search value)? search,
+  }) {
+    return getSowarList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_GetSowarList value)? getSowarList,
+    TResult Function(_Search value)? search,
+    required TResult orElse(),
+  }) {
+    if (getSowarList != null) {
+      return getSowarList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetSowarList implements QuranPagesIndexEvent {
+  factory _GetSowarList(final BuildContext context) = _$GetSowarListImpl;
+
+  BuildContext get context;
+
+  /// Create a copy of QuranPagesIndexEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetSowarListImplCopyWith<_$GetSowarListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchImplCopyWith<$Res> {
+  factory _$$SearchImplCopyWith(
+          _$SearchImpl value, $Res Function(_$SearchImpl) then) =
+      __$$SearchImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BuildContext context, String value});
+}
+
+/// @nodoc
+class __$$SearchImplCopyWithImpl<$Res>
+    extends _$QuranPagesIndexEventCopyWithImpl<$Res, _$SearchImpl>
+    implements _$$SearchImplCopyWith<$Res> {
+  __$$SearchImplCopyWithImpl(
+      _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QuranPagesIndexEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+    Object? value = null,
+  }) {
+    return _then(_$SearchImpl(
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchImpl implements _Search {
+  _$SearchImpl(this.context, this.value);
+
+  @override
+  final BuildContext context;
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'QuranPagesIndexEvent.search(context: $context, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchImpl &&
+            (identical(other.context, context) || other.context == context) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, context, value);
+
+  /// Create a copy of QuranPagesIndexEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int index) updateSelectedTab,
+    required TResult Function(BuildContext context) getSowarList,
+    required TResult Function(BuildContext context, String value) search,
+  }) {
+    return search(context, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int index)? updateSelectedTab,
+    TResult? Function(BuildContext context)? getSowarList,
+    TResult? Function(BuildContext context, String value)? search,
+  }) {
+    return search?.call(context, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int index)? updateSelectedTab,
+    TResult Function(BuildContext context)? getSowarList,
+    TResult Function(BuildContext context, String value)? search,
+    required TResult orElse(),
+  }) {
+    if (search != null) {
+      return search(context, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
+    required TResult Function(_GetSowarList value) getSowarList,
+    required TResult Function(_Search value) search,
+  }) {
+    return search(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult? Function(_GetSowarList value)? getSowarList,
+    TResult? Function(_Search value)? search,
+  }) {
+    return search?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
+    TResult Function(_GetSowarList value)? getSowarList,
+    TResult Function(_Search value)? search,
+    required TResult orElse(),
+  }) {
+    if (search != null) {
+      return search(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Search implements QuranPagesIndexEvent {
+  factory _Search(final BuildContext context, final String value) =
+      _$SearchImpl;
+
+  BuildContext get context;
+  String get value;
+
+  /// Create a copy of QuranPagesIndexEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$QuranPagesIndexState {
   int get selectedIndex => throw _privateConstructorUsedError;
+  List<String> get sowarList => throw _privateConstructorUsedError;
 
   /// Create a copy of QuranPagesIndexState
   /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +551,7 @@ abstract class $QuranPagesIndexStateCopyWith<$Res> {
           $Res Function(QuranPagesIndexState) then) =
       _$QuranPagesIndexStateCopyWithImpl<$Res, QuranPagesIndexState>;
   @useResult
-  $Res call({int selectedIndex});
+  $Res call({int selectedIndex, List<String> sowarList});
 }
 
 /// @nodoc
@@ -269,12 +571,17 @@ class _$QuranPagesIndexStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? selectedIndex = null,
+    Object? sowarList = null,
   }) {
     return _then(_value.copyWith(
       selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      sowarList: null == sowarList
+          ? _value.sowarList
+          : sowarList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -287,7 +594,7 @@ abstract class _$$QuranPagesIndexStateImplCopyWith<$Res>
       __$$QuranPagesIndexStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int selectedIndex});
+  $Res call({int selectedIndex, List<String> sowarList});
 }
 
 /// @nodoc
@@ -304,12 +611,17 @@ class __$$QuranPagesIndexStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectedIndex = null,
+    Object? sowarList = null,
   }) {
     return _then(_$QuranPagesIndexStateImpl(
       selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      sowarList: null == sowarList
+          ? _value._sowarList
+          : sowarList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -317,15 +629,25 @@ class __$$QuranPagesIndexStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$QuranPagesIndexStateImpl implements _QuranPagesIndexState {
-  const _$QuranPagesIndexStateImpl({this.selectedIndex = 0});
+  const _$QuranPagesIndexStateImpl(
+      {this.selectedIndex = 0, final List<String> sowarList = const []})
+      : _sowarList = sowarList;
 
   @override
   @JsonKey()
   final int selectedIndex;
+  final List<String> _sowarList;
+  @override
+  @JsonKey()
+  List<String> get sowarList {
+    if (_sowarList is EqualUnmodifiableListView) return _sowarList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sowarList);
+  }
 
   @override
   String toString() {
-    return 'QuranPagesIndexState(selectedIndex: $selectedIndex)';
+    return 'QuranPagesIndexState(selectedIndex: $selectedIndex, sowarList: $sowarList)';
   }
 
   @override
@@ -334,11 +656,14 @@ class _$QuranPagesIndexStateImpl implements _QuranPagesIndexState {
         (other.runtimeType == runtimeType &&
             other is _$QuranPagesIndexStateImpl &&
             (identical(other.selectedIndex, selectedIndex) ||
-                other.selectedIndex == selectedIndex));
+                other.selectedIndex == selectedIndex) &&
+            const DeepCollectionEquality()
+                .equals(other._sowarList, _sowarList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedIndex);
+  int get hashCode => Object.hash(runtimeType, selectedIndex,
+      const DeepCollectionEquality().hash(_sowarList));
 
   /// Create a copy of QuranPagesIndexState
   /// with the given fields replaced by the non-null parameter values.
@@ -352,11 +677,14 @@ class _$QuranPagesIndexStateImpl implements _QuranPagesIndexState {
 }
 
 abstract class _QuranPagesIndexState implements QuranPagesIndexState {
-  const factory _QuranPagesIndexState({final int selectedIndex}) =
-      _$QuranPagesIndexStateImpl;
+  const factory _QuranPagesIndexState(
+      {final int selectedIndex,
+      final List<String> sowarList}) = _$QuranPagesIndexStateImpl;
 
   @override
   int get selectedIndex;
+  @override
+  List<String> get sowarList;
 
   /// Create a copy of QuranPagesIndexState
   /// with the given fields replaced by the non-null parameter values.

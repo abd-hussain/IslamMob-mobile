@@ -453,7 +453,9 @@
     "other" : "Other",
     "selectLocationManually" : "Select location manually",
     "all" : "All",
-    "favorites" : "Favorites"
+    "favorites" : "Favorites",
+    "noItemToShow" : "No Item To Show",
+    "searchField" : "Search ..."
 
 
 

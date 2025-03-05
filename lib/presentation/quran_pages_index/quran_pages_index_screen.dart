@@ -14,18 +14,14 @@ class QuranPagesIndexScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Map<String, dynamic> arguments =
-        ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
-    final String currentSowrahName =
-        arguments[ArgumentConstant.currentSowrahName] ?? "";
-    final String currentPartName =
-        arguments[ArgumentConstant.currentPartName] ?? "";
-    final int currentPageNumber =
-        arguments[ArgumentConstant.currentPageNumber] ?? 0;
+    final Map<String, dynamic> arguments = ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
+    final String currentSowrahName = arguments[ArgumentConstant.currentSowrahName] ?? "";
+    final String currentPartName = arguments[ArgumentConstant.currentPartName] ?? "";
+    final int currentPageNumber = arguments[ArgumentConstant.currentPageNumber] ?? 0;
     FirebaseAnalyticsRepository.logEvent(name: "QuranPagesIndexScreen");
 
     return BlocProvider(
-      create: (context) => QuranPagesIndexBloc(),
+      create: (context) => QuranPagesIndexBloc()..add(QuranPagesIndexEvent.getSowarList(context)),
       child: DefaultTabController(
         length: 3,
         child: Scaffold(
@@ -56,13 +52,10 @@ class QuranPagesIndexScreen extends StatelessWidget {
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: BlocBuilder<QuranPagesIndexBloc, QuranPagesIndexState>(
-          buildWhen: (previous, current) =>
-              previous.selectedIndex != current.selectedIndex,
+          buildWhen: (previous, current) => previous.selectedIndex != current.selectedIndex,
           builder: (context, state) {
             return TabBar(
-              onTap: (index) => context
-                  .read<QuranPagesIndexBloc>()
-                  .add(QuranPagesIndexEvent.updateSelectedTab(index)),
+              onTap: (index) => context.read<QuranPagesIndexBloc>().add(QuranPagesIndexEvent.updateSelectedTab(index)),
               labelColor: Colors.white,
               unselectedLabelColor: Colors.grey[700],
               indicatorColor: const Color(0xff008480),
@@ -113,8 +106,7 @@ class QuranPagesIndexScreen extends StatelessWidget {
     int currentPageNumber,
   ) {
     return BlocBuilder<QuranPagesIndexBloc, QuranPagesIndexState>(
-      buildWhen: (previous, current) =>
-          previous.selectedIndex != current.selectedIndex,
+      buildWhen: (previous, current) => previous.selectedIndex != current.selectedIndex,
       builder: (context, state) {
         return TabBarView(
           controller: TabController(
@@ -127,8 +119,7 @@ class QuranPagesIndexScreen extends StatelessWidget {
             QuranSowarView(
               currentSowrahName: currentSowrahName,
               onSowrahSelected: (sowrahName) {
-                FirebaseAnalyticsRepository.logEvent(
-                    name: "QuranSowarViewItemSelected");
+                FirebaseAnalyticsRepository.logEvent(name: "QuranSowarViewItemSelected");
                 Navigator.of(context).pop({
                   ArgumentConstant.currentSowrahName: sowrahName,
                 });
@@ -137,8 +128,7 @@ class QuranPagesIndexScreen extends StatelessWidget {
             QuranPartsView(
               currentPartName: currentPartName,
               onPartSelected: (partNumber) {
-                FirebaseAnalyticsRepository.logEvent(
-                    name: "QuranPartsViewItemSelected");
+                FirebaseAnalyticsRepository.logEvent(name: "QuranPartsViewItemSelected");
                 Navigator.of(context).pop({
                   ArgumentConstant.currentPartNumber: partNumber,
                 });
@@ -147,8 +137,7 @@ class QuranPagesIndexScreen extends StatelessWidget {
             QuranPagesView(
               currentPageNumber: currentPageNumber,
               onPageSelected: (pageNumber) {
-                FirebaseAnalyticsRepository.logEvent(
-                    name: "QuranPagesViewItemSelected");
+                FirebaseAnalyticsRepository.logEvent(name: "QuranPagesViewItemSelected");
                 Navigator.of(context).pop({
                   ArgumentConstant.currentPageNumber: pageNumber,
                 });

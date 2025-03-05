@@ -1,7 +1,10 @@
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/constants/argument_constant.dart';
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/presentation/hisn_al_muslim/main_list/bloc/hisn_al_muslim_list_bloc.dart';
 
 class HisnMainCardView extends StatelessWidget {
   final HisnAlMuslimModel item;
@@ -26,11 +29,9 @@ class HisnMainCardView extends StatelessWidget {
         color: const Color(0xff444444),
         child: InkWell(
           onTap: () async {
-            await FirebaseAnalyticsRepository.logEvent(
-                name: "hisnAlMuslimDetailsScreenFromListScreen");
-            await Navigator.of(context).pushNamed(
-                RoutesConstants.hisnAlMuslimDetailsScreen,
-                arguments: item);
+            await FirebaseAnalyticsRepository.logEvent(name: "hisnAlMuslimDetailsScreenFromListScreen");
+            final arguments = {ArgumentConstant.hisnAlMuslimItem: item};
+            await Navigator.of(context).pushNamed(RoutesConstants.hisnAlMuslimDetailsScreen, arguments: arguments);
           },
           child: Padding(
             padding: const EdgeInsets.all(8),
@@ -47,8 +48,13 @@ class HisnMainCardView extends StatelessWidget {
                 ),
                 const Expanded(child: SizedBox()),
                 IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.favorite_border),
+                  onPressed: () {
+                    final updatedHisn = item.copyWith(isFavorite: !item.isFavorite);
+                    context
+                        .read<HisnAlMuslimListBloc>()
+                        .add(HisnAlMuslimListEvent.addRemoveItemToFavorite(updatedHisn));
+                  },
+                  icon: Icon(item.isFavorite ? Icons.favorite : Icons.favorite_border),
                   color: Colors.white,
                 )
               ],

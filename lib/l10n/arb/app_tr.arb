@@ -453,6 +453,8 @@
     "other": "Diğer",
     "selectLocationManually" : "Konumu Manuel Olarak Seçin",
     "all" : "hepsi",
-    "favorites" : "favoriler"
+    "favorites" : "favoriler",
+    "noItemToShow" : "Gösterilecek Öğe Yok",
+    "searchField" : "Aramak ..."
 
 }

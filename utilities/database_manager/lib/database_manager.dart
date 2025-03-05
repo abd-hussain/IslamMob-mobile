@@ -5,6 +5,7 @@ library database_manager;
 
 export 'core/constants/database_box.dart';
 export 'core/constants/database_field.dart';
+export 'core/constants/database_hisn_al_muslim.dart';
 export 'core/constants/database_inboarding.dart';
 export 'core/constants/database_local_notifications.dart';
 export 'core/constants/database_location.dart';

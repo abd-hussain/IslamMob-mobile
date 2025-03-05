@@ -453,7 +453,9 @@
     "other": "Autre",
     "selectLocationManually" : "Sélectionner l'emplacement manuellement",
     "all" : "tous",
-    "favorites" : "favoris"
+    "favorites" : "favoris",
+    "noItemToShow" : "Aucun élément à afficher",
+    "searchField" : "Recherche ..."
 
 
 }
