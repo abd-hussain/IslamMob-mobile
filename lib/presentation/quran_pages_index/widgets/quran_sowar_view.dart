@@ -10,7 +10,10 @@ class QuranSowarView extends StatelessWidget {
   final String currentSowrahName;
   final Function(String sowrahName) onSowrahSelected;
 
-  const QuranSowarView({super.key, required this.onSowrahSelected, required this.currentSowrahName});
+  const QuranSowarView(
+      {super.key,
+      required this.onSowrahSelected,
+      required this.currentSowrahName});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +32,17 @@ class QuranSowarView extends StatelessWidget {
                   controller: searchController,
                   hintText: IslamMobLocalizations.of(context).searchField,
                   prefixIcon: Icons.search,
-                  onChanged: (p0) => context.read<QuranPagesIndexBloc>().add(QuranPagesIndexEvent.search(context, p0)),
+                  onChanged: (p0) => context
+                      .read<QuranPagesIndexBloc>()
+                      .add(QuranPagesIndexEvent.search(context, p0)),
                 );
               }),
             ],
           ),
           Expanded(
             child: BlocBuilder<QuranPagesIndexBloc, QuranPagesIndexState>(
-              buildWhen: (previous, current) => previous.sowarList != current.sowarList,
+              buildWhen: (previous, current) =>
+                  previous.sowarList != current.sowarList,
               builder: (context, state) {
                 return ListView.builder(
                     itemCount: state.sowarList.length,

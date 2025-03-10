@@ -12,10 +12,6 @@ class _TitleTableWidgetState extends State<TitleTableWidget> {
   final List<String> _phrases = [
     "اختر لغتك المفضلة",
     "Select Your Favorite Language",
-    'Favori Dilinizi Seçin',
-    'زبان مورد علاقه خود را انتخاب کنید',
-    'Sélectionnez votre langue préférée',
-    'Выберите ваш любимый язык',
   ];
   int _currentIndex = 0;
   bool _isDisposed = false;

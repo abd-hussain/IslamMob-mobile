@@ -5,14 +5,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/constants/argument_constant.dart';
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/details/bloc/hisn_al_muslim_details_bloc.dart';
-import 'package:islam_app/presentation/hisn_al_muslim/details/widgets/hisn_al_muslim_view.dart';
+import 'package:islam_app/presentation/hisn_al_muslim/details/widgets/hisn_al_muslim_text_view.dart';
+import 'package:islam_app/presentation/hisn_al_muslim/details/widgets/hisn_al_muslim_with_counter_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 
 class HisnAlMuslimDetailsScreen extends StatefulWidget {
   const HisnAlMuslimDetailsScreen({super.key});
 
   @override
-  State<HisnAlMuslimDetailsScreen> createState() => _HisnAlMuslimDetailsScreenState();
+  State<HisnAlMuslimDetailsScreen> createState() =>
+      _HisnAlMuslimDetailsScreenState();
 }
 
 class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
@@ -37,7 +39,8 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
     final hisnAlMuslimModel = _getHisnAlMuslimModel(context);
 
     return BlocProvider(
-      create: (context) => HisnAlMuslimDetailsBloc()..add(HisnAlMuslimDetailsEvent.fillInitialValue(hisnAlMuslimModel)),
+      create: (context) => HisnAlMuslimDetailsBloc()
+        ..add(HisnAlMuslimDetailsEvent.fillInitialValue(hisnAlMuslimModel)),
       child: BlocBuilder<HisnAlMuslimDetailsBloc, HisnAlMuslimDetailsState>(
         buildWhen: (previous, current) => previous.item != current.item,
         builder: _buildScaffold,
@@ -56,8 +59,14 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(child: _buildPageView(state)),
-            const AddMobBanner(size: AdsBannerSize.fullBanner),
+            Expanded(
+                child: state.item != null
+                    ? _buildPageView(state)
+                    : const SizedBox()),
+            const AddMobBanner(
+              size: AdsBannerSize.fullBanner,
+              verticalPadding: 0,
+            ),
           ],
         ),
       ),
@@ -67,36 +76,47 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
   /// Builds the PageView for displaying content
   Widget _buildPageView(HisnAlMuslimDetailsState state) {
     return Padding(
-      padding: const EdgeInsets.all(8),
-      child: PageView.builder(
-        itemCount: state.item?.list.length ?? 0,
-        controller: controller,
-        itemBuilder: (context, index) {
-          return HisnAlMuslimView(
-            index: index + 1,
-            totalLength: state.item?.list.length ?? 0,
-            hisnAlMuslimDetailsModel: state.item?.list[index],
-            reachMaxCount: () {
-              controller.animateToPage(controller.page!.toInt() + 1,
-                  duration: const Duration(milliseconds: 400), curve: Curves.easeIn);
-            },
-          );
-        },
-      ),
-    );
+        padding: const EdgeInsets.all(8),
+        child: switch (state.item!.details) {
+          HisnAlMuslimModelStateText(
+            :final List<String> list,
+            :final List<String> referance
+          ) =>
+            HisnAlMuslimTextView(
+              list: list,
+              referance: referance,
+            ),
+          HisnAlMuslimModelStateCounter(
+            :final List<HisnAlMuslimDetailsModel> list
+          ) =>
+            PageView.builder(
+              itemCount: list.length,
+              controller: controller,
+              itemBuilder: (context, index) {
+                return HisnAlMuslimWithCounterView(
+                  index: index + 1,
+                  totalLength: list.length,
+                  hisnAlMuslimDetailsModel: list[index],
+                  reachMaxCount: () {
+                    controller.animateToPage(controller.page!.toInt() + 1,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeIn);
+                  },
+                );
+              },
+            ),
+        });
   }
 
   /// Builds the Favorite button in the AppBar
-  Widget _buildFavoriteButton(BuildContext context, HisnAlMuslimDetailsState state) {
+  Widget _buildFavoriteButton(
+      BuildContext context, HisnAlMuslimDetailsState state) {
     final isFavorite = state.item?.isFavorite ?? false;
 
     return IconButton(
-      onPressed: () {
-        //TODO
-        // context.read<HisnAlMuslimDetailsBloc>().add(
-        //       HisnAlMuslimDetailsEvent.addRemoveItemFromFavorite(state.item),
-        //     );
-      },
+      onPressed: () => context
+          .read<HisnAlMuslimDetailsBloc>()
+          .add(const HisnAlMuslimDetailsEvent.updateFavoriteItem()),
       icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
     );
   }

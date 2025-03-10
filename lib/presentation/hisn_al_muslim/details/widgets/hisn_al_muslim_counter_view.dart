@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class HisnAlMuslimCounterView extends StatelessWidget {
@@ -17,8 +18,9 @@ class HisnAlMuslimCounterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
+    return Container(
+      height: 80,
+      color: Colors.white,
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -28,7 +30,7 @@ class HisnAlMuslimCounterView extends StatelessWidget {
               const Divider(color: Color(0xff444444)),
               Padding(
                 padding: const EdgeInsets.all(8),
-                child: _buildInfoRow(),
+                child: _buildInfoRow(context),
               ),
             ],
           ),
@@ -39,7 +41,7 @@ class HisnAlMuslimCounterView extends StatelessWidget {
   }
 
   /// Builds the bottom row with index and repetition count
-  Widget _buildInfoRow() {
+  Widget _buildInfoRow(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -50,7 +52,8 @@ class HisnAlMuslimCounterView extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
         CustomText(
-          title: "التكرار : ($readCount)",
+          title:
+              "${IslamMobLocalizations.of(context).repetition} : ($readCount)",
           fontSize: 16,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,

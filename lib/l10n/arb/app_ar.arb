@@ -455,6 +455,7 @@
     "all" : "الكل",
     "favorites" : "المفضله",
     "noItemToShow" : "لا يوجد عناصر لعرضها",
-    "searchField" : "بحث ..."
+    "searchField" : "بحث ...",
+    "repetition" : "التكرار"
 
 }

@@ -29,32 +29,44 @@ class HisnMainCardView extends StatelessWidget {
         color: const Color(0xff444444),
         child: InkWell(
           onTap: () async {
-            await FirebaseAnalyticsRepository.logEvent(name: "hisnAlMuslimDetailsScreenFromListScreen");
+            await FirebaseAnalyticsRepository.logEvent(
+                name: "hisnAlMuslimDetailsScreenFromListScreen");
             final arguments = {ArgumentConstant.hisnAlMuslimItem: item};
-            await Navigator.of(context).pushNamed(RoutesConstants.hisnAlMuslimDetailsScreen, arguments: arguments);
+            await Navigator.of(context)
+                .pushNamed(RoutesConstants.hisnAlMuslimDetailsScreen,
+                    arguments: arguments)
+                .then((val) {
+              context
+                  .read<HisnAlMuslimListBloc>()
+                  .add(const HisnAlMuslimListEvent.getListOfAzkar());
+            });
           },
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                Text(
-                  item.title,
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        color: const Color(0xfffff2e9),
-                        fontFamily: 'Uthman',
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                Expanded(
+                  child: Text(
+                    "${item.id} - ${item.title}",
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: const Color(0xfffff2e9),
+                          fontFamily: 'Uthman',
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                    maxLines: 2,
+                  ),
                 ),
-                const Expanded(child: SizedBox()),
                 IconButton(
                   onPressed: () {
-                    final updatedHisn = item.copyWith(isFavorite: !item.isFavorite);
-                    context
-                        .read<HisnAlMuslimListBloc>()
-                        .add(HisnAlMuslimListEvent.addRemoveItemToFavorite(updatedHisn));
+                    final updatedHisn =
+                        item.copyWith(isFavorite: !item.isFavorite);
+                    context.read<HisnAlMuslimListBloc>().add(
+                        HisnAlMuslimListEvent.addRemoveItemToFavorite(
+                            updatedHisn));
                   },
-                  icon: Icon(item.isFavorite ? Icons.favorite : Icons.favorite_border),
+                  icon: Icon(
+                      item.isFavorite ? Icons.favorite : Icons.favorite_border),
                   color: Colors.white,
                 )
               ],
