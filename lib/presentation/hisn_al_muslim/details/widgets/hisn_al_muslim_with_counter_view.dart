@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/details/widgets/hisn_al_muslim_counter_view.dart';
 
-class HisnAlMuslimView extends StatefulWidget {
-  final HisnAlMuslimDetailsModel? hisnAlMuslimDetailsModel;
+class HisnAlMuslimWithCounterView extends StatefulWidget {
+  final HisnAlMuslimDetailsModel hisnAlMuslimDetailsModel;
   final int index;
   final int totalLength;
   final Function() reachMaxCount;
 
-  const HisnAlMuslimView({
+  const HisnAlMuslimWithCounterView({
     super.key,
     required this.hisnAlMuslimDetailsModel,
     required this.index,
@@ -17,13 +17,16 @@ class HisnAlMuslimView extends StatefulWidget {
   });
 
   @override
-  State<HisnAlMuslimView> createState() => _HisnAlMuslimViewState();
+  State<HisnAlMuslimWithCounterView> createState() =>
+      _HisnAlMuslimWithCounterViewState();
 }
 
-class _HisnAlMuslimViewState extends State<HisnAlMuslimView> {
+class _HisnAlMuslimWithCounterViewState
+    extends State<HisnAlMuslimWithCounterView> {
   void _incrementCount() {
-    if ((widget.hisnAlMuslimDetailsModel?.readCount ?? 0) > (widget.hisnAlMuslimDetailsModel?.currentCount ?? 0)) {
-      setState(() => widget.hisnAlMuslimDetailsModel?.currentCount++);
+    if ((widget.hisnAlMuslimDetailsModel.readCount) >
+        (widget.hisnAlMuslimDetailsModel.currentCount)) {
+      setState(() => widget.hisnAlMuslimDetailsModel.currentCount++);
     } else {
       if (widget.index < (widget.totalLength)) {
         widget.reachMaxCount();
@@ -45,14 +48,25 @@ class _HisnAlMuslimViewState extends State<HisnAlMuslimView> {
           onTap: _incrementCount,
           child: Padding(
             padding: const EdgeInsets.all(8),
-            child: Column(
+            child: Stack(
               children: [
-                _buildTitleText(context),
-                _buildDescriptionText(context),
-                const Divider(color: Color(0xff444444)),
-                _buildReferenceText(context),
-                const Expanded(child: SizedBox()),
-                _buildCounterView(),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _buildTitleText(context),
+                      _buildDescriptionText(context),
+                      const Divider(color: Color(0xff444444)),
+                      _buildReferenceText(context),
+                      const SizedBox(height: 80),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: _buildCounterView(),
+                ),
               ],
             ),
           ),
@@ -62,7 +76,7 @@ class _HisnAlMuslimViewState extends State<HisnAlMuslimView> {
   }
 
   Widget _buildTitleText(BuildContext context) {
-    final title = widget.hisnAlMuslimDetailsModel?.descriptionTitle ?? "";
+    final title = widget.hisnAlMuslimDetailsModel.descriptionTitle;
     if (title.isEmpty) return const SizedBox();
 
     return Text(
@@ -74,26 +88,33 @@ class _HisnAlMuslimViewState extends State<HisnAlMuslimView> {
 
   Widget _buildDescriptionText(BuildContext context) {
     return Text(
-      widget.hisnAlMuslimDetailsModel?.description ?? "",
+      widget.hisnAlMuslimDetailsModel.description,
       style: _uthmanTextStyle(fontSize: 22),
       textAlign: TextAlign.center,
     );
   }
 
   Widget _buildReferenceText(BuildContext context) {
-    return Text(
-      widget.hisnAlMuslimDetailsModel?.referance ?? "",
-      style: _uthmanTextStyle(fontSize: 16),
-      textAlign: TextAlign.center,
-    );
+    return ListView.builder(
+        shrinkWrap: true, // Ensures it takes only required space
+        physics:
+            const NeverScrollableScrollPhysics(), // Disables internal scrolling
+        itemCount: widget.hisnAlMuslimDetailsModel.referance.length,
+        itemBuilder: (ctx, index) {
+          return Text(
+            widget.hisnAlMuslimDetailsModel.referance[index],
+            style: _uthmanTextStyle(fontSize: 16),
+            textAlign: TextAlign.start,
+          );
+        });
   }
 
   Widget _buildCounterView() {
     return HisnAlMuslimCounterView(
-      readCount: widget.hisnAlMuslimDetailsModel?.readCount ?? 0,
+      readCount: widget.hisnAlMuslimDetailsModel.readCount,
       totalLength: widget.totalLength,
       index: widget.index,
-      currentCount: widget.hisnAlMuslimDetailsModel?.currentCount ?? 0,
+      currentCount: widget.hisnAlMuslimDetailsModel.currentCount,
     );
   }
 

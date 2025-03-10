@@ -24,7 +24,8 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: BlocProvider(
-        create: (context) => HisnAlMuslimListBloc()..add(const HisnAlMuslimListEvent.getListOfAzkar()),
+        create: (context) => HisnAlMuslimListBloc()
+          ..add(const HisnAlMuslimListEvent.getListOfAzkar()),
         child: DefaultTabController(
           length: 2,
           child: Scaffold(
@@ -40,11 +41,13 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(kToolbarHeight),
                 child: BlocBuilder<HisnAlMuslimListBloc, HisnAlMuslimListState>(
-                  buildWhen: (previous, current) => previous.selectedIndex != current.selectedIndex,
+                  buildWhen: (previous, current) =>
+                      previous.selectedIndex != current.selectedIndex,
                   builder: (context, state) {
                     return TabBar(
-                      onTap: (index) =>
-                          context.read<HisnAlMuslimListBloc>().add(HisnAlMuslimListEvent.updateSelectedTab(index)),
+                      onTap: (index) => context
+                          .read<HisnAlMuslimListBloc>()
+                          .add(HisnAlMuslimListEvent.updateSelectedTab(index)),
                       labelColor: Colors.white,
                       unselectedLabelColor: Colors.grey[700],
                       indicatorColor: const Color(0xff008480),
@@ -87,9 +90,12 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
                       Builder(builder: (context) {
                         return CustomTextField(
                           controller: searchController,
-                          hintText: IslamMobLocalizations.of(context).searchField,
+                          hintText:
+                              IslamMobLocalizations.of(context).searchField,
                           prefixIcon: Icons.search,
-                          onChanged: (p0) => context.read<HisnAlMuslimListBloc>().add(HisnAlMuslimListEvent.search(p0)),
+                          onChanged: (p0) => context
+                              .read<HisnAlMuslimListBloc>()
+                              .add(HisnAlMuslimListEvent.search(p0)),
                         );
                       }),
                     ],
@@ -97,9 +103,11 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(8),
-                      child: BlocBuilder<HisnAlMuslimListBloc, HisnAlMuslimListState>(
+                      child: BlocBuilder<HisnAlMuslimListBloc,
+                          HisnAlMuslimListState>(
                         buildWhen: (previous, current) =>
-                            (previous.selectedIndex != current.selectedIndex) || (previous.list != current.list),
+                            (previous.selectedIndex != current.selectedIndex) ||
+                            (previous.list != current.list),
                         builder: (context, state) {
                           return TabBarView(
                             controller: TabController(
@@ -118,6 +126,7 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
                   ),
                   const AddMobBanner(
                     size: AdsBannerSize.fullBanner,
+                    verticalPadding: 0,
                   ),
                 ],
               ),

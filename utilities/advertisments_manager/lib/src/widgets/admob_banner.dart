@@ -12,9 +12,11 @@ enum AdsBannerSize {
 
 class AddMobBanner extends StatefulWidget {
   final AdsBannerSize size;
+  final double verticalPadding;
   const AddMobBanner({
     super.key,
     this.size = AdsBannerSize.banner,
+    this.verticalPadding = 8,
   });
 
   @override
@@ -80,7 +82,7 @@ class _AddMobBannerState extends State<AddMobBanner> {
   Widget build(BuildContext context) {
     return _isBannerAdReady
         ? Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            padding: EdgeInsets.symmetric(vertical: widget.verticalPadding),
             child: Align(
               alignment: Alignment.topCenter,
               child: SizedBox(

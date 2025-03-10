@@ -58,10 +58,6 @@ class IslamMobAppState extends State<IslamMobApp> {
     return const [
       Locale('en', ''),
       Locale('ar', ''),
-      Locale('tr', ''),
-      // Locale('fr', ''),
-      Locale('fa', ''),
-      // Locale('ru', ''),
     ];
   }
 

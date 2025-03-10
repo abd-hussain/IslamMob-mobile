@@ -455,7 +455,8 @@
     "all" : "All",
     "favorites" : "Favorites",
     "noItemToShow" : "No Item To Show",
-    "searchField" : "Search ..."
+    "searchField" : "Search ...",
+    "repetition" : "Repetition"
 
 
 

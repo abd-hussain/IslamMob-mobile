@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'hisn_al_muslim.freezed.dart';
 
 @freezed
@@ -6,15 +7,23 @@ class HisnAlMuslimModel with _$HisnAlMuslimModel {
   factory HisnAlMuslimModel({
     required int id,
     required String title,
-    required List<HisnAlMuslimDetailsModel> list,
+    required HisnAlMuslimModelState details,
     @Default(false) bool isFavorite,
   }) = _HisnAlMuslimModel;
+}
+
+@freezed
+sealed class HisnAlMuslimModelState with _$HisnAlMuslimModelState {
+  const factory HisnAlMuslimModelState.text(
+      List<String> list, List<String> referance) = HisnAlMuslimModelStateText;
+  const factory HisnAlMuslimModelState.counter(
+      List<HisnAlMuslimDetailsModel> list) = HisnAlMuslimModelStateCounter;
 }
 
 class HisnAlMuslimDetailsModel {
   final String descriptionTitle;
   final String description;
-  final String referance;
+  final List<String> referance;
   final int readCount;
   int currentCount;
 
