@@ -24,17 +24,23 @@ class IslamMobAppState extends State<IslamMobApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      onGenerateTitle: (BuildContext context) => AppConstant.appName,
-      locale: _getLocale(),
-      localizationsDelegates: _localizationDelegates(),
-      supportedLocales: _supportedLocales(),
-      theme: ThemeData(useMaterial3: false),
-      scrollBehavior: MyCustomScrollBehavior(),
-      onGenerateRoute: _onGenerateRoute,
-      initialRoute: _getInitialRoute(),
-    );
+    return Builder(builder: (context) {
+      return MediaQuery(
+        data: MediaQuery.of(context)
+            .copyWith(textScaler: TextScaler.noScaling), // Locks font scaling
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          onGenerateTitle: (BuildContext context) => AppConstant.appName,
+          locale: _getLocale(),
+          localizationsDelegates: _localizationDelegates(),
+          supportedLocales: _supportedLocales(),
+          theme: ThemeData(useMaterial3: false),
+          scrollBehavior: MyCustomScrollBehavior(),
+          onGenerateRoute: _onGenerateRoute,
+          initialRoute: _getInitialRoute(),
+        ),
+      );
+    });
   }
 
   Locale _getLocale() {

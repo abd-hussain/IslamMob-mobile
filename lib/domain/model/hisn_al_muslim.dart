@@ -23,14 +23,14 @@ sealed class HisnAlMuslimModelState with _$HisnAlMuslimModelState {
 class HisnAlMuslimDetailsModel {
   final String descriptionTitle;
   final String description;
-  final List<String> referance;
+  final List<String> references;
   final int readCount;
   int currentCount;
 
   HisnAlMuslimDetailsModel({
     required this.descriptionTitle,
     required this.description,
-    required this.referance,
+    required this.references,
     required this.readCount,
     this.currentCount = 0,
   });

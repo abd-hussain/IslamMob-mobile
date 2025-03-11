@@ -99,10 +99,10 @@ class _HisnAlMuslimWithCounterViewState
         shrinkWrap: true, // Ensures it takes only required space
         physics:
             const NeverScrollableScrollPhysics(), // Disables internal scrolling
-        itemCount: widget.hisnAlMuslimDetailsModel.referance.length,
+        itemCount: widget.hisnAlMuslimDetailsModel.references.length,
         itemBuilder: (ctx, index) {
           return Text(
-            widget.hisnAlMuslimDetailsModel.referance[index],
+            widget.hisnAlMuslimDetailsModel.references[index],
             style: _uthmanTextStyle(fontSize: 16),
             textAlign: TextAlign.start,
           );
