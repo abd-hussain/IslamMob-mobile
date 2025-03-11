@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.2.0+153
+version: 1.2.0+154
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -119,6 +119,7 @@ flutter:
   - assets/images/toolbar/
   - assets/images/qibla/
   - assets/lottie/
+  - assets/json/
 
   fonts:
     - family: Uthman

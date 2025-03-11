@@ -5,9 +5,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/domain/usecase/hisn_al_muslim_usecase.dart';
 
+part 'hisn_al_muslim_list_bloc.freezed.dart';
 part 'hisn_al_muslim_list_event.dart';
 part 'hisn_al_muslim_list_state.dart';
-part 'hisn_al_muslim_list_bloc.freezed.dart';
 
 class HisnAlMuslimListBloc
     extends Bloc<HisnAlMuslimListEvent, HisnAlMuslimListState> {
@@ -19,8 +19,8 @@ class HisnAlMuslimListBloc
   }
 
   FutureOr<void> _getListOfAzkar(
-      _GetListOfAzkar event, Emitter<HisnAlMuslimListState> emit) {
-    emit(state.copyWith(list: HisnAlMuslimUseCase.getHisnAlMuslimList()));
+      _GetListOfAzkar event, Emitter<HisnAlMuslimListState> emit) async {
+    emit(state.copyWith(list: await HisnAlMuslimUseCase.getHisnAlMuslimList()));
   }
 
   FutureOr<void> _updateSelectedTab(
@@ -29,13 +29,15 @@ class HisnAlMuslimListBloc
   }
 
   FutureOr<void> _addItemToFavorite(
-      _AddItemToFavorite event, Emitter<HisnAlMuslimListState> emit) {
+      _AddItemToFavorite event, Emitter<HisnAlMuslimListState> emit) async {
     HisnAlMuslimUseCase.addRemoveNewItemToFavoriteList(event.item.id);
-    emit(state.copyWith(list: HisnAlMuslimUseCase.getHisnAlMuslimList()));
+    emit(state.copyWith(list: await HisnAlMuslimUseCase.getHisnAlMuslimList()));
   }
 
-  FutureOr<void> _search(_Search event, Emitter<HisnAlMuslimListState> emit) {
-    final searchFilteredList = HisnAlMuslimUseCase.getHisnAlMuslimList()
+  FutureOr<void> _search(
+      _Search event, Emitter<HisnAlMuslimListState> emit) async {
+    final originalList = await HisnAlMuslimUseCase.getHisnAlMuslimList();
+    final searchFilteredList = originalList
         .where((element) =>
             element.title.toLowerCase().contains(event.value.toLowerCase()))
         .toList();
