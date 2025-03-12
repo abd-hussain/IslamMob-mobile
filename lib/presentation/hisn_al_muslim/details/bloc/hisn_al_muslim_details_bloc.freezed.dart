@@ -20,18 +20,24 @@ mixin _$HisnAlMuslimDetailsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(HisnAlMuslimModel? item) fillInitialValue,
     required TResult Function() updateFavoriteItem,
+    required TResult Function(String description) updateTextToShare,
+    required TResult Function(String title) shareItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HisnAlMuslimModel? item)? fillInitialValue,
     TResult? Function()? updateFavoriteItem,
+    TResult? Function(String description)? updateTextToShare,
+    TResult? Function(String title)? shareItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HisnAlMuslimModel? item)? fillInitialValue,
     TResult Function()? updateFavoriteItem,
+    TResult Function(String description)? updateTextToShare,
+    TResult Function(String title)? shareItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$HisnAlMuslimDetailsEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
     required TResult Function(_UpdateFavoriteItem value) updateFavoriteItem,
+    required TResult Function(_UpdateTextToShare value) updateTextToShare,
+    required TResult Function(_ShareItem value) shareItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
     TResult? Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult? Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult? Function(_ShareItem value)? shareItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
     TResult Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult Function(_ShareItem value)? shareItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -165,6 +177,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   TResult when<TResult extends Object?>({
     required TResult Function(HisnAlMuslimModel? item) fillInitialValue,
     required TResult Function() updateFavoriteItem,
+    required TResult Function(String description) updateTextToShare,
+    required TResult Function(String title) shareItem,
   }) {
     return fillInitialValue(item);
   }
@@ -174,6 +188,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HisnAlMuslimModel? item)? fillInitialValue,
     TResult? Function()? updateFavoriteItem,
+    TResult? Function(String description)? updateTextToShare,
+    TResult? Function(String title)? shareItem,
   }) {
     return fillInitialValue?.call(item);
   }
@@ -183,6 +199,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HisnAlMuslimModel? item)? fillInitialValue,
     TResult Function()? updateFavoriteItem,
+    TResult Function(String description)? updateTextToShare,
+    TResult Function(String title)? shareItem,
     required TResult orElse(),
   }) {
     if (fillInitialValue != null) {
@@ -196,6 +214,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
     required TResult Function(_UpdateFavoriteItem value) updateFavoriteItem,
+    required TResult Function(_UpdateTextToShare value) updateTextToShare,
+    required TResult Function(_ShareItem value) shareItem,
   }) {
     return fillInitialValue(this);
   }
@@ -205,6 +225,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
     TResult? Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult? Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult? Function(_ShareItem value)? shareItem,
   }) {
     return fillInitialValue?.call(this);
   }
@@ -214,6 +236,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
     TResult Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult Function(_ShareItem value)? shareItem,
     required TResult orElse(),
   }) {
     if (fillInitialValue != null) {
@@ -280,6 +304,8 @@ class _$UpdateFavoriteItemImpl implements _UpdateFavoriteItem {
   TResult when<TResult extends Object?>({
     required TResult Function(HisnAlMuslimModel? item) fillInitialValue,
     required TResult Function() updateFavoriteItem,
+    required TResult Function(String description) updateTextToShare,
+    required TResult Function(String title) shareItem,
   }) {
     return updateFavoriteItem();
   }
@@ -289,6 +315,8 @@ class _$UpdateFavoriteItemImpl implements _UpdateFavoriteItem {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HisnAlMuslimModel? item)? fillInitialValue,
     TResult? Function()? updateFavoriteItem,
+    TResult? Function(String description)? updateTextToShare,
+    TResult? Function(String title)? shareItem,
   }) {
     return updateFavoriteItem?.call();
   }
@@ -298,6 +326,8 @@ class _$UpdateFavoriteItemImpl implements _UpdateFavoriteItem {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HisnAlMuslimModel? item)? fillInitialValue,
     TResult Function()? updateFavoriteItem,
+    TResult Function(String description)? updateTextToShare,
+    TResult Function(String title)? shareItem,
     required TResult orElse(),
   }) {
     if (updateFavoriteItem != null) {
@@ -311,6 +341,8 @@ class _$UpdateFavoriteItemImpl implements _UpdateFavoriteItem {
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
     required TResult Function(_UpdateFavoriteItem value) updateFavoriteItem,
+    required TResult Function(_UpdateTextToShare value) updateTextToShare,
+    required TResult Function(_ShareItem value) shareItem,
   }) {
     return updateFavoriteItem(this);
   }
@@ -320,6 +352,8 @@ class _$UpdateFavoriteItemImpl implements _UpdateFavoriteItem {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
     TResult? Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult? Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult? Function(_ShareItem value)? shareItem,
   }) {
     return updateFavoriteItem?.call(this);
   }
@@ -329,6 +363,8 @@ class _$UpdateFavoriteItemImpl implements _UpdateFavoriteItem {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
     TResult Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult Function(_ShareItem value)? shareItem,
     required TResult orElse(),
   }) {
     if (updateFavoriteItem != null) {
@@ -343,8 +379,317 @@ abstract class _UpdateFavoriteItem implements HisnAlMuslimDetailsEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateTextToShareImplCopyWith<$Res> {
+  factory _$$UpdateTextToShareImplCopyWith(_$UpdateTextToShareImpl value,
+          $Res Function(_$UpdateTextToShareImpl) then) =
+      __$$UpdateTextToShareImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String description});
+}
+
+/// @nodoc
+class __$$UpdateTextToShareImplCopyWithImpl<$Res>
+    extends _$HisnAlMuslimDetailsEventCopyWithImpl<$Res,
+        _$UpdateTextToShareImpl>
+    implements _$$UpdateTextToShareImplCopyWith<$Res> {
+  __$$UpdateTextToShareImplCopyWithImpl(_$UpdateTextToShareImpl _value,
+      $Res Function(_$UpdateTextToShareImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? description = null,
+  }) {
+    return _then(_$UpdateTextToShareImpl(
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateTextToShareImpl implements _UpdateTextToShare {
+  const _$UpdateTextToShareImpl({required this.description});
+
+  @override
+  final String description;
+
+  @override
+  String toString() {
+    return 'HisnAlMuslimDetailsEvent.updateTextToShare(description: $description)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateTextToShareImpl &&
+            (identical(other.description, description) ||
+                other.description == description));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, description);
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateTextToShareImplCopyWith<_$UpdateTextToShareImpl> get copyWith =>
+      __$$UpdateTextToShareImplCopyWithImpl<_$UpdateTextToShareImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HisnAlMuslimModel? item) fillInitialValue,
+    required TResult Function() updateFavoriteItem,
+    required TResult Function(String description) updateTextToShare,
+    required TResult Function(String title) shareItem,
+  }) {
+    return updateTextToShare(description);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HisnAlMuslimModel? item)? fillInitialValue,
+    TResult? Function()? updateFavoriteItem,
+    TResult? Function(String description)? updateTextToShare,
+    TResult? Function(String title)? shareItem,
+  }) {
+    return updateTextToShare?.call(description);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HisnAlMuslimModel? item)? fillInitialValue,
+    TResult Function()? updateFavoriteItem,
+    TResult Function(String description)? updateTextToShare,
+    TResult Function(String title)? shareItem,
+    required TResult orElse(),
+  }) {
+    if (updateTextToShare != null) {
+      return updateTextToShare(description);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FillInitialValue value) fillInitialValue,
+    required TResult Function(_UpdateFavoriteItem value) updateFavoriteItem,
+    required TResult Function(_UpdateTextToShare value) updateTextToShare,
+    required TResult Function(_ShareItem value) shareItem,
+  }) {
+    return updateTextToShare(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FillInitialValue value)? fillInitialValue,
+    TResult? Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult? Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult? Function(_ShareItem value)? shareItem,
+  }) {
+    return updateTextToShare?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FillInitialValue value)? fillInitialValue,
+    TResult Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult Function(_ShareItem value)? shareItem,
+    required TResult orElse(),
+  }) {
+    if (updateTextToShare != null) {
+      return updateTextToShare(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateTextToShare implements HisnAlMuslimDetailsEvent {
+  const factory _UpdateTextToShare({required final String description}) =
+      _$UpdateTextToShareImpl;
+
+  String get description;
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateTextToShareImplCopyWith<_$UpdateTextToShareImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ShareItemImplCopyWith<$Res> {
+  factory _$$ShareItemImplCopyWith(
+          _$ShareItemImpl value, $Res Function(_$ShareItemImpl) then) =
+      __$$ShareItemImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String title});
+}
+
+/// @nodoc
+class __$$ShareItemImplCopyWithImpl<$Res>
+    extends _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, _$ShareItemImpl>
+    implements _$$ShareItemImplCopyWith<$Res> {
+  __$$ShareItemImplCopyWithImpl(
+      _$ShareItemImpl _value, $Res Function(_$ShareItemImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+  }) {
+    return _then(_$ShareItemImpl(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ShareItemImpl implements _ShareItem {
+  const _$ShareItemImpl({required this.title});
+
+  @override
+  final String title;
+
+  @override
+  String toString() {
+    return 'HisnAlMuslimDetailsEvent.shareItem(title: $title)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShareItemImpl &&
+            (identical(other.title, title) || other.title == title));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, title);
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShareItemImplCopyWith<_$ShareItemImpl> get copyWith =>
+      __$$ShareItemImplCopyWithImpl<_$ShareItemImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HisnAlMuslimModel? item) fillInitialValue,
+    required TResult Function() updateFavoriteItem,
+    required TResult Function(String description) updateTextToShare,
+    required TResult Function(String title) shareItem,
+  }) {
+    return shareItem(title);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HisnAlMuslimModel? item)? fillInitialValue,
+    TResult? Function()? updateFavoriteItem,
+    TResult? Function(String description)? updateTextToShare,
+    TResult? Function(String title)? shareItem,
+  }) {
+    return shareItem?.call(title);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HisnAlMuslimModel? item)? fillInitialValue,
+    TResult Function()? updateFavoriteItem,
+    TResult Function(String description)? updateTextToShare,
+    TResult Function(String title)? shareItem,
+    required TResult orElse(),
+  }) {
+    if (shareItem != null) {
+      return shareItem(title);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FillInitialValue value) fillInitialValue,
+    required TResult Function(_UpdateFavoriteItem value) updateFavoriteItem,
+    required TResult Function(_UpdateTextToShare value) updateTextToShare,
+    required TResult Function(_ShareItem value) shareItem,
+  }) {
+    return shareItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FillInitialValue value)? fillInitialValue,
+    TResult? Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult? Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult? Function(_ShareItem value)? shareItem,
+  }) {
+    return shareItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FillInitialValue value)? fillInitialValue,
+    TResult Function(_UpdateFavoriteItem value)? updateFavoriteItem,
+    TResult Function(_UpdateTextToShare value)? updateTextToShare,
+    TResult Function(_ShareItem value)? shareItem,
+    required TResult orElse(),
+  }) {
+    if (shareItem != null) {
+      return shareItem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ShareItem implements HisnAlMuslimDetailsEvent {
+  const factory _ShareItem({required final String title}) = _$ShareItemImpl;
+
+  String get title;
+
+  /// Create a copy of HisnAlMuslimDetailsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ShareItemImplCopyWith<_$ShareItemImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HisnAlMuslimDetailsState {
   HisnAlMuslimModel? get item => throw _privateConstructorUsedError;
+  dynamic get textToShare => throw _privateConstructorUsedError;
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -359,7 +704,7 @@ abstract class $HisnAlMuslimDetailsStateCopyWith<$Res> {
           $Res Function(HisnAlMuslimDetailsState) then) =
       _$HisnAlMuslimDetailsStateCopyWithImpl<$Res, HisnAlMuslimDetailsState>;
   @useResult
-  $Res call({HisnAlMuslimModel? item});
+  $Res call({HisnAlMuslimModel? item, dynamic textToShare});
 
   $HisnAlMuslimModelCopyWith<$Res>? get item;
 }
@@ -381,12 +726,17 @@ class _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? item = freezed,
+    Object? textToShare = freezed,
   }) {
     return _then(_value.copyWith(
       item: freezed == item
           ? _value.item
           : item // ignore: cast_nullable_to_non_nullable
               as HisnAlMuslimModel?,
+      textToShare: freezed == textToShare
+          ? _value.textToShare
+          : textToShare // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ) as $Val);
   }
 
@@ -414,7 +764,7 @@ abstract class _$$HisnAlMuslimDetailsStateImplCopyWith<$Res>
       __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HisnAlMuslimModel? item});
+  $Res call({HisnAlMuslimModel? item, dynamic textToShare});
 
   @override
   $HisnAlMuslimModelCopyWith<$Res>? get item;
@@ -436,12 +786,14 @@ class __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? item = freezed,
+    Object? textToShare = freezed,
   }) {
     return _then(_$HisnAlMuslimDetailsStateImpl(
       item: freezed == item
           ? _value.item
           : item // ignore: cast_nullable_to_non_nullable
               as HisnAlMuslimModel?,
+      textToShare: freezed == textToShare ? _value.textToShare! : textToShare,
     ));
   }
 }
@@ -449,14 +801,17 @@ class __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
-  const _$HisnAlMuslimDetailsStateImpl({this.item});
+  const _$HisnAlMuslimDetailsStateImpl({this.item, this.textToShare = ""});
 
   @override
   final HisnAlMuslimModel? item;
+  @override
+  @JsonKey()
+  final dynamic textToShare;
 
   @override
   String toString() {
-    return 'HisnAlMuslimDetailsState(item: $item)';
+    return 'HisnAlMuslimDetailsState(item: $item, textToShare: $textToShare)';
   }
 
   @override
@@ -464,11 +819,14 @@ class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HisnAlMuslimDetailsStateImpl &&
-            (identical(other.item, item) || other.item == item));
+            (identical(other.item, item) || other.item == item) &&
+            const DeepCollectionEquality()
+                .equals(other.textToShare, textToShare));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, item);
+  int get hashCode => Object.hash(
+      runtimeType, item, const DeepCollectionEquality().hash(textToShare));
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -481,11 +839,14 @@ class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
 }
 
 abstract class _HisnAlMuslimDetailsState implements HisnAlMuslimDetailsState {
-  const factory _HisnAlMuslimDetailsState({final HisnAlMuslimModel? item}) =
-      _$HisnAlMuslimDetailsStateImpl;
+  const factory _HisnAlMuslimDetailsState(
+      {final HisnAlMuslimModel? item,
+      final dynamic textToShare}) = _$HisnAlMuslimDetailsStateImpl;
 
   @override
   HisnAlMuslimModel? get item;
+  @override
+  dynamic get textToShare;
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
