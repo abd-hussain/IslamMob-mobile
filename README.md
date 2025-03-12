@@ -55,16 +55,16 @@ Key Regions and Language Distribution:
 The languages used by Muslims are influenced by regional demographics, and while Arabic is central for religious purposes, local languages dominate daily communication.
 
 
-## TODO features:
+## //TODO features:
 - [ ] Support new languages
 - [ ] Button inside Quran to move to next BookMark
 - [ ] Qibla Finder
-- [ ] Hesen AL Moslem
 - [ ] Download PDF should happen in background thread will the user navigating inside
 - [ ] Place For Donate
 - [ ] Place For Questioners
 - [ ] Place For Suggestions
 - [ ] Doaa 
+- [ ] Support should send to email instedof firestore 
 - [ ] Education Place (Omrah, Hajj , Wodoo2, salaaah, al shahadeh, asma2 allah al husna, zakah, doaa 5etm al quran  etc)
 - [ ] Umah Spcial Media Feed
 - [ ] Hasanaat Calculator

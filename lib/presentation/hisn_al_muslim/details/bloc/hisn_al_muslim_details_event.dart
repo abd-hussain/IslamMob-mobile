@@ -6,4 +6,10 @@ class HisnAlMuslimDetailsEvent with _$HisnAlMuslimDetailsEvent {
       HisnAlMuslimModel? item) = _FillInitialValue;
   const factory HisnAlMuslimDetailsEvent.updateFavoriteItem() =
       _UpdateFavoriteItem;
+  const factory HisnAlMuslimDetailsEvent.updateTextToShare({
+    required String description,
+  }) = _UpdateTextToShare;
+  const factory HisnAlMuslimDetailsEvent.shareItem({
+    required String title,
+  }) = _ShareItem;
 }

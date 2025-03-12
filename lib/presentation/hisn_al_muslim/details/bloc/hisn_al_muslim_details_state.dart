@@ -4,5 +4,6 @@ part of 'hisn_al_muslim_details_bloc.dart';
 class HisnAlMuslimDetailsState with _$HisnAlMuslimDetailsState {
   const factory HisnAlMuslimDetailsState({
     HisnAlMuslimModel? item,
+    @Default("") textToShare,
   }) = _HisnAlMuslimDetailsState;
 }

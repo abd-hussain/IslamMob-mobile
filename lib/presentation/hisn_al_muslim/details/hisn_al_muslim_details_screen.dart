@@ -54,15 +54,18 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
       backgroundColor: const Color(0xFFFFF2E9),
       appBar: CustomAppBar(
         title: state.item?.title ?? "",
-        actions: [_buildFavoriteButton(context, state)],
+        actions: [
+          _buildFavoriteButton(context, state),
+          _buildShareButton(context, state),
+        ],
       ),
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
-                child: state.item != null
-                    ? _buildPageView(state)
-                    : const SizedBox()),
+              child:
+                  state.item != null ? _buildPageView(state) : const SizedBox(),
+            ),
             const AddMobBanner(
               size: AdsBannerSize.fullBanner,
               verticalPadding: 0,
@@ -93,10 +96,15 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
               itemCount: list.length,
               controller: controller,
               itemBuilder: (context, index) {
+                final HisnAlMuslimDetailsModel details = list[index];
+                context.read<HisnAlMuslimDetailsBloc>().add(
+                    HisnAlMuslimDetailsEvent.updateTextToShare(
+                        description:
+                            "${details.descriptionTitle} ${details.description}"));
                 return HisnAlMuslimWithCounterView(
                   index: index + 1,
                   totalLength: list.length,
-                  hisnAlMuslimDetailsModel: list[index],
+                  hisnAlMuslimDetailsModel: details,
                   reachMaxCount: () {
                     controller.animateToPage(controller.page!.toInt() + 1,
                         duration: const Duration(milliseconds: 400),
@@ -118,6 +126,19 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
           .read<HisnAlMuslimDetailsBloc>()
           .add(const HisnAlMuslimDetailsEvent.updateFavoriteItem()),
       icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
+    );
+  }
+
+  /// Builds the Share button in the AppBar
+  Widget _buildShareButton(
+      BuildContext context, HisnAlMuslimDetailsState state) {
+    return IconButton(
+      onPressed: () => context
+          .read<HisnAlMuslimDetailsBloc>()
+          .add(HisnAlMuslimDetailsEvent.shareItem(
+            title: state.item?.title ?? "",
+          )),
+      icon: const Icon(Icons.ios_share_rounded),
     );
   }
 }
