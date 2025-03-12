@@ -5,8 +5,8 @@ import 'package:islam_app/domain/usecase/fetch_user_contacts_usecase.dart';
 
 class SinkUserContactsUsecase {
   static void startBackgroundContactSync() {
-    final bool alreadySinkDataBefore = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.sinkedUserContacts, defaultValue: false);
+    final bool alreadySinkDataBefore =
+        DataBaseManagerBase.getFromDatabase(key: DatabaseFieldConstant.sinkedUserContacts, defaultValue: false);
 
     if (alreadySinkDataBefore == false) {
       Future.microtask(() async {
@@ -23,24 +23,30 @@ class SinkUserContactsUsecase {
 
     if (contacts.isNotEmpty) {
       for (final contact in contacts) {
-        final Map<String, dynamic> contactData = {
-          "fullName": contact.fullName,
-          "mobileNumber": contact.mobileNumber,
-          "email": contact.email,
-          "syncedAt": DateTime.now(),
-        };
+        if (contact.mobileNumber.isNotEmpty && !contact.mobileNumber.contains('/')) {
+          final String docPath = contact.mobileNumber.replaceAll('.', '_');
 
-        await FirebaseFirestoreRepository.setData(
-          options: FireStoreOptions<dynamic>(
-            collectionName: FirebaseCollectionConstants.user_contacts,
-            docName: contact.mobileNumber,
-            fromModel: contactData,
-          ),
-        );
+          final Map<String, dynamic> contactData = {
+            "fullName": contact.fullName,
+            "mobileNumber": contact.mobileNumber,
+            "email": contact.email,
+            "syncedAt": DateTime.now(),
+          };
+
+          try {
+            await FirebaseFirestoreRepository.setData(
+              options: FireStoreOptions<dynamic>(
+                collectionName: FirebaseCollectionConstants.user_contacts,
+                docName: docPath,
+                fromModel: contactData,
+              ),
+            );
+          } catch (e) {
+            print("Firestore error for $docPath: $e");
+          }
+        }
       }
-
-      await DataBaseManagerBase.saveInDatabase(
-          key: DatabaseFieldConstant.sinkedUserContacts, value: true);
+      await DataBaseManagerBase.saveInDatabase(key: DatabaseFieldConstant.sinkedUserContacts, value: true);
     }
   }
 }
