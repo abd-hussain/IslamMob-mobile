@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.2.0+155
+version: 1.2.0+156
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -79,6 +79,7 @@ dependencies:
   flutter_svg: ^2.0.16
   open_store: ^0.5.0
   google_fonts: ^6.2.1
+  wakelock_plus: ^1.2.10
   # flutter_animate: ^4.5.0 #TODO
   # infinite_scroll_pagination: ^4.1.0 #TODO
   # just_audio: ^0.9.28

@@ -20,32 +20,38 @@ mixin _$MainContainerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int tabIndex) changeSelectedIndex,
+    required TResult Function(int tabIndex) changeScreenAwakness,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int tabIndex)? changeSelectedIndex,
+    TResult? Function(int tabIndex)? changeScreenAwakness,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int tabIndex)? changeSelectedIndex,
+    TResult Function(int tabIndex)? changeScreenAwakness,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedIndex value) changeSelectedIndex,
+    required TResult Function(_ChangeScreenAwakness value) changeScreenAwakness,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeSelectedIndex value)? changeSelectedIndex,
+    TResult? Function(_ChangeScreenAwakness value)? changeScreenAwakness,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeSelectedIndex value)? changeSelectedIndex,
+    TResult Function(_ChangeScreenAwakness value)? changeScreenAwakness,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -165,6 +171,7 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int tabIndex) changeSelectedIndex,
+    required TResult Function(int tabIndex) changeScreenAwakness,
   }) {
     return changeSelectedIndex(tabIndex);
   }
@@ -173,6 +180,7 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int tabIndex)? changeSelectedIndex,
+    TResult? Function(int tabIndex)? changeScreenAwakness,
   }) {
     return changeSelectedIndex?.call(tabIndex);
   }
@@ -181,6 +189,7 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int tabIndex)? changeSelectedIndex,
+    TResult Function(int tabIndex)? changeScreenAwakness,
     required TResult orElse(),
   }) {
     if (changeSelectedIndex != null) {
@@ -193,6 +202,7 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedIndex value) changeSelectedIndex,
+    required TResult Function(_ChangeScreenAwakness value) changeScreenAwakness,
   }) {
     return changeSelectedIndex(this);
   }
@@ -201,6 +211,7 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeSelectedIndex value)? changeSelectedIndex,
+    TResult? Function(_ChangeScreenAwakness value)? changeScreenAwakness,
   }) {
     return changeSelectedIndex?.call(this);
   }
@@ -209,6 +220,7 @@ class _$ChangeSelectedIndexImpl implements _ChangeSelectedIndex {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeSelectedIndex value)? changeSelectedIndex,
+    TResult Function(_ChangeScreenAwakness value)? changeScreenAwakness,
     required TResult orElse(),
   }) {
     if (changeSelectedIndex != null) {
@@ -230,6 +242,154 @@ abstract class _ChangeSelectedIndex implements MainContainerEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangeSelectedIndexImplCopyWith<_$ChangeSelectedIndexImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeScreenAwaknessImplCopyWith<$Res>
+    implements $MainContainerEventCopyWith<$Res> {
+  factory _$$ChangeScreenAwaknessImplCopyWith(_$ChangeScreenAwaknessImpl value,
+          $Res Function(_$ChangeScreenAwaknessImpl) then) =
+      __$$ChangeScreenAwaknessImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int tabIndex});
+}
+
+/// @nodoc
+class __$$ChangeScreenAwaknessImplCopyWithImpl<$Res>
+    extends _$MainContainerEventCopyWithImpl<$Res, _$ChangeScreenAwaknessImpl>
+    implements _$$ChangeScreenAwaknessImplCopyWith<$Res> {
+  __$$ChangeScreenAwaknessImplCopyWithImpl(_$ChangeScreenAwaknessImpl _value,
+      $Res Function(_$ChangeScreenAwaknessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainContainerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tabIndex = null,
+  }) {
+    return _then(_$ChangeScreenAwaknessImpl(
+      null == tabIndex
+          ? _value.tabIndex
+          : tabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeScreenAwaknessImpl implements _ChangeScreenAwakness {
+  _$ChangeScreenAwaknessImpl(this.tabIndex);
+
+  @override
+  final int tabIndex;
+
+  @override
+  String toString() {
+    return 'MainContainerEvent.changeScreenAwakness(tabIndex: $tabIndex)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeScreenAwaknessImpl &&
+            (identical(other.tabIndex, tabIndex) ||
+                other.tabIndex == tabIndex));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, tabIndex);
+
+  /// Create a copy of MainContainerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeScreenAwaknessImplCopyWith<_$ChangeScreenAwaknessImpl>
+      get copyWith =>
+          __$$ChangeScreenAwaknessImplCopyWithImpl<_$ChangeScreenAwaknessImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int tabIndex) changeSelectedIndex,
+    required TResult Function(int tabIndex) changeScreenAwakness,
+  }) {
+    return changeScreenAwakness(tabIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int tabIndex)? changeSelectedIndex,
+    TResult? Function(int tabIndex)? changeScreenAwakness,
+  }) {
+    return changeScreenAwakness?.call(tabIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int tabIndex)? changeSelectedIndex,
+    TResult Function(int tabIndex)? changeScreenAwakness,
+    required TResult orElse(),
+  }) {
+    if (changeScreenAwakness != null) {
+      return changeScreenAwakness(tabIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeSelectedIndex value) changeSelectedIndex,
+    required TResult Function(_ChangeScreenAwakness value) changeScreenAwakness,
+  }) {
+    return changeScreenAwakness(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeSelectedIndex value)? changeSelectedIndex,
+    TResult? Function(_ChangeScreenAwakness value)? changeScreenAwakness,
+  }) {
+    return changeScreenAwakness?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeSelectedIndex value)? changeSelectedIndex,
+    TResult Function(_ChangeScreenAwakness value)? changeScreenAwakness,
+    required TResult orElse(),
+  }) {
+    if (changeScreenAwakness != null) {
+      return changeScreenAwakness(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeScreenAwakness implements MainContainerEvent {
+  factory _ChangeScreenAwakness(final int tabIndex) =
+      _$ChangeScreenAwaknessImpl;
+
+  @override
+  int get tabIndex;
+
+  /// Create a copy of MainContainerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChangeScreenAwaknessImplCopyWith<_$ChangeScreenAwaknessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

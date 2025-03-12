@@ -79,6 +79,17 @@ class $AssetsImagesGen {
       ];
 }
 
+class $AssetsJsonGen {
+  const $AssetsJsonGen();
+
+  /// File path: assets/json/hisn_al_muslim.json
+  String get hisnAlMuslim =>
+      'packages/islam_app/assets/json/hisn_al_muslim.json';
+
+  /// List of all assets
+  List<String> get values => [hisnAlMuslim];
+}
+
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
@@ -227,6 +238,7 @@ class Assets {
   static const String package = 'islam_app';
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsJsonGen json = $AssetsJsonGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();
 }
 
