@@ -456,6 +456,13 @@
     "favorites" : "المفضله",
     "noItemToShow" : "لا يوجد عناصر لعرضها",
     "searchField" : "بحث ...",
-    "repetition" : "التكرار"
+    "repetition" : "التكرار",
+    "shareByContact" : "مشاركة جهات الاتصال",
+    "shareOnSocialMedia" : "مشاركة على وسائل التواصل الاجتماعي",
+    "invite_friends" : "اضافة الاصدقاء",
+    "no_contacts_to_show" : "لا يوجد اسماء لعرضها",
+    "noContactsPermissionButton" : "تفعيل من الاعدادات",
+    "no_permission_for_contact" : "لا يوجد إذن لقراءة قائمة جهات الاتصال الخاصة بك"
+
 
 }

@@ -1428,4 +1428,23 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get repetition => 'التكرار';
+
+  @override
+  String get shareByContact => 'مشاركة جهات الاتصال';
+
+  @override
+  String get shareOnSocialMedia => 'مشاركة على وسائل التواصل الاجتماعي';
+
+  @override
+  String get invite_friends => 'اضافة الاصدقاء';
+
+  @override
+  String get no_contacts_to_show => 'لا يوجد اسماء لعرضها';
+
+  @override
+  String get noContactsPermissionButton => 'تفعيل من الاعدادات';
+
+  @override
+  String get no_permission_for_contact =>
+      'لا يوجد إذن لقراءة قائمة جهات الاتصال الخاصة بك';
 }

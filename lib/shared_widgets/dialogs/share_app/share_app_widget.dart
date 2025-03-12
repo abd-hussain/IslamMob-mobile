@@ -2,6 +2,7 @@ import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -55,6 +56,29 @@ class ShareAppDialogWidget extends StatelessWidget {
                     child: InkWell(
                       onTap: () async {
                         Navigator.of(context, rootNavigator: true).pop();
+                        await Navigator.of(context)
+                            .pushNamed(RoutesConstants.contactsScreen);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 14, bottom: 14),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: CustomText(
+                            title: localize.shareByContact,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Material(
+                    borderRadius: BorderRadius.circular(5),
+                    color: const Color(0xff008480),
+                    child: InkWell(
+                      onTap: () async {
+                        Navigator.of(context, rootNavigator: true).pop();
                         await Share.share(
                           "${localize.shareMessageBody} \n Android : ${AppConstant.androidAppLink} \n iOS : ${AppConstant.iOSAppLink}",
                           subject: localize.shareMessageTitle,
@@ -65,7 +89,7 @@ class ShareAppDialogWidget extends StatelessWidget {
                         child: Container(
                           alignment: Alignment.center,
                           child: CustomText(
-                            title: localize.shareapp,
+                            title: localize.shareOnSocialMedia,
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
