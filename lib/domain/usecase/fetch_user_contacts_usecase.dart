@@ -20,18 +20,17 @@ class FetchUserContactsUsecase {
     );
 
     for (final Contact item in contatctList) {
-      final String contactName = item.displayName != ""
-          ? item.displayName
-          : ("${item.name.first} ${item.name.last}");
-      final String phoneNumber =
-          item.phones.isNotEmpty ? item.phones[0].number : "";
+      final String contactName = item.displayName != "" ? item.displayName : ("${item.name.first} ${item.name.last}");
+      final String phoneNumber = item.phones.isNotEmpty ? item.phones.first.number : "";
       final String email = item.emails.isNotEmpty ? item.emails[0].address : "";
 
-      listOfContacts.add(UserContacts(
-        fullName: contactName,
-        mobileNumber: phoneNumber.replaceAll(" ", ""),
-        email: email,
-      ));
+      if (phoneNumber.isNotEmpty) {
+        listOfContacts.add(UserContacts(
+          fullName: contactName,
+          mobileNumber: phoneNumber.replaceAll(" ", ""),
+          email: email,
+        ));
+      }
     }
 
     return listOfContacts;
