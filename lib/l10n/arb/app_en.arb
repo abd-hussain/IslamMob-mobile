@@ -456,10 +456,13 @@
     "favorites" : "Favorites",
     "noItemToShow" : "No Item To Show",
     "searchField" : "Search ...",
-    "repetition" : "Repetition"
-
-
-
+    "repetition" : "Repetition",
+    "shareByContact" : "Contacts Share",
+    "shareOnSocialMedia" : "Social Media Share",
+    "invite_friends" : "Invite Friends",
+    "no_contacts_to_show" : "no contacts to show",
+    "noContactsPermissionButton" : "Activate from settings",
+    "no_permission_for_contact" : "no permission to read your contacts list"
 
 
 

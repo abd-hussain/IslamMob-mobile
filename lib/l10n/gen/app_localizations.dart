@@ -2846,6 +2846,42 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Repetition'**
   String get repetition;
+
+  /// No description provided for @shareByContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contacts Share'**
+  String get shareByContact;
+
+  /// No description provided for @shareOnSocialMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'Social Media Share'**
+  String get shareOnSocialMedia;
+
+  /// No description provided for @invite_friends.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite Friends'**
+  String get invite_friends;
+
+  /// No description provided for @no_contacts_to_show.
+  ///
+  /// In en, this message translates to:
+  /// **'no contacts to show'**
+  String get no_contacts_to_show;
+
+  /// No description provided for @noContactsPermissionButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate from settings'**
+  String get noContactsPermissionButton;
+
+  /// No description provided for @no_permission_for_contact.
+  ///
+  /// In en, this message translates to:
+  /// **'no permission to read your contacts list'**
+  String get no_permission_for_contact;
 }
 
 class _IslamMobLocalizationsDelegate

@@ -1439,4 +1439,23 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get repetition => 'Repetition';
+
+  @override
+  String get shareByContact => 'Contacts Share';
+
+  @override
+  String get shareOnSocialMedia => 'Social Media Share';
+
+  @override
+  String get invite_friends => 'Invite Friends';
+
+  @override
+  String get no_contacts_to_show => 'no contacts to show';
+
+  @override
+  String get noContactsPermissionButton => 'Activate from settings';
+
+  @override
+  String get no_permission_for_contact =>
+      'no permission to read your contacts list';
 }

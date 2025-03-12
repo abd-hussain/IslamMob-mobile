@@ -173,6 +173,8 @@ PODS:
   - Flutter (1.0.0)
   - flutter_compass_v2 (0.0.1):
     - Flutter
+  - flutter_contacts (0.0.1):
+    - Flutter
   - flutter_downloader (0.0.1):
     - Flutter
   - flutter_local_notifications (0.0.1):
@@ -300,6 +302,7 @@ DEPENDENCIES:
   - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `11.6.0`)
   - Flutter (from `Flutter`)
   - flutter_compass_v2 (from `.symlinks/plugins/flutter_compass_v2/ios`)
+  - flutter_contacts (from `.symlinks/plugins/flutter_contacts/ios`)
   - flutter_downloader (from `.symlinks/plugins/flutter_downloader/ios`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
@@ -386,6 +389,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_compass_v2:
     :path: ".symlinks/plugins/flutter_compass_v2/ios"
+  flutter_contacts:
+    :path: ".symlinks/plugins/flutter_contacts/ios"
   flutter_downloader:
     :path: ".symlinks/plugins/flutter_downloader/ios"
   flutter_local_notifications:
@@ -469,6 +474,7 @@ SPEC CHECKSUMS:
   FirebaseStorage: 52fb65a69d3e87675186881a08e2a5db86452ace
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_compass_v2: f7704b078814b705e76ae2bd48fe48ae6cd067df
+  flutter_contacts: edb1c5ce76aa433e20e6cb14c615f4c0b66e0983
   flutter_downloader: b7301ae057deadd4b1650dc7c05375f10ff12c39
   flutter_local_notifications: df98d66e515e1ca797af436137b4459b160ad8c9
   fluttertoast: e9a18c7be5413da53898f660530c56f35edfba9c

@@ -70,6 +70,10 @@
 	<string>IslamMob uses your location to calculate accurate prayer times, find the Qibla direction, and display local mosque information.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>IslamMob uses speech recognition to let you create voice notes and perform hands-free actions for a more convenient user experience.</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+  		<string>sms</string>
+	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
