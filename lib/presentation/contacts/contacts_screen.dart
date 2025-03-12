@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:islam_app/domain/usecase/open_mobile_setting_usecase.dart';
+import 'package:islam_app/domain/usecase/sink_user_contacts_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/contacts/bloc/contacts_bloc.dart';
 import 'package:islam_app/presentation/contacts/widgets/contact_item_view.dart';
@@ -103,6 +104,8 @@ class _ContactsScreenState extends State<ContactsScreen> {
             ),
           );
         } else {
+          SinkUserContactsUsecase.startBackgroundContactSync();
+
           return Padding(
             padding: const EdgeInsets.all(8),
             child: ListView.builder(
