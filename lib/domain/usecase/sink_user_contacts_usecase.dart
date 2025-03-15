@@ -1,12 +1,13 @@
 import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
+import 'package:flutter/material.dart';
 import 'package:islam_app/domain/model/user_contacts.dart';
 import 'package:islam_app/domain/usecase/fetch_user_contacts_usecase.dart';
 
 class SinkUserContactsUsecase {
   static void startBackgroundContactSync() {
-    final bool alreadySinkDataBefore = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.sinkedUserContacts, defaultValue: false);
+    final bool alreadySinkDataBefore =
+        DataBaseManagerBase.getFromDatabase(key: DatabaseFieldConstant.sinkedUserContacts, defaultValue: false);
 
     if (alreadySinkDataBefore == false) {
       Future.microtask(() async {
@@ -23,8 +24,7 @@ class SinkUserContactsUsecase {
 
     if (contacts.isNotEmpty) {
       for (final contact in contacts) {
-        if (contact.mobileNumber.isNotEmpty &&
-            !contact.mobileNumber.contains('/')) {
+        if (contact.mobileNumber.isNotEmpty && !contact.mobileNumber.contains('/')) {
           final String docPath = contact.mobileNumber.replaceAll('.', '_');
 
           final Map<String, dynamic> contactData = {
@@ -43,12 +43,11 @@ class SinkUserContactsUsecase {
               ),
             );
           } catch (e) {
-            print("Firestore error for $docPath: $e");
+            debugPrint("Firestore error for $docPath: $e");
           }
         }
       }
-      await DataBaseManagerBase.saveInDatabase(
-          key: DatabaseFieldConstant.sinkedUserContacts, value: true);
+      await DataBaseManagerBase.saveInDatabase(key: DatabaseFieldConstant.sinkedUserContacts, value: true);
     }
   }
 }
