@@ -228,8 +228,7 @@ class _SalahTimingViewState extends State<SalahTimingView> {
           child: Material(
             child: InkWell(
               onTap: () async {
-                final bottomSheet = SettingBottomSheet();
-                await bottomSheet.showBottomSheet(context: context);
+                await SettingBottomSheet().showBottomSheet(context: context);
               },
               child: const Icon(
                 Icons.settings,

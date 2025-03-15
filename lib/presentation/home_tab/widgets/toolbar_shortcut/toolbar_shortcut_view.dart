@@ -41,7 +41,8 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.calenderSettings,
                     imagePath: "assets/images/toolbar/calender.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(name: "CalenderScreenFromHomeToolBar");
+                      await FirebaseAnalyticsRepository.logEvent(
+                          name: "CalenderScreenFromHomeToolBar");
                       await navigator.pushNamed(RoutesConstants.calenderScreen);
                     },
                   ),
@@ -51,8 +52,10 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.hesenAlMuslim,
                     imagePath: "assets/images/toolbar/hesenAlMuslim.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(name: "hisnAlMuslimListScreenFromHomeToolBar");
-                      await navigator.pushNamed(RoutesConstants.hisnAlMuslimListScreen);
+                      await FirebaseAnalyticsRepository.logEvent(
+                          name: "hisnAlMuslimListScreenFromHomeToolBar");
+                      await navigator
+                          .pushNamed(RoutesConstants.hisnAlMuslimListScreen);
                     },
                   ),
                 ),
@@ -61,7 +64,8 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.shareapp,
                     imagePath: "assets/images/toolbar/share.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(name: "ShareAppFromHomeToolBar");
+                      await FirebaseAnalyticsRepository.logEvent(
+                          name: "ShareAppFromHomeToolBar");
                       await ShareDialog().dialog(context: context);
                     },
                   ),
@@ -71,7 +75,8 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.quranSettingSupportUs,
                     imagePath: "assets/images/toolbar/donate.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(name: "SupportUsFromHomeToolBar");
+                      await FirebaseAnalyticsRepository.logEvent(
+                          name: "SupportUsFromHomeToolBar");
                       await SupportUsDialog().dialog(context: context);
                     },
                   ),

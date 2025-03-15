@@ -34,6 +34,10 @@ class $AssetsImagesGen {
   AssetGenImage get donatePopup =>
       const AssetGenImage('assets/images/donate_popup.png');
 
+  /// File path: assets/images/finger_click.png
+  AssetGenImage get fingerClick =>
+      const AssetGenImage('assets/images/finger_click.png');
+
   /// File path: assets/images/hisnalmuslim.png
   AssetGenImage get hisnalmuslim =>
       const AssetGenImage('assets/images/hisnalmuslim.png');
@@ -71,6 +75,7 @@ class $AssetsImagesGen {
         background,
         calender,
         donatePopup,
+        fingerClick,
         hisnalmuslim,
         internet,
         readyToGo,
@@ -199,17 +204,41 @@ class $AssetsImagesSorahTypeGen {
 class $AssetsImagesToolbarGen {
   const $AssetsImagesToolbarGen();
 
+  /// File path: assets/images/toolbar/asma2_allaah_alhusna.png
+  AssetGenImage get asma2AllaahAlhusna =>
+      const AssetGenImage('assets/images/toolbar/asma2_allaah_alhusna.png');
+
   /// File path: assets/images/toolbar/calender.png
   AssetGenImage get calender =>
       const AssetGenImage('assets/images/toolbar/calender.png');
+
+  /// File path: assets/images/toolbar/doaa.png
+  AssetGenImage get doaa =>
+      const AssetGenImage('assets/images/toolbar/doaa.png');
 
   /// File path: assets/images/toolbar/donate.png
   AssetGenImage get donate =>
       const AssetGenImage('assets/images/toolbar/donate.png');
 
+  /// File path: assets/images/toolbar/hadeeth.png
+  AssetGenImage get hadeeth =>
+      const AssetGenImage('assets/images/toolbar/hadeeth.png');
+
+  /// File path: assets/images/toolbar/hajj.png
+  AssetGenImage get hajj =>
+      const AssetGenImage('assets/images/toolbar/hajj.png');
+
   /// File path: assets/images/toolbar/hesenAlMuslim.png
   AssetGenImage get hesenAlMuslim =>
       const AssetGenImage('assets/images/toolbar/hesenAlMuslim.png');
+
+  /// File path: assets/images/toolbar/library.png
+  AssetGenImage get library =>
+      const AssetGenImage('assets/images/toolbar/library.png');
+
+  /// File path: assets/images/toolbar/omra.png
+  AssetGenImage get omra =>
+      const AssetGenImage('assets/images/toolbar/omra.png');
 
   /// File path: assets/images/toolbar/qibla.png
   AssetGenImage get qibla =>
@@ -219,6 +248,14 @@ class $AssetsImagesToolbarGen {
   AssetGenImage get quran =>
       const AssetGenImage('assets/images/toolbar/quran.png');
 
+  /// File path: assets/images/toolbar/seyam.png
+  AssetGenImage get seyam =>
+      const AssetGenImage('assets/images/toolbar/seyam.png');
+
+  /// File path: assets/images/toolbar/shahadeeh.png
+  AssetGenImage get shahadeeh =>
+      const AssetGenImage('assets/images/toolbar/shahadeeh.png');
+
   /// File path: assets/images/toolbar/share.png
   AssetGenImage get share =>
       const AssetGenImage('assets/images/toolbar/share.png');
@@ -227,9 +264,29 @@ class $AssetsImagesToolbarGen {
   AssetGenImage get tasbeeh =>
       const AssetGenImage('assets/images/toolbar/tasbeeh.png');
 
+  /// File path: assets/images/toolbar/tracker.png
+  AssetGenImage get tracker =>
+      const AssetGenImage('assets/images/toolbar/tracker.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [calender, donate, hesenAlMuslim, qibla, quran, share, tasbeeh];
+  List<AssetGenImage> get values => [
+        asma2AllaahAlhusna,
+        calender,
+        doaa,
+        donate,
+        hadeeth,
+        hajj,
+        hesenAlMuslim,
+        library,
+        omra,
+        qibla,
+        quran,
+        seyam,
+        shahadeeh,
+        share,
+        tasbeeh,
+        tracker
+      ];
 }
 
 class Assets {

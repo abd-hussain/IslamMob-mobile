@@ -12,9 +12,9 @@ import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:pdfx/pdfx.dart';
 
+part 'quran_kareem_bloc.freezed.dart';
 part 'quran_kareem_event.dart';
 part 'quran_kareem_state.dart';
-part 'quran_kareem_bloc.freezed.dart';
 
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   PdfController? pdfController;
@@ -28,6 +28,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     on<_UpdateSidePage>(_updateSidePage);
     on<_UpdateBookMarkedPages>(_updateBookMarkedPages);
     on<_UpdateScreenBrigtness>(_updateScreenBrigtness);
+    on<_UpdateScreenTutorial>(_updateScreenTutorial);
     on<_UpdateRewardedAd>(_updateRewardedAd);
     on<_UpdateReadPDFFile>(_updateReadPDFFile);
 
@@ -87,13 +88,13 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   void changeHelpBarShowingStatus() {
     final status = state.showHelpBar;
     add(QuranKareemEvent.showHideHelpBar(!status));
+    add(QuranKareemEvent.updateScreenTutorial(true));
   }
 
   // Event Handlers
   FutureOr<void> _showHideHelpBar(
       _ShowHideHelpBar event, Emitter<QuranKareemState> emit) {
     FirebaseAnalyticsRepository.logEvent(name: "QuranShowHideHelpBar");
-
     emit(state.copyWith(showHelpBar: event.status));
   }
 
@@ -160,5 +161,10 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   FutureOr<void> _updateJozo2Name(
       _UpdateJozo2Name event, Emitter<QuranKareemState> emit) {
     emit(state.copyWith(jozo2Name: event.value));
+  }
+
+  FutureOr<void> _updateScreenTutorial(
+      _UpdateScreenTutorial event, Emitter<QuranKareemState> emit) {
+    emit(state.copyWith(tutorialShown: event.value));
   }
 }

@@ -226,8 +226,8 @@
     "termstitle8" : "8. التغييرات على الشروط",
     "termsdesc8" : "يجوز لنا تحديث هذه الشروط والأحكام بشكل دوري. الاستمرار في استخدام التطبيق بعد إجراء التغييرات يشير إلى قبول الشروط الجديدة.",
     "quranSettingIndex" : "الفهرس",
-    "quranSowarIndex" : "فهرس السور",
-    "quranPartsIndex" : "فهرس الاجزاء",
+    "quranSowarIndex" : "السور",
+    "quranPartsIndex" : "الاجزاء",
     "fajr": "الفجر",
     "sherooq": "الشروق",
     "zhur": "الظهر",
@@ -463,7 +463,10 @@
     "no_contacts_to_show" : "لا يوجد اسماء لعرضها",
     "noContactsPermissionButton" : "تفعيل من الاعدادات",
     "no_permission_for_contact" : "لا يوجد إذن لقراءة قائمة جهات الاتصال الخاصة بك",
-    "asma2_allaah_alhusna" : "اسماء الله الحسنى"
+    "asma2_allaah_alhusna" : "اسماء الله الحسنى",
+    "quransettings" : "إعدادات القرآن الكريم",
+    "quranSettingSavedBookMark" : "كل الإشارات",
+    "quranSettingTapTutorial" : "يمكنك بسهولة إظهار أشرطة الأدوات أو إخفائها في أي وقت بمجرد النقر على الشاشة"
 
 
 }
