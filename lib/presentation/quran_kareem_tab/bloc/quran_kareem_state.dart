@@ -13,6 +13,7 @@ class QuranKareemState with _$QuranKareemState {
     @Default("") String sourceFileOfPDF,
     @Default("") String sorahName,
     @Default("") String jozo2Name,
+    @Default(false) bool tutorialShown,
   }) = _QuranKareemState;
 }
 

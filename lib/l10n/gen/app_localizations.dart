@@ -62,15 +62,18 @@ import 'app_localizations_en.dart';
 /// be consistent with the languages listed in the IslamMobLocalizations.supportedLocales
 /// property.
 abstract class IslamMobLocalizations {
-  IslamMobLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  IslamMobLocalizations(String locale)
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
   static IslamMobLocalizations of(BuildContext context) {
-    return Localizations.of<IslamMobLocalizations>(context, IslamMobLocalizations)!;
+    return Localizations.of<IslamMobLocalizations>(
+        context, IslamMobLocalizations)!;
   }
 
-  static const LocalizationsDelegate<IslamMobLocalizations> delegate = _IslamMobLocalizationsDelegate();
+  static const LocalizationsDelegate<IslamMobLocalizations> delegate =
+      _IslamMobLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -82,7 +85,8 @@ abstract class IslamMobLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -1460,13 +1464,13 @@ abstract class IslamMobLocalizations {
   /// No description provided for @quranSowarIndex.
   ///
   /// In en, this message translates to:
-  /// **'Sowar Index'**
+  /// **'Sowar'**
   String get quranSowarIndex;
 
   /// No description provided for @quranPartsIndex.
   ///
   /// In en, this message translates to:
-  /// **'Parts Index'**
+  /// **'Parts'**
   String get quranPartsIndex;
 
   /// No description provided for @fajr.
@@ -2884,36 +2888,56 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'99 Names'**
   String get asma2_allaah_alhusna;
+
+  /// No description provided for @quransettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Holy Quran Settings'**
+  String get quransettings;
+
+  /// No description provided for @quranSettingSavedBookMark.
+  ///
+  /// In en, this message translates to:
+  /// **'All BookMarks'**
+  String get quranSettingSavedBookMark;
+
+  /// No description provided for @quranSettingTapTutorial.
+  ///
+  /// In en, this message translates to:
+  /// **'You can easily show or hide the toolbars at any time by simply tapping on the screen'**
+  String get quranSettingTapTutorial;
 }
 
-class _IslamMobLocalizationsDelegate extends LocalizationsDelegate<IslamMobLocalizations> {
+class _IslamMobLocalizationsDelegate
+    extends LocalizationsDelegate<IslamMobLocalizations> {
   const _IslamMobLocalizationsDelegate();
 
   @override
   Future<IslamMobLocalizations> load(Locale locale) {
-    return SynchronousFuture<IslamMobLocalizations>(lookupIslamMobLocalizations(locale));
+    return SynchronousFuture<IslamMobLocalizations>(
+        lookupIslamMobLocalizations(locale));
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['ar', 'en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['ar', 'en'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_IslamMobLocalizationsDelegate old) => false;
 }
 
 IslamMobLocalizations lookupIslamMobLocalizations(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'ar': return IslamMobLocalizationsAr();
-    case 'en': return IslamMobLocalizationsEn();
+    case 'ar':
+      return IslamMobLocalizationsAr();
+    case 'en':
+      return IslamMobLocalizationsEn();
   }
 
   throw FlutterError(
-    'IslamMobLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-    'an issue with the localizations generation tool. Please file an issue '
-    'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
-  );
+      'IslamMobLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
 }

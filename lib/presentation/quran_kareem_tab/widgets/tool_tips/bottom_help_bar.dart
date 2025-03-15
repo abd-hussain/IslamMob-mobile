@@ -15,6 +15,7 @@ import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
+import 'package:islam_app/shared_widgets/bottomsheet/quran_setting_bottomsheet.dart';
 import 'package:pdfx/pdfx.dart';
 
 class QuranBottomHelpBar extends StatelessWidget {
@@ -40,10 +41,10 @@ class QuranBottomHelpBar extends StatelessWidget {
           childAspectRatio: 3,
         ),
         children: [
-          _buildBrightnessTile(context, localize),
-          _buildBookmarkTile(context, localize),
           _buildIndexTile(context, localize),
-          _buildMushafTile(context, localize),
+          _buildBookmarkTile(context, localize),
+          _buildAllBookmarksTile(context, localize),
+          _buildSettingsTile(context, localize),
           _buildSpacerTile(),
           _buildSupportUsTile(context, localize),
         ],
@@ -51,28 +52,52 @@ class QuranBottomHelpBar extends StatelessWidget {
     );
   }
 
-  Widget _buildBrightnessTile(
+  Widget _buildSettingsTile(
       BuildContext context, IslamMobLocalizations localize) {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) => previous.brigtness != current.brigtness,
       builder: (context, state) {
         return BottomTile(
-          title: localize.quranSettingLighting,
-          icon: Icons.sunny,
-          onTap: () {
-            FirebaseAnalyticsRepository.logEvent(name: "QuranBrightnessShown");
-
-            showDialog(
+          title: localize.settings,
+          icon: Icons.settings,
+          onTap: () async {
+            await QuranSettingBottomsheet().showBottomSheet(
               context: context,
-              barrierColor: const Color(0x01000000),
-              builder: (context) => BrightnessPopup(
-                initialValue: state.brigtness,
-                returnBrightness: returnBrightness,
-              ),
+              showAdsCallback: () async {
+                await FirebaseAnalyticsRepository.logEvent(
+                    name: "QuranSupportUsShown");
+                await RewarderAds.showRewardedAd();
+                context.read<QuranKareemBloc>().add(
+                    QuranKareemEvent.updateRewardedAd(
+                        RewarderAds.mainRewardedAd != null));
+              },
+              brigtnessCallback: () {
+                FirebaseAnalyticsRepository.logEvent(
+                    name: "QuranBrightnessShown");
+                showDialog(
+                  context: context,
+                  barrierColor: const Color(0x01000000),
+                  builder: (context) => BrightnessPopup(
+                    initialValue: state.brigtness,
+                    returnBrightness: returnBrightness,
+                  ),
+                );
+              },
+              masaheefCallback: () => _navigateToMushafScreen(context),
             );
           },
         );
       },
+    );
+  }
+
+  Widget _buildAllBookmarksTile(
+      BuildContext context, IslamMobLocalizations localize) {
+    return BottomTile(
+      title: localize.quranSettingSavedBookMark,
+      icon: Icons.bookmarks,
+      onTap: () => _navigateToIndexScreen(
+          context: context, localize: localize, initialTabIndexSelected: 3),
     );
   }
 
@@ -114,12 +139,15 @@ class QuranBottomHelpBar extends StatelessWidget {
     return BottomTile(
       title: localize.quranSettingIndex,
       icon: Ionicons.book,
-      onTap: () => _navigateToIndexScreen(context, localize),
+      onTap: () => _navigateToIndexScreen(context: context, localize: localize),
     );
   }
 
-  Future<void> _navigateToIndexScreen(
-      BuildContext context, IslamMobLocalizations localize) async {
+  Future<void> _navigateToIndexScreen({
+    required BuildContext context,
+    required IslamMobLocalizations localize,
+    int initialTabIndexSelected = 0,
+  }) async {
     final navigator = Navigator.of(context, rootNavigator: true);
     final bloc = context.read<QuranKareemBloc>();
     final currentPage = bloc.currentPageNumber;
@@ -134,6 +162,7 @@ class QuranBottomHelpBar extends StatelessWidget {
       ArgumentConstant.currentSowrahName:
           localize.getLocalizedString(sorahName),
       ArgumentConstant.currentPartName: localize.getLocalizedString(jozo2Name),
+      ArgumentConstant.initialTabIndexSelected: initialTabIndexSelected,
     };
 
     await navigator
@@ -173,15 +202,6 @@ class QuranBottomHelpBar extends StatelessWidget {
         pdfController?.jumpToPage(sorahPageNumber);
       }
     }
-  }
-
-  Widget _buildMushafTile(
-      BuildContext context, IslamMobLocalizations localize) {
-    return BottomTile(
-      title: localize.quranSettingMushaf,
-      icon: Icons.library_books,
-      onTap: () => _navigateToMushafScreen(context),
-    );
   }
 
   Future<void> _navigateToMushafScreen(BuildContext context) async {

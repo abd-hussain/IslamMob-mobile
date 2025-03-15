@@ -22,7 +22,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
             const Expanded(child: SizedBox()),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 4),
                 child: _buildPageSideIndicator(),
               ),
             ),
@@ -140,8 +140,14 @@ class QuranHeaderHelpBar extends StatelessWidget {
     return Center(
       child: Container(
         width: 80,
-        height: 60,
-        color: Colors.black.withOpacity(0.8),
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.8),
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(5),
+            bottomRight: Radius.circular(5),
+          ),
+        ),
         child: BlocBuilder<QuranKareemBloc, QuranKareemState>(
           buildWhen: (previous, current) =>
               previous.pageSide != current.pageSide,
@@ -156,7 +162,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
               child: const Icon(
                 Icons.menu_book_rounded,
                 color: Colors.white70,
-                size: 55,
+                size: 45,
               ),
             );
           },

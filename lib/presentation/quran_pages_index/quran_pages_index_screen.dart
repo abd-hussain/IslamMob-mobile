@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/constants/argument_constant.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/quran_pages_index/bloc/quran_pages_index_bloc.dart';
+import 'package:islam_app/presentation/quran_pages_index/widgets/quran_bookmark_pages_view.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/quran_pages_view.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/quran_parts_view.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/quran_sowar_view.dart';
@@ -22,13 +23,18 @@ class QuranPagesIndexScreen extends StatelessWidget {
         arguments[ArgumentConstant.currentPartName] ?? "";
     final int currentPageNumber =
         arguments[ArgumentConstant.currentPageNumber] ?? 0;
+    final int initialTabIndexSelected =
+        arguments[ArgumentConstant.initialTabIndexSelected] ?? 0;
+
     FirebaseAnalyticsRepository.logEvent(name: "QuranPagesIndexScreen");
 
     return BlocProvider(
       create: (context) => QuranPagesIndexBloc()
-        ..add(QuranPagesIndexEvent.getSowarList(context)),
+        ..add(QuranPagesIndexEvent.getSowarList(context))
+        ..add(QuranPagesIndexEvent.updateSelectedTab(initialTabIndexSelected)),
       child: DefaultTabController(
-        length: 3,
+        initialIndex: initialTabIndexSelected,
+        length: 4,
         child: Scaffold(
           appBar: _buildAppBar(context),
           body: _buildTabBarView(
@@ -81,21 +87,28 @@ class QuranPagesIndexScreen extends StatelessWidget {
                   text: localize.quranSowarIndex,
                   icon: const Icon(
                     Icons.copy_sharp,
-                    size: 20,
+                    size: 15,
                   ),
                 ),
                 Tab(
                   text: localize.quranPartsIndex,
                   icon: const Icon(
                     Icons.pie_chart_rounded,
-                    size: 20,
+                    size: 15,
                   ),
                 ),
                 Tab(
                   text: localize.quranpages,
                   icon: const Icon(
                     Icons.pageview,
-                    size: 20,
+                    size: 15,
+                  ),
+                ),
+                Tab(
+                  text: localize.quranSettingSavedBookMark,
+                  icon: const Icon(
+                    Icons.bookmarks,
+                    size: 15,
                   ),
                 ),
               ],
@@ -119,7 +132,7 @@ class QuranPagesIndexScreen extends StatelessWidget {
       builder: (context, state) {
         return TabBarView(
           controller: TabController(
-            length: 3,
+            length: 4,
             vsync: Scaffold.of(context),
             initialIndex: state.selectedIndex,
           ),
@@ -155,6 +168,16 @@ class QuranPagesIndexScreen extends StatelessWidget {
                 });
               },
             ),
+            QuranBookmarkPagesView(
+              currentPageNumber: currentPageNumber,
+              onPageSelected: (pageNumber) {
+                FirebaseAnalyticsRepository.logEvent(
+                    name: "QuranBookmarkPagesViewItemSelected");
+                Navigator.of(context).pop({
+                  ArgumentConstant.currentPageNumber: pageNumber,
+                });
+              },
+            )
           ],
         );
       },
