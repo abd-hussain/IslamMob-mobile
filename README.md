@@ -57,7 +57,6 @@ The languages used by Muslims are influenced by regional demographics, and while
 
 ## //TODO features:
 - [ ] Support new languages
-- [ ] Button inside Quran to move to next BookMark
 - [ ] Qibla Finder
 - [ ] Download PDF should happen in background thread will the user navigating inside
 - [ ] Place For Donate
