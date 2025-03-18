@@ -8,7 +8,9 @@ import 'package:islam_app/presentation/hisn_al_muslim/main_list/bloc/hisn_al_mus
 
 class HisnMainCardView extends StatelessWidget {
   final HisnAlMuslimModel item;
-  const HisnMainCardView({super.key, required this.item});
+  final bool isRtlLanguage;
+  const HisnMainCardView(
+      {super.key, required this.item, required this.isRtlLanguage});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class HisnMainCardView extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    "${item.id} - ${item.title}",
+                    "${item.id} - ${isRtlLanguage ? item.title.ar : item.title.en}",
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                           color: const Color(0xfffff2e9),
                           fontFamily: 'Uthman',

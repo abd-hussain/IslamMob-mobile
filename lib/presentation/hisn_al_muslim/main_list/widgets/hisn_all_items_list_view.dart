@@ -6,7 +6,9 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class HisnAllItemsListView extends StatelessWidget {
   final List<HisnAlMuslimModel> list;
-  const HisnAllItemsListView({super.key, required this.list});
+  final bool isRtlLanguage;
+  const HisnAllItemsListView(
+      {super.key, required this.list, required this.isRtlLanguage});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,10 @@ class HisnAllItemsListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 8),
-                child: HisnMainCardView(item: list[index]),
+                child: HisnMainCardView(
+                  isRtlLanguage: isRtlLanguage,
+                  item: list[index],
+                ),
               );
             },
           );

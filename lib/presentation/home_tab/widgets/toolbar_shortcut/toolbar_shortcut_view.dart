@@ -83,62 +83,55 @@ class ToolbarShortcutView extends StatelessWidget {
                 ),
               ],
             ),
-            // const SizedBox(height: 8),
-            // Row(
-            //   children: [
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: localize.asma2_allaah_alhusna,
-            //         imagePath: "assets/images/toolbar/asma2_allaah_alhusna.png",
-            //         onTap: () async {},
-            //       ),
-            //     ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "Qibla",
-            //         imagePath: "assets/images/toolbar/qibla.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "tracker",
-            //         imagePath: "assets/images/toolbar/tracker.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "Doaa",
-            //         imagePath: "assets/images/toolbar/doaa.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "tasbeeh",
-            //         imagePath: "assets/images/toolbar/tasbeeh.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            //   ],
-            // ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Expanded(
+                  child: ToolbarCell(
+                    title: localize.tasbeeh,
+                    imagePath: "assets/images/toolbar/tasbeeh.png",
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                          name: "tasbeehScreenFromHomeToolBar");
+                      await navigator.pushNamed(RoutesConstants.tasbeehScreen);
+                    },
+                  ),
+                ),
+                //     Expanded(
+                //       child: ToolbarCell(
+                //         title: "Qibla",
+                //         imagePath: "assets/images/toolbar/qibla.png",
+                //         onTap: () async {
+                //           // await FirebaseAnalyticsRepository.logEvent(
+                //           //     name: "QiblaFinderScreenFromHomeToolBar");
+                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //         },
+                //       ),
+                //     ),
+                //     Expanded(
+                //       child: ToolbarCell(
+                //         title: "tracker",
+                //         imagePath: "assets/images/toolbar/tracker.png",
+                //         onTap: () async {
+                //           // await FirebaseAnalyticsRepository.logEvent(
+                //           //     name: "QiblaFinderScreenFromHomeToolBar");
+                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //         },
+                //       ),
+                //     ),
+                //     Expanded(
+                //       child: ToolbarCell(
+                //         title: "Doaa",
+                //         imagePath: "assets/images/toolbar/doaa.png",
+                //         onTap: () async {
+                //           // await FirebaseAnalyticsRepository.logEvent(
+                //           //     name: "QiblaFinderScreenFromHomeToolBar");
+                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //         },
+                //       ),
+                //     ),
+              ],
+            ),
             // const SizedBox(height: 8),
             // Row(
             //   children: [

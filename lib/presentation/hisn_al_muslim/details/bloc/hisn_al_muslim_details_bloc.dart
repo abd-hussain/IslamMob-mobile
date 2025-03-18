@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:database_manager/database_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
@@ -22,7 +23,7 @@ class HisnAlMuslimDetailsBloc
 
   FutureOr<void> _fillInitialValue(
       _FillInitialValue event, Emitter<HisnAlMuslimDetailsState> emit) {
-    emit(state.copyWith(item: event.item));
+    emit(state.copyWith(item: event.item, isRtlLanguage: _isRtlLanguage()));
   }
 
   FutureOr<void> _updateFavoriteItem(
@@ -51,5 +52,11 @@ class HisnAlMuslimDetailsBloc
       textToShare,
       subject: event.title,
     );
+  }
+
+  bool _isRtlLanguage() {
+    final String languageCode = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
+    return languageCode == "ar" || languageCode == "fa";
   }
 }

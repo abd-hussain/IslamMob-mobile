@@ -466,7 +466,9 @@
     "asma2_allaah_alhusna" : "اسماء الله الحسنى",
     "quransettings" : "إعدادات القرآن الكريم",
     "quranSettingSavedBookMark" : "كل الإشارات",
-    "quranSettingTapTutorial" : "يمكنك بسهولة إظهار أشرطة الأدوات أو إخفائها في أي وقت بمجرد النقر على الشاشة"
+    "quranSettingTapTutorial" : "يمكنك بسهولة إظهار أشرطة الأدوات أو إخفائها في أي وقت بمجرد النقر على الشاشة",
+    "tasbeeh" : "تسبيح",
+    "counterResetDaily" : "يصفر العداد يوميا"
 
 
 }

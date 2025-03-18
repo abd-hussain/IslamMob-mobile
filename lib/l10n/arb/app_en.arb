@@ -466,7 +466,9 @@
     "asma2_allaah_alhusna" : "99 Names",
     "quransettings" : "Holy Quran Settings",
     "quranSettingSavedBookMark" : "All BookMarks",
-    "quranSettingTapTutorial" : "You can easily show or hide the toolbars at any time by simply tapping on the screen"
+    "quranSettingTapTutorial" : "You can easily show or hide the toolbars at any time by simply tapping on the screen",
+    "tasbeeh" : "tasbeeh",
+    "counterResetDaily" : "The counter resets daily"
 
 
 }

@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HisnAlMuslimModel {
   int get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
+  MultiLanguageString get title => throw _privateConstructorUsedError;
   HisnAlMuslimModelState get details => throw _privateConstructorUsedError;
   bool get isFavorite => throw _privateConstructorUsedError;
 
@@ -35,7 +35,10 @@ abstract class $HisnAlMuslimModelCopyWith<$Res> {
       _$HisnAlMuslimModelCopyWithImpl<$Res, HisnAlMuslimModel>;
   @useResult
   $Res call(
-      {int id, String title, HisnAlMuslimModelState details, bool isFavorite});
+      {int id,
+      MultiLanguageString title,
+      HisnAlMuslimModelState details,
+      bool isFavorite});
 
   $HisnAlMuslimModelStateCopyWith<$Res> get details;
 }
@@ -68,7 +71,7 @@ class _$HisnAlMuslimModelCopyWithImpl<$Res, $Val extends HisnAlMuslimModel>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as MultiLanguageString,
       details: null == details
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
@@ -100,7 +103,10 @@ abstract class _$$HisnAlMuslimModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id, String title, HisnAlMuslimModelState details, bool isFavorite});
+      {int id,
+      MultiLanguageString title,
+      HisnAlMuslimModelState details,
+      bool isFavorite});
 
   @override
   $HisnAlMuslimModelStateCopyWith<$Res> get details;
@@ -132,7 +138,7 @@ class __$$HisnAlMuslimModelImplCopyWithImpl<$Res>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as MultiLanguageString,
       details: null == details
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
@@ -157,7 +163,7 @@ class _$HisnAlMuslimModelImpl implements _HisnAlMuslimModel {
   @override
   final int id;
   @override
-  final String title;
+  final MultiLanguageString title;
   @override
   final HisnAlMuslimModelState details;
   @override
@@ -197,14 +203,14 @@ class _$HisnAlMuslimModelImpl implements _HisnAlMuslimModel {
 abstract class _HisnAlMuslimModel implements HisnAlMuslimModel {
   factory _HisnAlMuslimModel(
       {required final int id,
-      required final String title,
+      required final MultiLanguageString title,
       required final HisnAlMuslimModelState details,
       final bool isFavorite}) = _$HisnAlMuslimModelImpl;
 
   @override
   int get id;
   @override
-  String get title;
+  MultiLanguageString get title;
   @override
   HisnAlMuslimModelState get details;
   @override
@@ -223,20 +229,27 @@ mixin _$HisnAlMuslimModelState {
   List<Object> get list => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> list, List<String> referance) text,
-    required TResult Function(List<HisnAlMuslimDetailsModel> list) counter,
+    required TResult Function(
+            List<MultiLanguageString> list, List<MultiLanguageString> referance)
+        text,
+    required TResult Function(List<HisnAlMuslimCounterDetailsModel> list)
+        counter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<String> list, List<String> referance)? text,
-    TResult? Function(List<HisnAlMuslimDetailsModel> list)? counter,
+    TResult? Function(List<MultiLanguageString> list,
+            List<MultiLanguageString> referance)?
+        text,
+    TResult? Function(List<HisnAlMuslimCounterDetailsModel> list)? counter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> list, List<String> referance)? text,
-    TResult Function(List<HisnAlMuslimDetailsModel> list)? counter,
+    TResult Function(List<MultiLanguageString> list,
+            List<MultiLanguageString> referance)?
+        text,
+    TResult Function(List<HisnAlMuslimCounterDetailsModel> list)? counter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -290,7 +303,8 @@ abstract class _$$HisnAlMuslimModelStateTextImplCopyWith<$Res> {
           $Res Function(_$HisnAlMuslimModelStateTextImpl) then) =
       __$$HisnAlMuslimModelStateTextImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> list, List<String> referance});
+  $Res call(
+      {List<MultiLanguageString> list, List<MultiLanguageString> referance});
 }
 
 /// @nodoc
@@ -312,14 +326,14 @@ class __$$HisnAlMuslimModelStateTextImplCopyWithImpl<$Res>
     Object? referance = null,
   }) {
     return _then(_$HisnAlMuslimModelStateTextImpl(
-      null == list
+      list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      null == referance
+              as List<MultiLanguageString>,
+      referance: null == referance
           ? _value._referance
           : referance // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<MultiLanguageString>,
     ));
   }
 }
@@ -328,21 +342,22 @@ class __$$HisnAlMuslimModelStateTextImplCopyWithImpl<$Res>
 
 class _$HisnAlMuslimModelStateTextImpl implements HisnAlMuslimModelStateText {
   const _$HisnAlMuslimModelStateTextImpl(
-      final List<String> list, final List<String> referance)
+      {required final List<MultiLanguageString> list,
+      required final List<MultiLanguageString> referance})
       : _list = list,
         _referance = referance;
 
-  final List<String> _list;
+  final List<MultiLanguageString> _list;
   @override
-  List<String> get list {
+  List<MultiLanguageString> get list {
     if (_list is EqualUnmodifiableListView) return _list;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_list);
   }
 
-  final List<String> _referance;
+  final List<MultiLanguageString> _referance;
   @override
-  List<String> get referance {
+  List<MultiLanguageString> get referance {
     if (_referance is EqualUnmodifiableListView) return _referance;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_referance);
@@ -381,8 +396,11 @@ class _$HisnAlMuslimModelStateTextImpl implements HisnAlMuslimModelStateText {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> list, List<String> referance) text,
-    required TResult Function(List<HisnAlMuslimDetailsModel> list) counter,
+    required TResult Function(
+            List<MultiLanguageString> list, List<MultiLanguageString> referance)
+        text,
+    required TResult Function(List<HisnAlMuslimCounterDetailsModel> list)
+        counter,
   }) {
     return text(list, referance);
   }
@@ -390,8 +408,10 @@ class _$HisnAlMuslimModelStateTextImpl implements HisnAlMuslimModelStateText {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<String> list, List<String> referance)? text,
-    TResult? Function(List<HisnAlMuslimDetailsModel> list)? counter,
+    TResult? Function(List<MultiLanguageString> list,
+            List<MultiLanguageString> referance)?
+        text,
+    TResult? Function(List<HisnAlMuslimCounterDetailsModel> list)? counter,
   }) {
     return text?.call(list, referance);
   }
@@ -399,8 +419,10 @@ class _$HisnAlMuslimModelStateTextImpl implements HisnAlMuslimModelStateText {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> list, List<String> referance)? text,
-    TResult Function(List<HisnAlMuslimDetailsModel> list)? counter,
+    TResult Function(List<MultiLanguageString> list,
+            List<MultiLanguageString> referance)?
+        text,
+    TResult Function(List<HisnAlMuslimCounterDetailsModel> list)? counter,
     required TResult orElse(),
   }) {
     if (text != null) {
@@ -443,12 +465,13 @@ class _$HisnAlMuslimModelStateTextImpl implements HisnAlMuslimModelStateText {
 
 abstract class HisnAlMuslimModelStateText implements HisnAlMuslimModelState {
   const factory HisnAlMuslimModelStateText(
-          final List<String> list, final List<String> referance) =
+          {required final List<MultiLanguageString> list,
+          required final List<MultiLanguageString> referance}) =
       _$HisnAlMuslimModelStateTextImpl;
 
   @override
-  List<String> get list;
-  List<String> get referance;
+  List<MultiLanguageString> get list;
+  List<MultiLanguageString> get referance;
 
   /// Create a copy of HisnAlMuslimModelState
   /// with the given fields replaced by the non-null parameter values.
@@ -464,7 +487,7 @@ abstract class _$$HisnAlMuslimModelStateCounterImplCopyWith<$Res> {
           $Res Function(_$HisnAlMuslimModelStateCounterImpl) then) =
       __$$HisnAlMuslimModelStateCounterImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<HisnAlMuslimDetailsModel> list});
+  $Res call({List<HisnAlMuslimCounterDetailsModel> list});
 }
 
 /// @nodoc
@@ -488,7 +511,7 @@ class __$$HisnAlMuslimModelStateCounterImplCopyWithImpl<$Res>
       null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
-              as List<HisnAlMuslimDetailsModel>,
+              as List<HisnAlMuslimCounterDetailsModel>,
     ));
   }
 }
@@ -498,12 +521,12 @@ class __$$HisnAlMuslimModelStateCounterImplCopyWithImpl<$Res>
 class _$HisnAlMuslimModelStateCounterImpl
     implements HisnAlMuslimModelStateCounter {
   const _$HisnAlMuslimModelStateCounterImpl(
-      final List<HisnAlMuslimDetailsModel> list)
+      final List<HisnAlMuslimCounterDetailsModel> list)
       : _list = list;
 
-  final List<HisnAlMuslimDetailsModel> _list;
+  final List<HisnAlMuslimCounterDetailsModel> _list;
   @override
-  List<HisnAlMuslimDetailsModel> get list {
+  List<HisnAlMuslimCounterDetailsModel> get list {
     if (_list is EqualUnmodifiableListView) return _list;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_list);
@@ -539,8 +562,11 @@ class _$HisnAlMuslimModelStateCounterImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> list, List<String> referance) text,
-    required TResult Function(List<HisnAlMuslimDetailsModel> list) counter,
+    required TResult Function(
+            List<MultiLanguageString> list, List<MultiLanguageString> referance)
+        text,
+    required TResult Function(List<HisnAlMuslimCounterDetailsModel> list)
+        counter,
   }) {
     return counter(list);
   }
@@ -548,8 +574,10 @@ class _$HisnAlMuslimModelStateCounterImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<String> list, List<String> referance)? text,
-    TResult? Function(List<HisnAlMuslimDetailsModel> list)? counter,
+    TResult? Function(List<MultiLanguageString> list,
+            List<MultiLanguageString> referance)?
+        text,
+    TResult? Function(List<HisnAlMuslimCounterDetailsModel> list)? counter,
   }) {
     return counter?.call(list);
   }
@@ -557,8 +585,10 @@ class _$HisnAlMuslimModelStateCounterImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> list, List<String> referance)? text,
-    TResult Function(List<HisnAlMuslimDetailsModel> list)? counter,
+    TResult Function(List<MultiLanguageString> list,
+            List<MultiLanguageString> referance)?
+        text,
+    TResult Function(List<HisnAlMuslimCounterDetailsModel> list)? counter,
     required TResult orElse(),
   }) {
     if (counter != null) {
@@ -601,11 +631,11 @@ class _$HisnAlMuslimModelStateCounterImpl
 
 abstract class HisnAlMuslimModelStateCounter implements HisnAlMuslimModelState {
   const factory HisnAlMuslimModelStateCounter(
-          final List<HisnAlMuslimDetailsModel> list) =
+          final List<HisnAlMuslimCounterDetailsModel> list) =
       _$HisnAlMuslimModelStateCounterImpl;
 
   @override
-  List<HisnAlMuslimDetailsModel> get list;
+  List<HisnAlMuslimCounterDetailsModel> get list;
 
   /// Create a copy of HisnAlMuslimModelState
   /// with the given fields replaced by the non-null parameter values.

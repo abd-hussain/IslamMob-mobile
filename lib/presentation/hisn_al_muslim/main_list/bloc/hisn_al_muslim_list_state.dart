@@ -5,5 +5,6 @@ class HisnAlMuslimListState with _$HisnAlMuslimListState {
   const factory HisnAlMuslimListState({
     @Default([]) List<HisnAlMuslimModel> list,
     @Default(0) int selectedIndex,
+    @Default(false) bool isRtlLanguage,
   }) = _HisnAlMuslimListState;
 }

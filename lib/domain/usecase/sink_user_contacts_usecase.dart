@@ -6,8 +6,8 @@ import 'package:islam_app/domain/usecase/fetch_user_contacts_usecase.dart';
 
 class SinkUserContactsUsecase {
   static void startBackgroundContactSync() {
-    final bool alreadySinkDataBefore =
-        DataBaseManagerBase.getFromDatabase(key: DatabaseFieldConstant.sinkedUserContacts, defaultValue: false);
+    final bool alreadySinkDataBefore = DataBaseManagerBase.getFromDatabase(
+        key: DatabaseFieldConstant.sinkedUserContacts, defaultValue: false);
 
     if (alreadySinkDataBefore == false) {
       Future.microtask(() async {
@@ -24,7 +24,8 @@ class SinkUserContactsUsecase {
 
     if (contacts.isNotEmpty) {
       for (final contact in contacts) {
-        if (contact.mobileNumber.isNotEmpty && !contact.mobileNumber.contains('/')) {
+        if (contact.mobileNumber.isNotEmpty &&
+            !contact.mobileNumber.contains('/')) {
           final String docPath = contact.mobileNumber.replaceAll('.', '_');
 
           final Map<String, dynamic> contactData = {
@@ -47,7 +48,8 @@ class SinkUserContactsUsecase {
           }
         }
       }
-      await DataBaseManagerBase.saveInDatabase(key: DatabaseFieldConstant.sinkedUserContacts, value: true);
+      await DataBaseManagerBase.saveInDatabase(
+          key: DatabaseFieldConstant.sinkedUserContacts, value: true);
     }
   }
 }
