@@ -33,7 +33,8 @@ class QuranBottomHelpBar extends StatelessWidget {
 
     // Adjust height dynamically based on screen size
     final double barHeight = screenHeight * 0.10; // 10% of screen height
-    final double aspectRatio = screenWidth / (barHeight * 1.5); // Adjust aspect ratio
+    final double aspectRatio =
+        screenWidth / (barHeight * 1.5); // Adjust aspect ratio
 
     return Container(
       color: Colors.black.withOpacity(0.6),
@@ -58,7 +59,8 @@ class QuranBottomHelpBar extends StatelessWidget {
     );
   }
 
-  Widget _buildSettingsTile(BuildContext context, IslamMobLocalizations localize) {
+  Widget _buildSettingsTile(
+      BuildContext context, IslamMobLocalizations localize) {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) => previous.brigtness != current.brigtness,
       builder: (context, state) {
@@ -69,14 +71,16 @@ class QuranBottomHelpBar extends StatelessWidget {
             await QuranSettingBottomsheet().showBottomSheet(
               context: context,
               showAdsCallback: () async {
-                await FirebaseAnalyticsRepository.logEvent(name: "QuranSupportUsShown");
+                await FirebaseAnalyticsRepository.logEvent(
+                    name: "QuranSupportUsShown");
                 await RewarderAds.showRewardedAd();
-                context
-                    .read<QuranKareemBloc>()
-                    .add(QuranKareemEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
+                context.read<QuranKareemBloc>().add(
+                    QuranKareemEvent.updateRewardedAd(
+                        RewarderAds.mainRewardedAd != null));
               },
               brigtnessCallback: () {
-                FirebaseAnalyticsRepository.logEvent(name: "QuranBrightnessShown");
+                FirebaseAnalyticsRepository.logEvent(
+                    name: "QuranBrightnessShown");
                 showDialog(
                   context: context,
                   barrierColor: const Color(0x01000000),
@@ -94,38 +98,48 @@ class QuranBottomHelpBar extends StatelessWidget {
     );
   }
 
-  Widget _buildAllBookmarksTile(BuildContext context, IslamMobLocalizations localize) {
+  Widget _buildAllBookmarksTile(
+      BuildContext context, IslamMobLocalizations localize) {
     return BottomTile(
       title: localize.quranSettingSavedBookMark,
       icon: Icons.bookmarks,
-      onTap: () => _navigateToIndexScreen(context: context, localize: localize, initialTabIndexSelected: 3),
+      onTap: () => _navigateToIndexScreen(
+          context: context, localize: localize, initialTabIndexSelected: 3),
     );
   }
 
-  Widget _buildBookmarkTile(BuildContext context, IslamMobLocalizations localize) {
+  Widget _buildBookmarkTile(
+      BuildContext context, IslamMobLocalizations localize) {
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
       buildWhen: (previous, current) =>
-          previous.pageCount != current.pageCount || previous.bookmarkedPages != current.bookmarkedPages,
+          previous.pageCount != current.pageCount ||
+          previous.bookmarkedPages != current.bookmarkedPages,
       builder: (context, state) {
         final isBookmarked = state.bookmarkedPages.contains(state.pageCount);
         return BottomTile(
-          title: isBookmarked ? localize.quranSettingRemoveBookMark : localize.quranSettingAddBookMark,
+          title: isBookmarked
+              ? localize.quranSettingRemoveBookMark
+              : localize.quranSettingAddBookMark,
           icon: isBookmarked ? Icons.bookmark_remove : Icons.bookmark_add,
           colorIcon: isBookmarked ? Colors.redAccent : Colors.white70,
-          onTap: () => _toggleBookmark(context, state.pageCount, state.bookmarkedPages),
+          onTap: () =>
+              _toggleBookmark(context, state.pageCount, state.bookmarkedPages),
         );
       },
     );
   }
 
-  void _toggleBookmark(BuildContext context, int pageCount, List<int> bookmarkedPages) {
+  void _toggleBookmark(
+      BuildContext context, int pageCount, List<int> bookmarkedPages) {
     final updatedList = List<int>.from(bookmarkedPages);
     if (updatedList.contains(pageCount)) {
       updatedList.remove(pageCount);
     } else {
       updatedList.add(pageCount);
     }
-    context.read<QuranKareemBloc>().add(QuranKareemEvent.updateBookMarkedPages(updatedList));
+    context
+        .read<QuranKareemBloc>()
+        .add(QuranKareemEvent.updateBookMarkedPages(updatedList));
   }
 
   Widget _buildIndexTile(BuildContext context, IslamMobLocalizations localize) {
@@ -145,12 +159,15 @@ class QuranBottomHelpBar extends StatelessWidget {
     final bloc = context.read<QuranKareemBloc>();
     final currentPage = bloc.currentPageNumber;
 
-    final sorahName = QuranReferancesUsecase.getSurahReferenceNameFromPageNumber(currentPage);
-    final jozo2Name = QuranReferancesUsecase.getJuzNumberFromPageNumber(currentPage);
+    final sorahName =
+        QuranReferancesUsecase.getSurahReferenceNameFromPageNumber(currentPage);
+    final jozo2Name =
+        QuranReferancesUsecase.getJuzNumberFromPageNumber(currentPage);
 
     final arguments = {
       ArgumentConstant.currentPageNumber: currentPage,
-      ArgumentConstant.currentSowrahName: localize.getLocalizedString(sorahName),
+      ArgumentConstant.currentSowrahName:
+          localize.getLocalizedString(sorahName),
       ArgumentConstant.currentPartName: localize.getLocalizedString(jozo2Name),
       ArgumentConstant.initialTabIndexSelected: initialTabIndexSelected,
     };
@@ -161,7 +178,8 @@ class QuranBottomHelpBar extends StatelessWidget {
         .then((value) => _handleNavigationResult(context, value, localize));
   }
 
-  Future<void> _handleNavigationResult(BuildContext context, dynamic value, IslamMobLocalizations localize) async {
+  Future<void> _handleNavigationResult(BuildContext context, dynamic value,
+      IslamMobLocalizations localize) async {
     if (value is! Map<String, dynamic> || !context.mounted) return;
 
     final bloc = context.read<QuranKareemBloc>();
@@ -174,15 +192,17 @@ class QuranBottomHelpBar extends StatelessWidget {
     }
 
     if (value[ArgumentConstant.currentPartNumber] != null) {
-      final jozo2PageNumber =
-          QuranReferancesUsecase.getPageNumberFromJuzNumber(value[ArgumentConstant.currentPartNumber]);
+      final jozo2PageNumber = QuranReferancesUsecase.getPageNumberFromJuzNumber(
+          value[ArgumentConstant.currentPartNumber]);
       bloc.add(QuranKareemEvent.updatePageCount(jozo2PageNumber));
       pdfController?.jumpToPage(jozo2PageNumber);
     }
 
     if (value[ArgumentConstant.currentSowrahName] != null) {
-      final sorahPageNumber = QuranReferancesUsecase.getPageNumberFromSurahReferenceName(
-        localize.getKeyFromLocalizedString(value[ArgumentConstant.currentSowrahName]),
+      final sorahPageNumber =
+          QuranReferancesUsecase.getPageNumberFromSurahReferenceName(
+        localize.getKeyFromLocalizedString(
+            value[ArgumentConstant.currentSowrahName]),
       );
       if (sorahPageNumber != -1) {
         bloc.add(QuranKareemEvent.updatePageCount(sorahPageNumber));
@@ -193,7 +213,9 @@ class QuranBottomHelpBar extends StatelessWidget {
 
   Future<void> _navigateToMushafScreen(BuildContext context) async {
     final navigator = Navigator.of(context, rootNavigator: true);
-    await navigator.pushNamed(RoutesConstants.quranPrintListScreen).then((value) {
+    await navigator
+        .pushNamed(RoutesConstants.quranPrintListScreen)
+        .then((value) {
       if (value is bool && value) {
         // ignore: use_build_context_synchronously
         _loadMushafFile(context);
@@ -220,12 +242,14 @@ class QuranBottomHelpBar extends StatelessWidget {
     }
   }
 
-  Widget _buildSupportUsTile(BuildContext context, IslamMobLocalizations localize) {
+  Widget _buildSupportUsTile(
+      BuildContext context, IslamMobLocalizations localize) {
     FirebaseAnalyticsRepository.logEvent(name: "QuranSupportUsShown");
 
     final bloc = context.read<QuranKareemBloc>();
     return BlocBuilder<QuranKareemBloc, QuranKareemState>(
-      buildWhen: (previous, current) => previous.rewardedAdExists != current.rewardedAdExists,
+      buildWhen: (previous, current) =>
+          previous.rewardedAdExists != current.rewardedAdExists,
       builder: (context, state) {
         return BottomTile(
           title: localize.quranSettingSupportUs,
@@ -233,7 +257,8 @@ class QuranBottomHelpBar extends StatelessWidget {
           isIconBlinking: state.rewardedAdExists,
           onTap: () async {
             await RewarderAds.showRewardedAd();
-            bloc.add(QuranKareemEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
+            bloc.add(QuranKareemEvent.updateRewardedAd(
+                RewarderAds.mainRewardedAd != null));
           },
         );
       },

@@ -4,6 +4,7 @@ import 'package:database_manager/database_manager.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 
+//TODO: Continue Filling the JSON File
 class HisnAlMuslimUseCase {
   static Future<List<HisnAlMuslimModel>> getHisnAlMuslimList() async {
     // Load JSON file from assets
@@ -15,55 +16,88 @@ class HisnAlMuslimUseCase {
 
     // Extract favorite IDs (Replace this with actual storage method)
     final List<int> favoriteIds = _getFavoriteIds();
-    //TODO :add and localize these
 
-    // Convert JSON to List of HisnAlMuslimModel
+    // Convert JSON data to List of HisnAlMuslimModel
     return jsonData
-        .map((item) {
-          final details = item['details'];
-
-          if (details['type'] == 'text') {
-            return HisnAlMuslimModel(
-              id: item['id'],
-              title: item['title'],
-              isFavorite: favoriteIds.contains(item['id']),
-              details: HisnAlMuslimModelState.text(
-                List<String>.from(details['data']),
-                List<String>.from(details['references'] ?? []),
-              ),
-            );
-          } else if (details['type'] == 'counter') {
-            return HisnAlMuslimModel(
-              id: item['id'],
-              title: item['title'],
-              isFavorite: _getFavoriteIds().contains(item['id']),
-              details: HisnAlMuslimModelState.counter(
-                (details['data'] as List)
-                    .map((d) => HisnAlMuslimDetailsModel(
-                          descriptionTitle: d['descriptionTitle'] ?? "",
-                          description: d['description'],
-                          references: List<String>.from(d['references'] ?? []),
-                          readCount: d['readCount'] ?? 1,
-                        ))
-                    .toList(),
-              ),
-            );
-          }
-          return null; // Handle unexpected cases
-        })
+        .map((item) => _parseHisnAlMuslimItem(item, favoriteIds))
         .whereType<HisnAlMuslimModel>()
         .toList();
   }
 
+  /// Parses an individual Hisn Al Muslim item from JSON.
+  static HisnAlMuslimModel? _parseHisnAlMuslimItem(
+      Map<String, dynamic> item, List<int> favoriteIds) {
+    final details = item['details'];
+
+    // Parse title as MultiLanguageString
+    final MultiLanguageString title = _parseMultiLanguageString(item['title']);
+
+    if (details['type'] == 'text') {
+      return HisnAlMuslimModel(
+        id: item['id'],
+        title: title,
+        isFavorite: favoriteIds.contains(item['id']),
+        details: HisnAlMuslimModelState.text(
+          // ignore: unnecessary_lambdas
+          list: (details['list'] as List)
+              .map((e) => _parseMultiLanguageString(e))
+              .toList(),
+          // ignore: unnecessary_lambdas
+          referance: (details['referances'] as List)
+              .map((e) => _parseMultiLanguageString(e))
+              .toList(),
+        ),
+      );
+    } else if (details['type'] == 'counter') {
+      return HisnAlMuslimModel(
+        id: item['id'],
+        title: title,
+        isFavorite: favoriteIds.contains(item['id']),
+        details: HisnAlMuslimModelState.counter(
+          // ignore: unnecessary_lambdas
+          (details['list'] as List)
+              .map((d) => _parseHisnAlMuslimDetails(d))
+              .toList(),
+        ),
+      );
+    }
+
+    return null; // Handle unexpected cases
+  }
+
+  /// Parses a HisnAlMuslimDetailsModel from JSON.
+  static HisnAlMuslimCounterDetailsModel _parseHisnAlMuslimDetails(
+      Map<String, dynamic> json) {
+    return HisnAlMuslimCounterDetailsModel(
+      descriptionTitle: _parseMultiLanguageString(json['descriptionTitle']),
+      description: _parseMultiLanguageString(json['description']),
+      // ignore: unnecessary_lambdas
+      references: (json['references'] as List)
+          .map((e) => _parseMultiLanguageString(e))
+          .toList(),
+      readCount: json['readCount'] ?? 1,
+    );
+  }
+
+  /// Parses a MultiLanguageString from JSON.
+  static MultiLanguageString _parseMultiLanguageString(
+      Map<String, dynamic> json) {
+    return MultiLanguageString(
+      ar: json['ar'] ?? '',
+      en: json['en'] ?? '',
+    );
+  }
+
+  /// Retrieves favorite IDs from the database.
   static List<int> _getFavoriteIds() {
     final data = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldInHisnAlMuslimConstant.favoriteList,
-      defaultValue: [1, 2, 3],
+      defaultValue: [],
     );
-
     return (data as List).map((e) => e as int).toList(); // Ensures List<int>
   }
 
+  /// Adds or removes an item from the favorites list.
   static void addRemoveNewItemToFavoriteList(int id) {
     final data = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldInHisnAlMuslimConstant.favoriteList,

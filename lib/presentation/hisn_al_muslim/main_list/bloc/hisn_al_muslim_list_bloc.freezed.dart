@@ -682,6 +682,7 @@ abstract class _Search implements HisnAlMuslimListEvent {
 mixin _$HisnAlMuslimListState {
   List<HisnAlMuslimModel> get list => throw _privateConstructorUsedError;
   int get selectedIndex => throw _privateConstructorUsedError;
+  bool get isRtlLanguage => throw _privateConstructorUsedError;
 
   /// Create a copy of HisnAlMuslimListState
   /// with the given fields replaced by the non-null parameter values.
@@ -696,7 +697,8 @@ abstract class $HisnAlMuslimListStateCopyWith<$Res> {
           $Res Function(HisnAlMuslimListState) then) =
       _$HisnAlMuslimListStateCopyWithImpl<$Res, HisnAlMuslimListState>;
   @useResult
-  $Res call({List<HisnAlMuslimModel> list, int selectedIndex});
+  $Res call(
+      {List<HisnAlMuslimModel> list, int selectedIndex, bool isRtlLanguage});
 }
 
 /// @nodoc
@@ -717,6 +719,7 @@ class _$HisnAlMuslimListStateCopyWithImpl<$Res,
   $Res call({
     Object? list = null,
     Object? selectedIndex = null,
+    Object? isRtlLanguage = null,
   }) {
     return _then(_value.copyWith(
       list: null == list
@@ -727,6 +730,10 @@ class _$HisnAlMuslimListStateCopyWithImpl<$Res,
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      isRtlLanguage: null == isRtlLanguage
+          ? _value.isRtlLanguage
+          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -740,7 +747,8 @@ abstract class _$$HisnAlMuslimListStateImplCopyWith<$Res>
       __$$HisnAlMuslimListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<HisnAlMuslimModel> list, int selectedIndex});
+  $Res call(
+      {List<HisnAlMuslimModel> list, int selectedIndex, bool isRtlLanguage});
 }
 
 /// @nodoc
@@ -759,6 +767,7 @@ class __$$HisnAlMuslimListStateImplCopyWithImpl<$Res>
   $Res call({
     Object? list = null,
     Object? selectedIndex = null,
+    Object? isRtlLanguage = null,
   }) {
     return _then(_$HisnAlMuslimListStateImpl(
       list: null == list
@@ -769,6 +778,10 @@ class __$$HisnAlMuslimListStateImplCopyWithImpl<$Res>
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      isRtlLanguage: null == isRtlLanguage
+          ? _value.isRtlLanguage
+          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -777,7 +790,9 @@ class __$$HisnAlMuslimListStateImplCopyWithImpl<$Res>
 
 class _$HisnAlMuslimListStateImpl implements _HisnAlMuslimListState {
   const _$HisnAlMuslimListStateImpl(
-      {final List<HisnAlMuslimModel> list = const [], this.selectedIndex = 0})
+      {final List<HisnAlMuslimModel> list = const [],
+      this.selectedIndex = 0,
+      this.isRtlLanguage = false})
       : _list = list;
 
   final List<HisnAlMuslimModel> _list;
@@ -792,10 +807,13 @@ class _$HisnAlMuslimListStateImpl implements _HisnAlMuslimListState {
   @override
   @JsonKey()
   final int selectedIndex;
+  @override
+  @JsonKey()
+  final bool isRtlLanguage;
 
   @override
   String toString() {
-    return 'HisnAlMuslimListState(list: $list, selectedIndex: $selectedIndex)';
+    return 'HisnAlMuslimListState(list: $list, selectedIndex: $selectedIndex, isRtlLanguage: $isRtlLanguage)';
   }
 
   @override
@@ -805,12 +823,14 @@ class _$HisnAlMuslimListStateImpl implements _HisnAlMuslimListState {
             other is _$HisnAlMuslimListStateImpl &&
             const DeepCollectionEquality().equals(other._list, _list) &&
             (identical(other.selectedIndex, selectedIndex) ||
-                other.selectedIndex == selectedIndex));
+                other.selectedIndex == selectedIndex) &&
+            (identical(other.isRtlLanguage, isRtlLanguage) ||
+                other.isRtlLanguage == isRtlLanguage));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_list), selectedIndex);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_list), selectedIndex, isRtlLanguage);
 
   /// Create a copy of HisnAlMuslimListState
   /// with the given fields replaced by the non-null parameter values.
@@ -825,12 +845,15 @@ class _$HisnAlMuslimListStateImpl implements _HisnAlMuslimListState {
 abstract class _HisnAlMuslimListState implements HisnAlMuslimListState {
   const factory _HisnAlMuslimListState(
       {final List<HisnAlMuslimModel> list,
-      final int selectedIndex}) = _$HisnAlMuslimListStateImpl;
+      final int selectedIndex,
+      final bool isRtlLanguage}) = _$HisnAlMuslimListStateImpl;
 
   @override
   List<HisnAlMuslimModel> get list;
   @override
   int get selectedIndex;
+  @override
+  bool get isRtlLanguage;
 
   /// Create a copy of HisnAlMuslimListState
   /// with the given fields replaced by the non-null parameter values.

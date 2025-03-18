@@ -6,7 +6,10 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class HisnFavoriteItemsListView extends StatelessWidget {
   final List<HisnAlMuslimModel> list;
-  const HisnFavoriteItemsListView({super.key, required this.list});
+  final bool isRtlLanguage;
+
+  const HisnFavoriteItemsListView(
+      {super.key, required this.list, required this.isRtlLanguage});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +30,7 @@ class HisnFavoriteItemsListView extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: HisnMainCardView(
+                  isRtlLanguage: isRtlLanguage,
                   item: favoriteList[index],
                 ),
               );

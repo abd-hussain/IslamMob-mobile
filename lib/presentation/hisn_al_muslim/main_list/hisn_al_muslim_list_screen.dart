@@ -116,8 +116,12 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
                               initialIndex: state.selectedIndex,
                             ),
                             children: [
-                              HisnAllItemsListView(list: state.list),
-                              HisnFavoriteItemsListView(list: state.list),
+                              HisnAllItemsListView(
+                                  list: state.list,
+                                  isRtlLanguage: state.isRtlLanguage),
+                              HisnFavoriteItemsListView(
+                                  list: state.list,
+                                  isRtlLanguage: state.isRtlLanguage),
                             ],
                           );
                         },

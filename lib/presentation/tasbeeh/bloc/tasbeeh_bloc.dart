@@ -1,0 +1,84 @@
+import 'dart:async';
+
+import 'package:audioplayers/audioplayers.dart';
+import 'package:bloc/bloc.dart';
+import 'package:flutter/services.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:islam_app/domain/model/tasbeeh.dart';
+import 'package:islam_app/domain/usecase/tasbeeh_usecase.dart';
+
+part 'tasbeeh_bloc.freezed.dart';
+part 'tasbeeh_event.dart';
+part 'tasbeeh_state.dart';
+
+class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
+  TasbeehBloc() : super(const TasbeehState()) {
+    on<_FillInitialValue>(_fillInitialValue);
+    on<_SoundSetting>(_soundSetting);
+    on<_VibrationSetting>(_vibrationSetting);
+    on<_LeftZikerSelected>(_leftZikerSelected);
+    on<_RightZikerEnabled>(_rightZikerEnabled);
+    on<_ResetCounter>(_resetCounter);
+    on<_IncrementCounter>(_incrementCounter);
+  }
+
+  FutureOr<void> _fillInitialValue(
+      _FillInitialValue event, Emitter<TasbeehState> emit) async {
+    emit(state.copyWith(list: await TasbeehUseCase.getTasbeehList()));
+  }
+
+  FutureOr<void> _soundSetting(
+      _SoundSetting event, Emitter<TasbeehState> emit) {
+    final bool allowedSound = state.allowSound;
+    emit(state.copyWith(allowSound: !allowedSound));
+  }
+
+  FutureOr<void> _vibrationSetting(
+      _VibrationSetting event, Emitter<TasbeehState> emit) {
+    final bool allowedVibration = state.allowVibration;
+    emit(state.copyWith(allowVibration: !allowedVibration));
+  }
+
+  FutureOr<void> _leftZikerSelected(
+      _LeftZikerSelected event, Emitter<TasbeehState> emit) {
+    if (state.selectedListIndex != 0) {
+      int currentIndex = state.selectedListIndex;
+      currentIndex = currentIndex - 1;
+      emit(state.copyWith(selectedListIndex: currentIndex));
+    }
+  }
+
+  FutureOr<void> _rightZikerEnabled(
+      _RightZikerEnabled event, Emitter<TasbeehState> emit) {
+    if (state.selectedListIndex != state.list.length - 1) {
+      int currentIndex = state.selectedListIndex;
+      currentIndex = currentIndex + 1;
+      emit(state.copyWith(selectedListIndex: currentIndex));
+    }
+  }
+
+  FutureOr<void> _resetCounter(
+      _ResetCounter event, Emitter<TasbeehState> emit) {
+    emit(state.copyWith(counter: 0));
+  }
+
+  FutureOr<void> _incrementCounter(
+      _IncrementCounter event, Emitter<TasbeehState> emit) {
+    int currentCounter = state.counter;
+    currentCounter = currentCounter + 1;
+    emit(state.copyWith(counter: currentCounter));
+    _beepAndVibrate(
+        allowSound: state.allowSound, allowVibrate: state.allowVibration);
+  }
+
+  void _beepAndVibrate({required bool allowSound, required bool allowVibrate}) {
+    if (allowVibrate) {
+      HapticFeedback.vibrate();
+    }
+    if (allowSound) {
+      AudioPlayer().play(
+        AssetSource('audios/click.wav'),
+      );
+    }
+  }
+}

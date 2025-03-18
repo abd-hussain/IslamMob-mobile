@@ -3,7 +3,8 @@ import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/details/widgets/hisn_al_muslim_counter_view.dart';
 
 class HisnAlMuslimWithCounterView extends StatefulWidget {
-  final HisnAlMuslimDetailsModel hisnAlMuslimDetailsModel;
+  final HisnAlMuslimCounterDetailsModel hisnAlMuslimDetailsModel;
+  final bool isRtlLanguage;
   final int index;
   final int totalLength;
   final Function() reachMaxCount;
@@ -14,6 +15,7 @@ class HisnAlMuslimWithCounterView extends StatefulWidget {
     required this.index,
     required this.totalLength,
     required this.reachMaxCount,
+    required this.isRtlLanguage,
   });
 
   @override
@@ -76,7 +78,9 @@ class _HisnAlMuslimWithCounterViewState
   }
 
   Widget _buildTitleText(BuildContext context) {
-    final title = widget.hisnAlMuslimDetailsModel.descriptionTitle;
+    final title = widget.isRtlLanguage
+        ? widget.hisnAlMuslimDetailsModel.descriptionTitle.ar
+        : widget.hisnAlMuslimDetailsModel.descriptionTitle.en;
     if (title.isEmpty) return const SizedBox();
 
     return Text(
@@ -88,21 +92,26 @@ class _HisnAlMuslimWithCounterViewState
 
   Widget _buildDescriptionText(BuildContext context) {
     return Text(
-      widget.hisnAlMuslimDetailsModel.description,
+      widget.isRtlLanguage
+          ? widget.hisnAlMuslimDetailsModel.description.ar
+          : widget.hisnAlMuslimDetailsModel.description.en,
       style: _uthmanTextStyle(fontSize: 22),
       textAlign: TextAlign.center,
     );
   }
 
   Widget _buildReferenceText(BuildContext context) {
+    final listOfReferances = widget.hisnAlMuslimDetailsModel.references;
     return ListView.builder(
         shrinkWrap: true, // Ensures it takes only required space
         physics:
             const NeverScrollableScrollPhysics(), // Disables internal scrolling
-        itemCount: widget.hisnAlMuslimDetailsModel.references.length,
+        itemCount: listOfReferances.length,
         itemBuilder: (ctx, index) {
           return Text(
-            widget.hisnAlMuslimDetailsModel.references[index],
+            widget.isRtlLanguage
+                ? listOfReferances[index].ar
+                : listOfReferances[index].en,
             style: _uthmanTextStyle(fontSize: 16),
             textAlign: TextAlign.start,
           );

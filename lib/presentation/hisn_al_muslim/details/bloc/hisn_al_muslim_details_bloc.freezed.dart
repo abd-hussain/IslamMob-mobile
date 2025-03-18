@@ -690,6 +690,7 @@ abstract class _ShareItem implements HisnAlMuslimDetailsEvent {
 mixin _$HisnAlMuslimDetailsState {
   HisnAlMuslimModel? get item => throw _privateConstructorUsedError;
   dynamic get textToShare => throw _privateConstructorUsedError;
+  bool get isRtlLanguage => throw _privateConstructorUsedError;
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -704,7 +705,7 @@ abstract class $HisnAlMuslimDetailsStateCopyWith<$Res> {
           $Res Function(HisnAlMuslimDetailsState) then) =
       _$HisnAlMuslimDetailsStateCopyWithImpl<$Res, HisnAlMuslimDetailsState>;
   @useResult
-  $Res call({HisnAlMuslimModel? item, dynamic textToShare});
+  $Res call({HisnAlMuslimModel? item, dynamic textToShare, bool isRtlLanguage});
 
   $HisnAlMuslimModelCopyWith<$Res>? get item;
 }
@@ -727,6 +728,7 @@ class _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
   $Res call({
     Object? item = freezed,
     Object? textToShare = freezed,
+    Object? isRtlLanguage = null,
   }) {
     return _then(_value.copyWith(
       item: freezed == item
@@ -737,6 +739,10 @@ class _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
           ? _value.textToShare
           : textToShare // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      isRtlLanguage: null == isRtlLanguage
+          ? _value.isRtlLanguage
+          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -764,7 +770,7 @@ abstract class _$$HisnAlMuslimDetailsStateImplCopyWith<$Res>
       __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HisnAlMuslimModel? item, dynamic textToShare});
+  $Res call({HisnAlMuslimModel? item, dynamic textToShare, bool isRtlLanguage});
 
   @override
   $HisnAlMuslimModelCopyWith<$Res>? get item;
@@ -787,6 +793,7 @@ class __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>
   $Res call({
     Object? item = freezed,
     Object? textToShare = freezed,
+    Object? isRtlLanguage = null,
   }) {
     return _then(_$HisnAlMuslimDetailsStateImpl(
       item: freezed == item
@@ -794,6 +801,10 @@ class __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>
           : item // ignore: cast_nullable_to_non_nullable
               as HisnAlMuslimModel?,
       textToShare: freezed == textToShare ? _value.textToShare! : textToShare,
+      isRtlLanguage: null == isRtlLanguage
+          ? _value.isRtlLanguage
+          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -801,17 +812,21 @@ class __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
-  const _$HisnAlMuslimDetailsStateImpl({this.item, this.textToShare = ""});
+  const _$HisnAlMuslimDetailsStateImpl(
+      {this.item, this.textToShare = "", this.isRtlLanguage = false});
 
   @override
   final HisnAlMuslimModel? item;
   @override
   @JsonKey()
   final dynamic textToShare;
+  @override
+  @JsonKey()
+  final bool isRtlLanguage;
 
   @override
   String toString() {
-    return 'HisnAlMuslimDetailsState(item: $item, textToShare: $textToShare)';
+    return 'HisnAlMuslimDetailsState(item: $item, textToShare: $textToShare, isRtlLanguage: $isRtlLanguage)';
   }
 
   @override
@@ -821,12 +836,14 @@ class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
             other is _$HisnAlMuslimDetailsStateImpl &&
             (identical(other.item, item) || other.item == item) &&
             const DeepCollectionEquality()
-                .equals(other.textToShare, textToShare));
+                .equals(other.textToShare, textToShare) &&
+            (identical(other.isRtlLanguage, isRtlLanguage) ||
+                other.isRtlLanguage == isRtlLanguage));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, item, const DeepCollectionEquality().hash(textToShare));
+  int get hashCode => Object.hash(runtimeType, item,
+      const DeepCollectionEquality().hash(textToShare), isRtlLanguage);
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -841,12 +858,15 @@ class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
 abstract class _HisnAlMuslimDetailsState implements HisnAlMuslimDetailsState {
   const factory _HisnAlMuslimDetailsState(
       {final HisnAlMuslimModel? item,
-      final dynamic textToShare}) = _$HisnAlMuslimDetailsStateImpl;
+      final dynamic textToShare,
+      final bool isRtlLanguage}) = _$HisnAlMuslimDetailsStateImpl;
 
   @override
   HisnAlMuslimModel? get item;
   @override
   dynamic get textToShare;
+  @override
+  bool get isRtlLanguage;
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.

@@ -18,6 +18,7 @@ import 'package:islam_app/presentation/quran_pages_index/quran_pages_index_scree
 import 'package:islam_app/presentation/quran_prints/quran_prints_screen.dart';
 import 'package:islam_app/presentation/report_suggestions/report_suggestion_screen.dart';
 import 'package:islam_app/presentation/settings_tab/settings_screen.dart';
+import 'package:islam_app/presentation/tasbeeh/tasbeeh_screen.dart';
 import 'package:islam_app/presentation/web_view/web_view_screen.dart';
 
 class RoutesConstants {
@@ -41,6 +42,7 @@ class RoutesConstants {
   static const hisnAlMuslimListScreen = 'hisnAlMuslimListScreen';
   static const hisnAlMuslimDetailsScreen = 'hisnAlMuslimDetailsScreen';
   static const contactsScreen = 'contactsScreen';
+  static const tasbeehScreen = 'tasbeehScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -66,4 +68,5 @@ final Map<String, Widget> routes = {
   RoutesConstants.hisnAlMuslimListScreen: const HisnAlMuslimListScreen(),
   RoutesConstants.hisnAlMuslimDetailsScreen: const HisnAlMuslimDetailsScreen(),
   RoutesConstants.contactsScreen: const ContactsScreen(),
+  RoutesConstants.tasbeehScreen: const TasbeehScreen(),
 };

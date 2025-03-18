@@ -62,6 +62,10 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/sorah_type
   $AssetsImagesSorahTypeGen get sorahType => const $AssetsImagesSorahTypeGen();
 
+  /// File path: assets/images/tasbeeh_counter_layout.svg
+  SvgGenImage get tasbeehCounterLayout =>
+      const SvgGenImage('assets/images/tasbeeh_counter_layout.svg');
+
   /// Directory path: assets/images/toolbar
   $AssetsImagesToolbarGen get toolbar => const $AssetsImagesToolbarGen();
 
@@ -80,6 +84,7 @@ class $AssetsImagesGen {
         internet,
         readyToGo,
         sharePopoup,
+        tasbeehCounterLayout,
         updateAppIc
       ];
 }
@@ -91,8 +96,11 @@ class $AssetsJsonGen {
   String get hisnAlMuslim =>
       'packages/islam_app/assets/json/hisn_al_muslim.json';
 
+  /// File path: assets/json/tasbeeh.json
+  String get tasbeeh => 'packages/islam_app/assets/json/tasbeeh.json';
+
   /// List of all assets
-  List<String> get values => [hisnAlMuslim];
+  List<String> get values => [hisnAlMuslim, tasbeeh];
 }
 
 class $AssetsLottieGen {
