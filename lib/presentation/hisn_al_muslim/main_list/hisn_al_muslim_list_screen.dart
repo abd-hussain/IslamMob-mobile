@@ -35,7 +35,7 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
               iconTheme: const IconThemeData(color: Colors.white),
               title: CustomText(
                 title: localizations.hesenAlMuslim,
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
               bottom: PreferredSize(

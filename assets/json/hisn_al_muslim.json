@@ -326,5 +326,256 @@
         }
       ]
     }
+  },
+  {
+    "id": 6,
+    "title": {
+      "ar": "الدعاء لمن لبس ثوباً جديداً",
+      "en": "To someone wearing a new garment"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "إلبِسْ جَدِيداً وعِشْ حميداً ومُتْ شهيداً",
+            "en": "Put on new clothes, live a praise-worthy life and die as a martyr"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Ilbas jadīdan, wa `ish ḥamīdan, wa mut shahīdan"
+            },
+            {
+              "ar": "ابن ماجه 2/ 1178 والبغوي 12/ 41 وانظر صحيح ابن ماجة2/ 275",
+              "en": "Ibn Majah 2/1178, Al-Baghawi 12/41. See also Al-Albani, Sahih Ibn Majah 2/275"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "تُبْـلي وَيُـخْلِفُ اللهُ تَعَالى",
+            "en": "May Allah replace it when it is worn out"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Tublī wa yukhliful-lāhu ta`ālā"
+            },
+            {
+              "ar": "أخرجه أبو داود 4/ 41 ، وانظر صحيح أبي داود2/ 760",
+              "en": "Abu Dawud 4/41. See also Al-Albani Sahih Abu Dawud 2/760"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": {
+      "ar": "ما يقول إذا وضع الثوب",
+      "en": "Before undressing"
+    },
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "",
+          "en": ""
+        },
+        {
+          "ar": "بِسْمِ الله",
+          "en": "In the Name of Allah"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "",
+          "en": "Bismillāhi"
+        },
+        {
+          "ar": "الترمذي 2/505 وغيره وانظر الإرواء برقم 49 صحيح الجامع 3/ 203",
+          "en": "At-Tirmidhi 2/505, among others. See 'Irwa'ul Ghalil no. 49 and Sahihul-Jami' 3/203"
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": {
+      "ar": "دعاء دخول الخلاء",
+      "en": "Before entering the bathroom"
+    },
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "(بِسْمِ الله)",
+          "en": "[In the Name of Allah]"
+        },
+        {
+          "ar": "اللّهُـمَّ إِنِّـي أَعـوذُ بِـكَ مِـنَ الْخُـبْثِ وَالْخَبائِث",
+          "en": "O Allah, I seek protection in You from evil and the evil ones (or, from the evil male and female Jinn)"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "",
+          "en": "Bismillāhi, Allāhumma 'innī 'a`ūdhu bika minal-khubthi walkhabā'ith"
+        },
+        {
+          "ar": "أخرجه البخاري 1/45 ومسلم 1/283 وزيادة بسم الله في أوله متفق عليه، أخرجها سعيد بن منصور أنظر فتح الباري 1/244",
+          "en": "Al-Bukhari 1/45, Muslim 1/283. The addition of Bismillah at its beginning was reported by Said bin Mansur. See Fathul-Bari 1/244"
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": {
+      "ar": "دعاء الخروج من الخلاء",
+      "en": "After leaving the bathroom"
+    },
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "",
+          "en": ""
+        },
+        {
+          "ar": "غُفْـرانَك",
+          "en": "I seek Your forgiveness"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "",
+          "en": "Ghufrānaka"
+        },
+        {
+          "ar": "أخرجه أصحاب السنن إلا النسائي أخرجه في عمل اليوم والليلة انظر تخريج زاد المعاد 2/ 387",
+          "en": "Abu Dawud, Ibn Majah and At-Tirmidhi. An-Nasa'i recorded it in 'Amalul-Yawm wal-Laylah. Also see the checking of Ibn Al-Qayyim's Zadul-Ma'ad, 2/387"
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": {
+      "ar": "الذكر قبل الوضوء",
+      "en": "Before ablution"
+    },
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "",
+          "en": ""
+        },
+        {
+          "ar": "بِسْمِ الله",
+          "en": "In the Name of Allah"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "",
+          "en": "Bismillāhi"
+        },
+        {
+          "ar": "أبو داود وابن ماجه وأحمد وانظر إرواء الغليل 1/ 122",
+          "en": "Abu Dawud, Ibn Majah, and Ahmad. See also Al-Albani, 'Irwa'ul-Ghain 1/122"
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "title": {
+      "ar": "الذكر بعد الفراغ من الوضوء",
+      "en": "Upon completing the ablution"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "أشهد أن لا إله إلا الله وحده لا شريك له ، وأشهد أن محمداً عبده ورسوله",
+            "en": "I bear witness that none has the right to be worshipped but Allah alone, Who has no partner; and I bear witness that Muhammad is His slave and His Messenger."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "'Ash-hadu 'an lā 'ilāha 'illallāhu waḥdahu lā sharīka lahu wa 'ash-hadu 'anna Muḥammadan `abduhu wa Rasūluhu."
+            },
+            {
+              "ar": "رواه مسلم1/ 209",
+              "en": "Muslim 1/209"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ اجْعَلنـي مِنَ التَّـوّابينَ وَاجْعَـلْني مِنَ المتَطَهّـرين",
+            "en": "O Allah, make me among those who turn to You in repentance, and make me among those who are purified"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhummaj`alnī minat-tawwābīna waj`alnī minal-mutaṭahhirīn"
+            },
+            {
+              "ar": "الترمذي 1/ 78 وانظر صحيح الترمذي 1/18",
+              "en": "At-Tirmidhi 1/78. See also Al-Albani, Sahih At- Tirmidhi 1/18"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سبحانك اللهم وبحمدك أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك",
+            "en": "Glory is to You, O Allah, and praise; I bear witness that there is none worthy of worship but You. I seek Your forgiveness and turn to You in repentance"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥānaka Allāhumma wa biḥamdika, 'ash-hadu 'an lā 'ilāha 'illā 'Anta, 'astaghfiruka wa 'atūbu 'ilayk."
+            },
+            {
+              "ar": "النسائي في عمل اليوم والليلة ص173 وانظر  إرواء الغليل 1/ 135 و2/  94",
+              "en": "An-Nasa'i, 'Amalul-Yawm wal-Laylah, p. 173. See also Al-Albani, 'Irwa'ul-Ghalil 1/135 and 2/94"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
   }
 ]

@@ -27,7 +27,7 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
         iconTheme: const IconThemeData(color: Colors.white),
         title: CustomText(
           title: localizations.tasbeeh,
-          fontSize: 18,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
       ),
