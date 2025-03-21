@@ -12,6 +12,16 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
+class $AssetsAudiosGen {
+  const $AssetsAudiosGen();
+
+  /// File path: assets/audios/click.wav
+  String get click => 'packages/islam_app/assets/audios/click.wav';
+
+  /// List of all assets
+  List<String> get values => [click];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -302,6 +312,7 @@ class Assets {
 
   static const String package = 'islam_app';
 
+  static const $AssetsAudiosGen audios = $AssetsAudiosGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsJsonGen json = $AssetsJsonGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();

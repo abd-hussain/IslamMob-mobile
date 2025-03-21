@@ -12,7 +12,10 @@ class QuranPrintsUsecase {
 
       final listOfPrints = mapDocumentsToQuranPrints(documents);
 
-      return listOfPrints;
+      final filteredList =
+          listOfPrints.where((element) => !element.hidden!).toList();
+
+      return filteredList;
     } catch (e) {
       LoggerManagerBase.logDebugMessage(
           message: 'Error fetching documents: $e');
@@ -34,6 +37,7 @@ class QuranPrintsUsecase {
         fieldName: doc["fieldName"] ?? "",
         juz2ToPageNumbers: doc["juz2ToPageNumbers"] ?? {},
         sorahToPageNumbers: doc["sorahToPageNumbers"] ?? {},
+        hidden: doc["hidden"] ?? false,
       );
     }).toList();
   }
