@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'quran_prints.freezed.dart';
 
 @freezed
@@ -13,5 +14,6 @@ class QuranPrints with _$QuranPrints {
     String? addedPagesAttachmentLocation,
     Map<String, dynamic>? juz2ToPageNumbers,
     Map<String, dynamic>? sorahToPageNumbers,
+    bool? hidden,
   }) = _QuranPrints;
 }

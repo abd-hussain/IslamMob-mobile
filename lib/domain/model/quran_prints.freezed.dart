@@ -28,6 +28,7 @@ mixin _$QuranPrints {
       throw _privateConstructorUsedError;
   Map<String, dynamic>? get sorahToPageNumbers =>
       throw _privateConstructorUsedError;
+  bool? get hidden => throw _privateConstructorUsedError;
 
   /// Create a copy of QuranPrints
   /// with the given fields replaced by the non-null parameter values.
@@ -51,7 +52,8 @@ abstract class $QuranPrintsCopyWith<$Res> {
       String? attachmentLocation,
       String? addedPagesAttachmentLocation,
       Map<String, dynamic>? juz2ToPageNumbers,
-      Map<String, dynamic>? sorahToPageNumbers});
+      Map<String, dynamic>? sorahToPageNumbers,
+      bool? hidden});
 }
 
 /// @nodoc
@@ -78,6 +80,7 @@ class _$QuranPrintsCopyWithImpl<$Res, $Val extends QuranPrints>
     Object? addedPagesAttachmentLocation = freezed,
     Object? juz2ToPageNumbers = freezed,
     Object? sorahToPageNumbers = freezed,
+    Object? hidden = freezed,
   }) {
     return _then(_value.copyWith(
       fieldName: freezed == fieldName
@@ -116,6 +119,10 @@ class _$QuranPrintsCopyWithImpl<$Res, $Val extends QuranPrints>
           ? _value.sorahToPageNumbers
           : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      hidden: freezed == hidden
+          ? _value.hidden
+          : hidden // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -137,7 +144,8 @@ abstract class _$$QuranPrintsImplCopyWith<$Res>
       String? attachmentLocation,
       String? addedPagesAttachmentLocation,
       Map<String, dynamic>? juz2ToPageNumbers,
-      Map<String, dynamic>? sorahToPageNumbers});
+      Map<String, dynamic>? sorahToPageNumbers,
+      bool? hidden});
 }
 
 /// @nodoc
@@ -162,6 +170,7 @@ class __$$QuranPrintsImplCopyWithImpl<$Res>
     Object? addedPagesAttachmentLocation = freezed,
     Object? juz2ToPageNumbers = freezed,
     Object? sorahToPageNumbers = freezed,
+    Object? hidden = freezed,
   }) {
     return _then(_$QuranPrintsImpl(
       fieldName: freezed == fieldName
@@ -200,6 +209,10 @@ class __$$QuranPrintsImplCopyWithImpl<$Res>
           ? _value._sorahToPageNumbers
           : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      hidden: freezed == hidden
+          ? _value.hidden
+          : hidden // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -216,7 +229,8 @@ class _$QuranPrintsImpl implements _QuranPrints {
       this.attachmentLocation,
       this.addedPagesAttachmentLocation,
       final Map<String, dynamic>? juz2ToPageNumbers,
-      final Map<String, dynamic>? sorahToPageNumbers})
+      final Map<String, dynamic>? sorahToPageNumbers,
+      this.hidden})
       : _juz2ToPageNumbers = juz2ToPageNumbers,
         _sorahToPageNumbers = sorahToPageNumbers;
 
@@ -257,8 +271,11 @@ class _$QuranPrintsImpl implements _QuranPrints {
   }
 
   @override
+  final bool? hidden;
+
+  @override
   String toString() {
-    return 'QuranPrints(fieldName: $fieldName, nameReferance: $nameReferance, description: $description, language: $language, previewImage: $previewImage, attachmentLocation: $attachmentLocation, addedPagesAttachmentLocation: $addedPagesAttachmentLocation, juz2ToPageNumbers: $juz2ToPageNumbers, sorahToPageNumbers: $sorahToPageNumbers)';
+    return 'QuranPrints(fieldName: $fieldName, nameReferance: $nameReferance, description: $description, language: $language, previewImage: $previewImage, attachmentLocation: $attachmentLocation, addedPagesAttachmentLocation: $addedPagesAttachmentLocation, juz2ToPageNumbers: $juz2ToPageNumbers, sorahToPageNumbers: $sorahToPageNumbers, hidden: $hidden)';
   }
 
   @override
@@ -285,7 +302,8 @@ class _$QuranPrintsImpl implements _QuranPrints {
             const DeepCollectionEquality()
                 .equals(other._juz2ToPageNumbers, _juz2ToPageNumbers) &&
             const DeepCollectionEquality()
-                .equals(other._sorahToPageNumbers, _sorahToPageNumbers));
+                .equals(other._sorahToPageNumbers, _sorahToPageNumbers) &&
+            (identical(other.hidden, hidden) || other.hidden == hidden));
   }
 
   @override
@@ -299,7 +317,8 @@ class _$QuranPrintsImpl implements _QuranPrints {
       attachmentLocation,
       addedPagesAttachmentLocation,
       const DeepCollectionEquality().hash(_juz2ToPageNumbers),
-      const DeepCollectionEquality().hash(_sorahToPageNumbers));
+      const DeepCollectionEquality().hash(_sorahToPageNumbers),
+      hidden);
 
   /// Create a copy of QuranPrints
   /// with the given fields replaced by the non-null parameter values.
@@ -320,7 +339,8 @@ abstract class _QuranPrints implements QuranPrints {
       final String? attachmentLocation,
       final String? addedPagesAttachmentLocation,
       final Map<String, dynamic>? juz2ToPageNumbers,
-      final Map<String, dynamic>? sorahToPageNumbers}) = _$QuranPrintsImpl;
+      final Map<String, dynamic>? sorahToPageNumbers,
+      final bool? hidden}) = _$QuranPrintsImpl;
 
   @override
   String? get fieldName;
@@ -340,6 +360,8 @@ abstract class _QuranPrints implements QuranPrints {
   Map<String, dynamic>? get juz2ToPageNumbers;
   @override
   Map<String, dynamic>? get sorahToPageNumbers;
+  @override
+  bool? get hidden;
 
   /// Create a copy of QuranPrints
   /// with the given fields replaced by the non-null parameter values.
