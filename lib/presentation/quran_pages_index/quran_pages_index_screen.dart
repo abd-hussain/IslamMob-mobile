@@ -37,11 +37,14 @@ class QuranPagesIndexScreen extends StatelessWidget {
         length: 4,
         child: Scaffold(
           appBar: _buildAppBar(context),
-          body: _buildTabBarView(
-            context,
-            currentSowrahName,
-            currentPartName,
-            currentPageNumber,
+          body: GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: _buildTabBarView(
+              context,
+              currentSowrahName,
+              currentPartName,
+              currentPageNumber,
+            ),
           ),
         ),
       ),

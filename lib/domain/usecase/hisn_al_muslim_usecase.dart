@@ -38,12 +38,12 @@ class HisnAlMuslimUseCase {
         title: title,
         isFavorite: favoriteIds.contains(item['id']),
         details: HisnAlMuslimModelState.text(
-          // ignore: unnecessary_lambdas
           list: (details['list'] as List)
+              // ignore: unnecessary_lambdas
               .map((e) => _parseMultiLanguageString(e))
               .toList(),
-          // ignore: unnecessary_lambdas
           referance: (details['referances'] as List)
+              // ignore: unnecessary_lambdas
               .map((e) => _parseMultiLanguageString(e))
               .toList(),
         ),

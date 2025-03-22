@@ -14,8 +14,8 @@ class TasbeehUseCase {
     final List<dynamic> jsonData = jsonDecode(jsonString);
 
     // Convert JSON data to List of HisnAlMuslimModel
-    // ignore: unnecessary_lambdas
     return jsonData
+        // ignore: unnecessary_lambdas
         .map((item) => _parseTasbeehItem(item))
         .whereType<TasbeehModel>()
         .toList();

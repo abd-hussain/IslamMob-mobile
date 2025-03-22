@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.4.0+168
+version: 1.4.0+169
 
 environment:
   sdk: ">=3.3.4 <4.0.0"

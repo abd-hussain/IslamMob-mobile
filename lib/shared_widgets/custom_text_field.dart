@@ -18,30 +18,33 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8),
-      child: TextField(
-        autocorrect: false,
-        enableSuggestions: false,
-        enableInteractiveSelection: false,
-        controller: controller,
-        style: const TextStyle(
-          fontWeight: FontWeight.w300,
-          color: Color(0xff191C1F),
-          fontSize: 16,
-        ),
-        decoration: InputDecoration(
-          filled: true,
-          hintText: hintText,
-          fillColor: Colors.white,
-          prefixIcon: Icon(prefixIcon),
-          focusedBorder: const OutlineInputBorder(
-            borderSide:
-                const BorderSide(color: const Color(0xff008480), width: 5),
+      child: SizedBox(
+        height: 50,
+        child: TextField(
+          autocorrect: false,
+          enableSuggestions: false,
+          enableInteractiveSelection: false,
+          controller: controller,
+          style: const TextStyle(
+            fontWeight: FontWeight.w300,
+            color: Color(0xff191C1F),
+            fontSize: 14,
           ),
-          border: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
+          decoration: InputDecoration(
+            filled: true,
+            hintText: hintText,
+            fillColor: Colors.white,
+            prefixIcon: Icon(prefixIcon),
+            focusedBorder: const OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: const Color(0xff008480), width: 5),
+            ),
+            border: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey),
+            ),
           ),
+          onChanged: onChanged,
         ),
-        onChanged: onChanged,
       ),
     );
   }
