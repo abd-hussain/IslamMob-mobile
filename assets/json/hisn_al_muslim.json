@@ -577,5 +577,1483 @@
         }
       ]
     }
+  },
+  {
+    "id": 12,
+    "title": {
+      "ar": "الذكر عند الخروج من المنزل",
+      "en": "Remembrance when leaving the home"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "بِسْمِ اللهِ ، تَوَكَّلْـتُ عَلى اللهِ ، وَلا حَوْلَ وَلا قُـوَّةَ إِلاّ بِالله",
+            "en": "In the Name of Allah, I have placed my trust in Allah, there is no might and no power except by Allah"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Bismillāhi, tawakkaltu `alallāhi, wa lā ḥawla wa lā quwwata illā billāh"
+            },
+            {
+              "ar": "أبو داود 4/ 325 والترمذي 5/ 490 وانظر صحيح الترمذي3/ 151",
+              "en": "Abu Dawud 4/325, At-Tirmidhi 5/490. See also Al-Albani, Sahih At-Tirmidhi 3/151"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللهُمَ إني أعُوذُ بِكَ أن أَضِلَّ أوْ أُضَلَّ أَوْ أزِلَّ، أو أُزَلَّ، أوْ أظلِم أوْ أُظْلَم، أوْ أَجْهَلَ أوْ يُجْهَلَ عَلَيَّ",
+            "en": "O Allah, I seek refuge in You lest I misguide others , or I am misguided by others , lest I cause others to err or I am caused to err , lest I abuse others or be abused, and lest I behave foolishly or meet with the foolishness of others"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma 'innī 'a`ūdhu bika 'an 'aḍilla, 'aw 'uḍalla, 'aw 'azilla, 'aw 'uzalla, 'aw 'aẓlima, 'aw 'uẓlama, 'aw 'ajhala 'aw yujhala `alayya."
+            },
+            {
+              "ar": "أهل السنن وانظر صحيح الترمذي 3/ 152 وصحيح ابن ماجه 2/ 336",
+              "en": "Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmidhi. See also Al-Albani, Sahih At-Tirmidhi 3/152 and Sahih Ibn Majah 2/336"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "title": {
+      "ar": "الذكر عند الدخول المنزل",
+      "en": "Remembrance upon entering the home"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "بسم الله ولجنا ،وبسم الله خرجنا ، وعلى ربنا توكلنا ، ثم ليسلم على أهله",
+            "en": "In the Name of Allah we enter , in the Name of Allah we leave , and upon our Lord we depend [then say As-Salāmu `Alaykum to those present]."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Bismillāhi walajnā, wa bismillāhi kharajnā, wa `ala Rabbinā tawakkalnā"
+            },
+            {
+              "ar": "أخرجه أبو داود 4/ 325 ، وحسن إسناده العلامة ابن باز في تحفة الأخيار ص28 ، وفي الصحيح ' إذا دخل الرجل بيته فذكر بيته فذكر الله عند دخوله وعند طعامه قال الشيطان لا مبيت لكم ولا عشاء ' مسلم برقم 2018",
+              "en": "Abu Dawud 4/325. Muslim {Hadith no. 2018) says that one should mention the Name of Allah when entering the home and when beginning to eat; and that the devil, hearing this, says: 'There is no shelter for us here tonight and no food.'"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "title": {
+      "ar": "دعاء الذهاب إلى المسجد",
+      "en": "When going to the mosque"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ اجْعَـلْ فِي قَلْبـي نُوراً ، وَفي لِسَـانِي نُوراً، وَفِي سَمْعِي نُوراً, وَفِي  َصَرِيِ نُوراً, وَمِنْ فََوْقِي نُوراً , وَ مِنْ تَحْتِي نُوراً, وَ عَنْ يَمِينيِ نُوراَ, وعَنْ شِمَالِي نُوراً, وَمْن أَماَمِي نُوراً, وَمِنْ خَلْفيِ نُوراَ, واجْعَلْ فِي نَفْسِي نُوراً, وأَعْظِمْ لِي نُوراً, وَعظِّمْ لِي نُوراً, وَاجْعَلْ لِي نُوراً, واجْعَلنِي نُوراً, أللَّهُمَّ أَعْطِنِي نُوراً, واجْعَلْ فِي عَصَبِي نُوراً, وَفِي لَحْمِي نُوراً, وَفِي دَمِي نُوراً وَفِي شَعْرِي نُوراً, وفِي بَشَرِي نُوراً (أَللَّهُمَّ اجِعَلْ لِي نُوراً فِي قّبْرِي وَ نُوراَ فِي عِظاَمِي) (وَزِدْنِي نُوراً, وَزِدْنِي نُوراَ , وَزِدْنِي نُوراً) (وَهَبْ لِي نُوراً عَلَى نُوراً)",
+            "en": "O Allah, place light in my heart, and on my tongue light, and in my ears light and in my sight light, and above me light, and below me light, and to my right light, and to my left light, and before me light and behind me light. Place in my soul light. Magnify for me light, and amplify for me light. Make for me light and make me a light. O Allah, grant me light, and place light in my nerves, and in my body light and in my blood light and in my hair light and in my skin light.1 [O Allah, make for me a light in my grave... and a light in my bones.] [Increase me in light, increase me in light, increase me in light .] [Grant me light upon light.]"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhummaj'al fī qalbī nūran, wa fī lisānī nūran, wa fī sam`ī nūran, wa fī baṣarī nūran, wa min fawqī nūran, wa min taḥtī nūran, wa `an yamīnī nūran, wa `an shimālī nūran, wa min 'amāmī nūran, wa min khalfī nūran, waj`al fī nafsī nūran, wa 'a`ẓim lī nūran, wa `ẓẓim lī nūran, waj`allī nūran, waj`alnī nūran, Allāhumma 'a`tinī nūran, waj'al fī `aṣabī nūran, wa fī laḥmī nūran, wa fī damī nūran, wa fī sha`rī nūran, wa fī basharī nūran. [Allāhummaj`allī nūran fī qabrī wa nūran fī `iẓāmī.] [Wa zidnī nūran, wa zidnī nūran, wa zidnī nūran.] [Wa hab lī nūran `alā nūr.]"
+            },
+            {
+              "ar": "جميع هذه الخصال في البخاري 11/ 116 برقم 6316 ومسلم 1/ 526، 529 ، 530 برقم 763",
+              "en": "1 Up to this point was reported by Al-Bukhari 11 / 116 (Hadith no. 6316) and by Muslim 1/526, 529-530 (Hadithno. 763)"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "title": {
+      "ar": "دعاء دخول المسجد",
+      "en": "Upon entering the mosque"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "أَعوذُ باللهِ العَظيـم وَبِوَجْهِـهِ الكَرِيـم وَسُلْطـانِه القَديـم مِنَ الشّيْـطانِ الرَّجـيم، [ بِسْـمِ الله، وَالصَّلاةُ وَالسَّلامُ عَلى رَسولِ الله]، اللّهُـمَّ افْتَـحْ لي أَبْوابَ رَحْمَتـِك",
+            "en": "I seek refuge in Almighty Allah, By His Noble Face, By His primordial power, From Satan the outcast [In the Name of Allah, and blessings  and peace be upon the Messenger of Allah O Allah, open before me the doors of Your mercy"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "'A`ūdhu billāhi l-`aẓīm, wa bi-wajhihil-karīm, wa sultānihil-qadīm, min ash-shaytānir-rajīm. [Bismillāhi, wassalātu wassalāmu `alā rasūlillāhi.] Allāhummaftaḥ lī 'abwāba raḥmatik"
+            },
+            {
+              "ar": "أبو داود وانظر صحيح الجامع برقم 4591",
+              "en": "Abu Dawud and Al-Albani, Sahihul-Jdmi' As-Saghir (Hadithno. 4591)"
+            },
+            {
+              "ar": "رواه ابن السني برقم 88 وحسنه الألباني",
+              "en": "Ibn As-Sunni (Hadith no. 88), graded good by Al-Albani"
+            },
+            {
+              "ar": "أبو داود 1/ 126 وانظر صحيح الجامع 1/ 528",
+              "en": "Abu Dawud 1/126, see also Al-Albani, Sahihul-Jami'As-Saghir 1/528"
+            },
+            {
+              "ar": "رواه مسلم1/ 494. وفي سنن ابن ماجه من حديث فاطمة رضي الله عنها ' اللهم اغفر لي ذنوبي وافتح لي أبواب رحمتك ' وصححه الألباني لشواهده انظر صحيح ابن ماجه 1/ 128 – 129",
+              "en": "Muslim 1/494. There is also a report in Sunan Ibn Majah on the authority of Fatimah (RA), : 'O Allah, forgive me my sins and open for me the doors of Your mercy.' It was graded authentic by Al-Albani due to supporting Ahadith. See Sahih Ibn Majah 1/128-9"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "title": {
+      "ar": "دعاء الخروج من المسجد",
+      "en": "Upon leaving the mosque"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "بسم الله والصلاة والسلام على رسول الله ،اللهم إني أسألك من فضلك، اللهم اعصمني من الشيطان الرجيم",
+            "en": "In the Name of Allah, and peace and blessings be upon the Messenger of Allah. O Allah, I ask for Your favor, O Allah, protect me from Satan the outcast"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Bismillāhi waṣṣalātu wassalāmu 'alā Rasūlillāhi, Allāhumma 'innī 'as'aluka min faḍlika, Allāhumma`ṣimnī min ash-shaytānir-rajīm"
+            },
+            {
+              "ar": "انظر تخريج روايات الحديث السابق رقم 20 وزيادة (( اللهم اعصمني من الشيطان الرجيم )) لابن ماجه . انظر صحيح ابن ماجه 1/ 288",
+              "en": "See also the checking of the previous Hadith no. 20 and the addition of 'O Allah, protect me from Satan the outcast' by Ibn Majah. See Sahih Ibn Majah 1/288"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "title": {
+      "ar": "أذكار الأذان",
+      "en": "Concerning the athan (the call to prayer)"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "يقول مثل ما يقول المؤذن إلا في ' حي على الصلاة ، وحي على الفلاح' فيقول 'لا حول ولا قوة إلا بالله'",
+            "en": "Repeat what the Mu'adh-dhin says, except for when he says: Hayya 'alas-Salāh (hasten to the prayer) and Hayya 'alal-Falāh (hasten to salvation). Here you should say: Lā ḥawla wa lā quwwata 'illā billāh There is no might and no power except by Allah."
+          },
+          "references": [
+            {
+              "ar": "البخاري 1/ 152 ومسلم 1/ 288",
+              "en": "Al-Bukhari 1/152, Muslim 1/288."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "يقول ' وأنا أشهد أن لا إله إلا الله ، وحده لا شريك له ، وأن محمد عبده ورسوله ، رضيت بالله رباً ، وبمحمداً رسولاً وبالإسلام ديناً'[2] (( يقول ذلك عقب تشهد المؤذن))",
+            "en": "I bear witness that none has the right to be worshipped but Allah alone, Who has no partner, and that Muhammad is His slave and His Messenger. I am pleased with Allah as my Lord, with Muhammad as my Messenger and with Islam as my religion.1 [To be recited in Arabic after the mu'adh-dhin's tashahhud or the words of affirmation of Faith] "
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Wa 'anā 'ash-hadu 'an lā 'ilāha 'illallāhu waḥdahu lā sharīka lahu wa 'anna Muḥammadan 'abduhu wa rasūluhu, raḍītu billāhi rabban, wa bi Muḥammadin rasūlan wa bi 'l-islāmi dīnan"
+            },
+            {
+              "ar": "ابن خزيمة 1/ 220",
+              "en": "Muslim 1/290. 2. Ibn Khuzaymah 1/220"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "يصلي على النبي صلى الله عليه وسلم بعد فراغه من إجابة المؤذن",
+            "en": "After replying to the call of Mu'adh-dhin. you should recite in Arabic Allah's blessings on the Prophet (ﷺ)"
+          },
+          "references": [
+            {
+              "ar": "مسلم 1/ 288",
+              "en": "Muslim 1/288"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللهم رب هذه الدعوة التامة ،والصلاة القائمة، آت محمداً الوسيلة والفضيلة، وأبعثه مقاماً محموداً الذي وعدته، [ إنك لا تخلف الميعاد ]",
+            "en": "O Allah , Lord of this perfect call and established prayer. Grant Muhammad the intercession and favor, and raise him to the honored station You have promised him, [verily You do not neglect promises]"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma rabba hādhihi 'd-da'wati 't-tāmmah waṣ-ṣalāti 'l-qā'imah, 'āti Muhammadani 'l-wasīlata walfaḍīlata, wab 'ath-hu maqāma 'm-mahmūdani 'l-ladhī wa`adtahu, ['innaka lā tukhliful-mī'ād]"
+            },
+            {
+              "ar": "البخاري 1/ 152 وما بين المعكوفين للبيهقي 1/ 410 وحسن إسناده العلامة عبد العزيز بن باز في تحفة الأخيار ص 38",
+              "en": "Al-Bukhari 1/152, and the addition between brackets is from Al-Bayhaqi 1/410 with a good (Hasan) chain of narration. See 'Abdul-Azlz bin Baz's Tuhfatul-'Akhyar, pg. 38"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "يدعو لنفسه بين الأذان والإقامة فإن الدعاء حينئذٍ لا يرد",
+            "en": "Between the call to prayer and the 'Iqamah, you should supplicate Allah for yourself. Invocation during this time is not rejected"
+          },
+          "references": [
+            {
+              "ar": "الترمذي وأبو داود وأحمد وانظر إرواء الغليل 1/ 262",
+              "en": "At-Tirmidhi, Abu Dawud, Ahmed. See Irwaa Al-Ghalil 1/262"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "title": {
+      "ar": "دعاء الاستفتاح",
+      "en": "At the start of the prayer (after takbeer)"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللهم باعد بيني وبين خطاياي كما باعدت بين المشرق والمغرب ، اللهم نقني من خطاياي كما ينقى الثوب الأبيض من الدنس اللهم اغسلني من خطاياي بالماء والثلج والبرد",
+            "en": "O Allah, separate me from my sins as You have separated the East from the West. O Allah, cleanse me of my transgressions as the white garment is cleansed of stains. O Allah, wash away my sins with ice and water and frost"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma bā'id baynī wa bayna khatāyāya kamā bāa'adta bayn al-mashriqi wal-maghribi, Allāhumma naqqinī min khatāyāya kamā yunaqqa 'th-thawbu 'l-'abyaḍu min ad-danasi, Allāhumma 'ghsilnī min khatāyāya, bi 'th-thalji wal-mā'i wal-barad"
+            },
+            {
+              "ar": "البخاري 1/ 181 ومسلم 1/ 419",
+              "en": "Al-Bukhari 1/181, Muslim 1/419"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سبحانك اللهم وبحمدك وتبارك اسمك وتعالى جدك، ولا إله غيرك",
+            "en": "Glory is to You O Allah, and praise. Blessed is Your Name and Exalted is Your Majesty. There is none worthy of worship but You"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subhānaka Allāhumma wa biḥamdika, wa tabāraka 'smuka, wa ta'ālā jadduka, wa lā 'ilāha ghayruk"
+            },
+            {
+              "ar": "أخرجه أصحاب السنن الأربعة وانظر صحيح الترمذي 1/77 وصحيح ابن ماجه 1/ 135",
+              "en": "Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmidhi. See Al-Albani, Sahih At-Tirmidhi 1/77 and Sahih Ibn Majah 1/135."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وجهت وجهي للذي فطر السموات والأرض حنيفاً وما أنا من المشركين ،إن صلاتي ونُسُكي ومحياي ومماتي لله رب العالمين ، لا شريك له وبذلك أمرت وأنا من المسلمين اللهم أنت الملك لا إله إلا أنت ، أنت ربي وأنا عبدك ، ظلمت نفسي ، واعترفت بذنبي ، فاغفر لي ذنوبي جميعاً ، إنه لا يغفر الذنوب إلا أنت ، واهدني لأحسن الأخلاق، لا يهدي لأحسنها إلا أنت ، واصرف عني سيئها لا يصرف عني سيئها إلا أنت لبيك وسعديك والخير كله بيديك ، والشر ليس إليك ، أنا بك وإليك ، تباركت وتعاليت أستغفرك وأتوب إليك",
+            "en": "I have turned my face sincerely towards He who has brought forth the heavens and the Earth and I am not of those who associate (others with Allah). Indeed my prayer, my sacrifice, my life and my death are for Allah, Lord of the worlds, no partner has He, with this I am commanded and I am of the Muslims. O Allah, You are the Sovereign, none has the right to be worshipped except You. You are my Lord and I am Your servant,I have wronged my own soul and have acknowledged my sin, so forgive me all my sins for no one forgives sins except You. Guide me to the best of characters for none can guide to it other than You,and deliver me from the worst of characters for none can deliver me from it other than You. Here I am, in answer to Your call, happy to serve you. All good is within Your hands and evil does not stem from You. I exist by your will and will return to you. Blessed and High are You, I seek Your forgiveness and repent unto You"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Wajjahtu wajhiya li 'l-ladhî faṭara s-samāwāti wa 'l-arḍa, ḥanīfan wa mā ana min al-mushrikīna. Inna salāti wa nusukī, wa mahyāya wa mamātī lillāhi rabbi 'l-`ālamīna, lā sharīka lahu. Wa bi dhālika umirtu wa ana min al-muslimīna. Allāhumma anta 'l-maliku lā ilāha illā anta. Anta rabbī wa ana `abduka, ẓalamtu nafsī wa`taraftu bi dhanbī. Faghfir lī dhunūbī jamī`an, innahu lā yaghfiru 'dh-dhunūba illā anta. Wahdinī li-aḥsani 'l-akhlāqi, lā yahdī li aḥsanihā illā anta. Waṣrif `annī sayyi'ahā, lā yaṣrifu `annī sayyi'ahā illā anta. Labbayka wa sa`dayka, wa 'l-khayru kulluhu bi yadayka, wa 'sh-sharru laysa ilayka, ana bika wa ilayka, tabārakta wa ta`ālayta, astaghfiruka wa atūbu ilayka"
+            },
+            {
+              "ar": "رواه مسلم1/ 534",
+              "en": "Muslim 1/534"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللهم رب جبرائيل وميكائيل وإسرافيل ، فاطر السموات والأرض ، عالم الغيب والشهادة ، أنت تحكم بين عبادك فيما كانوا فيه يختلفون اهدني لما اختلف فيه من الحق بإذنك إنك تهدي من تشاء إلى صراط مستقيم",
+            "en": "O Allah, Lord of Jibraīl, Mīkaīl and Israfīl (great angels), Creator of the heavens and the Earth, Knower of the seen and the unseen. You are the arbitrator between Your servants in that which they have disputed. Guide me to the truth by Your leave, in that which they have differed, for verily You guide whom You will to a straight path"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma, rabba Jibrā'īla, wa Mīkā'īla, wa Isrāfīla Fāṭira 's-samāwāti wa 'l-arḍi, `ālima 'l-ghaybi wa 'sh-shahādati, anta taḥkumu bayna `ibādika fīmā kānū fīhi yakhtalifūna. Ihdinī li makhtulifa fīhi min al-ḥaqqi bi idhnika. Innaka tahdī man tashā'u ilā ṣirāṭin mustaqīm"
+            },
+            {
+              "ar": "رواه مسلم1/ 534",
+              "en": "Muslim 1/534"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "الله اكبر كبيرا، الله اكبر كبيرا، الله اكبر كبيرا، والحمد لله كثيرا، والحمد لله كثيرا، والحمد لله كثيرا، وسبحان الله بكرةً وأصيلا ـ ثلاثا ـ ' أعوذ بالله من الشيطان الرجيم : من نفخه، ونفثه ،و همزه",
+            "en": "Allah is the Greatest, Most Great. Allah is the Greatest, Most Great. Allah is the Greatest, Most Great. Praise is to Allah, abundantly. Praise is to Allah, abundantly. Praise is to Allah, abundantly. Glory is to Allah, at the break of day and at its end. [Recite three times in Arabic.] I seek refuge in Allah from Satan. From his breath, and from his voice, and from his whisper"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhu 'Akbar Kabīra, Allāhu 'Akbar Kabīra, Allāhu 'Akbar Kabīra, walḥamdu lillāhi kathīra, walḥamdu lillāhi kathīra, walḥamdu lillāhi kathīra, wa Subḥānallāhi bukratan wa'aṣīla. [Recite three times in Arabic.] 'A `ūdhu billāhi min ash-shayṭān min nafkhihi, wa nafthihi, wa hamzihi"
+            },
+            {
+              "ar": "أخرجه أبو داود 1/ 203 وابن ماجه 1/ 265 وأحمد 4/85 وأخرجه مسلم عن ابن عمر رضي الله عنهماا بنحوه وفيه قصة 1/ 420",
+              "en": "Abu Dawud 1/203, Ibn Majah 1/265, ai Ahmad 4/85. Muslim recorded a similar Hadil 1/420"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ لَكَ الْحَمْدُ أَنْتَ نـورُ السَّمـواتِ وَالأَرْضِ وَمَنْ فيـهِن ، وَلَكَ الْحَمْدُ أَنْتَ قَـيِّمُ السَّـمواتِ وَالأَرْضِ وَمَنْ فيـهِن ، [وَلَكَ الْحَمْدُ أَنْتَ رَبُّ السَّـمواتِ وَالأَرْضِ وَمَنْ فيـهِن] [وَلَكَ الْحَمْدُ لَكَ مُلْـكُ السَّـمواتِ وَالأَرْضِ وَمَنْ فيـهِن] [وَلَكَ الْحَمْدُ أَنْتَ مَلِـكُ السَّـمواتِ وَالأَرْضِ ] [وَلَكَ الْحَمْدُ] [أَنْتَ الْحَـقّ وَوَعْـدُكَ الْحَـق ، وَقَوْلُـكَ الْحَـق ، وَلِقـاؤُكَ الْحَـق ، وَالْجَـنَّةُحَـق ، وَالنّـارُ حَـق ، وَالنَّبِـيّونَ حَـق ، وَمـحَمَّدٌ حَـق ، وَالسّـاعَةُحَـق] [اللّهُـمَّ لَكَ أَسْلَمت ، وَعَلَـيْكَ تَوَكَّلْـت ، وَبِكَ آمَنْـت ، وَإِلَـيْكَ أَنَبْـت ، وَبِـكَ خاصَمْت ، وَإِلَـيْكَ حاكَمْـت . فاغْفِـرْ لي مـا قَدَّمْتُ ، وَما أَخَّـرْت ، وَما أَسْـرَرْت ، وَما أَعْلَـنْت ] [أَنْتَ المُقَـدِّمُ وَأَنْتَ المُـؤَخِّر ، لا إِاـهَ إِلاّ أَنْـت] [أَنْـتَ إِلـهي لا إِاـهَ إِلاّ أَنْـت",
+            "en": "O Allah, praise is to You. You are the Light of the heavens and the earth and all that they contain. Praise is to You, You are the Sustainer of the heavens and the earth and all they contain. [Praise is to You, You are the Lord of the heavens and the earth and all they contain.] [Praise is to You, Yours is dominion of the heavens and the earth and all they contain.] [Praise is to You, You are the King of the heavens and the earth.] [And praise is to You.] [You are the Truth, Your Promise is true, Your Word is true, Your audience is true, Paradise is true, Hell is true, the Prophets are true, and Muhammad (peace and blessings be upon him) is true, and the Hour of Judgment is true.] [O Allah, to You I have submitted, and upon You I depend. I have believed in You and to You I turn in repentance . For Your sake I dispute and by Your standard I judge. Forgive me what I have sent before me and what I have left behind me, what I have concealed and what I have declared.] [You are the One Who sends forth and You are the One Who delays, there is none who has the right to be worshipped but You.] [You are my God, there is none who has the right to be worshipped but You.]"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma lakal-ḥamdu 'Anta nūrussamāwāti wal'arḍhi wa man fīhinna, wa lakal-ḥamdu 'Anta qayyimus-samāwāti wal'arḍi wa man fīhinna, [wa lakal-ḥamdu 'Anta Rabbus-samāwāti wal'arḍi wa man fīhinna] [wa lakal-ḥamdu laka mulkus-samāwāti wal'arḍi wa man fīhinna] [wa lakal-ḥamdu 'Anta Malikus-samāwāti wal'arḍi] [wa lakal-ḥamdu] ['Antal-ḥaqq, wa wa`dukal-ḥaqq, wa qawlukal-ḥaqq, wa liqā'ukal-ḥaqq, waljannatu ḥaqq, wannāru ḥaqq, wannabiyyūna ḥaqq, wa Muḥammadun (sallallāhu 'alayhi wa sallam) ḥaqq, wassā`atu ḥaqq] [Allāhumma laka 'aslamtu, wa `alayka tawakkaltu, wa bika 'āmantu, wa 'ilayka 'anabtu, wa bika khāṣamtu, wa 'ilayka ḥākamtu. Faghfir lī maa qaddamtu, wa mā 'akhkhartu, wa mā 'asrartu, wa mā 'a`lantu ['Antal-Muqaddimu, wa 'Antal-Mu'akhkhiru laa 'ilāha 'illā 'Anta] ['Anta 'ilāhī lā 'ilāha 'illā 'Anta]."
+            },
+            {
+              "ar": "البخاري مع الفتح 3/3 و11/116 و 13/ 371 423، 465 ومسلم مختصراً بنحوه 1/ 532",
+              "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/3 , 11/ 116, 13/371, 423, 465. See also Muslim for a shorter account, 1/532"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "title": {
+      "ar": "دعاء الركوع",
+      "en": "While bowing in prayer"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سبحان ربي العظيم",
+            "en": "Glory to my Lord the Exalted (three times in Arabic)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥāna Rabbiyal-`Aẓīm"
+            },
+            {
+              "ar": "أخرجه أهل السنن وأحمد وانظر صحيح الترمذي 1/83",
+              "en": "Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmidhi, and Ahmad. See Al-Albani's Sahih At-Tirmidhi 1/83"
+            }
+          ],
+          "readCount": 3
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبْـحانَكَ اللّهُـمَّ رَبَّـنا وَبِحَـمْدِك ،اللّهُـمَّ اغْفِـرْ لي",
+            "en": "Glory is to You , O Allah , our Lord , and praise is Yours . O Allah , forgive me"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subhānaka Allāhumma wa biḥamdika, wa tabāraka 'smuka, wa ta'ālā jadduka, wa lā 'ilāha ghayruk"
+            },
+            {
+              "ar": "البخاري 1/199 ومسلم 1/ 350",
+              "en": "Al-Bukhari 1/99, Muslim 1/350."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبـّوحٌ قُـدّْوس ، رَبُّ الملائِكَـةِ وَالـرُّوح",
+            "en": "Glory (to You) , Most Holy (are You) , Lord of the angels and the Spirit"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subbūḥun, Quddūsun, Rabbul-malā'ikati warrūḥ"
+            },
+            {
+              "ar": "مسلم1/ 353 وأبو داود 1/230",
+              "en": "Muslim 1/353, Abu Dawud 1/230."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ لَكَ رَكَـعْتُ وَبِكَ آمَـنْت، ولَكَ أَسْلَـمْت ، خَشَـعَ لَكَ سَمْـعي، وَبَصَـري ، وَمُخِّـي، وَعَظْمـي، وَعَصَـبي ، وَما استَقَـلَّ بِهِ قَدَمي",
+            "en": "O Allah , to You I bow (in prayer) and in You I believe and to You I have submitted. Before You my hearing is humbled, and my sight, and my mind, my bones, my nerves and what my feet have mounted upon (for travel)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma laka raka`tu, wa bika 'āmantu, wa laka 'aslamtu khasha`a laka sam`ee wa baṣarī, wa mukhkhī, wa `aẓmī, wa `aṣabī, wa mastaqalla bihi qadamī"
+            },
+            {
+              "ar": "مسلم 1/534 والأربعة إلا ابن ماجه",
+              "en": "Muslim 1/534, Abu Dawud, An-Nasa'i and At- Tirmidhi."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبْـحانَ ذي الْجَبَـروت، والمَلَـكوت، وَالكِبْـرِياء، وَالْعَظَـمَةِ",
+            "en": "Glory is to You, Master of power, of dominion, of majesty and greatness"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥāna dhil-jabarūti, walmalakūti, walkibriyā'i, wal`aẓamati"
+            },
+            {
+              "ar": "أبو داود 1/ 230 والنسائي وأحمد وإسناده حسن",
+              "en": "Abu Dawud 1/230, An-Nasa'i and Ahmad. Its chain of narration is good (Hasan)"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "title": {
+      "ar": "دعاء الرفع من الركوع",
+      "en": "Upon rising from the bowing position"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سَمِـعَ اللهُ لِمَـنْ حَمِـدَه",
+            "en": "Allah hears whoever praises Him"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Sami`allāhu liman ḥamidah"
+            },
+            {
+              "ar": "البخاري مع الفتح 2/ 282",
+              "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 2/282"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "رَبَّنـا وَلَكَ الحَمْـدُ حَمْـداً كَثـيراً طَيِّـباً مُـبارَكاً فيه",
+            "en": "Our Lord, praise is Yours, abundant, good and blessed praise"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Rabbanā wa lakal-ḥamd, ḥamdan kathīran ṭayyiban mubārakan fīh"
+            },
+            {
+              "ar": "البخاري مع الفتح 2/ 282",
+              "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 2/284."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "مِلْءَ السَّمـواتِ وَمِلْءَ الأَرْض، وَما بَيْـنَهُمـا ، وَمِلْءَ ما شِئْـتَ مِنْ شَيءٍ بَعْـد . أَهـلَ الثَّـناءِ وَالمَجـد ، أََحَـقُّ ما قالَ العَبْـد ، وَكُلُّـنا لَكَ عَـبد . اللّهُـمَّ لا مانِعَ لِما أَعْطَـيْت ، وَلا مُعْطِـيَ لِما مَنَـعْت ، وَلا يَنْفَـعُ ذا الجَـدِّ مِنْـكَ الجَـد",
+            "en": "(A praise that) fills the heavens and the earth and what lies between them, and whatever else You please. (You Allah) are most worthy of praise and majesty, and what the slave has said - we are all Your slaves. O Allah, there is none who can withhold what You give, and none may give what You have withheld. And the might of the mighty person cannot benefit him against You"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Mil'a 's-samāwāti wa mil'a 'l-'arḍi wa mā baynahumā, wa mil'a mā shi'ta min shay'in ba`d. 'Ahla 'th-thanā'i wa 'l-majdi, 'aḥaqqu mā qāla 'l-`abdu, wa kullunā laka `abdun. Allāhumma lā māni`a limā 'a`ṭayta, wa lā mu`ṭiya limā mana`ta, wa lā yanfa`u dhal-jaddi minka 'l-jadd"
+            },
+            {
+              "ar": "مسلم 1/346",
+              "en": "Muslim 1/346"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "title": {
+      "ar": "دعاء السجود",
+      "en": "While prostrating"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبْـحانَ رَبِّـيَ الأَعْلـى",
+            "en": "Glory is to my Lord, the Most High. (This is said three times in Arabic.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥāna Rabbiya ‘l-a`lā"
+            },
+            {
+              "ar": "أخرجه أهل السنن وأحمد وانظر صحيح الترمذي 1/83",
+              "en": "Abu Dawud, Ibn Majah, An-Nasa'i, At-Tirmidhi, and Ahmad. See also Al-Albani, Sahih At-Tirmidhi 1/83"
+            }
+          ],
+          "readCount": 3
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبْـحانَكَ اللّهُـمَّ رَبَّـنا وَبِحَـمْدِكَ ،اللّهُـمَّ اغْفِرْ لي",
+            "en": "Glory is to You, O Allah, our Lord, and praise is Yours. O Allah, forgive me"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥānaka Allāhumma Rabbanā wa biḥamdika Allāhumma ‘ghfir lī."
+            },
+            {
+              "ar": "البخاري ومسلم وتقدم تخريجه برقم 34",
+              "en": "Al-Bukhari and Muslim, see invocation no. 34 above"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبـّوحٌ قُـدّوس، رَبُّ الملائِكَـةِ وَالـرُّوح",
+            "en": "Glory (to You), Most Holy (are You), Lord of the angels and the Spirit"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subbūḥun, Quddūsun, Rabbu ‘l-malā'ikati warrūḥ"
+            },
+            {
+              "ar": "مسلم 1/ 533 وتقدم برقم 35",
+              "en": "Muslim 1/533, see invocation no. 35 above"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ لَكَ سَـجَدْتُ وَبِـكَ آمَنْـت ، وَلَكَ أَسْلَـمْت ، سَجَـدَ وَجْهـي للَّـذي خَلَقَـهُ وَصَـوَّرَهُ وَشَقَّ سَمْـعَـهُ وَبَصَـرَه ، تَبـارَكَ اللهُ أَحْسـنُ الخـالِقيـن",
+            "en": "O Allah, to You I prostrate myself and in You I believe. To You I have submitted. My face is prostrated to the One Who created it, fashioned it, and gave it hearing and sight. Blessed is Allah, the Best of creators"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma laka sajadtu wa bika āmantu, wa laka aslamtu, sajada waj’hiya lilladhī khalaqahu, wa ṣawwarahu, wa shaqqa sam`ahu wa baṣarahu, tabārakallāhu 'aḥsanul-khāliqīn."
+            },
+            {
+              "ar": "مسلم 1/ 534 وغيره",
+              "en": "Muslim 1/534 and others"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبْـحانَ ذي الْجَبَـروت، والمَلَكـوت، والكِبْـرِياء، وَالعَظَمَـةِ",
+            "en": "Glory is to the master of power, sovereignty, of majesty and greatness"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥāna dhi ’l-jabarūti, wa ’l-malakūti, wa ‘l-kibriyā'i, wa ‘l-aẓamati"
+            },
+            {
+              "ar": "أبو داود 1/ 230 والنسائي وأحمد وإسناده وصححه الألباني في صحيح أبي داود 166",
+              "en": "Abu Dawud 1/230, An-Nasa'i, Ahmad. See also Al-Albani, Sahih Abu Dawud 1/166, see invocation no. 37 above"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ اغْفِـرْ لي ذَنْـبي كُلَّـه ، دِقَّـهُ وَجِلَّـه ، وَأَوَّلَـهُ وَآخِـرَه ، وَعَلانِيَّتَـهُ وَسِـرَّه",
+            "en": "O Allah, forgive me all my sins, great and small, the first and the last, those that are apparent and those that are hidden"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma’ghfir lī dhanbī kullahu, diqqahu wa jillahu, wa awwalahu wa ākhirahu wa `alāniyyatahu wa sirrahu"
+            },
+            {
+              "ar": "مسلم 1/ 350",
+              "en": "Muslim 1/350"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَعـوذُ بِرِضـاكَ مِنْ سَخَطِـك ، وَبِمعـافاتِـكَ مِنْ عُقوبَـتِك ، وَأَعـوذُ بِكَ مِنْـك ، لا أُحْصـي ثَنـاءً عَلَـيْك ، أَنْـتَ كَمـا أَثْنَـيْتَ عَلـى نَفْسـِك",
+            "en": "O Allah, I seek protection in Your pleasure from Your anger, and I seek protection in Your forgiveness from Your punishment. I seek protection in You from You. I cannot count Your praises. You are as You have praised Yourself"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī a`ūdhu biriḍāka min sakhaṭika, wa bimu`āfātika min `uqūbatika wa a`ūdhu bika minka lā uḥṣī thanā'an `alayka anta kamā athnayta `alā nafsika"
+            },
+            {
+              "ar": "مسلم 1/ 352",
+              "en": "Muslim 1/352"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "title": {
+      "ar": "دعاء الجلسة بين السجدتين",
+      "en": "Between the two prostrations"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "رَبِّ اغْفِـرْ لي ، رَبِّ اغْفِـرْ لي",
+            "en": "Lord, forgive me. My Lord, forgive me"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Rabbi’ghfir lī, Rabbi’ghfir lī"
+            },
+            {
+              "ar": "أبو داود 1/ 231 وانظر صحيح ابن ماجة 1/ 148",
+              "en": "Abu Dawud 1/231. See also Al-Albani, Sahihibn Mdjah 1/148"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ اغْفِـرْ لي ، وَارْحَمْـني ، وَاهْدِنـي ، وَاجْبُرْنـي ، وَعافِنـي وَارْزُقْنـي وَارْفَعْـني",
+            "en": "O Allah forgive me, have mercy on me, guide me, support me, protect me, provide for me, and elevate me"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma’ghfir lī, war’ḥamnī, wahdinī, wajburnī, wa `āfinī, warzuqnī, warfa`nī"
+            },
+            {
+              "ar": "أخرجه أصحاب السنن إلا النسائي وانظر صحيح الترمذي 1/90 وصحيح ابن ماجه 1/ 148",
+              "en": "Abu Dawud, Ibn Majah, At-Tirmidhi. See also Al-Albani, Sahih At-Tirmidhi 1/90 and Sahih Ibn Majah 1/148"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "title": {
+      "ar": "دعاء سجود التلاوة",
+      "en": "When prostrating due to recitation of the Quran"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سَجَـدَ وَجْهـي للَّـذي خَلَقَـهُ وَشَقَّ سَمْـعَـهُ وَبَصَـرَهُ بِحَـوْلِـهِ وَقُـوَّتِهِ ﴿فتَبـارَكَ اللهُ أَحْسَـنُ الخـالِقيـن﴾",
+            "en": "I have prostrated my face to the One Who created it, and gave it hearing and sight by His might and His power. Glory is to Allah, the Best of creators"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Sajada wajhiya lilladhī khalaqahu, wa shaqqa sam`ahu wa baṣarahu biḥawlihi wa quwwatihi. Fatabārakallāhu 'aḥsanul-khāliqīn"
+            },
+            {
+              "ar": "الترمذي 2/474 وأحمد 6/30 والحاكم وصححه ووافقه الذهبي 1/ 220 والزيادة له",
+              "en": "At-Tirmidhi 2/474, Ahmad 6/30, and Al-Hakim"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ اكْتُـبْ لي بِهـا عِنْـدَكَ أَجْـراً ، وَضَـعْ عَنِّـي بِهـا وِزْراً ، وَاجْعَـلها لي عِنْـدَكَ ذُخْـراً ، وَتَقَبَّـلها مِنِّي كَمَا تَقَبَّلْتَهَا مِنْ عَبْدِكَ دَاوُدَ",
+            "en": "O Allah, write it as a reward for me, and release me from a burden for it, and make it a treasure for me with You. Accept it from me as You accepted it from your servant Dawud"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhummak’tub lī bihā `indaka ajra, waḍa` `annī bihā wizra, waj`alhā lī `indaka dhukhra, wa taqabbal’hā minnī kamā taqabbal’tahā min `abdika Dāwūd"
+            },
+            {
+              "ar": "الترمذي 2/473 والحاكم وصححه ووافقه الذهبي 1/ 219",
+              "en": "At-Tirmidhi 2/473, and Al-Hakim who graded it authentic and Ath-Thahabi agreed 1/219"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "title": {
+      "ar": "التشهد",
+      "en": "The Tashahhud"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "التَّحِيّـاتُ للهِ وَالصَّلَـواتُ والطَّيِّـبات ، السَّلامُ عَلَيـكَ أَيُّهـا النَّبِـيُّ وَرَحْمَـةُ اللهِ وَبَرَكـاتُه ، السَّلامُ عَلَيْـناوَعَلـى عِبـادِ للهِ الصَّـالِحـين . أَشْـهَدُ أَنْ لا إِلـهَ إِلاّ الله ، وَأَشْـهَدُ أَنَّ مُحَمّـداً عَبْـدُهُ وَرَسـولُه",
+            "en": "All greetings of humility are for Allah, and all prayers and goodness. Peace be upon you, O Prophet, and the mercy of Allah and His blessings. Peace be upon us and upon the righteous slaves of Allah. I bear witness that there is none worthy of worship but Allah, and I bear witness that Muhammad is His slave and His Messenger"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Attaḥiyyātu lillāhi waṣṣalawātu, waṭṭayyibāt, assalāmu `alayka 'ayyuhan-Nabiyyu wa raḥmatullāhi wa barakātuh, assalāmu `alaynā wa `alā ‘ibādillāhiṣ-ṣāliḥīn. 'Ash-hadu 'an lā 'ilāha 'illallāh wa 'ash-hadu 'anna Muḥammadan `abduhu wa rasūluh"
+            },
+            {
+              "ar": "البخاري مع الفتح 1/13 ومسلم 1/ 301",
+              "en": "Al-Bukhari, Muslim 1/301. See also Al-Asqalani, Fathul-Bal 1/13"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "title": {
+      "ar": "الصلاة على النبي ﷺ بعد التشهد",
+      "en": "Prayers upon the Prophet ﷺ after the tashahhud"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ صَلِّ عَلـى مُحمَّـد، وَعَلـى آلِ مُحمَّد، كَمـا صَلَّيـتَ عَلـى إبْراهـيمَ وَعَلـى آلِ إبْراهـيم، إِنَّكَ حَمـيدٌ مَجـيد ، اللّهُـمَّ بارِكْ عَلـى مُحمَّـد، وَعَلـى آلِ مُحمَّـد، كَمـا بارِكْتَ عَلـى إبْراهـيمَ وَعَلـى آلِ إبْراهيم، إِنَّكَ حَمـيدٌ مَجـيد",
+            "en": "O Allah, bestow Your favor on Muhammad and on the family of Muhammad as You have bestowed Your favor on Ibrahim and on the family of Ibrahim, You are Praiseworthy, Most Glorious. O Allah, bless Muhammad and the family of Muhammad as You have blessed Ibrahim and the family of Ibrahim, You are Praiseworthy, Most Glorious"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma ṣalli `alā Muḥammadinwa `alā ’āli Muḥammadin, kamā ṣallayta `alā 'Ibrāhīma wa `alā ’āli 'Ibrāhīma, 'innaka ḥamīdum-majīd. Allāhumma bārik `alā Muḥammadin wa `alā ’āli Muḥammadin, kamā bārakta `alā 'Ibrāhīma wa `alā 'āli 'Ibrāhīma, 'innaka ḥamīdum-majīd"
+            },
+            {
+              "ar": "البخاري مع الفتح 6/ 408",
+              "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/408"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ صَلِّ عَلـى مُحمَّـدٍ وَعَلـى أَزْواجِـهِ وَذُرِّيَّـتِه، كَمـا صَلَّيْـتَ عَلـى آلِ إبْراهـيم . وَبارِكْ عَلـى مُحمَّـدٍ وَعَلـى أَزْواجِـهِ وَذُرِّيَّـتِه، كَمـا بارِكْتَ عَلـى آلِ إبْراهـيم . إِنَّكَ حَمـيدٌ مَجـيد",
+            "en": "O Allah, bestow Your favor on Muhammad and upon his wives and progeny as You have bestowed Your favor upon the family of Ibrahim. And bless Muhammad and his wives and progeny as You have blessed the family of Ibrahim, You are full of praise, Most Glorious"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma ṣalli `alā Muḥammadin wa `alā 'azwājihi wa dhurriyyatihi, kamā ṣallayta `alā 'āli 'Ibrāhīma. Wa bārik `alā Muḥammadin wa `alā 'azwājihi wa dhurriyyatihi, kamā bārakta `alā 'āli 'Ibrāhīma. 'Innaka ḥamīdum-majīd"
+            },
+            {
+              "ar": "البخاري مع الفتح 6/ 407ومسلم 1/ 306 واللفظ له",
+              "en": "Al-Bukhari, from Al-Asqalani, Fathul-Bari 6/ 407, Muslim 1/306"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "title": {
+      "ar": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "en": "After the last tashahhud and before salam"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَعـوذُ بِكَ مِـنْ عَذابِ القَـبْر، وَمِـنْ عَذابِ جَهَـنَّم، وَمِـنْ فِتْـنَةِ المَحْـيا وَالمَمـات، وَمِـنْ شَـرِّ فِتْـنَةِ المَسيحِ الدَّجّال",
+            "en": "O Allah, I seek refuge in You from the punishment of the grave, and from the punishment of Hell-fire, and from the trials of life and death, and from the evil of the trial of the False Messiah"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma ‘innī ‘a`ūdhu bika min `adhābi ‘l-qabri, wa min `adhābi jahannam, wa min fitnati ‘l-maḥyā wa ‘l-mamāti, wa min sharri fitnati ‘l-masīḥid-dajjāl."
+            },
+            {
+              "ar": "البخاري 2/ 102 ومسلم 1/ 412 واللفظ لمسلم",
+              "en": "Al-Bukhari 2/102, Muslim 1/412, and this is Muslim's wording"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَعـوذُ بِكَ مِـنْ عَذابِ القَـبْر ، وَأَعـوذُ بِكَ مِـنْ فِتْـنَةِ المَسيحِ الدَّجّـال ، أَعـوذُ بِكَ مِـنْ فِتْـنَةِ المَحْـيا وَالمَمـات . اللّهُـمَّ إِنِّـي أَعـوذُ بِكَ مِنَ المَأْثَـمِ وَالمَغْـرَم",
+            "en": "O Allah, I seek refuge in You from the punishment of the grave, and I seek refuge in You from the trial of the False Messiah, and I seek refuge in You from the trials of life and death. O Allah, I seek refuge in You from sin and from debt"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma 'innī ‘a`ūdhu bika min `adhābi ‘l-qabr, wa ‘a`ūdhu bika min fitnati ‘l-masīḥid-dajjāl, wa ‘a`ūdhu bika min fitnati ‘l-maḥyā wa ‘l-mamāt. Allāhumma ‘innī ‘a`ūdhu bika mina ‘l-m’athami wa ‘l-maghram"
+            },
+            {
+              "ar": "البخاري 1/ 202 ومسلم 1/ 412",
+              "en": "Al-Bukhari 1/202, Muslim 1/412"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي ظَلَـمْتُ نَفْسـي ظُلْمـاً كَثـيراً وَلا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْت، فَاغْـفِر لي مَغْـفِرَةً مِنْ عِنْـدِك وَارْحَمْـني، إِنَّكَ أَنْتَ الغَـفورُ الرَّحـيم",
+            "en": "O Allah, I have greatly wronged myself, and no one forgives sins but You. So, grant me forgiveness and have mercy on me. Surely, you are Forgiving, Merciful."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma ‘innī ẓalamtu nafsī ẓulman kathīran, wa lā yaghfiru-dhdhunūba illā 'anta, faghfir lī maghfiratam’min `indika warḥamnī innaka 'anta ‘l-Ghafūr ur-Rahīm"
+            },
+            {
+              "ar": "البخاري 8/168 ومسلم 4/ 2078",
+              "en": "Al-Bukhari 8/168, Muslim 4/2078"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ اغْـفِرْ لي ما قَدَّمْـتُ وَما أَخَّرْت ، وَما أَسْـرَرْتُ وَما أَعْلَـنْت ، وَما أَسْـرَفْت ، وَما أَنْتَ أَعْـلَمُ بِهِ مِنِّي . أَنْتَ المُقَـدِّمُ، وَأَنْتَ المُـؤَخِّـرُ لا إِلهَ إِلاّ أَنْـت",
+            "en": "O Allah, forgive me what I have sent before me and what I have left behind me, what I have concealed and what I have done openly, what I have done in excess, and what You are better aware of than I. You are the One Who sends forth and You are the One Who delays. There is none worthy of worship but You"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhummagh’fir lī mā qaddamtu, wa mā ‘akhkhartu, wa mā ‘asrartu, wa mā ‘a`lantu, wa mā ‘asraftu, wa mā 'anta ‘a`lamu bihi minnī. ‘anta ‘l-Muqaddimu, wa 'anta ‘l-Mu‘akhkhiru lā 'ilāha 'illā 'anta."
+            },
+            {
+              "ar": "مسلم 1/ 534",
+              "en": "Muslim 1/534"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ أَعِـنِّي عَلـى ذِكْـرِكَ وَشُكْـرِك ، وَحُسْـنِ عِبـادَتِـك",
+            "en": "O Allah, help me to remember You, to give You thanks, and to perform Your worship in the best manner."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma ‘a`innī `alā dhikrika, wa shukrika, wa ḥusni `ibādatik"
+            },
+            {
+              "ar": "أبو داود 2/86 والنسائي 3/ 53 وصححه الألباني في صحيح أبو داود 1/ 284",
+              "en": "Abu Dawud 2/86, An-Nasa'i 3/53. See also Al-Albani Sahih Abu Dawud 1 /284"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَعوذُ بِكَ مِنَ البُخْـل، وَأَعوذُ بِكَ مِنَ الجُـبْن، وَأَعوذُ بِكَ مِنْ أَنْ أُرَدَّ إِلى أَرْذَلِ الـعُمُر، وَأََعوذُ بِكَ مِنْ فِتْنَـةِ الدُّنْـيا وَعَـذابِ القَـبْر",
+            "en": "O Allah, I seek Your protection from miserliness, I seek Your protection from cowardice, and I seek Your protection from being returned to feeble old age. I seek Your protection from the trials of this world and from the torment of the grave"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma 'innī ‘a`udhu bika mina ‘l-bukhl, wa ‘a`udhu bika mina ‘l-jubn, wa ‘a`udhu bika min ‘an ‘uradda ilā ‘ardhali ‘l-`umur, wa ‘a`udhu bika min fitnatid-dunyā wa `adhābi ‘l-qabr"
+            },
+            {
+              "ar": "البخاري 6/35",
+              "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/35"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَسْأَلُـكَ الجَـنَّةَ وأََعوذُ بِـكَ مِـنَ الـنّار",
+            "en": "O Allah, I ask You for Paradise, and I seek Your protection from the Fire"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī as'aluka ‘l-jannah wa a`ūdhu bika minan-nār"
+            },
+            {
+              "ar": "أبو داود وانظر صحيح ابن ماجه 2/ 328",
+              "en": "Abu Dawud. See also Al-Albani, Sahih Ibn Majah 2/328"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ بِعِلْـمِكَ الغَـيْبِ وَقُـدْرَتِـكَ عَلـى الْخَلقِ أَحْـيِني ما عَلِـمْتَ الحـياةَ خَـيْراً لـي، وَتَوَفَّـني إِذا عَلِـمْتَ الوَفـاةَ خَـيْراً لـي، اللّهُـمَّ إِنِّـي أَسْـأَلُـكَ خَشْيَتَـكَ في الغَـيْبِ وَالشَّهـادَةِ، وَأَسْـأَلُـكَ كَلِمَـةَ الحَـقِّ في الرِّضـا وَالغَضَـب، وَأَسْـأَلُـكَ القَصْدَ في الغِنـى وَالفَقْـر، أَسْـأَلُـكَ نَعـيماً لا يَنْفَـد، وَأَسْـأَلُـكَ قُـرَّةَ عَيْـنٍ لا تَنْـقَطِعْ وَأَسْـأَلُـكَ الرِّضـا بَعْـدَ القَضـاء، وَأَسْـأَلُـكَ بًـرْدَ الْعَـيْشِ بَعْـدَ الْمَـوْت، وَأَسْـأَلُـكَ لَـذَّةَ النَّظَـرِ إِلـى وَجْـهِكَ وَالشَّـوْقَ إِلـى لِقـائِـك، في غَـيرِ ضَـرّاءَ مُضِـرَّة، وَلا فِتْـنَةٍ مُضـلَّة، اللّهُـمَّ زَيِّـنّا بِزينَـةِ الإيـمان، وَاجْـعَلنا هُـداةً مُهْـتَدين",
+            "en": "O Allah, by Your Knowledge of the unseen and by Your Power over creation, let me live if You know that life is good for me, and let me die if You know that death is good for me. O Allah, I ask You to grant me fear of You in private and in public. I ask you for the word of truth in times of contentment and anger. I ask You for moderation in wealth and in poverty. I ask you for blessings never ceasing and the coolness of my eye (i.e. pleasure) that never ends. I ask You for pleasure after Your Judgment and I ask You for a life of coolness after death. I ask You for the delight of gazing upon Your Face, and the joy of meeting You, without any harm and misleading trials befalling me. O Allah, dress us with the beauty of Faith and make us guides who are upon (correct) guidance"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma bi `ilmika ‘l-ghayb, wa qudratika `ala ‘l-khalq, aḥyinī mā `alimta ‘l-ḥayāta khayran lī, wa tawaffanī idhā `alimta ‘l-wafāta khayran lī, Allāhumma innī as'aluka khash’yataka fil-ghaybi wash-shahādah, wa as'aluka kalimata ‘l-ḥaqqi fir-riḍā wa ‘l-ghaḍab, wa as'aluka ‘l-qaṣda fil-ghinā wa ‘l-faqr, wa as'aluka na`īman lā yanfad, wa as'aluka qurrata `aynin lā tanqati`, wa as'alukar-riḍā ba`dal-qaḍā', wa as'aluka barda ‘l-`ayshi ba`da ‘l-mawt, wa as'aluka ladh-dhatan-naẓari ilā wajhik, wash-shawqa ilā liqā'ik, fī ghayri ḍarrā'a muḍirrah, wa lā fitnatin muḍillah, Allāhumma zayyinnā bi zīnati ‘l-'īmān, waj`alnā hudātan muhtadīn"
+            },
+            {
+              "ar": "النسائي 4/54،55 وأحمد 4/364 وصححه الألباني في صحيح النسائي 1/ 281",
+              "en": "An-Nasa'i 3/54, 55, Ahmad 4/364. See also Al-Albani, Sahih An-Nasa'i 1/281"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ بِعِلْـمِكَ الغَـيْبِ وَقُـدْرَتِـكَ عَلـى الْخَلقِ أَحْـيِني ما عَلِـمْتَ الحـياةَ خَـيْراً لـي، وَتَوَفَّـني إِذا عَلِـمْتَ الوَفـاةَ خَـيْراً لـي، اللّهُـمَّ إِنِّـي أَسْـأَلُـكَ خَشْيَتَـكَ في الغَـيْبِ وَالشَّهـادَةِ، وَأَسْـأَلُـكَ كَلِمَـةَ الحَـقِّ في الرِّضـا وَالغَضَـب، وَأَسْـأَلُـكَ القَصْدَ في الغِنـى وَالفَقْـر، أَسْـأَلُـكَ نَعـيماً لا يَنْفَـد، وَأَسْـأَلُـكَ قُـرَّةَ عَيْـنٍ لا تَنْـقَطِعْ وَأَسْـأَلُـكَ الرِّضـا بَعْـدَ القَضـاء، وَأَسْـأَلُـكَ بًـرْدَ الْعَـيْشِ بَعْـدَ الْمَـوْت، وَأَسْـأَلُـكَ لَـذَّةَ النَّظَـرِ إِلـى وَجْـهِكَ وَالشَّـوْقَ إِلـى لِقـائِـك، في غَـيرِ ضَـرّاءَ مُضِـرَّة، وَلا فِتْـنَةٍ مُضـلَّة، اللّهُـمَّ زَيِّـنّا بِزينَـةِ الإيـمان، وَاجْـعَلنا هُـداةً مُهْـتَدين",
+            "en": "O Allah, by Your Knowledge of the unseen and by Your Power over creation, let me live if You know that life is good for me, and let me die if You know that death is good for me. O Allah, I ask You to grant me fear of You in private and in public. I ask you for the word of truth in times of contentment and anger. I ask You for moderation in wealth and in poverty. I ask you for blessings never ceasing and the coolness of my eye (i.e. pleasure) that never ends. I ask You for pleasure after Your Judgment and I ask You for a life of coolness after death. I ask You for the delight of gazing upon Your Face, and the joy of meeting You, without any harm and misleading trials befalling me. O Allah, dress us with the beauty of Faith and make us guides who are upon (correct) guidance"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma bi `ilmika ‘l-ghayb, wa qudratika `ala ‘l-khalq, aḥyinī mā `alimta ‘l-ḥayāta khayran lī, wa tawaffanī idhā `alimta ‘l-wafāta khayran lī, Allāhumma innī as'aluka khash’yataka fil-ghaybi wash-shahādah, wa as'aluka kalimata ‘l-ḥaqqi fir-riḍā wa ‘l-ghaḍab, wa as'aluka ‘l-qaṣda fil-ghinā wa ‘l-faqr, wa as'aluka na`īman lā yanfad, wa as'aluka qurrata `aynin lā tanqati`, wa as'alukar-riḍā ba`dal-qaḍā', wa as'aluka barda ‘l-`ayshi ba`da ‘l-mawt, wa as'aluka ladh-dhatan-naẓari ilā wajhik, wash-shawqa ilā liqā'ik, fī ghayri ḍarrā'a muḍirrah, wa lā fitnatin muḍillah, Allāhumma zayyinnā bi zīnati ‘l-'īmān, waj`alnā hudātan muhtadīn"
+            },
+            {
+              "ar": "النسائي 4/54،55 وأحمد 4/364 وصححه الألباني في صحيح النسائي 1/ 281",
+              "en": "An-Nasa'i 3/54, 55, Ahmad 4/364. See also Al-Albani, Sahih An-Nasa'i 1/281"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَسْأَلُـكَ يا اللهُ بِأَنَّـكَ الواحِـدُ الأَحَـد الصَّـمَدُ الَّـذي لَـمْ يَلِـدْ وَلَمْ يولَدْ، وَلَمْ يَكـنْ لَهُ كُـفُواً أَحَـد ، أَنْ تَغْـفِرْ لي ذُنـوبي إِنَّـكَ أَنْـتَ الغَفـورُ الرَّحِّـيم",
+            "en": "O Allah, I ask You. O Allah, You are the One, the Only, Self-Sufficient Master, Who was not begotten and begets not, and none is equal to Him. Forgive me my sins, surely you are Forgiving, Merciful"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī as'aluka yā Allāh bi'annaka ‘l-Wāḥidu ‘l-Aḥaduṣ-ṣamad, alladhī lam yalid wa lam yūlad, wa lam yakun lahu kufuwan aḥad, an taghfir lī dhunūbī, innaka anta ‘l-Ghafūrur-Raḥīm"
+            },
+            {
+              "ar": "أخرجه النسائي بلفظه 3/52وأحمد 4/338 وصححه الألباني في صحيح النسائي 1/ 280",
+              "en": "An-Nasa'i 3/52, Ahmad 4/338. See also Al-Albani, Sahih An-Nasa'i 1/280 and Sifat Salatun-Nabi, pg. 204"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَسْأَلُـكَ بِأَنَّ لَكَ الْحَـمْدُ لا إِلـهَ إِلاّ أَنْـتَ وَحْـدَكَ لا شَـريكَ لَـكَ المَنّـانُ يا بَديـعَ السَّمواتِ وَالأَرْضِ يا ذا الجَلالِ وَالإِكْـرام يا حَـيُّ يا قَـيّومُ إِنِّـي أَسْأَلُـكَ الجَـنَّةَ وَأَعـوذُ بِـكَ مِنَ الـنّار",
+            "en": "O Allah, I ask You, as You are the Owner of praise, there is none worthy of worship but You alone, You have no partner. You are the Giver of all good. O Creator of the heavens and the earth, Owner of majesty and honor. O Living and Everlasting One, I ask you for Paradise, and I seek refuge in You from the fire"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī as'aluka bi'anna laka ‘l-ḥamd, lā ilāha illā ant, waḥdaka lā sharīka lak, al-Mannān, yā Badī`as-samāwāti wa ‘l-arḍ yā dha ‘l-Jalāli wa ‘l-'Ikrām, yā ḥayyu yā Qayyūm, innī as'aluka ‘l-jannah, wa a`ūdhu bika minan-nār"
+            },
+            {
+              "ar": "رواه أهل السنن وانظر صحيح ابن ماجه 2/ 329",
+              "en": "Abu Dawud, An-Nasa'i, Ibn Majah, At-Tirmidhi. See also Al-Albani, Sahih Ibn Majah 2/329"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَسْأَلُـكَ بِأَنَّـي أَشْـهَدُ أَنَّـكَ أنْـتَ اللهُ لا إِلـهَ إِلاّ أَنْـت الأَحَـدُ الصَّـمَدُ الَّـذي لَـمْ يَلِـدْ وَلَمْ يولَـدْ وَلَمْ يَكـنْ لَهُ كُـفُواً أَحَـد",
+            "en": "O Allah, I ask You, by the fact that I bear witness that You are Allah. There is none worthy of worship but You, the Only God, Independent of creation, Who was not begotten and begets not, and none is equal to Him"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī as'aluka bi'annī ash-hadu annaka ant-Allāh lā 'ilāha 'illā ant, Al-Aḥaduṣ-ṣamad alladhī lam yalid wa lam yūlad wa lam yakun lahu kufuwan aḥad"
+            },
+            {
+              "ar": "أبو داود 2/62 والترمذي 5/ 515 وابن ماجه 2/ 1267 وأحمد 5/360 وانظر صحيح ابن ماجه 2/ 329 وصحيح الترمذي 3/ 163",
+              "en": "Abu Dawud 2/62, Ibn Majah 2/1267, At-Tirmidhi 5/515, Ahmad 5/360. See also Al-Albani, Sahih Ibn Majah 2/329 and Sahih At-Tirmidhi 3/163"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "title": {
+      "ar": "الأذكار بعد السلام من الصلاة",
+      "en": "After salam"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "أَسْـتَغْفِرُ الله أَسْـتَغْفِرُ الله أَسْـتَغْفِرُ الله ,اللّهُـمَّ أَنْـتَ السَّلامُ وَمِـنْكَ السَّلام تَبارَكْتَ يا ذا الجَـلالِ وَالإِكْـرام",
+            "en": "I seek the forgiveness of Allah (three times). O Allah, You are Peace and from You comes peace. Blessed are You, O Owner of majesty and honor"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Astaghfirullāh(three times), Allāhumma antas-salām, wa minkas-salām, tabārakta yā dhal-Jalāli wal-'Ikrām"
+            },
+            {
+              "ar": "مسلم 1/414",
+              "en": "Muslim 1/414"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "لا إلهَ إلاّ اللّهُ وحدَهُ لا شريكَ لهُ لهُ المُـلْكُ ولهُ الحَمْد وهوَ على كلّ شَيءٍ قَدير اللّهُـمَّ لا مانِعَ لِما أَعْطَـيْت وَلا مُعْطِـيَ لِما مَنَـعْت وَلا يَنْفَـعُ ذا الجَـدِّ مِنْـكَ الجَـد",
+            "en": "None has the right to be worshipped but Allah alone, He has no partner, His is the dominion and His is the praise, and He is Able to do all things. O Allah, there is none who can withhold what You give, and none may give what You have withheld, and the might of the mighty person cannot benefit him against You"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Lā 'ilāha 'illallāh, waḥdahu lā sharīka lah, lahu ‘l-mulku wa lahu ‘l-ḥamd, wa huwa `alā kulli shay'in qadīr, Allāhumma lā māni`a limā 'a`tayt, wa lā mu`tiya limā mana`t, wa lā yanfa`u dhal-jaddi minkal-jadd"
+            },
+            {
+              "ar": "البخاري 1/255 ومسلم 1/414",
+              "en": "Al-Bukhari 1/255, Muslim 1/414"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "لا إلهَ إلاّ اللّه وحدَهُ لا شريكَ لهُ لهُ الملكُ ولهُ الحَمد وهوَ على كلّ شيءٍ قدير لا حَـوْلَ وَلا قـوَّةَ إِلاّ بِاللهِ لا إلهَ إلاّ اللّـه وَلا نَعْـبُـدُ إِلاّ إيّـاه لَهُ النِّعْـمَةُ وَلَهُ الفَضْل وَلَهُ الثَّـناءُ الحَـسَن لا إلهَ إلاّ اللّهُ مخْلِصـينَ لَـهُ الدِّينَ وَلَوْ كَـرِهَ الكـافِرون",
+            "en": "None has the right to be worshipped but Allah alone, He has no partner, His is the dominion and His is the praise and He is Able to do all things. There is no power and no might except by Allah. None has the right to be worshipped but Allah, and we do not worship any other besides Him. His is grace, and His is bounty, and to Him belongs the most excellent praise. None has the right to be worshipped but Allah. (We are) sincere in making our religious devotion to Him, even though the disbelievers may dislike it."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Lā 'ilāha 'illallāh, waḥdahu lā sharīka lah, lahul-mulku, wa lahul-ḥamd, wa huwa `alā kulli shay'in qadīr. Lā ḥawla wa lā quwwata 'illā billāh, lā 'ilāha 'illallāh, wa lā na`budu 'illā 'iyyāh, lahun-ni`matu wa lahul-faḍl, wa lahuth-thanā'ul-ḥasan, lā 'ilāha 'illallāh, mukhliṣīna lahud-dīn, wa law karihal-kāfirūn."
+            },
+            {
+              "ar": "مسلم 1/415",
+              "en": "Muslim 1/415"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُـبْحانَ اللهِ والحَمْـدُ لله واللهُ أكْـبَر (ثلاثاً وثلاثين) لا إلهَ إلاّ اللّهُ وَحْـدَهُ لا شريكَ لهُ لهُ الملكُ ولهُ الحَمْد وهُوَ على كُلّ شَيءٍ قَـدير",
+            "en": "Glory is to Allah, and praise is to Allah, and Allah is the Most Great. (each said thirty-three times) None has the right to be worshiped but Allah alone, He has no partner, His is the dominion and His is the praise and He is Able to do all things"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥānallāh, walḥamdu lillāh, wallāhu 'akbar,(each said thirty-three times)Lā 'ilāha 'illallāh waḥdahu lā sharīka lahu, lahul-mulku wa lahul-ḥamd wa huwā`lā kulli shay'in qadīr"
+            },
+            {
+              "ar": "مسلم 1/ 418 من قال ذلك دبر كل صلاة غفرت خطاياه وإن كانت مثل زبد البحر مسلم 1/ 418",
+              "en": "Muslim 1/418, Whoever says this after every prayer will be forgiven his sins even though they be as the foam of the sea"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
+            "en": "Bismillāhir-Raḥmānir-Raḥīm."
+          },
+          "description": {
+            "ar": "{ قُلْ هُوَ اللَّهُ أَحَدٌ*اللَّهُ الصَّمَدُ*لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ *وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } { قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ } بعد كل صلاة مرة واحدة , وبعد صلاة المغرب والفجر ثلاث مرات",
+            "en": "(Surahs 112 al-Ikhlas, 113 al-Falaq, and 114 an-Nas) These Surahs should be recited in Arabic after each prayer. After the Maghrib and Fajr prayers, they should be recited three times each. With the Name of Allah, the Most Gracious, the Most Merciful. Say: He is Allah (the) One. The Self-Sufficient Master, Whom all creatures need, He begets not nor was He begotten, and there is none equal to Him. With the Name of Allah, the Most Gracious, the Most Merciful. Say: I seek refuge with (Allah) the Lord of the daybreak, from the evil of what He has created, and from the evil of the darkening (night) as it comes with its darkness, and from the evil of those who practice witchcraft when they blow in the knots, and from the evil of the envier when he envies. With the Name of Allah, the Most Gracious, the Most Merciful. Say: I seek refuge with (Allah) the Lord of mankind, the King of mankind, the God of mankind, from the evil of the whisperer who withdraws, who whispers in the breasts of mankind, of jinns and men"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Qul huwallāhu aḥad. Allāhuṣ-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahu kufuwan aḥad. Bismillāhir-Raḥmānir-Raḥīm. Qul a`ūdhu birabbil-falaq. Min sharri mā khalaq. Wa min sharri ghāsiqin idhā waqab. Wa min sharrin-naffāthāti fil-`uqad. Wa min sharri ḥāsidin idhā ḥasad. Bismillāhir-Raḥmānir-Raḥīm. Qul a`ūdhu birabbin-nās. Malikin-nās. 'Ilāhin-nās. Min sharri ‘l-waswāsil-khannās. Alladhī yuwaswisu fī ṣudūrin-nās. Minal-jinnati wannās."
+            },
+            {
+              "ar": "أبو داود2 /86 والنسائي 3/ 68 وانظر صحيح الترمذي 2/8 والسور الثلاث يقال لها المعوذات وانظر فتح الباري 9 / 62",
+              "en": "Abu Dawud 2/86, An-Nasa'i 3/68. See also Al-Albani, Sahih At-Tirmidhi 2/8"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "﴿اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾ عقب كل صلاة",
+            "en": "Allah! There is none worthy of worship but He, the Ever-Living, the One Who sustains and protects all that exists. Neither slumber nor sleep overtakes Him. To Him belongs whatever is in the heavens and whatever is on the earth. Who is he that can intercede with Him except with His Permission? He knows what happens to them in this world, and what will happen to them in the Hereafter. And they will never compass anything of His Knowledge except that which He wills. His Throne extends over the heavens and the earth, and He feels no fatigue in guarding and preserving them. And He is the Most High, the Most Great. (Recite in Arabic after each prayer.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhu lā ilāha illā huwa ‘l-Ḥayyul-Qayyūm, lā ta'khudhuhu sinatun wa lā nawm, lahu mā fis-samāwāti wa mā fil-ardh, man dhal-ladhī yashfa`u `indahu illā bi'idhnih, ya`lamu mā bayna 'aydīhim wa mā khalfahum, wa lā yuḥītūna bishay'im-min `ilmihi illā bimā shā'a, wasi `a kursiyyuhus-samāwāti wal-ardh, wa lā ya'ūduhu hifẓuhumā, wa huwal-`Aliyyu ‘l-`Aẓīm"
+            },
+            {
+              "ar": "من قرأها دبر كل صلاة لم يمنعه من دخول الجنة إلا أن يموت . والنسائي في عمل اليوم والليلة برقم 100 ، وابن السني برقم 121 وصححه الجامع 5/339 وسلسلة الأحاديث الصحيحة 2/697 برقم 972",
+              "en": "An-Nasa'i, 'Amalul-Yawm wal-Laylah (Hadith no. 100), also Ibn As-Sunni (no. 121). See also Al-Albani, Sahihul-Jami' As-Saghir 5/339 and Silsilatul-Ahadith As-Sahihah 2/697 (no. 972)"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِي وَيُمِيتُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ (عَشْرَ مَرّاتٍ بَعْدَ صَلاةِ الْمَغْرِبِ وَالصُّبْحِ)",
+            "en": "(Recite ten times in Arabic after the Maghrib and Fajr prayers.) None has the right to be worshipped but Allah alone, Who has no partner. His is the dominion and His is the praise. He brings life and He causes death, and He is Able to do all things"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Lā ilāha illallāh waḥdahu lā sharīka lah, lahu‘l-mulku wa lahu‘l-ḥamd yuḥyī wa yumīt wa huwa `alā kulli shay'in qadīr."
+            },
+            {
+              "ar": "رواه الترمذي 5/515 وأحمد 4/ 227 وانظر تخريجه في زاد المعاد 1/300",
+              "en": "At-Tirmidhi 5/515, Ahmad 4/227. See its checking in Ibn Al-Qayyim Al-Jawziyyah's Zddul-Ma'ad 1/300"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْماً نافِعاً وَرِزْقاً طَيِّباً وَعَمَلاً مُتَقَبَّلاً (بَعْدَ السّلامِ مِنْ صَلاَةِ الفَجْرِ)",
+            "en": "[to be said after giving salam for the Fajr prayer.] 'O Allah, I ask You for knowledge which is beneficial, and sustenance which is good, and deeds which are acceptable."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī as'aluka `ilman nāfi`an, wa rizqan ṭayyiban, wa `amalam-mutaqabbala."
+            },
+            {
+              "ar": "ابن ماجه وغيره وانظر صحيح ابن ماجة1/ 152 ومجمع الزوائد 10/111",
+              "en": "Ibn Majah and others. See Sahih Ibn Majah 1/152 and Majma' Az-Zawa'id 10/111"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "title": {
+      "ar": "دعاء صلاة الاستخارة",
+      "en": "For seeking guidance in forming a decision or choosing the proper course"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "قال جابر بن عبد الله رضي الله عنهما : كان رسول الله صلى الله عليه وسلم ، يُعلمنا الاستخارة في الأمور كلها كما يعلمُنا السورة من القرآن ، يقول : إذا هم أحدكم بالأمر فليركع ركعتين من غير الفريضة ، ثم ليقل: اللهم إني أستخيرك بعلمك ، وأستقدرك بقدرتك ، وأسألك من فضلك العظيم فإنك تقدِرُ ولا أقدِرُ ، وتعلم ولا أعلم ، وأنت علام الغيوب ، اللهم إن كنت تعلم أن هذا الأمر - يسمي حاجته - خير لي في ديني ومعاشي وعاقبة أمري - أو قال : عاجله وآجله - فاقدره لي ويسره لي ، ثم بارك لي فيه ، وإن كنت تعلم أن هذا الأمر شر لي في ديني ومعاشي وعاقبة أمري - أو قال : عاجله وآجله - فاصرفه عني واصرفني عنه ، واقدر لي الخير حيث كان ، ثم ارضني به",
+          "en": "The Prophet (ﷺ) used to teach us to seek Allah's Counsel in all matters, as he used to teach us a Surah from the Qur'an. He would say: When anyone of you has an important matter to decide, let him pray two Rak'ahs other than the obligatory prayer, and then say: O Allah, I seek the counsel of Your Knowledge, and I seek the help of Your Omnipotence, and I beseech You for Your Magnificent Grace. Surely, You are Capable and I am not. You know and I know not, and You are the Knower of the unseen. O Allah, if You know that this matter [then mention the thing to be decided] is good for me in my religion and in my life and for my welfare in the life to come, - [or say: in this life and the afterlife] - then ordain it for me and make it easy for me, then bless me in it. And if You know that this matter is bad for me in my religion and in my life and for my welfare in the life to come, - [or say: in this life and the afterlife] - then distance it from me, and distance me from it, and ordain for me what is good wherever it may be, and help me to be content with it."
+        },
+        {
+          "ar": "وما ندم من استخار الخالق ، وشاور المخلوقين المؤمنين وتثبت في أمره ، فقد قال سبحانه { وَشَاوِرْهُمْ فِي الأَمْرِ فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللّهِ}",
+          "en": "Whoever seeks the counsel of the Creator will not regret it and whoever seeks the advice of the believers will feel confident about his decisions, for Allah has said in the Qur'an: And consult them in the affair. Then when you have taken a decision, put your trust in Allah"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "",
+          "en": "Allāhumma innī astakhīruka bi `ilmik, wa astaqdiruka biqudratik, wa as'aluka min faḍlika ‘l-`Aẓīm, fa'innaka taqdiru wa lā aqdir, wa ta`lamu wa lā a`lam, wa anta `allāmu ‘l-ghuyūb, Allāhumma in kunta ta`lamu anna hādha ‘l-amra - [then mention the thing to be decided] Khayrun lī fī dīnī wa ma`āshī wa `āqibati amrī - [or say] `ājilihi wa ājilih - faqdurhu lī wa yassirhu lī thumma bārik lī fīh, wa in kunta ta`lamu anna hādha ‘l-amra sharrun lī fī dīnī wa ma`āshī wa `āqibati 'amrī - [or say] `ājilihi wa 'ājilihi - faṣrifhu `annī waṣrifnī `anh, waqdur liya ‘l-khayra ḥaythu kān, thumma arḍinī bih"
+        },
+        {
+          "ar": "البخاري7/ 162 , سورة آل عمران ، آية : 159",
+          "en": "Al-Bukhari 7/162. and Aal-'Imran 3:159"
+        }
+      ]
+    }
   }
 ]
