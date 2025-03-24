@@ -33,10 +33,20 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
             appBar: AppBar(
               backgroundColor: const Color(0xff292929),
               iconTheme: const IconThemeData(color: Colors.white),
-              title: CustomText(
-                title: localizations.hesenAlMuslim,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+              title: Column(
+                children: [
+                  CustomText(
+                    title: localizations.hesenAlMuslim,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  CustomText(
+                    title: localizations.thisPlaceStillUnderDevelopment,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                  ),
+                ],
               ),
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(kToolbarHeight),

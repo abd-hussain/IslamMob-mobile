@@ -2055,5 +2055,623 @@
         }
       ]
     }
+  },
+  {
+    "id": 29,
+    "title": {
+      "ar": "أذكار الصباح",
+      "en": "In the morning"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "الْحَمْدُ لِلَّهِ وَحْدَهُ، وَالصَّلاَةُ وَالسَّلاَمُ عَلَى مَنْ لاَ نَبِيَّ بَعْدَهُ",
+            "en": "All praise is due to Allah alone, and peace and blessings be upon him after whom there is no other Prophet"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Alḥamdulillahi waḥdah waṣ-ṣalatu was-salam `alā man lā nabiyya ba`dah"
+            },
+            {
+              "ar": "عن أنس يرفعه ' لأن أقعد مع قوم يذكرون الله تعالى من صلاة الغداة حتى تطلع الشمس أحب إلي من أن أعتق أربعة من ولد إسماعيل، ولأن أقعد مع قوم يذكرون الله من صلاة العصر إلى أن تغرب الشمس أحب إلي من أن أعتق أربعة ' أبو داود برقم 3667، وحسنه الألباني ، صحيح أبو داود 2/ 698",
+              "en": "Anas (RA) said that he heard the Prophet (ﷺ) say: That I sit with people remembering Almighty Allah from the morning (Fajr) prayer until sunrise is more beloved to me than freeing four slaves from among the Children of Isma'il. That I sit with people remembering Allah from the afternoon ('Asr) prayer, until the sun sets, is more beloved to me than freeing four slaves from among the Children of Isma'il. This was reported by Abu Dawud (no. 3667). Al-Albani graded it good in Sahih Abu Dawud 2/698"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "أعوذ بالله من الشيطان الرجيم",
+            "en": ""
+          },
+          "description": {
+            "ar": "﴿اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾",
+            "en": "(Ayat al-Kursi; Al-Qur'an 2:255) Allah! There is none worthy of worship but He, the Ever-Living, the One Who sustains and protects all that exists. Neither slumber nor sleep overtakes Him. To Him belongs whatever is in the heavens and whatever is on the earth. Who is he that can intercede with Him except with His Permission? He knows what happens to them in this world, and what will happen to them in the Hereafter. And they will never encompass anything of His Knowledge except that which He wills. His Throne extends over the heavens and the earth, and He feels no fatigue in guarding and preserving them. And He is the Most High, the Most Great."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "(A`ūdhu billāhi min ash-shaytāni 'r-rajīm) Allāhu lā ilāha illā huwa ‘l-Ḥayyul-Qayyūm, lā ta'khudhuhu sinatun wa lā nawm, lahu mā fis-samāwāti wa māfil-arḍ, man dhal-ladhī yashfa`u `indahu illā bi'idhnih, ya`lamu mā bayna aydīhim wa mā khalfahum, wa lā yuḥīṭūna bishay'im-min `ilmihi illā bimā shā', wasi`a kursiyyuhus-samāwāti wal-arḍ, wa lā ya'ūduhu hifẓuhumā, wa huwal-`Aliyyu‘l-`Aẓīm"
+            },
+            {
+              "ar": "سورة البقرة ، آية 255 من قالها حين يمسي أجير منهم حتى يصبح أخرجه الحاكم 1/ 562وصححه الألباني في صحيح الترغيب والترهيب 1/ 273 وعزاه إلى النسائي والطبراني وقال : وإسناد الطبراني جيد",
+              "en": "Whoever says this when he rises in the morning will be protected from jinns until he retires in the evening, and whoever says it when retiring in the evening will be protected from them until he rises in the morning. It was reported by Al-Hakim 1 / 562, Al-Albani graded it as authentic in Sahihut-Targhib wat-Tarhib 1/273, and traces it to An-Nasa'i and At-Tabarani. He says that At-Tabarani's chain of transmission is reliable (Jayyid)"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "بسم الله الرحمن الرحيم",
+            "en": "Bismillāhir-Raḥmānir-Raḥīm"
+          },
+          "description": {
+            "ar": "{ قُلْ هُوَ اللَّهُ أَحَدٌ * اللَّهُ الصَّمَدُ * لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ *وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } { قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ }",
+            "en": "(Recite these three times each in Arabic). With the Name of Allah, the Most Gracious, the Most Merciful. Say: He is Allah (the) One. The Self-Sufficient Master, Whom all creatures need, He begets not nor was He begotten, and there is none equal to Him. With the Name of Allah, the Most Gracious, the Most Merciful. Say: I seek refuge with (Allah) the Lord of the daybreak, from the evil of what He has created, and from the evil of the darkening (night) as it comes with its darkness, and from the evil of those who practice witchcraft when they blow in the knots, and from the evil of the envier when he envies. With the Name of Allah, the Most Gracious, the Most Merciful. Say: I seek refuge with (Allah) the Lord of mankind, the King of mankind, the God of mankind, from the evil of the whisperer who withdraws, who whispers in the breasts of mankind, of jinns and men"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Qul huwallāhu aḥad. Allāhuṣ-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahu kufuwan aḥad. Bismillāhir-Raḥmānir-Raḥīm. Qul a`ūdhu birabbil-falaq. Min sharri mā khalaq. Wa min sharri ghāsiqin idhā waqab. Wa min sharrin-naffāthāti fil-`uqad. Wa min sharri ḥāsidin idhā ḥasad. Bismillāhir-Raḥmānir-Raḥīm. Qul a`ūdhu birabbin-nās. Malikin-nās. 'Ilāhin-nās. Min sharri ‘l-waswāsil-khannās. Alladhī yuwaswisu fī ṣudūrin-nās. Minal-jinnati wannās"
+            },
+            {
+              "ar": "من قالها ثلاث مرات حين يصبح وحين يمسي كفته من كل شيء . أبو داود 4/ 322 والترمذي 5/ 567وانظر صحيح الترمذي 3/ 182",
+              "en": "Al-Ikhlas 112:1-4, Al-Falaq 113:1-5, An-Nas 114:1-6. Whoever recites these three times in the morning and in the evening, they will suffice him (as a protection) against everything. The Hadith was reported by Abu Dawud 4/322, and At-Tirmidhi 5/567. See Al-Albani's Sahih At-Tirmidhi 3/182."
+            }
+          ],
+          "readCount": 3
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي القَـبْر",
+            "en": "We have entered a new day 1 and with it all dominion is Allah's. Praise is to Allah. None has the right to be worshipped but Allah alone, Who has no partner. To Allah belongs the dominion, and to Him is the praise and He is Able to do all things. My Lord, I ask You for the goodness of this day and of the days that come after it, and I seek refuge in You from the evil of this day and of the days that come after it.2 My Lord, I seek refuge in You from laziness and helpless old age. My Lord, I seek refuge in You from the punishment of Hell-fire, and from the punishment of the grave.3"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Aṣbaḥnā wa aṣbaḥal-mulku lillāh, walḥamdu lillāh, lā ilāha illallāhu waḥdahu lā sharīka lah, lahul-mulku wa lahul-ḥamd, wa huwa `alā kulli shay'in Qadīr. Rabbi as'aluka khayra mā fī hādha ‘l-yawmi wa khayra mā ba`dahu wa a`ūdhu bika min sharri mā fī hātha ‘l-yawmi wa sharri mā ba`dahu, Rabbi a`ūdhu bika minal-kasali, wa sū'il-kibar, Rabbi a`ūdhu bika min `adhābin fin-nāri wa `adhābin fil-qabr."
+            },
+            {
+              "ar": "مسلم 4/ 2088",
+              "en": "1 When you say this in the evening you should say Amsaynā wa amsal-mulku lillāh: We have ended another day and with it, all dominion is Allah's. 2 When you say this in the evening you should say: Rabbi as'aluka khayra mā fī hāthihil-laylati, wa khayra mā ba`dahā, wa a`ūthu bika min sharri mā fī hāthihil-laylati wa sharri mā ba`dahā: I ask You for the good things of this night and of the nights that come after it and I seek refuge in You from the evil of this night and of the nights that come after it. 3 Muslim 4/2088"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ بِكَ أَصْـبَحْنا وَبِكَ أَمْسَـينا وَبِكَ نَحْـيا وَبِكَ نَمـوتُ وَإِلَـيْكَ النِّـشور",
+            "en": "O Allah, You bring us the end of the day as You bring us its beginning, You bring us life and you bring us death, and to You is our fate."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma bika aṣbaḥnā, wa bika amsaynā, wa bika naḥyā, wa bika namūt, wa ilaykan-nushūr"
+            },
+            {
+              "ar": "الترمذي 5/ 466 وانظر صحيح الترمذي 3/ 142",
+              "en": "Sahih At-Tirmidhi 3/142."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ خَلَقْتَنـي وَأَنا عَبْـدُك وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت أَعـوذُ بِكَ مِنْ شَـرِّ ما صَنَـعْت أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ",
+            "en": "O Allah, You are my Lord, there is none worthy of worship but You. You created me and I am your slave. I keep Your covenant, and my pledge to You so far as I am able. I seek refuge in You from the evil of what I have done. I admit to Your blessings upon me, and I admit to my misdeeds. Forgive me, for there is none who may forgive sins but You."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma anta Rabbī lā ilāha illā ant, khalaqtanī wa anā `abduk, wa anā `alā `ahdika wa wa`dika mastaṭa`t, a`ūdhu bika min sharri mā ṣana`t, abū'u laka bi ni`matika `alay, wa abū'u bidhanbī faghfir lī fa'innahu lā yaghfirudh-dhunūba illā ant"
+            },
+            {
+              "ar": "من قالها موقناً بها حين يمسي فمات من ليلته دخل الجنة ، وكذلك إذا أصبح أخرجه البخاري 7/150",
+              "en": "Whoever recites this with conviction in the evening and dies during that night shall enter Paradise, and whoever recites it with conviction in the morning and dies during that day shall enter Paradise, Al-Bukhari 7/150. Other reports are in An-Nasa'i and At-Tirmidhi"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أَصْبَـحْتُ أَُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلائِكَتِك ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك",
+            "en": "O Allah, I have entered a new morning 1 and call upon You and upon the bearers of Your Throne, upon Your angels and all creation to bear witness that surely You are Allah, there is none worthy of worship but You alone, You have no partners, and that Muhammad is Your slave and Your Messenger. (Recite four times in Arabic.) 2"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī aṣbaḥtu ush-hiduka wa ush-hidu ḥamalata `arshik, wa malā'ikataka wajamī`a khalqik, annaka antallāhu lā ilāha illā ant, waḥdaka lā sharīka lak, wa anna Muḥammadan `abduka wa rasūluk"
+            },
+            {
+              "ar": "من قالها حين يصبح وحين يمسي أربع مرات أعتقه الله من النار . أخرجه أبو داود 4/ 317 والبخاري في الأدب المفرد برقم 1201 والنسائي في عمل اليوم والليلة برقم 9، وابن السني برقم 70 وحسن سماحة الشيخ ابن باز إسناد النسائي وأبي داود في تحفة الأخيار ص 23",
+              "en": "1 When you say this in the evening you should say, Allāhumma innī amsaytu. . . .: O Allah, I have ended another day...' 2 'Allah will spare whoever says this four times in the morning or evening from the fire of Hell. Abu Dawud 4/317. It was also reported by Al-Bukhari in Al-'Adab Al-Mufrad, An-Nasa'i in 'Amalul-Yawm wal-Laylah and Ibn As-Sunni. Nasa'i's and Abu Dawud's chains of transmission are good (Hasan), Ibn Baz, p. 23"
+            }
+          ],
+          "readCount": 4
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ ما أَصْبَـَحَ بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر",
+            "en": "O Allah, whatever blessing has been received by me or anyone of Your creation 1 is from You alone, You have no partner. All praise is for you and thanks is to You. 2"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma mā aṣbaha bī min ni`matin aw bi aḥadin min khalqik, fa minka waḥdaka lā sharīka lak, falaka ‘l-ḥamdu wa lakash-shukr"
+            },
+            {
+              "ar": "من قالها حين يصبح فقد أدي شكر يومه ، ومن قالها حين يمسى فقد أدى شكر ليلته . أخرجه أبو داود 4/318 ، والنسائي في عمل اليوم والليلة برقم 7وابن السني برقم 41 وابن حبان (( موارد)) رقم 2361وحسن ابن باز إسناده في تحفة الأخيار ص24",
+              "en": "1 When you say this in the evening, you should say: Allāhumma mā 'amsā bī...: O Allah, as I... enter this evening... 2 Whoever recites this in the morning, has completed his obligation to thank Allah for that day; and whoever says it in the evening, has completed his obligation for that night. Abu Dawud 4/318, An-Nasa'i 'Amalul-Yawm wal-Laylah (no. 7), Ibn As-Sunni (no. 41), Ibn Hibban (no. 2361). Its chain of transmission is good (Hasan), Ibn Baz, p. 24."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ عافِـني في بَدَنـي، اللّهُـمَّ عافِـني في سَمْـعي، اللّهُـمَّ عافِـني في بَصَـري، لا إلهَ إلاّ اللّه أَنْـتَ. اللّهُـمَّ إِنّـي أَعـوذُبِكَ مِنَ الْكُـفر، وَالفَـقْر، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر، لا إلهَ إلاّ أَنْـتَ",
+            "en": "O Allah, make me healthy in my body. O Allah, preserve for me my hearing. O Allah, preserve for me my sight. There is none worthy of worship but You. O Allah, I seek refuge in You from disbelief and poverty, and I seek refuge in You from the punishment of the grave. There is none worthy of worship but You (Recite three times in Arabic.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma `āfinī fī badanī, Allāhumma `āfinī fī sam`ī, Allāhumma `āfinī fī baṣarī, lā ilāha illā ant. Allāhumma innī a`ūdhu bika mina ‘l-kufri, wa ‘l-faqr, wa a`ūdhu bika min `adhābi ‘l-qabr, lā ilāha illā ant"
+            },
+            {
+              "ar": "أبو داود 4/ 324، وأحمد 5/ 42 والنسائي في عمل اليوم والليلة برقم 22وابن السني برقم 69والبخاري في الأدب المفرد وحسن العلامة ابن باز في تحفة الأخيار ص26",
+              "en": "Abu Dawud 4/324, Ahmad 5/42, An-Nasa'i, 'Amalul-Yawm wal-Laylah (no. 22), Ibn As-Sunni (no. 69), Al-Bukhari Al-'Adab Al-Mufrad. Its chain of transmission is good (Hasan), Ibn Baz, p. 26"
+            }
+          ],
+          "readCount": 3
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم",
+            "en": "Allah is sufficient for me. There is none worthy of worship but Him. I have placed my trust in Him, He is Lord of the Majestic Throne. (Recite seven times in Arabic.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Ḥasbiyallāhu lā ilāha illā huwa `alayhi tawakkalt, wa huwa Rabbu ‘l-`Arshi ‘l-'Aẓīm"
+            },
+            {
+              "ar": "من قالها حين يصبح ويمسي سبع مرات كفاه الله ما أهمه من أمر الدنيا والآخرة .أخرجه ابن السني برقم 71مرفوعاً وأبو موقوف 4/321،وصحح إسناده شعيب وعبد القادر الأرناؤوط . انظر زاد المعاد 2/ 376",
+              "en": "Allah will grant whoever recites this seven times in the morning or evening whatever he desires from this world or the next, Ibn As-Sunni (no. 71), Abu Dawud 4/321. Both reports are attributed directly to the Prophet j§ (Marfu1). The chain of transmission is sound (Sahih). Ibn As-Sunni."
+            }
+          ],
+          "readCount": 7
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي",
+            "en": "O Allah, I seek Your forgiveness and Your protection in this world and the next. O Allah, I seek Your forgiveness and Your protection in my religion, in my worldly affairs, in my family and in my wealth. O Allah, conceal my secrets and preserve me from anguish. O Allah, guard me from what is in front of me and behind me, from my left, and from my right, and from above me. I seek refuge in Your Greatness from being struck down from beneath me."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī as'aluka 'l-`afwa wal-`āfiyah fid-dunyā wal-ākhirah, Allāhumma innī as'aluka 'l-`afwa wal-`āfiyah fī dīnī wa dunyāya, wa ahlī, wa mālī, Allāhummastur `awrātī, wa āmin raw`ātī, Allāhummaḥfaẓnī min bayni yadayya, wa min khalfī, wa `an yamīnī, wa `an shimālī, wa min fawqī, wa a`ūdhu bi`aẓamatika an 'ughtāla min taḥtī."
+            },
+            {
+              "ar": "أبو داود وابن ماجه وانظر صحيح ابن ماجه 2/332",
+              "en": "Sahih Ibn Majah 2/332 and Abu Dawud"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِـرْكِه ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم",
+            "en": "O Allah, Knower of the unseen and the evident, Maker of the heavens and the earth, Lord of everything and its Possessor, I bear witness that there is none worthy of worship but You. I seek refuge in You from the evil of my soul, and from the evil of Satan and his helpers. (I seek refuge in You) from bringing evil upon my soul and from harming any Muslim"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma `ālima ‘l-ghaybi wash-shahādah fātir as-samāwāti wa ‘l'arḍ, Rabba kulli shay'in wa malīkah, ash-hadu an lā ilāha illā ant, a`ūdhu bika min sharri nafsī, wa min sharrish-shayṭāni wa shirkih, wa an aqtarifa `alā nafsī sū'an, aw ajurrahu ilā Muslim"
+            },
+            {
+              "ar": "الترمذي وأبو داود .انظر :صحيح الترمذي3/ 142",
+              "en": "Sahih At-Tirmidhi 3/142 and AbuDawud"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم",
+            "en": "In the Name of Allah, Who with His Name nothing can cause harm in the earth nor in the heavens, and He is the All-Hearing, the All-Knowing. (Recite three times in Arabic)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Bismillāhi ‘l-ladhī lā yaḍurru ma`a-smihi shay'un fil-'arḍi wa lā fis-samā' wa huwas-Samī `ul-`Alīm"
+            },
+            {
+              "ar": "من قالها ثلاثاً إذا أصبح وثلاثاً إذا أمسى لم يضره شيء أخرجه أبو داود 4/ 323 والترمذي 5/ 465 وابن ماجه وأحمد . انظر : صحيح ابن ماجه 2/332 وحسن إسناده العلامة ابن باز في تحفة الأخيار ص39",
+              "en": "Whoever recites it three times in the morning will not be afflicted by any calamity before evening, and whoever recites it three times in the evening will not be overtaken by any calamity before morning. Abu Dawud 4/323, At-Tirmidhi 5/465, Ibn Majah 2/332, Ahmad. Ibn Majah's chain of transmission is good (Hasan), Ibn Baz, p. 39"
+            }
+          ],
+          "readCount": 3
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ نَبِيّـاً",
+            "en": "I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad (peace and blessings of Allah be upon him) as my Prophet. (Recite three times in Arabic.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Raḍītu billāhi Rabba, wa bil-Islāmi dīna, wa bi-Muḥammadin (ṣallallāhu `alayhi wa sallama) nabiyya."
+            },
+            {
+              "ar": "من قالها ثلاثاً حين يصبح وحين يمسي كان حقاً على الله أن يرضيه يوم القيامة . أحمد 4/ 337 والنسائي في عمل اليوم والليلة برقم 4 وابن السني برقم 68 وأبو داود 4/418 والترمذي 5/465 وحسنه ابن باز في تحفة الأخيار ص 39 ",
+              "en": "Allah has promised that anyone who says this three times every morning or evening will be pleased on the Day of Resurrection. Ahmad 4/ 337, An-Nasa'i, 'Amalul-Yawm wal-Laylah p. 4, Ibn As-Sunni (no. 68), At-Tirmidhi 5/465. Its chain of transmission is good (Hasan), Ibn Baz, p. 39."
+            }
+          ],
+          "readCount": 3
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "يا حَـيُّ يا قَيّـومُ بِـرَحْمَـتِكِ أَسْتَـغـيث ، أَصْلِـحْ لي شَـأْنـي كُلَّـه ، وَلا تَكِلـني إِلى نَفْـسي طَـرْفَةَ عَـين",
+            "en": "O Ever-Living One, O Eternal One, by Your mercy I call on You to set right all my affairs. Do not place me in charge of my soul even for the blinking of an eye (i.e. a moment)."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Yā Ḥayyu yā Qayyūmu biraḥmatika astaghīth aṣlih lī sha'nī kullah wa lā takilnī ilā nafsī ṭarfata `ayn."
+            },
+            {
+              "ar": "الحاكم وصححه ووافقه الذهبي 1/ 545 وانظر صحيح الترغيب والترهيب 1/273",
+              "en": "Its chain of transmission is sound (Sahih), Al-Hakim 1/545, see Albani, Sahihut-Targhib wat-Tarhib, 1/273."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "أَصْبَـحْـنا وَأَصْبَـحْ المُـلكُ للهِ رَبِّ العـالَمـين ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ خَـيْرَ هـذا الـيَوْم ، فَـتْحَهُ ، وَنَصْـرَهُ ، وَنـورَهُ وَبَـرَكَتَـهُ ، وَهُـداهُ ، وَأَعـوذُ بِـكَ مِـنْ شَـرِّ ما فـيهِ وَشَـرِّ ما بَعْـدَه",
+            "en": "We have entered a new day and with it all the dominion which belongs to Allah, Lord of all that exists. O Allah, I ask You for the goodness of this day,2 its victory, its help, its light, its blessings, and its guidance. I seek refuge in You from the evil that is in it, and from the evil that follows it."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Aṣbaḥnā wa aṣbaḥal-mulku lillāhi Rabbi ‘l-a`lāmīn, Allāhumma innī as'aluka khayra hādha ‘l-yawm:Fat’ḥahu wa naṣrahu wa nūrahu, wa barakatahu, wa hudāh, wa a`ūdhu bika min sharri mā fīhi wa sharri mā ba`dah."
+            },
+            {
+              "ar": "أبو داود 4/ 322 وحسن إسناده شعيب وعبد القادر الأرناؤوط في تحقيق زاد المعاد 2/ 273",
+              "en": "1 For evening recitation, say here: Allāhumma innī as'aluka khayra hāthihil-laylah: My Lord, I ask You for the good things of this night. 2 Abu Dawud 4/322. Its transmission chain is good (Hasan). See also Ibn Al-Qayyim, Zadul- Ma'ad 2/273"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "أَصْـبَحْنا علـى فِطْـرَةِ الإسْلام، وَعَلـى كَلِـمَةِ الإخْـلاص، وَعلـى دينِ نَبِـيِّنا مُحَـمَّدٍ وَعَلـى مِلَّـةِ أبينـا إِبْـراهيـمَ حَنيـفاً مُسْلِـماً وَمـا كـانَ مِنَ المُشـرِكيـن",
+            "en": "We have entered a new day 1 upon the natural religion of Islam, the word of sincere devotion, the religion of our Prophet Muhammad (peace and blessings of Allah be upon him), and the faith of our father Ibrahim. He was upright (in worshipping Allah), and a Muslim. He was not of those who worship others besides Allah. 2"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Aṣbahnā `alā fiṭrati ‘l-Islām, wa `alā kalimati ‘l-ikhlās, wa `alā dīni nabiyyinā Muḥammadin (ṣallallāhu `alayhi wa sallam), wa `alā millati abīnā Ibrāhīm, ḥanīfan Musliman wa mā kāna mina ‘l-mushrikīn"
+            },
+            {
+              "ar": "أحمد 3/ 406و 407 وابن السني في عمل اليوم والليلة برقم 34 وانظر : صحيح الجامع 4/ 209",
+              "en": "1 When you say this in the evening, you should say: 'Amsaynā `alā fiṭratil-Islām...: We end this day... 2 Ahmad 3/406-7, 5/123, An-Nasa'i, 'Amalul- Yawm wal-Laylah (no. 34), At-Tirmidhi 4/209"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبْحـانَ اللهِ وَبِحَمْـدِهِ",
+            "en": "Glory is to Allah and praise is to Him. (Recite one hundred times in Arabic)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥānallāhi wa biḥamdih"
+            },
+            {
+              "ar": "من قالها مائة مرة حين يصبح وحين يمسي لم يأت أحد يوم القيامة بأفضل مما جاء به إلا أحد قال مثل ما قال أو زاد رواه مسلم4 / 2071",
+              "en": "Whoever recites this one hundred times in the morning and in the evening will not be surpassed on the Day of Resurrection by anyone having done better than this except for someone who had recited it more.  Al-Bukhari 4/2071"
+            }
+          ],
+          "readCount": 100
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "لا إلهَ إلاّ اللّهُ وحْـدَهُ لا شَـريكَ لهُ، لهُ المُـلْكُ ولهُ الحَمْـد، وهُوَ على كُلّ شَيءٍ قَدير",
+            "en": "None has the right to be worshipped but Allah alone, Who has no partner. His is the dominion and His is the praise and He is Able to do all things. (Recite ten times 1 in Arabic or one time to ward off laziness.) 2"
+          },
+          "references": [
+            {
+              "ar": "(عشر مرات أَوْ مرَّةً واحدةً عندَ الكَسَلِ)",
+              "en": "Lā ilāha illallāhu waḥdahu lā sharīka lah, lahu ‘l-mulku walahu ‘l-ḥamd, wa huwa `alā kulli shay'in qadīr"
+            },
+            {
+              "ar": "النسائي في عمل اليوم والليلة برقم 24 وانظر :صحيح الترغيب والترهيب 1/272 ،وتحفة الأخيار لابن باز ص44وانظر فضلها في ص146 ،حديث رقم 255",
+              "en": "1Allah will write ten Hasanaat (rewards) for whoever recites this ten times in the morning, and forgive him ten misdeeds and give him the reward of freeing ten slaves and protect him from Satan. Whoever recites this ten times in the evening will get this same reward. An-Nasa'i, 'Amalul-Yawm wal-Laylah (no. 24). Its chain of transmission is sound (Sahih). Albani 1/272. Abu Hurayrah «fe narrated that the Prophet j§ said: Allah will write one hundred Hasanat for whoever says There is no God but Allah alone, He has no partner. To Allah is possession of everything, and to Him all praise is. He is Capable of all things' ten times in the morning, and forgive him one hundred misdeeds. He will have the reward of freeing a slave and will be protected from Satan throughout the day unto dusk. Whoever says it in the evening will have the same reward. Ahmad 8/704, 16/293. Its chain of transmission is good (Hasan), Ibn Baz, p. 44. 2 Whoever recites this in the morning, will have the reward of freeing a slave from the Children of Isma'il. Ten Hasanaat (rewards) will be written for him, and he will be forgiven ten misdeeds, raised up ten degrees, and be protected from Satan until evening. Whoever says it in the evening will have the same reward until morning. Abu Dawud 4/319, 3/957, Ahmad 4/ 60, Ibn Majah 2/331, Ibn Al-Qayyim Zadul-Ma'ad 2/388. Its chain of transmission is sound (Sahih). Al-Albani 1/270"
+            },
+            {
+              "ar": " أبو داود 4/319 وابن ماجه وأحمد 4/60 وانظر :صحيح الترغيب والترهيب 1/270 ،صحيح أبو داود 3/957 ، وصحيح ابن ماجه 2/331 وزاد المعاد 2/ 377",
+              "en": ""
+            }
+          ],
+          "readCount": 10
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "لا إلهَ إلاّ اللّهُ وحْـدَهُ لا شَـريكَ لهُ، لهُ المُـلْكُ ولهُ الحَمْـد، وهُوَ على كُلّ شَيءٍ قَدير",
+            "en": "None has the right to be worshipped but Allah alone, Who has no partner. His is the dominion and His is the praise and He is Able to do all things. (Recite 100 times in Arabic upon rising in the morning)."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Lā ilāha illallāhu waḥdahu lā sharīka lah, lahu ‘l-mulku walahu ‘l-ḥamd, wa huwa `alā kulli shay'in qadīr"
+            },
+            {
+              "ar": "من قالها مائة مرة في يوم كانت له عدل عشر رقاب، وكتب له مائة حسنة ،ومحيت عنه مائة سيئة ، وكانت حرزاً من الشيطان يومه ذلك حتى يمسي ،ولم يأت أحد بأفضل مما جاء به إلا أحد عمل أكثر من ذلك . البخاري 4/95،ومسلم 4/2071",
+              "en": "Whoever recites this one hundred times a day will have the reward of freeing ten slaves. One hundred Hasanaat (rewards) will be written for him and one hundred misdeeds will be washed away. He will be shielded from Satan until the evening. No one will be able to present anything better than this except for someone who has recited more than this. Al-Bukhari 4/95, Muslim 4/2071"
+            }
+          ],
+          "readCount": 100
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه",
+            "en": "Glory is to Allah and praise is to Him, by the multitude of His creation, by His Pleasure, by the weight of His Throne, and by the extent of His Words. (Recite three times in Arabic upon rising in the morning.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Subḥānallāhi wa biḥamdih:`adada khalqih, wa riḍā nafsih, wa zinata `arshih, wa midāda kalimātih"
+            },
+            {
+              "ar": "مسلم 4/2090",
+              "en": "Muslim 4/2090"
+            }
+          ],
+          "readCount": 3
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْماً نَافِعاً، وَرِزْقاً طَيِّباً، وَعَمَلاً مُتَقَبَّلاً",
+            "en": "O Allah, I ask You for knowledge that is of benefit, a good provision, and deeds that will be accepted. (Recite in Arabic upon rising in the morning.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma innī as'aluka `ilman nāfi`a, wa rizqan ṭayyiba, wa `amalan mutaqabbala"
+            },
+            {
+              "ar": "أخرجه ابن السني في عمل اليوم والليلة برقم 54وابن ماجه برقم 925وحسن إسناده عبد القادر وشعيب الأرناؤوط في تحقيق زاد المعاد 2/375",
+              "en": "Ibn As-Sunni, no. 54, Ibn Majah no. 925. Its chain of transmission is good (Hasan), Ibn Al-Qayyim 2/375"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ",
+            "en": "I seek the forgiveness of Allah and repent to Him. (Recite one hundred times in Arabic during the day.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Astaghfirullāha wa atūbu ilayh"
+            },
+            {
+              "ar": "البخاري مع الفتح 11/ 101 ، ومسلم 4/ 2075",
+              "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/101, Muslim 4/2075"
+            }
+          ],
+          "readCount": 100
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "اللَّهُمَّ صَلِّ وَ سَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ",
+            "en": "O Allah, we ask for your peace and blessings upon our Prophet Muhammad. (Recite ten times in Arabic.)"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Allāhumma ṣalli wa sallim `alā nabiyyinā Muḥammad."
+            },
+            {
+              "ar": "من صلى علي حين يُصبح عشراً ، وحين يُمسي عشراً أدركتهُ شفاعتي يوم القيامة ، رواه الطبراني بإسنادين أحدهما جيد ، انظر الزائد 10/ 120 وصحيح الترغيب والترهيب 1/273",
+              "en": "The Prophet (ﷺ) said: Who recites blessings upon me ten times in the morning and ten times in the evening will obtain my intercession on the Day of Resurrection. At-Tabarani reported this Hadith together with two chains of transmission. One of them is reliable (Jayyid). See Haythami's Majma'uz-Zawa'id 10/120, and Al-Albani's Sahihut-Targhib wat-Tarhib 1/273"
+            }
+          ],
+          "readCount": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "title": {
+      "ar": "أذكار المساء",
+      "en": "In the evening"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "الْحَمْدُ لِلَّهِ وَحْدَهُ، وَالصَّلاَةُ وَالسَّلاَمُ عَلَى مَنْ لاَ نَبِيَّ بَعْدَهُ",
+            "en": "All praise is due to Allah alone, and peace and blessings be upon him after whom there is no other Prophet"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Alḥamdulillahi waḥdah waṣ-ṣalatu was-salam `alā man lā nabiyya ba`dah"
+            },
+            {
+              "ar": "عن أنس يرفعه ' لأن أقعد مع قوم يذكرون الله تعالى من صلاة الغداة حتى تطلع الشمس أحب إلي من أن أعتق أربعة من ولد إسماعيل، ولأن أقعد مع قوم يذكرون الله من صلاة العصر إلى أن تغرب الشمس أحب إلي من أن أعتق أربعة ' أبو داود برقم 3667، وحسنه الألباني ، صحيح أبو داود 2/ 698",
+              "en": "Anas (RA) said that he heard the Prophet (ﷺ) say: That I sit with people remembering Almighty Allah from the morning (Fajr) prayer until sunrise is more beloved to me than freeing four slaves from among the Children of Isma'il. That I sit with people remembering Allah from the afternoon ('Asr) prayer, until the sun sets, is more beloved to me than freeing four slaves from among the Children of Isma'il. This was reported by Abu Dawud (no. 3667). Al-Albani graded it good in Sahih Abu Dawud 2/698"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "أعوذ بالله من الشيطان الرجيم",
+            "en": ""
+          },
+          "description": {
+            "ar": "﴿اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾",
+            "en": "(Ayat al-Kursi; Al-Qur'an 2:255) Allah! There is none worthy of worship but He, the Ever-Living, the One Who sustains and protects all that exists. Neither slumber nor sleep overtakes Him. To Him belongs whatever is in the heavens and whatever is on the earth. Who is he that can intercede with Him except with His Permission? He knows what happens to them in this world, and what will happen to them in the Hereafter. And they will never encompass anything of His Knowledge except that which He wills. His Throne extends over the heavens and the earth, and He feels no fatigue in guarding and preserving them. And He is the Most High, the Most Great."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "(A`ūdhu billāhi min ash-shaytāni 'r-rajīm) Allāhu lā ilāha illā huwa ‘l-Ḥayyul-Qayyūm, lā ta'khudhuhu sinatun wa lā nawm, lahu mā fis-samāwāti wa māfil-arḍ, man dhal-ladhī yashfa`u `indahu illā bi'idhnih, ya`lamu mā bayna aydīhim wa mā khalfahum, wa lā yuḥīṭūna bishay'im-min `ilmihi illā bimā shā', wasi`a kursiyyuhus-samāwāti wal-arḍ, wa lā ya'ūduhu hifẓuhumā, wa huwal-`Aliyyu‘l-`Aẓīm"
+            },
+            {
+              "ar": "سورة البقرة ، آية 255 من قالها حين يمسي أجير منهم حتى يصبح أخرجه الحاكم 1/ 562وصححه الألباني في صحيح الترغيب والترهيب 1/ 273 وعزاه إلى النسائي والطبراني وقال : وإسناد الطبراني جيد",
+              "en": "Whoever says this when he rises in the morning will be protected from jinns until he retires in the evening, and whoever says it when retiring in the evening will be protected from them until he rises in the morning. It was reported by Al-Hakim 1 / 562, Al-Albani graded it as authentic in Sahihut-Targhib wat-Tarhib 1/273, and traces it to An-Nasa'i and At-Tabarani. He says that At-Tabarani's chain of transmission is reliable (Jayyid)"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "بسم الله الرحمن الرحيم",
+            "en": "Bismillāhir-Raḥmānir-Raḥīm"
+          },
+          "description": {
+            "ar": "{ قُلْ هُوَ اللَّهُ أَحَدٌ * اللَّهُ الصَّمَدُ * لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ *وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } { قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ }",
+            "en": "(Recite these three times each in Arabic). With the Name of Allah, the Most Gracious, the Most Merciful. Say: He is Allah (the) One. The Self-Sufficient Master, Whom all creatures need, He begets not nor was He begotten, and there is none equal to Him. With the Name of Allah, the Most Gracious, the Most Merciful. Say: I seek refuge with (Allah) the Lord of the daybreak, from the evil of what He has created, and from the evil of the darkening (night) as it comes with its darkness, and from the evil of those who practice witchcraft when they blow in the knots, and from the evil of the envier when he envies. With the Name of Allah, the Most Gracious, the Most Merciful. Say: I seek refuge with (Allah) the Lord of mankind, the King of mankind, the God of mankind, from the evil of the whisperer who withdraws, who whispers in the breasts of mankind, of jinns and men"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Qul huwallāhu aḥad. Allāhuṣ-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahu kufuwan aḥad. Bismillāhir-Raḥmānir-Raḥīm. Qul a`ūdhu birabbil-falaq. Min sharri mā khalaq. Wa min sharri ghāsiqin idhā waqab. Wa min sharrin-naffāthāti fil-`uqad. Wa min sharri ḥāsidin idhā ḥasad. Bismillāhir-Raḥmānir-Raḥīm. Qul a`ūdhu birabbin-nās. Malikin-nās. 'Ilāhin-nās. Min sharri ‘l-waswāsil-khannās. Alladhī yuwaswisu fī ṣudūrin-nās. Minal-jinnati wannās"
+            },
+            {
+              "ar": "من قالها ثلاث مرات حين يصبح وحين يمسي كفته من كل شيء . أبو داود 4/ 322 والترمذي 5/ 567وانظر صحيح الترمذي 3/ 182",
+              "en": "Al-Ikhlas 112:1-4, Al-Falaq 113:1-5, An-Nas 114:1-6. Whoever recites these three times in the morning and in the evening, they will suffice him (as a protection) against everything. The Hadith was reported by Abu Dawud 4/322, and At-Tirmidhi 5/567. See Al-Albani's Sahih At-Tirmidhi 3/182."
+            }
+          ],
+          "readCount": 3
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي القَـبْر",
+            "en": "We have entered a new day 1 and with it all dominion is Allah's. Praise is to Allah. None has the right to be worshipped but Allah alone, Who has no partner. To Allah belongs the dominion, and to Him is the praise and He is Able to do all things. My Lord, I ask You for the goodness of this day and of the days that come after it, and I seek refuge in You from the evil of this day and of the days that come after it.2 My Lord, I seek refuge in You from laziness and helpless old age. My Lord, I seek refuge in You from the punishment of Hell-fire, and from the punishment of the grave.3"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Aṣbaḥnā wa aṣbaḥal-mulku lillāh, walḥamdu lillāh, lā ilāha illallāhu waḥdahu lā sharīka lah, lahul-mulku wa lahul-ḥamd, wa huwa `alā kulli shay'in Qadīr. Rabbi as'aluka khayra mā fī hādha ‘l-yawmi wa khayra mā ba`dahu wa a`ūdhu bika min sharri mā fī hātha ‘l-yawmi wa sharri mā ba`dahu, Rabbi a`ūdhu bika minal-kasali, wa sū'il-kibar, Rabbi a`ūdhu bika min `adhābin fin-nāri wa `adhābin fil-qabr."
+            },
+            {
+              "ar": "مسلم 4/ 2088",
+              "en": "1 When you say this in the evening you should say Amsaynā wa amsal-mulku lillāh: We have ended another day and with it, all dominion is Allah's. 2 When you say this in the evening you should say: Rabbi as'aluka khayra mā fī hāthihil-laylati, wa khayra mā ba`dahā, wa a`ūthu bika min sharri mā fī hāthihil-laylati wa sharri mā ba`dahā: I ask You for the good things of this night and of the nights that come after it and I seek refuge in You from the evil of this night and of the nights that come after it. 3 Muslim 4/2088"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
   }
 ]

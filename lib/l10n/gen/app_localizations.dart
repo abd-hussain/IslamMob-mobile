@@ -2918,6 +2918,12 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'The counter resets daily'**
   String get counterResetDaily;
+
+  /// No description provided for @thisPlaceStillUnderDevelopment.
+  ///
+  /// In en, this message translates to:
+  /// **'Still Under Development'**
+  String get thisPlaceStillUnderDevelopment;
 }
 
 class _IslamMobLocalizationsDelegate

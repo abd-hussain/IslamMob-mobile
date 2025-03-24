@@ -1466,4 +1466,7 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get counterResetDaily => 'يصفر العداد يوميا';
+
+  @override
+  String get thisPlaceStillUnderDevelopment => 'ما يزال تحت التطوير';
 }
