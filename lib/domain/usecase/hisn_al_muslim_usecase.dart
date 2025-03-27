@@ -54,8 +54,8 @@ class HisnAlMuslimUseCase {
         title: title,
         isFavorite: favoriteIds.contains(item['id']),
         details: HisnAlMuslimModelState.counter(
-          // ignore: unnecessary_lambdas
           (details['list'] as List)
+              // ignore: unnecessary_lambdas
               .map((d) => _parseHisnAlMuslimDetails(d))
               .toList(),
         ),

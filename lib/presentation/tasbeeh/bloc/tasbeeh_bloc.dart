@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:bloc/bloc.dart';
+import 'package:database_manager/database_manager.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/tasbeeh.dart';
@@ -58,17 +60,41 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
   }
 
   FutureOr<void> _resetCounter(
-      _ResetCounter event, Emitter<TasbeehState> emit) {
-    emit(state.copyWith(counter: 0));
+      _ResetCounter event, Emitter<TasbeehState> emit) async {
+    final updatedItem = event.item.copyWith(currentCount: 0);
+    final updatedList = state.list.map((item) {
+      return item.id == event.item.id ? updatedItem : item;
+    }).toList();
+
+    emit(state.copyWith(list: updatedList));
+    await _saveTasbeehCounter();
   }
 
   FutureOr<void> _incrementCounter(
-      _IncrementCounter event, Emitter<TasbeehState> emit) {
-    int currentCounter = state.counter;
-    currentCounter = currentCounter + 1;
-    emit(state.copyWith(counter: currentCounter));
+      _IncrementCounter event, Emitter<TasbeehState> emit) async {
+    final updatedItem =
+        event.item.copyWith(currentCount: event.item.currentCount + 1);
+
+    final updatedList = state.list.map((item) {
+      return item.id == event.item.id ? updatedItem : item;
+    }).toList();
+
+    emit(state.copyWith(list: updatedList));
     _beepAndVibrate(
         allowSound: state.allowSound, allowVibrate: state.allowVibration);
+    await _saveTasbeehCounter();
+  }
+
+  Future<void> _saveTasbeehCounter() async {
+    await DataBaseManagerBase.saveInDatabase(
+      key: DatabaseFieldTasbeehConstant.tasbeehLastSavedDate,
+      value: DateTime.now().toString(),
+    );
+
+    await DataBaseManagerBase.saveInDatabase(
+      key: DatabaseFieldTasbeehConstant.tasbeehSavedCountsJson,
+      value: jsonEncode(state.list),
+    );
   }
 
   void _beepAndVibrate({required bool allowSound, required bool allowVibrate}) {

@@ -102,6 +102,9 @@ class $AssetsImagesGen {
 class $AssetsJsonGen {
   const $AssetsJsonGen();
 
+  /// File path: assets/json/backup.dart
+  String get backup => 'packages/islam_app/assets/json/backup.dart';
+
   /// File path: assets/json/hisn_al_muslim.json
   String get hisnAlMuslim =>
       'packages/islam_app/assets/json/hisn_al_muslim.json';
@@ -110,7 +113,7 @@ class $AssetsJsonGen {
   String get tasbeeh => 'packages/islam_app/assets/json/tasbeeh.json';
 
   /// List of all assets
-  List<String> get values => [hisnAlMuslim, tasbeeh];
+  List<String> get values => [backup, hisnAlMuslim, tasbeeh];
 }
 
 class $AssetsLottieGen {
@@ -226,6 +229,10 @@ class $AssetsImagesToolbarGen {
   AssetGenImage get asma2AllaahAlhusna =>
       const AssetGenImage('assets/images/toolbar/asma2_allaah_alhusna.png');
 
+  /// File path: assets/images/toolbar/azkar_after_salah.png
+  AssetGenImage get azkarAfterSalah =>
+      const AssetGenImage('assets/images/toolbar/azkar_after_salah.png');
+
   /// File path: assets/images/toolbar/calender.png
   AssetGenImage get calender =>
       const AssetGenImage('assets/images/toolbar/calender.png');
@@ -289,6 +296,7 @@ class $AssetsImagesToolbarGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         asma2AllaahAlhusna,
+        azkarAfterSalah,
         calender,
         doaa,
         donate,

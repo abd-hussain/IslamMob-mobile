@@ -11,4 +11,5 @@ export 'core/constants/database_local_notifications.dart';
 export 'core/constants/database_location.dart';
 export 'core/constants/database_pray_calculation.dart';
 export 'core/constants/database_quran_copy.dart';
+export 'core/constants/database_tasbeeh.dart';
 export 'src/database_manager_base.dart';
