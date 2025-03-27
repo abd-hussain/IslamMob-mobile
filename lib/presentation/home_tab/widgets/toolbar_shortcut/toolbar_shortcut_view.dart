@@ -119,17 +119,27 @@ class ToolbarShortcutView extends StatelessWidget {
                 //         },
                 //       ),
                 //     ),
-                //     Expanded(
-                //       child: ToolbarCell(
-                //         title: "Doaa",
-                //         imagePath: "assets/images/toolbar/doaa.png",
-                //         onTap: () async {
-                //           // await FirebaseAnalyticsRepository.logEvent(
-                //           //     name: "QiblaFinderScreenFromHomeToolBar");
-                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-                //         },
-                //       ),
-                //     ),
+                // Expanded(
+                //   child: ToolbarCell(
+                //     title: "Doaa",
+                //     imagePath: "assets/images/toolbar/doaa.png",
+                //     onTap: () async {
+                //       // await FirebaseAnalyticsRepository.logEvent(
+                //       //     name: "QiblaFinderScreenFromHomeToolBar");
+                //       // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //     },
+                //   ),
+                // ),
+                // Expanded(
+                //   child: ToolbarCell(
+                //     title: localize.azkarTitle,
+                //     imagePath: "assets/images/toolbar/azkar_after_salah.png",
+                //     onTap: () async {
+                //       await FirebaseAnalyticsRepository.logEvent(name: "AzkarAfterSalahScreenFromHomeToolBar");
+                //       await navigator.pushNamed(RoutesConstants.azkarAfterSalahScreen);
+                //     },
+                //   ),
+                // ),
               ],
             ),
             // const SizedBox(height: 8),

@@ -7,6 +7,7 @@ class TasbeehEvent with _$TasbeehEvent {
   const factory TasbeehEvent.vibrationSetting() = _VibrationSetting;
   const factory TasbeehEvent.leftZikerSelected() = _LeftZikerSelected;
   const factory TasbeehEvent.rightZikerEnabled() = _RightZikerEnabled;
-  const factory TasbeehEvent.resetCounter() = _ResetCounter;
-  const factory TasbeehEvent.incrementCounter() = _IncrementCounter;
+  const factory TasbeehEvent.resetCounter(TasbeehModel item) = _ResetCounter;
+  const factory TasbeehEvent.incrementCounter(TasbeehModel item) =
+      _IncrementCounter;
 }

@@ -23,8 +23,8 @@ mixin _$TasbeehEvent {
     required TResult Function() vibrationSetting,
     required TResult Function() leftZikerSelected,
     required TResult Function() rightZikerEnabled,
-    required TResult Function() resetCounter,
-    required TResult Function() incrementCounter,
+    required TResult Function(TasbeehModel item) resetCounter,
+    required TResult Function(TasbeehModel item) incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,8 +34,8 @@ mixin _$TasbeehEvent {
     TResult? Function()? vibrationSetting,
     TResult? Function()? leftZikerSelected,
     TResult? Function()? rightZikerEnabled,
-    TResult? Function()? resetCounter,
-    TResult? Function()? incrementCounter,
+    TResult? Function(TasbeehModel item)? resetCounter,
+    TResult? Function(TasbeehModel item)? incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,8 +45,8 @@ mixin _$TasbeehEvent {
     TResult Function()? vibrationSetting,
     TResult Function()? leftZikerSelected,
     TResult Function()? rightZikerEnabled,
-    TResult Function()? resetCounter,
-    TResult Function()? incrementCounter,
+    TResult Function(TasbeehModel item)? resetCounter,
+    TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -153,8 +153,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
     required TResult Function() vibrationSetting,
     required TResult Function() leftZikerSelected,
     required TResult Function() rightZikerEnabled,
-    required TResult Function() resetCounter,
-    required TResult Function() incrementCounter,
+    required TResult Function(TasbeehModel item) resetCounter,
+    required TResult Function(TasbeehModel item) incrementCounter,
   }) {
     return fillInitialValue();
   }
@@ -167,8 +167,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
     TResult? Function()? vibrationSetting,
     TResult? Function()? leftZikerSelected,
     TResult? Function()? rightZikerEnabled,
-    TResult? Function()? resetCounter,
-    TResult? Function()? incrementCounter,
+    TResult? Function(TasbeehModel item)? resetCounter,
+    TResult? Function(TasbeehModel item)? incrementCounter,
   }) {
     return fillInitialValue?.call();
   }
@@ -181,8 +181,8 @@ class _$FillInitialValueImpl implements _FillInitialValue {
     TResult Function()? vibrationSetting,
     TResult Function()? leftZikerSelected,
     TResult Function()? rightZikerEnabled,
-    TResult Function()? resetCounter,
-    TResult Function()? incrementCounter,
+    TResult Function(TasbeehModel item)? resetCounter,
+    TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
   }) {
     if (fillInitialValue != null) {
@@ -288,8 +288,8 @@ class _$SoundSettingImpl implements _SoundSetting {
     required TResult Function() vibrationSetting,
     required TResult Function() leftZikerSelected,
     required TResult Function() rightZikerEnabled,
-    required TResult Function() resetCounter,
-    required TResult Function() incrementCounter,
+    required TResult Function(TasbeehModel item) resetCounter,
+    required TResult Function(TasbeehModel item) incrementCounter,
   }) {
     return soundSetting();
   }
@@ -302,8 +302,8 @@ class _$SoundSettingImpl implements _SoundSetting {
     TResult? Function()? vibrationSetting,
     TResult? Function()? leftZikerSelected,
     TResult? Function()? rightZikerEnabled,
-    TResult? Function()? resetCounter,
-    TResult? Function()? incrementCounter,
+    TResult? Function(TasbeehModel item)? resetCounter,
+    TResult? Function(TasbeehModel item)? incrementCounter,
   }) {
     return soundSetting?.call();
   }
@@ -316,8 +316,8 @@ class _$SoundSettingImpl implements _SoundSetting {
     TResult Function()? vibrationSetting,
     TResult Function()? leftZikerSelected,
     TResult Function()? rightZikerEnabled,
-    TResult Function()? resetCounter,
-    TResult Function()? incrementCounter,
+    TResult Function(TasbeehModel item)? resetCounter,
+    TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
   }) {
     if (soundSetting != null) {
@@ -423,8 +423,8 @@ class _$VibrationSettingImpl implements _VibrationSetting {
     required TResult Function() vibrationSetting,
     required TResult Function() leftZikerSelected,
     required TResult Function() rightZikerEnabled,
-    required TResult Function() resetCounter,
-    required TResult Function() incrementCounter,
+    required TResult Function(TasbeehModel item) resetCounter,
+    required TResult Function(TasbeehModel item) incrementCounter,
   }) {
     return vibrationSetting();
   }
@@ -437,8 +437,8 @@ class _$VibrationSettingImpl implements _VibrationSetting {
     TResult? Function()? vibrationSetting,
     TResult? Function()? leftZikerSelected,
     TResult? Function()? rightZikerEnabled,
-    TResult? Function()? resetCounter,
-    TResult? Function()? incrementCounter,
+    TResult? Function(TasbeehModel item)? resetCounter,
+    TResult? Function(TasbeehModel item)? incrementCounter,
   }) {
     return vibrationSetting?.call();
   }
@@ -451,8 +451,8 @@ class _$VibrationSettingImpl implements _VibrationSetting {
     TResult Function()? vibrationSetting,
     TResult Function()? leftZikerSelected,
     TResult Function()? rightZikerEnabled,
-    TResult Function()? resetCounter,
-    TResult Function()? incrementCounter,
+    TResult Function(TasbeehModel item)? resetCounter,
+    TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
   }) {
     if (vibrationSetting != null) {
@@ -558,8 +558,8 @@ class _$LeftZikerSelectedImpl implements _LeftZikerSelected {
     required TResult Function() vibrationSetting,
     required TResult Function() leftZikerSelected,
     required TResult Function() rightZikerEnabled,
-    required TResult Function() resetCounter,
-    required TResult Function() incrementCounter,
+    required TResult Function(TasbeehModel item) resetCounter,
+    required TResult Function(TasbeehModel item) incrementCounter,
   }) {
     return leftZikerSelected();
   }
@@ -572,8 +572,8 @@ class _$LeftZikerSelectedImpl implements _LeftZikerSelected {
     TResult? Function()? vibrationSetting,
     TResult? Function()? leftZikerSelected,
     TResult? Function()? rightZikerEnabled,
-    TResult? Function()? resetCounter,
-    TResult? Function()? incrementCounter,
+    TResult? Function(TasbeehModel item)? resetCounter,
+    TResult? Function(TasbeehModel item)? incrementCounter,
   }) {
     return leftZikerSelected?.call();
   }
@@ -586,8 +586,8 @@ class _$LeftZikerSelectedImpl implements _LeftZikerSelected {
     TResult Function()? vibrationSetting,
     TResult Function()? leftZikerSelected,
     TResult Function()? rightZikerEnabled,
-    TResult Function()? resetCounter,
-    TResult Function()? incrementCounter,
+    TResult Function(TasbeehModel item)? resetCounter,
+    TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
   }) {
     if (leftZikerSelected != null) {
@@ -693,8 +693,8 @@ class _$RightZikerEnabledImpl implements _RightZikerEnabled {
     required TResult Function() vibrationSetting,
     required TResult Function() leftZikerSelected,
     required TResult Function() rightZikerEnabled,
-    required TResult Function() resetCounter,
-    required TResult Function() incrementCounter,
+    required TResult Function(TasbeehModel item) resetCounter,
+    required TResult Function(TasbeehModel item) incrementCounter,
   }) {
     return rightZikerEnabled();
   }
@@ -707,8 +707,8 @@ class _$RightZikerEnabledImpl implements _RightZikerEnabled {
     TResult? Function()? vibrationSetting,
     TResult? Function()? leftZikerSelected,
     TResult? Function()? rightZikerEnabled,
-    TResult? Function()? resetCounter,
-    TResult? Function()? incrementCounter,
+    TResult? Function(TasbeehModel item)? resetCounter,
+    TResult? Function(TasbeehModel item)? incrementCounter,
   }) {
     return rightZikerEnabled?.call();
   }
@@ -721,8 +721,8 @@ class _$RightZikerEnabledImpl implements _RightZikerEnabled {
     TResult Function()? vibrationSetting,
     TResult Function()? leftZikerSelected,
     TResult Function()? rightZikerEnabled,
-    TResult Function()? resetCounter,
-    TResult Function()? incrementCounter,
+    TResult Function(TasbeehModel item)? resetCounter,
+    TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
   }) {
     if (rightZikerEnabled != null) {
@@ -787,6 +787,10 @@ abstract class _$$ResetCounterImplCopyWith<$Res> {
   factory _$$ResetCounterImplCopyWith(
           _$ResetCounterImpl value, $Res Function(_$ResetCounterImpl) then) =
       __$$ResetCounterImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({TasbeehModel item});
+
+  $TasbeehModelCopyWith<$Res> get item;
 }
 
 /// @nodoc
@@ -799,26 +803,61 @@ class __$$ResetCounterImplCopyWithImpl<$Res>
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = null,
+  }) {
+    return _then(_$ResetCounterImpl(
+      null == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as TasbeehModel,
+    ));
+  }
+
+  /// Create a copy of TasbeehEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TasbeehModelCopyWith<$Res> get item {
+    return $TasbeehModelCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$ResetCounterImpl implements _ResetCounter {
-  const _$ResetCounterImpl();
+  const _$ResetCounterImpl(this.item);
+
+  @override
+  final TasbeehModel item;
 
   @override
   String toString() {
-    return 'TasbeehEvent.resetCounter()';
+    return 'TasbeehEvent.resetCounter(item: $item)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ResetCounterImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ResetCounterImpl &&
+            (identical(other.item, item) || other.item == item));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, item);
+
+  /// Create a copy of TasbeehEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResetCounterImplCopyWith<_$ResetCounterImpl> get copyWith =>
+      __$$ResetCounterImplCopyWithImpl<_$ResetCounterImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -828,10 +867,10 @@ class _$ResetCounterImpl implements _ResetCounter {
     required TResult Function() vibrationSetting,
     required TResult Function() leftZikerSelected,
     required TResult Function() rightZikerEnabled,
-    required TResult Function() resetCounter,
-    required TResult Function() incrementCounter,
+    required TResult Function(TasbeehModel item) resetCounter,
+    required TResult Function(TasbeehModel item) incrementCounter,
   }) {
-    return resetCounter();
+    return resetCounter(item);
   }
 
   @override
@@ -842,10 +881,10 @@ class _$ResetCounterImpl implements _ResetCounter {
     TResult? Function()? vibrationSetting,
     TResult? Function()? leftZikerSelected,
     TResult? Function()? rightZikerEnabled,
-    TResult? Function()? resetCounter,
-    TResult? Function()? incrementCounter,
+    TResult? Function(TasbeehModel item)? resetCounter,
+    TResult? Function(TasbeehModel item)? incrementCounter,
   }) {
-    return resetCounter?.call();
+    return resetCounter?.call(item);
   }
 
   @override
@@ -856,12 +895,12 @@ class _$ResetCounterImpl implements _ResetCounter {
     TResult Function()? vibrationSetting,
     TResult Function()? leftZikerSelected,
     TResult Function()? rightZikerEnabled,
-    TResult Function()? resetCounter,
-    TResult Function()? incrementCounter,
+    TResult Function(TasbeehModel item)? resetCounter,
+    TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
   }) {
     if (resetCounter != null) {
-      return resetCounter();
+      return resetCounter(item);
     }
     return orElse();
   }
@@ -914,7 +953,15 @@ class _$ResetCounterImpl implements _ResetCounter {
 }
 
 abstract class _ResetCounter implements TasbeehEvent {
-  const factory _ResetCounter() = _$ResetCounterImpl;
+  const factory _ResetCounter(final TasbeehModel item) = _$ResetCounterImpl;
+
+  TasbeehModel get item;
+
+  /// Create a copy of TasbeehEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ResetCounterImplCopyWith<_$ResetCounterImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -922,6 +969,10 @@ abstract class _$$IncrementCounterImplCopyWith<$Res> {
   factory _$$IncrementCounterImplCopyWith(_$IncrementCounterImpl value,
           $Res Function(_$IncrementCounterImpl) then) =
       __$$IncrementCounterImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({TasbeehModel item});
+
+  $TasbeehModelCopyWith<$Res> get item;
 }
 
 /// @nodoc
@@ -934,26 +985,62 @@ class __$$IncrementCounterImplCopyWithImpl<$Res>
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? item = null,
+  }) {
+    return _then(_$IncrementCounterImpl(
+      null == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as TasbeehModel,
+    ));
+  }
+
+  /// Create a copy of TasbeehEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TasbeehModelCopyWith<$Res> get item {
+    return $TasbeehModelCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$IncrementCounterImpl implements _IncrementCounter {
-  const _$IncrementCounterImpl();
+  const _$IncrementCounterImpl(this.item);
+
+  @override
+  final TasbeehModel item;
 
   @override
   String toString() {
-    return 'TasbeehEvent.incrementCounter()';
+    return 'TasbeehEvent.incrementCounter(item: $item)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$IncrementCounterImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$IncrementCounterImpl &&
+            (identical(other.item, item) || other.item == item));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, item);
+
+  /// Create a copy of TasbeehEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$IncrementCounterImplCopyWith<_$IncrementCounterImpl> get copyWith =>
+      __$$IncrementCounterImplCopyWithImpl<_$IncrementCounterImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -963,10 +1050,10 @@ class _$IncrementCounterImpl implements _IncrementCounter {
     required TResult Function() vibrationSetting,
     required TResult Function() leftZikerSelected,
     required TResult Function() rightZikerEnabled,
-    required TResult Function() resetCounter,
-    required TResult Function() incrementCounter,
+    required TResult Function(TasbeehModel item) resetCounter,
+    required TResult Function(TasbeehModel item) incrementCounter,
   }) {
-    return incrementCounter();
+    return incrementCounter(item);
   }
 
   @override
@@ -977,10 +1064,10 @@ class _$IncrementCounterImpl implements _IncrementCounter {
     TResult? Function()? vibrationSetting,
     TResult? Function()? leftZikerSelected,
     TResult? Function()? rightZikerEnabled,
-    TResult? Function()? resetCounter,
-    TResult? Function()? incrementCounter,
+    TResult? Function(TasbeehModel item)? resetCounter,
+    TResult? Function(TasbeehModel item)? incrementCounter,
   }) {
-    return incrementCounter?.call();
+    return incrementCounter?.call(item);
   }
 
   @override
@@ -991,12 +1078,12 @@ class _$IncrementCounterImpl implements _IncrementCounter {
     TResult Function()? vibrationSetting,
     TResult Function()? leftZikerSelected,
     TResult Function()? rightZikerEnabled,
-    TResult Function()? resetCounter,
-    TResult Function()? incrementCounter,
+    TResult Function(TasbeehModel item)? resetCounter,
+    TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
   }) {
     if (incrementCounter != null) {
-      return incrementCounter();
+      return incrementCounter(item);
     }
     return orElse();
   }
@@ -1049,14 +1136,22 @@ class _$IncrementCounterImpl implements _IncrementCounter {
 }
 
 abstract class _IncrementCounter implements TasbeehEvent {
-  const factory _IncrementCounter() = _$IncrementCounterImpl;
+  const factory _IncrementCounter(final TasbeehModel item) =
+      _$IncrementCounterImpl;
+
+  TasbeehModel get item;
+
+  /// Create a copy of TasbeehEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$IncrementCounterImplCopyWith<_$IncrementCounterImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$TasbeehState {
   bool get allowSound => throw _privateConstructorUsedError;
   bool get allowVibration => throw _privateConstructorUsedError;
-  int get counter => throw _privateConstructorUsedError;
   List<TasbeehModel> get list => throw _privateConstructorUsedError;
   int get selectedListIndex => throw _privateConstructorUsedError;
 
@@ -1076,7 +1171,6 @@ abstract class $TasbeehStateCopyWith<$Res> {
   $Res call(
       {bool allowSound,
       bool allowVibration,
-      int counter,
       List<TasbeehModel> list,
       int selectedListIndex});
 }
@@ -1098,7 +1192,6 @@ class _$TasbeehStateCopyWithImpl<$Res, $Val extends TasbeehState>
   $Res call({
     Object? allowSound = null,
     Object? allowVibration = null,
-    Object? counter = null,
     Object? list = null,
     Object? selectedListIndex = null,
   }) {
@@ -1111,10 +1204,6 @@ class _$TasbeehStateCopyWithImpl<$Res, $Val extends TasbeehState>
           ? _value.allowVibration
           : allowVibration // ignore: cast_nullable_to_non_nullable
               as bool,
-      counter: null == counter
-          ? _value.counter
-          : counter // ignore: cast_nullable_to_non_nullable
-              as int,
       list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
@@ -1138,7 +1227,6 @@ abstract class _$$TasbeehStateImplCopyWith<$Res>
   $Res call(
       {bool allowSound,
       bool allowVibration,
-      int counter,
       List<TasbeehModel> list,
       int selectedListIndex});
 }
@@ -1158,7 +1246,6 @@ class __$$TasbeehStateImplCopyWithImpl<$Res>
   $Res call({
     Object? allowSound = null,
     Object? allowVibration = null,
-    Object? counter = null,
     Object? list = null,
     Object? selectedListIndex = null,
   }) {
@@ -1171,10 +1258,6 @@ class __$$TasbeehStateImplCopyWithImpl<$Res>
           ? _value.allowVibration
           : allowVibration // ignore: cast_nullable_to_non_nullable
               as bool,
-      counter: null == counter
-          ? _value.counter
-          : counter // ignore: cast_nullable_to_non_nullable
-              as int,
       list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
@@ -1193,7 +1276,6 @@ class _$TasbeehStateImpl implements _TasbeehState {
   const _$TasbeehStateImpl(
       {this.allowSound = true,
       this.allowVibration = true,
-      this.counter = 0,
       final List<TasbeehModel> list = const [],
       this.selectedListIndex = 0})
       : _list = list;
@@ -1204,9 +1286,6 @@ class _$TasbeehStateImpl implements _TasbeehState {
   @override
   @JsonKey()
   final bool allowVibration;
-  @override
-  @JsonKey()
-  final int counter;
   final List<TasbeehModel> _list;
   @override
   @JsonKey()
@@ -1222,7 +1301,7 @@ class _$TasbeehStateImpl implements _TasbeehState {
 
   @override
   String toString() {
-    return 'TasbeehState(allowSound: $allowSound, allowVibration: $allowVibration, counter: $counter, list: $list, selectedListIndex: $selectedListIndex)';
+    return 'TasbeehState(allowSound: $allowSound, allowVibration: $allowVibration, list: $list, selectedListIndex: $selectedListIndex)';
   }
 
   @override
@@ -1234,7 +1313,6 @@ class _$TasbeehStateImpl implements _TasbeehState {
                 other.allowSound == allowSound) &&
             (identical(other.allowVibration, allowVibration) ||
                 other.allowVibration == allowVibration) &&
-            (identical(other.counter, counter) || other.counter == counter) &&
             const DeepCollectionEquality().equals(other._list, _list) &&
             (identical(other.selectedListIndex, selectedListIndex) ||
                 other.selectedListIndex == selectedListIndex));
@@ -1242,7 +1320,7 @@ class _$TasbeehStateImpl implements _TasbeehState {
 
   @override
   int get hashCode => Object.hash(runtimeType, allowSound, allowVibration,
-      counter, const DeepCollectionEquality().hash(_list), selectedListIndex);
+      const DeepCollectionEquality().hash(_list), selectedListIndex);
 
   /// Create a copy of TasbeehState
   /// with the given fields replaced by the non-null parameter values.
@@ -1257,7 +1335,6 @@ abstract class _TasbeehState implements TasbeehState {
   const factory _TasbeehState(
       {final bool allowSound,
       final bool allowVibration,
-      final int counter,
       final List<TasbeehModel> list,
       final int selectedListIndex}) = _$TasbeehStateImpl;
 
@@ -1265,8 +1342,6 @@ abstract class _TasbeehState implements TasbeehState {
   bool get allowSound;
   @override
   bool get allowVibration;
-  @override
-  int get counter;
   @override
   List<TasbeehModel> get list;
   @override

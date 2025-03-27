@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/presentation/about_us/about_us_screen.dart';
 import 'package:islam_app/presentation/about_us/privacy_policy_screen.dart';
 import 'package:islam_app/presentation/about_us/terms_condition_screen.dart';
+import 'package:islam_app/presentation/azkar_after_salah/azkar_after_salah_screen.dart';
 import 'package:islam_app/presentation/calender/calender_screen.dart';
 import 'package:islam_app/presentation/change_language/change_language_screen.dart';
 import 'package:islam_app/presentation/contacts/contacts_screen.dart';
@@ -43,6 +44,7 @@ class RoutesConstants {
   static const hisnAlMuslimDetailsScreen = 'hisnAlMuslimDetailsScreen';
   static const contactsScreen = 'contactsScreen';
   static const tasbeehScreen = 'tasbeehScreen';
+  static const azkarAfterSalahScreen = 'azkarAfterSalahScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -69,4 +71,5 @@ final Map<String, Widget> routes = {
   RoutesConstants.hisnAlMuslimDetailsScreen: const HisnAlMuslimDetailsScreen(),
   RoutesConstants.contactsScreen: const ContactsScreen(),
   RoutesConstants.tasbeehScreen: const TasbeehScreen(),
+  RoutesConstants.azkarAfterSalahScreen: const AzkarAfterSalahScreen(),
 };

@@ -35,28 +35,65 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
         child: BlocProvider(
           create: (context) =>
               TasbeehBloc()..add(const TasbeehEvent.fillInitialValue()),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Expanded(child: TasbeehTextView()),
-              const MasbahaView(),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: CustomText(
-                  title: localizations.counterResetDaily,
-                  fontSize: 12,
-                  color: const Color(0xff444444),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const TasbeehFooterView(),
-              const AddMobBanner(
-                size: AdsBannerSize.leaderboard,
-                verticalPadding: 0,
-              ),
-            ],
+          child: BlocBuilder<TasbeehBloc, TasbeehState>(
+            buildWhen: (previous, current) =>
+                previous.list != current.list ||
+                previous.selectedListIndex != current.selectedListIndex,
+            builder: (context, state) {
+              if (state.list.isEmpty) {
+                return _buildLoadingIndicator();
+              }
+
+              final tasbeehItem = state.list[state.selectedListIndex];
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: PageView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: state.list.length,
+                        itemBuilder: (context, index) {
+                          return Stack(
+                            alignment: Alignment.topCenter,
+                            children: [
+                              Column(
+                                children: [
+                                  const Expanded(child: SizedBox()),
+                                  MasbahaView(tasbeehItem: tasbeehItem),
+                                ],
+                              ),
+                              TasbeehTextView(tasbeehItem: tasbeehItem),
+                            ],
+                          );
+                        }),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: CustomText(
+                      title: localizations.counterResetDaily,
+                      fontSize: 12,
+                      color: const Color(0xff444444),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const TasbeehFooterView(),
+                  const AddMobBanner(
+                    verticalPadding: 0,
+                  ),
+                ],
+              );
+            },
           ),
         ),
+      ),
+    );
+  }
+
+  /// Displays a loading indicator when the list is empty.
+  Widget _buildLoadingIndicator() {
+    return const Center(
+      child: CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(Color(0xff292929)),
       ),
     );
   }

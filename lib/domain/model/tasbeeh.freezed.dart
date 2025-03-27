@@ -14,13 +14,20 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+TasbeehModel _$TasbeehModelFromJson(Map<String, dynamic> json) {
+  return _TasbeehModel.fromJson(json);
+}
+
 /// @nodoc
 mixin _$TasbeehModel {
   int get id => throw _privateConstructorUsedError;
-  MultiLanguageString get title => throw _privateConstructorUsedError;
-  MultiLanguageString get desc => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get desc => throw _privateConstructorUsedError;
   int get maxCount => throw _privateConstructorUsedError;
   int get currentCount => throw _privateConstructorUsedError;
+
+  /// Serializes this TasbeehModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of TasbeehModel
   /// with the given fields replaced by the non-null parameter values.
@@ -36,11 +43,7 @@ abstract class $TasbeehModelCopyWith<$Res> {
       _$TasbeehModelCopyWithImpl<$Res, TasbeehModel>;
   @useResult
   $Res call(
-      {int id,
-      MultiLanguageString title,
-      MultiLanguageString desc,
-      int maxCount,
-      int currentCount});
+      {int id, String title, String desc, int maxCount, int currentCount});
 }
 
 /// @nodoc
@@ -72,11 +75,11 @@ class _$TasbeehModelCopyWithImpl<$Res, $Val extends TasbeehModel>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as MultiLanguageString,
+              as String,
       desc: null == desc
           ? _value.desc
           : desc // ignore: cast_nullable_to_non_nullable
-              as MultiLanguageString,
+              as String,
       maxCount: null == maxCount
           ? _value.maxCount
           : maxCount // ignore: cast_nullable_to_non_nullable
@@ -98,11 +101,7 @@ abstract class _$$TasbeehModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
-      MultiLanguageString title,
-      MultiLanguageString desc,
-      int maxCount,
-      int currentCount});
+      {int id, String title, String desc, int maxCount, int currentCount});
 }
 
 /// @nodoc
@@ -132,11 +131,11 @@ class __$$TasbeehModelImplCopyWithImpl<$Res>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as MultiLanguageString,
+              as String,
       desc: null == desc
           ? _value.desc
           : desc // ignore: cast_nullable_to_non_nullable
-              as MultiLanguageString,
+              as String,
       maxCount: null == maxCount
           ? _value.maxCount
           : maxCount // ignore: cast_nullable_to_non_nullable
@@ -150,7 +149,7 @@ class __$$TasbeehModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$TasbeehModelImpl implements _TasbeehModel {
   _$TasbeehModelImpl(
       {required this.id,
@@ -159,12 +158,15 @@ class _$TasbeehModelImpl implements _TasbeehModel {
       required this.maxCount,
       required this.currentCount});
 
+  factory _$TasbeehModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TasbeehModelImplFromJson(json);
+
   @override
   final int id;
   @override
-  final MultiLanguageString title;
+  final String title;
   @override
-  final MultiLanguageString desc;
+  final String desc;
   @override
   final int maxCount;
   @override
@@ -189,6 +191,7 @@ class _$TasbeehModelImpl implements _TasbeehModel {
                 other.currentCount == currentCount));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, title, desc, maxCount, currentCount);
@@ -200,22 +203,32 @@ class _$TasbeehModelImpl implements _TasbeehModel {
   @pragma('vm:prefer-inline')
   _$$TasbeehModelImplCopyWith<_$TasbeehModelImpl> get copyWith =>
       __$$TasbeehModelImplCopyWithImpl<_$TasbeehModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TasbeehModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _TasbeehModel implements TasbeehModel {
   factory _TasbeehModel(
       {required final int id,
-      required final MultiLanguageString title,
-      required final MultiLanguageString desc,
+      required final String title,
+      required final String desc,
       required final int maxCount,
       required final int currentCount}) = _$TasbeehModelImpl;
+
+  factory _TasbeehModel.fromJson(Map<String, dynamic> json) =
+      _$TasbeehModelImpl.fromJson;
 
   @override
   int get id;
   @override
-  MultiLanguageString get title;
+  String get title;
   @override
-  MultiLanguageString get desc;
+  String get desc;
   @override
   int get maxCount;
   @override

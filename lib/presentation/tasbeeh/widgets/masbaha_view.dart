@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:islam_app/domain/model/tasbeeh.dart';
 import 'package:islam_app/presentation/tasbeeh/bloc/tasbeeh_bloc.dart';
 import 'package:islam_app/presentation/tasbeeh/widgets/counter_display.dart';
 import 'package:islam_app/presentation/tasbeeh/widgets/max_counter_view.dart';
 
 class MasbahaView extends StatelessWidget {
-  const MasbahaView({super.key});
+  final TasbeehModel tasbeehItem;
+
+  const MasbahaView({super.key, required this.tasbeehItem});
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +33,11 @@ class MasbahaView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CounterDisplay(),
+              CounterDisplay(tasbeehItem: tasbeehItem),
               const SizedBox(height: 8),
-              _buildButtonRow(context),
+              _buildButtonRow(context, tasbeehItem),
               const SizedBox(height: 10),
-              _buildIncrementButton(context),
+              _buildIncrementButton(context, tasbeehItem),
             ],
           ),
         ),
@@ -57,15 +60,14 @@ class MasbahaView extends StatelessWidget {
   }
 
   /// Builds the row containing the reset button.
-  Widget _buildButtonRow(BuildContext context) {
+  Widget _buildButtonRow(BuildContext context, TasbeehModel item) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _buildIconButton(
           icon: Icons.refresh,
-          onPressed: () => context
-              .read<TasbeehBloc>()
-              .add(const TasbeehEvent.resetCounter()),
+          onPressed: () =>
+              context.read<TasbeehBloc>().add(TasbeehEvent.resetCounter(item)),
         ),
         const SizedBox(width: 45),
         const MaxCounterView(maxCount: 100),
@@ -88,16 +90,15 @@ class MasbahaView extends StatelessWidget {
   }
 
   /// Builds the increment button.
-  Widget _buildIncrementButton(BuildContext context) {
+  Widget _buildIncrementButton(BuildContext context, TasbeehModel item) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         padding: const EdgeInsets.all(60),
         backgroundColor: const Color(0xFFadb5bd),
       ),
-      onPressed: () => context
-          .read<TasbeehBloc>()
-          .add(const TasbeehEvent.incrementCounter()),
+      onPressed: () =>
+          context.read<TasbeehBloc>().add(TasbeehEvent.incrementCounter(item)),
       child: null,
     );
   }

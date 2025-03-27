@@ -1,65 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/presentation/tasbeeh/bloc/tasbeeh_bloc.dart';
+import 'package:islam_app/domain/model/tasbeeh.dart';
 
-class TasbeehTextView extends StatelessWidget {
-  const TasbeehTextView({super.key});
+class TasbeehTextView extends StatefulWidget {
+  final TasbeehModel tasbeehItem;
+  const TasbeehTextView({super.key, required this.tasbeehItem});
+
+  @override
+  State<TasbeehTextView> createState() => _TasbeehTextViewState();
+}
+
+class _TasbeehTextViewState extends State<TasbeehTextView> {
+  bool isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8),
-      child: BlocBuilder<TasbeehBloc, TasbeehState>(
-        buildWhen: (previous, current) =>
-            previous.list != current.list ||
-            previous.selectedListIndex != current.selectedListIndex,
-        builder: (context, state) {
-          if (state.list.isEmpty) {
-            return _buildLoadingIndicator();
-          }
-          return _buildTasbeehContent(state);
-        },
-      ),
-    );
-  }
-
-  /// Displays a loading indicator when the list is empty.
-  Widget _buildLoadingIndicator() {
-    return const Center(
-      child: CircularProgressIndicator(
-        valueColor: AlwaysStoppedAnimation<Color>(Color(0xff292929)),
-      ),
-    );
-  }
-
-  /// Displays the Tasbeeh content inside a [PageView].
-  Widget _buildTasbeehContent(TasbeehState state) {
-    final tasbeehItem = state.list[state.selectedListIndex];
-    return PageView(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8),
-          child: _buildTasbeehContainer(
-            title: tasbeehItem.title.ar,
-            description: tasbeehItem.desc.ar,
-          ),
+      child: Container(
+        height: isExpanded ? 200 : 100,
+        child: Stack(
+          children: [
+            _buildTasbeehContainer(
+              context: context,
+              title: widget.tasbeehItem.title,
+              description: widget.tasbeehItem.desc,
+            ),
+            Positioned(
+              bottom: 0,
+              left: MediaQuery.of(context).size.width / 2 - 16 - 8,
+              child: InkWell(
+                onTap: () => setState(() => isExpanded = !isExpanded),
+                child: Container(
+                  decoration: _containerDecoration(),
+                  width: 30,
+                  height: 30,
+                  child: const Center(
+                    child: Icon(
+                      Icons.arrow_drop_down_circle_outlined,
+                      color: Color(0xff444444),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 
   /// Creates the container with Tasbeeh details.
   Widget _buildTasbeehContainer(
-      {required String title, required String description}) {
+      {required BuildContext context,
+      required String title,
+      required String description}) {
     return Container(
       decoration: _containerDecoration(),
+      height: isExpanded ? 185 : 85,
+      width: double.infinity,
       padding: const EdgeInsets.all(8),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildText(title, fontSize: 35),
-            const SizedBox(height: 8),
+            _buildText(title, fontSize: 32),
             _buildText(description, fontSize: 18),
           ],
         ),
@@ -84,13 +88,13 @@ class TasbeehTextView extends StatelessWidget {
   BoxDecoration _containerDecoration() {
     return BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(8),
       boxShadow: [
         BoxShadow(
           color: Colors.grey.withOpacity(0.4),
           spreadRadius: 3,
-          blurRadius: 5,
-          offset: const Offset(0, 5),
+          blurRadius: 3,
+          offset: const Offset(0, 3),
         ),
       ],
     );

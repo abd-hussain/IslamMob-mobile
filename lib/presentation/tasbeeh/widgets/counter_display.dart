@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/presentation/tasbeeh/bloc/tasbeeh_bloc.dart';
+import 'package:islam_app/domain/model/tasbeeh.dart';
 import 'package:islam_app/shared_widgets/digital_font/digital_number.dart';
 
 class CounterDisplay extends StatelessWidget {
-  const CounterDisplay({super.key});
+  final TasbeehModel tasbeehItem;
+
+  const CounterDisplay({super.key, required this.tasbeehItem});
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +31,10 @@ class CounterDisplay extends StatelessWidget {
                       right: 0,
                       bottom: 0,
                       top: 0,
-                      child: BlocBuilder<TasbeehBloc, TasbeehState>(
-                        buildWhen: (previous, current) =>
-                            previous.counter != current.counter,
-                        builder: (context, state) {
-                          return DigitalNumber(
-                            value: state.counter,
-                            height: maxHeight * 0.65,
-                            color: Colors.black,
-                          );
-                        },
+                      child: DigitalNumber(
+                        value: tasbeehItem.currentCount,
+                        height: maxHeight * 0.65,
+                        color: Colors.black,
                       ),
                     ),
                     Positioned(
