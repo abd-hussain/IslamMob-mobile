@@ -31,9 +31,9 @@ jobs:
         - name: 🐦 Setup Flutter
           uses: subosito/flutter-action@v2
           with:
-            flutter-version: '3.24.1'
+            flutter-version: "3.19.0" # use your version
             channel: 'stable'
-            cache: false
+            cache: true
 
         - name: 🗳️ Flutter gen-l10n
           run: flutter gen-l10n
