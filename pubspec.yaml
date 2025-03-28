@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.4.0+172
+version: 1.4.0+173
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -40,8 +40,8 @@ dependencies:
   # api_client: // commented out because it's not used in the app and piplines filed on android
   #   path: utilities/api_client
 
-  # qibla_finder:
-  #   path: utilities/qibla_finder
+  qibla_finder:
+    path: utilities/qibla_finder
 
   http: ^1.2.2 #//TODO
   dio: 5.7.0 #//TODO
@@ -81,7 +81,7 @@ dependencies:
   google_fonts: ^6.2.1
   wakelock_plus: ^1.2.10
   flutter_contacts: ^1.1.9+2
-  audioplayers: ^6.4.0
+  audioplayers: ^5.0.0
   # flutter_animate: ^4.5.0 
   # infinite_scroll_pagination: ^4.1.0 
   # just_audio: ^0.9.28
