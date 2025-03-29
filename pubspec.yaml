@@ -40,8 +40,8 @@ dependencies:
   # api_client: // commented out because it's not used in the app and piplines filed on android
   #   path: utilities/api_client
 
-  qibla_finder:
-    path: utilities/qibla_finder
+  # qibla_finder:
+  #   path: utilities/qibla_finder
 
   http: ^1.2.2 #//TODO
   dio: 5.7.0 #//TODO
