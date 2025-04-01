@@ -59,17 +59,16 @@ jobs:
               ruby-version: 3.3
               rubygems: latest
 
-        - name: 🔎 Cleaning before we start
+        - name: 🔎 Cleaning cash before we start
           run: |
               flutter clean
+              rm -rf ~/.pub-cache
               rm -rf pubspec.lock
-        
-        - name: 🔎 Remove Gradle cache
-          run: rm -rf $HOME/.gradle/caches
+              rm -rf $HOME/.gradle/caches
+              flutter pub get
     
         - name: 🛠️ Build and Deploy
           run: |
-              flutter pub get
               make deploy-android
 
   ios:
