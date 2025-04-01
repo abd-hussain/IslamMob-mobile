@@ -8,8 +8,7 @@ import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 class HisnAlMuslimUseCase {
   static Future<List<HisnAlMuslimModel>> getHisnAlMuslimList() async {
     // Load JSON file from assets
-    final String jsonString =
-        await rootBundle.loadString('assets/json/hisn_al_muslim.json');
+    final String jsonString = await rootBundle.loadString('assets/json/hisn_al_muslim.json');
 
     // Parse JSON into List
     final List<dynamic> jsonData = jsonDecode(jsonString);
@@ -18,15 +17,11 @@ class HisnAlMuslimUseCase {
     final List<int> favoriteIds = _getFavoriteIds();
 
     // Convert JSON data to List of HisnAlMuslimModel
-    return jsonData
-        .map((item) => _parseHisnAlMuslimItem(item, favoriteIds))
-        .whereType<HisnAlMuslimModel>()
-        .toList();
+    return jsonData.map((item) => _parseHisnAlMuslimItem(item, favoriteIds)).whereType<HisnAlMuslimModel>().toList();
   }
 
   /// Parses an individual Hisn Al Muslim item from JSON.
-  static HisnAlMuslimModel? _parseHisnAlMuslimItem(
-      Map<String, dynamic> item, List<int> favoriteIds) {
+  static HisnAlMuslimModel? _parseHisnAlMuslimItem(Map<String, dynamic> item, List<int> favoriteIds) {
     final details = item['details'];
 
     // Parse title as MultiLanguageString
@@ -66,13 +61,12 @@ class HisnAlMuslimUseCase {
   }
 
   /// Parses a HisnAlMuslimDetailsModel from JSON.
-  static HisnAlMuslimCounterDetailsModel _parseHisnAlMuslimDetails(
-      Map<String, dynamic> json) {
+  static HisnAlMuslimCounterDetailsModel _parseHisnAlMuslimDetails(Map<String, dynamic> json) {
     return HisnAlMuslimCounterDetailsModel(
       descriptionTitle: _parseMultiLanguageString(json['descriptionTitle']),
       description: _parseMultiLanguageString(json['description']),
-      // ignore: unnecessary_lambdas
       references: (json['references'] as List)
+          // ignore: unnecessary_lambdas
           .map((e) => _parseMultiLanguageString(e))
           .toList(),
       readCount: json['readCount'] ?? 1,
@@ -80,8 +74,7 @@ class HisnAlMuslimUseCase {
   }
 
   /// Parses a MultiLanguageString from JSON.
-  static MultiLanguageString _parseMultiLanguageString(
-      Map<String, dynamic> json) {
+  static MultiLanguageString _parseMultiLanguageString(Map<String, dynamic> json) {
     return MultiLanguageString(
       ar: json['ar'] ?? '',
       en: json['en'] ?? '',
@@ -112,8 +105,6 @@ class HisnAlMuslimUseCase {
       favoriteIds.add(id);
     }
 
-    DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldInHisnAlMuslimConstant.favoriteList,
-        value: favoriteIds);
+    DataBaseManagerBase.saveInDatabase(key: DatabaseFieldInHisnAlMuslimConstant.favoriteList, value: favoriteIds);
   }
 }
