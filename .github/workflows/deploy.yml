@@ -47,6 +47,7 @@ jobs:
         - name: 🔑 Set up local.properties
           run: |
             echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
+            echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
 
         - name: 🔑 Set up Play Store Secret
           run: |
