@@ -19,7 +19,7 @@ dependencies:
   #   path: ../../utilities/location_manager
 
 dependency_overrides:
-  geolocator_android: ^4.6.2
+  geolocator_android: ^4.6.1
   
 dev_dependencies:
   islam_mob_lint:

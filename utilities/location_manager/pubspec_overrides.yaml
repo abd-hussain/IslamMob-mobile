@@ -4,4 +4,4 @@ dependency_overrides:
     path: ../islam_mob_lint
   logger_manager:
     path: ../logger_manager
-  geolocator_android: ^4.6.2
+  geolocator_android: ^4.6.1
