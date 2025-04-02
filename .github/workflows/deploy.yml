@@ -67,6 +67,9 @@ jobs:
               rm -rf $HOME/.gradle/caches
               flutter pub get
     
+        - name: 🔍 Confirm geolocator version
+          run: flutter pub deps | grep geolocator
+          
         - name: 🛠️ Build and Deploy
           run: |
               make deploy-android
