@@ -65,11 +65,12 @@ jobs:
               rm -rf ~/.pub-cache
               rm -rf pubspec.lock
               rm -rf $HOME/.gradle/caches
+              rm -rf ~/.pub-cache/hosted/pub.dev/geolocator_android-4.6.2
               flutter pub get
-    
-        - name: 🔍 Confirm geolocator version
-          run: flutter pub deps | grep geolocator
-          
+
+        - name: 🔍 Dump full dependency tree
+          run: flutter pub deps --style=compact
+
         - name: 🛠️ Build and Deploy
           run: |
               make deploy-android
