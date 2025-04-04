@@ -10,7 +10,7 @@ dependencies:
     sdk: flutter
   geocoding: ^3.0.0
   geolocator: ^13.0.3
-  geolocator_android: ^4.6.1
+  geolocator_android: ^4.6.0
 
   logger_manager:
     path: ../../utilities/logger_manager

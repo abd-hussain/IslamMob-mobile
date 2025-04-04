@@ -81,7 +81,6 @@ dependencies:
   google_fonts: ^6.2.1
   wakelock_plus: ^1.2.10
   flutter_contacts: ^1.1.9+2
-  # geolocator_android: ^4.7.5
 
   # audioplayers: ^5.0.0
   # flutter_animate: ^4.5.0 
@@ -93,7 +92,7 @@ dependencies:
   # sensors_plus: ^6.1.0 
 
 dependency_overrides:
-  geolocator_android: ^4.6.1
+  geolocator_android: ^4.6.0
   
 dev_dependencies:
   test: ^1.25.7
