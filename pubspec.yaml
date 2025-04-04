@@ -90,9 +90,6 @@ dependencies:
     # flutter_qiblah: ^3.0.4 
 # flutter_compass: ^0.8.1
   # sensors_plus: ^6.1.0 
-
-dependency_overrides:
-  geolocator_android: ^4.6.0
   
 dev_dependencies:
   test: ^1.25.7

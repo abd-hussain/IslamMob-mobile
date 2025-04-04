@@ -1,5 +1,6 @@
-# melos_managed_dependency_overrides: islam_mob_lint,logger_manager
+# melos_managed_dependency_overrides: islam_mob_lint,logger_manager,geolocator_android
 dependency_overrides:
+  geolocator_android: ^4.6.0
   islam_mob_lint:
     path: ../islam_mob_lint
   logger_manager:
