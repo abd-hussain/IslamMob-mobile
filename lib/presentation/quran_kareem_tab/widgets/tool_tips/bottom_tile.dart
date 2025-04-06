@@ -56,7 +56,7 @@ class _BottomTileState extends State<BottomTile>
     return InkWell(
       onTap: widget.onTap,
       child: Container(
-        color: Colors.black.withOpacity(0.5),
+        color: Colors.black.withValues(alpha: 0.5),
         padding: const EdgeInsets.all(8),
         child: Row(
           children: [

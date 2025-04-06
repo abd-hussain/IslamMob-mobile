@@ -37,7 +37,7 @@ class QuranBottomHelpBar extends StatelessWidget {
         screenWidth / (barHeight * 1.5); // Adjust aspect ratio
 
     return Container(
-      color: Colors.black.withOpacity(0.6),
+      color: Colors.black.withValues(alpha: 0.6),
       height: barHeight,
       child: GridView(
         physics: const NeverScrollableScrollPhysics(),
@@ -266,6 +266,6 @@ class QuranBottomHelpBar extends StatelessWidget {
   }
 
   Widget _buildSpacerTile() {
-    return ColoredBox(color: Colors.black.withOpacity(0.5));
+    return ColoredBox(color: Colors.black.withValues(alpha: 0.5));
   }
 }

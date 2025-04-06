@@ -40,7 +40,7 @@ class _BrightnessPopupState extends State<BrightnessPopup>
   Widget build(BuildContext context) {
     return AlertDialog(
       actionsAlignment: MainAxisAlignment.spaceBetween,
-      backgroundColor: Colors.black.withOpacity(0.8),
+      backgroundColor: Colors.black.withValues(alpha: 0.8),
       content: _buildContent(context),
       actions: _buildActions(context),
     );

@@ -48,7 +48,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
         return isBookmarked
             ? Container(
                 decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(0.5),
+                  color: Colors.red.withValues(alpha: 0.5),
                   borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
@@ -64,7 +64,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
 
   Widget _buildHeaderBar(BuildContext context) {
     return Container(
-      color: Colors.black.withOpacity(0.8),
+      color: Colors.black.withValues(alpha: 0.8),
       height: 35,
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Stack(
@@ -142,7 +142,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
         width: 80,
         height: 50,
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.8),
+          color: Colors.black.withValues(alpha: 0.8),
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(5),
             bottomRight: Radius.circular(5),
