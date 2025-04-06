@@ -11,7 +11,8 @@ class QiblaFinderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => QiblaFinderBloc()..add(const QiblaFinderEvent.setup()),
+      create: (context) =>
+          QiblaFinderBloc()..add(const QiblaFinderEvent.setup()),
       child: Scaffold(
         backgroundColor: const Color(0xfffff2e9),
         appBar: CustomAppBar(
