@@ -41,8 +41,8 @@ android {
         applicationId = "com.islammob.app"
         minSdk = flutter.minSdkVersion
         targetSdk = 35
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        versionCode 1
+        versionName "1.0.0"
         multiDexEnabled = true
     }
 
