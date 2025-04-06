@@ -31,8 +31,8 @@ dependencies:
   internet_connection_checkup:
     path: utilities/internet_connection_checkup
 
-  # location_manager:
-  #   path: utilities/location_manager
+  location_manager:
+    path: utilities/location_manager
 
   firebase_manager:
     path: utilities/firebase_manager
