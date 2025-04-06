@@ -21,7 +21,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "com.islammob.app"
-    compileSdk = 33
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -40,7 +40,7 @@ android {
     defaultConfig {
         applicationId = "com.islammob.app"
         minSdk = flutter.minSdkVersion
-        targetSdk = 33
+        targetSdk = 35
         versionCode = flutter.versionCode
         versionName = flutter.versionName
         multiDexEnabled = true

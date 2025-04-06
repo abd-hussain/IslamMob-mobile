@@ -1,0 +1,2 @@
+/Users/abdelrahman/My_Docs/Islam app/IslamMob-mobile/android/app/.cxx/Debug/4h5e3bs6/x86/CMakeFiles/edit_cache.dir
+/Users/abdelrahman/My_Docs/Islam app/IslamMob-mobile/android/app/.cxx/Debug/4h5e3bs6/x86/CMakeFiles/rebuild_cache.dir

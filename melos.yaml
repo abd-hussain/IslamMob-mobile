@@ -11,7 +11,7 @@ command:
 
     environment:
       sdk: ">=3.3.4 <4.0.0"
-      flutter: 3.24.5
+      flutter: 3.29.2
     
     dependencies:
       get_it: 7.7.0
