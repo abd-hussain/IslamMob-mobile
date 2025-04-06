@@ -217,7 +217,7 @@ class ToolbarShortcutView extends StatelessWidget {
       ),
       boxShadow: [
         BoxShadow(
-          color: const Color(0xff292929).withOpacity(0.5),
+          color: const Color(0xff292929).withValues(alpha: 0.5),
           spreadRadius: 5,
           blurRadius: 7,
           offset: const Offset(0, 3), // Shadow position

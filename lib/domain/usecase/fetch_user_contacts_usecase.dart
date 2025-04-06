@@ -22,7 +22,7 @@ class FetchUserContactsUsecase {
     for (final Contact item in contatctList) {
       final String contactName = item.displayName != ""
           ? item.displayName
-          : ("${item.name.first} ${item.name.last}");
+          : "${item.name.first} ${item.name.last}";
       final String phoneNumber =
           item.phones.isNotEmpty ? item.phones.first.number : "";
       final String email = item.emails.isNotEmpty ? item.emails[0].address : "";

@@ -91,7 +91,7 @@ class _TasbeehTextViewState extends State<TasbeehTextView> {
       borderRadius: BorderRadius.circular(8),
       boxShadow: [
         BoxShadow(
-          color: Colors.grey.withOpacity(0.4),
+          color: Colors.grey.withValues(alpha: 0.4),
           spreadRadius: 3,
           blurRadius: 3,
           offset: const Offset(0, 3),

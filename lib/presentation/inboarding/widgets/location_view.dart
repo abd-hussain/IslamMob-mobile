@@ -112,8 +112,6 @@ class LocationInBoardingView extends StatelessWidget {
             doneSelection();
           },
         );
-      default:
-        return const SizedBox.shrink(); // Fallback in case of unknown state
     }
   }
 }

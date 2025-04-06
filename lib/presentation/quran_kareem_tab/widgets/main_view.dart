@@ -45,7 +45,7 @@ class QuranKareemMainView extends StatelessWidget {
       builder: (context, state) {
         return IgnorePointer(
           child: Container(
-            color: Colors.black.withOpacity(state.brigtness),
+            color: Colors.black.withValues(alpha: state.brigtness),
           ),
         );
       },
@@ -62,7 +62,7 @@ class QuranKareemMainView extends StatelessWidget {
             : Center(
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.8),
+                    color: Colors.black.withValues(alpha: 0.8),
                     borderRadius: BorderRadius.circular(200),
                     border: Border.all(
                       color: const Color(0xff444444),

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 // import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:bloc/bloc.dart';
 import 'package:database_manager/database_manager.dart';
 import 'package:flutter/services.dart';
@@ -102,10 +103,9 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
       HapticFeedback.vibrate();
     }
     if (allowSound) {
-      //TODO
-      // AudioPlayer().play(
-      //   AssetSource('audios/click.wav'),
-      // );
+      AudioPlayer().play(
+        AssetSource('audios/click.wav'),
+      );
     }
   }
 }

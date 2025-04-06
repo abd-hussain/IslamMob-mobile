@@ -78,8 +78,6 @@ class NotificationInBoardingView extends StatelessWidget {
         return NotificationHavePermissionView(
           onConfirmationPress: doneSelection,
         );
-      default:
-        return const SizedBox.shrink(); // Fallback in case of unexpected state
     }
   }
 }
