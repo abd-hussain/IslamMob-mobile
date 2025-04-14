@@ -21,8 +21,7 @@ class HomeScreen extends StatelessWidget {
       create: (context) => HomeTabBloc(),
       child: Builder(builder: (context) {
         final scrollController = context.read<HomeTabBloc>().scrollController;
-        locator<SetupLocalNotificationWhenAppOpenUseCase>()
-            .call(context: context);
+        locator<SetupLocalNotificationWhenAppOpenUseCase>().call(context: context);
 
         return NestedScrollView(
           controller: scrollController,
@@ -37,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                 _buildAppBarSpacer(),
                 const SalahTimingView(),
                 const SizedBox(height: 0.3),
-                const ToolbarShortcutView(),
+                _buildToolBarView(),
                 _buildNotificationPermissionView(),
                 _buildLocationPermissionView(),
                 const AddMobBanner(),
@@ -55,10 +54,21 @@ class HomeScreen extends StatelessWidget {
   /// Builds the spacer under the app bar when it is collapsed.
   Widget _buildAppBarSpacer() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.isBarExpanded != current.isBarExpanded,
+      buildWhen: (previous, current) => previous.isBarExpanded != current.isBarExpanded,
       builder: (context, state) {
         return SizedBox(height: state.isBarExpanded ? 0 : 75);
+      },
+    );
+  }
+
+  /// Builds the ToolBar view based on the next prayer type.
+  Widget _buildToolBarView() {
+    return BlocBuilder<HomeTabBloc, HomeTabState>(
+      buildWhen: (previous, current) => previous.nextPrayType != current.nextPrayType,
+      builder: (context, state) {
+        return ToolbarShortcutView(
+          salahTime: SalahTimeStateParser.getSalahTimeState(state.nextPrayType),
+        );
       },
     );
   }
@@ -66,12 +76,9 @@ class HomeScreen extends StatelessWidget {
   /// Builds the Azkar view based on the next prayer type.
   Widget _buildAzkarView() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.nextPrayType != current.nextPrayType,
+      buildWhen: (previous, current) => previous.nextPrayType != current.nextPrayType,
       builder: (context, state) {
-        return AzkarAfterSalahView(
-            salahType:
-                SalahTimeStateParser.getSalahTimeState(state.nextPrayType));
+        return AzkarAfterSalahView(salahType: SalahTimeStateParser.getSalahTimeState(state.nextPrayType));
       },
     );
   }
@@ -79,13 +86,9 @@ class HomeScreen extends StatelessWidget {
   /// Builds the notification permission view when applicable.
   Widget _buildNotificationPermissionView() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.showAllowNotificationView !=
-          current.showAllowNotificationView,
+      buildWhen: (previous, current) => previous.showAllowNotificationView != current.showAllowNotificationView,
       builder: (context, state) {
-        return state.showAllowNotificationView
-            ? const NotificationPermissionView()
-            : const SizedBox.shrink();
+        return state.showAllowNotificationView ? const NotificationPermissionView() : const SizedBox.shrink();
       },
     );
   }
@@ -93,12 +96,9 @@ class HomeScreen extends StatelessWidget {
   /// Builds the location permission view when applicable.
   Widget _buildLocationPermissionView() {
     return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.showAllowLocationView != current.showAllowLocationView,
+      buildWhen: (previous, current) => previous.showAllowLocationView != current.showAllowLocationView,
       builder: (context, state) {
-        return state.showAllowLocationView
-            ? const LocationPermissionView()
-            : const SizedBox.shrink();
+        return state.showAllowLocationView ? const LocationPermissionView() : const SizedBox.shrink();
       },
     );
   }

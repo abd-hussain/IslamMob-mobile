@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'azkar_after_salah_bloc.dart';
+part of 'azkar_after_salah_view_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$AzkarAfterSalahEvent {
+mixin _$AzkarAfterSalahViewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AzkarSalahTimeState state) initializeAzkar,
@@ -63,24 +63,24 @@ mixin _$AzkarAfterSalahEvent {
 }
 
 /// @nodoc
-abstract class $AzkarAfterSalahEventCopyWith<$Res> {
-  factory $AzkarAfterSalahEventCopyWith(AzkarAfterSalahEvent value,
-          $Res Function(AzkarAfterSalahEvent) then) =
-      _$AzkarAfterSalahEventCopyWithImpl<$Res, AzkarAfterSalahEvent>;
+abstract class $AzkarAfterSalahViewEventCopyWith<$Res> {
+  factory $AzkarAfterSalahViewEventCopyWith(AzkarAfterSalahViewEvent value,
+          $Res Function(AzkarAfterSalahViewEvent) then) =
+      _$AzkarAfterSalahViewEventCopyWithImpl<$Res, AzkarAfterSalahViewEvent>;
 }
 
 /// @nodoc
-class _$AzkarAfterSalahEventCopyWithImpl<$Res,
-        $Val extends AzkarAfterSalahEvent>
-    implements $AzkarAfterSalahEventCopyWith<$Res> {
-  _$AzkarAfterSalahEventCopyWithImpl(this._value, this._then);
+class _$AzkarAfterSalahViewEventCopyWithImpl<$Res,
+        $Val extends AzkarAfterSalahViewEvent>
+    implements $AzkarAfterSalahViewEventCopyWith<$Res> {
+  _$AzkarAfterSalahViewEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -97,13 +97,13 @@ abstract class _$$InitializeAzkarImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitializeAzkarImplCopyWithImpl<$Res>
-    extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$InitializeAzkarImpl>
+    extends _$AzkarAfterSalahViewEventCopyWithImpl<$Res, _$InitializeAzkarImpl>
     implements _$$InitializeAzkarImplCopyWith<$Res> {
   __$$InitializeAzkarImplCopyWithImpl(
       _$InitializeAzkarImpl _value, $Res Function(_$InitializeAzkarImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -118,7 +118,7 @@ class __$$InitializeAzkarImplCopyWithImpl<$Res>
     ));
   }
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -139,7 +139,7 @@ class _$InitializeAzkarImpl implements _InitializeAzkar {
 
   @override
   String toString() {
-    return 'AzkarAfterSalahEvent.initializeAzkar(state: $state)';
+    return 'AzkarAfterSalahViewEvent.initializeAzkar(state: $state)';
   }
 
   @override
@@ -153,7 +153,7 @@ class _$InitializeAzkarImpl implements _InitializeAzkar {
   @override
   int get hashCode => Object.hash(runtimeType, state);
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -231,13 +231,13 @@ class _$InitializeAzkarImpl implements _InitializeAzkar {
   }
 }
 
-abstract class _InitializeAzkar implements AzkarAfterSalahEvent {
+abstract class _InitializeAzkar implements AzkarAfterSalahViewEvent {
   factory _InitializeAzkar({required final AzkarSalahTimeState state}) =
       _$InitializeAzkarImpl;
 
   AzkarSalahTimeState get state;
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitializeAzkarImplCopyWith<_$InitializeAzkarImpl> get copyWith =>
@@ -253,13 +253,13 @@ abstract class _$$ResetCountersImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ResetCountersImplCopyWithImpl<$Res>
-    extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$ResetCountersImpl>
+    extends _$AzkarAfterSalahViewEventCopyWithImpl<$Res, _$ResetCountersImpl>
     implements _$$ResetCountersImplCopyWith<$Res> {
   __$$ResetCountersImplCopyWithImpl(
       _$ResetCountersImpl _value, $Res Function(_$ResetCountersImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -270,7 +270,7 @@ class _$ResetCountersImpl implements _ResetCounters {
 
   @override
   String toString() {
-    return 'AzkarAfterSalahEvent.resetCounters()';
+    return 'AzkarAfterSalahViewEvent.resetCounters()';
   }
 
   @override
@@ -351,7 +351,7 @@ class _$ResetCountersImpl implements _ResetCounters {
   }
 }
 
-abstract class _ResetCounters implements AzkarAfterSalahEvent {
+abstract class _ResetCounters implements AzkarAfterSalahViewEvent {
   const factory _ResetCounters() = _$ResetCountersImpl;
 }
 
@@ -366,13 +366,13 @@ abstract class _$$IncrementCounterImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$IncrementCounterImplCopyWithImpl<$Res>
-    extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$IncrementCounterImpl>
+    extends _$AzkarAfterSalahViewEventCopyWithImpl<$Res, _$IncrementCounterImpl>
     implements _$$IncrementCounterImplCopyWith<$Res> {
   __$$IncrementCounterImplCopyWithImpl(_$IncrementCounterImpl _value,
       $Res Function(_$IncrementCounterImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -398,7 +398,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
 
   @override
   String toString() {
-    return 'AzkarAfterSalahEvent.incrementCounter(zeker: $zeker)';
+    return 'AzkarAfterSalahViewEvent.incrementCounter(zeker: $zeker)';
   }
 
   @override
@@ -412,7 +412,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @override
   int get hashCode => Object.hash(runtimeType, zeker);
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -490,13 +490,13 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   }
 }
 
-abstract class _IncrementCounter implements AzkarAfterSalahEvent {
+abstract class _IncrementCounter implements AzkarAfterSalahViewEvent {
   const factory _IncrementCounter(final AzkarModel zeker) =
       _$IncrementCounterImpl;
 
   AzkarModel get zeker;
 
-  /// Create a copy of AzkarAfterSalahEvent
+  /// Create a copy of AzkarAfterSalahViewEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IncrementCounterImplCopyWith<_$IncrementCounterImpl> get copyWith =>
@@ -504,38 +504,38 @@ abstract class _IncrementCounter implements AzkarAfterSalahEvent {
 }
 
 /// @nodoc
-mixin _$AzkarAfterSalahState {
+mixin _$AzkarAfterSalahViewState {
   bool get showAzkarView => throw _privateConstructorUsedError;
   List<AzkarModel> get azkarList => throw _privateConstructorUsedError;
 
-  /// Create a copy of AzkarAfterSalahState
+  /// Create a copy of AzkarAfterSalahViewState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AzkarAfterSalahStateCopyWith<AzkarAfterSalahState> get copyWith =>
+  $AzkarAfterSalahViewStateCopyWith<AzkarAfterSalahViewState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AzkarAfterSalahStateCopyWith<$Res> {
-  factory $AzkarAfterSalahStateCopyWith(AzkarAfterSalahState value,
-          $Res Function(AzkarAfterSalahState) then) =
-      _$AzkarAfterSalahStateCopyWithImpl<$Res, AzkarAfterSalahState>;
+abstract class $AzkarAfterSalahViewStateCopyWith<$Res> {
+  factory $AzkarAfterSalahViewStateCopyWith(AzkarAfterSalahViewState value,
+          $Res Function(AzkarAfterSalahViewState) then) =
+      _$AzkarAfterSalahViewStateCopyWithImpl<$Res, AzkarAfterSalahViewState>;
   @useResult
   $Res call({bool showAzkarView, List<AzkarModel> azkarList});
 }
 
 /// @nodoc
-class _$AzkarAfterSalahStateCopyWithImpl<$Res,
-        $Val extends AzkarAfterSalahState>
-    implements $AzkarAfterSalahStateCopyWith<$Res> {
-  _$AzkarAfterSalahStateCopyWithImpl(this._value, this._then);
+class _$AzkarAfterSalahViewStateCopyWithImpl<$Res,
+        $Val extends AzkarAfterSalahViewState>
+    implements $AzkarAfterSalahViewStateCopyWith<$Res> {
+  _$AzkarAfterSalahViewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AzkarAfterSalahState
+  /// Create a copy of AzkarAfterSalahViewState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -557,25 +557,28 @@ class _$AzkarAfterSalahStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$AzkarAfterSalahStateImplCopyWith<$Res>
-    implements $AzkarAfterSalahStateCopyWith<$Res> {
-  factory _$$AzkarAfterSalahStateImplCopyWith(_$AzkarAfterSalahStateImpl value,
-          $Res Function(_$AzkarAfterSalahStateImpl) then) =
-      __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>;
+abstract class _$$AzkarAfterSalahViewStateImplCopyWith<$Res>
+    implements $AzkarAfterSalahViewStateCopyWith<$Res> {
+  factory _$$AzkarAfterSalahViewStateImplCopyWith(
+          _$AzkarAfterSalahViewStateImpl value,
+          $Res Function(_$AzkarAfterSalahViewStateImpl) then) =
+      __$$AzkarAfterSalahViewStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool showAzkarView, List<AzkarModel> azkarList});
 }
 
 /// @nodoc
-class __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>
-    extends _$AzkarAfterSalahStateCopyWithImpl<$Res, _$AzkarAfterSalahStateImpl>
-    implements _$$AzkarAfterSalahStateImplCopyWith<$Res> {
-  __$$AzkarAfterSalahStateImplCopyWithImpl(_$AzkarAfterSalahStateImpl _value,
-      $Res Function(_$AzkarAfterSalahStateImpl) _then)
+class __$$AzkarAfterSalahViewStateImplCopyWithImpl<$Res>
+    extends _$AzkarAfterSalahViewStateCopyWithImpl<$Res,
+        _$AzkarAfterSalahViewStateImpl>
+    implements _$$AzkarAfterSalahViewStateImplCopyWith<$Res> {
+  __$$AzkarAfterSalahViewStateImplCopyWithImpl(
+      _$AzkarAfterSalahViewStateImpl _value,
+      $Res Function(_$AzkarAfterSalahViewStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AzkarAfterSalahState
+  /// Create a copy of AzkarAfterSalahViewState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -583,7 +586,7 @@ class __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>
     Object? showAzkarView = null,
     Object? azkarList = null,
   }) {
-    return _then(_$AzkarAfterSalahStateImpl(
+    return _then(_$AzkarAfterSalahViewStateImpl(
       showAzkarView: null == showAzkarView
           ? _value.showAzkarView
           : showAzkarView // ignore: cast_nullable_to_non_nullable
@@ -598,8 +601,8 @@ class __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
-  const _$AzkarAfterSalahStateImpl(
+class _$AzkarAfterSalahViewStateImpl implements _AzkarAfterSalahViewState {
+  const _$AzkarAfterSalahViewStateImpl(
       {this.showAzkarView = false, final List<AzkarModel> azkarList = const []})
       : _azkarList = azkarList;
 
@@ -617,14 +620,14 @@ class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
 
   @override
   String toString() {
-    return 'AzkarAfterSalahState(showAzkarView: $showAzkarView, azkarList: $azkarList)';
+    return 'AzkarAfterSalahViewState(showAzkarView: $showAzkarView, azkarList: $azkarList)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AzkarAfterSalahStateImpl &&
+            other is _$AzkarAfterSalahViewStateImpl &&
             (identical(other.showAzkarView, showAzkarView) ||
                 other.showAzkarView == showAzkarView) &&
             const DeepCollectionEquality()
@@ -635,31 +638,30 @@ class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
   int get hashCode => Object.hash(runtimeType, showAzkarView,
       const DeepCollectionEquality().hash(_azkarList));
 
-  /// Create a copy of AzkarAfterSalahState
+  /// Create a copy of AzkarAfterSalahViewState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AzkarAfterSalahStateImplCopyWith<_$AzkarAfterSalahStateImpl>
-      get copyWith =>
-          __$$AzkarAfterSalahStateImplCopyWithImpl<_$AzkarAfterSalahStateImpl>(
-              this, _$identity);
+  _$$AzkarAfterSalahViewStateImplCopyWith<_$AzkarAfterSalahViewStateImpl>
+      get copyWith => __$$AzkarAfterSalahViewStateImplCopyWithImpl<
+          _$AzkarAfterSalahViewStateImpl>(this, _$identity);
 }
 
-abstract class _AzkarAfterSalahState implements AzkarAfterSalahState {
-  const factory _AzkarAfterSalahState(
+abstract class _AzkarAfterSalahViewState implements AzkarAfterSalahViewState {
+  const factory _AzkarAfterSalahViewState(
       {final bool showAzkarView,
-      final List<AzkarModel> azkarList}) = _$AzkarAfterSalahStateImpl;
+      final List<AzkarModel> azkarList}) = _$AzkarAfterSalahViewStateImpl;
 
   @override
   bool get showAzkarView;
   @override
   List<AzkarModel> get azkarList;
 
-  /// Create a copy of AzkarAfterSalahState
+  /// Create a copy of AzkarAfterSalahViewState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AzkarAfterSalahStateImplCopyWith<_$AzkarAfterSalahStateImpl>
+  _$$AzkarAfterSalahViewStateImplCopyWith<_$AzkarAfterSalahViewStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

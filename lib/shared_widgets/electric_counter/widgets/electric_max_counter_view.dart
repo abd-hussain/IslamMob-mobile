@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/shared_widgets/digital_font/digital_number.dart';
 
-class MaxCounterView extends StatelessWidget {
+class ElectricMaxCounterView extends StatelessWidget {
   final int maxCount;
-  const MaxCounterView({super.key, required this.maxCount});
+  final double width;
+  const ElectricMaxCounterView({
+    super.key,
+    required this.maxCount,
+    required this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 30,
-        width: 80,
+        height: width * 0.07,
+        width: width * 0.16,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: const Color(0xFFB1D7B4),
@@ -40,7 +45,7 @@ class MaxCounterView extends StatelessWidget {
                       bottom: 0,
                       top: 0,
                       child: DigitalNumber(
-                        value: 888888,
+                        value: 88888,
                         height: maxHeight * 0.65,
                         color: Colors.black12,
                       ),

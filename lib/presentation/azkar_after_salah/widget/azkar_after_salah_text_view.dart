@@ -1,23 +1,23 @@
+import 'package:azkar/model/azkar.dart';
 import 'package:flutter/material.dart';
-import 'package:islam_app/domain/model/tasbeeh.dart';
 
-class TasbeehTextView extends StatefulWidget {
-  final TasbeehModel tasbeehItem;
-  const TasbeehTextView({super.key, required this.tasbeehItem});
+class AzkarAfterSalahTextView extends StatefulWidget {
+  final AzkarModel azkarItem;
+  const AzkarAfterSalahTextView({super.key, required this.azkarItem});
 
   @override
-  State<TasbeehTextView> createState() => _TasbeehTextViewState();
+  State<AzkarAfterSalahTextView> createState() => _AzkarAfterSalahTextViewState();
 }
 
-class _TasbeehTextViewState extends State<TasbeehTextView> {
+class _AzkarAfterSalahTextViewState extends State<AzkarAfterSalahTextView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: _buildTasbeehContainer(
         context: context,
-        title: widget.tasbeehItem.title,
-        description: widget.tasbeehItem.desc,
+        title: widget.azkarItem.title,
+        description: widget.azkarItem.desc,
       ),
     );
   }

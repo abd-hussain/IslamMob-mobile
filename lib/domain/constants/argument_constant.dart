@@ -5,4 +5,5 @@ class ArgumentConstant {
   static const String currentPartNumber = 'currentPartNumber';
   static const String hisnAlMuslimItem = 'hisnAlMuslimItem';
   static const String initialTabIndexSelected = 'initialTabIndexSelected';
+  static const String salahTime = 'salahTime';
 }

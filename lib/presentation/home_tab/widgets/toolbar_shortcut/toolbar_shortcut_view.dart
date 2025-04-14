@@ -1,6 +1,8 @@
+import 'package:azkar/model/azkar_salah_time.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/constants/argument_constant.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_cell.dart';
@@ -9,7 +11,8 @@ import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/dialogs/support_us/support_dialog.dart';
 
 class ToolbarShortcutView extends StatelessWidget {
-  const ToolbarShortcutView({super.key});
+  final AzkarSalahTimeState salahTime;
+  const ToolbarShortcutView({super.key, required this.salahTime});
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +44,7 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.calenderSettings,
                     imagePath: "assets/images/toolbar/calender.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                          name: "CalenderScreenFromHomeToolBar");
+                      await FirebaseAnalyticsRepository.logEvent(name: "CalenderScreenFromHomeToolBar");
                       await navigator.pushNamed(RoutesConstants.calenderScreen);
                     },
                   ),
@@ -52,10 +54,8 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.hesenAlMuslim,
                     imagePath: "assets/images/toolbar/hesenAlMuslim.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                          name: "hisnAlMuslimListScreenFromHomeToolBar");
-                      await navigator
-                          .pushNamed(RoutesConstants.hisnAlMuslimListScreen);
+                      await FirebaseAnalyticsRepository.logEvent(name: "hisnAlMuslimListScreenFromHomeToolBar");
+                      await navigator.pushNamed(RoutesConstants.hisnAlMuslimListScreen);
                     },
                   ),
                 ),
@@ -64,8 +64,7 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.shareapp,
                     imagePath: "assets/images/toolbar/share.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                          name: "ShareAppFromHomeToolBar");
+                      await FirebaseAnalyticsRepository.logEvent(name: "ShareAppFromHomeToolBar");
                       await ShareDialog().dialog(context: context);
                     },
                   ),
@@ -75,8 +74,7 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.quranSettingSupportUs,
                     imagePath: "assets/images/toolbar/donate.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                          name: "SupportUsFromHomeToolBar");
+                      await FirebaseAnalyticsRepository.logEvent(name: "SupportUsFromHomeToolBar");
                       await SupportUsDialog().dialog(context: context);
                     },
                   ),
@@ -91,8 +89,7 @@ class ToolbarShortcutView extends StatelessWidget {
                     title: localize.tasbeeh,
                     imagePath: "assets/images/toolbar/tasbeeh.png",
                     onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                          name: "tasbeehScreenFromHomeToolBar");
+                      await FirebaseAnalyticsRepository.logEvent(name: "tasbeehScreenFromHomeToolBar");
                       await navigator.pushNamed(RoutesConstants.tasbeehScreen);
                     },
                   ),
@@ -130,16 +127,21 @@ class ToolbarShortcutView extends StatelessWidget {
                 //     },
                 //   ),
                 // ),
-                // Expanded(
-                //   child: ToolbarCell(
-                //     title: localize.azkarTitle,
-                //     imagePath: "assets/images/toolbar/azkar_after_salah.png",
-                //     onTap: () async {
-                //       await FirebaseAnalyticsRepository.logEvent(name: "AzkarAfterSalahScreenFromHomeToolBar");
-                //       await navigator.pushNamed(RoutesConstants.azkarAfterSalahScreen);
-                //     },
-                //   ),
-                // ),
+                Expanded(
+                  child: ToolbarCell(
+                    title: localize.azkarTitle,
+                    imagePath: "assets/images/toolbar/azkar_after_salah.png",
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(name: "AzkarAfterSalahScreenFromHomeToolBar");
+                      await navigator.pushNamed(
+                        RoutesConstants.azkarAfterSalahScreen,
+                        arguments: {
+                          ArgumentConstant.salahTime: salahTime,
+                        },
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
             // const SizedBox(height: 8),
