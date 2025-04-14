@@ -52,7 +52,7 @@ dependencies:
   shimmer: ^3.0.0
   country_flags: ^3.0.0
   convex_bottom_bar: ^3.2.0
-  pdfx: ^2.7.0
+  pdfx: ^2.9.0
   image_picker: ^1.1.2
   screen_brightness: ^1.0.1
   cached_network_image: ^3.4.1
