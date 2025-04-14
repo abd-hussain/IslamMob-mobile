@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/tasbeeh/bloc/tasbeeh_bloc.dart';
-import 'package:islam_app/presentation/tasbeeh/widgets/masbaha_view.dart';
-import 'package:islam_app/presentation/tasbeeh/widgets/tasbeeh_footer_view.dart';
 import 'package:islam_app/presentation/tasbeeh/widgets/tasbeeh_text_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:islam_app/shared_widgets/electric_counter/electric_counter_view.dart';
 
 class TasbeehScreen extends StatefulWidget {
   const TasbeehScreen({super.key});
@@ -31,58 +30,56 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
           fontWeight: FontWeight.bold,
         ),
       ),
-      body: SafeArea(
-        child: BlocProvider(
-          create: (context) =>
-              TasbeehBloc()..add(const TasbeehEvent.fillInitialValue()),
-          child: BlocBuilder<TasbeehBloc, TasbeehState>(
-            buildWhen: (previous, current) =>
-                previous.list != current.list ||
-                previous.selectedListIndex != current.selectedListIndex,
-            builder: (context, state) {
-              if (state.list.isEmpty) {
-                return _buildLoadingIndicator();
-              }
+      body: BlocProvider(
+        create: (context) => TasbeehBloc()..add(const TasbeehEvent.fillInitialValue()),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: BlocBuilder<TasbeehBloc, TasbeehState>(
+                  builder: (context, state) {
+                    if (state.list.isEmpty) {
+                      return _buildLoadingIndicator();
+                    }
 
-              final tasbeehItem = state.list[state.selectedListIndex];
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: PageView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: state.list.length,
-                        itemBuilder: (context, index) {
-                          return Stack(
-                            alignment: Alignment.topCenter,
-                            children: [
-                              Column(
-                                children: [
-                                  const Expanded(child: SizedBox()),
-                                  MasbahaView(tasbeehItem: tasbeehItem),
-                                ],
-                              ),
-                              TasbeehTextView(tasbeehItem: tasbeehItem),
-                            ],
-                          );
-                        }),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: CustomText(
-                      title: localizations.counterResetDaily,
-                      fontSize: 12,
-                      color: const Color(0xff444444),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const TasbeehFooterView(),
-                  const AddMobBanner(
-                    verticalPadding: 0,
-                  ),
-                ],
-              );
-            },
+                    final tasbeehItem = state.list[state.selectedListIndex];
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: TasbeehTextView(
+                            tasbeehItem: tasbeehItem,
+                          ),
+                        ),
+                        ElectricCounterView(
+                          currentCount: tasbeehItem.currentCount,
+                          maxCount: tasbeehItem.maxCount,
+                          width: MediaQuery.of(context).size.width,
+                          showResetHintText: true,
+                          isPreviosSelected: true,
+                          isNextSelected: true,
+                          isVibrationSelected: state.allowVibration,
+                          isSoundSelected: state.allowSound,
+                          onPreviosSelected: () =>
+                              context.read<TasbeehBloc>().add(const TasbeehEvent.leftZikerSelected()),
+                          onNextSelected: () => context.read<TasbeehBloc>().add(const TasbeehEvent.rightZikerEnabled()),
+                          onVibrationSelected: () =>
+                              context.read<TasbeehBloc>().add(const TasbeehEvent.vibrationSetting()),
+                          onSoundSelected: () => context.read<TasbeehBloc>().add(const TasbeehEvent.soundSetting()),
+                          onIncreaseCounter: () =>
+                              context.read<TasbeehBloc>().add(TasbeehEvent.incrementCounter(tasbeehItem)),
+                          onResetCounter: () => context.read<TasbeehBloc>().add(TasbeehEvent.resetCounter(tasbeehItem)),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 60,
+                child: AddMobBanner(verticalPadding: 0),
+              ),
+            ],
           ),
         ),
       ),

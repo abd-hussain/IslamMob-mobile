@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:islam_app/domain/model/tasbeeh.dart';
 import 'package:islam_app/shared_widgets/digital_font/digital_number.dart';
 
-class CounterDisplay extends StatelessWidget {
-  final TasbeehModel tasbeehItem;
-
-  const CounterDisplay({super.key, required this.tasbeehItem});
+class ElectricCounterDisplay extends StatelessWidget {
+  final int currentCount;
+  final double width;
+  final double hight;
+  const ElectricCounterDisplay({
+    super.key,
+    required this.currentCount,
+    required this.width,
+    required this.hight,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 70,
-        width: 190,
+        height: width * 0.15,
+        width: width * 0.4,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: const Color(0xFFB1D7B4),
@@ -32,7 +37,7 @@ class CounterDisplay extends StatelessWidget {
                       bottom: 0,
                       top: 0,
                       child: DigitalNumber(
-                        value: tasbeehItem.currentCount,
+                        value: currentCount,
                         height: maxHeight * 0.65,
                         color: Colors.black,
                       ),

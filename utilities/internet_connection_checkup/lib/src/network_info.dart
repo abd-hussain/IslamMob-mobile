@@ -1,18 +1,23 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checkup/core/exceptions.dart';
 
 class NetworkInfoRepository {
-  final StreamController<bool> _networkStateController =
-      StreamController<bool>.broadcast();
+  final StreamController<bool> _networkStateController = StreamController<bool>.broadcast();
   final Connectivity _connectivity = Connectivity();
+  StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
 
   /// Initializes network connection monitoring.
   void initNetworkConnectionCheck() {
-    _connectivity.onConnectivityChanged.listen((event) {
+    // Cancel any existing subscription before starting a new one
+    _connectivitySubscription?.cancel();
+
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen((event) async {
       final isConnected = _isConnected(event);
-      _networkStateController.sink.add(isConnected);
+      final hasInternet = isConnected ? await _internetLookupCheck() : false;
+      _networkStateController.sink.add(hasInternet);
     });
   }
 
@@ -42,8 +47,7 @@ class NetworkInfoRepository {
   Future<bool> _internetLookupCheck() async {
     try {
       final lookupResult = await InternetAddress.lookup('google.com');
-      return lookupResult.isNotEmpty &&
-          lookupResult.first.rawAddress.isNotEmpty;
+      return lookupResult.isNotEmpty && lookupResult.first.rawAddress.isNotEmpty;
     } catch (_) {
       return false;
     }
@@ -54,6 +58,7 @@ class NetworkInfoRepository {
 
   /// Disposes of resources used by the service.
   void dispose() {
+    _connectivitySubscription?.cancel();
     _networkStateController.close();
   }
 }

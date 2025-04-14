@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
-import 'package:islam_app/presentation/home_tab/bloc/azkar_after_salah/azkar_after_salah_bloc.dart';
+import 'package:islam_app/presentation/home_tab/bloc/azkar_after_salah_view/azkar_after_salah_view_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
@@ -29,9 +29,7 @@ class AzkarFinishView extends StatelessWidget {
         CustomButton(
           isEnabled: true,
           title: localize.activateAgain,
-          onTap: () => context
-              .read<AzkarAfterSalahBloc>()
-              .add(const AzkarAfterSalahEvent.resetCounters()),
+          onTap: () => context.read<AzkarAfterSalahViewBloc>().add(const AzkarAfterSalahViewEvent.resetCounters()),
         ),
       ],
     );
