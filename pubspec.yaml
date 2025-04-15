@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.4.0+180
+version: 1.4.0+181
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -52,13 +52,13 @@ dependencies:
   shimmer: ^3.0.0
   country_flags: ^3.0.0
   convex_bottom_bar: ^3.2.0
-  pdfx: ^2.9.0
+  pdfx: 2.6.0
   image_picker: ^1.1.2
   screen_brightness: ^1.0.1
   cached_network_image: ^3.4.1
   flutter_downloader: ^1.11.8
   path_provider: ^2.1.4
-  device_info_plus: ^10.1.2
+  device_info_plus: ^9.0.3
   cupertino_icons: ^1.0.8
   fluttertoast: ^8.2.8
   ionicons: ^0.2.1

@@ -6,7 +6,8 @@ class AzkarAfterSalahTextView extends StatefulWidget {
   const AzkarAfterSalahTextView({super.key, required this.azkarItem});
 
   @override
-  State<AzkarAfterSalahTextView> createState() => _AzkarAfterSalahTextViewState();
+  State<AzkarAfterSalahTextView> createState() =>
+      _AzkarAfterSalahTextViewState();
 }
 
 class _AzkarAfterSalahTextViewState extends State<AzkarAfterSalahTextView> {
@@ -23,7 +24,10 @@ class _AzkarAfterSalahTextViewState extends State<AzkarAfterSalahTextView> {
   }
 
   /// Creates the container with Tasbeeh details.
-  Widget _buildTasbeehContainer({required BuildContext context, required String title, required String description}) {
+  Widget _buildTasbeehContainer(
+      {required BuildContext context,
+      required String title,
+      required String description}) {
     return Container(
       decoration: _containerDecoration(),
       width: double.infinity,

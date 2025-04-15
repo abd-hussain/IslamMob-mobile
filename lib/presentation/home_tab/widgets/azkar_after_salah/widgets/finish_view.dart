@@ -29,7 +29,9 @@ class AzkarFinishView extends StatelessWidget {
         CustomButton(
           isEnabled: true,
           title: localize.activateAgain,
-          onTap: () => context.read<AzkarAfterSalahViewBloc>().add(const AzkarAfterSalahViewEvent.resetCounters()),
+          onTap: () => context
+              .read<AzkarAfterSalahViewBloc>()
+              .add(const AzkarAfterSalahViewEvent.resetCounters()),
         ),
       ],
     );

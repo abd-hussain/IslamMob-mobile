@@ -5,7 +5,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checkup/core/exceptions.dart';
 
 class NetworkInfoRepository {
-  final StreamController<bool> _networkStateController = StreamController<bool>.broadcast();
+  final StreamController<bool> _networkStateController =
+      StreamController<bool>.broadcast();
   final Connectivity _connectivity = Connectivity();
   StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
 
@@ -14,7 +15,8 @@ class NetworkInfoRepository {
     // Cancel any existing subscription before starting a new one
     _connectivitySubscription?.cancel();
 
-    _connectivitySubscription = _connectivity.onConnectivityChanged.listen((event) async {
+    _connectivitySubscription =
+        _connectivity.onConnectivityChanged.listen((event) async {
       final isConnected = _isConnected(event);
       final hasInternet = isConnected ? await _internetLookupCheck() : false;
       _networkStateController.sink.add(hasInternet);
@@ -47,7 +49,8 @@ class NetworkInfoRepository {
   Future<bool> _internetLookupCheck() async {
     try {
       final lookupResult = await InternetAddress.lookup('google.com');
-      return lookupResult.isNotEmpty && lookupResult.first.rawAddress.isNotEmpty;
+      return lookupResult.isNotEmpty &&
+          lookupResult.first.rawAddress.isNotEmpty;
     } catch (_) {
       return false;
     }

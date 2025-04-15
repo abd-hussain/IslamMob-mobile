@@ -10,7 +10,8 @@ part 'azkar_after_salah_bloc.freezed.dart';
 part 'azkar_after_salah_event.dart';
 part 'azkar_after_salah_state.dart';
 
-class AzkarAfterSalahBloc extends Bloc<AzkarAfterSalahEvent, AzkarAfterSalahState> {
+class AzkarAfterSalahBloc
+    extends Bloc<AzkarAfterSalahEvent, AzkarAfterSalahState> {
   AzkarAfterSalahBloc() : super(const AzkarAfterSalahState()) {
     on<_FillInitialValue>(_fillInitialValue);
     on<_SoundSetting>(_soundSetting);
@@ -21,22 +22,26 @@ class AzkarAfterSalahBloc extends Bloc<AzkarAfterSalahEvent, AzkarAfterSalahStat
     on<_IncrementCounter>(_incrementCounter);
   }
 
-  FutureOr<void> _fillInitialValue(_FillInitialValue event, Emitter<AzkarAfterSalahState> emit) {
+  FutureOr<void> _fillInitialValue(
+      _FillInitialValue event, Emitter<AzkarAfterSalahState> emit) {
     final azkarList = AzkarBase().azkarList(event.state);
     emit(state.copyWith(list: azkarList));
   }
 
-  FutureOr<void> _soundSetting(_SoundSetting event, Emitter<AzkarAfterSalahState> emit) {
+  FutureOr<void> _soundSetting(
+      _SoundSetting event, Emitter<AzkarAfterSalahState> emit) {
     final bool allowedSound = state.allowSound;
     emit(state.copyWith(allowSound: !allowedSound));
   }
 
-  FutureOr<void> _vibrationSetting(_VibrationSetting event, Emitter<AzkarAfterSalahState> emit) {
+  FutureOr<void> _vibrationSetting(
+      _VibrationSetting event, Emitter<AzkarAfterSalahState> emit) {
     final bool allowedVibration = state.allowVibration;
     emit(state.copyWith(allowVibration: !allowedVibration));
   }
 
-  FutureOr<void> _leftZikerSelected(_LeftZikerSelected event, Emitter<AzkarAfterSalahState> emit) {
+  FutureOr<void> _leftZikerSelected(
+      _LeftZikerSelected event, Emitter<AzkarAfterSalahState> emit) {
     if (state.selectedListIndex != 0) {
       int currentIndex = state.selectedListIndex;
       currentIndex = currentIndex - 1;
@@ -44,7 +49,8 @@ class AzkarAfterSalahBloc extends Bloc<AzkarAfterSalahEvent, AzkarAfterSalahStat
     }
   }
 
-  FutureOr<void> _rightZikerEnabled(_RightZikerEnabled event, Emitter<AzkarAfterSalahState> emit) {
+  FutureOr<void> _rightZikerEnabled(
+      _RightZikerEnabled event, Emitter<AzkarAfterSalahState> emit) {
     if (state.selectedListIndex != state.list.length - 1) {
       int currentIndex = state.selectedListIndex;
       currentIndex = currentIndex + 1;
@@ -52,7 +58,8 @@ class AzkarAfterSalahBloc extends Bloc<AzkarAfterSalahEvent, AzkarAfterSalahStat
     }
   }
 
-  FutureOr<void> _resetCounter(_ResetCounter event, Emitter<AzkarAfterSalahState> emit) {
+  FutureOr<void> _resetCounter(
+      _ResetCounter event, Emitter<AzkarAfterSalahState> emit) {
     final updatedItem = event.item.copyWith(currentCount: 0);
     final updatedList = state.list.map((item) {
       return item.id == event.item.id ? updatedItem : item;
@@ -61,15 +68,18 @@ class AzkarAfterSalahBloc extends Bloc<AzkarAfterSalahEvent, AzkarAfterSalahStat
     emit(state.copyWith(list: updatedList));
   }
 
-  FutureOr<void> _incrementCounter(_IncrementCounter event, Emitter<AzkarAfterSalahState> emit) {
-    final updatedItem = event.item.copyWith(currentCount: event.item.currentCount + 1);
+  FutureOr<void> _incrementCounter(
+      _IncrementCounter event, Emitter<AzkarAfterSalahState> emit) {
+    final updatedItem =
+        event.item.copyWith(currentCount: event.item.currentCount + 1);
 
     final updatedList = state.list.map((item) {
       return item.id == event.item.id ? updatedItem : item;
     }).toList();
 
     emit(state.copyWith(list: updatedList));
-    _beepAndVibrate(allowSound: state.allowSound, allowVibrate: state.allowVibration);
+    _beepAndVibrate(
+        allowSound: state.allowSound, allowVibrate: state.allowVibration);
   }
 
   void _beepAndVibrate({required bool allowSound, required bool allowVibrate}) {

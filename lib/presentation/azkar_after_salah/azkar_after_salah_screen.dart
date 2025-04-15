@@ -15,8 +15,11 @@ class AzkarAfterSalahScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Map<String, dynamic> arguments = ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
-    final AzkarSalahTimeState salahTime = arguments[ArgumentConstant.salahTime] ?? const AzkarSalahTimeState.fajir();
+    final Map<String, dynamic> arguments =
+        ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
+    final AzkarSalahTimeState salahTime =
+        arguments[ArgumentConstant.salahTime] ??
+            const AzkarSalahTimeState.fajir();
 
     FirebaseAnalyticsRepository.logEvent(name: "AzkarAfterSalahScreen");
     final localizations = IslamMobLocalizations.of(context);
@@ -27,13 +30,16 @@ class AzkarAfterSalahScreen extends StatelessWidget {
         backgroundColor: const Color(0xff292929),
         iconTheme: const IconThemeData(color: Colors.white),
         title: CustomText(
-          title: localizations.azkarAfterSalah + " " + _salahName(salahTime, localizations),
+          title: localizations.azkarAfterSalah +
+              " " +
+              _salahName(salahTime, localizations),
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
       ),
       body: BlocProvider(
-        create: (context) => AzkarAfterSalahBloc()..add(AzkarAfterSalahEvent.fillInitialValue(salahTime)),
+        create: (context) => AzkarAfterSalahBloc()
+          ..add(AzkarAfterSalahEvent.fillInitialValue(salahTime)),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -63,22 +69,33 @@ class AzkarAfterSalahScreen extends StatelessWidget {
                           isNextSelected: true,
                           isVibrationSelected: state.allowVibration,
                           isSoundSelected: state.allowSound,
-                          onPreviosSelected: () => context.read<AzkarAfterSalahBloc>().add(
+                          onPreviosSelected: () => context
+                              .read<AzkarAfterSalahBloc>()
+                              .add(
                                 const AzkarAfterSalahEvent.leftZikerSelected(),
                               ),
-                          onNextSelected: () => context.read<AzkarAfterSalahBloc>().add(
+                          onNextSelected: () => context
+                              .read<AzkarAfterSalahBloc>()
+                              .add(
                                 const AzkarAfterSalahEvent.rightZikerEnabled(),
                               ),
-                          onVibrationSelected: () => context.read<AzkarAfterSalahBloc>().add(
+                          onVibrationSelected: () => context
+                              .read<AzkarAfterSalahBloc>()
+                              .add(
                                 const AzkarAfterSalahEvent.vibrationSetting(),
                               ),
-                          onSoundSelected: () => context.read<AzkarAfterSalahBloc>().add(
-                                const AzkarAfterSalahEvent.soundSetting(),
-                              ),
-                          onIncreaseCounter: () => context.read<AzkarAfterSalahBloc>().add(
-                                AzkarAfterSalahEvent.incrementCounter(azkarItem),
-                              ),
-                          onResetCounter: () => context.read<AzkarAfterSalahBloc>().add(
+                          onSoundSelected: () =>
+                              context.read<AzkarAfterSalahBloc>().add(
+                                    const AzkarAfterSalahEvent.soundSetting(),
+                                  ),
+                          onIncreaseCounter: () =>
+                              context.read<AzkarAfterSalahBloc>().add(
+                                    AzkarAfterSalahEvent.incrementCounter(
+                                        azkarItem),
+                                  ),
+                          onResetCounter: () => context
+                              .read<AzkarAfterSalahBloc>()
+                              .add(
                                 AzkarAfterSalahEvent.resetCounter(azkarItem),
                               ),
                         ),
@@ -107,7 +124,8 @@ class AzkarAfterSalahScreen extends StatelessWidget {
     );
   }
 
-  String _salahName(AzkarSalahTimeState salahTime, IslamMobLocalizations localizations) {
+  String _salahName(
+      AzkarSalahTimeState salahTime, IslamMobLocalizations localizations) {
     switch (salahTime) {
       case AzkarSalahTimeStateFajir():
       case AzkarSalahTimeStateSunrise():
