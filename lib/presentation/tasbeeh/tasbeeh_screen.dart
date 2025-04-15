@@ -31,7 +31,8 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
         ),
       ),
       body: BlocProvider(
-        create: (context) => TasbeehBloc()..add(const TasbeehEvent.fillInitialValue()),
+        create: (context) =>
+            TasbeehBloc()..add(const TasbeehEvent.fillInitialValue()),
         child: SafeArea(
           child: Column(
             children: [
@@ -60,15 +61,24 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                           isNextSelected: true,
                           isVibrationSelected: state.allowVibration,
                           isSoundSelected: state.allowSound,
-                          onPreviosSelected: () =>
-                              context.read<TasbeehBloc>().add(const TasbeehEvent.leftZikerSelected()),
-                          onNextSelected: () => context.read<TasbeehBloc>().add(const TasbeehEvent.rightZikerEnabled()),
-                          onVibrationSelected: () =>
-                              context.read<TasbeehBloc>().add(const TasbeehEvent.vibrationSetting()),
-                          onSoundSelected: () => context.read<TasbeehBloc>().add(const TasbeehEvent.soundSetting()),
-                          onIncreaseCounter: () =>
-                              context.read<TasbeehBloc>().add(TasbeehEvent.incrementCounter(tasbeehItem)),
-                          onResetCounter: () => context.read<TasbeehBloc>().add(TasbeehEvent.resetCounter(tasbeehItem)),
+                          onPreviosSelected: () => context
+                              .read<TasbeehBloc>()
+                              .add(const TasbeehEvent.leftZikerSelected()),
+                          onNextSelected: () => context
+                              .read<TasbeehBloc>()
+                              .add(const TasbeehEvent.rightZikerEnabled()),
+                          onVibrationSelected: () => context
+                              .read<TasbeehBloc>()
+                              .add(const TasbeehEvent.vibrationSetting()),
+                          onSoundSelected: () => context
+                              .read<TasbeehBloc>()
+                              .add(const TasbeehEvent.soundSetting()),
+                          onIncreaseCounter: () => context
+                              .read<TasbeehBloc>()
+                              .add(TasbeehEvent.incrementCounter(tasbeehItem)),
+                          onResetCounter: () => context
+                              .read<TasbeehBloc>()
+                              .add(TasbeehEvent.resetCounter(tasbeehItem)),
                         ),
                       ],
                     );

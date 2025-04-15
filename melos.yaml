@@ -7,7 +7,7 @@ packages:
 
 command:
   bootstrap:
-    usePubspecOverrides: true
+    # usePubspecOverrides: true
 
     environment:
       sdk: ">=3.3.4 <4.0.0"
@@ -41,21 +41,6 @@ scripts:
     run: |
       melos analyze --fatal-infos --diff=origin/main...HEAD --include-dependents
     description: Run `flutter analyze` on changed packages.
-
-  update_goldens:
-    run: melos exec -c 1 -- flutter test --update-goldens
-    packageFilters:
-      dirExists: 
-        - test
-    description: Re-generate all golden test files
-  
-  update_goldens_changes:
-    run: |
-      melos exec -c 1 --diff=origin/main...HEAD -- "flutter test --update-goldens"
-    packageFilters:
-      dirExists: 
-        - test
-    description: Update goldens for changed packages.
   
   fix_check:
     run: melos exec -- "dart fix --dry-run"

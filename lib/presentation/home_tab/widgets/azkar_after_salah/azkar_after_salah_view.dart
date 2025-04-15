@@ -14,7 +14,8 @@ class AzkarAfterSalahView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AzkarAfterSalahViewBloc()..add(AzkarAfterSalahViewEvent.initializeAzkar(state: salahType)),
+      create: (context) => AzkarAfterSalahViewBloc()
+        ..add(AzkarAfterSalahViewEvent.initializeAzkar(state: salahType)),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Column(
@@ -39,7 +40,9 @@ class AzkarAfterSalahView extends StatelessWidget {
         Image.asset("assets/images/toolbar/azkar_after_salah.png", scale: 10),
         const SizedBox(width: 4),
         CustomText(
-          title: localizations.azkarAfterSalah + " " + _salahName(salahTime, localizations),
+          title: localizations.azkarAfterSalah +
+              " " +
+              _salahName(salahTime, localizations),
           fontSize: 18,
           color: const Color(0xff444444),
           fontWeight: FontWeight.bold,
@@ -91,10 +94,13 @@ class AzkarAfterSalahView extends StatelessWidget {
   /// Handles incrementing the Azkar count and emitting the update event.
   void _incrementAzkar(BuildContext context, AzkarModel azkar) {
     final updatedAzkar = azkar.copyWith(currentCount: azkar.currentCount + 1);
-    context.read<AzkarAfterSalahViewBloc>().add(AzkarAfterSalahViewEvent.incrementCounter(updatedAzkar));
+    context
+        .read<AzkarAfterSalahViewBloc>()
+        .add(AzkarAfterSalahViewEvent.incrementCounter(updatedAzkar));
   }
 
-  String _salahName(AzkarSalahTimeState salahTime, IslamMobLocalizations localizations) {
+  String _salahName(
+      AzkarSalahTimeState salahTime, IslamMobLocalizations localizations) {
     switch (salahTime) {
       case AzkarSalahTimeStateFajir():
       case AzkarSalahTimeStateSunrise():

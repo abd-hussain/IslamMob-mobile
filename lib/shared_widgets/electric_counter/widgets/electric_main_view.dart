@@ -65,7 +65,8 @@ class ElectricMainView extends StatelessWidget {
               onVibrationSelected: onVibrationSelected,
             ),
             SizedBox(height: width * 0.03),
-            _buildIncrementButton(context: context, width: width, onPressed: onIncrease),
+            _buildIncrementButton(
+                context: context, width: width, onPressed: onIncrease),
           ],
         ),
       ],
