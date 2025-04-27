@@ -4,7 +4,6 @@ import 'package:database_manager/database_manager.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 
-//TODO: Continue Filling the JSON File
 class HisnAlMuslimUseCase {
   static Future<List<HisnAlMuslimModel>> getHisnAlMuslimList() async {
     // Load JSON file from assets

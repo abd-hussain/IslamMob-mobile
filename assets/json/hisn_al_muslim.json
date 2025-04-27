@@ -5744,5 +5744,1194 @@
         }
       ]
     }
+  },
+  {
+    "id": 104,
+    "title": {
+      "ar": "دعاء المقيم للمسافر",
+      "en": "Supplication of the resident for the traveller"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "أَسْتَـوْدِعُ اللَّهَ ديـنَكَ وَأَمانَتَـكَ، وَخَـواتيـمَ عَمَـلِك",
+          "en": "Astawdi`ullāha dīnak, wa amānatak, wa khawātīma `amalik"
+        },
+        {
+          "ar": "",
+          "en": "I leave your religion in the care of Allah, as well as your safety, and the last of your deeds"
+        },
+        {
+          "ar": "زَوَّدَكَ اللَّهُ التقْوى، وَغَفَـرَذَنْـبَكَ، وَيَسَّـرَ لَكَ الخَـيْرَ حَيْـثُما كُنْـت",
+          "en": "Zawwadaka ‘llāhut-taqwā, wa ghafara dhanbak, wa yassara laka ‘l-khayra ḥaythu mā kunt"
+        },
+        {
+          "ar": "",
+          "en": "May Allah give you piety as your provision, forgive your sins, and make goodness easy for you wherever you are"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "أحمد 2/7 الترمذي 5/499 وانظر صحيح الترمذي 3/155",
+          "en": "Ahmad 2/7, At-Tirmidhi 5/499. See also Al-Albani, Sahih At-Tirmidhi 2/155"
+        },
+        {
+          "ar": "الترمذي وانظر صحيح الترمذي 3/155",
+          "en": "At-Tirmidhi. See Al-Albani, Sahih At-Tirmidhi, 3/155"
+        }
+      ]
+    }
+  },
+  {
+    "id": 105,
+    "title": {
+      "ar": "التكبير والتسبيح في سير السفر",
+      "en": "Takbir and Tasbih during travel"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "قَالَ جَابِرٌ رضي الله عنه: (كُنَّا إِذَا صَعَدْنَا كَبَّرْنَا، وَإِذَا نَزَلْنَا سَبَّحْنَا)",
+          "en": "Jabir (ra), said: Whenever we went up a hill we would say Allāhu Akbar (Allah is the Most Great) and when we descended we would say Subḥānallāh (Glory is to Allah)."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري الفتح 6/135",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/135"
+        }
+      ]
+    }
+  },
+  {
+    "id": 106,
+    "title": {
+      "ar": "دعاء المسافر إذا أسحر",
+      "en": "Prayer of the traveller as dawn approaches"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "سَمِـعَ سـامِعٌ بِحَمْـدِ اللهِ وَحُسْـنِ بَلائِـهِ عَلَيْـنا. رَبَّنـا صـاحِبْـنا وَأَفْـضِل عَلَيْـنا عائِذاً باللهِ مِنَ النّـار",
+          "en": "Sami`a sāmi`un biḥamdillāhi wa ḥusni balā'ihi `alaynā. Rabbanā ṣāḥibnā, wa afḍil `alaynā, `ā'idhan billāhi minan-nār."
+        },
+        {
+          "ar": "",
+          "en": "He Who listens has heard that we praise Allah for the good things He gives us. Our Lord, be with us and bestow Your favor upon us. I seek the protection of Allah from the Fire"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "مسلم4/ 2086 ومعني سمع سامع : أي شهد شاهد على حمدنا لله تعالى على نعمه وحسن بلائه . ومعني سمع سامع : بلغ سامع قولي هذا لغيره وقال مثله تنبيهاً على الذكر في السحر والدعاء . وقوله : ربنا صاحبنا وأفضل علينا : أي احفظنا وحطنا واكلأنا وأفضل علينا بجزيل نعمك واصرف عنا كل مكروه ، شرح النووي 17/39",
+          "en": "Muslim 4/2086, the meaning of sami`a sāmi`un (who listens has heard) is that 'a witness has witnessed our praise of Allah due to His blessings and favor upon us.' It could also be read samma`a sāmi`un, in which case it means 'one who has heard this statement of mine will convey it to another and he will say it as well.' This is due to the attention given to the Thikr (remembrance of Allah) and supplications made during the early morning hours. The meaning of his saying 'Our Lord, be with us and bestow Your favor upon us' is: 'Our Lord, protect us and guard us. Bless us with Your numerous bounties, and avert from us every evil.' See An-Nawawi, Sharh Sahih Muslim 17/39"
+        }
+      ]
+    }
+  },
+  {
+    "id": 107,
+    "title": {
+      "ar": "الدعاء إذا نزل منزلا في سفر أو غيره",
+      "en": "Stopping or lodging somewhere in travel and otherwise"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "أَعـوذُ بِكَلِـماتِ اللّهِ التّـامّاتِ مِنْ شَـرِّ ما خَلَـق",
+          "en": "A`ūdhu bikalimāti ‘llāhit-tāmmāti min sharri mā khalaq"
+        },
+        {
+          "ar": "",
+          "en": "I seek refuge in the Perfect Words of Allah from the evil of what He has created"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "رواه مسلم 4/2080",
+          "en": "Muslim 4/2080"
+        }
+      ]
+    }
+  },
+  {
+    "id": 108,
+    "title": {
+      "ar": "ذكر الرجوع من السفر",
+      "en": "While returning from travel"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "يُكَبِّرُ عَلَى كُلِّ شَرَفٍ ثَلاَثَ تَكْبِيرَاتٍ ثُمَّ يَقُولُ: لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، آيِبُونَ، تَائِبُونَ، عَابِدُونَ، لِرَبِّنا حَامِدُونَ، صَدَقَ اللَّهُ وَعْدَهُ، وَنَصَرَ عَبْدَهُ، وَهَزَمَ الْأَحْزابَ وَحْدَهُ",
+          "en": "From every elevated point say Allāhu Akbar (three times), and then recite: Lā ilāha illallāh waḥdahu lā sharīka lah, lahu ‘l-mulku, walahu ‘l-ḥamd, wa Huwa `alā kulli shay'in Qadīr, ā'ibūna, tā'ibūna,`ābidūn, li Rabbinā ḥāmidūn, sadaqallāhu wa`dah, wa nasara `abdah, wa hazama ‘l-'aḥzāba waḥdah. From every elevated point say Allāhu Akbar (Allah is the Most Great) three times and then recite: None has the right to be worshipped but Allah alone, Who has no partner. His is the dominion and His is the praise, and He is Able to do all things. We return repentant to our Lord, worshipping our Lord, and praising our Lord. He fulfilled His Promise, He aided His slave, and He alone defeated the Confederates."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "كان النبي صلى الله عليه وسلم يقوله إذا قفل من غزو أو حج ، البخاري 7/163 ومسلم 2/980",
+          "en": "Bukhari 7/163, Muslim 2/980. The Prophet (ﷺ) used to say this when returning from a campaign or from Hajj"
+        }
+      ]
+    }
+  },
+  {
+    "id": 109,
+    "title": {
+      "ar": "ما يقول من أتاه أمر يسره أو يكرهه",
+      "en": "What to say upon receiving pleasing or displeasing news"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "كَانَ النَّبِيُّ صلى الله عليه وسلم إِذَا أَتَاهُ الْأَمْرُ يَسُرُّهُ قَالَ: (الْحَمْدُ لِلَّهِ الَّذِي بِنِعْمَتِهِ تَتِمُّ الصَّالِحَاتُ) وَإِذَا أَتَاهُ الْأَمْرُ يَكْرَهُهُ قَالَ: (الْحَمْدُ لِلَّهِ عَلَى كُلِّ حَالٍ)",
+          "en": "When something happened that pleased him, the Prophet (ﷺ) used to say: Alḥamdu lillāhi ‘lladhi bi ni`matihi tatimmuṣ-ṣāliḥāt. And if something happened that displeased him, he used to say: Alḥamdu lillāhi `alā kulli ḥāl. When something happened that pleased him, the Prophet (ﷺ) used to say: Praise is to Allah Who by His blessings all good things are perfected. And if something happened that displeased him, he used to say: Praise is to Allah in all circumstances"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "أخرجه ابن السني في عمل اليوم والليلة والحاكم وصححه 1/499 وصححه الألباني في صحيح الجامع 4/201",
+          "en": "Ibn As-Sunni, 'Amalul-Yawm wal-Laylah, and Al-Hakim who graded it authentic 1/499. See also Al-Albani, Sahihul-Jami' As-Saghir 4/201"
+        }
+      ]
+    }
+  },
+  {
+    "id": 110,
+    "title": {
+      "ar": "فضل الصلاة على النبي ﷺ",
+      "en": "Excellence of sending prayers upon the Prophet (saws)"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "قَالَ النَّبِيُّ صلى الله عليه وسلم: (مَنْ صَلَّى عَلَيَّ صَلاَةً صَلَّى اللَّهُ عَلَيْهِ بِهَا عَشْراً)",
+          "en": "The Prophet (ﷺ) said: Whoever prays for Allah's blessings upon me once, will be blessed for it by Allah ten times."
+        },
+        {
+          "ar": "وَقَالَ صلى الله عليه وسلم: (لاَ تَجْعَلُوا قَبْرِي عِيداً وَصَلُّوا عَلَيَّ؛ فَإِنَّ صَلاَتَكُم تَبْلُغُنِي حَيْثُ كُنْتُمْ)",
+          "en": "The Prophet (ﷺ) said: Do not make my grave a place of ritual celebration, but pray for Allah's blessings upon me, for your blessings reach me from wherever you are"
+        },
+        {
+          "ar": "وَقَالَ صلى الله عليه وسلم: (الْبَخِيلُ مَنْ ذُكِرْتُ عِنْدَهُ فَلَمْ يُصَلِّ عَلَيَّ)",
+          "en": "The Prophet (ﷺ) said: The miser is the one in whose presence I am mentioned yet does not pray for Allah's blessings upon me."
+        },
+        {
+          "ar": "وَقَالَ صلى الله عليه وسلم:(إِنَّ لِلَّهِ مَلاَئِكَةً سَيَّاحِينَ فِي الْأَرْضِ يُبَلِّغُونِي مِنْ أُمَّتِي السَّلاَمَ)",
+          "en": "The Prophet (ﷺ) said: Indeed Allah has angels who roam the earth and they convey to me the greetings (or prayers of peace) of my Ummah (nation)."
+        },
+        {
+          "ar": "وَقَالَ صلى الله عليه وسلم: (مَا مِنْ أَحَدٍ يُسَلِّمُ عَلَيَّ إِلاَّ رَدَّ اللَّهُ عَلَيَّ رُوحِيَ حَتَّى أَرُدَّ عَلَيْهِ السَّلاَمَ)",
+          "en": "The Prophet (ﷺ) said: No one sends greetings (or prayers of peace) upon me but Allah returns my soul to me so that I may return his greetings."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "أخرجه مسلم 1/288",
+          "en": "Muslim 1/288"
+        },
+        {
+          "ar": "أبو داود 2/218 وأحمد 2/367 وصححه الألباني في صحيح أبي داود 2/383",
+          "en": "Abu Dawud 2/218, Ahmad 2/367. Al-Albani graded it authentic in Sahih Abu Dawud 2/383."
+        },
+        {
+          "ar": "الترمذي 5/551 وغيره وانظر صحيح الجامع 3/ 25 وصحيح الترمذي 3/177",
+          "en": "At-Tirmidhi 5/551 and others. See also Al-Albani, Sahih At-Tirmidhi 3/177 and Sahihul-Jarai' As-Saghir 3/25"
+        },
+        {
+          "ar": "النسائي ،والحاكم 2/421 وصححه الألباني في صحيح النسائي 1/274",
+          "en": "An-Nasa'i, Al-Hakim 2/421. Al-Albani graded it authentic in Sahih An-Nasa'i 1/274"
+        },
+        {
+          "ar": "أبو داود برقم 2041وحسنه الألباني في صحيح أبي داود 1/ 383",
+          "en": "Abu Dawud (no. 2041). Al-Albani graded it good in Sahih Abu Dawud 1/383"
+        }
+      ]
+    }
+  },
+  {
+    "id": 111,
+    "title": {
+      "ar": "إفشاء السلام",
+      "en": "Excellence of spreading the Islamic greeting"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم: (لاَ تَدْخُلُوا الْجَنَّةَ حَتَّى تُؤْمِنُوا، وَلاَ تُؤْمِنُوا حَتَّى تَحَابُّوا، أَوَلاَ أَدُلُّكُم عَلَى شَيْءٍ إِذَا فَعَلْتُمُوهُ تَحَابَبْتُم، أَفْشُوا السَّلاَمَ بَيْنَكُمْ)",
+          "en": "The Prophet (ﷺ) said: You shall not enter Paradise until you believe, and you have not believed until you love one another. Shall I tell you of something you can do to make you love one another? Spread the greetings of Salam (peace) amongst yourselves (i.e. between each other)"
+        },
+        {
+          "ar": "ثَلاَثٌ مَنْ جَمَعَهُنَّ فَقَدْ جَمَعَ الْإِيمَانَ: الْإِنْصَافُ مِنْ نَفْسِكَ، وَبَذْلُ السَّلاَمِ لِلْعَالَمِ، وَالْإِنْفَاقُ مِنَ الإِقْتَارِ",
+          "en": "Three characteristics, whoever combines them, has completed his faith: to be just, to spread greetings to all people and to spend (charitably) out of the little you have"
+        },
+        {
+          "ar": "وَعَنْ عَبْدِ اللَّهِ بْنِ عُمَرَ رَضِيَ اللَّهُ عَنْهُمَا: أنَّ رَجُلاً سَأَلَ النَّبِيَّ صلى الله عليه وسلم أيُّ الْإِسْلاَمِ خَيْرٌ قَالَ: (تُطْعِمُ الطَّعَامَ، وَتَقْرأُ السَّلاَمَ عَلَى مَنْ عَرَفْتَ وَمَنْ لَمْ تَعْرِفْ)",
+          "en": "`Abdullah bin `Umar (RA) said: A man asked the Prophet (ﷺ), What is the best act of Islam?, He said, To feed others and to give greetings of Salam (peace) to those whom you know and to those whom you do not know."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "مسلم 1/74 وغيره",
+          "en": "Muslim 1/74 and others"
+        },
+        {
+          "ar": "البخاري مع الفتح 1/ 82 عن عمار رضي الله عنه موقوفاً معلقاً",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 1/82 as a statement of the Companion 'Ammar (RA)"
+        },
+        {
+          "ar": "البخاري مع الفتح 1/55 ومسلم 1/65",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 1/55, Muslim 1/65"
+        }
+      ]
+    }
+  },
+  {
+    "id": 112,
+    "title": {
+      "ar": "كيف يرد السلام على الكافر إذا سلم",
+      "en": "Returning a greeting to a disbeliever"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "إذَا سَلَّمَ عَلَيْكُمْ أَهْلُ الْكِتَابِ فَقُولُوا: وَعَلَيْكُمْ",
+          "en": "If one of the People of the Scripture (i.e. Christians and Jews) greets you, saying As-Salāmu `alaykum, then say (to him): Wa `alaykum. If one of the People of the Scripture (i.e. Christians and Jews) greets you saying As-Salaamu `alaykum, then say (to him): And upon you"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 11/42 ،ومسلم 4/1705",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/42, Muslim 4/1705"
+        }
+      ]
+    }
+  },
+  {
+    "id": 113,
+    "title": {
+      "ar": "دعاء عند سماع صياح الديك ونهيق الحمار",
+      "en": "Upon hearing a rooster crow or the braying of a donkey"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "إِذَا سَمِعْتُمْ صِيَاحَ الدِّيَكَةِ فَاسْأَلُوا اللَّهَ مِنْ فَضْلِهِ؛ فَإِنَّهَا رَأَتْ مَلَكاً وَإِذَا سَمِعْتُمْ نَهِيقَ الْحِمَارِ فَتَعَوَّذُوا بِاللَّهِ مِنَ الشَّيطَانِ؛ فَإِنَّهُ رَأَى شَيْطَاناً",
+          "en": "When you hear the cock's crow, ask Allah for His favor upon you for surely it has seen an angel. When you hear the bray of a donkey, seek refuge in Allah from Satan, for surely it has seen a devil"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 6/350 ،ومسلم 4/2092",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/350, Muslim 4/2092"
+        }
+      ]
+    }
+  },
+  {
+    "id": 114,
+    "title": {
+      "ar": "دعاء عند سماع نباح الكلاب بالليل",
+      "en": "Upon hearing the barking of dogs at night"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "إِذَا سَمِعْتُمْ نُبَاحَ الْكِلاَبِ وَنَهِيقَ الْحَمِيرِ بِاللَّيْلِ فَتَعَوَّذُوا بِاللَّهِ مِنْهُنَّ؛ فَإِنَّهُنَّ يَرَيْنَ مَا لاَ تَرَوْنَ",
+          "en": "When you hear a dog barking or a donkey braying in the night, then seek refuge in Allah from them, for surely they have seen what you see not"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "أبو داود 4/327 وأحمد 3/306 وصححه الألباني في صحيح أبي داود 3/961",
+          "en": "Abu Dawud 4/327, Ahmad 3/306. Al-Albani graded it authentic in Sahih Abu Dawud 3/961"
+        }
+      ]
+    }
+  },
+  {
+    "id": 115,
+    "title": {
+      "ar": "الدعاء لمن سببته",
+      "en": "For one you have insulted"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "قال صلى الله عليه وسلم: اللَّهُم فأيما مؤمن سببته فاجعل ذلك له قربة إليك يوم القيامة",
+          "en": "Allāhumma fa'ayyumā mu'minin sababtuhu faj`al dhālika lahu qurbatan ilayka yawma ‘l-qiyāmah"
+        },
+        {
+          "ar": "",
+          "en": "O Allah, whomever of the believers I have abused, give him the reward of a sacrificial slaughter for it on the Day of Resurrection"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 11/ 171 و مسلم4/ 2007 ولفظه فاجعلها له زكاة ورحمة",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/171, Muslim 4/2007. The wording in Muslim's report is: 'make it a purification for him and a source of mercy"
+        }
+      ]
+    }
+  },
+  {
+    "id": 116,
+    "title": {
+      "ar": "ما يقول المسلم إذا مدح المسلم",
+      "en": "The etiquette of praising a fellow Muslim"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "قال صلى الله عليه وسلم: إِذَا كَانَ أَحَدُكُم مَادِحاً صَاحِبَهُ لاَ مَحَالَةَ فَلْيَقُلْ: أَحْسِبُ فُلاَناً وَاللَّهُ حَسِيبُهُ، وَلاَ أُزَكِّي عَلَى اللَّهِ أَحَداً، أَحْسِبُهُ – إِنْ كَانَ يَعْلَمُ ذَاكَ – كَذَا وَكَذَا",
+          "en": "If any of you praises his companion then let him say: Aḥsibu fulānan wallāhu ḥasībuh wa lā uzakkī `alallāhi aḥada. If any of you praises his companion then let him say: I consider (such and such a person), and Allah is his Assessor, (meaning: and I cannot claim anyone to be pious before Allah) if you know of this (good character trait in the person) to be such and such (saying what he thinks is praiseworthy in that person)"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "رواه مسلم 4/2296",
+          "en": "Muslim 4/2296"
+        }
+      ]
+    }
+  },
+  {
+    "id": 117,
+    "title": {
+      "ar": "ما يقول المسلم إذا زكي",
+      "en": "For the one that have been praised"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "اللَّهُمَّ لاَ تُؤَاخِذْنِي بِمَا يَقُولُونَ وَاغْفِرْ لِي مَا لاَ يَعْلَمُونَ [وَاجْعَلْنِي خَيْرًا مِمَّا يَظُّنُّونَ]",
+          "en": "Allāhumma lā tu'ākhidhnī bimā yaqūlūn, waghfir lī mā lā ya`lamūn [waj`alnī khayran mimmā yaẓunnūn]"
+        },
+        {
+          "ar": "",
+          "en": "O Allah, do not call me to account for what they say and forgive me for what they have no knowledge of [and make me better than they imagine]"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري في الأدب المفرد برقم 761 ، وصحح إسناده الألباني في صحيح الأدب المفرد برقم 585 ، وما بين المعكوفين زيادة للبيهقي في شعب الإيمان 4/ 228 من طريق آخر",
+          "en": "Al-Bukhari, Al-'Adabul-Mufrad no. 761. See Al-Albani, Sahih Al-'Adabul-Mufrad (no. 585). The portion between brackets if from Al-Bayhaqi, Shu'ab Al-Iman 4/228, and comes another account"
+        }
+      ]
+    }
+  },
+  {
+    "id": 118,
+    "title": {
+      "ar": "كيف يلبي المحرم في الحج أو العمرة",
+      "en": "The Talbiya for the one doing Hajj or 'Umrah"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لاَ شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ والنِّعْمَة لَكَ والمُلْكُ، لَا شَرِيكَ لَكَ",
+          "en": "Labbayk-Allāhumma labbayk, labbayka lā sharīka laka labbayk, inna ‘l-ḥamda, wanni`mata, laka wa ‘l-mulk, lā sharīka lak"
+        },
+        {
+          "ar": "",
+          "en": "I am here at Your service, O Allah, I am here at Your service. I am here at Your service, You have no partner, I am here at Your service. Surely the praise, and blessings are Yours, and the dominion. You have no partner"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 3/ 408 ، ومسلم 2/841",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/408, Muslim 2/841"
+        }
+      ]
+    }
+  },
+  {
+    "id": 119,
+    "title": {
+      "ar": "التكبير إذا أتي الركن الأسود",
+      "en": "The Takbîr passing the black stone"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "طَافَ النَّبيُّ صلى الله عليه وسلم بِالْبَيْتِ عَلَى بَعِيرٍ كُلَّمَا أَتَى الرُّكْنَ أَشَارَ إِلَيْهِ بِشَيْءٍ عِنْدَهُ وَكَبَّرَ",
+          "en": "The Prophet (ﷺ) performed Tawaf riding a camel. Every time he passed the corner (containing the Black Stone), he would point to it with something that he was holding and say: Allāhu Akbar (Allah is the Most Great)!"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 3/476 ،والمراد بالشيء المحجن انظر : البخاري مع الفتح 3/472",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/476. See also 472. The 'something' that was referred to in this Hadith was a cane"
+        }
+      ]
+    }
+  },
+  {
+    "id": 120,
+    "title": {
+      "ar": "الدعاء بين الركن اليماني والحجر الأسود",
+      "en": "Between the Yemeni corner and the black stone"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "رَبَّنَا آتِنَا في الدُّنْيَا حسَنَةً وفي الآخِرَةِ حسَنةً وقِنَا عذَابَ النَّارِ",
+          "en": "Rabbanā ātinā fid-dunyā ḥasanah wa fi ‘l-ākhirati ḥasanah wa qinā `adhāban-nār"
+        },
+        {
+          "ar": "",
+          "en": "Our Lord, grant us the good things in this world, and the good things in the next life, and save us from the punishment of the Fire"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "أبو داود 2/ 179 وأحمد 3/411 والبغوي في شرح السنة 7/128 ،وحسنه الألباني في صحيح أبي داود 1/ 354 ، والآية من سورة البقرة ، 201",
+          "en": "Abu Dawud 2/179, Ahmad 3/411, Al-Baghawi, Sharhus-Sunnah 7/128. Al-Albani graded it good in Sahih Abu Dawud 1/354. The Ayat is from Surat Al-Baqarah, 2:201"
+        }
+      ]
+    }
+  },
+  {
+    "id": 121,
+    "title": {
+      "ar": "دعاء الوقوف على الصفا والمروة",
+      "en": "When at Mount Safa and Mount Marwah"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "(لَمَّا دَنَا النَّبِيُّ صلى الله عليه وسلم مِنَ الصَّفَا قَرَأَ: ﴿إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَآئِرِ اللَّهِ﴾ أَبْدَأُ بِمَا بَدَأَ اللَّهُ بِهِ فَبَدَأَ بِالصَّفَا فَرَقِيَ عَلَيْهِ حَتَّى رَأَى الْبَيْتَ، فَاسْتَقْبَلَ الْقِبْلَةَ، فَوَحَّدَ اللَّهَ وَكبَّرَهُ وَقَالَ: لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ، أَنْجَزَ وَعْدَهُ، وَنَصَرَ عَبْدَهُ، وَهَزَمَ الْأَحْزَابَ وَحْدَهُ، ثُمَّ دَعَا بَيْنَ ذلكَ. قَالَ مِثْلَ هَذَا ثَلاَثَ مَرَّاتٍ) الْحَدِيثُ. وَفِيهِ: (فَفَعَلَ عَلَى الْمَرْوَةِ كَمَا فَعَلَ عَلَى الصَّفَا)",
+          "en": "Whenever the Prophet (ﷺ) approached Mount Safa, he would recite: Innaṣ-Ṣafā wa ‘l-Marwata min sha`ā'irillāh. Abda'u bimā bada'allāhu bih. He began (his Sa`y) at Mount Safa climbing it, until he could see the House. He then faced the Qiblah repeating the words: Lā ilāha illallāh, Allāhu Akbar Then he said: Lā ilāha 'illallāh waḥdahu lā sharīka lah, Lahu ‘l-mulku wa lahu ‘l-ḥamd wa Huwa `alā kulli shay'in Qadīr, lā 'ilāha illallāhu waḥdahu, anjaza wa`dahu, wa naṣara `abdahu, wa hazama ‘l 'aḥzāba waḥdah. Then he would ask Allah for what he liked, repeating the same three times. He did at Mount Marwah as he did at Mount Safa. Whenever the Prophet (ﷺ) approached Mount Safa, he would recite: Surely Safa and Marwah are among the signs of Allah. I begin by that which Allah began. He began (his Sa'y) at Mount Safa climbing it until he could see the House. He then faced the Qiblah repeating the words: There is none worthy of worship but Allah, and Allah is the Most Great. Then he said: None has the right to be worshipped but Allah alone, Who has no partner, His is the dominion and His is the praise, and He is Able to do all things. None has the right to be worshipped but Allah alone, He fulfilled His Promise, He aided His slave, and He alone defeated Confederates. Then he would ask Allah for what he liked, repeating the same thing like this three times. He did at Mount Marwah as he did at Mount Safa"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "مسلم 2/888",
+          "en": "Muslim 2/888"
+        }
+      ]
+    }
+  },
+  {
+    "id": 122,
+    "title": {
+      "ar": "الدعاء يوم عرفة",
+      "en": "The Day of 'Arafah"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "خير الدعاء دعاء يوم عرفة ، وخيرُ ما قلت أنا والنبيُّون من قبلي : لا إله إلا الله وحدهُ لا شريك لهُ ، لهُ الملكُ ولهُ الحمدُ وهو على كل شيء قدير.",
+          "en": "The Prophet (ﷺ) said: The best invocation is that of the Day of Arafat, and the best that anyone can say is what I and the Prophets before me have said: Lā 'ilāha 'illallāhu waḥdahu lā sharīka lahu, lahul-mulku wa lahul-ḥamdu wa huwa `alā kulli shay'in qadīr. None has the right to be worshipped but Allah Alone, Who has no partner. His is the dominion and His is the praise, and He is Able to do all things"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "الترمذي وحسنه الألباني في صحيح الترمذي 3/184، وفي الحديث الصحيحة 4/6",
+          "en": "At-Tirmidhi. Al-Albani graded it good in Sahih At-Tirmidhi 3/184, and also Silsilatul-'Ahadith As-Sahihah 4/6"
+        }
+      ]
+    }
+  },
+  {
+    "id": 123,
+    "title": {
+      "ar": "الذكر عند المشعر الحرام",
+      "en": "Remembrance at Muzdalifa"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "رَكِبَ صلى الله عليه وسلم الْقَصْوَاءَ حَتَّى أَتَى الْمَشْعَرَ الْحَرَامَ فَاسْتَقْبَلَ الْقِبْلَةَ (فَدَعَاهُ، وَكَبَّرَهُ، وَهَللَّهُ، وَوَحَّدَهُ) فَلَمْ يَزَلْ وَاقِفاً حَتَّى أَسْفَرَ جِدَّاً فَدَفَعَ قَبْلَ أَنْ تَطْلُعَ الشَّمسُ.",
+          "en": "He (ﷺ) rode Al-Qaswa until he reached Al-MashAAar Al-Haram, he then faced the qiblah, supplicated to Allah, and extoled His greatness and oneness. He stood until the sun shone but left before it rose."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "مسلم 2/891",
+          "en": "Muslim 2/891"
+        }
+      ]
+    }
+  },
+  {
+    "id": 124,
+    "title": {
+      "ar": "التكبير عند رمي الجمار مع كل حصاة",
+      "en": "Takbir when throwing each pebble at the Jamarat"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "يُكَبِّرُ كُلَّمَا رَمَى بِحَصَاةٍ عِنْدَ الْجِمَارِ الثَّلاَثِ، ثُمَّ يَتَقَدَّمُ، ويَقِفُ يَدْعُو مُسْتَقْبِلَ الْقِبلَةِ، رَافِعاً يَدَيْهِ بَعْدَ الْجَمْرَةِ الْأُولَى وَالثَّانِيَةِ. أَمَّا جَمْرَةُ الْعَقَبَةِ فَيَرْمِيهَا وَيُكَبِّرُ عِنْدَ كُلِّ حَصَاةٍ وَيَنْصَرِفُ وَلاَ يَقِفُ عِنْدَهَا",
+          "en": "The Prophet (ﷺ) said Allāhu Akbar (Allah is the Most Great) with each pebble he threw at the three pillars. Then he went forward, stood facing the Qiblah, and raised his hands and called upon Allah. That was after (stoning) the first and second pillars. As for the third, he stoned it and called out Allāhu Akbar with every pebble he threw, but when he was finished he left without standing at it (for supplications)."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 3/583 و3/584 وانظر لفظه هناك . والبخاري مع الفتح 3/581 ورواه مسلم أيضاً",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 3/581, 3, 4, and Muslim"
+        }
+      ]
+    }
+  },
+  {
+    "id": 125,
+    "title": {
+      "ar": "ما يقول عند التعجب والأمر السار",
+      "en": "At times of amazement and that which delights"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "سُـبْحانَ الله",
+          "en": "Subḥānallāh!"
+        },
+        {
+          "ar": "",
+          "en": "(Glory is to Allah)"
+        },
+        {
+          "ar": "اللهُ أَكْـبَر",
+          "en": "Allāhu Akbar!"
+        },
+        {
+          "ar": "",
+          "en": "(Allah is the Most Great)"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 1/210 و390 و414 ومسلم 4/1857",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 1/210, 390, 414 and Muslim 4/1857"
+        },
+        {
+          "ar": "البخاري الفتح 8/441 وانظر صحيح الترمذي 2/103 و2/235 ومسند أحمد 5/218",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 8/441. See also Al-Albani, Sahih At-Tirmidhi 2/103, 235, Ahmad 5/218"
+        }
+      ]
+    }
+  },
+  {
+    "id": 126,
+    "title": {
+      "ar": "ما يفعل من أتاه أمر يسره",
+      "en": "Upon receiving pleasant news"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "كَانَ النَّبيُّ صلى الله عليه وسلم إِذَا أَتَاهُ أَمْرٌ يَسُرُّهُ أَوْ يُسَرُّ بِهِ خَرَّ سَاجِداً شُكْراً لِلَّهِ تَبَارَكَ وَتَعَالَى",
+          "en": "The Prophet (ﷺ), upon receiving news which pleased him or which caused pleasure, would prostrate in gratitude to Allah blessed and exalted"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "رواه أهل السنن إلا النسائي . انظر صحيح ابن ماجه 1/233 وإرواء الغليل 2/226",
+          "en": "Abu Dawud, Ibn Majah, At-Tirmidhi. See also Al-Albani, Sahih Ibn Majah 1/233, and 'Irwa'ul-Ghalil 2/226"
+        }
+      ]
+    }
+  },
+  {
+    "id": 127,
+    "title": {
+      "ar": "ما يفعل ويقول من أحس وجعاً في جسده",
+      "en": "When feeling some pain in the body"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "ضَعْ يَدَكَ عَلَى الَّذِي تَألَّمَ مِنْ جَسَدِكَ وَقُلْ: 'بِسْمِ اللَّهِ' ثَلاَثاً، وَقُلْ سَبْعَ مَرَّاتٍ: 'أَعُوذُ بِاللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ'",
+          "en": "Put your hand on the place where you feel pain and say: Bismillāh (three times). Then say seven times: A`ūdhu billāhi wa qudratihi min sharri mā ajidu wa uḥādhir. Put your hand on the place where you feel pain and say: With the Name of Allah (three times). Then say seven times: I seek refuge in Allah and in His Power from the evil of what I find and of what I guard against"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "مسلم 4/1728",
+          "en": "Muslim 4/1728"
+        }
+      ]
+    }
+  },
+  {
+    "id": 128,
+    "title": {
+      "ar": "ما يقول من خشي أن يصيب شيئاً بعينه",
+      "en": "When in fear of afflicting something with an (evil) eye from oneself"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "إِذَا رَأَى أَحَدُكُم مِنْ أَخِيهِ، أَوْ مِنْ نَفْسِهِ، أَوْ مِنْ مَالِهِ مَا يُعْجِبُهُ [فَلْيَدْعُ لَهُ بِالْبَرَكَةِ] فَإِنَّ الْعَيْنَ حَقٌّ",
+          "en": "If you see something from your brother, yourself or wealth which you find impressing, then invoke blessings for it, for the evil eye is indeed true"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "مسند أحمد 4/447 وابن ماجه ومالك ، وصححه الألباني في صحيح الجامع 1/212 وانظر تحقيق زاد المعاد للأرناؤوط 4/170",
+          "en": "Ahmad 4/447, Ibn Majah, Malik. Al-Albani graded it authentic in Sahihul-Jami' As-Saghir 1/212. Also see Al-Arna'ut's checking of Ibn Al-Qayyim's Zadul-Ma'ad 4/170"
+        }
+      ]
+    }
+  },
+  {
+    "id": 129,
+    "title": {
+      "ar": "ما يقال عند الفزع",
+      "en": "When startled"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "لا إلهَ إلاّ اللّهُ",
+          "en": "Lā ilāha illallāh!"
+        },
+        {
+          "ar": "",
+          "en": "There is none worthy of worship but Allah!"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 6/181 ، ومسلم 4/2208",
+          "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 6/181, Muslim 4/2208"
+        }
+      ]
+    }
+  },
+  {
+    "id": 130,
+    "title": {
+      "ar": "ما يقول عند الذبح أو النحر",
+      "en": "When slaughtering or offering a sacrifice"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ [اللَّهُمَّ مِنْكَ وَلَكَ] اللَّهُمَّ تَقَبَّلْ مِنِّي",
+          "en": "Bismillāh wallāhu Akbar [Allāhumma minka wa lak] Allāhumma taqabbal minnī"
+        },
+        {
+          "ar": "",
+          "en": "With the Name of Allah, Allah is the Most Great! [O Allah, from You and to You.] O Allah, accept it from me."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "مسلم 3/1557 والبيهقي 9/287 وما بين المعكوفين للبيهقي 9/287 وغيره والجملة الأخيرة سقتها بالمعنى من رواية مسلم",
+          "en": "Muslim 3/1557, Al-Bayhaqi 9/287"
+        }
+      ]
+    }
+  },
+  {
+    "id": 131,
+    "title": {
+      "ar": "ما يقول لرد كيد مردة الشياطين",
+      "en": "To ward off the plot of the rebellious devils"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "أَعُوذُ بكَلِمَاتِ اللهِ التَّامَّاتِ الَّتِي لَا يُجَاوِزُهُنَّ بَرٌّ ولَا فَاجرٌ مِنْ شّرِّ مَا خَلقَ، وبَرَأَ وذَرَأَ، ومِنْ شَرِّ مَا يَنْزِلُ مِنَ السَّمَاءِ وِمنْ شَرِّ مَا يَعْرُجُ فيهَا، ومِن شَرِّ مَا ذَرَأَ في الأَرْضِ ومِنْ شَرِّ مَا يَخْرُجُ مِنْهَا، وِمنْ شَرِّ فِتَنِ اللَّيْلِ والنَّهارِ، ومِنْ شَرِّ كُلِّ طارِقٍ إِلَّا طَارِقاً يَطْرُقُ بخَيْرٍ يَا رَحْمَنُ",
+          "en": "A`ūdhu bikalimāti ‘llāhit-tāmmāti ‘llatī lā yujāwizuhunna barrun wa lā fājirun min sharri mā khalaq, wa bara'a wa dhara', wa min sharri mā yanzilu minas-samā', wa min sharri mā ya`ruju fīhā, wa min sharri mā dhara'a fi ‘l-arḍ, wa min sharri ma yakhruju minhā, wa min sharri fitani ‘llayli wannahār, wa min sharri kulli ṭāriqin illā ṭāriqan yaṭruqu bikhayr yā Rahmān"
+        },
+        {
+          "ar": "",
+          "en": "I seek refuge in the Perfect Words of Allah -which neither the upright nor the corrupt may overcome - from the evil of what He created, of what He made, and of what He scattered, from the evil of what descends from the heavens, and of what rises up to them, from the evil of what He scattered in the earth, and of what emerges from it, from the evil trials of night and day, and from the evil of every night visitor, except the night visitor who comes with good. O Merciful One"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "أحمد 3/419 بإسناد صحيح وابن السني برقم 637 وصحح إسناده الأرناؤوط في تخريجه للطحاوية ص 133 وانظر مجمع الزوائد 10/127",
+          "en": "Ahmad 3/419, with an authentic chain of narration, and Ibn As-Sunni (no. 637). Al-Arna'ut, graded its chain authentic in his checking of Al-'Aqidah At-Tahawiyyah p. 133. See also Majma'uz-Zawa'id, 10/127"
+        }
+      ]
+    }
+  },
+  {
+    "id": 132,
+    "title": {
+      "ar": "الاستغفار والتوبة",
+      "en": "Seeking forgiveness and repentance"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم: 'وَاللَّهِ إِنِّي لأَسْتَغفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ فِي الْيَوْمِ أَكْثَرَ مِنْ سَبْعِينَ مَرَّةٍ'",
+            "en": "Allah's Messenger (ﷺ) said: By Allah, I seek the forgiveness of Allah, and repent to Him more than seventy times in a day."
+          },
+          "references": [
+            {
+              "ar": "البخاري مع الفتح 11/101",
+              "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/101"
+            }
+          ],
+          "readCount": 70
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: (يَا أَيُّهَا النَّاسُ تُوبُوا إِلَى اللَّهِ فَإِنِّي أَتُوبُ فِي الْيَوْمِ إِلَيْهِ مِائَةَ مَرَّةٍ)",
+            "en": "Allah's Messenger (ﷺ) said: O people, repent to Allah, for I verily repent to Him one hundred times a day"
+          },
+          "references": [
+            {
+              "ar": "مسلم 4/2076",
+              "en": "Muslim 4/2076"
+            }
+          ],
+          "readCount": 100
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: مَنْ قَالَ (أَسْتَغْفِرُ اللَّهَ الْعَظيمَ الَّذِي لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ القَيّوُمُ وَأَتُوبُ إِلَيهِ)، غَفَرَ اللَّهُ لَهُ وَإِنْ كَانَ فَرَّ مِنَ الزَّحْفِ.",
+            "en": "Allah's Messenger (ﷺ) said: Whoever says: Astaghfirullāha ‘l-'Aẓīm alladhi lā ilāha illā huwa ‘l-ḥayyul-Qayyūm wa atūbu ilayh. Allah's Messenger (ﷺ) said: Whoever says: I seek the forgiveness of Allah the Mighty, Whom there is none worthy of worship except Him, the Living, the Eternal, and I repent to Him, Allah will forgive him even if he has deserted the army's ranks"
+          },
+          "references": [
+            {
+              "ar": "أخرجه أبو داود 2/85 والترمذي 5/569 والحاكم وصححه ووافقه الذهبي 1/511 وصححه الألباني . انظر صحيح الترمذي 3/182 وجامع الأصول لأحاديث الرسول صلى الله عيه وسلم 4/389 ï¿½ 390 بتحقيق الأرناؤوط",
+              "en": "Abu Dawud 2/85, At-Tirmidhi 5/569, and Al-Hakim who declared it authentic and Ath-Thahabi agreed with him 1/511. Al-Albani graded it authentic in Sahih At-Tirmidhi 3/182. See also Jami'ul-'Usool li-'Ahdaith Ar-Rasool 4/389-90 checked by Al-Arna'ut"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: أَقْرَبُ مَا يَكُونُ الرَّبُّ مِنَ الْعَبْدِ فِي جَوْفِ اللَّيْلِ الآخِرِ فَإِنِ اسْتَطَعْتَ أَنْ تَكُونَ مِمَّنْ يَذْكُرُ اللَّهَ فِي تِلْكَ السَّاعَةِ فَكُنْ",
+            "en": "Allah's Messenger (ﷺ) said: The closest that the Lord comes to the slave is in the last portion of the night. So, if you are able to be among those who remember Allah in this hour, then be among them."
+          },
+          "references": [
+            {
+              "ar": "أخرجه الترمذي والنسائي 1/279 والحاكم وانظر صحيح الترمذي 3/183 وجامع الأصول بتحقيق الأرناؤوط 4/144",
+              "en": "At-Tirmidhi, An-Nasa'i 1/279 and Al-Hakim. See also Al-Albani, Sahih At-Tirmidhi 3/183, and Jdmi'ul-'Usool with Al-Arna'ut's checking 4/144"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: أَقْرَبُ مَا يَكُونُ الْعَبْدُ مِنْ رَبِّهِ وَهُوَ سَاجِدٌ فَأَكثِرُوا الدُّعَاءَ",
+            "en": "Allah's Messenger (ﷺ) said: The closest that the slave comes to his Lord is when he is prostrating, so invoke Allah much (in prostration)"
+          },
+          "references": [
+            {
+              "ar": "مسلم 1/350",
+              "en": "Muslim 1/350"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: إِنَّهُ لَيُغَانُ عَلَى قَلْبِي وَإِنِّي لأَسْتَغْفِرُ اللَّهَ فِي الْيَوْمِ مِائَةَ مَرَّةٍ.",
+            "en": "Allah's Messenger (ﷺ) said: It is a heavy thing for my heart if I do not seek Allah's forgiveness a hundred times a day."
+          },
+          "references": [
+            {
+              "ar": "أخرجه مسلم 4/2075 قال ابن الأثير : ( ليُغان على قلبي ) أي ليغطى ويغشى والمراد : السهو ؛ لأنه كان صلى الله عيه وسلم لا يزال في مزيد من الذكر والقربة ودوام المراقبة فإذا سها عن شيء منها في بعض الأوقات ،أو نسي ،عدهُ ذنباً على نفسه ففزع إلى الاستغفار . انظر جامع الأصول 4/386",
+              "en": "Muslim 4/2075. Ibn 'Athir explains that the Prophet (ﷺ) was always vigilant in his remembrance and drawing near to Allah, and if he forgot to do any of what he normally did from time to time, or it slipped his mind, he felt as if he had wronged himself and so he would begin to seek the forgiveness of Allah. See Jami'ul-'Usool 4/386"
+            }
+          ],
+          "readCount": 100
+        }
+      ]
+    }
+  },
+  {
+    "id": 133,
+    "title": {
+      "ar": "من فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "en": "Excellence of Tasbih, Tahmid, Tahlil, and Takbir"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "counter",
+      "list": [
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "قَالَ صلى الله عليه وسلم: مَنْ قَالَ (سُبْحَانَ اللَّهِ وَبِحَمْدِهِ) فِي يَوْمٍ مِائَةَ مَرَّةٍ حُطَّتْ خَطَايَاهُ وَلَوْ كَانَتْ مِثْلَ زَبَدِ الْبَحْر",
+            "en": "Allah's Messenger (ﷺ) said: Whoever says: Subḥānallāhi wa biḥamdihi. one hundred times a day, will have his sins forgiven even if they are like the foam of the sea. Allah's Messenger (ﷺ) said: Whoever says: Glorified is Allah and praised is He. one hundred times a day, will have his sins forgiven even if they are like the foam of the sea"
+          },
+          "references": [
+            {
+              "ar": "البخاري 7/168 ومسلم 4/2071 ، وانظر :فضل من قالها مائة مرة إذا أصبح وإذا أمسى",
+              "en": "Al-Bukhari 7/168, Muslim 4/2071, see also invocation no. 91 of this book"
+            }
+          ],
+          "readCount": 100
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: مَنْ قَالَ (لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ) عَشْرَ مِرَارٍ، كَانَ كَمَنْ أَعْتَقَ أَرْبَعَةَ أَنْفُسٍ مِنْ وَلَدِ إِسْمَاعِيلَ",
+            "en": "Allah's Messenger (ﷺ) said: Whoever says: Lā ilāha illallāh waḥdahu lā sharīka lah, lahu ‘l-mulku wa lahu ‘l-ḥamd wa huwa `alā kulli shay'in Qadīr. ten times, will have the reward for freeing four slaves from the Children of Isma'il. Allah's Messenger (ﷺ) said: Whoever says: None has the right to be worshipped but Allah alone, Who has no partner. His is the dominion and His is the praise, and He is Able to do all things. ten times, will have the reward for freeing four slaves from the Children of Isma'il"
+          },
+          "references": [
+            {
+              "ar": "البخاري 7/67 ومسلم بلفظه 4/2071 وانظر فضل من قالها في اليوم مائة مرة",
+              "en": "Al-Bukhari 7/67, Muslim 4/2071, see also invocation no. 93 of this book."
+            }
+          ],
+          "readCount": 10
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي الْمِيزَانِ، حَبِيبَتَانِ إِلَى الرَّحْمَنِ: (سُبْحَانَ اللَّهِ وَبِحَمْدِهِ)، (سُبْحانَ اللَّهِ الْعَظِيمِ)",
+            "en": "Allah's Messenger (ﷺ) said: Two words are light on the tongue, weigh heavily in the balance, and are loved by the Most Merciful One: Subḥānallāhi wa biḥamdih, Subḥānallāhi ‘l-`Aẓīm. Allah's Messenger (ﷺ) said: Two words are light on the tongue, weigh heavily in the balance, and are loved by the Most Merciful One: Glorified is Allah and praised is He, Glorified is Allah the Most Great"
+          },
+          "references": [
+            {
+              "ar": "البخاري 7/167 ومسلم 4/2072",
+              "en": "Al-Bukhari 7/168, Muslim 4/2072"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: لَأَنْ أَقُولَ (سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَلاَ إِلَهَ إِلاَّ اللَّهُ، وَاللَّهُ أَكْبَرُ)، أَحَبُّ إِلَيَّ مِمَّا طَلَعَتْ عَلَيْهِ الشَّمسُ",
+            "en": "Allah's Messenger (ﷺ) said: For me to say: Subḥānallāh, walḥamdu lillāh, wa lā ilāha illallāh, wallāhu 'Akbar is dearer to me than all that the sun rises upon (i.e. the whole world). Allah's Messenger (ﷺ) said: For me to say: Glory is to Allah, and praise is to Allah, and there is none worthy of worship but Allah, and Allah is the Most Great. is dearer to me than all that the sun rises upon (i.e. the whole world)"
+          },
+          "references": [
+            {
+              "ar": "مسلم 4/2072",
+              "en": "Muslim 4/2072"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: أَيَعْجِزُ أَحَدُكُم أَنْ يَكْسِبَ كُلَّ يَوْمٍ أَلْفَ حَسَنَةٍ؟ فَسَأَلَهُ سَائِلٌ مِنْ جُلَسَائِهِ كَيْفَ يَكْسِبُ أَحَدُنَا أَلْفَ حَسَنَةٍ؟ قَالَ: يُسَبِّحُ مِائَةَ تَسْبِيحَةٍ، فَيُكتَبُ لَهُ أَلْفُ حَسَنَةٍ أَوْ يُحَطُّ عَنْهُ أَلْفُ خَطِيئَةٍ.",
+            "en": "Allah's Messenger (ﷺ) said: 'Is anyone of you incapable of earning one thousand Hasanah (rewards) in a day?' Someone from his gathering asked, 'How can anyone of us earn a thousand Hasanah?' He said, Glorify Allah a hundred times and a thousand Hasanah will be written for you, or a thousand sins will be wiped away."
+          },
+          "references": [
+            {
+              "ar": "مسلم 4/2073",
+              "en": "Muslim 4/2073"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "مَنْ قَالَ (سُبْحَانَ اللَّهِ الْعَظِيمِ وَبِحَمْدِهِ) غُرِسَتْ لَهُ نَخْلَةٌ فِي الْجَنَّةِ",
+            "en": "Whoever says: Subḥānallāhi ‘l-'Aẓīmi wa biḥamdih will have a date palm planted for him in Paradise"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Whoever says: Glorified is Allah the Most Great and praised is He. will have a date palm planted for him in Paradise"
+            },
+            {
+              "ar": "أخرجه الترمذي 5/511 والحاكم 1/501 وصححه ووافقه الذهبي ، وانظر صحيح الجامع 5/531 وصحيح الترمذي 3/160",
+              "en": "At-Tirmidhi 5/511, and Al-Hakim who graded it authentic and Ath-Thahabi agreed 1/501. See also Al-Albani, Sahihul-Jami' As-Saghir 5/531 and Sahih At-Tirmidhi3/160"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: يَا عَبْدَ اللَّهِ بْنَ قَيْسٍ أَلاَ أَدُلُّكَ عَلَى كَنْزٍ مِنْ كُنُوزِ الْجَنَّةِ؟ فَقُلْتُ: بَلَى يَا رَسُولَ اللَّهِ، قَالَ: قُلْ (لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ).",
+            "en": "Allah's Messenger (ﷺ) said: O Abdullah bin Qais, should I not point you to one of the treasures of Paradise? I said, 'Yes, O Messenger of Allah. So he told me to say: Lā ḥawla wa lā quwwata 'illā billāh. Allah's Messenger (ﷺ) said: O Abdullah bin Qais, should I not point you to one of the treasures of Paradise?, I said, Yes, O Messenger of Allah., So he told me to say: There is no power and no might except by Allah"
+          },
+          "references": [
+            {
+              "ar": "البخاري مع الفتح 11/ 213 ومسلم 4/2076",
+              "en": "Al-Bukhari, cf. Al-Asqalani, Fathul-Bari 11/213, Muslim 4/2076"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "وَقَالَ صلى الله عليه وسلم: أَحَبُّ الْكَلاَمِ إِلَى اللَّهِ أَرْبَعٌ: (سُبْحَانَ اللَّهِ)، وَ(الْحَمْدُ لِلَّهِ)، وَ(لاَ إِلَهَ إِلاَّ اللَّهُ)، وَ(اللَّهُ أَكْبَرُ)، لاَ يَضُرُّكَ بِأَيِّهِنَّ بَدَأتَ",
+            "en": "Allah's Messenger (ﷺ) said: The most beloved words to Allah are four: Subḥānallāh Walḥamdu lillāh. Wa lā ilāha illallāh Wallāhu Akbar. Allah's Messenger (ﷺ) said: The most beloved words to Allah are four: Glorified is Allah, and The praise is for Allah, and There is none worthy of worship but Allah, and Allah is the Most Great"
+          },
+          "references": [
+            {
+              "ar": "مسلم 3/1685",
+              "en": "Muslim 3/1685"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "جَاءَ أَعْرَابِيٌّ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم فَقَالَ: عَلِّمْنِي كَلاماً أَقُولُهُ: قَالَ: قُلْ (لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، اللَّهُ أَكْبَرُ كَبِيراً، وَالْحَمْدُ لِلَّهِ كَثِيراً، سُبْحَانَ اللَّهِ رَبِّ العَالَمِينَ، لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ الْعَزِيزِ الْحَكِيمِ). قَالَ: فَهَؤُلاَءِ لِرَبِّي، فَمَا لِي؟ قَالَ: قُلْ (اللَّهُمَّ اغْفِرْ لِي، وَارْحَمْنِي، وَاهْدِنِي، وَارْزُقْنِي)",
+            "en": "A desert Arab came to Allah's Messenger (ﷺ) and said, Teach me a word that I can say.  The Prophet told him to say: Lā ilāha illallāh waḥdahu lā sharīka lah, Allāhu Akbaru kabīra, walḥamdu lillāhi kathīra, Subḥānallāhi Rabbil-`ālamīn, Lā ḥawla wa lā quwwata illā billāhi ‘l-`Azīzil-Hakīm. He said, That is for my Lord, but what about me? The Prophet (ﷺ) told him to say: Allāhummaghfir lī, warḥamnī, waḥdinī warzuqnī."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "A desert Arab came to Allah's Messenger (ﷺ) and said, Teach me a word that I can say. The Prophet told him to say: There is none worthy of worship but Allah, Who has no partner, Allah is the Great, the Most Great, and praise is to Allah in abundance, glory is to Allah, Lord of the worlds. There is no power and no might but by Allah the Mighty, the Wise. He said, That is for my Lord, but what about me? The Prophet (ﷺ) told him to say: O Allah forgive me, and have mercy on me and guide me, and provide for me"
+            },
+            {
+              "ar": "مسلم 4/2072 وزاد أبو داود : فلما ولى الأعرابي قال النبي صلى الله عليه وسلم : لقد ملأ يديه من الخير 1/220",
+              "en": "Muslim 4/2072, Abu Dawud reports the same Hadith with the addition: and when the Arab left, the Prophet (ﷺ) said: He has filled his hands with goodness. 1/220"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "كَانَ الرَّجُلُ إِذَا أَسْلَمَ عَلَّمَهُ النَّبيُّ صلى الله عليه وسلم الصَّلاَةَ ثُمَّ أَمَرَهُ أَنْ يَدْعُوَ بِهَؤُلاَءِ الْكَلِمَاتِ: (اللَّهُمَّ اغْفِرِ لِي، وَارْحَمْنِي، وَاهْدِنِي، وَعَافِنِي وَارْزُقْنِي)",
+            "en": "Whenever anyone accepted Islam, the Prophet (ﷺ) used to teach him how to pray then he would instruct him to invoke Allah with the following words: Allāhummaghfir lī, warḥamnī, waḥdinī, wa `āfinī warzuqnī"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "Whenever anyone accepted Islam, the Prophet (ﷺ) used to teach him how to pray then he would instruct him to invoke Allah with the following words: O Allah forgive me, and have mercy on me and guide me and give me good health and provide for me"
+            },
+            {
+              "ar": "مسلم 4/2073 وفي رواية لمسلم فإن هؤلاء تجمع لك ديناك وآخرتك",
+              "en": "Muslim 4/2073, and in one of Muslim's reports there is the addition: 'For these words combine [the goodness of] this world and the next."
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "إِنَّ أَفْضَلَ الدُّعَاءِ (الْحَمْدُ لِلَّهِ)، وَأَفْضَلَ الذِّكْرِ (لاَ إِلَهَ إِلاَّ اللَّهُ)",
+            "en": "The most excellent invocation is: Alḥamdulillāh and the most excellent words of remembrance are: Lā ilāha illallāh"
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "The most excellent invocation is: Praise is for Allah. and the most excellent words of remembrance are: There is none worthy of worship but Allah"
+            },
+            {
+              "ar": "الترمذي 5/462 وابن ماجه 2/1249 والحاكم 1/503 وصححه ووافقه الذهبي وانظر صحيح الجامع 1/362",
+              "en": "At-Tirmidhi 5/462, Ibn Majah 2/1249, and Al-Hakim who graded it authentic and Ath-Tbahabi agreed 1/503. See Al-Albani, Sahihul-Jami' As-Saghir 1/362"
+            }
+          ],
+          "readCount": 1
+        },
+        {
+          "descriptionTitle": {
+            "ar": "",
+            "en": ""
+          },
+          "description": {
+            "ar": "الباقيات الصالحات : (سبحان الله) و(الحمد لله )، و(لا إله إلا الله)، و(الله أكبر) ،و (لا حول ولا قوة إلا بالله).",
+            "en": "The good deeds which endure are: Subḥānallāh. Walḥamdu lillāh. Wa lā ilāha illallāh Wallāhu Akbar Wa lā ḥawla wa lā quwwata illā billāh."
+          },
+          "references": [
+            {
+              "ar": "",
+              "en": "The good deeds which endure are: Glorified is Allah, and The praise is for Allah, and There is none worthy of worship but Allah, and Allah is the Most Great, and There is no power and no might except by Allah"
+            },
+            {
+              "ar": "أحمد برقم 513 بترتيب أحمد شاكر وإسناده صحيح وانظر مجمع الزوائد 1/297، وعزاه ابن حجر في بلوغ المرام من رواية أبي سعيد إلىالنسائي وقال :صححه ابن حبان والحاكم",
+              "en": "Ahmad (no. 513) (Ahmad Shakir, ed.) and its chain of narration is authentic. See Majma'uz-Zawa'id 1/297. Ibn Hajar mentions it in Bulughul-Maram saying that Ibn Hibban and Al-Hakim considered it authentic"
+            }
+          ],
+          "readCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 134,
+    "title": {
+      "ar": "كيف كان النبي ﷺ يسبح ؟",
+      "en": "How the Prophet ﷺ made tasbeeh"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "عَنْ عَبْدِ اللَّهِ بْنِ عَمْرٍو رضي الله عنهما قَالَ: رَأَيْتُ النَّبيَّ صلى الله عليه وسلم يَعْقِدُ التَّسْبِيحَ بِيَمِينِهِ.",
+          "en": "Abdullah bin 'Amr (RA) said: I saw the Prophet (ﷺ) counting the glorification of his Lord on his right hand."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "أخرجه أبو داود بلفظه 2/81 والترمذي 5/521 وانظر صحيح الجامع 4/271 برقم 4865",
+          "en": "Abu Dawud with a different wording 2/81, and At-Tirmidhi 5/521. See also Al-Albani, Sahihul-Jami'As-Saghir 4/271 (no. 4865)"
+        }
+      ]
+    }
+  },
+  {
+    "id": 135,
+    "title": {
+      "ar": "من أنواع الخير والآداب الجامعة",
+      "en": "Comprehensive types of good and manners"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "إِذَا كَانَ جُنْحُ اللَّيْلِ – أَوْ أَمْسَيْتُم – فَـكُفُّوا صِبْيانَـكُم، فَإِنَّ الشَّيَاطِينَ تَنْتَشِرُ حِينَئِذٍ، فَإِذَا ذَهَبَ سَاعَةٌ مِنَ اللَّيلِ فَخَلُّوهُمْ، وَأَغْلِقُوا الأَبْوَابَ وَاذْكُرُوا اسْمَ اللَّهِ؛ فَإِنَّ الشَّيطَانَ لاَ يَفْتَحُ بَاباً مُغلَقاً، وَأَوْكُوا قِرَبَكُمْ، وَاذْكُرُوا اسْمَ اللَّهِ، وَخَمِّرُوا آنِيَتَكُم، وَاذْكُرُوا اسْمَ اللَّهِ، وَلَوْ أَنْ تَعْرُضُوا عَلَيْهَا شَيْئاً، وَأَطْفِئُوا مَصَابِيحَكُمْ",
+          "en": "When night falls, restrain your children (from going out) because at such time the devils spread about. After a period of time has passed, let them be. Shut your doors and mention Allah’s name, for verily the devil does not open a shut door, tie up your water-skins and mention Allah’s name, cover your vessels with anything and mention Allah’s name and put out your lamps"
+        }
+      ],
+      "referances": [
+        {
+          "ar": "البخاري مع الفتح 10/ 88 ومسلم 3/1595",
+          "en": "Al-Bukhari with Al-Fath 10/88 and Muslim 3/1595"
+        }
+      ]
+    }
+  },
+  {
+    "id": 136,
+    "title": {
+      "ar": "النهاية",
+      "en": "the end"
+    },
+    "isFavorite": false,
+    "details": {
+      "type": "text",
+      "list": [
+        {
+          "ar": "وصلى الله وسلم وبارك على نبينا محمد وعلى آله وأصحابه أجمعين",
+          "en": "May God bless and grant peace and blessings upon our Prophet Muhammad, his family, and all his companions."
+        }
+      ],
+      "referances": [
+        {
+          "ar": "النصوص هنا هي صورة طبق الاصل من كتاب حصن المسلم",
+          "en": "The texts here are an exact copy of the book Hisn al-Muslim"
+        },
+        {
+          "ar": "من أذكار الكتاب والسنة",
+          "en": "From the remembrances of the Book and the Sunnah"
+        },
+        {
+          "ar": "الفقير إلى الله تعالى سعيد بن علي بن وهف القحطاني",
+          "en": "The poor man before God Almighty, Saeed bin Ali bin Wahf Al-Qahtani"
+        }
+      ]
+    }
   }
 ]
