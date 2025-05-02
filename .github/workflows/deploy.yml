@@ -75,7 +75,7 @@ jobs:
               make deploy-android
 
   ios:
-    runs-on: macos-latest
+    runs-on: macos-15
 
     steps:
         - name: 📚 Set up git and fetch all history for all branches and tags
