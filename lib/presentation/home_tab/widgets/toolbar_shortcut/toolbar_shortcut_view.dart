@@ -100,39 +100,30 @@ class ToolbarShortcutView extends StatelessWidget {
                     },
                   ),
                 ),
-                //     Expanded(
-                //       child: ToolbarCell(
-                //         title: "Qibla",
-                //         imagePath: "assets/images/toolbar/qibla.png",
-                //         onTap: () async {
-                //           // await FirebaseAnalyticsRepository.logEvent(
-                //           //     name: "QiblaFinderScreenFromHomeToolBar");
-                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-                //         },
-                //       ),
-                //     ),
-                //     Expanded(
-                //       child: ToolbarCell(
-                //         title: "tracker",
-                //         imagePath: "assets/images/toolbar/tracker.png",
-                //         onTap: () async {
-                //           // await FirebaseAnalyticsRepository.logEvent(
-                //           //     name: "QiblaFinderScreenFromHomeToolBar");
-                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-                //         },
-                //       ),
-                //     ),
-                // Expanded(
-                //   child: ToolbarCell(
-                //     title: "Doaa",
-                //     imagePath: "assets/images/toolbar/doaa.png",
-                //     onTap: () async {
-                //       // await FirebaseAnalyticsRepository.logEvent(
-                //       //     name: "QiblaFinderScreenFromHomeToolBar");
-                //       // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-                //     },
-                //   ),
-                // ),
+                Expanded(
+                  child: ToolbarCell(
+                    title: localize.omrahTitle,
+                    imagePath: "assets/images/toolbar/omra.png",
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                          name: "OmrahScreenFromHomeToolBar");
+                      await navigator.pushNamed(RoutesConstants.hajjOmrahScreen,
+                          arguments: {ArgumentConstant.hajjOmrahType: "omrah"});
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: ToolbarCell(
+                    title: localize.alhajjTitle,
+                    imagePath: "assets/images/toolbar/hajj.png",
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                          name: "HajjScreenFromHomeToolBar");
+                      await navigator.pushNamed(RoutesConstants.hajjOmrahScreen,
+                          arguments: {ArgumentConstant.hajjOmrahType: "hajj"});
+                    },
+                  ),
+                ),
                 Expanded(
                   child: ToolbarCell(
                     title: localize.azkarTitle,
@@ -156,6 +147,39 @@ class ToolbarShortcutView extends StatelessWidget {
             //   children: [
             //     Expanded(
             //       child: ToolbarCell(
+            //         title: "Qibla",
+            //         imagePath: "assets/images/toolbar/qibla.png",
+            //         onTap: () async {
+            //           // await FirebaseAnalyticsRepository.logEvent(
+            //           //     name: "QiblaFinderScreenFromHomeToolBar");
+            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+            //         },
+            //       ),
+            //     ),
+            //     Expanded(
+            //       child: ToolbarCell(
+            //         title: "tracker",
+            //         imagePath: "assets/images/toolbar/tracker.png",
+            //         onTap: () async {
+            //           // await FirebaseAnalyticsRepository.logEvent(
+            //           //     name: "QiblaFinderScreenFromHomeToolBar");
+            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+            //         },
+            //       ),
+            //     ),
+            // Expanded(
+            //   child: ToolbarCell(
+            //     title: "Doaa",
+            //     imagePath: "assets/images/toolbar/doaa.png",
+            //     onTap: () async {
+            //       // await FirebaseAnalyticsRepository.logEvent(
+            //       //     name: "QiblaFinderScreenFromHomeToolBar");
+            //       // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+            //     },
+            //   ),
+            // ),
+            //     Expanded(
+            //       child: ToolbarCell(
             //         title: "hadeeth",
             //         imagePath: "assets/images/toolbar/hadeeth.png",
             //         onTap: () async {
@@ -176,28 +200,7 @@ class ToolbarShortcutView extends StatelessWidget {
             //         },
             //       ),
             //     ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "omra",
-            //         imagePath: "assets/images/toolbar/omra.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "Hajj",
-            //         imagePath: "assets/images/toolbar/hajj.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
+
             //     Expanded(
             //       child: ToolbarCell(
             //         title: "library",

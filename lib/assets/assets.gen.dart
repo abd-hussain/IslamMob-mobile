@@ -102,18 +102,21 @@ class $AssetsImagesGen {
 class $AssetsJsonGen {
   const $AssetsJsonGen();
 
-  /// File path: assets/json/backup.dart
-  String get backup => 'packages/islam_app/assets/json/backup.dart';
+  /// File path: assets/json/hajj.json
+  String get hajj => 'packages/islam_app/assets/json/hajj.json';
 
   /// File path: assets/json/hisn_al_muslim.json
   String get hisnAlMuslim =>
       'packages/islam_app/assets/json/hisn_al_muslim.json';
 
+  /// File path: assets/json/omrah.json
+  String get omrah => 'packages/islam_app/assets/json/omrah.json';
+
   /// File path: assets/json/tasbeeh.json
   String get tasbeeh => 'packages/islam_app/assets/json/tasbeeh.json';
 
   /// List of all assets
-  List<String> get values => [backup, hisnAlMuslim, tasbeeh];
+  List<String> get values => [hajj, hisnAlMuslim, omrah, tasbeeh];
 }
 
 class $AssetsLottieGen {
