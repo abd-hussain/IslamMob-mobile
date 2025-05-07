@@ -470,7 +470,9 @@
     "tasbeeh" : "tasbeeh",
     "counterResetDaily" : "The counter resets daily",
     "thisPlaceStillUnderDevelopment" : "Still Under Development",
-    "azkarAfterSalah" : "Azkar After Salah"
+    "azkarAfterSalah" : "Azkar After Salah",
+    "alhajjTitle" : "Hajj", 
+    "omrahTitle" : "Omrah"
 
 
 }

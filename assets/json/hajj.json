@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "title": {
+            "ar": "",
+            "en": ""
+        },
+        "desc": {
+            "ar": "",
+            "en": ""
+        },
+        "mainImagePath": "assets/images/donate_popup.png",
+        "descImagePath": ""
+    },
+    {
+        "id": 2,
+        "title": {
+            "ar": "",
+            "en": ""
+        },
+        "desc": {
+            "ar": "",
+            "en": ""
+        },
+        "mainImagePath": "assets/images/donate_popup.png",
+        "descImagePath": ""
+    }
+]
