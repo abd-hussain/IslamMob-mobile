@@ -39,12 +39,28 @@ class HajjOmrahScreen extends StatelessWidget {
                 : const HajjOmrahScreenType.omrah(),
           )),
         child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const YoutubeLiveView(),
-              Expanded(
-                child: Padding(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const YoutubeLiveView(),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    color: Colors.white,
+                    child: CustomText(
+                      title: screenType == "hajj"
+                          ? localizations.hajjDescription
+                          : localizations.omrahDescription,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      maxLines: 14,
+                      color: const Color(0xff444444),
+                    ),
+                  ),
+                ),
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: BlocBuilder<HajjOmrahBloc, HajjOmrahState>(
                     buildWhen: (previous, current) =>
@@ -54,23 +70,26 @@ class HajjOmrahScreen extends StatelessWidget {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2, // Number of columns
-                          mainAxisSpacing: 2,
+                          mainAxisSpacing: 8,
+                          crossAxisSpacing: 8,
+                          childAspectRatio:
+                              1.4, // Adjust aspect ratio as needed
                         ),
-                        physics: const ClampingScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {
-                          final rowIndex = index ~/ 2; // Row index
-                          final colIndex = index % 2; // Column index
-                          final item = state.listOfItems[rowIndex];
                           return HajjOmrahTileView(
-                              data: item, colIndex: colIndex);
+                            data: state.listOfItems[index],
+                            isRtlLanguage: state.isRtlLanguage,
+                          );
                         },
+                        shrinkWrap: true,
                         itemCount: state.listOfItems.length,
                       );
                     },
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

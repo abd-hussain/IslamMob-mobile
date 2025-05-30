@@ -18,9 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HajjOmrahData {
   int get id => throw _privateConstructorUsedError;
   MultiLanguageString get title => throw _privateConstructorUsedError;
-  String get imagePath => throw _privateConstructorUsedError;
-  String get descImagePath => throw _privateConstructorUsedError;
-  MultiLanguageString get desc => throw _privateConstructorUsedError;
+  String get mainImagePath => throw _privateConstructorUsedError;
+  Map<String, List<String>> get details => throw _privateConstructorUsedError;
 
   /// Create a copy of HajjOmrahData
   /// with the given fields replaced by the non-null parameter values.
@@ -38,9 +37,8 @@ abstract class $HajjOmrahDataCopyWith<$Res> {
   $Res call(
       {int id,
       MultiLanguageString title,
-      String imagePath,
-      String descImagePath,
-      MultiLanguageString desc});
+      String mainImagePath,
+      Map<String, List<String>> details});
 }
 
 /// @nodoc
@@ -60,9 +58,8 @@ class _$HajjOmrahDataCopyWithImpl<$Res, $Val extends HajjOmrahData>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? imagePath = null,
-    Object? descImagePath = null,
-    Object? desc = null,
+    Object? mainImagePath = null,
+    Object? details = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -73,18 +70,14 @@ class _$HajjOmrahDataCopyWithImpl<$Res, $Val extends HajjOmrahData>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as MultiLanguageString,
-      imagePath: null == imagePath
-          ? _value.imagePath
-          : imagePath // ignore: cast_nullable_to_non_nullable
+      mainImagePath: null == mainImagePath
+          ? _value.mainImagePath
+          : mainImagePath // ignore: cast_nullable_to_non_nullable
               as String,
-      descImagePath: null == descImagePath
-          ? _value.descImagePath
-          : descImagePath // ignore: cast_nullable_to_non_nullable
-              as String,
-      desc: null == desc
-          ? _value.desc
-          : desc // ignore: cast_nullable_to_non_nullable
-              as MultiLanguageString,
+      details: null == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>,
     ) as $Val);
   }
 }
@@ -100,9 +93,8 @@ abstract class _$$HajjOmrahDataImplCopyWith<$Res>
   $Res call(
       {int id,
       MultiLanguageString title,
-      String imagePath,
-      String descImagePath,
-      MultiLanguageString desc});
+      String mainImagePath,
+      Map<String, List<String>> details});
 }
 
 /// @nodoc
@@ -120,9 +112,8 @@ class __$$HajjOmrahDataImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? imagePath = null,
-    Object? descImagePath = null,
-    Object? desc = null,
+    Object? mainImagePath = null,
+    Object? details = null,
   }) {
     return _then(_$HajjOmrahDataImpl(
       id: null == id
@@ -133,18 +124,14 @@ class __$$HajjOmrahDataImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as MultiLanguageString,
-      imagePath: null == imagePath
-          ? _value.imagePath
-          : imagePath // ignore: cast_nullable_to_non_nullable
+      mainImagePath: null == mainImagePath
+          ? _value.mainImagePath
+          : mainImagePath // ignore: cast_nullable_to_non_nullable
               as String,
-      descImagePath: null == descImagePath
-          ? _value.descImagePath
-          : descImagePath // ignore: cast_nullable_to_non_nullable
-              as String,
-      desc: null == desc
-          ? _value.desc
-          : desc // ignore: cast_nullable_to_non_nullable
-              as MultiLanguageString,
+      details: null == details
+          ? _value._details
+          : details // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>,
     ));
   }
 }
@@ -155,24 +142,27 @@ class _$HajjOmrahDataImpl implements _HajjOmrahData {
   _$HajjOmrahDataImpl(
       {required this.id,
       required this.title,
-      required this.imagePath,
-      required this.descImagePath,
-      required this.desc});
+      required this.mainImagePath,
+      required final Map<String, List<String>> details})
+      : _details = details;
 
   @override
   final int id;
   @override
   final MultiLanguageString title;
   @override
-  final String imagePath;
+  final String mainImagePath;
+  final Map<String, List<String>> _details;
   @override
-  final String descImagePath;
-  @override
-  final MultiLanguageString desc;
+  Map<String, List<String>> get details {
+    if (_details is EqualUnmodifiableMapView) return _details;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_details);
+  }
 
   @override
   String toString() {
-    return 'HajjOmrahData(id: $id, title: $title, imagePath: $imagePath, descImagePath: $descImagePath, desc: $desc)';
+    return 'HajjOmrahData(id: $id, title: $title, mainImagePath: $mainImagePath, details: $details)';
   }
 
   @override
@@ -182,16 +172,14 @@ class _$HajjOmrahDataImpl implements _HajjOmrahData {
             other is _$HajjOmrahDataImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.imagePath, imagePath) ||
-                other.imagePath == imagePath) &&
-            (identical(other.descImagePath, descImagePath) ||
-                other.descImagePath == descImagePath) &&
-            (identical(other.desc, desc) || other.desc == desc));
+            (identical(other.mainImagePath, mainImagePath) ||
+                other.mainImagePath == mainImagePath) &&
+            const DeepCollectionEquality().equals(other._details, _details));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, title, imagePath, descImagePath, desc);
+  int get hashCode => Object.hash(runtimeType, id, title, mainImagePath,
+      const DeepCollectionEquality().hash(_details));
 
   /// Create a copy of HajjOmrahData
   /// with the given fields replaced by the non-null parameter values.
@@ -206,20 +194,17 @@ abstract class _HajjOmrahData implements HajjOmrahData {
   factory _HajjOmrahData(
       {required final int id,
       required final MultiLanguageString title,
-      required final String imagePath,
-      required final String descImagePath,
-      required final MultiLanguageString desc}) = _$HajjOmrahDataImpl;
+      required final String mainImagePath,
+      required final Map<String, List<String>> details}) = _$HajjOmrahDataImpl;
 
   @override
   int get id;
   @override
   MultiLanguageString get title;
   @override
-  String get imagePath;
+  String get mainImagePath;
   @override
-  String get descImagePath;
-  @override
-  MultiLanguageString get desc;
+  Map<String, List<String>> get details;
 
   /// Create a copy of HajjOmrahData
   /// with the given fields replaced by the non-null parameter values.
