@@ -4,6 +4,7 @@ part of 'hajj_omrah_bloc.dart';
 class HajjOmrahState with _$HajjOmrahState {
   const factory HajjOmrahState({
     @Default([]) List<HajjOmrahData> listOfItems,
+    @Default(false) bool isRtlLanguage,
     @Default(VideoProcessState.loading()) VideoProcessState processState,
   }) = _HajjOmrahState;
 }

@@ -388,6 +388,7 @@ abstract class _LoadingState implements HajjOmrahEvent {
 /// @nodoc
 mixin _$HajjOmrahState {
   List<HajjOmrahData> get listOfItems => throw _privateConstructorUsedError;
+  bool get isRtlLanguage => throw _privateConstructorUsedError;
   VideoProcessState get processState => throw _privateConstructorUsedError;
 
   /// Create a copy of HajjOmrahState
@@ -403,7 +404,10 @@ abstract class $HajjOmrahStateCopyWith<$Res> {
           HajjOmrahState value, $Res Function(HajjOmrahState) then) =
       _$HajjOmrahStateCopyWithImpl<$Res, HajjOmrahState>;
   @useResult
-  $Res call({List<HajjOmrahData> listOfItems, VideoProcessState processState});
+  $Res call(
+      {List<HajjOmrahData> listOfItems,
+      bool isRtlLanguage,
+      VideoProcessState processState});
 
   $VideoProcessStateCopyWith<$Res> get processState;
 }
@@ -424,6 +428,7 @@ class _$HajjOmrahStateCopyWithImpl<$Res, $Val extends HajjOmrahState>
   @override
   $Res call({
     Object? listOfItems = null,
+    Object? isRtlLanguage = null,
     Object? processState = null,
   }) {
     return _then(_value.copyWith(
@@ -431,6 +436,10 @@ class _$HajjOmrahStateCopyWithImpl<$Res, $Val extends HajjOmrahState>
           ? _value.listOfItems
           : listOfItems // ignore: cast_nullable_to_non_nullable
               as List<HajjOmrahData>,
+      isRtlLanguage: null == isRtlLanguage
+          ? _value.isRtlLanguage
+          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+              as bool,
       processState: null == processState
           ? _value.processState
           : processState // ignore: cast_nullable_to_non_nullable
@@ -457,7 +466,10 @@ abstract class _$$HajjOmrahStateImplCopyWith<$Res>
       __$$HajjOmrahStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<HajjOmrahData> listOfItems, VideoProcessState processState});
+  $Res call(
+      {List<HajjOmrahData> listOfItems,
+      bool isRtlLanguage,
+      VideoProcessState processState});
 
   @override
   $VideoProcessStateCopyWith<$Res> get processState;
@@ -477,6 +489,7 @@ class __$$HajjOmrahStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? listOfItems = null,
+    Object? isRtlLanguage = null,
     Object? processState = null,
   }) {
     return _then(_$HajjOmrahStateImpl(
@@ -484,6 +497,10 @@ class __$$HajjOmrahStateImplCopyWithImpl<$Res>
           ? _value._listOfItems
           : listOfItems // ignore: cast_nullable_to_non_nullable
               as List<HajjOmrahData>,
+      isRtlLanguage: null == isRtlLanguage
+          ? _value.isRtlLanguage
+          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+              as bool,
       processState: null == processState
           ? _value.processState
           : processState // ignore: cast_nullable_to_non_nullable
@@ -497,6 +514,7 @@ class __$$HajjOmrahStateImplCopyWithImpl<$Res>
 class _$HajjOmrahStateImpl implements _HajjOmrahState {
   const _$HajjOmrahStateImpl(
       {final List<HajjOmrahData> listOfItems = const [],
+      this.isRtlLanguage = false,
       this.processState = const VideoProcessState.loading()})
       : _listOfItems = listOfItems;
 
@@ -511,11 +529,14 @@ class _$HajjOmrahStateImpl implements _HajjOmrahState {
 
   @override
   @JsonKey()
+  final bool isRtlLanguage;
+  @override
+  @JsonKey()
   final VideoProcessState processState;
 
   @override
   String toString() {
-    return 'HajjOmrahState(listOfItems: $listOfItems, processState: $processState)';
+    return 'HajjOmrahState(listOfItems: $listOfItems, isRtlLanguage: $isRtlLanguage, processState: $processState)';
   }
 
   @override
@@ -525,13 +546,18 @@ class _$HajjOmrahStateImpl implements _HajjOmrahState {
             other is _$HajjOmrahStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._listOfItems, _listOfItems) &&
+            (identical(other.isRtlLanguage, isRtlLanguage) ||
+                other.isRtlLanguage == isRtlLanguage) &&
             (identical(other.processState, processState) ||
                 other.processState == processState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_listOfItems), processState);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_listOfItems),
+      isRtlLanguage,
+      processState);
 
   /// Create a copy of HajjOmrahState
   /// with the given fields replaced by the non-null parameter values.
@@ -546,10 +572,13 @@ class _$HajjOmrahStateImpl implements _HajjOmrahState {
 abstract class _HajjOmrahState implements HajjOmrahState {
   const factory _HajjOmrahState(
       {final List<HajjOmrahData> listOfItems,
+      final bool isRtlLanguage,
       final VideoProcessState processState}) = _$HajjOmrahStateImpl;
 
   @override
   List<HajjOmrahData> get listOfItems;
+  @override
+  bool get isRtlLanguage;
   @override
   VideoProcessState get processState;
 

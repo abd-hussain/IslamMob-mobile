@@ -8,8 +8,7 @@ class HajjOmrahData with _$HajjOmrahData {
   factory HajjOmrahData({
     required int id,
     required MultiLanguageString title,
-    required String imagePath,
-    required String descImagePath,
-    required MultiLanguageString desc,
+    required String mainImagePath,
+    required Map<String, List<String>> details,
   }) = _HajjOmrahData;
 }

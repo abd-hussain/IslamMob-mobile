@@ -6,10 +6,10 @@ import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 
 class HajjOmrahUsecase {
   static Future<List<HajjOmrahData>> getHajjList() =>
-      _loadDataFromJson('assets/json/hajj.json');
+      _loadDataFromJson('assets/json/hajj_omrah/hajj.json');
 
   static Future<List<HajjOmrahData>> getOmrahList() =>
-      _loadDataFromJson('assets/json/omrah.json');
+      _loadDataFromJson('assets/json/hajj_omrah/omrah.json');
 
   static Future<List<HajjOmrahData>> _loadDataFromJson(String path) async {
     final jsonString = await rootBundle.loadString(path);
@@ -25,9 +25,8 @@ class HajjOmrahUsecase {
     return HajjOmrahData(
       id: item['id'] ?? "",
       title: _parseMultiLanguageString(item['title']),
-      desc: _parseMultiLanguageString(item['desc']),
-      imagePath: item['mainImagePath'] ?? "",
-      descImagePath: item['descImagePath'] ?? "",
+      mainImagePath: item['mainImagePath'] ?? "",
+      details: _parseDetails(item['details']),
     );
   }
 
@@ -39,5 +38,14 @@ class HajjOmrahUsecase {
       ar: json['ar'] ?? '',
       en: json['en'] ?? '',
     );
+  }
+
+  static Map<String, List<String>> _parseDetails(
+      Map<String, dynamic>? details) {
+    if (details == null) return {'ar': [], 'en': []};
+    return {
+      'ar': List<String>.from(details['ar'] ?? []),
+      'en': List<String>.from(details['en'] ?? []),
+    };
   }
 }

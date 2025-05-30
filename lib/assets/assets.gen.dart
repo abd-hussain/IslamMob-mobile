@@ -58,6 +58,9 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/logoz
   $AssetsImagesLogozGen get logoz => const $AssetsImagesLogozGen();
 
+  /// Directory path: assets/images/omrah
+  $AssetsImagesOmrahGen get omrah => const $AssetsImagesOmrahGen();
+
   /// Directory path: assets/images/qibla
   $AssetsImagesQiblaGen get qibla => const $AssetsImagesQiblaGen();
 
@@ -102,21 +105,18 @@ class $AssetsImagesGen {
 class $AssetsJsonGen {
   const $AssetsJsonGen();
 
-  /// File path: assets/json/hajj.json
-  String get hajj => 'packages/islam_app/assets/json/hajj.json';
+  /// Directory path: assets/json/hajj_omrah
+  $AssetsJsonHajjOmrahGen get hajjOmrah => const $AssetsJsonHajjOmrahGen();
 
   /// File path: assets/json/hisn_al_muslim.json
   String get hisnAlMuslim =>
       'packages/islam_app/assets/json/hisn_al_muslim.json';
 
-  /// File path: assets/json/omrah.json
-  String get omrah => 'packages/islam_app/assets/json/omrah.json';
-
   /// File path: assets/json/tasbeeh.json
   String get tasbeeh => 'packages/islam_app/assets/json/tasbeeh.json';
 
   /// List of all assets
-  List<String> get values => [hajj, hisnAlMuslim, omrah, tasbeeh];
+  List<String> get values => [hisnAlMuslim, tasbeeh];
 }
 
 class $AssetsLottieGen {
@@ -194,6 +194,35 @@ class $AssetsImagesLogozGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [logo];
+}
+
+class $AssetsImagesOmrahGen {
+  const $AssetsImagesOmrahGen();
+
+  /// File path: assets/images/omrah/halq.png
+  AssetGenImage get halq => const AssetGenImage('assets/images/omrah/halq.png');
+
+  /// File path: assets/images/omrah/ihram.jpg
+  AssetGenImage get ihram =>
+      const AssetGenImage('assets/images/omrah/ihram.jpg');
+
+  /// File path: assets/images/omrah/mawakeet.jpg
+  AssetGenImage get mawakeet =>
+      const AssetGenImage('assets/images/omrah/mawakeet.jpg');
+
+  /// File path: assets/images/omrah/nusuk.jpeg
+  AssetGenImage get nusuk =>
+      const AssetGenImage('assets/images/omrah/nusuk.jpeg');
+
+  /// File path: assets/images/omrah/saai.jpg
+  AssetGenImage get saai => const AssetGenImage('assets/images/omrah/saai.jpg');
+
+  /// File path: assets/images/omrah/tawaf.jpg
+  AssetGenImage get tawaf =>
+      const AssetGenImage('assets/images/omrah/tawaf.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [halq, ihram, mawakeet, nusuk, saai, tawaf];
 }
 
 class $AssetsImagesQiblaGen {
@@ -316,6 +345,27 @@ class $AssetsImagesToolbarGen {
         tasbeeh,
         tracker
       ];
+}
+
+class $AssetsJsonHajjOmrahGen {
+  const $AssetsJsonHajjOmrahGen();
+
+  /// File path: assets/json/hajj_omrah/hajj.json
+  String get hajj => 'packages/islam_app/assets/json/hajj_omrah/hajj.json';
+
+  /// File path: assets/json/hajj_omrah/hajj_arkan.json
+  String get hajjArkan =>
+      'packages/islam_app/assets/json/hajj_omrah/hajj_arkan.json';
+
+  /// File path: assets/json/hajj_omrah/hajj_steps.json
+  String get hajjSteps =>
+      'packages/islam_app/assets/json/hajj_omrah/hajj_steps.json';
+
+  /// File path: assets/json/hajj_omrah/omrah.json
+  String get omrah => 'packages/islam_app/assets/json/hajj_omrah/omrah.json';
+
+  /// List of all assets
+  List<String> get values => [hajj, hajjArkan, hajjSteps, omrah];
 }
 
 class Assets {

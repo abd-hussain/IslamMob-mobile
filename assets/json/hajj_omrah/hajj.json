@@ -1,0 +1,566 @@
+[
+    {
+        "id": 1,
+        "title": {
+            "ar": "أركان الحج",
+            "en": "Pillars of Hajj"
+        },
+        "mainImagePath": "assets/images/hajj/arkan.png",
+        "details": {
+            "ar": [
+                "",
+                "الإحرام",
+                "من الإحرام تبدأ نيّة أداء النسك بالقلب ويتلفظ بها باللسان: لبيك اللهم حجاً",
+                "",
+                "الوقوف بعرفة",
+                "قال النبي -صلى الله عليه وسلم-: (ما مِن يوم أكثر من أن يعتق الله فيه عبداً من النار من يوم عرفة، وإنه ليدنو ثم يباهي بهم الملائكة فيقول: ما أراد هؤلاء؟)",
+                "",
+                "طواف الإفاضة",
+                "قال تعالى: ﴿ثُمَّ لْيَقْضُوا تَفَثَهُمْ وَلْيُوفُوا نُذُورَهُمْ وَلْيَطَّوَّفُوا بِالْبَيْتِ الْعَتِيقِ﴾",
+                "",
+                "السعي",
+                "قال تعالى: ﴿إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَائِرِ اللَّهِ فَمَنْ حَجَّ الْبَيْتَ أَوِ اعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَن يَطَّوَّفَ بِهِمَا ۚ وَمَن تَطَوَّعَ خَيْرًا فَإِنَّ اللَّهَ شَاكِرٌ عَلِيمٌ﴾"
+            ],
+            "en": [
+                "",
+                "Ihram",
+                "Upon entering the state of Ihram, the intention to perform the ritual begins in the heart. It may be articulated on the tongue, saying: Labbayka Allahumma Hajjan (O Allah, Here I am intending to perform Hajj)",
+                "",
+                "Standing at Arafah",
+                "The Prophet (peace be upon him) said: There is no day when Allah sets free more servants from Hell than the Day of 'Arafah. He draws near, then praises them to the angels, saying: What do these want?",
+                "",
+                "Tawaf Al-Ifadhah",
+                "Allah, the Almighty, said,: Then let them end their untidiness and fulfill their vows and perform Tawaf around the ancient House.",
+                "",
+                "Saa'i",
+                "Allah, the Almighty, said,: Indeed, as-Safa and al-Marwah are among the symbols of Allah . So whoever makes Hajj to the House or performs 'umrah - there is no blame upon him for walking between them. And whoever volunteers good - then indeed, Allah is appreciative and Knowing"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "title": {
+            "ar": "الإحرام",
+            "en": "Ihram"
+        },
+        "mainImagePath": "assets/images/hajj/ihram.jpg",
+        "details": {
+            "ar": [
+                "",
+                "ما هو الإحرام؟",
+                "الإحرام هو الدخول في عبادة الحج أو العمرة، والاشتغال بأعمالها قصداً. ويقال أَحْرَم إذا دخل في النسك، فيصبح محرّماً عليه ما كان مباحاً. ومن ذلك لبس الرجل المخيط، وأخذ الرجل والمرأة شيئاً من الشعر أو الأظفار أو مسّ الطيب. وللإحرام مظاهر وشعائر مخصوصة، ودلالات ترمز إلى التجرد من الدنيا وزينتها والإقبال على الله والعبادة بقلب نقي، وجوارح مطيعة.",
+                "بالإحرام يبدأ المسلم أوّل أركان الحج والعمرة. فهو أول خطوة في رحلته الإيمانية، وهو عمل قلبي يدخل به في عبادة عظيمة أمَر الله أن نخلص له فيها النية وأن نقيمها لوجهه، كما قال سبحانه: ﴿وأتمّوا الحج والعمرة لله﴾.",
+                "الدخول في الإحرام يوجب الامتناع عن كل ما يحظر فعله من محظورات الإحرام، مع نية الدخول في النسك بالتلبية. فمن أراد الحج يقول: لبّيك حجاً ، ومن أراد العمرة يقول: لبيك عمرةً، ومن ثم يبدأ بعدها التلبية. عن ابن عمر -رضي الله عنهما- قال: أن رسول الله -صلى الله عليه وسلم- سُئِل: (مَا يلبس المُحرم من الثياب؟ فقال: لا تلبسوا القُمُصَ، ولا العَمَائِمَ، ولا السّراويلات، ولا البَرَانِس، ولا الخفَافَ، إلا أحد لا يجد النّعلَين فَلْيَلْبَس الْخُفّين، وليَقطَعهُمَا أسفَل من الكَعبَين، ولا تَلبَسُوا شيئاً من الثّياب مسّه الزّعفَرَان، وَلَا الوَرس). وعن عثمان بن عفان -رضي الله عنه- أن رسول الله -صلى الله عليه وسلم- قال: (لا يَنكِحُ المُحرِمُ، ولا يُنكِحُ، ولا يَخطُب).",
+                "",
+                "ما هو لباس الإحرام للرجل؟",
+                "يجب على المُحرم أن يخلع ملابسه المعتادة، فيزيل عنه أغطية الرأس من قبّعة وعمامة وغيرها، وكذلك اللباس المعتاد المفصل على الجسم، مثل: القميص، والبنطلون، والجوربين، والقفازين، وما في حكمه. وكذلك الأحذية التي تحيط كامل القدمين والكعبين. يلبس الرجل إزاراً يُحيط أسفل بدنه، ورداءً يغطي أعلاه. يشرع أن يكون الرداء أبيض اللون. وللرجل كذلك أن ينتعل نعالاً مناسباً لا يغطي كامل القدم. وبإمكان المحرم استخدام ما يلي:",
+                "المشبَك أو الحزام الذي يلفه على وسطه كي يُمسك بإزاره عن السقوط، وأيضاً يضع فيه هاتفه وماله ونحوهما. .",
+                "الساعات والخواتم.",
+                "لواصق ولفائف الجروح والإصابات.",
+                "المظلات الشمسية وكل غطاء لا يلاصق الرأس.",
+                "",
+                "ما هو لباس الإحرام للمرأة؟",
+                "المرأة المسلمة مخيّرة عند إحرامها فيما تلبسه، فتحرم بما شاءت من الثياب والألبسة بألوانها وأشكالها، بشرط أن تكون تلك الملابس فضفاضة تسترها ولا تعيق حركتها، وليست فيها زينة ظاهرة يفتتن بها الرجال، قال النبي -صلى الله عليه وسلم: (ولا تَنتقِب المرأَةُ ولا تلبسُ القفّازينِ [يعني: في الإحرام]). إذن، محظورات الإحرام على المرأة هي:",
+                "تغطية الوجه ولبس النقاب، ما لم تكن بحضرة أجانب فلها أن تغطي وجهها. - لبس القفازين.",
+                "ويُباح للمرأة المحرمة ما يلي:",
+                "النظارة والخاتم والساعة.",
+                "تضميد الجراح باللاصق واللفافة.",
+                "",
+                "كيف يلبس المحرم الإحرام؟",
+                "إحرام الرجل يكون بإزارٍ يغطي أسفل جسده، ورداءٍ يغطي أعلى الجسد. يسنُّ للمحرم أن يجعل الرداء على كتفيه جميعاً، وأن يجعل طرفيه على صدره، كما فعل النبي -عليه الصلاة والسلام. حتى إذا أراد أن يطوف طواف القدوم، اضطبع، فجعل وسط ردائه تحت إبطه الأيمن وأطرافه على عاتقه الأيسر، وكشف منكبه الأيمن في حالة الطواف. ومَن كشف منكبه دائماً فهو يخالف بذلك السنة، إلا إذا كان ذلك لأكله وشربه وقضاء حاجته.",
+                "وعلى كل حال، الغاية أن يكون الإحرام ساتراً، ومريحاً في الحركة، ومُحكماً لا يرتخي ولا يسقط. فمن وجد سهولة في ارتدائه بصفة معيّنة كالذين يعتادون الإزار والرداء في لباسهم الشعبي في بعض مناطق المسلمين، فلهم ذلك.",
+                "",
+                "التلبية",
+                "تبدأ التلبية مع الإحرام. فعند دخول الحاج أو المعتمر في الإحرام، ينوي ما يريد أداءه من حج أو عمرة أو كِلَيْهما ثم يقول: لبّيك حجاً ، أو لبّيك عمرةً ، أو لبّيك عمرةً وحجاً ، وبذلك يكون محرماً؛ ثم يرفع صوته ملبياً بتلبية النبي -صلى الله عليه وسلم-: (لبّيكَ اللهُم لبّيكَ، لبّيكَ لا شريكَ لك لبّيك، إنّ الحمْدَ والنّعمةَ لك والْمُلْك، لا شريكَ لك). وتنتهي التلبية في العمرة عند رؤية البيت أو بدء الطواف، وفي الحج عند رمي جمرة العَقَبة.",
+                "ومعنى قول الحاج أو المعتمر: لبيك ، أي: إجابة لك يا ربي. وقد ثُنّيت التلبية إرادة التكرار، وليس المعنى أن الإنسان يجيب ربه مرتين فحسب، بل المعنى أنه يجيبه مرة بعد أخرى، فالتثنية هنا مراد بها إجابة الإنسان ربه، وإقامته على طاعته. ثم إنه بعد هذه الإجابة يقول: (إن الحمد والنعمة لك والملك). والحمد هو وصف المحمود بالكمال، فإذا كرّر صار ثناءً، والنعمة هي ما يتفضل الله به على عباده من حصول المطلوب ودفع المكروه.",
+                "",
+                "الاشتراط في الإحرام",
+                "الإسلام دين يُسر وتيسير كما قال -سبحانه وتعالى-: ﴿يريد الله بكم اليُسر ولا يريد بكم العُسر﴾. ومن مظاهر هذا التيسير على المسلم في أداء العبادات؛ مراعاة الظروف التي قد تمنعه من إكمال نسكه الذي نواه من حج أو عمرة؛ فيشرع له إن خاف ألا يُكمل نسكه لأي سبب كان أن يشترطَ في إحرامه.",
+                "يكون الاشتراط في الحج أو العمرة عند الخوف من عدم إتمام النسك، إما لمرض أو عذر شرعي، أو سبب خارج عن إرادته، فيشرع عند الإحرام الاشتراط في النية، وذلك بأن يقول بعد قوله: لبيك عمرة أو لبيك حجا : فإن حبسني حابسٌ فمحِلِّي حيث حبستني . وتقال بأي لغة يُحسنها الحاج أو المعتمر، فإذا قالها واشترط، وحصل أمرٌ منعه من إتمام النسك، جاز له الخروج من الإحرام والتوقف عن إكمال النسك الذي أحرم لأجله، وليس عليه شيء.",
+                "",
+                "الإحرام من الطائرة",
+                "من تيسير الله لعباده وفتحه بالعلم والدليل على فقهاء الإسلام؛ فقد رُخّص للحاج والمعتمر القادم عبر الطائرة أن يُحرم في طائرته عند محاذاة الميقات، قبل وصوله إلى مدينة جدة.",
+                "تعلن الطائرات في العادة محاذاة الميقات قبل الوصول إليه بزمن كافٍ، ثم تعيد التنبيه عند محاذاته، وعلى من أراد الحج أو العمرة أن يستعد بلباس الإحرام وإزالة ما يحظر عليه حال الإحرام قبل مدة كافية من إعلان المحاذاة؛ حتى لا يحصل ازدحام عند دورات المياه في الطائرات. وعند إعلان المحاذاة ينوي المسلم الإحرام بما يقصده من سفرته بالحج أو العمرة، ثم يتلفظ بما نواه فيقول: لبيك حجاً أو لبيك عمرة ، ثم يبدأ التلبية.",
+                "نوصي الحاج أو المعتمر أن يتنبّه ويبقى مستيقظاً إلى أن ينوي الإحرام عند الميقات، وإن خشي على نفسه النوم والغفلة فله أن يحرم قبل محاذاة الميقات، وإذا خاف عدم إصدار طاقم الطائرة تنبيه المحاذاة أو علِم أنهم لا ينبهون؛ فله الإحرام قبل الوصول بوقتٍ كافٍ احتياطاً، مثل أن يحرم قبل موعد الوصول بنصف ساعة (30 دقيقة).",
+                "",
+                "سنن قبل الإحرام",
+                "يُسن للمُحرِم قبل أن ينوي الإحرام عدّة فضائل:",
+                "الاغتسال أو الوضوء: يشرع الاغتسال أو الوضوء قبل أن ينويَ الحاج أو المعتمر الإحرامَ. ذلك على سبيل الندب لا الوجوب، للذكور والإناث في كل أحوالهم. ومن لم يتيسر له الغسل يُشرع له الوضوء.",
+                "الاغتسال في البيت: الذي لا يمكِنه الاغتسال عند الميقات؛ كمن يسافر بالطائرة، يشرع له الاغتسال للإحرام في بيته عند خروجه إلى المطار، ثم يُحرِم عند محاذاة الطائرة الميقات.",
+                "النظافة الشخصية، من قص الأظافر وإزالة شعر الإبط ونحوه، مشروعة في كل حال، وتتأكد له قبل إحرامه لأنه ممنوع من إزالتها في إحرامه.",
+                "الإحرام بعد صلاة:",
+                "يُشرع للمحرم أن يحرم بعد صلاة، فإذا وافقَ وقتُ إحرامهِ صلاةً مكتوبةً فإنه يصليها ثم ينوي الإحرام، وإن لم يكن فيُشرع له أن يتوضأ ويصلي ركعتين ثم يحرم بعدها ويلبي. قال -صلى الله عليه وسلم-: أتاني آتٍ من ربي، وقال: صلّ في هذا الوادِ المبارك، وقل: عمرة في حجة.",
+                "",
+                "وصايا للمُحرِم",
+                "أنت الآن في عبادة عظيمة دخلت فيها فور نيتِك وتلبيتِك، وهذه بعض وصايا تهمّك:",
+                "اقرأ ما لخصناه لك من محظورات الإحرام، حتى لا تقع في أيٍ منها فيتأثر حجك.",
+                "عظّم شعائر الله وأوامرَه ونواهيه، وأعطها حقها من التقدير والاحترام. قال تعالى: ﴿وَمَن يُعَظّمْ شَعَائِرَ اللَّهِ فَإِنَّهَا مِن تَقْوَى الْقُلُوبِ﴾",
+                "ابتعد عن كل ما يخدش إحرامك من الخصام ورفع الصوت والإيذاء والجدال. قال تعالى: ﴿فَمَن فَرَضَ فِيهِنَّ الْحَجَّ فَلَا رَفَثَ وَلَا فُسُوقَ وَلَا جِدَالَ فِي الْحَج﴾",
+                "أكثِر من التلبية، فإنها ذكرٌ ودعاءٌ عظيم لا يشرع إلا في هذه اللحظات، قال -صلى الله عليه وسلم-: (ما من مسلم يلبي؛ إلاّ لبى ما عن يمينه وشماله -من حجر، أو شجر، أو مدَر، حتى تنقطع الأرض من ها هنا وها هنا).",
+                "احرص على التقيد بتعليمات رجال الأمن ومشرفي الحملات.",
+                "احرص على تعلّم ما تحتاجه من الأحكام الشرعية في نُسكك الذي تُقبل عليه.",
+                "لا تواجه أشعة الشمس مباشرة، واستخدم المظلة إن اضطررت إلى الخروج نهاراً.",
+                "استخدم من المراهم ما يقيك التسلخات الجلدية والتهابات ثنايا الجسم بعد ارتداء الإحرام،",
+                "اهتمم بالنظافة الشخصية، وتهوية ثنايا الجسم (مثل الفخذين والإبطين).",
+                "استخدم المراهم العلاجية عند الإصابة بالتسلخات الجلدية، مع غسل المنطقة بالماء قبل وضع المرهم."
+            ],
+            "en": [
+                "",
+                "What is Ihram?",
+                "Ihram is entering into the worship of Hajj or Umrah, and deliberately engaging oneself in its actions. The root verb “ahrama” mans ‘to enter into the rituals’, in which case permissible things then become forbidden. Forbidden things include, men wearing sewn clothes, and men and women cutting something from their hair, clipping nails, or applying perfume. Ihram has specific manifestations and rituals, and indications that symbolize detachment from the world and its adornment, the turnout to Allah, and worship with a pure heart and obedient limbs.",
+                "By entering the state of Ihram, the Muslim begins the first pillars of Hajj and Umrah. It is the first step in his/her journey of faith, and it is an act of the heart that makes him/her enter into a great act of worship. Allah, the Almighty, said: And complete the Hajj and ‘Umrah for Allah.",
+                "Entering into the state of ihram necessitates abstaining from all the prohibitions of Ihram, to enter the rituals by reciting the Talbiyah. A person who intends to perform Hajj should say: Labbayka Allahumma Hajjan (O Allah, here I am intending to perform Hajj); one who intends to perform Umrah should say: Labbayka 'Umaratan (O Allah, here I am intending to perform Umrah) and then commences Talbiyah. On the authority of Ibn Umar (may Allah be pleased with them) who said: The Messenger of Allah (peace be upon him) was asked: What should a Muhrim wear? He answered: Do not wear a shirt, turbans, trousers, a hooded cloak, or Khuffs (socks made from thick fabric or leather); but if someone cannot get sandals, then he can wear Khuffs after cutting them short below the ankles. Do not wear clothes to which Saffon or Wars (two kinds of perfumes) are applied. On the authority of ‘Uthman ibn ‘Affan (may Allah be pleased with him) who said that the Messenger of Allah (peace be upon him) said: A Muhrim must not contract marriage, nor help others contract marriage, nor get engaged for marriag",
+                "",
+                "What should a man wear for Ihram?",
+                "A Muhrim must take off his usual clothes, so he removes the head covering, such as a hat, a turban, and others. He must also remove the usual clothing tailored to fit the body, such as: shirt, pants, socks, gloves, and the like, as well as shoes that surround the entire feet and heels. A man wears an Izaar that covers his lower body and a Ridaa' that covers the upper part. The Ridaa’ may be white. A man may also wear suitable slippers that do not cover the entire foot. The Muhrim can use the following:",
+                "The clip or belt that he wraps around his waist in order to hold his lower garment from falling, and he also puts his phone, money, and the like in it. .",
+                "Watches and rings.",
+                "Bandages and wraps for wounds and injuries.",
+                "Umbrellas and every cover but without his head being touched or without that item sitting on the head directly.",
+                "",
+                "What should a woman wear for Ihram?",
+                "A Muslim woman who enters the state of Ihram may wear clothes of all colors and shapes, on the condition that these clothes are loose-fitting, cover her body, do not hinder her movement, and do not contain visible adornment that attracts men. The Prophet (peace be upon him) said: Women may not cover their faces or wear gloves [i.e. in the state of Ihram]. So, the restrictions of Ihram for women are:",
+                "Covering the face and wearing the Niqab, unless she is in the presence of non-Mahram men, in which case she may cover her face",
+                "Wearing gloves. The following are permissible for a woman in the state of Ihram:",
+                "Wearing glasses, rings, and watches.",
+                "Wound dressing with band-aid and bandage.",
+                "",
+                "How to wear Ihram?",
+                "A man wears an Izaar that covers his lower body and a Ridaa’ that covers the upper part. It is an act of Sunnah for the Muhrim to put the robe on all of his shoulders, and to put its two ends on his chest, as the Prophet (peace be upon him) did. When he wants to perform the Arrival Tawaf, he should make Idtibaa’ i.e., place the middle of his garment under his right armpit and its ends on his left shoulder, and uncover his right shoulder in the case of Tawaf. Someone who always uncovers his shoulder is violating the Sunnah, unless that is for eating, drinking, and relieving himself.",
+                "In any case, the goal is for the Ihram to be covering the whole body, be comfortable in movement, and be tightly fitted, not loosening or prone to drop. Someone who finds it easy to wear it in a specific way, such as those who used to wear the Ridaa’ and the Izar in their popular dress in some Muslim regions, may do so",
+                "",
+                "Talbiyah",
+                "The Talbiyah begins with the Ihram. When the pilgrim or performer of Umrah enters the state of Ihram, he/she intends to perform Hajj or 'Umrah or both, then says: Labbayka Hajjan [O Allah I intend to perform Hajj], Labbayka 'Umaratan [O Allah I intend to perform 'Umrah], or Labbayka 'Umaratan wa Hajjan, [O Allah I intend to perform 'Umrah and Hajj]. By doing so, he enters the state of Ihram. He then pronounces Talbiyah loudly, following the example of the Prophet (peace be upon him): Labbayk Allaahumma labbayk, labbayk laa shareeka laka labbayk, 'innal-hamda, wanni'mata, laka walmulk, laa shareeka laka. [Ever at Your service, O Allah, ever at Your service. Ever at Your Service, You have no partner, ever at Your service. Verily all praise, blessings and dominions are Yours. You have no partner] The Talbiyah ends in 'Umrah when seeing the Sacred House or starting Tawaf, and in Hajj when throwing Jamrat Al-Aqabah.",
+                "The meaning of the saying of the pilgrim or performer of 'Umrah: Labbayk, 'here I am answering Your Call, O my Lord.' The Talbiyah is to be pronounced repeatedly. The aim is that a person answers his Lord not only once or twice, but rather again and again. Repetition indicates the willingness to answer the Lord’s Call and the servant’s dwelling on obedience to Him. After this answer, he says: 'innal-hamda, wanni'mata, laka walmulk, [verily all praise, blessings and dominions are Yours.] Hamd is describing the praised with perfection; if it is repeated, it becomes thanaa'. Ni'mah is what Allah bestows upon His servants by giving them what they desire and repel what is bad.",
+                "",
+                "Stipulating a condition for entering Ihram",
+                "Islam is a religion of ease and facilitation, as Allah, the Almighty, said: Allah intends for you ease and does not intend for you hardship One of the manifestations of this facilitation for the Muslim in performing acts of worship is taking into account the circumstances that may prevent him from completing the Hajj or Umrah that he intended. Therefore, it is allowed for him, if he fears that he will not complete his rituals for any reason, to stipulate a condition for entering Ihram.",
+                "Stipulating a condition for Hajj or Umrah is when there is fear of not completing the rituals, either due to illness or a legitimate excuse, or a reason beyond his control. So when entering Ihram, it is allowed to stipulate the intention. After saying: Labbayka Hajjan [O Allah I intend to perform Hajj], Labbayka 'Umaratan [O Allah I intend to perform 'Umrah], a pilgrim should further say, If something prevents me from continuing, then my exiting Ihram will be at the place where You caused me to be prevented from continuing. It may be said in any language that the pilgrim or performer of Umrah masters. If he says it coupled with a stipulation, and something happens that prevents him from completing the rituals, he may leave the state of Ihram and stop completing the rituals for which he entered Ihram, and he does not have to do anything in compensation.",
+                "",
+                "Assuming Ihram on the airplane",
+                "From Allah's facilitation to His servants and endowing the jurists of Islam with knowledge and deduction of evidence that pilgrims and performers of Umrah arriving by plane are permitted to enter Ihram on their plane at the Miqaat proximity, before arriving in the city of Jeddah.",
+                "The Miqaat is usually announced well ahead of time during the flights of Saudi Airlines for the passengers to get ready. Another announcement is made when reaching it. Those who want to perform Hajj or Umrah must prepare by wearing the Ihram garments and remove any dress/item that becomes prohibited in the state of Ihram well before reaching it to avoid the overcrowdedness of the plane toilets. When the Miqaat proximity is announced, the Muslim intends to enter Ihram according to what he intends to do from his trip, Hajj or Umrah, then he utters what he intends, saying: Labbayka Hajjan, or Labbayka 'Umaratan, and then commences Talbiyah.",
+                "We advise the pilgrim or performer of Umrah to wake up and stay awake until he intends to enter Ihram at the Miqaat. He may enter Ihram well before arrival, half an hour (30 minutes), as a precaution.",
+                "",
+                "Sunnah acts before Ihram",
+                "A Muhrim may do some Sunnah acts before intending Ihram, including:",
+                "Taking a bath or making Wudu (ablution)",
+                "Ghusl (washing the whole body) or Wudu is recommended before the pilgrim intends to enter Ihram. This is a matter of recommendation, not obligation, for males and females in all their conditions. If Ghusl is not possible, a pilgrim may just make Wudu.",
+                "Taking a bath at home",
+                "The one who cannot take a bath at the Miqaat, like someone who travels by plane, may take a bath at home for Ihram before going out to the airport, then enters Ihram when the plane comes in line with the Miqaat.",
+                "Personal hygiene, such as cutting nails, removing armpit hair, and the like, is recommended in every case, and it is even stressed before entering Ihram, because it is forbidden to remove these during Ihram.",
+                "Entering Ihram after performing prayer:",
+                "It is recommended to enter Ihram after offering prayer. If the time of Ihram coincides with a prescribed prayer, a person should perform it first and then intends to enter Ihram. If not, it is recommended for him to perform Wudu and pray two rak’ahs, then enter Ihram and start pronouncing Talbiyah. The Prophet (peace be upon him) said: A messenger came to me from my Lord and asked me to pray in this blessed valley and to assume Ihram for Hajj and Umrah together",
+                "",
+                "Tips:",
+                "You are now engaged in a great worship that you enter into as soon as you make intention and pronounce Talbiyah. Here are some tips of interest to you:",
+                "Read the prohibitions of Ihram summary we have prepared for you so that you do not fall into any of them lest your Hajj shall be affected.",
+                "Honor Allah's rituals, commands, and prohibitions, and give them their due appreciation and respect. Allah, the Almighty, said: That [is so]. And whoever honors the symbols of Allah - indeed, it is from the piety of hearts.",
+                "Stay away from everything that blemishes your Ihram, such as quarrels, raising your voice, abuse, and arguments. Allah, the Almighty, said: Hajj is [during] well-known months, so whoever has made Hajj obligatory upon himself therein [by entering the state of ihram], there is [to be for him] no sexual relations and no disobedience and no disputing during Hajj",
+                "Pronounce much Talbiyah, for it is a great remembrance and supplication that is not prescribed except in these moments. The Prophet (peace be upon him) said: There is no Muslim who says the Talbiyah except that - on his right and left, until the end of the land, from here to there - the rocks, or trees, or mud say the Talbiyah.",
+                "Be sure to adhere to the instructions of security personnel and campaign supervisors.",
+                "Make sure to learn the must-know Shari’ah rulings on the rituals that you are about to perform.",
+                "Do not face the sun directly, and use an umbrella if you have to go out during the day.",
+                "Use ointments to protect you from skin abrasions and inflammation of the folds and creases of the body after wearing the Ihram.",
+                "Pay attention to personal hygiene, and keep body folds and creases, such as the thighs and armpits, well-ventilated.",
+                "Use medicated ointments when skin abrasions occur, and wash the area with water before applying the ointment."
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "title": {
+            "ar": "دخول الحرم",
+            "en": "Entering the Grand Mosqu"
+        },
+        "mainImagePath": "assets/images/hajj/haram.jpg",
+        "details": {
+            "ar": [
+                "",
+                "روحانية اللقاء",
+                "الدخول إلى الحرم يعطي شعوراً مفعماً بالإيمان، ففي تلك اللحظات تتجلى المشاعر العالية، والهيبة والخشوع. فمن نفس البقعة كان دعاء إبراهيم -عليه السلام- حين قال: ﴿ربّنَا إِنّي أَسْكَنتُ مِن ذُريّتِي بِوَادٍ غَيْرِ ذِي زَرْعٍ عِندَ بَيْتِكَ الْمُحَرّمِ رَبّنَا لِيُقِيمُوا الصّلَاةَ فَاجْعَلْ أَفْئِدَةً مّنَ النّاسِ تَهْوِي إِلَيْهِمْ وَارْزُقْهُم منَ الثّمَرَاتِ لَعَلّهُمْ يَشْكُرُونَ﴾.",
+                "",
+                "ما الذي يمنع دخوله إلى الحرم المكي؟",
+                "أبرز ما يُمنع إدخاله إلى المسجد الحرام:",
+                "المأكولات والمشروبات (عدا القهوة والتمر والماء).",
+                "الآلات الحادة.",
+                "السوائل القابلة للاشتعال.",
+                "الحقائب الكبيرة والأمتعة.",
+                "عربات الأطفال.",
+                "على الحاج والمعتمر عدم ترك أمتعته وأغراضه الشخصية عند البوابات، وبدلاً من ذلك إيداعها في صناديق الأمانات في ساحات الحرم.",
+                "",
+                "بوابات الحرم المكي",
+                "توجد بوابات عديدة تؤدّي إلى داخل المسجد الحرام. لكل باب رقم يخصّه، وتعلو هذه البوابات لوحات مضيئة تُظهر عن بُعد معلومات الدخول أو الخروج. الأبواب الرئيسة الخمسة في المسجد الحرام:",
+                "باب الملك عبد العزيز، رقم (1) في الساحة الغربية.",
+                "باب الصفا، رقم (11) في جهة المسعى.",
+                "باب الفتح، رقم (45) في الساحة الشمالية.",
+                "باب العمرة، رقم (62) في الساحة الشمالية.",
+                "باب الملك فهد، رقم (79) في الساحة الغربية.",
+                "",
+                "الدخول بالعربات اليدوية (الكراسي المتحركة)",
+                "إذا قَدِم الحاج أو المعتمر إلى الحرم المكي بعربته اليدوية الخاصّة (الكراسي المتحرّكة)، وأراد الدخول واستخدامها في الحرم، فيسمح له بذلك شرط الدخول من مدخل العربات المخصص. وتتوفر في الحرم المكي: خدمة دافعي العربات، وخدمة العربات العادية والكهربائية.",
+                "",
+                "الأطفال في الحرم",
+                "يُتاح للآباء والأمهات اصطحاب أطفالهم من مختلف الأعمار لأداء الصلوات في الحرم المكي. أمّا اصطحابهم إلى العمرة فيتطلب استخراج تصريح عمرة عبر تطبيق نُسُك لمن تتجاوز أعمارهم 5 سنوات. وعلى وليّ أمر الطفل تزويد الطفل ببطاقة تعريفية أو سوار يحملان اسمه ورقم التواصل مع الأسرة، مع الإمساك بيده دائماً، وعدم الابتعاد عنه حتى لا يتيه، مع الحرص على تعليمه الهدوء وعدم إزعاج المصلين.",
+                "ويتوفر في الحرم المكي (مركز العناية بالأطفال التائهين). يستقبل المركز الأطفال التائهين في رحاب المسجد الحرام، بإشراف أمن الحرم المكي الذي يتابع استلام الأطفال وتسليمهم إلى ذويهم."
+            ],
+            "en": [
+                "",
+                "Spirituality",
+                "Entering the Grand Mosque gives a feeling of full faith - in those moments high feelings, prestige and reverence are evident. It is in this same place that Prophet Ibrahim (peace be upon him) made his well-known supplication, saying: Our Lord, I have settled some of my descendants in an uncultivated valley near Your sacred House, our Lord, that they may establish prayer. So make hearts among the people incline toward them and provide for them from the fruits so that they might be grateful.",
+                "",
+                "Things not allowed inside the Grand Mosque",
+                "The following are the most common items not allowed to be brought into the Grand Mosque:",
+                "Food and drinks (except for coffee, dates, and water).",
+                "Sharp tools.",
+                "Flammable liquids.",
+                "Large bags and luggage.",
+                "Strollers.",
+                "Hajj and Umrah performers should not leave their luggage and personal items at the gates. Instead, they should deposit them in safety deposit boxes in the outer piazzas of the Grand Mosque.",
+                "",
+                "The gates of the Grand Mosque of Makkah",
+                "There are many gates leading into the Grand Mosque. Each gate has a unique number. These gates are topped with illuminated panels that show entry or exit information at a distance. The five main doors in the Grand Mosque:",
+                "King Abdul Aziz Gate, No. (1) in the western piazza.",
+                "Bab Al-Safa, No. (11) on the Masaa direction.",
+                "Bab Al-Fath, No. (45) in the northern piazza.",
+                "Bab Al-Umrah, No. (62) in the northern piazza.",
+                "King Fahd Gate, No. (79) in the western piazza",
+                "",
+                "Entering with hand-propelled wheelchairs",
+                "If the Hajj or Umrah performer comes to the Grand Mosque in Makkah with his wheelchair and wants to enter and use it inside it, he is allowed to do so, provided that he enters through the designated entrance. Available in the Grand Mosque of Makkah: wheelchair assistance service, and regular and electric wheelchair service.",
+                "",
+                "Children in the Grand Mosque",
+                "Parents are allowed to bring their children of all ages to perform prayers in the Grand Mosque of Makkah. However, an Umrah permit through the Nusuk application is required to bring them for Umrah for those over 5 years of age. The child’s guardian/parent must provide the child with an identification card or bracelet that bears his name and the contact number of the family, while always holding his hand, and not leaving them unattended so as not to get lost. They should be instructed to keep quiet and not to disturb worshipers.",
+                "Lost Children's Care Center is available in precincts of the Grand Mosque of Makkah. The Center receives lost children in the vicinity of the Grand Mosque, under the supervision of the security of the Grand Mosque of Makkah, which follows up on the receipt of children and their handover to their families."
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "title": {
+            "ar": "الطواف",
+            "en": "Tawaf"
+        },
+        "mainImagePath": "assets/images/hajj/tawaf.jpg",
+        "details": {
+            "ar": [
+                "",
+                "صفة الطواف",
+                "الطواف ركن من أركان الحج والعمرة، وهو عبادة لله تُظهر الافتقار والتوجه بالقلب والجوارح إليه سبحانه، يقوم فيها المسلم بالطواف حول بيته الكريم -الكعبة- تعبداً لرب البيت وتقرباً إليه بما شَرع. وصِفته أن يبتدئ الحاج أو المعتمر طوافه من الرّكن الذي فيه الحجر الأسود، حيث توجد في الأدوار العلوية علامة خضراء تدلّ عليه. من هذه النقطة يكبّر الطائف بداية كل شوط جديد. وليس شرطاً أن يكون التكبير في ذات النقطة بالضبط، بل الأمرُ تقريبي، فإذا وجد الحاج أو المعتمر نفسه قد حاذى الحجر فإنه يكبر.",
+                "صِفَة التكبير أن يُشيرَ بيده إلى الحجر الأسود، ثم يبتدئ طوافه جاعلاً الكعبة عن يساره (عكس عقارب الساعة)، وإن استطاع تقبيل الحجر الأسود فقد أدّى السنة، وإن لم يتيسر له ذلك -في أيام المواسم والزحام- فلا شيء عليه. ويستحب للطائف إكثار الدعاء إلى الله والابتهال إليه، كما يستحب له أيضاً إذا وصل إلى الركن الذي يسبق الحجر الأسود، الذي يسمى الرّكن اليماني ، أن يمسح عليه إذا تيسر له، وتكرار ذلك في أشواطه السبعة.",
+                "",
+                "الرّمَل",
+                "الرّمل هو الإسراع في الطواف، وهو من سنن المصطفى رسول الله -صلى الله عليه وسلم- في طواف العمرة وطواف القدوم. وهو يختلف عن الهرولة التي في السّعي. في الرّمَل يُسن للرجال -إن تيسّر لهم- تعجيل خطاهم، والمشي سريعاً مع تقارب الخُطى في الأشواط الثلاثة الأولى، اقتداءً برسول الله -صلى الله عليه وسلم- ثم إتمام الأشواط الأربعة الباقية مشياً معتاداً. أما النساء فلا يرملن. كما لا يشرع الرّمَل للجنسين في طواف الإفاضة (الحج) ولا طواف الوداع ولا طواف النافلة.",
+                "",
+                "الاضطباع",
+                "الاضطباع سنّة من سنن المصطفى -صلى الله عليه وسلم. تتمثل في إظهار الرجل كتفه الأيمن في طواف العمرة وطواف القدوم، ولا تُشرع في غيرهما من أنواع الطواف.",
+                "جاءت مشروعية الاضطباع حينما ورَد أن قريشاً قالت عن النبي -صلى الله عليه وسلم- وصحابته: (يقدم عليكم قوم قد أوهنهم المرض)، فأراد رسول الله -صلى الله عليه وسلم- وصحابته أن يُظهروا قوتهم ونشاطهم بإبراز أكتافهم، ثم استمر رسول الله -صلى الله عليه وسلم- وصحابته في فعلها بعد ذلك. واليوم، يقتدي فيها المسلم برسوله، ويُظهر قوته ونشاطه في التوجه إلى ربه -عز وجل.",
+                "",
+                "طواف القدوم",
+                "هو الطواف الذي يؤدّيه الحاج أولَ وصوله إلى مكة، ويسمى أيضاً طوافَ التحية. يطوف طواف القدوم من أحَرم بالحج وقدمَ إلى مكة، وذلك قبل يوم عرفة بوقتٍ يكفي للطواف. والمعنيّون بطواف القدوم هم من كان نُسُكهم الإفراد والقران؛ إذ يتأكّد في حقهم عند الوصول إلى مكة طواف سبعة أشواط بالكعبة. ويسقط طواف القدوم عن المتمتع، وعمّن توجه إلى عرفة مباشرة، وعن المرأة الحائض أو النفساء.",
+                "صفة الطواف مثل طواف العمرة، ويُشرع في حق من أتم طواف القدوم أن يسعى بين الصفا والمروة سبعة أشواط، ويكون هذا هو سعي الحج اللازم عليه لإتمام الحج، ولا يحتاج بعده إعادة السعيَ عند طواف الإفاضة يومَ العيد. ويُسن في طواف القدوم كل ما يُسن في طواف العمرة، وعلى الحاج أن يتقيد بتعليمات ومواعيد برنامج حملة الحج حتى لا يضطرب جدول بقية الحملات.",
+                "",
+                "الكعبة",
+                "الكعبة هي بيتُ الله الحرامُ، والبناءُ المعظّم عند المسلمين، ذو المكانة الكبيرة والتاريخ الجليل. رَفع بناءه خليل الله إبراهيم مع ابنه إسماعيل -عليهما السلام، قال تعالى: ﴿َإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ رَبّنَا تَقَبّلْ مِنّا ۖ إِنّكَ أَنتَ السّمِيعُ الْعَلِيمُ﴾. وهي أول بيتٍ وضعه الله في الأرض لعبادته -وحده لا شريك له؛ قال تعالى: ﴿إن أَوّلَ بَيْتٍ وُضِعَ لِلنَاسِ لَلَذي بِبَكَة مُبَارَكًا وَهُدًى لِلْعَالَمِينَ﴾. وهي قِبْلة المسلمين ومَهوى أفئدتهم، وحولها فقط يكون طوافهم. للكعبة عدّة معالم بارزة يراها الطائف حين طوافه، وهي:",
+                "الحَطيم (حِجر إسماعيل)",
+                "سورٌ مقوّس ملتصق بالكعبة، كان في أصله جزءٌ من الكعبة التي بناها إبراهيم وإسماعيل (عليمهما السلام)، والصلاة والوقوف فيه كالصلاة والوقوف داخل الكعبة.",
+                "باب الكعبة",
+                "يقع في الجهة الشرقية من الكعبة، وهو مصنوع اليوم من الذهب الخالص، ويرتفع عن الأرض بمقدار (222) سم.",
+                "الملتزَم",
+                "هو الجدار الشرقي أو جزء منه، يقع بين الحجر الأسود وبين باب الكعبة، ومعنى الالتزام هو: وضع الداعي صدرَه ووجهه وذراعيه وكفّيه على هذا الجدار، وابتهاله إلى الله تعالى بما تيسّر له. وقد يصعب هذا في المواسم.",
+                "الميزاب",
+                "هو الجزء المثبّت على سطح الكعبة لتصريف المياه، منه تصبّ المياه على حِجر إسماعيل.",
+                "الشاذروان",
+                "هو دعامة أرضيّة تحيط الكعبة كالإزار، وهو ليس من الكعبة في أصله وإنما وُضِع لتقوية بناء الكعبة وحمايتها من السيول، وقد حوفظ عليه عبر السنين، وهو اليوم مكسوٌّ برخام أبيض.",
+                "الحجر الأسود",
+                "الحَجَر الأسود من أحجار الجنّة؛ كما قال -صلى الله عليه وسلم. وهو مَبدأ الطواف ونهايتُه. وقد وضعه النبيّ -صلى الله عليه وسلم- في مكانه حينما اختلفت قريش فيمن سيضعه، وذلك بعد أن أعادوا بناء الكعبة إثر تهدّم جزء من بنائها بفعل الأمطار.",
+                "الركن اليماني",
+                "الركنُ اليمانيّ هو أحدُ الأركان الأربعة من الكعبة المشرّفة، وقد سُمّي باليماني؛ لأنه من جهة اليمن، ويُطلَق عليه هو والحجر الأسود الركنان اليمانيان",
+                "",
+                "الطواف بالعربات",
+                "يجوز لمن لا يستطيع المشي، أو مَن أحسّ الإعياء والمرض والتعب، أن يطوف راكباً. وعليه أن يبقى مستيقظاً منتبهاً لأنه في عبادة، وأن يشغل وقته بالدعاء والتضرع إلى الله.",
+                "",
+                "سنة الصلاة بعد الطواف",
+                "يُسن للطائف بعد أن ينهي طوافه أن يصلي ركعتين، وهي من السنن المؤكدة لكل من طاف بالكعبة لحج أو عمرة أو تنفلاً مطلقاً بالطواف. ويشرع للمصلّي أن يقرأ في الركعة الأولى (سورة الكافرون)، وفي الركعة الثانية (سورة الإخلاص). ولأن الطواف شعار التوحيد وإفراد العبادة لله وحده لا شريك له؛ فشرع له أن يعلن ذلك في السور التي يقرؤها عند إتمام طوافه.",
+                "يسن -إن تيسّر ذلك- صلاة الركعتين خلف مقام إبراهيم، حيث يكون المقام بينه وبين الكعبة وإن بعُد المقام عنه. وعلى المصلّي التزام المكان الذي يُشير إليه رجال الأمن. فكل مكان في المسجد الحرام يصح أن تؤدى فيه الركعتين، وتوجيهات رجال الأمن تصب في مصلحة النظام ورعاية حق الطائفين الذين هم أولى وأحق بالمكان من المصلين.",
+                "",
+                "سنن الطواف",
+                "للطواف سننٌ فعلَها رسول الله -صلى الله عليه وسلم- وتابعه عليها صحابتُه الكرام. وقد قال -صلى الله عليه وسلم-: (خذوا عني مَناسككم). والطواف كما هو الحال في بقية أعمال الحج والعمرة من العبادات العظيمة التي يسعى فيها المسلم إلى الاقتداء برسول الله -صلى الله عليه وسلم- ومتابعته في الكيفية والصفة والحال التي كان عليها؛ لأن ذلك سببٌ عظيمٌ لمحبة الله لعباده، كما قال تعالى: ﴿قل إن كنتم تحبون الله فاتبعوني يحببكم الله ويغفر لكم ذنوبكم﴾. ومن سنن الطواف:",
+                "التكبير يُسن لمن حاذى الحجر الأسود أو النور الأخضر في الأدوار العليا عند بداية كل شوط ونهايته أن يرفع يديه قائلاً: الله أكبر.",
+                "الدعاء يعتبر الطواف بالكعبة من أعظم مواقف الدعاء والتضرع إلى الله، وقد كان رسول الله يشغل كل لحظات طوافه بالدعاء والذكر، وكان يقول بعد أن يتجاوز الركن اليماني (وهو آخر ركن قبل الحجر الأسود): ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار.",
+                "يدعو الطائف بكل ما يحتاجه ويهمه من خيري الدنيا والآخرة، بلغتِه التي يتكلم بها، فأعظمُ الدعاء ما توافقَ فيه القلب واللسان.",
+                "من أعظم الأدعية وأكثرها بركة أدعيةُ القرآن وأدعية رسول الله -صلى الله عليه وسلم-. الاضطباع",
+                "يسن للرجل في طواف العمرة أن يُظهر كتفه الأيمنَ اقتداءً بالنبي صلى الله عليه وسلم، وذلك خاص بطواف العمرة وطواف القدوم.",
+                "الرّمَل يسن للرجال -إن تيسّر لهم- أن يعجلوا خطاهم، ويمشوا مشياً سريعاً مع تقارب الخُطى في الأشواط الثلاثة الأولى؛ اقتداء برسول الله -صلى الله عليه وسلم- ويتمّون باقي الأشواط الأربعة مشياً معتاداً في طوافي العمرة والقدوم.",
+                "صلاة ركعتي الطواف يسن لمن أتم طوافه أن يصلي ركعتين، يقرأ في الأولى سورة الكافرون، وفي الثانية سورة الإخلاص.",
+                "",
+                "زمزم",
+                "م. يُشرع للمسلم الشرب من ماء زمزم عموماً، ويتأكد في حقه عندما ينتهي من طوافه، وقبل أن يبدأ في السعي، ومن أهم المعلومات حول ماء زمزم في الحرمين؛ ما يلي:",
+                "يُوفّر ماء زمزم في حاويات شُرب مخصصة، في أنحاء المسجد الحرام والمسجد النبوي، بنوعين: ماء مبرّد، وغير مبرّد وعليه علامة.",
+                "تتوفر أكواب من البلاستيك للشرب، ومع كل وحدة شرب تؤخذ الكأس من الجهة اليمنى وتوضع بعد استخدامها بالجهة اليسرى أو في سلّة المهملات في أيّ مكان آخر.",
+                "يُعيد منسوبو السقاية تعبئة الحاويات باستمرار، ومّما يعطّل مهمتهم في التعبئة: تحريكُها وتغييرُ مكانها واتجاهها.",
+                "هذه الحاويات مجهّزة للشرب فقط، واستخدامها للوضوء يعرض الزوار والمعتمرين إلى الانزلاق والتلوث، كما أن نقل مخزونها خارج الحرم يهدر ماء زمزم."
+            ],
+            "en": [
+                "",
+                "How to make Tawaf",
+                "Tawaf is one of the pillars of Hajj and Umrah, and it is an act of worship to Allah that shows the need and turning of the heart and limbs to Him, Glory be to Him. Tawaf starts from the corner where the Black Stone is located; green lights are indicating it on the upper floors. From this point on the pilgrim pronounces Takbeer at the beginning of each new round. It is not a requirement that the Takbeer is at the same point, rather the matter is approximate. If the Hajj or Umrah performer finds himself in line with the Black Stone, he may say Takbeer.",
+                "The Takbeer is made while the pilgrim points with his hand to the Black Stone, then begins his Tawaf, having the Ka’bah on his left (counterclockwise). He may kiss the Black Stone if possible, in fulfillment of the Sunnah. If he cannot do so, especially in seasons and during crowds, he is not to blame. The pilgrims in Tawaf should pray a lot to Allah and invoke Him. If they reach the corner that precedes the Black Stone, which is called the “Yemeni Corner”, it is also desirable for them to wipe over it if possible, and repeat that practice in the seven rounds.",
+                "",
+                "Ramal (jogging)",
+                "Ramal is to speed up the Tawaf, and it is one of the Sunnah acts of the Messenger of Allah (peace be upon him) in the Tawaf for Umrah and the Arrival Tawaf. It differs from jogging in Saa'i (walking between Al-Safa and Al-Marwah). In Ramal, it is an act of Sunnah for men, if it is possible for them, to accelerate their steps, and to walk quickly with close steps in the first three rounds, following the example of the Messenger of Allah (peace be upon him) and then complete the remaining four rounds with moderate pacing. Women may not perform Ramal. Likewise, men and women are not required to perform Ramal in Tawaf Al-Ifadah (in Hajj), the Farewell Tawaf, nor in any other supererogatory Tawaf.",
+                "",
+                "Al-Idtibaa’",
+                "Al-Idtibaa’ is one of the acts of Sunnah of the Prophet (peace be upon him). It consists of the man showing his right shoulder in the Tawaf for Umrah and the Arrival Tawaf, and it is not to be performed in other types of Tawaf.",
+                "Idtibaa’ came into prominence as a legal practice when it was reported that Quraysh said about the Prophet (peace be upon him) and his companions: A people weakened with the illness have come to you. So the Messenger of Allah (peace be upon him) and his companions wanted to show their strength and vigorousness by showing their shoulders, then the Messenger of Allah (peace be upon him) and his companions continued to do it afterward. Today, the Muslim follows his Messenger and shows his strength and vigorousness in turning to his Lord - Glory be to Him.",
+                "",
+                "Arrival Tawaf",
+                "It is the Tawaf that the pilgrim performs on his first arrival in Makkah, and it is also called the Tawaf of Greeting. The Arrival Tawaf is performed by those who entered Ihram for Hajj and came to Makkah, well before the day of Arafah, having sufficient time for Tawaf. Those concerned with the Arrival Tawaf have made their intention for Ifrad or Qiran types of Hajj. Once they arrive at Makkah, it becomes mandatory to make seven rounds of Tawaf around the Ka’bah. The Arrival Tawaf is waived for those doing Tamattu’ Hajj, for those who go directly to Arafah, and for menstruating or postpartum women.",
+                "The Arrival Tawaf is performed exactly like the Tawaf for Umrah. One who completes the Arrival Tawaf should go jogging seven times between Al-Safa and Al-Marwah. This will be considered the Saa’i required to complete the Hajj. Afterward, a pilgrim does not need to repeat the Saa’i when he goes for Tawaf Al-Ifadah on the Day of Eid. All the steps of the Tawaf for Umrah are also applicable in the Arrival Tawaf. A pilgrim must adhere to the instructions and dates set by the Hajj campaign program so that the schedule of the rest of the campaigns will not be interrupted.",
+                "",
+                "Ka'bah",
+                "The Ka’bah is the Sacred House of Allah, and the building venerated by all Muslims of great importance and magnificent history. Its building was erected by Allah's Messengers Ibrahim and his son Isma'il (peace be upon them). Allah, the Almighty, said: And [mention] when Abraham was raising the foundations of the House and [with him] Ishmael, [saying], Our Lord, accept [this] from us. Indeed You are the Hearing, the Knowing. It is the first House on earth that Allah appointed for His worship alone with no partner. Allah, the Almighty, said: Indeed, the first House [of worship] established for mankind was that at Makkah - blessed and a guidance for the worlds. It is the direction that Muslims face in prayer and the destination to which their hearts yearn. It is the only House around which they make Tawaf. The Ka’bah has several prominent features that a pilgrim sees during Tawaf, which are:",
+                "Al-Hatim (Hijr Isma'il)",
+                "It is an arched wall attached to the Ka’bah. It was originally part of the Ka’bah built by Ibrahim and Isma’il (peace be upon them). Praying and standing in it is like praying and standing inside the Ka’bah.",
+                "The door of the Ka'bah",
+                "It is located on the eastern side of the Ka'bah. Today, it is made of pure gold, and it is 222 cm above the ground.",
+                "Al-Multazam",
+                "It is the eastern wall or part of it, located between the Black Stone and the door of the Ka'bah. It came from Iltizam, where a person making supplication attaches his chest, face, forearms, and hands to this wall. This may be difficult to do during the seasons.",
+                "Al-Mizab",
+                "It is the part installed on the roof of the Ka’bah to drain water, from which water is poured onto the Hijr of Isma’il..",
+                "Al-Shadhuran",
+                "It is a ground support that surrounds the Ka’bah like a skirting. It is not originally part of the Ka’bah but was placed to strengthen the building of the Ka’bah and protect it from floods. It has been preserved over the years, and today it is clad with white marble.",
+                "The Black Stone",
+                "The Black Stone is one of the stones of Paradise. The Prophet (peace be upon him) said: It marks the beginning and end of Tawaf. The Prophet (peace be upon him) put it in its place to resolve the Quraysh’s disagreement over who should put it back in place. This happened after they completely rebuilt the Ka’bah when part of its building had been damaged by rain.",
+                "Al-Rukn Al-Yamani (The Yemeni Corner)",
+                "The Yemeni Corner is one of the four corners of the Holy Ka’bah. It was called ‘Yemani’ because it faces the direction of Yemen. Together with the Black Stone, they are called the “Yemeni corners",
+                "",
+                "Tawaf in wheelchairs",
+                "It is permissible for a person who cannot walk, or who feels tired, ill, or exhausted, to make Tawaf in a wheelchair. However, he must remain awake and conscious because he is engaged in worship, and should spend his time making supplications and invoking Allah",
+                "",
+                "The Sunnah prayer after Tawaf",
+                "After completing Tawaf, it is a stressed Sunnah to pray two Rak’ahs for everyone who makes Tawaf around the Ka’bah for Hajj or Umrah, or as a non-specific supererogatory Tawaf. It is recommended to recite Surah Al-Kafirun in the first Rak’ah and Surah Al-Ikhlas in the second Rak’ah. Moreover, Tawaf is symbolic of monotheism and singling out Allah alone with worship with no partner. So it is recommended to profess this creed through the surahs recited upon completion of Tawaf.",
+                "If possible, it is an act of Sunnah to pray two Rak'ahs behind Maqam Ibrahim, where the Maqam is between him and the Ka’bah, even if the Maqam is far from him. The worshiper must abide by the place indicated by the security men. In every place in the Grand Mosque, it is valid to perform the two Rak’ahs. The directives of the security men are in the interest of the order and the interest of those performing Tawaf, who have a better right to the place than the worshipers.",
+                "",
+                "The Sunnah acts of Tawaf",
+                "Tawaf has associated Sunnah acts that the Messenger of Allah (peace be upon him) did, and his honorable companions followed him in this respect. The Prophet (peace be upon him) said: Learn your rituals from me. As is the case with the rest of the Hajj and Umrah acts, Tawaf is one of the great acts of worship in which the Muslim seeks to follow the example of the Messenger of Allah (peace be upon him) in the same manner, quality, and state of affairs he was on. This is a great reason for Allah’s love for His servants, as He, the Almighty, said: Say, [O Muhammad], If you should love Allah, then follow me, [so] Allah will love you and forgive you your sins”. Some Sunnah acts of Tawaf:",
+                "Takbeer It is recommended for the one who is in line with the Black Stone or the Green Light in the upper floors at the beginning and end of each round to raise his hands, saying: Allah Akbar [Allah is the Greatest]",
+                "Supplication Tawaf around the Ka’bah is considered one of the greatest situations of making a supplication to Allah. The Messenger of Allah used to spend all the moments of his Tawaf making supplication and remembrance, and he used to say after passing the Yemeni Corner (which is the last corner before the Black Stone): Our Lord, give us in this world [that which is] good and in the Hereafter [that which is] good and protect us from the punishment of the Fire",
+                "The person engaged in Tawaf may supplicate to Allah for everything he needs and seeks for the good of this world and the hereafter, in the language he speaks. The greatest supplication is the one made with the heart in agreement with the tongue.",
+                "Among the greatest and most blessed supplications are those found in the Qur’an and the supplications of the Messenger of Allah (peace be upon him).",
+                "Al-Idtibaa It is an act of Sunnah for a man during the Tawaf for Umrah to show his right shoulder, following the example of the Prophet (peace be upon him). This is specific to the Tawaf for Umrah and the Arrival Tawaf.",
+                "Ramal (jogging) In Ramal, it is an act of Sunnah for men, if it is possible for them, to accelerate their steps, and to walk quickly with close steps in the first three rounds, following the example of the Messenger of Allah (peace be upon him) and then complete the remaining four rounds with moderate pacing. This is typical of Tawaf for Umrah and the Arrival Tawaf.",
+                "Offering two Rak'ahs of prayer after finishing Tawaf After completing Tawaf, it is a stressed Sunnah to pray two Rak’ahs, reciting Surah Al-Kafirun in the first Rak'ah (after Al-Fatihah) and Al-Ikhlas in the second Rak'ah.",
+                "",
+                "Zamzam",
+                "Zamzam water is one of Allah’s favors to Makkah and its visitors. Allah blessed Isma’il (peace be upon him) and his mother Hajar with Zazam when Ibrahim (peace be upon him) left them in Makkah in response to Allah’s command. So Allah made that freshwater flow from underneath the feet of the child Isma’il. Its characteristics and qualities are not like those of any other water on the face of the earth. It was a tribute to Ibrahim, his son, his wife, and the Ummah of Muhammad (peace be upon him) which came later. It is recommended for a Muslim to drink Zamzam water in general, and it is even stressed when he finishes his Tawaf, and before he begins Saa’i. Here is some important information about Zamzam water in the Two Holy Mosques:",
+                "Zamzam water is provided in designated drinking containers, throughout the Grand Mosque and the Prophet’s Mosque, in two types: chilled, and non-chilled water with a label.",
+                "Plastic cups are available for drinking. In each drinking container, the cup is taken from the right side column and placed after use on the left side column or in the trash in any other place.",
+                "Watering personnel constantly refill the containers. The following disrupts their refilling task: moving them and changing their location and direction.",
+                "These containers are made for drinking only. Using their water for Wudu exposes visitors and pilgrims to slipping and infection, and to move their storage of water to the outside of the Grand Mosque is to waste Zamzam water."
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "title": {
+            "ar": "السعي",
+            "en": "Saa’i"
+        },
+        "mainImagePath": "assets/images/hajj/sai.jpg",
+        "details": {
+            "ar": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "en": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "title": {
+            "ar": "منى",
+            "en": "Mina"
+        },
+        "mainImagePath": "assets/images/hajj/mina.jpg",
+        "details": {
+            "ar": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "en": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "title": {
+            "ar": "عرفة",
+            "en": "Arafah"
+        },
+        "mainImagePath": "assets/images/hajj/arafa.jpg",
+        "details": {
+            "ar": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "en": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    {
+        "id": 8,
+        "title": {
+            "ar": "مزدلفة",
+            "en": "Muzdalifah"
+        },
+        "mainImagePath": "assets/images/hajj/muzdalefa.jpg",
+        "details": {
+            "ar": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "en": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    {
+        "id": 9,
+        "title": {
+            "ar": "يوم النحر",
+            "en": "Day of Sacrifice"
+        },
+        "mainImagePath": "assets/images/hajj/naher.jpg",
+        "details": {
+            "ar": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "en": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    {
+        "id": 10,
+        "title": {
+            "ar": "أيام التشريق",
+            "en": "Days of Al-Tashreeq"
+        },
+        "mainImagePath": "assets/images/hajj/arafa.jpg",
+        "details": {
+            "ar": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "en": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    {
+        "id": 11,
+        "title": {
+            "ar": "سنن ومستحبات الحج",
+            "en": "Sunnah and desirable acts of Hajj"
+        },
+        "mainImagePath": "assets/images/hajj/sonan.jpg",
+        "details": {
+            "ar": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "en": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    {
+        "id": 12,
+        "title": {
+            "ar": "تطبيق نسك",
+            "en": "Nusuk » Application"
+        },
+        "mainImagePath": "assets/images/omrah/nusuk.jpeg",
+        "details": {
+            "ar": [
+                "نُسُك تعد أول منصة رسمية سعودية تتيح لك خيار التخطيط والحجز وعيش تجربة العمرة أو الحج الخاصة بك. نُسُك تتيح للمسافرين من جميع أنحاء العالم تنظيم وتخطيط جميع تفاصيل زيارتهم بسهولة، بدءا من التقدم بطلب الحصول على تأشيرة إلكترونية إلى حجز الفنادق والرحلات الجوية. مستقبلًا، سيمكنك نُسُك من جدولة الزيارات للمواقع المهمة، والعثور على وسائل النقل، وتنظيم مسارات الرحلات، والوصول إلى الخدمات على أرض الواقع مثل تعقب الطواف وغيره الكثير.",
+                "",
+                "https://www.nusuk.sa/ar"
+            ],
+            "en": [
+                "Use Nusuk, the first-ever official planning, booking and experience platform, to create your Hajj or Umrah itinerary to Makkah, Madinah, and beyond. With Nusuk, travelers from all over the world can easily organize their entire visit, from applying for an eVisa to booking hotels and flights. In the future, Nusuk can also be used to schedule visits to important sites, find transportation, curate itineraries, and access on-ground tools such as the Tawaf tracker and more.",
+                "",
+                "https://www.nusuk.sa/en"
+            ]
+        }
+    }
+]
