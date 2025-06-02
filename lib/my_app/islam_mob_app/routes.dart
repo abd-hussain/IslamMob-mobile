@@ -6,6 +6,7 @@ import 'package:islam_app/presentation/azkar_after_salah/azkar_after_salah_scree
 import 'package:islam_app/presentation/calender/calender_screen.dart';
 import 'package:islam_app/presentation/change_language/change_language_screen.dart';
 import 'package:islam_app/presentation/contacts/contacts_screen.dart';
+import 'package:islam_app/presentation/estekara/estekara_screen.dart';
 import 'package:islam_app/presentation/hajj_omrah/hajj_omrah_details_screen.dart';
 import 'package:islam_app/presentation/hajj_omrah/hajj_omrah_screen.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/details/hisn_al_muslim_details_screen.dart';
@@ -49,6 +50,7 @@ class RoutesConstants {
   static const azkarAfterSalahScreen = 'azkarAfterSalahScreen';
   static const hajjOmrahScreen = 'hajjOmrahScreen';
   static const hajjOmrahDetailsScreen = 'hajjOmrahDetailsScreen';
+  static const estekaraScreen = 'estekaraScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -78,4 +80,5 @@ final Map<String, Widget> routes = {
   RoutesConstants.azkarAfterSalahScreen: const AzkarAfterSalahScreen(),
   RoutesConstants.hajjOmrahScreen: const HajjOmrahScreen(),
   RoutesConstants.hajjOmrahDetailsScreen: const HajjOmrahDetailsScreen(),
+  RoutesConstants.estekaraScreen: const EstekaraScreen(),
 };

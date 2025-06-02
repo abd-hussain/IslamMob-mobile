@@ -126,6 +126,20 @@ class ToolbarShortcutView extends StatelessWidget {
                 ),
                 Expanded(
                   child: ToolbarCell(
+                    title: localize.estekaraTitle,
+                    imagePath: "assets/images/toolbar/estekara.png",
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                          name: "EstekaraScreenFromHomeToolBar");
+                      await navigator.pushNamed(
+                        RoutesConstants.estekaraScreen,
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Expanded(
+                  child: ToolbarCell(
                     title: localize.azkarTitle,
                     imagePath: "assets/images/toolbar/azkar_after_salah.png",
                     onTap: () async {
@@ -142,7 +156,7 @@ class ToolbarShortcutView extends StatelessWidget {
                 ),
               ],
             ),
-            // const SizedBox(height: 8),
+
             // Row(
             //   children: [
             //     Expanded(
