@@ -86,10 +86,9 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     required String soundFileName,
   }) async {
     await _localNotificationRepository.cancelSpesificNotifications(111);
-    await _localNotificationRepository.scheduleNotification(
+    await _localNotificationRepository.testNotification(
       id: 111,
       type: type,
-      scheduledTime: DateTime.now(),
       context: context,
       soundFileName: soundFileName,
     );
