@@ -6,8 +6,7 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 class LocalNotificationRepository {
-  static final FlutterLocalNotificationsPlugin _notificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  static final FlutterLocalNotificationsPlugin _notificationsPlugin = FlutterLocalNotificationsPlugin();
 
   /// Initializes the local notification service with platform-specific settings.
   Future<void> initialize() async {
@@ -29,8 +28,7 @@ class LocalNotificationRepository {
 
       // **Now** explicitly request iOS permission:
       await _notificationsPlugin
-          .resolvePlatformSpecificImplementation<
-              IOSFlutterLocalNotificationsPlugin>()
+          .resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>()
           ?.requestPermissions(
             alert: true,
             badge: true,
@@ -45,19 +43,55 @@ class LocalNotificationRepository {
 
   /// Handles notification responses for both foreground and background events.
   @pragma('vm:entry-point')
-  static Future<void> _notificationTapBackground(
-      NotificationResponse response) async {
+  static Future<void> _notificationTapBackground(NotificationResponse response) async {
     debugPrint('Notification received with payload: ${response.payload}');
   }
 
   /// Requests notification permission on Android devices.
   static Future<void> _requestAndroidPermission() async {
     final androidPlugin =
-        _notificationsPlugin.resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>();
+        _notificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
     if (androidPlugin != null) {
       await androidPlugin.requestNotificationsPermission();
     }
+  }
+
+  Future<void> testNotification({
+    required NotificationTypeState type,
+    required BuildContext context,
+    required int id,
+    required String soundFileName,
+  }) async {
+    final localize = IslamMobLocalizations.of(context);
+    final details = _notificationDetails(
+      context: context,
+      type: type,
+      localize: localize,
+      soundFileName: soundFileName,
+    );
+
+    final notificationDetails = NotificationDetails(
+      android: AndroidNotificationDetails(
+        '${details.soundFileName}_channel_$id',
+        'Adhan Notifications',
+        importance: Importance.high,
+        priority: Priority.high,
+        sound: details.soundFileName != null ? RawResourceAndroidNotificationSound(details.soundFileName) : null,
+      ),
+      iOS: DarwinNotificationDetails(
+        sound: details.soundFileName != null ? '${details.soundFileName}.wav' : null,
+        presentSound: true,
+        presentAlert: true,
+        presentBadge: true,
+      ),
+    );
+
+    await _notificationsPlugin.show(
+      id,
+      details.rightNowMessage,
+      details.description,
+      notificationDetails,
+    );
   }
 
   /// Schedules a notification at the specified date and time.
@@ -75,40 +109,38 @@ class LocalNotificationRepository {
       localize: localize,
       soundFileName: soundFileName,
     );
-    String? iOSSoundFileName;
-    String? androidSoundFileName;
+    // String? iOSSoundFileName;
+    // String? androidSoundFileName;
 
-    // Reference without the file extension
-    if (details.soundFileName != null) {
-      iOSSoundFileName = '${details.soundFileName}.wav'; // For iOS
-      androidSoundFileName = details.soundFileName; // For Android
-    }
+    // // Reference without the file extension
+    // if (details.soundFileName != null) {
+    //   iOSSoundFileName = '${details.soundFileName}.wav'; // For iOS
+    //   androidSoundFileName = '${details.soundFileName}'; // For Android
+    // }
 
     final notificationDetails = NotificationDetails(
       android: AndroidNotificationDetails(
-        '$androidSoundFileName _channel',
+        '${details.soundFileName}_channel_$id',
         'Adhan Notifications',
         importance: Importance.high,
         priority: Priority.high,
-        sound: androidSoundFileName != null
-            ? RawResourceAndroidNotificationSound(androidSoundFileName)
-            : null, // Without file extension
+        sound: details.soundFileName != null ? RawResourceAndroidNotificationSound(details.soundFileName) : null,
       ),
       iOS: DarwinNotificationDetails(
-        sound: iOSSoundFileName,
+        sound: details.soundFileName != null ? '${details.soundFileName}.wav' : null,
         presentSound: true,
         presentAlert: true,
         presentBadge: true,
       ),
     );
+
     await _notificationsPlugin.zonedSchedule(
       id,
       details.rightNowMessage,
       details.description,
       tz.TZDateTime.from(scheduledTime, tz.local),
       notificationDetails,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
+      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.dateAndTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
@@ -131,9 +163,7 @@ class LocalNotificationRepository {
     );
 
     // If it's not meant to be a countdown, bail out
-    if (details.isItForCountdown == false) {
-      return;
-    }
+    if (!details.isItForCountdown) return;
 
     final notificationDetails = NotificationDetails(
       android: AndroidNotificationDetails(
