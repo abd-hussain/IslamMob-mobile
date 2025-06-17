@@ -16,19 +16,19 @@ class PrayNotificationSettingState with _$PrayNotificationSettingState {
     @Default(true) bool jom3aDo3aa,
     @Default(true) bool qeyamAlLayel,
     @Default(true) bool before15Min,
-    @Default(PrayNotificationSettingProcessState.idl()) loadingStatus,
+    @Default(PrayNotificationSettingProcessState.loading()) loadingStatus,
   }) = _PrayNotificationSettingState;
 }
 
 @freezed
 sealed class PrayNotificationSettingProcessState
     with _$PrayNotificationSettingProcessState {
-  const factory PrayNotificationSettingProcessState.idl() =
-      PrayNotificationSettingProcessStateIdl;
   const factory PrayNotificationSettingProcessState.loading() =
       PrayNotificationSettingProcessStateLoading;
   const factory PrayNotificationSettingProcessState.error() =
       PrayNotificationSettingProcessStateError;
   const factory PrayNotificationSettingProcessState.success() =
       PrayNotificationSettingProcessStateSuccess;
+  const factory PrayNotificationSettingProcessState.settingSaved() =
+      PrayNotificationSettingProcessStateSettingSaved;
 }

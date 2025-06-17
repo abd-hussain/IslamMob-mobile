@@ -73,7 +73,8 @@ class _EstekaraScreenState extends State<EstekaraScreen> {
               ),
               const SizedBox(height: 10),
               BlocBuilder<EstekaraBloc, EstekaraState>(
-                buildWhen: (previous, current) => previous.listOfItems != current.listOfItems,
+                buildWhen: (previous, current) =>
+                    previous.listOfItems != current.listOfItems,
                 builder: (context, state) {
                   return ListView.builder(
                       itemCount: state.listOfItems.length,
@@ -100,9 +101,12 @@ class _EstekaraScreenState extends State<EstekaraScreen> {
                                 const SizedBox(height: 5),
                                 ListView.builder(
                                   itemBuilder: (context, detailIndex) {
-                                    final details = state.listOfItems[index].details[state.isRtlLanguage ? 'ar' : 'en'];
+                                    final details =
+                                        state.listOfItems[index].details[
+                                            state.isRtlLanguage ? 'ar' : 'en'];
                                     return Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 2),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 2),
                                       child: CustomText(
                                         title: details?[detailIndex] ?? "",
                                         fontSize: 16,
@@ -111,8 +115,12 @@ class _EstekaraScreenState extends State<EstekaraScreen> {
                                       ),
                                     );
                                   },
-                                  itemCount:
-                                      state.listOfItems[index].details[state.isRtlLanguage ? 'ar' : 'en']?.length ?? 0,
+                                  itemCount: state
+                                          .listOfItems[index]
+                                          .details[
+                                              state.isRtlLanguage ? 'ar' : 'en']
+                                          ?.length ??
+                                      0,
                                   shrinkWrap: true,
                                   physics: const NeverScrollableScrollPhysics(),
                                 ),

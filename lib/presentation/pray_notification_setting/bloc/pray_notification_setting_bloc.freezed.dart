@@ -19,25 +19,26 @@ mixin _$PrayNotificationSettingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)
+    required TResult Function(bool status, PrayNotificationTypeState type)
         changePrayNotificationSettings,
+    required TResult Function(BuildContext context)
+        savePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)?
+    TResult? Function(bool status, PrayNotificationTypeState type)?
         changePrayNotificationSettings,
+    TResult? Function(BuildContext context)? savePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)?
+    TResult Function(bool status, PrayNotificationTypeState type)?
         changePrayNotificationSettings,
+    TResult Function(BuildContext context)? savePrayNotificationSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +48,8 @@ mixin _$PrayNotificationSettingEvent {
         initialPrayNotificationSettings,
     required TResult Function(_ChangePrayNotificationSettings value)
         changePrayNotificationSettings,
+    required TResult Function(_SavePrayNotificationSettings value)
+        savePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +58,8 @@ mixin _$PrayNotificationSettingEvent {
         initialPrayNotificationSettings,
     TResult? Function(_ChangePrayNotificationSettings value)?
         changePrayNotificationSettings,
+    TResult? Function(_SavePrayNotificationSettings value)?
+        savePrayNotificationSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,8 @@ mixin _$PrayNotificationSettingEvent {
         initialPrayNotificationSettings,
     TResult Function(_ChangePrayNotificationSettings value)?
         changePrayNotificationSettings,
+    TResult Function(_SavePrayNotificationSettings value)?
+        savePrayNotificationSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,9 +146,10 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)
+    required TResult Function(bool status, PrayNotificationTypeState type)
         changePrayNotificationSettings,
+    required TResult Function(BuildContext context)
+        savePrayNotificationSettings,
   }) {
     return initialPrayNotificationSettings();
   }
@@ -150,9 +158,9 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)?
+    TResult? Function(bool status, PrayNotificationTypeState type)?
         changePrayNotificationSettings,
+    TResult? Function(BuildContext context)? savePrayNotificationSettings,
   }) {
     return initialPrayNotificationSettings?.call();
   }
@@ -161,9 +169,9 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)?
+    TResult Function(bool status, PrayNotificationTypeState type)?
         changePrayNotificationSettings,
+    TResult Function(BuildContext context)? savePrayNotificationSettings,
     required TResult orElse(),
   }) {
     if (initialPrayNotificationSettings != null) {
@@ -179,6 +187,8 @@ class _$InitialPrayNotificationSettingsImpl
         initialPrayNotificationSettings,
     required TResult Function(_ChangePrayNotificationSettings value)
         changePrayNotificationSettings,
+    required TResult Function(_SavePrayNotificationSettings value)
+        savePrayNotificationSettings,
   }) {
     return initialPrayNotificationSettings(this);
   }
@@ -190,6 +200,8 @@ class _$InitialPrayNotificationSettingsImpl
         initialPrayNotificationSettings,
     TResult? Function(_ChangePrayNotificationSettings value)?
         changePrayNotificationSettings,
+    TResult? Function(_SavePrayNotificationSettings value)?
+        savePrayNotificationSettings,
   }) {
     return initialPrayNotificationSettings?.call(this);
   }
@@ -201,6 +213,8 @@ class _$InitialPrayNotificationSettingsImpl
         initialPrayNotificationSettings,
     TResult Function(_ChangePrayNotificationSettings value)?
         changePrayNotificationSettings,
+    TResult Function(_SavePrayNotificationSettings value)?
+        savePrayNotificationSettings,
     required TResult orElse(),
   }) {
     if (initialPrayNotificationSettings != null) {
@@ -223,8 +237,7 @@ abstract class _$$ChangePrayNotificationSettingsImplCopyWith<$Res> {
           $Res Function(_$ChangePrayNotificationSettingsImpl) then) =
       __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {bool status, PrayNotificationTypeState type, BuildContext context});
+  $Res call({bool status, PrayNotificationTypeState type});
 
   $PrayNotificationTypeStateCopyWith<$Res> get type;
 }
@@ -246,7 +259,6 @@ class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? type = null,
-    Object? context = null,
   }) {
     return _then(_$ChangePrayNotificationSettingsImpl(
       status: null == status
@@ -257,10 +269,6 @@ class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PrayNotificationTypeState,
-      context: null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as BuildContext,
     ));
   }
 
@@ -280,18 +288,16 @@ class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
 class _$ChangePrayNotificationSettingsImpl
     implements _ChangePrayNotificationSettings {
   const _$ChangePrayNotificationSettingsImpl(
-      {required this.status, required this.type, required this.context});
+      {required this.status, required this.type});
 
   @override
   final bool status;
   @override
   final PrayNotificationTypeState type;
-  @override
-  final BuildContext context;
 
   @override
   String toString() {
-    return 'PrayNotificationSettingEvent.changePrayNotificationSettings(status: $status, type: $type, context: $context)';
+    return 'PrayNotificationSettingEvent.changePrayNotificationSettings(status: $status, type: $type)';
   }
 
   @override
@@ -300,12 +306,11 @@ class _$ChangePrayNotificationSettingsImpl
         (other.runtimeType == runtimeType &&
             other is _$ChangePrayNotificationSettingsImpl &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.context, context) || other.context == context));
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, type, context);
+  int get hashCode => Object.hash(runtimeType, status, type);
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -321,35 +326,36 @@ class _$ChangePrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)
+    required TResult Function(bool status, PrayNotificationTypeState type)
         changePrayNotificationSettings,
+    required TResult Function(BuildContext context)
+        savePrayNotificationSettings,
   }) {
-    return changePrayNotificationSettings(status, type, context);
+    return changePrayNotificationSettings(status, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)?
+    TResult? Function(bool status, PrayNotificationTypeState type)?
         changePrayNotificationSettings,
+    TResult? Function(BuildContext context)? savePrayNotificationSettings,
   }) {
-    return changePrayNotificationSettings?.call(status, type, context);
+    return changePrayNotificationSettings?.call(status, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(
-            bool status, PrayNotificationTypeState type, BuildContext context)?
+    TResult Function(bool status, PrayNotificationTypeState type)?
         changePrayNotificationSettings,
+    TResult Function(BuildContext context)? savePrayNotificationSettings,
     required TResult orElse(),
   }) {
     if (changePrayNotificationSettings != null) {
-      return changePrayNotificationSettings(status, type, context);
+      return changePrayNotificationSettings(status, type);
     }
     return orElse();
   }
@@ -361,6 +367,8 @@ class _$ChangePrayNotificationSettingsImpl
         initialPrayNotificationSettings,
     required TResult Function(_ChangePrayNotificationSettings value)
         changePrayNotificationSettings,
+    required TResult Function(_SavePrayNotificationSettings value)
+        savePrayNotificationSettings,
   }) {
     return changePrayNotificationSettings(this);
   }
@@ -372,6 +380,8 @@ class _$ChangePrayNotificationSettingsImpl
         initialPrayNotificationSettings,
     TResult? Function(_ChangePrayNotificationSettings value)?
         changePrayNotificationSettings,
+    TResult? Function(_SavePrayNotificationSettings value)?
+        savePrayNotificationSettings,
   }) {
     return changePrayNotificationSettings?.call(this);
   }
@@ -383,6 +393,8 @@ class _$ChangePrayNotificationSettingsImpl
         initialPrayNotificationSettings,
     TResult Function(_ChangePrayNotificationSettings value)?
         changePrayNotificationSettings,
+    TResult Function(_SavePrayNotificationSettings value)?
+        savePrayNotificationSettings,
     required TResult orElse(),
   }) {
     if (changePrayNotificationSettings != null) {
@@ -396,19 +408,186 @@ abstract class _ChangePrayNotificationSettings
     implements PrayNotificationSettingEvent {
   const factory _ChangePrayNotificationSettings(
           {required final bool status,
-          required final PrayNotificationTypeState type,
-          required final BuildContext context}) =
+          required final PrayNotificationTypeState type}) =
       _$ChangePrayNotificationSettingsImpl;
 
   bool get status;
   PrayNotificationTypeState get type;
-  BuildContext get context;
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangePrayNotificationSettingsImplCopyWith<
           _$ChangePrayNotificationSettingsImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SavePrayNotificationSettingsImplCopyWith<$Res> {
+  factory _$$SavePrayNotificationSettingsImplCopyWith(
+          _$SavePrayNotificationSettingsImpl value,
+          $Res Function(_$SavePrayNotificationSettingsImpl) then) =
+      __$$SavePrayNotificationSettingsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$$SavePrayNotificationSettingsImplCopyWithImpl<$Res>
+    extends _$PrayNotificationSettingEventCopyWithImpl<$Res,
+        _$SavePrayNotificationSettingsImpl>
+    implements _$$SavePrayNotificationSettingsImplCopyWith<$Res> {
+  __$$SavePrayNotificationSettingsImplCopyWithImpl(
+      _$SavePrayNotificationSettingsImpl _value,
+      $Res Function(_$SavePrayNotificationSettingsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayNotificationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+  }) {
+    return _then(_$SavePrayNotificationSettingsImpl(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SavePrayNotificationSettingsImpl
+    implements _SavePrayNotificationSettings {
+  const _$SavePrayNotificationSettingsImpl({required this.context});
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'PrayNotificationSettingEvent.savePrayNotificationSettings(context: $context)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SavePrayNotificationSettingsImpl &&
+            (identical(other.context, context) || other.context == context));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, context);
+
+  /// Create a copy of PrayNotificationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SavePrayNotificationSettingsImplCopyWith<
+          _$SavePrayNotificationSettingsImpl>
+      get copyWith => __$$SavePrayNotificationSettingsImplCopyWithImpl<
+          _$SavePrayNotificationSettingsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialPrayNotificationSettings,
+    required TResult Function(bool status, PrayNotificationTypeState type)
+        changePrayNotificationSettings,
+    required TResult Function(BuildContext context)
+        savePrayNotificationSettings,
+  }) {
+    return savePrayNotificationSettings(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialPrayNotificationSettings,
+    TResult? Function(bool status, PrayNotificationTypeState type)?
+        changePrayNotificationSettings,
+    TResult? Function(BuildContext context)? savePrayNotificationSettings,
+  }) {
+    return savePrayNotificationSettings?.call(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialPrayNotificationSettings,
+    TResult Function(bool status, PrayNotificationTypeState type)?
+        changePrayNotificationSettings,
+    TResult Function(BuildContext context)? savePrayNotificationSettings,
+    required TResult orElse(),
+  }) {
+    if (savePrayNotificationSettings != null) {
+      return savePrayNotificationSettings(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialPrayNotificationSettings value)
+        initialPrayNotificationSettings,
+    required TResult Function(_ChangePrayNotificationSettings value)
+        changePrayNotificationSettings,
+    required TResult Function(_SavePrayNotificationSettings value)
+        savePrayNotificationSettings,
+  }) {
+    return savePrayNotificationSettings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialPrayNotificationSettings value)?
+        initialPrayNotificationSettings,
+    TResult? Function(_ChangePrayNotificationSettings value)?
+        changePrayNotificationSettings,
+    TResult? Function(_SavePrayNotificationSettings value)?
+        savePrayNotificationSettings,
+  }) {
+    return savePrayNotificationSettings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialPrayNotificationSettings value)?
+        initialPrayNotificationSettings,
+    TResult Function(_ChangePrayNotificationSettings value)?
+        changePrayNotificationSettings,
+    TResult Function(_SavePrayNotificationSettings value)?
+        savePrayNotificationSettings,
+    required TResult orElse(),
+  }) {
+    if (savePrayNotificationSettings != null) {
+      return savePrayNotificationSettings(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SavePrayNotificationSettings
+    implements PrayNotificationSettingEvent {
+  const factory _SavePrayNotificationSettings(
+          {required final BuildContext context}) =
+      _$SavePrayNotificationSettingsImpl;
+
+  BuildContext get context;
+
+  /// Create a copy of PrayNotificationSettingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SavePrayNotificationSettingsImplCopyWith<
+          _$SavePrayNotificationSettingsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -686,7 +865,8 @@ class _$PrayNotificationSettingStateImpl
       this.jom3aDo3aa = true,
       this.qeyamAlLayel = true,
       this.before15Min = true,
-      this.loadingStatus = const PrayNotificationSettingProcessState.idl()});
+      this.loadingStatus =
+          const PrayNotificationSettingProcessState.loading()});
 
   @override
   @JsonKey()
@@ -859,56 +1039,60 @@ abstract class _PrayNotificationSettingState
 mixin _$PrayNotificationSettingProcessState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() error,
     required TResult Function() success,
+    required TResult Function() settingSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? error,
     TResult? Function()? success,
+    TResult? Function()? settingSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? error,
     TResult Function()? success,
+    TResult Function()? settingSaved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(PrayNotificationSettingProcessStateIdl value) idl,
     required TResult Function(PrayNotificationSettingProcessStateLoading value)
         loading,
     required TResult Function(PrayNotificationSettingProcessStateError value)
         error,
     required TResult Function(PrayNotificationSettingProcessStateSuccess value)
         success,
+    required TResult Function(
+            PrayNotificationSettingProcessStateSettingSaved value)
+        settingSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrayNotificationSettingProcessStateIdl value)? idl,
     TResult? Function(PrayNotificationSettingProcessStateLoading value)?
         loading,
     TResult? Function(PrayNotificationSettingProcessStateError value)? error,
     TResult? Function(PrayNotificationSettingProcessStateSuccess value)?
         success,
+    TResult? Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrayNotificationSettingProcessStateIdl value)? idl,
     TResult Function(PrayNotificationSettingProcessStateLoading value)? loading,
     TResult Function(PrayNotificationSettingProcessStateError value)? error,
     TResult Function(PrayNotificationSettingProcessStateSuccess value)? success,
+    TResult Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -936,135 +1120,6 @@ class _$PrayNotificationSettingProcessStateCopyWithImpl<$Res,
 
   /// Create a copy of PrayNotificationSettingProcessState
   /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$PrayNotificationSettingProcessStateIdlImplCopyWith<$Res> {
-  factory _$$PrayNotificationSettingProcessStateIdlImplCopyWith(
-          _$PrayNotificationSettingProcessStateIdlImpl value,
-          $Res Function(_$PrayNotificationSettingProcessStateIdlImpl) then) =
-      __$$PrayNotificationSettingProcessStateIdlImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PrayNotificationSettingProcessStateIdlImplCopyWithImpl<$Res>
-    extends _$PrayNotificationSettingProcessStateCopyWithImpl<$Res,
-        _$PrayNotificationSettingProcessStateIdlImpl>
-    implements _$$PrayNotificationSettingProcessStateIdlImplCopyWith<$Res> {
-  __$$PrayNotificationSettingProcessStateIdlImplCopyWithImpl(
-      _$PrayNotificationSettingProcessStateIdlImpl _value,
-      $Res Function(_$PrayNotificationSettingProcessStateIdlImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrayNotificationSettingProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$PrayNotificationSettingProcessStateIdlImpl
-    implements PrayNotificationSettingProcessStateIdl {
-  const _$PrayNotificationSettingProcessStateIdlImpl();
-
-  @override
-  String toString() {
-    return 'PrayNotificationSettingProcessState.idl()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PrayNotificationSettingProcessStateIdlImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() error,
-    required TResult Function() success,
-  }) {
-    return idl();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? error,
-    TResult? Function()? success,
-  }) {
-    return idl?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function()? success,
-    required TResult orElse(),
-  }) {
-    if (idl != null) {
-      return idl();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrayNotificationSettingProcessStateIdl value) idl,
-    required TResult Function(PrayNotificationSettingProcessStateLoading value)
-        loading,
-    required TResult Function(PrayNotificationSettingProcessStateError value)
-        error,
-    required TResult Function(PrayNotificationSettingProcessStateSuccess value)
-        success,
-  }) {
-    return idl(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrayNotificationSettingProcessStateIdl value)? idl,
-    TResult? Function(PrayNotificationSettingProcessStateLoading value)?
-        loading,
-    TResult? Function(PrayNotificationSettingProcessStateError value)? error,
-    TResult? Function(PrayNotificationSettingProcessStateSuccess value)?
-        success,
-  }) {
-    return idl?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrayNotificationSettingProcessStateIdl value)? idl,
-    TResult Function(PrayNotificationSettingProcessStateLoading value)? loading,
-    TResult Function(PrayNotificationSettingProcessStateError value)? error,
-    TResult Function(PrayNotificationSettingProcessStateSuccess value)? success,
-    required TResult orElse(),
-  }) {
-    if (idl != null) {
-      return idl(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PrayNotificationSettingProcessStateIdl
-    implements PrayNotificationSettingProcessState {
-  const factory PrayNotificationSettingProcessStateIdl() =
-      _$PrayNotificationSettingProcessStateIdlImpl;
 }
 
 /// @nodoc
@@ -1114,10 +1169,10 @@ class _$PrayNotificationSettingProcessStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() error,
     required TResult Function() success,
+    required TResult Function() settingSaved,
   }) {
     return loading();
   }
@@ -1125,10 +1180,10 @@ class _$PrayNotificationSettingProcessStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? error,
     TResult? Function()? success,
+    TResult? Function()? settingSaved,
   }) {
     return loading?.call();
   }
@@ -1136,10 +1191,10 @@ class _$PrayNotificationSettingProcessStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? error,
     TResult Function()? success,
+    TResult Function()? settingSaved,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1151,13 +1206,15 @@ class _$PrayNotificationSettingProcessStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(PrayNotificationSettingProcessStateIdl value) idl,
     required TResult Function(PrayNotificationSettingProcessStateLoading value)
         loading,
     required TResult Function(PrayNotificationSettingProcessStateError value)
         error,
     required TResult Function(PrayNotificationSettingProcessStateSuccess value)
         success,
+    required TResult Function(
+            PrayNotificationSettingProcessStateSettingSaved value)
+        settingSaved,
   }) {
     return loading(this);
   }
@@ -1165,12 +1222,13 @@ class _$PrayNotificationSettingProcessStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrayNotificationSettingProcessStateIdl value)? idl,
     TResult? Function(PrayNotificationSettingProcessStateLoading value)?
         loading,
     TResult? Function(PrayNotificationSettingProcessStateError value)? error,
     TResult? Function(PrayNotificationSettingProcessStateSuccess value)?
         success,
+    TResult? Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
   }) {
     return loading?.call(this);
   }
@@ -1178,10 +1236,11 @@ class _$PrayNotificationSettingProcessStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrayNotificationSettingProcessStateIdl value)? idl,
     TResult Function(PrayNotificationSettingProcessStateLoading value)? loading,
     TResult Function(PrayNotificationSettingProcessStateError value)? error,
     TResult Function(PrayNotificationSettingProcessStateSuccess value)? success,
+    TResult Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1243,10 +1302,10 @@ class _$PrayNotificationSettingProcessStateErrorImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() error,
     required TResult Function() success,
+    required TResult Function() settingSaved,
   }) {
     return error();
   }
@@ -1254,10 +1313,10 @@ class _$PrayNotificationSettingProcessStateErrorImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? error,
     TResult? Function()? success,
+    TResult? Function()? settingSaved,
   }) {
     return error?.call();
   }
@@ -1265,10 +1324,10 @@ class _$PrayNotificationSettingProcessStateErrorImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? error,
     TResult Function()? success,
+    TResult Function()? settingSaved,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1280,13 +1339,15 @@ class _$PrayNotificationSettingProcessStateErrorImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(PrayNotificationSettingProcessStateIdl value) idl,
     required TResult Function(PrayNotificationSettingProcessStateLoading value)
         loading,
     required TResult Function(PrayNotificationSettingProcessStateError value)
         error,
     required TResult Function(PrayNotificationSettingProcessStateSuccess value)
         success,
+    required TResult Function(
+            PrayNotificationSettingProcessStateSettingSaved value)
+        settingSaved,
   }) {
     return error(this);
   }
@@ -1294,12 +1355,13 @@ class _$PrayNotificationSettingProcessStateErrorImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrayNotificationSettingProcessStateIdl value)? idl,
     TResult? Function(PrayNotificationSettingProcessStateLoading value)?
         loading,
     TResult? Function(PrayNotificationSettingProcessStateError value)? error,
     TResult? Function(PrayNotificationSettingProcessStateSuccess value)?
         success,
+    TResult? Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
   }) {
     return error?.call(this);
   }
@@ -1307,10 +1369,11 @@ class _$PrayNotificationSettingProcessStateErrorImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrayNotificationSettingProcessStateIdl value)? idl,
     TResult Function(PrayNotificationSettingProcessStateLoading value)? loading,
     TResult Function(PrayNotificationSettingProcessStateError value)? error,
     TResult Function(PrayNotificationSettingProcessStateSuccess value)? success,
+    TResult Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1373,10 +1436,10 @@ class _$PrayNotificationSettingProcessStateSuccessImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() idl,
     required TResult Function() loading,
     required TResult Function() error,
     required TResult Function() success,
+    required TResult Function() settingSaved,
   }) {
     return success();
   }
@@ -1384,10 +1447,10 @@ class _$PrayNotificationSettingProcessStateSuccessImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? error,
     TResult? Function()? success,
+    TResult? Function()? settingSaved,
   }) {
     return success?.call();
   }
@@ -1395,10 +1458,10 @@ class _$PrayNotificationSettingProcessStateSuccessImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
     TResult Function()? loading,
     TResult Function()? error,
     TResult Function()? success,
+    TResult Function()? settingSaved,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1410,13 +1473,15 @@ class _$PrayNotificationSettingProcessStateSuccessImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(PrayNotificationSettingProcessStateIdl value) idl,
     required TResult Function(PrayNotificationSettingProcessStateLoading value)
         loading,
     required TResult Function(PrayNotificationSettingProcessStateError value)
         error,
     required TResult Function(PrayNotificationSettingProcessStateSuccess value)
         success,
+    required TResult Function(
+            PrayNotificationSettingProcessStateSettingSaved value)
+        settingSaved,
   }) {
     return success(this);
   }
@@ -1424,12 +1489,13 @@ class _$PrayNotificationSettingProcessStateSuccessImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrayNotificationSettingProcessStateIdl value)? idl,
     TResult? Function(PrayNotificationSettingProcessStateLoading value)?
         loading,
     TResult? Function(PrayNotificationSettingProcessStateError value)? error,
     TResult? Function(PrayNotificationSettingProcessStateSuccess value)?
         success,
+    TResult? Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
   }) {
     return success?.call(this);
   }
@@ -1437,10 +1503,11 @@ class _$PrayNotificationSettingProcessStateSuccessImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrayNotificationSettingProcessStateIdl value)? idl,
     TResult Function(PrayNotificationSettingProcessStateLoading value)? loading,
     TResult Function(PrayNotificationSettingProcessStateError value)? error,
     TResult Function(PrayNotificationSettingProcessStateSuccess value)? success,
+    TResult Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1454,4 +1521,141 @@ abstract class PrayNotificationSettingProcessStateSuccess
     implements PrayNotificationSettingProcessState {
   const factory PrayNotificationSettingProcessStateSuccess() =
       _$PrayNotificationSettingProcessStateSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$PrayNotificationSettingProcessStateSettingSavedImplCopyWith<
+    $Res> {
+  factory _$$PrayNotificationSettingProcessStateSettingSavedImplCopyWith(
+          _$PrayNotificationSettingProcessStateSettingSavedImpl value,
+          $Res Function(_$PrayNotificationSettingProcessStateSettingSavedImpl)
+              then) =
+      __$$PrayNotificationSettingProcessStateSettingSavedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PrayNotificationSettingProcessStateSettingSavedImplCopyWithImpl<$Res>
+    extends _$PrayNotificationSettingProcessStateCopyWithImpl<$Res,
+        _$PrayNotificationSettingProcessStateSettingSavedImpl>
+    implements
+        _$$PrayNotificationSettingProcessStateSettingSavedImplCopyWith<$Res> {
+  __$$PrayNotificationSettingProcessStateSettingSavedImplCopyWithImpl(
+      _$PrayNotificationSettingProcessStateSettingSavedImpl _value,
+      $Res Function(_$PrayNotificationSettingProcessStateSettingSavedImpl)
+          _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrayNotificationSettingProcessState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$PrayNotificationSettingProcessStateSettingSavedImpl
+    implements PrayNotificationSettingProcessStateSettingSaved {
+  const _$PrayNotificationSettingProcessStateSettingSavedImpl();
+
+  @override
+  String toString() {
+    return 'PrayNotificationSettingProcessState.settingSaved()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PrayNotificationSettingProcessStateSettingSavedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function() error,
+    required TResult Function() success,
+    required TResult Function() settingSaved,
+  }) {
+    return settingSaved();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function()? error,
+    TResult? Function()? success,
+    TResult? Function()? settingSaved,
+  }) {
+    return settingSaved?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function()? success,
+    TResult Function()? settingSaved,
+    required TResult orElse(),
+  }) {
+    if (settingSaved != null) {
+      return settingSaved();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PrayNotificationSettingProcessStateLoading value)
+        loading,
+    required TResult Function(PrayNotificationSettingProcessStateError value)
+        error,
+    required TResult Function(PrayNotificationSettingProcessStateSuccess value)
+        success,
+    required TResult Function(
+            PrayNotificationSettingProcessStateSettingSaved value)
+        settingSaved,
+  }) {
+    return settingSaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PrayNotificationSettingProcessStateLoading value)?
+        loading,
+    TResult? Function(PrayNotificationSettingProcessStateError value)? error,
+    TResult? Function(PrayNotificationSettingProcessStateSuccess value)?
+        success,
+    TResult? Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
+  }) {
+    return settingSaved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PrayNotificationSettingProcessStateLoading value)? loading,
+    TResult Function(PrayNotificationSettingProcessStateError value)? error,
+    TResult Function(PrayNotificationSettingProcessStateSuccess value)? success,
+    TResult Function(PrayNotificationSettingProcessStateSettingSaved value)?
+        settingSaved,
+    required TResult orElse(),
+  }) {
+    if (settingSaved != null) {
+      return settingSaved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PrayNotificationSettingProcessStateSettingSaved
+    implements PrayNotificationSettingProcessState {
+  const factory PrayNotificationSettingProcessStateSettingSaved() =
+      _$PrayNotificationSettingProcessStateSettingSavedImpl;
 }

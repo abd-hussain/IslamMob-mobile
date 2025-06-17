@@ -66,9 +66,15 @@ class LocalNotificationRepository {
     required NotificationTypeState type,
     required BuildContext context,
     required int id,
+    required String soundFileName,
   }) async {
     final localize = IslamMobLocalizations.of(context);
-    final details = _notificationDetails(context, type, localize);
+    final details = _notificationDetails(
+      context: context,
+      type: type,
+      localize: localize,
+      soundFileName: soundFileName,
+    );
     String? iOSSoundFileName;
     String? androidSoundFileName;
 
@@ -114,9 +120,15 @@ class LocalNotificationRepository {
     required String nextSalahTime,
     required NotificationTypeState type,
     required int id,
+    required String soundFileName,
   }) async {
     final localize = IslamMobLocalizations.of(context);
-    final details = _notificationDetails(context, type, localize);
+    final details = _notificationDetails(
+      context: context,
+      type: type,
+      localize: localize,
+      soundFileName: soundFileName,
+    );
 
     // If it's not meant to be a countdown, bail out
     if (details.isItForCountdown == false) {
@@ -169,18 +181,27 @@ class LocalNotificationRepository {
   }
 
   /// Cancels all scheduled notifications.
+  Future<void> cancelSpesificNotifications(int id) async {
+    return _notificationsPlugin.cancel(id);
+  }
+
+  /// Cancels all scheduled notifications.
   Future<void> cancelAllNotifications() async {
     return _notificationsPlugin.cancelAll();
   }
 
-  static LocalNotification _notificationDetails(BuildContext context,
-      NotificationTypeState type, IslamMobLocalizations localize) {
+  static LocalNotification _notificationDetails({
+    required BuildContext context,
+    required NotificationTypeState type,
+    required IslamMobLocalizations localize,
+    required String soundFileName,
+  }) {
     switch (type) {
       case NotificationTypeStateFajir():
         return LocalNotification(
           rightNowMessage: localize.rightNowFajirMessage,
           description: '',
-          soundFileName: 'fajir',
+          soundFileName: soundFileName,
           remeningTimeMessage: localize.remeningTimeFajirMessage,
           nextSalahTime: localize.nextSalahTimeFajirMessage,
           isItForCountdown: true,
@@ -189,7 +210,7 @@ class LocalNotificationRepository {
         return LocalNotification(
           rightNowMessage: localize.rightNowDuherMessage,
           description: '',
-          soundFileName: 'duher',
+          soundFileName: soundFileName,
           remeningTimeMessage: localize.remeningTimeDuherMessage,
           nextSalahTime: localize.nextSalahTimeDuherMessage,
           isItForCountdown: true,
@@ -198,7 +219,7 @@ class LocalNotificationRepository {
         return LocalNotification(
           rightNowMessage: localize.rightNowAsrMessage,
           description: '',
-          soundFileName: 'asr',
+          soundFileName: soundFileName,
           remeningTimeMessage: localize.remeningTimeAsrMessage,
           nextSalahTime: localize.nextSalahTimeAsrMessage,
           isItForCountdown: true,
@@ -208,7 +229,7 @@ class LocalNotificationRepository {
         return LocalNotification(
           rightNowMessage: localize.rightNowMagrebMessage,
           description: '',
-          soundFileName: 'magreb',
+          soundFileName: soundFileName,
           remeningTimeMessage: localize.remeningTimeMagrebMessage,
           nextSalahTime: localize.nextSalahTimeMagrebMessage,
           isItForCountdown: true,
@@ -218,7 +239,7 @@ class LocalNotificationRepository {
         return LocalNotification(
           rightNowMessage: localize.rightNowIshaMessage,
           description: '',
-          soundFileName: 'isha',
+          soundFileName: soundFileName,
           remeningTimeMessage: localize.remeningTimeIshaMessage,
           nextSalahTime: localize.nextSalahTimeIshaMessage,
           isItForCountdown: true,
@@ -228,7 +249,7 @@ class LocalNotificationRepository {
         return LocalNotification(
           rightNowMessage: localize.rightNowWarningMessage,
           description: '',
-          soundFileName: 'warning',
+          soundFileName: soundFileName,
           remeningTimeMessage: '',
           nextSalahTime: '',
           isItForCountdown: false,
@@ -238,7 +259,7 @@ class LocalNotificationRepository {
         return LocalNotification(
           rightNowMessage: localize.rightNowSunriseMessage,
           description: '',
-          soundFileName: 'sunrise',
+          soundFileName: soundFileName,
           remeningTimeMessage: localize.remeningTimeSunriseMessage,
           nextSalahTime: localize.nextSalahTimeSunriseMessage,
           isItForCountdown: true,

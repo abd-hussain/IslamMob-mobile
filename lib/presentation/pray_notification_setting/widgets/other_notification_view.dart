@@ -14,7 +14,7 @@ class OtherNotificationView extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       decoration: _containerDecoration(),
       child: Column(
-        children: _buildNotificationRows(),
+        children: _buildNotificationRows(context),
       ),
     );
   }
@@ -33,21 +33,24 @@ class OtherNotificationView extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildNotificationRows() {
+  List<Widget> _buildNotificationRows(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return [
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
         buildWhen: (previous, current) =>
             previous.sunriseTime != current.sunriseTime,
-        builder: (context, state) {
+        builder: (builderContext, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context)
-                .notificationSettingSunriseTime,
+            title: localization.notificationSettingSunriseTime,
+            soundFileName: "",
+            description: "",
             value: state.sunriseTime,
+            onChangeSoundPresses: null,
             onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
+              builderContext.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      context: context,
                       type: const SunriseTime(),
                     ),
                   );
@@ -59,16 +62,17 @@ class OtherNotificationView extends StatelessWidget {
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
         buildWhen: (previous, current) =>
             previous.jom3aAlkahf != current.jom3aAlkahf,
-        builder: (context, state) {
+        builder: (builderContext, state) {
           return NotificationRowView(
-            title:
-                IslamMobLocalizations.of(context).notificationSettingJomAlkahf,
+            title: localization.notificationSettingJomAlkahf,
             value: state.jom3aAlkahf,
+            soundFileName: "",
+            onChangeSoundPresses: null,
+            description: "",
             onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
+              builderContext.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      context: context,
                       type: const Jom3aAlkahf(),
                     ),
                   );
@@ -80,16 +84,17 @@ class OtherNotificationView extends StatelessWidget {
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
         buildWhen: (previous, current) =>
             previous.jom3aDo3aa != current.jom3aDo3aa,
-        builder: (context, state) {
+        builder: (builderContext, state) {
           return NotificationRowView(
-            title:
-                IslamMobLocalizations.of(context).notificationSettingJom3aDoaa,
+            title: localization.notificationSettingJom3aDoaa,
             value: state.jom3aDo3aa,
+            soundFileName: "",
+            description: "",
+            onChangeSoundPresses: null,
             onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
+              builderContext.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      context: context,
                       type: const Jom3aDo3aa(),
                     ),
                   );
@@ -101,16 +106,17 @@ class OtherNotificationView extends StatelessWidget {
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
         buildWhen: (previous, current) =>
             previous.qeyamAlLayel != current.qeyamAlLayel,
-        builder: (context, state) {
+        builder: (builderContext, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context)
-                .notificationSettingQeyamAlLayel,
+            title: localization.notificationSettingQeyamAlLayel,
             value: state.qeyamAlLayel,
+            soundFileName: "",
+            description: "",
+            onChangeSoundPresses: null,
             onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
+              builderContext.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      context: context,
                       type: const QeyamAlLayel(),
                     ),
                   );
@@ -122,16 +128,17 @@ class OtherNotificationView extends StatelessWidget {
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
         buildWhen: (previous, current) =>
             previous.before15Min != current.before15Min,
-        builder: (context, state) {
+        builder: (builderContext, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context)
-                .notificationBeforeSalah15Minutes,
+            title: localization.notificationBeforeSalah15Minutes,
             value: state.before15Min,
+            soundFileName: "",
+            description: "",
+            onChangeSoundPresses: null,
             onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
+              builderContext.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      context: context,
                       type: const Before15Min(),
                     ),
                   );

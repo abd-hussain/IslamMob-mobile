@@ -18,11 +18,15 @@
 		BC1ADBC42CD2D1F3001FC392 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC1ADBC32CD2D1F3001FC392 /* GoogleService-Info.plist */; };
 		BC93B45C2D2EEA2500F19EFC /* warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC93B45B2D2EEA2500F19EFC /* warning.wav */; };
 		BC93B45E2D2EEABA00F19EFC /* sunrise.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC93B45D2D2EEAB900F19EFC /* sunrise.wav */; };
-		BC93B4642D2EEB4100F19EFC /* asr.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC93B45F2D2EEB3F00F19EFC /* asr.wav */; };
-		BC93B4652D2EEB4100F19EFC /* isha.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC93B4602D2EEB4000F19EFC /* isha.wav */; };
-		BC93B4662D2EEB4100F19EFC /* magreb.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC93B4612D2EEB4000F19EFC /* magreb.wav */; };
-		BC93B4672D2EEB4100F19EFC /* fajir.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC93B4622D2EEB4100F19EFC /* fajir.wav */; };
-		BC93B4682D2EEB4100F19EFC /* duher.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC93B4632D2EEB4100F19EFC /* duher.wav */; };
+		BCD178042E019A35006BC9AF /* adhan6.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD178002E019A35006BC9AF /* adhan6.wav */; };
+		BCD178052E019A35006BC9AF /* adhan9.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD178032E019A35006BC9AF /* adhan9.wav */; };
+		BCD178062E019A35006BC9AF /* adhan1.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD177FB2E019A35006BC9AF /* adhan1.wav */; };
+		BCD178072E019A35006BC9AF /* adhan7.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD178012E019A35006BC9AF /* adhan7.wav */; };
+		BCD178082E019A35006BC9AF /* adhan3.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD177FD2E019A35006BC9AF /* adhan3.wav */; };
+		BCD178092E019A35006BC9AF /* adhan4.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD177FE2E019A35006BC9AF /* adhan4.wav */; };
+		BCD1780A2E019A35006BC9AF /* adhan8.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD178022E019A35006BC9AF /* adhan8.wav */; };
+		BCD1780B2E019A35006BC9AF /* adhan5.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD177FF2E019A35006BC9AF /* adhan5.wav */; };
+		BCD1780C2E019A35006BC9AF /* adhan2.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCD177FC2E019A35006BC9AF /* adhan2.wav */; };
 		DE69A8AA3ABAD86D0641D724 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616E092C8A42D2CE8F0A9AAE /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,12 +79,16 @@
 		BC1ADBC32CD2D1F3001FC392 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC93B45B2D2EEA2500F19EFC /* warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = warning.wav; sourceTree = "<group>"; };
 		BC93B45D2D2EEAB900F19EFC /* sunrise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sunrise.wav; sourceTree = "<group>"; };
-		BC93B45F2D2EEB3F00F19EFC /* asr.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = asr.wav; sourceTree = "<group>"; };
-		BC93B4602D2EEB4000F19EFC /* isha.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = isha.wav; sourceTree = "<group>"; };
-		BC93B4612D2EEB4000F19EFC /* magreb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = magreb.wav; sourceTree = "<group>"; };
-		BC93B4622D2EEB4100F19EFC /* fajir.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fajir.wav; sourceTree = "<group>"; };
-		BC93B4632D2EEB4100F19EFC /* duher.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = duher.wav; sourceTree = "<group>"; };
 		BCB1D10B2CD2C5B60072C5C5 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
+		BCD177FB2E019A35006BC9AF /* adhan1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan1.wav; sourceTree = "<group>"; };
+		BCD177FC2E019A35006BC9AF /* adhan2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan2.wav; sourceTree = "<group>"; };
+		BCD177FD2E019A35006BC9AF /* adhan3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan3.wav; sourceTree = "<group>"; };
+		BCD177FE2E019A35006BC9AF /* adhan4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan4.wav; sourceTree = "<group>"; };
+		BCD177FF2E019A35006BC9AF /* adhan5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan5.wav; sourceTree = "<group>"; };
+		BCD178002E019A35006BC9AF /* adhan6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan6.wav; sourceTree = "<group>"; };
+		BCD178012E019A35006BC9AF /* adhan7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan7.wav; sourceTree = "<group>"; };
+		BCD178022E019A35006BC9AF /* adhan8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan8.wav; sourceTree = "<group>"; };
+		BCD178032E019A35006BC9AF /* adhan9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = adhan9.wav; sourceTree = "<group>"; };
 		BCFF23002CC01C6D00529A5B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CD144D971554C8F95DB5F2F1 /* Pods-RunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,11 +170,15 @@
 			isa = PBXGroup;
 			children = (
 				BC93B45B2D2EEA2500F19EFC /* warning.wav */,
-				BC93B45F2D2EEB3F00F19EFC /* asr.wav */,
-				BC93B4632D2EEB4100F19EFC /* duher.wav */,
-				BC93B4622D2EEB4100F19EFC /* fajir.wav */,
-				BC93B4602D2EEB4000F19EFC /* isha.wav */,
-				BC93B4612D2EEB4000F19EFC /* magreb.wav */,
+				BCD177FB2E019A35006BC9AF /* adhan1.wav */,
+				BCD177FC2E019A35006BC9AF /* adhan2.wav */,
+				BCD177FD2E019A35006BC9AF /* adhan3.wav */,
+				BCD177FE2E019A35006BC9AF /* adhan4.wav */,
+				BCD177FF2E019A35006BC9AF /* adhan5.wav */,
+				BCD178002E019A35006BC9AF /* adhan6.wav */,
+				BCD178012E019A35006BC9AF /* adhan7.wav */,
+				BCD178022E019A35006BC9AF /* adhan8.wav */,
+				BCD178032E019A35006BC9AF /* adhan9.wav */,
 				BC93B45D2D2EEAB900F19EFC /* sunrise.wav */,
 				BCB1D10B2CD2C5B60072C5C5 /* Runner.entitlements */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
@@ -291,15 +303,19 @@
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				BC1ADBC42CD2D1F3001FC392 /* GoogleService-Info.plist in Resources */,
-				BC93B4642D2EEB4100F19EFC /* asr.wav in Resources */,
-				BC93B4652D2EEB4100F19EFC /* isha.wav in Resources */,
-				BC93B4662D2EEB4100F19EFC /* magreb.wav in Resources */,
-				BC93B4672D2EEB4100F19EFC /* fajir.wav in Resources */,
-				BC93B4682D2EEB4100F19EFC /* duher.wav in Resources */,
 				BC93B45E2D2EEABA00F19EFC /* sunrise.wav in Resources */,
 				BC93B45C2D2EEA2500F19EFC /* warning.wav in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
+				BCD178042E019A35006BC9AF /* adhan6.wav in Resources */,
+				BCD178052E019A35006BC9AF /* adhan9.wav in Resources */,
+				BCD178062E019A35006BC9AF /* adhan1.wav in Resources */,
+				BCD178072E019A35006BC9AF /* adhan7.wav in Resources */,
+				BCD178082E019A35006BC9AF /* adhan3.wav in Resources */,
+				BCD178092E019A35006BC9AF /* adhan4.wav in Resources */,
+				BCD1780A2E019A35006BC9AF /* adhan8.wav in Resources */,
+				BCD1780B2E019A35006BC9AF /* adhan5.wav in Resources */,
+				BCD1780C2E019A35006BC9AF /* adhan2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -84,6 +84,21 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     );
   }
 
+  Future<void> testNotification({
+    required BuildContext context,
+    required NotificationTypeState type,
+    required String soundFileName,
+  }) async {
+    await _localNotificationRepository.cancelSpesificNotifications(111);
+    await _localNotificationRepository.scheduleNotification(
+      id: 111,
+      type: type,
+      scheduledTime: DateTime.now(),
+      context: context,
+      soundFileName: soundFileName,
+    );
+  }
+
   // ---------------------------------------------------------------------------
   //                           DAILY NOTIFICATIONS
   // ---------------------------------------------------------------------------
@@ -291,6 +306,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
         type: type,
         scheduledTime: time,
         context: context,
+        soundFileName: _getSoundFileName(type),
       );
       // Update our `_lastScheduledTime` to be the max of itself and this time
       if (_lastScheduledTime == null || time.isAfter(_lastScheduledTime!)) {
@@ -314,6 +330,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
               minites: minutes,
               nextSalahTime: DateFormat('hh:mm a').format(time),
               type: type,
+              soundFileName: _getSoundFileName(type),
             );
             nextCounttdownNotificationScheduled = true;
           }
@@ -455,6 +472,66 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     return !DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableAllForWeek,
       defaultValue: false,
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  //                     DATABASE GET NOTIFICATIONS Sound
+  // ---------------------------------------------------------------------------
+
+  String _getSoundFileName(NotificationTypeState type) {
+    switch (type) {
+      case NotificationTypeStateFajir():
+        return _fajirNotificationSound();
+      case NotificationTypeStateZuhr():
+        return _zhurNotificationSound();
+      case NotificationTypeStateAsr():
+        return _asrNotificationSound();
+      case NotificationTypeStateMaghrib():
+        return _magreebNotificationSound();
+      case NotificationTypeStateIsha():
+        return _ishaNotificationSound();
+      case NotificationTypeStateBefore15Minutes():
+        return "warning";
+      case NotificationTypeStateSunrise():
+        return "sunrise";
+      default:
+        return "";
+    }
+  }
+
+  String _fajirNotificationSound() {
+    return DataBaseManagerBase.getFromDatabase(
+      key: DatabaseNotificationSoundConstant.fajirNotification,
+      defaultValue: "adhan1",
+    );
+  }
+
+  String _zhurNotificationSound() {
+    return DataBaseManagerBase.getFromDatabase(
+      key: DatabaseNotificationSoundConstant.zhurNotification,
+      defaultValue: "adhan2",
+    );
+  }
+
+  String _asrNotificationSound() {
+    return DataBaseManagerBase.getFromDatabase(
+      key: DatabaseNotificationSoundConstant.asrNotification,
+      defaultValue: "adhan3",
+    );
+  }
+
+  String _magreebNotificationSound() {
+    return DataBaseManagerBase.getFromDatabase(
+      key: DatabaseNotificationSoundConstant.maghribNotification,
+      defaultValue: "adhan4",
+    );
+  }
+
+  String _ishaNotificationSound() {
+    return DataBaseManagerBase.getFromDatabase(
+      key: DatabaseNotificationSoundConstant.ishaNotification,
+      defaultValue: "adhan5",
     );
   }
 }

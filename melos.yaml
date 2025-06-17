@@ -1,4 +1,3 @@
-
 name: utilities
 
 packages:
@@ -7,7 +6,9 @@ packages:
 
 command:
   bootstrap:
-    # usePubspecOverrides: true
+    hooks:
+      # pre: make -C scripts init_hooks
+      post: dart pub global run melos run gen_l10n
 
     environment:
       sdk: ">=3.3.4 <4.0.0"
@@ -17,12 +18,15 @@ command:
       get_it: 7.7.0
       flutter_bloc: 8.1.6
       freezed_annotation: 2.4.4
-      dio: 5.7.0
+      dio: 5.8.0+1
       intl: 0.19.0
       json_annotation: ^4.9.0
+      flutter_svg: 2.0.10+1
 
     dev_dependencies:
-      build_runner: 2.4.12
+      build_verify: 3.1.0
+      build_runner: 2.4.15
+      bdd_widget_test: 1.7.6
       dependency_validator: 4.1.0
       freezed: 2.5.7
       flutter_gen_runner: 5.8.0
@@ -37,11 +41,43 @@ command:
       post: melos exec --flutter -c 1 -- dart format lib
 
 scripts:
+  # upgrade:
+  #   run: melos exec -c 1 -- flutter pub upgrade
+  #   description: Upgrade all dependencies.
+
   analyze_changes:
     run: |
       melos analyze --fatal-infos --diff=origin/main...HEAD --include-dependents
     description: Run `flutter analyze` on changed packages.
   
+  # update_goldens:
+  #   run: melos exec --dir-exists="test/goldens" -c 1 -- APP_LOCALE=en APP_THEME=light flutter test --update-goldens --tags golden
+  #   description: Re-generate all golden test files
+
+  # update_goldens_dark:
+  #   run: melos exec --dir-exists="test/goldens" -c 1 -- APP_LOCALE=ar APP_THEME=dark flutter test --update-goldens --tags golden
+  #   description: Re-generate all golden test files for duplo package
+    # packageFilters:
+    #   scope:
+    #     - duplo
+    #     - login
+    #     - onboarding
+
+  # update_goldens_changes:
+  #   run: |
+  #     melos exec --dir-exists="test/goldens" -c 1 --diff=origin/main...HEAD -- "flutter test --no-optimization --update-goldens"
+  #   description: Update goldens for changed packages.
+  
+  # update_goldens_changes_dark:
+  #   run: |
+  #     melos exec --dir-exists="test/goldens" -c 1 --diff=origin/main...HEAD -- "flutter test --no-optimization --update-goldens"
+  #   packageFilters:
+  #     dirExists:
+  #       - duplo
+  #       - login
+  #       - onboarding
+  #   description: Update goldens for changed packages.
+
   fix_check:
     run: melos exec -- "dart fix --dry-run"
     description: Run `dart fix` checks on all packages.
@@ -54,10 +90,10 @@ scripts:
         - test
     description: Run `flutter test` checks on all packages.
 
-  test_changes:
-    run: |
-      melos exec -c 1 --fail-fast --diff=origin/main...HEAD --include-dependents -- "flutter test --no-pub"
-    description: Run `flutter test` checks on changed packages.
+  # test_changes:
+  #   run: |
+  #     melos exec -c 1 --fail-fast --diff=origin/main...HEAD --include-dependents -- "very_good test"
+  #   description: Run tests on changed packages.
 
   format_check_changes:
     run: melos exec --diff=origin/main...HEAD -- "bash $MELOS_ROOT_PATH/scripts/format.sh --set-exit-if-changed"
@@ -78,6 +114,26 @@ scripts:
   dependency_validator_changes:
     run: melos exec -c 1 --diff=origin/main...HEAD --include-dependents -- "dart run dependency_validator"
     description: Run `dart run dependency_validator` checks on changed packages.
+
+  gen_l10n:
+    run: dart pub global run melos run combine_arb_files && dart pub global run melos run gen_lok_l10n
+    description: Combine and generate localization files.
+
+  combine_arb_files:
+    run : dart pub global run melos exec --scope="equiti_localization" -- "dart lib/src/combine_arb_files.dart"
+    description: Combine all .arb files.
+
+  gen_lok_l10n:
+    run: dart pub global run melos exec --scope="equiti_localization" -- "dart run lokalise_flutter_sdk:gen-lok-l10n"
+    description: Generate localization files using lokalise_flutter_sdk.
+
+  gen_l10n_watch:
+    run: melos run combine_arb_files_watch
+    description: Combine and generate localization files.
+
+  combine_arb_files_watch:
+    run : melos exec --scope="equiti_localization" -- "dart lib/src/combine_arb_files.dart --watch"
+    description: Combine and watch for all .arb files.
 
   autogen:
     run: melos exec -c 1 -- "dart run build_runner build --delete-conflicting-outputs"
