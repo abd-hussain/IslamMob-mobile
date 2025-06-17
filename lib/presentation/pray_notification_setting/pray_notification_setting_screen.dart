@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
-import 'package:islam_app/presentation/pray_notification_setting/widgets/other_notification_view.dart';
-import 'package:islam_app/presentation/pray_notification_setting/widgets/pray_notification_view.dart';
-import 'package:islam_app/presentation/pray_notification_setting/widgets/quick_notification_view.dart';
+import 'package:islam_app/presentation/pray_notification_setting/widgets/notification_list_save_button.dart';
+import 'package:islam_app/presentation/pray_notification_setting/widgets/notification_list_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
-import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class PrayNotificationSettingScreen extends StatelessWidget {
   const PrayNotificationSettingScreen({super.key});
@@ -19,71 +17,44 @@ class PrayNotificationSettingScreen extends StatelessWidget {
 
     return BlocProvider(
       create: (context) => PrayNotificationSettingBloc()
-        ..add(const PrayNotificationSettingEvent
-            .initialPrayNotificationSettings()),
-      child: Scaffold(
-        appBar: CustomAppBar(title: localization.notificationSettings),
-        body: SafeArea(
-          child: BlocBuilder<PrayNotificationSettingBloc,
-                  PrayNotificationSettingState>(
-              buildWhen: (previous, current) =>
-                  previous.loadingStatus != current.loadingStatus,
-              builder: (context, state) {
-                if (state.loadingStatus ==
-                    const PrayNotificationSettingProcessState.loading()) {
-                  return const SizedBox(
-                    child: Center(
+        ..add(
+          const PrayNotificationSettingEvent.initialPrayNotificationSettings(),
+        ),
+      child: BlocListener<PrayNotificationSettingBloc,
+          PrayNotificationSettingState>(
+        listenWhen: (previous, current) =>
+            previous.loadingStatus != current.loadingStatus,
+        listener: (context, state) {
+          if (state.loadingStatus ==
+              const PrayNotificationSettingProcessState.settingSaved()) {
+            Navigator.of(context).pop(); // 👈 dismiss the screen after save
+          }
+        },
+        child: Scaffold(
+          appBar: CustomAppBar(title: localization.notificationSettings),
+          body: SafeArea(
+            child: BlocBuilder<PrayNotificationSettingBloc,
+                    PrayNotificationSettingState>(
+                buildWhen: (previous, current) =>
+                    previous.loadingStatus != current.loadingStatus,
+                builder: (blocContext, state) {
+                  if (state.loadingStatus ==
+                      const PrayNotificationSettingProcessState.loading()) {
+                    return const Center(
                       child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          Color(0xff292929),
-                        ),
+                        valueColor:
+                            AlwaysStoppedAnimation<Color>(Color(0xff292929)),
                       ),
-                    ),
+                    );
+                  }
+                  return Stack(
+                    children: [
+                      NotificationSettingsList(localization: localization),
+                      NotificationListSaveButton(localization: localization),
+                    ],
                   );
-                } else {
-                  return SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: CustomText(
-                            title: localization.notificationSettingQuick,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xff444444),
-                          ),
-                        ),
-                        const QuickNotificationView(),
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: CustomText(
-                            title: localization.notificationSettingPray,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xff444444),
-                          ),
-                        ),
-                        const PrayNotificationView(),
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: CustomText(
-                            title: localization.notificationSettingOther,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xff444444),
-                          ),
-                        ),
-                        const OtherNotificationView(),
-                        const SizedBox(height: 5)
-                      ],
-                    ),
-                  );
-                }
-              }),
+                }),
+          ),
         ),
       ),
     );

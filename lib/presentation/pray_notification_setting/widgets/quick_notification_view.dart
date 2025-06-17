@@ -11,7 +11,6 @@ class QuickNotificationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
       decoration: _containerDecoration(),
       child: Column(
         children: _buildNotificationRows(context),
@@ -34,20 +33,23 @@ class QuickNotificationView extends StatelessWidget {
   }
 
   List<Widget> _buildNotificationRows(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
+
     return [
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
         buildWhen: (previous, current) =>
             previous.allNotificationForToday != current.allNotificationForToday,
-        builder: (context, state) {
+        builder: (builderContext, state) {
           return NotificationRowView(
-            title:
-                IslamMobLocalizations.of(context).notificationSettingTodayAll,
+            title: localization.notificationSettingTodayAll,
             value: state.allNotificationForToday,
+            description: "", //TODO
+            soundFileName: "",
+            onChangeSoundPresses: null,
             onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
+              builderContext.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      context: context,
                       type: const AllNotificationForToday(),
                     ),
                   );
@@ -60,16 +62,17 @@ class QuickNotificationView extends StatelessWidget {
         buildWhen: (previous, current) =>
             previous.allNotificationForThreeDay !=
             current.allNotificationForThreeDay,
-        builder: (context, state) {
+        builder: (builderContext, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context)
-                .notificationSettingThreedayAll,
+            title: localization.notificationSettingThreedayAll,
             value: state.allNotificationForThreeDay,
+            soundFileName: "",
+            description: "", //TODO
+            onChangeSoundPresses: null,
             onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
+              builderContext.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      context: context,
                       type: const AllNotificationForThreeDay(),
                     ),
                   );
@@ -82,15 +85,17 @@ class QuickNotificationView extends StatelessWidget {
         buildWhen: (previous, current) =>
             previous.allNotificationForWeekDay !=
             current.allNotificationForWeekDay,
-        builder: (context, state) {
+        builder: (builderContext, state) {
           return NotificationRowView(
-            title: IslamMobLocalizations.of(context).notificationSettingWeekAll,
+            title: localization.notificationSettingWeekAll,
             value: state.allNotificationForWeekDay,
+            soundFileName: "",
+            description: "", //TODO
+            onChangeSoundPresses: null,
             onChanged: (value) {
-              context.read<PrayNotificationSettingBloc>().add(
+              builderContext.read<PrayNotificationSettingBloc>().add(
                     PrayNotificationSettingEvent.changePrayNotificationSettings(
                       status: value,
-                      context: context,
                       type: const AllNotificationForWeekDay(),
                     ),
                   );

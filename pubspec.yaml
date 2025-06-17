@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.6.0+188
+version: 1.6.0+189
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
@@ -41,7 +41,7 @@ dependencies:
   #   path: utilities/api_client
 
   http: ^1.2.2 #//TODO
-  dio: 5.7.0 #//TODO
+  dio: 5.8.0+1 #//TODO
   async: ^2.11.0
   get_it: 7.7.0
   loading_indicator: ^3.1.1
@@ -73,7 +73,7 @@ dependencies:
   flutter_local_notifications: ^18.0.1
   timezone: ^0.10.0
   fpdart: ^1.1.1
-  flutter_svg: ^2.0.16
+  flutter_svg: 2.0.10+1
   open_store: ^0.5.0
   google_fonts: ^6.2.1
   wakelock_plus: ^1.2.10
@@ -94,7 +94,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   hive_generator: ^2.0.1 #TODO
-  build_runner: 2.4.12
+  build_runner: 2.4.15
   islam_mob_lint:
     path: utilities/islam_mob_lint
   json_serializable: 6.8.0
@@ -104,7 +104,7 @@ dev_dependencies:
   dependency_validator: 4.1.0
   flutter_gen_runner: 5.8.0
   freezed: 2.5.7
-  bdd_widget_test: ^1.7.3
+  bdd_widget_test: 1.7.6
   bdd_steps:
     path: utilities/bdd_steps
   islam_test:

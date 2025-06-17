@@ -15,6 +15,7 @@ import 'package:islam_app/presentation/home_tab/home_screen.dart';
 import 'package:islam_app/presentation/inboarding/inboarding_screen.dart';
 import 'package:islam_app/presentation/main_container/main_container.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/pray_calculation_setting_screen.dart';
+import 'package:islam_app/presentation/pray_notification_setting/choose_sound/choose_sound_screen.dart';
 import 'package:islam_app/presentation/pray_notification_setting/pray_notification_setting_screen.dart';
 import 'package:islam_app/presentation/qibla_finder/qibla_finder_screen.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/quran_kareem_screen.dart';
@@ -51,6 +52,7 @@ class RoutesConstants {
   static const hajjOmrahScreen = 'hajjOmrahScreen';
   static const hajjOmrahDetailsScreen = 'hajjOmrahDetailsScreen';
   static const estekaraScreen = 'estekaraScreen';
+  static const chooseSoundScreen = 'chooseSoundScreen';
 }
 
 final Map<String, Widget> routes = {
@@ -81,4 +83,5 @@ final Map<String, Widget> routes = {
   RoutesConstants.hajjOmrahScreen: const HajjOmrahScreen(),
   RoutesConstants.hajjOmrahDetailsScreen: const HajjOmrahDetailsScreen(),
   RoutesConstants.estekaraScreen: const EstekaraScreen(),
+  RoutesConstants.chooseSoundScreen: const ChooseSoundScreen(),
 };

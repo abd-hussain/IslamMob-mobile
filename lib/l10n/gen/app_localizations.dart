@@ -62,15 +62,18 @@ import 'app_localizations_en.dart';
 /// be consistent with the languages listed in the IslamMobLocalizations.supportedLocales
 /// property.
 abstract class IslamMobLocalizations {
-  IslamMobLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  IslamMobLocalizations(String locale)
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
   static IslamMobLocalizations of(BuildContext context) {
-    return Localizations.of<IslamMobLocalizations>(context, IslamMobLocalizations)!;
+    return Localizations.of<IslamMobLocalizations>(
+        context, IslamMobLocalizations)!;
   }
 
-  static const LocalizationsDelegate<IslamMobLocalizations> delegate = _IslamMobLocalizationsDelegate();
+  static const LocalizationsDelegate<IslamMobLocalizations> delegate =
+      _IslamMobLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -82,7 +85,8 @@ abstract class IslamMobLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -2956,36 +2960,182 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Salat al-Istikharah'**
   String get estekaraTitle;
+
+  /// No description provided for @adhanSoundSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan sound settings'**
+  String get adhanSoundSettings;
+
+  /// No description provided for @change.
+  ///
+  /// In en, this message translates to:
+  /// **'change'**
+  String get change;
+
+  /// No description provided for @chooseSound.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the sound that you prefer'**
+  String get chooseSound;
+
+  /// No description provided for @adhanFajirSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fajir Sound Setting'**
+  String get adhanFajirSoundTitle;
+
+  /// No description provided for @adhanDuhirSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Duhir Sound Setting'**
+  String get adhanDuhirSoundTitle;
+
+  /// No description provided for @adhanAsrSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Asr Sound Setting'**
+  String get adhanAsrSoundTitle;
+
+  /// No description provided for @adhanMagriebSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Magrieb Sound Setting'**
+  String get adhanMagriebSoundTitle;
+
+  /// No description provided for @adhanIshaSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Isha Sound Setting'**
+  String get adhanIshaSoundTitle;
+
+  /// No description provided for @adhanSunriseSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise Sound Setting'**
+  String get adhanSunriseSoundTitle;
+
+  /// No description provided for @adhanAlkahfSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Alkahf Reminder Sound Setting'**
+  String get adhanAlkahfSoundTitle;
+
+  /// No description provided for @adhanJom3aaSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Jomaa Doaa Reminder Sound Setting'**
+  String get adhanJom3aaSoundTitle;
+
+  /// No description provided for @adhanBefore15MinSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Salah Reminder Sound Setting'**
+  String get adhanBefore15MinSoundTitle;
+
+  /// No description provided for @adhanMidnightSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Midnight Reminder Sound Setting'**
+  String get adhanMidnightSoundTitle;
+
+  /// No description provided for @adhan1.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 1'**
+  String get adhan1;
+
+  /// No description provided for @adhan2.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 2'**
+  String get adhan2;
+
+  /// No description provided for @adhan3.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 3'**
+  String get adhan3;
+
+  /// No description provided for @adhan4.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 4'**
+  String get adhan4;
+
+  /// No description provided for @adhan5.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 5'**
+  String get adhan5;
+
+  /// No description provided for @adhan6.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 6'**
+  String get adhan6;
+
+  /// No description provided for @adhan7.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 7'**
+  String get adhan7;
+
+  /// No description provided for @adhan8.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 8'**
+  String get adhan8;
+
+  /// No description provided for @adhan9.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 9'**
+  String get adhan9;
+
+  /// No description provided for @unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get unknown;
+
+  /// No description provided for @chooseSoundDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Please note that the notification sound may not play in full when the app is open'**
+  String get chooseSoundDesc;
 }
 
-class _IslamMobLocalizationsDelegate extends LocalizationsDelegate<IslamMobLocalizations> {
+class _IslamMobLocalizationsDelegate
+    extends LocalizationsDelegate<IslamMobLocalizations> {
   const _IslamMobLocalizationsDelegate();
 
   @override
   Future<IslamMobLocalizations> load(Locale locale) {
-    return SynchronousFuture<IslamMobLocalizations>(lookupIslamMobLocalizations(locale));
+    return SynchronousFuture<IslamMobLocalizations>(
+        lookupIslamMobLocalizations(locale));
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['ar', 'en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['ar', 'en'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_IslamMobLocalizationsDelegate old) => false;
 }
 
 IslamMobLocalizations lookupIslamMobLocalizations(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'ar': return IslamMobLocalizationsAr();
-    case 'en': return IslamMobLocalizationsEn();
+    case 'ar':
+      return IslamMobLocalizationsAr();
+    case 'en':
+      return IslamMobLocalizationsEn();
   }
 
   throw FlutterError(
-    'IslamMobLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-    'an issue with the localizations generation tool. Please file an issue '
-    'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
-  );
+      'IslamMobLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
 }

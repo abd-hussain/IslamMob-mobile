@@ -80,7 +80,7 @@ The languages used by Muslims are influenced by regional demographics, and while
 - [ ] fasting calculator
 - [ ] place for articles
 - [ ] after finish tasbeeh scrollup 
-
+- [ ] adhan sounds is too big make some of them downloadable
 ## TODO Technical:
 - [ ] add golden widget test
 - [ ] check and change location on each lunch for the application

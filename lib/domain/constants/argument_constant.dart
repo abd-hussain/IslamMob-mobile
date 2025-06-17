@@ -7,4 +7,5 @@ class ArgumentConstant {
   static const String initialTabIndexSelected = 'initialTabIndexSelected';
   static const String salahTime = 'salahTime';
   static const String hajjOmrahType = 'hajjOmrahType';
+  static const String notificationSettingType = 'notificationSettingType';
 }

@@ -26,7 +26,9 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   bool get _isPlaying => _playerState == PlayerState.playing;
   bool get _isPaused => _playerState == PlayerState.paused;
 
-  double get _progress => (_duration.inMilliseconds == 0) ? 0.0 : _position.inMilliseconds / _duration.inMilliseconds;
+  double get _progress => (_duration.inMilliseconds == 0)
+      ? 0.0
+      : _position.inMilliseconds / _duration.inMilliseconds;
 
   String get _formattedPosition => _formatDuration(_position);
   String get _formattedDuration => _formatDuration(_duration);
@@ -93,7 +95,8 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   }
 
   void _seek(double value) {
-    final newPosition = Duration(milliseconds: (_duration.inMilliseconds * value).round());
+    final newPosition =
+        Duration(milliseconds: (_duration.inMilliseconds * value).round());
     _player.seek(newPosition);
   }
 
@@ -108,7 +111,9 @@ class _PlayerWidgetState extends State<PlayerWidget> {
           value: _progress.clamp(0.0, 1.0),
         ),
         Text(
-          (_duration != Duration.zero) ? '$_formattedPosition / $_formattedDuration' : '',
+          (_duration != Duration.zero)
+              ? '$_formattedPosition / $_formattedDuration'
+              : '',
           style: const TextStyle(fontSize: 14),
         ),
       ],

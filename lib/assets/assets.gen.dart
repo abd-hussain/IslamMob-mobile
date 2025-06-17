@@ -15,11 +15,53 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsAudiosGen {
   const $AssetsAudiosGen();
 
+  /// File path: assets/audios/adhan1.mp3
+  String get adhan1 => 'packages/islam_app/assets/audios/adhan1.mp3';
+
+  /// File path: assets/audios/adhan2.mp3
+  String get adhan2 => 'packages/islam_app/assets/audios/adhan2.mp3';
+
+  /// File path: assets/audios/adhan3.mp3
+  String get adhan3 => 'packages/islam_app/assets/audios/adhan3.mp3';
+
+  /// File path: assets/audios/adhan4.mp3
+  String get adhan4 => 'packages/islam_app/assets/audios/adhan4.mp3';
+
+  /// File path: assets/audios/adhan5.mp3
+  String get adhan5 => 'packages/islam_app/assets/audios/adhan5.mp3';
+
+  /// File path: assets/audios/adhan6.mp3
+  String get adhan6 => 'packages/islam_app/assets/audios/adhan6.mp3';
+
+  /// File path: assets/audios/adhan7.mp3
+  String get adhan7 => 'packages/islam_app/assets/audios/adhan7.mp3';
+
+  /// File path: assets/audios/adhan8.mp3
+  String get adhan8 => 'packages/islam_app/assets/audios/adhan8.mp3';
+
+  /// File path: assets/audios/adhan9.mp3
+  String get adhan9 => 'packages/islam_app/assets/audios/adhan9.mp3';
+
   /// File path: assets/audios/click.wav
   String get click => 'packages/islam_app/assets/audios/click.wav';
 
+  /// File path: assets/audios/istikhara.mp3
+  String get istikhara => 'packages/islam_app/assets/audios/istikhara.mp3';
+
   /// List of all assets
-  List<String> get values => [click];
+  List<String> get values => [
+        adhan1,
+        adhan2,
+        adhan3,
+        adhan4,
+        adhan5,
+        adhan6,
+        adhan7,
+        adhan8,
+        adhan9,
+        click,
+        istikhara
+      ];
 }
 
 class $AssetsImagesGen {

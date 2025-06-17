@@ -9,6 +9,7 @@ export 'core/constants/database_hisn_al_muslim.dart';
 export 'core/constants/database_inboarding.dart';
 export 'core/constants/database_local_notifications.dart';
 export 'core/constants/database_location.dart';
+export 'core/constants/database_notification_sound.dart';
 export 'core/constants/database_pray_calculation.dart';
 export 'core/constants/database_quran_copy.dart';
 export 'core/constants/database_tasbeeh.dart';

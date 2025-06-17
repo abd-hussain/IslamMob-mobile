@@ -475,7 +475,31 @@
     "omrahTitle" : "Omrah",
     "hajjDescription" : "Muslims pray toward the direction of Makkah five times every day, seeking forgiveness and repentance, desiring the grace and benevolence of Allah, the Almighty, and hoping when visiting it to seek its goodness and the love of Allah and His Messenger (peace be upon him), who said: I swear by Allah that you are the best part of Allah’s earth and the part dearest to Him. Allah earned it a sanctity that preserves and protects it. He has exalted it above all other lands and mosques. The Prophet (peace be upon him) said: Allah made this town sacred on the day He created the heavens and the earth, so it is sacred by the sacredness conferred on it by Allah until the Day of Resurrection",
     "omrahDescription" : "Umrah means visit or destination. According to Sharia, Umrah entails visiting the Sacred House, Tawaf, and Saa'i with known conditions. The Prophet (peace be upon him) completed Umrah four times throughout his lifetime. Umrah can be performed by any time of year. It is obligatory once in a lifetime, according to the Almighty’s saying: 'And Complete Hajj and ‘Umrah for Allah'",
-    "estekaraTitle" : "Salat al-Istikharah"
+    "estekaraTitle" : "Salat al-Istikharah",
+    "adhanSoundSettings" : "Adhan sound settings",
+    "change" : "change",
+    "chooseSound" : "Choose the sound that you prefer",
+    "adhanFajirSoundTitle" : "Fajir Sound Setting",
+    "adhanDuhirSoundTitle" : "Duhir Sound Setting",    
+    "adhanAsrSoundTitle" : "Asr Sound Setting",
+    "adhanMagriebSoundTitle" : "Magrieb Sound Setting",    
+    "adhanIshaSoundTitle" : "Isha Sound Setting",    
+    "adhanSunriseSoundTitle" : "Sunrise Sound Setting",    
+    "adhanAlkahfSoundTitle" : "Alkahf Reminder Sound Setting",    
+    "adhanJom3aaSoundTitle" : "Jomaa Doaa Reminder Sound Setting",    
+    "adhanBefore15MinSoundTitle" : "Salah Reminder Sound Setting",    
+    "adhanMidnightSoundTitle" : "Midnight Reminder Sound Setting",
+    "adhan1" : "Adhan 1",
+    "adhan2" : "Adhan 2",
+    "adhan3" : "Adhan 3",
+    "adhan4" : "Adhan 4",
+    "adhan5" : "Adhan 5",
+    "adhan6" : "Adhan 6",
+    "adhan7" : "Adhan 7",
+    "adhan8" : "Adhan 8",
+    "adhan9" : "Adhan 9",
+    "unknown" : "Unknown",
+    "chooseSoundDesc" : "Please note that the notification sound may not play in full when the app is open"
 
 
 }
