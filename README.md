@@ -81,6 +81,7 @@ The languages used by Muslims are influenced by regional demographics, and while
 - [ ] place for articles
 - [ ] after finish tasbeeh scrollup 
 - [ ] adhan sounds is too big make some of them downloadable
+- //TODO: [ ] Download PDF should happen in background thread will the user navigating inside
 ## TODO Technical:
 - [ ] add golden widget test
 - [ ] check and change location on each lunch for the application
