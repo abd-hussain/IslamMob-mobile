@@ -2,9 +2,9 @@ import 'package:azkar/azkar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
-import 'package:islam_app/presentation/home_tab/bloc/azkar_after_salah_view/azkar_after_salah_view_bloc.dart';
-import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/widgets/finish_view.dart';
-import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/widgets/zeker_view.dart';
+import 'package:islam_app/presentation/azkar_after_salah/bloc/azkar_after_salah_bloc.dart';
+import 'package:islam_app/presentation/azkar_after_salah/widget/finish_view.dart';
+import 'package:islam_app/presentation/azkar_after_salah/widget/zeker_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class AzkarAfterSalahView extends StatelessWidget {
@@ -14,8 +14,12 @@ class AzkarAfterSalahView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AzkarAfterSalahViewBloc()
-        ..add(AzkarAfterSalahViewEvent.initializeAzkar(state: salahType)),
+      create: (context) => AzkarAfterSalahBloc()
+        ..add(
+          AzkarAfterSalahEvent.fillInitialValue(
+            state: salahType,
+          ),
+        ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Column(
@@ -53,9 +57,9 @@ class AzkarAfterSalahView extends StatelessWidget {
 
   /// Displays the finish view when all counters are filled, otherwise shows nothing.
   Widget _buildFinishView() {
-    return BlocBuilder<AzkarAfterSalahViewBloc, AzkarAfterSalahViewState>(
+    return BlocBuilder<AzkarAfterSalahBloc, AzkarAfterSalahState>(
       builder: (context, state) {
-        return context.read<AzkarAfterSalahViewBloc>().isCounterFilled()
+        return context.read<AzkarAfterSalahBloc>().isCounterFilled()
             ? const AzkarFinishView()
             : const SizedBox.shrink();
       },
@@ -64,7 +68,7 @@ class AzkarAfterSalahView extends StatelessWidget {
 
   /// Dynamically builds a list of Azkar items based on the state.
   Widget _buildAzkarList() {
-    return BlocBuilder<AzkarAfterSalahViewBloc, AzkarAfterSalahViewState>(
+    return BlocBuilder<AzkarAfterSalahBloc, AzkarAfterSalahState>(
       builder: (context, state) {
         if (state.azkarList.isEmpty) {
           return const SizedBox.shrink();
@@ -95,8 +99,8 @@ class AzkarAfterSalahView extends StatelessWidget {
   void _incrementAzkar(BuildContext context, AzkarModel azkar) {
     final updatedAzkar = azkar.copyWith(currentCount: azkar.currentCount + 1);
     context
-        .read<AzkarAfterSalahViewBloc>()
-        .add(AzkarAfterSalahViewEvent.incrementCounter(updatedAzkar));
+        .read<AzkarAfterSalahBloc>()
+        .add(AzkarAfterSalahEvent.incrementCounter(updatedAzkar));
   }
 
   String _salahName(
