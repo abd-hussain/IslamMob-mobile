@@ -1,15 +1,12 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_manager/model/firestore_options.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:logger_manager/logger_manager.dart';
 
 class FirebaseFirestoreRepository {
   static final FirebaseFirestore _firestoreInstance =
       FirebaseFirestore.instance;
-  final FirebaseStorage _storageInstance = FirebaseStorage.instance;
+  // final FirebaseStorage _storageInstance = FirebaseStorage.instance;
 
   /// Fetches all documents from a Firestore collection.
   static Future<List<Map<String, dynamic>>> getAllDocuments({
@@ -51,21 +48,21 @@ class FirebaseFirestoreRepository {
     return null;
   }
 
-  /// Uploads a file to Firebase Storage and returns its download URL.
-  Future<String> uploadFile({
-    required File file,
-    required String fileName,
-  }) async {
-    try {
-      final ref = _storageInstance.ref('reports/$fileName');
-      await ref.putFile(file);
-      return await ref.getDownloadURL();
-    } catch (error) {
-      LoggerManagerBase.logDebugMessage(
-          message: 'Error uploading file: $error');
-      return '';
-    }
-  }
+  // /// Uploads a file to Firebase Storage and returns its download URL.
+  // Future<String> uploadFile({
+  //   required File file,
+  //   required String fileName,
+  // }) async {
+  //   try {
+  //     final ref = _storageInstance.ref('reports/$fileName');
+  //     await ref.putFile(file);
+  //     return await ref.getDownloadURL();
+  //   } catch (error) {
+  //     LoggerManagerBase.logDebugMessage(
+  //         message: 'Error uploading file: $error');
+  //     return '';
+  //   }
+  // }
 
   /// Sets Firestore data for a given [FireStoreOptions].
   static Future<void> setData<T>({
