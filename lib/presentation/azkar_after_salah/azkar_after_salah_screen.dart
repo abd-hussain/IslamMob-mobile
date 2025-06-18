@@ -1,4 +1,5 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
+import 'package:azkar/model/azkar.dart';
 import 'package:azkar/model/azkar_salah_time.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/constants/argument_constant.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/azkar_after_salah/bloc/azkar_after_salah_bloc.dart';
-import 'package:islam_app/presentation/azkar_after_salah/widget/azkar_after_salah_text_view.dart';
+import 'package:islam_app/presentation/azkar_after_salah/widget/finish_view.dart';
+import 'package:islam_app/presentation/azkar_after_salah/widget/zeker_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:islam_app/shared_widgets/electric_counter/electric_counter_view.dart';
 
 class AzkarAfterSalahScreen extends StatelessWidget {
   const AzkarAfterSalahScreen({super.key});
@@ -39,75 +40,24 @@ class AzkarAfterSalahScreen extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (context) => AzkarAfterSalahBloc()
-          ..add(AzkarAfterSalahEvent.fillInitialValue(salahTime)),
+          ..add(
+            AzkarAfterSalahEvent.fillInitialValue(
+              state: salahTime,
+            ),
+          ),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
-                child: BlocBuilder<AzkarAfterSalahBloc, AzkarAfterSalahState>(
-                  builder: (context, state) {
-                    if (state.list.isEmpty) {
-                      return _buildLoadingIndicator();
-                    }
-
-                    final azkarItem = state.list[state.selectedListIndex];
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: AzkarAfterSalahTextView(
-                            azkarItem: azkarItem,
-                          ),
-                        ),
-                        ElectricCounterView(
-                          currentCount: azkarItem.currentCount,
-                          maxCount: azkarItem.maxCount,
-                          width: MediaQuery.of(context).size.width,
-                          showResetHintText: false,
-                          isPreviosSelected: true,
-                          isNextSelected: true,
-                          isVibrationSelected: state.allowVibration,
-                          isSoundSelected: state.allowSound,
-                          onPreviosSelected: () => context
-                              .read<AzkarAfterSalahBloc>()
-                              .add(
-                                const AzkarAfterSalahEvent.leftZikerSelected(),
-                              ),
-                          onNextSelected: () => context
-                              .read<AzkarAfterSalahBloc>()
-                              .add(
-                                const AzkarAfterSalahEvent.rightZikerEnabled(),
-                              ),
-                          onVibrationSelected: () => context
-                              .read<AzkarAfterSalahBloc>()
-                              .add(
-                                const AzkarAfterSalahEvent.vibrationSetting(),
-                              ),
-                          onSoundSelected: () =>
-                              context.read<AzkarAfterSalahBloc>().add(
-                                    const AzkarAfterSalahEvent.soundSetting(),
-                                  ),
-                          onIncreaseCounter: () =>
-                              context.read<AzkarAfterSalahBloc>().add(
-                                    AzkarAfterSalahEvent.incrementCounter(
-                                        azkarItem),
-                                  ),
-                          onResetCounter: () => context
-                              .read<AzkarAfterSalahBloc>()
-                              .add(
-                                AzkarAfterSalahEvent.resetCounter(azkarItem),
-                              ),
-                        ),
-                      ],
-                    );
-                  },
+                child: Stack(
+                  children: [
+                    _buildAzkarList(),
+                    _buildFinishView(),
+                  ],
                 ),
               ),
-              const SizedBox(
-                height: 60,
-                child: AddMobBanner(verticalPadding: 0),
-              ),
+              const AddMobBanner(verticalPadding: 0),
             ],
           ),
         ),
@@ -115,13 +65,51 @@ class AzkarAfterSalahScreen extends StatelessWidget {
     );
   }
 
-  /// Displays a loading indicator when the list is empty.
-  Widget _buildLoadingIndicator() {
-    return const Center(
-      child: CircularProgressIndicator(
-        valueColor: AlwaysStoppedAnimation<Color>(Color(0xff292929)),
-      ),
+  /// Displays the finish view when all counters are filled, otherwise shows nothing.
+  Widget _buildFinishView() {
+    return BlocBuilder<AzkarAfterSalahBloc, AzkarAfterSalahState>(
+      builder: (context, state) {
+        return context.read<AzkarAfterSalahBloc>().isCounterFilled()
+            ? const AzkarFinishView()
+            : const SizedBox.shrink();
+      },
     );
+  }
+
+  /// Dynamically builds a list of Azkar items based on the state.
+  Widget _buildAzkarList() {
+    return BlocBuilder<AzkarAfterSalahBloc, AzkarAfterSalahState>(
+      builder: (context, state) {
+        if (state.azkarList.isEmpty) {
+          return const SizedBox.shrink();
+        }
+
+        return ListView.builder(
+          itemCount: state.azkarList.length,
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            final azkar = state.azkarList[index];
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: ZekerView(
+                azkarModel: azkar,
+                isDisabled: azkar.currentCount >= azkar.maxCount,
+                onTap: () => _incrementAzkar(context, azkar),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  /// Handles incrementing the Azkar count and emitting the update event.
+  void _incrementAzkar(BuildContext context, AzkarModel azkar) {
+    final updatedAzkar = azkar.copyWith(currentCount: azkar.currentCount + 1);
+    context
+        .read<AzkarAfterSalahBloc>()
+        .add(AzkarAfterSalahEvent.incrementCounter(updatedAzkar));
   }
 
   String _salahName(

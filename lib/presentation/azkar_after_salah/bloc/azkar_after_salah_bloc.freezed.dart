@@ -19,33 +19,21 @@ mixin _$AzkarAfterSalahEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AzkarSalahTimeState state) fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(AzkarModel item) resetCounter,
+    required TResult Function() resetCounter,
     required TResult Function(AzkarModel item) incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(AzkarModel item)? resetCounter,
+    TResult? Function()? resetCounter,
     TResult? Function(AzkarModel item)? incrementCounter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(AzkarModel item)? resetCounter,
+    TResult Function()? resetCounter,
     TResult Function(AzkarModel item)? incrementCounter,
     required TResult orElse(),
   }) =>
@@ -53,10 +41,6 @@ mixin _$AzkarAfterSalahEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
     required TResult Function(_ResetCounter value) resetCounter,
     required TResult Function(_IncrementCounter value) incrementCounter,
   }) =>
@@ -64,10 +48,6 @@ mixin _$AzkarAfterSalahEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult? Function(_ResetCounter value)? resetCounter,
     TResult? Function(_IncrementCounter value)? incrementCounter,
   }) =>
@@ -75,10 +55,6 @@ mixin _$AzkarAfterSalahEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult Function(_ResetCounter value)? resetCounter,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
@@ -135,7 +111,7 @@ class __$$FillInitialValueImplCopyWithImpl<$Res>
     Object? state = null,
   }) {
     return _then(_$FillInitialValueImpl(
-      null == state
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as AzkarSalahTimeState,
@@ -156,7 +132,7 @@ class __$$FillInitialValueImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FillInitialValueImpl implements _FillInitialValue {
-  const _$FillInitialValueImpl(this.state);
+  const _$FillInitialValueImpl({required this.state});
 
   @override
   final AzkarSalahTimeState state;
@@ -190,11 +166,7 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AzkarSalahTimeState state) fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(AzkarModel item) resetCounter,
+    required TResult Function() resetCounter,
     required TResult Function(AzkarModel item) incrementCounter,
   }) {
     return fillInitialValue(state);
@@ -204,11 +176,7 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(AzkarModel item)? resetCounter,
+    TResult? Function()? resetCounter,
     TResult? Function(AzkarModel item)? incrementCounter,
   }) {
     return fillInitialValue?.call(state);
@@ -218,11 +186,7 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(AzkarModel item)? resetCounter,
+    TResult Function()? resetCounter,
     TResult Function(AzkarModel item)? incrementCounter,
     required TResult orElse(),
   }) {
@@ -236,10 +200,6 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
     required TResult Function(_ResetCounter value) resetCounter,
     required TResult Function(_IncrementCounter value) incrementCounter,
   }) {
@@ -250,10 +210,6 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult? Function(_ResetCounter value)? resetCounter,
     TResult? Function(_IncrementCounter value)? incrementCounter,
   }) {
@@ -264,10 +220,6 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult Function(_ResetCounter value)? resetCounter,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
@@ -280,7 +232,7 @@ class _$FillInitialValueImpl implements _FillInitialValue {
 }
 
 abstract class _FillInitialValue implements AzkarAfterSalahEvent {
-  const factory _FillInitialValue(final AzkarSalahTimeState state) =
+  const factory _FillInitialValue({required final AzkarSalahTimeState state}) =
       _$FillInitialValueImpl;
 
   AzkarSalahTimeState get state;
@@ -293,552 +245,10 @@ abstract class _FillInitialValue implements AzkarAfterSalahEvent {
 }
 
 /// @nodoc
-abstract class _$$SoundSettingImplCopyWith<$Res> {
-  factory _$$SoundSettingImplCopyWith(
-          _$SoundSettingImpl value, $Res Function(_$SoundSettingImpl) then) =
-      __$$SoundSettingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SoundSettingImplCopyWithImpl<$Res>
-    extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$SoundSettingImpl>
-    implements _$$SoundSettingImplCopyWith<$Res> {
-  __$$SoundSettingImplCopyWithImpl(
-      _$SoundSettingImpl _value, $Res Function(_$SoundSettingImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AzkarAfterSalahEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$SoundSettingImpl implements _SoundSetting {
-  const _$SoundSettingImpl();
-
-  @override
-  String toString() {
-    return 'AzkarAfterSalahEvent.soundSetting()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SoundSettingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(AzkarSalahTimeState state) fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(AzkarModel item) resetCounter,
-    required TResult Function(AzkarModel item) incrementCounter,
-  }) {
-    return soundSetting();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(AzkarModel item)? resetCounter,
-    TResult? Function(AzkarModel item)? incrementCounter,
-  }) {
-    return soundSetting?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(AzkarModel item)? resetCounter,
-    TResult Function(AzkarModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (soundSetting != null) {
-      return soundSetting();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return soundSetting(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return soundSetting?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (soundSetting != null) {
-      return soundSetting(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SoundSetting implements AzkarAfterSalahEvent {
-  const factory _SoundSetting() = _$SoundSettingImpl;
-}
-
-/// @nodoc
-abstract class _$$VibrationSettingImplCopyWith<$Res> {
-  factory _$$VibrationSettingImplCopyWith(_$VibrationSettingImpl value,
-          $Res Function(_$VibrationSettingImpl) then) =
-      __$$VibrationSettingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$VibrationSettingImplCopyWithImpl<$Res>
-    extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$VibrationSettingImpl>
-    implements _$$VibrationSettingImplCopyWith<$Res> {
-  __$$VibrationSettingImplCopyWithImpl(_$VibrationSettingImpl _value,
-      $Res Function(_$VibrationSettingImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AzkarAfterSalahEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$VibrationSettingImpl implements _VibrationSetting {
-  const _$VibrationSettingImpl();
-
-  @override
-  String toString() {
-    return 'AzkarAfterSalahEvent.vibrationSetting()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$VibrationSettingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(AzkarSalahTimeState state) fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(AzkarModel item) resetCounter,
-    required TResult Function(AzkarModel item) incrementCounter,
-  }) {
-    return vibrationSetting();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(AzkarModel item)? resetCounter,
-    TResult? Function(AzkarModel item)? incrementCounter,
-  }) {
-    return vibrationSetting?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(AzkarModel item)? resetCounter,
-    TResult Function(AzkarModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (vibrationSetting != null) {
-      return vibrationSetting();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return vibrationSetting(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return vibrationSetting?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (vibrationSetting != null) {
-      return vibrationSetting(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _VibrationSetting implements AzkarAfterSalahEvent {
-  const factory _VibrationSetting() = _$VibrationSettingImpl;
-}
-
-/// @nodoc
-abstract class _$$LeftZikerSelectedImplCopyWith<$Res> {
-  factory _$$LeftZikerSelectedImplCopyWith(_$LeftZikerSelectedImpl value,
-          $Res Function(_$LeftZikerSelectedImpl) then) =
-      __$$LeftZikerSelectedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LeftZikerSelectedImplCopyWithImpl<$Res>
-    extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$LeftZikerSelectedImpl>
-    implements _$$LeftZikerSelectedImplCopyWith<$Res> {
-  __$$LeftZikerSelectedImplCopyWithImpl(_$LeftZikerSelectedImpl _value,
-      $Res Function(_$LeftZikerSelectedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AzkarAfterSalahEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LeftZikerSelectedImpl implements _LeftZikerSelected {
-  const _$LeftZikerSelectedImpl();
-
-  @override
-  String toString() {
-    return 'AzkarAfterSalahEvent.leftZikerSelected()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LeftZikerSelectedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(AzkarSalahTimeState state) fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(AzkarModel item) resetCounter,
-    required TResult Function(AzkarModel item) incrementCounter,
-  }) {
-    return leftZikerSelected();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(AzkarModel item)? resetCounter,
-    TResult? Function(AzkarModel item)? incrementCounter,
-  }) {
-    return leftZikerSelected?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(AzkarModel item)? resetCounter,
-    TResult Function(AzkarModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (leftZikerSelected != null) {
-      return leftZikerSelected();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return leftZikerSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return leftZikerSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (leftZikerSelected != null) {
-      return leftZikerSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LeftZikerSelected implements AzkarAfterSalahEvent {
-  const factory _LeftZikerSelected() = _$LeftZikerSelectedImpl;
-}
-
-/// @nodoc
-abstract class _$$RightZikerEnabledImplCopyWith<$Res> {
-  factory _$$RightZikerEnabledImplCopyWith(_$RightZikerEnabledImpl value,
-          $Res Function(_$RightZikerEnabledImpl) then) =
-      __$$RightZikerEnabledImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RightZikerEnabledImplCopyWithImpl<$Res>
-    extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$RightZikerEnabledImpl>
-    implements _$$RightZikerEnabledImplCopyWith<$Res> {
-  __$$RightZikerEnabledImplCopyWithImpl(_$RightZikerEnabledImpl _value,
-      $Res Function(_$RightZikerEnabledImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AzkarAfterSalahEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$RightZikerEnabledImpl implements _RightZikerEnabled {
-  const _$RightZikerEnabledImpl();
-
-  @override
-  String toString() {
-    return 'AzkarAfterSalahEvent.rightZikerEnabled()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RightZikerEnabledImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(AzkarSalahTimeState state) fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(AzkarModel item) resetCounter,
-    required TResult Function(AzkarModel item) incrementCounter,
-  }) {
-    return rightZikerEnabled();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(AzkarModel item)? resetCounter,
-    TResult? Function(AzkarModel item)? incrementCounter,
-  }) {
-    return rightZikerEnabled?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(AzkarModel item)? resetCounter,
-    TResult Function(AzkarModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (rightZikerEnabled != null) {
-      return rightZikerEnabled();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return rightZikerEnabled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return rightZikerEnabled?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (rightZikerEnabled != null) {
-      return rightZikerEnabled(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RightZikerEnabled implements AzkarAfterSalahEvent {
-  const factory _RightZikerEnabled() = _$RightZikerEnabledImpl;
-}
-
-/// @nodoc
 abstract class _$$ResetCounterImplCopyWith<$Res> {
   factory _$$ResetCounterImplCopyWith(
           _$ResetCounterImpl value, $Res Function(_$ResetCounterImpl) then) =
       __$$ResetCounterImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AzkarModel item});
 }
 
 /// @nodoc
@@ -851,94 +261,57 @@ class __$$ResetCounterImplCopyWithImpl<$Res>
 
   /// Create a copy of AzkarAfterSalahEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? item = null,
-  }) {
-    return _then(_$ResetCounterImpl(
-      null == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as AzkarModel,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$ResetCounterImpl implements _ResetCounter {
-  const _$ResetCounterImpl(this.item);
-
-  @override
-  final AzkarModel item;
+  const _$ResetCounterImpl();
 
   @override
   String toString() {
-    return 'AzkarAfterSalahEvent.resetCounter(item: $item)';
+    return 'AzkarAfterSalahEvent.resetCounter()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ResetCounterImpl &&
-            (identical(other.item, item) || other.item == item));
+        (other.runtimeType == runtimeType && other is _$ResetCounterImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, item);
-
-  /// Create a copy of AzkarAfterSalahEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ResetCounterImplCopyWith<_$ResetCounterImpl> get copyWith =>
-      __$$ResetCounterImplCopyWithImpl<_$ResetCounterImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AzkarSalahTimeState state) fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(AzkarModel item) resetCounter,
+    required TResult Function() resetCounter,
     required TResult Function(AzkarModel item) incrementCounter,
   }) {
-    return resetCounter(item);
+    return resetCounter();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(AzkarModel item)? resetCounter,
+    TResult? Function()? resetCounter,
     TResult? Function(AzkarModel item)? incrementCounter,
   }) {
-    return resetCounter?.call(item);
+    return resetCounter?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(AzkarModel item)? resetCounter,
+    TResult Function()? resetCounter,
     TResult Function(AzkarModel item)? incrementCounter,
     required TResult orElse(),
   }) {
     if (resetCounter != null) {
-      return resetCounter(item);
+      return resetCounter();
     }
     return orElse();
   }
@@ -947,10 +320,6 @@ class _$ResetCounterImpl implements _ResetCounter {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
     required TResult Function(_ResetCounter value) resetCounter,
     required TResult Function(_IncrementCounter value) incrementCounter,
   }) {
@@ -961,10 +330,6 @@ class _$ResetCounterImpl implements _ResetCounter {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult? Function(_ResetCounter value)? resetCounter,
     TResult? Function(_IncrementCounter value)? incrementCounter,
   }) {
@@ -975,10 +340,6 @@ class _$ResetCounterImpl implements _ResetCounter {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult Function(_ResetCounter value)? resetCounter,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
@@ -991,15 +352,7 @@ class _$ResetCounterImpl implements _ResetCounter {
 }
 
 abstract class _ResetCounter implements AzkarAfterSalahEvent {
-  const factory _ResetCounter(final AzkarModel item) = _$ResetCounterImpl;
-
-  AzkarModel get item;
-
-  /// Create a copy of AzkarAfterSalahEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ResetCounterImplCopyWith<_$ResetCounterImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _ResetCounter() = _$ResetCounterImpl;
 }
 
 /// @nodoc
@@ -1072,11 +425,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AzkarSalahTimeState state) fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(AzkarModel item) resetCounter,
+    required TResult Function() resetCounter,
     required TResult Function(AzkarModel item) incrementCounter,
   }) {
     return incrementCounter(item);
@@ -1086,11 +435,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(AzkarModel item)? resetCounter,
+    TResult? Function()? resetCounter,
     TResult? Function(AzkarModel item)? incrementCounter,
   }) {
     return incrementCounter?.call(item);
@@ -1100,11 +445,7 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AzkarSalahTimeState state)? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(AzkarModel item)? resetCounter,
+    TResult Function()? resetCounter,
     TResult Function(AzkarModel item)? incrementCounter,
     required TResult orElse(),
   }) {
@@ -1118,10 +459,6 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
     required TResult Function(_ResetCounter value) resetCounter,
     required TResult Function(_IncrementCounter value) incrementCounter,
   }) {
@@ -1132,10 +469,6 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult? Function(_ResetCounter value)? resetCounter,
     TResult? Function(_IncrementCounter value)? incrementCounter,
   }) {
@@ -1146,10 +479,6 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult Function(_ResetCounter value)? resetCounter,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
@@ -1176,10 +505,8 @@ abstract class _IncrementCounter implements AzkarAfterSalahEvent {
 
 /// @nodoc
 mixin _$AzkarAfterSalahState {
-  bool get allowSound => throw _privateConstructorUsedError;
-  bool get allowVibration => throw _privateConstructorUsedError;
-  List<AzkarModel> get list => throw _privateConstructorUsedError;
-  int get selectedListIndex => throw _privateConstructorUsedError;
+  List<AzkarModel> get azkarList => throw _privateConstructorUsedError;
+  bool get showAzkarView => throw _privateConstructorUsedError;
 
   /// Create a copy of AzkarAfterSalahState
   /// with the given fields replaced by the non-null parameter values.
@@ -1194,11 +521,7 @@ abstract class $AzkarAfterSalahStateCopyWith<$Res> {
           $Res Function(AzkarAfterSalahState) then) =
       _$AzkarAfterSalahStateCopyWithImpl<$Res, AzkarAfterSalahState>;
   @useResult
-  $Res call(
-      {bool allowSound,
-      bool allowVibration,
-      List<AzkarModel> list,
-      int selectedListIndex});
+  $Res call({List<AzkarModel> azkarList, bool showAzkarView});
 }
 
 /// @nodoc
@@ -1217,28 +540,18 @@ class _$AzkarAfterSalahStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? allowSound = null,
-    Object? allowVibration = null,
-    Object? list = null,
-    Object? selectedListIndex = null,
+    Object? azkarList = null,
+    Object? showAzkarView = null,
   }) {
     return _then(_value.copyWith(
-      allowSound: null == allowSound
-          ? _value.allowSound
-          : allowSound // ignore: cast_nullable_to_non_nullable
-              as bool,
-      allowVibration: null == allowVibration
-          ? _value.allowVibration
-          : allowVibration // ignore: cast_nullable_to_non_nullable
-              as bool,
-      list: null == list
-          ? _value.list
-          : list // ignore: cast_nullable_to_non_nullable
+      azkarList: null == azkarList
+          ? _value.azkarList
+          : azkarList // ignore: cast_nullable_to_non_nullable
               as List<AzkarModel>,
-      selectedListIndex: null == selectedListIndex
-          ? _value.selectedListIndex
-          : selectedListIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      showAzkarView: null == showAzkarView
+          ? _value.showAzkarView
+          : showAzkarView // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -1251,11 +564,7 @@ abstract class _$$AzkarAfterSalahStateImplCopyWith<$Res>
       __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {bool allowSound,
-      bool allowVibration,
-      List<AzkarModel> list,
-      int selectedListIndex});
+  $Res call({List<AzkarModel> azkarList, bool showAzkarView});
 }
 
 /// @nodoc
@@ -1271,28 +580,18 @@ class __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? allowSound = null,
-    Object? allowVibration = null,
-    Object? list = null,
-    Object? selectedListIndex = null,
+    Object? azkarList = null,
+    Object? showAzkarView = null,
   }) {
     return _then(_$AzkarAfterSalahStateImpl(
-      allowSound: null == allowSound
-          ? _value.allowSound
-          : allowSound // ignore: cast_nullable_to_non_nullable
-              as bool,
-      allowVibration: null == allowVibration
-          ? _value.allowVibration
-          : allowVibration // ignore: cast_nullable_to_non_nullable
-              as bool,
-      list: null == list
-          ? _value._list
-          : list // ignore: cast_nullable_to_non_nullable
+      azkarList: null == azkarList
+          ? _value._azkarList
+          : azkarList // ignore: cast_nullable_to_non_nullable
               as List<AzkarModel>,
-      selectedListIndex: null == selectedListIndex
-          ? _value.selectedListIndex
-          : selectedListIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      showAzkarView: null == showAzkarView
+          ? _value.showAzkarView
+          : showAzkarView // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1301,34 +600,25 @@ class __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>
 
 class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
   const _$AzkarAfterSalahStateImpl(
-      {this.allowSound = true,
-      this.allowVibration = true,
-      final List<AzkarModel> list = const [],
-      this.selectedListIndex = 0})
-      : _list = list;
+      {final List<AzkarModel> azkarList = const [], this.showAzkarView = false})
+      : _azkarList = azkarList;
 
+  final List<AzkarModel> _azkarList;
   @override
   @JsonKey()
-  final bool allowSound;
-  @override
-  @JsonKey()
-  final bool allowVibration;
-  final List<AzkarModel> _list;
-  @override
-  @JsonKey()
-  List<AzkarModel> get list {
-    if (_list is EqualUnmodifiableListView) return _list;
+  List<AzkarModel> get azkarList {
+    if (_azkarList is EqualUnmodifiableListView) return _azkarList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_list);
+    return EqualUnmodifiableListView(_azkarList);
   }
 
   @override
   @JsonKey()
-  final int selectedListIndex;
+  final bool showAzkarView;
 
   @override
   String toString() {
-    return 'AzkarAfterSalahState(allowSound: $allowSound, allowVibration: $allowVibration, list: $list, selectedListIndex: $selectedListIndex)';
+    return 'AzkarAfterSalahState(azkarList: $azkarList, showAzkarView: $showAzkarView)';
   }
 
   @override
@@ -1336,18 +626,15 @@ class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AzkarAfterSalahStateImpl &&
-            (identical(other.allowSound, allowSound) ||
-                other.allowSound == allowSound) &&
-            (identical(other.allowVibration, allowVibration) ||
-                other.allowVibration == allowVibration) &&
-            const DeepCollectionEquality().equals(other._list, _list) &&
-            (identical(other.selectedListIndex, selectedListIndex) ||
-                other.selectedListIndex == selectedListIndex));
+            const DeepCollectionEquality()
+                .equals(other._azkarList, _azkarList) &&
+            (identical(other.showAzkarView, showAzkarView) ||
+                other.showAzkarView == showAzkarView));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, allowSound, allowVibration,
-      const DeepCollectionEquality().hash(_list), selectedListIndex);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_azkarList), showAzkarView);
 
   /// Create a copy of AzkarAfterSalahState
   /// with the given fields replaced by the non-null parameter values.
@@ -1362,19 +649,13 @@ class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
 
 abstract class _AzkarAfterSalahState implements AzkarAfterSalahState {
   const factory _AzkarAfterSalahState(
-      {final bool allowSound,
-      final bool allowVibration,
-      final List<AzkarModel> list,
-      final int selectedListIndex}) = _$AzkarAfterSalahStateImpl;
+      {final List<AzkarModel> azkarList,
+      final bool showAzkarView}) = _$AzkarAfterSalahStateImpl;
 
   @override
-  bool get allowSound;
+  List<AzkarModel> get azkarList;
   @override
-  bool get allowVibration;
-  @override
-  List<AzkarModel> get list;
-  @override
-  int get selectedListIndex;
+  bool get showAzkarView;
 
   /// Create a copy of AzkarAfterSalahState
   /// with the given fields replaced by the non-null parameter values.

@@ -1,4 +1,5 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
+import 'package:azkar/model/azkar_salah_time.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
@@ -11,6 +12,7 @@ import 'package:islam_app/presentation/home_tab/widgets/location_permission_view
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_shortcut_view.dart';
+import 'package:loading_indicator/loading_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -82,9 +84,22 @@ class HomeScreen extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.nextPrayType != current.nextPrayType,
       builder: (context, state) {
-        return AzkarAfterSalahView(
-            salahType:
-                SalahTimeStateParser.getSalahTimeState(state.nextPrayType));
+        final type = SalahTimeStateParser.getSalahTimeState(state.nextPrayType);
+
+        if (type == const AzkarSalahTimeState.none()) {
+          return const SizedBox(
+            height: 50,
+            width: 50,
+            child: LoadingIndicator(
+                indicatorType: Indicator.ballSpinFadeLoader,
+                colors: [Color(0xff034061)],
+                strokeWidth: 1,
+                backgroundColor: Colors.transparent,
+                pathBackgroundColor: Colors.transparent),
+          );
+        }
+
+        return AzkarAfterSalahView(salahType: type);
       },
     );
   }

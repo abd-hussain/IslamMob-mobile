@@ -55,6 +55,7 @@ class ChooseSoundScreen extends StatelessWidget {
                 fontSize: 14,
                 color: const Color(0xff444444),
                 fontWeight: FontWeight.bold,
+                maxLines: 2,
               ),
             ),
             Expanded(
