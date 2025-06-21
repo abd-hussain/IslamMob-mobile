@@ -56,7 +56,6 @@ Future<void> setupLocator() async {
   locator.registerFactory<DownloadFileUsecase>(DownloadFileUsecase.new);
   locator.registerFactory<ApplicationVersionUsecase>(
       ApplicationVersionUsecase.new);
-
   locator.registerSingleton<LocalNotificationRepository>(
       LocalNotificationRepository());
   locator.registerFactory<MainContainerBloc>(MainContainerBloc.new);

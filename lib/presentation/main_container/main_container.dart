@@ -43,8 +43,7 @@ class _MainContainerState extends State<MainContainer> {
         appBar: const MainCustomAppBar(),
         body: SafeArea(
           child: BlocBuilder<MainContainerBloc, MainContainerState>(
-            buildWhen: (previous, current) =>
-                previous.selectedIndex != current.selectedIndex,
+            buildWhen: (previous, current) => previous.selectedIndex != current.selectedIndex,
             builder: (context, state) {
               return IndexedStack(
                 index: state.selectedIndex,
@@ -62,8 +61,7 @@ class _MainContainerState extends State<MainContainer> {
     );
   }
 
-  Future<void> _showVersionUpdateDialog(
-      BuildContext context, VersionUpdate versionUpdate) async {
+  Future<void> _showVersionUpdateDialog(BuildContext context, VersionUpdate versionUpdate) async {
     await VersionDialog().dialog(
       context: context,
       isOptional: versionUpdate == VersionUpdate.optional,
