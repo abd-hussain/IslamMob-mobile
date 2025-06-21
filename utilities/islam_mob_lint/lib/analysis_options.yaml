@@ -6,6 +6,7 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "lib/l10n/gen/**"
+    - ".github/workflows/**"
   language:
     strict-casts: true
     strict-raw-types: true
