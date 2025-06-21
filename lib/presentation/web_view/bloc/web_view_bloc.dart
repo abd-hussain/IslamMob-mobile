@@ -11,10 +11,37 @@ part 'web_view_bloc.freezed.dart';
 part 'web_view_event.dart';
 part 'web_view_state.dart';
 
+/// A BLoC that manages the state and logic for web view functionality.
+///
+/// This BLoC handles:
+/// - Web view initialization and content loading
+/// - Internet connection status monitoring
+/// - URL and page title management
+/// - Firebase analytics logging for web view usage
+/// - Argument extraction from navigation parameters
+///
+/// The BLoC automatically checks internet connectivity before loading
+/// web content and logs analytics events for tracking web view usage.
 class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
+  /// Arguments passed from the navigation route containing web view configuration.
+  ///
+  /// Expected to contain:
+  /// - [AppConstant.webViewPageUrl]: The URL to load in the web view
+  /// - [AppConstant.pageTitle]: The title to display for the page
   final Map<String, dynamic>? arguments;
-  WebViewXController? webviewController;
 
+  /// Controller for managing the WebViewX widget.
+  ///
+  /// This controller provides programmatic access to web view operations
+  /// such as navigation, JavaScript execution, and content manipulation.
+  /// It's initialized when the web view widget is created.
+  WebViewXController<dynamic>? webviewController;
+
+  /// Creates a new [WebViewBloc] instance.
+  ///
+  /// Requires [arguments] containing the web view configuration parameters.
+  /// Automatically sets up event handlers for web view initialization,
+  /// content updates, and internet connection status changes.
   WebViewBloc({required this.arguments}) : super(const WebViewState()) {
     on<_InitalizeWebViewContent>(_initalizeWebViewContent);
     on<_UpdateWebViewContent>(_updateWebViewContent);
@@ -24,14 +51,15 @@ class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
   void _extractArguments() {
     if (arguments != null) {
       add(WebViewEvent.updateWebViewContent(
-          webViewUrl: arguments?[AppConstant.webViewPageUrl] ?? "",
-          pageTitle: arguments?[AppConstant.pageTitle] ?? ""));
+          webViewUrl: (arguments?[AppConstant.webViewPageUrl] as String?) ?? "",
+          pageTitle: (arguments?[AppConstant.pageTitle] as String?) ?? ""));
 
       FirebaseAnalyticsRepository.logEvent(
         name: "WebViewScreen",
         parameters: {
-          "webViewUrl": arguments?[AppConstant.webViewPageUrl] ?? "",
-          "pageTitle": arguments?[AppConstant.pageTitle] ?? "",
+          "webViewUrl":
+              (arguments?[AppConstant.webViewPageUrl] as String?) ?? "",
+          "pageTitle": (arguments?[AppConstant.pageTitle] as String?) ?? "",
         },
       );
     }

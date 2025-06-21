@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 // import 'package:qibla_finder/qibla_finder.dart';
 
+/// A compass widget for finding the Qibla direction.
+///
+/// This widget provides a compass interface to help users determine the
+/// direction of the Qibla (towards the Kaaba in Mecca) for Islamic prayers.
+/// Currently, the implementation is commented out and shows an empty container,
+/// but it's designed to handle location permissions and display a compass
+/// with directional indicators when fully implemented.
 class QiblahCompass extends StatefulWidget {
+  /// Creates a [QiblahCompass] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const QiblahCompass({super.key});
 
   @override

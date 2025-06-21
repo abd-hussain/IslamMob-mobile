@@ -10,8 +10,31 @@ import 'package:islam_app/domain/usecase/pray_manager/next_pray_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
 import 'package:islam_mob_adhan/adhan.dart';
 
+/// A comprehensive use case class for managing prayer time operations.
+///
+/// This class serves as the main interface for prayer time functionality,
+/// providing access to:
+/// - Next prayer information (type and time)
+/// - Today's prayer times
+/// - Monthly prayer time calendars
+/// - Prayer time calculations based on user settings
+///
+/// The class automatically retrieves user preferences from the database
+/// including calculation method, madhab, coordinates, and timezone settings.
 class PrayUsecase {
+  /// An optional specific date for prayer time calculations.
+  ///
+  /// When provided, prayer times will be calculated for this specific date
+  /// instead of the current date. If null, calculations use the current date.
   final DateComponents? specificDate;
+
+  /// Creates an instance of [PrayUsecase].
+  ///
+  /// Optionally accepts a [specificDate] parameter to calculate prayer times
+  /// for a particular date. If not provided, calculations will use the current date.
+  ///
+  /// The constructor automatically initializes the prayer manager repository
+  /// with user settings retrieved from the database.
   PrayUsecase({this.specificDate}) {
     _initalize();
   }
@@ -28,18 +51,51 @@ class PrayUsecase {
     );
   }
 
+  /// Determines the type of the next upcoming prayer.
+  ///
+  /// This method analyzes the current time and returns the state representing
+  /// which prayer is next (Fajr, Dhuhr, Asr, Maghrib, or Isha).
+  ///
+  /// Returns a [SalahTimeState] indicating the next prayer type.
   SalahTimeState getNextPrayType() {
     return NextPrayUsecase(_prayManager).nextPrayerType();
   }
 
+  /// Gets the exact time of the next upcoming prayer.
+  ///
+  /// This method calculates when the next prayer will occur based on
+  /// the current time and prayer schedule.
+  ///
+  /// Returns a [DateTime] representing when the next prayer will start,
+  /// or null if no next prayer can be determined.
   DateTime? getNextPrayTime() {
     return NextPrayUsecase(_prayManager).nextPrayerTime();
   }
 
+  /// Retrieves all prayer times for today as DateTime objects.
+  ///
+  /// This method returns today's complete prayer schedule including
+  /// all five daily prayers and Sunnah times, with user-configured
+  /// time adjustments applied.
+  ///
+  /// Returns a [PrayTimingDateTimeModel] containing all prayer times for today.
   PrayTimingDateTimeModel getAllPrayTimeAsDateTimeForToday() {
     return AllPrayTimeUsecase(_prayManager).getAllPrayTimeAsDateTimeForToday();
   }
 
+  /// Retrieves prayer times for an entire Hijri month as calendar models.
+  ///
+  /// This method calculates prayer times for every day in the specified
+  /// Hijri month and returns them formatted for calendar display.
+  /// Each day includes prayer times, dates in both Hijri and Gregorian
+  /// calendars, and day names.
+  ///
+  /// Parameters:
+  /// - [hijriDate]: A [HijriCalendar] object representing any date within
+  ///   the desired month. The method will calculate times for the entire month.
+  ///
+  /// Returns a [List<CalenderModel>] containing prayer times for each day
+  /// in the specified Hijri month.
   List<CalenderModel> getAllPrayTimeAsDateTimeForPassedMonth(
     HijriCalendar hijriDate,
   ) {
@@ -58,7 +114,7 @@ class PrayUsecase {
   Madhab _retrieveMadhab() {
     final String madhab = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
-        defaultValue: "MadhabState.hanafi()");
+        defaultValue: "MadhabState.hanafi()") as String;
     return PrayDBParser.parseMadhab(madhab);
   }
 
@@ -67,7 +123,7 @@ class PrayUsecase {
     final String selectedMethod = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
       defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
-    );
+    ) as String;
 
     return PrayDBParser.parseCalculationMethod(selectedMethod);
   }
@@ -76,23 +132,23 @@ class PrayUsecase {
     final String selectedMethod = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
       defaultValue: "PrayHightLatitudeCaluclationState.none()",
-    );
+    ) as String;
 
     return PrayDBParser.parseHighLatitudeRule(selectedMethod);
   }
 
   /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
   Coordinates _retrieveCoordinates() {
-    final String latitude = DataBaseManagerBase.getFromDatabase(
+    final double latitude = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldLocationConstant.selectedLatitude,
-        defaultValue: "0.0");
-    final String longitude = DataBaseManagerBase.getFromDatabase(
+        defaultValue: 0.0) as double;
+    final double longitude = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldLocationConstant.selectedLongitude,
-        defaultValue: "0.0");
+        defaultValue: 0.0) as double;
 
     return Coordinates(
-      double.tryParse(latitude) ?? 0.0,
-      double.tryParse(longitude) ?? 0.0,
+      latitude,
+      longitude,
     );
   }
 
@@ -100,10 +156,10 @@ class PrayUsecase {
   Duration _retrieveUtcOffset() {
     final String hourOffset = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour,
-        defaultValue: "");
+        defaultValue: "") as String;
     final String minuteOffset = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin,
-        defaultValue: "");
+        defaultValue: "") as String;
 
     if (hourOffset.isEmpty) {
       return DateTime.now().timeZoneOffset;

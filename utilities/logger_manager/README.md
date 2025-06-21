@@ -1,39 +1,85 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Logger Manager
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
-
-Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package that provides a simplified interface for logging in Flutter applications.
 
 ## Features
 
-List what your package can do. Maybe include images, gifs, or videos.
+- Multiple log levels (verbose, debug, info, warning, error, critical)
+- Customizable logger configuration
+- File logging support
+- Pretty console output with colors and formatting
 
 ## Getting started
 
-List prerequisites and provide or point to information on how to
-start using the package.
+Add this package to your pubspec.yaml:
+
+```yaml
+dependencies:
+  logger_manager:
+    path: ../logger_manager
+```
 
 ## Usage
 
-Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+### Basic Logging
 
 ```dart
-const like = 'sample';
+import 'package:logger_manager/logger_manager.dart';
+
+// Log messages at different levels
+LoggerManagerBase.logDebugMessage(message: 'This is a debug message');
+LoggerManagerBase.logInfo(message: 'This is an info message');
+LoggerManagerBase.logWarning(message: 'This is a warning message');
+LoggerManagerBase.logErrorMessage(
+  error: Exception('Something went wrong'),
+  message: 'This is an error message',
+);
+LoggerManagerBase.logCritical(
+  error: Exception('Fatal error'),
+  message: 'This is a critical message',
+  stackTrace: StackTrace.current,
+);
+```
+
+### Custom Configuration
+
+```dart
+import 'package:logger_manager/logger_manager.dart';
+
+// Initialize with custom configuration
+LoggerManagerBase.initialize(
+  config: LoggerConfig(
+    level: Level.info,  // Only show info and above
+    includeTime: true,
+    useColors: true,
+    methodCount: 1,
+    errorMethodCount: 5,
+  ),
+);
+
+// Or use predefined configurations
+LoggerManagerBase.initialize(config: LoggerConfig.production);
+```
+
+### File Logging
+
+```dart
+import 'package:logger_manager/logger_manager.dart';
+
+// Initialize file logger
+await FileLogger.initialize(fileName: 'my_app_logs.txt');
+
+// Log to file
+FileLogger.log(Level.info, 'This message will be saved to a file');
+
+// Read logs
+String logs = await FileLogger.readLogs();
+print(logs);
+
+// Clear logs
+await FileLogger.clearLogs();
 ```
 
 ## Additional information
 
-Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+For more information on the underlying logger package, see [logger](https://pub.dev/packages/logger).

@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A custom checkbox tile widget with a title and selection state.
+///
+/// This widget displays a tile with a title text and a checkbox icon that
+/// indicates the selection state. The entire tile is tappable and triggers
+/// the [onChanged] callback when tapped.
 class CheckBoxTile extends StatelessWidget {
+  /// The title text to display in the tile.
   final String title;
+
+  /// Whether the checkbox is currently selected.
   final bool isSelected;
+
+  /// Callback function called when the tile is tapped.
   final Function() onChanged;
+
+  /// Creates a [CheckBoxTile] with the given [title], [isSelected] state, and [onChanged] callback.
   const CheckBoxTile({
     super.key,
     required this.title,

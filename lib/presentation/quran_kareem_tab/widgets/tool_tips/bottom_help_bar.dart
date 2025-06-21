@@ -18,8 +18,31 @@ import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/bright
 import 'package:islam_app/shared_widgets/bottomsheet/quran_setting_bottomsheet.dart';
 import 'package:pdfx/pdfx.dart';
 
+/// A bottom help bar widget for the Quran reading interface.
+///
+/// This widget provides a comprehensive toolbar for Quran reading functionality including:
+/// - Index navigation (Surah and Juz navigation)
+/// - Bookmark management (add, remove, view all bookmarks)
+/// - Settings access (brightness, Mushaf selection, general settings)
+/// - Support features (rewarded ads)
+/// - Responsive design that adapts to different screen sizes
+///
+/// The bar is displayed as a grid of interactive tiles, each providing specific
+/// functionality for enhancing the Quran reading experience. It integrates with
+/// the QuranKareemBloc for state management and supports both Arabic and English
+/// localization.
 class QuranBottomHelpBar extends StatelessWidget {
+  /// Callback function to return brightness value changes.
+  ///
+  /// This function is called when the user adjusts the brightness setting
+  /// through the brightness popup dialog. The brightness value is passed
+  /// back to the parent widget to apply the screen brightness changes.
   final Function(double) returnBrightness;
+
+  /// Creates a [QuranBottomHelpBar] widget.
+  ///
+  /// The [returnBrightness] callback is required to handle brightness
+  /// adjustments from the brightness control popup.
   const QuranBottomHelpBar({
     super.key,
     required this.returnBrightness,
@@ -74,9 +97,11 @@ class QuranBottomHelpBar extends StatelessWidget {
                 await FirebaseAnalyticsRepository.logEvent(
                     name: "QuranSupportUsShown");
                 await RewarderAds.showRewardedAd();
-                context.read<QuranKareemBloc>().add(
-                    QuranKareemEvent.updateRewardedAd(
-                        RewarderAds.mainRewardedAd != null));
+                if (context.mounted) {
+                  context.read<QuranKareemBloc>().add(
+                      QuranKareemEvent.updateRewardedAd(
+                          RewarderAds.mainRewardedAd != null));
+                }
               },
               brigtnessCallback: () {
                 FirebaseAnalyticsRepository.logEvent(
@@ -186,14 +211,14 @@ class QuranBottomHelpBar extends StatelessWidget {
     final pdfController = bloc.pdfController;
 
     if (value[ArgumentConstant.currentPageNumber] != null) {
-      final pageNumber = value[ArgumentConstant.currentPageNumber];
+      final pageNumber = value[ArgumentConstant.currentPageNumber] as int;
       bloc.add(QuranKareemEvent.updatePageCount(pageNumber));
       pdfController?.jumpToPage(pageNumber);
     }
 
     if (value[ArgumentConstant.currentPartNumber] != null) {
       final jozo2PageNumber = QuranReferancesUsecase.getPageNumberFromJuzNumber(
-          value[ArgumentConstant.currentPartNumber]);
+          value[ArgumentConstant.currentPartNumber] as String);
       bloc.add(QuranKareemEvent.updatePageCount(jozo2PageNumber));
       pdfController?.jumpToPage(jozo2PageNumber);
     }
@@ -202,7 +227,7 @@ class QuranBottomHelpBar extends StatelessWidget {
       final sorahPageNumber =
           QuranReferancesUsecase.getPageNumberFromSurahReferenceName(
         localize.getKeyFromLocalizedString(
-            value[ArgumentConstant.currentSowrahName]),
+            value[ArgumentConstant.currentSowrahName] as String),
       );
       if (sorahPageNumber != -1) {
         bloc.add(QuranKareemEvent.updatePageCount(sorahPageNumber));

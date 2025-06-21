@@ -16,11 +16,31 @@ part 'pray_calculation_setting_bloc.freezed.dart';
 part 'pray_calculation_setting_event.dart';
 part 'pray_calculation_setting_state.dart';
 
+/// BLoC for managing prayer calculation settings and configurations.
+///
+/// This BLoC handles all the business logic for prayer calculation settings
+/// including calculation methods, madhab selection, timezone adjustments,
+/// high latitude calculations, and manual time corrections. It manages
+/// the state of prayer times and provides real-time updates when settings
+/// are modified.
+///
+/// Key responsibilities:
+/// - Loading and saving prayer calculation preferences
+/// - Managing calculation method and madhab selections
+/// - Handling timezone and manual time adjustments
+/// - Calculating and updating prayer times based on settings
+/// - Persisting changes to local database
 class PrayCalculationSettingBloc
     extends Bloc<PrayCalculationSettingEvent, PrayCalculationSettingState> {
+  /// Use case for retrieving user settings from storage.
   final GetUserSettingUseCase _getUserSettingUseCase =
       locator<GetUserSettingUseCase>();
 
+  /// Creates a [PrayCalculationSettingBloc] with initial state.
+  ///
+  /// Initializes the bloc with default state and registers event handlers
+  /// for all prayer calculation setting operations including setup,
+  /// method updates, time adjustments, and saving changes.
   PrayCalculationSettingBloc() : super(const PrayCalculationSettingState()) {
     on<_Setup>(_setup);
     on<_UpdateCalculationMethod>(_updateCalculationMethod);
@@ -120,7 +140,7 @@ class PrayCalculationSettingBloc
   }
 
   FutureOr<void> _updateMadhabMethod(
-      event, Emitter<PrayCalculationSettingState> emit) {
+      _UpdateMadhabMethod event, Emitter<PrayCalculationSettingState> emit) {
     emit(state.copyWith(madhab: event.madhab, buttonsStatus: true));
     _prepareSalahTiming();
   }

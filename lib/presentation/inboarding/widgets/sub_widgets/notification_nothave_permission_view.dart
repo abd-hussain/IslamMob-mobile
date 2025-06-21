@@ -4,8 +4,18 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays a view when notification permissions are not granted.
+///
+/// This widget shows information about why notification permissions should be allowed
+/// and provides options to either open app settings or skip the permission request.
 class NotificationNothavePermissionView extends StatelessWidget {
+  /// Callback function to be executed when the skip button is pressed.
   final Function() skipButton;
+
+  /// Creates a [NotificationNothavePermissionView] widget.
+  ///
+  /// The [skipButton] parameter is required and defines the action to take
+  /// when the user chooses to skip granting notification permissions.
   const NotificationNothavePermissionView(
       {super.key, required this.skipButton});
 

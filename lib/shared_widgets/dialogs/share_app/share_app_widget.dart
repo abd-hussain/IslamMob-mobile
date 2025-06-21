@@ -6,7 +6,20 @@ import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:share_plus/share_plus.dart';
 
+/// A dialog widget that provides options for sharing the application.
+///
+/// This widget displays a dialog with multiple sharing options including:
+/// - Share by contact (navigates to contacts screen)
+/// - Share on social media (uses the device's share functionality)
+/// - Cancel option to dismiss the dialog
+///
+/// The dialog includes a title, descriptive message, illustration image,
+/// and styled action buttons for each sharing method.
 class ShareAppDialogWidget extends StatelessWidget {
+  /// Creates a [ShareAppDialogWidget].
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const ShareAppDialogWidget({super.key});
 
   @override

@@ -7,8 +7,29 @@ import 'package:islam_app/presentation/azkar_after_salah/widget/finish_view.dart
 import 'package:islam_app/presentation/azkar_after_salah/widget/zeker_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget for displaying post-prayer Azkar (Islamic remembrances) interface.
+///
+/// This widget provides Muslims with authentic Islamic remembrances and
+/// supplications to recite after completing their obligatory prayers.
+/// It features:
+/// - **Prayer-specific Azkar** tailored to each of the five daily prayers
+/// - **Interactive counters** for tracking recitation progress
+/// - **Completion tracking** with visual feedback when finished
+/// - **Authentic Islamic content** from traditional Islamic sources
+/// - **Multilingual support** for global Muslim community access
+///
+/// The Azkar after Salah are essential Islamic practices that help Muslims
+/// maintain spiritual connection and earn additional rewards after their
+/// obligatory prayers, following the Sunnah of Prophet Muhammad (PBUH).
 class AzkarAfterSalahView extends StatelessWidget {
+  /// The prayer type for which to display the corresponding Azkar.
   final AzkarSalahTimeState salahType;
+
+  /// Creates an [AzkarAfterSalahView] widget for post-prayer remembrances.
+  ///
+  /// Parameters:
+  /// - [salahType]: The specific prayer type (Fajr, Dhuhr, Asr, Maghrib, Isha)
+  ///   for which to display the appropriate Islamic remembrances and supplications.
   const AzkarAfterSalahView({super.key, required this.salahType});
 
   @override

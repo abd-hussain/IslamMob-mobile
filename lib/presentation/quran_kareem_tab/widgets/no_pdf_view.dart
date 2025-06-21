@@ -10,7 +10,17 @@ import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.d
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:lottie/lottie.dart';
 
+/// A widget displayed when no Quran PDF is available for reading.
+///
+/// This widget shows when the user hasn't selected or downloaded any Quran
+/// print edition yet. It displays an animated illustration, instructional text,
+/// and a button to navigate to the print selection screen. Once a print is
+/// selected and downloaded, it automatically loads the PDF for reading.
 class NoPDFView extends StatelessWidget {
+  /// Creates a [NoPDFView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const NoPDFView({super.key});
 
   @override

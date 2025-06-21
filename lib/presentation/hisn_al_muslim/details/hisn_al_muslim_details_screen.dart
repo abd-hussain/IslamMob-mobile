@@ -9,9 +9,33 @@ import 'package:islam_app/presentation/hisn_al_muslim/details/widgets/hisn_al_mu
 import 'package:islam_app/presentation/hisn_al_muslim/details/widgets/hisn_al_muslim_with_counter_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 
+/// Screen for displaying detailed view of Hisn Al-Muslim supplications.
+///
+/// This screen provides Muslims with comprehensive access to individual
+/// Islamic supplications from Hisn Al-Muslim (Fortress of the Muslim),
+/// a renowned collection of authentic Islamic prayers and remembrances.
+/// It features:
+/// - **Detailed supplication display** with Arabic text and translations
+/// - **Favorite management** for bookmarking important supplications
+/// - **Content sharing** via social platforms and messaging
+/// - **Counter functionality** for supplications with repetition counts
+/// - **Page navigation** for multi-part supplications
+///
+/// The screen adapts its interface based on the supplication type,
+/// providing either simple text display or interactive counter functionality
+/// for supplications that should be recited multiple times, supporting
+/// Muslims in their daily spiritual practices and dhikr routines.
 class HisnAlMuslimDetailsScreen extends StatefulWidget {
+  /// Creates a [HisnAlMuslimDetailsScreen] widget.
+  ///
+  /// This screen displays detailed Islamic supplication content with
+  /// interactive features for favorites, sharing, and counter functionality.
   const HisnAlMuslimDetailsScreen({super.key});
 
+  /// Creates the state for the Hisn Al-Muslim details screen.
+  ///
+  /// Returns a [_HisnAlMuslimDetailsScreenState] instance that manages
+  /// the screen's lifecycle, page controller, and supplication interactions.
   @override
   State<HisnAlMuslimDetailsScreen> createState() =>
       _HisnAlMuslimDetailsScreenState();

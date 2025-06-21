@@ -2,12 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget displaying counter information for Hisn Al-Muslim supplications.
+///
+/// This widget provides visual feedback for Islamic supplications that
+/// should be recited multiple times, showing progress and repetition
+/// information. It features:
+/// - **Circular progress indicator** showing completion percentage
+/// - **Current count display** in the center of the progress circle
+/// - **Index information** showing position in multi-part supplications
+/// - **Repetition count** indicating total required recitations
+///
+/// The counter supports Muslims in performing dhikr and supplications
+/// correctly according to Islamic teachings, providing clear visual
+/// guidance for repeated recitations and spiritual practices.
 class HisnAlMuslimCounterView extends StatelessWidget {
+  /// The total number of times this supplication should be recited.
   final int readCount;
+
+  /// The current index position in multi-part supplications.
   final int index;
+
+  /// The total number of parts in this supplication series.
   final int totalLength;
+
+  /// The current count of completed recitations.
   final int currentCount;
 
+  /// Creates a [HisnAlMuslimCounterView] widget for supplication counting.
+  ///
+  /// Parameters:
+  /// - [readCount]: Total required recitations for this supplication
+  /// - [index]: Current position in the supplication series
+  /// - [totalLength]: Total number of parts in the series
+  /// - [currentCount]: Current number of completed recitations
   const HisnAlMuslimCounterView({
     super.key,
     required this.readCount,

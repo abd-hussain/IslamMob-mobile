@@ -4,16 +4,59 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A tile widget that displays information about a Quran print option.
+///
+/// This widget shows a print option with its title, description, preview image,
+/// and action buttons for downloading or using the print. It features a language
+/// banner in the top-right corner to indicate the print's language.
+///
+/// The tile includes:
+/// - Language banner indicator
+/// - Title and description text
+/// - Preview image with caching
+/// - Download and use action buttons
+/// - Conditional button availability based on state
 class PrintTileView extends StatelessWidget {
+  /// The language of the Quran print, displayed in a banner.
   final String language;
+
+  /// The title of the print option.
+  ///
+  /// If null, an empty string will be displayed.
   final String? title;
+
+  /// A description of the print option.
+  ///
+  /// If null, an empty string will be displayed. The description
+  /// is limited to 4 lines and centered.
   final String? description;
+
+  /// URL of the preview image for the print.
+  ///
+  /// If null, an empty string will be used, which may result in
+  /// an error widget being displayed.
   final String? previewImage;
+
+  /// Whether the download button should be enabled.
+  ///
+  /// Defaults to false if not specified.
   final bool downloadButtonAvailable;
+
+  /// Whether the use button should be enabled.
+  ///
+  /// Defaults to false if not specified.
   final bool useButtonAvailable;
+
+  /// Callback function executed when the download button is pressed.
   final VoidCallback onDownloadPressed;
+
+  /// Callback function executed when the use button is pressed.
   final VoidCallback onUsePressed;
 
+  /// Creates a [PrintTileView] widget.
+  ///
+  /// The [language], [onDownloadPressed], and [onUsePressed] parameters are required.
+  /// The [downloadButtonAvailable] and [useButtonAvailable] default to false.
   const PrintTileView({
     super.key,
     required this.language,

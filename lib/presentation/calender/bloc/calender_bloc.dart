@@ -10,9 +10,30 @@ part 'calender_bloc.freezed.dart';
 part 'calender_event.dart';
 part 'calender_state.dart';
 
+/// BLoC for managing Islamic calendar functionality and prayer time displays.
+///
+/// This BLoC handles the business logic for the Islamic calendar screen,
+/// which displays prayer times organized by Hijri (Islamic) calendar months.
+/// It manages:
+/// - **Hijri calendar navigation** between Islamic months
+/// - **Prayer time data** for each day of the selected month
+/// - **Month name display** in Arabic Islamic calendar format
+/// - **Calendar state management** including loading and error states
+///
+/// The calendar integrates both Hijri and Gregorian date systems, providing
+/// Muslims with a comprehensive view of prayer times organized according
+/// to the Islamic lunar calendar. This helps users plan their religious
+/// observances and maintain awareness of Islamic dates and months.
 class CalenderBloc extends Bloc<CalenderEvent, CalenderState> {
+  /// Prayer use case instance for calculating prayer times for calendar display.
   final PrayUsecase prayUsecase = PrayUsecase();
 
+  /// Creates a [CalenderBloc] with initial state and event handlers.
+  ///
+  /// Initializes the BLoC with empty calendar state and sets up event handlers for:
+  /// - Preparing prayer timing data for the current month
+  /// - Filling initial month name display
+  /// - Navigating to next and previous Islamic months
   CalenderBloc() : super(const CalenderState()) {
     on<_PrepareSalahTiming>(_prepareSalahTiming);
     on<_FillMonthNameFirstTime>(_fillMonthNameFirstTime);

@@ -10,9 +10,31 @@ import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widget
 import 'package:islam_app/shared_widgets/bottomsheet/setting_bottomsheet.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget for displaying Islamic prayer times in a swipeable weekly view.
+///
+/// This widget provides Muslims with comprehensive prayer timing information
+/// for the entire week in an interactive, swipeable interface. It features:
+/// - **Weekly prayer schedule** with all five daily prayers displayed
+/// - **Swipeable interface** for navigating through different days
+/// - **Current prayer highlighting** showing the next upcoming prayer
+/// - **Additional Islamic times** including midnight and last third of night
+/// - **Settings access** for prayer calculation method customization
+///
+/// The prayer timing view is central to Islamic practice, providing Muslims
+/// with accurate prayer times based on their location and selected calculation
+/// method. It helps Muslims plan their day around their spiritual obligations
+/// and maintain their connection with Islamic prayer schedule.
 class SalahTimingView extends StatefulWidget {
+  /// Creates a [SalahTimingView] widget.
+  ///
+  /// This widget displays the weekly Islamic prayer timing interface with
+  /// swipeable navigation and comprehensive prayer time information.
   const SalahTimingView({super.key});
 
+  /// Creates the state for the prayer timing view.
+  ///
+  /// Returns a [_SalahTimingViewState] instance that manages the swiper
+  /// controller, prayer time display, and user interactions.
   @override
   State<SalahTimingView> createState() => _SalahTimingViewState();
 }

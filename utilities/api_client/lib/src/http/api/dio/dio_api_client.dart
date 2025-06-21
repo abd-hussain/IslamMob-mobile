@@ -4,7 +4,38 @@ import 'package:api_client/src/http/api_client_base.dart';
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
 
+/// A concrete implementation of [ApiClientBase] using the Dio HTTP client.
+///
+/// This class provides HTTP API functionality using the Dio library for making
+/// network requests. It implements all the standard HTTP methods (GET, POST,
+/// PUT, PATCH, DELETE) with functional programming error handling using
+/// [TaskEither] from the fpdart library.
+///
+/// The implementation automatically handles:
+/// - Request/response serialization
+/// - Error mapping from Dio exceptions to custom API exceptions
+/// - Connection timeouts and network errors
+/// - HTTP status code handling
+///
+/// Example usage:
+/// ```dart
+/// final dio = DioBuilder()
+///   .setBaseUrl('https://api.example.com')
+///   .build();
+/// final apiClient = DioApiClient(dio);
+///
+/// final result = await apiClient.get<Map<String, dynamic>>('/users').run();
+/// result.fold(
+///   (error) => print('Error: $error'),
+///   (response) => print('Data: ${response.data}'),
+/// );
+/// ```
 class DioApiClient extends ApiClientBase {
+  /// Creates a new [DioApiClient] instance with the provided Dio client.
+  ///
+  /// [_dio] The configured Dio instance to use for making HTTP requests.
+  /// This should be properly configured with base URL, interceptors, and
+  /// any other necessary settings before being passed to this constructor.
   DioApiClient(this._dio);
 
   final Dio _dio;

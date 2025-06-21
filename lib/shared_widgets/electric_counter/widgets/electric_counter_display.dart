@@ -1,10 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/shared_widgets/digital_font/digital_number.dart';
 
+/// Widget for displaying the digital counter screen in Islamic dhikr counting.
+///
+/// This widget provides a realistic digital display interface for Islamic
+/// dhikr (remembrance of Allah) counting, mimicking traditional electronic
+/// counters used in mosques and by Muslims worldwide. It features:
+/// - **Digital number display** with authentic electronic counter styling
+/// - **Layered visual effect** with background digits for realistic appearance
+/// - **Responsive sizing** adapting to different screen dimensions
+/// - **Islamic green color scheme** reflecting traditional Islamic aesthetics
+/// - **High contrast display** for clear visibility during dhikr practice
+///
+/// The display supports Muslims in their spiritual practice by providing
+/// a familiar, traditional-looking counter interface for tracking Islamic
+/// remembrances, supplications, and dhikr repetitions.
 class ElectricCounterDisplay extends StatelessWidget {
+  /// The current count value to display on the digital screen.
   final int currentCount;
+
+  /// The width dimension for responsive display sizing.
   final double width;
+
+  /// The height dimension for responsive display sizing.
   final double hight;
+
+  /// Creates an [ElectricCounterDisplay] widget for Islamic dhikr counting.
+  ///
+  /// Parameters:
+  /// - [currentCount]: The current dhikr count to display
+  /// - [width]: Width dimension for responsive sizing
+  /// - [hight]: Height dimension for responsive sizing
   const ElectricCounterDisplay({
     super.key,
     required this.currentCount,

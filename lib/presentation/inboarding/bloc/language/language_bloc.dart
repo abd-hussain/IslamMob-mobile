@@ -7,11 +7,29 @@ import 'package:islam_app/domain/model/language.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 import 'package:islam_app/my_app/islam_mob_app/islam_mob_app.dart';
 
+part 'language_bloc.freezed.dart';
 part 'language_event.dart';
 part 'language_state.dart';
-part 'language_bloc.freezed.dart';
 
+/// BLoC for managing language selection during Islamic app onboarding.
+///
+/// This BLoC handles the business logic for language selection and
+/// configuration during the onboarding process, ensuring the Islamic
+/// application displays content in the user's preferred language. It manages:
+/// - **Language selection** from available supported languages
+/// - **Language application** with immediate app interface updates
+/// - **Persistent storage** of language preferences for future sessions
+/// - **App rebuilding** to apply language changes throughout the interface
+///
+/// Language selection is crucial for Islamic apps as they serve a global
+/// Muslim community speaking various languages. This BLoC ensures Muslims
+/// can access Islamic content, prayer times, and spiritual guidance in
+/// their preferred language for better understanding and engagement.
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
+  /// Creates a [LanguageBloc] with initial state and event handlers.
+  ///
+  /// Initializes the BLoC with empty language state and sets up event
+  /// handlers for language selection and application during onboarding.
   LanguageBloc() : super(const LanguageState()) {
     on<_ChangeSelectedLanguage>(_changeSelectedLanguage);
     on<_SetupLanguage>(_setupLanguage);

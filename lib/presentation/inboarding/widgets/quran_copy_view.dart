@@ -12,9 +12,24 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 
+/// A widget that displays the Quran copy selection screen during onboarding.
+///
+/// This widget allows users to browse, download, and select different Quran
+/// print copies (mushaf) during the app's initial setup. It handles internet
+/// connectivity, displays available prints, manages downloads with progress
+/// tracking, and provides a skip option for users who want to proceed without
+/// selecting a copy.
 class QuranCopyView extends StatelessWidget {
+  /// Callback function called when the user completes copy selection or skips.
+  ///
+  /// This function is invoked either when the user selects and sets up a
+  /// Quran copy, or when they choose to skip this step during onboarding.
   final Function() doneSelection;
 
+  /// Creates a [QuranCopyView] widget.
+  ///
+  /// The [doneSelection] callback is required and will be called when
+  /// the user either completes the Quran copy setup or skips this step.
   const QuranCopyView({super.key, required this.doneSelection});
 
   @override

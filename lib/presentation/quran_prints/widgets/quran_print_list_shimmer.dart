@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
+/// A shimmer loading widget for the Quran prints list.
+///
+/// This widget displays a shimmer effect while the list of available
+/// Quran print editions is being loaded from the server. It shows
+/// placeholder items that mimic the structure of actual print tiles
+/// including title, description, and action button areas.
 class QuranListPrintsShimmer extends StatelessWidget {
+  /// Creates a [QuranListPrintsShimmer] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const QuranListPrintsShimmer({super.key});
 
   @override

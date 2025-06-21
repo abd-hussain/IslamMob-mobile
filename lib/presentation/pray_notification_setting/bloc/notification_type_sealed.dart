@@ -1,6 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'notification_type_sealed.freezed.dart';
 
+/// Represents different types of prayer notification states.
+///
+/// This sealed class defines various notification types for Islamic prayers
+/// and related reminders, including individual prayer times, bulk notifications,
+/// and special occasions like Friday prayers and night prayers.
 @freezed
 sealed class PrayNotificationTypeState with _$PrayNotificationTypeState {
   const factory PrayNotificationTypeState.allNotificationForToday() =

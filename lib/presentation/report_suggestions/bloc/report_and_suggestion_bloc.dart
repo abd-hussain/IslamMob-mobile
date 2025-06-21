@@ -14,10 +14,36 @@ part 'report_and_suggestion_bloc.freezed.dart';
 part 'report_and_suggestion_event.dart';
 part 'report_and_suggestion_state.dart';
 
+/// A BLoC that manages the state and logic for report and suggestion functionality.
+///
+/// This BLoC handles:
+/// - Text input validation for report content
+/// - Image attachment management (up to 3 attachments)
+/// - Internet connectivity status monitoring
+/// - Form submission state management
+/// - Image picking from camera or gallery
+/// - Report/suggestion submission to backend
+///
+/// The BLoC automatically validates form fields and manages the submit button
+/// state based on content availability and internet connectivity.
 class ReportAndSuggestionBloc
     extends Bloc<ReportAndSuggestionEvent, ReportAndSuggestionState> {
+  /// Text controller for managing the report/suggestion content input.
+  ///
+  /// This controller is automatically configured with validation listeners
+  /// to enable/disable the submit button based on text content.
   TextEditingController textController = TextEditingController();
 
+  /// Creates a new [ReportAndSuggestionBloc] instance.
+  ///
+  /// Automatically sets up event handlers for:
+  /// - Submit button state management
+  /// - Loading status updates
+  /// - Attachment management (3 slots)
+  /// - Internet connectivity monitoring
+  ///
+  /// Also initializes the BLoC by checking internet connectivity and
+  /// setting up text field validation listeners.
   ReportAndSuggestionBloc() : super(const ReportAndSuggestionState()) {
     on<_UpdateEnableSubmitBtn>(_updateEnableSubmitBtn);
     on<_UpdateLoadingStatus>(_updateLoadingStatus);
@@ -29,6 +55,14 @@ class ReportAndSuggestionBloc
     initial();
   }
 
+  /// Initializes the BLoC by setting up internet connectivity and validation.
+  ///
+  /// This method:
+  /// 1. Checks the current internet connection status
+  /// 2. Sets up text field validation listeners
+  /// 3. Configures automatic form validation
+  ///
+  /// Called automatically during BLoC construction.
   void initial() {
     _checkInternetConnectionStatus().then((value) {
       textController.addListener(_validationFields);
@@ -49,11 +83,45 @@ class ReportAndSuggestionBloc
     }
   }
 
+  /// Picks an image from the specified source (camera or gallery).
+  ///
+  /// This method uses the device's image picker to allow users to select
+  /// or capture images for attachment to their reports or suggestions.
+  ///
+  /// Parameters:
+  /// - [source]: The image source (ImageSource.camera or ImageSource.gallery)
+  ///
+  /// Returns a [Future<File?>] containing the selected image file, or null
+  /// if the user cancels the selection or an error occurs.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final imageFile = await bloc.pickImage(ImageSource.gallery);
+  /// if (imageFile != null) {
+  ///   // Handle the selected image
+  /// }
+  /// ```
   Future<File?> pickImage(ImageSource source) async {
     final image = await ImagePicker().pickImage(source: source);
     return image != null ? File(image.path) : null;
   }
 
+  /// Submits a report or suggestion with the provided attachments.
+  ///
+  /// This method creates a [ReportRequest] model with the current text content
+  /// and up to three image attachments, then submits it to the backend using
+  /// the [ReportUseCase].
+  ///
+  /// Parameters:
+  /// - [attach1]: Optional first image attachment
+  /// - [attach2]: Optional second image attachment
+  /// - [attach3]: Optional third image attachment
+  ///
+  /// Returns a [Future<void>] that completes when the submission is finished.
+  /// The method automatically includes the text content from [textController].
+  ///
+  /// The submission process is handled by the injected [ReportUseCase] which
+  /// manages the network request and backend communication.
   Future<void> callRequest(
       {required File? attach1,
       required File? attach2,
@@ -69,7 +137,7 @@ class ReportAndSuggestionBloc
   }
 
   FutureOr<void> _updateEnableSubmitBtn(
-      event, Emitter<ReportAndSuggestionState> emit) {
+      _UpdateEnableSubmitBtn event, Emitter<ReportAndSuggestionState> emit) {
     emit(state.copyWith(enableSubmitBtn: event.status));
   }
 

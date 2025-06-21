@@ -8,9 +8,40 @@ import 'package:islam_app/presentation/change_language/widgets/list_of_languages
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 
+/// Screen for changing the application language.
+///
+/// This screen allows users to select their preferred language for the
+/// Islam Mob application interface. It supports multiple languages to
+/// serve the global Muslim community, including:
+/// - **Arabic**: The language of the Quran and Islamic texts
+/// - **English**: International language for broader accessibility
+/// - **Other languages**: Additional languages for regional Muslim communities
+///
+/// The language selection affects:
+/// - User interface text and navigation
+/// - Prayer time displays and Islamic content
+/// - Quran translations and Islamic terminology
+/// - Help text and instructional content
+///
+/// This ensures the app is accessible to Muslims worldwide, regardless
+/// of their primary language, while maintaining Islamic authenticity.
 class ChangeLanguageScreen extends StatelessWidget {
+  /// Creates a [ChangeLanguageScreen] widget.
+  ///
+  /// This screen provides language selection functionality with a list
+  /// of available languages and confirmation button for applying changes.
   const ChangeLanguageScreen({super.key});
 
+  /// Builds the language selection screen.
+  ///
+  /// This method constructs the language selection interface with:
+  /// - List of available languages with selection indicators
+  /// - Confirmation button that appears when a language is selected
+  /// - Immediate app rebuild and navigation after language change
+  /// - Analytics tracking for language selection events
+  ///
+  /// The screen uses BLoC pattern for state management and provides
+  /// a smooth user experience for language switching.
   @override
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(

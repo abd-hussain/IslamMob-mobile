@@ -5,9 +5,19 @@ import 'package:islam_app/domain/model/language.dart';
 import 'package:islam_app/presentation/inboarding/bloc/language/language_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A tile widget that displays a language option with its flag and name.
+///
+/// This widget shows a selectable language option with a country flag,
+/// language name, and a checkbox indicator. When tapped, it updates
+/// the selected language in the LanguageBloc.
 class LanguageTile extends StatelessWidget {
+  /// Creates a [LanguageTile] widget.
+  ///
+  /// The [language] parameter is required and contains the language
+  /// information to display in this tile.
   const LanguageTile({super.key, required this.language});
 
+  /// The language model containing the language information to display.
   final LanguageModel language;
 
   @override

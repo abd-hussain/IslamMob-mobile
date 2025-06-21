@@ -12,8 +12,27 @@ part 'hisn_al_muslim_details_bloc.freezed.dart';
 part 'hisn_al_muslim_details_event.dart';
 part 'hisn_al_muslim_details_state.dart';
 
+/// BLoC for managing Hisn Al-Muslim supplication details and interactions.
+///
+/// This BLoC handles the business logic for the detailed view of Islamic
+/// supplications from Hisn Al-Muslim (Fortress of the Muslim), a renowned
+/// collection of authentic Islamic prayers and remembrances. It manages:
+/// - **Supplication display** with Arabic text and translations
+/// - **Favorite management** for bookmarking important supplications
+/// - **Content sharing** via social platforms and messaging
+/// - **Language direction** for proper Arabic and RTL text display
+///
+/// Hisn Al-Muslim contains essential Islamic supplications for daily life,
+/// including prayers for morning/evening, travel, eating, sleeping, and
+/// various life situations. This BLoC ensures proper presentation and
+/// interaction with these sacred Islamic texts.
 class HisnAlMuslimDetailsBloc
     extends Bloc<HisnAlMuslimDetailsEvent, HisnAlMuslimDetailsState> {
+  /// Creates a [HisnAlMuslimDetailsBloc] with initial state and event handlers.
+  ///
+  /// Initializes the BLoC with empty supplication details state and sets up
+  /// event handlers for displaying supplications, managing favorites, and
+  /// sharing Islamic content with others.
   HisnAlMuslimDetailsBloc() : super(const HisnAlMuslimDetailsState()) {
     on<_FillInitialValue>(_fillInitialValue);
     on<_UpdateFavoriteItem>(_updateFavoriteItem);
@@ -56,7 +75,8 @@ class HisnAlMuslimDetailsBloc
 
   bool _isRtlLanguage() {
     final String languageCode = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
+        key: DatabaseFieldConstant.userLanguageCode,
+        defaultValue: "en") as String;
     return languageCode == "ar" || languageCode == "fa";
   }
 }

@@ -8,8 +8,24 @@ import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/notificati
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:lottie/lottie.dart';
 
+/// A widget that displays the notification permission setup screen during onboarding.
+///
+/// This widget handles notification permission requests and allows users to
+/// either grant notification access for prayer time reminders and other app
+/// notifications, or skip this step. It manages different states including
+/// idle, loading, permission denied, and permission granted.
 class NotificationInBoardingView extends StatelessWidget {
+  /// Callback function called when the user completes notification setup.
+  ///
+  /// This function is invoked after the user either grants notification
+  /// permission and confirms their choice, or skips the notification setup.
   final Function() doneSelection;
+
+  /// Creates a [NotificationInBoardingView] widget.
+  ///
+  /// The [doneSelection] callback is required and will be called when
+  /// the user successfully completes the notification permission setup
+  /// or chooses to skip this step.
   const NotificationInBoardingView({super.key, required this.doneSelection});
 
   @override

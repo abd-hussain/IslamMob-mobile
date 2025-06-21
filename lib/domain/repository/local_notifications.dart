@@ -5,6 +5,26 @@ import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:timezone/timezone.dart' as tz;
 
+/// Repository for managing local notifications in the Islam Mob app.
+///
+/// This class provides comprehensive notification management for Islamic
+/// prayer times, reminders, and other religious observances. It handles:
+/// - **Prayer time notifications** with customizable sounds (Adhan)
+/// - **Countdown notifications** showing time until next prayer
+/// - **Islamic reminders** for special occasions and practices
+/// - **Platform-specific implementations** for Android and iOS
+/// - **Permission management** for notification access
+///
+/// The repository supports various Islamic notification types including:
+/// - Five daily prayer notifications (Fajr, Zuhr, Asr, Maghrib, Isha)
+/// - Sunrise time notifications
+/// - 15-minute prayer reminders
+/// - Friday special reminders (Surah Al-Kahf, Dua time)
+/// - Midnight time notifications
+/// - App usage reminders
+///
+/// All notifications are localized and can include traditional Islamic
+/// call to prayer (Adhan) sounds or custom notification tones.
 class LocalNotificationRepository {
   static final FlutterLocalNotificationsPlugin _notificationsPlugin =
       FlutterLocalNotificationsPlugin();
@@ -60,6 +80,20 @@ class LocalNotificationRepository {
     }
   }
 
+  /// Displays a test notification immediately for preview purposes.
+  ///
+  /// This method allows users to preview notification sounds and content
+  /// before applying them to their prayer time settings. It's useful for:
+  /// - Testing different Adhan sounds
+  /// - Previewing notification content and formatting
+  /// - Verifying notification permissions and functionality
+  /// - Allowing users to make informed choices about notification settings
+  ///
+  /// Parameters:
+  /// - [type]: The type of notification to test (prayer, reminder, etc.)
+  /// - [context]: Build context for localization
+  /// - [id]: Unique identifier for this test notification
+  /// - [soundFileName]: The sound file to play with the notification
   Future<void> testNotification({
     required NotificationTypeState type,
     required BuildContext context,
@@ -159,6 +193,27 @@ class LocalNotificationRepository {
     );
   }
 
+  /// Creates a persistent countdown notification for Android devices.
+  ///
+  /// This method displays an ongoing notification that shows the countdown
+  /// to the next prayer time. It's specifically designed for Android and
+  /// provides a persistent reminder in the notification panel showing:
+  /// - Time remaining until the next prayer
+  /// - Name of the upcoming prayer
+  /// - Chronometer-style countdown display
+  /// - Action to dismiss the notification
+  ///
+  /// The countdown notification helps Muslims stay aware of prayer times
+  /// throughout their day without needing to open the app repeatedly.
+  /// It uses Android's chronometer feature for accurate time display.
+  ///
+  /// Parameters:
+  /// - [context]: Build context for localization
+  /// - [minites]: Minutes until the next prayer (for chronometer calculation)
+  /// - [nextSalahTime]: Formatted time string for the next prayer
+  /// - [type]: The type of notification for content customization
+  /// - [id]: Unique identifier for this countdown notification
+  /// - [soundFileName]: Sound file (though countdown notifications are silent)
   Future<void> countdownNotificationForAndroid({
     required BuildContext context,
     required int minites,

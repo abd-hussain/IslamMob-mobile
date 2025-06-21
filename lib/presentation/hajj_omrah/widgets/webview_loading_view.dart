@@ -2,9 +2,29 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+/// Widget displaying an animated loading indicator for webview content.
+///
+/// This widget provides visual feedback while YouTube video content loads
+/// in the Hajj/Omrah guidance interface. It features:
+/// - **Animated circular progress** with gradient colors
+/// - **Smooth rotation animation** providing engaging visual feedback
+/// - **Islamic-themed colors** matching the app's spiritual design
+/// - **Responsive sizing** adapting to different screen contexts
+///
+/// The loading view enhances user experience during video loading by
+/// providing clear visual indication that content is being prepared,
+/// maintaining engagement while spiritual content loads.
 class WebviewLoadingView extends StatefulWidget {
+  /// Creates a [WebviewLoadingView] widget.
+  ///
+  /// This widget displays an animated loading indicator for webview
+  /// content with gradient circular progress animation.
   const WebviewLoadingView({super.key});
 
+  /// Creates the state for the webview loading view.
+  ///
+  /// Returns a [_WebviewLoadingViewState] instance that manages the
+  /// animation controller and loading indicator lifecycle.
   @override
   State<WebviewLoadingView> createState() => _WebviewLoadingViewState();
 }
@@ -54,11 +74,33 @@ class _WebviewLoadingViewState extends State<WebviewLoadingView>
   }
 }
 
+/// Custom painter for creating animated gradient arc loading indicators.
+///
+/// This painter creates a circular loading animation with gradient colors
+/// that rotates smoothly to indicate loading progress. It features:
+/// - **Gradient sweep effect** with Islamic-themed colors
+/// - **Smooth rotation animation** based on progress value
+/// - **Customizable stroke width** for different visual weights
+/// - **Rounded stroke caps** for polished appearance
+///
+/// The painter is used in the webview loading interface to provide
+/// engaging visual feedback while spiritual content loads.
 class GradientArcPainter extends CustomPainter {
+  /// The current animation progress value (0.0 to 1.0).
   final double progress;
+
+  /// The width of the arc stroke in logical pixels.
   final double strokeWidth;
+
+  /// The build context for accessing theme and styling information.
   final BuildContext context;
 
+  /// Creates a [GradientArcPainter] with animation and styling parameters.
+  ///
+  /// Parameters:
+  /// - [context]: Build context for theme access
+  /// - [progress]: Animation progress (0.0 to 1.0)
+  /// - [strokeWidth]: Width of the arc stroke
   const GradientArcPainter({
     required this.context,
     required this.progress,

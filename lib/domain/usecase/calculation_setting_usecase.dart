@@ -11,7 +11,52 @@ import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_sealed.dart';
 
+/// Use case for managing Islamic prayer calculation settings and configurations.
+///
+/// This class provides comprehensive functionality for configuring all aspects
+/// of Islamic prayer time calculations, including:
+/// - **Time zone management** for accurate local prayer times
+/// - **Madhab selection** for Asr prayer calculation differences
+/// - **Calculation method selection** from various Islamic authorities
+/// - **High latitude adjustments** for extreme geographical locations
+/// - **Prayer time corrections** for local variations and preferences
+/// - **Salah configuration** for individual prayer settings
+///
+/// The use case supports the complex requirements of Islamic prayer time
+/// calculations, which must account for geographical location, Islamic
+/// jurisprudence differences, regional calculation methods, and user
+/// preferences while maintaining religious accuracy.
+///
+/// This is essential for providing Muslims worldwide with accurate prayer
+/// times that align with their local Islamic authorities and personal
+/// religious practices.
 class CalculationSettingUsecase {
+  /// Generates a comprehensive list of time zone options for prayer time calculations.
+  ///
+  /// This method creates a complete list of time zones from UTC-12 to UTC+14,
+  /// including half-hour and quarter-hour offsets used in various regions.
+  /// Each time zone option includes:
+  /// - Human-readable UTC offset display
+  /// - Precise Duration object for calculations
+  /// - Selection state based on current user setting
+  ///
+  /// Time zones are crucial for Islamic prayer times as even small errors
+  /// can result in incorrect prayer times, potentially affecting the
+  /// validity of prayers in Islamic practice.
+  ///
+  /// Parameters:
+  /// - [localizations]: Localization object for potential future localization
+  /// - [currentState]: The currently selected time zone offset
+  ///
+  /// Returns a list of [TimeZoneSetting] objects covering all major time zones
+  /// worldwide, with the current selection properly marked.
+  ///
+  /// Example:
+  /// ```dart
+  /// final currentOffset = Duration(hours: 3); // UTC+3
+  /// final timeZones = CalculationSettingUsecase.getTimeZonesList(localizations, currentOffset);
+  /// // Returns list with UTC+3 marked as selected
+  /// ```
   static List<TimeZoneSetting> getTimeZonesList(
       IslamMobLocalizations localizations, Duration currentState) {
     return [
@@ -208,6 +253,24 @@ class CalculationSettingUsecase {
     ];
   }
 
+  /// Generates a list of Islamic Madhab (school of jurisprudence) options.
+  ///
+  /// This method creates a list of the major Islamic schools of jurisprudence
+  /// that affect prayer time calculations, specifically for the Asr prayer:
+  /// - **Shafi'i**: Earlier Asr time (shadow = object length + original shadow)
+  /// - **Hanafi**: Later Asr time (shadow = 2 × object length + original shadow)
+  ///
+  /// The Madhab selection is crucial for accurate prayer times as different
+  /// schools have varying interpretations of when the Asr prayer time begins
+  /// based on shadow length calculations. This affects daily prayer schedules
+  /// for practicing Muslims who follow specific jurisprudential traditions.
+  ///
+  /// Parameters:
+  /// - [localizations]: Localization object for Madhab names
+  /// - [currentState]: The currently selected Madhab
+  ///
+  /// Returns a list of [MadhabSetting] objects with localized names and
+  /// proper selection state marking.
   static List<MadhabSetting> getMadhabList(
       IslamMobLocalizations localizations, MadhabState currentState) {
     return [
@@ -224,6 +287,32 @@ class CalculationSettingUsecase {
     ];
   }
 
+  /// Generates a comprehensive list of Islamic prayer calculation methods.
+  ///
+  /// This method creates a complete list of calculation methods used by various
+  /// Islamic authorities and organizations worldwide. Each method has different
+  /// parameters for calculating prayer times, including:
+  /// - **Fajr and Isha angles** (degrees below horizon)
+  /// - **Maghrib calculation** (sunset + minutes or angle)
+  /// - **Regional adjustments** for local Islamic authorities
+  ///
+  /// The available methods include calculations from:
+  /// - Jafari (Shia) method
+  /// - University of Islamic Sciences, Karachi
+  /// - Islamic Society of North America (ISNA)
+  /// - Muslim World League
+  /// - Umm Al-Qura University, Makkah
+  /// - Egyptian General Authority of Survey
+  /// - Institute of Geophysics, University of Tehran
+  /// - Gulf Region calculations
+  /// - Various national Islamic authorities (Kuwait, Qatar, Singapore, etc.)
+  ///
+  /// Parameters:
+  /// - [localizations]: Localization object for method names
+  /// - [currentState]: The currently selected calculation method
+  ///
+  /// Returns a list of [CalculationMethodSetting] objects with localized names
+  /// and proper selection state marking.
   static List<CalculationMethodSetting> getCalculationMethodsList(
     IslamMobLocalizations localizations,
     PrayCalculationMethodState currentState,
@@ -349,6 +438,26 @@ class CalculationSettingUsecase {
     ];
   }
 
+  /// Generates a list of high latitude calculation adjustment methods.
+  ///
+  /// This method creates options for handling prayer time calculations in
+  /// extreme latitudes where normal astronomical calculations may not work
+  /// properly during certain times of the year. The methods include:
+  /// - **None**: No special adjustments (standard calculation)
+  /// - **Angle-based method**: Uses angle-based approximations
+  /// - **Midnight**: Splits night between Maghrib and Fajr
+  /// - **One-seventh**: Divides night into seven parts
+  ///
+  /// High latitude adjustments are essential for Muslims living in northern
+  /// or southern regions where the sun may not reach the required angles
+  /// for Fajr and Isha calculations during certain seasons.
+  ///
+  /// Parameters:
+  /// - [localizations]: Localization object for method names
+  /// - [currentState]: The currently selected high latitude method
+  ///
+  /// Returns a list of [HighLatitudeSetting] objects with localized names
+  /// and proper selection state marking.
   static List<HighLatitudeSetting> getHightLatitudeCaluclationList(
     IslamMobLocalizations localizations,
     PrayHightLatitudeCaluclationState currentState,
@@ -381,6 +490,26 @@ class CalculationSettingUsecase {
     ];
   }
 
+  /// Generates configuration settings for all prayer times.
+  ///
+  /// This method creates a list of configuration objects for each prayer time,
+  /// mapping prayer types to their corresponding state selectors. This enables
+  /// the app to handle each prayer time individually for:
+  /// - Time corrections and adjustments
+  /// - Notification scheduling
+  /// - Display formatting
+  /// - User preference management
+  ///
+  /// The configuration includes all five daily prayers plus sunrise:
+  /// - Fajr (Dawn prayer)
+  /// - Sunrise (end of Fajr time)
+  /// - Dhuhr (Noon prayer)
+  /// - Asr (Afternoon prayer)
+  /// - Maghrib (Sunset prayer)
+  /// - Isha (Night prayer)
+  ///
+  /// Returns a list of [SalahConfigSetting] objects that map each prayer
+  /// type to its corresponding time selector function.
   static List<SalahConfigSetting> getSalahConfigSettingList() {
     return [
       SalahConfigSetting(
@@ -410,6 +539,31 @@ class CalculationSettingUsecase {
     ];
   }
 
+  /// Generates configuration data for manual prayer time corrections.
+  ///
+  /// This method creates a list of correction settings that allow users to
+  /// manually adjust prayer times by adding or subtracting minutes. This is
+  /// important for:
+  /// - **Local variations** in prayer time calculations
+  /// - **Personal preferences** based on local Islamic authority guidance
+  /// - **Seasonal adjustments** for specific geographical locations
+  /// - **Community synchronization** with local mosque times
+  ///
+  /// The correction options include all prayer times and special times:
+  /// - Fajr correction
+  /// - Sunrise correction
+  /// - Dhuhr correction
+  /// - Asr correction
+  /// - Maghrib correction
+  /// - Isha correction
+  /// - Midnight correction (for voluntary prayers)
+  /// - Last third of night correction (for Tahajjud)
+  ///
+  /// Parameters:
+  /// - [localizations]: Localization object for correction titles
+  ///
+  /// Returns a list of [CorrectionMinTimeData] objects with localized titles
+  /// and corresponding state getters and setters.
   static List<CorrectionMinTimeData> getCorrectionMinTimeDataList(
       IslamMobLocalizations localizations) {
     return [

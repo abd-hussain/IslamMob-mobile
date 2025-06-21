@@ -15,7 +15,18 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 
+/// A screen that displays available Quran print editions for download and selection.
+///
+/// This screen allows users to browse different Quran print editions (mushaf),
+/// download them to their device, and select which edition to use for reading.
+/// It handles internet connectivity checks, download progress, storage permissions,
+/// and provides a list of available Quran prints with preview images and descriptions.
+/// Users can download new prints and switch between different editions.
 class QuranPrintsScreen extends StatelessWidget {
+  /// Creates a [QuranPrintsScreen] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const QuranPrintsScreen({super.key});
 
   @override

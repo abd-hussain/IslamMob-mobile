@@ -4,7 +4,27 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A utility class for displaying a settings bottom sheet.
+///
+/// This class provides functionality to show a modal bottom sheet with
+/// quick access to various app settings including prayer calculation settings,
+/// notification settings, location change, and cancel option. The bottom sheet
+/// has a dark theme with rounded corners and provides navigation to different
+/// settings screens.
 class SettingBottomSheet {
+  /// Displays the settings bottom sheet.
+  ///
+  /// Shows a modal bottom sheet with quick settings options including:
+  /// - Prayer calculation settings
+  /// - Notification settings
+  /// - Change location settings (resets onboarding)
+  /// - Cancel option
+  ///
+  /// The bottom sheet uses root navigator and has a dark background with
+  /// rounded top corners. Each option navigates to the appropriate screen
+  /// or performs the related action.
+  ///
+  /// The [context] parameter is required for showing the bottom sheet.
   Future<void> showBottomSheet({required BuildContext context}) {
     final localize = IslamMobLocalizations.of(context);
     final navigator = Navigator.of(context, rootNavigator: true);

@@ -7,6 +7,13 @@ import 'package:flutter/material.dart';
 // import 'package:islam_app/presentation/qibla_finder/widgets/location_error_widget.dart';
 // import 'package:islam_app/presentation/qibla_finder/widgets/loading_indicator.dart';
 
+/// A map widget for visualizing the Qibla direction using Google Maps.
+///
+/// This widget is designed to show a map interface that displays the user's
+/// current location and the direction to Mecca (Qibla) for Islamic prayers.
+/// Currently, the implementation is commented out and shows placeholder text,
+/// but it's intended to include markers for Mecca and the user's location,
+/// with a line connecting them to show the Qibla direction.
 class QiblahMaps extends StatefulWidget {
   // static const meccaLatLong = LatLng(21.422487, 39.826206);
   // static final meccaMarker = Marker(
@@ -16,6 +23,10 @@ class QiblahMaps extends StatefulWidget {
   //   draggable: false,
   // );
 
+  /// Creates a [QiblahMaps] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const QiblahMaps({super.key});
 
   @override

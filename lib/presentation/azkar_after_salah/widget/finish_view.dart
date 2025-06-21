@@ -5,9 +5,36 @@ import 'package:islam_app/presentation/azkar_after_salah/bloc/azkar_after_salah_
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget displayed when all post-prayer azkar have been completed.
+///
+/// This widget provides a completion interface for the azkar after salah
+/// (post-prayer remembrances), showing congratulatory messages and options
+/// for continuing the spiritual practice. It features:
+/// - **Completion message** acknowledging the finished azkar session
+/// - **Islamic blessing** with "May Allah accept" message
+/// - **Reset functionality** to start a new azkar session
+/// - **Elegant design** with rounded corners and subtle shadows
+///
+/// The widget appears after users complete all the recommended post-prayer
+/// remembrances, providing positive reinforcement for maintaining Islamic
+/// spiritual practices and encouraging continued engagement with dhikr.
 class AzkarFinishView extends StatelessWidget {
+  /// Creates an [AzkarFinishView] widget.
+  ///
+  /// This widget displays the completion interface for post-prayer azkar
+  /// with congratulatory messages and reset functionality.
   const AzkarFinishView({super.key});
 
+  /// Builds the azkar completion view with messages and reset button.
+  ///
+  /// This method constructs a completion interface featuring:
+  /// - Congratulatory message for completing the azkar
+  /// - Islamic blessing message (May Allah accept)
+  /// - Reset button to start a new azkar session
+  /// - Elegant container design with Islamic-appropriate styling
+  ///
+  /// The interface encourages continued spiritual practice while providing
+  /// a sense of accomplishment for completing the post-prayer remembrances.
   @override
   Widget build(BuildContext context) {
     final localize = IslamMobLocalizations.of(context);

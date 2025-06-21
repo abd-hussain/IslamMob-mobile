@@ -10,8 +10,29 @@ import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.d
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/dialogs/support_us/support_dialog.dart';
 
+/// Widget for displaying the main toolbar with Islamic app shortcuts.
+///
+/// This widget provides Muslims with quick access to all major Islamic
+/// features and content through an organized grid of shortcut buttons.
+/// It features:
+/// - **Comprehensive Islamic features** including Quran, prayer times, and Hajj guidance
+/// - **Organized layout** with multiple rows of Islamic content shortcuts
+/// - **Analytics tracking** for user engagement and feature usage monitoring
+/// - **Navigation integration** with proper routing to Islamic screens
+/// - **Visual consistency** with Islamic color scheme and styling
+///
+/// The toolbar is the central navigation hub for the Islamic app, providing
+/// Muslims with immediate access to spiritual content including Quran reading,
+/// Islamic calendar, Hisn Al-Muslim supplications, Tasbeeh counter, Hajj/Omrah
+/// guidance, Istikharah prayer, and post-prayer Azkar.
 class ToolbarShortcutView extends StatelessWidget {
+  /// The current prayer time state for context-aware Azkar navigation.
   final AzkarSalahTimeState salahTime;
+
+  /// Creates a [ToolbarShortcutView] widget for Islamic app navigation.
+  ///
+  /// Parameters:
+  /// - [salahTime]: Current prayer time state for appropriate Azkar content
   const ToolbarShortcutView({super.key, required this.salahTime});
 
   @override
@@ -69,7 +90,9 @@ class ToolbarShortcutView extends StatelessWidget {
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
                           name: "ShareAppFromHomeToolBar");
-                      await ShareDialog().dialog(context: context);
+                      if (context.mounted) {
+                        await ShareDialog().dialog(context: context);
+                      }
                     },
                   ),
                 ),
@@ -80,7 +103,9 @@ class ToolbarShortcutView extends StatelessWidget {
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
                           name: "SupportUsFromHomeToolBar");
-                      await SupportUsDialog().dialog(context: context);
+                      if (context.mounted) {
+                        await SupportUsDialog().dialog(context: context);
+                      }
                     },
                   ),
                 ),

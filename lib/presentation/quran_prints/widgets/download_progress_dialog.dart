@@ -6,10 +6,37 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 
+/// A dialog widget that displays download progress for file downloads.
+///
+/// This dialog shows a progress bar, percentage indicator, and cancel button
+/// while downloading files. It automatically starts the download when created
+/// and provides callbacks for completion. The dialog includes Firebase Analytics
+/// tracking and proper cancellation handling.
 class DownloadProgressDialog extends StatefulWidget {
+  /// The URL of the file to download.
+  ///
+  /// This should be a valid HTTP/HTTPS URL pointing to the file
+  /// that needs to be downloaded.
   final String fileUrl;
+
+  /// The filename with extension for the downloaded file.
+  ///
+  /// This will be used as the local filename when saving the
+  /// downloaded file to the device storage.
   final String fileNameWithExtension;
+
+  /// Callback function called when the download completes successfully.
+  ///
+  /// This function receives the local file path as a parameter,
+  /// allowing the caller to handle the downloaded file.
   final Function(String) filePathCallback;
+
+  /// Creates a [DownloadProgressDialog] with the specified download parameters.
+  ///
+  /// All parameters are required:
+  /// - [fileUrl]: The URL of the file to download
+  /// - [fileNameWithExtension]: The local filename for the downloaded file
+  /// - [filePathCallback]: Callback to handle the downloaded file path
   const DownloadProgressDialog({
     super.key,
     required this.fileUrl,

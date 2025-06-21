@@ -1,5 +1,9 @@
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+/// Base class for managing Google Mobile Ads functionality.
+///
+/// This class provides static methods for initializing and configuring
+/// Google Mobile Ads in the application.
 class AdvertismentsBase {
   /// Initializes Google Mobile Ads
   static Future<void> initializeMobileAds() async {

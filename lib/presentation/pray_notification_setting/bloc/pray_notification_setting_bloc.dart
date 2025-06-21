@@ -15,8 +15,18 @@ part 'pray_notification_setting_bloc.freezed.dart';
 part 'pray_notification_setting_event.dart';
 part 'pray_notification_setting_state.dart';
 
+/// BLoC for managing prayer notification settings.
+///
+/// This BLoC handles the state management for prayer notification settings,
+/// including loading current settings, updating individual notification
+/// preferences, and saving changes to persistent storage. It manages
+/// notifications for all five daily prayers and special Islamic events.
 class PrayNotificationSettingBloc
     extends Bloc<PrayNotificationSettingEvent, PrayNotificationSettingState> {
+  /// Creates a [PrayNotificationSettingBloc] and initializes event handlers.
+  ///
+  /// Sets up event handlers for initializing settings, changing individual
+  /// notification preferences, and saving settings to storage.
   PrayNotificationSettingBloc() : super(const PrayNotificationSettingState()) {
     on<_InitialPrayNotificationSettings>(_onInitialize);
     on<_ChangePrayNotificationSettings>(_onChangeSetting);
@@ -107,8 +117,10 @@ class PrayNotificationSettingBloc
       LocalNotificationConstant.disableQeyamAlLayel: state.qeyamAlLayel
     });
 
-    await locator<SetupLocalNotificationWhenAppOpenUseCase>()
-        .call(context: event.context);
+    if (event.context.mounted) {
+      await locator<SetupLocalNotificationWhenAppOpenUseCase>()
+          .call(context: event.context);
+    }
 
     emit(
       state.copyWith(
@@ -117,6 +129,15 @@ class PrayNotificationSettingBloc
     );
   }
 
+  /// Gets the localized name of the notification sound for a specific prayer type.
+  ///
+  /// This method retrieves the currently selected sound for the given prayer
+  /// type from the database and returns its localized display name.
+  ///
+  /// The [localization] parameter provides access to localized strings.
+  /// The [type] parameter specifies which prayer type to get the sound name for.
+  ///
+  /// Returns the localized sound name, or "unknown" if the sound is not found.
   String getSoundName({
     required IslamMobLocalizations localization,
     required NotificationTypeState type,
@@ -164,6 +185,6 @@ class PrayNotificationSettingBloc
 
   T _getValue<T>(String key, T defaultValue) {
     return DataBaseManagerBase.getFromDatabase(
-        key: key, defaultValue: defaultValue);
+        key: key, defaultValue: defaultValue) as T;
   }
 }

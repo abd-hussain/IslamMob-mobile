@@ -2,8 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A utility class that provides bottom sheet dialogs for image attachment operations.
+///
+/// This class contains methods to display modal bottom sheets that allow users
+/// to interact with image attachments in reports and suggestions. It provides
+/// different UI states based on whether an image is already attached or not.
+///
+/// The bottom sheets support:
+/// - Adding images from gallery or camera
+/// - Removing existing images
+/// - Localized text and user-friendly interface
+/// - Consistent styling with the app theme
 class AttachmentBottomSheetsUtil {
-  Future addImageBottomSheet(
+  /// Displays a modal bottom sheet for image attachment operations.
+  ///
+  /// This method shows different UI based on the [image] parameter:
+  /// - If [image] is true: Shows options to remove the existing image
+  /// - If [image] is false: Shows options to add image from gallery or camera
+  ///
+  /// Parameters:
+  /// - [context]: The build context for showing the bottom sheet
+  /// - [image]: Whether an image is currently attached (true) or not (false)
+  /// - [title1]: Title text shown when an image exists (for removal options)
+  /// - [title2]: Title text shown when no image exists (for adding options)
+  /// - [galleryCallBack]: Callback function executed when user selects gallery
+  /// - [cameraCallBack]: Callback function executed when user selects camera
+  /// - [deleteCallBack]: Callback function executed when user removes image
+  ///
+  /// Returns a [Future<void>] that completes when the bottom sheet is dismissed.
+  ///
+  /// The bottom sheet automatically handles navigation and calls the appropriate
+  /// callback based on user selection. Gallery and camera options automatically
+  /// close the bottom sheet before executing the callback.
+  Future<void> addImageBottomSheet(
       {required BuildContext context,
       required bool? image,
       required String title1,

@@ -2,17 +2,37 @@ import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+/// Enum representing different banner ad sizes available for AdMob.
 enum AdsBannerSize {
+  /// Standard banner size (320x50).
   banner,
+
+  /// Full banner size (468x60).
   fullBanner,
+
+  /// Large banner size (320x100).
   largeBanner,
+
+  /// Leaderboard banner size (728x90).
   leaderboard,
+
+  /// Medium rectangle banner size (300x250).
   mediumRectangle,
 }
 
+/// A widget that displays an AdMob banner advertisement.
+///
+/// This widget automatically loads and displays a banner ad using Google AdMob.
+/// It supports different banner sizes and includes vertical padding customization.
+/// The banner is only displayed when the ad is successfully loaded.
 class AddMobBanner extends StatefulWidget {
+  /// The size of the banner ad to display.
   final AdsBannerSize size;
+
+  /// The vertical padding around the banner ad.
   final double verticalPadding;
+
+  /// Creates an [AddMobBanner] with the specified [size] and [verticalPadding].
   const AddMobBanner({
     super.key,
     this.size = AdsBannerSize.banner,

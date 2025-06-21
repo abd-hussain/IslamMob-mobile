@@ -14,11 +14,30 @@ part 'quran_prints_bloc.freezed.dart';
 part 'quran_prints_event.dart';
 part 'quran_prints_state.dart';
 
+/// BLoC for managing Quran prints functionality.
+///
+/// This BLoC handles the state management for Quran prints including:
+/// - Fetching available Quran prints from Firebase
+/// - Managing internet connectivity status
+/// - Tracking download progress and file availability
+/// - Language code to name conversion
+/// - Firebase initialization when needed
 class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
+  /// Use case for Quran prints operations.
+  ///
+  /// Handles fetching Quran prints data and language name conversions.
   QuranPrintsUsecase quranPrintsUsecase = locator<QuranPrintsUsecase>();
+
+  /// Use case for file download operations.
+  ///
+  /// Handles file existence checks and download functionality.
   final DownloadFileUsecase downloadFileUsecase =
       locator<DownloadFileUsecase>();
 
+  /// Creates a [QuranPrintsBloc] with initial state and event handlers.
+  ///
+  /// Sets up event handlers for all QuranPrintsEvent types and initializes
+  /// the bloc with an empty QuranPrintsState.
   QuranPrintsBloc() : super(const QuranPrintsState()) {
     on<_InitializeFetchingData>(_initializeFetchingData);
     on<_UpdatelistOfPrints>(_handleUpdateListOfPrints);
@@ -39,7 +58,7 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     final listOfPrints = await quranPrintsUsecase.getQuranPrints();
 
     if (listOfPrints.isEmpty) {
-      LoggerManagerBase.logDebugMessage(
+      LoggerManagerBase.logWarning(
           message: 'No documents found in the collection.');
       return;
     }
@@ -70,8 +89,16 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
     return downloadFileUsecase.fileExists(fileName);
   }
 
-  /// Gets the display name for a language code
-
+  /// Gets the display name for a language code.
+  ///
+  /// Converts a language code (e.g., 'en', 'ar') to its corresponding
+  /// display name (e.g., 'English', 'Arabic') for UI presentation.
+  ///
+  /// Parameters:
+  /// - [languageCode]: The language code to convert
+  ///
+  /// Returns:
+  ///   The display name of the language corresponding to the code
   String getLanguageNameByCode(String languageCode) {
     return quranPrintsUsecase.getLanguageNameByCode(languageCode);
   }

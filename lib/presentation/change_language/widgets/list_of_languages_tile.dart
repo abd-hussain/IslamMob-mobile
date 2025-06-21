@@ -6,9 +6,27 @@ import 'package:islam_app/domain/model/language.dart';
 import 'package:islam_app/presentation/change_language/bloc/change_language_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget representing a single language option in the language selection list.
+///
+/// This widget displays an individual language choice in the language selection
+/// interface, providing a comprehensive representation of each available language
+/// option. It features:
+/// - **Country flag** visual representation of the language's region
+/// - **Language name** in the native script and localized format
+/// - **Selection indicator** showing current selection state
+/// - **Interactive feedback** for language selection
+///
+/// The tile supports the global Muslim community by providing clear visual
+/// identification of language options, making it easy for users to select
+/// their preferred language for accessing Islamic content in the app.
 class ListOfLanguageTile extends StatelessWidget {
+  /// Creates a [ListOfLanguageTile] widget for a specific language option.
+  ///
+  /// This widget displays a language selection tile with flag, name, and
+  /// selection state for the language selection interface.
   const ListOfLanguageTile({super.key, required this.language});
 
+  /// The language model containing information about this language option.
   final LanguageModel language;
 
   @override
@@ -22,11 +40,13 @@ class ListOfLanguageTile extends StatelessWidget {
               parameters: {
                 "language": language.languageCode,
               });
-          context.read<ChangeLanguageBloc>().add(
-                ChangeLanguageEvent.changeSelectedCheckBoxLanguage(
-                  type: language,
-                ),
-              );
+          if (context.mounted) {
+            context.read<ChangeLanguageBloc>().add(
+                  ChangeLanguageEvent.changeSelectedCheckBoxLanguage(
+                    type: language,
+                  ),
+                );
+          }
         },
         child: Container(
           height: 50,

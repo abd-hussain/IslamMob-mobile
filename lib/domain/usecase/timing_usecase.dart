@@ -3,6 +3,26 @@ import 'package:hijri/hijri_calendar.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 
+/// Use case for managing time-related operations and formatting in the Islam Mob app.
+///
+/// This class provides comprehensive time management functionality for Islamic
+/// applications, handling both Gregorian and Hijri calendar systems. It supports:
+/// - **Time-based visual elements** for day/night UI themes
+/// - **Date formatting** for both Gregorian and Islamic calendars
+/// - **Hijri calendar operations** for Islamic date calculations
+/// - **Localized day names** supporting multiple languages
+/// - **Time format conversions** between 12-hour and 24-hour formats
+/// - **Date offset calculations** for prayer schedule planning
+///
+/// The use case is essential for Islamic applications that need to:
+/// - Display prayer times in user-preferred formats
+/// - Show Islamic dates alongside Gregorian dates
+/// - Provide culturally appropriate time representations
+/// - Support international Muslim communities with localization
+/// - Handle time-sensitive Islamic features like prayer schedules
+///
+/// This ensures accurate time representation for Islamic religious practices
+/// while maintaining user-friendly formatting and international accessibility.
 class TimingUseCase {
   /// Returns the appropriate image path based on the current time.
   String getCurrentImageForTime() {
@@ -12,7 +32,23 @@ class TimingUseCase {
         : "assets/images/days/moon.png";
   }
 
-  // /// Formats a [DateTime] object to `dd/MM/yyyy`.
+  /// Formats a Gregorian DateTime object to dd/MM/yyyy format.
+  ///
+  /// This method converts a standard DateTime object to a user-friendly
+  /// date string format commonly used in Islamic applications for displaying
+  /// prayer schedules, Islamic events, and general date information.
+  ///
+  /// Parameters:
+  /// - [date]: The DateTime object to format
+  ///
+  /// Returns a formatted date string in dd/MM/yyyy format.
+  ///
+  /// Example:
+  /// ```dart
+  /// final date = DateTime(2024, 3, 15);
+  /// final formatted = timingUseCase.formatDate(date);
+  /// // Returns: "15/03/2024"
+  /// ```
   String formatDate(DateTime date) => DateFormat('dd/MM/yyyy').format(date);
 
   /// Formats a [HijriCalendar] object to `dd/MM/yyyy`.

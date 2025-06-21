@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/model/tasbeeh.dart';
 
+/// A widget that displays Tasbeeh (dhikr) text content in a styled container.
+///
+/// This widget shows the Arabic text and description of a dhikr phrase
+/// in a beautifully styled container with shadow effects. It uses the
+/// Uthman font for proper Arabic text rendering and provides a scrollable
+/// view for longer content.
 class TasbeehTextView extends StatefulWidget {
+  /// The Tasbeeh model containing the dhikr text and description.
+  ///
+  /// This model includes the Arabic title and description that will
+  /// be displayed in the styled container.
   final TasbeehModel tasbeehItem;
+
+  /// Creates a [TasbeehTextView] with the specified Tasbeeh item.
+  ///
+  /// The [tasbeehItem] parameter is required and contains the dhikr
+  /// text and description to display.
   const TasbeehTextView({super.key, required this.tasbeehItem});
 
   @override

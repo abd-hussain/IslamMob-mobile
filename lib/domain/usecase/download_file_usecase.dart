@@ -4,6 +4,25 @@ import 'package:dio/dio.dart';
 import 'package:logger_manager/logger_manager.dart';
 import 'package:path_provider/path_provider.dart';
 
+/// Use case for downloading and managing files in the Islam Mob app.
+///
+/// This class provides comprehensive file download functionality for Islamic
+/// content including:
+/// - **Quran PDF files** for different Mushaf editions
+/// - **Audio files** for Adhan sounds and Quran recitations
+/// - **Islamic content** such as Hadith collections and prayer guides
+/// - **App resources** like additional language packs or updates
+///
+/// The use case handles:
+/// - **Progress tracking** during downloads for user feedback
+/// - **Cancellation support** for interrupted downloads
+/// - **File management** including existence checks and deletion
+/// - **Error handling** with proper logging for debugging
+/// - **Storage management** in the app's document directory
+///
+/// This is essential for the app's offline functionality, allowing users
+/// to download Islamic content for use without internet connectivity,
+/// which is particularly important for prayer times and Quran reading.
 class DownloadFileUsecase {
   final Dio _dio = Dio();
 
@@ -24,22 +43,44 @@ class DownloadFileUsecase {
         cancelToken: cancelToken,
         onReceiveProgress: progressCallback,
       );
-      LoggerManagerBase.logDebugMessage(message: 'Download Completed');
+      LoggerManagerBase.logInfo(message: 'Download Completed');
       finishCallback(filePath);
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(message: 'Download failed: $e');
+      LoggerManagerBase.logErrorMessage(error: e, message: 'Download failed');
     }
   }
 
+  /// Gets the full file path for a given filename in the app's document directory.
+  ///
+  /// This method constructs the complete file path where downloaded Islamic
+  /// content should be stored. It ensures the directory exists and creates
+  /// it if necessary. This is used for:
+  /// - Locating downloaded Quran PDF files
+  /// - Finding audio files for Adhan and recitations
+  /// - Accessing cached Islamic content
+  /// - Managing app-specific file storage
+  ///
+  /// Parameters:
+  /// - [filename]: The name of the file including its extension
+  ///
+  /// Returns the complete file path as a string where the file should be
+  /// stored or can be found in the app's document directory.
+  ///
+  /// Example:
+  /// ```dart
+  /// final usecase = DownloadFileUsecase();
+  /// final path = await usecase.getFilePath('quran_madinah.pdf');
+  /// // Returns: '/path/to/app/documents/quran_madinah.pdf'
+  /// ```
   Future<String> getFilePath(String filename) async {
     final Directory dir = await getApplicationDocumentsDirectory();
     final newDirectory = Directory('${dir.path}/');
 
     if (await newDirectory.exists()) {
-      LoggerManagerBase.logDebugMessage(message: 'Directory exists');
+      LoggerManagerBase.logInfo(message: 'Directory exists');
     } else {
       await newDirectory.create();
-      LoggerManagerBase.logDebugMessage(message: 'Directory created');
+      LoggerManagerBase.logInfo(message: 'Directory created');
     }
 
     return "${newDirectory.path}$filename";
@@ -58,9 +99,9 @@ class DownloadFileUsecase {
 
     if (await file.exists()) {
       await file.delete();
-      LoggerManagerBase.logDebugMessage(message: 'File deleted: $filePath');
+      LoggerManagerBase.logInfo(message: 'File deleted: $filePath');
     } else {
-      LoggerManagerBase.logDebugMessage(message: 'File not found: $filePath');
+      LoggerManagerBase.logInfo(message: 'File not found: $filePath');
     }
   }
 
@@ -71,10 +112,10 @@ class DownloadFileUsecase {
 
     if (!await newDirectory.exists()) {
       await newDirectory.create();
-      LoggerManagerBase.logDebugMessage(
+      LoggerManagerBase.logInfo(
           message: 'Directory created: ${newDirectory.path}');
     } else {
-      LoggerManagerBase.logDebugMessage(
+      LoggerManagerBase.logInfo(
           message: 'Directory exists: ${newDirectory.path}');
     }
 

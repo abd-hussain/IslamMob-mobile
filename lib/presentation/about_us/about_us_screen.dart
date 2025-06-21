@@ -13,9 +13,38 @@ import 'package:islam_app/presentation/settings_tab/widgets/collection_list_opti
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Screen displaying information about the Islam Mob application.
+///
+/// This screen provides comprehensive information about the Islam Mob app,
+/// including its purpose, features, and Islamic mission. It serves as:
+/// - **App introduction** explaining the Islamic features and benefits
+/// - **Mission statement** about serving the Muslim community
+/// - **Feature overview** highlighting prayer times, Quran, and Islamic tools
+/// - **Legal information** with links to privacy policy and terms
+/// - **Support options** including rewarded ads to support development
+/// - **Version information** for user reference and support
+///
+/// The screen emphasizes the app's commitment to providing authentic Islamic
+/// content and tools for Muslim users worldwide, with proper attribution
+/// and transparency about the app's development and mission.
 class AboutUsScreen extends StatelessWidget {
+  /// Creates an [AboutUsScreen] widget.
+  ///
+  /// This screen displays comprehensive information about the Islam Mob
+  /// application, its Islamic mission, features, and legal information.
   const AboutUsScreen({super.key});
 
+  /// Builds the About Us screen with comprehensive app information.
+  ///
+  /// This method constructs the complete About Us interface including:
+  /// - App logo and basic information header
+  /// - Detailed descriptions of Islamic features and mission
+  /// - Navigation options for privacy policy and terms
+  /// - Support options through rewarded advertisements
+  /// - Current app version and copyright information
+  ///
+  /// The screen uses BLoC pattern for state management, particularly for
+  /// handling rewarded ad availability and display logic.
   @override
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "AboutUsScreen");

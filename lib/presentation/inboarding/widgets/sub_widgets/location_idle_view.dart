@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
-import 'package:islam_app/domain/model/location.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
@@ -9,7 +8,24 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 import 'package:location_manager/location_manager.dart';
 
+/// A widget that displays the initial location permission request interface during onboarding.
+///
+/// This widget is shown when the app needs to request location permission from the user
+/// for prayer time calculations. It provides:
+/// - Explanatory text about why location access is needed for prayer times
+/// - A button to trigger the location permission request
+/// - Internet connectivity checking before attempting location access
+/// - Integration with LocationBloc for state management
+/// - Proper error handling for permission denial scenarios
+///
+/// The widget explains to users that location access is required for accurate
+/// prayer time calculations based on their geographical position, which is
+/// essential for Islamic prayer observance.
 class LocationIdleView extends StatelessWidget {
+  /// Creates a [LocationIdleView] widget.
+  ///
+  /// This widget is typically used during the onboarding flow when the app
+  /// needs to request location permission for prayer time calculations.
   const LocationIdleView({super.key});
 
   @override
@@ -69,14 +85,16 @@ class LocationIdleView extends StatelessWidget {
               );
             } else {
               final location = LocationModel(
-                countryCode: locationDetails['isoCountryCode'] ?? "",
-                country: locationDetails['country'] ?? "",
-                city: locationDetails['city'] ?? "",
-                subCity: locationDetails['subCity'] ?? "",
-                street: locationDetails['street'] ?? "",
-                latitude: locationDetails['latitude'] ?? "",
-                longitude: locationDetails['longitude'] ?? "",
-                thoroughfare: locationDetails['thoroughfare'] ?? "",
+                countryCode:
+                    (locationDetails['isoCountryCode'] as String?) ?? "",
+                country: (locationDetails['country'] as String?) ?? "",
+                city: (locationDetails['city'] as String?) ?? "",
+                subCity: (locationDetails['subCity'] as String?) ?? "",
+                street: (locationDetails['street'] as String?) ?? "",
+                latitude: (locationDetails['latitude'] as double?) ?? 0.0,
+                longitude: (locationDetails['longitude'] as double?) ?? 0.0,
+                thoroughfare:
+                    (locationDetails['thoroughfare'] as String?) ?? "",
               );
               locationBloc.add(
                 LocationEvent.setCountryAndCityNames(location: location),

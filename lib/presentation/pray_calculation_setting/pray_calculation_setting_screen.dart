@@ -16,7 +16,18 @@ import 'package:islam_app/presentation/pray_calculation_setting/widgets/time_zoo
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 
+/// A screen that provides comprehensive prayer calculation settings.
+///
+/// This screen allows users to configure various aspects of prayer time
+/// calculations including calculation methods, madhab selection, timezone
+/// settings, manual time adjustments, and high latitude calculations.
+/// It uses a swiper interface to navigate between different setting categories
+/// and provides save and factory reset functionality.
 class PrayCalculationSettingScreen extends StatelessWidget {
+  /// Creates a [PrayCalculationSettingScreen] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const PrayCalculationSettingScreen({super.key});
 
   @override

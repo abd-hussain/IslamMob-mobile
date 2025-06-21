@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 
+/// Widget for displaying text-based Hisn Al-Muslim supplications.
+///
+/// This widget provides a clean, readable interface for Islamic supplications
+/// that are displayed as text without counter functionality. It features:
+/// - **Scrollable text display** for longer supplications and descriptions
+/// - **Arabic typography** using the Uthman font for authentic Islamic text
+/// - **Reference information** showing sources and Islamic authenticity
+/// - **Organized layout** with clear separation between content and references
+///
+/// The widget supports Muslims in reading and studying Islamic supplications
+/// from Hisn Al-Muslim, providing proper typography and layout for Arabic
+/// text and ensuring authentic presentation of Islamic prayers and remembrances.
 class HisnAlMuslimTextView extends StatelessWidget {
+  /// List of supplication text content to display.
   final List<String> list;
+
+  /// List of reference information for the supplications.
   final List<String> referance;
+
+  /// Creates a [HisnAlMuslimTextView] widget for text-based supplications.
+  ///
+  /// Parameters:
+  /// - [list]: The main supplication text content
+  /// - [referance]: Reference information and sources for the supplications
   const HisnAlMuslimTextView({
     super.key,
     required this.list,

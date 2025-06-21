@@ -6,11 +6,33 @@ import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget for displaying day information in the Islamic prayer timing interface.
+///
+/// This widget shows comprehensive date information for a specific day in
+/// the prayer timing view, displaying both Gregorian and Islamic calendar
+/// dates. It features:
+/// - **Gregorian date** with standard calendar formatting
+/// - **Hijri date** with Islamic calendar representation
+/// - **Day identification** showing relative day names (Today, Tomorrow, etc.)
+/// - **Language-aware arrows** adapting to RTL/LTR text direction
+/// - **Visual separators** for clear information organization
+///
+/// The day box is essential for Islamic practice as it helps Muslims
+/// understand the correspondence between Gregorian and Islamic dates,
+/// ensuring proper awareness of Islamic calendar events and prayer timing
+/// context within the Islamic lunar calendar system.
 class DayBox extends StatelessWidget {
+  /// The index representing the day offset from the current day.
   final int index;
 
+  /// Creates a [DayBox] widget for displaying day information.
+  ///
+  /// Parameters:
+  /// - [index]: Day offset index where 3 represents today, values less than 3
+  ///   represent past days, and values greater than 3 represent future days.
   DayBox({super.key, required this.index});
 
+  /// Timing use case instance for date calculations and formatting.
   final TimingUseCase timingUsecase = locator<TimingUseCase>();
 
   @override
@@ -121,6 +143,7 @@ class DayBox extends StatelessWidget {
   /// Retrieves the current language code from the Hive box.
   String _currentLanguageCode() {
     return DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
+        key: DatabaseFieldConstant.userLanguageCode,
+        defaultValue: "en") as String;
   }
 }

@@ -10,7 +10,17 @@ import 'package:islam_app/presentation/quran_pages_index/widgets/quran_parts_vie
 import 'package:islam_app/presentation/quran_pages_index/widgets/quran_sowar_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A screen that displays the Quran pages index with multiple navigation options.
+///
+/// This screen provides a tabbed interface allowing users to navigate through
+/// the Quran by surahs (chapters), parts (juz), pages, or bookmarked pages.
+/// It includes search functionality and returns selected navigation data
+/// to the calling screen.
 class QuranPagesIndexScreen extends StatelessWidget {
+  /// Creates a [QuranPagesIndexScreen].
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const QuranPagesIndexScreen({super.key});
 
   @override
@@ -18,13 +28,13 @@ class QuranPagesIndexScreen extends StatelessWidget {
     final Map<String, dynamic> arguments =
         ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
     final String currentSowrahName =
-        arguments[ArgumentConstant.currentSowrahName] ?? "";
+        (arguments[ArgumentConstant.currentSowrahName] as String?) ?? "";
     final String currentPartName =
-        arguments[ArgumentConstant.currentPartName] ?? "";
+        (arguments[ArgumentConstant.currentPartName] as String?) ?? "";
     final int currentPageNumber =
-        arguments[ArgumentConstant.currentPageNumber] ?? 0;
+        (arguments[ArgumentConstant.currentPageNumber] as int?) ?? 0;
     final int initialTabIndexSelected =
-        arguments[ArgumentConstant.initialTabIndexSelected] ?? 0;
+        (arguments[ArgumentConstant.initialTabIndexSelected] as int?) ?? 0;
 
     FirebaseAnalyticsRepository.logEvent(name: "QuranPagesIndexScreen");
 

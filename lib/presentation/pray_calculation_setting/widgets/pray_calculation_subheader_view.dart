@@ -5,7 +5,17 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A subheader widget that displays additional prayer time information.
+///
+/// This widget shows supplementary prayer times including midnight, last third
+/// of the night, device time, and application time. It displays these times
+/// in a grid layout with two rows of time cards, providing users with
+/// additional time references for prayer calculations and scheduling.
 class PrayCalculationSubHeaderView extends StatelessWidget {
+  /// Creates a [PrayCalculationSubHeaderView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const PrayCalculationSubHeaderView({super.key});
 
   @override

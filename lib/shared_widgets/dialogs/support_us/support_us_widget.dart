@@ -6,7 +6,16 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/dialogs/support_us/bloc/support_us_dialog_bloc.dart';
 
+/// A dialog widget that encourages users to support the app.
+///
+/// This widget displays a support dialog with donation information and
+/// an option to watch rewarded ads to support the app. It includes
+/// localized text, images, and interactive buttons for user engagement.
 class SupportUsDialogWidget extends StatelessWidget {
+  /// Creates a [SupportUsDialogWidget].
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const SupportUsDialogWidget({super.key});
 
   @override

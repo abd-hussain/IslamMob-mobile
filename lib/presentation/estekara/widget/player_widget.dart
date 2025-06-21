@@ -3,21 +3,45 @@ import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
+/// Widget for controlling audio playback of Istikhara prayer recitation.
+///
+/// This widget provides comprehensive audio controls for the Istikhara
+/// (Islamic guidance prayer) audio recitation, allowing Muslims to listen
+/// to the proper pronunciation and recitation of this important Islamic
+/// prayer. It features:
+/// - **Play/pause controls** for audio playback management
+/// - **Progress slider** for seeking to specific positions
+/// - **Time display** showing current position and total duration
+/// - **Stop functionality** for ending playback
+///
+/// The widget supports the Islamic practice of learning proper prayer
+/// recitation by providing clear audio controls for the Istikhara prayer,
+/// helping Muslims learn the correct pronunciation and timing for this
+/// important spiritual practice.
 class PlayerWidget extends StatefulWidget {
+  /// The audio player instance for controlling Istikhara prayer audio.
   final AudioPlayer player;
 
+  /// Creates a [PlayerWidget] for Istikhara prayer audio control.
+  ///
+  /// Parameters:
+  /// - [player]: The audio player instance configured with Istikhara audio
   const PlayerWidget({required this.player, super.key});
 
+  /// Creates the state for the audio player widget.
+  ///
+  /// Returns a [_PlayerWidgetState] instance that manages audio playback
+  /// controls and state for the Istikhara prayer recitation.
   @override
   State<PlayerWidget> createState() => _PlayerWidgetState();
 }
 
 class _PlayerWidgetState extends State<PlayerWidget> {
   late final AudioPlayer _player;
-  late StreamSubscription _durationSub;
-  late StreamSubscription _positionSub;
-  late StreamSubscription _completeSub;
-  late StreamSubscription _stateSub;
+  late StreamSubscription<Duration> _durationSub;
+  late StreamSubscription<Duration> _positionSub;
+  late StreamSubscription<void> _completeSub;
+  late StreamSubscription<PlayerState> _stateSub;
 
   Duration _duration = Duration.zero;
   Duration _position = Duration.zero;

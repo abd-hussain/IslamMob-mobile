@@ -13,7 +13,20 @@ part 'tasbeeh_bloc.freezed.dart';
 part 'tasbeeh_event.dart';
 part 'tasbeeh_state.dart';
 
+/// BLoC for managing Tasbeeh (Islamic prayer beads) functionality.
+///
+/// This BLoC handles the state management for the Tasbeeh feature including:
+/// - Loading and managing the list of available dhikr (remembrance) phrases
+/// - Tracking counters for each dhikr phrase
+/// - Managing sound and vibration settings
+/// - Navigating between different dhikr phrases
+/// - Persisting counter data to local storage
+/// - Providing audio and haptic feedback
 class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
+  /// Creates a [TasbeehBloc] with initial state and event handlers.
+  ///
+  /// Sets up event handlers for all TasbeehEvent types and initializes
+  /// the bloc with an empty TasbeehState.
   TasbeehBloc() : super(const TasbeehState()) {
     on<_FillInitialValue>(_fillInitialValue);
     on<_SoundSetting>(_soundSetting);

@@ -5,7 +5,19 @@ import 'package:islam_app/presentation/quran_kareem_tab/widgets/main_view.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/no_pdf_view.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/help_tool_tips.dart';
 
+/// A screen widget that displays the Quran Kareem (Holy Quran) interface.
+///
+/// This screen provides a complete Quran reading experience with features like:
+/// - PDF viewing of Quran pages
+/// - Help tooltips and guidance
+/// - Screen brightness control
+/// - Page navigation and bookmarking
+///
+/// The screen uses BLoC pattern for state management and conditionally displays
+/// either the main Quran view or a no-PDF placeholder based on the availability
+/// of the PDF source file.
 class QuranKareemScreen extends StatefulWidget {
+  /// Creates a [QuranKareemScreen].
   const QuranKareemScreen({super.key});
 
   @override

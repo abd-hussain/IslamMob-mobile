@@ -7,7 +7,18 @@ import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calcul
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/sub_widgets/time_correction_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that allows users to manually adjust prayer times in minutes.
+///
+/// This view provides an interface for fine-tuning prayer times by adding
+/// or subtracting minutes from the calculated prayer times. It displays
+/// a list of time correction controls for each prayer time (Fajr, Dhuhr,
+/// Asr, Maghrib, Isha, etc.), allowing users to customize prayer times
+/// based on local conditions or personal preferences.
 class EditPrayTimeMinutesView extends StatelessWidget {
+  /// Creates an [EditPrayTimeMinutesView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const EditPrayTimeMinutesView({super.key});
 
   @override

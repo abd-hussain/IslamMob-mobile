@@ -92,8 +92,6 @@ abstract class _$$SetCountryAndCityNamesImplCopyWith<$Res> {
       __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LocationModel location});
-
-  $LocationModelCopyWith<$Res> get location;
 }
 
 /// @nodoc
@@ -110,24 +108,14 @@ class __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? location = null,
+    Object? location = freezed,
   }) {
     return _then(_$SetCountryAndCityNamesImpl(
-      location: null == location
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as LocationModel,
     ));
-  }
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $LocationModelCopyWith<$Res> get location {
-    return $LocationModelCopyWith<$Res>(_value.location, (value) {
-      return _then(_value.copyWith(location: value));
-    });
   }
 }
 
@@ -149,12 +137,12 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SetCountryAndCityNamesImpl &&
-            (identical(other.location, location) ||
-                other.location == location));
+            const DeepCollectionEquality().equals(other.location, location));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, location);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(location));
 
   /// Create a copy of LocationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -543,7 +531,6 @@ abstract class $LocationStateCopyWith<$Res> {
   @useResult
   $Res call({LocationModel? location, LocationProcessState status});
 
-  $LocationModelCopyWith<$Res>? get location;
   $LocationProcessStateCopyWith<$Res> get status;
 }
 
@@ -581,20 +568,6 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $LocationModelCopyWith<$Res>? get location {
-    if (_value.location == null) {
-      return null;
-    }
-
-    return $LocationModelCopyWith<$Res>(_value.location!, (value) {
-      return _then(_value.copyWith(location: value) as $Val);
-    });
-  }
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $LocationProcessStateCopyWith<$Res> get status {
     return $LocationProcessStateCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value) as $Val);
@@ -612,8 +585,6 @@ abstract class _$$LocationStateImplCopyWith<$Res>
   @useResult
   $Res call({LocationModel? location, LocationProcessState status});
 
-  @override
-  $LocationModelCopyWith<$Res>? get location;
   @override
   $LocationProcessStateCopyWith<$Res> get status;
 }
@@ -669,13 +640,13 @@ class _$LocationStateImpl implements _LocationState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LocationStateImpl &&
-            (identical(other.location, location) ||
-                other.location == location) &&
+            const DeepCollectionEquality().equals(other.location, location) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, location, status);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(location), status);
 
   /// Create a copy of LocationState
   /// with the given fields replaced by the non-null parameter values.

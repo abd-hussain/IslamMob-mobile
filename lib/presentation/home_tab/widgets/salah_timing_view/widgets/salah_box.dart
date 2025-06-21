@@ -4,11 +4,36 @@ import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/domain/usecase/salah_box_usecase.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget for displaying individual Islamic prayer (Salah) information boxes.
+///
+/// This widget represents a single prayer time in the prayer timing interface,
+/// showing essential information for each of the five daily Islamic prayers.
+/// It features:
+/// - **Prayer type identification** with appropriate Islamic iconography
+/// - **Accurate prayer time** with 12-hour format and AM/PM indication
+/// - **Visual highlighting** for the current or next upcoming prayer
+/// - **Localized prayer names** supporting multiple languages
+/// - **Consistent styling** with rounded corners and proper spacing
+///
+/// The Salah box is fundamental to Islamic practice, providing Muslims with
+/// clear, accessible prayer time information for each of the five daily
+/// prayers (Fajr, Dhuhr, Asr, Maghrib, Isha) plus sunrise time for reference.
 class SalahBox extends StatelessWidget {
+  /// The type of Islamic prayer this box represents.
   final SalahTimeState salahType;
+
+  /// The exact date and time for this prayer.
   final DateTime salahTime;
+
+  /// Whether this is the current or next upcoming prayer.
   final bool isCurrentSalah;
 
+  /// Creates a [SalahBox] widget for displaying prayer information.
+  ///
+  /// Parameters:
+  /// - [salahType]: The Islamic prayer type (Fajr, Dhuhr, Asr, Maghrib, Isha, Sunrise)
+  /// - [salahTime]: The exact date and time for this prayer
+  /// - [isCurrentSalah]: Whether this prayer should be visually highlighted
   const SalahBox({
     super.key,
     required this.salahType,

@@ -7,7 +7,25 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays contextual information and visual indicators for the Quran reading interface.
+///
+/// This help bar provides users with essential information about their current position
+/// in the Quran, including:
+/// - Current page number prominently displayed in the center
+/// - Surah (chapter) name on the left side
+/// - Juz (part) name on the right side
+/// - Visual page side indicator showing whether viewing left or right page
+/// - Bookmark indicator when the current page is bookmarked
+///
+/// The widget uses a dark semi-transparent background to overlay on the Quran content
+/// without completely obscuring it. It responds to state changes from the QuranKareemBloc
+/// to update the displayed information in real-time as users navigate through pages.
+///
+/// The page side indicator uses a book icon that rotates to show the current page
+/// orientation, and the bookmark indicator appears as a red semi-transparent tab
+/// when the current page is in the user's bookmarks.
 class QuranHeaderHelpBar extends StatelessWidget {
+  /// Creates a [QuranHeaderHelpBar] widget.
   const QuranHeaderHelpBar({super.key});
 
   @override

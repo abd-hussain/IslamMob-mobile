@@ -3,10 +3,14 @@ import 'package:firebase_manager/model/firestore_options.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:logger_manager/logger_manager.dart';
 
+/// A repository class that provides methods for interacting with Firebase Firestore.
+///
+/// This class offers static methods for common Firestore operations including
+/// fetching documents, getting specific data, and setting data. All operations
+/// include network connectivity checks and error handling.
 class FirebaseFirestoreRepository {
   static final FirebaseFirestore _firestoreInstance =
       FirebaseFirestore.instance;
-  // final FirebaseStorage _storageInstance = FirebaseStorage.instance;
 
   /// Fetches all documents from a Firestore collection.
   static Future<List<Map<String, dynamic>>> getAllDocuments({
@@ -21,8 +25,9 @@ class FirebaseFirestoreRepository {
 
         return documents;
       } on FirebaseException catch (error) {
-        LoggerManagerBase.logDebugMessage(
-          message: 'Unable to fetch data. Error: $error',
+        LoggerManagerBase.logCritical(
+          error: error,
+          message: 'Unable to fetch data',
         );
       }
     }
@@ -40,29 +45,14 @@ class FirebaseFirestoreRepository {
             .get(const GetOptions());
         return options.toModel!(document.data());
       } on FirebaseException catch (error) {
-        LoggerManagerBase.logDebugMessage(
-          message: 'Unable to fetch data. Error: $error',
+        LoggerManagerBase.logCritical(
+          error: error,
+          message: 'Unable to fetch data.',
         );
       }
     }
     return null;
   }
-
-  // /// Uploads a file to Firebase Storage and returns its download URL.
-  // Future<String> uploadFile({
-  //   required File file,
-  //   required String fileName,
-  // }) async {
-  //   try {
-  //     final ref = _storageInstance.ref('reports/$fileName');
-  //     await ref.putFile(file);
-  //     return await ref.getDownloadURL();
-  //   } catch (error) {
-  //     LoggerManagerBase.logDebugMessage(
-  //         message: 'Error uploading file: $error');
-  //     return '';
-  //   }
-  // }
 
   /// Sets Firestore data for a given [FireStoreOptions].
   static Future<void> setData<T>({
@@ -72,8 +62,8 @@ class FirebaseFirestoreRepository {
       final collection = _firestoreInstance.collection(options.collectionName!);
       await collection.doc(options.docName).set(options.fromModel!);
     } catch (error) {
-      LoggerManagerBase.logDebugMessage(
-          message: 'Error setting Firestore data: $error');
+      LoggerManagerBase.logCritical(
+          message: 'Error setting Firestore data', error: error);
     }
   }
 

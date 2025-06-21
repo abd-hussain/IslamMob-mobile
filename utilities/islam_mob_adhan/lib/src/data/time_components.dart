@@ -1,8 +1,21 @@
+/// Represents time components broken down into hours, minutes, and seconds.
+///
+/// This class is used to represent time values in Islamic prayer time calculations,
+/// providing a structured way to handle time components separately.
 class TimeComponents {
+  /// The hour component of the time (0-23).
   final int hours;
+
+  /// The minute component of the time (0-59).
   final int minutes;
+
+  /// The second component of the time (0-59).
   final int seconds;
 
+  /// Creates a new [TimeComponents] instance with the specified time components.
+  ///
+  /// The [hours] should be in 24-hour format (0-23).
+  /// The [minutes] and [seconds] should be in the range 0-59.
   TimeComponents(this.hours, this.minutes, this.seconds);
 
   /// Creates a [TimeComponents] instance from a fractional double value.

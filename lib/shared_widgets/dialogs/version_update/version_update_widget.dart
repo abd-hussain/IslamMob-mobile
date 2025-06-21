@@ -6,10 +6,31 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:open_store/open_store.dart';
 
+/// A dialog widget that prompts users to update the app to a newer version.
+///
+/// This widget displays an update notification with the new version number,
+/// an update button that opens the app store, and optionally a skip button
+/// if the update is not mandatory. It includes Firebase Analytics tracking
+/// for user interactions.
 class VersionDialogWidget extends StatelessWidget {
+  /// The version number of the available update.
+  ///
+  /// This string represents the new version that is available for download
+  /// and will be displayed to the user in the dialog.
   final String version;
+
+  /// Whether the update is optional or mandatory.
+  ///
+  /// If `true`, the dialog will show a "Skip for now" button allowing users
+  /// to dismiss the dialog. If `false`, the dialog will only show the update
+  /// button, making the update mandatory.
   final bool isOptional;
 
+  /// Creates a [VersionDialogWidget] with the specified version and update type.
+  ///
+  /// Both [version] and [isOptional] parameters are required:
+  /// - [version]: The new version number to display
+  /// - [isOptional]: Whether users can skip this update
   const VersionDialogWidget({
     super.key,
     required this.isOptional,

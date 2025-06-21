@@ -5,7 +5,21 @@ import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 
+/// A screen that displays web content using WebViewX.
+///
+/// This screen provides a full-screen web view experience with:
+/// - Custom app bar showing the page title
+/// - Internet connectivity checking with retry functionality
+/// - WebViewX integration for cross-platform web content display
+/// - BLoC state management for handling web view state and connectivity
+///
+/// The screen expects route arguments containing web view configuration
+/// such as URL and page title.
 class WebViewScreen extends StatefulWidget {
+  /// Creates a [WebViewScreen].
+  ///
+  /// This screen requires route arguments to be passed containing
+  /// the web view configuration (URL, title, etc.).
   const WebViewScreen({super.key});
 
   @override

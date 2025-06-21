@@ -5,7 +5,21 @@ import 'package:islam_app/presentation/pray_notification_setting/bloc/notificati
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
 
+/// A widget that provides quick notification settings for prayer notifications.
+///
+/// This widget displays a list of notification options that allow users to quickly
+/// enable or disable prayer notifications for different time periods:
+/// - All notifications for today
+/// - All notifications for the next three days
+/// - All notifications for the entire week
+///
+/// Each option is presented as a toggle switch with localized titles and
+/// integrates with the [PrayNotificationSettingBloc] to manage notification states.
 class QuickNotificationView extends StatelessWidget {
+  /// Creates a [QuickNotificationView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const QuickNotificationView({super.key});
 
   @override

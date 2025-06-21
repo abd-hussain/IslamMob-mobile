@@ -9,7 +9,17 @@ import 'package:islam_app/presentation/pray_notification_setting/bloc/notificati
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
 
+/// A widget that displays prayer notification settings for all five daily prayers.
+///
+/// This widget provides a list of notification settings for Fajr, Dhuhr, Asr,
+/// Maghrib, and Isha prayers. Each prayer has its own toggle switch and sound
+/// selection option. Users can enable/disable notifications and customize
+/// notification sounds for each prayer individually.
 class PrayNotificationView extends StatefulWidget {
+  /// Creates a [PrayNotificationView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const PrayNotificationView({super.key});
 
   @override
@@ -60,6 +70,8 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
                   name: "ChooseSoundScreen fajir");
+              if (!mounted) return;
+              if (!context.mounted) return;
               await Navigator.pushNamed(
                 context,
                 RoutesConstants.chooseSoundScreen,
@@ -67,7 +79,9 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
                   ArgumentConstant.notificationSettingType:
                       const NotificationTypeState.fajir(),
                 },
-              ).then((_) => setState(() {}));
+              ).then((_) {
+                if (mounted) setState(() {});
+              });
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
@@ -96,6 +110,8 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
                   name: "ChooseSoundScreen duhir");
+              if (!mounted) return;
+              if (!context.mounted) return;
               await Navigator.pushNamed(
                 context,
                 RoutesConstants.chooseSoundScreen,
@@ -103,7 +119,9 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
                   ArgumentConstant.notificationSettingType:
                       const NotificationTypeState.zuhr(),
                 },
-              ).then((_) => setState(() {}));
+              ).then((_) {
+                if (mounted) setState(() {});
+              });
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
@@ -132,6 +150,8 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
                   name: "ChooseSoundScreen Asr");
+              if (!mounted) return;
+              if (!context.mounted) return;
               await Navigator.pushNamed(
                 context,
                 RoutesConstants.chooseSoundScreen,
@@ -139,7 +159,9 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
                   ArgumentConstant.notificationSettingType:
                       const NotificationTypeState.asr(),
                 },
-              ).then((_) => setState(() {}));
+              ).then((_) {
+                if (mounted) setState(() {});
+              });
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
@@ -168,6 +190,8 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
                   name: "ChooseSoundScreen Magrieb");
+              if (!mounted) return;
+              if (!context.mounted) return;
               await Navigator.pushNamed(
                 context,
                 RoutesConstants.chooseSoundScreen,
@@ -175,7 +199,9 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
                   ArgumentConstant.notificationSettingType:
                       const NotificationTypeState.maghrib(),
                 },
-              ).then((_) => setState(() {}));
+              ).then((_) {
+                if (mounted) setState(() {});
+              });
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
@@ -204,6 +230,8 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
                   name: "ChooseSoundScreen Isha");
+              if (!mounted) return;
+              if (!context.mounted) return;
               await Navigator.pushNamed(
                 context,
                 RoutesConstants.chooseSoundScreen,
@@ -211,7 +239,9 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
                   ArgumentConstant.notificationSettingType:
                       const NotificationTypeState.isha(),
                 },
-              ).then((_) => setState(() {}));
+              ).then((_) {
+                if (mounted) setState(() {});
+              });
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(

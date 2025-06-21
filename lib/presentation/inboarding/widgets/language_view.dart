@@ -7,8 +7,23 @@ import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/title_tabl
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:lottie/lottie.dart';
 
+/// A widget that displays the language selection screen during onboarding.
+///
+/// This widget presents a list of available languages with an animation
+/// and allows users to select their preferred language. Once a language
+/// is selected, it provides a button to confirm the selection and proceed
+/// with the onboarding process.
 class LanguageInBoardingView extends StatelessWidget {
+  /// Callback function called when the user completes language selection.
+  ///
+  /// This function is invoked after the user selects a language and
+  /// confirms their choice, typically to proceed to the next onboarding step.
   final Function() doneSelection;
+
+  /// Creates a [LanguageInBoardingView] widget.
+  ///
+  /// The [doneSelection] callback is required and will be called when
+  /// the user successfully selects and confirms their language preference.
   const LanguageInBoardingView({super.key, required this.doneSelection});
 
   @override

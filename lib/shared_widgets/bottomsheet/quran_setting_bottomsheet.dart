@@ -2,7 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A utility class that provides a bottom sheet for Quran-related settings.
+///
+/// This class displays a modal bottom sheet with options for:
+/// - Brightness/lighting settings
+/// - Mushaf (Quran text) selection
+/// - Support options (ads)
 class QuranSettingBottomsheet {
+  /// Displays a modal bottom sheet with Quran settings options.
+  ///
+  /// Parameters:
+  /// - [context]: The build context for showing the bottom sheet
+  /// - [showAdsCallback]: Callback function for the support/ads option
+  /// - [brigtnessCallback]: Callback function for brightness settings
+  /// - [masaheefCallback]: Callback function for Mushaf selection
+  ///
+  /// Returns a [Future<void>] that completes when the bottom sheet is dismissed.
   Future<void> showBottomSheet({
     required BuildContext context,
     required void Function() showAdsCallback,

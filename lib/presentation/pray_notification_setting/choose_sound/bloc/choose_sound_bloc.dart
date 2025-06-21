@@ -11,7 +11,25 @@ part 'choose_sound_bloc.freezed.dart';
 part 'choose_sound_event.dart';
 part 'choose_sound_state.dart';
 
+/// BLoC for managing notification sound selection and configuration.
+///
+/// This BLoC handles the business logic for choosing and saving notification sounds
+/// for different prayer times (Fajr, Zuhr, Asr, Maghrib, Isha). It manages:
+///
+/// - Loading available notification sounds with localized names
+/// - Retrieving currently selected sounds from persistent storage
+/// - Temporarily updating sound selection during user interaction
+/// - Saving final sound choices to the database
+///
+/// The BLoC provides a list of predefined Adhan sounds (adhan1 through adhan9)
+/// and maintains the current selection state for each prayer notification type.
+/// Sound preferences are persisted using the database manager and can be
+/// retrieved when the app restarts.
 class ChooseSoundBloc extends Bloc<ChooseSoundEvent, ChooseSoundState> {
+  /// Creates a new [ChooseSoundBloc] instance.
+  ///
+  /// Initializes the BLoC with default state and sets up event handlers
+  /// for sound initialization, selection changes, and saving preferences.
   ChooseSoundBloc() : super(const ChooseSoundState()) {
     on<_InitialNotificationSoundSettings>(_initialNotificationSoundSettings);
     on<_ChangeNotificationSoundSettings>(_changeNotificationSoundSettings);
@@ -50,27 +68,27 @@ class ChooseSoundBloc extends Bloc<ChooseSoundEvent, ChooseSoundState> {
         return DataBaseManagerBase.getFromDatabase(
           key: DatabaseNotificationSoundConstant.fajirNotification,
           defaultValue: "adhan1",
-        );
+        ) as String;
       case const NotificationTypeState.zuhr():
         return DataBaseManagerBase.getFromDatabase(
           key: DatabaseNotificationSoundConstant.zhurNotification,
           defaultValue: "adhan2",
-        );
+        ) as String;
       case const NotificationTypeState.asr():
         return DataBaseManagerBase.getFromDatabase(
           key: DatabaseNotificationSoundConstant.asrNotification,
           defaultValue: "adhan3",
-        );
+        ) as String;
       case const NotificationTypeState.maghrib():
         return DataBaseManagerBase.getFromDatabase(
           key: DatabaseNotificationSoundConstant.maghribNotification,
           defaultValue: "adhan4",
-        );
+        ) as String;
       case const NotificationTypeState.isha():
         return DataBaseManagerBase.getFromDatabase(
           key: DatabaseNotificationSoundConstant.ishaNotification,
           defaultValue: "adhan5",
-        );
+        ) as String;
       default:
         return "";
     }

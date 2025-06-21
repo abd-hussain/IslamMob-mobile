@@ -1,7 +1,25 @@
 import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+/// Use case for opening device settings from the Islam Mob app.
+///
+/// This class provides cross-platform functionality to open the device's
+/// application settings, which is essential for Islamic apps that require
+/// specific permissions and configurations:
+/// - **Notification permissions** for prayer time alerts and Adhan
+/// - **Location permissions** for accurate prayer time calculations
+/// - **Background app refresh** for continuous prayer time monitoring
+/// - **Sound settings** for Adhan and Islamic reminder notifications
+/// - **Storage permissions** for downloading Quran files and Islamic content
+///
+/// The use case handles platform-specific implementations for both iOS and
+/// Android, ensuring users can easily access the necessary settings to
+/// configure their device for optimal Islamic app functionality.
+///
+/// This is particularly important for prayer time accuracy and notification
+/// reliability, which are crucial for Islamic religious observance.
 class OpenMobileSettingUseCase {
   static const MethodChannel _platform =
       MethodChannel('com.islammob.app/settings');
