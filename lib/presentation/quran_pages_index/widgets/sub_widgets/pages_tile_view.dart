@@ -2,13 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/arrow_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A tile widget that displays a Quran page with its number, Surah name, and bookmark status.
+///
+/// This widget creates a clickable tile that shows a page number, the name of the
+/// Surah on that page, a bookmark icon (if bookmarked), and an arrow indicator.
+/// The styling changes based on whether this page is currently selected.
 class PagesTileView extends StatelessWidget {
+  /// The zero-based index of the page.
+  ///
+  /// This index is used to calculate the display number (index + 1)
+  /// shown in the tile. For example, index 0 displays as "1".
   final int index;
+
+  /// The name of the Surah (chapter) on this page.
+  ///
+  /// This is typically the Arabic name of the Surah that appears
+  /// on this Quran page.
   final String sowrahName;
+
+  /// Whether this page is currently selected or active.
+  ///
+  /// When true, the page number and Surah name are displayed in a
+  /// highlighted color (teal). When false, they are displayed in white.
   final bool isCurrentPage;
+
+  /// Whether this page has been bookmarked by the user.
+  ///
+  /// When true, a red bookmark icon is displayed. When false,
+  /// an empty space is shown instead.
   final bool isBookedMarked;
+
+  /// Callback function executed when the tile is tapped.
+  ///
+  /// This function is called when the user taps on the page tile,
+  /// typically used to navigate to the selected page.
   final VoidCallback onTap;
 
+  /// Creates a [PagesTileView] with the specified parameters.
+  ///
+  /// All parameters are required:
+  /// - [index]: Zero-based index of the page
+  /// - [sowrahName]: Name of the Surah on this page
+  /// - [isCurrentPage]: Whether this page is currently selected
+  /// - [onTap]: Callback for when the tile is tapped
+  /// - [isBookedMarked]: Whether this page is bookmarked
   const PagesTileView(
       {super.key,
       required this.index,

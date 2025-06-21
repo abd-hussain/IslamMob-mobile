@@ -100,6 +100,11 @@ enum CalculationMethod {
   other
 }
 
+/// Extension methods for [CalculationMethod] enum.
+///
+/// Provides utility methods to get calculation parameters for different
+/// Islamic prayer time calculation methods used by various organizations
+/// and regions around the world.
 extension CalculationMethodExtensions on CalculationMethod {
   /// Returns the [CalculationParameters] for the given calculation method.
   CalculationParameters getParameters() {

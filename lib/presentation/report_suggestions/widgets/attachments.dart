@@ -7,7 +7,22 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/report_suggestions/bloc/report_and_suggestion_bloc.dart';
 import 'package:islam_app/presentation/report_suggestions/widgets/attachmen_bottom_sheet.dart';
 
+/// A widget that displays attachment options for reports and suggestions.
+///
+/// This widget provides a horizontal row of three attachment slots where users
+/// can add images to their reports or suggestions. Each slot supports:
+/// - Adding images from camera or gallery
+/// - Displaying selected images as thumbnails
+/// - Removing attached images
+/// - Visual feedback with placeholder images
+///
+/// The widget integrates with [ReportAndSuggestionBloc] to manage attachment
+/// state and uses a bottom sheet interface for image selection options.
 class ReportSuggestionAttachment extends StatelessWidget {
+  /// Creates a [ReportSuggestionAttachment] widget.
+  ///
+  /// This widget automatically manages three attachment slots and provides
+  /// a user-friendly interface for adding images to reports and suggestions.
   const ReportSuggestionAttachment({super.key});
 
   @override
@@ -73,7 +88,7 @@ class ReportSuggestionAttachment extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.file(
-                      attachment,
+                      attachment as File,
                       width: 60,
                       height: 60,
                       fit: BoxFit.cover,

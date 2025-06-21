@@ -9,7 +9,12 @@ import 'package:islam_app/presentation/main_container/widgets/tab_navigator.dart
 import 'package:islam_app/shared_widgets/appbar/main_appbar.dart';
 import 'package:islam_app/shared_widgets/dialogs/version_update/version_dialog.dart';
 
+/// Main container widget that provides the app's primary navigation structure.
+///
+/// This widget serves as the root container for the app's main screens,
+/// managing bottom navigation and displaying different tabs using an IndexedStack.
 class MainContainer extends StatefulWidget {
+  /// Creates a [MainContainer] widget.
   const MainContainer({super.key});
 
   @override
@@ -57,7 +62,7 @@ class _MainContainerState extends State<MainContainer> {
     );
   }
 
-  Future _showVersionUpdateDialog(
+  Future<void> _showVersionUpdateDialog(
       BuildContext context, VersionUpdate versionUpdate) async {
     await VersionDialog().dialog(
       context: context,

@@ -10,7 +10,26 @@ part 'contacts_bloc.freezed.dart';
 part 'contacts_event.dart';
 part 'contacts_state.dart';
 
+/// BLoC for managing contacts and Islamic content sharing functionality.
+///
+/// This BLoC handles the business logic for the contacts interface, which
+/// allows users to share Islamic content with their contacts via SMS. It manages:
+/// - **Contact fetching** with permission handling for device contacts
+/// - **Contact selection** for choosing recipients of Islamic content
+/// - **Content sharing** via SMS to selected contacts
+/// - **Permission management** for accessing user's contact list
+///
+/// The contacts functionality enables Muslims to share Islamic content,
+/// prayer reminders, and religious information with their family and friends,
+/// supporting the Islamic principle of sharing beneficial knowledge and
+/// encouraging others in their faith journey.
 class ContactsBloc extends Bloc<ContactsEvent, ContactsState> {
+  /// Creates a [ContactsBloc] with initial state and event handlers.
+  ///
+  /// Initializes the BLoC with empty contacts state and sets up event handlers for:
+  /// - Fetching user contacts with permission requests
+  /// - Updating contact selection states
+  /// - Sharing Islamic content via SMS
   ContactsBloc() : super(const ContactsState()) {
     on<_FetchContacts>(_fetchContacts);
     on<_UpdateSelectedContact>(_updateSelectedContact);

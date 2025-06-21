@@ -10,7 +10,25 @@ import 'package:islam_app/presentation/inboarding/widgets/quran_copy_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/setup_account_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Main onboarding screen for guiding new users through Islamic app setup.
+///
+/// This screen provides a comprehensive introduction and setup process for
+/// new Muslims and users of the Islamic application. It guides users through
+/// essential configuration steps including:
+/// - **Language selection** for localized Islamic content access
+/// - **Location setup** for accurate prayer time calculations
+/// - **Quran copy selection** for preferred Mushaf reading experience
+/// - **Notification permissions** for prayer time reminders
+/// - **Account configuration** with Islamic-specific settings
+///
+/// The onboarding process is crucial for ensuring Muslims can effectively
+/// use the Islamic app with proper prayer times, localized content, and
+/// personalized spiritual features according to their preferences and location.
 class InBoardingScreen extends StatelessWidget {
+  /// Creates an [InBoardingScreen] widget.
+  ///
+  /// This screen displays the step-by-step onboarding process for new
+  /// users to configure their Islamic app experience properly.
   const InBoardingScreen({super.key});
 
   @override

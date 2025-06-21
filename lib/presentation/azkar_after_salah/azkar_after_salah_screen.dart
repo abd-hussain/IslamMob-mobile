@@ -11,7 +11,25 @@ import 'package:islam_app/presentation/azkar_after_salah/widget/finish_view.dart
 import 'package:islam_app/presentation/azkar_after_salah/widget/zeker_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A screen that displays Azkar (Islamic remembrances) to be recited after Salah (prayer).
+///
+/// This screen provides an interactive interface for users to:
+/// - View prayer-specific Azkar based on the current prayer time
+/// - Track completion progress with counters for each Azkar
+/// - Navigate through different Azkar items with tap interactions
+/// - See a completion view when all Azkar are finished
+/// - View advertisements at the bottom of the screen
+///
+/// The screen receives the current prayer time as an argument and displays
+/// the appropriate Azkar collection. Each Azkar has a counter that users
+/// can increment by tapping, and the screen shows a finish view when all
+/// counters reach their target values.
 class AzkarAfterSalahScreen extends StatelessWidget {
+  /// Creates an [AzkarAfterSalahScreen].
+  ///
+  /// This screen expects to receive an [AzkarSalahTimeState] argument
+  /// through the route settings to determine which prayer-specific
+  /// Azkar collection to display.
   const AzkarAfterSalahScreen({super.key});
 
   @override
@@ -19,7 +37,7 @@ class AzkarAfterSalahScreen extends StatelessWidget {
     final Map<String, dynamic> arguments =
         ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
     final AzkarSalahTimeState salahTime =
-        arguments[ArgumentConstant.salahTime] ??
+        (arguments[ArgumentConstant.salahTime] as AzkarSalahTimeState?) ??
             const AzkarSalahTimeState.fajir();
 
     FirebaseAnalyticsRepository.logEvent(name: "AzkarAfterSalahScreen");

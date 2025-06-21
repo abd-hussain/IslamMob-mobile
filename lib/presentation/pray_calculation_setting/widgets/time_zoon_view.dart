@@ -6,7 +6,17 @@ import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calcul
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays timezone selection options for prayer calculations.
+///
+/// This view allows users to select different timezone offsets to ensure
+/// prayer times are calculated correctly for their local time zone.
+/// It provides a list of available timezone options with checkboxes for selection,
+/// helping users adjust prayer times based on their geographical location.
 class TimeZoneView extends StatelessWidget {
+  /// Creates a [TimeZoneView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const TimeZoneView({super.key});
 
   @override

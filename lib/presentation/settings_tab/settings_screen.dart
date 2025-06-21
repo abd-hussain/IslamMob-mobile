@@ -15,7 +15,18 @@ import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
+/// The main settings screen that provides access to various app configurations.
+///
+/// This screen displays a comprehensive list of settings options organized into
+/// categories including general settings (calendar, language, notifications,
+/// prayer calculations), reach out options (bug reports), and support features
+/// (rate app, about us, share app). It includes a profile header, categorized
+/// option lists, and a footer with version information.
 class SettingsScreen extends StatefulWidget {
+  /// Creates a [SettingsScreen] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const SettingsScreen({super.key});
 
   @override
@@ -119,7 +130,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   onTap: () async {
                     await FirebaseAnalyticsRepository.logEvent(
                         name: "ShareAppFromSettingsScreen");
-                    await ShareDialog().dialog(context: context);
+                    if (context.mounted) {
+                      await ShareDialog().dialog(context: context);
+                    }
                   },
                 ),
               ]),

@@ -1,13 +1,16 @@
 name: islam_mob_lint
-description: "A new Flutter package project."
+description: "Lint rules and code style guidelines for Islam Mob projects"
 publish_to: "none"
-version: 0.0.1
+version: 1.0.0
 
 environment:
   sdk: ">=3.3.4 <4.0.0"
 
 dependencies:
+  analyzer: ^6.4.1
   leancode_lint: ^14.0.0
+  logger_manager:
+    path: ../logger_manager
 
 dev_dependencies:
   dependency_validator: 4.1.0

@@ -10,7 +10,27 @@ part 'hajj_omrah_bloc.freezed.dart';
 part 'hajj_omrah_event.dart';
 part 'hajj_omrah_state.dart';
 
+/// A BLoC that manages the state and logic for Hajj and Omrah guidance functionality.
+///
+/// This BLoC handles:
+/// - Loading Hajj guidance data from JSON assets
+/// - Loading Omrah guidance data from JSON assets
+/// - Managing loading states during data fetching
+/// - Language direction detection (RTL for Arabic/Farsi)
+/// - State management for guidance content display
+///
+/// The BLoC automatically determines the appropriate content based on the
+/// screen type (Hajj or Omrah) and configures the UI for the user's language
+/// preference, including RTL support for Arabic and Farsi languages.
 class HajjOmrahBloc extends Bloc<HajjOmrahEvent, HajjOmrahState> {
+  /// Creates a new [HajjOmrahBloc] instance.
+  ///
+  /// Automatically sets up event handlers for:
+  /// - Initial value loading (Hajj or Omrah data)
+  /// - Loading state management
+  ///
+  /// The BLoC starts with an empty state and waits for events to
+  /// trigger data loading and state updates.
   HajjOmrahBloc() : super(const HajjOmrahState()) {
     on<_FillInitialValue>(_fillInitialValue);
     on<_LoadingState>(_loadingState);
@@ -32,13 +52,15 @@ class HajjOmrahBloc extends Bloc<HajjOmrahEvent, HajjOmrahState> {
     }
   }
 
-  FutureOr<void> _loadingState(event, Emitter<HajjOmrahState> emit) {
+  FutureOr<void> _loadingState(
+      _LoadingState event, Emitter<HajjOmrahState> emit) {
     emit(state.copyWith(processState: event.state));
   }
 
   bool _isRtlLanguage() {
     final String languageCode = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode, defaultValue: "en");
+        key: DatabaseFieldConstant.userLanguageCode,
+        defaultValue: "en") as String;
     return languageCode == "ar" || languageCode == "fa";
   }
 }

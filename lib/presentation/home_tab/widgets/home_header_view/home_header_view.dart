@@ -6,9 +6,37 @@ import 'package:islam_app/presentation/home_tab/bloc/home_header/home_header_blo
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/widgets/salah_timer_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget for displaying the home screen header with Islamic prayer information.
+///
+/// This widget provides the main header interface for the Islamic app's home
+/// screen, displaying critical prayer timing and location information. It features:
+/// - **Next prayer countdown** with real-time timer functionality
+/// - **Prayer time display** with accurate Islamic timing calculations
+/// - **Location information** showing current city and country for prayer times
+/// - **Collapsible design** with smooth expansion and collapse animations
+/// - **Islamic background** with appropriate visual styling
+///
+/// The header serves as the primary information display for Muslims to quickly
+/// see their next prayer time, countdown, and location context, ensuring they
+/// can prepare for their Islamic obligations with accurate timing information.
 class HomeHeaderView extends StatelessWidget {
+  /// Creates a [HomeHeaderView] widget.
+  ///
+  /// This widget displays the main header for the Islamic app with prayer
+  /// timing information, countdown functionality, and location context.
   const HomeHeaderView({super.key});
 
+  /// Builds the home header with Islamic prayer information and countdown.
+  ///
+  /// This method constructs a collapsible sliver app bar featuring:
+  /// - Real-time countdown timer to the next Islamic prayer
+  /// - Prayer time display with AM/PM indication
+  /// - Location information for prayer time accuracy
+  /// - Background image with Islamic visual styling
+  /// - Responsive design that adapts to scroll position
+  ///
+  /// The header automatically updates when prayer times change and provides
+  /// essential information for Muslim users' daily prayer schedule.
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

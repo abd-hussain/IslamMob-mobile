@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/domain/model/location.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_have_permission_view.dart';
@@ -8,10 +7,26 @@ import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_i
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_nothave_permission_view.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_select_manual_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:location_manager/location_manager.dart';
 import 'package:lottie/lottie.dart';
 
+/// A widget that displays the location setup screen during onboarding.
+///
+/// This widget handles location permission requests and allows users to
+/// either grant location access for automatic prayer time calculations
+/// or manually select their location. It manages different states including
+/// idle, loading, permission denied, and location selection.
 class LocationInBoardingView extends StatelessWidget {
+  /// Callback function called when the user completes location setup.
+  ///
+  /// This function is invoked after the user either grants location permission
+  /// and confirms their location, or manually selects their location.
   final Function() doneSelection;
+
+  /// Creates a [LocationInBoardingView] widget.
+  ///
+  /// The [doneSelection] callback is required and will be called when
+  /// the user successfully completes the location setup process.
   const LocationInBoardingView({super.key, required this.doneSelection});
 
   @override

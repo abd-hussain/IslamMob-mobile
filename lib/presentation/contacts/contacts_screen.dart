@@ -12,9 +12,31 @@ import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Screen for managing contacts and sharing Islamic content via SMS.
+///
+/// This screen provides Muslims with the ability to share Islamic content,
+/// prayer reminders, and beneficial religious knowledge with their contacts
+/// through SMS messaging. It features:
+/// - **Contact list display** with device contacts and selection capabilities
+/// - **Permission handling** for accessing user's contact information
+/// - **Islamic content sharing** via SMS to selected contacts
+/// - **App invitation** functionality to spread Islamic app usage
+///
+/// The screen supports the Islamic principle of sharing beneficial knowledge
+/// (sharing good) by enabling users to invite others to use Islamic tools
+/// and share prayer reminders, Quranic verses, and other religious content
+/// with their family and friends.
 class ContactsScreen extends StatefulWidget {
+  /// Creates a [ContactsScreen] widget.
+  ///
+  /// This screen provides contact management and Islamic content sharing
+  /// functionality through SMS messaging capabilities.
   const ContactsScreen({super.key});
 
+  /// Creates the state for the contacts screen.
+  ///
+  /// Returns a [_ContactsScreenState] instance that manages the screen's
+  /// lifecycle and handles contact loading, selection, and sharing operations.
   @override
   State<ContactsScreen> createState() => _ContactsScreenState();
 }

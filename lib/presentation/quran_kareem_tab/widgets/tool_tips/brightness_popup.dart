@@ -2,10 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A popup dialog widget for adjusting screen brightness in the Quran Kareem tab.
+///
+/// This widget displays an interactive brightness slider with visual indicators
+/// (sun and moon icons) and action buttons for closing or resetting brightness.
+/// The slider uses a gradient background to represent brightness levels from
+/// dark to light.
+///
+/// The popup provides:
+/// - Interactive slider for brightness adjustment
+/// - Real-time brightness value updates through [returnBrightness] callback
+/// - Reset functionality to set brightness to 0
+/// - Close button to dismiss the dialog
 class BrightnessPopup extends StatefulWidget {
+  /// Callback function that receives the updated brightness value.
+  ///
+  /// This function is called whenever the user adjusts the brightness slider
+  /// or resets the brightness. The value ranges from 0.0 (darkest) to 1.0 (brightest).
   final ValueChanged<double> returnBrightness;
+
+  /// The initial brightness value to display when the popup opens.
+  ///
+  /// This value should be between 0.0 and 1.0, where 0.0 represents
+  /// the darkest setting and 1.0 represents the brightest setting.
   final double initialValue;
 
+  /// Creates a [BrightnessPopup] widget.
+  ///
+  /// Both [returnBrightness] and [initialValue] are required parameters.
+  /// The [initialValue] should be between 0.0 and 1.0.
   const BrightnessPopup({
     super.key,
     required this.returnBrightness,

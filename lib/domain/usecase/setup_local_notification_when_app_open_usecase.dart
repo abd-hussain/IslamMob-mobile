@@ -23,12 +23,17 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase =
       locator<NotifyAdhanNotificationUsecase>();
 
-  // How many notifications we want from prayer-related scheduling.
-  // The last 2 are the final "open the app" reminders.
+  /// Maximum number of prayer-related notifications to schedule.
+  ///
+  /// The system schedules up to 62 prayer notifications, with the final 2 slots
+  /// reserved for app reminder notifications.
   static const int maxPrayerNotifications = 62;
 
-  // How far we extend scheduling if we have not reached 62 notifications yet.
-  static const int maxDayCount = 14; // e.g., up to 2 weeks
+  /// Maximum number of days to extend scheduling if notification limit not reached.
+  ///
+  /// If we haven't reached the 62 notification limit, we'll continue scheduling
+  /// for up to this many days (e.g., up to 2 weeks).
+  static const int maxDayCount = 14;
 
   int _notificationCount =
       0; // will increment each time we schedule a notification
@@ -37,6 +42,9 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   /// so the final 2 reminders can come *after* that.
   DateTime? _lastScheduledTime;
 
+  /// Flag to track if countdown notification has been scheduled for Android.
+  ///
+  /// Ensures only one countdown notification is scheduled to avoid duplicates.
   bool nextCounttdownNotificationScheduled = false;
 
   /// Entry method: cancels existing notifications, then schedules new ones.
@@ -84,6 +92,19 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     );
   }
 
+  /// Tests a notification by scheduling it immediately with ID 111.
+  ///
+  /// This method is used for testing notification functionality. It cancels
+  /// any existing notification with ID 111 and then schedules a new test
+  /// notification with the specified parameters.
+  ///
+  /// Parameters:
+  /// - [context]: The build context for localization and UI access
+  /// - [type]: The type of notification to test
+  /// - [soundFileName]: The sound file to play with the notification
+  ///
+  /// This is typically used in settings or debug screens to allow users
+  /// to preview how notifications will appear and sound.
   Future<void> testNotification({
     required BuildContext context,
     required NotificationTypeState type,
@@ -93,6 +114,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     await _localNotificationRepository.testNotification(
       id: 111,
       type: type,
+      // ignore: use_build_context_synchronously
       context: context,
       soundFileName: soundFileName,
     );
@@ -220,6 +242,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
 
     // 2. Main prayer time
     count += await _scheduleSingleTimeNotification(
+      // ignore: use_build_context_synchronously
       context: context,
       time: mainTime,
       type: mainType,
@@ -387,91 +410,91 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableFajr,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isSunriseNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableSunriseTime,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isZhurNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableDuher,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isAsrNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableAsr,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isMagreebNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableMagrieb,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isIshaNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableIsha,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isWarningBefore15MinNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableNotificationBefore15Min,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isJom3aAlkahfNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableJom3aAlkahf,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isJom3aDoaaNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableJom3aDo3aa,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isMidNightPrayNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableQeyamAlLayel,
       defaultValue: true,
-    );
+    ) as bool;
   }
 
   bool _isNotificationForTodayAllowed() {
-    return !DataBaseManagerBase.getFromDatabase(
+    return !(DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableAllForToday,
       defaultValue: false,
-    );
+    ) as bool);
   }
 
   bool _isNotificationForThreeTodayAllowed() {
-    return !DataBaseManagerBase.getFromDatabase(
+    return !(DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableAllForThreeDay,
       defaultValue: false,
-    );
+    ) as bool);
   }
 
   bool _isNotificationForWeekAllowed() {
-    return !DataBaseManagerBase.getFromDatabase(
+    return !(DataBaseManagerBase.getFromDatabase(
       key: LocalNotificationConstant.disableAllForWeek,
       defaultValue: false,
-    );
+    ) as bool);
   }
 
   // ---------------------------------------------------------------------------
@@ -503,34 +526,34 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     return DataBaseManagerBase.getFromDatabase(
       key: DatabaseNotificationSoundConstant.fajirNotification,
       defaultValue: "adhan1",
-    );
+    ) as String;
   }
 
   String _zhurNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
       key: DatabaseNotificationSoundConstant.zhurNotification,
       defaultValue: "adhan2",
-    );
+    ) as String;
   }
 
   String _asrNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
       key: DatabaseNotificationSoundConstant.asrNotification,
       defaultValue: "adhan3",
-    );
+    ) as String;
   }
 
   String _magreebNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
       key: DatabaseNotificationSoundConstant.maghribNotification,
       defaultValue: "adhan4",
-    );
+    ) as String;
   }
 
   String _ishaNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
       key: DatabaseNotificationSoundConstant.ishaNotification,
       defaultValue: "adhan5",
-    );
+    ) as String;
   }
 }

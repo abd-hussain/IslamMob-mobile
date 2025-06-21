@@ -4,9 +4,37 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/about_us/widgets/section_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 
+/// Screen displaying the privacy policy for the Islam Mob application.
+///
+/// This screen presents the comprehensive privacy policy that explains how
+/// the Islam Mob app collects, uses, and protects user data. It covers:
+/// - **Data collection practices** for Islamic app functionality
+/// - **User privacy protection** measures and commitments
+/// - **Islamic content usage** and attribution policies
+/// - **Third-party service integration** and data sharing
+/// - **User rights** regarding their personal information
+/// - **Contact information** for privacy-related inquiries
+///
+/// The privacy policy is essential for transparency and compliance with
+/// privacy regulations while maintaining trust with the Muslim community
+/// that uses the app for religious purposes.
 class PrivacyPolicyScreen extends StatelessWidget {
+  /// Creates a [PrivacyPolicyScreen] widget.
+  ///
+  /// This screen displays the complete privacy policy with organized
+  /// sections covering all aspects of data handling and user privacy.
   const PrivacyPolicyScreen({super.key});
 
+  /// Builds the privacy policy screen with sectioned content.
+  ///
+  /// This method constructs the privacy policy interface with:
+  /// - Organized sections for different privacy topics
+  /// - Scrollable content for comprehensive policy coverage
+  /// - Localized text supporting multiple languages
+  /// - Clear formatting for easy reading and understanding
+  ///
+  /// The content is structured to provide transparency about how the
+  /// Islam Mob app handles user data while providing Islamic services.
   @override
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "PrivacyPolicyScreen");

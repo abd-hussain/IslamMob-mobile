@@ -6,7 +6,17 @@ import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calcul
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays prayer calculation method selection options.
+///
+/// This view allows users to select different calculation methods for prayer times.
+/// Different calculation methods are used by various Islamic organizations and
+/// countries, each with slightly different parameters for calculating prayer times.
+/// It provides a list of available calculation methods with checkboxes for selection.
 class CalculationMethodView extends StatelessWidget {
+  /// Creates a [CalculationMethodView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const CalculationMethodView({super.key});
 
   @override

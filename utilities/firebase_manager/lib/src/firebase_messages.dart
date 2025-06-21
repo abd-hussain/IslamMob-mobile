@@ -3,6 +3,12 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:logger_manager/logger_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+/// Repository class for managing Firebase Cloud Messaging (FCM) operations.
+///
+/// This class provides functionality to:
+/// - Check and request notification permissions
+/// - Retrieve FCM tokens for push notifications
+/// - Handle Firebase initialization
 class FirebaseMessagesRepository {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 
@@ -16,12 +22,10 @@ class FirebaseMessagesRepository {
   static Future<bool> _requestNotificationPermission() async {
     final status = await Permission.notification.request();
     if (status.isGranted) {
-      LoggerManagerBase.logDebugMessage(
-          message: "Notification permission granted.");
+      LoggerManagerBase.logInfo(message: "Notification permission granted.");
       return true;
     } else {
-      LoggerManagerBase.logDebugMessage(
-          message: "Notification permission denied.");
+      LoggerManagerBase.logWarning(message: "Notification permission denied.");
       return false;
     }
   }
@@ -43,8 +47,8 @@ class FirebaseMessagesRepository {
       }
       return true;
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(
-          message: "Error retrieving notification token: $e");
+      LoggerManagerBase.logErrorMessage(
+          error: e, message: "Error retrieving notification token");
       return false;
     }
   }
@@ -54,23 +58,23 @@ class FirebaseMessagesRepository {
     try {
       final permissionGranted = await checkAndRequestPermission();
       if (!permissionGranted) {
-        LoggerManagerBase.logDebugMessage(
+        LoggerManagerBase.logInfo(
             message: "Notification permission not granted.");
         return null;
       }
 
       final token = await _firebaseMessaging.getToken();
       if (token != null) {
-        LoggerManagerBase.logDebugMessage(
+        LoggerManagerBase.logInfo(
             message: "Notification token retrieved: $token");
       } else {
-        LoggerManagerBase.logDebugMessage(
+        LoggerManagerBase.logWarning(
             message: "Failed to retrieve notification token.");
       }
       return token;
     } catch (e) {
-      LoggerManagerBase.logDebugMessage(
-          message: "Error retrieving notification token: $e");
+      LoggerManagerBase.logErrorMessage(
+          error: e, message: "Error retrieving notification token");
       return null;
     }
   }

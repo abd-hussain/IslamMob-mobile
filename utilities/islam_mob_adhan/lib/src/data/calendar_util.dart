@@ -1,6 +1,11 @@
 import 'package:islam_mob_adhan/src/data/date_components.dart';
 import 'package:islam_mob_adhan/src/extensions/datetime.dart';
 
+/// Utility class for calendar-related operations and date calculations.
+///
+/// This class provides static methods for common calendar operations such as
+/// determining leap years, rounding time values, and resolving UTC DateTime
+/// objects from date components.
 class CalendarUtil {
   /// Whether or not a year is a leap year (has 366 days)
   ///

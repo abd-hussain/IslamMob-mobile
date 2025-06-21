@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A utility class for displaying custom toast messages in the app.
+///
+/// This class provides static methods to show various types of toast notifications
+/// with consistent styling and behavior throughout the application.
 class CustomToast {
   /// Displays a warning toast message with a custom design.
 

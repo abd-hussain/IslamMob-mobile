@@ -1,3 +1,7 @@
+/// Extension methods for [DateTime] to provide additional functionality for Adhan calculations.
+///
+/// This extension adds utility methods that are commonly needed when working with
+/// Islamic prayer times and date/time manipulations in the Adhan library.
 extension AdhanDateTimeExtensions on DateTime {
   /// Creates a copy of this [DateTime] with specified fields replaced by new values.
   ///

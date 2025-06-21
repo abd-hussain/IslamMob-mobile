@@ -9,12 +9,50 @@ import 'package:islam_app/presentation/calender/widgets/month_selection_view.dar
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Screen displaying the Islamic calendar with integrated prayer times.
+///
+/// This screen provides Muslims with a comprehensive calendar view that
+/// combines the Hijri (Islamic lunar) calendar with daily prayer times.
+/// It features:
+/// - **Hijri calendar navigation** between Islamic months
+/// - **Prayer time display** for all five daily prayers
+/// - **Date correlation** showing both Islamic and Gregorian dates
+/// - **Today highlighting** for current date awareness
+/// - **Month selection** with Islamic month names
+///
+/// The calendar helps Muslims:
+/// - Plan their religious observances according to Islamic dates
+/// - View prayer schedules in calendar format
+/// - Maintain awareness of Islamic months and their significance
+/// - Coordinate daily prayers with calendar planning
+///
+/// This integration of Islamic calendar and prayer times provides a
+/// comprehensive tool for Islamic time management and religious planning.
 class CalenderScreen extends StatelessWidget {
+  /// Creates a [CalenderScreen] widget.
+  ///
+  /// This screen displays the Islamic calendar interface with integrated
+  /// prayer times and month navigation functionality.
   const CalenderScreen({super.key});
 
+  /// Background color for the calendar screen interface.
   static const Color backgroundColor = Color(0xfffff2e9);
+
+  /// Color used for separators and dividers in the calendar grid.
   static const Color separatorColor = Color(0xFFDADADA);
 
+  /// Builds the Islamic calendar screen with prayer time integration.
+  ///
+  /// This method constructs the calendar interface featuring:
+  /// - BLoC provider for calendar state management
+  /// - Loading states during data preparation
+  /// - Error handling for calendar data issues
+  /// - Grid layout displaying dates and prayer times
+  /// - Month navigation and selection controls
+  ///
+  /// The screen automatically loads the current Islamic month and
+  /// corresponding prayer times, providing immediate access to
+  /// Islamic calendar and prayer schedule information.
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

@@ -2,13 +2,44 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/details/widgets/hisn_al_muslim_counter_view.dart';
 
+/// Widget for displaying Hisn Al-Muslim supplications with interactive counter.
+///
+/// This widget provides a comprehensive interface for Islamic supplications
+/// that require multiple recitations, combining text display with interactive
+/// counting functionality. It features:
+/// - **Supplication text display** with Arabic typography and translations
+/// - **Interactive counter** for tracking recitation progress
+/// - **Tap-to-increment** functionality for easy counting
+/// - **Automatic progression** to next supplication when count is reached
+/// - **Reference information** showing Islamic sources and authenticity
+///
+/// The widget supports Muslims in performing dhikr and repeated supplications
+/// correctly according to Islamic teachings, providing both the spiritual
+/// content and practical counting tools for proper Islamic practice.
 class HisnAlMuslimWithCounterView extends StatefulWidget {
+  /// The detailed model containing supplication content and counter information.
   final HisnAlMuslimCounterDetailsModel hisnAlMuslimDetailsModel;
+
+  /// Whether the current language requires right-to-left text direction.
   final bool isRtlLanguage;
+
+  /// The current index position in multi-part supplications.
   final int index;
+
+  /// The total number of parts in this supplication series.
   final int totalLength;
+
+  /// Callback function triggered when maximum count is reached.
   final Function() reachMaxCount;
 
+  /// Creates a [HisnAlMuslimWithCounterView] widget for interactive supplications.
+  ///
+  /// Parameters:
+  /// - [hisnAlMuslimDetailsModel]: The supplication data with counter information
+  /// - [isRtlLanguage]: Boolean for RTL language support (Arabic, Farsi)
+  /// - [index]: Current position in the supplication series
+  /// - [totalLength]: Total number of parts in the series
+  /// - [reachMaxCount]: Callback for when maximum count is reached
   const HisnAlMuslimWithCounterView({
     super.key,
     required this.hisnAlMuslimDetailsModel,

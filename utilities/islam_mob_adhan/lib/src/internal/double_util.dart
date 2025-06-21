@@ -1,3 +1,7 @@
+/// A utility class providing mathematical operations for double values.
+///
+/// This class contains static methods for normalizing values, unwinding angles,
+/// and performing angle calculations commonly used in astronomical computations.
 class DoubleUtil {
   /// Normalizes a value within a given [max] bound.
   ///

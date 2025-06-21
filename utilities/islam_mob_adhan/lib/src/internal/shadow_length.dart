@@ -1,3 +1,9 @@
+/// Represents the shadow length used in Islamic prayer time calculations.
+///
+/// Shadow length is used to determine the timing of Asr prayer, which occurs
+/// when the shadow of an object is equal to the object's height plus its
+/// shadow at noon (Hanafi school) or when the shadow equals the object's
+/// height (Shafi school).
 class ShadowLength {
   final double _value;
 

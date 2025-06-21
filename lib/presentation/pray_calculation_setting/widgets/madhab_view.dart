@@ -6,7 +6,17 @@ import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calcul
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays madhab (Islamic jurisprudence school) selection options.
+///
+/// This view allows users to select different madhab methods for prayer time
+/// calculations. Different madhabs have varying interpretations for calculating
+/// prayer times, particularly for Asr prayer. It provides a list of available
+/// madhab options with checkboxes for selection.
 class MadhabView extends StatelessWidget {
+  /// Creates a [MadhabView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const MadhabView({super.key});
 
   @override

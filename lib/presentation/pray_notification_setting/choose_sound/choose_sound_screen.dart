@@ -9,7 +9,25 @@ import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A screen that allows users to choose notification sounds for prayer times.
+///
+/// This screen provides functionality to:
+/// - Display available notification sounds for a specific prayer type
+/// - Allow users to preview and select different sound options
+/// - Save the selected sound preference for the notification type
+/// - Show localized titles based on the prayer/notification type
+/// - Provide an intuitive interface with sound tiles and preview functionality
+///
+/// The screen receives a [NotificationTypeState] argument to determine which
+/// prayer or notification type the sound selection is for (Fajr, Zuhr, Asr,
+/// Maghrib, Isha, reminders, etc.). It integrates with [ChooseSoundBloc] for
+/// state management and sound selection logic.
 class ChooseSoundScreen extends StatelessWidget {
+  /// Creates a [ChooseSoundScreen].
+  ///
+  /// This screen expects to receive a [NotificationTypeState] argument
+  /// through route settings to determine which notification type's
+  /// sound is being configured.
   const ChooseSoundScreen({super.key});
 
   @override
@@ -18,8 +36,9 @@ class ChooseSoundScreen extends StatelessWidget {
     final Map<String, dynamic> arguments =
         ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
     final NotificationTypeState notificationSettingType =
-        arguments[ArgumentConstant.notificationSettingType] ??
-            NotificationTypeState.fajir;
+        arguments[ArgumentConstant.notificationSettingType]
+                as NotificationTypeState? ??
+            const NotificationTypeState.fajir();
 
     return BlocProvider(
       create: (context) => ChooseSoundBloc()
@@ -114,6 +133,24 @@ class ChooseSoundScreen extends StatelessWidget {
     );
   }
 
+  /// Returns the localized title for the notification sound selection screen.
+  ///
+  /// This method maps each [NotificationTypeState] to its corresponding
+  /// localized title string for display in the app bar and UI elements.
+  ///
+  /// Parameters:
+  /// - [localization]: The localization object containing translated strings
+  /// - [notificationSettingType]: The type of notification/prayer for which
+  ///   the sound is being selected
+  ///
+  /// Returns a localized string representing the title for the specific
+  /// notification type. Supported types include:
+  /// - All five daily prayers (Fajr, Zuhr, Asr, Maghrib, Isha)
+  /// - Prayer reminders (15 minutes before)
+  /// - Special times (Midnight, Sunrise)
+  /// - Friday-specific notifications (Al-Kahf, Jumu'ah Dua)
+  ///
+  /// Returns an empty string for unsupported notification types.
   String getNotificationTitleName(IslamMobLocalizations localization,
       NotificationTypeState notificationSettingType) {
     switch (notificationSettingType) {

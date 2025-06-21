@@ -1,0 +1,10 @@
+analyzer:
+  plugins:
+    - custom_lint
+
+custom_lint:
+  rules:
+    - avoid_print_statements: warning
+    - require_documentation: info
+    - prefer_named_parameters: info
+    - avoid_hardcoded_strings: info

@@ -1,3 +1,9 @@
+/// A utility class for calendrical calculations and conversions.
+///
+/// This class provides static methods for converting between different
+/// calendar systems and calculating astronomical values such as Julian Days
+/// and Julian Centuries, which are commonly used in astronomical calculations
+/// for prayer times and other Islamic calendar computations.
 class CalendricalHelper {
   /// Calculates the Julian Day for a given Gregorian date.
   ///

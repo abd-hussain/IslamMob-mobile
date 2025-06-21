@@ -6,7 +6,17 @@ import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calcul
 import 'package:islam_app/shared_widgets/checkbox_tile.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays high latitude calculation options for prayer times.
+///
+/// This view allows users to select different calculation methods for prayer times
+/// in high latitude regions where standard calculation methods may not be accurate.
+/// It provides a list of available high latitude calculation methods with
+/// checkboxes for selection.
 class PolesCalculationView extends StatelessWidget {
+  /// Creates a [PolesCalculationView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const PolesCalculationView({super.key});
 
   @override

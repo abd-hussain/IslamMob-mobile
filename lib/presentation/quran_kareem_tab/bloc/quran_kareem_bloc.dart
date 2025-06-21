@@ -16,10 +16,37 @@ part 'quran_kareem_bloc.freezed.dart';
 part 'quran_kareem_event.dart';
 part 'quran_kareem_state.dart';
 
+/// BLoC for managing the Quran Kareem (Holy Quran) reading interface state.
+///
+/// This BLoC handles all the business logic for the Quran reading experience,
+/// including PDF document management, page navigation, bookmarking, screen
+/// brightness control, and help interface management.
+///
+/// Key responsibilities:
+/// - Managing PDF document loading and display
+/// - Tracking current page number and navigation
+/// - Handling bookmarked pages persistence
+/// - Managing screen brightness and tutorial states
+/// - Coordinating with advertisement system
+/// - Providing Surah and Juz reference information
 class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
+  /// Controller for managing the PDF document display and navigation.
+  ///
+  /// This controller is responsible for rendering the Quran PDF pages
+  /// and handling page transitions.
   PdfController? pdfController;
+
+  /// The current page number being displayed in the Quran.
+  ///
+  /// This field tracks the active page number (1-based indexing) and is used
+  /// for navigation, bookmarking, and determining Surah/Juz references.
   int currentPageNumber = 0;
 
+  /// Creates a new [QuranKareemBloc] instance.
+  ///
+  /// Initializes the BLoC with default state and sets up event handlers
+  /// for all supported events. Also triggers the initialization process
+  /// to load the PDF and restore user preferences.
   QuranKareemBloc() : super(const QuranKareemState()) {
     on<_ShowHideHelpBar>(_showHideHelpBar);
     on<_UpdatePageCount>(_updatePageCount);
@@ -35,6 +62,14 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     initialize();
   }
 
+  /// Initializes the Quran Kareem BLoC with necessary setup operations.
+  ///
+  /// This method performs the initial setup required for the Quran reading
+  /// interface including:
+  /// - Loading the PDF document from storage
+  /// - Restoring bookmarked pages from local database
+  /// - Setting up rewarded advertisements
+  /// - Updating the initial state with loaded data
   Future<void> initialize() async {
     await _setupFirstInitialPDF();
     _loadBookmarkedPages();
@@ -46,7 +81,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   Future<void> _setupFirstInitialPDF() async {
     final pageNumber = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
-        defaultValue: "1");
+        defaultValue: "1") as String;
 
     final filePath = await locator<LoadFileFromDocumentUseCase>().call();
 
@@ -76,7 +111,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
   void _loadBookmarkedPages() {
     final List<dynamic> bookMarkedPages = DataBaseManagerBase.getFromDatabase(
         key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
-        defaultValue: []);
+        defaultValue: []) as List<dynamic>;
 
     if (bookMarkedPages.isNotEmpty) {
       final intList = List<int>.from(bookMarkedPages);
@@ -84,7 +119,11 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     }
   }
 
-  // Change the help bar visibility
+  /// Toggles the visibility of the help bar in the Quran reading interface.
+  ///
+  /// This method switches the current help bar visibility state and marks
+  /// the tutorial as shown. It's typically called when the user taps on
+  /// the screen to show or hide the navigation and control elements.
   void changeHelpBarShowingStatus() {
     final status = state.showHelpBar;
     add(QuranKareemEvent.showHideHelpBar(!status));

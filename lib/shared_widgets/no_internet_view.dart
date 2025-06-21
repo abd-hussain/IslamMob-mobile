@@ -3,8 +3,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays a no internet connection message with retry functionality.
+///
+/// This widget shows an informative screen when the device has no internet
+/// connection, including an icon, localized messages, and a retry button.
+/// It's typically used as a fallback UI when network operations fail.
 class NoInternetView extends StatelessWidget {
+  /// Callback function to execute when the user taps the retry button.
+  ///
+  /// This function should contain the logic to retry the failed network
+  /// operation or refresh the current screen.
   final Function() retryCallback;
+
+  /// Creates a [NoInternetView] with the specified retry callback.
+  ///
+  /// The [retryCallback] parameter is required and will be called when
+  /// the user taps the retry button to attempt reconnection.
   const NoInternetView({super.key, required this.retryCallback});
 
   @override

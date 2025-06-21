@@ -5,9 +5,24 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/select_location_tile_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that allows users to manually select their location during onboarding.
+///
+/// This widget displays a list of predefined countries and cities that users
+/// can choose from when automatic location detection is not available or
+/// permission is denied. It also provides an option to open device settings
+/// to grant location permission.
 class LocationSelectManualView extends StatelessWidget {
-  final Function(String countryName, String lat, String long)
+  /// Callback function called when a location is manually selected.
+  ///
+  /// This function receives the selected country name, latitude, and longitude
+  /// coordinates when the user taps on a location from the list.
+  final Function(String countryName, double lat, double long)
       onSelectManualLocation;
+
+  /// Creates a [LocationSelectManualView] widget.
+  ///
+  /// The [onSelectManualLocation] callback is required and will be called
+  /// when the user selects a location from the available options.
   const LocationSelectManualView(
       {super.key, required this.onSelectManualLocation});
 

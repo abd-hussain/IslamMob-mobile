@@ -5,13 +5,48 @@ import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays a selectable sound option tile for notification settings.
+///
+/// This tile is used in the sound selection interface where users can choose
+/// different notification sounds for prayers and other Islamic reminders. Each tile
+/// displays:
+/// - A radio button indicating selection state
+/// - The sound name
+/// - A play button to preview the sound
+///
+/// The tile's appearance adapts based on its position in a list (first, middle, or last)
+/// with appropriate border radius styling. When the play button is pressed, it triggers
+/// a test notification with the selected sound.
 class ChooceSoundTile extends StatelessWidget {
+  /// Whether this tile is the first item in the list.
+  ///
+  /// Used to apply top border radius styling to create a cohesive list appearance.
   final bool isFirstIndex;
+
+  /// Whether this tile is the last item in the list.
+  ///
+  /// Used to apply bottom border radius styling to create a cohesive list appearance.
   final bool isLastIndex;
+
+  /// Whether this sound option is currently selected.
+  ///
+  /// When true, displays a checked radio button; when false, displays an unchecked one.
   final bool isSelected;
+
+  /// The notification sound data to display in this tile.
+  ///
+  /// Contains the sound name and file information that will be shown to the user.
   final NotificationSound sound;
+
+  /// The type of notification this sound selection is for.
+  ///
+  /// Used when testing the notification sound to ensure the correct context
+  /// and behavior for the specific notification type.
   final NotificationTypeState type;
 
+  /// Creates a [ChooceSoundTile] widget.
+  ///
+  /// All parameters are required to properly display and handle the sound selection tile.
   const ChooceSoundTile({
     super.key,
     required this.isFirstIndex,

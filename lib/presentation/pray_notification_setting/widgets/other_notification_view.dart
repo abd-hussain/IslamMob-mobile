@@ -5,7 +5,22 @@ import 'package:islam_app/presentation/pray_notification_setting/bloc/notificati
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_notification_setting/widgets/sub_widgets/notification_row_view.dart';
 
+/// A widget that displays additional Islamic notification settings beyond the five daily prayers.
+///
+/// This widget provides a list of supplementary notification options including:
+/// - Sunrise time notifications
+/// - Friday (Jumu'ah) Al-Kahf (The Cave) chapter reminder
+/// - Friday (Jumu'ah) Du'a (supplication) reminder
+/// - Qiyam al-Layl (night prayer) reminder
+/// - 15-minute prayer reminder before each prayer
+///
+/// Each notification type is presented as a toggle-able row with localized titles.
+/// The widget uses BLoC pattern to manage the state of each notification setting
+/// and automatically saves changes to the user's preferences.
+///
+/// The widget is styled with a white background and subtle shadow for visual separation.
 class OtherNotificationView extends StatelessWidget {
+  /// Creates an [OtherNotificationView] widget.
   const OtherNotificationView({super.key});
 
   @override

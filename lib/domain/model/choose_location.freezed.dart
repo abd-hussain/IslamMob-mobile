@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ChooseLocation {
   String get flag => throw _privateConstructorUsedError;
   String get countryName => throw _privateConstructorUsedError;
-  String get latitude => throw _privateConstructorUsedError;
-  String get longitude => throw _privateConstructorUsedError;
+  double get latitude => throw _privateConstructorUsedError;
+  double get longitude => throw _privateConstructorUsedError;
 
   /// Create a copy of ChooseLocation
   /// with the given fields replaced by the non-null parameter values.
@@ -35,7 +35,7 @@ abstract class $ChooseLocationCopyWith<$Res> {
       _$ChooseLocationCopyWithImpl<$Res, ChooseLocation>;
   @useResult
   $Res call(
-      {String flag, String countryName, String latitude, String longitude});
+      {String flag, String countryName, double latitude, double longitude});
 }
 
 /// @nodoc
@@ -70,11 +70,11 @@ class _$ChooseLocationCopyWithImpl<$Res, $Val extends ChooseLocation>
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
     ) as $Val);
   }
 }
@@ -88,7 +88,7 @@ abstract class _$$ChooseLocationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String flag, String countryName, String latitude, String longitude});
+      {String flag, String countryName, double latitude, double longitude});
 }
 
 /// @nodoc
@@ -121,11 +121,11 @@ class __$$ChooseLocationImplCopyWithImpl<$Res>
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
     ));
   }
 }
@@ -144,9 +144,9 @@ class _$ChooseLocationImpl implements _ChooseLocation {
   @override
   final String countryName;
   @override
-  final String latitude;
+  final double latitude;
   @override
-  final String longitude;
+  final double longitude;
 
   @override
   String toString() {
@@ -185,17 +185,17 @@ abstract class _ChooseLocation implements ChooseLocation {
   factory _ChooseLocation(
       {required final String flag,
       required final String countryName,
-      required final String latitude,
-      required final String longitude}) = _$ChooseLocationImpl;
+      required final double latitude,
+      required final double longitude}) = _$ChooseLocationImpl;
 
   @override
   String get flag;
   @override
   String get countryName;
   @override
-  String get latitude;
+  double get latitude;
   @override
-  String get longitude;
+  double get longitude;
 
   /// Create a copy of ChooseLocation
   /// with the given fields replaced by the non-null parameter values.

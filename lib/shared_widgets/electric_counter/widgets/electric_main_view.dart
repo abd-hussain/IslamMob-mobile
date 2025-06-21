@@ -4,17 +4,40 @@ import 'package:islam_app/shared_widgets/electric_counter/widgets/electric_count
 import 'package:islam_app/shared_widgets/electric_counter/widgets/electric_max_counter_view.dart';
 import 'package:islam_app/shared_widgets/electric_counter/widgets/toggle_button.dart';
 
+/// The main view widget for the electric counter (Tasbeeh) interface.
+///
+/// This widget displays a circular counter interface with layered SVG images,
+/// a counter display, control buttons for sound/vibration/reset, and an
+/// increment button. It provides a complete digital Tasbeeh counter experience.
 class ElectricMainView extends StatelessWidget {
+  /// The current count value to display.
   final int currentCount;
+
+  /// The maximum count value for the counter.
   final int maxCount;
+
+  /// The width used for sizing various elements in the interface.
   final double width;
+
+  /// Callback function called when the refresh/reset button is pressed.
   final void Function() onRefresh;
+
+  /// Callback function called when the increment button is pressed.
   final void Function() onIncrease;
+
+  /// Callback function called when the vibration toggle button is pressed.
   final void Function() onVibrationSelected;
+
+  /// Callback function called when the sound toggle button is pressed.
   final void Function() onSoundSelected;
+
+  /// Whether the vibration option is currently selected/enabled.
   final bool isVibrationSelected;
+
+  /// Whether the sound option is currently selected/enabled.
   final bool isSoundSelected;
 
+  /// Creates an [ElectricMainView] with the specified properties.
   const ElectricMainView({
     super.key,
     required this.currentCount,

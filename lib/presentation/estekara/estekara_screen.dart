@@ -6,9 +6,31 @@ import 'package:islam_app/presentation/estekara/bloc/estekara_bloc.dart';
 import 'package:islam_app/presentation/estekara/widget/player_widget.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Screen for Istikhara (Islamic guidance prayer) functionality.
+///
+/// This screen provides Muslims with the complete Istikhara experience,
+/// which is an important Islamic practice for seeking Allah's guidance
+/// when making significant life decisions. It features:
+/// - **Audio recitation** of the Istikhara prayer in Arabic
+/// - **Prayer text display** in both Arabic and localized languages
+/// - **Step-by-step instructions** for performing Istikhara correctly
+/// - **Islamic guidance** on when and how to use Istikhara
+///
+/// Istikhara is a Sunnah prayer that Muslims perform when they need to
+/// make important decisions and seek Allah's guidance. This screen provides
+/// authentic Islamic content including the proper prayer (dua), instructions,
+/// and guidance according to Islamic teachings and prophetic traditions.
 class EstekaraScreen extends StatefulWidget {
+  /// Creates an [EstekaraScreen] widget.
+  ///
+  /// This screen provides the complete Istikhara experience with audio
+  /// recitation, prayer text, and guidance for Islamic decision-making.
   const EstekaraScreen({super.key});
 
+  /// Creates the state for the Istikhara screen.
+  ///
+  /// Returns a [_EstekaraScreenState] instance that manages the screen's
+  /// lifecycle, audio player, and Istikhara content display.
   @override
   State<EstekaraScreen> createState() => _EstekaraScreenState();
 }

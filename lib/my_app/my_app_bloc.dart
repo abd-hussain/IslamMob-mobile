@@ -8,11 +8,27 @@ import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
+/// BLoC for managing the Islam Mob application initialization and setup.
+///
+/// This class handles the comprehensive initialization process for the Islamic
+/// application, ensuring all necessary services and configurations are properly
+/// set up before the main app interface is presented to users. It manages:
+/// - **Database initialization** for storing Islamic preferences and data
+/// - **Service locator setup** for dependency injection
+/// - **Firebase integration** for analytics and remote features
+/// - **Advertisement services** for app sustainability
+/// - **Timezone configuration** for accurate prayer time calculations
+/// - **Device orientation** settings for optimal Islamic content display
+/// - **Network connectivity** checks for online features
+///
+/// The initialization process is memoized to ensure it runs only once during
+/// the app lifecycle, providing efficient startup performance while ensuring
+/// all Islamic features are properly configured for user interaction.
 class MyAppBloc {
-  final AsyncMemoizer _memoizer = AsyncMemoizer();
+  final AsyncMemoizer<dynamic> _memoizer = AsyncMemoizer();
 
   /// Public method to fetch data with memoization
-  Future fetchData() => _memoizer.runOnce(_initializeApp);
+  Future<dynamic> fetchData() => _memoizer.runOnce(_initializeApp);
 
   /// Initializes the app by setting up dependencies and configurations
   Future<void> _initializeApp() async {

@@ -1,11 +1,30 @@
 import 'package:flutter/material.dart';
 
-enum Direction { ltr, rtl }
+/// Enum representing text direction for the switch animation.
+enum Direction {
+  /// Left-to-right direction.
+  ltr,
 
+  /// Right-to-left direction.
+  rtl
+}
+
+/// A custom switch widget with directional support and smooth animations.
+///
+/// This widget provides a toggle switch with customizable direction behavior
+/// that supports both LTR and RTL layouts. The switch animates smoothly
+/// between on and off states with a teal color when active.
 class CustomSwitch extends StatelessWidget {
+  /// The current state of the switch (true for on, false for off).
   final bool value;
+
+  /// The direction for the switch animation (LTR or RTL).
   final Direction direction;
+
+  /// Callback function called when the switch state changes.
   final ValueChanged<bool> onChanged;
+
+  /// Creates a [CustomSwitch] with the specified [value], [direction], and [onChanged] callback.
   const CustomSwitch({
     super.key,
     required this.value,

@@ -5,18 +5,23 @@ import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_sealed.dart';
 
+/// Use case for retrieving user prayer calculation settings from the database.
+///
+/// This class provides methods to fetch various prayer-related settings including
+/// high latitude calculation rules, calculation methods, madhab preferences,
+/// UTC offset, and custom minute adjustments for prayer times.
 class GetUserSettingUseCase {
   /// Retrieves the HighLatitude Rule, from Hive
   PrayHightLatitudeCaluclationState savedHighLatitudeRule() {
-    final String selectedPraynHightLatitudeCaluclation =
+    final String selectedPrayHighLatitudeCalculation =
         DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
-      defaultValue: "PraynHightLatitudeCaluclatioState.none()",
-    );
+      defaultValue: "PrayHightLatitudeCaluclationState.none()",
+    ) as String;
 
     final PrayHightLatitudeCaluclationState highLatitude =
         PrayDBParser.parseHighLatitudeRuleState(
-            selectedPraynHightLatitudeCaluclation);
+            selectedPrayHighLatitudeCalculation);
     return highLatitude;
   }
 
@@ -26,7 +31,7 @@ class GetUserSettingUseCase {
         DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
       defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
-    );
+    ) as String;
 
     final PrayCalculationMethodState calculationMethod =
         PrayDBParser.parseCalculationMethodState(selectedCalculationMethod);
@@ -39,7 +44,7 @@ class GetUserSettingUseCase {
     final String selectedMadhab = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
       defaultValue: "MadhabState.hanafi()",
-    );
+    ) as String;
 
     final MadhabState madhab = PrayDBParser.parseMadhabState(selectedMadhab);
     return madhab;
@@ -50,11 +55,11 @@ class GetUserSettingUseCase {
     final String hourOffset = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour,
       defaultValue: "",
-    );
+    ) as String;
     final String minuteOffset = DataBaseManagerBase.getFromDatabase(
       key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin,
       defaultValue: "",
-    );
+    ) as String;
 
     if (hourOffset.isEmpty) {
       return const Duration(
@@ -67,6 +72,7 @@ class GetUserSettingUseCase {
     }
   }
 
+  /// Retrieves the saved minute adjustments for each prayer time from the database.
   Map<AzanTypeForEditMinState, int> savedMinutesEdited() {
     final Map<String, dynamic> getDefaultMinEditSettings = {
       DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin: "0",
@@ -86,7 +92,7 @@ class GetUserSettingUseCase {
           key: key, defaultValue: defaultValue);
       final azanType = _mapKeyToAzanType(key);
       if (azanType != null) {
-        minutesEdited[azanType] = int.tryParse(value) ?? 0;
+        minutesEdited[azanType] = int.tryParse(value as String) ?? 0;
       }
     });
 

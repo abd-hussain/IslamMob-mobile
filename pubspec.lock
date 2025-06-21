@@ -1353,7 +1353,7 @@ packages:
       path: "utilities/islam_mob_lint"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "1.0.0"
   islam_test:
     dependency: "direct dev"
     description:

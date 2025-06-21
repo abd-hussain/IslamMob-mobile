@@ -5,11 +5,28 @@ import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'inboarding_bloc.freezed.dart';
 part 'inboarding_event.dart';
 part 'inboarding_state.dart';
-part 'inboarding_bloc.freezed.dart';
 
+/// BLoC for managing the Islamic app onboarding flow and user introduction.
+///
+/// This BLoC handles the business logic for guiding new users through
+/// the Islamic application's features and initial setup process. It manages:
+/// - **Onboarding stage progression** through different introduction screens
+/// - **User progress tracking** with persistent storage of completion status
+/// - **Analytics integration** for monitoring onboarding effectiveness
+/// - **Completion management** marking when users finish the introduction
+///
+/// The onboarding process is crucial for helping Muslims understand and
+/// navigate the Islamic app's features, ensuring they can effectively
+/// access prayer times, Quran reading, Islamic calendar, and other
+/// spiritual tools provided by the application.
 class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
+  /// Creates an [InboardingBloc] with initial state and event handlers.
+  ///
+  /// Initializes the BLoC with empty onboarding state and sets up event
+  /// handlers for stage progression, initialization, and completion management.
   InboardingBloc() : super(const InboardingState()) {
     on<_InitialInBoardingStage>(_initialInBoardingStage);
     on<_ChangeInBoardingStage>(_changeInBoardingStage);

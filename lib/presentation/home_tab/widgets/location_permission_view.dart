@@ -4,9 +4,37 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget for requesting location permission for accurate Islamic prayer times.
+///
+/// This widget displays a permission request interface that explains to
+/// Muslims why location access is essential for accurate prayer time
+/// calculations. It features:
+/// - **Clear explanation** of why location permission is needed for Islamic practice
+/// - **Direct settings access** for easy permission management
+/// - **Islamic context** explaining the importance of accurate prayer times
+/// - **User-friendly interface** with proper visual styling
+///
+/// Location permission is crucial for Islamic apps as prayer times vary
+/// significantly based on geographical location. This widget helps Muslims
+/// understand the religious importance of providing location access for
+/// accurate prayer time calculations according to their specific location.
 class LocationPermissionView extends StatelessWidget {
+  /// Creates a [LocationPermissionView] widget.
+  ///
+  /// This widget displays the location permission request interface with
+  /// Islamic context and direct access to device settings for permission management.
   const LocationPermissionView({super.key});
 
+  /// Builds the location permission request interface.
+  ///
+  /// This method constructs a permission request view featuring:
+  /// - Header with location icon and permission request title
+  /// - Detailed explanation of why location is needed for prayer times
+  /// - Settings button for direct access to permission management
+  /// - Proper visual styling with shadows and rounded corners
+  ///
+  /// The interface helps Muslims understand the Islamic importance of
+  /// location-based prayer time accuracy.
   @override
   Widget build(BuildContext context) {
     return Padding(

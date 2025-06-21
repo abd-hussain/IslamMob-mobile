@@ -11,10 +11,10 @@ jobs:
 
     steps:
         - name: 📚 Git Checkout
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
 
         - name: 🔥 Set Up Java
-          uses: actions/setup-java@v3.12.0
+          uses: actions/setup-java@v4
           with:
             distribution: 'oracle'
             java-version: '17'
@@ -24,7 +24,7 @@ jobs:
           with:
             flutter-version: '3.29.2'
             channel: 'stable'
-            cache: false
+            cache: true
 
         - name: 🗳️ Flutter gen-l10n
           run: flutter gen-l10n
@@ -36,13 +36,21 @@ jobs:
           run: flutter pub run build_runner build --delete-conflicting-outputs
             
         - name: 🔑 Set up key.properties
+          env:
+            ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+            ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+            ANDROID_KEY_CONTENT: ${{ secrets.ANDROID_KEY_CONTENT }}
           run: |
-            echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" > android/key.properties
-            echo "storePassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
-            echo "keyAlias=${{ secrets.ANDROID_KEY_Alias }}" >> android/key.properties
-            echo "${{ secrets.ANDROID_KEY_CONTENT }}" | base64 --decode > android/androidkeystore.jks
-            # Optional test command to verify file creation (do not log file content directly for security)
-            ls -la android/ # Check if androidkeystore.jks file is generated
+            if [ -n "$ANDROID_KEY_PASSWORD" ] && [ -n "$ANDROID_KEY_ALIAS" ] && [ -n "$ANDROID_KEY_CONTENT" ]; then
+              echo "keyPassword=$ANDROID_KEY_PASSWORD" > android/key.properties
+              echo "storePassword=$ANDROID_KEY_PASSWORD" >> android/key.properties
+              echo "keyAlias=$ANDROID_KEY_ALIAS" >> android/key.properties
+              echo "$ANDROID_KEY_CONTENT" | base64 --decode > android/androidkeystore.jks
+              # Optional test command to verify file creation (do not log file content directly for security)
+              ls -la android/ # Check if androidkeystore.jks file is generated
+            else
+              echo "Warning: Android signing secrets not found. Skipping key setup."
+            fi
             
         - name: 🔑 Set up local.properties
           run: |
@@ -50,8 +58,14 @@ jobs:
             echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
 
         - name: 🔑 Set up Play Store Secret
+          env:
+            PLAY_STORE_SECRET: ${{ secrets.PLAY_STORE_SECRET }}
           run: |
-            echo "${{ secrets.PLAY_STORE_SECRET }}" | base64 --decode > android/play_store_secret.json
+            if [ -n "$PLAY_STORE_SECRET" ]; then
+              echo "$PLAY_STORE_SECRET" | base64 --decode > android/play_store_secret.json
+            else
+              echo "Warning: Play Store secret not found. Skipping Play Store setup."
+            fi
 
         - name: 🎯 Setup Fastlane
           uses: ruby/setup-ruby@v1
@@ -91,7 +105,7 @@ jobs:
           with:
             flutter-version: '3.29.2'
             channel: 'stable'
-            cache: false
+            cache: true
 
         - name: 🗳️ Flutter gen-l10n
           run: flutter gen-l10n
@@ -103,8 +117,14 @@ jobs:
           run: flutter pub run build_runner build --delete-conflicting-outputs
 
         - name: 🧰 Set up App Store Connect
+          env:
+            APPSTORE_CONNECT: ${{ secrets.APPSTORE_CONNECT }}
           run: |
-            echo "${{ secrets.APPSTORE_CONNECT }}" | base64 --decode > ios/app_store_connect.json
+            if [ -n "$APPSTORE_CONNECT" ]; then
+              echo "$APPSTORE_CONNECT" | base64 --decode > ios/app_store_connect.json
+            else
+              echo "Warning: App Store Connect secret not found. Skipping App Store setup."
+            fi
 
         - name: 🎯 Setup Fastlane
           uses: ruby/setup-ruby@v1
@@ -121,10 +141,15 @@ jobs:
             flutter pub get
 
         - name: 🛠️ Build and Deploy
-          run: |
-            make deploy-ios
           env:
             MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
             MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
+          run: |
+            if [ -n "$MATCH_PASSWORD" ] && [ -n "$MATCH_GIT_BASIC_AUTHORIZATION" ]; then
+              make deploy-ios
+            else
+              echo "Warning: iOS deployment secrets not found. Skipping iOS deployment."
+              exit 1
+            fi
 
   

@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays animated title text during onboarding.
+///
+/// This widget cycles through different language phrases to prompt users
+/// to select their preferred language. It automatically animates between
+/// Arabic and English text every second to create an engaging onboarding
+/// experience.
 class TitleTableWidget extends StatefulWidget {
+  /// Creates a [TitleTableWidget] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const TitleTableWidget({super.key});
 
   @override

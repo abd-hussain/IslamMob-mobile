@@ -1,9 +1,29 @@
 import 'package:azkar/model/azkar.dart';
 import 'package:azkar/model/azkar_salah_time.dart';
 
+/// A base class that provides collections of Islamic supplications (Azkar).
+///
+/// This class contains predefined Azkar that are traditionally recited after
+/// the five daily prayers (Salah). It provides different sets of supplications
+/// based on the prayer time, with some Azkar being specific to certain prayers
+/// like Fajr and Maghrib.
+///
+/// The class organizes Azkar into categories:
+/// - Base Azkar: Common supplications recited after all prayers
+/// - Time-based Azkar: Specific to Fajr/Maghrib vs other prayers
+/// - Universal Azkar: Additional supplications with prayer-specific variations
+/// - Prayer-specific Azkar: Unique to certain prayers (e.g., Fajr-only)
 class AzkarBase {
-  // Constant
+  /// Bismillah - "In the name of Allah, the Most Gracious, the Most Merciful".
+  ///
+  /// This is the opening phrase used before reciting certain Quranic chapters
+  /// and is commonly recited before various Islamic supplications.
   static String besemellah = "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم";
+
+  /// A'udhu Billah - "I seek refuge in Allah from Satan, the accursed".
+  ///
+  /// This phrase is recited to seek protection from Satan before reading
+  /// the Quran or performing religious acts.
   static String aothBellah = "أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ";
 
   static final List<AzkarModel> _baseList = [
@@ -126,6 +146,24 @@ class AzkarBase {
     );
   }
 
+  /// Returns a complete list of Azkar (Islamic supplications) for a specific prayer time.
+  ///
+  /// This method compiles a comprehensive collection of supplications that should
+  /// be recited after the specified prayer. The returned list includes:
+  /// - Base Azkar: Common supplications recited after all prayers
+  /// - Time-based Azkar: Specific variations for Fajr/Maghrib vs other prayers
+  /// - Universal Azkar: Additional supplications with prayer-specific counts
+  /// - Prayer-specific Azkar: Unique supplications for certain prayers (e.g., Fajr)
+  ///
+  /// The method automatically adjusts the repetition counts and includes
+  /// appropriate Azkar based on the prayer time. For example, certain
+  /// supplications are recited more times after Fajr and Maghrib prayers.
+  ///
+  /// [salahType] The specific prayer time state that determines which
+  /// Azkar should be included and their repetition counts.
+  ///
+  /// Returns a [List<AzkarModel>] containing all the appropriate supplications
+  /// for the specified prayer time, ordered according to Islamic tradition.
   List<AzkarModel> azkarList(AzkarSalahTimeState salahType) {
     final bool fajirOrMaghribSalah =
         salahType == const AzkarSalahTimeStateFajir() ||

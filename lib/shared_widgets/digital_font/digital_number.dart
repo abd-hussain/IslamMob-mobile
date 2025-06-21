@@ -1,12 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+/// A widget that displays numbers using a digital/seven-segment display style.
+///
+/// This widget renders integers using a custom-painted seven-segment display
+/// appearance, similar to digital clocks or calculators. It supports:
+/// - Custom colors for the segments
+/// - Adjustable height (width is automatically calculated)
+/// - Left padding with zeros for consistent digit count
+/// - RTL (Arabic) text direction support
+/// - Smooth rendering using custom painting
+///
+/// The widget automatically handles digit extraction and positioning,
+/// and can display any non-negative integer value.
 class DigitalNumber extends StatelessWidget {
+  /// The integer value to display in digital format.
+  ///
+  /// This value will be broken down into individual digits and rendered
+  /// using seven-segment display style. Must be non-negative.
   final int value;
+
+  /// The minimum number of digits to display, padding with zeros on the left.
+  ///
+  /// If the [value] has fewer digits than [padLeft], leading zeros will be
+  /// added to reach the specified width. For example, if [value] is 42 and
+  /// [padLeft] is 4, it will display as "0042".
+  ///
+  /// Defaults to 0 (no padding).
   final int padLeft;
+
+  /// The height of the digital display in logical pixels.
+  ///
+  /// The width of each digit is automatically calculated as height/2.
+  /// This determines the overall size of the digital number display.
   final double height;
+
+  /// The color used to paint the digital segments.
+  ///
+  /// All segments of all digits will be rendered in this color.
+  /// Typically a bright color like green, red, or blue for visibility.
   final Color color;
 
+  /// Creates a digital number display widget.
+  ///
+  /// The [value], [height], and [color] parameters are required.
+  /// The [padLeft] parameter is optional and defaults to 0.
+  ///
+  /// Example:
+  /// ```dart
+  /// DigitalNumber(
+  ///   value: 1234,
+  ///   height: 60.0,
+  ///   color: Colors.green,
+  ///   padLeft: 6, // Will display as "001234"
+  /// )
+  /// ```
   const DigitalNumber({
     super.key,
     required this.value,
@@ -88,7 +136,7 @@ class _DigitalDigitPainter extends CustomPainter {
       ..color = color
       ..style = PaintingStyle.fill;
 
-    List<Offset> leftPolygon(top, bottom) {
+    List<Offset> leftPolygon(double top, double bottom) {
       return [
         Offset(left + smallGap, top),
         Offset(left, top + smallGap),
@@ -99,7 +147,7 @@ class _DigitalDigitPainter extends CustomPainter {
       ];
     }
 
-    List<Offset> rightPolygon(top, bottom) {
+    List<Offset> rightPolygon(double top, double bottom) {
       return [
         Offset(right - smallGap, top),
         Offset(right - thickness, top + bigGap),

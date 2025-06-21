@@ -3,7 +3,53 @@ import 'package:islam_app/domain/sealed/high_latitude_method.dart';
 import 'package:islam_app/domain/sealed/madhab.dart';
 import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 
+/// Use case for managing country-specific Islamic prayer calculation settings.
+///
+/// This class provides a comprehensive database of prayer calculation settings
+/// for countries worldwide, ensuring accurate prayer times based on local
+/// Islamic authorities and regional preferences. Each country configuration includes:
+/// - **Madhab selection** (Hanafi or Shafi'i) based on regional traditions
+/// - **Calculation method** from local Islamic authorities or organizations
+/// - **High latitude adjustments** for countries with extreme seasonal variations
+///
+/// The settings are based on:
+/// - Official Islamic authorities in each country
+/// - Regional Islamic organizations and councils
+/// - Traditional madhab preferences in different regions
+/// - Geographical considerations for high latitude locations
+///
+/// This ensures Muslims worldwide receive prayer times that align with
+/// their local Islamic community standards and religious traditions,
+/// providing authentic and regionally appropriate prayer time calculations.
 class PrayCountrySettingUsecase {
+  /// Comprehensive list of country-specific prayer calculation settings.
+  ///
+  /// This static list contains prayer calculation configurations for countries
+  /// worldwide, each tailored to local Islamic traditions and authorities.
+  /// The configurations include:
+  ///
+  /// **Country Code**: ISO 3166-1 alpha-2 country codes for identification
+  /// **Madhab**: Islamic school of jurisprudence (Hanafi or Shafi'i)
+  /// **Calculation Method**: Prayer time calculation method from local authorities
+  /// **High Latitude Rule**: Adjustments for extreme geographical locations
+  ///
+  /// The settings are organized to provide:
+  /// - Accurate prayer times based on local Islamic authority recommendations
+  /// - Proper madhab selection reflecting regional Islamic traditions
+  /// - Appropriate high latitude adjustments for northern/southern countries
+  /// - Consistency with local mosque and community prayer schedules
+  ///
+  /// Countries with significant Muslim populations have settings based on
+  /// their official Islamic councils or widely accepted calculation methods.
+  /// High latitude countries (like those in Northern Europe) include special
+  /// adjustments for seasons when normal astronomical calculations may not work.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// final jordanSettings = PrayCountrySettingUsecase.list
+  ///     .firstWhere((setting) => setting.countryCode == 'JO');
+  /// // Returns Jordan's settings: Shafi'i madhab, Jordan Awqaf method
+  /// ```
   static List<PrayCountrySetting> list = [
     PrayCountrySetting(
       countryCode: 'JO', // Jordan
@@ -1299,6 +1345,35 @@ class PrayCountrySettingUsecase {
     ),
   ];
 
+  /// Retrieves prayer calculation settings for a specific country code.
+  ///
+  /// This method looks up the appropriate prayer calculation settings for a given
+  /// country using its ISO 3166-1 alpha-2 country code. It provides:
+  /// - **Exact match lookup** for countries in the predefined list
+  /// - **Fallback settings** for countries not explicitly configured
+  /// - **Case-insensitive matching** by normalizing the country code
+  ///
+  /// The method ensures that every country receives appropriate prayer calculation
+  /// settings, either from the curated list or sensible defaults. The fallback
+  /// settings use:
+  /// - Shafi'i madhab (most widely followed)
+  /// - Jordan Awqaf calculation method (widely accepted)
+  /// - No high latitude adjustments (suitable for most regions)
+  ///
+  /// Parameters:
+  /// - [countryCode]: The ISO 3166-1 alpha-2 country code (e.g., 'US', 'SA', 'GB')
+  ///
+  /// Returns a [PrayCountrySetting] object containing the appropriate prayer
+  /// calculation configuration for the specified country.
+  ///
+  /// Example:
+  /// ```dart
+  /// final usSettings = PrayCountrySettingUsecase.setupPraySettingByCountryCode('US');
+  /// // Returns: ISNA method, Shafi'i madhab, angle-based high latitude
+  ///
+  /// final unknownSettings = PrayCountrySettingUsecase.setupPraySettingByCountryCode('XX');
+  /// // Returns: Jordan Awqaf method, Shafi'i madhab, no high latitude adjustments
+  /// ```
   static PrayCountrySetting setupPraySettingByCountryCode(String countryCode) {
     final normalizedCode = countryCode.toUpperCase();
 

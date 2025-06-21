@@ -4,6 +4,17 @@ import 'dart:io';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checkup/core/exceptions.dart';
 
+/// A repository for managing network connectivity information and monitoring.
+///
+/// This class provides functionality to:
+/// - Monitor real-time network connectivity changes
+/// - Check internet connectivity on app launch
+/// - Verify actual internet access (not just network connection)
+/// - Provide a stream of network state updates
+///
+/// The repository distinguishes between being connected to a network
+/// (WiFi, mobile, etc.) and having actual internet access by performing
+/// DNS lookups to verify connectivity.
 class NetworkInfoRepository {
   final StreamController<bool> _networkStateController =
       StreamController<bool>.broadcast();

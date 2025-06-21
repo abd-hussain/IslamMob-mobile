@@ -4,9 +4,37 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// Widget for requesting notification permission for Islamic prayer reminders.
+///
+/// This widget displays a permission request interface that explains to
+/// Muslims why notification access is essential for prayer time reminders
+/// and Islamic spiritual practices. It features:
+/// - **Clear explanation** of why notifications are needed for Islamic practice
+/// - **Direct settings access** for easy permission management
+/// - **Islamic context** explaining the importance of prayer time reminders
+/// - **User-friendly interface** with proper visual styling
+///
+/// Notification permission is crucial for Islamic apps as it enables prayer
+/// time reminders, helping Muslims maintain their spiritual obligations
+/// throughout the day. This widget helps Muslims understand the religious
+/// importance of enabling notifications for their Islamic practice.
 class NotificationPermissionView extends StatelessWidget {
+  /// Creates a [NotificationPermissionView] widget.
+  ///
+  /// This widget displays the notification permission request interface with
+  /// Islamic context and direct access to device settings for permission management.
   const NotificationPermissionView({super.key});
 
+  /// Builds the notification permission request interface.
+  ///
+  /// This method constructs a permission request view featuring:
+  /// - Header with notification icon and permission request title
+  /// - Detailed explanation of why notifications are needed for prayer reminders
+  /// - Settings button for direct access to permission management
+  /// - Proper visual styling with shadows and rounded corners
+  ///
+  /// The interface helps Muslims understand the Islamic importance of
+  /// prayer time notifications for maintaining their spiritual schedule.
   @override
   Widget build(BuildContext context) {
     return Padding(

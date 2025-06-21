@@ -10,7 +10,14 @@ import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 
+/// A widget that displays the initial notification permission request view.
+///
+/// This widget shows information about notification permissions and provides
+/// a button to request notification permissions from the user. It handles
+/// the permission request process including internet connectivity checks,
+/// Firebase messaging setup, and local notification initialization.
 class NotificationIdleView extends StatelessWidget {
+  /// Creates a [NotificationIdleView] widget.
   const NotificationIdleView({super.key});
 
   @override

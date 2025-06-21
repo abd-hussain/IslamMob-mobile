@@ -2,8 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/domain/model/profile_options.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
+/// A widget that displays a collection of profile options in a list format.
+///
+/// This widget creates a scrollable list of profile options with icons, titles,
+/// subtitles, and navigation arrows. Each option can be enabled or disabled,
+/// with different styling applied based on availability. The list includes
+/// separators between items and shadow styling for visual appeal.
 class CollectionListOptionView extends StatelessWidget {
+  /// Creates a [CollectionListOptionView] with the specified list of options.
+  ///
+  /// The [listOfOptions] parameter is required and contains the profile
+  /// options to display in the list.
   const CollectionListOptionView({super.key, required this.listOfOptions});
+
+  /// The list of profile options to display.
+  ///
+  /// Each [ProfileOptions] item contains information about an option including
+  /// its icon, name, subtitle, availability status, and tap callback.
+  /// Disabled options are displayed with grey styling and are not clickable.
   final List<ProfileOptions> listOfOptions;
 
   @override

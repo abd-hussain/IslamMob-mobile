@@ -8,9 +8,33 @@ import 'package:islam_app/presentation/hisn_al_muslim/main_list/widgets/hisn_fav
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/custom_text_field.dart';
 
+/// Screen for browsing and managing Hisn Al-Muslim supplications list.
+///
+/// This screen provides Muslims with comprehensive access to the complete
+/// collection of Islamic supplications from Hisn Al-Muslim (Fortress of
+/// the Muslim), a renowned compilation of authentic Islamic prayers and
+/// remembrances. It features:
+/// - **Tabbed navigation** between all supplications and favorites
+/// - **Search functionality** for finding specific Islamic prayers
+/// - **Visual branding** with Hisn Al-Muslim imagery
+/// - **Organized lists** with proper Islamic categorization
+/// - **Favorite management** for bookmarking important supplications
+///
+/// The screen serves as the main entry point for accessing Islamic
+/// supplications for various life situations including daily dhikr,
+/// travel prayers, eating supplications, and prayers for different
+/// occasions according to Islamic teachings and Sunnah practices.
 class HisnAlMuslimListScreen extends StatefulWidget {
+  /// Creates a [HisnAlMuslimListScreen] widget.
+  ///
+  /// This screen displays the main list interface for Hisn Al-Muslim
+  /// supplications with search, navigation, and favorite management.
   const HisnAlMuslimListScreen({super.key});
 
+  /// Creates the state for the Hisn Al-Muslim list screen.
+  ///
+  /// Returns a [_HisnAlMuslimListScreenState] instance that manages
+  /// the screen's lifecycle, search controller, and tab navigation.
   @override
   State<HisnAlMuslimListScreen> createState() => _HisnAlMuslimListScreenState();
 }

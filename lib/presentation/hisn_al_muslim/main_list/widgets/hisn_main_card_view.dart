@@ -6,9 +6,32 @@ import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/main_list/bloc/hisn_al_muslim_list_bloc.dart';
 
+/// Widget for displaying individual Hisn Al-Muslim supplication cards.
+///
+/// This widget represents a single Islamic supplication from the Hisn Al-Muslim
+/// collection in a card format, providing navigation and favorite management
+/// functionality. It features:
+/// - **Supplication title** with ID number and Arabic/translated text
+/// - **Favorite toggle** for bookmarking important supplications
+/// - **Navigation functionality** to detailed supplication view
+/// - **Islamic typography** using the Uthman font for authentic presentation
+/// - **Visual feedback** with shadows and material design interactions
+///
+/// The card supports Muslims in browsing and organizing Islamic supplications
+/// from the Fortress of the Muslim collection, providing easy access to
+/// authentic Islamic prayers and remembrances for various life situations.
 class HisnMainCardView extends StatelessWidget {
+  /// The Hisn Al-Muslim supplication model to display.
   final HisnAlMuslimModel item;
+
+  /// Whether the current language requires right-to-left text direction.
   final bool isRtlLanguage;
+
+  /// Creates a [HisnMainCardView] widget for supplication display.
+  ///
+  /// Parameters:
+  /// - [item]: The supplication data including title, content, and favorite status
+  /// - [isRtlLanguage]: Boolean for RTL language support (Arabic, Farsi)
   const HisnMainCardView(
       {super.key, required this.item, required this.isRtlLanguage});
 
@@ -33,14 +56,18 @@ class HisnMainCardView extends StatelessWidget {
           onTap: () async {
             await FirebaseAnalyticsRepository.logEvent(
                 name: "hisnAlMuslimDetailsScreenFromListScreen");
+            if (!context.mounted) return;
+
             final arguments = {ArgumentConstant.hisnAlMuslimItem: item};
             await Navigator.of(context)
                 .pushNamed(RoutesConstants.hisnAlMuslimDetailsScreen,
                     arguments: arguments)
                 .then((val) {
-              context
-                  .read<HisnAlMuslimListBloc>()
-                  .add(const HisnAlMuslimListEvent.getListOfAzkar());
+              if (context.mounted) {
+                context
+                    .read<HisnAlMuslimListBloc>()
+                    .add(const HisnAlMuslimListEvent.getListOfAzkar());
+              }
             });
           },
           child: Padding(

@@ -6,6 +6,7 @@ import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.d
 
 /// Builds the bottom navigation bar with tabs.
 class BottomNavigationBarView extends StatelessWidget {
+  /// Creates a [BottomNavigationBarView] widget.
   const BottomNavigationBarView({super.key});
 
   @override

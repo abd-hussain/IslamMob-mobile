@@ -2,6 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/domain/sealed/sorah_type_state.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 
+/// Use case for managing Quran page indexing and navigation systems.
+///
+/// This class provides comprehensive functionality for Quran navigation and
+/// organization, supporting the traditional Islamic systems of Quran division:
+/// - **Juz (Para) system**: 30 sections for monthly reading schedules
+/// - **Surah (Chapter) system**: 114 chapters of varying lengths
+/// - **Makki/Madani classification**: Historical context of revelation
+///
+/// The use case enables:
+/// - Complete Juz and Surah name lists in multiple languages
+/// - Proper Islamic classification of Quranic content
+/// - Navigation support for different Quran reading methods
+/// - Educational information about Quranic organization
+///
+/// This supports various Islamic practices:
+/// - Khatm al-Quran (completing the Quran) in 30 days using Juz
+/// - Surah-based study and memorization
+/// - Understanding the historical context of revelation
+/// - Proper Quranic education and learning
 class QuranPagesIndexUseCase {
   /// Returns a list of all Juz names in the current locale.
   static List<String> getAllJuzNames({required BuildContext context}) {

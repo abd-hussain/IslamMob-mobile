@@ -7,7 +7,18 @@ import 'package:islam_app/presentation/pray_notification_setting/widgets/notific
 import 'package:islam_app/presentation/pray_notification_setting/widgets/notification_list_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 
+/// A screen for managing prayer notification settings.
+///
+/// This screen allows users to configure notification settings for all five
+/// daily prayers (Fajr, Dhuhr, Asr, Maghrib, Isha). Users can enable/disable
+/// notifications for each prayer and customize notification sounds. The screen
+/// includes a save button that persists the settings and automatically
+/// dismisses the screen upon successful save.
 class PrayNotificationSettingScreen extends StatelessWidget {
+  /// Creates a [PrayNotificationSettingScreen].
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const PrayNotificationSettingScreen({super.key});
 
   @override

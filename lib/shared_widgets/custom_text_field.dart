@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 
+/// A custom text field widget with consistent styling for the Islam app.
+///
+/// This widget provides a reusable text field with a white background,
+/// teal focus border, prefix icon support, and disabled text suggestions.
+/// It has a fixed height of 50 pixels and includes padding around the field.
 class CustomTextField extends StatelessWidget {
+  /// The controller for managing the text field's content.
   final TextEditingController controller;
+
+  /// The hint text to display when the field is empty.
   final String hintText;
+
+  /// Optional icon to display at the beginning of the text field.
   final IconData? prefixIcon;
+
+  /// Optional callback function called when the text changes.
   final void Function(String)? onChanged;
 
+  /// Creates a [CustomTextField] with the specified properties.
   const CustomTextField({
     super.key,
     required this.controller,

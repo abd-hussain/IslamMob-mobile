@@ -6,7 +6,19 @@ import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.d
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:pdfx/pdfx.dart';
 
+/// The main view widget for displaying the Quran Kareem (Holy Quran) PDF.
+///
+/// This widget provides the primary interface for reading the Quran, including:
+/// - PDF document display with page navigation
+/// - Brightness overlay for comfortable reading
+/// - Tutorial overlay for first-time users
+/// - Tap gesture handling to toggle help bar visibility
+/// - Language-aware page direction (RTL for Arabic, LTR for other languages)
 class QuranKareemMainView extends StatelessWidget {
+  /// Creates a [QuranKareemMainView] widget.
+  ///
+  /// The [key] parameter is optional and can be used to control how one widget
+  /// replaces another widget in the tree.
   const QuranKareemMainView({super.key});
 
   @override

@@ -12,13 +12,33 @@ part 'salah_timing_bloc.freezed.dart';
 part 'salah_timing_event.dart';
 part 'salah_timing_state.dart';
 
+/// BLoC for managing Islamic prayer timing calculations and weekly schedules.
+///
+/// This BLoC handles the business logic for calculating and displaying
+/// Islamic prayer times (Salah) for the current week and managing the
+/// current prayer status. It manages:
+/// - **Weekly prayer schedules** with accurate timing calculations
+/// - **Current prayer type** identification for today's next prayer
+/// - **Prayer time generation** using Islamic calculation methods
+/// - **Location-based calculations** for accurate prayer times
+///
+/// The prayer timing system is fundamental to Islamic practice, providing
+/// Muslims with accurate prayer times based on their geographical location
+/// and Islamic calculation methods. This BLoC ensures proper prayer time
+/// management for the entire week with current prayer status tracking.
 class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
+  /// Creates a [SalahTimingBloc] with initial state and event handlers.
+  ///
+  /// Initializes the BLoC with empty prayer timing state and sets up
+  /// event handlers for weekly prayer time updates and current prayer
+  /// type management. Automatically initializes prayer timings for the week.
   SalahTimingBloc() : super(const SalahTimingState()) {
     on<_UpdateSalahTimingForTheWeek>(_onUpdateSalahTimingForTheWeek);
     on<_UpdateCurrentSalahType>(_onUpdateCurrentSalahType);
     _initializePrayerTimings();
   }
 
+  /// Prayer use case instance for Islamic prayer time calculations and management.
   PrayUsecase prayUsecase = PrayUsecase();
 
   /// Initializes prayer timings for the week and updates the current Salah type.
