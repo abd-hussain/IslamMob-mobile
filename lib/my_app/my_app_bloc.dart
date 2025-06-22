@@ -34,16 +34,10 @@ class MyAppBloc {
   Future<void> _initializeApp() async {
     WidgetsFlutterBinding.ensureInitialized();
     await DataBaseManagerBase.initializeHive();
-    await _initializeServices();
+    await setupLocator();
     _initializeTimeZones();
     await _initializeFirebaseAndAds();
-
     await _setPreferredOrientations();
-  }
-
-  /// Sets up dependency injection locator
-  Future<void> _initializeServices() async {
-    await setupLocator();
   }
 
   /// Initializes timezone data

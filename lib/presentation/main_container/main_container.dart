@@ -22,19 +22,18 @@ class MainContainer extends StatefulWidget {
 }
 
 class _MainContainerState extends State<MainContainer> {
-  @override
-  void didChangeDependencies() {
+  void _checkApplicationVersion() {
     VersionUseCase.getCurrentVersionUpdateStatus().then((status) async {
       if (status != VersionUpdate.noUpdate) {
         // ignore: use_build_context_synchronously
         await _showVersionUpdateDialog(context, status);
       }
     });
-    super.didChangeDependencies();
   }
 
   @override
   Widget build(BuildContext context) {
+    _checkApplicationVersion();
     return BlocProvider(
       create: (_) => locator<MainContainerBloc>(),
       child: Scaffold(
@@ -43,7 +42,8 @@ class _MainContainerState extends State<MainContainer> {
         appBar: const MainCustomAppBar(),
         body: SafeArea(
           child: BlocBuilder<MainContainerBloc, MainContainerState>(
-            buildWhen: (previous, current) => previous.selectedIndex != current.selectedIndex,
+            buildWhen: (previous, current) =>
+                previous.selectedIndex != current.selectedIndex,
             builder: (context, state) {
               return IndexedStack(
                 index: state.selectedIndex,
@@ -61,7 +61,8 @@ class _MainContainerState extends State<MainContainer> {
     );
   }
 
-  Future<void> _showVersionUpdateDialog(BuildContext context, VersionUpdate versionUpdate) async {
+  Future<void> _showVersionUpdateDialog(
+      BuildContext context, VersionUpdate versionUpdate) async {
     await VersionDialog().dialog(
       context: context,
       isOptional: versionUpdate == VersionUpdate.optional,

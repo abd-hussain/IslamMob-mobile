@@ -3,8 +3,6 @@ import 'package:azkar/model/azkar_salah_time.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
-import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
-import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/azkar_after_salah_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
@@ -12,7 +10,6 @@ import 'package:islam_app/presentation/home_tab/widgets/location_permission_view
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_shortcut_view.dart';
-import 'package:loading_indicator/loading_indicator.dart';
 
 /// Main home screen of the Islamic application.
 ///
@@ -51,38 +48,46 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeTabBloc(),
-      child: Builder(builder: (context) {
-        final scrollController = context.read<HomeTabBloc>().scrollController;
-        locator<SetupLocalNotificationWhenAppOpenUseCase>()
-            .call(context: context);
-
-        return NestedScrollView(
-          controller: scrollController,
-          headerSliverBuilder: (context, innerBoxIsScrolled) {
-            return [
-              const HomeHeaderView(),
-            ];
-          },
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                _buildAppBarSpacer(),
-                const SalahTimingView(),
-                const SizedBox(height: 0.3),
-                _buildToolBarView(),
-                _buildNotificationPermissionView(),
-                _buildLocationPermissionView(),
-                const AddMobBanner(),
-                _buildAzkarView(),
-                const AddMobBanner(),
-                const SizedBox(height: 20),
-              ],
-            ),
+        create: (context) => HomeTabBloc()
+          ..add(
+            HomeTabEvent.initialize(context),
           ),
-        );
-      }),
-    );
+        child: BlocBuilder<HomeTabBloc, HomeTabState>(
+          buildWhen: (previous, current) =>
+              previous.loadingStatus != current.loadingStatus,
+          builder: (context, state) {
+            if (state.loadingStatus == const HomeScreenProcessState.loading()) {
+              return const Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xff292929)),
+                ),
+              );
+            }
+            return NestedScrollView(
+              controller: context.read<HomeTabBloc>().scrollController,
+              headerSliverBuilder: (context, innerBoxIsScrolled) {
+                return [
+                  const HomeHeaderView(),
+                ];
+              },
+              body: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    _buildAppBarSpacer(),
+                    const SalahTimingView(),
+                    const SizedBox(height: 0.3),
+                    _buildToolBarView(),
+                    _buildNotificationPermissionView(),
+                    _buildLocationPermissionView(),
+                    const AddMobBanner(),
+                    _buildAzkarView(),
+                    const SizedBox(height: 20),
+                  ],
+                ),
+              ),
+            );
+          },
+        ));
   }
 
   /// Builds the spacer under the app bar when it is collapsed.
@@ -117,17 +122,11 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) {
         final type = SalahTimeStateParser.getSalahTimeState(state.nextPrayType);
 
+        context.read<HomeTabBloc>().initializePrayerTimings();
+
         if (type == const AzkarSalahTimeState.none()) {
-          return const SizedBox(
-            height: 50,
-            width: 50,
-            child: LoadingIndicator(
-                indicatorType: Indicator.ballSpinFadeLoader,
-                colors: [Color(0xff034061)],
-                strokeWidth: 1,
-                backgroundColor: Colors.transparent,
-                pathBackgroundColor: Colors.transparent),
-          );
+          return const AzkarAfterSalahView(
+              salahType: AzkarSalahTimeState.isha());
         }
 
         return AzkarAfterSalahView(salahType: type);

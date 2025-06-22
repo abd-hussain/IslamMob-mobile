@@ -5,6 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
+import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
+import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:location_manager/location_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -38,35 +41,48 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   /// - Next prayer type updates and calculations
   /// - Scroll-based UI state changes
   HomeTabBloc() : super(const HomeTabState()) {
+    on<_Initialize>(_initialize);
     on<_UpdateExpandedStatus>(_handleExpandedStatusUpdate);
     on<_UpdateShowingNotificationView>(_handleNotificationViewUpdate);
     on<_UpdateShowingLocationView>(_handleLocationViewUpdate);
     on<_UpdateNextPrayType>(_handleNextPrayTypeUpdate);
-    _initializeBloc();
   }
 
   /// Prayer use case instance for calculating Islamic prayer times and next prayer.
   final PrayUsecase prayUsecase = PrayUsecase();
+  final LocationManagerBase _locationManager = LocationManagerBase();
 
-  /// Initializes the Bloc listeners and data.
-  Future<void> _initializeBloc() async {
-    _initializePrayerTimings();
+  FutureOr<void> _initialize(
+      _Initialize event, Emitter<HomeTabState> emit) async {
     await _fetchPermissions();
     scrollController.addListener(_scrollListener);
+    initializePrayerTimings();
+
+    // Store context locally to avoid using it across async gaps
+    final context = event.context;
+
+    // Check if the widget is still mounted before using the context
+    if (context.mounted) {
+      await locator<SetupLocalNotificationWhenAppOpenUseCase>().call(
+        context: context,
+      );
+    }
   }
 
   /// Initializes prayer timings and sets the next prayer type.
-  void _initializePrayerTimings() {
-    add(HomeTabEvent.updateNextPrayType(prayUsecase.getNextPrayType()));
+  void initializePrayerTimings() {
+    final nextPrayType = prayUsecase.getNextPrayType();
+    add(HomeTabEvent.updateNextPrayType(nextPrayType));
   }
 
   Future<void> _fetchPermissions() async {
     final bool locationStatus =
-        await LocationManagerBase().checkLocationPermission();
+        await _locationManager.checkLocationPermission();
     final PermissionStatus notificationStatus =
         await Permission.notification.status;
 
     if (locationStatus) {
+      await _updateLocation();
       add(HomeTabEvent.updateShowingLocationView(false));
     } else {
       add(HomeTabEvent.updateShowingLocationView(true));
@@ -76,6 +92,24 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
       add(HomeTabEvent.updateShowingNotificationView(false));
     } else {
       add(HomeTabEvent.updateShowingNotificationView(true));
+    }
+  }
+
+  Future<void> _updateLocation() async {
+    // Request location details
+    final locationDetails = await _locationManager.getLocationDetails();
+    if (locationDetails.containsKey('error') == false) {
+      final location = LocationModel(
+        countryCode: (locationDetails['isoCountryCode'] as String?) ?? "",
+        country: (locationDetails['country'] as String?) ?? "",
+        city: (locationDetails['city'] as String?) ?? "",
+        subCity: (locationDetails['subCity'] as String?) ?? "",
+        street: (locationDetails['street'] as String?) ?? "",
+        latitude: (locationDetails['latitude'] as double?) ?? 0.0,
+        longitude: (locationDetails['longitude'] as double?) ?? 0.0,
+        thoroughfare: (locationDetails['thoroughfare'] as String?) ?? "",
+      );
+      await SetupUserSettingUseCase.setLocation(location);
     }
   }
 
@@ -111,7 +145,10 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   /// Handles updating the next prayer type.
   FutureOr<void> _handleNextPrayTypeUpdate(
       _UpdateNextPrayType event, Emitter<HomeTabState> emit) {
-    emit(state.copyWith(nextPrayType: event.nextPrayType));
+    emit(state.copyWith(
+      nextPrayType: event.nextPrayType,
+      loadingStatus: const HomeScreenProcessState.done(),
+    ));
   }
 
   @override

@@ -48,5 +48,13 @@ class HomeTabState with _$HomeTabState {
     @Default(false) bool showAllowNotificationView,
     @Default(false) bool showAllowLocationView,
     @Default(SalahTimeState.none()) SalahTimeState nextPrayType,
+    @Default(HomeScreenProcessState.loading()) loadingStatus,
   }) = _HomeTabState;
+}
+
+@freezed
+sealed class HomeScreenProcessState with _$HomeScreenProcessState {
+  const factory HomeScreenProcessState.loading() =
+      HomeScreenProcessStateLoading;
+  const factory HomeScreenProcessState.done() = HomeScreenProcessStateDone;
 }

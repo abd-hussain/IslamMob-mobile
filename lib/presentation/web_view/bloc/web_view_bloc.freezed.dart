@@ -539,8 +539,22 @@ abstract class _UpdateInternetConnectionStatus implements WebViewEvent {
 
 /// @nodoc
 mixin _$WebViewState {
+  /// The URL to be loaded in the web view.
+  ///
+  /// This string contains the web address that will be displayed
+  /// in the WebViewX component. Defaults to an empty string.
   String get webViewUrl => throw _privateConstructorUsedError;
+
+  /// The title of the web page to display in the app bar.
+  ///
+  /// This string is shown in the custom app bar at the top of the screen.
+  /// Defaults to an empty string.
   String get pageTitle => throw _privateConstructorUsedError;
+
+  /// The current internet connectivity status.
+  ///
+  /// When true, the web view is displayed. When false, a no internet
+  /// view with retry functionality is shown instead. Defaults to false.
   bool get internetConnectionStauts => throw _privateConstructorUsedError;
 
   /// Create a copy of WebViewState
@@ -650,12 +664,26 @@ class _$WebViewStateImpl implements _WebViewState {
       this.pageTitle = "",
       this.internetConnectionStauts = false});
 
+  /// The URL to be loaded in the web view.
+  ///
+  /// This string contains the web address that will be displayed
+  /// in the WebViewX component. Defaults to an empty string.
   @override
   @JsonKey()
   final String webViewUrl;
+
+  /// The title of the web page to display in the app bar.
+  ///
+  /// This string is shown in the custom app bar at the top of the screen.
+  /// Defaults to an empty string.
   @override
   @JsonKey()
   final String pageTitle;
+
+  /// The current internet connectivity status.
+  ///
+  /// When true, the web view is displayed. When false, a no internet
+  /// view with retry functionality is shown instead. Defaults to false.
   @override
   @JsonKey()
   final bool internetConnectionStauts;
@@ -698,10 +726,24 @@ abstract class _WebViewState implements WebViewState {
       final String pageTitle,
       final bool internetConnectionStauts}) = _$WebViewStateImpl;
 
+  /// The URL to be loaded in the web view.
+  ///
+  /// This string contains the web address that will be displayed
+  /// in the WebViewX component. Defaults to an empty string.
   @override
   String get webViewUrl;
+
+  /// The title of the web page to display in the app bar.
+  ///
+  /// This string is shown in the custom app bar at the top of the screen.
+  /// Defaults to an empty string.
   @override
   String get pageTitle;
+
+  /// The current internet connectivity status.
+  ///
+  /// When true, the web view is displayed. When false, a no internet
+  /// view with retry functionality is shown instead. Defaults to false.
   @override
   bool get internetConnectionStauts;
 
