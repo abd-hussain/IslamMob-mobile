@@ -363,6 +363,7 @@ void main() {
     );
     // ignore: unnecessary_type_check
     expect(
+      // ignore: unnecessary_type_check
       prayerTimes.nextPrayer(currentTimeInUTC: DateTime.now()) is Prayer,
       true,
     );

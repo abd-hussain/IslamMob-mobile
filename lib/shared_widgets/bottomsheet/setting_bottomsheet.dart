@@ -75,7 +75,7 @@ class SettingBottomSheet {
                   final navigator = Navigator.of(context, rootNavigator: true);
                   await DataBaseManagerBase.saveMultipleInDatabase(
                     data: {
-                      DatabaseFieldInBoardingStageConstant.inBoardingfinished:
+                      DatabaseFieldInBoardingStageConstant.finishInBoarding:
                           null,
                       DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,
                     },

@@ -168,8 +168,8 @@ class SetupUserSettingUseCase {
       DatabaseFieldLocationConstant.selectedCity: location.city,
       DatabaseFieldLocationConstant.selectedSubCity: location.subCity,
       DatabaseFieldLocationConstant.selectedStreet: location.street,
-      DatabaseFieldLocationConstant.selectedLatitude: location.latitude,
-      DatabaseFieldLocationConstant.selectedLongitude: location.longitude,
+      DatabaseFieldLocationConstant.selectedLat: location.latitude,
+      DatabaseFieldLocationConstant.selectedLong: location.longitude,
       DatabaseFieldLocationConstant.selectedThoroughfare: location.thoroughfare,
     };
 

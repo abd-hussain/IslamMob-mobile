@@ -119,8 +119,7 @@ class PrayCalculationSettingScreen extends StatelessWidget {
                 final navigator = Navigator.of(context, rootNavigator: true);
                 await DataBaseManagerBase.saveMultipleInDatabase(
                   data: {
-                    DatabaseFieldInBoardingStageConstant.inBoardingfinished:
-                        null,
+                    DatabaseFieldInBoardingStageConstant.finishInBoarding: null,
                     DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,
                   },
                 );

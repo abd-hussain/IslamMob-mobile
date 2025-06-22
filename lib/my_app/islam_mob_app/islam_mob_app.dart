@@ -137,13 +137,13 @@ class IslamMobAppState extends State<IslamMobApp> {
   }
 
   String _getInitialRoute() {
-    final bool? onBoardingFinished =
+    final bool? finishInBoarding =
         DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
+              key: DatabaseFieldInBoardingStageConstant.finishInBoarding,
               defaultValue: null,
             )
             as bool?;
-    return onBoardingFinished != null
+    return finishInBoarding != null
         ? RoutesConstants.mainContainer
         : RoutesConstants.inBoardingScreen;
   }

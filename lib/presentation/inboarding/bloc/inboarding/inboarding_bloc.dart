@@ -73,7 +73,7 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
     Emitter<InboardingState> emit,
   ) async {
     await DataBaseManagerBase.saveInDatabase(
-      key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
+      key: DatabaseFieldInBoardingStageConstant.finishInBoarding,
       value: true,
     );
 
