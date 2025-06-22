@@ -63,8 +63,11 @@ class TimingUseCase {
     final hijriDate = HijriCalendar.now();
 
     // Convert the Hijri date to a DateTime for manipulation
-    final gregorianDate = HijriCalendar()
-        .hijriToGregorian(hijriDate.hYear, hijriDate.hMonth, hijriDate.hDay);
+    final gregorianDate = HijriCalendar().hijriToGregorian(
+      hijriDate.hYear,
+      hijriDate.hMonth,
+      hijriDate.hDay,
+    );
 
     // Add the day offset to the Gregorian date
     final updatedGregorianDate = gregorianDate.add(Duration(days: dayOffset));

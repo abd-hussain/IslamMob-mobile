@@ -12,7 +12,8 @@ part of 'contacts_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$ContactsEvent {
@@ -21,53 +22,48 @@ mixin _$ContactsEvent {
     required TResult Function() fetchContacts,
     required TResult Function(UserContacts contact) updateSelectedContact,
     required TResult Function(String message) shareItem,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchContacts,
     TResult? Function(UserContacts contact)? updateSelectedContact,
     TResult? Function(String message)? shareItem,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchContacts,
     TResult Function(UserContacts contact)? updateSelectedContact,
     TResult Function(String message)? shareItem,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchContacts value) fetchContacts,
     required TResult Function(_UpdateSelectedContact value)
-        updateSelectedContact,
+    updateSelectedContact,
     required TResult Function(_ShareItem value) shareItem,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FetchContacts value)? fetchContacts,
     TResult? Function(_UpdateSelectedContact value)? updateSelectedContact,
     TResult? Function(_ShareItem value)? shareItem,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchContacts value)? fetchContacts,
     TResult Function(_UpdateSelectedContact value)? updateSelectedContact,
     TResult Function(_ShareItem value)? shareItem,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ContactsEventCopyWith<$Res> {
   factory $ContactsEventCopyWith(
-          ContactsEvent value, $Res Function(ContactsEvent) then) =
-      _$ContactsEventCopyWithImpl<$Res, ContactsEvent>;
+    ContactsEvent value,
+    $Res Function(ContactsEvent) then,
+  ) = _$ContactsEventCopyWithImpl<$Res, ContactsEvent>;
 }
 
 /// @nodoc
@@ -87,8 +83,9 @@ class _$ContactsEventCopyWithImpl<$Res, $Val extends ContactsEvent>
 /// @nodoc
 abstract class _$$FetchContactsImplCopyWith<$Res> {
   factory _$$FetchContactsImplCopyWith(
-          _$FetchContactsImpl value, $Res Function(_$FetchContactsImpl) then) =
-      __$$FetchContactsImplCopyWithImpl<$Res>;
+    _$FetchContactsImpl value,
+    $Res Function(_$FetchContactsImpl) then,
+  ) = __$$FetchContactsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -96,8 +93,9 @@ class __$$FetchContactsImplCopyWithImpl<$Res>
     extends _$ContactsEventCopyWithImpl<$Res, _$FetchContactsImpl>
     implements _$$FetchContactsImplCopyWith<$Res> {
   __$$FetchContactsImplCopyWithImpl(
-      _$FetchContactsImpl _value, $Res Function(_$FetchContactsImpl) _then)
-      : super(_value, _then);
+    _$FetchContactsImpl _value,
+    $Res Function(_$FetchContactsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ContactsEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -161,7 +159,7 @@ class _$FetchContactsImpl implements _FetchContacts {
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchContacts value) fetchContacts,
     required TResult Function(_UpdateSelectedContact value)
-        updateSelectedContact,
+    updateSelectedContact,
     required TResult Function(_ShareItem value) shareItem,
   }) {
     return fetchContacts(this);
@@ -199,9 +197,9 @@ abstract class _FetchContacts implements ContactsEvent {
 /// @nodoc
 abstract class _$$UpdateSelectedContactImplCopyWith<$Res> {
   factory _$$UpdateSelectedContactImplCopyWith(
-          _$UpdateSelectedContactImpl value,
-          $Res Function(_$UpdateSelectedContactImpl) then) =
-      __$$UpdateSelectedContactImplCopyWithImpl<$Res>;
+    _$UpdateSelectedContactImpl value,
+    $Res Function(_$UpdateSelectedContactImpl) then,
+  ) = __$$UpdateSelectedContactImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserContacts contact});
 
@@ -212,23 +210,24 @@ abstract class _$$UpdateSelectedContactImplCopyWith<$Res> {
 class __$$UpdateSelectedContactImplCopyWithImpl<$Res>
     extends _$ContactsEventCopyWithImpl<$Res, _$UpdateSelectedContactImpl>
     implements _$$UpdateSelectedContactImplCopyWith<$Res> {
-  __$$UpdateSelectedContactImplCopyWithImpl(_$UpdateSelectedContactImpl _value,
-      $Res Function(_$UpdateSelectedContactImpl) _then)
-      : super(_value, _then);
+  __$$UpdateSelectedContactImplCopyWithImpl(
+    _$UpdateSelectedContactImpl _value,
+    $Res Function(_$UpdateSelectedContactImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ContactsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? contact = null,
-  }) {
-    return _then(_$UpdateSelectedContactImpl(
-      contact: null == contact
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as UserContacts,
-    ));
+  $Res call({Object? contact = null}) {
+    return _then(
+      _$UpdateSelectedContactImpl(
+        contact: null == contact
+            ? _value.contact
+            : contact // ignore: cast_nullable_to_non_nullable
+                  as UserContacts,
+      ),
+    );
   }
 
   /// Create a copy of ContactsEvent
@@ -272,8 +271,11 @@ class _$UpdateSelectedContactImpl implements _UpdateSelectedContact {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateSelectedContactImplCopyWith<_$UpdateSelectedContactImpl>
-      get copyWith => __$$UpdateSelectedContactImplCopyWithImpl<
-          _$UpdateSelectedContactImpl>(this, _$identity);
+  get copyWith =>
+      __$$UpdateSelectedContactImplCopyWithImpl<_$UpdateSelectedContactImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -314,7 +316,7 @@ class _$UpdateSelectedContactImpl implements _UpdateSelectedContact {
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchContacts value) fetchContacts,
     required TResult Function(_UpdateSelectedContact value)
-        updateSelectedContact,
+    updateSelectedContact,
     required TResult Function(_ShareItem value) shareItem,
   }) {
     return updateSelectedContact(this);
@@ -355,14 +357,15 @@ abstract class _UpdateSelectedContact implements ContactsEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateSelectedContactImplCopyWith<_$UpdateSelectedContactImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ShareItemImplCopyWith<$Res> {
   factory _$$ShareItemImplCopyWith(
-          _$ShareItemImpl value, $Res Function(_$ShareItemImpl) then) =
-      __$$ShareItemImplCopyWithImpl<$Res>;
+    _$ShareItemImpl value,
+    $Res Function(_$ShareItemImpl) then,
+  ) = __$$ShareItemImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
@@ -372,22 +375,23 @@ class __$$ShareItemImplCopyWithImpl<$Res>
     extends _$ContactsEventCopyWithImpl<$Res, _$ShareItemImpl>
     implements _$$ShareItemImplCopyWith<$Res> {
   __$$ShareItemImplCopyWithImpl(
-      _$ShareItemImpl _value, $Res Function(_$ShareItemImpl) _then)
-      : super(_value, _then);
+    _$ShareItemImpl _value,
+    $Res Function(_$ShareItemImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ContactsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ShareItemImpl(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? message = null}) {
+    return _then(
+      _$ShareItemImpl(
+        message: null == message
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -462,7 +466,7 @@ class _$ShareItemImpl implements _ShareItem {
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchContacts value) fetchContacts,
     required TResult Function(_UpdateSelectedContact value)
-        updateSelectedContact,
+    updateSelectedContact,
     required TResult Function(_ShareItem value) shareItem,
   }) {
     return shareItem(this);
@@ -520,8 +524,9 @@ mixin _$ContactsState {
 /// @nodoc
 abstract class $ContactsStateCopyWith<$Res> {
   factory $ContactsStateCopyWith(
-          ContactsState value, $Res Function(ContactsState) then) =
-      _$ContactsStateCopyWithImpl<$Res, ContactsState>;
+    ContactsState value,
+    $Res Function(ContactsState) then,
+  ) = _$ContactsStateCopyWithImpl<$Res, ContactsState>;
   @useResult
   $Res call({List<UserContacts> listOfContacts, ContactsProgressState station});
 
@@ -542,20 +547,20 @@ class _$ContactsStateCopyWithImpl<$Res, $Val extends ContactsState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? listOfContacts = null,
-    Object? station = null,
-  }) {
-    return _then(_value.copyWith(
-      listOfContacts: null == listOfContacts
-          ? _value.listOfContacts
-          : listOfContacts // ignore: cast_nullable_to_non_nullable
-              as List<UserContacts>,
-      station: null == station
-          ? _value.station
-          : station // ignore: cast_nullable_to_non_nullable
-              as ContactsProgressState,
-    ) as $Val);
+  $Res call({Object? listOfContacts = null, Object? station = null}) {
+    return _then(
+      _value.copyWith(
+            listOfContacts: null == listOfContacts
+                ? _value.listOfContacts
+                : listOfContacts // ignore: cast_nullable_to_non_nullable
+                      as List<UserContacts>,
+            station: null == station
+                ? _value.station
+                : station // ignore: cast_nullable_to_non_nullable
+                      as ContactsProgressState,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of ContactsState
@@ -573,8 +578,9 @@ class _$ContactsStateCopyWithImpl<$Res, $Val extends ContactsState>
 abstract class _$$ContactsStateImplCopyWith<$Res>
     implements $ContactsStateCopyWith<$Res> {
   factory _$$ContactsStateImplCopyWith(
-          _$ContactsStateImpl value, $Res Function(_$ContactsStateImpl) then) =
-      __$$ContactsStateImplCopyWithImpl<$Res>;
+    _$ContactsStateImpl value,
+    $Res Function(_$ContactsStateImpl) then,
+  ) = __$$ContactsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<UserContacts> listOfContacts, ContactsProgressState station});
@@ -588,37 +594,37 @@ class __$$ContactsStateImplCopyWithImpl<$Res>
     extends _$ContactsStateCopyWithImpl<$Res, _$ContactsStateImpl>
     implements _$$ContactsStateImplCopyWith<$Res> {
   __$$ContactsStateImplCopyWithImpl(
-      _$ContactsStateImpl _value, $Res Function(_$ContactsStateImpl) _then)
-      : super(_value, _then);
+    _$ContactsStateImpl _value,
+    $Res Function(_$ContactsStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ContactsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? listOfContacts = null,
-    Object? station = null,
-  }) {
-    return _then(_$ContactsStateImpl(
-      listOfContacts: null == listOfContacts
-          ? _value._listOfContacts
-          : listOfContacts // ignore: cast_nullable_to_non_nullable
-              as List<UserContacts>,
-      station: null == station
-          ? _value.station
-          : station // ignore: cast_nullable_to_non_nullable
-              as ContactsProgressState,
-    ));
+  $Res call({Object? listOfContacts = null, Object? station = null}) {
+    return _then(
+      _$ContactsStateImpl(
+        listOfContacts: null == listOfContacts
+            ? _value._listOfContacts
+            : listOfContacts // ignore: cast_nullable_to_non_nullable
+                  as List<UserContacts>,
+        station: null == station
+            ? _value.station
+            : station // ignore: cast_nullable_to_non_nullable
+                  as ContactsProgressState,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$ContactsStateImpl implements _ContactsState {
-  const _$ContactsStateImpl(
-      {final List<UserContacts> listOfContacts = const [],
-      this.station = const ContactsProgressStateIdl()})
-      : _listOfContacts = listOfContacts;
+  const _$ContactsStateImpl({
+    final List<UserContacts> listOfContacts = const [],
+    this.station = const ContactsProgressStateIdl(),
+  }) : _listOfContacts = listOfContacts;
 
   final List<UserContacts> _listOfContacts;
   @override
@@ -643,14 +649,19 @@ class _$ContactsStateImpl implements _ContactsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ContactsStateImpl &&
-            const DeepCollectionEquality()
-                .equals(other._listOfContacts, _listOfContacts) &&
+            const DeepCollectionEquality().equals(
+              other._listOfContacts,
+              _listOfContacts,
+            ) &&
             (identical(other.station, station) || other.station == station));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_listOfContacts), station);
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_listOfContacts),
+    station,
+  );
 
   /// Create a copy of ContactsState
   /// with the given fields replaced by the non-null parameter values.
@@ -662,9 +673,10 @@ class _$ContactsStateImpl implements _ContactsState {
 }
 
 abstract class _ContactsState implements ContactsState {
-  const factory _ContactsState(
-      {final List<UserContacts> listOfContacts,
-      final ContactsProgressState station}) = _$ContactsStateImpl;
+  const factory _ContactsState({
+    final List<UserContacts> listOfContacts,
+    final ContactsProgressState station,
+  }) = _$ContactsStateImpl;
 
   @override
   List<UserContacts> get listOfContacts;
@@ -686,60 +698,57 @@ mixin _$ContactsProgressState {
     required TResult Function() idl,
     required TResult Function() success,
     required TResult Function() errorPermission,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idl,
     TResult? Function()? success,
     TResult? Function()? errorPermission,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idl,
     TResult Function()? success,
     TResult Function()? errorPermission,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ContactsProgressStateIdl value) idl,
     required TResult Function(ContactsProgressStateSuccess value) success,
     required TResult Function(ContactsProgressStateErrorPermission value)
-        errorPermission,
-  }) =>
-      throw _privateConstructorUsedError;
+    errorPermission,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ContactsProgressStateIdl value)? idl,
     TResult? Function(ContactsProgressStateSuccess value)? success,
     TResult? Function(ContactsProgressStateErrorPermission value)?
-        errorPermission,
-  }) =>
-      throw _privateConstructorUsedError;
+    errorPermission,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ContactsProgressStateIdl value)? idl,
     TResult Function(ContactsProgressStateSuccess value)? success,
     TResult Function(ContactsProgressStateErrorPermission value)?
-        errorPermission,
+    errorPermission,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ContactsProgressStateCopyWith<$Res> {
-  factory $ContactsProgressStateCopyWith(ContactsProgressState value,
-          $Res Function(ContactsProgressState) then) =
-      _$ContactsProgressStateCopyWithImpl<$Res, ContactsProgressState>;
+  factory $ContactsProgressStateCopyWith(
+    ContactsProgressState value,
+    $Res Function(ContactsProgressState) then,
+  ) = _$ContactsProgressStateCopyWithImpl<$Res, ContactsProgressState>;
 }
 
 /// @nodoc
-class _$ContactsProgressStateCopyWithImpl<$Res,
-        $Val extends ContactsProgressState>
+class _$ContactsProgressStateCopyWithImpl<
+  $Res,
+  $Val extends ContactsProgressState
+>
     implements $ContactsProgressStateCopyWith<$Res> {
   _$ContactsProgressStateCopyWithImpl(this._value, this._then);
 
@@ -755,20 +764,23 @@ class _$ContactsProgressStateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$ContactsProgressStateIdlImplCopyWith<$Res> {
   factory _$$ContactsProgressStateIdlImplCopyWith(
-          _$ContactsProgressStateIdlImpl value,
-          $Res Function(_$ContactsProgressStateIdlImpl) then) =
-      __$$ContactsProgressStateIdlImplCopyWithImpl<$Res>;
+    _$ContactsProgressStateIdlImpl value,
+    $Res Function(_$ContactsProgressStateIdlImpl) then,
+  ) = __$$ContactsProgressStateIdlImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ContactsProgressStateIdlImplCopyWithImpl<$Res>
-    extends _$ContactsProgressStateCopyWithImpl<$Res,
-        _$ContactsProgressStateIdlImpl>
+    extends
+        _$ContactsProgressStateCopyWithImpl<
+          $Res,
+          _$ContactsProgressStateIdlImpl
+        >
     implements _$$ContactsProgressStateIdlImplCopyWith<$Res> {
   __$$ContactsProgressStateIdlImplCopyWithImpl(
-      _$ContactsProgressStateIdlImpl _value,
-      $Res Function(_$ContactsProgressStateIdlImpl) _then)
-      : super(_value, _then);
+    _$ContactsProgressStateIdlImpl _value,
+    $Res Function(_$ContactsProgressStateIdlImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ContactsProgressState
   /// with the given fields replaced by the non-null parameter values.
@@ -834,7 +846,7 @@ class _$ContactsProgressStateIdlImpl implements ContactsProgressStateIdl {
     required TResult Function(ContactsProgressStateIdl value) idl,
     required TResult Function(ContactsProgressStateSuccess value) success,
     required TResult Function(ContactsProgressStateErrorPermission value)
-        errorPermission,
+    errorPermission,
   }) {
     return idl(this);
   }
@@ -845,7 +857,7 @@ class _$ContactsProgressStateIdlImpl implements ContactsProgressStateIdl {
     TResult? Function(ContactsProgressStateIdl value)? idl,
     TResult? Function(ContactsProgressStateSuccess value)? success,
     TResult? Function(ContactsProgressStateErrorPermission value)?
-        errorPermission,
+    errorPermission,
   }) {
     return idl?.call(this);
   }
@@ -856,7 +868,7 @@ class _$ContactsProgressStateIdlImpl implements ContactsProgressStateIdl {
     TResult Function(ContactsProgressStateIdl value)? idl,
     TResult Function(ContactsProgressStateSuccess value)? success,
     TResult Function(ContactsProgressStateErrorPermission value)?
-        errorPermission,
+    errorPermission,
     required TResult orElse(),
   }) {
     if (idl != null) {
@@ -873,20 +885,23 @@ abstract class ContactsProgressStateIdl implements ContactsProgressState {
 /// @nodoc
 abstract class _$$ContactsProgressStateSuccessImplCopyWith<$Res> {
   factory _$$ContactsProgressStateSuccessImplCopyWith(
-          _$ContactsProgressStateSuccessImpl value,
-          $Res Function(_$ContactsProgressStateSuccessImpl) then) =
-      __$$ContactsProgressStateSuccessImplCopyWithImpl<$Res>;
+    _$ContactsProgressStateSuccessImpl value,
+    $Res Function(_$ContactsProgressStateSuccessImpl) then,
+  ) = __$$ContactsProgressStateSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ContactsProgressStateSuccessImplCopyWithImpl<$Res>
-    extends _$ContactsProgressStateCopyWithImpl<$Res,
-        _$ContactsProgressStateSuccessImpl>
+    extends
+        _$ContactsProgressStateCopyWithImpl<
+          $Res,
+          _$ContactsProgressStateSuccessImpl
+        >
     implements _$$ContactsProgressStateSuccessImplCopyWith<$Res> {
   __$$ContactsProgressStateSuccessImplCopyWithImpl(
-      _$ContactsProgressStateSuccessImpl _value,
-      $Res Function(_$ContactsProgressStateSuccessImpl) _then)
-      : super(_value, _then);
+    _$ContactsProgressStateSuccessImpl _value,
+    $Res Function(_$ContactsProgressStateSuccessImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ContactsProgressState
   /// with the given fields replaced by the non-null parameter values.
@@ -953,7 +968,7 @@ class _$ContactsProgressStateSuccessImpl
     required TResult Function(ContactsProgressStateIdl value) idl,
     required TResult Function(ContactsProgressStateSuccess value) success,
     required TResult Function(ContactsProgressStateErrorPermission value)
-        errorPermission,
+    errorPermission,
   }) {
     return success(this);
   }
@@ -964,7 +979,7 @@ class _$ContactsProgressStateSuccessImpl
     TResult? Function(ContactsProgressStateIdl value)? idl,
     TResult? Function(ContactsProgressStateSuccess value)? success,
     TResult? Function(ContactsProgressStateErrorPermission value)?
-        errorPermission,
+    errorPermission,
   }) {
     return success?.call(this);
   }
@@ -975,7 +990,7 @@ class _$ContactsProgressStateSuccessImpl
     TResult Function(ContactsProgressStateIdl value)? idl,
     TResult Function(ContactsProgressStateSuccess value)? success,
     TResult Function(ContactsProgressStateErrorPermission value)?
-        errorPermission,
+    errorPermission,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -993,20 +1008,23 @@ abstract class ContactsProgressStateSuccess implements ContactsProgressState {
 /// @nodoc
 abstract class _$$ContactsProgressStateErrorPermissionImplCopyWith<$Res> {
   factory _$$ContactsProgressStateErrorPermissionImplCopyWith(
-          _$ContactsProgressStateErrorPermissionImpl value,
-          $Res Function(_$ContactsProgressStateErrorPermissionImpl) then) =
-      __$$ContactsProgressStateErrorPermissionImplCopyWithImpl<$Res>;
+    _$ContactsProgressStateErrorPermissionImpl value,
+    $Res Function(_$ContactsProgressStateErrorPermissionImpl) then,
+  ) = __$$ContactsProgressStateErrorPermissionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ContactsProgressStateErrorPermissionImplCopyWithImpl<$Res>
-    extends _$ContactsProgressStateCopyWithImpl<$Res,
-        _$ContactsProgressStateErrorPermissionImpl>
+    extends
+        _$ContactsProgressStateCopyWithImpl<
+          $Res,
+          _$ContactsProgressStateErrorPermissionImpl
+        >
     implements _$$ContactsProgressStateErrorPermissionImplCopyWith<$Res> {
   __$$ContactsProgressStateErrorPermissionImplCopyWithImpl(
-      _$ContactsProgressStateErrorPermissionImpl _value,
-      $Res Function(_$ContactsProgressStateErrorPermissionImpl) _then)
-      : super(_value, _then);
+    _$ContactsProgressStateErrorPermissionImpl _value,
+    $Res Function(_$ContactsProgressStateErrorPermissionImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ContactsProgressState
   /// with the given fields replaced by the non-null parameter values.
@@ -1073,7 +1091,7 @@ class _$ContactsProgressStateErrorPermissionImpl
     required TResult Function(ContactsProgressStateIdl value) idl,
     required TResult Function(ContactsProgressStateSuccess value) success,
     required TResult Function(ContactsProgressStateErrorPermission value)
-        errorPermission,
+    errorPermission,
   }) {
     return errorPermission(this);
   }
@@ -1084,7 +1102,7 @@ class _$ContactsProgressStateErrorPermissionImpl
     TResult? Function(ContactsProgressStateIdl value)? idl,
     TResult? Function(ContactsProgressStateSuccess value)? success,
     TResult? Function(ContactsProgressStateErrorPermission value)?
-        errorPermission,
+    errorPermission,
   }) {
     return errorPermission?.call(this);
   }
@@ -1095,7 +1113,7 @@ class _$ContactsProgressStateErrorPermissionImpl
     TResult Function(ContactsProgressStateIdl value)? idl,
     TResult Function(ContactsProgressStateSuccess value)? success,
     TResult Function(ContactsProgressStateErrorPermission value)?
-        errorPermission,
+    errorPermission,
     required TResult orElse(),
   }) {
     if (errorPermission != null) {

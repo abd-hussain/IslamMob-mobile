@@ -34,9 +34,12 @@ class SinkUserContactsUsecase {
   /// This method is safe to call multiple times as it includes duplicate
   /// prevention logic.
   static void startBackgroundContactSync() {
-    final bool alreadySinkDataBefore = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.sinkedUserContacts,
-        defaultValue: false) as bool;
+    final bool alreadySinkDataBefore =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldConstant.sinkedUserContacts,
+              defaultValue: false,
+            )
+            as bool;
 
     if (alreadySinkDataBefore == false) {
       Future.microtask(() async {
@@ -78,7 +81,9 @@ class SinkUserContactsUsecase {
         }
       }
       await DataBaseManagerBase.saveInDatabase(
-          key: DatabaseFieldConstant.sinkedUserContacts, value: true);
+        key: DatabaseFieldConstant.sinkedUserContacts,
+        value: true,
+      );
     }
   }
 }

@@ -22,16 +22,22 @@ class SelectLocationTileView extends StatelessWidget {
   /// Both [chooseLocation] and [onTap] are required parameters.
   /// The [key] parameter is optional and can be used to control how one widget
   /// replaces another widget in the tree.
-  const SelectLocationTileView(
-      {super.key, required this.chooseLocation, required this.onTap});
+  const SelectLocationTileView({
+    super.key,
+    required this.chooseLocation,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(6),
       child: InkWell(
-        onTap: () => onTap(chooseLocation.countryName, chooseLocation.latitude,
-            chooseLocation.longitude),
+        onTap: () => onTap(
+          chooseLocation.countryName,
+          chooseLocation.latitude,
+          chooseLocation.longitude,
+        ),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
@@ -49,10 +55,7 @@ class SelectLocationTileView extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Row(
               children: [
-                CustomText(
-                  title: chooseLocation.flag,
-                  fontSize: 16,
-                ),
+                CustomText(title: chooseLocation.flag, fontSize: 16),
                 const SizedBox(width: 6),
                 CustomText(
                   title: chooseLocation.countryName,

@@ -43,10 +43,8 @@ class ContactItemView extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8),
       child: InkWell(
         onTap: () => context.read<ContactsBloc>().add(
-              ContactsEvent.updateSelectedContact(
-                contact: contact,
-              ),
-            ),
+          ContactsEvent.updateSelectedContact(contact: contact),
+        ),
         child: Container(
           decoration: BoxDecoration(
             color: const Color(0xff444444),
@@ -56,17 +54,14 @@ class ContactItemView extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                CustomText(
-                  title: contact.fullName,
-                  fontSize: 16,
-                ),
+                CustomText(title: contact.fullName, fontSize: 16),
                 const Expanded(child: SizedBox()),
                 Icon(
                   contact.selected
                       ? Icons.check_box_outlined
                       : Icons.check_box_outline_blank_rounded,
                   color: Colors.white,
-                )
+                ),
               ],
             ),
           ),

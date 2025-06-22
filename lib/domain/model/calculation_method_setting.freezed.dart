@@ -12,7 +12,8 @@ part of 'calculation_method_setting.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$CalculationMethodSetting {
@@ -29,9 +30,10 @@ mixin _$CalculationMethodSetting {
 
 /// @nodoc
 abstract class $CalculationMethodSettingCopyWith<$Res> {
-  factory $CalculationMethodSettingCopyWith(CalculationMethodSetting value,
-          $Res Function(CalculationMethodSetting) then) =
-      _$CalculationMethodSettingCopyWithImpl<$Res, CalculationMethodSetting>;
+  factory $CalculationMethodSettingCopyWith(
+    CalculationMethodSetting value,
+    $Res Function(CalculationMethodSetting) then,
+  ) = _$CalculationMethodSettingCopyWithImpl<$Res, CalculationMethodSetting>;
   @useResult
   $Res call({String name, PrayCalculationMethodState method, bool isSelected});
 
@@ -39,8 +41,10 @@ abstract class $CalculationMethodSettingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CalculationMethodSettingCopyWithImpl<$Res,
-        $Val extends CalculationMethodSetting>
+class _$CalculationMethodSettingCopyWithImpl<
+  $Res,
+  $Val extends CalculationMethodSetting
+>
     implements $CalculationMethodSettingCopyWith<$Res> {
   _$CalculationMethodSettingCopyWithImpl(this._value, this._then);
 
@@ -58,20 +62,23 @@ class _$CalculationMethodSettingCopyWithImpl<$Res,
     Object? method = null,
     Object? isSelected = null,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as PrayCalculationMethodState,
-      isSelected: null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            method: null == method
+                ? _value.method
+                : method // ignore: cast_nullable_to_non_nullable
+                      as PrayCalculationMethodState,
+            isSelected: null == isSelected
+                ? _value.isSelected
+                : isSelected // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of CalculationMethodSetting
@@ -89,9 +96,9 @@ class _$CalculationMethodSettingCopyWithImpl<$Res,
 abstract class _$$CalculationMethodSettingImplCopyWith<$Res>
     implements $CalculationMethodSettingCopyWith<$Res> {
   factory _$$CalculationMethodSettingImplCopyWith(
-          _$CalculationMethodSettingImpl value,
-          $Res Function(_$CalculationMethodSettingImpl) then) =
-      __$$CalculationMethodSettingImplCopyWithImpl<$Res>;
+    _$CalculationMethodSettingImpl value,
+    $Res Function(_$CalculationMethodSettingImpl) then,
+  ) = __$$CalculationMethodSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, PrayCalculationMethodState method, bool isSelected});
@@ -102,13 +109,16 @@ abstract class _$$CalculationMethodSettingImplCopyWith<$Res>
 
 /// @nodoc
 class __$$CalculationMethodSettingImplCopyWithImpl<$Res>
-    extends _$CalculationMethodSettingCopyWithImpl<$Res,
-        _$CalculationMethodSettingImpl>
+    extends
+        _$CalculationMethodSettingCopyWithImpl<
+          $Res,
+          _$CalculationMethodSettingImpl
+        >
     implements _$$CalculationMethodSettingImplCopyWith<$Res> {
   __$$CalculationMethodSettingImplCopyWithImpl(
-      _$CalculationMethodSettingImpl _value,
-      $Res Function(_$CalculationMethodSettingImpl) _then)
-      : super(_value, _then);
+    _$CalculationMethodSettingImpl _value,
+    $Res Function(_$CalculationMethodSettingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CalculationMethodSetting
   /// with the given fields replaced by the non-null parameter values.
@@ -119,28 +129,33 @@ class __$$CalculationMethodSettingImplCopyWithImpl<$Res>
     Object? method = null,
     Object? isSelected = null,
   }) {
-    return _then(_$CalculationMethodSettingImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as PrayCalculationMethodState,
-      isSelected: null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$CalculationMethodSettingImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        method: null == method
+            ? _value.method
+            : method // ignore: cast_nullable_to_non_nullable
+                  as PrayCalculationMethodState,
+        isSelected: null == isSelected
+            ? _value.isSelected
+            : isSelected // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$CalculationMethodSettingImpl implements _CalculationMethodSetting {
-  _$CalculationMethodSettingImpl(
-      {required this.name, required this.method, required this.isSelected});
+  _$CalculationMethodSettingImpl({
+    required this.name,
+    required this.method,
+    required this.isSelected,
+  });
 
   @override
   final String name;
@@ -174,15 +189,18 @@ class _$CalculationMethodSettingImpl implements _CalculationMethodSetting {
   @override
   @pragma('vm:prefer-inline')
   _$$CalculationMethodSettingImplCopyWith<_$CalculationMethodSettingImpl>
-      get copyWith => __$$CalculationMethodSettingImplCopyWithImpl<
-          _$CalculationMethodSettingImpl>(this, _$identity);
+  get copyWith =>
+      __$$CalculationMethodSettingImplCopyWithImpl<
+        _$CalculationMethodSettingImpl
+      >(this, _$identity);
 }
 
 abstract class _CalculationMethodSetting implements CalculationMethodSetting {
-  factory _CalculationMethodSetting(
-      {required final String name,
-      required final PrayCalculationMethodState method,
-      required final bool isSelected}) = _$CalculationMethodSettingImpl;
+  factory _CalculationMethodSetting({
+    required final String name,
+    required final PrayCalculationMethodState method,
+    required final bool isSelected,
+  }) = _$CalculationMethodSettingImpl;
 
   @override
   String get name;
@@ -196,5 +214,5 @@ abstract class _CalculationMethodSetting implements CalculationMethodSetting {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CalculationMethodSettingImplCopyWith<_$CalculationMethodSettingImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

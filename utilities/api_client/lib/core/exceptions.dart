@@ -9,8 +9,11 @@ class HttpException implements Exception {
   /// - [status]: The HTTP status code of the failed request
   /// - [message]: A descriptive error message explaining what went wrong
   /// - [requestId]: A unique identifier for the request that failed
-  HttpException(
-      {required this.status, required this.message, required this.requestId});
+  HttpException({
+    required this.status,
+    required this.message,
+    required this.requestId,
+  });
 
   /// A descriptive message explaining the HTTP error.
   ///

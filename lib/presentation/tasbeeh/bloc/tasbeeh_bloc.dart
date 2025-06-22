@@ -38,24 +38,32 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
   }
 
   FutureOr<void> _fillInitialValue(
-      _FillInitialValue event, Emitter<TasbeehState> emit) async {
+    _FillInitialValue event,
+    Emitter<TasbeehState> emit,
+  ) async {
     emit(state.copyWith(list: await TasbeehUseCase.getTasbeehList()));
   }
 
   FutureOr<void> _soundSetting(
-      _SoundSetting event, Emitter<TasbeehState> emit) {
+    _SoundSetting event,
+    Emitter<TasbeehState> emit,
+  ) {
     final bool allowedSound = state.allowSound;
     emit(state.copyWith(allowSound: !allowedSound));
   }
 
   FutureOr<void> _vibrationSetting(
-      _VibrationSetting event, Emitter<TasbeehState> emit) {
+    _VibrationSetting event,
+    Emitter<TasbeehState> emit,
+  ) {
     final bool allowedVibration = state.allowVibration;
     emit(state.copyWith(allowVibration: !allowedVibration));
   }
 
   FutureOr<void> _leftZikerSelected(
-      _LeftZikerSelected event, Emitter<TasbeehState> emit) {
+    _LeftZikerSelected event,
+    Emitter<TasbeehState> emit,
+  ) {
     if (state.selectedListIndex != 0) {
       int currentIndex = state.selectedListIndex;
       currentIndex = currentIndex - 1;
@@ -64,7 +72,9 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
   }
 
   FutureOr<void> _rightZikerEnabled(
-      _RightZikerEnabled event, Emitter<TasbeehState> emit) {
+    _RightZikerEnabled event,
+    Emitter<TasbeehState> emit,
+  ) {
     if (state.selectedListIndex != state.list.length - 1) {
       int currentIndex = state.selectedListIndex;
       currentIndex = currentIndex + 1;
@@ -73,7 +83,9 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
   }
 
   FutureOr<void> _resetCounter(
-      _ResetCounter event, Emitter<TasbeehState> emit) async {
+    _ResetCounter event,
+    Emitter<TasbeehState> emit,
+  ) async {
     final updatedItem = event.item.copyWith(currentCount: 0);
     final updatedList = state.list.map((item) {
       return item.id == event.item.id ? updatedItem : item;
@@ -84,9 +96,12 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
   }
 
   FutureOr<void> _incrementCounter(
-      _IncrementCounter event, Emitter<TasbeehState> emit) async {
-    final updatedItem =
-        event.item.copyWith(currentCount: event.item.currentCount + 1);
+    _IncrementCounter event,
+    Emitter<TasbeehState> emit,
+  ) async {
+    final updatedItem = event.item.copyWith(
+      currentCount: event.item.currentCount + 1,
+    );
 
     final updatedList = state.list.map((item) {
       return item.id == event.item.id ? updatedItem : item;
@@ -94,7 +109,9 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
 
     emit(state.copyWith(list: updatedList));
     _beepAndVibrate(
-        allowSound: state.allowSound, allowVibrate: state.allowVibration);
+      allowSound: state.allowSound,
+      allowVibrate: state.allowVibration,
+    );
     await _saveTasbeehCounter();
   }
 
@@ -115,9 +132,7 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
       HapticFeedback.vibrate();
     }
     if (allowSound) {
-      AudioPlayer().play(
-        AssetSource('audios/click.wav'),
-      );
+      AudioPlayer().play(AssetSource('audios/click.wav'));
     }
   }
 }

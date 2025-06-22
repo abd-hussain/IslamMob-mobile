@@ -73,7 +73,8 @@ class LocationManager {
 
     if (permission == LocationPermission.deniedForever) {
       LoggerManagerBase.logWarning(
-          message: "Location permission permanently denied");
+        message: "Location permission permanently denied",
+      );
       await Geolocator.openAppSettings();
       return false;
     }

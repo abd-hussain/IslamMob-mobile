@@ -49,8 +49,9 @@ class ReportUseCase {
   /// );
   /// await ReportUseCase().addNewReportOrSuggestion(reportData: report);
   /// ```
-  Future<void> addNewReportOrSuggestion(
-      {required ReportRequest reportData}) async {
+  Future<void> addNewReportOrSuggestion({
+    required ReportRequest reportData,
+  }) async {
     final List<String> attachmentPaths = [];
 
     if (reportData.attach1 != null) {

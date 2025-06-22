@@ -17,8 +17,10 @@ class FirebaseCrashlyticsManager {
   /// [message] - A descriptive message explaining the context of the error.
   ///
   /// Returns the result from the local logger operation.
-  dynamic logErrorMessageCrashlytics(
-      {required dynamic error, required String message}) {
+  dynamic logErrorMessageCrashlytics({
+    required dynamic error,
+    required String message,
+  }) {
     LoggerManagerBase.logErrorMessage(error: error, message: message);
     FirebaseCrashlytics.instance.recordError(error, StackTrace.current);
   }

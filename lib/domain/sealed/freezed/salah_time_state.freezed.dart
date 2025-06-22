@@ -12,7 +12,8 @@ part of '../salah_time_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$SalahTimeState {
@@ -25,8 +26,7 @@ mixin _$SalahTimeState {
     required TResult Function() maghrib,
     required TResult Function() isha,
     required TResult Function() none,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fajir,
@@ -36,8 +36,7 @@ mixin _$SalahTimeState {
     TResult? Function()? maghrib,
     TResult? Function()? isha,
     TResult? Function()? none,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fajir,
@@ -48,8 +47,7 @@ mixin _$SalahTimeState {
     TResult Function()? isha,
     TResult Function()? none,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SalahTimeStateFajir value) fajir,
@@ -59,8 +57,7 @@ mixin _$SalahTimeState {
     required TResult Function(SalahTimeStateMaghrib value) maghrib,
     required TResult Function(SalahTimeStateIsha value) isha,
     required TResult Function(SalahTimeStateNone value) none,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SalahTimeStateFajir value)? fajir,
@@ -70,8 +67,7 @@ mixin _$SalahTimeState {
     TResult? Function(SalahTimeStateMaghrib value)? maghrib,
     TResult? Function(SalahTimeStateIsha value)? isha,
     TResult? Function(SalahTimeStateNone value)? none,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SalahTimeStateFajir value)? fajir,
@@ -82,15 +78,15 @@ mixin _$SalahTimeState {
     TResult Function(SalahTimeStateIsha value)? isha,
     TResult Function(SalahTimeStateNone value)? none,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SalahTimeStateCopyWith<$Res> {
   factory $SalahTimeStateCopyWith(
-          SalahTimeState value, $Res Function(SalahTimeState) then) =
-      _$SalahTimeStateCopyWithImpl<$Res, SalahTimeState>;
+    SalahTimeState value,
+    $Res Function(SalahTimeState) then,
+  ) = _$SalahTimeStateCopyWithImpl<$Res, SalahTimeState>;
 }
 
 /// @nodoc
@@ -109,18 +105,20 @@ class _$SalahTimeStateCopyWithImpl<$Res, $Val extends SalahTimeState>
 
 /// @nodoc
 abstract class _$$SalahTimeStateFajirImplCopyWith<$Res> {
-  factory _$$SalahTimeStateFajirImplCopyWith(_$SalahTimeStateFajirImpl value,
-          $Res Function(_$SalahTimeStateFajirImpl) then) =
-      __$$SalahTimeStateFajirImplCopyWithImpl<$Res>;
+  factory _$$SalahTimeStateFajirImplCopyWith(
+    _$SalahTimeStateFajirImpl value,
+    $Res Function(_$SalahTimeStateFajirImpl) then,
+  ) = __$$SalahTimeStateFajirImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SalahTimeStateFajirImplCopyWithImpl<$Res>
     extends _$SalahTimeStateCopyWithImpl<$Res, _$SalahTimeStateFajirImpl>
     implements _$$SalahTimeStateFajirImplCopyWith<$Res> {
-  __$$SalahTimeStateFajirImplCopyWithImpl(_$SalahTimeStateFajirImpl _value,
-      $Res Function(_$SalahTimeStateFajirImpl) _then)
-      : super(_value, _then);
+  __$$SalahTimeStateFajirImplCopyWithImpl(
+    _$SalahTimeStateFajirImpl _value,
+    $Res Function(_$SalahTimeStateFajirImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimeState
   /// with the given fields replaced by the non-null parameter values.
@@ -246,18 +244,19 @@ abstract class SalahTimeStateFajir implements SalahTimeState {
 /// @nodoc
 abstract class _$$SalahTimeStateSunriseImplCopyWith<$Res> {
   factory _$$SalahTimeStateSunriseImplCopyWith(
-          _$SalahTimeStateSunriseImpl value,
-          $Res Function(_$SalahTimeStateSunriseImpl) then) =
-      __$$SalahTimeStateSunriseImplCopyWithImpl<$Res>;
+    _$SalahTimeStateSunriseImpl value,
+    $Res Function(_$SalahTimeStateSunriseImpl) then,
+  ) = __$$SalahTimeStateSunriseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SalahTimeStateSunriseImplCopyWithImpl<$Res>
     extends _$SalahTimeStateCopyWithImpl<$Res, _$SalahTimeStateSunriseImpl>
     implements _$$SalahTimeStateSunriseImplCopyWith<$Res> {
-  __$$SalahTimeStateSunriseImplCopyWithImpl(_$SalahTimeStateSunriseImpl _value,
-      $Res Function(_$SalahTimeStateSunriseImpl) _then)
-      : super(_value, _then);
+  __$$SalahTimeStateSunriseImplCopyWithImpl(
+    _$SalahTimeStateSunriseImpl _value,
+    $Res Function(_$SalahTimeStateSunriseImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimeState
   /// with the given fields replaced by the non-null parameter values.
@@ -382,18 +381,20 @@ abstract class SalahTimeStateSunrise implements SalahTimeState {
 
 /// @nodoc
 abstract class _$$SalahTimeStateZhurImplCopyWith<$Res> {
-  factory _$$SalahTimeStateZhurImplCopyWith(_$SalahTimeStateZhurImpl value,
-          $Res Function(_$SalahTimeStateZhurImpl) then) =
-      __$$SalahTimeStateZhurImplCopyWithImpl<$Res>;
+  factory _$$SalahTimeStateZhurImplCopyWith(
+    _$SalahTimeStateZhurImpl value,
+    $Res Function(_$SalahTimeStateZhurImpl) then,
+  ) = __$$SalahTimeStateZhurImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SalahTimeStateZhurImplCopyWithImpl<$Res>
     extends _$SalahTimeStateCopyWithImpl<$Res, _$SalahTimeStateZhurImpl>
     implements _$$SalahTimeStateZhurImplCopyWith<$Res> {
-  __$$SalahTimeStateZhurImplCopyWithImpl(_$SalahTimeStateZhurImpl _value,
-      $Res Function(_$SalahTimeStateZhurImpl) _then)
-      : super(_value, _then);
+  __$$SalahTimeStateZhurImplCopyWithImpl(
+    _$SalahTimeStateZhurImpl _value,
+    $Res Function(_$SalahTimeStateZhurImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimeState
   /// with the given fields replaced by the non-null parameter values.
@@ -517,18 +518,20 @@ abstract class SalahTimeStateZhur implements SalahTimeState {
 
 /// @nodoc
 abstract class _$$SalahTimeStateAsrImplCopyWith<$Res> {
-  factory _$$SalahTimeStateAsrImplCopyWith(_$SalahTimeStateAsrImpl value,
-          $Res Function(_$SalahTimeStateAsrImpl) then) =
-      __$$SalahTimeStateAsrImplCopyWithImpl<$Res>;
+  factory _$$SalahTimeStateAsrImplCopyWith(
+    _$SalahTimeStateAsrImpl value,
+    $Res Function(_$SalahTimeStateAsrImpl) then,
+  ) = __$$SalahTimeStateAsrImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SalahTimeStateAsrImplCopyWithImpl<$Res>
     extends _$SalahTimeStateCopyWithImpl<$Res, _$SalahTimeStateAsrImpl>
     implements _$$SalahTimeStateAsrImplCopyWith<$Res> {
-  __$$SalahTimeStateAsrImplCopyWithImpl(_$SalahTimeStateAsrImpl _value,
-      $Res Function(_$SalahTimeStateAsrImpl) _then)
-      : super(_value, _then);
+  __$$SalahTimeStateAsrImplCopyWithImpl(
+    _$SalahTimeStateAsrImpl _value,
+    $Res Function(_$SalahTimeStateAsrImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimeState
   /// with the given fields replaced by the non-null parameter values.
@@ -653,18 +656,19 @@ abstract class SalahTimeStateAsr implements SalahTimeState {
 /// @nodoc
 abstract class _$$SalahTimeStateMaghribImplCopyWith<$Res> {
   factory _$$SalahTimeStateMaghribImplCopyWith(
-          _$SalahTimeStateMaghribImpl value,
-          $Res Function(_$SalahTimeStateMaghribImpl) then) =
-      __$$SalahTimeStateMaghribImplCopyWithImpl<$Res>;
+    _$SalahTimeStateMaghribImpl value,
+    $Res Function(_$SalahTimeStateMaghribImpl) then,
+  ) = __$$SalahTimeStateMaghribImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SalahTimeStateMaghribImplCopyWithImpl<$Res>
     extends _$SalahTimeStateCopyWithImpl<$Res, _$SalahTimeStateMaghribImpl>
     implements _$$SalahTimeStateMaghribImplCopyWith<$Res> {
-  __$$SalahTimeStateMaghribImplCopyWithImpl(_$SalahTimeStateMaghribImpl _value,
-      $Res Function(_$SalahTimeStateMaghribImpl) _then)
-      : super(_value, _then);
+  __$$SalahTimeStateMaghribImplCopyWithImpl(
+    _$SalahTimeStateMaghribImpl _value,
+    $Res Function(_$SalahTimeStateMaghribImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimeState
   /// with the given fields replaced by the non-null parameter values.
@@ -789,18 +793,20 @@ abstract class SalahTimeStateMaghrib implements SalahTimeState {
 
 /// @nodoc
 abstract class _$$SalahTimeStateIshaImplCopyWith<$Res> {
-  factory _$$SalahTimeStateIshaImplCopyWith(_$SalahTimeStateIshaImpl value,
-          $Res Function(_$SalahTimeStateIshaImpl) then) =
-      __$$SalahTimeStateIshaImplCopyWithImpl<$Res>;
+  factory _$$SalahTimeStateIshaImplCopyWith(
+    _$SalahTimeStateIshaImpl value,
+    $Res Function(_$SalahTimeStateIshaImpl) then,
+  ) = __$$SalahTimeStateIshaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SalahTimeStateIshaImplCopyWithImpl<$Res>
     extends _$SalahTimeStateCopyWithImpl<$Res, _$SalahTimeStateIshaImpl>
     implements _$$SalahTimeStateIshaImplCopyWith<$Res> {
-  __$$SalahTimeStateIshaImplCopyWithImpl(_$SalahTimeStateIshaImpl _value,
-      $Res Function(_$SalahTimeStateIshaImpl) _then)
-      : super(_value, _then);
+  __$$SalahTimeStateIshaImplCopyWithImpl(
+    _$SalahTimeStateIshaImpl _value,
+    $Res Function(_$SalahTimeStateIshaImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimeState
   /// with the given fields replaced by the non-null parameter values.
@@ -924,18 +930,20 @@ abstract class SalahTimeStateIsha implements SalahTimeState {
 
 /// @nodoc
 abstract class _$$SalahTimeStateNoneImplCopyWith<$Res> {
-  factory _$$SalahTimeStateNoneImplCopyWith(_$SalahTimeStateNoneImpl value,
-          $Res Function(_$SalahTimeStateNoneImpl) then) =
-      __$$SalahTimeStateNoneImplCopyWithImpl<$Res>;
+  factory _$$SalahTimeStateNoneImplCopyWith(
+    _$SalahTimeStateNoneImpl value,
+    $Res Function(_$SalahTimeStateNoneImpl) then,
+  ) = __$$SalahTimeStateNoneImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SalahTimeStateNoneImplCopyWithImpl<$Res>
     extends _$SalahTimeStateCopyWithImpl<$Res, _$SalahTimeStateNoneImpl>
     implements _$$SalahTimeStateNoneImplCopyWith<$Res> {
-  __$$SalahTimeStateNoneImplCopyWithImpl(_$SalahTimeStateNoneImpl _value,
-      $Res Function(_$SalahTimeStateNoneImpl) _then)
-      : super(_value, _then);
+  __$$SalahTimeStateNoneImplCopyWithImpl(
+    _$SalahTimeStateNoneImpl _value,
+    $Res Function(_$SalahTimeStateNoneImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimeState
   /// with the given fields replaced by the non-null parameter values.

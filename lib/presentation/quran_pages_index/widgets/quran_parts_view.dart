@@ -24,8 +24,11 @@ class QuranPartsView extends StatelessWidget {
   /// Both [onPartSelected] and [currentPartName] are required parameters.
   /// The [onPartSelected] callback will be invoked when a user taps on
   /// a part tile, and [currentPartName] is used to highlight the active part.
-  const QuranPartsView(
-      {super.key, required this.onPartSelected, required this.currentPartName});
+  const QuranPartsView({
+    super.key,
+    required this.onPartSelected,
+    required this.currentPartName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,17 +37,18 @@ class QuranPartsView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4),
       child: ListView.builder(
-          itemCount: partNames.length,
-          itemBuilder: (context, index) {
-            final partName = partNames[index];
-            final isCurrent = currentPartName == partName;
-            return PartTileView(
-              index: index,
-              partName: partName,
-              isCurrentPart: isCurrent,
-              onTap: () => onPartSelected((index + 1).toString()),
-            );
-          }),
+        itemCount: partNames.length,
+        itemBuilder: (context, index) {
+          final partName = partNames[index];
+          final isCurrent = currentPartName == partName;
+          return PartTileView(
+            index: index,
+            partName: partName,
+            isCurrentPart: isCurrent,
+            onTap: () => onPartSelected((index + 1).toString()),
+          );
+        },
+      ),
     );
   }
 }

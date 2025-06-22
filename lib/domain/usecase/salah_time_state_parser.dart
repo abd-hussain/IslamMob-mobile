@@ -92,7 +92,8 @@ class SalahTimeStateParser {
   /// // Returns NotificationTypeState.maghrib() for Maghrib prayer notifications
   /// ```
   static NotificationTypeState getNextSalahNotificationType(
-      SalahTimeState state) {
+    SalahTimeState state,
+  ) {
     switch (state) {
       case SalahTimeStateFajir():
         return const NotificationTypeState.fajir();

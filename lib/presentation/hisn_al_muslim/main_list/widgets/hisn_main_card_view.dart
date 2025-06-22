@@ -32,8 +32,11 @@ class HisnMainCardView extends StatelessWidget {
   /// Parameters:
   /// - [item]: The supplication data including title, content, and favorite status
   /// - [isRtlLanguage]: Boolean for RTL language support (Arabic, Farsi)
-  const HisnMainCardView(
-      {super.key, required this.item, required this.isRtlLanguage});
+  const HisnMainCardView({
+    super.key,
+    required this.item,
+    required this.isRtlLanguage,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,20 +58,23 @@ class HisnMainCardView extends StatelessWidget {
         child: InkWell(
           onTap: () async {
             await FirebaseAnalyticsRepository.logEvent(
-                name: "hisnAlMuslimDetailsScreenFromListScreen");
+              name: "hisnAlMuslimDetailsScreenFromListScreen",
+            );
             if (!context.mounted) return;
 
             final arguments = {ArgumentConstant.hisnAlMuslimItem: item};
             await Navigator.of(context)
-                .pushNamed(RoutesConstants.hisnAlMuslimDetailsScreen,
-                    arguments: arguments)
+                .pushNamed(
+                  RoutesConstants.hisnAlMuslimDetailsScreen,
+                  arguments: arguments,
+                )
                 .then((val) {
-              if (context.mounted) {
-                context
-                    .read<HisnAlMuslimListBloc>()
-                    .add(const HisnAlMuslimListEvent.getListOfAzkar());
-              }
-            });
+                  if (context.mounted) {
+                    context.read<HisnAlMuslimListBloc>().add(
+                      const HisnAlMuslimListEvent.getListOfAzkar(),
+                    );
+                  }
+                });
           },
           child: Padding(
             padding: const EdgeInsets.all(8),
@@ -78,26 +84,30 @@ class HisnMainCardView extends StatelessWidget {
                   child: Text(
                     "${item.id} - ${isRtlLanguage ? item.title.ar : item.title.en}",
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          color: const Color(0xfffff2e9),
-                          fontFamily: 'Uthman',
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      color: const Color(0xfffff2e9),
+                      fontFamily: 'Uthman',
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
                     maxLines: 2,
                   ),
                 ),
                 IconButton(
                   onPressed: () {
-                    final updatedHisn =
-                        item.copyWith(isFavorite: !item.isFavorite);
+                    final updatedHisn = item.copyWith(
+                      isFavorite: !item.isFavorite,
+                    );
                     context.read<HisnAlMuslimListBloc>().add(
-                        HisnAlMuslimListEvent.addRemoveItemToFavorite(
-                            updatedHisn));
+                      HisnAlMuslimListEvent.addRemoveItemToFavorite(
+                        updatedHisn,
+                      ),
+                    );
                   },
                   icon: Icon(
-                      item.isFavorite ? Icons.favorite : Icons.favorite_border),
+                    item.isFavorite ? Icons.favorite : Icons.favorite_border,
+                  ),
                   color: Colors.white,
-                )
+                ),
               ],
             ),
           ),

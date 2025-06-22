@@ -57,7 +57,8 @@ class HajjOmrahUsecase {
 
   /// Parses a MultiLanguageString from JSON.
   static MultiLanguageString _parseMultiLanguageString(
-      Map<String, dynamic>? json) {
+    Map<String, dynamic>? json,
+  ) {
     if (json == null) return MultiLanguageString(ar: '', en: '');
     return MultiLanguageString(
       ar: (json['ar'] as String?) ?? '',
@@ -66,7 +67,8 @@ class HajjOmrahUsecase {
   }
 
   static Map<String, List<String>> _parseDetails(
-      Map<String, dynamic>? details) {
+    Map<String, dynamic>? details,
+  ) {
     if (details == null) return {'ar': [], 'en': []};
     return {
       'ar': List<String>.from((details['ar'] as List<dynamic>?) ?? []),

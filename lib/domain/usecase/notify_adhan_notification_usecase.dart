@@ -59,15 +59,17 @@ class NotifyAdhanNotificationUsecase {
   /// final prayerTimes = usecase.getPrayTimingForSpesificDates(listOfDates: dates);
   /// // Schedule notifications for each prayer time
   /// ```
-  List<PrayTimingDateTimeModel> getPrayTimingForSpesificDates(
-      {required List<DateTime> listOfDates}) {
+  List<PrayTimingDateTimeModel> getPrayTimingForSpesificDates({
+    required List<DateTime> listOfDates,
+  }) {
     final List<PrayTimingDateTimeModel> prayTimingDateTimeModels = [];
 
     for (final date in listOfDates) {
       _prayUsecase = PrayUsecase(
-          specificDate: DateComponents(date.year, date.month, date.day));
-      final PrayTimingDateTimeModel prayTimingDateTimeModel =
-          _prayUsecase.getAllPrayTimeAsDateTimeForToday();
+        specificDate: DateComponents(date.year, date.month, date.day),
+      );
+      final PrayTimingDateTimeModel prayTimingDateTimeModel = _prayUsecase
+          .getAllPrayTimeAsDateTimeForToday();
 
       final fajirPrayTime = DateTime(
         date.year,

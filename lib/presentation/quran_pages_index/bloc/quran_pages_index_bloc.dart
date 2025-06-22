@@ -36,31 +36,41 @@ class QuranPagesIndexBloc
 
   /// Loads the list of bookmarked pages from persistent storage.
   void _loadBookmarkedPages() {
-    final List<dynamic> storedBookmarks = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
-        defaultValue: []) as List<dynamic>;
+    final List<dynamic> storedBookmarks =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
+              defaultValue: [],
+            )
+            as List<dynamic>;
     if (storedBookmarks.isNotEmpty) {
       bookmarkedPages = storedBookmarks.cast<int>();
     }
   }
 
   FutureOr<void> _updateSelectedTab(
-      _UpdateSelectedTab event, Emitter<QuranPagesIndexState> emit) {
+    _UpdateSelectedTab event,
+    Emitter<QuranPagesIndexState> emit,
+  ) {
     emit(state.copyWith(selectedIndex: event.index));
   }
 
   FutureOr<void> _getSowarList(
-      _GetSowarList event, Emitter<QuranPagesIndexState> emit) {
-    final list =
-        QuranPagesIndexUseCase.getAllSurahNames(context: event.context);
+    _GetSowarList event,
+    Emitter<QuranPagesIndexState> emit,
+  ) {
+    final list = QuranPagesIndexUseCase.getAllSurahNames(
+      context: event.context,
+    );
     emit(state.copyWith(sowarList: list));
   }
 
   FutureOr<void> _search(_Search event, Emitter<QuranPagesIndexState> emit) {
     final searchFilteredList =
         QuranPagesIndexUseCase.getAllSurahNames(context: event.context)
-            .where((element) =>
-                element.toLowerCase().contains(event.value.toLowerCase()))
+            .where(
+              (element) =>
+                  element.toLowerCase().contains(event.value.toLowerCase()),
+            )
             .toList();
     emit(state.copyWith(sowarList: searchFilteredList));
   }

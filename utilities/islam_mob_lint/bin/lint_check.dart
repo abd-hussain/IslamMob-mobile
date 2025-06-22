@@ -8,10 +8,7 @@ void main(List<String> args) async {
   LoggerManagerBase.logInfo(message: 'Running lint check on $directory...');
 
   // Run the analyzer
-  final analyzerResult = await Process.run(
-    'dart',
-    ['analyze', directory],
-  );
+  final analyzerResult = await Process.run('dart', ['analyze', directory]);
 
   LoggerManagerBase.logInfo(message: '\n--- Analyzer Results ---');
   LoggerManagerBase.logInfo(message: analyzerResult.stdout.toString());
@@ -25,10 +22,11 @@ void main(List<String> args) async {
   }
 
   // Run custom lint
-  final customLintResult = await Process.run(
-    'dart',
-    ['run', 'custom_lint', directory],
-  );
+  final customLintResult = await Process.run('dart', [
+    'run',
+    'custom_lint',
+    directory,
+  ]);
 
   LoggerManagerBase.logInfo(message: '\n--- Custom Lint Results ---');
   LoggerManagerBase.logInfo(message: customLintResult.stdout.toString());

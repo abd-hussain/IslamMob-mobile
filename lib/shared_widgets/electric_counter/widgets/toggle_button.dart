@@ -38,10 +38,7 @@ class ToggleButton extends StatelessWidget {
           color: const Color(0xFF6A8584),
           borderRadius: BorderRadius.circular(15),
         ),
-        child: Icon(
-          icon,
-          color: _toggleButtonIconColor(isSelected),
-        ),
+        child: Icon(icon, color: _toggleButtonIconColor(isSelected)),
       ),
     );
     // return ElevatedButton(

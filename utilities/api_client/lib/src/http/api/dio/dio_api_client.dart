@@ -46,22 +46,19 @@ class DioApiClient extends ApiClientBase {
     Map<String, Object?>? headers,
     Map<String, Object?>? queryParams,
   }) {
-    return TaskEither.tryCatch(
-      () async {
-        final response = await _dio.get<T>(
-          path,
-          queryParameters: queryParams,
-          options: Options(headers: headers),
-        );
+    return TaskEither.tryCatch(() async {
+      final response = await _dio.get<T>(
+        path,
+        queryParameters: queryParams,
+        options: Options(headers: headers),
+      );
 
-        return HttpApiResponse<T>(
-          data: response.data,
-          statusCode: response.statusCode,
-          statusMessage: response.statusMessage,
-        );
-      },
-      _mapException,
-    );
+      return HttpApiResponse<T>(
+        data: response.data,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+      );
+    }, _mapException);
   }
 
   @override
@@ -69,23 +66,19 @@ class DioApiClient extends ApiClientBase {
     String path, {
     Map<String, Object?>? headers,
     Map<String, Object?>? queryParams,
-  }) =>
-      TaskEither.tryCatch(
-        () async {
-          final response = await _dio.delete<T>(
-            path,
-            queryParameters: queryParams,
-            options: Options(headers: headers),
-          );
+  }) => TaskEither.tryCatch(() async {
+    final response = await _dio.delete<T>(
+      path,
+      queryParameters: queryParams,
+      options: Options(headers: headers),
+    );
 
-          return HttpApiResponse<T>(
-            data: response.data,
-            statusCode: response.statusCode,
-            statusMessage: response.statusMessage,
-          );
-        },
-        _mapException,
-      );
+    return HttpApiResponse<T>(
+      data: response.data,
+      statusCode: response.statusCode,
+      statusMessage: response.statusMessage,
+    );
+  }, _mapException);
 
   @override
   TaskEither<Exception, HttpApiResponse<T>> patch<T>(
@@ -93,24 +86,20 @@ class DioApiClient extends ApiClientBase {
     required Map<String, Object?> data,
     Map<String, Object?>? headers,
     Map<String, Object?>? queryParams,
-  }) =>
-      TaskEither.tryCatch(
-        () async {
-          final response = await _dio.patch<T>(
-            path,
-            data: data,
-            queryParameters: queryParams,
-            options: Options(headers: headers),
-          );
+  }) => TaskEither.tryCatch(() async {
+    final response = await _dio.patch<T>(
+      path,
+      data: data,
+      queryParameters: queryParams,
+      options: Options(headers: headers),
+    );
 
-          return HttpApiResponse<T>(
-            data: response.data,
-            statusCode: response.statusCode,
-            statusMessage: response.statusMessage,
-          );
-        },
-        _mapException,
-      );
+    return HttpApiResponse<T>(
+      data: response.data,
+      statusCode: response.statusCode,
+      statusMessage: response.statusMessage,
+    );
+  }, _mapException);
 
   @override
   TaskEither<Exception, HttpApiResponse<T>> post<T>(
@@ -118,24 +107,20 @@ class DioApiClient extends ApiClientBase {
     required Map<String, Object?> data,
     Map<String, Object?>? headers,
     Map<String, Object?>? queryParams,
-  }) =>
-      TaskEither.tryCatch(
-        () async {
-          final response = await _dio.post<T>(
-            path,
-            data: data,
-            queryParameters: queryParams,
-            options: Options(headers: headers),
-          );
+  }) => TaskEither.tryCatch(() async {
+    final response = await _dio.post<T>(
+      path,
+      data: data,
+      queryParameters: queryParams,
+      options: Options(headers: headers),
+    );
 
-          return HttpApiResponse<T>(
-            data: response.data,
-            statusCode: response.statusCode,
-            statusMessage: response.statusMessage,
-          );
-        },
-        _mapException,
-      );
+    return HttpApiResponse<T>(
+      data: response.data,
+      statusCode: response.statusCode,
+      statusMessage: response.statusMessage,
+    );
+  }, _mapException);
 
   @override
   TaskEither<Exception, HttpApiResponse<T>> put<T>(
@@ -143,24 +128,20 @@ class DioApiClient extends ApiClientBase {
     required Map<String, Object?> data,
     Map<String, Object?>? headers,
     Map<String, Object?>? queryParams,
-  }) =>
-      TaskEither.tryCatch(
-        () async {
-          final response = await _dio.put<T>(
-            path,
-            data: data,
-            queryParameters: queryParams,
-            options: Options(headers: headers),
-          );
+  }) => TaskEither.tryCatch(() async {
+    final response = await _dio.put<T>(
+      path,
+      data: data,
+      queryParameters: queryParams,
+      options: Options(headers: headers),
+    );
 
-          return HttpApiResponse<T>(
-            data: response.data,
-            statusCode: response.statusCode,
-            statusMessage: response.statusMessage,
-          );
-        },
-        _mapException,
-      );
+    return HttpApiResponse<T>(
+      data: response.data,
+      statusCode: response.statusCode,
+      statusMessage: response.statusMessage,
+    );
+  }, _mapException);
 
   Exception _mapException(Object error, StackTrace stackTrace) {
     if (error case final DioException dioException) {

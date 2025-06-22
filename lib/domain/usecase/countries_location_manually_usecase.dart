@@ -54,7 +54,8 @@ class CountriesLocationManuallyUseCase {
   /// final saudiArabia = locations.firstWhere((loc) => loc.countryName.contains('Saudi'));
   /// ```
   static List<ChooseLocation> getCountriesCitiesLocationManually(
-      BuildContext context) {
+    BuildContext context,
+  ) {
     final localize = IslamMobLocalizations.of(context);
 
     return [

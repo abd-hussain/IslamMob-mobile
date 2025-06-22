@@ -32,12 +32,16 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   FutureOr<void> _changeNotificationStatus(
-      _ChangeNotificationStatus event, Emitter<NotificationsState> emit) {
+    _ChangeNotificationStatus event,
+    Emitter<NotificationsState> emit,
+  ) {
     emit(state.copyWith(status: event.status));
   }
 
   FutureOr<void> _setupToken(
-      _SetupToken event, Emitter<NotificationsState> emit) {
+    _SetupToken event,
+    Emitter<NotificationsState> emit,
+  ) {
     SetupUserSettingUseCase.setNotificationToken(event.token);
   }
 }

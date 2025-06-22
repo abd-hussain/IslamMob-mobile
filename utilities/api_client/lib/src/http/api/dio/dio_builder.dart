@@ -73,11 +73,7 @@ class DioBuilder {
   ///
   /// Returns a fully configured [Dio] instance ready for use.
   Dio build() {
-    final dio = Dio(
-      BaseOptions(
-        baseUrl: _baseUrl ?? '',
-      ),
-    );
+    final dio = Dio(BaseOptions(baseUrl: _baseUrl ?? ''));
 
     // Add interceptors
     for (final interceptor in _interceptors) {

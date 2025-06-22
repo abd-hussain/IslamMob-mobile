@@ -28,9 +28,7 @@ class OtherNotificationView extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       decoration: _containerDecoration(),
-      child: Column(
-        children: _buildNotificationRows(context),
-      ),
+      child: Column(children: _buildNotificationRows(context)),
     );
   }
 
@@ -64,11 +62,11 @@ class OtherNotificationView extends StatelessWidget {
             onChangeSoundPresses: null,
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const SunriseTime(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const SunriseTime(),
+                ),
+              );
             },
           );
         },
@@ -86,11 +84,11 @@ class OtherNotificationView extends StatelessWidget {
             description: "",
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const Jom3aAlkahf(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const Jom3aAlkahf(),
+                ),
+              );
             },
           );
         },
@@ -108,11 +106,11 @@ class OtherNotificationView extends StatelessWidget {
             onChangeSoundPresses: null,
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const Jom3aDo3aa(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const Jom3aDo3aa(),
+                ),
+              );
             },
           );
         },
@@ -130,11 +128,11 @@ class OtherNotificationView extends StatelessWidget {
             onChangeSoundPresses: null,
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const QeyamAlLayel(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const QeyamAlLayel(),
+                ),
+              );
             },
           );
         },
@@ -152,11 +150,11 @@ class OtherNotificationView extends StatelessWidget {
             onChangeSoundPresses: null,
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const Before15Min(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const Before15Min(),
+                ),
+              );
             },
           );
         },

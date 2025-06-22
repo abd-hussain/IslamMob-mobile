@@ -22,5 +22,7 @@ class QiblaFinderBloc extends Bloc<QiblaFinderEvent, QiblaFinderState> {
   }
 
   FutureOr<void> _qiblaFinderSetup(
-      _QiblaFinderSetup event, Emitter<QiblaFinderState> emit) {}
+    _QiblaFinderSetup event,
+    Emitter<QiblaFinderState> emit,
+  ) {}
 }

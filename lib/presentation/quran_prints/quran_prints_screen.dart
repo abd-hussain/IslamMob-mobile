@@ -35,10 +35,8 @@ class QuranPrintsScreen extends StatelessWidget {
     final localize = IslamMobLocalizations.of(context);
 
     return BlocProvider(
-      create: (context) => QuranPrintsBloc()
-        ..add(
-          QuranPrintsEvent.initializeFetchingData(),
-        ),
+      create: (context) =>
+          QuranPrintsBloc()..add(QuranPrintsEvent.initializeFetchingData()),
       child: Scaffold(
         appBar: CustomAppBar(title: localize.quranprints),
         body: _buildBody(context, localize),
@@ -52,8 +50,8 @@ class QuranPrintsScreen extends StatelessWidget {
         if (state.internetConnectionStauts == false) {
           return NoInternetView(
             retryCallback: () => context.read<QuranPrintsBloc>().add(
-                  QuranPrintsEvent.initializeFetchingData(),
-                ),
+              QuranPrintsEvent.initializeFetchingData(),
+            ),
           );
         } else if (state.listOfPrints == null) {
           return const QuranListPrintsShimmer();
@@ -100,17 +98,22 @@ class QuranPrintsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPrintTile(BuildContext context, QuranPrints printItem,
-      QuranPrintsState state, IslamMobLocalizations localize) {
+  Widget _buildPrintTile(
+    BuildContext context,
+    QuranPrints printItem,
+    QuranPrintsState state,
+    IslamMobLocalizations localize,
+  ) {
     return PrintTileView(
-      language: context
-          .read<QuranPrintsBloc>()
-          .getLanguageNameByCode(printItem.language ?? ""),
+      language: context.read<QuranPrintsBloc>().getLanguageNameByCode(
+        printItem.language ?? "",
+      ),
       title: printItem.nameReferance,
       description: printItem.description,
       previewImage: printItem.previewImage,
-      downloadButtonAvailable:
-          !state.printsDownloading.contains(printItem.fieldName),
+      downloadButtonAvailable: !state.printsDownloading.contains(
+        printItem.fieldName,
+      ),
       useButtonAvailable: state.printsDownloading.contains(printItem.fieldName),
       onDownloadPressed: () =>
           _handleDownloadPressed(context, printItem, localize),
@@ -151,24 +154,27 @@ class QuranPrintsScreen extends StatelessWidget {
     );
 
     final updatedList = List<String>.from(
-        context.read<QuranPrintsBloc>().state.printsDownloading)
-      ..add(printItem.fieldName!);
+      context.read<QuranPrintsBloc>().state.printsDownloading,
+    )..add(printItem.fieldName!);
 
-    context
-        .read<QuranPrintsBloc>()
-        .add(QuranPrintsEvent.updatePrintsDownloading(print: updatedList));
+    context.read<QuranPrintsBloc>().add(
+      QuranPrintsEvent.updatePrintsDownloading(print: updatedList),
+    );
   }
 
   Future<void> _handleUsePressed(
-      BuildContext context, QuranPrints printItem) async {
+    BuildContext context,
+    QuranPrints printItem,
+  ) async {
     final String fileName = printItem.fieldName!;
 
     await SetupUserSettingUseCase.setQuranCopyInDB(
       QuranCopy(
-          fileName: fileName,
-          lastPageNumber: "1",
-          juz2ToPageNumbers: printItem.juz2ToPageNumbers,
-          sorahToPageNumbers: printItem.sorahToPageNumbers),
+        fileName: fileName,
+        lastPageNumber: "1",
+        juz2ToPageNumbers: printItem.juz2ToPageNumbers,
+        sorahToPageNumbers: printItem.sorahToPageNumbers,
+      ),
     );
 
     await FirebaseAnalyticsRepository.logEvent(

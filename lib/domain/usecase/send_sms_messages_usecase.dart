@@ -50,14 +50,17 @@ class SendSmsMessagesUsecase {
   ///   message: 'Assalamu Alaikum! Prayer time reminder: Maghrib at 6:30 PM',
   /// );
   /// ```
-  static Future<void> sendBulkSMS(
-      {required List<String> mobileNumbers, required String message}) async {
+  static Future<void> sendBulkSMS({
+    required List<String> mobileNumbers,
+    required String message,
+  }) async {
     // Join multiple numbers with a comma
     final String numbers = mobileNumbers.join(',');
 
     // Encode message to handle special characters
-    final Uri smsUri =
-        Uri.parse('sms:$numbers?body=${Uri.encodeComponent(message)}');
+    final Uri smsUri = Uri.parse(
+      'sms:$numbers?body=${Uri.encodeComponent(message)}',
+    );
 
     if (await canLaunchUrl(smsUri)) {
       await launchUrl(smsUri);

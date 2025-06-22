@@ -12,7 +12,8 @@ part of 'profile_options.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$ProfileOptions {
@@ -32,15 +33,17 @@ mixin _$ProfileOptions {
 /// @nodoc
 abstract class $ProfileOptionsCopyWith<$Res> {
   factory $ProfileOptionsCopyWith(
-          ProfileOptions value, $Res Function(ProfileOptions) then) =
-      _$ProfileOptionsCopyWithImpl<$Res, ProfileOptions>;
+    ProfileOptions value,
+    $Res Function(ProfileOptions) then,
+  ) = _$ProfileOptionsCopyWithImpl<$Res, ProfileOptions>;
   @useResult
-  $Res call(
-      {IconData icon,
-      String name,
-      String subtitle,
-      bool avaliable,
-      VoidCallback onTap});
+  $Res call({
+    IconData icon,
+    String name,
+    String subtitle,
+    bool avaliable,
+    VoidCallback onTap,
+  });
 }
 
 /// @nodoc
@@ -64,45 +67,50 @@ class _$ProfileOptionsCopyWithImpl<$Res, $Val extends ProfileOptions>
     Object? avaliable = null,
     Object? onTap = null,
   }) {
-    return _then(_value.copyWith(
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      subtitle: null == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String,
-      avaliable: null == avaliable
-          ? _value.avaliable
-          : avaliable // ignore: cast_nullable_to_non_nullable
-              as bool,
-      onTap: null == onTap
-          ? _value.onTap
-          : onTap // ignore: cast_nullable_to_non_nullable
-              as VoidCallback,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            icon: null == icon
+                ? _value.icon
+                : icon // ignore: cast_nullable_to_non_nullable
+                      as IconData,
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            subtitle: null == subtitle
+                ? _value.subtitle
+                : subtitle // ignore: cast_nullable_to_non_nullable
+                      as String,
+            avaliable: null == avaliable
+                ? _value.avaliable
+                : avaliable // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            onTap: null == onTap
+                ? _value.onTap
+                : onTap // ignore: cast_nullable_to_non_nullable
+                      as VoidCallback,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$ProfileOptionsImplCopyWith<$Res>
     implements $ProfileOptionsCopyWith<$Res> {
-  factory _$$ProfileOptionsImplCopyWith(_$ProfileOptionsImpl value,
-          $Res Function(_$ProfileOptionsImpl) then) =
-      __$$ProfileOptionsImplCopyWithImpl<$Res>;
+  factory _$$ProfileOptionsImplCopyWith(
+    _$ProfileOptionsImpl value,
+    $Res Function(_$ProfileOptionsImpl) then,
+  ) = __$$ProfileOptionsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {IconData icon,
-      String name,
-      String subtitle,
-      bool avaliable,
-      VoidCallback onTap});
+  $Res call({
+    IconData icon,
+    String name,
+    String subtitle,
+    bool avaliable,
+    VoidCallback onTap,
+  });
 }
 
 /// @nodoc
@@ -110,8 +118,9 @@ class __$$ProfileOptionsImplCopyWithImpl<$Res>
     extends _$ProfileOptionsCopyWithImpl<$Res, _$ProfileOptionsImpl>
     implements _$$ProfileOptionsImplCopyWith<$Res> {
   __$$ProfileOptionsImplCopyWithImpl(
-      _$ProfileOptionsImpl _value, $Res Function(_$ProfileOptionsImpl) _then)
-      : super(_value, _then);
+    _$ProfileOptionsImpl _value,
+    $Res Function(_$ProfileOptionsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ProfileOptions
   /// with the given fields replaced by the non-null parameter values.
@@ -124,40 +133,43 @@ class __$$ProfileOptionsImplCopyWithImpl<$Res>
     Object? avaliable = null,
     Object? onTap = null,
   }) {
-    return _then(_$ProfileOptionsImpl(
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      subtitle: null == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String,
-      avaliable: null == avaliable
-          ? _value.avaliable
-          : avaliable // ignore: cast_nullable_to_non_nullable
-              as bool,
-      onTap: null == onTap
-          ? _value.onTap
-          : onTap // ignore: cast_nullable_to_non_nullable
-              as VoidCallback,
-    ));
+    return _then(
+      _$ProfileOptionsImpl(
+        icon: null == icon
+            ? _value.icon
+            : icon // ignore: cast_nullable_to_non_nullable
+                  as IconData,
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        subtitle: null == subtitle
+            ? _value.subtitle
+            : subtitle // ignore: cast_nullable_to_non_nullable
+                  as String,
+        avaliable: null == avaliable
+            ? _value.avaliable
+            : avaliable // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        onTap: null == onTap
+            ? _value.onTap
+            : onTap // ignore: cast_nullable_to_non_nullable
+                  as VoidCallback,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$ProfileOptionsImpl implements _ProfileOptions {
-  _$ProfileOptionsImpl(
-      {required this.icon,
-      required this.name,
-      this.subtitle = '',
-      this.avaliable = true,
-      required this.onTap});
+  _$ProfileOptionsImpl({
+    required this.icon,
+    required this.name,
+    this.subtitle = '',
+    this.avaliable = true,
+    required this.onTap,
+  });
 
   @override
   final IconData icon;
@@ -202,16 +214,19 @@ class _$ProfileOptionsImpl implements _ProfileOptions {
   @pragma('vm:prefer-inline')
   _$$ProfileOptionsImplCopyWith<_$ProfileOptionsImpl> get copyWith =>
       __$$ProfileOptionsImplCopyWithImpl<_$ProfileOptionsImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _ProfileOptions implements ProfileOptions {
-  factory _ProfileOptions(
-      {required final IconData icon,
-      required final String name,
-      final String subtitle,
-      final bool avaliable,
-      required final VoidCallback onTap}) = _$ProfileOptionsImpl;
+  factory _ProfileOptions({
+    required final IconData icon,
+    required final String name,
+    final String subtitle,
+    final bool avaliable,
+    required final VoidCallback onTap,
+  }) = _$ProfileOptionsImpl;
 
   @override
   IconData get icon;

@@ -182,8 +182,10 @@ class QuranPagesIndexUseCase {
   }
 
   /// Returns `SowrahType.makyeh` or `SowrahType.madanyeh`.
-  static SowrahTypeState getSurahType(
-      {required BuildContext context, required String surahName}) {
+  static SowrahTypeState getSurahType({
+    required BuildContext context,
+    required String surahName,
+  }) {
     final localize = IslamMobLocalizations.of(context);
     final madaniyahSurahs = [
       localize.quranSorahName2,

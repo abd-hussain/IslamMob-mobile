@@ -12,49 +12,43 @@ part of 'qibla_finder_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$QiblaFinderEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() setup,
-  }) =>
+  TResult when<TResult extends Object?>({required TResult Function() setup}) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? setup,
-  }) =>
+  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? setup}) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_QiblaFinderSetup value) setup,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_QiblaFinderSetup value)? setup,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QiblaFinderSetup value)? setup,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QiblaFinderEventCopyWith<$Res> {
   factory $QiblaFinderEventCopyWith(
-          QiblaFinderEvent value, $Res Function(QiblaFinderEvent) then) =
-      _$QiblaFinderEventCopyWithImpl<$Res, QiblaFinderEvent>;
+    QiblaFinderEvent value,
+    $Res Function(QiblaFinderEvent) then,
+  ) = _$QiblaFinderEventCopyWithImpl<$Res, QiblaFinderEvent>;
 }
 
 /// @nodoc
@@ -73,18 +67,20 @@ class _$QiblaFinderEventCopyWithImpl<$Res, $Val extends QiblaFinderEvent>
 
 /// @nodoc
 abstract class _$$QiblaFinderSetupImplCopyWith<$Res> {
-  factory _$$QiblaFinderSetupImplCopyWith(_$QiblaFinderSetupImpl value,
-          $Res Function(_$QiblaFinderSetupImpl) then) =
-      __$$QiblaFinderSetupImplCopyWithImpl<$Res>;
+  factory _$$QiblaFinderSetupImplCopyWith(
+    _$QiblaFinderSetupImpl value,
+    $Res Function(_$QiblaFinderSetupImpl) then,
+  ) = __$$QiblaFinderSetupImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$QiblaFinderSetupImplCopyWithImpl<$Res>
     extends _$QiblaFinderEventCopyWithImpl<$Res, _$QiblaFinderSetupImpl>
     implements _$$QiblaFinderSetupImplCopyWith<$Res> {
-  __$$QiblaFinderSetupImplCopyWithImpl(_$QiblaFinderSetupImpl _value,
-      $Res Function(_$QiblaFinderSetupImpl) _then)
-      : super(_value, _then);
+  __$$QiblaFinderSetupImplCopyWithImpl(
+    _$QiblaFinderSetupImpl _value,
+    $Res Function(_$QiblaFinderSetupImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QiblaFinderEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -111,17 +107,13 @@ class _$QiblaFinderSetupImpl implements _QiblaFinderSetup {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() setup,
-  }) {
+  TResult when<TResult extends Object?>({required TResult Function() setup}) {
     return setup();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? setup,
-  }) {
+  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? setup}) {
     return setup?.call();
   }
 
@@ -184,8 +176,9 @@ mixin _$QiblaFinderState {
 /// @nodoc
 abstract class $QiblaFinderStateCopyWith<$Res> {
   factory $QiblaFinderStateCopyWith(
-          QiblaFinderState value, $Res Function(QiblaFinderState) then) =
-      _$QiblaFinderStateCopyWithImpl<$Res, QiblaFinderState>;
+    QiblaFinderState value,
+    $Res Function(QiblaFinderState) then,
+  ) = _$QiblaFinderStateCopyWithImpl<$Res, QiblaFinderState>;
   @useResult
   $Res call({QiblaFinderProcessState status});
 
@@ -206,15 +199,16 @@ class _$QiblaFinderStateCopyWithImpl<$Res, $Val extends QiblaFinderState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as QiblaFinderProcessState,
-    ) as $Val);
+  $Res call({Object? status = null}) {
+    return _then(
+      _value.copyWith(
+            status: null == status
+                ? _value.status
+                : status // ignore: cast_nullable_to_non_nullable
+                      as QiblaFinderProcessState,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of QiblaFinderState
@@ -231,9 +225,10 @@ class _$QiblaFinderStateCopyWithImpl<$Res, $Val extends QiblaFinderState>
 /// @nodoc
 abstract class _$$QiblaFinderStateImplCopyWith<$Res>
     implements $QiblaFinderStateCopyWith<$Res> {
-  factory _$$QiblaFinderStateImplCopyWith(_$QiblaFinderStateImpl value,
-          $Res Function(_$QiblaFinderStateImpl) then) =
-      __$$QiblaFinderStateImplCopyWithImpl<$Res>;
+  factory _$$QiblaFinderStateImplCopyWith(
+    _$QiblaFinderStateImpl value,
+    $Res Function(_$QiblaFinderStateImpl) then,
+  ) = __$$QiblaFinderStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({QiblaFinderProcessState status});
@@ -246,31 +241,33 @@ abstract class _$$QiblaFinderStateImplCopyWith<$Res>
 class __$$QiblaFinderStateImplCopyWithImpl<$Res>
     extends _$QiblaFinderStateCopyWithImpl<$Res, _$QiblaFinderStateImpl>
     implements _$$QiblaFinderStateImplCopyWith<$Res> {
-  __$$QiblaFinderStateImplCopyWithImpl(_$QiblaFinderStateImpl _value,
-      $Res Function(_$QiblaFinderStateImpl) _then)
-      : super(_value, _then);
+  __$$QiblaFinderStateImplCopyWithImpl(
+    _$QiblaFinderStateImpl _value,
+    $Res Function(_$QiblaFinderStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QiblaFinderState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$QiblaFinderStateImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as QiblaFinderProcessState,
-    ));
+  $Res call({Object? status = null}) {
+    return _then(
+      _$QiblaFinderStateImpl(
+        status: null == status
+            ? _value.status
+            : status // ignore: cast_nullable_to_non_nullable
+                  as QiblaFinderProcessState,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$QiblaFinderStateImpl implements _QiblaFinderState {
-  const _$QiblaFinderStateImpl(
-      {this.status = const QiblaFinderProcessState.loading()});
+  const _$QiblaFinderStateImpl({
+    this.status = const QiblaFinderProcessState.loading(),
+  });
 
   @override
   @JsonKey()
@@ -299,7 +296,9 @@ class _$QiblaFinderStateImpl implements _QiblaFinderState {
   @pragma('vm:prefer-inline')
   _$$QiblaFinderStateImplCopyWith<_$QiblaFinderStateImpl> get copyWith =>
       __$$QiblaFinderStateImplCopyWithImpl<_$QiblaFinderStateImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _QiblaFinderState implements QiblaFinderState {
@@ -324,57 +323,54 @@ mixin _$QiblaFinderProcessState {
     required TResult Function() loading,
     required TResult Function() error,
     required TResult Function() succss,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
     TResult? Function()? succss,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
     TResult Function()? succss,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(QiblaFinderProcessStateLoading value) loading,
     required TResult Function(QiblaFinderProcessStateError value) error,
     required TResult Function(QiblaFinderProcessStateSuccss value) succss,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QiblaFinderProcessStateLoading value)? loading,
     TResult? Function(QiblaFinderProcessStateError value)? error,
     TResult? Function(QiblaFinderProcessStateSuccss value)? succss,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QiblaFinderProcessStateLoading value)? loading,
     TResult Function(QiblaFinderProcessStateError value)? error,
     TResult Function(QiblaFinderProcessStateSuccss value)? succss,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QiblaFinderProcessStateCopyWith<$Res> {
-  factory $QiblaFinderProcessStateCopyWith(QiblaFinderProcessState value,
-          $Res Function(QiblaFinderProcessState) then) =
-      _$QiblaFinderProcessStateCopyWithImpl<$Res, QiblaFinderProcessState>;
+  factory $QiblaFinderProcessStateCopyWith(
+    QiblaFinderProcessState value,
+    $Res Function(QiblaFinderProcessState) then,
+  ) = _$QiblaFinderProcessStateCopyWithImpl<$Res, QiblaFinderProcessState>;
 }
 
 /// @nodoc
-class _$QiblaFinderProcessStateCopyWithImpl<$Res,
-        $Val extends QiblaFinderProcessState>
+class _$QiblaFinderProcessStateCopyWithImpl<
+  $Res,
+  $Val extends QiblaFinderProcessState
+>
     implements $QiblaFinderProcessStateCopyWith<$Res> {
   _$QiblaFinderProcessStateCopyWithImpl(this._value, this._then);
 
@@ -390,20 +386,23 @@ class _$QiblaFinderProcessStateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$QiblaFinderProcessStateLoadingImplCopyWith<$Res> {
   factory _$$QiblaFinderProcessStateLoadingImplCopyWith(
-          _$QiblaFinderProcessStateLoadingImpl value,
-          $Res Function(_$QiblaFinderProcessStateLoadingImpl) then) =
-      __$$QiblaFinderProcessStateLoadingImplCopyWithImpl<$Res>;
+    _$QiblaFinderProcessStateLoadingImpl value,
+    $Res Function(_$QiblaFinderProcessStateLoadingImpl) then,
+  ) = __$$QiblaFinderProcessStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$QiblaFinderProcessStateLoadingImplCopyWithImpl<$Res>
-    extends _$QiblaFinderProcessStateCopyWithImpl<$Res,
-        _$QiblaFinderProcessStateLoadingImpl>
+    extends
+        _$QiblaFinderProcessStateCopyWithImpl<
+          $Res,
+          _$QiblaFinderProcessStateLoadingImpl
+        >
     implements _$$QiblaFinderProcessStateLoadingImplCopyWith<$Res> {
   __$$QiblaFinderProcessStateLoadingImplCopyWithImpl(
-      _$QiblaFinderProcessStateLoadingImpl _value,
-      $Res Function(_$QiblaFinderProcessStateLoadingImpl) _then)
-      : super(_value, _then);
+    _$QiblaFinderProcessStateLoadingImpl _value,
+    $Res Function(_$QiblaFinderProcessStateLoadingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QiblaFinderProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -508,20 +507,23 @@ abstract class QiblaFinderProcessStateLoading
 /// @nodoc
 abstract class _$$QiblaFinderProcessStateErrorImplCopyWith<$Res> {
   factory _$$QiblaFinderProcessStateErrorImplCopyWith(
-          _$QiblaFinderProcessStateErrorImpl value,
-          $Res Function(_$QiblaFinderProcessStateErrorImpl) then) =
-      __$$QiblaFinderProcessStateErrorImplCopyWithImpl<$Res>;
+    _$QiblaFinderProcessStateErrorImpl value,
+    $Res Function(_$QiblaFinderProcessStateErrorImpl) then,
+  ) = __$$QiblaFinderProcessStateErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$QiblaFinderProcessStateErrorImplCopyWithImpl<$Res>
-    extends _$QiblaFinderProcessStateCopyWithImpl<$Res,
-        _$QiblaFinderProcessStateErrorImpl>
+    extends
+        _$QiblaFinderProcessStateCopyWithImpl<
+          $Res,
+          _$QiblaFinderProcessStateErrorImpl
+        >
     implements _$$QiblaFinderProcessStateErrorImplCopyWith<$Res> {
   __$$QiblaFinderProcessStateErrorImplCopyWithImpl(
-      _$QiblaFinderProcessStateErrorImpl _value,
-      $Res Function(_$QiblaFinderProcessStateErrorImpl) _then)
-      : super(_value, _then);
+    _$QiblaFinderProcessStateErrorImpl _value,
+    $Res Function(_$QiblaFinderProcessStateErrorImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QiblaFinderProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -625,20 +627,23 @@ abstract class QiblaFinderProcessStateError implements QiblaFinderProcessState {
 /// @nodoc
 abstract class _$$QiblaFinderProcessStateSuccssImplCopyWith<$Res> {
   factory _$$QiblaFinderProcessStateSuccssImplCopyWith(
-          _$QiblaFinderProcessStateSuccssImpl value,
-          $Res Function(_$QiblaFinderProcessStateSuccssImpl) then) =
-      __$$QiblaFinderProcessStateSuccssImplCopyWithImpl<$Res>;
+    _$QiblaFinderProcessStateSuccssImpl value,
+    $Res Function(_$QiblaFinderProcessStateSuccssImpl) then,
+  ) = __$$QiblaFinderProcessStateSuccssImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$QiblaFinderProcessStateSuccssImplCopyWithImpl<$Res>
-    extends _$QiblaFinderProcessStateCopyWithImpl<$Res,
-        _$QiblaFinderProcessStateSuccssImpl>
+    extends
+        _$QiblaFinderProcessStateCopyWithImpl<
+          $Res,
+          _$QiblaFinderProcessStateSuccssImpl
+        >
     implements _$$QiblaFinderProcessStateSuccssImplCopyWith<$Res> {
   __$$QiblaFinderProcessStateSuccssImplCopyWithImpl(
-      _$QiblaFinderProcessStateSuccssImpl _value,
-      $Res Function(_$QiblaFinderProcessStateSuccssImpl) _then)
-      : super(_value, _then);
+    _$QiblaFinderProcessStateSuccssImpl _value,
+    $Res Function(_$QiblaFinderProcessStateSuccssImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QiblaFinderProcessState
   /// with the given fields replaced by the non-null parameter values.

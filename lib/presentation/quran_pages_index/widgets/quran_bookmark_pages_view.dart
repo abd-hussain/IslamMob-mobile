@@ -42,8 +42,9 @@ class QuranBookmarkPagesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final listOfBookMark =
-        List<int>.from(context.read<QuranPagesIndexBloc>().bookmarkedPages);
+    final listOfBookMark = List<int>.from(
+      context.read<QuranPagesIndexBloc>().bookmarkedPages,
+    );
     listOfBookMark.sort();
     return Padding(
       padding: const EdgeInsets.all(4),
@@ -53,9 +54,11 @@ class QuranBookmarkPagesView extends StatelessWidget {
           final pageNumber = listOfBookMark[index];
           final surahReferenceName =
               QuranReferancesUsecase.getSurahReferenceNameFromPageNumber(
-                  pageNumber);
-          final surahName = IslamMobLocalizations.of(context)
-              .getLocalizedString(surahReferenceName);
+                pageNumber,
+              );
+          final surahName = IslamMobLocalizations.of(
+            context,
+          ).getLocalizedString(surahReferenceName);
           final isCurrentPage = currentPageNumber == pageNumber;
           final isBookmarked = context
               .read<QuranPagesIndexBloc>()

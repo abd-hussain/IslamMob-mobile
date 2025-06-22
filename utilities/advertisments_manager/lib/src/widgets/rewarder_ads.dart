@@ -26,12 +26,14 @@ class RewarderAds {
       await RewardedAd.load(
         adUnitId: AdHelper.rewardedAdUnitId,
         request: const AdRequest(),
-        rewardedAdLoadCallback:
-            RewardedAdLoadCallback(onAdLoaded: (RewardedAd rewardedAd) {
-          mainRewardedAd = rewardedAd;
-        }, onAdFailedToLoad: (LoadAdError error) {
-          mainRewardedAd = null;
-        }),
+        rewardedAdLoadCallback: RewardedAdLoadCallback(
+          onAdLoaded: (RewardedAd rewardedAd) {
+            mainRewardedAd = rewardedAd;
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            mainRewardedAd = null;
+          },
+        ),
       );
     }
   }
@@ -66,9 +68,11 @@ class RewarderAds {
       },
     );
     await mainRewardedAd!.setImmersiveMode(true);
-    await mainRewardedAd!.show(onUserEarnedReward: (_, reward) {
-      _logAdReward(reward);
-    });
+    await mainRewardedAd!.show(
+      onUserEarnedReward: (_, reward) {
+        _logAdReward(reward);
+      },
+    );
 
     mainRewardedAd = null;
   }

@@ -12,7 +12,8 @@ part of 'pray_calculation_sealed.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$AzanTypeForEditMinState {
@@ -26,8 +27,7 @@ mixin _$AzanTypeForEditMinState {
     required TResult Function() isha,
     required TResult Function() midnight,
     required TResult Function() last3th,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fajir,
@@ -38,8 +38,7 @@ mixin _$AzanTypeForEditMinState {
     TResult? Function()? isha,
     TResult? Function()? midnight,
     TResult? Function()? last3th,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fajir,
@@ -51,8 +50,7 @@ mixin _$AzanTypeForEditMinState {
     TResult Function()? midnight,
     TResult Function()? last3th,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Fajir value) fajir,
@@ -63,8 +61,7 @@ mixin _$AzanTypeForEditMinState {
     required TResult Function(Isha value) isha,
     required TResult Function(Midnight value) midnight,
     required TResult Function(Last3th value) last3th,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Fajir value)? fajir,
@@ -75,8 +72,7 @@ mixin _$AzanTypeForEditMinState {
     TResult? Function(Isha value)? isha,
     TResult? Function(Midnight value)? midnight,
     TResult? Function(Last3th value)? last3th,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Fajir value)? fajir,
@@ -88,20 +84,22 @@ mixin _$AzanTypeForEditMinState {
     TResult Function(Midnight value)? midnight,
     TResult Function(Last3th value)? last3th,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AzanTypeForEditMinStateCopyWith<$Res> {
-  factory $AzanTypeForEditMinStateCopyWith(AzanTypeForEditMinState value,
-          $Res Function(AzanTypeForEditMinState) then) =
-      _$AzanTypeForEditMinStateCopyWithImpl<$Res, AzanTypeForEditMinState>;
+  factory $AzanTypeForEditMinStateCopyWith(
+    AzanTypeForEditMinState value,
+    $Res Function(AzanTypeForEditMinState) then,
+  ) = _$AzanTypeForEditMinStateCopyWithImpl<$Res, AzanTypeForEditMinState>;
 }
 
 /// @nodoc
-class _$AzanTypeForEditMinStateCopyWithImpl<$Res,
-        $Val extends AzanTypeForEditMinState>
+class _$AzanTypeForEditMinStateCopyWithImpl<
+  $Res,
+  $Val extends AzanTypeForEditMinState
+>
     implements $AzanTypeForEditMinStateCopyWith<$Res> {
   _$AzanTypeForEditMinStateCopyWithImpl(this._value, this._then);
 
@@ -117,8 +115,9 @@ class _$AzanTypeForEditMinStateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$FajirImplCopyWith<$Res> {
   factory _$$FajirImplCopyWith(
-          _$FajirImpl value, $Res Function(_$FajirImpl) then) =
-      __$$FajirImplCopyWithImpl<$Res>;
+    _$FajirImpl value,
+    $Res Function(_$FajirImpl) then,
+  ) = __$$FajirImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -126,8 +125,9 @@ class __$$FajirImplCopyWithImpl<$Res>
     extends _$AzanTypeForEditMinStateCopyWithImpl<$Res, _$FajirImpl>
     implements _$$FajirImplCopyWith<$Res> {
   __$$FajirImplCopyWithImpl(
-      _$FajirImpl _value, $Res Function(_$FajirImpl) _then)
-      : super(_value, _then);
+    _$FajirImpl _value,
+    $Res Function(_$FajirImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzanTypeForEditMinState
   /// with the given fields replaced by the non-null parameter values.
@@ -258,8 +258,9 @@ abstract class Fajir implements AzanTypeForEditMinState {
 /// @nodoc
 abstract class _$$SunriseImplCopyWith<$Res> {
   factory _$$SunriseImplCopyWith(
-          _$SunriseImpl value, $Res Function(_$SunriseImpl) then) =
-      __$$SunriseImplCopyWithImpl<$Res>;
+    _$SunriseImpl value,
+    $Res Function(_$SunriseImpl) then,
+  ) = __$$SunriseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -267,8 +268,9 @@ class __$$SunriseImplCopyWithImpl<$Res>
     extends _$AzanTypeForEditMinStateCopyWithImpl<$Res, _$SunriseImpl>
     implements _$$SunriseImplCopyWith<$Res> {
   __$$SunriseImplCopyWithImpl(
-      _$SunriseImpl _value, $Res Function(_$SunriseImpl) _then)
-      : super(_value, _then);
+    _$SunriseImpl _value,
+    $Res Function(_$SunriseImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzanTypeForEditMinState
   /// with the given fields replaced by the non-null parameter values.
@@ -399,8 +401,9 @@ abstract class Sunrise implements AzanTypeForEditMinState {
 /// @nodoc
 abstract class _$$ZhurImplCopyWith<$Res> {
   factory _$$ZhurImplCopyWith(
-          _$ZhurImpl value, $Res Function(_$ZhurImpl) then) =
-      __$$ZhurImplCopyWithImpl<$Res>;
+    _$ZhurImpl value,
+    $Res Function(_$ZhurImpl) then,
+  ) = __$$ZhurImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -408,7 +411,7 @@ class __$$ZhurImplCopyWithImpl<$Res>
     extends _$AzanTypeForEditMinStateCopyWithImpl<$Res, _$ZhurImpl>
     implements _$$ZhurImplCopyWith<$Res> {
   __$$ZhurImplCopyWithImpl(_$ZhurImpl _value, $Res Function(_$ZhurImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of AzanTypeForEditMinState
   /// with the given fields replaced by the non-null parameter values.
@@ -547,7 +550,7 @@ class __$$AsrImplCopyWithImpl<$Res>
     extends _$AzanTypeForEditMinStateCopyWithImpl<$Res, _$AsrImpl>
     implements _$$AsrImplCopyWith<$Res> {
   __$$AsrImplCopyWithImpl(_$AsrImpl _value, $Res Function(_$AsrImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of AzanTypeForEditMinState
   /// with the given fields replaced by the non-null parameter values.
@@ -678,8 +681,9 @@ abstract class Asr implements AzanTypeForEditMinState {
 /// @nodoc
 abstract class _$$MagriebImplCopyWith<$Res> {
   factory _$$MagriebImplCopyWith(
-          _$MagriebImpl value, $Res Function(_$MagriebImpl) then) =
-      __$$MagriebImplCopyWithImpl<$Res>;
+    _$MagriebImpl value,
+    $Res Function(_$MagriebImpl) then,
+  ) = __$$MagriebImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -687,8 +691,9 @@ class __$$MagriebImplCopyWithImpl<$Res>
     extends _$AzanTypeForEditMinStateCopyWithImpl<$Res, _$MagriebImpl>
     implements _$$MagriebImplCopyWith<$Res> {
   __$$MagriebImplCopyWithImpl(
-      _$MagriebImpl _value, $Res Function(_$MagriebImpl) _then)
-      : super(_value, _then);
+    _$MagriebImpl _value,
+    $Res Function(_$MagriebImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzanTypeForEditMinState
   /// with the given fields replaced by the non-null parameter values.
@@ -819,8 +824,9 @@ abstract class Magrieb implements AzanTypeForEditMinState {
 /// @nodoc
 abstract class _$$IshaImplCopyWith<$Res> {
   factory _$$IshaImplCopyWith(
-          _$IshaImpl value, $Res Function(_$IshaImpl) then) =
-      __$$IshaImplCopyWithImpl<$Res>;
+    _$IshaImpl value,
+    $Res Function(_$IshaImpl) then,
+  ) = __$$IshaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -828,7 +834,7 @@ class __$$IshaImplCopyWithImpl<$Res>
     extends _$AzanTypeForEditMinStateCopyWithImpl<$Res, _$IshaImpl>
     implements _$$IshaImplCopyWith<$Res> {
   __$$IshaImplCopyWithImpl(_$IshaImpl _value, $Res Function(_$IshaImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of AzanTypeForEditMinState
   /// with the given fields replaced by the non-null parameter values.
@@ -959,8 +965,9 @@ abstract class Isha implements AzanTypeForEditMinState {
 /// @nodoc
 abstract class _$$MidnightImplCopyWith<$Res> {
   factory _$$MidnightImplCopyWith(
-          _$MidnightImpl value, $Res Function(_$MidnightImpl) then) =
-      __$$MidnightImplCopyWithImpl<$Res>;
+    _$MidnightImpl value,
+    $Res Function(_$MidnightImpl) then,
+  ) = __$$MidnightImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -968,8 +975,9 @@ class __$$MidnightImplCopyWithImpl<$Res>
     extends _$AzanTypeForEditMinStateCopyWithImpl<$Res, _$MidnightImpl>
     implements _$$MidnightImplCopyWith<$Res> {
   __$$MidnightImplCopyWithImpl(
-      _$MidnightImpl _value, $Res Function(_$MidnightImpl) _then)
-      : super(_value, _then);
+    _$MidnightImpl _value,
+    $Res Function(_$MidnightImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzanTypeForEditMinState
   /// with the given fields replaced by the non-null parameter values.
@@ -1100,8 +1108,9 @@ abstract class Midnight implements AzanTypeForEditMinState {
 /// @nodoc
 abstract class _$$Last3thImplCopyWith<$Res> {
   factory _$$Last3thImplCopyWith(
-          _$Last3thImpl value, $Res Function(_$Last3thImpl) then) =
-      __$$Last3thImplCopyWithImpl<$Res>;
+    _$Last3thImpl value,
+    $Res Function(_$Last3thImpl) then,
+  ) = __$$Last3thImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1109,8 +1118,9 @@ class __$$Last3thImplCopyWithImpl<$Res>
     extends _$AzanTypeForEditMinStateCopyWithImpl<$Res, _$Last3thImpl>
     implements _$$Last3thImplCopyWith<$Res> {
   __$$Last3thImplCopyWithImpl(
-      _$Last3thImpl _value, $Res Function(_$Last3thImpl) _then)
-      : super(_value, _then);
+    _$Last3thImpl _value,
+    $Res Function(_$Last3thImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzanTypeForEditMinState
   /// with the given fields replaced by the non-null parameter values.
@@ -1252,8 +1262,7 @@ mixin _$PreviewBoxesState {
     required TResult Function() last3th,
     required TResult Function() deviceTime,
     required TResult Function() applicationTime,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fajir,
@@ -1266,8 +1275,7 @@ mixin _$PreviewBoxesState {
     TResult? Function()? last3th,
     TResult? Function()? deviceTime,
     TResult? Function()? applicationTime,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fajir,
@@ -1281,8 +1289,7 @@ mixin _$PreviewBoxesState {
     TResult Function()? deviceTime,
     TResult Function()? applicationTime,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(PreviewBoxesFajir value) fajir,
@@ -1295,9 +1302,8 @@ mixin _$PreviewBoxesState {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
-  }) =>
-      throw _privateConstructorUsedError;
+    applicationTime,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PreviewBoxesFajir value)? fajir,
@@ -1310,8 +1316,7 @@ mixin _$PreviewBoxesState {
     TResult? Function(PreviewBoxesLast3th value)? last3th,
     TResult? Function(PreviewBoxesDeviceTime value)? deviceTime,
     TResult? Function(PreviewBoxesApplicationTime value)? applicationTime,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PreviewBoxesFajir value)? fajir,
@@ -1325,15 +1330,15 @@ mixin _$PreviewBoxesState {
     TResult Function(PreviewBoxesDeviceTime value)? deviceTime,
     TResult Function(PreviewBoxesApplicationTime value)? applicationTime,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PreviewBoxesStateCopyWith<$Res> {
   factory $PreviewBoxesStateCopyWith(
-          PreviewBoxesState value, $Res Function(PreviewBoxesState) then) =
-      _$PreviewBoxesStateCopyWithImpl<$Res, PreviewBoxesState>;
+    PreviewBoxesState value,
+    $Res Function(PreviewBoxesState) then,
+  ) = _$PreviewBoxesStateCopyWithImpl<$Res, PreviewBoxesState>;
 }
 
 /// @nodoc
@@ -1352,18 +1357,20 @@ class _$PreviewBoxesStateCopyWithImpl<$Res, $Val extends PreviewBoxesState>
 
 /// @nodoc
 abstract class _$$PreviewBoxesFajirImplCopyWith<$Res> {
-  factory _$$PreviewBoxesFajirImplCopyWith(_$PreviewBoxesFajirImpl value,
-          $Res Function(_$PreviewBoxesFajirImpl) then) =
-      __$$PreviewBoxesFajirImplCopyWithImpl<$Res>;
+  factory _$$PreviewBoxesFajirImplCopyWith(
+    _$PreviewBoxesFajirImpl value,
+    $Res Function(_$PreviewBoxesFajirImpl) then,
+  ) = __$$PreviewBoxesFajirImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PreviewBoxesFajirImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesFajirImpl>
     implements _$$PreviewBoxesFajirImplCopyWith<$Res> {
-  __$$PreviewBoxesFajirImplCopyWithImpl(_$PreviewBoxesFajirImpl _value,
-      $Res Function(_$PreviewBoxesFajirImpl) _then)
-      : super(_value, _then);
+  __$$PreviewBoxesFajirImplCopyWithImpl(
+    _$PreviewBoxesFajirImpl _value,
+    $Res Function(_$PreviewBoxesFajirImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -1456,7 +1463,7 @@ class _$PreviewBoxesFajirImpl implements PreviewBoxesFajir {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return fajir(this);
   }
@@ -1506,18 +1513,20 @@ abstract class PreviewBoxesFajir implements PreviewBoxesState {
 
 /// @nodoc
 abstract class _$$PreviewBoxesSunriseImplCopyWith<$Res> {
-  factory _$$PreviewBoxesSunriseImplCopyWith(_$PreviewBoxesSunriseImpl value,
-          $Res Function(_$PreviewBoxesSunriseImpl) then) =
-      __$$PreviewBoxesSunriseImplCopyWithImpl<$Res>;
+  factory _$$PreviewBoxesSunriseImplCopyWith(
+    _$PreviewBoxesSunriseImpl value,
+    $Res Function(_$PreviewBoxesSunriseImpl) then,
+  ) = __$$PreviewBoxesSunriseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PreviewBoxesSunriseImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesSunriseImpl>
     implements _$$PreviewBoxesSunriseImplCopyWith<$Res> {
-  __$$PreviewBoxesSunriseImplCopyWithImpl(_$PreviewBoxesSunriseImpl _value,
-      $Res Function(_$PreviewBoxesSunriseImpl) _then)
-      : super(_value, _then);
+  __$$PreviewBoxesSunriseImplCopyWithImpl(
+    _$PreviewBoxesSunriseImpl _value,
+    $Res Function(_$PreviewBoxesSunriseImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -1611,7 +1620,7 @@ class _$PreviewBoxesSunriseImpl implements PreviewBoxesSunrise {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return sunrise(this);
   }
@@ -1661,18 +1670,20 @@ abstract class PreviewBoxesSunrise implements PreviewBoxesState {
 
 /// @nodoc
 abstract class _$$PreviewBoxesZhurImplCopyWith<$Res> {
-  factory _$$PreviewBoxesZhurImplCopyWith(_$PreviewBoxesZhurImpl value,
-          $Res Function(_$PreviewBoxesZhurImpl) then) =
-      __$$PreviewBoxesZhurImplCopyWithImpl<$Res>;
+  factory _$$PreviewBoxesZhurImplCopyWith(
+    _$PreviewBoxesZhurImpl value,
+    $Res Function(_$PreviewBoxesZhurImpl) then,
+  ) = __$$PreviewBoxesZhurImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PreviewBoxesZhurImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesZhurImpl>
     implements _$$PreviewBoxesZhurImplCopyWith<$Res> {
-  __$$PreviewBoxesZhurImplCopyWithImpl(_$PreviewBoxesZhurImpl _value,
-      $Res Function(_$PreviewBoxesZhurImpl) _then)
-      : super(_value, _then);
+  __$$PreviewBoxesZhurImplCopyWithImpl(
+    _$PreviewBoxesZhurImpl _value,
+    $Res Function(_$PreviewBoxesZhurImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -1765,7 +1776,7 @@ class _$PreviewBoxesZhurImpl implements PreviewBoxesZhur {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return zhur(this);
   }
@@ -1815,9 +1826,10 @@ abstract class PreviewBoxesZhur implements PreviewBoxesState {
 
 /// @nodoc
 abstract class _$$PreviewBoxesAsrImplCopyWith<$Res> {
-  factory _$$PreviewBoxesAsrImplCopyWith(_$PreviewBoxesAsrImpl value,
-          $Res Function(_$PreviewBoxesAsrImpl) then) =
-      __$$PreviewBoxesAsrImplCopyWithImpl<$Res>;
+  factory _$$PreviewBoxesAsrImplCopyWith(
+    _$PreviewBoxesAsrImpl value,
+    $Res Function(_$PreviewBoxesAsrImpl) then,
+  ) = __$$PreviewBoxesAsrImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1825,8 +1837,9 @@ class __$$PreviewBoxesAsrImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesAsrImpl>
     implements _$$PreviewBoxesAsrImplCopyWith<$Res> {
   __$$PreviewBoxesAsrImplCopyWithImpl(
-      _$PreviewBoxesAsrImpl _value, $Res Function(_$PreviewBoxesAsrImpl) _then)
-      : super(_value, _then);
+    _$PreviewBoxesAsrImpl _value,
+    $Res Function(_$PreviewBoxesAsrImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -1919,7 +1932,7 @@ class _$PreviewBoxesAsrImpl implements PreviewBoxesAsr {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return asr(this);
   }
@@ -1969,18 +1982,20 @@ abstract class PreviewBoxesAsr implements PreviewBoxesState {
 
 /// @nodoc
 abstract class _$$PreviewBoxesMagriebImplCopyWith<$Res> {
-  factory _$$PreviewBoxesMagriebImplCopyWith(_$PreviewBoxesMagriebImpl value,
-          $Res Function(_$PreviewBoxesMagriebImpl) then) =
-      __$$PreviewBoxesMagriebImplCopyWithImpl<$Res>;
+  factory _$$PreviewBoxesMagriebImplCopyWith(
+    _$PreviewBoxesMagriebImpl value,
+    $Res Function(_$PreviewBoxesMagriebImpl) then,
+  ) = __$$PreviewBoxesMagriebImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PreviewBoxesMagriebImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesMagriebImpl>
     implements _$$PreviewBoxesMagriebImplCopyWith<$Res> {
-  __$$PreviewBoxesMagriebImplCopyWithImpl(_$PreviewBoxesMagriebImpl _value,
-      $Res Function(_$PreviewBoxesMagriebImpl) _then)
-      : super(_value, _then);
+  __$$PreviewBoxesMagriebImplCopyWithImpl(
+    _$PreviewBoxesMagriebImpl _value,
+    $Res Function(_$PreviewBoxesMagriebImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -2074,7 +2089,7 @@ class _$PreviewBoxesMagriebImpl implements PreviewBoxesMagrieb {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return magrieb(this);
   }
@@ -2124,18 +2139,20 @@ abstract class PreviewBoxesMagrieb implements PreviewBoxesState {
 
 /// @nodoc
 abstract class _$$PreviewBoxesIshaImplCopyWith<$Res> {
-  factory _$$PreviewBoxesIshaImplCopyWith(_$PreviewBoxesIshaImpl value,
-          $Res Function(_$PreviewBoxesIshaImpl) then) =
-      __$$PreviewBoxesIshaImplCopyWithImpl<$Res>;
+  factory _$$PreviewBoxesIshaImplCopyWith(
+    _$PreviewBoxesIshaImpl value,
+    $Res Function(_$PreviewBoxesIshaImpl) then,
+  ) = __$$PreviewBoxesIshaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PreviewBoxesIshaImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesIshaImpl>
     implements _$$PreviewBoxesIshaImplCopyWith<$Res> {
-  __$$PreviewBoxesIshaImplCopyWithImpl(_$PreviewBoxesIshaImpl _value,
-      $Res Function(_$PreviewBoxesIshaImpl) _then)
-      : super(_value, _then);
+  __$$PreviewBoxesIshaImplCopyWithImpl(
+    _$PreviewBoxesIshaImpl _value,
+    $Res Function(_$PreviewBoxesIshaImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -2228,7 +2245,7 @@ class _$PreviewBoxesIshaImpl implements PreviewBoxesIsha {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return isha(this);
   }
@@ -2278,18 +2295,20 @@ abstract class PreviewBoxesIsha implements PreviewBoxesState {
 
 /// @nodoc
 abstract class _$$PreviewBoxesMidnightImplCopyWith<$Res> {
-  factory _$$PreviewBoxesMidnightImplCopyWith(_$PreviewBoxesMidnightImpl value,
-          $Res Function(_$PreviewBoxesMidnightImpl) then) =
-      __$$PreviewBoxesMidnightImplCopyWithImpl<$Res>;
+  factory _$$PreviewBoxesMidnightImplCopyWith(
+    _$PreviewBoxesMidnightImpl value,
+    $Res Function(_$PreviewBoxesMidnightImpl) then,
+  ) = __$$PreviewBoxesMidnightImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PreviewBoxesMidnightImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesMidnightImpl>
     implements _$$PreviewBoxesMidnightImplCopyWith<$Res> {
-  __$$PreviewBoxesMidnightImplCopyWithImpl(_$PreviewBoxesMidnightImpl _value,
-      $Res Function(_$PreviewBoxesMidnightImpl) _then)
-      : super(_value, _then);
+  __$$PreviewBoxesMidnightImplCopyWithImpl(
+    _$PreviewBoxesMidnightImpl _value,
+    $Res Function(_$PreviewBoxesMidnightImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -2383,7 +2402,7 @@ class _$PreviewBoxesMidnightImpl implements PreviewBoxesMidnight {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return midnight(this);
   }
@@ -2433,18 +2452,20 @@ abstract class PreviewBoxesMidnight implements PreviewBoxesState {
 
 /// @nodoc
 abstract class _$$PreviewBoxesLast3thImplCopyWith<$Res> {
-  factory _$$PreviewBoxesLast3thImplCopyWith(_$PreviewBoxesLast3thImpl value,
-          $Res Function(_$PreviewBoxesLast3thImpl) then) =
-      __$$PreviewBoxesLast3thImplCopyWithImpl<$Res>;
+  factory _$$PreviewBoxesLast3thImplCopyWith(
+    _$PreviewBoxesLast3thImpl value,
+    $Res Function(_$PreviewBoxesLast3thImpl) then,
+  ) = __$$PreviewBoxesLast3thImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PreviewBoxesLast3thImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesLast3thImpl>
     implements _$$PreviewBoxesLast3thImplCopyWith<$Res> {
-  __$$PreviewBoxesLast3thImplCopyWithImpl(_$PreviewBoxesLast3thImpl _value,
-      $Res Function(_$PreviewBoxesLast3thImpl) _then)
-      : super(_value, _then);
+  __$$PreviewBoxesLast3thImplCopyWithImpl(
+    _$PreviewBoxesLast3thImpl _value,
+    $Res Function(_$PreviewBoxesLast3thImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -2538,7 +2559,7 @@ class _$PreviewBoxesLast3thImpl implements PreviewBoxesLast3th {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return last3th(this);
   }
@@ -2589,9 +2610,9 @@ abstract class PreviewBoxesLast3th implements PreviewBoxesState {
 /// @nodoc
 abstract class _$$PreviewBoxesDeviceTimeImplCopyWith<$Res> {
   factory _$$PreviewBoxesDeviceTimeImplCopyWith(
-          _$PreviewBoxesDeviceTimeImpl value,
-          $Res Function(_$PreviewBoxesDeviceTimeImpl) then) =
-      __$$PreviewBoxesDeviceTimeImplCopyWithImpl<$Res>;
+    _$PreviewBoxesDeviceTimeImpl value,
+    $Res Function(_$PreviewBoxesDeviceTimeImpl) then,
+  ) = __$$PreviewBoxesDeviceTimeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -2599,9 +2620,9 @@ class __$$PreviewBoxesDeviceTimeImplCopyWithImpl<$Res>
     extends _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesDeviceTimeImpl>
     implements _$$PreviewBoxesDeviceTimeImplCopyWith<$Res> {
   __$$PreviewBoxesDeviceTimeImplCopyWithImpl(
-      _$PreviewBoxesDeviceTimeImpl _value,
-      $Res Function(_$PreviewBoxesDeviceTimeImpl) _then)
-      : super(_value, _then);
+    _$PreviewBoxesDeviceTimeImpl _value,
+    $Res Function(_$PreviewBoxesDeviceTimeImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -2695,7 +2716,7 @@ class _$PreviewBoxesDeviceTimeImpl implements PreviewBoxesDeviceTime {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return deviceTime(this);
   }
@@ -2746,20 +2767,20 @@ abstract class PreviewBoxesDeviceTime implements PreviewBoxesState {
 /// @nodoc
 abstract class _$$PreviewBoxesApplicationTimeImplCopyWith<$Res> {
   factory _$$PreviewBoxesApplicationTimeImplCopyWith(
-          _$PreviewBoxesApplicationTimeImpl value,
-          $Res Function(_$PreviewBoxesApplicationTimeImpl) then) =
-      __$$PreviewBoxesApplicationTimeImplCopyWithImpl<$Res>;
+    _$PreviewBoxesApplicationTimeImpl value,
+    $Res Function(_$PreviewBoxesApplicationTimeImpl) then,
+  ) = __$$PreviewBoxesApplicationTimeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PreviewBoxesApplicationTimeImplCopyWithImpl<$Res>
-    extends _$PreviewBoxesStateCopyWithImpl<$Res,
-        _$PreviewBoxesApplicationTimeImpl>
+    extends
+        _$PreviewBoxesStateCopyWithImpl<$Res, _$PreviewBoxesApplicationTimeImpl>
     implements _$$PreviewBoxesApplicationTimeImplCopyWith<$Res> {
   __$$PreviewBoxesApplicationTimeImplCopyWithImpl(
-      _$PreviewBoxesApplicationTimeImpl _value,
-      $Res Function(_$PreviewBoxesApplicationTimeImpl) _then)
-      : super(_value, _then);
+    _$PreviewBoxesApplicationTimeImpl _value,
+    $Res Function(_$PreviewBoxesApplicationTimeImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PreviewBoxesState
   /// with the given fields replaced by the non-null parameter values.
@@ -2853,7 +2874,7 @@ class _$PreviewBoxesApplicationTimeImpl implements PreviewBoxesApplicationTime {
     required TResult Function(PreviewBoxesLast3th value) last3th,
     required TResult Function(PreviewBoxesDeviceTime value) deviceTime,
     required TResult Function(PreviewBoxesApplicationTime value)
-        applicationTime,
+    applicationTime,
   }) {
     return applicationTime(this);
   }

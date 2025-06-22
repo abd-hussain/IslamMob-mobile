@@ -33,7 +33,7 @@ void main() {
     expect(params.ishaInterval, 0);
     expect(params.method, CalculationMethod.other);
 
-//     CalculationMethod calculationMethod;
-//     expect(() => calculationMethod.getParameters(), throwsFormatException);
+    //     CalculationMethod calculationMethod;
+    //     expect(() => calculationMethod.getParameters(), throwsFormatException);
   });
 }

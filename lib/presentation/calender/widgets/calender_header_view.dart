@@ -41,7 +41,9 @@ class CalenderHeaderView extends StatelessWidget {
         height: 25,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+          ),
           color: Colors.grey[400],
         ),
         child: Row(

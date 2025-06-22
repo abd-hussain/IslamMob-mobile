@@ -6,7 +6,7 @@ enum Direction {
   ltr,
 
   /// Right-to-left direction.
-  rtl
+  rtl,
 }
 
 /// A custom switch widget with directional support and smooth animations.

@@ -35,7 +35,8 @@ class LocationManagerBase {
     if (!serviceEnabled) {
       // You can prompt the user to open location settings
       LoggerManagerBase.logWarning(
-          message: "❌ Location services are disabled.");
+        message: "❌ Location services are disabled.",
+      );
       await Geolocator.openLocationSettings();
       return false;
     }
@@ -55,7 +56,8 @@ class LocationManagerBase {
     // Step 4: If denied forever, show a dialog or guide user to settings
     if (permission == LocationPermission.deniedForever) {
       LoggerManagerBase.logWarning(
-          message: "❌ Location permission is permanently denied.");
+        message: "❌ Location permission is permanently denied.",
+      );
       await Geolocator.openAppSettings();
       return false;
     }
@@ -92,13 +94,16 @@ class LocationManagerBase {
     }
 
     LoggerManagerBase.logWarning(
-        message: 'No placemarks found for the given coordinates.');
+      message: 'No placemarks found for the given coordinates.',
+    );
     return {'error': 'No placemarks found'};
   }
 
   /// Logs platform exceptions for debugging purposes.
   void _logPlatformException(PlatformException e) {
     LoggerManagerBase.logErrorMessage(
-        error: e, message: e.message ?? 'An unknown platform error occurred');
+      error: e,
+      message: e.message ?? 'An unknown platform error occurred',
+    );
   }
 }

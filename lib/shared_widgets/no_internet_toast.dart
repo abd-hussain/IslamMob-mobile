@@ -15,9 +15,7 @@ class NoInternetToast {
     final localize = IslamMobLocalizations.of(context);
 
     scaffoldMessenger.showSnackBar(
-      SnackBar(
-        content: Text(localize.pleasecheckyourinternetconnection),
-      ),
+      SnackBar(content: Text(localize.pleasecheckyourinternetconnection)),
     );
   }
 }

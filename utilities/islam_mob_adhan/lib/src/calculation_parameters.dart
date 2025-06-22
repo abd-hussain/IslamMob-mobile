@@ -59,8 +59,8 @@ class CalculationParameters {
     this.highLatitudeRule = HighLatitudeRule.middleOfTheNight,
     PrayerAdjustments? adjustments,
     PrayerAdjustments? methodAdjustments,
-  })  : adjustments = adjustments ?? const PrayerAdjustments(),
-        methodAdjustments = methodAdjustments ?? const PrayerAdjustments();
+  }) : adjustments = adjustments ?? const PrayerAdjustments(),
+       methodAdjustments = methodAdjustments ?? const PrayerAdjustments();
 
   /// Creates a new instance with updated method adjustments.
   ///

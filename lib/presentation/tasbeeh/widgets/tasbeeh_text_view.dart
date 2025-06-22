@@ -38,10 +38,11 @@ class _TasbeehTextViewState extends State<TasbeehTextView> {
   }
 
   /// Creates the container with Tasbeeh details.
-  Widget _buildTasbeehContainer(
-      {required BuildContext context,
-      required String title,
-      required String description}) {
+  Widget _buildTasbeehContainer({
+    required BuildContext context,
+    required String title,
+    required String description,
+  }) {
     return Container(
       decoration: _containerDecoration(),
       width: double.infinity,

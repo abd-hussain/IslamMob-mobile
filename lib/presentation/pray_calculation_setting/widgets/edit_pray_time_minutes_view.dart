@@ -61,14 +61,18 @@ class EditPrayTimeMinutesView extends StatelessWidget {
   }
 
   List<Widget> _buildTimeCorrectionViews(
-      BuildContext context, IslamMobLocalizations localizations) {
+    BuildContext context,
+    IslamMobLocalizations localizations,
+  ) {
     return CalculationSettingUsecase.getCorrectionMinTimeDataList(localizations)
         .map((correction) => _buildTimeCorrectionBloc(context, correction))
         .toList();
   }
 
   Widget _buildTimeCorrectionBloc(
-      BuildContext context, CorrectionMinTimeData correction) {
+    BuildContext context,
+    CorrectionMinTimeData correction,
+  ) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) =>
           correction.getter(previous) != correction.getter(current),
@@ -78,11 +82,11 @@ class EditPrayTimeMinutesView extends StatelessWidget {
           initialValue: correction.getter(state),
           onValueChanged: (value) {
             context.read<PrayCalculationSettingBloc>().add(
-                  PrayCalculationSettingEvent.updateAzanTypeInMin(
-                    minutes: value,
-                    azanType: correction.type,
-                  ),
-                );
+              PrayCalculationSettingEvent.updateAzanTypeInMin(
+                minutes: value,
+                azanType: correction.type,
+              ),
+            );
           },
         );
       },

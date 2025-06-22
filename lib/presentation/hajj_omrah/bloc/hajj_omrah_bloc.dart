@@ -37,30 +37,41 @@ class HajjOmrahBloc extends Bloc<HajjOmrahEvent, HajjOmrahState> {
   }
 
   FutureOr<void> _fillInitialValue(
-      _FillInitialValue event, Emitter<HajjOmrahState> emit) async {
+    _FillInitialValue event,
+    Emitter<HajjOmrahState> emit,
+  ) async {
     switch (event.screenType) {
       case _Hajj():
-        emit(state.copyWith(
-          listOfItems: await HajjOmrahUsecase.getHajjList(),
-          isRtlLanguage: _isRtlLanguage(),
-        ));
+        emit(
+          state.copyWith(
+            listOfItems: await HajjOmrahUsecase.getHajjList(),
+            isRtlLanguage: _isRtlLanguage(),
+          ),
+        );
       case _Omrah():
-        emit(state.copyWith(
-          listOfItems: await HajjOmrahUsecase.getOmrahList(),
-          isRtlLanguage: _isRtlLanguage(),
-        ));
+        emit(
+          state.copyWith(
+            listOfItems: await HajjOmrahUsecase.getOmrahList(),
+            isRtlLanguage: _isRtlLanguage(),
+          ),
+        );
     }
   }
 
   FutureOr<void> _loadingState(
-      _LoadingState event, Emitter<HajjOmrahState> emit) {
+    _LoadingState event,
+    Emitter<HajjOmrahState> emit,
+  ) {
     emit(state.copyWith(processState: event.state));
   }
 
   bool _isRtlLanguage() {
-    final String languageCode = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode,
-        defaultValue: "en") as String;
+    final String languageCode =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldConstant.userLanguageCode,
+              defaultValue: "en",
+            )
+            as String;
     return languageCode == "ar" || languageCode == "fa";
   }
 }

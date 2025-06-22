@@ -50,13 +50,13 @@ class HisnAlMuslimModel with _$HisnAlMuslimModel {
 /// when handling different content types in the UI.
 @freezed
 sealed class HisnAlMuslimModelState with _$HisnAlMuslimModelState {
-  const factory HisnAlMuslimModelState.text(
-          {required List<MultiLanguageString> list,
-          required List<MultiLanguageString> referance}) =
-      HisnAlMuslimModelStateText;
+  const factory HisnAlMuslimModelState.text({
+    required List<MultiLanguageString> list,
+    required List<MultiLanguageString> referance,
+  }) = HisnAlMuslimModelStateText;
   const factory HisnAlMuslimModelState.counter(
-          List<HisnAlMuslimCounterDetailsModel> list) =
-      HisnAlMuslimModelStateCounter;
+    List<HisnAlMuslimCounterDetailsModel> list,
+  ) = HisnAlMuslimModelStateCounter;
 }
 
 /// A model representing counter-based supplication details from Hisn Al-Muslim.

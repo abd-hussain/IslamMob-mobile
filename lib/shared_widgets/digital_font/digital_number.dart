@@ -94,9 +94,7 @@ class DigitalNumber extends StatelessWidget {
       digits++;
     }
 
-    return Row(
-      children: isArabic ? children : children.reversed.toList(),
-    );
+    return Row(children: isArabic ? children : children.reversed.toList());
   }
 }
 
@@ -106,8 +104,8 @@ class _DigitalDigitPainter extends CustomPainter {
   final Color color;
 
   _DigitalDigitPainter(this.value, this.height, this.color)
-      : assert(value >= 0),
-        assert(value < 10);
+    : assert(value >= 0),
+      assert(value < 10);
 
   @override
   bool shouldRepaint(_DigitalDigitPainter oldDelegate) {

@@ -32,6 +32,7 @@ class ChangeLanguageEvent with _$ChangeLanguageEvent {
   ///
   /// Parameters:
   /// - [langCode]: The language code to save and apply (e.g., 'en', 'ar')
-  const factory ChangeLanguageEvent.placeNewLanguage(
-      {required String langCode}) = _PlaceNewLanguage;
+  const factory ChangeLanguageEvent.placeNewLanguage({
+    required String langCode,
+  }) = _PlaceNewLanguage;
 }

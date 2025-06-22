@@ -50,9 +50,12 @@ class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
 
   void _extractArguments() {
     if (arguments != null) {
-      add(WebViewEvent.updateWebViewContent(
+      add(
+        WebViewEvent.updateWebViewContent(
           webViewUrl: (arguments?[AppConstant.webViewPageUrl] as String?) ?? "",
-          pageTitle: (arguments?[AppConstant.pageTitle] as String?) ?? ""));
+          pageTitle: (arguments?[AppConstant.pageTitle] as String?) ?? "",
+        ),
+      );
 
       FirebaseAnalyticsRepository.logEvent(
         name: "WebViewScreen",
@@ -76,20 +79,27 @@ class WebViewBloc extends Bloc<WebViewEvent, WebViewState> {
   }
 
   FutureOr<void> _initalizeWebViewContent(
-      _InitalizeWebViewContent event, Emitter<WebViewState> emit) {
+    _InitalizeWebViewContent event,
+    Emitter<WebViewState> emit,
+  ) {
     _checkInternetConnectionStatus().then((value) {
       _extractArguments();
     });
   }
 
   FutureOr<void> _updateWebViewContent(
-      _UpdateWebViewContent event, Emitter<WebViewState> emit) {
-    emit(state.copyWith(
-        pageTitle: event.pageTitle, webViewUrl: event.webViewUrl));
+    _UpdateWebViewContent event,
+    Emitter<WebViewState> emit,
+  ) {
+    emit(
+      state.copyWith(pageTitle: event.pageTitle, webViewUrl: event.webViewUrl),
+    );
   }
 
   FutureOr<void> _updateInternetConnectionStatus(
-      _UpdateInternetConnectionStatus event, Emitter<WebViewState> emit) {
+    _UpdateInternetConnectionStatus event,
+    Emitter<WebViewState> emit,
+  ) {
     emit(state.copyWith(internetConnectionStauts: event.status));
   }
 }

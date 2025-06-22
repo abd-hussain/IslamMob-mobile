@@ -45,11 +45,12 @@ class SalahBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: isCurrentSalah ? Colors.white : Colors.grey,
-          borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(8),
-            bottomRight: Radius.circular(8),
-          )),
+        color: isCurrentSalah ? Colors.white : Colors.grey,
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(8),
+          bottomRight: Radius.circular(8),
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.only(left: 6, right: 6, top: 4, bottom: 4),
         child: Column(
@@ -66,10 +67,7 @@ class SalahBox extends StatelessWidget {
 
   /// Builds the image representing the Salah type.
   Widget _buildSalahImage() {
-    return Image.asset(
-      SalahBoxUseCase.getSalahImage(salahType),
-      scale: 6,
-    );
+    return Image.asset(SalahBoxUseCase.getSalahImage(salahType), scale: 6);
   }
 
   /// Builds the text widget for the Salah name.

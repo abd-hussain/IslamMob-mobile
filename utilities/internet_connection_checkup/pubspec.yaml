@@ -2,7 +2,7 @@ name: internet_connection_checkup
 version: 1.0.0
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 environment:
-  sdk: ">=3.3.4 <4.0.0"
+  sdk: 3.8.1
 
 dependencies:
   connectivity_plus: ^6.1.3

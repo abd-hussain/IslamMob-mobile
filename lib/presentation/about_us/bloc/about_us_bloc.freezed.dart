@@ -12,7 +12,8 @@ part of 'about_us_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$AboutUsEvent {
@@ -20,47 +21,42 @@ mixin _$AboutUsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initializeRewardedAd,
     required TResult Function(bool value) updateRewardedAd,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initializeRewardedAd,
     TResult? Function(bool value)? updateRewardedAd,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initializeRewardedAd,
     TResult Function(bool value)? updateRewardedAd,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitializeRewardedAd value) initializeRewardedAd,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitializeRewardedAd value)? initializeRewardedAd,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitializeRewardedAd value)? initializeRewardedAd,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AboutUsEventCopyWith<$Res> {
   factory $AboutUsEventCopyWith(
-          AboutUsEvent value, $Res Function(AboutUsEvent) then) =
-      _$AboutUsEventCopyWithImpl<$Res, AboutUsEvent>;
+    AboutUsEvent value,
+    $Res Function(AboutUsEvent) then,
+  ) = _$AboutUsEventCopyWithImpl<$Res, AboutUsEvent>;
 }
 
 /// @nodoc
@@ -79,18 +75,20 @@ class _$AboutUsEventCopyWithImpl<$Res, $Val extends AboutUsEvent>
 
 /// @nodoc
 abstract class _$$InitializeRewardedAdImplCopyWith<$Res> {
-  factory _$$InitializeRewardedAdImplCopyWith(_$InitializeRewardedAdImpl value,
-          $Res Function(_$InitializeRewardedAdImpl) then) =
-      __$$InitializeRewardedAdImplCopyWithImpl<$Res>;
+  factory _$$InitializeRewardedAdImplCopyWith(
+    _$InitializeRewardedAdImpl value,
+    $Res Function(_$InitializeRewardedAdImpl) then,
+  ) = __$$InitializeRewardedAdImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$InitializeRewardedAdImplCopyWithImpl<$Res>
     extends _$AboutUsEventCopyWithImpl<$Res, _$InitializeRewardedAdImpl>
     implements _$$InitializeRewardedAdImplCopyWith<$Res> {
-  __$$InitializeRewardedAdImplCopyWithImpl(_$InitializeRewardedAdImpl _value,
-      $Res Function(_$InitializeRewardedAdImpl) _then)
-      : super(_value, _then);
+  __$$InitializeRewardedAdImplCopyWithImpl(
+    _$InitializeRewardedAdImpl _value,
+    $Res Function(_$InitializeRewardedAdImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AboutUsEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -185,9 +183,10 @@ abstract class _InitializeRewardedAd implements AboutUsEvent {
 
 /// @nodoc
 abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
-  factory _$$UpdateRewardedAdImplCopyWith(_$UpdateRewardedAdImpl value,
-          $Res Function(_$UpdateRewardedAdImpl) then) =
-      __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
+  factory _$$UpdateRewardedAdImplCopyWith(
+    _$UpdateRewardedAdImpl value,
+    $Res Function(_$UpdateRewardedAdImpl) then,
+  ) = __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
@@ -196,23 +195,24 @@ abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
 class __$$UpdateRewardedAdImplCopyWithImpl<$Res>
     extends _$AboutUsEventCopyWithImpl<$Res, _$UpdateRewardedAdImpl>
     implements _$$UpdateRewardedAdImplCopyWith<$Res> {
-  __$$UpdateRewardedAdImplCopyWithImpl(_$UpdateRewardedAdImpl _value,
-      $Res Function(_$UpdateRewardedAdImpl) _then)
-      : super(_value, _then);
+  __$$UpdateRewardedAdImplCopyWithImpl(
+    _$UpdateRewardedAdImpl _value,
+    $Res Function(_$UpdateRewardedAdImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AboutUsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UpdateRewardedAdImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? value = null}) {
+    return _then(
+      _$UpdateRewardedAdImpl(
+        null == value
+            ? _value.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
@@ -247,7 +247,9 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @pragma('vm:prefer-inline')
   _$$UpdateRewardedAdImplCopyWith<_$UpdateRewardedAdImpl> get copyWith =>
       __$$UpdateRewardedAdImplCopyWithImpl<_$UpdateRewardedAdImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -338,8 +340,9 @@ mixin _$AboutUsState {
 /// @nodoc
 abstract class $AboutUsStateCopyWith<$Res> {
   factory $AboutUsStateCopyWith(
-          AboutUsState value, $Res Function(AboutUsState) then) =
-      _$AboutUsStateCopyWithImpl<$Res, AboutUsState>;
+    AboutUsState value,
+    $Res Function(AboutUsState) then,
+  ) = _$AboutUsStateCopyWithImpl<$Res, AboutUsState>;
   @useResult
   $Res call({bool rewardedAdExsist});
 }
@@ -358,15 +361,16 @@ class _$AboutUsStateCopyWithImpl<$Res, $Val extends AboutUsState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? rewardedAdExsist = null,
-  }) {
-    return _then(_value.copyWith(
-      rewardedAdExsist: null == rewardedAdExsist
-          ? _value.rewardedAdExsist
-          : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  $Res call({Object? rewardedAdExsist = null}) {
+    return _then(
+      _value.copyWith(
+            rewardedAdExsist: null == rewardedAdExsist
+                ? _value.rewardedAdExsist
+                : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -374,8 +378,9 @@ class _$AboutUsStateCopyWithImpl<$Res, $Val extends AboutUsState>
 abstract class _$$AboutUsStateImplCopyWith<$Res>
     implements $AboutUsStateCopyWith<$Res> {
   factory _$$AboutUsStateImplCopyWith(
-          _$AboutUsStateImpl value, $Res Function(_$AboutUsStateImpl) then) =
-      __$$AboutUsStateImplCopyWithImpl<$Res>;
+    _$AboutUsStateImpl value,
+    $Res Function(_$AboutUsStateImpl) then,
+  ) = __$$AboutUsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool rewardedAdExsist});
@@ -386,22 +391,23 @@ class __$$AboutUsStateImplCopyWithImpl<$Res>
     extends _$AboutUsStateCopyWithImpl<$Res, _$AboutUsStateImpl>
     implements _$$AboutUsStateImplCopyWith<$Res> {
   __$$AboutUsStateImplCopyWithImpl(
-      _$AboutUsStateImpl _value, $Res Function(_$AboutUsStateImpl) _then)
-      : super(_value, _then);
+    _$AboutUsStateImpl _value,
+    $Res Function(_$AboutUsStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AboutUsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? rewardedAdExsist = null,
-  }) {
-    return _then(_$AboutUsStateImpl(
-      rewardedAdExsist: null == rewardedAdExsist
-          ? _value.rewardedAdExsist
-          : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? rewardedAdExsist = null}) {
+    return _then(
+      _$AboutUsStateImpl(
+        rewardedAdExsist: null == rewardedAdExsist
+            ? _value.rewardedAdExsist
+            : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 

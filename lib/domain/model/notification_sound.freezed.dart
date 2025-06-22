@@ -12,7 +12,8 @@ part of 'notification_sound.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$NotificationSound {
@@ -29,8 +30,9 @@ mixin _$NotificationSound {
 /// @nodoc
 abstract class $NotificationSoundCopyWith<$Res> {
   factory $NotificationSoundCopyWith(
-          NotificationSound value, $Res Function(NotificationSound) then) =
-      _$NotificationSoundCopyWithImpl<$Res, NotificationSound>;
+    NotificationSound value,
+    $Res Function(NotificationSound) then,
+  ) = _$NotificationSoundCopyWithImpl<$Res, NotificationSound>;
   @useResult
   $Res call({String name, String soundFileName});
 }
@@ -49,29 +51,30 @@ class _$NotificationSoundCopyWithImpl<$Res, $Val extends NotificationSound>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = null,
-    Object? soundFileName = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      soundFileName: null == soundFileName
-          ? _value.soundFileName
-          : soundFileName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? name = null, Object? soundFileName = null}) {
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            soundFileName: null == soundFileName
+                ? _value.soundFileName
+                : soundFileName // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$NotificationSoundImplCopyWith<$Res>
     implements $NotificationSoundCopyWith<$Res> {
-  factory _$$NotificationSoundImplCopyWith(_$NotificationSoundImpl value,
-          $Res Function(_$NotificationSoundImpl) then) =
-      __$$NotificationSoundImplCopyWithImpl<$Res>;
+  factory _$$NotificationSoundImplCopyWith(
+    _$NotificationSoundImpl value,
+    $Res Function(_$NotificationSoundImpl) then,
+  ) = __$$NotificationSoundImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, String soundFileName});
@@ -81,28 +84,28 @@ abstract class _$$NotificationSoundImplCopyWith<$Res>
 class __$$NotificationSoundImplCopyWithImpl<$Res>
     extends _$NotificationSoundCopyWithImpl<$Res, _$NotificationSoundImpl>
     implements _$$NotificationSoundImplCopyWith<$Res> {
-  __$$NotificationSoundImplCopyWithImpl(_$NotificationSoundImpl _value,
-      $Res Function(_$NotificationSoundImpl) _then)
-      : super(_value, _then);
+  __$$NotificationSoundImplCopyWithImpl(
+    _$NotificationSoundImpl _value,
+    $Res Function(_$NotificationSoundImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationSound
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = null,
-    Object? soundFileName = null,
-  }) {
-    return _then(_$NotificationSoundImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      soundFileName: null == soundFileName
-          ? _value.soundFileName
-          : soundFileName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? name = null, Object? soundFileName = null}) {
+    return _then(
+      _$NotificationSoundImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        soundFileName: null == soundFileName
+            ? _value.soundFileName
+            : soundFileName // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -141,13 +144,16 @@ class _$NotificationSoundImpl implements _NotificationSound {
   @pragma('vm:prefer-inline')
   _$$NotificationSoundImplCopyWith<_$NotificationSoundImpl> get copyWith =>
       __$$NotificationSoundImplCopyWithImpl<_$NotificationSoundImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _NotificationSound implements NotificationSound {
-  factory _NotificationSound(
-      {required final String name,
-      required final String soundFileName}) = _$NotificationSoundImpl;
+  factory _NotificationSound({
+    required final String name,
+    required final String soundFileName,
+  }) = _$NotificationSoundImpl;
 
   @override
   String get name;

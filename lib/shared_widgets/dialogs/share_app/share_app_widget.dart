@@ -50,10 +50,7 @@ class ShareAppDialogWidget extends StatelessWidget {
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
-                  Image.asset(
-                    'assets/images/share_popoup.png',
-                    height: 250,
-                  ),
+                  Image.asset('assets/images/share_popoup.png', height: 250),
                   const SizedBox(height: 15),
                   CustomText(
                     maxLines: 3,
@@ -69,8 +66,9 @@ class ShareAppDialogWidget extends StatelessWidget {
                     child: InkWell(
                       onTap: () async {
                         Navigator.of(context, rootNavigator: true).pop();
-                        await Navigator.of(context)
-                            .pushNamed(RoutesConstants.contactsScreen);
+                        await Navigator.of(
+                          context,
+                        ).pushNamed(RoutesConstants.contactsScreen);
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(top: 14, bottom: 14),
@@ -114,7 +112,8 @@ class ShareAppDialogWidget extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       FirebaseAnalyticsRepository.logEvent(
-                          name: "DismissShareDialog");
+                        name: "DismissShareDialog",
+                      );
                       Navigator.of(context, rootNavigator: true).pop();
                     },
                     child: Container(
@@ -126,7 +125,7 @@ class ShareAppDialogWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

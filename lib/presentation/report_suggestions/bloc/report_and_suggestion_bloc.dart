@@ -122,10 +122,11 @@ class ReportAndSuggestionBloc
   ///
   /// The submission process is handled by the injected [ReportUseCase] which
   /// manages the network request and backend communication.
-  Future<void> callRequest(
-      {required File? attach1,
-      required File? attach2,
-      required File? attach3}) {
+  Future<void> callRequest({
+    required File? attach1,
+    required File? attach2,
+    required File? attach3,
+  }) {
     final model = ReportRequest(
       content: textController.text,
       attach1: attach1,
@@ -137,33 +138,44 @@ class ReportAndSuggestionBloc
   }
 
   FutureOr<void> _updateEnableSubmitBtn(
-      _UpdateEnableSubmitBtn event, Emitter<ReportAndSuggestionState> emit) {
+    _UpdateEnableSubmitBtn event,
+    Emitter<ReportAndSuggestionState> emit,
+  ) {
     emit(state.copyWith(enableSubmitBtn: event.status));
   }
 
   FutureOr<void> _updateLoadingStatus(
-      _UpdateLoadingStatus event, Emitter<ReportAndSuggestionState> emit) {
+    _UpdateLoadingStatus event,
+    Emitter<ReportAndSuggestionState> emit,
+  ) {
     emit(state.copyWith(loadingStatus: event.status));
   }
 
   FutureOr<void> _updateAttachment1(
-      _UpdateAttachment1 event, Emitter<ReportAndSuggestionState> emit) {
+    _UpdateAttachment1 event,
+    Emitter<ReportAndSuggestionState> emit,
+  ) {
     emit(state.copyWith(attach1: event.value));
   }
 
   FutureOr<void> _updateAttachment2(
-      _UpdateAttachment2 event, Emitter<ReportAndSuggestionState> emit) {
+    _UpdateAttachment2 event,
+    Emitter<ReportAndSuggestionState> emit,
+  ) {
     emit(state.copyWith(attach2: event.value));
   }
 
   FutureOr<void> _updateAttachment3(
-      _UpdateAttachment3 event, Emitter<ReportAndSuggestionState> emit) {
+    _UpdateAttachment3 event,
+    Emitter<ReportAndSuggestionState> emit,
+  ) {
     emit(state.copyWith(attach3: event.value));
   }
 
   FutureOr<void> _updateInternetConnectionStatus(
-      _UpdateInternetConnectionStatus event,
-      Emitter<ReportAndSuggestionState> emit) {
+    _UpdateInternetConnectionStatus event,
+    Emitter<ReportAndSuggestionState> emit,
+  ) {
     emit(state.copyWith(internetConnectionStauts: event.status));
   }
 }

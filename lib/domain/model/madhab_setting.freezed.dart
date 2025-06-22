@@ -12,7 +12,8 @@ part of 'madhab_setting.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$MadhabSetting {
@@ -30,8 +31,9 @@ mixin _$MadhabSetting {
 /// @nodoc
 abstract class $MadhabSettingCopyWith<$Res> {
   factory $MadhabSettingCopyWith(
-          MadhabSetting value, $Res Function(MadhabSetting) then) =
-      _$MadhabSettingCopyWithImpl<$Res, MadhabSetting>;
+    MadhabSetting value,
+    $Res Function(MadhabSetting) then,
+  ) = _$MadhabSettingCopyWithImpl<$Res, MadhabSetting>;
   @useResult
   $Res call({String name, MadhabState method, bool isSelected});
 
@@ -57,20 +59,23 @@ class _$MadhabSettingCopyWithImpl<$Res, $Val extends MadhabSetting>
     Object? method = null,
     Object? isSelected = null,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as MadhabState,
-      isSelected: null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            method: null == method
+                ? _value.method
+                : method // ignore: cast_nullable_to_non_nullable
+                      as MadhabState,
+            isSelected: null == isSelected
+                ? _value.isSelected
+                : isSelected // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of MadhabSetting
@@ -88,8 +93,9 @@ class _$MadhabSettingCopyWithImpl<$Res, $Val extends MadhabSetting>
 abstract class _$$MadhabSettingImplCopyWith<$Res>
     implements $MadhabSettingCopyWith<$Res> {
   factory _$$MadhabSettingImplCopyWith(
-          _$MadhabSettingImpl value, $Res Function(_$MadhabSettingImpl) then) =
-      __$$MadhabSettingImplCopyWithImpl<$Res>;
+    _$MadhabSettingImpl value,
+    $Res Function(_$MadhabSettingImpl) then,
+  ) = __$$MadhabSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, MadhabState method, bool isSelected});
@@ -103,8 +109,9 @@ class __$$MadhabSettingImplCopyWithImpl<$Res>
     extends _$MadhabSettingCopyWithImpl<$Res, _$MadhabSettingImpl>
     implements _$$MadhabSettingImplCopyWith<$Res> {
   __$$MadhabSettingImplCopyWithImpl(
-      _$MadhabSettingImpl _value, $Res Function(_$MadhabSettingImpl) _then)
-      : super(_value, _then);
+    _$MadhabSettingImpl _value,
+    $Res Function(_$MadhabSettingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of MadhabSetting
   /// with the given fields replaced by the non-null parameter values.
@@ -115,28 +122,33 @@ class __$$MadhabSettingImplCopyWithImpl<$Res>
     Object? method = null,
     Object? isSelected = null,
   }) {
-    return _then(_$MadhabSettingImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as MadhabState,
-      isSelected: null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$MadhabSettingImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        method: null == method
+            ? _value.method
+            : method // ignore: cast_nullable_to_non_nullable
+                  as MadhabState,
+        isSelected: null == isSelected
+            ? _value.isSelected
+            : isSelected // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$MadhabSettingImpl implements _MadhabSetting {
-  _$MadhabSettingImpl(
-      {required this.name, required this.method, required this.isSelected});
+  _$MadhabSettingImpl({
+    required this.name,
+    required this.method,
+    required this.isSelected,
+  });
 
   @override
   final String name;
@@ -174,10 +186,11 @@ class _$MadhabSettingImpl implements _MadhabSetting {
 }
 
 abstract class _MadhabSetting implements MadhabSetting {
-  factory _MadhabSetting(
-      {required final String name,
-      required final MadhabState method,
-      required final bool isSelected}) = _$MadhabSettingImpl;
+  factory _MadhabSetting({
+    required final String name,
+    required final MadhabState method,
+    required final bool isSelected,
+  }) = _$MadhabSettingImpl;
 
   @override
   String get name;

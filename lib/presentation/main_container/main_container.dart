@@ -62,7 +62,9 @@ class _MainContainerState extends State<MainContainer> {
   }
 
   Future<void> _showVersionUpdateDialog(
-      BuildContext context, VersionUpdate versionUpdate) async {
+    BuildContext context,
+    VersionUpdate versionUpdate,
+  ) async {
     await VersionDialog().dialog(
       context: context,
       isOptional: versionUpdate == VersionUpdate.optional,

@@ -34,7 +34,6 @@ class LanguageEvent with _$LanguageEvent {
   ///
   /// Parameters:
   /// - [context]: Build context required for app rebuilding
-  const factory LanguageEvent.setupLanguage({
-    required BuildContext context,
-  }) = _SetupLanguage;
+  const factory LanguageEvent.setupLanguage({required BuildContext context}) =
+      _SetupLanguage;
 }

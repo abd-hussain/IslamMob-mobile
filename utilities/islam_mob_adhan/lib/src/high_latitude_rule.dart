@@ -12,5 +12,5 @@ enum HighLatitudeRule {
   /// the fraction of the night used is determined by the angles:
   /// - Fajr: `fajrAngle / 60`
   /// - Isha: `ishaAngle / 60`.
-  twilightAngle
+  twilightAngle,
 }

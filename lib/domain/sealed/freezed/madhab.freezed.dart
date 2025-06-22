@@ -12,7 +12,8 @@ part of '../madhab.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$MadhabState {
@@ -20,47 +21,42 @@ mixin _$MadhabState {
   TResult when<TResult extends Object?>({
     required TResult Function() hanafi,
     required TResult Function() shafi,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? hanafi,
     TResult? Function()? shafi,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? hanafi,
     TResult Function()? shafi,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MadhabStateHanafi value) hanafi,
     required TResult Function(MadhabStateShafi value) shafi,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MadhabStateHanafi value)? hanafi,
     TResult? Function(MadhabStateShafi value)? shafi,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MadhabStateHanafi value)? hanafi,
     TResult Function(MadhabStateShafi value)? shafi,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MadhabStateCopyWith<$Res> {
   factory $MadhabStateCopyWith(
-          MadhabState value, $Res Function(MadhabState) then) =
-      _$MadhabStateCopyWithImpl<$Res, MadhabState>;
+    MadhabState value,
+    $Res Function(MadhabState) then,
+  ) = _$MadhabStateCopyWithImpl<$Res, MadhabState>;
 }
 
 /// @nodoc
@@ -79,18 +75,20 @@ class _$MadhabStateCopyWithImpl<$Res, $Val extends MadhabState>
 
 /// @nodoc
 abstract class _$$MadhabStateHanafiImplCopyWith<$Res> {
-  factory _$$MadhabStateHanafiImplCopyWith(_$MadhabStateHanafiImpl value,
-          $Res Function(_$MadhabStateHanafiImpl) then) =
-      __$$MadhabStateHanafiImplCopyWithImpl<$Res>;
+  factory _$$MadhabStateHanafiImplCopyWith(
+    _$MadhabStateHanafiImpl value,
+    $Res Function(_$MadhabStateHanafiImpl) then,
+  ) = __$$MadhabStateHanafiImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$MadhabStateHanafiImplCopyWithImpl<$Res>
     extends _$MadhabStateCopyWithImpl<$Res, _$MadhabStateHanafiImpl>
     implements _$$MadhabStateHanafiImplCopyWith<$Res> {
-  __$$MadhabStateHanafiImplCopyWithImpl(_$MadhabStateHanafiImpl _value,
-      $Res Function(_$MadhabStateHanafiImpl) _then)
-      : super(_value, _then);
+  __$$MadhabStateHanafiImplCopyWithImpl(
+    _$MadhabStateHanafiImpl _value,
+    $Res Function(_$MadhabStateHanafiImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of MadhabState
   /// with the given fields replaced by the non-null parameter values.
@@ -184,18 +182,20 @@ abstract class MadhabStateHanafi implements MadhabState {
 
 /// @nodoc
 abstract class _$$MadhabStateShafiImplCopyWith<$Res> {
-  factory _$$MadhabStateShafiImplCopyWith(_$MadhabStateShafiImpl value,
-          $Res Function(_$MadhabStateShafiImpl) then) =
-      __$$MadhabStateShafiImplCopyWithImpl<$Res>;
+  factory _$$MadhabStateShafiImplCopyWith(
+    _$MadhabStateShafiImpl value,
+    $Res Function(_$MadhabStateShafiImpl) then,
+  ) = __$$MadhabStateShafiImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$MadhabStateShafiImplCopyWithImpl<$Res>
     extends _$MadhabStateCopyWithImpl<$Res, _$MadhabStateShafiImpl>
     implements _$$MadhabStateShafiImplCopyWith<$Res> {
-  __$$MadhabStateShafiImplCopyWithImpl(_$MadhabStateShafiImpl _value,
-      $Res Function(_$MadhabStateShafiImpl) _then)
-      : super(_value, _then);
+  __$$MadhabStateShafiImplCopyWithImpl(
+    _$MadhabStateShafiImpl _value,
+    $Res Function(_$MadhabStateShafiImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of MadhabState
   /// with the given fields replaced by the non-null parameter values.

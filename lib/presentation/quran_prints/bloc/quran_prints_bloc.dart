@@ -59,7 +59,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
     if (listOfPrints.isEmpty) {
       LoggerManagerBase.logWarning(
-          message: 'No documents found in the collection.');
+        message: 'No documents found in the collection.',
+      );
       return;
     }
 
@@ -70,7 +71,8 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   /// Prepares the list of prints that are ready for downloading
   Future<List<String>> _prepareDownloadingList(
-      List<QuranPrints> listOfPrints) async {
+    List<QuranPrints> listOfPrints,
+  ) async {
     final downloadingList = <String>[];
 
     for (final printItem in listOfPrints) {
@@ -105,7 +107,9 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   /// Event handlers
   FutureOr<void> _initializeFetchingData(
-      _InitializeFetchingData event, Emitter<QuranPrintsState> emit) async {
+    _InitializeFetchingData event,
+    Emitter<QuranPrintsState> emit,
+  ) async {
     final hasInternet = await _checkInternetConnectionStatus();
 
     if (hasInternet) {
@@ -117,17 +121,23 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
   }
 
   FutureOr<void> _handleUpdateListOfPrints(
-      _UpdatelistOfPrints event, Emitter<QuranPrintsState> emit) {
+    _UpdatelistOfPrints event,
+    Emitter<QuranPrintsState> emit,
+  ) {
     emit(state.copyWith(listOfPrints: event.list));
   }
 
   FutureOr<void> _handleUpdateInternetConnectionStatus(
-      _UpdateInternetConnectionStatus event, Emitter<QuranPrintsState> emit) {
+    _UpdateInternetConnectionStatus event,
+    Emitter<QuranPrintsState> emit,
+  ) {
     emit(state.copyWith(internetConnectionStauts: event.status));
   }
 
   FutureOr<void> _handleUpdatePrintsDownloading(
-      _UpdatePrintsDownloading event, Emitter<QuranPrintsState> emit) {
+    _UpdatePrintsDownloading event,
+    Emitter<QuranPrintsState> emit,
+  ) {
     emit(state.copyWith(printsDownloading: event.print));
   }
 }

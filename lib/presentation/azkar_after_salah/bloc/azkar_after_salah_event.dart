@@ -16,8 +16,9 @@ class AzkarAfterSalahEvent with _$AzkarAfterSalahEvent {
   ///
   /// Parameters:
   /// - [state]: The prayer time state indicating which prayer was completed
-  const factory AzkarAfterSalahEvent.fillInitialValue(
-      {required AzkarSalahTimeState state}) = _FillInitialValue;
+  const factory AzkarAfterSalahEvent.fillInitialValue({
+    required AzkarSalahTimeState state,
+  }) = _FillInitialValue;
 
   /// Event to reset all counters to their default values
   const factory AzkarAfterSalahEvent.resetCounter() = _ResetCounter;

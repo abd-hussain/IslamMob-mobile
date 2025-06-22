@@ -46,13 +46,14 @@ class PagesTileView extends StatelessWidget {
   /// - [isCurrentPage]: Whether this page is currently selected
   /// - [onTap]: Callback for when the tile is tapped
   /// - [isBookedMarked]: Whether this page is bookmarked
-  const PagesTileView(
-      {super.key,
-      required this.index,
-      required this.sowrahName,
-      required this.isCurrentPage,
-      required this.onTap,
-      required this.isBookedMarked});
+  const PagesTileView({
+    super.key,
+    required this.index,
+    required this.sowrahName,
+    required this.isCurrentPage,
+    required this.onTap,
+    required this.isBookedMarked,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -68,16 +69,13 @@ class PagesTileView extends StatelessWidget {
             child: Row(
               children: [
                 _buildPageNumber(context),
-                Container(
-                  width: 1,
-                  color: Colors.white,
-                ),
+                Container(width: 1, color: Colors.white),
                 const SizedBox(width: 10),
                 _buildSowrahName(context),
                 const SizedBox(width: 10),
                 _buildBookmarkIcon(),
                 const SizedBox(width: 10),
-                const ArrowView()
+                const ArrowView(),
               ],
             ),
           ),
@@ -118,10 +116,7 @@ class PagesTileView extends StatelessWidget {
     return isBookedMarked
         ? const SizedBox(
             width: 30,
-            child: Icon(
-              Icons.bookmark,
-              color: Colors.redAccent,
-            ),
+            child: Icon(Icons.bookmark, color: Colors.redAccent),
           )
         : const SizedBox(width: 30);
   }

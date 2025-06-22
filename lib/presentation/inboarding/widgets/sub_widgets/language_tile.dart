@@ -26,9 +26,9 @@ class LanguageTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
       child: InkWell(
         onTap: () async {
-          context
-              .read<LanguageBloc>()
-              .add(LanguageEvent.changeSelectedLanguage(type: language));
+          context.read<LanguageBloc>().add(
+            LanguageEvent.changeSelectedLanguage(type: language),
+          );
         },
         child: Container(
           height: 50,
@@ -77,7 +77,7 @@ class LanguageTile extends StatelessWidget {
                       size: 25,
                     );
                   },
-                )
+                ),
               ],
             ),
           ),

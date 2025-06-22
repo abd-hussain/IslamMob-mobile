@@ -73,10 +73,7 @@ class NotificationRowView extends StatelessWidget {
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _buildNotificationTitle(),
-                _soundName(),
-              ],
+              children: [_buildNotificationTitle(), _soundName()],
             ),
             // ),
           ),
@@ -144,9 +141,12 @@ class NotificationRowView extends StatelessWidget {
   }
 
   bool _isRtlLanguage() {
-    final String languageCode = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode,
-        defaultValue: "en") as String;
+    final String languageCode =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldConstant.userLanguageCode,
+              defaultValue: "en",
+            )
+            as String;
     return languageCode == "ar" || languageCode == "fa";
   }
 }

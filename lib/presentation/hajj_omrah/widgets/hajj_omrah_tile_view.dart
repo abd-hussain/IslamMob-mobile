@@ -63,10 +63,7 @@ class HajjOmrahTileView extends StatelessWidget {
           child: Stack(
             alignment: AlignmentDirectional.center,
             children: [
-              Image.asset(
-                data.mainImagePath,
-                fit: BoxFit.fill,
-              ),
+              Image.asset(data.mainImagePath, fit: BoxFit.fill),
               Positioned(
                 bottom: 0,
                 left: 0,

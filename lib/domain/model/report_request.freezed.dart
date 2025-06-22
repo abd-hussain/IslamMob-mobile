@@ -12,7 +12,8 @@ part of 'report_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$ReportRequest {
@@ -31,8 +32,9 @@ mixin _$ReportRequest {
 /// @nodoc
 abstract class $ReportRequestCopyWith<$Res> {
   factory $ReportRequestCopyWith(
-          ReportRequest value, $Res Function(ReportRequest) then) =
-      _$ReportRequestCopyWithImpl<$Res, ReportRequest>;
+    ReportRequest value,
+    $Res Function(ReportRequest) then,
+  ) = _$ReportRequestCopyWithImpl<$Res, ReportRequest>;
   @useResult
   $Res call({String content, File? attach1, File? attach2, File? attach3});
 }
@@ -57,24 +59,27 @@ class _$ReportRequestCopyWithImpl<$Res, $Val extends ReportRequest>
     Object? attach2 = freezed,
     Object? attach3 = freezed,
   }) {
-    return _then(_value.copyWith(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-      attach1: freezed == attach1
-          ? _value.attach1
-          : attach1 // ignore: cast_nullable_to_non_nullable
-              as File?,
-      attach2: freezed == attach2
-          ? _value.attach2
-          : attach2 // ignore: cast_nullable_to_non_nullable
-              as File?,
-      attach3: freezed == attach3
-          ? _value.attach3
-          : attach3 // ignore: cast_nullable_to_non_nullable
-              as File?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            content: null == content
+                ? _value.content
+                : content // ignore: cast_nullable_to_non_nullable
+                      as String,
+            attach1: freezed == attach1
+                ? _value.attach1
+                : attach1 // ignore: cast_nullable_to_non_nullable
+                      as File?,
+            attach2: freezed == attach2
+                ? _value.attach2
+                : attach2 // ignore: cast_nullable_to_non_nullable
+                      as File?,
+            attach3: freezed == attach3
+                ? _value.attach3
+                : attach3 // ignore: cast_nullable_to_non_nullable
+                      as File?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -82,8 +87,9 @@ class _$ReportRequestCopyWithImpl<$Res, $Val extends ReportRequest>
 abstract class _$$ReportRequestImplCopyWith<$Res>
     implements $ReportRequestCopyWith<$Res> {
   factory _$$ReportRequestImplCopyWith(
-          _$ReportRequestImpl value, $Res Function(_$ReportRequestImpl) then) =
-      __$$ReportRequestImplCopyWithImpl<$Res>;
+    _$ReportRequestImpl value,
+    $Res Function(_$ReportRequestImpl) then,
+  ) = __$$ReportRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String content, File? attach1, File? attach2, File? attach3});
@@ -94,8 +100,9 @@ class __$$ReportRequestImplCopyWithImpl<$Res>
     extends _$ReportRequestCopyWithImpl<$Res, _$ReportRequestImpl>
     implements _$$ReportRequestImplCopyWith<$Res> {
   __$$ReportRequestImplCopyWithImpl(
-      _$ReportRequestImpl _value, $Res Function(_$ReportRequestImpl) _then)
-      : super(_value, _then);
+    _$ReportRequestImpl _value,
+    $Res Function(_$ReportRequestImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ReportRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -107,32 +114,38 @@ class __$$ReportRequestImplCopyWithImpl<$Res>
     Object? attach2 = freezed,
     Object? attach3 = freezed,
   }) {
-    return _then(_$ReportRequestImpl(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-      attach1: freezed == attach1
-          ? _value.attach1
-          : attach1 // ignore: cast_nullable_to_non_nullable
-              as File?,
-      attach2: freezed == attach2
-          ? _value.attach2
-          : attach2 // ignore: cast_nullable_to_non_nullable
-              as File?,
-      attach3: freezed == attach3
-          ? _value.attach3
-          : attach3 // ignore: cast_nullable_to_non_nullable
-              as File?,
-    ));
+    return _then(
+      _$ReportRequestImpl(
+        content: null == content
+            ? _value.content
+            : content // ignore: cast_nullable_to_non_nullable
+                  as String,
+        attach1: freezed == attach1
+            ? _value.attach1
+            : attach1 // ignore: cast_nullable_to_non_nullable
+                  as File?,
+        attach2: freezed == attach2
+            ? _value.attach2
+            : attach2 // ignore: cast_nullable_to_non_nullable
+                  as File?,
+        attach3: freezed == attach3
+            ? _value.attach3
+            : attach3 // ignore: cast_nullable_to_non_nullable
+                  as File?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$ReportRequestImpl implements _ReportRequest {
-  _$ReportRequestImpl(
-      {required this.content, this.attach1, this.attach2, this.attach3});
+  _$ReportRequestImpl({
+    required this.content,
+    this.attach1,
+    this.attach2,
+    this.attach3,
+  });
 
   @override
   final String content;
@@ -173,11 +186,12 @@ class _$ReportRequestImpl implements _ReportRequest {
 }
 
 abstract class _ReportRequest implements ReportRequest {
-  factory _ReportRequest(
-      {required final String content,
-      final File? attach1,
-      final File? attach2,
-      final File? attach3}) = _$ReportRequestImpl;
+  factory _ReportRequest({
+    required final String content,
+    final File? attach1,
+    final File? attach2,
+    final File? attach3,
+  }) = _$ReportRequestImpl;
 
   @override
   String get content;

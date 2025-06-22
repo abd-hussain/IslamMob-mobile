@@ -23,8 +23,9 @@ class QuranPrintsEvent with _$QuranPrintsEvent {
   ///
   /// Parameters:
   /// - [list]: The updated list of Quran prints, or null if unavailable
-  factory QuranPrintsEvent.updatelistOfPrints(
-      {required List<QuranPrints>? list}) = _UpdatelistOfPrints;
+  factory QuranPrintsEvent.updatelistOfPrints({
+    required List<QuranPrints>? list,
+  }) = _UpdatelistOfPrints;
 
   /// Event to update the internet connection status.
   ///
@@ -33,8 +34,9 @@ class QuranPrintsEvent with _$QuranPrintsEvent {
   ///
   /// Parameters:
   /// - [status]: True if internet connection is available, false otherwise
-  factory QuranPrintsEvent.updateInternetConnectionStatus(
-      {required bool status}) = _UpdateInternetConnectionStatus;
+  factory QuranPrintsEvent.updateInternetConnectionStatus({
+    required bool status,
+  }) = _UpdateInternetConnectionStatus;
 
   /// Event to update the list of Quran prints currently being downloaded.
   ///
@@ -43,6 +45,7 @@ class QuranPrintsEvent with _$QuranPrintsEvent {
   ///
   /// Parameters:
   /// - [print]: List of print identifiers that are currently downloading
-  factory QuranPrintsEvent.updatePrintsDownloading(
-      {required List<String> print}) = _UpdatePrintsDownloading;
+  factory QuranPrintsEvent.updatePrintsDownloading({
+    required List<String> print,
+  }) = _UpdatePrintsDownloading;
 }

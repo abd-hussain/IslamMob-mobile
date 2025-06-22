@@ -74,7 +74,8 @@ class CalenderScreen extends StatelessWidget {
                 );
               } else if (state.status is CalenderProcessStateError) {
                 return const Center(
-                    child: CustomText(title: "Something Wrong", fontSize: 14));
+                  child: CustomText(title: "Something Wrong", fontSize: 14),
+                );
               } else {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,10 +98,11 @@ class CalenderScreen extends StatelessWidget {
                             child: GridView.builder(
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 7, // Number of columns
-                                mainAxisSpacing: 2,
-                                childAspectRatio: 1.8, // Adjust based on design
-                              ),
+                                    crossAxisCount: 7, // Number of columns
+                                    mainAxisSpacing: 2,
+                                    childAspectRatio:
+                                        1.8, // Adjust based on design
+                                  ),
                               physics: const ClampingScrollPhysics(),
                               itemBuilder: (context, index) {
                                 final rowIndex = index ~/ 7; // Row index
@@ -114,7 +116,7 @@ class CalenderScreen extends StatelessWidget {
                           ),
                         );
                       },
-                    )
+                    ),
                   ],
                 );
               }

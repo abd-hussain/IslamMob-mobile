@@ -60,107 +60,137 @@ class PrayCalculationSettingBloc
     final applicationTime = currentTime.toUtc().add(state.timeZone);
 
     final PraySettingUsecase praySettingUsecase = PraySettingUsecase(
-        madhab: state.madhab.toString(),
-        calculationMethod: state.calculationMethod.toString(),
-        utcOffset: state.timeZone,
-        highLatitudeRule: state.hightLatitudeCaluclation.toString());
+      madhab: state.madhab.toString(),
+      calculationMethod: state.calculationMethod.toString(),
+      utcOffset: state.timeZone,
+      highLatitudeRule: state.hightLatitudeCaluclation.toString(),
+    );
 
     // Get Salah timings from PrayManager
     final timings = praySettingUsecase.getAllPrayTimeAsDateTimeForToday();
 
     // Map Salah timings and their adjustments
     final azanTimings = {
-      const PreviewBoxesState.fajir():
-          timings.fajir.add(Duration(minutes: state.editFajirTimeManual)),
-      const PreviewBoxesState.sunrise():
-          timings.sunrise.add(Duration(minutes: state.editSunriseTimeManual)),
-      const PreviewBoxesState.zhur():
-          timings.dhuhr.add(Duration(minutes: state.editDuhirTimeManual)),
-      const PreviewBoxesState.asr():
-          timings.asr.add(Duration(minutes: state.editAsrTimeManual)),
-      const PreviewBoxesState.magrieb():
-          timings.maghrib.add(Duration(minutes: state.editMagrebTimeManual)),
-      const PreviewBoxesState.isha():
-          timings.isha.add(Duration(minutes: state.editIshaTimeManual)),
-      const PreviewBoxesState.midnight(): timings.middleOfTheNight
-          .add(Duration(minutes: state.editMidNightTimeManual)),
-      const PreviewBoxesState.last3th(): timings.lastThirdOfTheNight
-          .add(Duration(minutes: state.editLast3thTimeTimeManual)),
+      const PreviewBoxesState.fajir(): timings.fajir.add(
+        Duration(minutes: state.editFajirTimeManual),
+      ),
+      const PreviewBoxesState.sunrise(): timings.sunrise.add(
+        Duration(minutes: state.editSunriseTimeManual),
+      ),
+      const PreviewBoxesState.zhur(): timings.dhuhr.add(
+        Duration(minutes: state.editDuhirTimeManual),
+      ),
+      const PreviewBoxesState.asr(): timings.asr.add(
+        Duration(minutes: state.editAsrTimeManual),
+      ),
+      const PreviewBoxesState.magrieb(): timings.maghrib.add(
+        Duration(minutes: state.editMagrebTimeManual),
+      ),
+      const PreviewBoxesState.isha(): timings.isha.add(
+        Duration(minutes: state.editIshaTimeManual),
+      ),
+      const PreviewBoxesState.midnight(): timings.middleOfTheNight.add(
+        Duration(minutes: state.editMidNightTimeManual),
+      ),
+      const PreviewBoxesState.last3th(): timings.lastThirdOfTheNight.add(
+        Duration(minutes: state.editLast3thTimeTimeManual),
+      ),
       const PreviewBoxesState.deviceTime(): deviceTime,
       const PreviewBoxesState.applicationTime(): applicationTime,
     };
 
     // Dispatch updated timings
     azanTimings.forEach((azanType, time) {
-      add(PrayCalculationSettingEvent.updateTimeOfPreview(
-          azanType: azanType, time: time));
+      add(
+        PrayCalculationSettingEvent.updateTimeOfPreview(
+          azanType: azanType,
+          time: time,
+        ),
+      );
     });
   }
 
   FutureOr<void> _setup(
-      _Setup event, Emitter<PrayCalculationSettingState> emit) {
-    final PrayCalculationMethodState calculationMethod =
-        _getUserSettingUseCase.savedCalculationMethod();
+    _Setup event,
+    Emitter<PrayCalculationSettingState> emit,
+  ) {
+    final PrayCalculationMethodState calculationMethod = _getUserSettingUseCase
+        .savedCalculationMethod();
     final PrayHightLatitudeCaluclationState highLatitudeRule =
         _getUserSettingUseCase.savedHighLatitudeRule();
     final MadhabState madhab = _getUserSettingUseCase.savedMadhab();
     final Duration duration = _getUserSettingUseCase.savedUtcOffset();
     final minutesEdited = _getUserSettingUseCase.savedMinutesEdited();
 
-    emit(state.copyWith(
-      calculationMethod: calculationMethod,
-      hightLatitudeCaluclation: highLatitudeRule,
-      madhab: madhab,
-      timeZone: duration,
-      editFajirTimeManual:
-          minutesEdited[const AzanTypeForEditMinState.fajir()] ?? 0,
-      editSunriseTimeManual:
-          minutesEdited[const AzanTypeForEditMinState.sunrise()] ?? 0,
-      editDuhirTimeManual:
-          minutesEdited[const AzanTypeForEditMinState.zhur()] ?? 0,
-      editAsrTimeManual:
-          minutesEdited[const AzanTypeForEditMinState.asr()] ?? 0,
-      editMagrebTimeManual:
-          minutesEdited[const AzanTypeForEditMinState.magrieb()] ?? 0,
-      editIshaTimeManual:
-          minutesEdited[const AzanTypeForEditMinState.isha()] ?? 0,
-      editMidNightTimeManual:
-          minutesEdited[const AzanTypeForEditMinState.midnight()] ?? 0,
-      editLast3thTimeTimeManual:
-          minutesEdited[const AzanTypeForEditMinState.last3th()] ?? 0,
-    ));
+    emit(
+      state.copyWith(
+        calculationMethod: calculationMethod,
+        hightLatitudeCaluclation: highLatitudeRule,
+        madhab: madhab,
+        timeZone: duration,
+        editFajirTimeManual:
+            minutesEdited[const AzanTypeForEditMinState.fajir()] ?? 0,
+        editSunriseTimeManual:
+            minutesEdited[const AzanTypeForEditMinState.sunrise()] ?? 0,
+        editDuhirTimeManual:
+            minutesEdited[const AzanTypeForEditMinState.zhur()] ?? 0,
+        editAsrTimeManual:
+            minutesEdited[const AzanTypeForEditMinState.asr()] ?? 0,
+        editMagrebTimeManual:
+            minutesEdited[const AzanTypeForEditMinState.magrieb()] ?? 0,
+        editIshaTimeManual:
+            minutesEdited[const AzanTypeForEditMinState.isha()] ?? 0,
+        editMidNightTimeManual:
+            minutesEdited[const AzanTypeForEditMinState.midnight()] ?? 0,
+        editLast3thTimeTimeManual:
+            minutesEdited[const AzanTypeForEditMinState.last3th()] ?? 0,
+      ),
+    );
 
     _prepareSalahTiming();
   }
 
-  FutureOr<void> _updateCalculationMethod(_UpdateCalculationMethod event,
-      Emitter<PrayCalculationSettingState> emit) {
+  FutureOr<void> _updateCalculationMethod(
+    _UpdateCalculationMethod event,
+    Emitter<PrayCalculationSettingState> emit,
+  ) {
     emit(state.copyWith(calculationMethod: event.method, buttonsStatus: true));
     _prepareSalahTiming();
   }
 
   FutureOr<void> _updateMadhabMethod(
-      _UpdateMadhabMethod event, Emitter<PrayCalculationSettingState> emit) {
+    _UpdateMadhabMethod event,
+    Emitter<PrayCalculationSettingState> emit,
+  ) {
     emit(state.copyWith(madhab: event.madhab, buttonsStatus: true));
     _prepareSalahTiming();
   }
 
   FutureOr<void> _handleUpdateHighLatitudeCalculation(
-      _UpdateHightLatitudeCalculation event,
-      Emitter<PrayCalculationSettingState> emit) {
-    emit(state.copyWith(
-        hightLatitudeCaluclation: event.state, buttonsStatus: true));
+    _UpdateHightLatitudeCalculation event,
+    Emitter<PrayCalculationSettingState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        hightLatitudeCaluclation: event.state,
+        buttonsStatus: true,
+      ),
+    );
     _prepareSalahTiming();
   }
 
   FutureOr<void> _handleUpdateTimeZone(
-      _UpdateTimeZone event, Emitter<PrayCalculationSettingState> emit) {
+    _UpdateTimeZone event,
+    Emitter<PrayCalculationSettingState> emit,
+  ) {
     emit(state.copyWith(timeZone: event.value, buttonsStatus: true));
     _prepareSalahTiming();
   }
 
   FutureOr<void> _handleUpdateAzanTypeInMin(
-      _UpdateAzanTypeInMin event, Emitter<PrayCalculationSettingState> emit) {
+    _UpdateAzanTypeInMin event,
+    Emitter<PrayCalculationSettingState> emit,
+  ) {
     final updateMapping = {
       const AzanTypeForEditMinState.fajir(): (int minutes) =>
           state.copyWith(editFajirTimeManual: minutes, buttonsStatus: true),
@@ -177,7 +207,9 @@ class PrayCalculationSettingBloc
       const AzanTypeForEditMinState.midnight(): (int minutes) =>
           state.copyWith(editMidNightTimeManual: minutes, buttonsStatus: true),
       const AzanTypeForEditMinState.last3th(): (int minutes) => state.copyWith(
-          editLast3thTimeTimeManual: minutes, buttonsStatus: true),
+        editLast3thTimeTimeManual: minutes,
+        buttonsStatus: true,
+      ),
     };
 
     final updatedState = updateMapping[event.azanType]?.call(event.minutes);
@@ -189,7 +221,9 @@ class PrayCalculationSettingBloc
   }
 
   FutureOr<void> _updateTimeOfPreview(
-      _UpdateTimeOfPreview event, Emitter<PrayCalculationSettingState> emit) {
+    _UpdateTimeOfPreview event,
+    Emitter<PrayCalculationSettingState> emit,
+  ) {
     final updateMapping = {
       const PreviewBoxesState.fajir(): (DateTime time) =>
           state.copyWith(fajirTime: time),
@@ -221,42 +255,63 @@ class PrayCalculationSettingBloc
   }
 
   FutureOr<void> _handleSaveChanges(
-      _SaveChanges event, Emitter<PrayCalculationSettingState> emit) async {
+    _SaveChanges event,
+    Emitter<PrayCalculationSettingState> emit,
+  ) async {
     final saveMapping = {
-      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour:
-          state.timeZone.inHours.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin:
-          state.timeZone.inMinutes.remainder(60).toString(),
-      DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin:
-          state.editFajirTimeManual.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin:
-          state.editSunriseTimeManual.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin:
-          state.editDuhirTimeManual.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin:
-          state.editAsrTimeManual.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin:
-          state.editMagrebTimeManual.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin:
-          state.editIshaTimeManual.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin:
-          state.editMidNightTimeManual.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin:
-          state.editLast3thTimeTimeManual.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod:
-          state.calculationMethod.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedMadhab:
-          state.madhab.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedHighLatitude:
-          state.hightLatitudeCaluclation.toString(),
+      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour: state
+          .timeZone
+          .inHours
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin: state
+          .timeZone
+          .inMinutes
+          .remainder(60)
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin: state
+          .editFajirTimeManual
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin: state
+          .editSunriseTimeManual
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin: state
+          .editDuhirTimeManual
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin: state
+          .editAsrTimeManual
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin: state
+          .editMagrebTimeManual
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin: state
+          .editIshaTimeManual
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin: state
+          .editMidNightTimeManual
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin: state
+          .editLast3thTimeTimeManual
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedCalculationMethod: state
+          .calculationMethod
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedMadhab: state.madhab
+          .toString(),
+      DatabaseFieldPrayCalculationConstant.selectedHighLatitude: state
+          .hightLatitudeCaluclation
+          .toString(),
     };
 
     await FirebaseAnalyticsRepository.logEvent(
-        name: "PraySettingsSaved", parameters: saveMapping);
+      name: "PraySettingsSaved",
+      parameters: saveMapping,
+    );
 
     for (final entry in saveMapping.entries) {
       await DataBaseManagerBase.saveInDatabase(
-          key: entry.key, value: entry.value);
+        key: entry.key,
+        value: entry.value,
+      );
     }
   }
 }

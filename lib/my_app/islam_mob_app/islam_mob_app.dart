@@ -72,29 +72,35 @@ class IslamMobAppState extends State<IslamMobApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(builder: (context) {
-      return MediaQuery(
-        data: MediaQuery.of(context)
-            .copyWith(textScaler: TextScaler.noScaling), // Locks font scaling
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          onGenerateTitle: (BuildContext context) => AppConstant.appName,
-          locale: _getLocale(),
-          localizationsDelegates: _localizationDelegates(),
-          supportedLocales: _supportedLocales(),
-          theme: ThemeData(useMaterial3: false),
-          scrollBehavior: MyCustomScrollBehavior(),
-          onGenerateRoute: _onGenerateRoute,
-          initialRoute: _getInitialRoute(),
-        ),
-      );
-    });
+    return Builder(
+      builder: (context) {
+        return MediaQuery(
+          data: MediaQuery.of(
+            context,
+          ).copyWith(textScaler: TextScaler.noScaling), // Locks font scaling
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            onGenerateTitle: (BuildContext context) => AppConstant.appName,
+            locale: _getLocale(),
+            localizationsDelegates: _localizationDelegates(),
+            supportedLocales: _supportedLocales(),
+            theme: ThemeData(useMaterial3: false),
+            scrollBehavior: MyCustomScrollBehavior(),
+            onGenerateRoute: _onGenerateRoute,
+            initialRoute: _getInitialRoute(),
+          ),
+        );
+      },
+    );
   }
 
   Locale _getLocale() {
-    final selectedLanguage = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode,
-        defaultValue: "") as String;
+    final selectedLanguage =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldConstant.userLanguageCode,
+              defaultValue: "",
+            )
+            as String;
     return selectedLanguage != ""
         ? Locale(selectedLanguage)
         : const Locale("en");
@@ -110,10 +116,7 @@ class IslamMobAppState extends State<IslamMobApp> {
   }
 
   List<Locale> _supportedLocales() {
-    return const [
-      Locale('en', ''),
-      Locale('ar', ''),
-    ];
+    return const [Locale('en', ''), Locale('ar', '')];
   }
 
   Route<dynamic>? _onGenerateRoute(RouteSettings settings) {
@@ -134,9 +137,12 @@ class IslamMobAppState extends State<IslamMobApp> {
   }
 
   String _getInitialRoute() {
-    final bool? onBoardingFinished = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
-        defaultValue: null) as bool?;
+    final bool? onBoardingFinished =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldInBoardingStageConstant.inBoardingfinished,
+              defaultValue: null,
+            )
+            as bool?;
     return onBoardingFinished != null
         ? RoutesConstants.mainContainer
         : RoutesConstants.inBoardingScreen;

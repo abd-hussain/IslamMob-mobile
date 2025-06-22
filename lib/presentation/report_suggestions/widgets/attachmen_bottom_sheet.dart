@@ -34,22 +34,21 @@ class AttachmentBottomSheetsUtil {
   /// The bottom sheet automatically handles navigation and calls the appropriate
   /// callback based on user selection. Gallery and camera options automatically
   /// close the bottom sheet before executing the callback.
-  Future<void> addImageBottomSheet(
-      {required BuildContext context,
-      required bool? image,
-      required String title1,
-      required String title2,
-      required VoidCallback galleryCallBack,
-      required VoidCallback cameraCallBack,
-      required VoidCallback deleteCallBack}) {
+  Future<void> addImageBottomSheet({
+    required BuildContext context,
+    required bool? image,
+    required String title1,
+    required String title2,
+    required VoidCallback galleryCallBack,
+    required VoidCallback cameraCallBack,
+    required VoidCallback deleteCallBack,
+  }) {
     final localize = IslamMobLocalizations.of(context);
 
     return showModalBottomSheet(
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(25),
-        ),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
       ),
       context: context,
       builder: (context) {
@@ -125,10 +124,7 @@ class AttachmentBottomSheetsUtil {
                                       color: const Color(0xff444444),
                                     ),
                                   ),
-                                  const Icon(
-                                    Icons.arrow_forward_ios,
-                                    size: 15,
-                                  )
+                                  const Icon(Icons.arrow_forward_ios, size: 15),
                                 ],
                               ),
                             ),
@@ -143,12 +139,13 @@ class AttachmentBottomSheetsUtil {
                               child: Row(
                                 children: [
                                   const SizedBox(
-                                      width: 40,
-                                      height: 40,
-                                      child: Icon(
-                                        Icons.camera_alt_outlined,
-                                        color: Color(0xff444444),
-                                      )),
+                                    width: 40,
+                                    height: 40,
+                                    child: Icon(
+                                      Icons.camera_alt_outlined,
+                                      color: Color(0xff444444),
+                                    ),
+                                  ),
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: CustomText(
@@ -157,10 +154,7 @@ class AttachmentBottomSheetsUtil {
                                       color: const Color(0xff444444),
                                     ),
                                   ),
-                                  const Icon(
-                                    Icons.arrow_forward_ios,
-                                    size: 15,
-                                  )
+                                  const Icon(Icons.arrow_forward_ios, size: 15),
                                 ],
                               ),
                             ),

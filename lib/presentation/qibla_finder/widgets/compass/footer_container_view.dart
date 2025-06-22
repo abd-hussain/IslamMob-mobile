@@ -30,8 +30,11 @@ class FooterContainerView extends StatelessWidget {
   ///
   /// Both [title] and [value] are required parameters that define the
   /// content to be displayed in the container.
-  const FooterContainerView(
-      {super.key, required this.title, required this.value});
+  const FooterContainerView({
+    super.key,
+    required this.title,
+    required this.value,
+  });
 
   @override
   Widget build(BuildContext context) {

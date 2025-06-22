@@ -59,7 +59,9 @@ class SetupAccountView extends StatelessWidget {
 
   /// Builds the header text
   Widget _buildHeader(
-      BuildContext context, IslamMobLocalizations localization) {
+    BuildContext context,
+    IslamMobLocalizations localization,
+  ) {
     return Column(
       children: [
         CustomText(
@@ -92,25 +94,28 @@ class SetupAccountView extends StatelessWidget {
   }
 
   Widget _buildStateView(
-      BuildContext context, IslamMobLocalizations localization) {
+    BuildContext context,
+    IslamMobLocalizations localization,
+  ) {
     return FutureBuilder(
-        future: context.read<SetupAccountBloc>().setupAccount(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            return Expanded(
-              child: Center(
-                child: CustomButton(
-                  isEnabled: true,
-                  title: localization.startyourjourney,
-                  onTap: () async => doneSelection(),
-                ),
+      future: context.read<SetupAccountBloc>().setupAccount(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          return Expanded(
+            child: Center(
+              child: CustomButton(
+                isEnabled: true,
+                title: localization.startyourjourney,
+                onTap: () async => doneSelection(),
               ),
-            );
-          } else {
-            return const Center(
-              child: CircularProgressIndicator(color: Color(0xff008480)),
-            );
-          }
-        });
+            ),
+          );
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(color: Color(0xff008480)),
+          );
+        }
+      },
+    );
   }
 }

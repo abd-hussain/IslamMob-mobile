@@ -119,8 +119,9 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   }
 
   void _seek(double value) {
-    final newPosition =
-        Duration(milliseconds: (_duration.inMilliseconds * value).round());
+    final newPosition = Duration(
+      milliseconds: (_duration.inMilliseconds * value).round(),
+    );
     _player.seek(newPosition);
   }
 

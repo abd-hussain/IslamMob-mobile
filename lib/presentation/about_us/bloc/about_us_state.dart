@@ -14,7 +14,6 @@ class AboutUsState with _$AboutUsState {
   ///   available for display. Defaults to false. When true, the "Support Us"
   ///   option will be shown in the About Us screen, allowing users to view
   ///   ads to support Islamic app development.
-  const factory AboutUsState({
-    @Default(false) bool rewardedAdExsist,
-  }) = _AboutUsState;
+  const factory AboutUsState({@Default(false) bool rewardedAdExsist}) =
+      _AboutUsState;
 }

@@ -41,10 +41,11 @@ class QuranPagesView extends StatelessWidget {
   ///
   /// Both [currentPageNumber] and [onPageSelected] are required parameters
   /// for proper functionality of the page navigation interface.
-  const QuranPagesView(
-      {super.key,
-      required this.currentPageNumber,
-      required this.onPageSelected});
+  const QuranPagesView({
+    super.key,
+    required this.currentPageNumber,
+    required this.onPageSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +60,11 @@ class QuranPagesView extends StatelessWidget {
           final pageNumber = index + 1;
           final surahReferenceName =
               QuranReferancesUsecase.getSurahReferenceNameFromPageNumber(
-                  pageNumber);
-          final surahName = IslamMobLocalizations.of(context)
-              .getLocalizedString(surahReferenceName);
+                pageNumber,
+              );
+          final surahName = IslamMobLocalizations.of(
+            context,
+          ).getLocalizedString(surahReferenceName);
           final isCurrentPage = currentPageNumber == pageNumber;
           final isBookmarked = context
               .read<QuranPagesIndexBloc>()

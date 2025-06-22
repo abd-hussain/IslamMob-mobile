@@ -36,17 +36,20 @@ class QuranKareemMainView extends StatelessWidget {
   }
 
   Widget _buildPdfView(BuildContext context) {
-    final isReversed = DataBaseManagerBase.getFromDatabase(
-            key: DatabaseFieldConstant.userLanguageCode, defaultValue: "") !=
+    final isReversed =
+        DataBaseManagerBase.getFromDatabase(
+          key: DatabaseFieldConstant.userLanguageCode,
+          defaultValue: "",
+        ) !=
         "ar";
 
     return PdfView(
       reverse: isReversed,
       controller: context.read<QuranKareemBloc>().pdfController!,
       onPageChanged: (index) {
-        context
-            .read<QuranKareemBloc>()
-            .add(QuranKareemEvent.updatePageCount(index));
+        context.read<QuranKareemBloc>().add(
+          QuranKareemEvent.updatePageCount(index),
+        );
       },
     );
   }
@@ -76,9 +79,7 @@ class QuranKareemMainView extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.black.withValues(alpha: 0.8),
                     borderRadius: BorderRadius.circular(200),
-                    border: Border.all(
-                      color: const Color(0xff444444),
-                    ),
+                    border: Border.all(color: const Color(0xff444444)),
                   ),
                   width: MediaQuery.of(context).size.width / 1.5,
                   height: MediaQuery.of(context).size.width / 1.5,
@@ -93,14 +94,15 @@ class QuranKareemMainView extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         CustomText(
-                          title: IslamMobLocalizations.of(context)
-                              .quranSettingTapTutorial,
+                          title: IslamMobLocalizations.of(
+                            context,
+                          ).quranSettingTapTutorial,
                           fontSize: 18,
                           maxLines: 3,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold,
                           textAlign: TextAlign.center,
-                        )
+                        ),
                       ],
                     ),
                   ),

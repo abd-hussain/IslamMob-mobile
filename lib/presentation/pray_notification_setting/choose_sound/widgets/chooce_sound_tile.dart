@@ -72,18 +72,10 @@ class ChooceSoundTile extends StatelessWidget {
                 size: 30,
               )
             else
-              const Icon(
-                Icons.radio_button_off,
-                color: Colors.grey,
-                size: 30,
-              ),
+              const Icon(Icons.radio_button_off, color: Colors.grey, size: 30),
             Padding(
               padding: const EdgeInsets.all(8),
-              child: Container(
-                color: Colors.grey,
-                width: 2,
-                height: 30,
-              ),
+              child: Container(color: Colors.grey, width: 2, height: 30),
             ),
             Expanded(
               child: CustomText(
@@ -99,10 +91,10 @@ class ChooceSoundTile extends StatelessWidget {
               onPressed: () =>
                   locator<SetupLocalNotificationWhenAppOpenUseCase>()
                       .testNotification(
-                context: context,
-                type: type,
-                soundFileName: sound.soundFileName,
-              ),
+                        context: context,
+                        type: type,
+                        soundFileName: sound.soundFileName,
+                      ),
               iconSize: 35,
               icon: const Icon(Icons.play_arrow),
               color: const Color(0xff292929),
@@ -119,12 +111,15 @@ class ChooceSoundTile extends StatelessWidget {
       color: Colors.white,
       borderRadius: isFirstIndex
           ? const BorderRadius.only(
-              topLeft: Radius.circular(8), topRight: Radius.circular(8))
+              topLeft: Radius.circular(8),
+              topRight: Radius.circular(8),
+            )
           : isLastIndex
-              ? const BorderRadius.only(
-                  bottomLeft: Radius.circular(8),
-                  bottomRight: Radius.circular(8))
-              : BorderRadius.circular(0),
+          ? const BorderRadius.only(
+              bottomLeft: Radius.circular(8),
+              bottomRight: Radius.circular(8),
+            )
+          : BorderRadius.circular(0),
       boxShadow: [
         const BoxShadow(
           color: Colors.grey,

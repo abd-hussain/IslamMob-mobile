@@ -50,9 +50,7 @@ class HomeHeaderView extends StatelessWidget {
         flexibleSpace: FlexibleSpaceBar(
           centerTitle: true,
           titlePadding: const EdgeInsets.only(bottom: 10),
-          title: Builder(
-            builder: _buildHeaderContent,
-          ),
+          title: Builder(builder: _buildHeaderContent),
           background: _buildBackground(),
         ),
       ),
@@ -102,10 +100,11 @@ class HomeHeaderView extends StatelessWidget {
       decoration: _blackOverlayDecoration(),
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: SalahTimerView(
-          targetTime: state.nextPrayDateTime!,
-          onTimerFinished: () {
-            bloc.add(HomeHeaderEvent.prepareNextSalahTypeAndTime());
-          }),
+        targetTime: state.nextPrayDateTime!,
+        onTimerFinished: () {
+          bloc.add(HomeHeaderEvent.prepareNextSalahTypeAndTime());
+        },
+      ),
     );
   }
 
@@ -118,10 +117,7 @@ class HomeHeaderView extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CustomText(
-              title: bloc.getNextSalahTime(),
-              fontSize: 12,
-            ),
+            CustomText(title: bloc.getNextSalahTime(), fontSize: 12),
             const SizedBox(width: 2),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,11 +144,7 @@ class HomeHeaderView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
-            Icons.location_on,
-            color: Color(0xff008480),
-            size: 12,
-          ),
+          const Icon(Icons.location_on, color: Color(0xff008480), size: 12),
           CustomText(
             title:
                 "${bloc.currentSubCity()}, ${bloc.currentCity()}, ${bloc.currentCountry()}",
@@ -167,10 +159,7 @@ class HomeHeaderView extends StatelessWidget {
   Widget _buildBackground() {
     return Opacity(
       opacity: 0.6,
-      child: Image.asset(
-        "assets/images/background.png",
-        fit: BoxFit.cover,
-      ),
+      child: Image.asset("assets/images/background.png", fit: BoxFit.cover),
     );
   }
 

@@ -45,10 +45,11 @@ class PolesCalculationView extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Expanded(
-              child: Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: _buildCalculationSelector(context, localizations),
-          )),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: _buildCalculationSelector(context, localizations),
+            ),
+          ),
           const SizedBox(height: 8),
         ],
       ),
@@ -56,14 +57,18 @@ class PolesCalculationView extends StatelessWidget {
   }
 
   Widget _buildCalculationSelector(
-      BuildContext context, IslamMobLocalizations localizations) {
+    BuildContext context,
+    IslamMobLocalizations localizations,
+  ) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) =>
           previous.hightLatitudeCaluclation != current.hightLatitudeCaluclation,
       builder: (context, state) {
         final hightLatitudeCaluclationList =
             CalculationSettingUsecase.getHightLatitudeCaluclationList(
-                localizations, state.hightLatitudeCaluclation);
+              localizations,
+              state.hightLatitudeCaluclation,
+            );
 
         return ListView.builder(
           itemCount: hightLatitudeCaluclationList.length,
@@ -72,10 +77,10 @@ class PolesCalculationView extends StatelessWidget {
               title: hightLatitudeCaluclationList[index].name,
               isSelected: hightLatitudeCaluclationList[index].isSelected,
               onChanged: () => context.read<PrayCalculationSettingBloc>().add(
-                    PrayCalculationSettingEvent.updateHightLatitudeCalculation(
-                      state: hightLatitudeCaluclationList[index].method,
-                    ),
-                  ),
+                PrayCalculationSettingEvent.updateHightLatitudeCalculation(
+                  state: hightLatitudeCaluclationList[index].method,
+                ),
+              ),
             );
           },
         );

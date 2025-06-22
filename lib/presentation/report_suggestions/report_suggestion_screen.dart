@@ -52,9 +52,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Scaffold(
-          appBar: CustomAppBar(
-            title: localize.reportandsuggestiontitle,
-          ),
+          appBar: CustomAppBar(title: localize.reportandsuggestiontitle),
           body: BlocBuilder<ReportAndSuggestionBloc, ReportAndSuggestionState>(
             buildWhen: (previous, current) =>
                 previous.loadingStatus != current.loadingStatus ||
@@ -113,7 +111,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
   }
 
   Widget _buildFeedbackInput(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(8),
@@ -122,8 +122,9 @@ class ReportOrSuggestionScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: TextField(
-              controller:
-                  context.read<ReportAndSuggestionBloc>().textController,
+              controller: context
+                  .read<ReportAndSuggestionBloc>()
+                  .textController,
               decoration: InputDecoration(
                 hintText: localize.feedbackmessage,
                 hintMaxLines: 2,
@@ -165,7 +166,8 @@ class ReportOrSuggestionScreen extends StatelessWidget {
   ) async {
     try {
       await FirebaseAnalyticsRepository.logEvent(
-          name: "ReportOrSuggestionSubmitsion");
+        name: "ReportOrSuggestionSubmitsion",
+      );
 
       if (!context.mounted) return;
 
@@ -173,7 +175,8 @@ class ReportOrSuggestionScreen extends StatelessWidget {
       final navigator = Navigator.of(context);
 
       bloc.add(
-          const ReportAndSuggestionEvent.updateLoadingStatus(status: true));
+        const ReportAndSuggestionEvent.updateLoadingStatus(status: true),
+      );
 
       await bloc.callRequest(
         attach1: state.attach1,
@@ -184,7 +187,8 @@ class ReportOrSuggestionScreen extends StatelessWidget {
       if (!context.mounted) return;
 
       bloc.add(
-          const ReportAndSuggestionEvent.updateLoadingStatus(status: false));
+        const ReportAndSuggestionEvent.updateLoadingStatus(status: false),
+      );
       navigator.pop();
     } on ConnectionException {
       if (context.mounted) {

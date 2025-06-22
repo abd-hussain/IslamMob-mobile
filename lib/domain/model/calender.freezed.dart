@@ -12,7 +12,8 @@ part of 'calender.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$CalenderModel {
@@ -37,20 +38,22 @@ mixin _$CalenderModel {
 /// @nodoc
 abstract class $CalenderModelCopyWith<$Res> {
   factory $CalenderModelCopyWith(
-          CalenderModel value, $Res Function(CalenderModel) then) =
-      _$CalenderModelCopyWithImpl<$Res, CalenderModel>;
+    CalenderModel value,
+    $Res Function(CalenderModel) then,
+  ) = _$CalenderModelCopyWithImpl<$Res, CalenderModel>;
   @useResult
-  $Res call(
-      {String dayName,
-      String dateHijri,
-      String dateMilady,
-      String fajirTime,
-      String sunriseTime,
-      String zhurTime,
-      String asrTime,
-      String magribTime,
-      String ishaTime,
-      bool isToday});
+  $Res call({
+    String dayName,
+    String dateHijri,
+    String dateMilady,
+    String fajirTime,
+    String sunriseTime,
+    String zhurTime,
+    String asrTime,
+    String magribTime,
+    String ishaTime,
+    bool isToday,
+  });
 }
 
 /// @nodoc
@@ -79,48 +82,51 @@ class _$CalenderModelCopyWithImpl<$Res, $Val extends CalenderModel>
     Object? ishaTime = null,
     Object? isToday = null,
   }) {
-    return _then(_value.copyWith(
-      dayName: null == dayName
-          ? _value.dayName
-          : dayName // ignore: cast_nullable_to_non_nullable
-              as String,
-      dateHijri: null == dateHijri
-          ? _value.dateHijri
-          : dateHijri // ignore: cast_nullable_to_non_nullable
-              as String,
-      dateMilady: null == dateMilady
-          ? _value.dateMilady
-          : dateMilady // ignore: cast_nullable_to_non_nullable
-              as String,
-      fajirTime: null == fajirTime
-          ? _value.fajirTime
-          : fajirTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      sunriseTime: null == sunriseTime
-          ? _value.sunriseTime
-          : sunriseTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      zhurTime: null == zhurTime
-          ? _value.zhurTime
-          : zhurTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      asrTime: null == asrTime
-          ? _value.asrTime
-          : asrTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      magribTime: null == magribTime
-          ? _value.magribTime
-          : magribTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      ishaTime: null == ishaTime
-          ? _value.ishaTime
-          : ishaTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      isToday: null == isToday
-          ? _value.isToday
-          : isToday // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            dayName: null == dayName
+                ? _value.dayName
+                : dayName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            dateHijri: null == dateHijri
+                ? _value.dateHijri
+                : dateHijri // ignore: cast_nullable_to_non_nullable
+                      as String,
+            dateMilady: null == dateMilady
+                ? _value.dateMilady
+                : dateMilady // ignore: cast_nullable_to_non_nullable
+                      as String,
+            fajirTime: null == fajirTime
+                ? _value.fajirTime
+                : fajirTime // ignore: cast_nullable_to_non_nullable
+                      as String,
+            sunriseTime: null == sunriseTime
+                ? _value.sunriseTime
+                : sunriseTime // ignore: cast_nullable_to_non_nullable
+                      as String,
+            zhurTime: null == zhurTime
+                ? _value.zhurTime
+                : zhurTime // ignore: cast_nullable_to_non_nullable
+                      as String,
+            asrTime: null == asrTime
+                ? _value.asrTime
+                : asrTime // ignore: cast_nullable_to_non_nullable
+                      as String,
+            magribTime: null == magribTime
+                ? _value.magribTime
+                : magribTime // ignore: cast_nullable_to_non_nullable
+                      as String,
+            ishaTime: null == ishaTime
+                ? _value.ishaTime
+                : ishaTime // ignore: cast_nullable_to_non_nullable
+                      as String,
+            isToday: null == isToday
+                ? _value.isToday
+                : isToday // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -128,21 +134,23 @@ class _$CalenderModelCopyWithImpl<$Res, $Val extends CalenderModel>
 abstract class _$$CalenderModelImplCopyWith<$Res>
     implements $CalenderModelCopyWith<$Res> {
   factory _$$CalenderModelImplCopyWith(
-          _$CalenderModelImpl value, $Res Function(_$CalenderModelImpl) then) =
-      __$$CalenderModelImplCopyWithImpl<$Res>;
+    _$CalenderModelImpl value,
+    $Res Function(_$CalenderModelImpl) then,
+  ) = __$$CalenderModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String dayName,
-      String dateHijri,
-      String dateMilady,
-      String fajirTime,
-      String sunriseTime,
-      String zhurTime,
-      String asrTime,
-      String magribTime,
-      String ishaTime,
-      bool isToday});
+  $Res call({
+    String dayName,
+    String dateHijri,
+    String dateMilady,
+    String fajirTime,
+    String sunriseTime,
+    String zhurTime,
+    String asrTime,
+    String magribTime,
+    String ishaTime,
+    bool isToday,
+  });
 }
 
 /// @nodoc
@@ -150,8 +158,9 @@ class __$$CalenderModelImplCopyWithImpl<$Res>
     extends _$CalenderModelCopyWithImpl<$Res, _$CalenderModelImpl>
     implements _$$CalenderModelImplCopyWith<$Res> {
   __$$CalenderModelImplCopyWithImpl(
-      _$CalenderModelImpl _value, $Res Function(_$CalenderModelImpl) _then)
-      : super(_value, _then);
+    _$CalenderModelImpl _value,
+    $Res Function(_$CalenderModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CalenderModel
   /// with the given fields replaced by the non-null parameter values.
@@ -169,65 +178,68 @@ class __$$CalenderModelImplCopyWithImpl<$Res>
     Object? ishaTime = null,
     Object? isToday = null,
   }) {
-    return _then(_$CalenderModelImpl(
-      dayName: null == dayName
-          ? _value.dayName
-          : dayName // ignore: cast_nullable_to_non_nullable
-              as String,
-      dateHijri: null == dateHijri
-          ? _value.dateHijri
-          : dateHijri // ignore: cast_nullable_to_non_nullable
-              as String,
-      dateMilady: null == dateMilady
-          ? _value.dateMilady
-          : dateMilady // ignore: cast_nullable_to_non_nullable
-              as String,
-      fajirTime: null == fajirTime
-          ? _value.fajirTime
-          : fajirTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      sunriseTime: null == sunriseTime
-          ? _value.sunriseTime
-          : sunriseTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      zhurTime: null == zhurTime
-          ? _value.zhurTime
-          : zhurTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      asrTime: null == asrTime
-          ? _value.asrTime
-          : asrTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      magribTime: null == magribTime
-          ? _value.magribTime
-          : magribTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      ishaTime: null == ishaTime
-          ? _value.ishaTime
-          : ishaTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      isToday: null == isToday
-          ? _value.isToday
-          : isToday // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$CalenderModelImpl(
+        dayName: null == dayName
+            ? _value.dayName
+            : dayName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        dateHijri: null == dateHijri
+            ? _value.dateHijri
+            : dateHijri // ignore: cast_nullable_to_non_nullable
+                  as String,
+        dateMilady: null == dateMilady
+            ? _value.dateMilady
+            : dateMilady // ignore: cast_nullable_to_non_nullable
+                  as String,
+        fajirTime: null == fajirTime
+            ? _value.fajirTime
+            : fajirTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        sunriseTime: null == sunriseTime
+            ? _value.sunriseTime
+            : sunriseTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        zhurTime: null == zhurTime
+            ? _value.zhurTime
+            : zhurTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        asrTime: null == asrTime
+            ? _value.asrTime
+            : asrTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        magribTime: null == magribTime
+            ? _value.magribTime
+            : magribTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        ishaTime: null == ishaTime
+            ? _value.ishaTime
+            : ishaTime // ignore: cast_nullable_to_non_nullable
+                  as String,
+        isToday: null == isToday
+            ? _value.isToday
+            : isToday // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$CalenderModelImpl implements _CalenderModel {
-  _$CalenderModelImpl(
-      {required this.dayName,
-      required this.dateHijri,
-      required this.dateMilady,
-      required this.fajirTime,
-      required this.sunriseTime,
-      required this.zhurTime,
-      required this.asrTime,
-      required this.magribTime,
-      required this.ishaTime,
-      required this.isToday});
+  _$CalenderModelImpl({
+    required this.dayName,
+    required this.dateHijri,
+    required this.dateMilady,
+    required this.fajirTime,
+    required this.sunriseTime,
+    required this.zhurTime,
+    required this.asrTime,
+    required this.magribTime,
+    required this.ishaTime,
+    required this.isToday,
+  });
 
   @override
   final String dayName;
@@ -280,8 +292,19 @@ class _$CalenderModelImpl implements _CalenderModel {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, dayName, dateHijri, dateMilady,
-      fajirTime, sunriseTime, zhurTime, asrTime, magribTime, ishaTime, isToday);
+  int get hashCode => Object.hash(
+    runtimeType,
+    dayName,
+    dateHijri,
+    dateMilady,
+    fajirTime,
+    sunriseTime,
+    zhurTime,
+    asrTime,
+    magribTime,
+    ishaTime,
+    isToday,
+  );
 
   /// Create a copy of CalenderModel
   /// with the given fields replaced by the non-null parameter values.
@@ -293,17 +316,18 @@ class _$CalenderModelImpl implements _CalenderModel {
 }
 
 abstract class _CalenderModel implements CalenderModel {
-  factory _CalenderModel(
-      {required final String dayName,
-      required final String dateHijri,
-      required final String dateMilady,
-      required final String fajirTime,
-      required final String sunriseTime,
-      required final String zhurTime,
-      required final String asrTime,
-      required final String magribTime,
-      required final String ishaTime,
-      required final bool isToday}) = _$CalenderModelImpl;
+  factory _CalenderModel({
+    required final String dayName,
+    required final String dateHijri,
+    required final String dateMilady,
+    required final String fajirTime,
+    required final String sunriseTime,
+    required final String zhurTime,
+    required final String asrTime,
+    required final String magribTime,
+    required final String ishaTime,
+    required final bool isToday,
+  }) = _$CalenderModelImpl;
 
   @override
   String get dayName;

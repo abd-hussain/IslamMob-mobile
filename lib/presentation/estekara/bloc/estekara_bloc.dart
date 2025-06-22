@@ -33,17 +33,24 @@ class EstekaraBloc extends Bloc<EstekaraEvent, EstekaraState> {
   }
 
   FutureOr<void> _fillInitialValue(
-      _FillInitialValue event, Emitter<EstekaraState> emit) async {
-    emit(state.copyWith(
-      listOfItems: await EstekaraUsecase.getEstekaraList(),
-      isRtlLanguage: _isRtlLanguage(),
-    ));
+    _FillInitialValue event,
+    Emitter<EstekaraState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        listOfItems: await EstekaraUsecase.getEstekaraList(),
+        isRtlLanguage: _isRtlLanguage(),
+      ),
+    );
   }
 
   bool _isRtlLanguage() {
-    final String languageCode = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode,
-        defaultValue: "en") as String;
+    final String languageCode =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldConstant.userLanguageCode,
+              defaultValue: "en",
+            )
+            as String;
     return languageCode == "ar" || languageCode == "fa";
   }
 }

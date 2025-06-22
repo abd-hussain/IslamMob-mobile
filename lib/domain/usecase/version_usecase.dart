@@ -19,7 +19,7 @@ enum VersionUpdate {
   optional,
 
   /// No update needed - current version is up to date
-  noUpdate
+  noUpdate,
 }
 
 /// A use case class that handles app version checking and update status determination.
@@ -60,8 +60,8 @@ class VersionUseCase {
   static Future<VersionUpdate> getCurrentVersionUpdateStatus() async {
     final AppVersionModel? firebaseVersionData =
         await _fetchVersionFromFirebase();
-    final String currentVersion =
-        await locator<ApplicationVersionUsecase>().getApplicationVersion();
+    final String currentVersion = await locator<ApplicationVersionUsecase>()
+        .getApplicationVersion();
     // Default version update status
     VersionUpdate updateStatus = VersionUpdate.noUpdate;
 
@@ -71,8 +71,9 @@ class VersionUseCase {
       return updateStatus;
     }
 
-    final int minSupported =
-        _parseVersionNumber(firebaseVersionData!.minSupportedVersion!);
+    final int minSupported = _parseVersionNumber(
+      firebaseVersionData!.minSupportedVersion!,
+    );
     final int latest = _parseVersionNumber(firebaseVersionData.latestVersion!);
     final int current = _parseVersionNumber(currentVersion);
 
@@ -102,7 +103,8 @@ class VersionUseCase {
   /// Convert map/json into [AppVersionModel].
   static AppVersionModel _toAppVersionModel(dynamic source) {
     return AppVersionModel.fromJson(
-        (source as Map<String, dynamic>?) ?? <String, dynamic>{});
+      (source as Map<String, dynamic>?) ?? <String, dynamic>{},
+    );
   }
 
   /// Converts a version string (e.g. "1.2.3") into an integer (e.g. 123).

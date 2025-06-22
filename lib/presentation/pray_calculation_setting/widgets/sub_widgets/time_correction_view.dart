@@ -93,10 +93,7 @@ class TimeCorrectionView extends StatelessWidget {
           ),
         ],
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: child,
-      ),
+      child: Padding(padding: const EdgeInsets.all(8), child: child),
     );
   }
 }

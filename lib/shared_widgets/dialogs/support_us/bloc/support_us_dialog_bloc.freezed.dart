@@ -12,7 +12,8 @@ part of 'support_us_dialog_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$SupportUsDialogEvent {
@@ -20,52 +21,49 @@ mixin _$SupportUsDialogEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initializeRewardedAd,
     required TResult Function(bool value) updateRewardedAd,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initializeRewardedAd,
     TResult? Function(bool value)? updateRewardedAd,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initializeRewardedAd,
     TResult Function(bool value)? updateRewardedAd,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitializeRewardedAd value) initializeRewardedAd,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitializeRewardedAd value)? initializeRewardedAd,
     TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitializeRewardedAd value)? initializeRewardedAd,
     TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SupportUsDialogEventCopyWith<$Res> {
-  factory $SupportUsDialogEventCopyWith(SupportUsDialogEvent value,
-          $Res Function(SupportUsDialogEvent) then) =
-      _$SupportUsDialogEventCopyWithImpl<$Res, SupportUsDialogEvent>;
+  factory $SupportUsDialogEventCopyWith(
+    SupportUsDialogEvent value,
+    $Res Function(SupportUsDialogEvent) then,
+  ) = _$SupportUsDialogEventCopyWithImpl<$Res, SupportUsDialogEvent>;
 }
 
 /// @nodoc
-class _$SupportUsDialogEventCopyWithImpl<$Res,
-        $Val extends SupportUsDialogEvent>
+class _$SupportUsDialogEventCopyWithImpl<
+  $Res,
+  $Val extends SupportUsDialogEvent
+>
     implements $SupportUsDialogEventCopyWith<$Res> {
   _$SupportUsDialogEventCopyWithImpl(this._value, this._then);
 
@@ -80,18 +78,20 @@ class _$SupportUsDialogEventCopyWithImpl<$Res,
 
 /// @nodoc
 abstract class _$$InitializeRewardedAdImplCopyWith<$Res> {
-  factory _$$InitializeRewardedAdImplCopyWith(_$InitializeRewardedAdImpl value,
-          $Res Function(_$InitializeRewardedAdImpl) then) =
-      __$$InitializeRewardedAdImplCopyWithImpl<$Res>;
+  factory _$$InitializeRewardedAdImplCopyWith(
+    _$InitializeRewardedAdImpl value,
+    $Res Function(_$InitializeRewardedAdImpl) then,
+  ) = __$$InitializeRewardedAdImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$InitializeRewardedAdImplCopyWithImpl<$Res>
     extends _$SupportUsDialogEventCopyWithImpl<$Res, _$InitializeRewardedAdImpl>
     implements _$$InitializeRewardedAdImplCopyWith<$Res> {
-  __$$InitializeRewardedAdImplCopyWithImpl(_$InitializeRewardedAdImpl _value,
-      $Res Function(_$InitializeRewardedAdImpl) _then)
-      : super(_value, _then);
+  __$$InitializeRewardedAdImplCopyWithImpl(
+    _$InitializeRewardedAdImpl _value,
+    $Res Function(_$InitializeRewardedAdImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SupportUsDialogEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -186,9 +186,10 @@ abstract class _InitializeRewardedAd implements SupportUsDialogEvent {
 
 /// @nodoc
 abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
-  factory _$$UpdateRewardedAdImplCopyWith(_$UpdateRewardedAdImpl value,
-          $Res Function(_$UpdateRewardedAdImpl) then) =
-      __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
+  factory _$$UpdateRewardedAdImplCopyWith(
+    _$UpdateRewardedAdImpl value,
+    $Res Function(_$UpdateRewardedAdImpl) then,
+  ) = __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
@@ -197,23 +198,24 @@ abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
 class __$$UpdateRewardedAdImplCopyWithImpl<$Res>
     extends _$SupportUsDialogEventCopyWithImpl<$Res, _$UpdateRewardedAdImpl>
     implements _$$UpdateRewardedAdImplCopyWith<$Res> {
-  __$$UpdateRewardedAdImplCopyWithImpl(_$UpdateRewardedAdImpl _value,
-      $Res Function(_$UpdateRewardedAdImpl) _then)
-      : super(_value, _then);
+  __$$UpdateRewardedAdImplCopyWithImpl(
+    _$UpdateRewardedAdImpl _value,
+    $Res Function(_$UpdateRewardedAdImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SupportUsDialogEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UpdateRewardedAdImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? value = null}) {
+    return _then(
+      _$UpdateRewardedAdImpl(
+        null == value
+            ? _value.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
@@ -248,7 +250,9 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @pragma('vm:prefer-inline')
   _$$UpdateRewardedAdImplCopyWith<_$UpdateRewardedAdImpl> get copyWith =>
       __$$UpdateRewardedAdImplCopyWithImpl<_$UpdateRewardedAdImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -338,16 +342,19 @@ mixin _$SupportUsDialogState {
 
 /// @nodoc
 abstract class $SupportUsDialogStateCopyWith<$Res> {
-  factory $SupportUsDialogStateCopyWith(SupportUsDialogState value,
-          $Res Function(SupportUsDialogState) then) =
-      _$SupportUsDialogStateCopyWithImpl<$Res, SupportUsDialogState>;
+  factory $SupportUsDialogStateCopyWith(
+    SupportUsDialogState value,
+    $Res Function(SupportUsDialogState) then,
+  ) = _$SupportUsDialogStateCopyWithImpl<$Res, SupportUsDialogState>;
   @useResult
   $Res call({bool rewardedAdExsist});
 }
 
 /// @nodoc
-class _$SupportUsDialogStateCopyWithImpl<$Res,
-        $Val extends SupportUsDialogState>
+class _$SupportUsDialogStateCopyWithImpl<
+  $Res,
+  $Val extends SupportUsDialogState
+>
     implements $SupportUsDialogStateCopyWith<$Res> {
   _$SupportUsDialogStateCopyWithImpl(this._value, this._then);
 
@@ -360,24 +367,26 @@ class _$SupportUsDialogStateCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? rewardedAdExsist = null,
-  }) {
-    return _then(_value.copyWith(
-      rewardedAdExsist: null == rewardedAdExsist
-          ? _value.rewardedAdExsist
-          : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  $Res call({Object? rewardedAdExsist = null}) {
+    return _then(
+      _value.copyWith(
+            rewardedAdExsist: null == rewardedAdExsist
+                ? _value.rewardedAdExsist
+                : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$SupportUsDialogStateImplCopyWith<$Res>
     implements $SupportUsDialogStateCopyWith<$Res> {
-  factory _$$SupportUsDialogStateImplCopyWith(_$SupportUsDialogStateImpl value,
-          $Res Function(_$SupportUsDialogStateImpl) then) =
-      __$$SupportUsDialogStateImplCopyWithImpl<$Res>;
+  factory _$$SupportUsDialogStateImplCopyWith(
+    _$SupportUsDialogStateImpl value,
+    $Res Function(_$SupportUsDialogStateImpl) then,
+  ) = __$$SupportUsDialogStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool rewardedAdExsist});
@@ -387,23 +396,24 @@ abstract class _$$SupportUsDialogStateImplCopyWith<$Res>
 class __$$SupportUsDialogStateImplCopyWithImpl<$Res>
     extends _$SupportUsDialogStateCopyWithImpl<$Res, _$SupportUsDialogStateImpl>
     implements _$$SupportUsDialogStateImplCopyWith<$Res> {
-  __$$SupportUsDialogStateImplCopyWithImpl(_$SupportUsDialogStateImpl _value,
-      $Res Function(_$SupportUsDialogStateImpl) _then)
-      : super(_value, _then);
+  __$$SupportUsDialogStateImplCopyWithImpl(
+    _$SupportUsDialogStateImpl _value,
+    $Res Function(_$SupportUsDialogStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SupportUsDialogState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? rewardedAdExsist = null,
-  }) {
-    return _then(_$SupportUsDialogStateImpl(
-      rewardedAdExsist: null == rewardedAdExsist
-          ? _value.rewardedAdExsist
-          : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? rewardedAdExsist = null}) {
+    return _then(
+      _$SupportUsDialogStateImpl(
+        rewardedAdExsist: null == rewardedAdExsist
+            ? _value.rewardedAdExsist
+            : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
@@ -439,9 +449,11 @@ class _$SupportUsDialogStateImpl implements _SupportUsDialogState {
   @override
   @pragma('vm:prefer-inline')
   _$$SupportUsDialogStateImplCopyWith<_$SupportUsDialogStateImpl>
-      get copyWith =>
-          __$$SupportUsDialogStateImplCopyWithImpl<_$SupportUsDialogStateImpl>(
-              this, _$identity);
+  get copyWith =>
+      __$$SupportUsDialogStateImplCopyWithImpl<_$SupportUsDialogStateImpl>(
+        this,
+        _$identity,
+      );
 }
 
 abstract class _SupportUsDialogState implements SupportUsDialogState {
@@ -456,5 +468,5 @@ abstract class _SupportUsDialogState implements SupportUsDialogState {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SupportUsDialogStateImplCopyWith<_$SupportUsDialogStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

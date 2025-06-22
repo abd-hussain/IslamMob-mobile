@@ -18,11 +18,7 @@ class HttpApiResponse<T> {
   /// [data] - The response data of type [T], if available.
   /// [statusCode] - The HTTP status code of the response.
   /// [statusMessage] - The HTTP status message associated with the response.
-  HttpApiResponse({
-    this.data,
-    this.statusCode,
-    this.statusMessage,
-  });
+  HttpApiResponse({this.data, this.statusCode, this.statusMessage});
 
   /// The response data of type [T].
   ///

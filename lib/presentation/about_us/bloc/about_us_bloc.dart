@@ -35,13 +35,17 @@ class AboutUsBloc extends Bloc<AboutUsEvent, AboutUsState> {
   }
 
   FutureOr<void> _initializeRewardedAd(
-      _InitializeRewardedAd event, Emitter<AboutUsState> emit) async {
+    _InitializeRewardedAd event,
+    Emitter<AboutUsState> emit,
+  ) async {
     await RewarderAds.createRewardedAd();
     add(AboutUsEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null));
   }
 
   FutureOr<void> _handleUpdateRewardedAd(
-      _UpdateRewardedAd event, Emitter<AboutUsState> emit) {
+    _UpdateRewardedAd event,
+    Emitter<AboutUsState> emit,
+  ) {
     emit(state.copyWith(rewardedAdExsist: event.value));
   }
 }

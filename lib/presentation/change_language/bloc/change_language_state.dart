@@ -34,7 +34,6 @@ class ChangeLanguageState with _$ChangeLanguageState {
   ///   ),
   /// );
   /// ```
-  const factory ChangeLanguageState({
-    LanguageModel? selectedLanguage,
-  }) = _ChangeLanguageState;
+  const factory ChangeLanguageState({LanguageModel? selectedLanguage}) =
+      _ChangeLanguageState;
 }

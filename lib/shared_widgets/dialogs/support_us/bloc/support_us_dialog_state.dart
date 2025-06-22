@@ -12,7 +12,6 @@ class SupportUsDialogState with _$SupportUsDialogState {
   /// The [rewardedAdExsist] parameter indicates whether a rewarded advertisement
   /// is available for the user to watch as a way to support the application.
   /// Defaults to `false` if not specified.
-  const factory SupportUsDialogState({
-    @Default(false) bool rewardedAdExsist,
-  }) = _SupportUsDialogState;
+  const factory SupportUsDialogState({@Default(false) bool rewardedAdExsist}) =
+      _SupportUsDialogState;
 }

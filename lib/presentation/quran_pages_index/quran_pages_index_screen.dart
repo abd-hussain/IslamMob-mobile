@@ -80,9 +80,9 @@ class QuranPagesIndexScreen extends StatelessWidget {
               previous.selectedIndex != current.selectedIndex,
           builder: (context, state) {
             return TabBar(
-              onTap: (index) => context
-                  .read<QuranPagesIndexBloc>()
-                  .add(QuranPagesIndexEvent.updateSelectedTab(index)),
+              onTap: (index) => context.read<QuranPagesIndexBloc>().add(
+                QuranPagesIndexEvent.updateSelectedTab(index),
+              ),
               labelColor: Colors.white,
               unselectedLabelColor: Colors.grey[700],
               indicatorColor: const Color(0xff008480),
@@ -98,31 +98,19 @@ class QuranPagesIndexScreen extends StatelessWidget {
               tabs: [
                 Tab(
                   text: localize.quranSowarIndex,
-                  icon: const Icon(
-                    Icons.copy_sharp,
-                    size: 15,
-                  ),
+                  icon: const Icon(Icons.copy_sharp, size: 15),
                 ),
                 Tab(
                   text: localize.quranPartsIndex,
-                  icon: const Icon(
-                    Icons.pie_chart_rounded,
-                    size: 15,
-                  ),
+                  icon: const Icon(Icons.pie_chart_rounded, size: 15),
                 ),
                 Tab(
                   text: localize.quranpages,
-                  icon: const Icon(
-                    Icons.pageview,
-                    size: 15,
-                  ),
+                  icon: const Icon(Icons.pageview, size: 15),
                 ),
                 Tab(
                   text: localize.quranSettingSavedBookMark,
-                  icon: const Icon(
-                    Icons.bookmarks,
-                    size: 15,
-                  ),
+                  icon: const Icon(Icons.bookmarks, size: 15),
                 ),
               ],
             );
@@ -155,42 +143,46 @@ class QuranPagesIndexScreen extends StatelessWidget {
               currentSowrahName: currentSowrahName,
               onSowrahSelected: (sowrahName) {
                 FirebaseAnalyticsRepository.logEvent(
-                    name: "QuranSowarViewItemSelected");
-                Navigator.of(context).pop({
-                  ArgumentConstant.currentSowrahName: sowrahName,
-                });
+                  name: "QuranSowarViewItemSelected",
+                );
+                Navigator.of(
+                  context,
+                ).pop({ArgumentConstant.currentSowrahName: sowrahName});
               },
             ),
             QuranPartsView(
               currentPartName: currentPartName,
               onPartSelected: (partNumber) {
                 FirebaseAnalyticsRepository.logEvent(
-                    name: "QuranPartsViewItemSelected");
-                Navigator.of(context).pop({
-                  ArgumentConstant.currentPartNumber: partNumber,
-                });
+                  name: "QuranPartsViewItemSelected",
+                );
+                Navigator.of(
+                  context,
+                ).pop({ArgumentConstant.currentPartNumber: partNumber});
               },
             ),
             QuranPagesView(
               currentPageNumber: currentPageNumber,
               onPageSelected: (pageNumber) {
                 FirebaseAnalyticsRepository.logEvent(
-                    name: "QuranPagesViewItemSelected");
-                Navigator.of(context).pop({
-                  ArgumentConstant.currentPageNumber: pageNumber,
-                });
+                  name: "QuranPagesViewItemSelected",
+                );
+                Navigator.of(
+                  context,
+                ).pop({ArgumentConstant.currentPageNumber: pageNumber});
               },
             ),
             QuranBookmarkPagesView(
               currentPageNumber: currentPageNumber,
               onPageSelected: (pageNumber) {
                 FirebaseAnalyticsRepository.logEvent(
-                    name: "QuranBookmarkPagesViewItemSelected");
-                Navigator.of(context).pop({
-                  ArgumentConstant.currentPageNumber: pageNumber,
-                });
+                  name: "QuranBookmarkPagesViewItemSelected",
+                );
+                Navigator.of(
+                  context,
+                ).pop({ArgumentConstant.currentPageNumber: pageNumber});
               },
-            )
+            ),
           ],
         );
       },

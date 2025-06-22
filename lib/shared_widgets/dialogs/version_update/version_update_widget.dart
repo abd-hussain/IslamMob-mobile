@@ -24,10 +24,7 @@ class VersionDialogWidget extends StatelessWidget {
   ///
   ///  [isOptional] parameters are required:
   /// - [isOptional]: Whether users can skip this update
-  const VersionDialogWidget({
-    super.key,
-    required this.isOptional,
-  });
+  const VersionDialogWidget({super.key, required this.isOptional});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +79,8 @@ class VersionDialogWidget extends StatelessWidget {
                     child: InkWell(
                       onTap: () async {
                         await FirebaseAnalyticsRepository.logEvent(
-                            name: "OpenStoreFromVersionDialog");
+                          name: "OpenStoreFromVersionDialog",
+                        );
 
                         await OpenStore.instance.open(
                           appStoreId: AppConstant.iOSAppId,
@@ -107,7 +105,8 @@ class VersionDialogWidget extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         FirebaseAnalyticsRepository.logEvent(
-                            name: "DismissVersionDialog");
+                          name: "DismissVersionDialog",
+                        );
 
                         Navigator.of(context, rootNavigator: true).pop();
                       },

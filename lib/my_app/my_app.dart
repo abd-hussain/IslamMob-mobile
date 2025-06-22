@@ -38,22 +38,25 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: _myAppBloc.fetchData(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            if (snapshot.hasError) {
-              LoggerManagerBase.logErrorMessage(
-                  error: snapshot.error,
-                  message: "Error during app initialization");
-              return const SplashLoadingScreen(); // Optional: Show an error-specific screen here.
-            }
-
-            LoggerManagerBase.logInfo(
-                message: 'App initialization completed successfully!');
-            return const IslamMobApp();
+      future: _myAppBloc.fetchData(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.hasError) {
+            LoggerManagerBase.logErrorMessage(
+              error: snapshot.error,
+              message: "Error during app initialization",
+            );
+            return const SplashLoadingScreen(); // Optional: Show an error-specific screen here.
           }
 
-          return const SplashLoadingScreen(); // Default loading screen while initialization is ongoing.
-        });
+          LoggerManagerBase.logInfo(
+            message: 'App initialization completed successfully!',
+          );
+          return const IslamMobApp();
+        }
+
+        return const SplashLoadingScreen(); // Default loading screen while initialization is ongoing.
+      },
+    );
   }
 }

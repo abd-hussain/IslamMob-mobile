@@ -37,20 +37,24 @@ class QuranPrintsUsecase {
 
       final listOfPrints = mapDocumentsToQuranPrints(documents);
 
-      final filteredList =
-          listOfPrints.where((element) => !element.hidden!).toList();
+      final filteredList = listOfPrints
+          .where((element) => !element.hidden!)
+          .toList();
 
       return filteredList;
     } catch (e) {
       LoggerManagerBase.logErrorMessage(
-          error: e, message: 'Error fetching documents');
+        error: e,
+        message: 'Error fetching documents',
+      );
       return [];
     }
   }
 
   /// Maps Firestore documents to `QuranPrints` objects
   static List<QuranPrints> mapDocumentsToQuranPrints(
-      List<Map<String, dynamic>> documents) {
+    List<Map<String, dynamic>> documents,
+  ) {
     return documents.map((doc) {
       return QuranPrints(
         nameReferance: (doc["name_referance"] as String?) ?? "",

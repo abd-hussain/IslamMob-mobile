@@ -41,42 +41,51 @@ class HisnAlMuslimDetailsBloc
   }
 
   FutureOr<void> _fillInitialValue(
-      _FillInitialValue event, Emitter<HisnAlMuslimDetailsState> emit) {
+    _FillInitialValue event,
+    Emitter<HisnAlMuslimDetailsState> emit,
+  ) {
     emit(state.copyWith(item: event.item, isRtlLanguage: _isRtlLanguage()));
   }
 
   FutureOr<void> _updateFavoriteItem(
-      _UpdateFavoriteItem event, Emitter<HisnAlMuslimDetailsState> emit) {
+    _UpdateFavoriteItem event,
+    Emitter<HisnAlMuslimDetailsState> emit,
+  ) {
     if (state.item != null) {
-      final HisnAlMuslimModel newItem =
-          state.item!.copyWith(isFavorite: !state.item!.isFavorite);
+      final HisnAlMuslimModel newItem = state.item!.copyWith(
+        isFavorite: !state.item!.isFavorite,
+      );
       HisnAlMuslimUseCase.addRemoveNewItemToFavoriteList(newItem.id);
       emit(state.copyWith(item: newItem));
     }
   }
 
   FutureOr<void> _updateTextToShare(
-      _UpdateTextToShare event, Emitter<HisnAlMuslimDetailsState> emit) {
+    _UpdateTextToShare event,
+    Emitter<HisnAlMuslimDetailsState> emit,
+  ) {
     emit(state.copyWith(textToShare: event.description));
   }
 
   FutureOr<void> _shareItem(
-      _ShareItem event, Emitter<HisnAlMuslimDetailsState> emit) async {
+    _ShareItem event,
+    Emitter<HisnAlMuslimDetailsState> emit,
+  ) async {
     const String downloadLink =
         "Android : ${AppConstant.androidAppLink} \n iOS : ${AppConstant.iOSAppLink}"; // Replace with actual download link
 
     final String textToShare = "${state.textToShare}\n\n $downloadLink";
 
-    await Share.share(
-      textToShare,
-      subject: event.title,
-    );
+    await Share.share(textToShare, subject: event.title);
   }
 
   bool _isRtlLanguage() {
-    final String languageCode = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode,
-        defaultValue: "en") as String;
+    final String languageCode =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldConstant.userLanguageCode,
+              defaultValue: "en",
+            )
+            as String;
     return languageCode == "ar" || languageCode == "fa";
   }
 }

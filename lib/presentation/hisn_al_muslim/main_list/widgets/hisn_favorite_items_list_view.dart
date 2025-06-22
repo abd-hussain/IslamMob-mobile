@@ -29,8 +29,11 @@ class HisnFavoriteItemsListView extends StatelessWidget {
   /// Parameters:
   /// - [list]: Complete list of supplications to filter for favorites
   /// - [isRtlLanguage]: Boolean for RTL language support (Arabic, Farsi)
-  const HisnFavoriteItemsListView(
-      {super.key, required this.list, required this.isRtlLanguage});
+  const HisnFavoriteItemsListView({
+    super.key,
+    required this.list,
+    required this.isRtlLanguage,
+  });
 
   @override
   Widget build(BuildContext context) {

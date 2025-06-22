@@ -53,7 +53,9 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   final LocationManagerBase _locationManager = LocationManagerBase();
 
   FutureOr<void> _initialize(
-      _Initialize event, Emitter<HomeTabState> emit) async {
+    _Initialize event,
+    Emitter<HomeTabState> emit,
+  ) async {
     await _fetchPermissions();
     scrollController.addListener(_scrollListener);
     initializePrayerTimings();
@@ -76,8 +78,8 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   }
 
   Future<void> _fetchPermissions() async {
-    final bool locationStatus =
-        await _locationManager.checkLocationPermission();
+    final bool locationStatus = await _locationManager
+        .checkLocationPermission();
     final PermissionStatus notificationStatus =
         await Permission.notification.status;
 
@@ -126,29 +128,39 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
 
   /// Handles updating the app bar's expanded status.
   FutureOr<void> _handleExpandedStatusUpdate(
-      _UpdateExpandedStatus event, Emitter<HomeTabState> emit) {
+    _UpdateExpandedStatus event,
+    Emitter<HomeTabState> emit,
+  ) {
     emit(state.copyWith(isBarExpanded: event.status));
   }
 
   /// Handles showing or hiding the notification view.
   FutureOr<void> _handleNotificationViewUpdate(
-      _UpdateShowingNotificationView event, Emitter<HomeTabState> emit) {
+    _UpdateShowingNotificationView event,
+    Emitter<HomeTabState> emit,
+  ) {
     emit(state.copyWith(showAllowNotificationView: event.status));
   }
 
   /// Handles showing or hiding the location view.
   FutureOr<void> _handleLocationViewUpdate(
-      _UpdateShowingLocationView event, Emitter<HomeTabState> emit) {
+    _UpdateShowingLocationView event,
+    Emitter<HomeTabState> emit,
+  ) {
     emit(state.copyWith(showAllowLocationView: event.status));
   }
 
   /// Handles updating the next prayer type.
   FutureOr<void> _handleNextPrayTypeUpdate(
-      _UpdateNextPrayType event, Emitter<HomeTabState> emit) {
-    emit(state.copyWith(
-      nextPrayType: event.nextPrayType,
-      loadingStatus: const HomeScreenProcessState.done(),
-    ));
+    _UpdateNextPrayType event,
+    Emitter<HomeTabState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        nextPrayType: event.nextPrayType,
+        loadingStatus: const HomeScreenProcessState.done(),
+      ),
+    );
   }
 
   @override

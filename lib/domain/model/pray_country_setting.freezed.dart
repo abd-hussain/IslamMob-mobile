@@ -12,7 +12,8 @@ part of 'pray_country_setting.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$PrayCountrySetting {
@@ -33,19 +34,21 @@ mixin _$PrayCountrySetting {
 /// @nodoc
 abstract class $PrayCountrySettingCopyWith<$Res> {
   factory $PrayCountrySettingCopyWith(
-          PrayCountrySetting value, $Res Function(PrayCountrySetting) then) =
-      _$PrayCountrySettingCopyWithImpl<$Res, PrayCountrySetting>;
+    PrayCountrySetting value,
+    $Res Function(PrayCountrySetting) then,
+  ) = _$PrayCountrySettingCopyWithImpl<$Res, PrayCountrySetting>;
   @useResult
-  $Res call(
-      {String countryCode,
-      MadhabState madhab,
-      PrayCalculationMethodState calculationMethod,
-      PrayHightLatitudeCaluclationState hightLatitudeCaluclationState});
+  $Res call({
+    String countryCode,
+    MadhabState madhab,
+    PrayCalculationMethodState calculationMethod,
+    PrayHightLatitudeCaluclationState hightLatitudeCaluclationState,
+  });
 
   $MadhabStateCopyWith<$Res> get madhab;
   $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod;
   $PrayHightLatitudeCaluclationStateCopyWith<$Res>
-      get hightLatitudeCaluclationState;
+  get hightLatitudeCaluclationState;
 }
 
 /// @nodoc
@@ -68,24 +71,27 @@ class _$PrayCountrySettingCopyWithImpl<$Res, $Val extends PrayCountrySetting>
     Object? calculationMethod = null,
     Object? hightLatitudeCaluclationState = null,
   }) {
-    return _then(_value.copyWith(
-      countryCode: null == countryCode
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      madhab: null == madhab
-          ? _value.madhab
-          : madhab // ignore: cast_nullable_to_non_nullable
-              as MadhabState,
-      calculationMethod: null == calculationMethod
-          ? _value.calculationMethod
-          : calculationMethod // ignore: cast_nullable_to_non_nullable
-              as PrayCalculationMethodState,
-      hightLatitudeCaluclationState: null == hightLatitudeCaluclationState
-          ? _value.hightLatitudeCaluclationState
-          : hightLatitudeCaluclationState // ignore: cast_nullable_to_non_nullable
-              as PrayHightLatitudeCaluclationState,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            countryCode: null == countryCode
+                ? _value.countryCode
+                : countryCode // ignore: cast_nullable_to_non_nullable
+                      as String,
+            madhab: null == madhab
+                ? _value.madhab
+                : madhab // ignore: cast_nullable_to_non_nullable
+                      as MadhabState,
+            calculationMethod: null == calculationMethod
+                ? _value.calculationMethod
+                : calculationMethod // ignore: cast_nullable_to_non_nullable
+                      as PrayCalculationMethodState,
+            hightLatitudeCaluclationState: null == hightLatitudeCaluclationState
+                ? _value.hightLatitudeCaluclationState
+                : hightLatitudeCaluclationState // ignore: cast_nullable_to_non_nullable
+                      as PrayHightLatitudeCaluclationState,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of PrayCountrySetting
@@ -103,8 +109,9 @@ class _$PrayCountrySettingCopyWithImpl<$Res, $Val extends PrayCountrySetting>
   @override
   @pragma('vm:prefer-inline')
   $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod {
-    return $PrayCalculationMethodStateCopyWith<$Res>(_value.calculationMethod,
-        (value) {
+    return $PrayCalculationMethodStateCopyWith<$Res>(_value.calculationMethod, (
+      value,
+    ) {
       return _then(_value.copyWith(calculationMethod: value) as $Val);
     });
   }
@@ -114,28 +121,33 @@ class _$PrayCountrySettingCopyWithImpl<$Res, $Val extends PrayCountrySetting>
   @override
   @pragma('vm:prefer-inline')
   $PrayHightLatitudeCaluclationStateCopyWith<$Res>
-      get hightLatitudeCaluclationState {
+  get hightLatitudeCaluclationState {
     return $PrayHightLatitudeCaluclationStateCopyWith<$Res>(
-        _value.hightLatitudeCaluclationState, (value) {
-      return _then(
-          _value.copyWith(hightLatitudeCaluclationState: value) as $Val);
-    });
+      _value.hightLatitudeCaluclationState,
+      (value) {
+        return _then(
+          _value.copyWith(hightLatitudeCaluclationState: value) as $Val,
+        );
+      },
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$PrayCountrySettingImplCopyWith<$Res>
     implements $PrayCountrySettingCopyWith<$Res> {
-  factory _$$PrayCountrySettingImplCopyWith(_$PrayCountrySettingImpl value,
-          $Res Function(_$PrayCountrySettingImpl) then) =
-      __$$PrayCountrySettingImplCopyWithImpl<$Res>;
+  factory _$$PrayCountrySettingImplCopyWith(
+    _$PrayCountrySettingImpl value,
+    $Res Function(_$PrayCountrySettingImpl) then,
+  ) = __$$PrayCountrySettingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String countryCode,
-      MadhabState madhab,
-      PrayCalculationMethodState calculationMethod,
-      PrayHightLatitudeCaluclationState hightLatitudeCaluclationState});
+  $Res call({
+    String countryCode,
+    MadhabState madhab,
+    PrayCalculationMethodState calculationMethod,
+    PrayHightLatitudeCaluclationState hightLatitudeCaluclationState,
+  });
 
   @override
   $MadhabStateCopyWith<$Res> get madhab;
@@ -143,16 +155,17 @@ abstract class _$$PrayCountrySettingImplCopyWith<$Res>
   $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod;
   @override
   $PrayHightLatitudeCaluclationStateCopyWith<$Res>
-      get hightLatitudeCaluclationState;
+  get hightLatitudeCaluclationState;
 }
 
 /// @nodoc
 class __$$PrayCountrySettingImplCopyWithImpl<$Res>
     extends _$PrayCountrySettingCopyWithImpl<$Res, _$PrayCountrySettingImpl>
     implements _$$PrayCountrySettingImplCopyWith<$Res> {
-  __$$PrayCountrySettingImplCopyWithImpl(_$PrayCountrySettingImpl _value,
-      $Res Function(_$PrayCountrySettingImpl) _then)
-      : super(_value, _then);
+  __$$PrayCountrySettingImplCopyWithImpl(
+    _$PrayCountrySettingImpl _value,
+    $Res Function(_$PrayCountrySettingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCountrySetting
   /// with the given fields replaced by the non-null parameter values.
@@ -164,35 +177,38 @@ class __$$PrayCountrySettingImplCopyWithImpl<$Res>
     Object? calculationMethod = null,
     Object? hightLatitudeCaluclationState = null,
   }) {
-    return _then(_$PrayCountrySettingImpl(
-      countryCode: null == countryCode
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      madhab: null == madhab
-          ? _value.madhab
-          : madhab // ignore: cast_nullable_to_non_nullable
-              as MadhabState,
-      calculationMethod: null == calculationMethod
-          ? _value.calculationMethod
-          : calculationMethod // ignore: cast_nullable_to_non_nullable
-              as PrayCalculationMethodState,
-      hightLatitudeCaluclationState: null == hightLatitudeCaluclationState
-          ? _value.hightLatitudeCaluclationState
-          : hightLatitudeCaluclationState // ignore: cast_nullable_to_non_nullable
-              as PrayHightLatitudeCaluclationState,
-    ));
+    return _then(
+      _$PrayCountrySettingImpl(
+        countryCode: null == countryCode
+            ? _value.countryCode
+            : countryCode // ignore: cast_nullable_to_non_nullable
+                  as String,
+        madhab: null == madhab
+            ? _value.madhab
+            : madhab // ignore: cast_nullable_to_non_nullable
+                  as MadhabState,
+        calculationMethod: null == calculationMethod
+            ? _value.calculationMethod
+            : calculationMethod // ignore: cast_nullable_to_non_nullable
+                  as PrayCalculationMethodState,
+        hightLatitudeCaluclationState: null == hightLatitudeCaluclationState
+            ? _value.hightLatitudeCaluclationState
+            : hightLatitudeCaluclationState // ignore: cast_nullable_to_non_nullable
+                  as PrayHightLatitudeCaluclationState,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$PrayCountrySettingImpl implements _PrayCountrySetting {
-  _$PrayCountrySettingImpl(
-      {required this.countryCode,
-      required this.madhab,
-      required this.calculationMethod,
-      required this.hightLatitudeCaluclationState});
+  _$PrayCountrySettingImpl({
+    required this.countryCode,
+    required this.madhab,
+    required this.calculationMethod,
+    required this.hightLatitudeCaluclationState,
+  });
 
   @override
   final String countryCode;
@@ -218,15 +234,22 @@ class _$PrayCountrySettingImpl implements _PrayCountrySetting {
             (identical(other.madhab, madhab) || other.madhab == madhab) &&
             (identical(other.calculationMethod, calculationMethod) ||
                 other.calculationMethod == calculationMethod) &&
-            (identical(other.hightLatitudeCaluclationState,
-                    hightLatitudeCaluclationState) ||
+            (identical(
+                  other.hightLatitudeCaluclationState,
+                  hightLatitudeCaluclationState,
+                ) ||
                 other.hightLatitudeCaluclationState ==
                     hightLatitudeCaluclationState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, countryCode, madhab,
-      calculationMethod, hightLatitudeCaluclationState);
+  int get hashCode => Object.hash(
+    runtimeType,
+    countryCode,
+    madhab,
+    calculationMethod,
+    hightLatitudeCaluclationState,
+  );
 
   /// Create a copy of PrayCountrySetting
   /// with the given fields replaced by the non-null parameter values.
@@ -235,16 +258,19 @@ class _$PrayCountrySettingImpl implements _PrayCountrySetting {
   @pragma('vm:prefer-inline')
   _$$PrayCountrySettingImplCopyWith<_$PrayCountrySettingImpl> get copyWith =>
       __$$PrayCountrySettingImplCopyWithImpl<_$PrayCountrySettingImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _PrayCountrySetting implements PrayCountrySetting {
-  factory _PrayCountrySetting(
-      {required final String countryCode,
-      required final MadhabState madhab,
-      required final PrayCalculationMethodState calculationMethod,
-      required final PrayHightLatitudeCaluclationState
-          hightLatitudeCaluclationState}) = _$PrayCountrySettingImpl;
+  factory _PrayCountrySetting({
+    required final String countryCode,
+    required final MadhabState madhab,
+    required final PrayCalculationMethodState calculationMethod,
+    required final PrayHightLatitudeCaluclationState
+    hightLatitudeCaluclationState,
+  }) = _$PrayCountrySettingImpl;
 
   @override
   String get countryCode;

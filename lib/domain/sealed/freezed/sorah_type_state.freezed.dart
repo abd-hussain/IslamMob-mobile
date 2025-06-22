@@ -12,7 +12,8 @@ part of '../sorah_type_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$SowrahTypeState {
@@ -20,47 +21,42 @@ mixin _$SowrahTypeState {
   TResult when<TResult extends Object?>({
     required TResult Function() makyeh,
     required TResult Function() madanyeh,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? makyeh,
     TResult? Function()? madanyeh,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? makyeh,
     TResult Function()? madanyeh,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SowrahTypeStateMakyeh value) makyeh,
     required TResult Function(SowrahTypeStateMadanyeh value) madanyeh,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SowrahTypeStateMakyeh value)? makyeh,
     TResult? Function(SowrahTypeStateMadanyeh value)? madanyeh,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SowrahTypeStateMakyeh value)? makyeh,
     TResult Function(SowrahTypeStateMadanyeh value)? madanyeh,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SowrahTypeStateCopyWith<$Res> {
   factory $SowrahTypeStateCopyWith(
-          SowrahTypeState value, $Res Function(SowrahTypeState) then) =
-      _$SowrahTypeStateCopyWithImpl<$Res, SowrahTypeState>;
+    SowrahTypeState value,
+    $Res Function(SowrahTypeState) then,
+  ) = _$SowrahTypeStateCopyWithImpl<$Res, SowrahTypeState>;
 }
 
 /// @nodoc
@@ -80,18 +76,19 @@ class _$SowrahTypeStateCopyWithImpl<$Res, $Val extends SowrahTypeState>
 /// @nodoc
 abstract class _$$SowrahTypeStateMakyehImplCopyWith<$Res> {
   factory _$$SowrahTypeStateMakyehImplCopyWith(
-          _$SowrahTypeStateMakyehImpl value,
-          $Res Function(_$SowrahTypeStateMakyehImpl) then) =
-      __$$SowrahTypeStateMakyehImplCopyWithImpl<$Res>;
+    _$SowrahTypeStateMakyehImpl value,
+    $Res Function(_$SowrahTypeStateMakyehImpl) then,
+  ) = __$$SowrahTypeStateMakyehImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$SowrahTypeStateMakyehImplCopyWithImpl<$Res>
     extends _$SowrahTypeStateCopyWithImpl<$Res, _$SowrahTypeStateMakyehImpl>
     implements _$$SowrahTypeStateMakyehImplCopyWith<$Res> {
-  __$$SowrahTypeStateMakyehImplCopyWithImpl(_$SowrahTypeStateMakyehImpl _value,
-      $Res Function(_$SowrahTypeStateMakyehImpl) _then)
-      : super(_value, _then);
+  __$$SowrahTypeStateMakyehImplCopyWithImpl(
+    _$SowrahTypeStateMakyehImpl _value,
+    $Res Function(_$SowrahTypeStateMakyehImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SowrahTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -187,9 +184,9 @@ abstract class SowrahTypeStateMakyeh implements SowrahTypeState {
 /// @nodoc
 abstract class _$$SowrahTypeStateMadanyehImplCopyWith<$Res> {
   factory _$$SowrahTypeStateMadanyehImplCopyWith(
-          _$SowrahTypeStateMadanyehImpl value,
-          $Res Function(_$SowrahTypeStateMadanyehImpl) then) =
-      __$$SowrahTypeStateMadanyehImplCopyWithImpl<$Res>;
+    _$SowrahTypeStateMadanyehImpl value,
+    $Res Function(_$SowrahTypeStateMadanyehImpl) then,
+  ) = __$$SowrahTypeStateMadanyehImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -197,9 +194,9 @@ class __$$SowrahTypeStateMadanyehImplCopyWithImpl<$Res>
     extends _$SowrahTypeStateCopyWithImpl<$Res, _$SowrahTypeStateMadanyehImpl>
     implements _$$SowrahTypeStateMadanyehImplCopyWith<$Res> {
   __$$SowrahTypeStateMadanyehImplCopyWithImpl(
-      _$SowrahTypeStateMadanyehImpl _value,
-      $Res Function(_$SowrahTypeStateMadanyehImpl) _then)
-      : super(_value, _then);
+    _$SowrahTypeStateMadanyehImpl _value,
+    $Res Function(_$SowrahTypeStateMadanyehImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SowrahTypeState
   /// with the given fields replaced by the non-null parameter values.

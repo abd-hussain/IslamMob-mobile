@@ -25,7 +25,8 @@ class ChooseSoundEvent with _$ChooseSoundEvent {
   ///
   /// [soundFileName] - the filename of the new sound to select
   const factory ChooseSoundEvent.changeNotificationSoundSettings(
-      String soundFileName) = _ChangeNotificationSoundSettings;
+    String soundFileName,
+  ) = _ChangeNotificationSoundSettings;
 
   /// Saves the current sound selection changes to persistent storage.
   ///
@@ -33,6 +34,7 @@ class ChooseSoundEvent with _$ChooseSoundEvent {
   /// notification type to the database or user preferences.
   ///
   /// [type] - the notification type to save the sound settings for
-  const factory ChooseSoundEvent.saveChanges(
-      {required NotificationTypeState type}) = _SaveChanges;
+  const factory ChooseSoundEvent.saveChanges({
+    required NotificationTypeState type,
+  }) = _SaveChanges;
 }

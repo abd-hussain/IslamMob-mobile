@@ -93,7 +93,9 @@ class LocationPermissionView extends StatelessWidget {
   }
 
   Widget _buildDescription(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return CustomText(
       title: localize.allowLocationDetails,
       fontSize: 14,
@@ -104,7 +106,9 @@ class LocationPermissionView extends StatelessWidget {
   }
 
   Widget _buildSettingsButton(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return CustomButton(
       isEnabled: true,
       padding: const EdgeInsets.only(left: 16, right: 16, top: 8),

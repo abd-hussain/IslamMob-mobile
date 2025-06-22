@@ -26,8 +26,9 @@ class NetworkInfoRepository {
     // Cancel any existing subscription before starting a new one
     _connectivitySubscription?.cancel();
 
-    _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen((event) async {
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen((
+      event,
+    ) async {
       final isConnected = _isConnected(event);
       final hasInternet = isConnected ? await _internetLookupCheck() : false;
       _networkStateController.sink.add(hasInternet);

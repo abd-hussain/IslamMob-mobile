@@ -61,7 +61,8 @@ class ClientException extends HttpApiException {
   final StackTrace? stackTrace;
 
   @override
-  String toString() => 'ClientException('
+  String toString() =>
+      'ClientException('
       'message: $message,'
       'statusCode: $statusCode,'
       'cause: $cause,'
@@ -85,7 +86,8 @@ class ConnectionException extends HttpApiExceptionWithCause {
   });
 
   @override
-  String toString() => 'ConnectionException('
+  String toString() =>
+      'ConnectionException('
       'message: $message,'
       'statusCode: $statusCode,'
       'cause: $cause,'

@@ -20,5 +20,5 @@ enum Prayer {
   isha,
 
   /// Represents no specific prayer time or an undefined state.
-  none
+  none,
 }

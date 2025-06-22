@@ -145,30 +145,32 @@ class _DownloadProgressDialogState extends State<DownloadProgressDialog> {
   }
 
   Widget _buildInfoMessage(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         localize.downloadpopupmessage,
         maxLines: 3,
         textAlign: TextAlign.center,
-        style: const TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
-        ),
+        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
       ),
     );
   }
 
   Widget _buildCancelButton(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return CustomButton(
       isEnabled: true,
       title: localize.cancel,
       color: Colors.redAccent,
       onTap: () {
         FirebaseAnalyticsRepository.logEvent(
-            name: "QuranPrintsScreenCancelButton");
+          name: "QuranPrintsScreenCancelButton",
+        );
         cancelToken.cancel(); // Cancel the download when pressing Cancel
         Navigator.of(context).pop();
       },
