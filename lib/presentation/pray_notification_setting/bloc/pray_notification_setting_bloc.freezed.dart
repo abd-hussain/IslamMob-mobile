@@ -593,19 +593,46 @@ abstract class _SavePrayNotificationSettings
 
 /// @nodoc
 mixin _$PrayNotificationSettingState {
+  /// Whether all notifications are enabled for today only.
   bool get allNotificationForToday => throw _privateConstructorUsedError;
+
+  /// Whether all notifications are enabled for three days.
   bool get allNotificationForThreeDay => throw _privateConstructorUsedError;
+
+  /// Whether all notifications are enabled for weekdays.
   bool get allNotificationForWeekDay => throw _privateConstructorUsedError;
+
+  /// Whether Fajr prayer notifications are enabled.
   bool get fajir => throw _privateConstructorUsedError;
+
+  /// Whether Dhuhr prayer notifications are enabled.
   bool get duhir => throw _privateConstructorUsedError;
+
+  /// Whether Asr prayer notifications are enabled.
   bool get asr => throw _privateConstructorUsedError;
+
+  /// Whether Maghrib prayer notifications are enabled.
   bool get magrieb => throw _privateConstructorUsedError;
+
+  /// Whether Isha prayer notifications are enabled.
   bool get isha => throw _privateConstructorUsedError;
+
+  /// Whether sunrise time notifications are enabled.
   bool get sunriseTime => throw _privateConstructorUsedError;
+
+  /// Whether Friday Al-Kahf notifications are enabled.
   bool get jom3aAlkahf => throw _privateConstructorUsedError;
+
+  /// Whether Friday prayer notifications are enabled.
   bool get jom3aDo3aa => throw _privateConstructorUsedError;
+
+  /// Whether night prayer (Qiyam al-Layl) notifications are enabled.
   bool get qeyamAlLayel => throw _privateConstructorUsedError;
+
+  /// Whether 15-minute before prayer notifications are enabled.
   bool get before15Min => throw _privateConstructorUsedError;
+
+  /// The current loading/processing status of the settings.
   dynamic get loadingStatus => throw _privateConstructorUsedError;
 
   /// Create a copy of PrayNotificationSettingState
@@ -868,45 +895,72 @@ class _$PrayNotificationSettingStateImpl
       this.loadingStatus =
           const PrayNotificationSettingProcessState.loading()});
 
+  /// Whether all notifications are enabled for today only.
   @override
   @JsonKey()
   final bool allNotificationForToday;
+
+  /// Whether all notifications are enabled for three days.
   @override
   @JsonKey()
   final bool allNotificationForThreeDay;
+
+  /// Whether all notifications are enabled for weekdays.
   @override
   @JsonKey()
   final bool allNotificationForWeekDay;
+
+  /// Whether Fajr prayer notifications are enabled.
   @override
   @JsonKey()
   final bool fajir;
+
+  /// Whether Dhuhr prayer notifications are enabled.
   @override
   @JsonKey()
   final bool duhir;
+
+  /// Whether Asr prayer notifications are enabled.
   @override
   @JsonKey()
   final bool asr;
+
+  /// Whether Maghrib prayer notifications are enabled.
   @override
   @JsonKey()
   final bool magrieb;
+
+  /// Whether Isha prayer notifications are enabled.
   @override
   @JsonKey()
   final bool isha;
+
+  /// Whether sunrise time notifications are enabled.
   @override
   @JsonKey()
   final bool sunriseTime;
+
+  /// Whether Friday Al-Kahf notifications are enabled.
   @override
   @JsonKey()
   final bool jom3aAlkahf;
+
+  /// Whether Friday prayer notifications are enabled.
   @override
   @JsonKey()
   final bool jom3aDo3aa;
+
+  /// Whether night prayer (Qiyam al-Layl) notifications are enabled.
   @override
   @JsonKey()
   final bool qeyamAlLayel;
+
+  /// Whether 15-minute before prayer notifications are enabled.
   @override
   @JsonKey()
   final bool before15Min;
+
+  /// The current loading/processing status of the settings.
   @override
   @JsonKey()
   final dynamic loadingStatus;
@@ -997,32 +1051,59 @@ abstract class _PrayNotificationSettingState
       final bool before15Min,
       final dynamic loadingStatus}) = _$PrayNotificationSettingStateImpl;
 
+  /// Whether all notifications are enabled for today only.
   @override
   bool get allNotificationForToday;
+
+  /// Whether all notifications are enabled for three days.
   @override
   bool get allNotificationForThreeDay;
+
+  /// Whether all notifications are enabled for weekdays.
   @override
   bool get allNotificationForWeekDay;
+
+  /// Whether Fajr prayer notifications are enabled.
   @override
   bool get fajir;
+
+  /// Whether Dhuhr prayer notifications are enabled.
   @override
   bool get duhir;
+
+  /// Whether Asr prayer notifications are enabled.
   @override
   bool get asr;
+
+  /// Whether Maghrib prayer notifications are enabled.
   @override
   bool get magrieb;
+
+  /// Whether Isha prayer notifications are enabled.
   @override
   bool get isha;
+
+  /// Whether sunrise time notifications are enabled.
   @override
   bool get sunriseTime;
+
+  /// Whether Friday Al-Kahf notifications are enabled.
   @override
   bool get jom3aAlkahf;
+
+  /// Whether Friday prayer notifications are enabled.
   @override
   bool get jom3aDo3aa;
+
+  /// Whether night prayer (Qiyam al-Layl) notifications are enabled.
   @override
   bool get qeyamAlLayel;
+
+  /// Whether 15-minute before prayer notifications are enabled.
   @override
   bool get before15Min;
+
+  /// The current loading/processing status of the settings.
   @override
   dynamic get loadingStatus;
 

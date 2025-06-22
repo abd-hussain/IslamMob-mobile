@@ -14,6 +14,9 @@ part of 'home_tab_bloc.dart';
 /// for the main home screen where Muslims access prayer times and Islamic features.
 @freezed
 class HomeTabEvent with _$HomeTabEvent {
+  /// Initializes the Home Tab with context and loads initial prayer data.
+  factory HomeTabEvent.initialize(BuildContext context) = _Initialize;
+
   /// Event to update the app bar's expanded status based on scroll position.
   ///
   /// This event controls whether the app bar is expanded or collapsed,

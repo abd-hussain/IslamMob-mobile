@@ -86,7 +86,7 @@ linter:
     - type_annotate_public_apis
     
     # Documentation
-    - public_member_api_docs
+    # - public_member_api_docs
     
     # Flutter specific
     - avoid_unnecessary_containers

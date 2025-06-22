@@ -13,12 +13,6 @@ import 'package:open_store/open_store.dart';
 /// if the update is not mandatory. It includes Firebase Analytics tracking
 /// for user interactions.
 class VersionDialogWidget extends StatelessWidget {
-  /// The version number of the available update.
-  ///
-  /// This string represents the new version that is available for download
-  /// and will be displayed to the user in the dialog.
-  final String version;
-
   /// Whether the update is optional or mandatory.
   ///
   /// If `true`, the dialog will show a "Skip for now" button allowing users
@@ -28,13 +22,11 @@ class VersionDialogWidget extends StatelessWidget {
 
   /// Creates a [VersionDialogWidget] with the specified version and update type.
   ///
-  /// Both [version] and [isOptional] parameters are required:
-  /// - [version]: The new version number to display
+  ///  [isOptional] parameters are required:
   /// - [isOptional]: Whether users can skip this update
   const VersionDialogWidget({
     super.key,
     required this.isOptional,
-    required this.version,
   });
 
   @override
@@ -77,7 +69,7 @@ class VersionDialogWidget extends StatelessWidget {
                         maxLines: 3,
                         textAlign: TextAlign.center,
                         title:
-                            "${localize.versionDialogNewVersion} $version ${localize.versionDialogUpdateSecondeSubTitle}",
+                            "${localize.versionDialogNewVersion} ${localize.versionDialogUpdateSecondeSubTitle}",
                         fontSize: 14,
                         color: const Color(0xff191C1F),
                       ),
@@ -90,8 +82,7 @@ class VersionDialogWidget extends StatelessWidget {
                     child: InkWell(
                       onTap: () async {
                         await FirebaseAnalyticsRepository.logEvent(
-                            name: "OpenStoreFromVersionDialog",
-                            parameters: {"version": version});
+                            name: "OpenStoreFromVersionDialog");
 
                         await OpenStore.instance.open(
                           appStoreId: AppConstant.iOSAppId,
@@ -116,8 +107,7 @@ class VersionDialogWidget extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         FirebaseAnalyticsRepository.logEvent(
-                            name: "DismissVersionDialog",
-                            parameters: {"version": version});
+                            name: "DismissVersionDialog");
 
                         Navigator.of(context, rootNavigator: true).pop();
                       },
