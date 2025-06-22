@@ -34,14 +34,19 @@ class ChangeLanguageBloc
     on<_PlaceNewLanguage>(_placeNewLanguage);
   }
   FutureOr<void> _changeSelectedCheckBoxLanguage(
-      _ChangeSelectedCheckBoxLanguage event,
-      Emitter<ChangeLanguageState> emit) {
+    _ChangeSelectedCheckBoxLanguage event,
+    Emitter<ChangeLanguageState> emit,
+  ) {
     emit(state.copyWith(selectedLanguage: event.type));
   }
 
   FutureOr<void> _placeNewLanguage(
-      _PlaceNewLanguage event, Emitter<ChangeLanguageState> emit) async {
+    _PlaceNewLanguage event,
+    Emitter<ChangeLanguageState> emit,
+  ) async {
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldConstant.userLanguageCode, value: event.langCode);
+      key: DatabaseFieldConstant.userLanguageCode,
+      value: event.langCode,
+    );
   }
 }

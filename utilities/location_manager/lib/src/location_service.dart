@@ -70,20 +70,21 @@ class LocationService {
     }
 
     try {
-      _positionSubscription = Geolocator.getPositionStream(
-        locationSettings: AndroidSettings(
-          accuracy: accuracy,
-          distanceFilter: distanceFilter,
-          intervalDuration: Duration(milliseconds: interval),
-        ),
-      ).listen((Position position) {
-        _lastKnownPosition = position;
-        _locationController.add(position);
-        LoggerManagerBase.logDebugMessage(
-          message:
-              'Location update: ${position.latitude}, ${position.longitude}',
-        );
-      });
+      _positionSubscription =
+          Geolocator.getPositionStream(
+            locationSettings: AndroidSettings(
+              accuracy: accuracy,
+              distanceFilter: distanceFilter,
+              intervalDuration: Duration(milliseconds: interval),
+            ),
+          ).listen((Position position) {
+            _lastKnownPosition = position;
+            _locationController.add(position);
+            LoggerManagerBase.logDebugMessage(
+              message:
+                  'Location update: ${position.latitude}, ${position.longitude}',
+            );
+          });
 
       _isTracking = true;
       return true;
@@ -114,9 +115,7 @@ class LocationService {
 
     try {
       final position = await Geolocator.getCurrentPosition(
-        locationSettings: LocationSettings(
-          accuracy: accuracy,
-        ),
+        locationSettings: LocationSettings(accuracy: accuracy),
       );
       _lastKnownPosition = position;
       return position;

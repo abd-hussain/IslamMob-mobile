@@ -61,7 +61,7 @@ class CheckBoxTile extends StatelessWidget {
                       ? Icons.check_box_outlined
                       : Icons.check_box_outline_blank_rounded,
                   size: 25,
-                )
+                ),
               ],
             ),
           ),

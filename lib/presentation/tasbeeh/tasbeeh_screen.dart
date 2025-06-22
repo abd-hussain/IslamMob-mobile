@@ -75,9 +75,7 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          child: TasbeehTextView(
-                            tasbeehItem: tasbeehItem,
-                          ),
+                          child: TasbeehTextView(tasbeehItem: tasbeehItem),
                         ),
                         ElectricCounterView(
                           currentCount: tasbeehItem.currentCount,
@@ -91,9 +89,9 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                           onPreviosSelected: () => context
                               .read<TasbeehBloc>()
                               .add(const TasbeehEvent.leftZikerSelected()),
-                          onNextSelected: () => context
-                              .read<TasbeehBloc>()
-                              .add(const TasbeehEvent.rightZikerEnabled()),
+                          onNextSelected: () => context.read<TasbeehBloc>().add(
+                            const TasbeehEvent.rightZikerEnabled(),
+                          ),
                           onVibrationSelected: () => context
                               .read<TasbeehBloc>()
                               .add(const TasbeehEvent.vibrationSetting()),
@@ -103,9 +101,9 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                           onIncreaseCounter: () => context
                               .read<TasbeehBloc>()
                               .add(TasbeehEvent.incrementCounter(tasbeehItem)),
-                          onResetCounter: () => context
-                              .read<TasbeehBloc>()
-                              .add(TasbeehEvent.resetCounter(tasbeehItem)),
+                          onResetCounter: () => context.read<TasbeehBloc>().add(
+                            TasbeehEvent.resetCounter(tasbeehItem),
+                          ),
                         ),
                       ],
                     );

@@ -80,11 +80,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget _buildHeader(BuildContext context, IslamMobLocalizations localize) {
     return Row(
       children: [
-        Image.asset(
-          "assets/images/logoz/logo.png",
-          height: 100,
-          width: 150,
-        ),
+        Image.asset("assets/images/logoz/logo.png", height: 100, width: 150),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,7 +106,9 @@ class AboutUsScreen extends StatelessWidget {
 
   /// Builds the main app descriptions
   Widget _buildAppDescriptions(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     final descriptions = [
       localize.appmaindesc,
       localize.about1,
@@ -127,16 +125,18 @@ class AboutUsScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: descriptions
-            .map((desc) => Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: CustomText(
-                    title: desc,
-                    fontSize: 14,
-                    color: const Color(0xff292929),
-                    fontWeight: FontWeight.bold,
-                    maxLines: 8,
-                  ),
-                ))
+            .map(
+              (desc) => Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: CustomText(
+                  title: desc,
+                  fontSize: 14,
+                  color: const Color(0xff292929),
+                  fontWeight: FontWeight.bold,
+                  maxLines: 8,
+                ),
+              ),
+            )
             .toList(),
       ),
     );
@@ -144,7 +144,9 @@ class AboutUsScreen extends StatelessWidget {
 
   /// Builds the secondary app description
   Widget _buildSecondaryDescription(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomText(
@@ -158,8 +160,11 @@ class AboutUsScreen extends StatelessWidget {
   }
 
   /// Builds the profile options list
-  Widget _buildProfileOptions(BuildContext context, NavigatorState navigator,
-      IslamMobLocalizations localize) {
+  Widget _buildProfileOptions(
+    BuildContext context,
+    NavigatorState navigator,
+    IslamMobLocalizations localize,
+  ) {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: BlocBuilder<AboutUsBloc, AboutUsState>(
@@ -175,10 +180,14 @@ class AboutUsScreen extends StatelessWidget {
                 name: localize.supportus,
                 onTap: () async {
                   await FirebaseAnalyticsRepository.logEvent(
-                      name: "showRewardedAdFromAboutScreen");
+                    name: "showRewardedAdFromAboutScreen",
+                  );
                   await RewarderAds.showRewardedAd();
-                  bloc.add(AboutUsEvent.updateRewardedAd(
-                      RewarderAds.mainRewardedAd != null));
+                  bloc.add(
+                    AboutUsEvent.updateRewardedAd(
+                      RewarderAds.mainRewardedAd != null,
+                    ),
+                  );
                 },
               ),
             ProfileOptions(
@@ -203,14 +212,16 @@ class AboutUsScreen extends StatelessWidget {
 
   /// Builds the version info and rights reserved text
   Widget _buildVersionInfo(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return Column(
       children: [
         Center(
           child: FutureBuilder<String>(
             initialData: "",
-            future:
-                locator<ApplicationVersionUsecase>().getApplicationVersion(),
+            future: locator<ApplicationVersionUsecase>()
+                .getApplicationVersion(),
             builder: (context, snapshot) {
               return CustomText(
                 title: "${localize.version} ${snapshot.data}",

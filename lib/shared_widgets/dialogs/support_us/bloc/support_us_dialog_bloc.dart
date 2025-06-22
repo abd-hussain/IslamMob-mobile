@@ -26,14 +26,19 @@ class SupportUsDialogBloc
   }
 
   FutureOr<void> _initializeRewardedAd(
-      _InitializeRewardedAd event, Emitter<SupportUsDialogState> emit) async {
+    _InitializeRewardedAd event,
+    Emitter<SupportUsDialogState> emit,
+  ) async {
     await RewarderAds.createRewardedAd();
-    add(SupportUsDialogEvent.updateRewardedAd(
-        RewarderAds.mainRewardedAd != null));
+    add(
+      SupportUsDialogEvent.updateRewardedAd(RewarderAds.mainRewardedAd != null),
+    );
   }
 
   FutureOr<void> _handleUpdateRewardedAd(
-      _UpdateRewardedAd event, Emitter<SupportUsDialogState> emit) {
+    _UpdateRewardedAd event,
+    Emitter<SupportUsDialogState> emit,
+  ) {
     emit(state.copyWith(rewardedAdExsist: event.value));
   }
 }

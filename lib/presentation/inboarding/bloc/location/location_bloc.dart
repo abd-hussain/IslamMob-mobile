@@ -35,12 +35,16 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
   }
 
   FutureOr<void> _changeLocationStatus(
-      _ChangeLocationStatus event, Emitter<LocationState> emit) {
+    _ChangeLocationStatus event,
+    Emitter<LocationState> emit,
+  ) {
     emit(state.copyWith(status: event.status));
   }
 
   FutureOr<void> _setCountryAndCityNames(
-      _SetCountryAndCityNames event, Emitter<LocationState> emit) {
+    _SetCountryAndCityNames event,
+    Emitter<LocationState> emit,
+  ) {
     emit(state.copyWith(location: event.location));
   }
 

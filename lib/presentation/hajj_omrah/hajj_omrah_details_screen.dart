@@ -31,8 +31,9 @@ class HajjOmrahDetailsScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
     final HajjOmrahData data = arguments["data"] as HajjOmrahData;
     final bool isRtlLanguage = (arguments["isRtlLanguage"] as bool?) ?? false;
-    final List<String>? detailsTitle =
-        isRtlLanguage ? data.details["ar"] : data.details["en"];
+    final List<String>? detailsTitle = isRtlLanguage
+        ? data.details["ar"]
+        : data.details["en"];
     return Scaffold(
       backgroundColor: const Color(0xfffff2e9),
       appBar: AppBar(
@@ -52,14 +53,17 @@ class HajjOmrahDetailsScreen extends StatelessWidget {
             ListView.builder(
               itemBuilder: (ctx, index) {
                 return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 5,
+                  ),
                   child: textOrLink(
-                      context: context,
-                      text: detailsTitle?[index] ?? "",
-                      detailsTitle: detailsTitle,
-                      index: index,
-                      title: isRtlLanguage ? data.title.ar : data.title.en),
+                    context: context,
+                    text: detailsTitle?[index] ?? "",
+                    detailsTitle: detailsTitle,
+                    index: index,
+                    title: isRtlLanguage ? data.title.ar : data.title.en,
+                  ),
                 );
               },
               itemCount: detailsTitle?.length ?? 0,
@@ -88,21 +92,25 @@ class HajjOmrahDetailsScreen extends StatelessWidget {
   /// Returns a [Widget] that displays the text appropriately based on its content.
   /// URLs are displayed as clickable links that open in a web view, while regular
   /// text is displayed with appropriate formatting and font weight.
-  Widget textOrLink(
-      {required String text,
-      required List<String>? detailsTitle,
-      required int index,
-      required String title,
-      required BuildContext context}) {
+  Widget textOrLink({
+    required String text,
+    required List<String>? detailsTitle,
+    required int index,
+    required String title,
+    required BuildContext context,
+  }) {
     if (text.startsWith("http")) {
       return InkWell(
         onTap: () {
           // Handle link tap, e.g., open in browser
-          Navigator.pushNamed(context, RoutesConstants.webViewScreen,
-              arguments: {
-                AppConstant.webViewPageUrl: text,
-                AppConstant.pageTitle: title,
-              });
+          Navigator.pushNamed(
+            context,
+            RoutesConstants.webViewScreen,
+            arguments: {
+              AppConstant.webViewPageUrl: text,
+              AppConstant.pageTitle: title,
+            },
+          );
         },
         child: CustomText(
           title: text,
@@ -141,7 +149,9 @@ class HajjOmrahDetailsScreen extends StatelessWidget {
   /// making it easier for users to distinguish between section headers
   /// and regular instructional text.
   FontWeight getFontWeightIfItsTitleOrNot(
-      int index, List<String>? detailsTitle) {
+    int index,
+    List<String>? detailsTitle,
+  ) {
     if (index > 0 && (detailsTitle?[index - 1] ?? "") == "") {
       return FontWeight.bold;
     }

@@ -44,11 +44,7 @@ class QuranHeaderHelpBar extends StatelessWidget {
                 child: _buildPageSideIndicator(),
               ),
             ),
-            Expanded(
-              child: Center(
-                child: _buildPageBookmarkIndicator(),
-              ),
-            ),
+            Expanded(child: Center(child: _buildPageBookmarkIndicator())),
             const SizedBox(width: 10),
           ],
         ),
@@ -113,7 +109,8 @@ class QuranHeaderHelpBar extends StatelessWidget {
       buildWhen: (previous, current) => previous.sorahName != current.sorahName,
       builder: (context, state) {
         return CustomText(
-          title: "${localize.quranSorah} "
+          title:
+              "${localize.quranSorah} "
               "${localize.getLocalizedString(state.sorahName)}",
           fontSize: 14,
           color: Colors.white70,

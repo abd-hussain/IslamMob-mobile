@@ -12,62 +12,58 @@ part of 'salah_timing_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$SalahTimingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     required TResult Function(SalahTimeState status) updateCurrentSalahType,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult? Function(SalahTimeState status)? updateCurrentSalahType,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult Function(SalahTimeState status)? updateCurrentSalahType,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateSalahTimingForTheWeek value)
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     required TResult Function(_UpdateCurrentSalahType value)
-        updateCurrentSalahType,
-  }) =>
-      throw _privateConstructorUsedError;
+    updateCurrentSalahType,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateSalahTimingForTheWeek value)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult? Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateSalahTimingForTheWeek value)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SalahTimingEventCopyWith<$Res> {
   factory $SalahTimingEventCopyWith(
-          SalahTimingEvent value, $Res Function(SalahTimingEvent) then) =
-      _$SalahTimingEventCopyWithImpl<$Res, SalahTimingEvent>;
+    SalahTimingEvent value,
+    $Res Function(SalahTimingEvent) then,
+  ) = _$SalahTimingEventCopyWithImpl<$Res, SalahTimingEvent>;
 }
 
 /// @nodoc
@@ -87,36 +83,36 @@ class _$SalahTimingEventCopyWithImpl<$Res, $Val extends SalahTimingEvent>
 /// @nodoc
 abstract class _$$UpdateSalahTimingForTheWeekImplCopyWith<$Res> {
   factory _$$UpdateSalahTimingForTheWeekImplCopyWith(
-          _$UpdateSalahTimingForTheWeekImpl value,
-          $Res Function(_$UpdateSalahTimingForTheWeekImpl) then) =
-      __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<$Res>;
+    _$UpdateSalahTimingForTheWeekImpl value,
+    $Res Function(_$UpdateSalahTimingForTheWeekImpl) then,
+  ) = __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<PrayTimingDateTimeModel> prayTimeForWeek});
 }
 
 /// @nodoc
 class __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<$Res>
-    extends _$SalahTimingEventCopyWithImpl<$Res,
-        _$UpdateSalahTimingForTheWeekImpl>
+    extends
+        _$SalahTimingEventCopyWithImpl<$Res, _$UpdateSalahTimingForTheWeekImpl>
     implements _$$UpdateSalahTimingForTheWeekImplCopyWith<$Res> {
   __$$UpdateSalahTimingForTheWeekImplCopyWithImpl(
-      _$UpdateSalahTimingForTheWeekImpl _value,
-      $Res Function(_$UpdateSalahTimingForTheWeekImpl) _then)
-      : super(_value, _then);
+    _$UpdateSalahTimingForTheWeekImpl _value,
+    $Res Function(_$UpdateSalahTimingForTheWeekImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? prayTimeForWeek = null,
-  }) {
-    return _then(_$UpdateSalahTimingForTheWeekImpl(
-      null == prayTimeForWeek
-          ? _value._prayTimeForWeek
-          : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
-              as List<PrayTimingDateTimeModel>,
-    ));
+  $Res call({Object? prayTimeForWeek = null}) {
+    return _then(
+      _$UpdateSalahTimingForTheWeekImpl(
+        null == prayTimeForWeek
+            ? _value._prayTimeForWeek
+            : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
+                  as List<PrayTimingDateTimeModel>,
+      ),
+    );
   }
 }
 
@@ -125,8 +121,8 @@ class __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<$Res>
 class _$UpdateSalahTimingForTheWeekImpl
     implements _UpdateSalahTimingForTheWeek {
   const _$UpdateSalahTimingForTheWeekImpl(
-      final List<PrayTimingDateTimeModel> prayTimeForWeek)
-      : _prayTimeForWeek = prayTimeForWeek;
+    final List<PrayTimingDateTimeModel> prayTimeForWeek,
+  ) : _prayTimeForWeek = prayTimeForWeek;
 
   final List<PrayTimingDateTimeModel> _prayTimeForWeek;
   @override
@@ -146,13 +142,17 @@ class _$UpdateSalahTimingForTheWeekImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateSalahTimingForTheWeekImpl &&
-            const DeepCollectionEquality()
-                .equals(other._prayTimeForWeek, _prayTimeForWeek));
+            const DeepCollectionEquality().equals(
+              other._prayTimeForWeek,
+              _prayTimeForWeek,
+            ));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_prayTimeForWeek));
+    runtimeType,
+    const DeepCollectionEquality().hash(_prayTimeForWeek),
+  );
 
   /// Create a copy of SalahTimingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -160,14 +160,16 @@ class _$UpdateSalahTimingForTheWeekImpl
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateSalahTimingForTheWeekImplCopyWith<_$UpdateSalahTimingForTheWeekImpl>
-      get copyWith => __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<
-          _$UpdateSalahTimingForTheWeekImpl>(this, _$identity);
+  get copyWith =>
+      __$$UpdateSalahTimingForTheWeekImplCopyWithImpl<
+        _$UpdateSalahTimingForTheWeekImpl
+      >(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     required TResult Function(SalahTimeState status) updateCurrentSalahType,
   }) {
     return updateSalahTimingForTheWeek(prayTimeForWeek);
@@ -177,7 +179,7 @@ class _$UpdateSalahTimingForTheWeekImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult? Function(SalahTimeState status)? updateCurrentSalahType,
   }) {
     return updateSalahTimingForTheWeek?.call(prayTimeForWeek);
@@ -187,7 +189,7 @@ class _$UpdateSalahTimingForTheWeekImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult Function(SalahTimeState status)? updateCurrentSalahType,
     required TResult orElse(),
   }) {
@@ -201,9 +203,9 @@ class _$UpdateSalahTimingForTheWeekImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateSalahTimingForTheWeek value)
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     required TResult Function(_UpdateCurrentSalahType value)
-        updateCurrentSalahType,
+    updateCurrentSalahType,
   }) {
     return updateSalahTimingForTheWeek(this);
   }
@@ -212,7 +214,7 @@ class _$UpdateSalahTimingForTheWeekImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateSalahTimingForTheWeek value)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult? Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
   }) {
     return updateSalahTimingForTheWeek?.call(this);
@@ -222,7 +224,7 @@ class _$UpdateSalahTimingForTheWeekImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateSalahTimingForTheWeek value)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
     required TResult orElse(),
   }) {
@@ -235,8 +237,8 @@ class _$UpdateSalahTimingForTheWeekImpl
 
 abstract class _UpdateSalahTimingForTheWeek implements SalahTimingEvent {
   const factory _UpdateSalahTimingForTheWeek(
-          final List<PrayTimingDateTimeModel> prayTimeForWeek) =
-      _$UpdateSalahTimingForTheWeekImpl;
+    final List<PrayTimingDateTimeModel> prayTimeForWeek,
+  ) = _$UpdateSalahTimingForTheWeekImpl;
 
   List<PrayTimingDateTimeModel> get prayTimeForWeek;
 
@@ -244,15 +246,15 @@ abstract class _UpdateSalahTimingForTheWeek implements SalahTimingEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateSalahTimingForTheWeekImplCopyWith<_$UpdateSalahTimingForTheWeekImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateCurrentSalahTypeImplCopyWith<$Res> {
   factory _$$UpdateCurrentSalahTypeImplCopyWith(
-          _$UpdateCurrentSalahTypeImpl value,
-          $Res Function(_$UpdateCurrentSalahTypeImpl) then) =
-      __$$UpdateCurrentSalahTypeImplCopyWithImpl<$Res>;
+    _$UpdateCurrentSalahTypeImpl value,
+    $Res Function(_$UpdateCurrentSalahTypeImpl) then,
+  ) = __$$UpdateCurrentSalahTypeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SalahTimeState status});
 
@@ -264,23 +266,23 @@ class __$$UpdateCurrentSalahTypeImplCopyWithImpl<$Res>
     extends _$SalahTimingEventCopyWithImpl<$Res, _$UpdateCurrentSalahTypeImpl>
     implements _$$UpdateCurrentSalahTypeImplCopyWith<$Res> {
   __$$UpdateCurrentSalahTypeImplCopyWithImpl(
-      _$UpdateCurrentSalahTypeImpl _value,
-      $Res Function(_$UpdateCurrentSalahTypeImpl) _then)
-      : super(_value, _then);
+    _$UpdateCurrentSalahTypeImpl _value,
+    $Res Function(_$UpdateCurrentSalahTypeImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$UpdateCurrentSalahTypeImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as SalahTimeState,
-    ));
+  $Res call({Object? status = null}) {
+    return _then(
+      _$UpdateCurrentSalahTypeImpl(
+        status: null == status
+            ? _value.status
+            : status // ignore: cast_nullable_to_non_nullable
+                  as SalahTimeState,
+      ),
+    );
   }
 
   /// Create a copy of SalahTimingEvent
@@ -324,14 +326,17 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateCurrentSalahTypeImplCopyWith<_$UpdateCurrentSalahTypeImpl>
-      get copyWith => __$$UpdateCurrentSalahTypeImplCopyWithImpl<
-          _$UpdateCurrentSalahTypeImpl>(this, _$identity);
+  get copyWith =>
+      __$$UpdateCurrentSalahTypeImplCopyWithImpl<_$UpdateCurrentSalahTypeImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     required TResult Function(SalahTimeState status) updateCurrentSalahType,
   }) {
     return updateCurrentSalahType(status);
@@ -341,7 +346,7 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult? Function(SalahTimeState status)? updateCurrentSalahType,
   }) {
     return updateCurrentSalahType?.call(status);
@@ -351,7 +356,7 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<PrayTimingDateTimeModel> prayTimeForWeek)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult Function(SalahTimeState status)? updateCurrentSalahType,
     required TResult orElse(),
   }) {
@@ -365,9 +370,9 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateSalahTimingForTheWeek value)
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     required TResult Function(_UpdateCurrentSalahType value)
-        updateCurrentSalahType,
+    updateCurrentSalahType,
   }) {
     return updateCurrentSalahType(this);
   }
@@ -376,7 +381,7 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateSalahTimingForTheWeek value)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult? Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
   }) {
     return updateCurrentSalahType?.call(this);
@@ -386,7 +391,7 @@ class _$UpdateCurrentSalahTypeImpl implements _UpdateCurrentSalahType {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateSalahTimingForTheWeek value)?
-        updateSalahTimingForTheWeek,
+    updateSalahTimingForTheWeek,
     TResult Function(_UpdateCurrentSalahType value)? updateCurrentSalahType,
     required TResult orElse(),
   }) {
@@ -407,7 +412,7 @@ abstract class _UpdateCurrentSalahType implements SalahTimingEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateCurrentSalahTypeImplCopyWith<_$UpdateCurrentSalahTypeImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -426,12 +431,14 @@ mixin _$SalahTimingState {
 /// @nodoc
 abstract class $SalahTimingStateCopyWith<$Res> {
   factory $SalahTimingStateCopyWith(
-          SalahTimingState value, $Res Function(SalahTimingState) then) =
-      _$SalahTimingStateCopyWithImpl<$Res, SalahTimingState>;
+    SalahTimingState value,
+    $Res Function(SalahTimingState) then,
+  ) = _$SalahTimingStateCopyWithImpl<$Res, SalahTimingState>;
   @useResult
-  $Res call(
-      {SalahTimeState currentSalahType,
-      List<PrayTimingDateTimeModel> prayTimeForWeek});
+  $Res call({
+    SalahTimeState currentSalahType,
+    List<PrayTimingDateTimeModel> prayTimeForWeek,
+  });
 
   $SalahTimeStateCopyWith<$Res> get currentSalahType;
 }
@@ -450,20 +457,20 @@ class _$SalahTimingStateCopyWithImpl<$Res, $Val extends SalahTimingState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? currentSalahType = null,
-    Object? prayTimeForWeek = null,
-  }) {
-    return _then(_value.copyWith(
-      currentSalahType: null == currentSalahType
-          ? _value.currentSalahType
-          : currentSalahType // ignore: cast_nullable_to_non_nullable
-              as SalahTimeState,
-      prayTimeForWeek: null == prayTimeForWeek
-          ? _value.prayTimeForWeek
-          : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
-              as List<PrayTimingDateTimeModel>,
-    ) as $Val);
+  $Res call({Object? currentSalahType = null, Object? prayTimeForWeek = null}) {
+    return _then(
+      _value.copyWith(
+            currentSalahType: null == currentSalahType
+                ? _value.currentSalahType
+                : currentSalahType // ignore: cast_nullable_to_non_nullable
+                      as SalahTimeState,
+            prayTimeForWeek: null == prayTimeForWeek
+                ? _value.prayTimeForWeek
+                : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
+                      as List<PrayTimingDateTimeModel>,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of SalahTimingState
@@ -480,14 +487,16 @@ class _$SalahTimingStateCopyWithImpl<$Res, $Val extends SalahTimingState>
 /// @nodoc
 abstract class _$$SalahTimingStateImplCopyWith<$Res>
     implements $SalahTimingStateCopyWith<$Res> {
-  factory _$$SalahTimingStateImplCopyWith(_$SalahTimingStateImpl value,
-          $Res Function(_$SalahTimingStateImpl) then) =
-      __$$SalahTimingStateImplCopyWithImpl<$Res>;
+  factory _$$SalahTimingStateImplCopyWith(
+    _$SalahTimingStateImpl value,
+    $Res Function(_$SalahTimingStateImpl) then,
+  ) = __$$SalahTimingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {SalahTimeState currentSalahType,
-      List<PrayTimingDateTimeModel> prayTimeForWeek});
+  $Res call({
+    SalahTimeState currentSalahType,
+    List<PrayTimingDateTimeModel> prayTimeForWeek,
+  });
 
   @override
   $SalahTimeStateCopyWith<$Res> get currentSalahType;
@@ -497,38 +506,38 @@ abstract class _$$SalahTimingStateImplCopyWith<$Res>
 class __$$SalahTimingStateImplCopyWithImpl<$Res>
     extends _$SalahTimingStateCopyWithImpl<$Res, _$SalahTimingStateImpl>
     implements _$$SalahTimingStateImplCopyWith<$Res> {
-  __$$SalahTimingStateImplCopyWithImpl(_$SalahTimingStateImpl _value,
-      $Res Function(_$SalahTimingStateImpl) _then)
-      : super(_value, _then);
+  __$$SalahTimingStateImplCopyWithImpl(
+    _$SalahTimingStateImpl _value,
+    $Res Function(_$SalahTimingStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahTimingState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? currentSalahType = null,
-    Object? prayTimeForWeek = null,
-  }) {
-    return _then(_$SalahTimingStateImpl(
-      currentSalahType: null == currentSalahType
-          ? _value.currentSalahType
-          : currentSalahType // ignore: cast_nullable_to_non_nullable
-              as SalahTimeState,
-      prayTimeForWeek: null == prayTimeForWeek
-          ? _value._prayTimeForWeek
-          : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
-              as List<PrayTimingDateTimeModel>,
-    ));
+  $Res call({Object? currentSalahType = null, Object? prayTimeForWeek = null}) {
+    return _then(
+      _$SalahTimingStateImpl(
+        currentSalahType: null == currentSalahType
+            ? _value.currentSalahType
+            : currentSalahType // ignore: cast_nullable_to_non_nullable
+                  as SalahTimeState,
+        prayTimeForWeek: null == prayTimeForWeek
+            ? _value._prayTimeForWeek
+            : prayTimeForWeek // ignore: cast_nullable_to_non_nullable
+                  as List<PrayTimingDateTimeModel>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$SalahTimingStateImpl implements _SalahTimingState {
-  const _$SalahTimingStateImpl(
-      {this.currentSalahType = const SalahTimeState.none(),
-      final List<PrayTimingDateTimeModel> prayTimeForWeek = const []})
-      : _prayTimeForWeek = prayTimeForWeek;
+  const _$SalahTimingStateImpl({
+    this.currentSalahType = const SalahTimeState.none(),
+    final List<PrayTimingDateTimeModel> prayTimeForWeek = const [],
+  }) : _prayTimeForWeek = prayTimeForWeek;
 
   @override
   @JsonKey()
@@ -554,13 +563,18 @@ class _$SalahTimingStateImpl implements _SalahTimingState {
             other is _$SalahTimingStateImpl &&
             (identical(other.currentSalahType, currentSalahType) ||
                 other.currentSalahType == currentSalahType) &&
-            const DeepCollectionEquality()
-                .equals(other._prayTimeForWeek, _prayTimeForWeek));
+            const DeepCollectionEquality().equals(
+              other._prayTimeForWeek,
+              _prayTimeForWeek,
+            ));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentSalahType,
-      const DeepCollectionEquality().hash(_prayTimeForWeek));
+  int get hashCode => Object.hash(
+    runtimeType,
+    currentSalahType,
+    const DeepCollectionEquality().hash(_prayTimeForWeek),
+  );
 
   /// Create a copy of SalahTimingState
   /// with the given fields replaced by the non-null parameter values.
@@ -569,14 +583,16 @@ class _$SalahTimingStateImpl implements _SalahTimingState {
   @pragma('vm:prefer-inline')
   _$$SalahTimingStateImplCopyWith<_$SalahTimingStateImpl> get copyWith =>
       __$$SalahTimingStateImplCopyWithImpl<_$SalahTimingStateImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _SalahTimingState implements SalahTimingState {
-  const factory _SalahTimingState(
-          {final SalahTimeState currentSalahType,
-          final List<PrayTimingDateTimeModel> prayTimeForWeek}) =
-      _$SalahTimingStateImpl;
+  const factory _SalahTimingState({
+    final SalahTimeState currentSalahType,
+    final List<PrayTimingDateTimeModel> prayTimeForWeek,
+  }) = _$SalahTimingStateImpl;
 
   @override
   SalahTimeState get currentSalahType;

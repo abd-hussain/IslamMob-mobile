@@ -59,7 +59,7 @@ class NoInternetView extends StatelessWidget {
                 maxLines: 2,
                 textAlign: TextAlign.center,
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -12,7 +12,8 @@ part of '../local_notification.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$NotificationTypeState {
@@ -30,8 +31,7 @@ mixin _$NotificationTypeState {
     required TResult Function() midnight,
     required TResult Function() reminderToOpenTheApp1,
     required TResult Function() reminderToOpenTheApp2,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fajir,
@@ -46,8 +46,7 @@ mixin _$NotificationTypeState {
     TResult? Function()? midnight,
     TResult? Function()? reminderToOpenTheApp1,
     TResult? Function()? reminderToOpenTheApp2,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fajir,
@@ -63,8 +62,7 @@ mixin _$NotificationTypeState {
     TResult Function()? reminderToOpenTheApp1,
     TResult Function()? reminderToOpenTheApp2,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationTypeStateFajir value) fajir,
@@ -74,19 +72,19 @@ mixin _$NotificationTypeState {
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
-  }) =>
-      throw _privateConstructorUsedError;
+    reminderToOpenTheApp2,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationTypeStateFajir value)? fajir,
@@ -96,18 +94,17 @@ mixin _$NotificationTypeState {
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
-  }) =>
-      throw _privateConstructorUsedError;
+    reminderToOpenTheApp2,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationTypeStateFajir value)? fajir,
@@ -117,31 +114,33 @@ mixin _$NotificationTypeState {
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NotificationTypeStateCopyWith<$Res> {
-  factory $NotificationTypeStateCopyWith(NotificationTypeState value,
-          $Res Function(NotificationTypeState) then) =
-      _$NotificationTypeStateCopyWithImpl<$Res, NotificationTypeState>;
+  factory $NotificationTypeStateCopyWith(
+    NotificationTypeState value,
+    $Res Function(NotificationTypeState) then,
+  ) = _$NotificationTypeStateCopyWithImpl<$Res, NotificationTypeState>;
 }
 
 /// @nodoc
-class _$NotificationTypeStateCopyWithImpl<$Res,
-        $Val extends NotificationTypeState>
+class _$NotificationTypeStateCopyWithImpl<
+  $Res,
+  $Val extends NotificationTypeState
+>
     implements $NotificationTypeStateCopyWith<$Res> {
   _$NotificationTypeStateCopyWithImpl(this._value, this._then);
 
@@ -157,20 +156,23 @@ class _$NotificationTypeStateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$NotificationTypeStateFajirImplCopyWith<$Res> {
   factory _$$NotificationTypeStateFajirImplCopyWith(
-          _$NotificationTypeStateFajirImpl value,
-          $Res Function(_$NotificationTypeStateFajirImpl) then) =
-      __$$NotificationTypeStateFajirImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateFajirImpl value,
+    $Res Function(_$NotificationTypeStateFajirImpl) then,
+  ) = __$$NotificationTypeStateFajirImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateFajirImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateFajirImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateFajirImpl
+        >
     implements _$$NotificationTypeStateFajirImplCopyWith<$Res> {
   __$$NotificationTypeStateFajirImplCopyWithImpl(
-      _$NotificationTypeStateFajirImpl _value,
-      $Res Function(_$NotificationTypeStateFajirImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateFajirImpl _value,
+    $Res Function(_$NotificationTypeStateFajirImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -267,17 +269,18 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return fajir(this);
   }
@@ -292,16 +295,16 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return fajir?.call(this);
   }
@@ -316,16 +319,16 @@ class _$NotificationTypeStateFajirImpl implements NotificationTypeStateFajir {
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (fajir != null) {
@@ -342,20 +345,23 @@ abstract class NotificationTypeStateFajir implements NotificationTypeState {
 /// @nodoc
 abstract class _$$NotificationTypeStateSunriseImplCopyWith<$Res> {
   factory _$$NotificationTypeStateSunriseImplCopyWith(
-          _$NotificationTypeStateSunriseImpl value,
-          $Res Function(_$NotificationTypeStateSunriseImpl) then) =
-      __$$NotificationTypeStateSunriseImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateSunriseImpl value,
+    $Res Function(_$NotificationTypeStateSunriseImpl) then,
+  ) = __$$NotificationTypeStateSunriseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateSunriseImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateSunriseImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateSunriseImpl
+        >
     implements _$$NotificationTypeStateSunriseImplCopyWith<$Res> {
   __$$NotificationTypeStateSunriseImplCopyWithImpl(
-      _$NotificationTypeStateSunriseImpl _value,
-      $Res Function(_$NotificationTypeStateSunriseImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateSunriseImpl _value,
+    $Res Function(_$NotificationTypeStateSunriseImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -453,17 +459,18 @@ class _$NotificationTypeStateSunriseImpl
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return sunrise(this);
   }
@@ -478,16 +485,16 @@ class _$NotificationTypeStateSunriseImpl
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return sunrise?.call(this);
   }
@@ -502,16 +509,16 @@ class _$NotificationTypeStateSunriseImpl
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (sunrise != null) {
@@ -529,20 +536,23 @@ abstract class NotificationTypeStateSunrise implements NotificationTypeState {
 /// @nodoc
 abstract class _$$NotificationTypeStateZuhrImplCopyWith<$Res> {
   factory _$$NotificationTypeStateZuhrImplCopyWith(
-          _$NotificationTypeStateZuhrImpl value,
-          $Res Function(_$NotificationTypeStateZuhrImpl) then) =
-      __$$NotificationTypeStateZuhrImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateZuhrImpl value,
+    $Res Function(_$NotificationTypeStateZuhrImpl) then,
+  ) = __$$NotificationTypeStateZuhrImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateZuhrImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateZuhrImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateZuhrImpl
+        >
     implements _$$NotificationTypeStateZuhrImplCopyWith<$Res> {
   __$$NotificationTypeStateZuhrImplCopyWithImpl(
-      _$NotificationTypeStateZuhrImpl _value,
-      $Res Function(_$NotificationTypeStateZuhrImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateZuhrImpl _value,
+    $Res Function(_$NotificationTypeStateZuhrImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -639,17 +649,18 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return zuhr(this);
   }
@@ -664,16 +675,16 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return zuhr?.call(this);
   }
@@ -688,16 +699,16 @@ class _$NotificationTypeStateZuhrImpl implements NotificationTypeStateZuhr {
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (zuhr != null) {
@@ -714,20 +725,23 @@ abstract class NotificationTypeStateZuhr implements NotificationTypeState {
 /// @nodoc
 abstract class _$$NotificationTypeStateAsrImplCopyWith<$Res> {
   factory _$$NotificationTypeStateAsrImplCopyWith(
-          _$NotificationTypeStateAsrImpl value,
-          $Res Function(_$NotificationTypeStateAsrImpl) then) =
-      __$$NotificationTypeStateAsrImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateAsrImpl value,
+    $Res Function(_$NotificationTypeStateAsrImpl) then,
+  ) = __$$NotificationTypeStateAsrImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateAsrImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateAsrImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateAsrImpl
+        >
     implements _$$NotificationTypeStateAsrImplCopyWith<$Res> {
   __$$NotificationTypeStateAsrImplCopyWithImpl(
-      _$NotificationTypeStateAsrImpl _value,
-      $Res Function(_$NotificationTypeStateAsrImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateAsrImpl _value,
+    $Res Function(_$NotificationTypeStateAsrImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -824,17 +838,18 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return asr(this);
   }
@@ -849,16 +864,16 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return asr?.call(this);
   }
@@ -873,16 +888,16 @@ class _$NotificationTypeStateAsrImpl implements NotificationTypeStateAsr {
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (asr != null) {
@@ -899,20 +914,23 @@ abstract class NotificationTypeStateAsr implements NotificationTypeState {
 /// @nodoc
 abstract class _$$NotificationTypeStateMaghribImplCopyWith<$Res> {
   factory _$$NotificationTypeStateMaghribImplCopyWith(
-          _$NotificationTypeStateMaghribImpl value,
-          $Res Function(_$NotificationTypeStateMaghribImpl) then) =
-      __$$NotificationTypeStateMaghribImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateMaghribImpl value,
+    $Res Function(_$NotificationTypeStateMaghribImpl) then,
+  ) = __$$NotificationTypeStateMaghribImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateMaghribImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateMaghribImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateMaghribImpl
+        >
     implements _$$NotificationTypeStateMaghribImplCopyWith<$Res> {
   __$$NotificationTypeStateMaghribImplCopyWithImpl(
-      _$NotificationTypeStateMaghribImpl _value,
-      $Res Function(_$NotificationTypeStateMaghribImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateMaghribImpl _value,
+    $Res Function(_$NotificationTypeStateMaghribImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1010,17 +1028,18 @@ class _$NotificationTypeStateMaghribImpl
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return maghrib(this);
   }
@@ -1035,16 +1054,16 @@ class _$NotificationTypeStateMaghribImpl
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return maghrib?.call(this);
   }
@@ -1059,16 +1078,16 @@ class _$NotificationTypeStateMaghribImpl
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (maghrib != null) {
@@ -1086,20 +1105,23 @@ abstract class NotificationTypeStateMaghrib implements NotificationTypeState {
 /// @nodoc
 abstract class _$$NotificationTypeStateIshaImplCopyWith<$Res> {
   factory _$$NotificationTypeStateIshaImplCopyWith(
-          _$NotificationTypeStateIshaImpl value,
-          $Res Function(_$NotificationTypeStateIshaImpl) then) =
-      __$$NotificationTypeStateIshaImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateIshaImpl value,
+    $Res Function(_$NotificationTypeStateIshaImpl) then,
+  ) = __$$NotificationTypeStateIshaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateIshaImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateIshaImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateIshaImpl
+        >
     implements _$$NotificationTypeStateIshaImplCopyWith<$Res> {
   __$$NotificationTypeStateIshaImplCopyWithImpl(
-      _$NotificationTypeStateIshaImpl _value,
-      $Res Function(_$NotificationTypeStateIshaImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateIshaImpl _value,
+    $Res Function(_$NotificationTypeStateIshaImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1196,17 +1218,18 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return isha(this);
   }
@@ -1221,16 +1244,16 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return isha?.call(this);
   }
@@ -1245,16 +1268,16 @@ class _$NotificationTypeStateIshaImpl implements NotificationTypeStateIsha {
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (isha != null) {
@@ -1271,20 +1294,23 @@ abstract class NotificationTypeStateIsha implements NotificationTypeState {
 /// @nodoc
 abstract class _$$NotificationTypeStateBefore15MinutesImplCopyWith<$Res> {
   factory _$$NotificationTypeStateBefore15MinutesImplCopyWith(
-          _$NotificationTypeStateBefore15MinutesImpl value,
-          $Res Function(_$NotificationTypeStateBefore15MinutesImpl) then) =
-      __$$NotificationTypeStateBefore15MinutesImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateBefore15MinutesImpl value,
+    $Res Function(_$NotificationTypeStateBefore15MinutesImpl) then,
+  ) = __$$NotificationTypeStateBefore15MinutesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateBefore15MinutesImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateBefore15MinutesImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateBefore15MinutesImpl
+        >
     implements _$$NotificationTypeStateBefore15MinutesImplCopyWith<$Res> {
   __$$NotificationTypeStateBefore15MinutesImplCopyWithImpl(
-      _$NotificationTypeStateBefore15MinutesImpl _value,
-      $Res Function(_$NotificationTypeStateBefore15MinutesImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateBefore15MinutesImpl _value,
+    $Res Function(_$NotificationTypeStateBefore15MinutesImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1382,17 +1408,18 @@ class _$NotificationTypeStateBefore15MinutesImpl
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return before15Minutes(this);
   }
@@ -1407,16 +1434,16 @@ class _$NotificationTypeStateBefore15MinutesImpl
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return before15Minutes?.call(this);
   }
@@ -1431,16 +1458,16 @@ class _$NotificationTypeStateBefore15MinutesImpl
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (before15Minutes != null) {
@@ -1459,20 +1486,23 @@ abstract class NotificationTypeStateBefore15Minutes
 /// @nodoc
 abstract class _$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWith<$Res> {
   factory _$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWith(
-          _$NotificationTypeStateJom3aLastHourForDoaaImpl value,
-          $Res Function(_$NotificationTypeStateJom3aLastHourForDoaaImpl) then) =
-      __$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateJom3aLastHourForDoaaImpl value,
+    $Res Function(_$NotificationTypeStateJom3aLastHourForDoaaImpl) then,
+  ) = __$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateJom3aLastHourForDoaaImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateJom3aLastHourForDoaaImpl
+        >
     implements _$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWith<$Res> {
   __$$NotificationTypeStateJom3aLastHourForDoaaImplCopyWithImpl(
-      _$NotificationTypeStateJom3aLastHourForDoaaImpl _value,
-      $Res Function(_$NotificationTypeStateJom3aLastHourForDoaaImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateJom3aLastHourForDoaaImpl _value,
+    $Res Function(_$NotificationTypeStateJom3aLastHourForDoaaImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1570,17 +1600,18 @@ class _$NotificationTypeStateJom3aLastHourForDoaaImpl
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return jom3aLastHourForDoaa(this);
   }
@@ -1595,16 +1626,16 @@ class _$NotificationTypeStateJom3aLastHourForDoaaImpl
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return jom3aLastHourForDoaa?.call(this);
   }
@@ -1619,16 +1650,16 @@ class _$NotificationTypeStateJom3aLastHourForDoaaImpl
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (jom3aLastHourForDoaa != null) {
@@ -1646,26 +1677,30 @@ abstract class NotificationTypeStateJom3aLastHourForDoaa
 
 /// @nodoc
 abstract class _$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWith<
-    $Res> {
+  $Res
+> {
   factory _$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWith(
-          _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl value,
-          $Res Function(_$NotificationTypeReminderjom3aSoratAlKahfReminderImpl)
-              then) =
+    _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl value,
+    $Res Function(_$NotificationTypeReminderjom3aSoratAlKahfReminderImpl) then,
+  ) =
       __$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWithImpl<
-          $Res>;
+        $Res
+      >;
 }
 
 /// @nodoc
 class __$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl
+        >
     implements
         _$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWith<$Res> {
   __$$NotificationTypeReminderjom3aSoratAlKahfReminderImplCopyWithImpl(
-      _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl _value,
-      $Res Function(_$NotificationTypeReminderjom3aSoratAlKahfReminderImpl)
-          _then)
-      : super(_value, _then);
+    _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl _value,
+    $Res Function(_$NotificationTypeReminderjom3aSoratAlKahfReminderImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1763,17 +1798,18 @@ class _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return jom3aSoratAlKahfReminder(this);
   }
@@ -1788,16 +1824,16 @@ class _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return jom3aSoratAlKahfReminder?.call(this);
   }
@@ -1812,16 +1848,16 @@ class _$NotificationTypeReminderjom3aSoratAlKahfReminderImpl
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (jom3aSoratAlKahfReminder != null) {
@@ -1840,20 +1876,23 @@ abstract class NotificationTypeReminderjom3aSoratAlKahfReminder
 /// @nodoc
 abstract class _$$NotificationTypeStateMidnightImplCopyWith<$Res> {
   factory _$$NotificationTypeStateMidnightImplCopyWith(
-          _$NotificationTypeStateMidnightImpl value,
-          $Res Function(_$NotificationTypeStateMidnightImpl) then) =
-      __$$NotificationTypeStateMidnightImplCopyWithImpl<$Res>;
+    _$NotificationTypeStateMidnightImpl value,
+    $Res Function(_$NotificationTypeStateMidnightImpl) then,
+  ) = __$$NotificationTypeStateMidnightImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeStateMidnightImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeStateMidnightImpl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeStateMidnightImpl
+        >
     implements _$$NotificationTypeStateMidnightImplCopyWith<$Res> {
   __$$NotificationTypeStateMidnightImplCopyWithImpl(
-      _$NotificationTypeStateMidnightImpl _value,
-      $Res Function(_$NotificationTypeStateMidnightImpl) _then)
-      : super(_value, _then);
+    _$NotificationTypeStateMidnightImpl _value,
+    $Res Function(_$NotificationTypeStateMidnightImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1951,17 +1990,18 @@ class _$NotificationTypeStateMidnightImpl
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return midnight(this);
   }
@@ -1976,16 +2016,16 @@ class _$NotificationTypeStateMidnightImpl
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return midnight?.call(this);
   }
@@ -2000,16 +2040,16 @@ class _$NotificationTypeStateMidnightImpl
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (midnight != null) {
@@ -2027,20 +2067,23 @@ abstract class NotificationTypeStateMidnight implements NotificationTypeState {
 /// @nodoc
 abstract class _$$NotificationTypeReminderToOpenTheApp1ImplCopyWith<$Res> {
   factory _$$NotificationTypeReminderToOpenTheApp1ImplCopyWith(
-          _$NotificationTypeReminderToOpenTheApp1Impl value,
-          $Res Function(_$NotificationTypeReminderToOpenTheApp1Impl) then) =
-      __$$NotificationTypeReminderToOpenTheApp1ImplCopyWithImpl<$Res>;
+    _$NotificationTypeReminderToOpenTheApp1Impl value,
+    $Res Function(_$NotificationTypeReminderToOpenTheApp1Impl) then,
+  ) = __$$NotificationTypeReminderToOpenTheApp1ImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeReminderToOpenTheApp1ImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeReminderToOpenTheApp1Impl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeReminderToOpenTheApp1Impl
+        >
     implements _$$NotificationTypeReminderToOpenTheApp1ImplCopyWith<$Res> {
   __$$NotificationTypeReminderToOpenTheApp1ImplCopyWithImpl(
-      _$NotificationTypeReminderToOpenTheApp1Impl _value,
-      $Res Function(_$NotificationTypeReminderToOpenTheApp1Impl) _then)
-      : super(_value, _then);
+    _$NotificationTypeReminderToOpenTheApp1Impl _value,
+    $Res Function(_$NotificationTypeReminderToOpenTheApp1Impl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -2138,17 +2181,18 @@ class _$NotificationTypeReminderToOpenTheApp1Impl
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return reminderToOpenTheApp1(this);
   }
@@ -2163,16 +2207,16 @@ class _$NotificationTypeReminderToOpenTheApp1Impl
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return reminderToOpenTheApp1?.call(this);
   }
@@ -2187,16 +2231,16 @@ class _$NotificationTypeReminderToOpenTheApp1Impl
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (reminderToOpenTheApp1 != null) {
@@ -2215,20 +2259,23 @@ abstract class NotificationTypeReminderToOpenTheApp1
 /// @nodoc
 abstract class _$$NotificationTypeReminderToOpenTheApp2ImplCopyWith<$Res> {
   factory _$$NotificationTypeReminderToOpenTheApp2ImplCopyWith(
-          _$NotificationTypeReminderToOpenTheApp2Impl value,
-          $Res Function(_$NotificationTypeReminderToOpenTheApp2Impl) then) =
-      __$$NotificationTypeReminderToOpenTheApp2ImplCopyWithImpl<$Res>;
+    _$NotificationTypeReminderToOpenTheApp2Impl value,
+    $Res Function(_$NotificationTypeReminderToOpenTheApp2Impl) then,
+  ) = __$$NotificationTypeReminderToOpenTheApp2ImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationTypeReminderToOpenTheApp2ImplCopyWithImpl<$Res>
-    extends _$NotificationTypeStateCopyWithImpl<$Res,
-        _$NotificationTypeReminderToOpenTheApp2Impl>
+    extends
+        _$NotificationTypeStateCopyWithImpl<
+          $Res,
+          _$NotificationTypeReminderToOpenTheApp2Impl
+        >
     implements _$$NotificationTypeReminderToOpenTheApp2ImplCopyWith<$Res> {
   __$$NotificationTypeReminderToOpenTheApp2ImplCopyWithImpl(
-      _$NotificationTypeReminderToOpenTheApp2Impl _value,
-      $Res Function(_$NotificationTypeReminderToOpenTheApp2Impl) _then)
-      : super(_value, _then);
+    _$NotificationTypeReminderToOpenTheApp2Impl _value,
+    $Res Function(_$NotificationTypeReminderToOpenTheApp2Impl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of NotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -2326,17 +2373,18 @@ class _$NotificationTypeReminderToOpenTheApp2Impl
     required TResult Function(NotificationTypeStateMaghrib value) maghrib,
     required TResult Function(NotificationTypeStateIsha value) isha,
     required TResult Function(NotificationTypeStateBefore15Minutes value)
-        before15Minutes,
+    before15Minutes,
     required TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     required TResult Function(
-            NotificationTypeReminderjom3aSoratAlKahfReminder value)
-        jom3aSoratAlKahfReminder,
+      NotificationTypeReminderjom3aSoratAlKahfReminder value,
+    )
+    jom3aSoratAlKahfReminder,
     required TResult Function(NotificationTypeStateMidnight value) midnight,
     required TResult Function(NotificationTypeReminderToOpenTheApp1 value)
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     required TResult Function(NotificationTypeReminderToOpenTheApp2 value)
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return reminderToOpenTheApp2(this);
   }
@@ -2351,16 +2399,16 @@ class _$NotificationTypeReminderToOpenTheApp2Impl
     TResult? Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult? Function(NotificationTypeStateIsha value)? isha,
     TResult? Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult? Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult? Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult? Function(NotificationTypeStateMidnight value)? midnight,
     TResult? Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult? Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
   }) {
     return reminderToOpenTheApp2?.call(this);
   }
@@ -2375,16 +2423,16 @@ class _$NotificationTypeReminderToOpenTheApp2Impl
     TResult Function(NotificationTypeStateMaghrib value)? maghrib,
     TResult Function(NotificationTypeStateIsha value)? isha,
     TResult Function(NotificationTypeStateBefore15Minutes value)?
-        before15Minutes,
+    before15Minutes,
     TResult Function(NotificationTypeStateJom3aLastHourForDoaa value)?
-        jom3aLastHourForDoaa,
+    jom3aLastHourForDoaa,
     TResult Function(NotificationTypeReminderjom3aSoratAlKahfReminder value)?
-        jom3aSoratAlKahfReminder,
+    jom3aSoratAlKahfReminder,
     TResult Function(NotificationTypeStateMidnight value)? midnight,
     TResult Function(NotificationTypeReminderToOpenTheApp1 value)?
-        reminderToOpenTheApp1,
+    reminderToOpenTheApp1,
     TResult Function(NotificationTypeReminderToOpenTheApp2 value)?
-        reminderToOpenTheApp2,
+    reminderToOpenTheApp2,
     required TResult orElse(),
   }) {
     if (reminderToOpenTheApp2 != null) {

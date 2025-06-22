@@ -12,7 +12,8 @@ part of 'version.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 AppVersionModel _$AppVersionModelFromJson(Map<String, dynamic> json) {
   return _AppVersionModel.fromJson(json);
@@ -36,8 +37,9 @@ mixin _$AppVersionModel {
 /// @nodoc
 abstract class $AppVersionModelCopyWith<$Res> {
   factory $AppVersionModelCopyWith(
-          AppVersionModel value, $Res Function(AppVersionModel) then) =
-      _$AppVersionModelCopyWithImpl<$Res, AppVersionModel>;
+    AppVersionModel value,
+    $Res Function(AppVersionModel) then,
+  ) = _$AppVersionModelCopyWithImpl<$Res, AppVersionModel>;
   @useResult
   $Res call({String? latestVersion, String? minSupportedVersion});
 }
@@ -60,25 +62,29 @@ class _$AppVersionModelCopyWithImpl<$Res, $Val extends AppVersionModel>
     Object? latestVersion = freezed,
     Object? minSupportedVersion = freezed,
   }) {
-    return _then(_value.copyWith(
-      latestVersion: freezed == latestVersion
-          ? _value.latestVersion
-          : latestVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      minSupportedVersion: freezed == minSupportedVersion
-          ? _value.minSupportedVersion
-          : minSupportedVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            latestVersion: freezed == latestVersion
+                ? _value.latestVersion
+                : latestVersion // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            minSupportedVersion: freezed == minSupportedVersion
+                ? _value.minSupportedVersion
+                : minSupportedVersion // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$AppVersionModelImplCopyWith<$Res>
     implements $AppVersionModelCopyWith<$Res> {
-  factory _$$AppVersionModelImplCopyWith(_$AppVersionModelImpl value,
-          $Res Function(_$AppVersionModelImpl) then) =
-      __$$AppVersionModelImplCopyWithImpl<$Res>;
+  factory _$$AppVersionModelImplCopyWith(
+    _$AppVersionModelImpl value,
+    $Res Function(_$AppVersionModelImpl) then,
+  ) = __$$AppVersionModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? latestVersion, String? minSupportedVersion});
@@ -89,8 +95,9 @@ class __$$AppVersionModelImplCopyWithImpl<$Res>
     extends _$AppVersionModelCopyWithImpl<$Res, _$AppVersionModelImpl>
     implements _$$AppVersionModelImplCopyWith<$Res> {
   __$$AppVersionModelImplCopyWithImpl(
-      _$AppVersionModelImpl _value, $Res Function(_$AppVersionModelImpl) _then)
-      : super(_value, _then);
+    _$AppVersionModelImpl _value,
+    $Res Function(_$AppVersionModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AppVersionModel
   /// with the given fields replaced by the non-null parameter values.
@@ -100,16 +107,18 @@ class __$$AppVersionModelImplCopyWithImpl<$Res>
     Object? latestVersion = freezed,
     Object? minSupportedVersion = freezed,
   }) {
-    return _then(_$AppVersionModelImpl(
-      latestVersion: freezed == latestVersion
-          ? _value.latestVersion
-          : latestVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      minSupportedVersion: freezed == minSupportedVersion
-          ? _value.minSupportedVersion
-          : minSupportedVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$AppVersionModelImpl(
+        latestVersion: freezed == latestVersion
+            ? _value.latestVersion
+            : latestVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        minSupportedVersion: freezed == minSupportedVersion
+            ? _value.minSupportedVersion
+            : minSupportedVersion // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -154,20 +163,21 @@ class _$AppVersionModelImpl implements _AppVersionModel {
   @pragma('vm:prefer-inline')
   _$$AppVersionModelImplCopyWith<_$AppVersionModelImpl> get copyWith =>
       __$$AppVersionModelImplCopyWithImpl<_$AppVersionModelImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AppVersionModelImplToJson(
-      this,
-    );
+    return _$$AppVersionModelImplToJson(this);
   }
 }
 
 abstract class _AppVersionModel implements AppVersionModel {
-  factory _AppVersionModel(
-      {final String? latestVersion,
-      final String? minSupportedVersion}) = _$AppVersionModelImpl;
+  factory _AppVersionModel({
+    final String? latestVersion,
+    final String? minSupportedVersion,
+  }) = _$AppVersionModelImpl;
 
   factory _AppVersionModel.fromJson(Map<String, dynamic> json) =
       _$AppVersionModelImpl.fromJson;

@@ -87,11 +87,7 @@ class _BottomTileState extends State<BottomTile>
         color: Colors.black.withValues(alpha: 0.5),
         padding: const EdgeInsets.all(8),
         child: Row(
-          children: [
-            _buildIcon(),
-            const SizedBox(width: 4),
-            _buildTitle(),
-          ],
+          children: [_buildIcon(), const SizedBox(width: 4), _buildTitle()],
         ),
       ),
     );
@@ -102,18 +98,10 @@ class _BottomTileState extends State<BottomTile>
         ? AnimatedBuilder(
             animation: _colorAnimation,
             builder: (context, child) {
-              return Icon(
-                widget.icon,
-                color: _colorAnimation.value,
-                size: 20,
-              );
+              return Icon(widget.icon, color: _colorAnimation.value, size: 20);
             },
           )
-        : Icon(
-            widget.icon,
-            color: widget.colorIcon,
-            size: 20,
-          );
+        : Icon(widget.icon, color: widget.colorIcon, size: 20);
   }
 
   Widget _buildTitle() {

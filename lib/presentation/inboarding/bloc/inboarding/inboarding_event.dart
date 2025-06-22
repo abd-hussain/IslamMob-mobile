@@ -28,9 +28,8 @@ class InboardingEvent with _$InboardingEvent {
   ///
   /// Parameters:
   /// - [stage]: The new onboarding stage number to transition to
-  const factory InboardingEvent.changeInBoardingStage({
-    required int stage,
-  }) = _ChangeInBoardingStage;
+  const factory InboardingEvent.changeInBoardingStage({required int stage}) =
+      _ChangeInBoardingStage;
 
   /// Event to finalize and complete the onboarding process.
   ///

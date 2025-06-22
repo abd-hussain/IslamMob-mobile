@@ -70,17 +70,20 @@ class PraySettingUsecase {
 
   /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
   Coordinates _retrieveCoordinates() {
-    final double latitude = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldLocationConstant.selectedLatitude,
-        defaultValue: 0.0) as double;
-    final double longitude = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldLocationConstant.selectedLongitude,
-        defaultValue: 0.0) as double;
+    final double latitude =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldLocationConstant.selectedLatitude,
+              defaultValue: 0.0,
+            )
+            as double;
+    final double longitude =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldLocationConstant.selectedLongitude,
+              defaultValue: 0.0,
+            )
+            as double;
 
-    return Coordinates(
-      latitude,
-      longitude,
-    );
+    return Coordinates(latitude, longitude);
   }
 
   /// Retrieves all prayer times for today using the configured settings.

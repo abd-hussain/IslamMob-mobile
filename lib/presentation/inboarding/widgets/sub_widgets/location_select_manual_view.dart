@@ -17,14 +17,16 @@ class LocationSelectManualView extends StatelessWidget {
   /// This function receives the selected country name, latitude, and longitude
   /// coordinates when the user taps on a location from the list.
   final Function(String countryName, double lat, double long)
-      onSelectManualLocation;
+  onSelectManualLocation;
 
   /// Creates a [LocationSelectManualView] widget.
   ///
   /// The [onSelectManualLocation] callback is required and will be called
   /// when the user selects a location from the available options.
-  const LocationSelectManualView(
-      {super.key, required this.onSelectManualLocation});
+  const LocationSelectManualView({
+    super.key,
+    required this.onSelectManualLocation,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,8 @@ class LocationSelectManualView extends StatelessWidget {
 
     final countriesCitiesLocationManually =
         CountriesLocationManuallyUseCase.getCountriesCitiesLocationManually(
-            context);
+          context,
+        );
 
     return Column(
       children: [
@@ -57,20 +60,22 @@ class LocationSelectManualView extends StatelessWidget {
         const SizedBox(height: 8),
         Expanded(
           child: ListView.builder(
-              itemCount: countriesCitiesLocationManually.length,
-              itemBuilder: (listContext, index) {
-                return SelectLocationTileView(
-                  chooseLocation: countriesCitiesLocationManually[index],
-                  onTap: onSelectManualLocation,
-                );
-              }),
+            itemCount: countriesCitiesLocationManually.length,
+            itemBuilder: (listContext, index) {
+              return SelectLocationTileView(
+                chooseLocation: countriesCitiesLocationManually[index],
+                onTap: onSelectManualLocation,
+              );
+            },
+          ),
         ),
         TextButton(
           onPressed: () async => OpenMobileSettingUseCase.openAppSettings(),
           child: CustomText(
-              title: localization.nolocationPermissionButton,
-              fontSize: 16,
-              color: Colors.blue),
+            title: localization.nolocationPermissionButton,
+            fontSize: 16,
+            color: Colors.blue,
+          ),
         ),
       ],
     );

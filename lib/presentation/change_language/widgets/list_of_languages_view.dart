@@ -36,10 +36,11 @@ class ListOfLanguagesView extends StatelessWidget {
     final List<LanguageModel> languages = LanguageConstant.languages;
     return Expanded(
       child: ListView.builder(
-          itemCount: languages.length,
-          itemBuilder: (context, index) {
-            return ListOfLanguageTile(language: languages[index]);
-          }),
+        itemCount: languages.length,
+        itemBuilder: (context, index) {
+          return ListOfLanguageTile(language: languages[index]);
+        },
+      ),
     );
   }
 }

@@ -23,7 +23,8 @@ class HajjOmrahEvent with _$HajjOmrahEvent {
   /// Parameters:
   /// - [screenType]: The type of pilgrimage screen (Hajj or Omrah)
   const factory HajjOmrahEvent.fillInitialValue(
-      HajjOmrahScreenType screenType) = _FillInitialValue;
+    HajjOmrahScreenType screenType,
+  ) = _FillInitialValue;
 
   /// Event to update video loading state for pilgrimage educational content.
   ///
@@ -33,7 +34,6 @@ class HajjOmrahEvent with _$HajjOmrahEvent {
   ///
   /// Parameters:
   /// - [state]: The current video processing state (loading, success, error)
-  const factory HajjOmrahEvent.loadingState(
-    VideoProcessState state,
-  ) = _LoadingState;
+  const factory HajjOmrahEvent.loadingState(VideoProcessState state) =
+      _LoadingState;
 }

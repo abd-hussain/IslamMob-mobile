@@ -27,16 +27,17 @@ class FooterView extends StatelessWidget {
         children: [
           const SizedBox(height: 16),
           FutureBuilder<String>(
-              initialData: "",
-              future:
-                  locator<ApplicationVersionUsecase>().getApplicationVersion(),
-              builder: (context, snapshot) {
-                return CustomText(
-                  title: "${localize.version} ${snapshot.data}",
-                  fontSize: 12,
-                  color: const Color(0xffBFBFBF),
-                );
-              }),
+            initialData: "",
+            future: locator<ApplicationVersionUsecase>()
+                .getApplicationVersion(),
+            builder: (context, snapshot) {
+              return CustomText(
+                title: "${localize.version} ${snapshot.data}",
+                fontSize: 12,
+                color: const Color(0xffBFBFBF),
+              );
+            },
+          ),
           const SizedBox(height: 20),
           CustomText(
             title: localize.rightsreserved,

@@ -27,8 +27,10 @@ class PrayCalculationHeaderView extends StatelessWidget {
 
   List<Widget> _buildSalahBoxes(BuildContext context) {
     return CalculationSettingUsecase.getSalahConfigSettingList().map((config) {
-      return BlocBuilder<PrayCalculationSettingBloc,
-          PrayCalculationSettingState>(
+      return BlocBuilder<
+        PrayCalculationSettingBloc,
+        PrayCalculationSettingState
+      >(
         buildWhen: (previous, current) =>
             config.stateSelector(previous) != config.stateSelector(current),
         builder: (context, state) {

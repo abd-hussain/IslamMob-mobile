@@ -58,32 +58,34 @@ class HisnAlMuslimTextView extends StatelessWidget {
 
   Widget _buildDescriptionText(BuildContext context, List<String> list) {
     return ListView.builder(
-        shrinkWrap: true, // Ensures it takes only required space
-        physics:
-            const NeverScrollableScrollPhysics(), // Disables internal scrolling
-        itemCount: list.length,
-        itemBuilder: (ctx, index) {
-          return Text(
-            list[index],
-            style: _uthmanTextStyle(fontSize: 22),
-            textAlign: TextAlign.center,
-          );
-        });
+      shrinkWrap: true, // Ensures it takes only required space
+      physics:
+          const NeverScrollableScrollPhysics(), // Disables internal scrolling
+      itemCount: list.length,
+      itemBuilder: (ctx, index) {
+        return Text(
+          list[index],
+          style: _uthmanTextStyle(fontSize: 22),
+          textAlign: TextAlign.center,
+        );
+      },
+    );
   }
 
   Widget _buildReferenceText(BuildContext context, List<String> referance) {
     return ListView.builder(
-        shrinkWrap: true, // Ensures it takes only required space
-        physics:
-            const NeverScrollableScrollPhysics(), // Disables internal scrolling
-        itemCount: referance.length,
-        itemBuilder: (ctx, index) {
-          return Text(
-            referance[index],
-            style: _uthmanTextStyle(fontSize: 16),
-            textAlign: TextAlign.start,
-          );
-        });
+      shrinkWrap: true, // Ensures it takes only required space
+      physics:
+          const NeverScrollableScrollPhysics(), // Disables internal scrolling
+      itemCount: referance.length,
+      itemBuilder: (ctx, index) {
+        return Text(
+          referance[index],
+          style: _uthmanTextStyle(fontSize: 16),
+          textAlign: TextAlign.start,
+        );
+      },
+    );
   }
 
   TextStyle _uthmanTextStyle({required double fontSize}) {

@@ -21,8 +21,9 @@ import 'package:url_launcher/url_launcher.dart';
 /// This is particularly important for prayer time accuracy and notification
 /// reliability, which are crucial for Islamic religious observance.
 class OpenMobileSettingUseCase {
-  static const MethodChannel _platform =
-      MethodChannel('com.islammob.app/settings');
+  static const MethodChannel _platform = MethodChannel(
+    'com.islammob.app/settings',
+  );
 
   /// Opens the application settings on iOS or Android.
   static Future<void> openAppSettings() async {

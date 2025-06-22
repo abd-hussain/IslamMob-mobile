@@ -30,12 +30,16 @@ class MainContainerBloc extends Bloc<MainContainerEvent, MainContainerState> {
   }
 
   FutureOr<void> _changeSelectedIndex(
-      _ChangeSelectedIndex event, Emitter<MainContainerState> emit) {
+    _ChangeSelectedIndex event,
+    Emitter<MainContainerState> emit,
+  ) {
     emit(state.copyWith(selectedIndex: event.tabIndex));
   }
 
   FutureOr<void> _changeScreenAwakness(
-      _ChangeScreenAwakness event, Emitter<MainContainerState> emit) async {
+    _ChangeScreenAwakness event,
+    Emitter<MainContainerState> emit,
+  ) async {
     if (state.selectedIndex == 1) {
       // The following line will enable the Android and iOS wakelock.
       await WakelockPlus.enable();

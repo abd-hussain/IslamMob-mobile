@@ -12,7 +12,8 @@ part of 'azkar_after_salah_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$AzkarAfterSalahEvent {
@@ -21,57 +22,54 @@ mixin _$AzkarAfterSalahEvent {
     required TResult Function(AzkarSalahTimeState state) fillInitialValue,
     required TResult Function() resetCounter,
     required TResult Function(AzkarModel item) incrementCounter,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AzkarSalahTimeState state)? fillInitialValue,
     TResult? Function()? resetCounter,
     TResult? Function(AzkarModel item)? incrementCounter,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AzkarSalahTimeState state)? fillInitialValue,
     TResult Function()? resetCounter,
     TResult Function(AzkarModel item)? incrementCounter,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
     required TResult Function(_ResetCounter value) resetCounter,
     required TResult Function(_IncrementCounter value) incrementCounter,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
     TResult? Function(_ResetCounter value)? resetCounter,
     TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
     TResult Function(_ResetCounter value)? resetCounter,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AzkarAfterSalahEventCopyWith<$Res> {
-  factory $AzkarAfterSalahEventCopyWith(AzkarAfterSalahEvent value,
-          $Res Function(AzkarAfterSalahEvent) then) =
-      _$AzkarAfterSalahEventCopyWithImpl<$Res, AzkarAfterSalahEvent>;
+  factory $AzkarAfterSalahEventCopyWith(
+    AzkarAfterSalahEvent value,
+    $Res Function(AzkarAfterSalahEvent) then,
+  ) = _$AzkarAfterSalahEventCopyWithImpl<$Res, AzkarAfterSalahEvent>;
 }
 
 /// @nodoc
-class _$AzkarAfterSalahEventCopyWithImpl<$Res,
-        $Val extends AzkarAfterSalahEvent>
+class _$AzkarAfterSalahEventCopyWithImpl<
+  $Res,
+  $Val extends AzkarAfterSalahEvent
+>
     implements $AzkarAfterSalahEventCopyWith<$Res> {
   _$AzkarAfterSalahEventCopyWithImpl(this._value, this._then);
 
@@ -86,9 +84,10 @@ class _$AzkarAfterSalahEventCopyWithImpl<$Res,
 
 /// @nodoc
 abstract class _$$FillInitialValueImplCopyWith<$Res> {
-  factory _$$FillInitialValueImplCopyWith(_$FillInitialValueImpl value,
-          $Res Function(_$FillInitialValueImpl) then) =
-      __$$FillInitialValueImplCopyWithImpl<$Res>;
+  factory _$$FillInitialValueImplCopyWith(
+    _$FillInitialValueImpl value,
+    $Res Function(_$FillInitialValueImpl) then,
+  ) = __$$FillInitialValueImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AzkarSalahTimeState state});
 
@@ -99,23 +98,24 @@ abstract class _$$FillInitialValueImplCopyWith<$Res> {
 class __$$FillInitialValueImplCopyWithImpl<$Res>
     extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$FillInitialValueImpl>
     implements _$$FillInitialValueImplCopyWith<$Res> {
-  __$$FillInitialValueImplCopyWithImpl(_$FillInitialValueImpl _value,
-      $Res Function(_$FillInitialValueImpl) _then)
-      : super(_value, _then);
+  __$$FillInitialValueImplCopyWithImpl(
+    _$FillInitialValueImpl _value,
+    $Res Function(_$FillInitialValueImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzkarAfterSalahEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? state = null,
-  }) {
-    return _then(_$FillInitialValueImpl(
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as AzkarSalahTimeState,
-    ));
+  $Res call({Object? state = null}) {
+    return _then(
+      _$FillInitialValueImpl(
+        state: null == state
+            ? _value.state
+            : state // ignore: cast_nullable_to_non_nullable
+                  as AzkarSalahTimeState,
+      ),
+    );
   }
 
   /// Create a copy of AzkarAfterSalahEvent
@@ -160,7 +160,9 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @pragma('vm:prefer-inline')
   _$$FillInitialValueImplCopyWith<_$FillInitialValueImpl> get copyWith =>
       __$$FillInitialValueImplCopyWithImpl<_$FillInitialValueImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -247,8 +249,9 @@ abstract class _FillInitialValue implements AzkarAfterSalahEvent {
 /// @nodoc
 abstract class _$$ResetCounterImplCopyWith<$Res> {
   factory _$$ResetCounterImplCopyWith(
-          _$ResetCounterImpl value, $Res Function(_$ResetCounterImpl) then) =
-      __$$ResetCounterImplCopyWithImpl<$Res>;
+    _$ResetCounterImpl value,
+    $Res Function(_$ResetCounterImpl) then,
+  ) = __$$ResetCounterImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -256,8 +259,9 @@ class __$$ResetCounterImplCopyWithImpl<$Res>
     extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$ResetCounterImpl>
     implements _$$ResetCounterImplCopyWith<$Res> {
   __$$ResetCounterImplCopyWithImpl(
-      _$ResetCounterImpl _value, $Res Function(_$ResetCounterImpl) _then)
-      : super(_value, _then);
+    _$ResetCounterImpl _value,
+    $Res Function(_$ResetCounterImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzkarAfterSalahEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -357,9 +361,10 @@ abstract class _ResetCounter implements AzkarAfterSalahEvent {
 
 /// @nodoc
 abstract class _$$IncrementCounterImplCopyWith<$Res> {
-  factory _$$IncrementCounterImplCopyWith(_$IncrementCounterImpl value,
-          $Res Function(_$IncrementCounterImpl) then) =
-      __$$IncrementCounterImplCopyWithImpl<$Res>;
+  factory _$$IncrementCounterImplCopyWith(
+    _$IncrementCounterImpl value,
+    $Res Function(_$IncrementCounterImpl) then,
+  ) = __$$IncrementCounterImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AzkarModel item});
 }
@@ -368,23 +373,24 @@ abstract class _$$IncrementCounterImplCopyWith<$Res> {
 class __$$IncrementCounterImplCopyWithImpl<$Res>
     extends _$AzkarAfterSalahEventCopyWithImpl<$Res, _$IncrementCounterImpl>
     implements _$$IncrementCounterImplCopyWith<$Res> {
-  __$$IncrementCounterImplCopyWithImpl(_$IncrementCounterImpl _value,
-      $Res Function(_$IncrementCounterImpl) _then)
-      : super(_value, _then);
+  __$$IncrementCounterImplCopyWithImpl(
+    _$IncrementCounterImpl _value,
+    $Res Function(_$IncrementCounterImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzkarAfterSalahEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? item = null,
-  }) {
-    return _then(_$IncrementCounterImpl(
-      null == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as AzkarModel,
-    ));
+  $Res call({Object? item = null}) {
+    return _then(
+      _$IncrementCounterImpl(
+        null == item
+            ? _value.item
+            : item // ignore: cast_nullable_to_non_nullable
+                  as AzkarModel,
+      ),
+    );
   }
 }
 
@@ -419,7 +425,9 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @pragma('vm:prefer-inline')
   _$$IncrementCounterImplCopyWith<_$IncrementCounterImpl> get copyWith =>
       __$$IncrementCounterImplCopyWithImpl<_$IncrementCounterImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -517,16 +525,19 @@ mixin _$AzkarAfterSalahState {
 
 /// @nodoc
 abstract class $AzkarAfterSalahStateCopyWith<$Res> {
-  factory $AzkarAfterSalahStateCopyWith(AzkarAfterSalahState value,
-          $Res Function(AzkarAfterSalahState) then) =
-      _$AzkarAfterSalahStateCopyWithImpl<$Res, AzkarAfterSalahState>;
+  factory $AzkarAfterSalahStateCopyWith(
+    AzkarAfterSalahState value,
+    $Res Function(AzkarAfterSalahState) then,
+  ) = _$AzkarAfterSalahStateCopyWithImpl<$Res, AzkarAfterSalahState>;
   @useResult
   $Res call({List<AzkarModel> azkarList, bool showAzkarView});
 }
 
 /// @nodoc
-class _$AzkarAfterSalahStateCopyWithImpl<$Res,
-        $Val extends AzkarAfterSalahState>
+class _$AzkarAfterSalahStateCopyWithImpl<
+  $Res,
+  $Val extends AzkarAfterSalahState
+>
     implements $AzkarAfterSalahStateCopyWith<$Res> {
   _$AzkarAfterSalahStateCopyWithImpl(this._value, this._then);
 
@@ -539,29 +550,30 @@ class _$AzkarAfterSalahStateCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? azkarList = null,
-    Object? showAzkarView = null,
-  }) {
-    return _then(_value.copyWith(
-      azkarList: null == azkarList
-          ? _value.azkarList
-          : azkarList // ignore: cast_nullable_to_non_nullable
-              as List<AzkarModel>,
-      showAzkarView: null == showAzkarView
-          ? _value.showAzkarView
-          : showAzkarView // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  $Res call({Object? azkarList = null, Object? showAzkarView = null}) {
+    return _then(
+      _value.copyWith(
+            azkarList: null == azkarList
+                ? _value.azkarList
+                : azkarList // ignore: cast_nullable_to_non_nullable
+                      as List<AzkarModel>,
+            showAzkarView: null == showAzkarView
+                ? _value.showAzkarView
+                : showAzkarView // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$AzkarAfterSalahStateImplCopyWith<$Res>
     implements $AzkarAfterSalahStateCopyWith<$Res> {
-  factory _$$AzkarAfterSalahStateImplCopyWith(_$AzkarAfterSalahStateImpl value,
-          $Res Function(_$AzkarAfterSalahStateImpl) then) =
-      __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>;
+  factory _$$AzkarAfterSalahStateImplCopyWith(
+    _$AzkarAfterSalahStateImpl value,
+    $Res Function(_$AzkarAfterSalahStateImpl) then,
+  ) = __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<AzkarModel> azkarList, bool showAzkarView});
@@ -571,37 +583,38 @@ abstract class _$$AzkarAfterSalahStateImplCopyWith<$Res>
 class __$$AzkarAfterSalahStateImplCopyWithImpl<$Res>
     extends _$AzkarAfterSalahStateCopyWithImpl<$Res, _$AzkarAfterSalahStateImpl>
     implements _$$AzkarAfterSalahStateImplCopyWith<$Res> {
-  __$$AzkarAfterSalahStateImplCopyWithImpl(_$AzkarAfterSalahStateImpl _value,
-      $Res Function(_$AzkarAfterSalahStateImpl) _then)
-      : super(_value, _then);
+  __$$AzkarAfterSalahStateImplCopyWithImpl(
+    _$AzkarAfterSalahStateImpl _value,
+    $Res Function(_$AzkarAfterSalahStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AzkarAfterSalahState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? azkarList = null,
-    Object? showAzkarView = null,
-  }) {
-    return _then(_$AzkarAfterSalahStateImpl(
-      azkarList: null == azkarList
-          ? _value._azkarList
-          : azkarList // ignore: cast_nullable_to_non_nullable
-              as List<AzkarModel>,
-      showAzkarView: null == showAzkarView
-          ? _value.showAzkarView
-          : showAzkarView // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? azkarList = null, Object? showAzkarView = null}) {
+    return _then(
+      _$AzkarAfterSalahStateImpl(
+        azkarList: null == azkarList
+            ? _value._azkarList
+            : azkarList // ignore: cast_nullable_to_non_nullable
+                  as List<AzkarModel>,
+        showAzkarView: null == showAzkarView
+            ? _value.showAzkarView
+            : showAzkarView // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
-  const _$AzkarAfterSalahStateImpl(
-      {final List<AzkarModel> azkarList = const [], this.showAzkarView = false})
-      : _azkarList = azkarList;
+  const _$AzkarAfterSalahStateImpl({
+    final List<AzkarModel> azkarList = const [],
+    this.showAzkarView = false,
+  }) : _azkarList = azkarList;
 
   final List<AzkarModel> _azkarList;
   @override
@@ -626,15 +639,20 @@ class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AzkarAfterSalahStateImpl &&
-            const DeepCollectionEquality()
-                .equals(other._azkarList, _azkarList) &&
+            const DeepCollectionEquality().equals(
+              other._azkarList,
+              _azkarList,
+            ) &&
             (identical(other.showAzkarView, showAzkarView) ||
                 other.showAzkarView == showAzkarView));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_azkarList), showAzkarView);
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_azkarList),
+    showAzkarView,
+  );
 
   /// Create a copy of AzkarAfterSalahState
   /// with the given fields replaced by the non-null parameter values.
@@ -642,15 +660,18 @@ class _$AzkarAfterSalahStateImpl implements _AzkarAfterSalahState {
   @override
   @pragma('vm:prefer-inline')
   _$$AzkarAfterSalahStateImplCopyWith<_$AzkarAfterSalahStateImpl>
-      get copyWith =>
-          __$$AzkarAfterSalahStateImplCopyWithImpl<_$AzkarAfterSalahStateImpl>(
-              this, _$identity);
+  get copyWith =>
+      __$$AzkarAfterSalahStateImplCopyWithImpl<_$AzkarAfterSalahStateImpl>(
+        this,
+        _$identity,
+      );
 }
 
 abstract class _AzkarAfterSalahState implements AzkarAfterSalahState {
-  const factory _AzkarAfterSalahState(
-      {final List<AzkarModel> azkarList,
-      final bool showAzkarView}) = _$AzkarAfterSalahStateImpl;
+  const factory _AzkarAfterSalahState({
+    final List<AzkarModel> azkarList,
+    final bool showAzkarView,
+  }) = _$AzkarAfterSalahStateImpl;
 
   @override
   List<AzkarModel> get azkarList;
@@ -662,5 +683,5 @@ abstract class _AzkarAfterSalahState implements AzkarAfterSalahState {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AzkarAfterSalahStateImplCopyWith<_$AzkarAfterSalahStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

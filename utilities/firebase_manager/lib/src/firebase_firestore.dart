@@ -20,8 +20,10 @@ class FirebaseFirestoreRepository {
       try {
         final collection = _firestoreInstance.collection(collectionName);
 
-        final List<Map<String, dynamic>> documents =
-            (await collection.get()).docs.map((doc) => doc.data()).toList();
+        final List<Map<String, dynamic>> documents = (await collection.get())
+            .docs
+            .map((doc) => doc.data())
+            .toList();
 
         return documents;
       } on FirebaseException catch (error) {
@@ -36,7 +38,8 @@ class FirebaseFirestoreRepository {
 
   /// Fetches spesific documents from a Firestore collection.
   static Future<T?> getDataFromFireStoreDocument<T>(
-      FireStoreOptions<T> options) async {
+    FireStoreOptions<T> options,
+  ) async {
     if (await _isConnected()) {
       try {
         final document = await _firestoreInstance
@@ -55,15 +58,15 @@ class FirebaseFirestoreRepository {
   }
 
   /// Sets Firestore data for a given [FireStoreOptions].
-  static Future<void> setData<T>({
-    required FireStoreOptions<T> options,
-  }) async {
+  static Future<void> setData<T>({required FireStoreOptions<T> options}) async {
     try {
       final collection = _firestoreInstance.collection(options.collectionName!);
       await collection.doc(options.docName).set(options.fromModel!);
     } catch (error) {
       LoggerManagerBase.logCritical(
-          message: 'Error setting Firestore data', error: error);
+        message: 'Error setting Firestore data',
+        error: error,
+      );
     }
   }
 

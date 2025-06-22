@@ -47,9 +47,9 @@ class QuranCopyView extends StatelessWidget {
           builder: (context, state) {
             if (state.internetConnectionStauts == false) {
               return NoInternetView(
-                retryCallback: () => context
-                    .read<QuranCopyBloc>()
-                    .add(QuranCopyEvent.getlistOfPrints()),
+                retryCallback: () => context.read<QuranCopyBloc>().add(
+                  QuranCopyEvent.getlistOfPrints(),
+                ),
               );
             }
 
@@ -60,10 +60,7 @@ class QuranCopyView extends StatelessWidget {
             return Column(
               children: [
                 _buildHeader(context),
-                Container(
-                  height: 1,
-                  color: const Color(0xffD9D9D9),
-                ),
+                Container(height: 1, color: const Color(0xffD9D9D9)),
                 Expanded(child: _buildPrintList(context, state)),
               ],
             );
@@ -109,35 +106,38 @@ class QuranCopyView extends StatelessWidget {
 
   Widget _buildPrintList(BuildContext context, QuranCopyState state) {
     return BlocBuilder<QuranCopyBloc, QuranCopyState>(
-        buildWhen: (previous, current) =>
-            previous.printsAlreadyDownloaded != current.printsAlreadyDownloaded,
-        builder: (context, downloadState) {
-          return ListView.builder(
-            itemCount: state.listOfPrints!.length,
-            itemBuilder: (context, index) {
-              final printItem = state.listOfPrints![index];
-              return PrintTileView(
-                language: context.read<QuranCopyBloc>().getLanguageNameByCode(
-                      printItem.language ?? "",
-                    ),
-                title: printItem.nameReferance,
-                description: printItem.description,
-                previewImage: printItem.previewImage,
-                downloadButtonAvailable: !downloadState.printsAlreadyDownloaded
-                    .contains(printItem.fieldName),
-                useButtonAvailable: downloadState.printsAlreadyDownloaded
-                    .contains(printItem.fieldName),
-                onDownloadPressed: () =>
-                    _handleDownloadPressed(context, printItem),
-                onUsePressed: () => _handleUsePressed(context, printItem),
-              );
-            },
-          );
-        });
+      buildWhen: (previous, current) =>
+          previous.printsAlreadyDownloaded != current.printsAlreadyDownloaded,
+      builder: (context, downloadState) {
+        return ListView.builder(
+          itemCount: state.listOfPrints!.length,
+          itemBuilder: (context, index) {
+            final printItem = state.listOfPrints![index];
+            return PrintTileView(
+              language: context.read<QuranCopyBloc>().getLanguageNameByCode(
+                printItem.language ?? "",
+              ),
+              title: printItem.nameReferance,
+              description: printItem.description,
+              previewImage: printItem.previewImage,
+              downloadButtonAvailable: !downloadState.printsAlreadyDownloaded
+                  .contains(printItem.fieldName),
+              useButtonAvailable: downloadState.printsAlreadyDownloaded
+                  .contains(printItem.fieldName),
+              onDownloadPressed: () =>
+                  _handleDownloadPressed(context, printItem),
+              onUsePressed: () => _handleUsePressed(context, printItem),
+            );
+          },
+        );
+      },
+    );
   }
 
   Future<void> _handleDownloadPressed(
-      BuildContext context, QuranPrints printItem) async {
+    BuildContext context,
+    QuranPrints printItem,
+  ) async {
     final hasPermission =
         await StoragePermissionUseCase.requestStoragePermission();
 
@@ -167,13 +167,13 @@ class QuranCopyView extends StatelessWidget {
   }
 
   void _updateDownloadState(BuildContext context, QuranPrints printItem) {
-    final List<String> updatedList =
-        List.from(context.read<QuranCopyBloc>().state.printsAlreadyDownloaded)
-          ..add(printItem.fieldName!);
+    final List<String> updatedList = List.from(
+      context.read<QuranCopyBloc>().state.printsAlreadyDownloaded,
+    )..add(printItem.fieldName!);
 
-    context
-        .read<QuranCopyBloc>()
-        .add(QuranCopyEvent.updatePrintsDownloading(updatedList));
+    context.read<QuranCopyBloc>().add(
+      QuranCopyEvent.updatePrintsDownloading(updatedList),
+    );
   }
 
   void _showPermissionWarning(BuildContext context) {
@@ -184,10 +184,12 @@ class QuranCopyView extends StatelessWidget {
   }
 
   Future<void> _handleUsePressed(
-      BuildContext context, QuranPrints printItem) async {
-    context
-        .read<QuranCopyBloc>()
-        .add(QuranCopyEvent.setupCopy(printItem: printItem));
+    BuildContext context,
+    QuranPrints printItem,
+  ) async {
+    context.read<QuranCopyBloc>().add(
+      QuranCopyEvent.setupCopy(printItem: printItem),
+    );
     doneSelection();
   }
 }

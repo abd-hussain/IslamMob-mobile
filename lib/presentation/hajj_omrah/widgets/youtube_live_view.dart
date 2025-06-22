@@ -63,8 +63,10 @@ class YoutubeLiveView extends StatelessWidget {
                     await controller.loadContent(youtubeUrl);
                   },
                   onPageFinished: (url) => context.read<HajjOmrahBloc>().add(
-                      const HajjOmrahEvent.loadingState(
-                          const VideoProcessState.success())),
+                    const HajjOmrahEvent.loadingState(
+                      const VideoProcessState.success(),
+                    ),
+                  ),
                 ),
                 if (state.processState == const VideoProcessState.loading())
                   const Positioned.fill(top: 100, child: WebviewLoadingView()),

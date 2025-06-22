@@ -15,8 +15,10 @@ class NotificationHavePermissionView extends StatelessWidget {
   ///
   /// The [onConfirmationPress] parameter is required and defines the action to take
   /// when the user confirms they want to proceed with account setup.
-  const NotificationHavePermissionView(
-      {super.key, required this.onConfirmationPress});
+  const NotificationHavePermissionView({
+    super.key,
+    required this.onConfirmationPress,
+  });
 
   @override
   Widget build(BuildContext context) {

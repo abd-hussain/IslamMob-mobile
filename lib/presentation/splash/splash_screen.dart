@@ -59,11 +59,12 @@ class SplashLoadingScreen extends StatelessWidget {
                     height: 50,
                     width: 50,
                     child: LoadingIndicator(
-                        indicatorType: Indicator.ballSpinFadeLoader,
-                        colors: [Color(0xff034061)],
-                        strokeWidth: 1,
-                        backgroundColor: Colors.transparent,
-                        pathBackgroundColor: Colors.transparent),
+                      indicatorType: Indicator.ballSpinFadeLoader,
+                      colors: [Color(0xff034061)],
+                      strokeWidth: 1,
+                      backgroundColor: Colors.transparent,
+                      pathBackgroundColor: Colors.transparent,
+                    ),
                   ),
                   const Expanded(child: SizedBox()),
                   const Text(

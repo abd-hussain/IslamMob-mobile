@@ -32,9 +32,7 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
     return Container(
       width: MediaQuery.of(context).size.width,
       decoration: _containerDecoration(),
-      child: Column(
-        children: _buildNotificationRows(context),
-      ),
+      child: Column(children: _buildNotificationRows(context)),
     );
   }
 
@@ -61,15 +59,17 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
           return NotificationRowView(
             title: localization.notificationSettingFajir,
             value: state.fajir,
-            soundFileName:
-                context.read<PrayNotificationSettingBloc>().getSoundName(
-                      type: const NotificationTypeState.fajir(),
-                      localization: localization,
-                    ),
+            soundFileName: context
+                .read<PrayNotificationSettingBloc>()
+                .getSoundName(
+                  type: const NotificationTypeState.fajir(),
+                  localization: localization,
+                ),
             description: "",
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
-                  name: "ChooseSoundScreen fajir");
+                name: "ChooseSoundScreen fajir",
+              );
               if (!mounted) return;
               if (!context.mounted) return;
               await Navigator.pushNamed(
@@ -85,11 +85,11 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const Fajir(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const Fajir(),
+                ),
+              );
             },
           );
         },
@@ -101,15 +101,17 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
           return NotificationRowView(
             title: localization.notificationSettingDuher,
             value: state.duhir,
-            soundFileName:
-                context.read<PrayNotificationSettingBloc>().getSoundName(
-                      type: const NotificationTypeState.zuhr(),
-                      localization: localization,
-                    ),
+            soundFileName: context
+                .read<PrayNotificationSettingBloc>()
+                .getSoundName(
+                  type: const NotificationTypeState.zuhr(),
+                  localization: localization,
+                ),
             description: "",
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
-                  name: "ChooseSoundScreen duhir");
+                name: "ChooseSoundScreen duhir",
+              );
               if (!mounted) return;
               if (!context.mounted) return;
               await Navigator.pushNamed(
@@ -125,11 +127,11 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const Duhir(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const Duhir(),
+                ),
+              );
             },
           );
         },
@@ -141,15 +143,17 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
           return NotificationRowView(
             title: localization.notificationSettingAsr,
             value: state.asr,
-            soundFileName:
-                context.read<PrayNotificationSettingBloc>().getSoundName(
-                      type: const NotificationTypeState.asr(),
-                      localization: localization,
-                    ),
+            soundFileName: context
+                .read<PrayNotificationSettingBloc>()
+                .getSoundName(
+                  type: const NotificationTypeState.asr(),
+                  localization: localization,
+                ),
             description: "",
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
-                  name: "ChooseSoundScreen Asr");
+                name: "ChooseSoundScreen Asr",
+              );
               if (!mounted) return;
               if (!context.mounted) return;
               await Navigator.pushNamed(
@@ -165,11 +169,11 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const Asr(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const Asr(),
+                ),
+              );
             },
           );
         },
@@ -181,15 +185,17 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
           return NotificationRowView(
             title: localization.notificationSettingMagrieb,
             value: state.magrieb,
-            soundFileName:
-                context.read<PrayNotificationSettingBloc>().getSoundName(
-                      type: const NotificationTypeState.maghrib(),
-                      localization: localization,
-                    ),
+            soundFileName: context
+                .read<PrayNotificationSettingBloc>()
+                .getSoundName(
+                  type: const NotificationTypeState.maghrib(),
+                  localization: localization,
+                ),
             description: "",
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
-                  name: "ChooseSoundScreen Magrieb");
+                name: "ChooseSoundScreen Magrieb",
+              );
               if (!mounted) return;
               if (!context.mounted) return;
               await Navigator.pushNamed(
@@ -205,11 +211,11 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const Magrieb(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const Magrieb(),
+                ),
+              );
             },
           );
         },
@@ -221,15 +227,17 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
           return NotificationRowView(
             title: localization.notificationSettingIsha,
             value: state.isha,
-            soundFileName:
-                context.read<PrayNotificationSettingBloc>().getSoundName(
-                      type: const NotificationTypeState.isha(),
-                      localization: localization,
-                    ),
+            soundFileName: context
+                .read<PrayNotificationSettingBloc>()
+                .getSoundName(
+                  type: const NotificationTypeState.isha(),
+                  localization: localization,
+                ),
             description: "",
             onChangeSoundPresses: () async {
               await FirebaseAnalyticsRepository.logEvent(
-                  name: "ChooseSoundScreen Isha");
+                name: "ChooseSoundScreen Isha",
+              );
               if (!mounted) return;
               if (!context.mounted) return;
               await Navigator.pushNamed(
@@ -245,11 +253,11 @@ class _PrayNotificationViewState extends State<PrayNotificationView> {
             },
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const Isha(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const Isha(),
+                ),
+              );
             },
           );
         },

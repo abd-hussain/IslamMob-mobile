@@ -29,8 +29,11 @@ class SectionView extends StatelessWidget {
   ///
   /// The widget automatically handles spacing and formatting for consistent
   /// presentation across different sections of content.
-  const SectionView(
-      {super.key, required this.title, required this.descriptions});
+  const SectionView({
+    super.key,
+    required this.title,
+    required this.descriptions,
+  });
 
   /// Builds the section view with title and description content.
   ///

@@ -48,14 +48,12 @@ class _WebViewScreenState extends State<WebViewScreen> {
       child: BlocBuilder<WebViewBloc, WebViewState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: CustomAppBar(
-              title: state.pageTitle,
-            ),
+            appBar: CustomAppBar(title: state.pageTitle),
             body: (state.internetConnectionStauts == false)
                 ? NoInternetView(
                     retryCallback: () => context.read<WebViewBloc>().add(
-                          const WebViewEvent.initalizeWebViewContent(),
-                        ),
+                      const WebViewEvent.initalizeWebViewContent(),
+                    ),
                   )
                 : WebViewAware(
                     child: WebViewX(

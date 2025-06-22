@@ -13,9 +13,6 @@ class ArrowView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Icon(
-      Icons.arrow_forward,
-      color: Colors.white,
-    );
+    return const Icon(Icons.arrow_forward, color: Colors.white);
   }
 }

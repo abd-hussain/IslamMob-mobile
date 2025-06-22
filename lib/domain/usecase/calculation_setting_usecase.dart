@@ -58,7 +58,9 @@ class CalculationSettingUsecase {
   /// // Returns list with UTC+3 marked as selected
   /// ```
   static List<TimeZoneSetting> getTimeZonesList(
-      IslamMobLocalizations localizations, Duration currentState) {
+    IslamMobLocalizations localizations,
+    Duration currentState,
+  ) {
     return [
       TimeZoneSetting(
         name: 'UTC -12:00',
@@ -272,7 +274,9 @@ class CalculationSettingUsecase {
   /// Returns a list of [MadhabSetting] objects with localized names and
   /// proper selection state marking.
   static List<MadhabSetting> getMadhabList(
-      IslamMobLocalizations localizations, MadhabState currentState) {
+    IslamMobLocalizations localizations,
+    MadhabState currentState,
+  ) {
     return [
       MadhabSetting(
         name: localizations.mathhab1Shafi,
@@ -331,13 +335,15 @@ class CalculationSettingUsecase {
       CalculationMethodSetting(
         name: localizations.calculationMethod3,
         method: const PrayCalculationMethodState.islamicSocietyOfNorthAmerica(),
-        isSelected: currentState ==
+        isSelected:
+            currentState ==
             const PrayCalculationMethodState.islamicSocietyOfNorthAmerica(),
       ),
       CalculationMethodSetting(
         name: localizations.calculationMethod4,
         method: const PrayCalculationMethodState.muslimWorldLeague(),
-        isSelected: currentState ==
+        isSelected:
+            currentState ==
             const PrayCalculationMethodState.muslimWorldLeague(),
       ),
       CalculationMethodSetting(
@@ -426,7 +432,8 @@ class CalculationSettingUsecase {
       CalculationMethodSetting(
         name: localizations.calculationMethod21,
         method: const PrayCalculationMethodState.comunidadeIslamicaLisboa(),
-        isSelected: currentState ==
+        isSelected:
+            currentState ==
             const PrayCalculationMethodState.comunidadeIslamicaLisboa(),
       ),
       CalculationMethodSetting(
@@ -472,7 +479,8 @@ class CalculationSettingUsecase {
       HighLatitudeSetting(
         name: localizations.hightLatitudeCaluclationAngleBasedMethod,
         method: const PrayHightLatitudeCaluclationState.angleBasedMethod(),
-        isSelected: currentState ==
+        isSelected:
+            currentState ==
             const PrayHightLatitudeCaluclationState.angleBasedMethod(),
       ),
       HighLatitudeSetting(
@@ -484,7 +492,8 @@ class CalculationSettingUsecase {
       HighLatitudeSetting(
         name: localizations.hightLatitudeCaluclationOneSeventh,
         method: const PrayHightLatitudeCaluclationState.seventhPartOfTheNight(),
-        isSelected: currentState ==
+        isSelected:
+            currentState ==
             const PrayHightLatitudeCaluclationState.seventhPartOfTheNight(),
       ),
     ];
@@ -565,7 +574,8 @@ class CalculationSettingUsecase {
   /// Returns a list of [CorrectionMinTimeData] objects with localized titles
   /// and corresponding state getters and setters.
   static List<CorrectionMinTimeData> getCorrectionMinTimeDataList(
-      IslamMobLocalizations localizations) {
+    IslamMobLocalizations localizations,
+  ) {
     return [
       CorrectionMinTimeData(
         title: localizations.fajirCorrectionTitle,

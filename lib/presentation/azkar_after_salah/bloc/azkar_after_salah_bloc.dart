@@ -41,7 +41,9 @@ class AzkarAfterSalahBloc
       state.azkarList.every((zeker) => zeker.currentCount >= zeker.maxCount);
 
   FutureOr<void> _resetCounter(
-      _ResetCounter event, Emitter<AzkarAfterSalahState> emit) {
+    _ResetCounter event,
+    Emitter<AzkarAfterSalahState> emit,
+  ) {
     final List<AzkarModel> resetList = state.azkarList
         .map((zeker) => zeker.copyWith(currentCount: 0))
         .toList();
@@ -49,7 +51,9 @@ class AzkarAfterSalahBloc
   }
 
   FutureOr<void> _incrementCounter(
-      _IncrementCounter event, Emitter<AzkarAfterSalahState> emit) {
+    _IncrementCounter event,
+    Emitter<AzkarAfterSalahState> emit,
+  ) {
     final List<AzkarModel> updatedList = state.azkarList.map((zeker) {
       if (zeker.id == event.item.id) {
         return zeker.copyWith(currentCount: event.item.currentCount);
@@ -60,7 +64,9 @@ class AzkarAfterSalahBloc
   }
 
   FutureOr<void> _fillInitialValue(
-      _FillInitialValue event, Emitter<AzkarAfterSalahState> emit) {
+    _FillInitialValue event,
+    Emitter<AzkarAfterSalahState> emit,
+  ) {
     final azkarList = AzkarBase().azkarList(event.state);
     emit(state.copyWith(azkarList: azkarList));
   }

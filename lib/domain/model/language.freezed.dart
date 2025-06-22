@@ -12,7 +12,8 @@ part of 'language.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$LanguageModel {
@@ -31,14 +32,16 @@ mixin _$LanguageModel {
 /// @nodoc
 abstract class $LanguageModelCopyWith<$Res> {
   factory $LanguageModelCopyWith(
-          LanguageModel value, $Res Function(LanguageModel) then) =
-      _$LanguageModelCopyWithImpl<$Res, LanguageModel>;
+    LanguageModel value,
+    $Res Function(LanguageModel) then,
+  ) = _$LanguageModelCopyWithImpl<$Res, LanguageModel>;
   @useResult
-  $Res call(
-      {String name,
-      String flagCode,
-      String languageCode,
-      String selectButtonTitle});
+  $Res call({
+    String name,
+    String flagCode,
+    String languageCode,
+    String selectButtonTitle,
+  });
 }
 
 /// @nodoc
@@ -61,24 +64,27 @@ class _$LanguageModelCopyWithImpl<$Res, $Val extends LanguageModel>
     Object? languageCode = null,
     Object? selectButtonTitle = null,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      flagCode: null == flagCode
-          ? _value.flagCode
-          : flagCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      languageCode: null == languageCode
-          ? _value.languageCode
-          : languageCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      selectButtonTitle: null == selectButtonTitle
-          ? _value.selectButtonTitle
-          : selectButtonTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            flagCode: null == flagCode
+                ? _value.flagCode
+                : flagCode // ignore: cast_nullable_to_non_nullable
+                      as String,
+            languageCode: null == languageCode
+                ? _value.languageCode
+                : languageCode // ignore: cast_nullable_to_non_nullable
+                      as String,
+            selectButtonTitle: null == selectButtonTitle
+                ? _value.selectButtonTitle
+                : selectButtonTitle // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -86,15 +92,17 @@ class _$LanguageModelCopyWithImpl<$Res, $Val extends LanguageModel>
 abstract class _$$LanguageModelImplCopyWith<$Res>
     implements $LanguageModelCopyWith<$Res> {
   factory _$$LanguageModelImplCopyWith(
-          _$LanguageModelImpl value, $Res Function(_$LanguageModelImpl) then) =
-      __$$LanguageModelImplCopyWithImpl<$Res>;
+    _$LanguageModelImpl value,
+    $Res Function(_$LanguageModelImpl) then,
+  ) = __$$LanguageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String name,
-      String flagCode,
-      String languageCode,
-      String selectButtonTitle});
+  $Res call({
+    String name,
+    String flagCode,
+    String languageCode,
+    String selectButtonTitle,
+  });
 }
 
 /// @nodoc
@@ -102,8 +110,9 @@ class __$$LanguageModelImplCopyWithImpl<$Res>
     extends _$LanguageModelCopyWithImpl<$Res, _$LanguageModelImpl>
     implements _$$LanguageModelImplCopyWith<$Res> {
   __$$LanguageModelImplCopyWithImpl(
-      _$LanguageModelImpl _value, $Res Function(_$LanguageModelImpl) _then)
-      : super(_value, _then);
+    _$LanguageModelImpl _value,
+    $Res Function(_$LanguageModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LanguageModel
   /// with the given fields replaced by the non-null parameter values.
@@ -115,35 +124,38 @@ class __$$LanguageModelImplCopyWithImpl<$Res>
     Object? languageCode = null,
     Object? selectButtonTitle = null,
   }) {
-    return _then(_$LanguageModelImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      flagCode: null == flagCode
-          ? _value.flagCode
-          : flagCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      languageCode: null == languageCode
-          ? _value.languageCode
-          : languageCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      selectButtonTitle: null == selectButtonTitle
-          ? _value.selectButtonTitle
-          : selectButtonTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$LanguageModelImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        flagCode: null == flagCode
+            ? _value.flagCode
+            : flagCode // ignore: cast_nullable_to_non_nullable
+                  as String,
+        languageCode: null == languageCode
+            ? _value.languageCode
+            : languageCode // ignore: cast_nullable_to_non_nullable
+                  as String,
+        selectButtonTitle: null == selectButtonTitle
+            ? _value.selectButtonTitle
+            : selectButtonTitle // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$LanguageModelImpl implements _LanguageModel {
-  _$LanguageModelImpl(
-      {required this.name,
-      required this.flagCode,
-      required this.languageCode,
-      required this.selectButtonTitle});
+  _$LanguageModelImpl({
+    required this.name,
+    required this.flagCode,
+    required this.languageCode,
+    required this.selectButtonTitle,
+  });
 
   @override
   final String name;
@@ -187,11 +199,12 @@ class _$LanguageModelImpl implements _LanguageModel {
 }
 
 abstract class _LanguageModel implements LanguageModel {
-  factory _LanguageModel(
-      {required final String name,
-      required final String flagCode,
-      required final String languageCode,
-      required final String selectButtonTitle}) = _$LanguageModelImpl;
+  factory _LanguageModel({
+    required final String name,
+    required final String flagCode,
+    required final String languageCode,
+    required final String selectButtonTitle,
+  }) = _$LanguageModelImpl;
 
   @override
   String get name;

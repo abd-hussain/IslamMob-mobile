@@ -40,40 +40,58 @@ class HisnAlMuslimListBloc
   }
 
   FutureOr<void> _getListOfAzkar(
-      _GetListOfAzkar event, Emitter<HisnAlMuslimListState> emit) async {
-    emit(state.copyWith(
+    _GetListOfAzkar event,
+    Emitter<HisnAlMuslimListState> emit,
+  ) async {
+    emit(
+      state.copyWith(
         list: await HisnAlMuslimUseCase.getHisnAlMuslimList(),
-        isRtlLanguage: _isRtlLanguage()));
+        isRtlLanguage: _isRtlLanguage(),
+      ),
+    );
   }
 
   FutureOr<void> _updateSelectedTab(
-      _UpdateSelectedTab event, Emitter<HisnAlMuslimListState> emit) {
+    _UpdateSelectedTab event,
+    Emitter<HisnAlMuslimListState> emit,
+  ) {
     emit(state.copyWith(selectedIndex: event.index));
   }
 
   FutureOr<void> _addItemToFavorite(
-      _AddItemToFavorite event, Emitter<HisnAlMuslimListState> emit) async {
+    _AddItemToFavorite event,
+    Emitter<HisnAlMuslimListState> emit,
+  ) async {
     HisnAlMuslimUseCase.addRemoveNewItemToFavoriteList(event.item.id);
     emit(state.copyWith(list: await HisnAlMuslimUseCase.getHisnAlMuslimList()));
   }
 
   FutureOr<void> _search(
-      _Search event, Emitter<HisnAlMuslimListState> emit) async {
+    _Search event,
+    Emitter<HisnAlMuslimListState> emit,
+  ) async {
     final originalList = await HisnAlMuslimUseCase.getHisnAlMuslimList();
     final searchFilteredList = originalList
-        .where((element) =>
-            element.title.ar
-                .toLowerCase()
-                .contains(event.value.toLowerCase()) ||
-            element.title.en.toLowerCase().contains(event.value.toLowerCase()))
+        .where(
+          (element) =>
+              element.title.ar.toLowerCase().contains(
+                event.value.toLowerCase(),
+              ) ||
+              element.title.en.toLowerCase().contains(
+                event.value.toLowerCase(),
+              ),
+        )
         .toList();
     emit(state.copyWith(list: searchFilteredList));
   }
 
   bool _isRtlLanguage() {
-    final String languageCode = DataBaseManagerBase.getFromDatabase(
-        key: DatabaseFieldConstant.userLanguageCode,
-        defaultValue: "en") as String;
+    final String languageCode =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldConstant.userLanguageCode,
+              defaultValue: "en",
+            )
+            as String;
     return languageCode == "ar" || languageCode == "fa";
   }
 }

@@ -24,23 +24,17 @@ class BottomNavigationBarView extends StatelessWidget {
           height: 55,
           style: TabStyle.react,
           items: [
-            TabItem(
-              icon: Icons.home,
-              title: localization.home,
-            ),
+            TabItem(icon: Icons.home, title: localization.home),
             TabItem(
               icon: Icons.menu_book_rounded,
               title: localization.qurankareem,
             ),
-            TabItem(
-              icon: Icons.settings,
-              title: localization.settings,
-            ),
+            TabItem(icon: Icons.settings, title: localization.settings),
           ],
           onTap: (int index) {
             context.read<MainContainerBloc>().add(
-                  MainContainerEvent.changeSelectedIndex(index),
-                );
+              MainContainerEvent.changeSelectedIndex(index),
+            );
           },
         );
       },

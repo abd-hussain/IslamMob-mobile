@@ -26,11 +26,7 @@ class LocationErrorWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const Icon(
-            Icons.location_off,
-            size: 150,
-            color: errorColor,
-          ),
+          const Icon(Icons.location_off, size: 150, color: errorColor),
           const SizedBox(height: 8),
           CustomText(
             title: localize.allowLocations,
@@ -48,7 +44,9 @@ class LocationErrorWidget extends StatelessWidget {
   }
 
   Widget _buildDescription(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return CustomText(
       title: localize.allowLocationDetails,
       fontSize: 14,
@@ -60,7 +58,9 @@ class LocationErrorWidget extends StatelessWidget {
   }
 
   Widget _buildSettingsButton(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return CustomButton(
       isEnabled: true,
       padding: const EdgeInsets.only(left: 16, right: 16, top: 8),

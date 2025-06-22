@@ -141,7 +141,9 @@ class PrintTileView extends StatelessWidget {
   }
 
   Widget _buildDownloadButton(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return CustomButton(
       isEnabled: downloadButtonAvailable,
       padding: const EdgeInsets.all(8),

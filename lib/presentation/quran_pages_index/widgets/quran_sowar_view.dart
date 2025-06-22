@@ -41,10 +41,11 @@ class QuranSowarView extends StatelessWidget {
   ///
   /// Both [currentSowrahName] and [onSowrahSelected] are required parameters
   /// for proper functionality of the Surah navigation interface.
-  const QuranSowarView(
-      {super.key,
-      required this.onSowrahSelected,
-      required this.currentSowrahName});
+  const QuranSowarView({
+    super.key,
+    required this.onSowrahSelected,
+    required this.currentSowrahName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -58,16 +59,18 @@ class QuranSowarView extends StatelessWidget {
           Stack(
             children: [
               Image.asset("assets/images/hisnalmuslim.png"),
-              Builder(builder: (context) {
-                return CustomTextField(
-                  controller: searchController,
-                  hintText: IslamMobLocalizations.of(context).searchField,
-                  prefixIcon: Icons.search,
-                  onChanged: (p0) => context
-                      .read<QuranPagesIndexBloc>()
-                      .add(QuranPagesIndexEvent.search(context, p0)),
-                );
-              }),
+              Builder(
+                builder: (context) {
+                  return CustomTextField(
+                    controller: searchController,
+                    hintText: IslamMobLocalizations.of(context).searchField,
+                    prefixIcon: Icons.search,
+                    onChanged: (p0) => context.read<QuranPagesIndexBloc>().add(
+                      QuranPagesIndexEvent.search(context, p0),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
           Expanded(
@@ -76,21 +79,22 @@ class QuranSowarView extends StatelessWidget {
                   previous.sowarList != current.sowarList,
               builder: (context, state) {
                 return ListView.builder(
-                    itemCount: state.sowarList.length,
-                    itemBuilder: (context, index) {
-                      final surahName = state.sowarList[index];
-                      final isCurrent = currentSowrahName == surahName;
-                      return SowrahTileView(
-                        index: index,
-                        sowrahName: surahName,
-                        isCurrentPage: isCurrent,
-                        sowrahType: QuranPagesIndexUseCase.getSurahType(
-                          context: context,
-                          surahName: surahName,
-                        ),
-                        onTap: () => onSowrahSelected(surahName),
-                      );
-                    });
+                  itemCount: state.sowarList.length,
+                  itemBuilder: (context, index) {
+                    final surahName = state.sowarList[index];
+                    final isCurrent = currentSowrahName == surahName;
+                    return SowrahTileView(
+                      index: index,
+                      sowrahName: surahName,
+                      isCurrentPage: isCurrent,
+                      sowrahType: QuranPagesIndexUseCase.getSurahType(
+                        context: context,
+                        surahName: surahName,
+                      ),
+                      onTap: () => onSowrahSelected(surahName),
+                    );
+                  },
+                );
               },
             ),
           ),

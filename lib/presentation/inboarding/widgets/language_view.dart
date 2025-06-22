@@ -73,9 +73,9 @@ class LanguageInBoardingView extends StatelessWidget {
           isEnabled: true,
           title: state.selectedLanguage!.selectButtonTitle,
           onTap: () {
-            context
-                .read<LanguageBloc>()
-                .add(LanguageEvent.setupLanguage(context: context));
+            context.read<LanguageBloc>().add(
+              LanguageEvent.setupLanguage(context: context),
+            );
             doneSelection();
           },
         );

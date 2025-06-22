@@ -33,10 +33,10 @@ class NotificationListSaveButton extends StatelessWidget {
           isEnabled: true,
           onTap: () {
             context.read<PrayNotificationSettingBloc>().add(
-                  PrayNotificationSettingEvent.savePrayNotificationSettings(
-                    context: context,
-                  ),
-                );
+              PrayNotificationSettingEvent.savePrayNotificationSettings(
+                context: context,
+              ),
+            );
           },
         ),
       ),

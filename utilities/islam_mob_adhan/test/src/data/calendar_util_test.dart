@@ -11,23 +11,11 @@ void main() {
   test('Test CalenderUtil.roundedMinute', () {
     expect(
       CalendarUtil.roundedMinute(DateTime(2020, 1, 1, 1, 1, 50)),
-      DateTime(
-        2020,
-        1,
-        1,
-        1,
-        2,
-      ),
+      DateTime(2020, 1, 1, 1, 2),
     );
     expect(
       CalendarUtil.roundedMinute(DateTime(2020, 1, 1, 1, 1, 29)),
-      DateTime(
-        2020,
-        1,
-        1,
-        1,
-        1,
-      ),
+      DateTime(2020, 1, 1, 1, 1),
     );
   });
 
@@ -39,11 +27,6 @@ void main() {
   });
 
   test('Test CalenderUtil.resolveTime', () {
-    expect(
-      CalendarUtil.resolveTime(2020, 1, 1),
-      DateTime.utc(
-        2020,
-      ),
-    );
+    expect(CalendarUtil.resolveTime(2020, 1, 1), DateTime.utc(2020));
   });
 }

@@ -37,23 +37,31 @@ class ContactsBloc extends Bloc<ContactsEvent, ContactsState> {
   }
 
   FutureOr<void> _fetchContacts(
-      _FetchContacts event, Emitter<ContactsState> emit) async {
+    _FetchContacts event,
+    Emitter<ContactsState> emit,
+  ) async {
     final bool station = await FetchUserContactsUsecase.requestPermission();
 
     if (station == false) {
-      emit(state.copyWith(
-          station: const ContactsProgressStateErrorPermission()));
+      emit(
+        state.copyWith(station: const ContactsProgressStateErrorPermission()),
+      );
     } else {
       final List<UserContacts> listOfContacts =
           await FetchUserContactsUsecase.call();
-      emit(state.copyWith(
+      emit(
+        state.copyWith(
           station: const ContactsProgressStateSuccess(),
-          listOfContacts: listOfContacts));
+          listOfContacts: listOfContacts,
+        ),
+      );
     }
   }
 
   FutureOr<void> _updateSelectedContact(
-      _UpdateSelectedContact event, Emitter<ContactsState> emit) {
+    _UpdateSelectedContact event,
+    Emitter<ContactsState> emit,
+  ) {
     final updatedListOfContacts = state.listOfContacts.map((item) {
       if (item.fullName == event.contact.fullName &&
           item.mobileNumber == event.contact.mobileNumber) {
@@ -62,13 +70,18 @@ class ContactsBloc extends Bloc<ContactsEvent, ContactsState> {
       return item;
     }).toList();
 
-    emit(state.copyWith(
+    emit(
+      state.copyWith(
         station: const ContactsProgressStateSuccess(),
-        listOfContacts: updatedListOfContacts));
+        listOfContacts: updatedListOfContacts,
+      ),
+    );
   }
 
   FutureOr<void> _shareItem(
-      _ShareItem event, Emitter<ContactsState> emit) async {
+    _ShareItem event,
+    Emitter<ContactsState> emit,
+  ) async {
     final mobileNumbers = state.listOfContacts
         .where((item) => item.selected)
         .map((item) => item.mobileNumber)
@@ -76,7 +89,9 @@ class ContactsBloc extends Bloc<ContactsEvent, ContactsState> {
 
     if (mobileNumbers.isNotEmpty) {
       await SendSmsMessagesUsecase.sendBulkSMS(
-          mobileNumbers: mobileNumbers, message: event.message);
+        mobileNumbers: mobileNumbers,
+        message: event.message,
+      );
     }
   }
 }

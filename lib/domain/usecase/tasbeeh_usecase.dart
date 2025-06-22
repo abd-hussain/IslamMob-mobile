@@ -82,10 +82,12 @@ class TasbeehUseCase {
   ///
   /// Returns true if saved data is from today and should be used, false otherwise.
   static bool _shouldUseSavedData() {
-    final dateStr = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldTasbeehConstant.tasbeehLastSavedDate,
-      defaultValue: "",
-    ) as String;
+    final dateStr =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldTasbeehConstant.tasbeehLastSavedDate,
+              defaultValue: "",
+            )
+            as String;
 
     final parsedDate = DateTime.tryParse(dateStr);
     return parsedDate != null &&
@@ -103,10 +105,12 @@ class TasbeehUseCase {
   /// Returns the saved count for the specified Tasbeeh item, or 0 if not found
   /// or if there's an error parsing the saved data.
   static int _getSavedCount(int id) {
-    final rawData = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldTasbeehConstant.tasbeehSavedCountsJson,
-      defaultValue: "",
-    ) as String;
+    final rawData =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldTasbeehConstant.tasbeehSavedCountsJson,
+              defaultValue: "",
+            )
+            as String;
 
     try {
       final List<dynamic> jsonList = jsonDecode(rawData) as List<dynamic>;

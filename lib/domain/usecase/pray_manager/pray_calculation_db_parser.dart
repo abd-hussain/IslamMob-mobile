@@ -43,7 +43,7 @@ class PrayDBParser {
   };
 
   static final Map<String, PrayHightLatitudeCaluclationState>
-      _highLatitudeRuleStateMap = {
+  _highLatitudeRuleStateMap = {
     "PrayHightLatitudeCaluclationState.midnight()":
         const PrayHightLatitudeCaluclationState.midnight(),
     "PrayHightLatitudeCaluclationState.seventhPartOfTheNight()":
@@ -81,7 +81,7 @@ class PrayDBParser {
   };
 
   static final Map<String, PrayCalculationMethodState>
-      _calculationMethodStateMap = {
+  _calculationMethodStateMap = {
     "PrayCalculationMethodState.jordanAwqaf()":
         const PrayCalculationMethodState.jordanAwqaf(),
     "PrayCalculationMethodState.jafari()":
@@ -178,7 +178,8 @@ class PrayDBParser {
   ///
   /// Returns the corresponding [PrayHightLatitudeCaluclationState] for app state.
   static PrayHightLatitudeCaluclationState parseHighLatitudeRuleState(
-          String highLatitudeRule) =>
+    String highLatitudeRule,
+  ) =>
       _highLatitudeRuleStateMap[highLatitudeRule] ??
       const PrayHightLatitudeCaluclationState.none();
 
@@ -206,7 +207,8 @@ class PrayDBParser {
   ///
   /// Returns the corresponding [PrayCalculationMethodState] for app state.
   static PrayCalculationMethodState parseCalculationMethodState(
-          String calculationMethod) =>
+    String calculationMethod,
+  ) =>
       _calculationMethodStateMap[calculationMethod] ??
       const PrayCalculationMethodState.jordanAwqaf();
 }

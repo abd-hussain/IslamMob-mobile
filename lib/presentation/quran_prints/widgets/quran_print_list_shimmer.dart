@@ -39,15 +39,27 @@ class QuranListPrintsShimmer extends StatelessWidget {
             _buildShimmerBox(width: 120, height: 16),
             const SizedBox(height: 8),
             _buildShimmerBox(
-                width: double.infinity, height: 16, horizontalPadding: 8),
+              width: double.infinity,
+              height: 16,
+              horizontalPadding: 8,
+            ),
             _buildShimmerBox(
-                width: double.infinity, height: 16, horizontalPadding: 30),
+              width: double.infinity,
+              height: 16,
+              horizontalPadding: 30,
+            ),
             const Spacer(),
             _buildShimmerBox(
-                width: double.infinity, height: 50, horizontalPadding: 16),
+              width: double.infinity,
+              height: 50,
+              horizontalPadding: 16,
+            ),
             const SizedBox(height: 10),
             _buildShimmerBox(
-                width: double.infinity, height: 50, horizontalPadding: 16),
+              width: double.infinity,
+              height: 50,
+              horizontalPadding: 16,
+            ),
             const SizedBox(height: 10),
           ],
         ),
@@ -62,11 +74,7 @@ class QuranListPrintsShimmer extends StatelessWidget {
   }) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-      child: Container(
-        width: width,
-        height: height,
-        color: Colors.white,
-      ),
+      child: Container(width: width, height: height, color: Colors.white),
     );
   }
 }

@@ -41,13 +41,14 @@ class SowrahTileView extends StatelessWidget {
   /// - [sowrahName]: Arabic name of the Surah
   /// - [isCurrentPage]: Whether this Surah is currently being viewed
   /// - [sowrahType]: Revelation classification (Meccan/Medinan)
-  const SowrahTileView(
-      {super.key,
-      required this.onTap,
-      required this.index,
-      required this.sowrahName,
-      required this.isCurrentPage,
-      required this.sowrahType});
+  const SowrahTileView({
+    super.key,
+    required this.onTap,
+    required this.index,
+    required this.sowrahName,
+    required this.isCurrentPage,
+    required this.sowrahType,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,15 +64,12 @@ class SowrahTileView extends StatelessWidget {
             child: Row(
               children: [
                 _buildNumber(context),
-                Container(
-                  width: 1,
-                  color: Colors.white,
-                ),
+                Container(width: 1, color: Colors.white),
                 const SizedBox(width: 10),
                 _buildSowrahName(context),
                 _buildSowrahTypeIcon(sowrahType),
                 const SizedBox(width: 10),
-                const ArrowView()
+                const ArrowView(),
               ],
             ),
           ),
@@ -112,9 +110,6 @@ class SowrahTileView extends StatelessWidget {
     final imagePath = type == const SowrahTypeState.makyeh()
         ? "assets/images/sorah_type/macca.png"
         : "assets/images/sorah_type/madenah.png";
-    return SizedBox(
-      width: 35,
-      child: Image.asset(imagePath),
-    );
+    return SizedBox(width: 35, child: Image.asset(imagePath));
   }
 }

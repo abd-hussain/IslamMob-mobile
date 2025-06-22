@@ -50,18 +50,18 @@ class $AssetsAudiosGen {
 
   /// List of all assets
   List<String> get values => [
-        adhan1,
-        adhan2,
-        adhan3,
-        adhan4,
-        adhan5,
-        adhan6,
-        adhan7,
-        adhan8,
-        adhan9,
-        click,
-        istikhara
-      ];
+    adhan1,
+    adhan2,
+    adhan3,
+    adhan4,
+    adhan5,
+    adhan6,
+    adhan7,
+    adhan8,
+    adhan9,
+    click,
+    istikhara,
+  ];
 }
 
 class $AssetsImagesGen {
@@ -137,19 +137,19 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
-        attachPlaceholder,
-        background,
-        calender,
-        donatePopup,
-        estekaraBe,
-        fingerClick,
-        hisnalmuslim,
-        internet,
-        readyToGo,
-        sharePopoup,
-        tasbeehCounterLayout,
-        updateAppIc
-      ];
+    attachPlaceholder,
+    background,
+    calender,
+    donatePopup,
+    estekaraBe,
+    fingerClick,
+    hisnalmuslim,
+    internet,
+    readyToGo,
+    sharePopoup,
+    tasbeehCounterLayout,
+    updateAppIc,
+  ];
 }
 
 class $AssetsJsonGen {
@@ -197,12 +197,12 @@ class $AssetsLottieGen {
 
   /// List of all assets
   List<String> get values => [
-        animation1731435312091,
-        animation1731435567950,
-        animation1731435678253,
-        animation1731435759765,
-        animationLm3q2kl2
-      ];
+    animation1731435312091,
+    animation1731435567950,
+    animation1731435678253,
+    animation1731435759765,
+    animationLm3q2kl2,
+  ];
 }
 
 class $AssetsImagesDaysGen {
@@ -235,8 +235,16 @@ class $AssetsImagesDaysGen {
   AssetGenImage get zhur => const AssetGenImage('assets/images/days/zhur.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [asr, fajr, isha, maghrib, moon, sun, sunrise, zhur];
+  List<AssetGenImage> get values => [
+    asr,
+    fajr,
+    isha,
+    maghrib,
+    moon,
+    sun,
+    sunrise,
+    zhur,
+  ];
 }
 
 class $AssetsImagesHajjGen {
@@ -286,18 +294,18 @@ class $AssetsImagesHajjGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        arafa,
-        arkan,
-        haram,
-        ihram,
-        mina,
-        muzdalefa,
-        naher,
-        sai,
-        sonan,
-        tashreq,
-        tawaf
-      ];
+    arafa,
+    arkan,
+    haram,
+    ihram,
+    mina,
+    muzdalefa,
+    naher,
+    sai,
+    sonan,
+    tashreq,
+    tawaf,
+  ];
 }
 
 class $AssetsImagesLogozGen {
@@ -445,25 +453,25 @@ class $AssetsImagesToolbarGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        asma2AllaahAlhusna,
-        azkarAfterSalah,
-        calender,
-        doaa,
-        donate,
-        estekara,
-        hadeeth,
-        hajj,
-        hesenAlMuslim,
-        library,
-        omra,
-        qibla,
-        quran,
-        seyam,
-        shahadeeh,
-        share,
-        tasbeeh,
-        tracker
-      ];
+    asma2AllaahAlhusna,
+    azkarAfterSalah,
+    calender,
+    doaa,
+    donate,
+    estekara,
+    hadeeth,
+    hajj,
+    hesenAlMuslim,
+    library,
+    omra,
+    qibla,
+    quran,
+    seyam,
+    shahadeeh,
+    share,
+    tasbeeh,
+    tracker,
+  ];
 }
 
 class $AssetsJsonHajjOmrahGen {
@@ -491,11 +499,7 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  });
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
 
@@ -563,11 +567,7 @@ class AssetGenImage {
     @Deprecated('Do not specify package for a generated library asset')
     String? package = package,
   }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;
@@ -576,17 +576,11 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  }) : _isVecFormat = false;
+  const SvgGenImage(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = false;
 
-  const SvgGenImage.vec(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  }) : _isVecFormat = true;
+  const SvgGenImage.vec(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = true;
 
   final String _assetName;
   final Size? size;
@@ -643,7 +637,8 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ??
+      colorFilter:
+          colorFilter ??
           (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,

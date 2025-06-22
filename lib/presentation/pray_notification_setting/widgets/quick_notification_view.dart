@@ -26,9 +26,7 @@ class QuickNotificationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: _containerDecoration(),
-      child: Column(
-        children: _buildNotificationRows(context),
-      ),
+      child: Column(children: _buildNotificationRows(context)),
     );
   }
 
@@ -62,11 +60,11 @@ class QuickNotificationView extends StatelessWidget {
             onChangeSoundPresses: null,
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const AllNotificationForToday(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const AllNotificationForToday(),
+                ),
+              );
             },
           );
         },
@@ -85,11 +83,11 @@ class QuickNotificationView extends StatelessWidget {
             onChangeSoundPresses: null,
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const AllNotificationForThreeDay(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const AllNotificationForThreeDay(),
+                ),
+              );
             },
           );
         },
@@ -108,11 +106,11 @@ class QuickNotificationView extends StatelessWidget {
             onChangeSoundPresses: null,
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
-                    PrayNotificationSettingEvent.changePrayNotificationSettings(
-                      status: value,
-                      type: const AllNotificationForWeekDay(),
-                    ),
-                  );
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  type: const AllNotificationForWeekDay(),
+                ),
+              );
             },
           );
         },

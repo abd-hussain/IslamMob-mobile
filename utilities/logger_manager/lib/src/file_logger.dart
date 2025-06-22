@@ -42,11 +42,16 @@ class FileLogger {
   }
 
   /// Log a message to the file
-  static void log(Level level, String message,
-      {dynamic error, StackTrace? stackTrace}) {
+  static void log(
+    Level level,
+    String message, {
+    dynamic error,
+    StackTrace? stackTrace,
+  }) {
     if (!_initialized) {
       debugPrint(
-          'File logger not initialized. Call FileLogger.initialize() first.');
+        'File logger not initialized. Call FileLogger.initialize() first.',
+      );
       return;
     }
 

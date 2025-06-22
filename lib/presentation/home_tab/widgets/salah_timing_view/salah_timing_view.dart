@@ -155,7 +155,10 @@ class _SalahTimingViewState extends State<SalahTimingView> {
               _buildMidnightInfo(context, prayTimes.middleOfTheNight, localize),
               _buildSettingsButton(context),
               _buildLastThirdOfNightInfo(
-                  context, prayTimes.lastThirdOfTheNight, localize),
+                context,
+                prayTimes.lastThirdOfTheNight,
+                localize,
+              ),
             ],
           ),
         );
@@ -164,22 +167,22 @@ class _SalahTimingViewState extends State<SalahTimingView> {
   }
 
   Widget _buildMidnightInfo(
-      BuildContext context, DateTime time, IslamMobLocalizations localize) {
+    BuildContext context,
+    DateTime time,
+    IslamMobLocalizations localize,
+  ) {
     return Expanded(
-      child: _buildInfoBox(
-        title: localize.midnight,
-        time: time,
-      ),
+      child: _buildInfoBox(title: localize.midnight, time: time),
     );
   }
 
   Widget _buildLastThirdOfNightInfo(
-      BuildContext context, DateTime time, IslamMobLocalizations localize) {
+    BuildContext context,
+    DateTime time,
+    IslamMobLocalizations localize,
+  ) {
     return Expanded(
-      child: _buildInfoBox(
-        title: localize.last3ofnight,
-        time: time,
-      ),
+      child: _buildInfoBox(title: localize.last3ofnight, time: time),
     );
   }
 

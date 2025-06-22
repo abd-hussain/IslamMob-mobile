@@ -12,7 +12,8 @@ part of 'pray_timing.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$PrayTimingModel {
@@ -35,18 +36,20 @@ mixin _$PrayTimingModel {
 /// @nodoc
 abstract class $PrayTimingModelCopyWith<$Res> {
   factory $PrayTimingModelCopyWith(
-          PrayTimingModel value, $Res Function(PrayTimingModel) then) =
-      _$PrayTimingModelCopyWithImpl<$Res, PrayTimingModel>;
+    PrayTimingModel value,
+    $Res Function(PrayTimingModel) then,
+  ) = _$PrayTimingModelCopyWithImpl<$Res, PrayTimingModel>;
   @useResult
-  $Res call(
-      {String fajir,
-      String sunrise,
-      String dhuhr,
-      String asr,
-      String maghrib,
-      String isha,
-      String middleOfTheNight,
-      String lastThirdOfTheNight});
+  $Res call({
+    String fajir,
+    String sunrise,
+    String dhuhr,
+    String asr,
+    String maghrib,
+    String isha,
+    String middleOfTheNight,
+    String lastThirdOfTheNight,
+  });
 }
 
 /// @nodoc
@@ -73,60 +76,65 @@ class _$PrayTimingModelCopyWithImpl<$Res, $Val extends PrayTimingModel>
     Object? middleOfTheNight = null,
     Object? lastThirdOfTheNight = null,
   }) {
-    return _then(_value.copyWith(
-      fajir: null == fajir
-          ? _value.fajir
-          : fajir // ignore: cast_nullable_to_non_nullable
-              as String,
-      sunrise: null == sunrise
-          ? _value.sunrise
-          : sunrise // ignore: cast_nullable_to_non_nullable
-              as String,
-      dhuhr: null == dhuhr
-          ? _value.dhuhr
-          : dhuhr // ignore: cast_nullable_to_non_nullable
-              as String,
-      asr: null == asr
-          ? _value.asr
-          : asr // ignore: cast_nullable_to_non_nullable
-              as String,
-      maghrib: null == maghrib
-          ? _value.maghrib
-          : maghrib // ignore: cast_nullable_to_non_nullable
-              as String,
-      isha: null == isha
-          ? _value.isha
-          : isha // ignore: cast_nullable_to_non_nullable
-              as String,
-      middleOfTheNight: null == middleOfTheNight
-          ? _value.middleOfTheNight
-          : middleOfTheNight // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastThirdOfTheNight: null == lastThirdOfTheNight
-          ? _value.lastThirdOfTheNight
-          : lastThirdOfTheNight // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            fajir: null == fajir
+                ? _value.fajir
+                : fajir // ignore: cast_nullable_to_non_nullable
+                      as String,
+            sunrise: null == sunrise
+                ? _value.sunrise
+                : sunrise // ignore: cast_nullable_to_non_nullable
+                      as String,
+            dhuhr: null == dhuhr
+                ? _value.dhuhr
+                : dhuhr // ignore: cast_nullable_to_non_nullable
+                      as String,
+            asr: null == asr
+                ? _value.asr
+                : asr // ignore: cast_nullable_to_non_nullable
+                      as String,
+            maghrib: null == maghrib
+                ? _value.maghrib
+                : maghrib // ignore: cast_nullable_to_non_nullable
+                      as String,
+            isha: null == isha
+                ? _value.isha
+                : isha // ignore: cast_nullable_to_non_nullable
+                      as String,
+            middleOfTheNight: null == middleOfTheNight
+                ? _value.middleOfTheNight
+                : middleOfTheNight // ignore: cast_nullable_to_non_nullable
+                      as String,
+            lastThirdOfTheNight: null == lastThirdOfTheNight
+                ? _value.lastThirdOfTheNight
+                : lastThirdOfTheNight // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$PrayTimingModelImplCopyWith<$Res>
     implements $PrayTimingModelCopyWith<$Res> {
-  factory _$$PrayTimingModelImplCopyWith(_$PrayTimingModelImpl value,
-          $Res Function(_$PrayTimingModelImpl) then) =
-      __$$PrayTimingModelImplCopyWithImpl<$Res>;
+  factory _$$PrayTimingModelImplCopyWith(
+    _$PrayTimingModelImpl value,
+    $Res Function(_$PrayTimingModelImpl) then,
+  ) = __$$PrayTimingModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String fajir,
-      String sunrise,
-      String dhuhr,
-      String asr,
-      String maghrib,
-      String isha,
-      String middleOfTheNight,
-      String lastThirdOfTheNight});
+  $Res call({
+    String fajir,
+    String sunrise,
+    String dhuhr,
+    String asr,
+    String maghrib,
+    String isha,
+    String middleOfTheNight,
+    String lastThirdOfTheNight,
+  });
 }
 
 /// @nodoc
@@ -134,8 +142,9 @@ class __$$PrayTimingModelImplCopyWithImpl<$Res>
     extends _$PrayTimingModelCopyWithImpl<$Res, _$PrayTimingModelImpl>
     implements _$$PrayTimingModelImplCopyWith<$Res> {
   __$$PrayTimingModelImplCopyWithImpl(
-      _$PrayTimingModelImpl _value, $Res Function(_$PrayTimingModelImpl) _then)
-      : super(_value, _then);
+    _$PrayTimingModelImpl _value,
+    $Res Function(_$PrayTimingModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayTimingModel
   /// with the given fields replaced by the non-null parameter values.
@@ -151,55 +160,58 @@ class __$$PrayTimingModelImplCopyWithImpl<$Res>
     Object? middleOfTheNight = null,
     Object? lastThirdOfTheNight = null,
   }) {
-    return _then(_$PrayTimingModelImpl(
-      fajir: null == fajir
-          ? _value.fajir
-          : fajir // ignore: cast_nullable_to_non_nullable
-              as String,
-      sunrise: null == sunrise
-          ? _value.sunrise
-          : sunrise // ignore: cast_nullable_to_non_nullable
-              as String,
-      dhuhr: null == dhuhr
-          ? _value.dhuhr
-          : dhuhr // ignore: cast_nullable_to_non_nullable
-              as String,
-      asr: null == asr
-          ? _value.asr
-          : asr // ignore: cast_nullable_to_non_nullable
-              as String,
-      maghrib: null == maghrib
-          ? _value.maghrib
-          : maghrib // ignore: cast_nullable_to_non_nullable
-              as String,
-      isha: null == isha
-          ? _value.isha
-          : isha // ignore: cast_nullable_to_non_nullable
-              as String,
-      middleOfTheNight: null == middleOfTheNight
-          ? _value.middleOfTheNight
-          : middleOfTheNight // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastThirdOfTheNight: null == lastThirdOfTheNight
-          ? _value.lastThirdOfTheNight
-          : lastThirdOfTheNight // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$PrayTimingModelImpl(
+        fajir: null == fajir
+            ? _value.fajir
+            : fajir // ignore: cast_nullable_to_non_nullable
+                  as String,
+        sunrise: null == sunrise
+            ? _value.sunrise
+            : sunrise // ignore: cast_nullable_to_non_nullable
+                  as String,
+        dhuhr: null == dhuhr
+            ? _value.dhuhr
+            : dhuhr // ignore: cast_nullable_to_non_nullable
+                  as String,
+        asr: null == asr
+            ? _value.asr
+            : asr // ignore: cast_nullable_to_non_nullable
+                  as String,
+        maghrib: null == maghrib
+            ? _value.maghrib
+            : maghrib // ignore: cast_nullable_to_non_nullable
+                  as String,
+        isha: null == isha
+            ? _value.isha
+            : isha // ignore: cast_nullable_to_non_nullable
+                  as String,
+        middleOfTheNight: null == middleOfTheNight
+            ? _value.middleOfTheNight
+            : middleOfTheNight // ignore: cast_nullable_to_non_nullable
+                  as String,
+        lastThirdOfTheNight: null == lastThirdOfTheNight
+            ? _value.lastThirdOfTheNight
+            : lastThirdOfTheNight // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$PrayTimingModelImpl implements _PrayTimingModel {
-  _$PrayTimingModelImpl(
-      {required this.fajir,
-      required this.sunrise,
-      required this.dhuhr,
-      required this.asr,
-      required this.maghrib,
-      required this.isha,
-      required this.middleOfTheNight,
-      required this.lastThirdOfTheNight});
+  _$PrayTimingModelImpl({
+    required this.fajir,
+    required this.sunrise,
+    required this.dhuhr,
+    required this.asr,
+    required this.maghrib,
+    required this.isha,
+    required this.middleOfTheNight,
+    required this.lastThirdOfTheNight,
+  });
 
   @override
   final String fajir;
@@ -241,8 +253,17 @@ class _$PrayTimingModelImpl implements _PrayTimingModel {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, fajir, sunrise, dhuhr, asr,
-      maghrib, isha, middleOfTheNight, lastThirdOfTheNight);
+  int get hashCode => Object.hash(
+    runtimeType,
+    fajir,
+    sunrise,
+    dhuhr,
+    asr,
+    maghrib,
+    isha,
+    middleOfTheNight,
+    lastThirdOfTheNight,
+  );
 
   /// Create a copy of PrayTimingModel
   /// with the given fields replaced by the non-null parameter values.
@@ -251,19 +272,22 @@ class _$PrayTimingModelImpl implements _PrayTimingModel {
   @pragma('vm:prefer-inline')
   _$$PrayTimingModelImplCopyWith<_$PrayTimingModelImpl> get copyWith =>
       __$$PrayTimingModelImplCopyWithImpl<_$PrayTimingModelImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _PrayTimingModel implements PrayTimingModel {
-  factory _PrayTimingModel(
-      {required final String fajir,
-      required final String sunrise,
-      required final String dhuhr,
-      required final String asr,
-      required final String maghrib,
-      required final String isha,
-      required final String middleOfTheNight,
-      required final String lastThirdOfTheNight}) = _$PrayTimingModelImpl;
+  factory _PrayTimingModel({
+    required final String fajir,
+    required final String sunrise,
+    required final String dhuhr,
+    required final String asr,
+    required final String maghrib,
+    required final String isha,
+    required final String middleOfTheNight,
+    required final String lastThirdOfTheNight,
+  }) = _$PrayTimingModelImpl;
 
   @override
   String get fajir;
@@ -310,24 +334,28 @@ mixin _$PrayTimingDateTimeModel {
 
 /// @nodoc
 abstract class $PrayTimingDateTimeModelCopyWith<$Res> {
-  factory $PrayTimingDateTimeModelCopyWith(PrayTimingDateTimeModel value,
-          $Res Function(PrayTimingDateTimeModel) then) =
-      _$PrayTimingDateTimeModelCopyWithImpl<$Res, PrayTimingDateTimeModel>;
+  factory $PrayTimingDateTimeModelCopyWith(
+    PrayTimingDateTimeModel value,
+    $Res Function(PrayTimingDateTimeModel) then,
+  ) = _$PrayTimingDateTimeModelCopyWithImpl<$Res, PrayTimingDateTimeModel>;
   @useResult
-  $Res call(
-      {DateTime fajir,
-      DateTime sunrise,
-      DateTime dhuhr,
-      DateTime asr,
-      DateTime maghrib,
-      DateTime isha,
-      DateTime middleOfTheNight,
-      DateTime lastThirdOfTheNight});
+  $Res call({
+    DateTime fajir,
+    DateTime sunrise,
+    DateTime dhuhr,
+    DateTime asr,
+    DateTime maghrib,
+    DateTime isha,
+    DateTime middleOfTheNight,
+    DateTime lastThirdOfTheNight,
+  });
 }
 
 /// @nodoc
-class _$PrayTimingDateTimeModelCopyWithImpl<$Res,
-        $Val extends PrayTimingDateTimeModel>
+class _$PrayTimingDateTimeModelCopyWithImpl<
+  $Res,
+  $Val extends PrayTimingDateTimeModel
+>
     implements $PrayTimingDateTimeModelCopyWith<$Res> {
   _$PrayTimingDateTimeModelCopyWithImpl(this._value, this._then);
 
@@ -350,40 +378,43 @@ class _$PrayTimingDateTimeModelCopyWithImpl<$Res,
     Object? middleOfTheNight = null,
     Object? lastThirdOfTheNight = null,
   }) {
-    return _then(_value.copyWith(
-      fajir: null == fajir
-          ? _value.fajir
-          : fajir // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      sunrise: null == sunrise
-          ? _value.sunrise
-          : sunrise // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      dhuhr: null == dhuhr
-          ? _value.dhuhr
-          : dhuhr // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      asr: null == asr
-          ? _value.asr
-          : asr // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      maghrib: null == maghrib
-          ? _value.maghrib
-          : maghrib // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      isha: null == isha
-          ? _value.isha
-          : isha // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      middleOfTheNight: null == middleOfTheNight
-          ? _value.middleOfTheNight
-          : middleOfTheNight // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      lastThirdOfTheNight: null == lastThirdOfTheNight
-          ? _value.lastThirdOfTheNight
-          : lastThirdOfTheNight // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            fajir: null == fajir
+                ? _value.fajir
+                : fajir // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            sunrise: null == sunrise
+                ? _value.sunrise
+                : sunrise // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            dhuhr: null == dhuhr
+                ? _value.dhuhr
+                : dhuhr // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            asr: null == asr
+                ? _value.asr
+                : asr // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            maghrib: null == maghrib
+                ? _value.maghrib
+                : maghrib // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            isha: null == isha
+                ? _value.isha
+                : isha // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            middleOfTheNight: null == middleOfTheNight
+                ? _value.middleOfTheNight
+                : middleOfTheNight // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            lastThirdOfTheNight: null == lastThirdOfTheNight
+                ? _value.lastThirdOfTheNight
+                : lastThirdOfTheNight // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -391,31 +422,35 @@ class _$PrayTimingDateTimeModelCopyWithImpl<$Res,
 abstract class _$$PrayTimingDateTimeModelImplCopyWith<$Res>
     implements $PrayTimingDateTimeModelCopyWith<$Res> {
   factory _$$PrayTimingDateTimeModelImplCopyWith(
-          _$PrayTimingDateTimeModelImpl value,
-          $Res Function(_$PrayTimingDateTimeModelImpl) then) =
-      __$$PrayTimingDateTimeModelImplCopyWithImpl<$Res>;
+    _$PrayTimingDateTimeModelImpl value,
+    $Res Function(_$PrayTimingDateTimeModelImpl) then,
+  ) = __$$PrayTimingDateTimeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {DateTime fajir,
-      DateTime sunrise,
-      DateTime dhuhr,
-      DateTime asr,
-      DateTime maghrib,
-      DateTime isha,
-      DateTime middleOfTheNight,
-      DateTime lastThirdOfTheNight});
+  $Res call({
+    DateTime fajir,
+    DateTime sunrise,
+    DateTime dhuhr,
+    DateTime asr,
+    DateTime maghrib,
+    DateTime isha,
+    DateTime middleOfTheNight,
+    DateTime lastThirdOfTheNight,
+  });
 }
 
 /// @nodoc
 class __$$PrayTimingDateTimeModelImplCopyWithImpl<$Res>
-    extends _$PrayTimingDateTimeModelCopyWithImpl<$Res,
-        _$PrayTimingDateTimeModelImpl>
+    extends
+        _$PrayTimingDateTimeModelCopyWithImpl<
+          $Res,
+          _$PrayTimingDateTimeModelImpl
+        >
     implements _$$PrayTimingDateTimeModelImplCopyWith<$Res> {
   __$$PrayTimingDateTimeModelImplCopyWithImpl(
-      _$PrayTimingDateTimeModelImpl _value,
-      $Res Function(_$PrayTimingDateTimeModelImpl) _then)
-      : super(_value, _then);
+    _$PrayTimingDateTimeModelImpl _value,
+    $Res Function(_$PrayTimingDateTimeModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayTimingDateTimeModel
   /// with the given fields replaced by the non-null parameter values.
@@ -431,55 +466,58 @@ class __$$PrayTimingDateTimeModelImplCopyWithImpl<$Res>
     Object? middleOfTheNight = null,
     Object? lastThirdOfTheNight = null,
   }) {
-    return _then(_$PrayTimingDateTimeModelImpl(
-      fajir: null == fajir
-          ? _value.fajir
-          : fajir // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      sunrise: null == sunrise
-          ? _value.sunrise
-          : sunrise // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      dhuhr: null == dhuhr
-          ? _value.dhuhr
-          : dhuhr // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      asr: null == asr
-          ? _value.asr
-          : asr // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      maghrib: null == maghrib
-          ? _value.maghrib
-          : maghrib // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      isha: null == isha
-          ? _value.isha
-          : isha // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      middleOfTheNight: null == middleOfTheNight
-          ? _value.middleOfTheNight
-          : middleOfTheNight // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      lastThirdOfTheNight: null == lastThirdOfTheNight
-          ? _value.lastThirdOfTheNight
-          : lastThirdOfTheNight // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
+    return _then(
+      _$PrayTimingDateTimeModelImpl(
+        fajir: null == fajir
+            ? _value.fajir
+            : fajir // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        sunrise: null == sunrise
+            ? _value.sunrise
+            : sunrise // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        dhuhr: null == dhuhr
+            ? _value.dhuhr
+            : dhuhr // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        asr: null == asr
+            ? _value.asr
+            : asr // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        maghrib: null == maghrib
+            ? _value.maghrib
+            : maghrib // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        isha: null == isha
+            ? _value.isha
+            : isha // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        middleOfTheNight: null == middleOfTheNight
+            ? _value.middleOfTheNight
+            : middleOfTheNight // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        lastThirdOfTheNight: null == lastThirdOfTheNight
+            ? _value.lastThirdOfTheNight
+            : lastThirdOfTheNight // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$PrayTimingDateTimeModelImpl implements _PrayTimingDateTimeModel {
-  _$PrayTimingDateTimeModelImpl(
-      {required this.fajir,
-      required this.sunrise,
-      required this.dhuhr,
-      required this.asr,
-      required this.maghrib,
-      required this.isha,
-      required this.middleOfTheNight,
-      required this.lastThirdOfTheNight});
+  _$PrayTimingDateTimeModelImpl({
+    required this.fajir,
+    required this.sunrise,
+    required this.dhuhr,
+    required this.asr,
+    required this.maghrib,
+    required this.isha,
+    required this.middleOfTheNight,
+    required this.lastThirdOfTheNight,
+  });
 
   @override
   final DateTime fajir;
@@ -521,8 +559,17 @@ class _$PrayTimingDateTimeModelImpl implements _PrayTimingDateTimeModel {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, fajir, sunrise, dhuhr, asr,
-      maghrib, isha, middleOfTheNight, lastThirdOfTheNight);
+  int get hashCode => Object.hash(
+    runtimeType,
+    fajir,
+    sunrise,
+    dhuhr,
+    asr,
+    maghrib,
+    isha,
+    middleOfTheNight,
+    lastThirdOfTheNight,
+  );
 
   /// Create a copy of PrayTimingDateTimeModel
   /// with the given fields replaced by the non-null parameter values.
@@ -530,21 +577,23 @@ class _$PrayTimingDateTimeModelImpl implements _PrayTimingDateTimeModel {
   @override
   @pragma('vm:prefer-inline')
   _$$PrayTimingDateTimeModelImplCopyWith<_$PrayTimingDateTimeModelImpl>
-      get copyWith => __$$PrayTimingDateTimeModelImplCopyWithImpl<
-          _$PrayTimingDateTimeModelImpl>(this, _$identity);
+  get copyWith =>
+      __$$PrayTimingDateTimeModelImplCopyWithImpl<
+        _$PrayTimingDateTimeModelImpl
+      >(this, _$identity);
 }
 
 abstract class _PrayTimingDateTimeModel implements PrayTimingDateTimeModel {
-  factory _PrayTimingDateTimeModel(
-          {required final DateTime fajir,
-          required final DateTime sunrise,
-          required final DateTime dhuhr,
-          required final DateTime asr,
-          required final DateTime maghrib,
-          required final DateTime isha,
-          required final DateTime middleOfTheNight,
-          required final DateTime lastThirdOfTheNight}) =
-      _$PrayTimingDateTimeModelImpl;
+  factory _PrayTimingDateTimeModel({
+    required final DateTime fajir,
+    required final DateTime sunrise,
+    required final DateTime dhuhr,
+    required final DateTime asr,
+    required final DateTime maghrib,
+    required final DateTime isha,
+    required final DateTime middleOfTheNight,
+    required final DateTime lastThirdOfTheNight,
+  }) = _$PrayTimingDateTimeModelImpl;
 
   @override
   DateTime get fajir;
@@ -568,5 +617,5 @@ abstract class _PrayTimingDateTimeModel implements PrayTimingDateTimeModel {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PrayTimingDateTimeModelImplCopyWith<_$PrayTimingDateTimeModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

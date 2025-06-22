@@ -14,23 +14,27 @@ class VersionDialog {
   ///
   /// Returns a [Widget] if the dialog is successfully shown, or null
   /// if the context is not mounted when attempting to show the dialog.
-  Future<Widget?> dialog(
-      {required BuildContext context, required bool isOptional}) async {
+  Future<Widget?> dialog({
+    required BuildContext context,
+    required bool isOptional,
+  }) async {
     if (context.mounted) {
       return showDialog(
-          barrierDismissible: false,
-          context: context,
-          builder: (BuildContext context) {
-            return Dialog(
-              insetPadding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              child: VersionDialogWidget(
-                isOptional: isOptional,
-              ),
-            );
-          });
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            insetPadding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 16,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: VersionDialogWidget(isOptional: isOptional),
+          );
+        },
+      );
     }
 
     return null;

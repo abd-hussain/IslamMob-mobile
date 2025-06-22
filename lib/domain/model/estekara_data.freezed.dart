@@ -12,7 +12,8 @@ part of 'estekara_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$EstekaraData {
@@ -30,11 +31,15 @@ mixin _$EstekaraData {
 /// @nodoc
 abstract class $EstekaraDataCopyWith<$Res> {
   factory $EstekaraDataCopyWith(
-          EstekaraData value, $Res Function(EstekaraData) then) =
-      _$EstekaraDataCopyWithImpl<$Res, EstekaraData>;
+    EstekaraData value,
+    $Res Function(EstekaraData) then,
+  ) = _$EstekaraDataCopyWithImpl<$Res, EstekaraData>;
   @useResult
-  $Res call(
-      {int id, MultiLanguageString title, Map<String, List<String>> details});
+  $Res call({
+    int id,
+    MultiLanguageString title,
+    Map<String, List<String>> details,
+  });
 }
 
 /// @nodoc
@@ -51,25 +56,24 @@ class _$EstekaraDataCopyWithImpl<$Res, $Val extends EstekaraData>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? details = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as MultiLanguageString,
-      details: null == details
-          ? _value.details
-          : details // ignore: cast_nullable_to_non_nullable
-              as Map<String, List<String>>,
-    ) as $Val);
+  $Res call({Object? id = null, Object? title = null, Object? details = null}) {
+    return _then(
+      _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as int,
+            title: null == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                      as MultiLanguageString,
+            details: null == details
+                ? _value.details
+                : details // ignore: cast_nullable_to_non_nullable
+                      as Map<String, List<String>>,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -77,12 +81,16 @@ class _$EstekaraDataCopyWithImpl<$Res, $Val extends EstekaraData>
 abstract class _$$EstekaraDataImplCopyWith<$Res>
     implements $EstekaraDataCopyWith<$Res> {
   factory _$$EstekaraDataImplCopyWith(
-          _$EstekaraDataImpl value, $Res Function(_$EstekaraDataImpl) then) =
-      __$$EstekaraDataImplCopyWithImpl<$Res>;
+    _$EstekaraDataImpl value,
+    $Res Function(_$EstekaraDataImpl) then,
+  ) = __$$EstekaraDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id, MultiLanguageString title, Map<String, List<String>> details});
+  $Res call({
+    int id,
+    MultiLanguageString title,
+    Map<String, List<String>> details,
+  });
 }
 
 /// @nodoc
@@ -90,43 +98,42 @@ class __$$EstekaraDataImplCopyWithImpl<$Res>
     extends _$EstekaraDataCopyWithImpl<$Res, _$EstekaraDataImpl>
     implements _$$EstekaraDataImplCopyWith<$Res> {
   __$$EstekaraDataImplCopyWithImpl(
-      _$EstekaraDataImpl _value, $Res Function(_$EstekaraDataImpl) _then)
-      : super(_value, _then);
+    _$EstekaraDataImpl _value,
+    $Res Function(_$EstekaraDataImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of EstekaraData
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? details = null,
-  }) {
-    return _then(_$EstekaraDataImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as MultiLanguageString,
-      details: null == details
-          ? _value._details
-          : details // ignore: cast_nullable_to_non_nullable
-              as Map<String, List<String>>,
-    ));
+  $Res call({Object? id = null, Object? title = null, Object? details = null}) {
+    return _then(
+      _$EstekaraDataImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as int,
+        title: null == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as MultiLanguageString,
+        details: null == details
+            ? _value._details
+            : details // ignore: cast_nullable_to_non_nullable
+                  as Map<String, List<String>>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$EstekaraDataImpl implements _EstekaraData {
-  _$EstekaraDataImpl(
-      {required this.id,
-      required this.title,
-      required final Map<String, List<String>> details})
-      : _details = details;
+  _$EstekaraDataImpl({
+    required this.id,
+    required this.title,
+    required final Map<String, List<String>> details,
+  }) : _details = details;
 
   @override
   final int id;
@@ -157,7 +164,11 @@ class _$EstekaraDataImpl implements _EstekaraData {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, title, const DeepCollectionEquality().hash(_details));
+    runtimeType,
+    id,
+    title,
+    const DeepCollectionEquality().hash(_details),
+  );
 
   /// Create a copy of EstekaraData
   /// with the given fields replaced by the non-null parameter values.
@@ -169,10 +180,11 @@ class _$EstekaraDataImpl implements _EstekaraData {
 }
 
 abstract class _EstekaraData implements EstekaraData {
-  factory _EstekaraData(
-      {required final int id,
-      required final MultiLanguageString title,
-      required final Map<String, List<String>> details}) = _$EstekaraDataImpl;
+  factory _EstekaraData({
+    required final int id,
+    required final MultiLanguageString title,
+    required final Map<String, List<String>> details,
+  }) = _$EstekaraDataImpl;
 
   @override
   int get id;

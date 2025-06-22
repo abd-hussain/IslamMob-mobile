@@ -23,7 +23,8 @@ class HisnAlMuslimDetailsEvent with _$HisnAlMuslimDetailsEvent {
   /// Parameters:
   /// - [item]: The Hisn Al-Muslim supplication model to display
   const factory HisnAlMuslimDetailsEvent.fillInitialValue(
-      HisnAlMuslimModel? item) = _FillInitialValue;
+    HisnAlMuslimModel? item,
+  ) = _FillInitialValue;
 
   /// Event to toggle the favorite status of the current supplication.
   ///
@@ -53,7 +54,6 @@ class HisnAlMuslimDetailsEvent with _$HisnAlMuslimDetailsEvent {
   ///
   /// Parameters:
   /// - [title]: The title of the supplication being shared
-  const factory HisnAlMuslimDetailsEvent.shareItem({
-    required String title,
-  }) = _ShareItem;
+  const factory HisnAlMuslimDetailsEvent.shareItem({required String title}) =
+      _ShareItem;
 }

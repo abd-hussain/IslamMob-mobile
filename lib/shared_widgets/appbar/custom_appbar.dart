@@ -24,11 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CustomText(
-            title: title,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          CustomText(title: title, fontSize: 18, fontWeight: FontWeight.bold),
         ],
       ),
       actions: actions,

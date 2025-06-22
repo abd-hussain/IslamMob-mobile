@@ -12,7 +12,8 @@ part of 'high_latitude_setting.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$HighLatitudeSetting {
@@ -31,11 +32,15 @@ mixin _$HighLatitudeSetting {
 /// @nodoc
 abstract class $HighLatitudeSettingCopyWith<$Res> {
   factory $HighLatitudeSettingCopyWith(
-          HighLatitudeSetting value, $Res Function(HighLatitudeSetting) then) =
-      _$HighLatitudeSettingCopyWithImpl<$Res, HighLatitudeSetting>;
+    HighLatitudeSetting value,
+    $Res Function(HighLatitudeSetting) then,
+  ) = _$HighLatitudeSettingCopyWithImpl<$Res, HighLatitudeSetting>;
   @useResult
-  $Res call(
-      {String name, PrayHightLatitudeCaluclationState method, bool isSelected});
+  $Res call({
+    String name,
+    PrayHightLatitudeCaluclationState method,
+    bool isSelected,
+  });
 
   $PrayHightLatitudeCaluclationStateCopyWith<$Res> get method;
 }
@@ -59,20 +64,23 @@ class _$HighLatitudeSettingCopyWithImpl<$Res, $Val extends HighLatitudeSetting>
     Object? method = null,
     Object? isSelected = null,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as PrayHightLatitudeCaluclationState,
-      isSelected: null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            method: null == method
+                ? _value.method
+                : method // ignore: cast_nullable_to_non_nullable
+                      as PrayHightLatitudeCaluclationState,
+            isSelected: null == isSelected
+                ? _value.isSelected
+                : isSelected // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of HighLatitudeSetting
@@ -80,8 +88,9 @@ class _$HighLatitudeSettingCopyWithImpl<$Res, $Val extends HighLatitudeSetting>
   @override
   @pragma('vm:prefer-inline')
   $PrayHightLatitudeCaluclationStateCopyWith<$Res> get method {
-    return $PrayHightLatitudeCaluclationStateCopyWith<$Res>(_value.method,
-        (value) {
+    return $PrayHightLatitudeCaluclationStateCopyWith<$Res>(_value.method, (
+      value,
+    ) {
       return _then(_value.copyWith(method: value) as $Val);
     });
   }
@@ -90,13 +99,17 @@ class _$HighLatitudeSettingCopyWithImpl<$Res, $Val extends HighLatitudeSetting>
 /// @nodoc
 abstract class _$$HighLatitudeSettingImplCopyWith<$Res>
     implements $HighLatitudeSettingCopyWith<$Res> {
-  factory _$$HighLatitudeSettingImplCopyWith(_$HighLatitudeSettingImpl value,
-          $Res Function(_$HighLatitudeSettingImpl) then) =
-      __$$HighLatitudeSettingImplCopyWithImpl<$Res>;
+  factory _$$HighLatitudeSettingImplCopyWith(
+    _$HighLatitudeSettingImpl value,
+    $Res Function(_$HighLatitudeSettingImpl) then,
+  ) = __$$HighLatitudeSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String name, PrayHightLatitudeCaluclationState method, bool isSelected});
+  $Res call({
+    String name,
+    PrayHightLatitudeCaluclationState method,
+    bool isSelected,
+  });
 
   @override
   $PrayHightLatitudeCaluclationStateCopyWith<$Res> get method;
@@ -106,9 +119,10 @@ abstract class _$$HighLatitudeSettingImplCopyWith<$Res>
 class __$$HighLatitudeSettingImplCopyWithImpl<$Res>
     extends _$HighLatitudeSettingCopyWithImpl<$Res, _$HighLatitudeSettingImpl>
     implements _$$HighLatitudeSettingImplCopyWith<$Res> {
-  __$$HighLatitudeSettingImplCopyWithImpl(_$HighLatitudeSettingImpl _value,
-      $Res Function(_$HighLatitudeSettingImpl) _then)
-      : super(_value, _then);
+  __$$HighLatitudeSettingImplCopyWithImpl(
+    _$HighLatitudeSettingImpl _value,
+    $Res Function(_$HighLatitudeSettingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HighLatitudeSetting
   /// with the given fields replaced by the non-null parameter values.
@@ -119,28 +133,33 @@ class __$$HighLatitudeSettingImplCopyWithImpl<$Res>
     Object? method = null,
     Object? isSelected = null,
   }) {
-    return _then(_$HighLatitudeSettingImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as PrayHightLatitudeCaluclationState,
-      isSelected: null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$HighLatitudeSettingImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        method: null == method
+            ? _value.method
+            : method // ignore: cast_nullable_to_non_nullable
+                  as PrayHightLatitudeCaluclationState,
+        isSelected: null == isSelected
+            ? _value.isSelected
+            : isSelected // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$HighLatitudeSettingImpl implements _HighLatitudeSetting {
-  _$HighLatitudeSettingImpl(
-      {required this.name, required this.method, required this.isSelected});
+  _$HighLatitudeSettingImpl({
+    required this.name,
+    required this.method,
+    required this.isSelected,
+  });
 
   @override
   final String name;
@@ -175,14 +194,17 @@ class _$HighLatitudeSettingImpl implements _HighLatitudeSetting {
   @pragma('vm:prefer-inline')
   _$$HighLatitudeSettingImplCopyWith<_$HighLatitudeSettingImpl> get copyWith =>
       __$$HighLatitudeSettingImplCopyWithImpl<_$HighLatitudeSettingImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _HighLatitudeSetting implements HighLatitudeSetting {
-  factory _HighLatitudeSetting(
-      {required final String name,
-      required final PrayHightLatitudeCaluclationState method,
-      required final bool isSelected}) = _$HighLatitudeSettingImpl;
+  factory _HighLatitudeSetting({
+    required final String name,
+    required final PrayHightLatitudeCaluclationState method,
+    required final bool isSelected,
+  }) = _$HighLatitudeSettingImpl;
 
   @override
   String get name;

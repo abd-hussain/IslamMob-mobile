@@ -50,12 +50,9 @@ class LocalNotificationRepository {
       // **Now** explicitly request iOS permission:
       await _notificationsPlugin
           .resolvePlatformSpecificImplementation<
-              IOSFlutterLocalNotificationsPlugin>()
-          ?.requestPermissions(
-            alert: true,
-            badge: true,
-            sound: true,
-          );
+            IOSFlutterLocalNotificationsPlugin
+          >()
+          ?.requestPermissions(alert: true, badge: true, sound: true);
 
       debugPrint('Notification Initialized Successfully!');
     } catch (e) {
@@ -66,15 +63,17 @@ class LocalNotificationRepository {
   /// Handles notification responses for both foreground and background events.
   @pragma('vm:entry-point')
   static Future<void> _notificationTapBackground(
-      NotificationResponse response) async {
+    NotificationResponse response,
+  ) async {
     debugPrint('Notification received with payload: ${response.payload}');
   }
 
   /// Requests notification permission on Android devices.
   static Future<void> _requestAndroidPermission() async {
-    final androidPlugin =
-        _notificationsPlugin.resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>();
+    final androidPlugin = _notificationsPlugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     if (androidPlugin != null) {
       await androidPlugin.requestNotificationsPermission();
     }
@@ -270,12 +269,7 @@ class LocalNotificationRepository {
         ],
       ),
     );
-    await _notificationsPlugin.show(
-      id,
-      null,
-      null,
-      notificationDetails,
-    );
+    await _notificationsPlugin.show(id, null, null, notificationDetails);
   }
 
   /// Cancels all scheduled notifications.

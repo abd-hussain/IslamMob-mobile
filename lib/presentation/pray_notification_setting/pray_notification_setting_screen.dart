@@ -31,43 +31,55 @@ class PrayNotificationSettingScreen extends StatelessWidget {
         ..add(
           const PrayNotificationSettingEvent.initialPrayNotificationSettings(),
         ),
-      child: BlocListener<PrayNotificationSettingBloc,
-          PrayNotificationSettingState>(
-        listenWhen: (previous, current) =>
-            previous.loadingStatus != current.loadingStatus,
-        listener: (context, state) {
-          if (state.loadingStatus ==
-              const PrayNotificationSettingProcessState.settingSaved()) {
-            Navigator.of(context).pop(); // 👈 dismiss the screen after save
-          }
-        },
-        child: Scaffold(
-          appBar: CustomAppBar(title: localization.notificationSettings),
-          body: SafeArea(
-            child: BlocBuilder<PrayNotificationSettingBloc,
-                    PrayNotificationSettingState>(
-                buildWhen: (previous, current) =>
-                    previous.loadingStatus != current.loadingStatus,
-                builder: (blocContext, state) {
-                  if (state.loadingStatus ==
-                      const PrayNotificationSettingProcessState.loading()) {
-                    return const Center(
-                      child: CircularProgressIndicator(
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(Color(0xff292929)),
-                      ),
-                    );
-                  }
-                  return Stack(
-                    children: [
-                      NotificationSettingsList(localization: localization),
-                      NotificationListSaveButton(localization: localization),
-                    ],
-                  );
-                }),
+      child:
+          BlocListener<
+            PrayNotificationSettingBloc,
+            PrayNotificationSettingState
+          >(
+            listenWhen: (previous, current) =>
+                previous.loadingStatus != current.loadingStatus,
+            listener: (context, state) {
+              if (state.loadingStatus ==
+                  const PrayNotificationSettingProcessState.settingSaved()) {
+                Navigator.of(context).pop(); // 👈 dismiss the screen after save
+              }
+            },
+            child: Scaffold(
+              appBar: CustomAppBar(title: localization.notificationSettings),
+              body: SafeArea(
+                child:
+                    BlocBuilder<
+                      PrayNotificationSettingBloc,
+                      PrayNotificationSettingState
+                    >(
+                      buildWhen: (previous, current) =>
+                          previous.loadingStatus != current.loadingStatus,
+                      builder: (blocContext, state) {
+                        if (state.loadingStatus ==
+                            const PrayNotificationSettingProcessState.loading()) {
+                          return const Center(
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                Color(0xff292929),
+                              ),
+                            ),
+                          );
+                        }
+                        return Stack(
+                          children: [
+                            NotificationSettingsList(
+                              localization: localization,
+                            ),
+                            NotificationListSaveButton(
+                              localization: localization,
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+              ),
+            ),
           ),
-        ),
-      ),
     );
   }
 }

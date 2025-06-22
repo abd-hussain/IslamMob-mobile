@@ -11,7 +11,6 @@ class MainContainerState with _$MainContainerState {
   ///
   /// The [selectedIndex] parameter represents the currently selected tab
   /// in the bottom navigation bar and defaults to 0 (first tab).
-  const factory MainContainerState({
-    @Default(0) int selectedIndex,
-  }) = _MainContainerState;
+  const factory MainContainerState({@Default(0) int selectedIndex}) =
+      _MainContainerState;
 }

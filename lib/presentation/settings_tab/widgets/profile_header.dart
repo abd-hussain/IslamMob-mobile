@@ -25,8 +25,11 @@ class ProfileHeader extends StatelessWidget {
         padding: const EdgeInsets.only(left: 16, right: 16),
         child: Row(
           children: [
-            Image.asset(locator<TimingUseCase>().getCurrentImageForTime(),
-                width: 32, height: 32),
+            Image.asset(
+              locator<TimingUseCase>().getCurrentImageForTime(),
+              width: 32,
+              height: 32,
+            ),
             const SizedBox(width: 16),
             Expanded(
               child: CustomText(

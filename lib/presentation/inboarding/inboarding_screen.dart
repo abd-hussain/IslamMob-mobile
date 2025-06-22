@@ -61,10 +61,7 @@ class InBoardingScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Expanded(child: SizedBox()),
-        Image.asset(
-          "assets/images/logoz/logo.png",
-          width: 50,
-        ),
+        Image.asset("assets/images/logoz/logo.png", width: 50),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,23 +102,27 @@ class InBoardingScreen extends StatelessWidget {
           switch (state.inBoardingStage) {
             case 0:
               return LanguageInBoardingView(
-                doneSelection: () => bloc
-                    .add(const InboardingEvent.changeInBoardingStage(stage: 1)),
+                doneSelection: () => bloc.add(
+                  const InboardingEvent.changeInBoardingStage(stage: 1),
+                ),
               );
             case 1:
               return LocationInBoardingView(
-                doneSelection: () => bloc
-                    .add(const InboardingEvent.changeInBoardingStage(stage: 2)),
+                doneSelection: () => bloc.add(
+                  const InboardingEvent.changeInBoardingStage(stage: 2),
+                ),
               );
             case 2:
               return QuranCopyView(
-                doneSelection: () => bloc
-                    .add(const InboardingEvent.changeInBoardingStage(stage: 3)),
+                doneSelection: () => bloc.add(
+                  const InboardingEvent.changeInBoardingStage(stage: 3),
+                ),
               );
             case 3:
               return NotificationInBoardingView(
-                doneSelection: () => bloc
-                    .add(const InboardingEvent.changeInBoardingStage(stage: 4)),
+                doneSelection: () => bloc.add(
+                  const InboardingEvent.changeInBoardingStage(stage: 4),
+                ),
               );
             case 4:
               return SetupAccountView(

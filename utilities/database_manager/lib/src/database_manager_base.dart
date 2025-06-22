@@ -42,8 +42,10 @@ class DataBaseManagerBase {
   /// - [defaultValue]: Fallback value if key doesn't exist
   ///
   /// Returns the stored value or default value if key is not found.
-  static dynamic getFromDatabase(
-      {required String key, required dynamic defaultValue}) {
+  static dynamic getFromDatabase({
+    required String key,
+    required dynamic defaultValue,
+  }) {
     return _userBox.get(key, defaultValue: defaultValue);
   }
 
@@ -57,14 +59,17 @@ class DataBaseManagerBase {
   /// - [value]: The value to store in the database
   ///
   /// The operation is asynchronous and completes when data is persisted.
-  static Future<void> saveInDatabase(
-      {required String key, required dynamic value}) async {
+  static Future<void> saveInDatabase({
+    required String key,
+    required dynamic value,
+  }) async {
     return _userBox.put(key, value);
   }
 
   /// Updates multiple values in Hive storage
-  static Future<void> saveMultipleInDatabase(
-      {required Map<String, dynamic> data}) async {
+  static Future<void> saveMultipleInDatabase({
+    required Map<String, dynamic> data,
+  }) async {
     for (final entry in data.entries) {
       await _userBox.put(entry.key, entry.value);
     }

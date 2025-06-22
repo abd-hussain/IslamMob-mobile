@@ -38,7 +38,7 @@ class AzkarAfterSalahScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
     final AzkarSalahTimeState salahTime =
         (arguments[ArgumentConstant.salahTime] as AzkarSalahTimeState?) ??
-            const AzkarSalahTimeState.fajir();
+        const AzkarSalahTimeState.fajir();
 
     FirebaseAnalyticsRepository.logEvent(name: "AzkarAfterSalahScreen");
     final localizations = IslamMobLocalizations.of(context);
@@ -49,7 +49,8 @@ class AzkarAfterSalahScreen extends StatelessWidget {
         backgroundColor: const Color(0xff292929),
         iconTheme: const IconThemeData(color: Colors.white),
         title: CustomText(
-          title: localizations.azkarAfterSalah +
+          title:
+              localizations.azkarAfterSalah +
               " " +
               _salahName(salahTime, localizations),
           fontSize: 20,
@@ -57,23 +58,15 @@ class AzkarAfterSalahScreen extends StatelessWidget {
         ),
       ),
       body: BlocProvider(
-        create: (context) => AzkarAfterSalahBloc()
-          ..add(
-            AzkarAfterSalahEvent.fillInitialValue(
-              state: salahTime,
-            ),
-          ),
+        create: (context) =>
+            AzkarAfterSalahBloc()
+              ..add(AzkarAfterSalahEvent.fillInitialValue(state: salahTime)),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
-                child: Stack(
-                  children: [
-                    _buildAzkarList(),
-                    _buildFinishView(),
-                  ],
-                ),
+                child: Stack(children: [_buildAzkarList(), _buildFinishView()]),
               ),
               const AddMobBanner(verticalPadding: 0),
             ],
@@ -125,13 +118,15 @@ class AzkarAfterSalahScreen extends StatelessWidget {
   /// Handles incrementing the Azkar count and emitting the update event.
   void _incrementAzkar(BuildContext context, AzkarModel azkar) {
     final updatedAzkar = azkar.copyWith(currentCount: azkar.currentCount + 1);
-    context
-        .read<AzkarAfterSalahBloc>()
-        .add(AzkarAfterSalahEvent.incrementCounter(updatedAzkar));
+    context.read<AzkarAfterSalahBloc>().add(
+      AzkarAfterSalahEvent.incrementCounter(updatedAzkar),
+    );
   }
 
   String _salahName(
-      AzkarSalahTimeState salahTime, IslamMobLocalizations localizations) {
+    AzkarSalahTimeState salahTime,
+    IslamMobLocalizations localizations,
+  ) {
     switch (salahTime) {
       case AzkarSalahTimeStateFajir():
       case AzkarSalahTimeStateSunrise():

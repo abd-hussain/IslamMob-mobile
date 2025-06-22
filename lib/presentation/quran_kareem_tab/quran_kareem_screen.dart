@@ -29,12 +29,7 @@ class _QuranKareemScreenState extends State<QuranKareemScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => QuranKareemBloc(),
-      child: Stack(
-        children: [
-          _buildMainContent(),
-          _buildHelpToolTips(),
-        ],
-      ),
+      child: Stack(children: [_buildMainContent(), _buildHelpToolTips()]),
     );
   }
 
@@ -59,8 +54,8 @@ class _QuranKareemScreenState extends State<QuranKareemScreen> {
             ? HelpToolTipsView(
                 returnBrightness: (value) {
                   context.read<QuranKareemBloc>().add(
-                        QuranKareemEvent.updateScreenBrigtness(value),
-                      );
+                    QuranKareemEvent.updateScreenBrigtness(value),
+                  );
                 },
               )
             : const SizedBox();

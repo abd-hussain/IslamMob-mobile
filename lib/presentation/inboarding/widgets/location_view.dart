@@ -90,30 +90,31 @@ class LocationInBoardingView extends StatelessWidget {
       case LocationProcessStateNoPermission():
         return LocationNothavePermissionView(
           openManualSelection: () => context.read<LocationBloc>().add(
-                const LocationEvent.changeLocationStatus(
-                  status: LocationProcessStateLocationManually(),
-                ),
-              ),
+            const LocationEvent.changeLocationStatus(
+              status: LocationProcessStateLocationManually(),
+            ),
+          ),
         );
       case LocationProcessStateLocationManually():
         return LocationSelectManualView(
           onSelectManualLocation: (countryName, lat, long) {
             context.read<LocationBloc>().add(
-                  LocationEvent.setCountryAndCityNames(
-                      location: LocationModel(
-                    countryCode: "",
-                    country: countryName,
-                    city: countryName,
-                    subCity: countryName,
-                    street: "",
-                    latitude: lat,
-                    longitude: long,
-                    thoroughfare: "",
-                  )),
-                );
-            context
-                .read<LocationBloc>()
-                .add(const LocationEvent.setupLocation());
+              LocationEvent.setCountryAndCityNames(
+                location: LocationModel(
+                  countryCode: "",
+                  country: countryName,
+                  city: countryName,
+                  subCity: countryName,
+                  street: "",
+                  latitude: lat,
+                  longitude: long,
+                  thoroughfare: "",
+                ),
+              ),
+            );
+            context.read<LocationBloc>().add(
+              const LocationEvent.setupLocation(),
+            );
             doneSelection();
           },
         );
@@ -121,9 +122,9 @@ class LocationInBoardingView extends StatelessWidget {
         return LocationHavePermissionView(
           locationModel: state.location!,
           onConfirmationPress: () {
-            context
-                .read<LocationBloc>()
-                .add(const LocationEvent.setupLocation());
+            context.read<LocationBloc>().add(
+              const LocationEvent.setupLocation(),
+            );
             doneSelection();
           },
         );

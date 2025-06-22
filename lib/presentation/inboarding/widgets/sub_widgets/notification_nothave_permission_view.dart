@@ -16,8 +16,10 @@ class NotificationNothavePermissionView extends StatelessWidget {
   ///
   /// The [skipButton] parameter is required and defines the action to take
   /// when the user chooses to skip granting notification permissions.
-  const NotificationNothavePermissionView(
-      {super.key, required this.skipButton});
+  const NotificationNothavePermissionView({
+    super.key,
+    required this.skipButton,
+  });
 
   @override
   Widget build(BuildContext context) {

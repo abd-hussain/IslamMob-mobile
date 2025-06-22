@@ -30,11 +30,12 @@ class ToolbarCell extends StatelessWidget {
   /// - [title]: The descriptive text for this Islamic feature
   /// - [imagePath]: Asset path to the icon representing this feature
   /// - [onTap]: Callback for navigation when the shortcut is tapped
-  const ToolbarCell(
-      {super.key,
-      required this.imagePath,
-      required this.onTap,
-      required this.title});
+  const ToolbarCell({
+    super.key,
+    required this.imagePath,
+    required this.onTap,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +45,7 @@ class ToolbarCell extends StatelessWidget {
         children: [
           Container(
             decoration: _containerDecoration(),
-            child: Image.asset(
-              imagePath,
-              height: 50,
-              width: 50,
-            ),
+            child: Image.asset(imagePath, height: 50, width: 50),
           ),
           const SizedBox(height: 5),
           CustomText(

@@ -18,41 +18,48 @@ class QuranReferancesUsecase {
   /// Gets the Surah name for localization based on a given page number.
   static String getSurahReferenceNameFromPageNumber(int pageNumber) {
     final surahToPageNumbers = _getDatabaseField(
-        DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers);
+      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers,
+    );
     return _findNearestLowerOrEqualKey(surahToPageNumbers, pageNumber);
   }
 
   /// Gets the page number from a given Surah reference name.
   static int getPageNumberFromSurahReferenceName(String surahName) {
     final surahToPageNumbers = _getDatabaseField(
-        DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers);
+      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers,
+    );
     return (surahToPageNumbers[surahName] as int?) ?? -1;
   }
 
   /// Gets the total number of pages for the selected Quran print.
   static int getNumberOfPagesForSelectedPrint() {
     final surahToPageNumbers = _getDatabaseField(
-        DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers);
+      DatabaseFieldQuranCopyConstant.quranKaremSorahToPageNumbers,
+    );
     return (surahToPageNumbers['quranSorahName114'] as int?) ?? -1;
   }
 
   /// Gets the Juz number based on a given page number.
   static String getJuzNumberFromPageNumber(int pageNumber) {
     final juzToPageNumbers = _getDatabaseField(
-        DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers);
+      DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers,
+    );
     return _findNearestLowerOrEqualKey(juzToPageNumbers, pageNumber);
   }
 
   /// Gets the starting page number from a given Juz number.
   static int getPageNumberFromJuzNumber(String juzNumber) {
     final juzToPageNumbers = _getDatabaseField(
-        DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers);
+      DatabaseFieldQuranCopyConstant.quranKaremJuz2ToPageNumbers,
+    );
     return (juzToPageNumbers[juzNumber] as int?) ?? -1;
   }
 
   /// Finds the nearest lower or equal key in a map for a given page number.
   static String _findNearestLowerOrEqualKey(
-      Map<dynamic, dynamic> map, int pageNumber) {
+    Map<dynamic, dynamic> map,
+    int pageNumber,
+  ) {
     if (map.isEmpty) return '';
 
     final sortedEntries = map.entries.toList()

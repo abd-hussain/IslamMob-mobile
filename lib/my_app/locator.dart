@@ -45,18 +45,23 @@ Future<void> setupLocator() async {
   // UseCases
   locator.registerSingleton<TimingUseCase>(TimingUseCase());
   locator.registerFactory<SetupLocalNotificationWhenAppOpenUseCase>(
-      SetupLocalNotificationWhenAppOpenUseCase.new);
+    SetupLocalNotificationWhenAppOpenUseCase.new,
+  );
   locator.registerFactory<ReportUseCase>(ReportUseCase.new);
   locator.registerFactory<NotifyAdhanNotificationUsecase>(
-      NotifyAdhanNotificationUsecase.new);
+    NotifyAdhanNotificationUsecase.new,
+  );
   locator.registerFactory<LoadFileFromDocumentUseCase>(
-      LoadFileFromDocumentUseCase.new);
+    LoadFileFromDocumentUseCase.new,
+  );
   locator.registerFactory<GetUserSettingUseCase>(GetUserSettingUseCase.new);
   locator.registerFactory<QuranPrintsUsecase>(QuranPrintsUsecase.new);
   locator.registerFactory<DownloadFileUsecase>(DownloadFileUsecase.new);
   locator.registerFactory<ApplicationVersionUsecase>(
-      ApplicationVersionUsecase.new);
+    ApplicationVersionUsecase.new,
+  );
   locator.registerSingleton<LocalNotificationRepository>(
-      LocalNotificationRepository());
+    LocalNotificationRepository(),
+  );
   locator.registerFactory<MainContainerBloc>(MainContainerBloc.new);
 }

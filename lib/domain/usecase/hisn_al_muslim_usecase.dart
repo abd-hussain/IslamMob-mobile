@@ -31,8 +31,9 @@ class HisnAlMuslimUseCase {
   /// Throws [FormatException] if the JSON format is invalid.
   static Future<List<HisnAlMuslimModel>> getHisnAlMuslimList() async {
     // Load JSON file from assets
-    final String jsonString =
-        await rootBundle.loadString('assets/json/hisn_al_muslim.json');
+    final String jsonString = await rootBundle.loadString(
+      'assets/json/hisn_al_muslim.json',
+    );
 
     // Parse JSON into List
     final List<dynamic> jsonData = jsonDecode(jsonString) as List<dynamic>;
@@ -42,20 +43,25 @@ class HisnAlMuslimUseCase {
 
     // Convert JSON data to List of HisnAlMuslimModel
     return jsonData
-        .map((item) =>
-            _parseHisnAlMuslimItem(item as Map<String, dynamic>, favoriteIds))
+        .map(
+          (item) =>
+              _parseHisnAlMuslimItem(item as Map<String, dynamic>, favoriteIds),
+        )
         .whereType<HisnAlMuslimModel>()
         .toList();
   }
 
   /// Parses an individual Hisn Al Muslim item from JSON.
   static HisnAlMuslimModel? _parseHisnAlMuslimItem(
-      Map<String, dynamic> item, List<int> favoriteIds) {
+    Map<String, dynamic> item,
+    List<int> favoriteIds,
+  ) {
     final details = item['details'] as Map<String, dynamic>;
 
     // Parse title as MultiLanguageString
-    final MultiLanguageString title =
-        _parseMultiLanguageString(item['title'] as Map<String, dynamic>);
+    final MultiLanguageString title = _parseMultiLanguageString(
+      item['title'] as Map<String, dynamic>,
+    );
 
     if (details['type'] == 'text') {
       return HisnAlMuslimModel(
@@ -92,12 +98,15 @@ class HisnAlMuslimUseCase {
 
   /// Parses a HisnAlMuslimDetailsModel from JSON.
   static HisnAlMuslimCounterDetailsModel _parseHisnAlMuslimDetails(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     return HisnAlMuslimCounterDetailsModel(
       descriptionTitle: _parseMultiLanguageString(
-          json['descriptionTitle'] as Map<String, dynamic>),
+        json['descriptionTitle'] as Map<String, dynamic>,
+      ),
       description: _parseMultiLanguageString(
-          json['description'] as Map<String, dynamic>),
+        json['description'] as Map<String, dynamic>,
+      ),
       references: (json['references'] as List<dynamic>)
           // ignore: unnecessary_lambdas
           .map((e) => _parseMultiLanguageString(e as Map<String, dynamic>))
@@ -108,7 +117,8 @@ class HisnAlMuslimUseCase {
 
   /// Parses a MultiLanguageString from JSON.
   static MultiLanguageString _parseMultiLanguageString(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     return MultiLanguageString(
       ar: (json['ar'] as String?) ?? '',
       en: (json['en'] as String?) ?? '',
@@ -149,7 +159,8 @@ class HisnAlMuslimUseCase {
     }
 
     DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldInHisnAlMuslimConstant.favoriteList,
-        value: favoriteIds);
+      key: DatabaseFieldInHisnAlMuslimConstant.favoriteList,
+      value: favoriteIds,
+    );
   }
 }

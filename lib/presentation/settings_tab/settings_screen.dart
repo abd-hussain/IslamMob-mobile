@@ -46,47 +46,57 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: ListView(
             children: [
               TitleView(title: localize.generalsettings),
-              CollectionListOptionView(listOfOptions: [
-                ProfileOptions(
-                  icon: Icons.calendar_month,
-                  name: localize.calenderSettings,
-                  onTap: () async {
-                    await FirebaseAnalyticsRepository.logEvent(
-                        name: "CalenderScreenFromSettingsScreen");
-                    await navigator.pushNamed(RoutesConstants.calenderScreen);
-                  },
-                ),
-                ProfileOptions(
-                  icon: Icons.translate,
-                  name: localize.changeSelectedLanguage,
-                  onTap: () async =>
-                      navigator.pushNamed(RoutesConstants.changeLanguageScreen),
-                ),
-                ProfileOptions(
-                  icon: Icons.notification_important,
-                  name: localize.notificationSettings,
-                  onTap: () async => navigator
-                      .pushNamed(RoutesConstants.prayNotificationSettingScreen),
-                ),
-                ProfileOptions(
-                  icon: Icons.settings,
-                  name: localize.prayCalculationSettings,
-                  onTap: () async => navigator
-                      .pushNamed(RoutesConstants.prayCalculationSettingScreen),
-                ),
-              ]),
+              CollectionListOptionView(
+                listOfOptions: [
+                  ProfileOptions(
+                    icon: Icons.calendar_month,
+                    name: localize.calenderSettings,
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                        name: "CalenderScreenFromSettingsScreen",
+                      );
+                      await navigator.pushNamed(RoutesConstants.calenderScreen);
+                    },
+                  ),
+                  ProfileOptions(
+                    icon: Icons.translate,
+                    name: localize.changeSelectedLanguage,
+                    onTap: () async => navigator.pushNamed(
+                      RoutesConstants.changeLanguageScreen,
+                    ),
+                  ),
+                  ProfileOptions(
+                    icon: Icons.notification_important,
+                    name: localize.notificationSettings,
+                    onTap: () async => navigator.pushNamed(
+                      RoutesConstants.prayNotificationSettingScreen,
+                    ),
+                  ),
+                  ProfileOptions(
+                    icon: Icons.settings,
+                    name: localize.prayCalculationSettings,
+                    onTap: () async => navigator.pushNamed(
+                      RoutesConstants.prayCalculationSettingScreen,
+                    ),
+                  ),
+                ],
+              ),
               TitleView(title: localize.reachouttous),
-              CollectionListOptionView(listOfOptions: [
-                ProfileOptions(
-                  icon: Icons.bug_report,
-                  name: localize.reportOrSuggestion,
-                  onTap: () async => navigator
-                      .pushNamed(RoutesConstants.reportOrSuggestionScreen),
-                ),
-              ]),
+              CollectionListOptionView(
+                listOfOptions: [
+                  ProfileOptions(
+                    icon: Icons.bug_report,
+                    name: localize.reportOrSuggestion,
+                    onTap: () async => navigator.pushNamed(
+                      RoutesConstants.reportOrSuggestionScreen,
+                    ),
+                  ),
+                ],
+              ),
               TitleView(title: localize.support),
-              CollectionListOptionView(listOfOptions: [
-                ProfileOptions(
+              CollectionListOptionView(
+                listOfOptions: [
+                  ProfileOptions(
                     icon: Ionicons.sparkles,
                     name: localize.rateapp,
                     onTap: () async {
@@ -117,25 +127,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           );
                         });
                       });
-                    }),
-                ProfileOptions(
-                  icon: Ionicons.color_palette,
-                  name: localize.aboutus,
-                  onTap: () async =>
-                      navigator.pushNamed(RoutesConstants.aboutUsScreen),
-                ),
-                ProfileOptions(
-                  icon: Icons.share,
-                  name: localize.shareapp,
-                  onTap: () async {
-                    await FirebaseAnalyticsRepository.logEvent(
-                        name: "ShareAppFromSettingsScreen");
-                    if (context.mounted) {
-                      await ShareDialog().dialog(context: context);
-                    }
-                  },
-                ),
-              ]),
+                    },
+                  ),
+                  ProfileOptions(
+                    icon: Ionicons.color_palette,
+                    name: localize.aboutus,
+                    onTap: () async =>
+                        navigator.pushNamed(RoutesConstants.aboutUsScreen),
+                  ),
+                  ProfileOptions(
+                    icon: Icons.share,
+                    name: localize.shareapp,
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                        name: "ShareAppFromSettingsScreen",
+                      );
+                      if (context.mounted) {
+                        await ShareDialog().dialog(context: context);
+                      }
+                    },
+                  ),
+                ],
+              ),
               const SizedBox(height: 8),
               if (kIsWeb) const SizedBox() else const AddMobBanner(),
               const FooterView(),

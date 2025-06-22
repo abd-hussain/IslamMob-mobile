@@ -32,7 +32,6 @@ class SetupAccountState with _$SetupAccountState {
   ///   isLoading: true,
   /// );
   /// ```
-  const factory SetupAccountState({
-    @Default(true) bool isLoading,
-  }) = _SetupAccountState;
+  const factory SetupAccountState({@Default(true) bool isLoading}) =
+      _SetupAccountState;
 }

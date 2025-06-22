@@ -63,8 +63,9 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
     final hisnAlMuslimModel = _getHisnAlMuslimModel(context);
 
     return BlocProvider(
-      create: (context) => HisnAlMuslimDetailsBloc()
-        ..add(HisnAlMuslimDetailsEvent.fillInitialValue(hisnAlMuslimModel)),
+      create: (context) =>
+          HisnAlMuslimDetailsBloc()
+            ..add(HisnAlMuslimDetailsEvent.fillInitialValue(hisnAlMuslimModel)),
       child: BlocBuilder<HisnAlMuslimDetailsBloc, HisnAlMuslimDetailsState>(
         buildWhen: (previous, current) => previous.item != current.item,
         builder: _buildScaffold,
@@ -89,8 +90,9 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
         child: Column(
           children: [
             Expanded(
-              child:
-                  state.item != null ? _buildPageView(state) : const SizedBox(),
+              child: state.item != null
+                  ? _buildPageView(state)
+                  : const SizedBox(),
             ),
             const AddMobBanner(
               size: AdsBannerSize.fullBanner,
@@ -105,72 +107,81 @@ class _HisnAlMuslimDetailsScreenState extends State<HisnAlMuslimDetailsScreen> {
   /// Builds the PageView for displaying content
   Widget _buildPageView(HisnAlMuslimDetailsState state) {
     return Padding(
-        padding: const EdgeInsets.all(8),
-        child: switch (state.item!.details) {
-          HisnAlMuslimModelStateText(
-            :final List<MultiLanguageString> list,
-            :final List<MultiLanguageString> referance
-          ) =>
-            HisnAlMuslimTextView(
-              list: list
-                  .map((desc) => state.isRtlLanguage ? desc.ar : desc.en)
-                  .toList(),
-              referance: referance
-                  .map((desc) => state.isRtlLanguage ? desc.ar : desc.en)
-                  .toList(),
-            ),
-          HisnAlMuslimModelStateCounter(
-            :final List<HisnAlMuslimCounterDetailsModel> list
-          ) =>
-            PageView.builder(
-              itemCount: list.length,
-              controller: controller,
-              itemBuilder: (context, index) {
-                final HisnAlMuslimCounterDetailsModel details = list[index];
-                context.read<HisnAlMuslimDetailsBloc>().add(
-                    HisnAlMuslimDetailsEvent.updateTextToShare(
-                        description:
-                            "${state.isRtlLanguage ? details.descriptionTitle.ar : details.descriptionTitle.en} ${state.isRtlLanguage ? details.description.ar : details.description.en}"));
-                return HisnAlMuslimWithCounterView(
-                  index: index + 1,
-                  isRtlLanguage: state.isRtlLanguage,
-                  totalLength: list.length,
-                  hisnAlMuslimDetailsModel: details,
-                  reachMaxCount: () {
-                    controller.animateToPage(controller.page!.toInt() + 1,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeIn);
-                  },
-                );
-              },
-            ),
-        });
+      padding: const EdgeInsets.all(8),
+      child: switch (state.item!.details) {
+        HisnAlMuslimModelStateText(
+          :final List<MultiLanguageString> list,
+          :final List<MultiLanguageString> referance,
+        ) =>
+          HisnAlMuslimTextView(
+            list: list
+                .map((desc) => state.isRtlLanguage ? desc.ar : desc.en)
+                .toList(),
+            referance: referance
+                .map((desc) => state.isRtlLanguage ? desc.ar : desc.en)
+                .toList(),
+          ),
+        HisnAlMuslimModelStateCounter(
+          :final List<HisnAlMuslimCounterDetailsModel> list,
+        ) =>
+          PageView.builder(
+            itemCount: list.length,
+            controller: controller,
+            itemBuilder: (context, index) {
+              final HisnAlMuslimCounterDetailsModel details = list[index];
+              context.read<HisnAlMuslimDetailsBloc>().add(
+                HisnAlMuslimDetailsEvent.updateTextToShare(
+                  description:
+                      "${state.isRtlLanguage ? details.descriptionTitle.ar : details.descriptionTitle.en} ${state.isRtlLanguage ? details.description.ar : details.description.en}",
+                ),
+              );
+              return HisnAlMuslimWithCounterView(
+                index: index + 1,
+                isRtlLanguage: state.isRtlLanguage,
+                totalLength: list.length,
+                hisnAlMuslimDetailsModel: details,
+                reachMaxCount: () {
+                  controller.animateToPage(
+                    controller.page!.toInt() + 1,
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeIn,
+                  );
+                },
+              );
+            },
+          ),
+      },
+    );
   }
 
   /// Builds the Favorite button in the AppBar
   Widget _buildFavoriteButton(
-      BuildContext context, HisnAlMuslimDetailsState state) {
+    BuildContext context,
+    HisnAlMuslimDetailsState state,
+  ) {
     final isFavorite = state.item?.isFavorite ?? false;
 
     return IconButton(
-      onPressed: () => context
-          .read<HisnAlMuslimDetailsBloc>()
-          .add(const HisnAlMuslimDetailsEvent.updateFavoriteItem()),
+      onPressed: () => context.read<HisnAlMuslimDetailsBloc>().add(
+        const HisnAlMuslimDetailsEvent.updateFavoriteItem(),
+      ),
       icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
     );
   }
 
   /// Builds the Share button in the AppBar
   Widget _buildShareButton(
-      BuildContext context, HisnAlMuslimDetailsState state) {
+    BuildContext context,
+    HisnAlMuslimDetailsState state,
+  ) {
     return IconButton(
-      onPressed: () => context
-          .read<HisnAlMuslimDetailsBloc>()
-          .add(HisnAlMuslimDetailsEvent.shareItem(
-            title: state.isRtlLanguage
-                ? state.item?.title.ar ?? ""
-                : state.item?.title.en ?? "",
-          )),
+      onPressed: () => context.read<HisnAlMuslimDetailsBloc>().add(
+        HisnAlMuslimDetailsEvent.shareItem(
+          title: state.isRtlLanguage
+              ? state.item?.title.ar ?? ""
+              : state.item?.title.en ?? "",
+        ),
+      ),
       icon: const Icon(Icons.ios_share_rounded),
     );
   }

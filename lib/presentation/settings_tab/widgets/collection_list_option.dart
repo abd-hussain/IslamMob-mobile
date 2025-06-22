@@ -37,67 +37,67 @@ class CollectionListOptionView extends StatelessWidget {
         ],
       ),
       child: ListView.separated(
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: listOfOptions.length,
-          shrinkWrap: true,
-          separatorBuilder: (BuildContext context, int index) => const Padding(
-                padding: EdgeInsets.only(left: 30, right: 30),
-                child: Divider(
-                  thickness: 0.5,
-                  color: Colors.grey,
-                ),
-              ),
-          itemBuilder: (ctx, index) {
-            return InkWell(
-              onTap: () => listOfOptions[index].avaliable
-                  ? listOfOptions[index].onTap()
-                  : null,
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(
-                      listOfOptions[index].icon,
-                      size: 20,
-                      color: listOfOptions[index].avaliable
-                          ? const Color(0xff008480)
-                          : Colors.grey,
-                    ),
-                    const SizedBox(width: 8),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: listOfOptions.length,
+        shrinkWrap: true,
+        separatorBuilder: (BuildContext context, int index) => const Padding(
+          padding: EdgeInsets.only(left: 30, right: 30),
+          child: Divider(thickness: 0.5, color: Colors.grey),
+        ),
+        itemBuilder: (ctx, index) {
+          return InkWell(
+            onTap: () => listOfOptions[index].avaliable
+                ? listOfOptions[index].onTap()
+                : null,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    listOfOptions[index].icon,
+                    size: 20,
+                    color: listOfOptions[index].avaliable
+                        ? const Color(0xff008480)
+                        : Colors.grey,
+                  ),
+                  const SizedBox(width: 8),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        title: listOfOptions[index].name,
+                        fontSize: 16,
+                        color: listOfOptions[index].avaliable
+                            ? const Color(0xff292929)
+                            : Colors.grey,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      if (listOfOptions[index].subtitle != "")
                         CustomText(
-                            title: listOfOptions[index].name,
-                            fontSize: 16,
-                            color: listOfOptions[index].avaliable
-                                ? const Color(0xff292929)
-                                : Colors.grey,
-                            fontWeight: FontWeight.bold),
-                        if (listOfOptions[index].subtitle != "")
-                          CustomText(
-                              title: listOfOptions[index].subtitle,
-                              fontSize: 12,
-                              color: listOfOptions[index].avaliable
-                                  ? const Color(0xff292929)
-                                  : Colors.grey,
-                              fontWeight: FontWeight.w500)
-                        else
-                          const SizedBox(),
-                      ],
-                    ),
-                    const Expanded(child: SizedBox()),
-                    const Icon(
-                      Icons.arrow_forward_ios_outlined,
-                      size: 12,
-                      color: Color(0xffBFBFBF),
-                    )
-                  ],
-                ),
+                          title: listOfOptions[index].subtitle,
+                          fontSize: 12,
+                          color: listOfOptions[index].avaliable
+                              ? const Color(0xff292929)
+                              : Colors.grey,
+                          fontWeight: FontWeight.w500,
+                        )
+                      else
+                        const SizedBox(),
+                    ],
+                  ),
+                  const Expanded(child: SizedBox()),
+                  const Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    size: 12,
+                    color: Color(0xffBFBFBF),
+                  ),
+                ],
               ),
-            );
-          }),
+            ),
+          );
+        },
+      ),
     );
   }
 }

@@ -34,18 +34,22 @@ class SetupUserSettingUseCase {
   ///
   /// Defaults to Jordan ("JO") if no country code is found.
   static Future<void> setupHighLatitudeRule() async {
-    final countryCode = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldLocationConstant.selectedCountryCode,
-      defaultValue: "JO",
-    ) as String;
+    final countryCode =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldLocationConstant.selectedCountryCode,
+              defaultValue: "JO",
+            )
+            as String;
 
     final PrayHightLatitudeCaluclationState calculationMethod =
-        PrayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode)
-            .hightLatitudeCaluclationState;
+        PrayCountrySettingUsecase.setupPraySettingByCountryCode(
+          countryCode,
+        ).hightLatitudeCaluclationState;
 
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
-        value: calculationMethod.toString());
+      key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
+      value: calculationMethod.toString(),
+    );
   }
 
   /// Sets up the prayer calculation method based on the user's country.
@@ -60,18 +64,22 @@ class SetupUserSettingUseCase {
   ///
   /// Defaults to Jordan ("JO") if no country code is found.
   static Future<void> setupPrayCalculationMethod() async {
-    final countryCode = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldLocationConstant.selectedCountryCode,
-      defaultValue: "JO",
-    ) as String;
+    final countryCode =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldLocationConstant.selectedCountryCode,
+              defaultValue: "JO",
+            )
+            as String;
 
     final PrayCalculationMethodState calculationMethod =
-        PrayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode)
-            .calculationMethod;
+        PrayCountrySettingUsecase.setupPraySettingByCountryCode(
+          countryCode,
+        ).calculationMethod;
 
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
-        value: calculationMethod.toString());
+      key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
+      value: calculationMethod.toString(),
+    );
   }
 
   /// Sets up the madhab (Islamic school of jurisprudence) based on the user's country.
@@ -87,18 +95,22 @@ class SetupUserSettingUseCase {
   ///
   /// Defaults to Jordan ("JO") if no country code is found.
   static Future<void> setupMadhabByCountryCode() async {
-    final countryCode = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldLocationConstant.selectedCountryCode,
-      defaultValue: "JO",
-    ) as String;
+    final countryCode =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldLocationConstant.selectedCountryCode,
+              defaultValue: "JO",
+            )
+            as String;
 
     final MadhabState calculationMethod =
-        PrayCountrySettingUsecase.setupPraySettingByCountryCode(countryCode)
-            .madhab;
+        PrayCountrySettingUsecase.setupPraySettingByCountryCode(
+          countryCode,
+        ).madhab;
 
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
-        value: calculationMethod.toString());
+      key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
+      value: calculationMethod.toString(),
+    );
   }
 
   /// Updates UTC Offset in storage
@@ -115,18 +127,22 @@ class SetupUserSettingUseCase {
 
     debugPrint('Current UTC Offset: hours: $hours, minutes: $minutes');
 
-    await DataBaseManagerBase.saveMultipleInDatabase(data: {
-      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour:
-          hours.toString(),
-      DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin:
-          minutes.toString()
-    });
+    await DataBaseManagerBase.saveMultipleInDatabase(
+      data: {
+        DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour:
+            hours.toString(),
+        DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin:
+            minutes.toString(),
+      },
+    );
   }
 
   /// Updates the notification token in storage
   static Future<void> setNotificationToken(String token) async {
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldConstant.notificationToken, value: token);
+      key: DatabaseFieldConstant.notificationToken,
+      value: token,
+    );
   }
 
   /// Updates location details in storage
@@ -163,6 +179,8 @@ class SetupUserSettingUseCase {
   /// Updates the selected language in storage and rebuilds the app
   static Future<void> setLanguage(String langCode) async {
     await DataBaseManagerBase.saveInDatabase(
-        key: DatabaseFieldConstant.userLanguageCode, value: langCode);
+      key: DatabaseFieldConstant.userLanguageCode,
+      value: langCode,
+    );
   }
 }

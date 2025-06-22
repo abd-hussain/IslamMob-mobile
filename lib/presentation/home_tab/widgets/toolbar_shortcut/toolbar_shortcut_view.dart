@@ -54,9 +54,7 @@ class ToolbarShortcutView extends StatelessWidget {
                     onTap: () {
                       final bloc = context.read<MainContainerBloc>();
                       bloc.appBarKey.currentState!.animateTo(1);
-                      bloc.add(
-                        MainContainerEvent.changeSelectedIndex(1),
-                      );
+                      bloc.add(MainContainerEvent.changeSelectedIndex(1));
                     },
                   ),
                 ),
@@ -66,7 +64,8 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/calender.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "CalenderScreenFromHomeToolBar");
+                        name: "CalenderScreenFromHomeToolBar",
+                      );
                       await navigator.pushNamed(RoutesConstants.calenderScreen);
                     },
                   ),
@@ -77,9 +76,11 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/hesenAlMuslim.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "hisnAlMuslimListScreenFromHomeToolBar");
-                      await navigator
-                          .pushNamed(RoutesConstants.hisnAlMuslimListScreen);
+                        name: "hisnAlMuslimListScreenFromHomeToolBar",
+                      );
+                      await navigator.pushNamed(
+                        RoutesConstants.hisnAlMuslimListScreen,
+                      );
                     },
                   ),
                 ),
@@ -89,7 +90,8 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/share.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "ShareAppFromHomeToolBar");
+                        name: "ShareAppFromHomeToolBar",
+                      );
                       if (context.mounted) {
                         await ShareDialog().dialog(context: context);
                       }
@@ -102,7 +104,8 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/donate.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "SupportUsFromHomeToolBar");
+                        name: "SupportUsFromHomeToolBar",
+                      );
                       if (context.mounted) {
                         await SupportUsDialog().dialog(context: context);
                       }
@@ -120,7 +123,8 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/tasbeeh.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "tasbeehScreenFromHomeToolBar");
+                        name: "tasbeehScreenFromHomeToolBar",
+                      );
                       await navigator.pushNamed(RoutesConstants.tasbeehScreen);
                     },
                   ),
@@ -131,9 +135,12 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/omra.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "OmrahScreenFromHomeToolBar");
-                      await navigator.pushNamed(RoutesConstants.hajjOmrahScreen,
-                          arguments: {ArgumentConstant.hajjOmrahType: "omrah"});
+                        name: "OmrahScreenFromHomeToolBar",
+                      );
+                      await navigator.pushNamed(
+                        RoutesConstants.hajjOmrahScreen,
+                        arguments: {ArgumentConstant.hajjOmrahType: "omrah"},
+                      );
                     },
                   ),
                 ),
@@ -143,9 +150,12 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/hajj.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "HajjScreenFromHomeToolBar");
-                      await navigator.pushNamed(RoutesConstants.hajjOmrahScreen,
-                          arguments: {ArgumentConstant.hajjOmrahType: "hajj"});
+                        name: "HajjScreenFromHomeToolBar",
+                      );
+                      await navigator.pushNamed(
+                        RoutesConstants.hajjOmrahScreen,
+                        arguments: {ArgumentConstant.hajjOmrahType: "hajj"},
+                      );
                     },
                   ),
                 ),
@@ -155,10 +165,9 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/estekara.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "EstekaraScreenFromHomeToolBar");
-                      await navigator.pushNamed(
-                        RoutesConstants.estekaraScreen,
+                        name: "EstekaraScreenFromHomeToolBar",
                       );
+                      await navigator.pushNamed(RoutesConstants.estekaraScreen);
                     },
                   ),
                 ),
@@ -169,12 +178,11 @@ class ToolbarShortcutView extends StatelessWidget {
                     imagePath: "assets/images/toolbar/azkar_after_salah.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                          name: "AzkarAfterSalahScreenFromHomeToolBar");
+                        name: "AzkarAfterSalahScreenFromHomeToolBar",
+                      );
                       await navigator.pushNamed(
                         RoutesConstants.azkarAfterSalahScreen,
-                        arguments: {
-                          ArgumentConstant.salahTime: salahTime,
-                        },
+                        arguments: {ArgumentConstant.salahTime: salahTime},
                       );
                     },
                   ),

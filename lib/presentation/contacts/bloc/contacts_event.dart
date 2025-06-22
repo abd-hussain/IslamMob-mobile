@@ -27,8 +27,9 @@ class ContactsEvent with _$ContactsEvent {
   ///
   /// Parameters:
   /// - [contact]: The contact whose selection state should be toggled
-  const factory ContactsEvent.updateSelectedContact(
-      {required UserContacts contact}) = _UpdateSelectedContact;
+  const factory ContactsEvent.updateSelectedContact({
+    required UserContacts contact,
+  }) = _UpdateSelectedContact;
 
   /// Event to share Islamic content with selected contacts via SMS.
   ///
@@ -38,7 +39,5 @@ class ContactsEvent with _$ContactsEvent {
   ///
   /// Parameters:
   /// - [message]: The Islamic content message to share with selected contacts
-  const factory ContactsEvent.shareItem({
-    required String message,
-  }) = _ShareItem;
+  const factory ContactsEvent.shareItem({required String message}) = _ShareItem;
 }

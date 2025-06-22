@@ -36,23 +36,24 @@ class ListOfLanguageTile extends StatelessWidget {
       child: InkWell(
         onTap: () async {
           await FirebaseAnalyticsRepository.logEvent(
-              name: "ChangeLanguage",
-              parameters: {
-                "language": language.languageCode,
-              });
+            name: "ChangeLanguage",
+            parameters: {"language": language.languageCode},
+          );
           if (context.mounted) {
             context.read<ChangeLanguageBloc>().add(
-                  ChangeLanguageEvent.changeSelectedCheckBoxLanguage(
-                    type: language,
-                  ),
-                );
+              ChangeLanguageEvent.changeSelectedCheckBoxLanguage(
+                type: language,
+              ),
+            );
           }
         },
         child: Container(
           height: 50,
           width: MediaQuery.of(context).size.width - 16,
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(5)),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(5),
+          ),
           child: Padding(
             padding: const EdgeInsets.only(left: 8, right: 8),
             child: Row(
@@ -86,7 +87,7 @@ class ListOfLanguageTile extends StatelessWidget {
                       size: 25,
                     );
                   },
-                )
+                ),
               ],
             ),
           ),

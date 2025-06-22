@@ -12,59 +12,55 @@ part of 'change_language_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$ChangeLanguageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LanguageModel type)
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     required TResult Function(String langCode) placeNewLanguage,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LanguageModel type)? changeSelectedCheckBoxLanguage,
     TResult? Function(String langCode)? placeNewLanguage,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LanguageModel type)? changeSelectedCheckBoxLanguage,
     TResult Function(String langCode)? placeNewLanguage,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedCheckBoxLanguage value)
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     required TResult Function(_PlaceNewLanguage value) placeNewLanguage,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeSelectedCheckBoxLanguage value)?
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     TResult? Function(_PlaceNewLanguage value)? placeNewLanguage,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeSelectedCheckBoxLanguage value)?
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     TResult Function(_PlaceNewLanguage value)? placeNewLanguage,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ChangeLanguageEventCopyWith<$Res> {
   factory $ChangeLanguageEventCopyWith(
-          ChangeLanguageEvent value, $Res Function(ChangeLanguageEvent) then) =
-      _$ChangeLanguageEventCopyWithImpl<$Res, ChangeLanguageEvent>;
+    ChangeLanguageEvent value,
+    $Res Function(ChangeLanguageEvent) then,
+  ) = _$ChangeLanguageEventCopyWithImpl<$Res, ChangeLanguageEvent>;
 }
 
 /// @nodoc
@@ -84,9 +80,9 @@ class _$ChangeLanguageEventCopyWithImpl<$Res, $Val extends ChangeLanguageEvent>
 /// @nodoc
 abstract class _$$ChangeSelectedCheckBoxLanguageImplCopyWith<$Res> {
   factory _$$ChangeSelectedCheckBoxLanguageImplCopyWith(
-          _$ChangeSelectedCheckBoxLanguageImpl value,
-          $Res Function(_$ChangeSelectedCheckBoxLanguageImpl) then) =
-      __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<$Res>;
+    _$ChangeSelectedCheckBoxLanguageImpl value,
+    $Res Function(_$ChangeSelectedCheckBoxLanguageImpl) then,
+  ) = __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LanguageModel type});
 
@@ -95,27 +91,30 @@ abstract class _$$ChangeSelectedCheckBoxLanguageImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<$Res>
-    extends _$ChangeLanguageEventCopyWithImpl<$Res,
-        _$ChangeSelectedCheckBoxLanguageImpl>
+    extends
+        _$ChangeLanguageEventCopyWithImpl<
+          $Res,
+          _$ChangeSelectedCheckBoxLanguageImpl
+        >
     implements _$$ChangeSelectedCheckBoxLanguageImplCopyWith<$Res> {
   __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl(
-      _$ChangeSelectedCheckBoxLanguageImpl _value,
-      $Res Function(_$ChangeSelectedCheckBoxLanguageImpl) _then)
-      : super(_value, _then);
+    _$ChangeSelectedCheckBoxLanguageImpl _value,
+    $Res Function(_$ChangeSelectedCheckBoxLanguageImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ChangeLanguageEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? type = null,
-  }) {
-    return _then(_$ChangeSelectedCheckBoxLanguageImpl(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as LanguageModel,
-    ));
+  $Res call({Object? type = null}) {
+    return _then(
+      _$ChangeSelectedCheckBoxLanguageImpl(
+        type: null == type
+            ? _value.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as LanguageModel,
+      ),
+    );
   }
 
   /// Create a copy of ChangeLanguageEvent
@@ -160,15 +159,18 @@ class _$ChangeSelectedCheckBoxLanguageImpl
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeSelectedCheckBoxLanguageImplCopyWith<
-          _$ChangeSelectedCheckBoxLanguageImpl>
-      get copyWith => __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<
-          _$ChangeSelectedCheckBoxLanguageImpl>(this, _$identity);
+    _$ChangeSelectedCheckBoxLanguageImpl
+  >
+  get copyWith =>
+      __$$ChangeSelectedCheckBoxLanguageImplCopyWithImpl<
+        _$ChangeSelectedCheckBoxLanguageImpl
+      >(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LanguageModel type)
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     required TResult Function(String langCode) placeNewLanguage,
   }) {
     return changeSelectedCheckBoxLanguage(type);
@@ -200,7 +202,7 @@ class _$ChangeSelectedCheckBoxLanguageImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedCheckBoxLanguage value)
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     required TResult Function(_PlaceNewLanguage value) placeNewLanguage,
   }) {
     return changeSelectedCheckBoxLanguage(this);
@@ -210,7 +212,7 @@ class _$ChangeSelectedCheckBoxLanguageImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeSelectedCheckBoxLanguage value)?
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     TResult? Function(_PlaceNewLanguage value)? placeNewLanguage,
   }) {
     return changeSelectedCheckBoxLanguage?.call(this);
@@ -220,7 +222,7 @@ class _$ChangeSelectedCheckBoxLanguageImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeSelectedCheckBoxLanguage value)?
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     TResult Function(_PlaceNewLanguage value)? placeNewLanguage,
     required TResult orElse(),
   }) {
@@ -232,9 +234,9 @@ class _$ChangeSelectedCheckBoxLanguageImpl
 }
 
 abstract class _ChangeSelectedCheckBoxLanguage implements ChangeLanguageEvent {
-  const factory _ChangeSelectedCheckBoxLanguage(
-          {required final LanguageModel type}) =
-      _$ChangeSelectedCheckBoxLanguageImpl;
+  const factory _ChangeSelectedCheckBoxLanguage({
+    required final LanguageModel type,
+  }) = _$ChangeSelectedCheckBoxLanguageImpl;
 
   LanguageModel get type;
 
@@ -242,15 +244,17 @@ abstract class _ChangeSelectedCheckBoxLanguage implements ChangeLanguageEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangeSelectedCheckBoxLanguageImplCopyWith<
-          _$ChangeSelectedCheckBoxLanguageImpl>
-      get copyWith => throw _privateConstructorUsedError;
+    _$ChangeSelectedCheckBoxLanguageImpl
+  >
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$PlaceNewLanguageImplCopyWith<$Res> {
-  factory _$$PlaceNewLanguageImplCopyWith(_$PlaceNewLanguageImpl value,
-          $Res Function(_$PlaceNewLanguageImpl) then) =
-      __$$PlaceNewLanguageImplCopyWithImpl<$Res>;
+  factory _$$PlaceNewLanguageImplCopyWith(
+    _$PlaceNewLanguageImpl value,
+    $Res Function(_$PlaceNewLanguageImpl) then,
+  ) = __$$PlaceNewLanguageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String langCode});
 }
@@ -259,23 +263,24 @@ abstract class _$$PlaceNewLanguageImplCopyWith<$Res> {
 class __$$PlaceNewLanguageImplCopyWithImpl<$Res>
     extends _$ChangeLanguageEventCopyWithImpl<$Res, _$PlaceNewLanguageImpl>
     implements _$$PlaceNewLanguageImplCopyWith<$Res> {
-  __$$PlaceNewLanguageImplCopyWithImpl(_$PlaceNewLanguageImpl _value,
-      $Res Function(_$PlaceNewLanguageImpl) _then)
-      : super(_value, _then);
+  __$$PlaceNewLanguageImplCopyWithImpl(
+    _$PlaceNewLanguageImpl _value,
+    $Res Function(_$PlaceNewLanguageImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ChangeLanguageEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? langCode = null,
-  }) {
-    return _then(_$PlaceNewLanguageImpl(
-      langCode: null == langCode
-          ? _value.langCode
-          : langCode // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? langCode = null}) {
+    return _then(
+      _$PlaceNewLanguageImpl(
+        langCode: null == langCode
+            ? _value.langCode
+            : langCode // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -311,13 +316,15 @@ class _$PlaceNewLanguageImpl implements _PlaceNewLanguage {
   @pragma('vm:prefer-inline')
   _$$PlaceNewLanguageImplCopyWith<_$PlaceNewLanguageImpl> get copyWith =>
       __$$PlaceNewLanguageImplCopyWithImpl<_$PlaceNewLanguageImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LanguageModel type)
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     required TResult Function(String langCode) placeNewLanguage,
   }) {
     return placeNewLanguage(langCode);
@@ -349,7 +356,7 @@ class _$PlaceNewLanguageImpl implements _PlaceNewLanguage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedCheckBoxLanguage value)
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     required TResult Function(_PlaceNewLanguage value) placeNewLanguage,
   }) {
     return placeNewLanguage(this);
@@ -359,7 +366,7 @@ class _$PlaceNewLanguageImpl implements _PlaceNewLanguage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeSelectedCheckBoxLanguage value)?
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     TResult? Function(_PlaceNewLanguage value)? placeNewLanguage,
   }) {
     return placeNewLanguage?.call(this);
@@ -369,7 +376,7 @@ class _$PlaceNewLanguageImpl implements _PlaceNewLanguage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeSelectedCheckBoxLanguage value)?
-        changeSelectedCheckBoxLanguage,
+    changeSelectedCheckBoxLanguage,
     TResult Function(_PlaceNewLanguage value)? placeNewLanguage,
     required TResult orElse(),
   }) {
@@ -407,8 +414,9 @@ mixin _$ChangeLanguageState {
 /// @nodoc
 abstract class $ChangeLanguageStateCopyWith<$Res> {
   factory $ChangeLanguageStateCopyWith(
-          ChangeLanguageState value, $Res Function(ChangeLanguageState) then) =
-      _$ChangeLanguageStateCopyWithImpl<$Res, ChangeLanguageState>;
+    ChangeLanguageState value,
+    $Res Function(ChangeLanguageState) then,
+  ) = _$ChangeLanguageStateCopyWithImpl<$Res, ChangeLanguageState>;
   @useResult
   $Res call({LanguageModel? selectedLanguage});
 
@@ -429,15 +437,16 @@ class _$ChangeLanguageStateCopyWithImpl<$Res, $Val extends ChangeLanguageState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? selectedLanguage = freezed,
-  }) {
-    return _then(_value.copyWith(
-      selectedLanguage: freezed == selectedLanguage
-          ? _value.selectedLanguage
-          : selectedLanguage // ignore: cast_nullable_to_non_nullable
-              as LanguageModel?,
-    ) as $Val);
+  $Res call({Object? selectedLanguage = freezed}) {
+    return _then(
+      _value.copyWith(
+            selectedLanguage: freezed == selectedLanguage
+                ? _value.selectedLanguage
+                : selectedLanguage // ignore: cast_nullable_to_non_nullable
+                      as LanguageModel?,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of ChangeLanguageState
@@ -458,9 +467,10 @@ class _$ChangeLanguageStateCopyWithImpl<$Res, $Val extends ChangeLanguageState>
 /// @nodoc
 abstract class _$$ChangeLanguageStateImplCopyWith<$Res>
     implements $ChangeLanguageStateCopyWith<$Res> {
-  factory _$$ChangeLanguageStateImplCopyWith(_$ChangeLanguageStateImpl value,
-          $Res Function(_$ChangeLanguageStateImpl) then) =
-      __$$ChangeLanguageStateImplCopyWithImpl<$Res>;
+  factory _$$ChangeLanguageStateImplCopyWith(
+    _$ChangeLanguageStateImpl value,
+    $Res Function(_$ChangeLanguageStateImpl) then,
+  ) = __$$ChangeLanguageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({LanguageModel? selectedLanguage});
@@ -473,23 +483,24 @@ abstract class _$$ChangeLanguageStateImplCopyWith<$Res>
 class __$$ChangeLanguageStateImplCopyWithImpl<$Res>
     extends _$ChangeLanguageStateCopyWithImpl<$Res, _$ChangeLanguageStateImpl>
     implements _$$ChangeLanguageStateImplCopyWith<$Res> {
-  __$$ChangeLanguageStateImplCopyWithImpl(_$ChangeLanguageStateImpl _value,
-      $Res Function(_$ChangeLanguageStateImpl) _then)
-      : super(_value, _then);
+  __$$ChangeLanguageStateImplCopyWithImpl(
+    _$ChangeLanguageStateImpl _value,
+    $Res Function(_$ChangeLanguageStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ChangeLanguageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? selectedLanguage = freezed,
-  }) {
-    return _then(_$ChangeLanguageStateImpl(
-      selectedLanguage: freezed == selectedLanguage
-          ? _value.selectedLanguage
-          : selectedLanguage // ignore: cast_nullable_to_non_nullable
-              as LanguageModel?,
-    ));
+  $Res call({Object? selectedLanguage = freezed}) {
+    return _then(
+      _$ChangeLanguageStateImpl(
+        selectedLanguage: freezed == selectedLanguage
+            ? _value.selectedLanguage
+            : selectedLanguage // ignore: cast_nullable_to_non_nullable
+                  as LanguageModel?,
+      ),
+    );
   }
 }
 
@@ -525,7 +536,9 @@ class _$ChangeLanguageStateImpl implements _ChangeLanguageState {
   @pragma('vm:prefer-inline')
   _$$ChangeLanguageStateImplCopyWith<_$ChangeLanguageStateImpl> get copyWith =>
       __$$ChangeLanguageStateImplCopyWithImpl<_$ChangeLanguageStateImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _ChangeLanguageState implements ChangeLanguageState {

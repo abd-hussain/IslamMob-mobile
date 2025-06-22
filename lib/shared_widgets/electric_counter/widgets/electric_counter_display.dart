@@ -77,7 +77,7 @@ class ElectricCounterDisplay extends StatelessWidget {
                         height: maxHeight * 0.65,
                         color: Colors.black12,
                       ),
-                    )
+                    ),
                   ],
                 ),
               );

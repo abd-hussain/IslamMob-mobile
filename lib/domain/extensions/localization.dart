@@ -51,9 +51,9 @@ extension AppLocalizationsExtension on IslamMobLocalizations {
   String getKeyFromLocalizedString(String value) {
     // Reverse lookup to find the key based on the provided localized value
     final entry = toJson().entries.firstWhere(
-          (element) => element.value == value,
-          orElse: () => const MapEntry('', ''),
-        );
+      (element) => element.value == value,
+      orElse: () => const MapEntry('', ''),
+    );
     return entry.key; // Returns an empty string if the value is not found
   }
 }

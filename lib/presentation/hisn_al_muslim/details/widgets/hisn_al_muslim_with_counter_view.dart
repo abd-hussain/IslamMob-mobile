@@ -134,19 +134,20 @@ class _HisnAlMuslimWithCounterViewState
   Widget _buildReferenceText(BuildContext context) {
     final listOfReferances = widget.hisnAlMuslimDetailsModel.references;
     return ListView.builder(
-        shrinkWrap: true, // Ensures it takes only required space
-        physics:
-            const NeverScrollableScrollPhysics(), // Disables internal scrolling
-        itemCount: listOfReferances.length,
-        itemBuilder: (ctx, index) {
-          return Text(
-            widget.isRtlLanguage
-                ? listOfReferances[index].ar
-                : listOfReferances[index].en,
-            style: _uthmanTextStyle(fontSize: 16),
-            textAlign: TextAlign.start,
-          );
-        });
+      shrinkWrap: true, // Ensures it takes only required space
+      physics:
+          const NeverScrollableScrollPhysics(), // Disables internal scrolling
+      itemCount: listOfReferances.length,
+      itemBuilder: (ctx, index) {
+        return Text(
+          widget.isRtlLanguage
+              ? listOfReferances[index].ar
+              : listOfReferances[index].en,
+          style: _uthmanTextStyle(fontSize: 16),
+          textAlign: TextAlign.start,
+        );
+      },
+    );
   }
 
   Widget _buildCounterView() {

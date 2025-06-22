@@ -86,12 +86,16 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Handles updating the list of downloading prints in the state.
   void _handlePrintsDownloadingUpdate(
-      _UpdatePrintsDownloading event, Emitter<QuranCopyState> emit) {
+    _UpdatePrintsDownloading event,
+    Emitter<QuranCopyState> emit,
+  ) {
     emit(state.copyWith(printsAlreadyDownloaded: event.print));
   }
 
   FutureOr<void> _handleSetupCopy(
-      _SetupCopy event, Emitter<QuranCopyState> emit) async {
+    _SetupCopy event,
+    Emitter<QuranCopyState> emit,
+  ) async {
     final String fileName = event.printItem.fieldName!;
 
     await FirebaseAnalyticsRepository.logEvent(
@@ -99,16 +103,20 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
       parameters: {"file": event.printItem.fieldName!},
     );
 
-    await SetupUserSettingUseCase.setQuranCopyInDB(QuranCopy(
-      fileName: fileName,
-      lastPageNumber: "1",
-      juz2ToPageNumbers: event.printItem.juz2ToPageNumbers,
-      sorahToPageNumbers: event.printItem.sorahToPageNumbers,
-    ));
+    await SetupUserSettingUseCase.setQuranCopyInDB(
+      QuranCopy(
+        fileName: fileName,
+        lastPageNumber: "1",
+        juz2ToPageNumbers: event.printItem.juz2ToPageNumbers,
+        sorahToPageNumbers: event.printItem.sorahToPageNumbers,
+      ),
+    );
   }
 
   FutureOr<void> _getListOfPrints(
-      _GetListOfPrints event, Emitter<QuranCopyState> emit) async {
+    _GetListOfPrints event,
+    Emitter<QuranCopyState> emit,
+  ) async {
     final hasInternet = await _checkInternetConnection();
     if (!hasInternet) return;
 
@@ -120,15 +128,18 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
     if (listOfPrints.isEmpty) {
       LoggerManagerBase.logWarning(
-          message: 'No documents found in the collection.');
+        message: 'No documents found in the collection.',
+      );
       return;
     }
 
     final downloadedList = await _prepareDownloadingList(listOfPrints);
 
-    emit(state.copyWith(
-      listOfPrints: listOfPrints,
-      printsAlreadyDownloaded: downloadedList,
-    ));
+    emit(
+      state.copyWith(
+        listOfPrints: listOfPrints,
+        printsAlreadyDownloaded: downloadedList,
+      ),
+    );
   }
 }

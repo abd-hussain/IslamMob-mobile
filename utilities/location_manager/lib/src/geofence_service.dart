@@ -104,7 +104,8 @@ class GeofenceService {
   Future<bool> startMonitoring() async {
     if (_locationSubscription != null) {
       LoggerManagerBase.logWarning(
-          message: 'Geofence monitoring already started');
+        message: 'Geofence monitoring already started',
+      );
       return true;
     }
 
@@ -113,14 +114,16 @@ class GeofenceService {
       final success = await _locationService.startTracking();
       if (!success) {
         LoggerManagerBase.logWarning(
-            message: 'Failed to start location tracking for geofencing');
+          message: 'Failed to start location tracking for geofencing',
+        );
         return false;
       }
     }
 
     // Listen to location updates
-    _locationSubscription =
-        _locationService.locationStream.listen(_checkGeofences);
+    _locationSubscription = _locationService.locationStream.listen(
+      _checkGeofences,
+    );
     LoggerManagerBase.logInfo(message: 'Started geofence monitoring');
     return true;
   }
@@ -164,7 +167,8 @@ class GeofenceService {
         _geofenceController.add(status);
 
         LoggerManagerBase.logInfo(
-          message: 'Geofence ${geofence.id} (${geofence.name ?? "unnamed"}): '
+          message:
+              'Geofence ${geofence.id} (${geofence.name ?? "unnamed"}): '
               '${event == GeofenceEvent.enter ? "ENTERED" : "EXITED"}',
         );
       }

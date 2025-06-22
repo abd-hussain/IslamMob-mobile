@@ -37,8 +37,8 @@ class ChooseSoundScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments! as Map<String, dynamic>;
     final NotificationTypeState notificationSettingType =
         arguments[ArgumentConstant.notificationSettingType]
-                as NotificationTypeState? ??
-            const NotificationTypeState.fajir();
+            as NotificationTypeState? ??
+        const NotificationTypeState.fajir();
 
     return BlocProvider(
       create: (context) => ChooseSoundBloc()
@@ -87,20 +87,21 @@ class ChooseSoundScreen extends StatelessWidget {
                           itemCount: state.notificationSounds.length,
                           itemBuilder: (ctx, index) {
                             return InkWell(
-                              onTap: () =>
-                                  blocContext.read<ChooseSoundBloc>().add(
-                                        ChooseSoundEvent
-                                            .changeNotificationSoundSettings(
-                                                state.notificationSounds[index]
-                                                    .soundFileName),
-                                      ),
+                              onTap: () => blocContext.read<ChooseSoundBloc>().add(
+                                ChooseSoundEvent.changeNotificationSoundSettings(
+                                  state.notificationSounds[index].soundFileName,
+                                ),
+                              ),
                               child: ChooceSoundTile(
                                 isFirstIndex: index == 0,
-                                isLastIndex: index ==
+                                isLastIndex:
+                                    index ==
                                     state.notificationSounds.length - 1,
                                 sound: state.notificationSounds[index],
                                 type: notificationSettingType,
-                                isSelected: state.notificationSounds[index]
+                                isSelected:
+                                    state
+                                        .notificationSounds[index]
                                         .soundFileName ==
                                     state.selectedSound,
                               ),
@@ -111,17 +112,18 @@ class ChooseSoundScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8),
                         child: CustomButton(
-                            title: localization.save,
-                            isEnabled: state.selectedSound.isNotEmpty,
-                            onTap: () {
-                              blocContext.read<ChooseSoundBloc>().add(
-                                    ChooseSoundEvent.saveChanges(
-                                      type: notificationSettingType,
-                                    ),
-                                  );
-                              Navigator.of(context).pop();
-                            }),
-                      )
+                          title: localization.save,
+                          isEnabled: state.selectedSound.isNotEmpty,
+                          onTap: () {
+                            blocContext.read<ChooseSoundBloc>().add(
+                              ChooseSoundEvent.saveChanges(
+                                type: notificationSettingType,
+                              ),
+                            );
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ),
                     ],
                   );
                 },
@@ -151,8 +153,10 @@ class ChooseSoundScreen extends StatelessWidget {
   /// - Friday-specific notifications (Al-Kahf, Jumu'ah Dua)
   ///
   /// Returns an empty string for unsupported notification types.
-  String getNotificationTitleName(IslamMobLocalizations localization,
-      NotificationTypeState notificationSettingType) {
+  String getNotificationTitleName(
+    IslamMobLocalizations localization,
+    NotificationTypeState notificationSettingType,
+  ) {
     switch (notificationSettingType) {
       case NotificationTypeStateFajir():
         return localization.adhanFajirSoundTitle;

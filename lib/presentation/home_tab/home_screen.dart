@@ -48,46 +48,42 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (context) => HomeTabBloc()
-          ..add(
-            HomeTabEvent.initialize(context),
-          ),
-        child: BlocBuilder<HomeTabBloc, HomeTabState>(
-          buildWhen: (previous, current) =>
-              previous.loadingStatus != current.loadingStatus,
-          builder: (context, state) {
-            if (state.loadingStatus == const HomeScreenProcessState.loading()) {
-              return const Center(
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xff292929)),
-                ),
-              );
-            }
-            return NestedScrollView(
-              controller: context.read<HomeTabBloc>().scrollController,
-              headerSliverBuilder: (context, innerBoxIsScrolled) {
-                return [
-                  const HomeHeaderView(),
-                ];
-              },
-              body: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    _buildAppBarSpacer(),
-                    const SalahTimingView(),
-                    const SizedBox(height: 0.3),
-                    _buildToolBarView(),
-                    _buildNotificationPermissionView(),
-                    _buildLocationPermissionView(),
-                    const AddMobBanner(),
-                    _buildAzkarView(),
-                    const SizedBox(height: 20),
-                  ],
-                ),
+      create: (context) => HomeTabBloc()..add(HomeTabEvent.initialize(context)),
+      child: BlocBuilder<HomeTabBloc, HomeTabState>(
+        buildWhen: (previous, current) =>
+            previous.loadingStatus != current.loadingStatus,
+        builder: (context, state) {
+          if (state.loadingStatus == const HomeScreenProcessState.loading()) {
+            return const Center(
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xff292929)),
               ),
             );
-          },
-        ));
+          }
+          return NestedScrollView(
+            controller: context.read<HomeTabBloc>().scrollController,
+            headerSliverBuilder: (context, innerBoxIsScrolled) {
+              return [const HomeHeaderView()];
+            },
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  _buildAppBarSpacer(),
+                  const SalahTimingView(),
+                  const SizedBox(height: 0.3),
+                  _buildToolBarView(),
+                  _buildNotificationPermissionView(),
+                  _buildLocationPermissionView(),
+                  const AddMobBanner(),
+                  _buildAzkarView(),
+                  const SizedBox(height: 20),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
   }
 
   /// Builds the spacer under the app bar when it is collapsed.
@@ -126,7 +122,8 @@ class HomeScreen extends StatelessWidget {
 
         if (type == const AzkarSalahTimeState.none()) {
           return const AzkarAfterSalahView(
-              salahType: AzkarSalahTimeState.isha());
+            salahType: AzkarSalahTimeState.isha(),
+          );
         }
 
         return AzkarAfterSalahView(salahType: type);

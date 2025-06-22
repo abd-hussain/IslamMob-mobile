@@ -12,7 +12,8 @@ part of 'user_contacts.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$UserContacts {
@@ -31,11 +32,16 @@ mixin _$UserContacts {
 /// @nodoc
 abstract class $UserContactsCopyWith<$Res> {
   factory $UserContactsCopyWith(
-          UserContacts value, $Res Function(UserContacts) then) =
-      _$UserContactsCopyWithImpl<$Res, UserContacts>;
+    UserContacts value,
+    $Res Function(UserContacts) then,
+  ) = _$UserContactsCopyWithImpl<$Res, UserContacts>;
   @useResult
-  $Res call(
-      {String fullName, String mobileNumber, String email, bool selected});
+  $Res call({
+    String fullName,
+    String mobileNumber,
+    String email,
+    bool selected,
+  });
 }
 
 /// @nodoc
@@ -58,24 +64,27 @@ class _$UserContactsCopyWithImpl<$Res, $Val extends UserContacts>
     Object? email = null,
     Object? selected = null,
   }) {
-    return _then(_value.copyWith(
-      fullName: null == fullName
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
-      mobileNumber: null == mobileNumber
-          ? _value.mobileNumber
-          : mobileNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      selected: null == selected
-          ? _value.selected
-          : selected // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            fullName: null == fullName
+                ? _value.fullName
+                : fullName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            mobileNumber: null == mobileNumber
+                ? _value.mobileNumber
+                : mobileNumber // ignore: cast_nullable_to_non_nullable
+                      as String,
+            email: null == email
+                ? _value.email
+                : email // ignore: cast_nullable_to_non_nullable
+                      as String,
+            selected: null == selected
+                ? _value.selected
+                : selected // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -83,12 +92,17 @@ class _$UserContactsCopyWithImpl<$Res, $Val extends UserContacts>
 abstract class _$$UserContactsImplCopyWith<$Res>
     implements $UserContactsCopyWith<$Res> {
   factory _$$UserContactsImplCopyWith(
-          _$UserContactsImpl value, $Res Function(_$UserContactsImpl) then) =
-      __$$UserContactsImplCopyWithImpl<$Res>;
+    _$UserContactsImpl value,
+    $Res Function(_$UserContactsImpl) then,
+  ) = __$$UserContactsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String fullName, String mobileNumber, String email, bool selected});
+  $Res call({
+    String fullName,
+    String mobileNumber,
+    String email,
+    bool selected,
+  });
 }
 
 /// @nodoc
@@ -96,8 +110,9 @@ class __$$UserContactsImplCopyWithImpl<$Res>
     extends _$UserContactsCopyWithImpl<$Res, _$UserContactsImpl>
     implements _$$UserContactsImplCopyWith<$Res> {
   __$$UserContactsImplCopyWithImpl(
-      _$UserContactsImpl _value, $Res Function(_$UserContactsImpl) _then)
-      : super(_value, _then);
+    _$UserContactsImpl _value,
+    $Res Function(_$UserContactsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of UserContacts
   /// with the given fields replaced by the non-null parameter values.
@@ -109,35 +124,38 @@ class __$$UserContactsImplCopyWithImpl<$Res>
     Object? email = null,
     Object? selected = null,
   }) {
-    return _then(_$UserContactsImpl(
-      fullName: null == fullName
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
-      mobileNumber: null == mobileNumber
-          ? _value.mobileNumber
-          : mobileNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      selected: null == selected
-          ? _value.selected
-          : selected // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$UserContactsImpl(
+        fullName: null == fullName
+            ? _value.fullName
+            : fullName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        mobileNumber: null == mobileNumber
+            ? _value.mobileNumber
+            : mobileNumber // ignore: cast_nullable_to_non_nullable
+                  as String,
+        email: null == email
+            ? _value.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String,
+        selected: null == selected
+            ? _value.selected
+            : selected // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$UserContactsImpl implements _UserContacts {
-  _$UserContactsImpl(
-      {this.fullName = '',
-      this.mobileNumber = '',
-      this.email = '',
-      this.selected = false});
+  _$UserContactsImpl({
+    this.fullName = '',
+    this.mobileNumber = '',
+    this.email = '',
+    this.selected = false,
+  });
 
   @override
   @JsonKey()
@@ -185,11 +203,12 @@ class _$UserContactsImpl implements _UserContacts {
 }
 
 abstract class _UserContacts implements UserContacts {
-  factory _UserContacts(
-      {final String fullName,
-      final String mobileNumber,
-      final String email,
-      final bool selected}) = _$UserContactsImpl;
+  factory _UserContacts({
+    final String fullName,
+    final String mobileNumber,
+    final String email,
+    final bool selected,
+  }) = _$UserContactsImpl;
 
   @override
   String get fullName;

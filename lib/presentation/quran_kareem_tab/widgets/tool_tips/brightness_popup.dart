@@ -88,11 +88,9 @@ class _BrightnessPopupState extends State<BrightnessPopup>
       height: 20,
       decoration: BoxDecoration(
         border: Border.all(width: 0.1),
-        gradient: const LinearGradient(colors: [
-          Colors.black,
-          Colors.grey,
-          Colors.white,
-        ]),
+        gradient: const LinearGradient(
+          colors: [Colors.black, Colors.grey, Colors.white],
+        ),
         borderRadius: BorderRadius.circular(5),
       ),
       child: AnimatedBuilder(

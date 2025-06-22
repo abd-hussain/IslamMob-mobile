@@ -89,7 +89,10 @@ class ElectricMainView extends StatelessWidget {
             ),
             SizedBox(height: width * 0.03),
             _buildIncrementButton(
-                context: context, width: width, onPressed: onIncrease),
+              context: context,
+              width: width,
+              onPressed: onIncrease,
+            ),
           ],
         ),
       ],

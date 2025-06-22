@@ -12,7 +12,8 @@ part of 'choose_location.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$ChooseLocation {
@@ -31,11 +32,16 @@ mixin _$ChooseLocation {
 /// @nodoc
 abstract class $ChooseLocationCopyWith<$Res> {
   factory $ChooseLocationCopyWith(
-          ChooseLocation value, $Res Function(ChooseLocation) then) =
-      _$ChooseLocationCopyWithImpl<$Res, ChooseLocation>;
+    ChooseLocation value,
+    $Res Function(ChooseLocation) then,
+  ) = _$ChooseLocationCopyWithImpl<$Res, ChooseLocation>;
   @useResult
-  $Res call(
-      {String flag, String countryName, double latitude, double longitude});
+  $Res call({
+    String flag,
+    String countryName,
+    double latitude,
+    double longitude,
+  });
 }
 
 /// @nodoc
@@ -58,37 +64,45 @@ class _$ChooseLocationCopyWithImpl<$Res, $Val extends ChooseLocation>
     Object? latitude = null,
     Object? longitude = null,
   }) {
-    return _then(_value.copyWith(
-      flag: null == flag
-          ? _value.flag
-          : flag // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryName: null == countryName
-          ? _value.countryName
-          : countryName // ignore: cast_nullable_to_non_nullable
-              as String,
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            flag: null == flag
+                ? _value.flag
+                : flag // ignore: cast_nullable_to_non_nullable
+                      as String,
+            countryName: null == countryName
+                ? _value.countryName
+                : countryName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            latitude: null == latitude
+                ? _value.latitude
+                : latitude // ignore: cast_nullable_to_non_nullable
+                      as double,
+            longitude: null == longitude
+                ? _value.longitude
+                : longitude // ignore: cast_nullable_to_non_nullable
+                      as double,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$ChooseLocationImplCopyWith<$Res>
     implements $ChooseLocationCopyWith<$Res> {
-  factory _$$ChooseLocationImplCopyWith(_$ChooseLocationImpl value,
-          $Res Function(_$ChooseLocationImpl) then) =
-      __$$ChooseLocationImplCopyWithImpl<$Res>;
+  factory _$$ChooseLocationImplCopyWith(
+    _$ChooseLocationImpl value,
+    $Res Function(_$ChooseLocationImpl) then,
+  ) = __$$ChooseLocationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String flag, String countryName, double latitude, double longitude});
+  $Res call({
+    String flag,
+    String countryName,
+    double latitude,
+    double longitude,
+  });
 }
 
 /// @nodoc
@@ -96,8 +110,9 @@ class __$$ChooseLocationImplCopyWithImpl<$Res>
     extends _$ChooseLocationCopyWithImpl<$Res, _$ChooseLocationImpl>
     implements _$$ChooseLocationImplCopyWith<$Res> {
   __$$ChooseLocationImplCopyWithImpl(
-      _$ChooseLocationImpl _value, $Res Function(_$ChooseLocationImpl) _then)
-      : super(_value, _then);
+    _$ChooseLocationImpl _value,
+    $Res Function(_$ChooseLocationImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ChooseLocation
   /// with the given fields replaced by the non-null parameter values.
@@ -109,35 +124,38 @@ class __$$ChooseLocationImplCopyWithImpl<$Res>
     Object? latitude = null,
     Object? longitude = null,
   }) {
-    return _then(_$ChooseLocationImpl(
-      flag: null == flag
-          ? _value.flag
-          : flag // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryName: null == countryName
-          ? _value.countryName
-          : countryName // ignore: cast_nullable_to_non_nullable
-              as String,
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
+    return _then(
+      _$ChooseLocationImpl(
+        flag: null == flag
+            ? _value.flag
+            : flag // ignore: cast_nullable_to_non_nullable
+                  as String,
+        countryName: null == countryName
+            ? _value.countryName
+            : countryName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        latitude: null == latitude
+            ? _value.latitude
+            : latitude // ignore: cast_nullable_to_non_nullable
+                  as double,
+        longitude: null == longitude
+            ? _value.longitude
+            : longitude // ignore: cast_nullable_to_non_nullable
+                  as double,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$ChooseLocationImpl implements _ChooseLocation {
-  _$ChooseLocationImpl(
-      {required this.flag,
-      required this.countryName,
-      required this.latitude,
-      required this.longitude});
+  _$ChooseLocationImpl({
+    required this.flag,
+    required this.countryName,
+    required this.latitude,
+    required this.longitude,
+  });
 
   @override
   final String flag;
@@ -178,15 +196,18 @@ class _$ChooseLocationImpl implements _ChooseLocation {
   @pragma('vm:prefer-inline')
   _$$ChooseLocationImplCopyWith<_$ChooseLocationImpl> get copyWith =>
       __$$ChooseLocationImplCopyWithImpl<_$ChooseLocationImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _ChooseLocation implements ChooseLocation {
-  factory _ChooseLocation(
-      {required final String flag,
-      required final String countryName,
-      required final double latitude,
-      required final double longitude}) = _$ChooseLocationImpl;
+  factory _ChooseLocation({
+    required final String flag,
+    required final String countryName,
+    required final double latitude,
+    required final double longitude,
+  }) = _$ChooseLocationImpl;
 
   @override
   String get flag;

@@ -48,7 +48,9 @@ class FirebaseMessagesRepository {
       return true;
     } catch (e) {
       LoggerManagerBase.logErrorMessage(
-          error: e, message: "Error retrieving notification token");
+        error: e,
+        message: "Error retrieving notification token",
+      );
       return false;
     }
   }
@@ -59,22 +61,27 @@ class FirebaseMessagesRepository {
       final permissionGranted = await checkAndRequestPermission();
       if (!permissionGranted) {
         LoggerManagerBase.logInfo(
-            message: "Notification permission not granted.");
+          message: "Notification permission not granted.",
+        );
         return null;
       }
 
       final token = await _firebaseMessaging.getToken();
       if (token != null) {
         LoggerManagerBase.logInfo(
-            message: "Notification token retrieved: $token");
+          message: "Notification token retrieved: $token",
+        );
       } else {
         LoggerManagerBase.logWarning(
-            message: "Failed to retrieve notification token.");
+          message: "Failed to retrieve notification token.",
+        );
       }
       return token;
     } catch (e) {
       LoggerManagerBase.logErrorMessage(
-          error: e, message: "Error retrieving notification token");
+        error: e,
+        message: "Error retrieving notification token",
+      );
       return null;
     }
   }

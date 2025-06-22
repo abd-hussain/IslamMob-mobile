@@ -19,10 +19,12 @@ class FirebaseRemoteConfigRepository {
     Duration minimumFetchInterval = const Duration(hours: 12),
   }) async {
     try {
-      await _remoteConfig.setConfigSettings(RemoteConfigSettings(
-        fetchTimeout: fetchTimeout,
-        minimumFetchInterval: minimumFetchInterval,
-      ));
+      await _remoteConfig.setConfigSettings(
+        RemoteConfigSettings(
+          fetchTimeout: fetchTimeout,
+          minimumFetchInterval: minimumFetchInterval,
+        ),
+      );
       await _remoteConfig.fetchAndActivate();
     } catch (e) {
       LoggerManagerBase.logCritical(

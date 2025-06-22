@@ -36,12 +36,16 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
   }
 
   void _changeSelectedLanguage(
-      _ChangeSelectedLanguage event, Emitter<LanguageState> emit) {
+    _ChangeSelectedLanguage event,
+    Emitter<LanguageState> emit,
+  ) {
     emit(state.copyWith(selectedLanguage: event.type));
   }
 
   FutureOr<void> _setupLanguage(
-      _SetupLanguage event, Emitter<LanguageState> emit) {
+    _SetupLanguage event,
+    Emitter<LanguageState> emit,
+  ) {
     SetupUserSettingUseCase.setLanguage(state.selectedLanguage!.languageCode);
     // Rebuilds the app after language change
     IslamMobApp.of(event.context)?.rebuild();

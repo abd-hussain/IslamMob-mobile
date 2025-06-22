@@ -63,11 +63,13 @@ class HajjOmrahScreen extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (context) => HajjOmrahBloc()
-          ..add(HajjOmrahEvent.fillInitialValue(
-            screenType == "hajj"
-                ? const HajjOmrahScreenType.hajj()
-                : const HajjOmrahScreenType.omrah(),
-          )),
+          ..add(
+            HajjOmrahEvent.fillInitialValue(
+              screenType == "hajj"
+                  ? const HajjOmrahScreenType.hajj()
+                  : const HajjOmrahScreenType.omrah(),
+            ),
+          ),
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
@@ -99,12 +101,12 @@ class HajjOmrahScreen extends StatelessWidget {
                       return GridView.builder(
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2, // Number of columns
-                          mainAxisSpacing: 8,
-                          crossAxisSpacing: 8,
-                          childAspectRatio:
-                              1.4, // Adjust aspect ratio as needed
-                        ),
+                              crossAxisCount: 2, // Number of columns
+                              mainAxisSpacing: 8,
+                              crossAxisSpacing: 8,
+                              childAspectRatio:
+                                  1.4, // Adjust aspect ratio as needed
+                            ),
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {
                           return HajjOmrahTileView(
@@ -117,7 +119,7 @@ class HajjOmrahScreen extends StatelessWidget {
                       );
                     },
                   ),
-                )
+                ),
               ],
             ),
           ),

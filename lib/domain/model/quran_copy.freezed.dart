@@ -12,7 +12,8 @@ part of 'quran_copy.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$QuranCopy {
@@ -35,11 +36,12 @@ abstract class $QuranCopyCopyWith<$Res> {
   factory $QuranCopyCopyWith(QuranCopy value, $Res Function(QuranCopy) then) =
       _$QuranCopyCopyWithImpl<$Res, QuranCopy>;
   @useResult
-  $Res call(
-      {String fileName,
-      String lastPageNumber,
-      Map<String, dynamic>? juz2ToPageNumbers,
-      Map<String, dynamic>? sorahToPageNumbers});
+  $Res call({
+    String fileName,
+    String lastPageNumber,
+    Map<String, dynamic>? juz2ToPageNumbers,
+    Map<String, dynamic>? sorahToPageNumbers,
+  });
 }
 
 /// @nodoc
@@ -62,24 +64,27 @@ class _$QuranCopyCopyWithImpl<$Res, $Val extends QuranCopy>
     Object? juz2ToPageNumbers = freezed,
     Object? sorahToPageNumbers = freezed,
   }) {
-    return _then(_value.copyWith(
-      fileName: null == fileName
-          ? _value.fileName
-          : fileName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastPageNumber: null == lastPageNumber
-          ? _value.lastPageNumber
-          : lastPageNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      juz2ToPageNumbers: freezed == juz2ToPageNumbers
-          ? _value.juz2ToPageNumbers
-          : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      sorahToPageNumbers: freezed == sorahToPageNumbers
-          ? _value.sorahToPageNumbers
-          : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            fileName: null == fileName
+                ? _value.fileName
+                : fileName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            lastPageNumber: null == lastPageNumber
+                ? _value.lastPageNumber
+                : lastPageNumber // ignore: cast_nullable_to_non_nullable
+                      as String,
+            juz2ToPageNumbers: freezed == juz2ToPageNumbers
+                ? _value.juz2ToPageNumbers
+                : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
+                      as Map<String, dynamic>?,
+            sorahToPageNumbers: freezed == sorahToPageNumbers
+                ? _value.sorahToPageNumbers
+                : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
+                      as Map<String, dynamic>?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -87,15 +92,17 @@ class _$QuranCopyCopyWithImpl<$Res, $Val extends QuranCopy>
 abstract class _$$QuranCopyImplCopyWith<$Res>
     implements $QuranCopyCopyWith<$Res> {
   factory _$$QuranCopyImplCopyWith(
-          _$QuranCopyImpl value, $Res Function(_$QuranCopyImpl) then) =
-      __$$QuranCopyImplCopyWithImpl<$Res>;
+    _$QuranCopyImpl value,
+    $Res Function(_$QuranCopyImpl) then,
+  ) = __$$QuranCopyImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String fileName,
-      String lastPageNumber,
-      Map<String, dynamic>? juz2ToPageNumbers,
-      Map<String, dynamic>? sorahToPageNumbers});
+  $Res call({
+    String fileName,
+    String lastPageNumber,
+    Map<String, dynamic>? juz2ToPageNumbers,
+    Map<String, dynamic>? sorahToPageNumbers,
+  });
 }
 
 /// @nodoc
@@ -103,8 +110,9 @@ class __$$QuranCopyImplCopyWithImpl<$Res>
     extends _$QuranCopyCopyWithImpl<$Res, _$QuranCopyImpl>
     implements _$$QuranCopyImplCopyWith<$Res> {
   __$$QuranCopyImplCopyWithImpl(
-      _$QuranCopyImpl _value, $Res Function(_$QuranCopyImpl) _then)
-      : super(_value, _then);
+    _$QuranCopyImpl _value,
+    $Res Function(_$QuranCopyImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QuranCopy
   /// with the given fields replaced by the non-null parameter values.
@@ -116,37 +124,39 @@ class __$$QuranCopyImplCopyWithImpl<$Res>
     Object? juz2ToPageNumbers = freezed,
     Object? sorahToPageNumbers = freezed,
   }) {
-    return _then(_$QuranCopyImpl(
-      fileName: null == fileName
-          ? _value.fileName
-          : fileName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastPageNumber: null == lastPageNumber
-          ? _value.lastPageNumber
-          : lastPageNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      juz2ToPageNumbers: freezed == juz2ToPageNumbers
-          ? _value._juz2ToPageNumbers
-          : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      sorahToPageNumbers: freezed == sorahToPageNumbers
-          ? _value._sorahToPageNumbers
-          : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
+    return _then(
+      _$QuranCopyImpl(
+        fileName: null == fileName
+            ? _value.fileName
+            : fileName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        lastPageNumber: null == lastPageNumber
+            ? _value.lastPageNumber
+            : lastPageNumber // ignore: cast_nullable_to_non_nullable
+                  as String,
+        juz2ToPageNumbers: freezed == juz2ToPageNumbers
+            ? _value._juz2ToPageNumbers
+            : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        sorahToPageNumbers: freezed == sorahToPageNumbers
+            ? _value._sorahToPageNumbers
+            : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$QuranCopyImpl implements _QuranCopy {
-  _$QuranCopyImpl(
-      {required this.fileName,
-      required this.lastPageNumber,
-      required final Map<String, dynamic>? juz2ToPageNumbers,
-      required final Map<String, dynamic>? sorahToPageNumbers})
-      : _juz2ToPageNumbers = juz2ToPageNumbers,
-        _sorahToPageNumbers = sorahToPageNumbers;
+  _$QuranCopyImpl({
+    required this.fileName,
+    required this.lastPageNumber,
+    required final Map<String, dynamic>? juz2ToPageNumbers,
+    required final Map<String, dynamic>? sorahToPageNumbers,
+  }) : _juz2ToPageNumbers = juz2ToPageNumbers,
+       _sorahToPageNumbers = sorahToPageNumbers;
 
   @override
   final String fileName;
@@ -188,19 +198,24 @@ class _$QuranCopyImpl implements _QuranCopy {
                 other.fileName == fileName) &&
             (identical(other.lastPageNumber, lastPageNumber) ||
                 other.lastPageNumber == lastPageNumber) &&
-            const DeepCollectionEquality()
-                .equals(other._juz2ToPageNumbers, _juz2ToPageNumbers) &&
-            const DeepCollectionEquality()
-                .equals(other._sorahToPageNumbers, _sorahToPageNumbers));
+            const DeepCollectionEquality().equals(
+              other._juz2ToPageNumbers,
+              _juz2ToPageNumbers,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._sorahToPageNumbers,
+              _sorahToPageNumbers,
+            ));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      fileName,
-      lastPageNumber,
-      const DeepCollectionEquality().hash(_juz2ToPageNumbers),
-      const DeepCollectionEquality().hash(_sorahToPageNumbers));
+    runtimeType,
+    fileName,
+    lastPageNumber,
+    const DeepCollectionEquality().hash(_juz2ToPageNumbers),
+    const DeepCollectionEquality().hash(_sorahToPageNumbers),
+  );
 
   /// Create a copy of QuranCopy
   /// with the given fields replaced by the non-null parameter values.
@@ -212,12 +227,12 @@ class _$QuranCopyImpl implements _QuranCopy {
 }
 
 abstract class _QuranCopy implements QuranCopy {
-  factory _QuranCopy(
-          {required final String fileName,
-          required final String lastPageNumber,
-          required final Map<String, dynamic>? juz2ToPageNumbers,
-          required final Map<String, dynamic>? sorahToPageNumbers}) =
-      _$QuranCopyImpl;
+  factory _QuranCopy({
+    required final String fileName,
+    required final String lastPageNumber,
+    required final Map<String, dynamic>? juz2ToPageNumbers,
+    required final Map<String, dynamic>? sorahToPageNumbers,
+  }) = _$QuranCopyImpl;
 
   @override
   String get fileName;

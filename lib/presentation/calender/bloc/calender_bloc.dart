@@ -42,10 +42,12 @@ class CalenderBloc extends Bloc<CalenderEvent, CalenderState> {
   }
 
   FutureOr<void> _prepareSalahTiming(
-      _PrepareSalahTiming event, Emitter<CalenderState> emit) {
+    _PrepareSalahTiming event,
+    Emitter<CalenderState> emit,
+  ) {
     final hijriDate = HijriUsecase.getHijriDateForThisDate(DateTime.now());
-    final List<CalenderModel> calenderData =
-        prayUsecase.getAllPrayTimeAsDateTimeForPassedMonth(hijriDate);
+    final List<CalenderModel> calenderData = prayUsecase
+        .getAllPrayTimeAsDateTimeForPassedMonth(hijriDate);
 
     if (calenderData.isEmpty) {
       emit(state.copyWith(status: const CalenderProcessStateError()));
@@ -60,7 +62,9 @@ class CalenderBloc extends Bloc<CalenderEvent, CalenderState> {
   }
 
   FutureOr<void> _fillMonthNameFirstTime(
-      _FillMonthNameFirstTime event, Emitter<CalenderState> emit) {
+    _FillMonthNameFirstTime event,
+    Emitter<CalenderState> emit,
+  ) {
     final String monthName = HijriUsecase.getThisMonthHijriDateName();
     emit(state.copyWith(monthName: monthName));
   }
@@ -75,7 +79,9 @@ class CalenderBloc extends Bloc<CalenderEvent, CalenderState> {
   }
 
   FutureOr<void> _previousMonth(
-      _PreviousMonth event, Emitter<CalenderState> emit) {
+    _PreviousMonth event,
+    Emitter<CalenderState> emit,
+  ) {
     final List<String> monthNames = HijriUsecase.getMonthNames();
     final int currentIndex = monthNames.indexOf(event.currentMonthName);
     if (currentIndex > 0) {
@@ -92,8 +98,8 @@ class CalenderBloc extends Bloc<CalenderEvent, CalenderState> {
     final hijriDate = HijriUsecase.getHijriDateFromMonthName(newMonthName);
 
     // Retrieve prayer time data for the selected month
-    final List<CalenderModel> calenderData =
-        prayUsecase.getAllPrayTimeAsDateTimeForPassedMonth(hijriDate);
+    final List<CalenderModel> calenderData = prayUsecase
+        .getAllPrayTimeAsDateTimeForPassedMonth(hijriDate);
 
     // Emit success or error state based on the data availability
     if (calenderData.isEmpty) {

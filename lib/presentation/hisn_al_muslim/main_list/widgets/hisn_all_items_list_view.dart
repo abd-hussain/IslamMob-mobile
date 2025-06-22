@@ -29,8 +29,11 @@ class HisnAllItemsListView extends StatelessWidget {
   /// Parameters:
   /// - [list]: Complete list of Hisn Al-Muslim supplications
   /// - [isRtlLanguage]: Boolean for RTL language support (Arabic, Farsi)
-  const HisnAllItemsListView(
-      {super.key, required this.list, required this.isRtlLanguage});
+  const HisnAllItemsListView({
+    super.key,
+    required this.list,
+    required this.isRtlLanguage,
+  });
 
   @override
   Widget build(BuildContext context) {

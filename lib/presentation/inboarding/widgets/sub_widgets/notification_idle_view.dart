@@ -81,7 +81,8 @@ class NotificationIdleView extends StatelessWidget {
 
               notificationsBloc.add(
                 NotificationsEvent.setupToken(
-                    token: notificationsDetails ?? ""),
+                  token: notificationsDetails ?? "",
+                ),
               );
             }
 

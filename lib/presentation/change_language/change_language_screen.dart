@@ -44,9 +44,7 @@ class ChangeLanguageScreen extends StatelessWidget {
   /// a smooth user experience for language switching.
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalyticsRepository.logEvent(
-      name: "ChangeLanguageScreen",
-    );
+    FirebaseAnalyticsRepository.logEvent(name: "ChangeLanguageScreen");
     return BlocProvider(
       create: (_) => ChangeLanguageBloc(),
       child: Scaffold(
@@ -81,10 +79,10 @@ class ChangeLanguageScreen extends StatelessWidget {
           title: state.selectedLanguage!.selectButtonTitle,
           onTap: () {
             context.read<ChangeLanguageBloc>().add(
-                  ChangeLanguageEvent.placeNewLanguage(
-                    langCode: state.selectedLanguage!.languageCode,
-                  ),
-                );
+              ChangeLanguageEvent.placeNewLanguage(
+                langCode: state.selectedLanguage!.languageCode,
+              ),
+            );
             IslamMobApp.of(context)!.rebuild();
             Navigator.pop(context);
           },

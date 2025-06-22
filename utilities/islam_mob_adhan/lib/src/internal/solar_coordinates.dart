@@ -54,7 +54,8 @@ class SolarCoordinates {
 
     // Calculate declination using spherical trigonometry.
     declination = radiansToDegrees(
-        asin(sin(apparentObliquity) * sin(apparentSolarLongitude)));
+      asin(sin(apparentObliquity) * sin(apparentSolarLongitude)),
+    );
 
     // Calculate right ascension.
     rightAscension = DoubleUtil.unwindAngle(
@@ -67,7 +68,8 @@ class SolarCoordinates {
     );
 
     // Calculate apparent sidereal time.
-    apparentSiderealTime = meanSiderealTime +
+    apparentSiderealTime =
+        meanSiderealTime +
         (nutationInLongitude *
                 3600 *
                 cos(degreesToRadians(meanObliquity + nutationInObliquity))) /

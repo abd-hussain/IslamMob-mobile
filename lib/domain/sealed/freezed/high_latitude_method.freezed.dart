@@ -12,7 +12,8 @@ part of '../high_latitude_method.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$PrayHightLatitudeCaluclationState {
@@ -22,16 +23,14 @@ mixin _$PrayHightLatitudeCaluclationState {
     required TResult Function() angleBasedMethod,
     required TResult Function() midnight,
     required TResult Function() seventhPartOfTheNight,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
     TResult? Function()? angleBasedMethod,
     TResult? Function()? midnight,
     TResult? Function()? seventhPartOfTheNight,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? none,
@@ -39,59 +38,64 @@ mixin _$PrayHightLatitudeCaluclationState {
     TResult Function()? midnight,
     TResult Function()? seventhPartOfTheNight,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(PrayHightLatitudeCaluclationStateNone value) none,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
+      PrayHightLatitudeCaluclationStateAngleBasedMethod value,
+    )
+    angleBasedMethod,
     required TResult Function(PrayHightLatitudeCaluclationStateMidnight value)
-        midnight,
+    midnight,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
-  }) =>
-      throw _privateConstructorUsedError;
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )
+    seventhPartOfTheNight,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult? Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult? Function(PrayHightLatitudeCaluclationStateMidnight value)?
-        midnight,
+    midnight,
     TResult? Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
-  }) =>
-      throw _privateConstructorUsedError;
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult Function(PrayHightLatitudeCaluclationStateMidnight value)? midnight,
     TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrayHightLatitudeCaluclationStateCopyWith<$Res> {
   factory $PrayHightLatitudeCaluclationStateCopyWith(
-          PrayHightLatitudeCaluclationState value,
-          $Res Function(PrayHightLatitudeCaluclationState) then) =
-      _$PrayHightLatitudeCaluclationStateCopyWithImpl<$Res,
-          PrayHightLatitudeCaluclationState>;
+    PrayHightLatitudeCaluclationState value,
+    $Res Function(PrayHightLatitudeCaluclationState) then,
+  ) =
+      _$PrayHightLatitudeCaluclationStateCopyWithImpl<
+        $Res,
+        PrayHightLatitudeCaluclationState
+      >;
 }
 
 /// @nodoc
-class _$PrayHightLatitudeCaluclationStateCopyWithImpl<$Res,
-        $Val extends PrayHightLatitudeCaluclationState>
+class _$PrayHightLatitudeCaluclationStateCopyWithImpl<
+  $Res,
+  $Val extends PrayHightLatitudeCaluclationState
+>
     implements $PrayHightLatitudeCaluclationStateCopyWith<$Res> {
   _$PrayHightLatitudeCaluclationStateCopyWithImpl(this._value, this._then);
 
@@ -107,20 +111,23 @@ class _$PrayHightLatitudeCaluclationStateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$PrayHightLatitudeCaluclationStateNoneImplCopyWith<$Res> {
   factory _$$PrayHightLatitudeCaluclationStateNoneImplCopyWith(
-          _$PrayHightLatitudeCaluclationStateNoneImpl value,
-          $Res Function(_$PrayHightLatitudeCaluclationStateNoneImpl) then) =
-      __$$PrayHightLatitudeCaluclationStateNoneImplCopyWithImpl<$Res>;
+    _$PrayHightLatitudeCaluclationStateNoneImpl value,
+    $Res Function(_$PrayHightLatitudeCaluclationStateNoneImpl) then,
+  ) = __$$PrayHightLatitudeCaluclationStateNoneImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayHightLatitudeCaluclationStateNoneImplCopyWithImpl<$Res>
-    extends _$PrayHightLatitudeCaluclationStateCopyWithImpl<$Res,
-        _$PrayHightLatitudeCaluclationStateNoneImpl>
+    extends
+        _$PrayHightLatitudeCaluclationStateCopyWithImpl<
+          $Res,
+          _$PrayHightLatitudeCaluclationStateNoneImpl
+        >
     implements _$$PrayHightLatitudeCaluclationStateNoneImplCopyWith<$Res> {
   __$$PrayHightLatitudeCaluclationStateNoneImplCopyWithImpl(
-      _$PrayHightLatitudeCaluclationStateNoneImpl _value,
-      $Res Function(_$PrayHightLatitudeCaluclationStateNoneImpl) _then)
-      : super(_value, _then);
+    _$PrayHightLatitudeCaluclationStateNoneImpl _value,
+    $Res Function(_$PrayHightLatitudeCaluclationStateNoneImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayHightLatitudeCaluclationState
   /// with the given fields replaced by the non-null parameter values.
@@ -189,13 +196,15 @@ class _$PrayHightLatitudeCaluclationStateNoneImpl
   TResult map<TResult extends Object?>({
     required TResult Function(PrayHightLatitudeCaluclationStateNone value) none,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
+      PrayHightLatitudeCaluclationStateAngleBasedMethod value,
+    )
+    angleBasedMethod,
     required TResult Function(PrayHightLatitudeCaluclationStateMidnight value)
-        midnight,
+    midnight,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )
+    seventhPartOfTheNight,
   }) {
     return none(this);
   }
@@ -205,12 +214,13 @@ class _$PrayHightLatitudeCaluclationStateNoneImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult? Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult? Function(PrayHightLatitudeCaluclationStateMidnight value)?
-        midnight,
+    midnight,
     TResult? Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
   }) {
     return none?.call(this);
   }
@@ -220,11 +230,12 @@ class _$PrayHightLatitudeCaluclationStateNoneImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult Function(PrayHightLatitudeCaluclationStateMidnight value)? midnight,
     TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
     required TResult orElse(),
   }) {
     if (none != null) {
@@ -242,27 +253,33 @@ abstract class PrayHightLatitudeCaluclationStateNone
 
 /// @nodoc
 abstract class _$$PrayHightLatitudeCaluclationStateAngleBasedMethodImplCopyWith<
-    $Res> {
+  $Res
+> {
   factory _$$PrayHightLatitudeCaluclationStateAngleBasedMethodImplCopyWith(
-          _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl value,
-          $Res Function(_$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl)
-              then) =
+    _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl value,
+    $Res Function(_$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl) then,
+  ) =
       __$$PrayHightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl<
-          $Res>;
+        $Res
+      >;
 }
 
 /// @nodoc
 class __$$PrayHightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl<
-        $Res>
-    extends _$PrayHightLatitudeCaluclationStateCopyWithImpl<$Res,
-        _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl>
+  $Res
+>
+    extends
+        _$PrayHightLatitudeCaluclationStateCopyWithImpl<
+          $Res,
+          _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl
+        >
     implements
         _$$PrayHightLatitudeCaluclationStateAngleBasedMethodImplCopyWith<$Res> {
   __$$PrayHightLatitudeCaluclationStateAngleBasedMethodImplCopyWithImpl(
-      _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl _value,
-      $Res Function(_$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl)
-          _then)
-      : super(_value, _then);
+    _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl _value,
+    $Res Function(_$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl)
+    _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayHightLatitudeCaluclationState
   /// with the given fields replaced by the non-null parameter values.
@@ -331,13 +348,15 @@ class _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl
   TResult map<TResult extends Object?>({
     required TResult Function(PrayHightLatitudeCaluclationStateNone value) none,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
+      PrayHightLatitudeCaluclationStateAngleBasedMethod value,
+    )
+    angleBasedMethod,
     required TResult Function(PrayHightLatitudeCaluclationStateMidnight value)
-        midnight,
+    midnight,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )
+    seventhPartOfTheNight,
   }) {
     return angleBasedMethod(this);
   }
@@ -347,12 +366,13 @@ class _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult? Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult? Function(PrayHightLatitudeCaluclationStateMidnight value)?
-        midnight,
+    midnight,
     TResult? Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
   }) {
     return angleBasedMethod?.call(this);
   }
@@ -362,11 +382,12 @@ class _$PrayHightLatitudeCaluclationStateAngleBasedMethodImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult Function(PrayHightLatitudeCaluclationStateMidnight value)? midnight,
     TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
     required TResult orElse(),
   }) {
     if (angleBasedMethod != null) {
@@ -385,20 +406,23 @@ abstract class PrayHightLatitudeCaluclationStateAngleBasedMethod
 /// @nodoc
 abstract class _$$PrayHightLatitudeCaluclationStateMidnightImplCopyWith<$Res> {
   factory _$$PrayHightLatitudeCaluclationStateMidnightImplCopyWith(
-          _$PrayHightLatitudeCaluclationStateMidnightImpl value,
-          $Res Function(_$PrayHightLatitudeCaluclationStateMidnightImpl) then) =
-      __$$PrayHightLatitudeCaluclationStateMidnightImplCopyWithImpl<$Res>;
+    _$PrayHightLatitudeCaluclationStateMidnightImpl value,
+    $Res Function(_$PrayHightLatitudeCaluclationStateMidnightImpl) then,
+  ) = __$$PrayHightLatitudeCaluclationStateMidnightImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayHightLatitudeCaluclationStateMidnightImplCopyWithImpl<$Res>
-    extends _$PrayHightLatitudeCaluclationStateCopyWithImpl<$Res,
-        _$PrayHightLatitudeCaluclationStateMidnightImpl>
+    extends
+        _$PrayHightLatitudeCaluclationStateCopyWithImpl<
+          $Res,
+          _$PrayHightLatitudeCaluclationStateMidnightImpl
+        >
     implements _$$PrayHightLatitudeCaluclationStateMidnightImplCopyWith<$Res> {
   __$$PrayHightLatitudeCaluclationStateMidnightImplCopyWithImpl(
-      _$PrayHightLatitudeCaluclationStateMidnightImpl _value,
-      $Res Function(_$PrayHightLatitudeCaluclationStateMidnightImpl) _then)
-      : super(_value, _then);
+    _$PrayHightLatitudeCaluclationStateMidnightImpl _value,
+    $Res Function(_$PrayHightLatitudeCaluclationStateMidnightImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayHightLatitudeCaluclationState
   /// with the given fields replaced by the non-null parameter values.
@@ -467,13 +491,15 @@ class _$PrayHightLatitudeCaluclationStateMidnightImpl
   TResult map<TResult extends Object?>({
     required TResult Function(PrayHightLatitudeCaluclationStateNone value) none,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
+      PrayHightLatitudeCaluclationStateAngleBasedMethod value,
+    )
+    angleBasedMethod,
     required TResult Function(PrayHightLatitudeCaluclationStateMidnight value)
-        midnight,
+    midnight,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )
+    seventhPartOfTheNight,
   }) {
     return midnight(this);
   }
@@ -483,12 +509,13 @@ class _$PrayHightLatitudeCaluclationStateMidnightImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult? Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult? Function(PrayHightLatitudeCaluclationStateMidnight value)?
-        midnight,
+    midnight,
     TResult? Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
   }) {
     return midnight?.call(this);
   }
@@ -498,11 +525,12 @@ class _$PrayHightLatitudeCaluclationStateMidnightImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult Function(PrayHightLatitudeCaluclationStateMidnight value)? midnight,
     TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
     required TResult orElse(),
   }) {
     if (midnight != null) {
@@ -520,30 +548,36 @@ abstract class PrayHightLatitudeCaluclationStateMidnight
 
 /// @nodoc
 abstract class _$$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith<
-    $Res> {
+  $Res
+> {
   factory _$$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith(
-          _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl value,
-          $Res Function(
-                  _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl)
-              then) =
+    _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl value,
+    $Res Function(_$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl)
+    then,
+  ) =
       __$$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl<
-          $Res>;
+        $Res
+      >;
 }
 
 /// @nodoc
 class __$$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl<
-        $Res>
-    extends _$PrayHightLatitudeCaluclationStateCopyWithImpl<$Res,
-        _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl>
+  $Res
+>
+    extends
+        _$PrayHightLatitudeCaluclationStateCopyWithImpl<
+          $Res,
+          _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl
+        >
     implements
         _$$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWith<
-            $Res> {
+          $Res
+        > {
   __$$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImplCopyWithImpl(
-      _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl _value,
-      $Res Function(
-              _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl)
-          _then)
-      : super(_value, _then);
+    _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl _value,
+    $Res Function(_$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl)
+    _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayHightLatitudeCaluclationState
   /// with the given fields replaced by the non-null parameter values.
@@ -613,13 +647,15 @@ class _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl
   TResult map<TResult extends Object?>({
     required TResult Function(PrayHightLatitudeCaluclationStateNone value) none,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateAngleBasedMethod value)
-        angleBasedMethod,
+      PrayHightLatitudeCaluclationStateAngleBasedMethod value,
+    )
+    angleBasedMethod,
     required TResult Function(PrayHightLatitudeCaluclationStateMidnight value)
-        midnight,
+    midnight,
     required TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )
+    seventhPartOfTheNight,
   }) {
     return seventhPartOfTheNight(this);
   }
@@ -629,12 +665,13 @@ class _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult? Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult? Function(PrayHightLatitudeCaluclationStateMidnight value)?
-        midnight,
+    midnight,
     TResult? Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
   }) {
     return seventhPartOfTheNight?.call(this);
   }
@@ -644,11 +681,12 @@ class _$PrayHightLatitudeCaluclationStateSeventhPartOfTheNightImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrayHightLatitudeCaluclationStateNone value)? none,
     TResult Function(PrayHightLatitudeCaluclationStateAngleBasedMethod value)?
-        angleBasedMethod,
+    angleBasedMethod,
     TResult Function(PrayHightLatitudeCaluclationStateMidnight value)? midnight,
     TResult Function(
-            PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value)?
-        seventhPartOfTheNight,
+      PrayHightLatitudeCaluclationStateSeventhPartOfTheNight value,
+    )?
+    seventhPartOfTheNight,
     required TResult orElse(),
   }) {
     if (seventhPartOfTheNight != null) {

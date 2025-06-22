@@ -45,10 +45,11 @@ class TimeZoneView extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Expanded(
-              child: Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: _buildCalculationSelector(context, localizations),
-          )),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: _buildCalculationSelector(context, localizations),
+            ),
+          ),
           const SizedBox(height: 8),
         ],
       ),
@@ -56,12 +57,16 @@ class TimeZoneView extends StatelessWidget {
   }
 
   Widget _buildCalculationSelector(
-      BuildContext context, IslamMobLocalizations localizations) {
+    BuildContext context,
+    IslamMobLocalizations localizations,
+  ) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) => previous.timeZone != current.timeZone,
       builder: (context, state) {
         final timeZonesList = CalculationSettingUsecase.getTimeZonesList(
-            localizations, state.timeZone);
+          localizations,
+          state.timeZone,
+        );
         return ListView.builder(
           itemCount: timeZonesList.length,
           itemBuilder: (context, index) {
@@ -69,10 +74,10 @@ class TimeZoneView extends StatelessWidget {
               title: timeZonesList[index].name,
               isSelected: timeZonesList[index].isSelected,
               onChanged: () => context.read<PrayCalculationSettingBloc>().add(
-                    PrayCalculationSettingEvent.updateTimeZone(
-                      value: timeZonesList[index].duration,
-                    ),
-                  ),
+                PrayCalculationSettingEvent.updateTimeZone(
+                  value: timeZonesList[index].duration,
+                ),
+              ),
             );
           },
         );

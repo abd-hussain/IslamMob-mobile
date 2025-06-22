@@ -15,13 +15,15 @@ class GetUserSettingUseCase {
   PrayHightLatitudeCaluclationState savedHighLatitudeRule() {
     final String selectedPrayHighLatitudeCalculation =
         DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
-      defaultValue: "PrayHightLatitudeCaluclationState.none()",
-    ) as String;
+              key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
+              defaultValue: "PrayHightLatitudeCaluclationState.none()",
+            )
+            as String;
 
     final PrayHightLatitudeCaluclationState highLatitude =
         PrayDBParser.parseHighLatitudeRuleState(
-            selectedPrayHighLatitudeCalculation);
+          selectedPrayHighLatitudeCalculation,
+        );
     return highLatitude;
   }
 
@@ -29,9 +31,11 @@ class GetUserSettingUseCase {
   PrayCalculationMethodState savedCalculationMethod() {
     final String selectedCalculationMethod =
         DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
-      defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
-    ) as String;
+              key: DatabaseFieldPrayCalculationConstant
+                  .selectedCalculationMethod,
+              defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
+            )
+            as String;
 
     final PrayCalculationMethodState calculationMethod =
         PrayDBParser.parseCalculationMethodState(selectedCalculationMethod);
@@ -41,10 +45,12 @@ class GetUserSettingUseCase {
 
   /// Retrieves the Madhab, from Hive
   MadhabState savedMadhab() {
-    final String selectedMadhab = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
-      defaultValue: "MadhabState.hanafi()",
-    ) as String;
+    final String selectedMadhab =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
+              defaultValue: "MadhabState.hanafi()",
+            )
+            as String;
 
     final MadhabState madhab = PrayDBParser.parseMadhabState(selectedMadhab);
     return madhab;
@@ -52,19 +58,23 @@ class GetUserSettingUseCase {
 
   /// Retrieves the UTC offset, from Hive
   Duration savedUtcOffset() {
-    final String hourOffset = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour,
-      defaultValue: "",
-    ) as String;
-    final String minuteOffset = DataBaseManagerBase.getFromDatabase(
-      key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin,
-      defaultValue: "",
-    ) as String;
+    final String hourOffset =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldPrayCalculationConstant
+                  .selectedDifferenceWithUTCHour,
+              defaultValue: "",
+            )
+            as String;
+    final String minuteOffset =
+        DataBaseManagerBase.getFromDatabase(
+              key: DatabaseFieldPrayCalculationConstant
+                  .selectedDifferenceWithUTCMin,
+              defaultValue: "",
+            )
+            as String;
 
     if (hourOffset.isEmpty) {
-      return const Duration(
-        hours: 3,
-      );
+      return const Duration(hours: 3);
     } else {
       final int hours = int.tryParse(hourOffset) ?? 0;
       final int minutes = int.tryParse(minuteOffset) ?? 0;
@@ -89,7 +99,9 @@ class GetUserSettingUseCase {
 
     getDefaultMinEditSettings.forEach((key, defaultValue) {
       final value = DataBaseManagerBase.getFromDatabase(
-          key: key, defaultValue: defaultValue);
+        key: key,
+        defaultValue: defaultValue,
+      );
       final azanType = _mapKeyToAzanType(key);
       if (azanType != null) {
         minutesEdited[azanType] = int.tryParse(value as String) ?? 0;

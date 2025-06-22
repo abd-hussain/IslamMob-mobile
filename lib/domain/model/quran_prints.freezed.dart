@@ -12,7 +12,8 @@ part of 'quran_prints.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$QuranPrints {
@@ -40,20 +41,22 @@ mixin _$QuranPrints {
 /// @nodoc
 abstract class $QuranPrintsCopyWith<$Res> {
   factory $QuranPrintsCopyWith(
-          QuranPrints value, $Res Function(QuranPrints) then) =
-      _$QuranPrintsCopyWithImpl<$Res, QuranPrints>;
+    QuranPrints value,
+    $Res Function(QuranPrints) then,
+  ) = _$QuranPrintsCopyWithImpl<$Res, QuranPrints>;
   @useResult
-  $Res call(
-      {String? fieldName,
-      String? nameReferance,
-      String? description,
-      String? language,
-      String? previewImage,
-      String? attachmentLocation,
-      String? addedPagesAttachmentLocation,
-      Map<String, dynamic>? juz2ToPageNumbers,
-      Map<String, dynamic>? sorahToPageNumbers,
-      bool? hidden});
+  $Res call({
+    String? fieldName,
+    String? nameReferance,
+    String? description,
+    String? language,
+    String? previewImage,
+    String? attachmentLocation,
+    String? addedPagesAttachmentLocation,
+    Map<String, dynamic>? juz2ToPageNumbers,
+    Map<String, dynamic>? sorahToPageNumbers,
+    bool? hidden,
+  });
 }
 
 /// @nodoc
@@ -82,48 +85,52 @@ class _$QuranPrintsCopyWithImpl<$Res, $Val extends QuranPrints>
     Object? sorahToPageNumbers = freezed,
     Object? hidden = freezed,
   }) {
-    return _then(_value.copyWith(
-      fieldName: freezed == fieldName
-          ? _value.fieldName
-          : fieldName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameReferance: freezed == nameReferance
-          ? _value.nameReferance
-          : nameReferance // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: freezed == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String?,
-      previewImage: freezed == previewImage
-          ? _value.previewImage
-          : previewImage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attachmentLocation: freezed == attachmentLocation
-          ? _value.attachmentLocation
-          : attachmentLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addedPagesAttachmentLocation: freezed == addedPagesAttachmentLocation
-          ? _value.addedPagesAttachmentLocation
-          : addedPagesAttachmentLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      juz2ToPageNumbers: freezed == juz2ToPageNumbers
-          ? _value.juz2ToPageNumbers
-          : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      sorahToPageNumbers: freezed == sorahToPageNumbers
-          ? _value.sorahToPageNumbers
-          : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      hidden: freezed == hidden
-          ? _value.hidden
-          : hidden // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            fieldName: freezed == fieldName
+                ? _value.fieldName
+                : fieldName // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            nameReferance: freezed == nameReferance
+                ? _value.nameReferance
+                : nameReferance // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            language: freezed == language
+                ? _value.language
+                : language // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            previewImage: freezed == previewImage
+                ? _value.previewImage
+                : previewImage // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            attachmentLocation: freezed == attachmentLocation
+                ? _value.attachmentLocation
+                : attachmentLocation // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            addedPagesAttachmentLocation:
+                freezed == addedPagesAttachmentLocation
+                ? _value.addedPagesAttachmentLocation
+                : addedPagesAttachmentLocation // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            juz2ToPageNumbers: freezed == juz2ToPageNumbers
+                ? _value.juz2ToPageNumbers
+                : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
+                      as Map<String, dynamic>?,
+            sorahToPageNumbers: freezed == sorahToPageNumbers
+                ? _value.sorahToPageNumbers
+                : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
+                      as Map<String, dynamic>?,
+            hidden: freezed == hidden
+                ? _value.hidden
+                : hidden // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -131,21 +138,23 @@ class _$QuranPrintsCopyWithImpl<$Res, $Val extends QuranPrints>
 abstract class _$$QuranPrintsImplCopyWith<$Res>
     implements $QuranPrintsCopyWith<$Res> {
   factory _$$QuranPrintsImplCopyWith(
-          _$QuranPrintsImpl value, $Res Function(_$QuranPrintsImpl) then) =
-      __$$QuranPrintsImplCopyWithImpl<$Res>;
+    _$QuranPrintsImpl value,
+    $Res Function(_$QuranPrintsImpl) then,
+  ) = __$$QuranPrintsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? fieldName,
-      String? nameReferance,
-      String? description,
-      String? language,
-      String? previewImage,
-      String? attachmentLocation,
-      String? addedPagesAttachmentLocation,
-      Map<String, dynamic>? juz2ToPageNumbers,
-      Map<String, dynamic>? sorahToPageNumbers,
-      bool? hidden});
+  $Res call({
+    String? fieldName,
+    String? nameReferance,
+    String? description,
+    String? language,
+    String? previewImage,
+    String? attachmentLocation,
+    String? addedPagesAttachmentLocation,
+    Map<String, dynamic>? juz2ToPageNumbers,
+    Map<String, dynamic>? sorahToPageNumbers,
+    bool? hidden,
+  });
 }
 
 /// @nodoc
@@ -153,8 +162,9 @@ class __$$QuranPrintsImplCopyWithImpl<$Res>
     extends _$QuranPrintsCopyWithImpl<$Res, _$QuranPrintsImpl>
     implements _$$QuranPrintsImplCopyWith<$Res> {
   __$$QuranPrintsImplCopyWithImpl(
-      _$QuranPrintsImpl _value, $Res Function(_$QuranPrintsImpl) _then)
-      : super(_value, _then);
+    _$QuranPrintsImpl _value,
+    $Res Function(_$QuranPrintsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QuranPrints
   /// with the given fields replaced by the non-null parameter values.
@@ -172,67 +182,69 @@ class __$$QuranPrintsImplCopyWithImpl<$Res>
     Object? sorahToPageNumbers = freezed,
     Object? hidden = freezed,
   }) {
-    return _then(_$QuranPrintsImpl(
-      fieldName: freezed == fieldName
-          ? _value.fieldName
-          : fieldName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameReferance: freezed == nameReferance
-          ? _value.nameReferance
-          : nameReferance // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: freezed == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String?,
-      previewImage: freezed == previewImage
-          ? _value.previewImage
-          : previewImage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attachmentLocation: freezed == attachmentLocation
-          ? _value.attachmentLocation
-          : attachmentLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addedPagesAttachmentLocation: freezed == addedPagesAttachmentLocation
-          ? _value.addedPagesAttachmentLocation
-          : addedPagesAttachmentLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      juz2ToPageNumbers: freezed == juz2ToPageNumbers
-          ? _value._juz2ToPageNumbers
-          : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      sorahToPageNumbers: freezed == sorahToPageNumbers
-          ? _value._sorahToPageNumbers
-          : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      hidden: freezed == hidden
-          ? _value.hidden
-          : hidden // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _$QuranPrintsImpl(
+        fieldName: freezed == fieldName
+            ? _value.fieldName
+            : fieldName // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        nameReferance: freezed == nameReferance
+            ? _value.nameReferance
+            : nameReferance // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        language: freezed == language
+            ? _value.language
+            : language // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        previewImage: freezed == previewImage
+            ? _value.previewImage
+            : previewImage // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        attachmentLocation: freezed == attachmentLocation
+            ? _value.attachmentLocation
+            : attachmentLocation // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        addedPagesAttachmentLocation: freezed == addedPagesAttachmentLocation
+            ? _value.addedPagesAttachmentLocation
+            : addedPagesAttachmentLocation // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        juz2ToPageNumbers: freezed == juz2ToPageNumbers
+            ? _value._juz2ToPageNumbers
+            : juz2ToPageNumbers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        sorahToPageNumbers: freezed == sorahToPageNumbers
+            ? _value._sorahToPageNumbers
+            : sorahToPageNumbers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, dynamic>?,
+        hidden: freezed == hidden
+            ? _value.hidden
+            : hidden // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$QuranPrintsImpl implements _QuranPrints {
-  _$QuranPrintsImpl(
-      {this.fieldName,
-      this.nameReferance,
-      this.description,
-      this.language,
-      this.previewImage,
-      this.attachmentLocation,
-      this.addedPagesAttachmentLocation,
-      final Map<String, dynamic>? juz2ToPageNumbers,
-      final Map<String, dynamic>? sorahToPageNumbers,
-      this.hidden})
-      : _juz2ToPageNumbers = juz2ToPageNumbers,
-        _sorahToPageNumbers = sorahToPageNumbers;
+  _$QuranPrintsImpl({
+    this.fieldName,
+    this.nameReferance,
+    this.description,
+    this.language,
+    this.previewImage,
+    this.attachmentLocation,
+    this.addedPagesAttachmentLocation,
+    final Map<String, dynamic>? juz2ToPageNumbers,
+    final Map<String, dynamic>? sorahToPageNumbers,
+    this.hidden,
+  }) : _juz2ToPageNumbers = juz2ToPageNumbers,
+       _sorahToPageNumbers = sorahToPageNumbers;
 
   @override
   final String? fieldName;
@@ -295,30 +307,37 @@ class _$QuranPrintsImpl implements _QuranPrints {
                 other.previewImage == previewImage) &&
             (identical(other.attachmentLocation, attachmentLocation) ||
                 other.attachmentLocation == attachmentLocation) &&
-            (identical(other.addedPagesAttachmentLocation,
-                    addedPagesAttachmentLocation) ||
+            (identical(
+                  other.addedPagesAttachmentLocation,
+                  addedPagesAttachmentLocation,
+                ) ||
                 other.addedPagesAttachmentLocation ==
                     addedPagesAttachmentLocation) &&
-            const DeepCollectionEquality()
-                .equals(other._juz2ToPageNumbers, _juz2ToPageNumbers) &&
-            const DeepCollectionEquality()
-                .equals(other._sorahToPageNumbers, _sorahToPageNumbers) &&
+            const DeepCollectionEquality().equals(
+              other._juz2ToPageNumbers,
+              _juz2ToPageNumbers,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._sorahToPageNumbers,
+              _sorahToPageNumbers,
+            ) &&
             (identical(other.hidden, hidden) || other.hidden == hidden));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      fieldName,
-      nameReferance,
-      description,
-      language,
-      previewImage,
-      attachmentLocation,
-      addedPagesAttachmentLocation,
-      const DeepCollectionEquality().hash(_juz2ToPageNumbers),
-      const DeepCollectionEquality().hash(_sorahToPageNumbers),
-      hidden);
+    runtimeType,
+    fieldName,
+    nameReferance,
+    description,
+    language,
+    previewImage,
+    attachmentLocation,
+    addedPagesAttachmentLocation,
+    const DeepCollectionEquality().hash(_juz2ToPageNumbers),
+    const DeepCollectionEquality().hash(_sorahToPageNumbers),
+    hidden,
+  );
 
   /// Create a copy of QuranPrints
   /// with the given fields replaced by the non-null parameter values.
@@ -330,17 +349,18 @@ class _$QuranPrintsImpl implements _QuranPrints {
 }
 
 abstract class _QuranPrints implements QuranPrints {
-  factory _QuranPrints(
-      {final String? fieldName,
-      final String? nameReferance,
-      final String? description,
-      final String? language,
-      final String? previewImage,
-      final String? attachmentLocation,
-      final String? addedPagesAttachmentLocation,
-      final Map<String, dynamic>? juz2ToPageNumbers,
-      final Map<String, dynamic>? sorahToPageNumbers,
-      final bool? hidden}) = _$QuranPrintsImpl;
+  factory _QuranPrints({
+    final String? fieldName,
+    final String? nameReferance,
+    final String? description,
+    final String? language,
+    final String? previewImage,
+    final String? attachmentLocation,
+    final String? addedPagesAttachmentLocation,
+    final Map<String, dynamic>? juz2ToPageNumbers,
+    final Map<String, dynamic>? sorahToPageNumbers,
+    final bool? hidden,
+  }) = _$QuranPrintsImpl;
 
   @override
   String? get fieldName;

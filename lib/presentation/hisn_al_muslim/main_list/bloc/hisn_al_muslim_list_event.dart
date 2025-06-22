@@ -41,7 +41,8 @@ class HisnAlMuslimListEvent with _$HisnAlMuslimListEvent {
   /// Parameters:
   /// - [item]: The supplication to add or remove from favorites
   const factory HisnAlMuslimListEvent.addRemoveItemToFavorite(
-      HisnAlMuslimModel item) = _AddItemToFavorite;
+    HisnAlMuslimModel item,
+  ) = _AddItemToFavorite;
 
   /// Event to search for specific supplications in the collection.
   ///

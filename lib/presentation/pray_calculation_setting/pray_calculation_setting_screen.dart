@@ -35,10 +35,9 @@ class PrayCalculationSettingScreen extends StatelessWidget {
     FirebaseAnalyticsRepository.logEvent(name: "PrayCalculationSettingScreen");
 
     return BlocProvider(
-      create: (context) => PrayCalculationSettingBloc()
-        ..add(
-          PrayCalculationSettingEvent.setup(),
-        ),
+      create: (context) =>
+          PrayCalculationSettingBloc()
+            ..add(PrayCalculationSettingEvent.setup()),
       child: Scaffold(
         appBar: CustomAppBar(
           title: IslamMobLocalizations.of(context).prayCalculationSettings,
@@ -105,28 +104,32 @@ class PrayCalculationSettingScreen extends StatelessWidget {
               title: localization.save,
               onTap: () {
                 context.read<PrayCalculationSettingBloc>().add(
-                      PrayCalculationSettingEvent.saveChanges(),
-                    );
+                  PrayCalculationSettingEvent.saveChanges(),
+                );
                 Navigator.pop(context);
               },
             ),
             const SizedBox(height: 10),
             CustomButton(
-                padding: const EdgeInsets.only(left: 16, right: 16),
-                isEnabled: true,
-                color: Colors.redAccent,
-                title: localization.factoryReset,
-                onTap: () async {
-                  final navigator = Navigator.of(context, rootNavigator: true);
-                  await DataBaseManagerBase.saveMultipleInDatabase(data: {
+              padding: const EdgeInsets.only(left: 16, right: 16),
+              isEnabled: true,
+              color: Colors.redAccent,
+              title: localization.factoryReset,
+              onTap: () async {
+                final navigator = Navigator.of(context, rootNavigator: true);
+                await DataBaseManagerBase.saveMultipleInDatabase(
+                  data: {
                     DatabaseFieldInBoardingStageConstant.inBoardingfinished:
                         null,
                     DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,
-                  });
-                  await navigator.pushNamedAndRemoveUntil(
-                      RoutesConstants.inBoardingScreen,
-                      (Route<dynamic> route) => false);
-                }),
+                  },
+                );
+                await navigator.pushNamedAndRemoveUntil(
+                  RoutesConstants.inBoardingScreen,
+                  (Route<dynamic> route) => false,
+                );
+              },
+            ),
           ],
         );
       },

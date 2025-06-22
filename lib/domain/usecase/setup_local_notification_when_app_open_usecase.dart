@@ -201,7 +201,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
       );
     }
 
-// 7. Last-third-of-the-night
+    // 7. Last-third-of-the-night
     if (_isMidNightPrayNotificationAllowed()) {
       scheduledCount += await _scheduleSingleTimeNotification(
         // ignore: use_build_context_synchronously
@@ -408,93 +408,106 @@ class SetupLocalNotificationWhenAppOpenUseCase {
 
   bool _isFajirNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableFajr,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableFajr,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isSunriseNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableSunriseTime,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableSunriseTime,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isZhurNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableDuher,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableDuher,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isAsrNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableAsr,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableAsr,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isMagreebNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableMagrieb,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableMagrieb,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isIshaNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableIsha,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableIsha,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isWarningBefore15MinNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableNotificationBefore15Min,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableNotificationBefore15Min,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isJom3aAlkahfNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableJom3aAlkahf,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableJom3aAlkahf,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isJom3aDoaaNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableJom3aDo3aa,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableJom3aDo3aa,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isMidNightPrayNotificationAllowed() {
     return DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableQeyamAlLayel,
-      defaultValue: true,
-    ) as bool;
+          key: LocalNotificationConstant.disableQeyamAlLayel,
+          defaultValue: true,
+        )
+        as bool;
   }
 
   bool _isNotificationForTodayAllowed() {
     return !(DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableAllForToday,
-      defaultValue: false,
-    ) as bool);
+          key: LocalNotificationConstant.disableAllForToday,
+          defaultValue: false,
+        )
+        as bool);
   }
 
   bool _isNotificationForThreeTodayAllowed() {
     return !(DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableAllForThreeDay,
-      defaultValue: false,
-    ) as bool);
+          key: LocalNotificationConstant.disableAllForThreeDay,
+          defaultValue: false,
+        )
+        as bool);
   }
 
   bool _isNotificationForWeekAllowed() {
     return !(DataBaseManagerBase.getFromDatabase(
-      key: LocalNotificationConstant.disableAllForWeek,
-      defaultValue: false,
-    ) as bool);
+          key: LocalNotificationConstant.disableAllForWeek,
+          defaultValue: false,
+        )
+        as bool);
   }
 
   // ---------------------------------------------------------------------------
@@ -524,36 +537,41 @@ class SetupLocalNotificationWhenAppOpenUseCase {
 
   String _fajirNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
-      key: DatabaseNotificationSoundConstant.fajirNotification,
-      defaultValue: "adhan1",
-    ) as String;
+          key: DatabaseNotificationSoundConstant.fajirNotification,
+          defaultValue: "adhan1",
+        )
+        as String;
   }
 
   String _zhurNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
-      key: DatabaseNotificationSoundConstant.zhurNotification,
-      defaultValue: "adhan2",
-    ) as String;
+          key: DatabaseNotificationSoundConstant.zhurNotification,
+          defaultValue: "adhan2",
+        )
+        as String;
   }
 
   String _asrNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
-      key: DatabaseNotificationSoundConstant.asrNotification,
-      defaultValue: "adhan3",
-    ) as String;
+          key: DatabaseNotificationSoundConstant.asrNotification,
+          defaultValue: "adhan3",
+        )
+        as String;
   }
 
   String _magreebNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
-      key: DatabaseNotificationSoundConstant.maghribNotification,
-      defaultValue: "adhan4",
-    ) as String;
+          key: DatabaseNotificationSoundConstant.maghribNotification,
+          defaultValue: "adhan4",
+        )
+        as String;
   }
 
   String _ishaNotificationSound() {
     return DataBaseManagerBase.getFromDatabase(
-      key: DatabaseNotificationSoundConstant.ishaNotification,
-      defaultValue: "adhan5",
-    ) as String;
+          key: DatabaseNotificationSoundConstant.ishaNotification,
+          defaultValue: "adhan5",
+        )
+        as String;
   }
 }

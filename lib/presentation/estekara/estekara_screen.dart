@@ -79,10 +79,8 @@ class _EstekaraScreenState extends State<EstekaraScreen> {
         ),
       ),
       body: BlocProvider(
-        create: (context) => EstekaraBloc()
-          ..add(
-            const EstekaraEvent.fillInitialValue(),
-          ),
+        create: (context) =>
+            EstekaraBloc()..add(const EstekaraEvent.fillInitialValue()),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -99,58 +97,64 @@ class _EstekaraScreenState extends State<EstekaraScreen> {
                     previous.listOfItems != current.listOfItems,
                 builder: (context, state) {
                   return ListView.builder(
-                      itemCount: state.listOfItems.length,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        return Padding(
+                    itemCount: state.listOfItems.length,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
                           padding: const EdgeInsets.all(8),
-                          child: Container(
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.white,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  title: state.isRtlLanguage
-                                      ? state.listOfItems[index].title.ar
-                                      : state.listOfItems[index].title.en,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  maxLines: 2,
-                                  color: const Color(0xff444444),
-                                ),
-                                const SizedBox(height: 5),
-                                ListView.builder(
-                                  itemBuilder: (context, detailIndex) {
-                                    final details =
-                                        state.listOfItems[index].details[
-                                            state.isRtlLanguage ? 'ar' : 'en'];
-                                    return Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 2),
-                                      child: CustomText(
-                                        title: details?[detailIndex] ?? "",
-                                        fontSize: 16,
-                                        maxLines: 25,
-                                        color: const Color(0xff666666),
-                                      ),
-                                    );
-                                  },
-                                  itemCount: state
-                                          .listOfItems[index]
-                                          .details[
-                                              state.isRtlLanguage ? 'ar' : 'en']
-                                          ?.length ??
-                                      0,
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                ),
-                              ],
-                            ),
+                          color: Colors.white,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomText(
+                                title: state.isRtlLanguage
+                                    ? state.listOfItems[index].title.ar
+                                    : state.listOfItems[index].title.en,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                maxLines: 2,
+                                color: const Color(0xff444444),
+                              ),
+                              const SizedBox(height: 5),
+                              ListView.builder(
+                                itemBuilder: (context, detailIndex) {
+                                  final details =
+                                      state.listOfItems[index].details[state
+                                              .isRtlLanguage
+                                          ? 'ar'
+                                          : 'en'];
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 2,
+                                    ),
+                                    child: CustomText(
+                                      title: details?[detailIndex] ?? "",
+                                      fontSize: 16,
+                                      maxLines: 25,
+                                      color: const Color(0xff666666),
+                                    ),
+                                  );
+                                },
+                                itemCount:
+                                    state
+                                        .listOfItems[index]
+                                        .details[state.isRtlLanguage
+                                            ? 'ar'
+                                            : 'en']
+                                        ?.length ??
+                                    0,
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                              ),
+                            ],
                           ),
-                        );
-                      });
+                        ),
+                      );
+                    },
+                  );
                 },
               ),
             ],

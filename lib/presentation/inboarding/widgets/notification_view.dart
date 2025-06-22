@@ -87,9 +87,7 @@ class NotificationInBoardingView extends StatelessWidget {
           child: CircularProgressIndicator(color: Color(0xff008480)),
         );
       case NotificationsProcessStateNoPermission():
-        return NotificationNothavePermissionView(
-          skipButton: doneSelection,
-        );
+        return NotificationNothavePermissionView(skipButton: doneSelection);
       case NotificationsProcessStateHavePermission():
         return NotificationHavePermissionView(
           onConfirmationPress: doneSelection,

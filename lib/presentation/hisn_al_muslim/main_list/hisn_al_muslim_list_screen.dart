@@ -48,8 +48,9 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: BlocProvider(
-        create: (context) => HisnAlMuslimListBloc()
-          ..add(const HisnAlMuslimListEvent.getListOfAzkar()),
+        create: (context) =>
+            HisnAlMuslimListBloc()
+              ..add(const HisnAlMuslimListEvent.getListOfAzkar()),
         child: DefaultTabController(
           length: 2,
           child: Scaffold(
@@ -87,17 +88,11 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
                       tabs: [
                         Tab(
                           text: localizations.all,
-                          icon: const Icon(
-                            Icons.clear_all,
-                            size: 15,
-                          ),
+                          icon: const Icon(Icons.clear_all, size: 15),
                         ),
                         Tab(
                           text: localizations.favorites,
-                          icon: const Icon(
-                            Icons.favorite,
-                            size: 15,
-                          ),
+                          icon: const Icon(Icons.favorite, size: 15),
                         ),
                       ],
                     );
@@ -111,45 +106,54 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
                   Stack(
                     children: [
                       Image.asset("assets/images/hisnalmuslim.png"),
-                      Builder(builder: (context) {
-                        return CustomTextField(
-                          controller: searchController,
-                          hintText:
-                              IslamMobLocalizations.of(context).searchField,
-                          prefixIcon: Icons.search,
-                          onChanged: (p0) => context
-                              .read<HisnAlMuslimListBloc>()
-                              .add(HisnAlMuslimListEvent.search(p0)),
-                        );
-                      }),
+                      Builder(
+                        builder: (context) {
+                          return CustomTextField(
+                            controller: searchController,
+                            hintText: IslamMobLocalizations.of(
+                              context,
+                            ).searchField,
+                            prefixIcon: Icons.search,
+                            onChanged: (p0) => context
+                                .read<HisnAlMuslimListBloc>()
+                                .add(HisnAlMuslimListEvent.search(p0)),
+                          );
+                        },
+                      ),
                     ],
                   ),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(8),
-                      child: BlocBuilder<HisnAlMuslimListBloc,
-                          HisnAlMuslimListState>(
-                        buildWhen: (previous, current) =>
-                            (previous.selectedIndex != current.selectedIndex) ||
-                            (previous.list != current.list),
-                        builder: (context, state) {
-                          return TabBarView(
-                            controller: TabController(
-                              length: 2,
-                              vsync: Scaffold.of(context),
-                              initialIndex: state.selectedIndex,
-                            ),
-                            children: [
-                              HisnAllItemsListView(
-                                  list: state.list,
-                                  isRtlLanguage: state.isRtlLanguage),
-                              HisnFavoriteItemsListView(
-                                  list: state.list,
-                                  isRtlLanguage: state.isRtlLanguage),
-                            ],
-                          );
-                        },
-                      ),
+                      child:
+                          BlocBuilder<
+                            HisnAlMuslimListBloc,
+                            HisnAlMuslimListState
+                          >(
+                            buildWhen: (previous, current) =>
+                                (previous.selectedIndex !=
+                                    current.selectedIndex) ||
+                                (previous.list != current.list),
+                            builder: (context, state) {
+                              return TabBarView(
+                                controller: TabController(
+                                  length: 2,
+                                  vsync: Scaffold.of(context),
+                                  initialIndex: state.selectedIndex,
+                                ),
+                                children: [
+                                  HisnAllItemsListView(
+                                    list: state.list,
+                                    isRtlLanguage: state.isRtlLanguage,
+                                  ),
+                                  HisnFavoriteItemsListView(
+                                    list: state.list,
+                                    isRtlLanguage: state.isRtlLanguage,
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
                     ),
                   ),
                   const AddMobBanner(

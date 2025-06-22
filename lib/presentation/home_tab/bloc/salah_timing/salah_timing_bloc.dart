@@ -66,13 +66,17 @@ class SalahTimingBloc extends Bloc<SalahTimingEvent, SalahTimingState> {
 
   /// Event handler for updating the current Salah type.
   FutureOr<void> _onUpdateCurrentSalahType(
-      _UpdateCurrentSalahType event, Emitter<SalahTimingState> emit) {
+    _UpdateCurrentSalahType event,
+    Emitter<SalahTimingState> emit,
+  ) {
     emit(state.copyWith(currentSalahType: event.status));
   }
 
   /// Event handler for updating the prayer timings for the week.
   FutureOr<void> _onUpdateSalahTimingForTheWeek(
-      _UpdateSalahTimingForTheWeek event, Emitter<SalahTimingState> emit) {
+    _UpdateSalahTimingForTheWeek event,
+    Emitter<SalahTimingState> emit,
+  ) {
     emit(state.copyWith(prayTimeForWeek: event.prayTimeForWeek));
   }
 }

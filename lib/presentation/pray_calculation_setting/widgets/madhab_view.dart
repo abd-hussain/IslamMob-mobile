@@ -57,12 +57,16 @@ class MadhabView extends StatelessWidget {
   }
 
   Widget _buildMathhabSelector(
-      BuildContext context, IslamMobLocalizations localizations) {
+    BuildContext context,
+    IslamMobLocalizations localizations,
+  ) {
     return BlocBuilder<PrayCalculationSettingBloc, PrayCalculationSettingState>(
       buildWhen: (previous, current) => previous.madhab != current.madhab,
       builder: (context, state) {
         final madhabList = CalculationSettingUsecase.getMadhabList(
-            localizations, state.madhab);
+          localizations,
+          state.madhab,
+        );
 
         return ListView.builder(
           itemCount: madhabList.length,
@@ -71,10 +75,10 @@ class MadhabView extends StatelessWidget {
               title: madhabList[index].name,
               isSelected: madhabList[index].isSelected,
               onChanged: () => context.read<PrayCalculationSettingBloc>().add(
-                    PrayCalculationSettingEvent.updateMadhabMethod(
-                      madhab: madhabList[index].method,
-                    ),
-                  ),
+                PrayCalculationSettingEvent.updateMadhabMethod(
+                  madhab: madhabList[index].method,
+                ),
+              ),
             );
           },
         );

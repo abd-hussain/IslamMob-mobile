@@ -17,10 +17,7 @@ class HelpToolTipsView extends StatelessWidget {
   ///
   /// The [returnBrightness] parameter is required and will be called
   /// when brightness adjustments are made through the help interface.
-  const HelpToolTipsView({
-    super.key,
-    required this.returnBrightness,
-  });
+  const HelpToolTipsView({super.key, required this.returnBrightness});
 
   @override
   Widget build(BuildContext context) {

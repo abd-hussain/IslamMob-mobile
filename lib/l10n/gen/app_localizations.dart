@@ -63,13 +63,15 @@ import 'app_localizations_en.dart';
 /// property.
 abstract class IslamMobLocalizations {
   IslamMobLocalizations(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
   static IslamMobLocalizations of(BuildContext context) {
     return Localizations.of<IslamMobLocalizations>(
-        context, IslamMobLocalizations)!;
+      context,
+      IslamMobLocalizations,
+    )!;
   }
 
   static const LocalizationsDelegate<IslamMobLocalizations> delegate =
@@ -87,16 +89,16 @@ abstract class IslamMobLocalizations {
   /// of delegates is preferred or required.
   static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('ar'),
-    Locale('en')
+    Locale('en'),
   ];
 
   /// No description provided for @appName.
@@ -3113,7 +3115,8 @@ class _IslamMobLocalizationsDelegate
   @override
   Future<IslamMobLocalizations> load(Locale locale) {
     return SynchronousFuture<IslamMobLocalizations>(
-        lookupIslamMobLocalizations(locale));
+      lookupIslamMobLocalizations(locale),
+    );
   }
 
   @override
@@ -3134,8 +3137,9 @@ IslamMobLocalizations lookupIslamMobLocalizations(Locale locale) {
   }
 
   throw FlutterError(
-      'IslamMobLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'IslamMobLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
 }

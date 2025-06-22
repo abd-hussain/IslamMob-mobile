@@ -40,14 +40,16 @@ class LanguageConstant {
   /// - Flag display in language selection interfaces
   static List<LanguageModel> languages = [
     LanguageModel(
-        name: 'العربية',
-        flagCode: 'SA',
-        selectButtonTitle: 'اختيار',
-        languageCode: 'ar'),
+      name: 'العربية',
+      flagCode: 'SA',
+      selectButtonTitle: 'اختيار',
+      languageCode: 'ar',
+    ),
     LanguageModel(
-        name: 'English',
-        flagCode: 'GB',
-        selectButtonTitle: 'Select',
-        languageCode: 'en'),
+      name: 'English',
+      flagCode: 'GB',
+      selectButtonTitle: 'Select',
+      languageCode: 'en',
+    ),
   ];
 }

@@ -69,11 +69,7 @@ class _CounterViewState extends State<CounterView> {
   }) {
     return IconButton(
       onPressed: onPressed,
-      icon: Icon(
-        icon,
-        color: Colors.white,
-        size: 20,
-      ),
+      icon: Icon(icon, color: Colors.white, size: 20),
     );
   }
 

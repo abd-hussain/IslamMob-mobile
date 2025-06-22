@@ -45,14 +45,13 @@ class NoPDFView extends StatelessWidget {
   }
 
   Widget _buildLottieAnimation() {
-    return Lottie.asset(
-      'assets/lottie/animation_lm3q2kl2.zip',
-      width: 200,
-    );
+    return Lottie.asset('assets/lottie/animation_lm3q2kl2.zip', width: 200);
   }
 
   Widget _buildInstructionText(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return CustomText(
       title: localize.selectprintdetails,
       fontSize: 16,
@@ -64,11 +63,11 @@ class NoPDFView extends StatelessWidget {
   }
 
   Widget _buildSelectPrintButton(
-      BuildContext context, IslamMobLocalizations localize) {
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xff008480),
-      ),
+      style: ElevatedButton.styleFrom(backgroundColor: const Color(0xff008480)),
       onPressed: () => _navigateToPrintListScreen(context),
       child: CustomText(
         title: localize.selectprint,
@@ -81,9 +80,9 @@ class NoPDFView extends StatelessWidget {
   Future<void> _navigateToPrintListScreen(BuildContext context) async {
     final navigator = Navigator.of(context, rootNavigator: true);
 
-    await navigator
-        .pushNamed(RoutesConstants.quranPrintListScreen)
-        .then((value) {
+    await navigator.pushNamed(RoutesConstants.quranPrintListScreen).then((
+      value,
+    ) {
       if (value is bool && value) {
         // ignore: use_build_context_synchronously
         _loadMushafFile(context);

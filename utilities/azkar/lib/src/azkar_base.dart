@@ -27,12 +27,7 @@ class AzkarBase {
   static String aothBellah = "أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ";
 
   static final List<AzkarModel> _baseList = [
-    AzkarModel(
-      id: 1,
-      title: '',
-      desc: "أَسْـتَغْفِرُ الله",
-      maxCount: 3,
-    ),
+    AzkarModel(id: 1, title: '', desc: "أَسْـتَغْفِرُ الله", maxCount: 3),
     AzkarModel(
       id: 2,
       title: '',
@@ -167,8 +162,8 @@ class AzkarBase {
   List<AzkarModel> azkarList(AzkarSalahTimeState salahType) {
     final bool fajirOrMaghribSalah =
         salahType == const AzkarSalahTimeStateFajir() ||
-            salahType == const AzkarSalahTimeStateSunrise() ||
-            salahType == const AzkarSalahTimeStateMaghrib();
+        salahType == const AzkarSalahTimeStateSunrise() ||
+        salahType == const AzkarSalahTimeStateMaghrib();
 
     final List<AzkarModel> list = [..._baseList];
 

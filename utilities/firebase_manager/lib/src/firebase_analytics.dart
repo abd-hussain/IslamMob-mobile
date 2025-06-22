@@ -33,12 +33,16 @@ class FirebaseAnalyticsRepository {
   ///   parameters: {'action_type': 'button_click', 'screen': 'home'},
   /// );
   /// ```
-  static Future<void> logEvent(
-      {required String name, Map<String, Object>? parameters}) async {
+  static Future<void> logEvent({
+    required String name,
+    Map<String, Object>? parameters,
+  }) async {
     try {
       if (await _hasInternetConnectivity()) {
-        await FirebaseAnalytics.instance
-            .logEvent(name: name, parameters: parameters);
+        await FirebaseAnalytics.instance.logEvent(
+          name: name,
+          parameters: parameters,
+        );
       }
     } catch (e) {
       return;

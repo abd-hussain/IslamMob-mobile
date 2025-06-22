@@ -12,7 +12,8 @@ part of '../pray_calculation_method.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$PrayCalculationMethodState {
@@ -40,8 +41,7 @@ mixin _$PrayCalculationMethodState {
     required TResult Function() morocco,
     required TResult Function() comunidadeIslamicaLisboa,
     required TResult Function() jordanAwqaf,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? jafari,
@@ -66,8 +66,7 @@ mixin _$PrayCalculationMethodState {
     TResult? Function()? morocco,
     TResult? Function()? comunidadeIslamicaLisboa,
     TResult? Function()? jordanAwqaf,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? jafari,
@@ -93,27 +92,27 @@ mixin _$PrayCalculationMethodState {
     TResult Function()? comunidadeIslamicaLisboa,
     TResult Function()? jordanAwqaf,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -124,21 +123,22 @@ mixin _$PrayCalculationMethodState {
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
-  }) =>
-      throw _privateConstructorUsedError;
+    jordanAwqaf,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -156,19 +156,19 @@ mixin _$PrayCalculationMethodState {
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -186,24 +186,29 @@ mixin _$PrayCalculationMethodState {
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrayCalculationMethodStateCopyWith<$Res> {
-  factory $PrayCalculationMethodStateCopyWith(PrayCalculationMethodState value,
-          $Res Function(PrayCalculationMethodState) then) =
-      _$PrayCalculationMethodStateCopyWithImpl<$Res,
-          PrayCalculationMethodState>;
+  factory $PrayCalculationMethodStateCopyWith(
+    PrayCalculationMethodState value,
+    $Res Function(PrayCalculationMethodState) then,
+  ) =
+      _$PrayCalculationMethodStateCopyWithImpl<
+        $Res,
+        PrayCalculationMethodState
+      >;
 }
 
 /// @nodoc
-class _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        $Val extends PrayCalculationMethodState>
+class _$PrayCalculationMethodStateCopyWithImpl<
+  $Res,
+  $Val extends PrayCalculationMethodState
+>
     implements $PrayCalculationMethodStateCopyWith<$Res> {
   _$PrayCalculationMethodStateCopyWithImpl(this._value, this._then);
 
@@ -219,20 +224,23 @@ class _$PrayCalculationMethodStateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateJafariImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateJafariImplCopyWith(
-          _$PrayCalculationMethodStateJafariImpl value,
-          $Res Function(_$PrayCalculationMethodStateJafariImpl) then) =
-      __$$PrayCalculationMethodStateJafariImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateJafariImpl value,
+    $Res Function(_$PrayCalculationMethodStateJafariImpl) then,
+  ) = __$$PrayCalculationMethodStateJafariImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateJafariImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateJafariImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateJafariImpl
+        >
     implements _$$PrayCalculationMethodStateJafariImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateJafariImplCopyWithImpl(
-      _$PrayCalculationMethodStateJafariImpl _value,
-      $Res Function(_$PrayCalculationMethodStateJafariImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateJafariImpl _value,
+    $Res Function(_$PrayCalculationMethodStateJafariImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -356,20 +364,21 @@ class _$PrayCalculationMethodStateJafariImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -380,10 +389,11 @@ class _$PrayCalculationMethodStateJafariImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return jafari(this);
   }
@@ -394,10 +404,11 @@ class _$PrayCalculationMethodStateJafariImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -415,7 +426,7 @@ class _$PrayCalculationMethodStateJafariImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return jafari?.call(this);
@@ -427,10 +438,11 @@ class _$PrayCalculationMethodStateJafariImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -448,7 +460,7 @@ class _$PrayCalculationMethodStateJafariImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -468,20 +480,23 @@ abstract class PrayCalculationMethodStateJafari
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateKarachiImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateKarachiImplCopyWith(
-          _$PrayCalculationMethodStateKarachiImpl value,
-          $Res Function(_$PrayCalculationMethodStateKarachiImpl) then) =
-      __$$PrayCalculationMethodStateKarachiImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateKarachiImpl value,
+    $Res Function(_$PrayCalculationMethodStateKarachiImpl) then,
+  ) = __$$PrayCalculationMethodStateKarachiImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateKarachiImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateKarachiImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateKarachiImpl
+        >
     implements _$$PrayCalculationMethodStateKarachiImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateKarachiImplCopyWithImpl(
-      _$PrayCalculationMethodStateKarachiImpl _value,
-      $Res Function(_$PrayCalculationMethodStateKarachiImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateKarachiImpl _value,
+    $Res Function(_$PrayCalculationMethodStateKarachiImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -605,20 +620,21 @@ class _$PrayCalculationMethodStateKarachiImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -629,10 +645,11 @@ class _$PrayCalculationMethodStateKarachiImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return karachi(this);
   }
@@ -643,10 +660,11 @@ class _$PrayCalculationMethodStateKarachiImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -664,7 +682,7 @@ class _$PrayCalculationMethodStateKarachiImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return karachi?.call(this);
@@ -676,10 +694,11 @@ class _$PrayCalculationMethodStateKarachiImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -697,7 +716,7 @@ class _$PrayCalculationMethodStateKarachiImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -716,30 +735,36 @@ abstract class PrayCalculationMethodStateKarachi
 
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWith<
-    $Res> {
+  $Res
+> {
   factory _$$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWith(
-          _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl value,
-          $Res Function(
-                  _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl)
-              then) =
+    _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl value,
+    $Res Function(_$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl)
+    then,
+  ) =
       __$$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWithImpl<
-          $Res>;
+        $Res
+      >;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWithImpl<
-        $Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl>
+  $Res
+>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl
+        >
     implements
         _$$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWith<
-            $Res> {
+          $Res
+        > {
   __$$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImplCopyWithImpl(
-      _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl _value,
-      $Res Function(
-              _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl)
-          _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl _value,
+    $Res Function(_$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl)
+    _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -864,20 +889,21 @@ class _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -888,10 +914,11 @@ class _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return islamicSocietyOfNorthAmerica(this);
   }
@@ -902,10 +929,11 @@ class _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -923,7 +951,7 @@ class _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return islamicSocietyOfNorthAmerica?.call(this);
@@ -935,10 +963,11 @@ class _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -956,7 +985,7 @@ class _$PrayCalculationMethodStateIslamicSocietyOfNorthAmericaImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -975,24 +1004,27 @@ abstract class PrayCalculationMethodStateIslamicSocietyOfNorthAmerica
 
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateMuslimWorldLeagueImplCopyWith<
-    $Res> {
+  $Res
+> {
   factory _$$PrayCalculationMethodStateMuslimWorldLeagueImplCopyWith(
-          _$PrayCalculationMethodStateMuslimWorldLeagueImpl value,
-          $Res Function(_$PrayCalculationMethodStateMuslimWorldLeagueImpl)
-              then) =
-      __$$PrayCalculationMethodStateMuslimWorldLeagueImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateMuslimWorldLeagueImpl value,
+    $Res Function(_$PrayCalculationMethodStateMuslimWorldLeagueImpl) then,
+  ) = __$$PrayCalculationMethodStateMuslimWorldLeagueImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateMuslimWorldLeagueImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateMuslimWorldLeagueImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateMuslimWorldLeagueImpl
+        >
     implements
         _$$PrayCalculationMethodStateMuslimWorldLeagueImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateMuslimWorldLeagueImplCopyWithImpl(
-      _$PrayCalculationMethodStateMuslimWorldLeagueImpl _value,
-      $Res Function(_$PrayCalculationMethodStateMuslimWorldLeagueImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateMuslimWorldLeagueImpl _value,
+    $Res Function(_$PrayCalculationMethodStateMuslimWorldLeagueImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -1116,20 +1148,21 @@ class _$PrayCalculationMethodStateMuslimWorldLeagueImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -1140,10 +1173,11 @@ class _$PrayCalculationMethodStateMuslimWorldLeagueImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return muslimWorldLeague(this);
   }
@@ -1154,10 +1188,11 @@ class _$PrayCalculationMethodStateMuslimWorldLeagueImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -1175,7 +1210,7 @@ class _$PrayCalculationMethodStateMuslimWorldLeagueImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return muslimWorldLeague?.call(this);
@@ -1187,10 +1222,11 @@ class _$PrayCalculationMethodStateMuslimWorldLeagueImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -1208,7 +1244,7 @@ class _$PrayCalculationMethodStateMuslimWorldLeagueImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -1228,20 +1264,23 @@ abstract class PrayCalculationMethodStateMuslimWorldLeague
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateUmmAlQuraImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateUmmAlQuraImplCopyWith(
-          _$PrayCalculationMethodStateUmmAlQuraImpl value,
-          $Res Function(_$PrayCalculationMethodStateUmmAlQuraImpl) then) =
-      __$$PrayCalculationMethodStateUmmAlQuraImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateUmmAlQuraImpl value,
+    $Res Function(_$PrayCalculationMethodStateUmmAlQuraImpl) then,
+  ) = __$$PrayCalculationMethodStateUmmAlQuraImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateUmmAlQuraImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateUmmAlQuraImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateUmmAlQuraImpl
+        >
     implements _$$PrayCalculationMethodStateUmmAlQuraImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateUmmAlQuraImplCopyWithImpl(
-      _$PrayCalculationMethodStateUmmAlQuraImpl _value,
-      $Res Function(_$PrayCalculationMethodStateUmmAlQuraImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateUmmAlQuraImpl _value,
+    $Res Function(_$PrayCalculationMethodStateUmmAlQuraImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -1365,20 +1404,21 @@ class _$PrayCalculationMethodStateUmmAlQuraImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -1389,10 +1429,11 @@ class _$PrayCalculationMethodStateUmmAlQuraImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return ummAlQura(this);
   }
@@ -1403,10 +1444,11 @@ class _$PrayCalculationMethodStateUmmAlQuraImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -1424,7 +1466,7 @@ class _$PrayCalculationMethodStateUmmAlQuraImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return ummAlQura?.call(this);
@@ -1436,10 +1478,11 @@ class _$PrayCalculationMethodStateUmmAlQuraImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -1457,7 +1500,7 @@ class _$PrayCalculationMethodStateUmmAlQuraImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -1477,20 +1520,23 @@ abstract class PrayCalculationMethodStateUmmAlQura
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateEgyptImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateEgyptImplCopyWith(
-          _$PrayCalculationMethodStateEgyptImpl value,
-          $Res Function(_$PrayCalculationMethodStateEgyptImpl) then) =
-      __$$PrayCalculationMethodStateEgyptImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateEgyptImpl value,
+    $Res Function(_$PrayCalculationMethodStateEgyptImpl) then,
+  ) = __$$PrayCalculationMethodStateEgyptImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateEgyptImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateEgyptImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateEgyptImpl
+        >
     implements _$$PrayCalculationMethodStateEgyptImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateEgyptImplCopyWithImpl(
-      _$PrayCalculationMethodStateEgyptImpl _value,
-      $Res Function(_$PrayCalculationMethodStateEgyptImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateEgyptImpl _value,
+    $Res Function(_$PrayCalculationMethodStateEgyptImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -1614,20 +1660,21 @@ class _$PrayCalculationMethodStateEgyptImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -1638,10 +1685,11 @@ class _$PrayCalculationMethodStateEgyptImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return egypt(this);
   }
@@ -1652,10 +1700,11 @@ class _$PrayCalculationMethodStateEgyptImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -1673,7 +1722,7 @@ class _$PrayCalculationMethodStateEgyptImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return egypt?.call(this);
@@ -1685,10 +1734,11 @@ class _$PrayCalculationMethodStateEgyptImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -1706,7 +1756,7 @@ class _$PrayCalculationMethodStateEgyptImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -1726,20 +1776,23 @@ abstract class PrayCalculationMethodStateEgypt
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateTehranImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateTehranImplCopyWith(
-          _$PrayCalculationMethodStateTehranImpl value,
-          $Res Function(_$PrayCalculationMethodStateTehranImpl) then) =
-      __$$PrayCalculationMethodStateTehranImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateTehranImpl value,
+    $Res Function(_$PrayCalculationMethodStateTehranImpl) then,
+  ) = __$$PrayCalculationMethodStateTehranImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateTehranImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateTehranImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateTehranImpl
+        >
     implements _$$PrayCalculationMethodStateTehranImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateTehranImplCopyWithImpl(
-      _$PrayCalculationMethodStateTehranImpl _value,
-      $Res Function(_$PrayCalculationMethodStateTehranImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateTehranImpl _value,
+    $Res Function(_$PrayCalculationMethodStateTehranImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -1863,20 +1916,21 @@ class _$PrayCalculationMethodStateTehranImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -1887,10 +1941,11 @@ class _$PrayCalculationMethodStateTehranImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return tehran(this);
   }
@@ -1901,10 +1956,11 @@ class _$PrayCalculationMethodStateTehranImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -1922,7 +1978,7 @@ class _$PrayCalculationMethodStateTehranImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return tehran?.call(this);
@@ -1934,10 +1990,11 @@ class _$PrayCalculationMethodStateTehranImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -1955,7 +2012,7 @@ class _$PrayCalculationMethodStateTehranImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -1975,20 +2032,23 @@ abstract class PrayCalculationMethodStateTehran
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateGulfRegionImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateGulfRegionImplCopyWith(
-          _$PrayCalculationMethodStateGulfRegionImpl value,
-          $Res Function(_$PrayCalculationMethodStateGulfRegionImpl) then) =
-      __$$PrayCalculationMethodStateGulfRegionImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateGulfRegionImpl value,
+    $Res Function(_$PrayCalculationMethodStateGulfRegionImpl) then,
+  ) = __$$PrayCalculationMethodStateGulfRegionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateGulfRegionImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateGulfRegionImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateGulfRegionImpl
+        >
     implements _$$PrayCalculationMethodStateGulfRegionImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateGulfRegionImplCopyWithImpl(
-      _$PrayCalculationMethodStateGulfRegionImpl _value,
-      $Res Function(_$PrayCalculationMethodStateGulfRegionImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateGulfRegionImpl _value,
+    $Res Function(_$PrayCalculationMethodStateGulfRegionImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -2112,20 +2172,21 @@ class _$PrayCalculationMethodStateGulfRegionImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -2136,10 +2197,11 @@ class _$PrayCalculationMethodStateGulfRegionImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return gulfRegion(this);
   }
@@ -2150,10 +2212,11 @@ class _$PrayCalculationMethodStateGulfRegionImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -2171,7 +2234,7 @@ class _$PrayCalculationMethodStateGulfRegionImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return gulfRegion?.call(this);
@@ -2183,10 +2246,11 @@ class _$PrayCalculationMethodStateGulfRegionImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -2204,7 +2268,7 @@ class _$PrayCalculationMethodStateGulfRegionImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -2224,20 +2288,23 @@ abstract class PrayCalculationMethodStateGulfRegion
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateKuwaitImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateKuwaitImplCopyWith(
-          _$PrayCalculationMethodStateKuwaitImpl value,
-          $Res Function(_$PrayCalculationMethodStateKuwaitImpl) then) =
-      __$$PrayCalculationMethodStateKuwaitImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateKuwaitImpl value,
+    $Res Function(_$PrayCalculationMethodStateKuwaitImpl) then,
+  ) = __$$PrayCalculationMethodStateKuwaitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateKuwaitImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateKuwaitImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateKuwaitImpl
+        >
     implements _$$PrayCalculationMethodStateKuwaitImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateKuwaitImplCopyWithImpl(
-      _$PrayCalculationMethodStateKuwaitImpl _value,
-      $Res Function(_$PrayCalculationMethodStateKuwaitImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateKuwaitImpl _value,
+    $Res Function(_$PrayCalculationMethodStateKuwaitImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -2361,20 +2428,21 @@ class _$PrayCalculationMethodStateKuwaitImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -2385,10 +2453,11 @@ class _$PrayCalculationMethodStateKuwaitImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return kuwait(this);
   }
@@ -2399,10 +2468,11 @@ class _$PrayCalculationMethodStateKuwaitImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -2420,7 +2490,7 @@ class _$PrayCalculationMethodStateKuwaitImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return kuwait?.call(this);
@@ -2432,10 +2502,11 @@ class _$PrayCalculationMethodStateKuwaitImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -2453,7 +2524,7 @@ class _$PrayCalculationMethodStateKuwaitImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -2473,20 +2544,23 @@ abstract class PrayCalculationMethodStateKuwait
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateQatarImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateQatarImplCopyWith(
-          _$PrayCalculationMethodStateQatarImpl value,
-          $Res Function(_$PrayCalculationMethodStateQatarImpl) then) =
-      __$$PrayCalculationMethodStateQatarImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateQatarImpl value,
+    $Res Function(_$PrayCalculationMethodStateQatarImpl) then,
+  ) = __$$PrayCalculationMethodStateQatarImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateQatarImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateQatarImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateQatarImpl
+        >
     implements _$$PrayCalculationMethodStateQatarImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateQatarImplCopyWithImpl(
-      _$PrayCalculationMethodStateQatarImpl _value,
-      $Res Function(_$PrayCalculationMethodStateQatarImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateQatarImpl _value,
+    $Res Function(_$PrayCalculationMethodStateQatarImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -2610,20 +2684,21 @@ class _$PrayCalculationMethodStateQatarImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -2634,10 +2709,11 @@ class _$PrayCalculationMethodStateQatarImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return qatar(this);
   }
@@ -2648,10 +2724,11 @@ class _$PrayCalculationMethodStateQatarImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -2669,7 +2746,7 @@ class _$PrayCalculationMethodStateQatarImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return qatar?.call(this);
@@ -2681,10 +2758,11 @@ class _$PrayCalculationMethodStateQatarImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -2702,7 +2780,7 @@ class _$PrayCalculationMethodStateQatarImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -2722,20 +2800,23 @@ abstract class PrayCalculationMethodStateQatar
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateSingaporeImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateSingaporeImplCopyWith(
-          _$PrayCalculationMethodStateSingaporeImpl value,
-          $Res Function(_$PrayCalculationMethodStateSingaporeImpl) then) =
-      __$$PrayCalculationMethodStateSingaporeImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateSingaporeImpl value,
+    $Res Function(_$PrayCalculationMethodStateSingaporeImpl) then,
+  ) = __$$PrayCalculationMethodStateSingaporeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateSingaporeImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateSingaporeImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateSingaporeImpl
+        >
     implements _$$PrayCalculationMethodStateSingaporeImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateSingaporeImplCopyWithImpl(
-      _$PrayCalculationMethodStateSingaporeImpl _value,
-      $Res Function(_$PrayCalculationMethodStateSingaporeImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateSingaporeImpl _value,
+    $Res Function(_$PrayCalculationMethodStateSingaporeImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -2859,20 +2940,21 @@ class _$PrayCalculationMethodStateSingaporeImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -2883,10 +2965,11 @@ class _$PrayCalculationMethodStateSingaporeImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return singapore(this);
   }
@@ -2897,10 +2980,11 @@ class _$PrayCalculationMethodStateSingaporeImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -2918,7 +3002,7 @@ class _$PrayCalculationMethodStateSingaporeImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return singapore?.call(this);
@@ -2930,10 +3014,11 @@ class _$PrayCalculationMethodStateSingaporeImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -2951,7 +3036,7 @@ class _$PrayCalculationMethodStateSingaporeImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -2971,20 +3056,23 @@ abstract class PrayCalculationMethodStateSingapore
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateFranceImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateFranceImplCopyWith(
-          _$PrayCalculationMethodStateFranceImpl value,
-          $Res Function(_$PrayCalculationMethodStateFranceImpl) then) =
-      __$$PrayCalculationMethodStateFranceImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateFranceImpl value,
+    $Res Function(_$PrayCalculationMethodStateFranceImpl) then,
+  ) = __$$PrayCalculationMethodStateFranceImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateFranceImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateFranceImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateFranceImpl
+        >
     implements _$$PrayCalculationMethodStateFranceImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateFranceImplCopyWithImpl(
-      _$PrayCalculationMethodStateFranceImpl _value,
-      $Res Function(_$PrayCalculationMethodStateFranceImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateFranceImpl _value,
+    $Res Function(_$PrayCalculationMethodStateFranceImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -3108,20 +3196,21 @@ class _$PrayCalculationMethodStateFranceImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -3132,10 +3221,11 @@ class _$PrayCalculationMethodStateFranceImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return france(this);
   }
@@ -3146,10 +3236,11 @@ class _$PrayCalculationMethodStateFranceImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -3167,7 +3258,7 @@ class _$PrayCalculationMethodStateFranceImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return france?.call(this);
@@ -3179,10 +3270,11 @@ class _$PrayCalculationMethodStateFranceImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -3200,7 +3292,7 @@ class _$PrayCalculationMethodStateFranceImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -3220,20 +3312,23 @@ abstract class PrayCalculationMethodStateFrance
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateTurkeyImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateTurkeyImplCopyWith(
-          _$PrayCalculationMethodStateTurkeyImpl value,
-          $Res Function(_$PrayCalculationMethodStateTurkeyImpl) then) =
-      __$$PrayCalculationMethodStateTurkeyImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateTurkeyImpl value,
+    $Res Function(_$PrayCalculationMethodStateTurkeyImpl) then,
+  ) = __$$PrayCalculationMethodStateTurkeyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateTurkeyImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateTurkeyImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateTurkeyImpl
+        >
     implements _$$PrayCalculationMethodStateTurkeyImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateTurkeyImplCopyWithImpl(
-      _$PrayCalculationMethodStateTurkeyImpl _value,
-      $Res Function(_$PrayCalculationMethodStateTurkeyImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateTurkeyImpl _value,
+    $Res Function(_$PrayCalculationMethodStateTurkeyImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -3357,20 +3452,21 @@ class _$PrayCalculationMethodStateTurkeyImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -3381,10 +3477,11 @@ class _$PrayCalculationMethodStateTurkeyImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return turkey(this);
   }
@@ -3395,10 +3492,11 @@ class _$PrayCalculationMethodStateTurkeyImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -3416,7 +3514,7 @@ class _$PrayCalculationMethodStateTurkeyImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return turkey?.call(this);
@@ -3428,10 +3526,11 @@ class _$PrayCalculationMethodStateTurkeyImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -3449,7 +3548,7 @@ class _$PrayCalculationMethodStateTurkeyImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -3469,20 +3568,23 @@ abstract class PrayCalculationMethodStateTurkey
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateRussiaImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateRussiaImplCopyWith(
-          _$PrayCalculationMethodStateRussiaImpl value,
-          $Res Function(_$PrayCalculationMethodStateRussiaImpl) then) =
-      __$$PrayCalculationMethodStateRussiaImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateRussiaImpl value,
+    $Res Function(_$PrayCalculationMethodStateRussiaImpl) then,
+  ) = __$$PrayCalculationMethodStateRussiaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateRussiaImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateRussiaImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateRussiaImpl
+        >
     implements _$$PrayCalculationMethodStateRussiaImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateRussiaImplCopyWithImpl(
-      _$PrayCalculationMethodStateRussiaImpl _value,
-      $Res Function(_$PrayCalculationMethodStateRussiaImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateRussiaImpl _value,
+    $Res Function(_$PrayCalculationMethodStateRussiaImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -3606,20 +3708,21 @@ class _$PrayCalculationMethodStateRussiaImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -3630,10 +3733,11 @@ class _$PrayCalculationMethodStateRussiaImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return russia(this);
   }
@@ -3644,10 +3748,11 @@ class _$PrayCalculationMethodStateRussiaImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -3665,7 +3770,7 @@ class _$PrayCalculationMethodStateRussiaImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return russia?.call(this);
@@ -3677,10 +3782,11 @@ class _$PrayCalculationMethodStateRussiaImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -3698,7 +3804,7 @@ class _$PrayCalculationMethodStateRussiaImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -3718,20 +3824,23 @@ abstract class PrayCalculationMethodStateRussia
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateDubaiImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateDubaiImplCopyWith(
-          _$PrayCalculationMethodStateDubaiImpl value,
-          $Res Function(_$PrayCalculationMethodStateDubaiImpl) then) =
-      __$$PrayCalculationMethodStateDubaiImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateDubaiImpl value,
+    $Res Function(_$PrayCalculationMethodStateDubaiImpl) then,
+  ) = __$$PrayCalculationMethodStateDubaiImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateDubaiImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateDubaiImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateDubaiImpl
+        >
     implements _$$PrayCalculationMethodStateDubaiImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateDubaiImplCopyWithImpl(
-      _$PrayCalculationMethodStateDubaiImpl _value,
-      $Res Function(_$PrayCalculationMethodStateDubaiImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateDubaiImpl _value,
+    $Res Function(_$PrayCalculationMethodStateDubaiImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -3855,20 +3964,21 @@ class _$PrayCalculationMethodStateDubaiImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -3879,10 +3989,11 @@ class _$PrayCalculationMethodStateDubaiImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return dubai(this);
   }
@@ -3893,10 +4004,11 @@ class _$PrayCalculationMethodStateDubaiImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -3914,7 +4026,7 @@ class _$PrayCalculationMethodStateDubaiImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return dubai?.call(this);
@@ -3926,10 +4038,11 @@ class _$PrayCalculationMethodStateDubaiImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -3947,7 +4060,7 @@ class _$PrayCalculationMethodStateDubaiImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -3967,20 +4080,23 @@ abstract class PrayCalculationMethodStateDubai
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateJAKIMImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateJAKIMImplCopyWith(
-          _$PrayCalculationMethodStateJAKIMImpl value,
-          $Res Function(_$PrayCalculationMethodStateJAKIMImpl) then) =
-      __$$PrayCalculationMethodStateJAKIMImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateJAKIMImpl value,
+    $Res Function(_$PrayCalculationMethodStateJAKIMImpl) then,
+  ) = __$$PrayCalculationMethodStateJAKIMImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateJAKIMImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateJAKIMImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateJAKIMImpl
+        >
     implements _$$PrayCalculationMethodStateJAKIMImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateJAKIMImplCopyWithImpl(
-      _$PrayCalculationMethodStateJAKIMImpl _value,
-      $Res Function(_$PrayCalculationMethodStateJAKIMImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateJAKIMImpl _value,
+    $Res Function(_$PrayCalculationMethodStateJAKIMImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -4104,20 +4220,21 @@ class _$PrayCalculationMethodStateJAKIMImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -4128,10 +4245,11 @@ class _$PrayCalculationMethodStateJAKIMImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return jAKIM(this);
   }
@@ -4142,10 +4260,11 @@ class _$PrayCalculationMethodStateJAKIMImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -4163,7 +4282,7 @@ class _$PrayCalculationMethodStateJAKIMImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return jAKIM?.call(this);
@@ -4175,10 +4294,11 @@ class _$PrayCalculationMethodStateJAKIMImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -4196,7 +4316,7 @@ class _$PrayCalculationMethodStateJAKIMImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -4216,20 +4336,23 @@ abstract class PrayCalculationMethodStateJAKIM
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateTunisiaImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateTunisiaImplCopyWith(
-          _$PrayCalculationMethodStateTunisiaImpl value,
-          $Res Function(_$PrayCalculationMethodStateTunisiaImpl) then) =
-      __$$PrayCalculationMethodStateTunisiaImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateTunisiaImpl value,
+    $Res Function(_$PrayCalculationMethodStateTunisiaImpl) then,
+  ) = __$$PrayCalculationMethodStateTunisiaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateTunisiaImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateTunisiaImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateTunisiaImpl
+        >
     implements _$$PrayCalculationMethodStateTunisiaImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateTunisiaImplCopyWithImpl(
-      _$PrayCalculationMethodStateTunisiaImpl _value,
-      $Res Function(_$PrayCalculationMethodStateTunisiaImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateTunisiaImpl _value,
+    $Res Function(_$PrayCalculationMethodStateTunisiaImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -4353,20 +4476,21 @@ class _$PrayCalculationMethodStateTunisiaImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -4377,10 +4501,11 @@ class _$PrayCalculationMethodStateTunisiaImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return tunisia(this);
   }
@@ -4391,10 +4516,11 @@ class _$PrayCalculationMethodStateTunisiaImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -4412,7 +4538,7 @@ class _$PrayCalculationMethodStateTunisiaImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return tunisia?.call(this);
@@ -4424,10 +4550,11 @@ class _$PrayCalculationMethodStateTunisiaImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -4445,7 +4572,7 @@ class _$PrayCalculationMethodStateTunisiaImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -4465,20 +4592,23 @@ abstract class PrayCalculationMethodStateTunisia
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateAlgeriaImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateAlgeriaImplCopyWith(
-          _$PrayCalculationMethodStateAlgeriaImpl value,
-          $Res Function(_$PrayCalculationMethodStateAlgeriaImpl) then) =
-      __$$PrayCalculationMethodStateAlgeriaImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateAlgeriaImpl value,
+    $Res Function(_$PrayCalculationMethodStateAlgeriaImpl) then,
+  ) = __$$PrayCalculationMethodStateAlgeriaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateAlgeriaImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateAlgeriaImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateAlgeriaImpl
+        >
     implements _$$PrayCalculationMethodStateAlgeriaImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateAlgeriaImplCopyWithImpl(
-      _$PrayCalculationMethodStateAlgeriaImpl _value,
-      $Res Function(_$PrayCalculationMethodStateAlgeriaImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateAlgeriaImpl _value,
+    $Res Function(_$PrayCalculationMethodStateAlgeriaImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -4602,20 +4732,21 @@ class _$PrayCalculationMethodStateAlgeriaImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -4626,10 +4757,11 @@ class _$PrayCalculationMethodStateAlgeriaImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return algeria(this);
   }
@@ -4640,10 +4772,11 @@ class _$PrayCalculationMethodStateAlgeriaImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -4661,7 +4794,7 @@ class _$PrayCalculationMethodStateAlgeriaImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return algeria?.call(this);
@@ -4673,10 +4806,11 @@ class _$PrayCalculationMethodStateAlgeriaImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -4694,7 +4828,7 @@ class _$PrayCalculationMethodStateAlgeriaImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -4714,20 +4848,23 @@ abstract class PrayCalculationMethodStateAlgeria
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateKEMENAGImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateKEMENAGImplCopyWith(
-          _$PrayCalculationMethodStateKEMENAGImpl value,
-          $Res Function(_$PrayCalculationMethodStateKEMENAGImpl) then) =
-      __$$PrayCalculationMethodStateKEMENAGImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateKEMENAGImpl value,
+    $Res Function(_$PrayCalculationMethodStateKEMENAGImpl) then,
+  ) = __$$PrayCalculationMethodStateKEMENAGImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateKEMENAGImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateKEMENAGImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateKEMENAGImpl
+        >
     implements _$$PrayCalculationMethodStateKEMENAGImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateKEMENAGImplCopyWithImpl(
-      _$PrayCalculationMethodStateKEMENAGImpl _value,
-      $Res Function(_$PrayCalculationMethodStateKEMENAGImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateKEMENAGImpl _value,
+    $Res Function(_$PrayCalculationMethodStateKEMENAGImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -4851,20 +4988,21 @@ class _$PrayCalculationMethodStateKEMENAGImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -4875,10 +5013,11 @@ class _$PrayCalculationMethodStateKEMENAGImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return kEMENAG(this);
   }
@@ -4889,10 +5028,11 @@ class _$PrayCalculationMethodStateKEMENAGImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -4910,7 +5050,7 @@ class _$PrayCalculationMethodStateKEMENAGImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return kEMENAG?.call(this);
@@ -4922,10 +5062,11 @@ class _$PrayCalculationMethodStateKEMENAGImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -4943,7 +5084,7 @@ class _$PrayCalculationMethodStateKEMENAGImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -4963,20 +5104,23 @@ abstract class PrayCalculationMethodStateKEMENAG
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateMoroccoImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateMoroccoImplCopyWith(
-          _$PrayCalculationMethodStateMoroccoImpl value,
-          $Res Function(_$PrayCalculationMethodStateMoroccoImpl) then) =
-      __$$PrayCalculationMethodStateMoroccoImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateMoroccoImpl value,
+    $Res Function(_$PrayCalculationMethodStateMoroccoImpl) then,
+  ) = __$$PrayCalculationMethodStateMoroccoImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateMoroccoImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateMoroccoImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateMoroccoImpl
+        >
     implements _$$PrayCalculationMethodStateMoroccoImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateMoroccoImplCopyWithImpl(
-      _$PrayCalculationMethodStateMoroccoImpl _value,
-      $Res Function(_$PrayCalculationMethodStateMoroccoImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateMoroccoImpl _value,
+    $Res Function(_$PrayCalculationMethodStateMoroccoImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -5100,20 +5244,21 @@ class _$PrayCalculationMethodStateMoroccoImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -5124,10 +5269,11 @@ class _$PrayCalculationMethodStateMoroccoImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return morocco(this);
   }
@@ -5138,10 +5284,11 @@ class _$PrayCalculationMethodStateMoroccoImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -5159,7 +5306,7 @@ class _$PrayCalculationMethodStateMoroccoImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return morocco?.call(this);
@@ -5171,10 +5318,11 @@ class _$PrayCalculationMethodStateMoroccoImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -5192,7 +5340,7 @@ class _$PrayCalculationMethodStateMoroccoImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -5211,29 +5359,36 @@ abstract class PrayCalculationMethodStateMorocco
 
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateComunidadeIslamicaLisboaImplCopyWith<
-    $Res> {
+  $Res
+> {
   factory _$$PrayCalculationMethodStateComunidadeIslamicaLisboaImplCopyWith(
-          _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl value,
-          $Res Function(
-                  _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl)
-              then) =
+    _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl value,
+    $Res Function(_$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl)
+    then,
+  ) =
       __$$PrayCalculationMethodStateComunidadeIslamicaLisboaImplCopyWithImpl<
-          $Res>;
+        $Res
+      >;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateComunidadeIslamicaLisboaImplCopyWithImpl<
-        $Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl>
+  $Res
+>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl
+        >
     implements
         _$$PrayCalculationMethodStateComunidadeIslamicaLisboaImplCopyWith<
-            $Res> {
+          $Res
+        > {
   __$$PrayCalculationMethodStateComunidadeIslamicaLisboaImplCopyWithImpl(
-      _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl _value,
-      $Res Function(_$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl)
-          _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl _value,
+    $Res Function(_$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl)
+    _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -5357,20 +5512,21 @@ class _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -5381,10 +5537,11 @@ class _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return comunidadeIslamicaLisboa(this);
   }
@@ -5395,10 +5552,11 @@ class _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -5416,7 +5574,7 @@ class _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return comunidadeIslamicaLisboa?.call(this);
@@ -5428,10 +5586,11 @@ class _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -5449,7 +5608,7 @@ class _$PrayCalculationMethodStateComunidadeIslamicaLisboaImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {
@@ -5469,20 +5628,23 @@ abstract class PrayCalculationMethodStateComunidadeIslamicaLisboa
 /// @nodoc
 abstract class _$$PrayCalculationMethodStateJordanAwqafImplCopyWith<$Res> {
   factory _$$PrayCalculationMethodStateJordanAwqafImplCopyWith(
-          _$PrayCalculationMethodStateJordanAwqafImpl value,
-          $Res Function(_$PrayCalculationMethodStateJordanAwqafImpl) then) =
-      __$$PrayCalculationMethodStateJordanAwqafImplCopyWithImpl<$Res>;
+    _$PrayCalculationMethodStateJordanAwqafImpl value,
+    $Res Function(_$PrayCalculationMethodStateJordanAwqafImpl) then,
+  ) = __$$PrayCalculationMethodStateJordanAwqafImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PrayCalculationMethodStateJordanAwqafImplCopyWithImpl<$Res>
-    extends _$PrayCalculationMethodStateCopyWithImpl<$Res,
-        _$PrayCalculationMethodStateJordanAwqafImpl>
+    extends
+        _$PrayCalculationMethodStateCopyWithImpl<
+          $Res,
+          _$PrayCalculationMethodStateJordanAwqafImpl
+        >
     implements _$$PrayCalculationMethodStateJordanAwqafImplCopyWith<$Res> {
   __$$PrayCalculationMethodStateJordanAwqafImplCopyWithImpl(
-      _$PrayCalculationMethodStateJordanAwqafImpl _value,
-      $Res Function(_$PrayCalculationMethodStateJordanAwqafImpl) _then)
-      : super(_value, _then);
+    _$PrayCalculationMethodStateJordanAwqafImpl _value,
+    $Res Function(_$PrayCalculationMethodStateJordanAwqafImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayCalculationMethodState
   /// with the given fields replaced by the non-null parameter values.
@@ -5606,20 +5768,21 @@ class _$PrayCalculationMethodStateJordanAwqafImpl
     required TResult Function(PrayCalculationMethodStateJafari value) jafari,
     required TResult Function(PrayCalculationMethodStateKarachi value) karachi,
     required TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )
+    islamicSocietyOfNorthAmerica,
     required TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)
-        muslimWorldLeague,
+    muslimWorldLeague,
     required TResult Function(PrayCalculationMethodStateUmmAlQura value)
-        ummAlQura,
+    ummAlQura,
     required TResult Function(PrayCalculationMethodStateEgypt value) egypt,
     required TResult Function(PrayCalculationMethodStateTehran value) tehran,
     required TResult Function(PrayCalculationMethodStateGulfRegion value)
-        gulfRegion,
+    gulfRegion,
     required TResult Function(PrayCalculationMethodStateKuwait value) kuwait,
     required TResult Function(PrayCalculationMethodStateQatar value) qatar,
     required TResult Function(PrayCalculationMethodStateSingapore value)
-        singapore,
+    singapore,
     required TResult Function(PrayCalculationMethodStateFrance value) france,
     required TResult Function(PrayCalculationMethodStateTurkey value) turkey,
     required TResult Function(PrayCalculationMethodStateRussia value) russia,
@@ -5630,10 +5793,11 @@ class _$PrayCalculationMethodStateJordanAwqafImpl
     required TResult Function(PrayCalculationMethodStateKEMENAG value) kEMENAG,
     required TResult Function(PrayCalculationMethodStateMorocco value) morocco,
     required TResult Function(
-            PrayCalculationMethodStateComunidadeIslamicaLisboa value)
-        comunidadeIslamicaLisboa,
+      PrayCalculationMethodStateComunidadeIslamicaLisboa value,
+    )
+    comunidadeIslamicaLisboa,
     required TResult Function(PrayCalculationMethodStateJordanAwqaf value)
-        jordanAwqaf,
+    jordanAwqaf,
   }) {
     return jordanAwqaf(this);
   }
@@ -5644,10 +5808,11 @@ class _$PrayCalculationMethodStateJordanAwqafImpl
     TResult? Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult? Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult? Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult? Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult? Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult? Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult? Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -5665,7 +5830,7 @@ class _$PrayCalculationMethodStateJordanAwqafImpl
     TResult? Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult? Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult? Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult? Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
   }) {
     return jordanAwqaf?.call(this);
@@ -5677,10 +5842,11 @@ class _$PrayCalculationMethodStateJordanAwqafImpl
     TResult Function(PrayCalculationMethodStateJafari value)? jafari,
     TResult Function(PrayCalculationMethodStateKarachi value)? karachi,
     TResult Function(
-            PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value)?
-        islamicSocietyOfNorthAmerica,
+      PrayCalculationMethodStateIslamicSocietyOfNorthAmerica value,
+    )?
+    islamicSocietyOfNorthAmerica,
     TResult Function(PrayCalculationMethodStateMuslimWorldLeague value)?
-        muslimWorldLeague,
+    muslimWorldLeague,
     TResult Function(PrayCalculationMethodStateUmmAlQura value)? ummAlQura,
     TResult Function(PrayCalculationMethodStateEgypt value)? egypt,
     TResult Function(PrayCalculationMethodStateTehran value)? tehran,
@@ -5698,7 +5864,7 @@ class _$PrayCalculationMethodStateJordanAwqafImpl
     TResult Function(PrayCalculationMethodStateKEMENAG value)? kEMENAG,
     TResult Function(PrayCalculationMethodStateMorocco value)? morocco,
     TResult Function(PrayCalculationMethodStateComunidadeIslamicaLisboa value)?
-        comunidadeIslamicaLisboa,
+    comunidadeIslamicaLisboa,
     TResult Function(PrayCalculationMethodStateJordanAwqaf value)? jordanAwqaf,
     required TResult orElse(),
   }) {

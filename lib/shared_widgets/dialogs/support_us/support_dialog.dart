@@ -21,16 +21,20 @@ class SupportUsDialog {
   ///   A [Future<Widget?>] that completes when the dialog is dismissed
   Future<Widget?> dialog({required BuildContext context}) async {
     return showDialog(
-        barrierDismissible: false,
-        context: context,
-        builder: (BuildContext context) {
-          return Dialog(
-            insetPadding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            child: const SupportUsDialogWidget(),
-          );
-        });
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          insetPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 16,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: const SupportUsDialogWidget(),
+        );
+      },
+    );
   }
 }

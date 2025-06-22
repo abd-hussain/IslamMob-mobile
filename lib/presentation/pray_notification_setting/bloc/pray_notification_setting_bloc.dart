@@ -33,18 +33,26 @@ class PrayNotificationSettingBloc
     on<_SavePrayNotificationSettings>(_onSaveSettings);
   }
 
-  FutureOr<void> _onInitialize(_InitialPrayNotificationSettings event,
-      Emitter<PrayNotificationSettingState> emit) {
+  FutureOr<void> _onInitialize(
+    _InitialPrayNotificationSettings event,
+    Emitter<PrayNotificationSettingState> emit,
+  ) {
     final get = _getValue;
 
     emit(
       state.copyWith(
-        allNotificationForToday:
-            get(LocalNotificationConstant.disableAllForToday, false),
-        allNotificationForThreeDay:
-            get(LocalNotificationConstant.disableAllForThreeDay, false),
-        allNotificationForWeekDay:
-            get(LocalNotificationConstant.disableAllForWeek, false),
+        allNotificationForToday: get(
+          LocalNotificationConstant.disableAllForToday,
+          false,
+        ),
+        allNotificationForThreeDay: get(
+          LocalNotificationConstant.disableAllForThreeDay,
+          false,
+        ),
+        allNotificationForWeekDay: get(
+          LocalNotificationConstant.disableAllForWeek,
+          false,
+        ),
         fajir: get(LocalNotificationConstant.disableFajr, true),
         duhir: get(LocalNotificationConstant.disableDuher, true),
         asr: get(LocalNotificationConstant.disableAsr, true),
@@ -53,79 +61,86 @@ class PrayNotificationSettingBloc
         sunriseTime: get(LocalNotificationConstant.disableSunriseTime, true),
         jom3aAlkahf: get(LocalNotificationConstant.disableJom3aAlkahf, true),
         jom3aDo3aa: get(LocalNotificationConstant.disableJom3aDo3aa, true),
-        before15Min:
-            get(LocalNotificationConstant.disableNotificationBefore15Min, true),
+        before15Min: get(
+          LocalNotificationConstant.disableNotificationBefore15Min,
+          true,
+        ),
         qeyamAlLayel: get(LocalNotificationConstant.disableQeyamAlLayel, true),
         loadingStatus: const PrayNotificationSettingProcessStateSuccess(),
       ),
     );
   }
 
-  FutureOr<void> _onChangeSetting(_ChangePrayNotificationSettings event,
-      Emitter<PrayNotificationSettingState> emit) async {
+  FutureOr<void> _onChangeSetting(
+    _ChangePrayNotificationSettings event,
+    Emitter<PrayNotificationSettingState> emit,
+  ) async {
     await FirebaseAnalyticsRepository.logEvent(
       name: "changePrayNotificationSettings",
-      parameters: {
-        "state": event.status,
-        "type": event.type.toString(),
-      },
+      parameters: {"state": event.status, "type": event.type.toString()},
     );
 
     final stateUpdater =
         <PrayNotificationTypeState, PrayNotificationSettingState Function()>{
-      const AllNotificationForToday(): () =>
-          state.copyWith(allNotificationForToday: event.status),
-      const AllNotificationForThreeDay(): () =>
-          state.copyWith(allNotificationForThreeDay: event.status),
-      const AllNotificationForWeekDay(): () =>
-          state.copyWith(allNotificationForWeekDay: event.status),
-      const Fajir(): () => state.copyWith(fajir: event.status),
-      const Duhir(): () => state.copyWith(duhir: event.status),
-      const Asr(): () => state.copyWith(asr: event.status),
-      const Magrieb(): () => state.copyWith(magrieb: event.status),
-      const Isha(): () => state.copyWith(isha: event.status),
-      const SunriseTime(): () => state.copyWith(sunriseTime: event.status),
-      const Jom3aAlkahf(): () => state.copyWith(jom3aAlkahf: event.status),
-      const Jom3aDo3aa(): () => state.copyWith(jom3aDo3aa: event.status),
-      const Before15Min(): () => state.copyWith(before15Min: event.status),
-      const QeyamAlLayel(): () => state.copyWith(qeyamAlLayel: event.status),
-    };
+          const AllNotificationForToday(): () =>
+              state.copyWith(allNotificationForToday: event.status),
+          const AllNotificationForThreeDay(): () =>
+              state.copyWith(allNotificationForThreeDay: event.status),
+          const AllNotificationForWeekDay(): () =>
+              state.copyWith(allNotificationForWeekDay: event.status),
+          const Fajir(): () => state.copyWith(fajir: event.status),
+          const Duhir(): () => state.copyWith(duhir: event.status),
+          const Asr(): () => state.copyWith(asr: event.status),
+          const Magrieb(): () => state.copyWith(magrieb: event.status),
+          const Isha(): () => state.copyWith(isha: event.status),
+          const SunriseTime(): () => state.copyWith(sunriseTime: event.status),
+          const Jom3aAlkahf(): () => state.copyWith(jom3aAlkahf: event.status),
+          const Jom3aDo3aa(): () => state.copyWith(jom3aDo3aa: event.status),
+          const Before15Min(): () => state.copyWith(before15Min: event.status),
+          const QeyamAlLayel(): () =>
+              state.copyWith(qeyamAlLayel: event.status),
+        };
 
     final newState = stateUpdater[event.type]?.call();
     if (newState != null) emit(newState);
   }
 
-  FutureOr<void> _onSaveSettings(_SavePrayNotificationSettings event,
-      Emitter<PrayNotificationSettingState> emit) async {
-    await DataBaseManagerBase.saveMultipleInDatabase(data: {
-      LocalNotificationConstant.disableAllForToday:
-          state.allNotificationForToday,
-      LocalNotificationConstant.disableAllForThreeDay:
-          state.allNotificationForThreeDay,
-      LocalNotificationConstant.disableAllForWeek:
-          state.allNotificationForWeekDay,
-      LocalNotificationConstant.disableFajr: state.fajir,
-      LocalNotificationConstant.disableDuher: state.duhir,
-      LocalNotificationConstant.disableAsr: state.asr,
-      LocalNotificationConstant.disableMagrieb: state.magrieb,
-      LocalNotificationConstant.disableIsha: state.isha,
-      LocalNotificationConstant.disableSunriseTime: state.sunriseTime,
-      LocalNotificationConstant.disableJom3aAlkahf: state.jom3aAlkahf,
-      LocalNotificationConstant.disableJom3aDo3aa: state.jom3aDo3aa,
-      LocalNotificationConstant.disableNotificationBefore15Min:
-          state.before15Min,
-      LocalNotificationConstant.disableQeyamAlLayel: state.qeyamAlLayel
-    });
+  FutureOr<void> _onSaveSettings(
+    _SavePrayNotificationSettings event,
+    Emitter<PrayNotificationSettingState> emit,
+  ) async {
+    await DataBaseManagerBase.saveMultipleInDatabase(
+      data: {
+        LocalNotificationConstant.disableAllForToday:
+            state.allNotificationForToday,
+        LocalNotificationConstant.disableAllForThreeDay:
+            state.allNotificationForThreeDay,
+        LocalNotificationConstant.disableAllForWeek:
+            state.allNotificationForWeekDay,
+        LocalNotificationConstant.disableFajr: state.fajir,
+        LocalNotificationConstant.disableDuher: state.duhir,
+        LocalNotificationConstant.disableAsr: state.asr,
+        LocalNotificationConstant.disableMagrieb: state.magrieb,
+        LocalNotificationConstant.disableIsha: state.isha,
+        LocalNotificationConstant.disableSunriseTime: state.sunriseTime,
+        LocalNotificationConstant.disableJom3aAlkahf: state.jom3aAlkahf,
+        LocalNotificationConstant.disableJom3aDo3aa: state.jom3aDo3aa,
+        LocalNotificationConstant.disableNotificationBefore15Min:
+            state.before15Min,
+        LocalNotificationConstant.disableQeyamAlLayel: state.qeyamAlLayel,
+      },
+    );
 
     if (event.context.mounted) {
-      await locator<SetupLocalNotificationWhenAppOpenUseCase>()
-          .call(context: event.context);
+      await locator<SetupLocalNotificationWhenAppOpenUseCase>().call(
+        context: event.context,
+      );
     }
 
     emit(
       state.copyWith(
-          loadingStatus:
-              const PrayNotificationSettingProcessStateSettingSaved()),
+        loadingStatus: const PrayNotificationSettingProcessStateSettingSaved(),
+      ),
     );
   }
 
@@ -185,6 +200,9 @@ class PrayNotificationSettingBloc
 
   T _getValue<T>(String key, T defaultValue) {
     return DataBaseManagerBase.getFromDatabase(
-        key: key, defaultValue: defaultValue) as T;
+          key: key,
+          defaultValue: defaultValue,
+        )
+        as T;
   }
 }

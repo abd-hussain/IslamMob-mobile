@@ -73,8 +73,8 @@ class LocationIdleView extends StatelessWidget {
             );
 
             // Request location details
-            final locationDetails =
-                await LocationManagerBase().getLocationDetails();
+            final locationDetails = await LocationManagerBase()
+                .getLocationDetails();
 
             if (locationDetails.containsKey('error')) {
               /// Handles the case when location permission is not granted

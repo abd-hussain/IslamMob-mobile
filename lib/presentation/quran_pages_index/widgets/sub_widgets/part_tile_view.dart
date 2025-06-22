@@ -61,14 +61,11 @@ class PartTileView extends StatelessWidget {
             child: Row(
               children: [
                 _buildPartNumber(context),
-                Container(
-                  width: 1,
-                  color: Colors.white,
-                ),
+                Container(width: 1, color: Colors.white),
                 const SizedBox(width: 10),
                 _buildPartName(context),
                 const SizedBox(width: 10),
-                const ArrowView()
+                const ArrowView(),
               ],
             ),
           ),

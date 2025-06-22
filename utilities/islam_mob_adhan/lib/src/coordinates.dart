@@ -31,11 +31,13 @@ class Coordinates {
   static void _validateCoordinates(double latitude, double longitude) {
     if (latitude < -90 || latitude > 90 || !latitude.isFinite) {
       throw ArgumentError(
-          'Invalid latitude: must be a finite number between -90 and 90.');
+        'Invalid latitude: must be a finite number between -90 and 90.',
+      );
     }
     if (longitude < -180 || longitude > 180 || !longitude.isFinite) {
       throw ArgumentError(
-          'Invalid longitude: must be a finite number between -180 and 180.');
+        'Invalid longitude: must be a finite number between -180 and 180.',
+      );
     }
   }
 }

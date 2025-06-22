@@ -26,7 +26,8 @@ class Astronomical {
     final longitude = l0 + solarEquationOfTheCenter(T, meanSolarAnomaly(T));
     final omega = 125.04 - 1934.136 * T;
     return DoubleUtil.unwindAngle(
-        longitude - 0.00569 - 0.00478 * sin(degreesToRadians(omega)));
+      longitude - 0.00569 - 0.00478 * sin(degreesToRadians(omega)),
+    );
   }
 
   /// Calculates the ascending lunar node longitude (in degrees).
@@ -82,7 +83,11 @@ class Astronomical {
 
   /// Calculates nutation in longitude (in degrees).
   static double nutationInLongitude(
-      double T, double l0, double lp, double omega) {
+    double T,
+    double l0,
+    double lp,
+    double omega,
+  ) {
     final term1 = (-17.2 / 3600) * sin(degreesToRadians(omega));
     final term2 = (1.32 / 3600) * sin(2 * degreesToRadians(l0));
     final term3 = (0.23 / 3600) * sin(2 * degreesToRadians(lp));
@@ -92,7 +97,11 @@ class Astronomical {
 
   /// Calculates nutation in obliquity (in degrees).
   static double nutationInObliquity(
-      double T, double l0, double lp, double omega) {
+    double T,
+    double l0,
+    double lp,
+    double omega,
+  ) {
     final term1 = (9.2 / 3600) * cos(degreesToRadians(omega));
     final term2 = (0.57 / 3600) * cos(2 * degreesToRadians(l0));
     final term3 = (0.10 / 3600) * cos(2 * degreesToRadians(lp));
@@ -103,7 +112,8 @@ class Astronomical {
   /// Calculates the altitude of a celestial body (in degrees).
   static double altitudeOfCelestialBody(double phi, double delta, double H) {
     final term1 = sin(degreesToRadians(phi)) * sin(degreesToRadians(delta));
-    final term2 = cos(degreesToRadians(phi)) *
+    final term2 =
+        cos(degreesToRadians(phi)) *
         cos(degreesToRadians(delta)) *
         cos(degreesToRadians(H));
     return radiansToDegrees(asin(term1 + term2));
@@ -115,43 +125,55 @@ class Astronomical {
   }
 
   /// Calculates the corrected transit time (in hours).
-  static double correctedTransit(double m0, double L, double theta0,
-      double alpha2, double alpha1, double alpha3) {
+  static double correctedTransit(
+    double m0,
+    double L,
+    double theta0,
+    double alpha2,
+    double alpha1,
+    double alpha3,
+  ) {
     final theta = DoubleUtil.unwindAngle(theta0 + 360.985647 * m0);
-    final alpha =
-        DoubleUtil.unwindAngle(interpolateAngles(alpha2, alpha1, alpha3, m0));
+    final alpha = DoubleUtil.unwindAngle(
+      interpolateAngles(alpha2, alpha1, alpha3, m0),
+    );
     final H = DoubleUtil.closestAngle(theta - (-L) - alpha);
     return (m0 - H / 360) * 24;
   }
 
   /// Calculates the corrected hour angle (in hours).
   static double correctedHourAngle(
-      double m0,
-      double h0,
-      Coordinates coordinates,
-      bool afterTransit,
-      double theta0,
-      double alpha2,
-      double alpha1,
-      double alpha3,
-      double delta2,
-      double delta1,
-      double delta3) {
+    double m0,
+    double h0,
+    Coordinates coordinates,
+    bool afterTransit,
+    double theta0,
+    double alpha2,
+    double alpha1,
+    double alpha3,
+    double delta2,
+    double delta1,
+    double delta3,
+  ) {
     final lw = -coordinates.longitude;
-    final term1 = sin(degreesToRadians(h0)) -
+    final term1 =
+        sin(degreesToRadians(h0)) -
         sin(degreesToRadians(coordinates.latitude)) *
             sin(degreesToRadians(delta2));
-    final term2 = cos(degreesToRadians(coordinates.latitude)) *
+    final term2 =
+        cos(degreesToRadians(coordinates.latitude)) *
         cos(degreesToRadians(delta2));
     final newH0 = radiansToDegrees(acos(term1 / term2));
     final m = afterTransit ? m0 + newH0 / 360 : m0 - newH0 / 360;
     final theta = DoubleUtil.unwindAngle(theta0 + 360.985647 * m);
-    final alpha =
-        DoubleUtil.unwindAngle(interpolateAngles(alpha2, alpha1, alpha3, m));
+    final alpha = DoubleUtil.unwindAngle(
+      interpolateAngles(alpha2, alpha1, alpha3, m),
+    );
     final delta = interpolate(delta2, delta1, delta3, m);
     final H = theta - lw - alpha;
     final h = altitudeOfCelestialBody(coordinates.latitude, delta, H);
-    final deltaM = (h - h0) /
+    final deltaM =
+        (h - h0) /
         (360 *
             cos(degreesToRadians(delta)) *
             cos(degreesToRadians(coordinates.latitude)) *
