@@ -156,13 +156,13 @@ class PrayUsecase {
   Coordinates _retrieveCoordinates() {
     final double latitude =
         DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldLocationConstant.selectedLatitude,
+              key: DatabaseFieldLocationConstant.selectedLat,
               defaultValue: 0.0,
             )
             as double;
     final double longitude =
         DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldLocationConstant.selectedLongitude,
+              key: DatabaseFieldLocationConstant.selectedLong,
               defaultValue: 0.0,
             )
             as double;

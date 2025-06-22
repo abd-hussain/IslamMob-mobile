@@ -20,10 +20,10 @@ class DatabaseFieldLocationConstant {
   static const String selectedStreet = "selectedStreet";
 
   /// Key for storing the selected latitude coordinate.
-  static const String selectedLatitude = "selectedLatitude";
+  static const String selectedLat = "selectedLat";
 
   /// Key for storing the selected longitude coordinate.
-  static const String selectedLongitude = "selectedLongitude";
+  static const String selectedLong = "selectedLong";
 
   /// Key for storing the selected thoroughfare (main road or street).
   static const String selectedThoroughfare = "selectedThoroughfare";
