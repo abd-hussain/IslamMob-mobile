@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_sealed.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/pray_notification_setting_bloc.dart';
@@ -52,63 +53,27 @@ class QuickNotificationView extends StatelessWidget {
         buildWhen: (previous, current) =>
             previous.allNotificationForToday != current.allNotificationForToday,
         builder: (builderContext, state) {
+          final dateInString = state.allNotificationForToday;
+          String formatedDate = "";
+          DateTime? date = DateTime.tryParse(dateInString);
+          if (date != null) {
+            date = date.add(const Duration(days: 1));
+            formatedDate =
+                "${localization.disableUntil} --- ${TimingUseCase().formatDate(date)}";
+          }
+
           return NotificationRowView(
             title: localization.notificationSettingTodayAll,
-            value: state.allNotificationForToday,
-            description: "", //TODO
+            value: state.allNotificationForToday != "",
+            description: formatedDate,
             soundFileName: "",
             onChangeSoundPresses: null,
             onChanged: (value) {
               builderContext.read<PrayNotificationSettingBloc>().add(
                 PrayNotificationSettingEvent.changePrayNotificationSettings(
                   status: value,
+                  date: DateTime.now(),
                   type: const AllNotificationForToday(),
-                ),
-              );
-            },
-          );
-        },
-      ),
-      const Divider(height: 1, color: Colors.grey),
-      BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.allNotificationForThreeDay !=
-            current.allNotificationForThreeDay,
-        builder: (builderContext, state) {
-          return NotificationRowView(
-            title: localization.notificationSettingThreedayAll,
-            value: state.allNotificationForThreeDay,
-            soundFileName: "",
-            description: "", //TODO
-            onChangeSoundPresses: null,
-            onChanged: (value) {
-              builderContext.read<PrayNotificationSettingBloc>().add(
-                PrayNotificationSettingEvent.changePrayNotificationSettings(
-                  status: value,
-                  type: const AllNotificationForThreeDay(),
-                ),
-              );
-            },
-          );
-        },
-      ),
-      const Divider(height: 1, color: Colors.grey),
-      BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.allNotificationForWeekDay !=
-            current.allNotificationForWeekDay,
-        builder: (builderContext, state) {
-          return NotificationRowView(
-            title: localization.notificationSettingWeekAll,
-            value: state.allNotificationForWeekDay,
-            soundFileName: "",
-            description: "", //TODO
-            onChangeSoundPresses: null,
-            onChanged: (value) {
-              builderContext.read<PrayNotificationSettingBloc>().add(
-                PrayNotificationSettingEvent.changePrayNotificationSettings(
-                  status: value,
-                  type: const AllNotificationForWeekDay(),
                 ),
               );
             },

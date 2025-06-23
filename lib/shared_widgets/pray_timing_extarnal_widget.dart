@@ -13,11 +13,17 @@ class PrayTimingExtarnalWidget {
   ///
   /// Currently, this method contains commented-out implementation that would
   /// save widget data and update the home widget provider.
-  Future<void> updateHomeWidget(String title, String content) async {
+  Future<void> updateHomeWidget({
+    required String title,
+    required String content,
+  }) async {
+    // await HomeWidget.setAppGroupId('YOUR_GROUP_ID');
+
     // await HomeWidget.saveWidgetData<String>('title', title);
     // await HomeWidget.saveWidgetData<String>('content', content);
     // await HomeWidget.updateWidget(
-    //     name: 'HomeWidgetProvider', // Name of your HomeWidgetProvider
-    //     iOSName: 'HomeWidget'); // Used in iOS
+    //   name: 'HomeWidgetProvider', // Name of your HomeWidgetProvider
+    //   iOSName: 'HomeWidget',
+    // ); // Used in iOS
   }
 }

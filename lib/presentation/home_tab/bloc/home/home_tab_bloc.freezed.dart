@@ -967,6 +967,7 @@ mixin _$HomeTabState {
   bool get isBarExpanded => throw _privateConstructorUsedError;
   bool get showAllowNotificationView => throw _privateConstructorUsedError;
   bool get showAllowLocationView => throw _privateConstructorUsedError;
+  bool get showInternetConnectionView => throw _privateConstructorUsedError;
   SalahTimeState get nextPrayType => throw _privateConstructorUsedError;
   dynamic get loadingStatus => throw _privateConstructorUsedError;
 
@@ -988,6 +989,7 @@ abstract class $HomeTabStateCopyWith<$Res> {
     bool isBarExpanded,
     bool showAllowNotificationView,
     bool showAllowLocationView,
+    bool showInternetConnectionView,
     SalahTimeState nextPrayType,
     dynamic loadingStatus,
   });
@@ -1013,6 +1015,7 @@ class _$HomeTabStateCopyWithImpl<$Res, $Val extends HomeTabState>
     Object? isBarExpanded = null,
     Object? showAllowNotificationView = null,
     Object? showAllowLocationView = null,
+    Object? showInternetConnectionView = null,
     Object? nextPrayType = null,
     Object? loadingStatus = freezed,
   }) {
@@ -1029,6 +1032,10 @@ class _$HomeTabStateCopyWithImpl<$Res, $Val extends HomeTabState>
             showAllowLocationView: null == showAllowLocationView
                 ? _value.showAllowLocationView
                 : showAllowLocationView // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            showInternetConnectionView: null == showInternetConnectionView
+                ? _value.showInternetConnectionView
+                : showInternetConnectionView // ignore: cast_nullable_to_non_nullable
                       as bool,
             nextPrayType: null == nextPrayType
                 ? _value.nextPrayType
@@ -1067,6 +1074,7 @@ abstract class _$$HomeTabStateImplCopyWith<$Res>
     bool isBarExpanded,
     bool showAllowNotificationView,
     bool showAllowLocationView,
+    bool showInternetConnectionView,
     SalahTimeState nextPrayType,
     dynamic loadingStatus,
   });
@@ -1092,6 +1100,7 @@ class __$$HomeTabStateImplCopyWithImpl<$Res>
     Object? isBarExpanded = null,
     Object? showAllowNotificationView = null,
     Object? showAllowLocationView = null,
+    Object? showInternetConnectionView = null,
     Object? nextPrayType = null,
     Object? loadingStatus = freezed,
   }) {
@@ -1108,6 +1117,10 @@ class __$$HomeTabStateImplCopyWithImpl<$Res>
         showAllowLocationView: null == showAllowLocationView
             ? _value.showAllowLocationView
             : showAllowLocationView // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        showInternetConnectionView: null == showInternetConnectionView
+            ? _value.showInternetConnectionView
+            : showInternetConnectionView // ignore: cast_nullable_to_non_nullable
                   as bool,
         nextPrayType: null == nextPrayType
             ? _value.nextPrayType
@@ -1128,6 +1141,7 @@ class _$HomeTabStateImpl implements _HomeTabState {
     this.isBarExpanded = true,
     this.showAllowNotificationView = false,
     this.showAllowLocationView = false,
+    this.showInternetConnectionView = false,
     this.nextPrayType = const SalahTimeState.none(),
     this.loadingStatus = const HomeScreenProcessState.loading(),
   });
@@ -1143,6 +1157,9 @@ class _$HomeTabStateImpl implements _HomeTabState {
   final bool showAllowLocationView;
   @override
   @JsonKey()
+  final bool showInternetConnectionView;
+  @override
+  @JsonKey()
   final SalahTimeState nextPrayType;
   @override
   @JsonKey()
@@ -1150,7 +1167,7 @@ class _$HomeTabStateImpl implements _HomeTabState {
 
   @override
   String toString() {
-    return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView, showAllowLocationView: $showAllowLocationView, nextPrayType: $nextPrayType, loadingStatus: $loadingStatus)';
+    return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView, showAllowLocationView: $showAllowLocationView, showInternetConnectionView: $showInternetConnectionView, nextPrayType: $nextPrayType, loadingStatus: $loadingStatus)';
   }
 
   @override
@@ -1167,6 +1184,12 @@ class _$HomeTabStateImpl implements _HomeTabState {
                 other.showAllowNotificationView == showAllowNotificationView) &&
             (identical(other.showAllowLocationView, showAllowLocationView) ||
                 other.showAllowLocationView == showAllowLocationView) &&
+            (identical(
+                  other.showInternetConnectionView,
+                  showInternetConnectionView,
+                ) ||
+                other.showInternetConnectionView ==
+                    showInternetConnectionView) &&
             (identical(other.nextPrayType, nextPrayType) ||
                 other.nextPrayType == nextPrayType) &&
             const DeepCollectionEquality().equals(
@@ -1181,6 +1204,7 @@ class _$HomeTabStateImpl implements _HomeTabState {
     isBarExpanded,
     showAllowNotificationView,
     showAllowLocationView,
+    showInternetConnectionView,
     nextPrayType,
     const DeepCollectionEquality().hash(loadingStatus),
   );
@@ -1199,6 +1223,7 @@ abstract class _HomeTabState implements HomeTabState {
     final bool isBarExpanded,
     final bool showAllowNotificationView,
     final bool showAllowLocationView,
+    final bool showInternetConnectionView,
     final SalahTimeState nextPrayType,
     final dynamic loadingStatus,
   }) = _$HomeTabStateImpl;
@@ -1209,6 +1234,8 @@ abstract class _HomeTabState implements HomeTabState {
   bool get showAllowNotificationView;
   @override
   bool get showAllowLocationView;
+  @override
+  bool get showInternetConnectionView;
   @override
   SalahTimeState get nextPrayType;
   @override

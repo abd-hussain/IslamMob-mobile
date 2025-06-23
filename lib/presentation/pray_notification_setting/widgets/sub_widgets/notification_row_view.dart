@@ -108,8 +108,8 @@ class NotificationRowView extends StatelessWidget {
           if (description != "")
             CustomText(
               title: description,
-              fontSize: 14,
-              color: const Color(0xff444444),
+              fontSize: 12,
+              color: const Color(0xff707070),
               fontWeight: FontWeight.bold,
             )
           else

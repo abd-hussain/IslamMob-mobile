@@ -24,6 +24,7 @@ class PrayNotificationSettingEvent with _$PrayNotificationSettingEvent {
   /// [type] - the specific prayer notification type to modify
   const factory PrayNotificationSettingEvent.changePrayNotificationSettings({
     required bool status,
+    DateTime? date,
     required PrayNotificationTypeState type,
   }) = _ChangePrayNotificationSettings;
 

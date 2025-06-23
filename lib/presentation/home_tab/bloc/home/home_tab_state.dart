@@ -47,6 +47,7 @@ class HomeTabState with _$HomeTabState {
     @Default(true) bool isBarExpanded,
     @Default(false) bool showAllowNotificationView,
     @Default(false) bool showAllowLocationView,
+    @Default(false) bool showInternetConnectionView,
     @Default(SalahTimeState.none()) SalahTimeState nextPrayType,
     @Default(HomeScreenProcessState.loading()) loadingStatus,
   }) = _HomeTabState;

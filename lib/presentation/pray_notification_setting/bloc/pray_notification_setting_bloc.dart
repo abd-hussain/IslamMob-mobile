@@ -42,16 +42,8 @@ class PrayNotificationSettingBloc
     emit(
       state.copyWith(
         allNotificationForToday: get(
-          LocalNotificationConstant.disableAllForToday,
-          false,
-        ),
-        allNotificationForThreeDay: get(
-          LocalNotificationConstant.disableAllForThreeDay,
-          false,
-        ),
-        allNotificationForWeekDay: get(
-          LocalNotificationConstant.disableAllForWeek,
-          false,
+          LocalNotificationConstant.disableAllForTodayDate,
+          "",
         ),
         fajir: get(LocalNotificationConstant.disableFajr, true),
         duhir: get(LocalNotificationConstant.disableDuher, true),
@@ -82,12 +74,9 @@ class PrayNotificationSettingBloc
 
     final stateUpdater =
         <PrayNotificationTypeState, PrayNotificationSettingState Function()>{
-          const AllNotificationForToday(): () =>
-              state.copyWith(allNotificationForToday: event.status),
-          const AllNotificationForThreeDay(): () =>
-              state.copyWith(allNotificationForThreeDay: event.status),
-          const AllNotificationForWeekDay(): () =>
-              state.copyWith(allNotificationForWeekDay: event.status),
+          const AllNotificationForToday(): () => state.copyWith(
+            allNotificationForToday: event.status ? event.date.toString() : "",
+          ),
           const Fajir(): () => state.copyWith(fajir: event.status),
           const Duhir(): () => state.copyWith(duhir: event.status),
           const Asr(): () => state.copyWith(asr: event.status),
@@ -111,12 +100,8 @@ class PrayNotificationSettingBloc
   ) async {
     await DataBaseManagerBase.saveMultipleInDatabase(
       data: {
-        LocalNotificationConstant.disableAllForToday:
+        LocalNotificationConstant.disableAllForTodayDate:
             state.allNotificationForToday,
-        LocalNotificationConstant.disableAllForThreeDay:
-            state.allNotificationForThreeDay,
-        LocalNotificationConstant.disableAllForWeek:
-            state.allNotificationForWeekDay,
         LocalNotificationConstant.disableFajr: state.fajir,
         LocalNotificationConstant.disableDuher: state.duhir,
         LocalNotificationConstant.disableAsr: state.asr,

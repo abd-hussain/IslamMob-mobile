@@ -101,7 +101,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     name: localize.rateapp,
                     onTap: () async {
                       final bool internetStatus =
-                          await NetworkUseCase.checkInternetConeection();
+                          await NetworkUseCase.checkInternetConnection();
 
                       if (internetStatus == false) {
                         if (context.mounted) {

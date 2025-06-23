@@ -6,6 +6,7 @@ import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/azkar_after_salah_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
+import 'package:islam_app/presentation/home_tab/widgets/internet_connection_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/location_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
@@ -72,6 +73,7 @@ class HomeScreen extends StatelessWidget {
                   const SalahTimingView(),
                   const SizedBox(height: 0.3),
                   _buildToolBarView(),
+                  _buildInternetConnectionView(),
                   _buildNotificationPermissionView(),
                   _buildLocationPermissionView(),
                   const AddMobBanner(),
@@ -127,6 +129,20 @@ class HomeScreen extends StatelessWidget {
         }
 
         return AzkarAfterSalahView(salahType: type);
+      },
+    );
+  }
+
+  /// Builds the Internet Connection Issue view when applicable.
+  Widget _buildInternetConnectionView() {
+    return BlocBuilder<HomeTabBloc, HomeTabState>(
+      buildWhen: (previous, current) =>
+          previous.showInternetConnectionView !=
+          current.showInternetConnectionView,
+      builder: (context, state) {
+        return state.showInternetConnectionView
+            ? const InternetConnectionView()
+            : const SizedBox.shrink();
       },
     );
   }

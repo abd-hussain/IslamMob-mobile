@@ -5,13 +5,7 @@
 /// These keys are used to store and retrieve notification preferences from the database.
 class LocalNotificationConstant {
   /// Key for disabling all notifications for today.
-  static const String disableAllForToday = "disableAllForToday";
-
-  /// Key for disabling all notifications for three days.
-  static const String disableAllForThreeDay = "disableAllForThreeDay";
-
-  /// Key for disabling all notifications for a week.
-  static const String disableAllForWeek = "disableAllForWeek";
+  static const String disableAllForTodayDate = "disableAllForTodayDate";
 
   /// Key for disabling Fajr prayer notifications.
   static const String disableFajr = "disableFajr";

@@ -25,12 +25,13 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11
+        jvmTarget = '1.8'
     }
 
     sourceSets {
@@ -40,7 +41,7 @@ android {
     defaultConfig {
         applicationId = "com.islammob.app"
         minSdk = flutter.minSdkVersion
-        targetSdk = 35
+        targetSdkVersion flutter.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
         multiDexEnabled = true
@@ -87,6 +88,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'com.android.installreferrer:installreferrer:2.1'
     implementation "androidx.appcompat:appcompat:1.6.1"
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
 }
 
 

@@ -1575,4 +1575,11 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
   @override
   String get chooseSoundDesc =>
       'Please note that the notification sound may not play in full when the app is open';
+
+  @override
+  String get internetConnectionDisableCanGiveWrongTimes =>
+      'If offline, time will be based on the last saved location. Ensure you\'re connected for accurate times';
+
+  @override
+  String get disableUntil => 'disabled until';
 }

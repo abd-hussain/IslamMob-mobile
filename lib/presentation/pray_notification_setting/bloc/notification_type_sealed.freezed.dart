@@ -20,8 +20,6 @@ mixin _$PrayNotificationTypeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -36,8 +34,6 @@ mixin _$PrayNotificationTypeState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -52,8 +48,6 @@ mixin _$PrayNotificationTypeState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -70,10 +64,6 @@ mixin _$PrayNotificationTypeState {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -88,10 +78,6 @@ mixin _$PrayNotificationTypeState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -106,10 +92,6 @@ mixin _$PrayNotificationTypeState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -198,8 +180,6 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -218,8 +198,6 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -238,8 +216,6 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -263,10 +239,6 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -285,10 +257,6 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -307,10 +275,6 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -332,376 +296,6 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
 
 abstract class AllNotificationForToday implements PrayNotificationTypeState {
   const factory AllNotificationForToday() = _$AllNotificationForTodayImpl;
-}
-
-/// @nodoc
-abstract class _$$AllNotificationForThreeDayImplCopyWith<$Res> {
-  factory _$$AllNotificationForThreeDayImplCopyWith(
-    _$AllNotificationForThreeDayImpl value,
-    $Res Function(_$AllNotificationForThreeDayImpl) then,
-  ) = __$$AllNotificationForThreeDayImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AllNotificationForThreeDayImplCopyWithImpl<$Res>
-    extends
-        _$PrayNotificationTypeStateCopyWithImpl<
-          $Res,
-          _$AllNotificationForThreeDayImpl
-        >
-    implements _$$AllNotificationForThreeDayImplCopyWith<$Res> {
-  __$$AllNotificationForThreeDayImplCopyWithImpl(
-    _$AllNotificationForThreeDayImpl _value,
-    $Res Function(_$AllNotificationForThreeDayImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of PrayNotificationTypeState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$AllNotificationForThreeDayImpl implements AllNotificationForThreeDay {
-  const _$AllNotificationForThreeDayImpl();
-
-  @override
-  String toString() {
-    return 'PrayNotificationTypeState.allNotificationForThreeDay()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AllNotificationForThreeDayImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
-    required TResult Function() fajir,
-    required TResult Function() duhir,
-    required TResult Function() asr,
-    required TResult Function() magrieb,
-    required TResult Function() isha,
-    required TResult Function() sunriseTime,
-    required TResult Function() jom3aAlkahf,
-    required TResult Function() jom3aDo3aa,
-    required TResult Function() qeyamAlLayel,
-    required TResult Function() before15Min,
-  }) {
-    return allNotificationForThreeDay();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
-    TResult? Function()? fajir,
-    TResult? Function()? duhir,
-    TResult? Function()? asr,
-    TResult? Function()? magrieb,
-    TResult? Function()? isha,
-    TResult? Function()? sunriseTime,
-    TResult? Function()? jom3aAlkahf,
-    TResult? Function()? jom3aDo3aa,
-    TResult? Function()? qeyamAlLayel,
-    TResult? Function()? before15Min,
-  }) {
-    return allNotificationForThreeDay?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
-    TResult Function()? fajir,
-    TResult Function()? duhir,
-    TResult Function()? asr,
-    TResult Function()? magrieb,
-    TResult Function()? isha,
-    TResult Function()? sunriseTime,
-    TResult Function()? jom3aAlkahf,
-    TResult Function()? jom3aDo3aa,
-    TResult Function()? qeyamAlLayel,
-    TResult Function()? before15Min,
-    required TResult orElse(),
-  }) {
-    if (allNotificationForThreeDay != null) {
-      return allNotificationForThreeDay();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AllNotificationForToday value)
-    allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
-    required TResult Function(Fajir value) fajir,
-    required TResult Function(Duhir value) duhir,
-    required TResult Function(Asr value) asr,
-    required TResult Function(Magrieb value) magrieb,
-    required TResult Function(Isha value) isha,
-    required TResult Function(SunriseTime value) sunriseTime,
-    required TResult Function(Jom3aAlkahf value) jom3aAlkahf,
-    required TResult Function(Jom3aDo3aa value) jom3aDo3aa,
-    required TResult Function(QeyamAlLayel value) qeyamAlLayel,
-    required TResult Function(Before15Min value) before15Min,
-  }) {
-    return allNotificationForThreeDay(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
-    TResult? Function(Fajir value)? fajir,
-    TResult? Function(Duhir value)? duhir,
-    TResult? Function(Asr value)? asr,
-    TResult? Function(Magrieb value)? magrieb,
-    TResult? Function(Isha value)? isha,
-    TResult? Function(SunriseTime value)? sunriseTime,
-    TResult? Function(Jom3aAlkahf value)? jom3aAlkahf,
-    TResult? Function(Jom3aDo3aa value)? jom3aDo3aa,
-    TResult? Function(QeyamAlLayel value)? qeyamAlLayel,
-    TResult? Function(Before15Min value)? before15Min,
-  }) {
-    return allNotificationForThreeDay?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
-    TResult Function(Fajir value)? fajir,
-    TResult Function(Duhir value)? duhir,
-    TResult Function(Asr value)? asr,
-    TResult Function(Magrieb value)? magrieb,
-    TResult Function(Isha value)? isha,
-    TResult Function(SunriseTime value)? sunriseTime,
-    TResult Function(Jom3aAlkahf value)? jom3aAlkahf,
-    TResult Function(Jom3aDo3aa value)? jom3aDo3aa,
-    TResult Function(QeyamAlLayel value)? qeyamAlLayel,
-    TResult Function(Before15Min value)? before15Min,
-    required TResult orElse(),
-  }) {
-    if (allNotificationForThreeDay != null) {
-      return allNotificationForThreeDay(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AllNotificationForThreeDay implements PrayNotificationTypeState {
-  const factory AllNotificationForThreeDay() = _$AllNotificationForThreeDayImpl;
-}
-
-/// @nodoc
-abstract class _$$AllNotificationForWeekDayImplCopyWith<$Res> {
-  factory _$$AllNotificationForWeekDayImplCopyWith(
-    _$AllNotificationForWeekDayImpl value,
-    $Res Function(_$AllNotificationForWeekDayImpl) then,
-  ) = __$$AllNotificationForWeekDayImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AllNotificationForWeekDayImplCopyWithImpl<$Res>
-    extends
-        _$PrayNotificationTypeStateCopyWithImpl<
-          $Res,
-          _$AllNotificationForWeekDayImpl
-        >
-    implements _$$AllNotificationForWeekDayImplCopyWith<$Res> {
-  __$$AllNotificationForWeekDayImplCopyWithImpl(
-    _$AllNotificationForWeekDayImpl _value,
-    $Res Function(_$AllNotificationForWeekDayImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of PrayNotificationTypeState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$AllNotificationForWeekDayImpl implements AllNotificationForWeekDay {
-  const _$AllNotificationForWeekDayImpl();
-
-  @override
-  String toString() {
-    return 'PrayNotificationTypeState.allNotificationForWeekDay()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AllNotificationForWeekDayImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
-    required TResult Function() fajir,
-    required TResult Function() duhir,
-    required TResult Function() asr,
-    required TResult Function() magrieb,
-    required TResult Function() isha,
-    required TResult Function() sunriseTime,
-    required TResult Function() jom3aAlkahf,
-    required TResult Function() jom3aDo3aa,
-    required TResult Function() qeyamAlLayel,
-    required TResult Function() before15Min,
-  }) {
-    return allNotificationForWeekDay();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
-    TResult? Function()? fajir,
-    TResult? Function()? duhir,
-    TResult? Function()? asr,
-    TResult? Function()? magrieb,
-    TResult? Function()? isha,
-    TResult? Function()? sunriseTime,
-    TResult? Function()? jom3aAlkahf,
-    TResult? Function()? jom3aDo3aa,
-    TResult? Function()? qeyamAlLayel,
-    TResult? Function()? before15Min,
-  }) {
-    return allNotificationForWeekDay?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
-    TResult Function()? fajir,
-    TResult Function()? duhir,
-    TResult Function()? asr,
-    TResult Function()? magrieb,
-    TResult Function()? isha,
-    TResult Function()? sunriseTime,
-    TResult Function()? jom3aAlkahf,
-    TResult Function()? jom3aDo3aa,
-    TResult Function()? qeyamAlLayel,
-    TResult Function()? before15Min,
-    required TResult orElse(),
-  }) {
-    if (allNotificationForWeekDay != null) {
-      return allNotificationForWeekDay();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AllNotificationForToday value)
-    allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
-    required TResult Function(Fajir value) fajir,
-    required TResult Function(Duhir value) duhir,
-    required TResult Function(Asr value) asr,
-    required TResult Function(Magrieb value) magrieb,
-    required TResult Function(Isha value) isha,
-    required TResult Function(SunriseTime value) sunriseTime,
-    required TResult Function(Jom3aAlkahf value) jom3aAlkahf,
-    required TResult Function(Jom3aDo3aa value) jom3aDo3aa,
-    required TResult Function(QeyamAlLayel value) qeyamAlLayel,
-    required TResult Function(Before15Min value) before15Min,
-  }) {
-    return allNotificationForWeekDay(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
-    TResult? Function(Fajir value)? fajir,
-    TResult? Function(Duhir value)? duhir,
-    TResult? Function(Asr value)? asr,
-    TResult? Function(Magrieb value)? magrieb,
-    TResult? Function(Isha value)? isha,
-    TResult? Function(SunriseTime value)? sunriseTime,
-    TResult? Function(Jom3aAlkahf value)? jom3aAlkahf,
-    TResult? Function(Jom3aDo3aa value)? jom3aDo3aa,
-    TResult? Function(QeyamAlLayel value)? qeyamAlLayel,
-    TResult? Function(Before15Min value)? before15Min,
-  }) {
-    return allNotificationForWeekDay?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
-    TResult Function(Fajir value)? fajir,
-    TResult Function(Duhir value)? duhir,
-    TResult Function(Asr value)? asr,
-    TResult Function(Magrieb value)? magrieb,
-    TResult Function(Isha value)? isha,
-    TResult Function(SunriseTime value)? sunriseTime,
-    TResult Function(Jom3aAlkahf value)? jom3aAlkahf,
-    TResult Function(Jom3aDo3aa value)? jom3aDo3aa,
-    TResult Function(QeyamAlLayel value)? qeyamAlLayel,
-    TResult Function(Before15Min value)? before15Min,
-    required TResult orElse(),
-  }) {
-    if (allNotificationForWeekDay != null) {
-      return allNotificationForWeekDay(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AllNotificationForWeekDay implements PrayNotificationTypeState {
-  const factory AllNotificationForWeekDay() = _$AllNotificationForWeekDayImpl;
 }
 
 /// @nodoc
@@ -748,8 +342,6 @@ class _$FajirImpl implements Fajir {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -768,8 +360,6 @@ class _$FajirImpl implements Fajir {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -788,8 +378,6 @@ class _$FajirImpl implements Fajir {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -813,10 +401,6 @@ class _$FajirImpl implements Fajir {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -835,10 +419,6 @@ class _$FajirImpl implements Fajir {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -857,10 +437,6 @@ class _$FajirImpl implements Fajir {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -928,8 +504,6 @@ class _$DuhirImpl implements Duhir {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -948,8 +522,6 @@ class _$DuhirImpl implements Duhir {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -968,8 +540,6 @@ class _$DuhirImpl implements Duhir {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -993,10 +563,6 @@ class _$DuhirImpl implements Duhir {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1015,10 +581,6 @@ class _$DuhirImpl implements Duhir {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1037,10 +599,6 @@ class _$DuhirImpl implements Duhir {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1104,8 +662,6 @@ class _$AsrImpl implements Asr {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -1124,8 +680,6 @@ class _$AsrImpl implements Asr {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -1144,8 +698,6 @@ class _$AsrImpl implements Asr {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -1169,10 +721,6 @@ class _$AsrImpl implements Asr {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1191,10 +739,6 @@ class _$AsrImpl implements Asr {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1213,10 +757,6 @@ class _$AsrImpl implements Asr {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1284,8 +824,6 @@ class _$MagriebImpl implements Magrieb {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -1304,8 +842,6 @@ class _$MagriebImpl implements Magrieb {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -1324,8 +860,6 @@ class _$MagriebImpl implements Magrieb {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -1349,10 +883,6 @@ class _$MagriebImpl implements Magrieb {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1371,10 +901,6 @@ class _$MagriebImpl implements Magrieb {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1393,10 +919,6 @@ class _$MagriebImpl implements Magrieb {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1462,8 +984,6 @@ class _$IshaImpl implements Isha {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -1482,8 +1002,6 @@ class _$IshaImpl implements Isha {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -1502,8 +1020,6 @@ class _$IshaImpl implements Isha {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -1527,10 +1043,6 @@ class _$IshaImpl implements Isha {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1549,10 +1061,6 @@ class _$IshaImpl implements Isha {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1571,10 +1079,6 @@ class _$IshaImpl implements Isha {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1642,8 +1146,6 @@ class _$SunriseTimeImpl implements SunriseTime {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -1662,8 +1164,6 @@ class _$SunriseTimeImpl implements SunriseTime {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -1682,8 +1182,6 @@ class _$SunriseTimeImpl implements SunriseTime {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -1707,10 +1205,6 @@ class _$SunriseTimeImpl implements SunriseTime {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1729,10 +1223,6 @@ class _$SunriseTimeImpl implements SunriseTime {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1751,10 +1241,6 @@ class _$SunriseTimeImpl implements SunriseTime {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1822,8 +1308,6 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -1842,8 +1326,6 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -1862,8 +1344,6 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -1887,10 +1367,6 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1909,10 +1385,6 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1931,10 +1403,6 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -2002,8 +1470,6 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -2022,8 +1488,6 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -2042,8 +1506,6 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -2067,10 +1529,6 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -2089,10 +1547,6 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -2111,10 +1565,6 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -2182,8 +1632,6 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -2202,8 +1650,6 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -2222,8 +1668,6 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -2247,10 +1691,6 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -2269,10 +1709,6 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -2291,10 +1727,6 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -2362,8 +1794,6 @@ class _$Before15MinImpl implements Before15Min {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() allNotificationForToday,
-    required TResult Function() allNotificationForThreeDay,
-    required TResult Function() allNotificationForWeekDay,
     required TResult Function() fajir,
     required TResult Function() duhir,
     required TResult Function() asr,
@@ -2382,8 +1812,6 @@ class _$Before15MinImpl implements Before15Min {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
-    TResult? Function()? allNotificationForThreeDay,
-    TResult? Function()? allNotificationForWeekDay,
     TResult? Function()? fajir,
     TResult? Function()? duhir,
     TResult? Function()? asr,
@@ -2402,8 +1830,6 @@ class _$Before15MinImpl implements Before15Min {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
-    TResult Function()? allNotificationForThreeDay,
-    TResult Function()? allNotificationForWeekDay,
     TResult Function()? fajir,
     TResult Function()? duhir,
     TResult Function()? asr,
@@ -2427,10 +1853,6 @@ class _$Before15MinImpl implements Before15Min {
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
     allNotificationForToday,
-    required TResult Function(AllNotificationForThreeDay value)
-    allNotificationForThreeDay,
-    required TResult Function(AllNotificationForWeekDay value)
-    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -2449,10 +1871,6 @@ class _$Before15MinImpl implements Before15Min {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult? Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult? Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -2471,10 +1889,6 @@ class _$Before15MinImpl implements Before15Min {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
-    TResult Function(AllNotificationForThreeDay value)?
-    allNotificationForThreeDay,
-    TResult Function(AllNotificationForWeekDay value)?
-    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,

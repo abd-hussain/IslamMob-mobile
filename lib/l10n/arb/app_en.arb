@@ -499,7 +499,9 @@
     "adhan8" : "Adhan 8",
     "adhan9" : "Adhan 9",
     "unknown" : "Unknown",
-    "chooseSoundDesc" : "Please note that the notification sound may not play in full when the app is open"
+    "chooseSoundDesc" : "Please note that the notification sound may not play in full when the app is open",
+    "internetConnectionDisableCanGiveWrongTimes" : "If offline, time will be based on the last saved location. Ensure you're connected for accurate times",
+    "disableUntil" : "disabled until"
 
 
 }

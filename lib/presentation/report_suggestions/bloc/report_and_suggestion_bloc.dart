@@ -70,7 +70,7 @@ class ReportAndSuggestionBloc
   }
 
   Future<bool> _checkInternetConnectionStatus() async {
-    final bool isConncected = await NetworkUseCase.checkInternetConeection();
+    final bool isConncected = await NetworkUseCase.checkInternetConnection();
     add(ReportAndSuggestionEvent.updateInternetConnectionStatus(isConncected));
     return isConncected;
   }

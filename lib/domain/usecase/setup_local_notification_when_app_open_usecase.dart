@@ -376,22 +376,13 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   bool _shouldSkipDay(DateTime date) {
     // Example logic:
     // If "disable all for today" and the day is 'today', skip it
-    if (!_isNotificationForTodayAllowed() && _isSameDay(date, DateTime.now())) {
+    final notificationDisableTime = _isNotificationForTodayDisabledAndWhen();
+    if (notificationDisableTime != "" &&
+        _isSameDay(
+          date,
+          DateTime.tryParse(notificationDisableTime) ?? DateTime.now(),
+        )) {
       return true;
-    }
-    // If "disable all for three days" and the day is within 3 days
-    if (!_isNotificationForThreeTodayAllowed()) {
-      final diff = date.difference(DateTime.now()).inDays;
-      if (diff >= 0 && diff < 3) {
-        return true;
-      }
-    }
-    // If "disable all for week" and the day is within 7 days
-    if (!_isNotificationForWeekAllowed()) {
-      final diff = date.difference(DateTime.now()).inDays;
-      if (diff >= 0 && diff < 7) {
-        return true;
-      }
     }
 
     return false;
@@ -486,28 +477,33 @@ class SetupLocalNotificationWhenAppOpenUseCase {
         as bool;
   }
 
-  bool _isNotificationForTodayAllowed() {
-    return !(DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableAllForToday,
-          defaultValue: false,
-        )
-        as bool);
-  }
+  String _isNotificationForTodayDisabledAndWhen() {
+    final disableAllForTodayDate =
+        DataBaseManagerBase.getFromDatabase(
+              key: LocalNotificationConstant.disableAllForTodayDate,
+              defaultValue: "",
+            )
+            as String;
 
-  bool _isNotificationForThreeTodayAllowed() {
-    return !(DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableAllForThreeDay,
-          defaultValue: false,
-        )
-        as bool);
-  }
+    if (disableAllForTodayDate.isEmpty) return "";
 
-  bool _isNotificationForWeekAllowed() {
-    return !(DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableAllForWeek,
-          defaultValue: false,
-        )
-        as bool);
+    final date = DateTime.parse(disableAllForTodayDate);
+    final now = DateTime.now();
+
+    final today = DateTime(now.year, now.month, now.day);
+    final tomorrow = today.add(const Duration(days: 1));
+    final savedDate = DateTime(date.year, date.month, date.day);
+
+    if (savedDate == today || savedDate == tomorrow) {
+      return disableAllForTodayDate;
+    }
+
+    // If the saved date is more than tomorrow (i.e. beyond max allowed)
+    DataBaseManagerBase.saveInDatabase(
+      key: LocalNotificationConstant.disableAllForTodayDate,
+      value: "",
+    );
+    return "";
   }
 
   // ---------------------------------------------------------------------------

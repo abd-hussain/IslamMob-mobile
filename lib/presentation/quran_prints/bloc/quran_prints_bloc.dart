@@ -47,7 +47,7 @@ class QuranPrintsBloc extends Bloc<QuranPrintsEvent, QuranPrintsState> {
 
   /// Checks internet connection and updates the state
   Future<bool> _checkInternetConnectionStatus() async {
-    final hasInternet = await NetworkUseCase.checkInternetConeection();
+    final hasInternet = await NetworkUseCase.checkInternetConnection();
 
     add(QuranPrintsEvent.updateInternetConnectionStatus(status: hasInternet));
     return hasInternet;

@@ -16,13 +16,7 @@ class PrayNotificationSettingState with _$PrayNotificationSettingState {
   /// - Loading status defaults to loading state
   const factory PrayNotificationSettingState({
     /// Whether all notifications are enabled for today only.
-    @Default(false) bool allNotificationForToday,
-
-    /// Whether all notifications are enabled for three days.
-    @Default(false) bool allNotificationForThreeDay,
-
-    /// Whether all notifications are enabled for weekdays.
-    @Default(false) bool allNotificationForWeekDay,
+    @Default("") String allNotificationForToday,
 
     /// Whether Fajr prayer notifications are enabled.
     @Default(true) bool fajir,

@@ -28,7 +28,7 @@ class NetworkUseCase {
   /// Returns:
   ///   A [Future<bool>] that completes with `true` if internet is available,
   ///   `false` otherwise.
-  static Future<bool> checkInternetConeection() async {
+  static Future<bool> checkInternetConnection() async {
     try {
       return await NetworkInfoRepository().checkConnectivityOnLaunch();
     } catch (e) {

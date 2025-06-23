@@ -48,7 +48,7 @@ class NotificationIdleView extends StatelessWidget {
           isEnabled: true,
           title: localization.allowNotifications,
           onTap: () async {
-            if (await NetworkUseCase.checkInternetConeection() == false) {
+            if (await NetworkUseCase.checkInternetConnection() == false) {
               if (context.mounted) {
                 NoInternetToast.show(context);
               }
