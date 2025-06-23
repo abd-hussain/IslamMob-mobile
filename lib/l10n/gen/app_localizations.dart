@@ -3106,6 +3106,18 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Please note that the notification sound may not play in full when the app is open'**
   String get chooseSoundDesc;
+
+  /// No description provided for @internetConnectionDisableCanGiveWrongTimes.
+  ///
+  /// In en, this message translates to:
+  /// **'If offline, time will be based on the last saved location. Ensure you\'re connected for accurate times'**
+  String get internetConnectionDisableCanGiveWrongTimes;
+
+  /// No description provided for @disableUntil.
+  ///
+  /// In en, this message translates to:
+  /// **'disabled until'**
+  String get disableUntil;
 }
 
 class _IslamMobLocalizationsDelegate

@@ -11,10 +11,6 @@ part 'notification_type_sealed.freezed.dart';
 sealed class PrayNotificationTypeState with _$PrayNotificationTypeState {
   const factory PrayNotificationTypeState.allNotificationForToday() =
       AllNotificationForToday;
-  const factory PrayNotificationTypeState.allNotificationForThreeDay() =
-      AllNotificationForThreeDay;
-  const factory PrayNotificationTypeState.allNotificationForWeekDay() =
-      AllNotificationForWeekDay;
   const factory PrayNotificationTypeState.fajir() = Fajir;
   const factory PrayNotificationTypeState.duhir() = Duhir;
   const factory PrayNotificationTypeState.asr() = Asr;

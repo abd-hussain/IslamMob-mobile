@@ -51,7 +51,7 @@ class QuranCopyBloc extends Bloc<QuranCopyEvent, QuranCopyState> {
 
   /// Checks the internet connection status and emits an event.
   Future<bool> _checkInternetConnection() async {
-    final isConnected = await NetworkUseCase.checkInternetConeection();
+    final isConnected = await NetworkUseCase.checkInternetConnection();
     add(QuranCopyEvent.updateInternetConnectionStatus(isConnected));
     return isConnected;
   }

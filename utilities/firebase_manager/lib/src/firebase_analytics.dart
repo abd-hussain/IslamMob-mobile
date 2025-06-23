@@ -51,6 +51,6 @@ class FirebaseAnalyticsRepository {
 
   /// Checks for internet connectivity during app initialization
   static Future<bool> _hasInternetConnectivity() async {
-    return NetworkUseCase.checkInternetConeection();
+    return NetworkUseCase.checkInternetConnection();
   }
 }

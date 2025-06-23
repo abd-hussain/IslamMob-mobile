@@ -185,8 +185,6 @@ class LocalNotificationRepository {
       details.description,
       tz.TZDateTime.from(scheduledTime, tz.local),
       notificationDetails,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.dateAndTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );

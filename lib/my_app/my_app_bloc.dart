@@ -68,6 +68,6 @@ class MyAppBloc {
   /// Checks for internet connectivity during app initialization
   Future<bool> _hasInternetConnectivity() async {
     NetworkUseCase.initialize();
-    return NetworkUseCase.checkInternetConeection();
+    return NetworkUseCase.checkInternetConnection();
   }
 }

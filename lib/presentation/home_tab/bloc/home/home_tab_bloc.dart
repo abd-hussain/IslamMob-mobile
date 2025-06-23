@@ -3,11 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/shared_widgets/pray_timing_extarnal_widget.dart';
 import 'package:location_manager/location_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -57,9 +59,14 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     Emitter<HomeTabState> emit,
   ) async {
     await _fetchPermissions();
+
     scrollController.addListener(_scrollListener);
     initializePrayerTimings();
 
+    await PrayTimingExtarnalWidget().updateHomeWidget(
+      title: "abbeed title",
+      content: "abeed content",
+    );
     // Store context locally to avoid using it across async gaps
     final context = event.context;
 
@@ -154,11 +161,15 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   FutureOr<void> _handleNextPrayTypeUpdate(
     _UpdateNextPrayType event,
     Emitter<HomeTabState> emit,
-  ) {
+  ) async {
+    final haveInternetConnection =
+        await NetworkUseCase.checkInternetConnection();
+
     emit(
       state.copyWith(
         nextPrayType: event.nextPrayType,
         loadingStatus: const HomeScreenProcessState.done(),
+        showInternetConnectionView: !haveInternetConnection,
       ),
     );
   }

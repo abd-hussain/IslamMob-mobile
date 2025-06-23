@@ -1564,4 +1564,11 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
   @override
   String get chooseSoundDesc =>
       'يرجى ملاحظة أن صوت الإشعار قد لا يُسمع بالكامل عند فتح التطبيق';
+
+  @override
+  String get internetConnectionDisableCanGiveWrongTimes =>
+      'إذا كنت غير متصل بالإنترنت، سيتم حساب الوقت بناءً على آخر موقع محفوظ. تأكد من الاتصال للحصول على أوقات دقيقة';
+
+  @override
+  String get disableUntil => 'متوقف حتى';
 }

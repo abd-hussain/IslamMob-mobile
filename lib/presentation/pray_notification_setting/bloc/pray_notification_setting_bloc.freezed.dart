@@ -20,7 +20,11 @@ mixin _$PrayNotificationSettingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(bool status, PrayNotificationTypeState type)
+    required TResult Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )
     changePrayNotificationSettings,
     required TResult Function(BuildContext context)
     savePrayNotificationSettings,
@@ -28,14 +32,22 @@ mixin _$PrayNotificationSettingEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(bool status, PrayNotificationTypeState type)?
+    TResult? Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )?
     changePrayNotificationSettings,
     TResult? Function(BuildContext context)? savePrayNotificationSettings,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(bool status, PrayNotificationTypeState type)?
+    TResult Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )?
     changePrayNotificationSettings,
     TResult Function(BuildContext context)? savePrayNotificationSettings,
     required TResult orElse(),
@@ -149,7 +161,11 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(bool status, PrayNotificationTypeState type)
+    required TResult Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )
     changePrayNotificationSettings,
     required TResult Function(BuildContext context)
     savePrayNotificationSettings,
@@ -161,7 +177,11 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(bool status, PrayNotificationTypeState type)?
+    TResult? Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )?
     changePrayNotificationSettings,
     TResult? Function(BuildContext context)? savePrayNotificationSettings,
   }) {
@@ -172,7 +192,11 @@ class _$InitialPrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(bool status, PrayNotificationTypeState type)?
+    TResult Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )?
     changePrayNotificationSettings,
     TResult Function(BuildContext context)? savePrayNotificationSettings,
     required TResult orElse(),
@@ -240,7 +264,7 @@ abstract class _$$ChangePrayNotificationSettingsImplCopyWith<$Res> {
     $Res Function(_$ChangePrayNotificationSettingsImpl) then,
   ) = __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool status, PrayNotificationTypeState type});
+  $Res call({bool status, DateTime? date, PrayNotificationTypeState type});
 
   $PrayNotificationTypeStateCopyWith<$Res> get type;
 }
@@ -262,13 +286,21 @@ class __$$ChangePrayNotificationSettingsImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null, Object? type = null}) {
+  $Res call({
+    Object? status = null,
+    Object? date = freezed,
+    Object? type = null,
+  }) {
     return _then(
       _$ChangePrayNotificationSettingsImpl(
         status: null == status
             ? _value.status
             : status // ignore: cast_nullable_to_non_nullable
                   as bool,
+        date: freezed == date
+            ? _value.date
+            : date // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
         type: null == type
             ? _value.type
             : type // ignore: cast_nullable_to_non_nullable
@@ -294,17 +326,20 @@ class _$ChangePrayNotificationSettingsImpl
     implements _ChangePrayNotificationSettings {
   const _$ChangePrayNotificationSettingsImpl({
     required this.status,
+    this.date,
     required this.type,
   });
 
   @override
   final bool status;
   @override
+  final DateTime? date;
+  @override
   final PrayNotificationTypeState type;
 
   @override
   String toString() {
-    return 'PrayNotificationSettingEvent.changePrayNotificationSettings(status: $status, type: $type)';
+    return 'PrayNotificationSettingEvent.changePrayNotificationSettings(status: $status, date: $date, type: $type)';
   }
 
   @override
@@ -313,11 +348,12 @@ class _$ChangePrayNotificationSettingsImpl
         (other.runtimeType == runtimeType &&
             other is _$ChangePrayNotificationSettingsImpl &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.date, date) || other.date == date) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, type);
+  int get hashCode => Object.hash(runtimeType, status, date, type);
 
   /// Create a copy of PrayNotificationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -336,36 +372,48 @@ class _$ChangePrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(bool status, PrayNotificationTypeState type)
+    required TResult Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )
     changePrayNotificationSettings,
     required TResult Function(BuildContext context)
     savePrayNotificationSettings,
   }) {
-    return changePrayNotificationSettings(status, type);
+    return changePrayNotificationSettings(status, date, type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(bool status, PrayNotificationTypeState type)?
+    TResult? Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )?
     changePrayNotificationSettings,
     TResult? Function(BuildContext context)? savePrayNotificationSettings,
   }) {
-    return changePrayNotificationSettings?.call(status, type);
+    return changePrayNotificationSettings?.call(status, date, type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(bool status, PrayNotificationTypeState type)?
+    TResult Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )?
     changePrayNotificationSettings,
     TResult Function(BuildContext context)? savePrayNotificationSettings,
     required TResult orElse(),
   }) {
     if (changePrayNotificationSettings != null) {
-      return changePrayNotificationSettings(status, type);
+      return changePrayNotificationSettings(status, date, type);
     }
     return orElse();
   }
@@ -418,10 +466,12 @@ abstract class _ChangePrayNotificationSettings
     implements PrayNotificationSettingEvent {
   const factory _ChangePrayNotificationSettings({
     required final bool status,
+    final DateTime? date,
     required final PrayNotificationTypeState type,
   }) = _$ChangePrayNotificationSettingsImpl;
 
   bool get status;
+  DateTime? get date;
   PrayNotificationTypeState get type;
 
   /// Create a copy of PrayNotificationSettingEvent
@@ -514,7 +564,11 @@ class _$SavePrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialPrayNotificationSettings,
-    required TResult Function(bool status, PrayNotificationTypeState type)
+    required TResult Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )
     changePrayNotificationSettings,
     required TResult Function(BuildContext context)
     savePrayNotificationSettings,
@@ -526,7 +580,11 @@ class _$SavePrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialPrayNotificationSettings,
-    TResult? Function(bool status, PrayNotificationTypeState type)?
+    TResult? Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )?
     changePrayNotificationSettings,
     TResult? Function(BuildContext context)? savePrayNotificationSettings,
   }) {
@@ -537,7 +595,11 @@ class _$SavePrayNotificationSettingsImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialPrayNotificationSettings,
-    TResult Function(bool status, PrayNotificationTypeState type)?
+    TResult Function(
+      bool status,
+      DateTime? date,
+      PrayNotificationTypeState type,
+    )?
     changePrayNotificationSettings,
     TResult Function(BuildContext context)? savePrayNotificationSettings,
     required TResult orElse(),
@@ -612,13 +674,7 @@ abstract class _SavePrayNotificationSettings
 /// @nodoc
 mixin _$PrayNotificationSettingState {
   /// Whether all notifications are enabled for today only.
-  bool get allNotificationForToday => throw _privateConstructorUsedError;
-
-  /// Whether all notifications are enabled for three days.
-  bool get allNotificationForThreeDay => throw _privateConstructorUsedError;
-
-  /// Whether all notifications are enabled for weekdays.
-  bool get allNotificationForWeekDay => throw _privateConstructorUsedError;
+  String get allNotificationForToday => throw _privateConstructorUsedError;
 
   /// Whether Fajr prayer notifications are enabled.
   bool get fajir => throw _privateConstructorUsedError;
@@ -672,9 +728,7 @@ abstract class $PrayNotificationSettingStateCopyWith<$Res> {
       >;
   @useResult
   $Res call({
-    bool allNotificationForToday,
-    bool allNotificationForThreeDay,
-    bool allNotificationForWeekDay,
+    String allNotificationForToday,
     bool fajir,
     bool duhir,
     bool asr,
@@ -708,8 +762,6 @@ class _$PrayNotificationSettingStateCopyWithImpl<
   @override
   $Res call({
     Object? allNotificationForToday = null,
-    Object? allNotificationForThreeDay = null,
-    Object? allNotificationForWeekDay = null,
     Object? fajir = null,
     Object? duhir = null,
     Object? asr = null,
@@ -727,15 +779,7 @@ class _$PrayNotificationSettingStateCopyWithImpl<
             allNotificationForToday: null == allNotificationForToday
                 ? _value.allNotificationForToday
                 : allNotificationForToday // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            allNotificationForThreeDay: null == allNotificationForThreeDay
-                ? _value.allNotificationForThreeDay
-                : allNotificationForThreeDay // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            allNotificationForWeekDay: null == allNotificationForWeekDay
-                ? _value.allNotificationForWeekDay
-                : allNotificationForWeekDay // ignore: cast_nullable_to_non_nullable
-                      as bool,
+                      as String,
             fajir: null == fajir
                 ? _value.fajir
                 : fajir // ignore: cast_nullable_to_non_nullable
@@ -796,9 +840,7 @@ abstract class _$$PrayNotificationSettingStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    bool allNotificationForToday,
-    bool allNotificationForThreeDay,
-    bool allNotificationForWeekDay,
+    String allNotificationForToday,
     bool fajir,
     bool duhir,
     bool asr,
@@ -832,8 +874,6 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? allNotificationForToday = null,
-    Object? allNotificationForThreeDay = null,
-    Object? allNotificationForWeekDay = null,
     Object? fajir = null,
     Object? duhir = null,
     Object? asr = null,
@@ -851,15 +891,7 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
         allNotificationForToday: null == allNotificationForToday
             ? _value.allNotificationForToday
             : allNotificationForToday // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        allNotificationForThreeDay: null == allNotificationForThreeDay
-            ? _value.allNotificationForThreeDay
-            : allNotificationForThreeDay // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        allNotificationForWeekDay: null == allNotificationForWeekDay
-            ? _value.allNotificationForWeekDay
-            : allNotificationForWeekDay // ignore: cast_nullable_to_non_nullable
-                  as bool,
+                  as String,
         fajir: null == fajir
             ? _value.fajir
             : fajir // ignore: cast_nullable_to_non_nullable
@@ -913,9 +945,7 @@ class __$$PrayNotificationSettingStateImplCopyWithImpl<$Res>
 class _$PrayNotificationSettingStateImpl
     implements _PrayNotificationSettingState {
   const _$PrayNotificationSettingStateImpl({
-    this.allNotificationForToday = false,
-    this.allNotificationForThreeDay = false,
-    this.allNotificationForWeekDay = false,
+    this.allNotificationForToday = "",
     this.fajir = true,
     this.duhir = true,
     this.asr = true,
@@ -932,17 +962,7 @@ class _$PrayNotificationSettingStateImpl
   /// Whether all notifications are enabled for today only.
   @override
   @JsonKey()
-  final bool allNotificationForToday;
-
-  /// Whether all notifications are enabled for three days.
-  @override
-  @JsonKey()
-  final bool allNotificationForThreeDay;
-
-  /// Whether all notifications are enabled for weekdays.
-  @override
-  @JsonKey()
-  final bool allNotificationForWeekDay;
+  final String allNotificationForToday;
 
   /// Whether Fajr prayer notifications are enabled.
   @override
@@ -1001,7 +1021,7 @@ class _$PrayNotificationSettingStateImpl
 
   @override
   String toString() {
-    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, allNotificationForThreeDay: $allNotificationForThreeDay, allNotificationForWeekDay: $allNotificationForWeekDay, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunriseTime: $sunriseTime, jom3aAlkahf: $jom3aAlkahf, jom3aDo3aa: $jom3aDo3aa, qeyamAlLayel: $qeyamAlLayel, before15Min: $before15Min, loadingStatus: $loadingStatus)';
+    return 'PrayNotificationSettingState(allNotificationForToday: $allNotificationForToday, fajir: $fajir, duhir: $duhir, asr: $asr, magrieb: $magrieb, isha: $isha, sunriseTime: $sunriseTime, jom3aAlkahf: $jom3aAlkahf, jom3aDo3aa: $jom3aDo3aa, qeyamAlLayel: $qeyamAlLayel, before15Min: $before15Min, loadingStatus: $loadingStatus)';
   }
 
   @override
@@ -1014,17 +1034,6 @@ class _$PrayNotificationSettingStateImpl
                   allNotificationForToday,
                 ) ||
                 other.allNotificationForToday == allNotificationForToday) &&
-            (identical(
-                  other.allNotificationForThreeDay,
-                  allNotificationForThreeDay,
-                ) ||
-                other.allNotificationForThreeDay ==
-                    allNotificationForThreeDay) &&
-            (identical(
-                  other.allNotificationForWeekDay,
-                  allNotificationForWeekDay,
-                ) ||
-                other.allNotificationForWeekDay == allNotificationForWeekDay) &&
             (identical(other.fajir, fajir) || other.fajir == fajir) &&
             (identical(other.duhir, duhir) || other.duhir == duhir) &&
             (identical(other.asr, asr) || other.asr == asr) &&
@@ -1050,8 +1059,6 @@ class _$PrayNotificationSettingStateImpl
   int get hashCode => Object.hash(
     runtimeType,
     allNotificationForToday,
-    allNotificationForThreeDay,
-    allNotificationForWeekDay,
     fajir,
     duhir,
     asr,
@@ -1082,9 +1089,7 @@ class _$PrayNotificationSettingStateImpl
 abstract class _PrayNotificationSettingState
     implements PrayNotificationSettingState {
   const factory _PrayNotificationSettingState({
-    final bool allNotificationForToday,
-    final bool allNotificationForThreeDay,
-    final bool allNotificationForWeekDay,
+    final String allNotificationForToday,
     final bool fajir,
     final bool duhir,
     final bool asr,
@@ -1100,15 +1105,7 @@ abstract class _PrayNotificationSettingState
 
   /// Whether all notifications are enabled for today only.
   @override
-  bool get allNotificationForToday;
-
-  /// Whether all notifications are enabled for three days.
-  @override
-  bool get allNotificationForThreeDay;
-
-  /// Whether all notifications are enabled for weekdays.
-  @override
-  bool get allNotificationForWeekDay;
+  String get allNotificationForToday;
 
   /// Whether Fajr prayer notifications are enabled.
   @override

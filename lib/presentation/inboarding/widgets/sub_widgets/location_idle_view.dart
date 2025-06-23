@@ -56,7 +56,7 @@ class LocationIdleView extends StatelessWidget {
           isEnabled: true,
           title: localization.allowgetlocation,
           onTap: () async {
-            if (await NetworkUseCase.checkInternetConeection() == false) {
+            if (await NetworkUseCase.checkInternetConnection() == false) {
               // ignore: use_build_context_synchronously
               NoInternetToast.show(context);
               return;

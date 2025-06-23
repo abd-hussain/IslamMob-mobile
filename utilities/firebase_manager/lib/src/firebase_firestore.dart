@@ -72,6 +72,6 @@ class FirebaseFirestoreRepository {
 
   /// Checks for network connectivity.
   static Future<bool> _isConnected() async {
-    return NetworkUseCase.checkInternetConeection();
+    return NetworkUseCase.checkInternetConnection();
   }
 }
