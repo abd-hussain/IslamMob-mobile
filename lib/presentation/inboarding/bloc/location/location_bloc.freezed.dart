@@ -12,8 +12,7 @@ part of 'location_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LocationEvent {
@@ -22,48 +21,53 @@ mixin _$LocationEvent {
     required TResult Function(LocationModel location) setCountryAndCityNames,
     required TResult Function(LocationProcessState status) changeLocationStatus,
     required TResult Function() setupLocation,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LocationModel location)? setCountryAndCityNames,
     TResult? Function(LocationProcessState status)? changeLocationStatus,
     TResult? Function()? setupLocation,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LocationModel location)? setCountryAndCityNames,
     TResult Function(LocationProcessState status)? changeLocationStatus,
     TResult Function()? setupLocation,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCountryAndCityNames value)
-    setCountryAndCityNames,
+        setCountryAndCityNames,
     required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
     required TResult Function(_SetupLocation value) setupLocation,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
     TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
     TResult? Function(_SetupLocation value)? setupLocation,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
     TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
     TResult Function(_SetupLocation value)? setupLocation,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocationEventCopyWith<$Res> {
   factory $LocationEventCopyWith(
-    LocationEvent value,
-    $Res Function(LocationEvent) then,
-  ) = _$LocationEventCopyWithImpl<$Res, LocationEvent>;
+          LocationEvent value, $Res Function(LocationEvent) then) =
+      _$LocationEventCopyWithImpl<$Res, LocationEvent>;
 }
 
 /// @nodoc
@@ -83,9 +87,9 @@ class _$LocationEventCopyWithImpl<$Res, $Val extends LocationEvent>
 /// @nodoc
 abstract class _$$SetCountryAndCityNamesImplCopyWith<$Res> {
   factory _$$SetCountryAndCityNamesImplCopyWith(
-    _$SetCountryAndCityNamesImpl value,
-    $Res Function(_$SetCountryAndCityNamesImpl) then,
-  ) = __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>;
+          _$SetCountryAndCityNamesImpl value,
+          $Res Function(_$SetCountryAndCityNamesImpl) then) =
+      __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LocationModel location});
 }
@@ -95,23 +99,23 @@ class __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>
     extends _$LocationEventCopyWithImpl<$Res, _$SetCountryAndCityNamesImpl>
     implements _$$SetCountryAndCityNamesImplCopyWith<$Res> {
   __$$SetCountryAndCityNamesImplCopyWithImpl(
-    _$SetCountryAndCityNamesImpl _value,
-    $Res Function(_$SetCountryAndCityNamesImpl) _then,
-  ) : super(_value, _then);
+      _$SetCountryAndCityNamesImpl _value,
+      $Res Function(_$SetCountryAndCityNamesImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? location = null}) {
-    return _then(
-      _$SetCountryAndCityNamesImpl(
-        location: null == location
-            ? _value.location
-            : location // ignore: cast_nullable_to_non_nullable
-                  as LocationModel,
-      ),
-    );
+  $Res call({
+    Object? location = null,
+  }) {
+    return _then(_$SetCountryAndCityNamesImpl(
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LocationModel,
+    ));
   }
 }
 
@@ -146,11 +150,8 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
   @override
   @pragma('vm:prefer-inline')
   _$$SetCountryAndCityNamesImplCopyWith<_$SetCountryAndCityNamesImpl>
-  get copyWith =>
-      __$$SetCountryAndCityNamesImplCopyWithImpl<_$SetCountryAndCityNamesImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$SetCountryAndCityNamesImplCopyWithImpl<
+          _$SetCountryAndCityNamesImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -190,7 +191,7 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCountryAndCityNames value)
-    setCountryAndCityNames,
+        setCountryAndCityNames,
     required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
     required TResult Function(_SetupLocation value) setupLocation,
   }) {
@@ -223,9 +224,8 @@ class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
 }
 
 abstract class _SetCountryAndCityNames implements LocationEvent {
-  const factory _SetCountryAndCityNames({
-    required final LocationModel location,
-  }) = _$SetCountryAndCityNamesImpl;
+  const factory _SetCountryAndCityNames(
+      {required final LocationModel location}) = _$SetCountryAndCityNamesImpl;
 
   LocationModel get location;
 
@@ -233,15 +233,14 @@ abstract class _SetCountryAndCityNames implements LocationEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SetCountryAndCityNamesImplCopyWith<_$SetCountryAndCityNamesImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ChangeLocationStatusImplCopyWith<$Res> {
-  factory _$$ChangeLocationStatusImplCopyWith(
-    _$ChangeLocationStatusImpl value,
-    $Res Function(_$ChangeLocationStatusImpl) then,
-  ) = __$$ChangeLocationStatusImplCopyWithImpl<$Res>;
+  factory _$$ChangeLocationStatusImplCopyWith(_$ChangeLocationStatusImpl value,
+          $Res Function(_$ChangeLocationStatusImpl) then) =
+      __$$ChangeLocationStatusImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LocationProcessState status});
 
@@ -252,24 +251,23 @@ abstract class _$$ChangeLocationStatusImplCopyWith<$Res> {
 class __$$ChangeLocationStatusImplCopyWithImpl<$Res>
     extends _$LocationEventCopyWithImpl<$Res, _$ChangeLocationStatusImpl>
     implements _$$ChangeLocationStatusImplCopyWith<$Res> {
-  __$$ChangeLocationStatusImplCopyWithImpl(
-    _$ChangeLocationStatusImpl _value,
-    $Res Function(_$ChangeLocationStatusImpl) _then,
-  ) : super(_value, _then);
+  __$$ChangeLocationStatusImplCopyWithImpl(_$ChangeLocationStatusImpl _value,
+      $Res Function(_$ChangeLocationStatusImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$ChangeLocationStatusImpl(
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as LocationProcessState,
-      ),
-    );
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$ChangeLocationStatusImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as LocationProcessState,
+    ));
   }
 
   /// Create a copy of LocationEvent
@@ -313,11 +311,9 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeLocationStatusImplCopyWith<_$ChangeLocationStatusImpl>
-  get copyWith =>
-      __$$ChangeLocationStatusImplCopyWithImpl<_$ChangeLocationStatusImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith =>
+          __$$ChangeLocationStatusImplCopyWithImpl<_$ChangeLocationStatusImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -357,7 +353,7 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCountryAndCityNames value)
-    setCountryAndCityNames,
+        setCountryAndCityNames,
     required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
     required TResult Function(_SetupLocation value) setupLocation,
   }) {
@@ -390,9 +386,9 @@ class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
 }
 
 abstract class _ChangeLocationStatus implements LocationEvent {
-  const factory _ChangeLocationStatus({
-    required final LocationProcessState status,
-  }) = _$ChangeLocationStatusImpl;
+  const factory _ChangeLocationStatus(
+          {required final LocationProcessState status}) =
+      _$ChangeLocationStatusImpl;
 
   LocationProcessState get status;
 
@@ -400,15 +396,14 @@ abstract class _ChangeLocationStatus implements LocationEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangeLocationStatusImplCopyWith<_$ChangeLocationStatusImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SetupLocationImplCopyWith<$Res> {
   factory _$$SetupLocationImplCopyWith(
-    _$SetupLocationImpl value,
-    $Res Function(_$SetupLocationImpl) then,
-  ) = __$$SetupLocationImplCopyWithImpl<$Res>;
+          _$SetupLocationImpl value, $Res Function(_$SetupLocationImpl) then) =
+      __$$SetupLocationImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -416,9 +411,8 @@ class __$$SetupLocationImplCopyWithImpl<$Res>
     extends _$LocationEventCopyWithImpl<$Res, _$SetupLocationImpl>
     implements _$$SetupLocationImplCopyWith<$Res> {
   __$$SetupLocationImplCopyWithImpl(
-    _$SetupLocationImpl _value,
-    $Res Function(_$SetupLocationImpl) _then,
-  ) : super(_value, _then);
+      _$SetupLocationImpl _value, $Res Function(_$SetupLocationImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -481,7 +475,7 @@ class _$SetupLocationImpl implements _SetupLocation {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCountryAndCityNames value)
-    setCountryAndCityNames,
+        setCountryAndCityNames,
     required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
     required TResult Function(_SetupLocation value) setupLocation,
   }) {
@@ -532,9 +526,8 @@ mixin _$LocationState {
 /// @nodoc
 abstract class $LocationStateCopyWith<$Res> {
   factory $LocationStateCopyWith(
-    LocationState value,
-    $Res Function(LocationState) then,
-  ) = _$LocationStateCopyWithImpl<$Res, LocationState>;
+          LocationState value, $Res Function(LocationState) then) =
+      _$LocationStateCopyWithImpl<$Res, LocationState>;
   @useResult
   $Res call({LocationModel? location, LocationProcessState status});
 
@@ -555,20 +548,20 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? location = freezed, Object? status = null}) {
-    return _then(
-      _value.copyWith(
-            location: freezed == location
-                ? _value.location
-                : location // ignore: cast_nullable_to_non_nullable
-                      as LocationModel?,
-            status: null == status
-                ? _value.status
-                : status // ignore: cast_nullable_to_non_nullable
-                      as LocationProcessState,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? location = freezed,
+    Object? status = null,
+  }) {
+    return _then(_value.copyWith(
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LocationModel?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as LocationProcessState,
+    ) as $Val);
   }
 
   /// Create a copy of LocationState
@@ -586,9 +579,8 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
 abstract class _$$LocationStateImplCopyWith<$Res>
     implements $LocationStateCopyWith<$Res> {
   factory _$$LocationStateImplCopyWith(
-    _$LocationStateImpl value,
-    $Res Function(_$LocationStateImpl) then,
-  ) = __$$LocationStateImplCopyWithImpl<$Res>;
+          _$LocationStateImpl value, $Res Function(_$LocationStateImpl) then) =
+      __$$LocationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({LocationModel? location, LocationProcessState status});
@@ -602,37 +594,35 @@ class __$$LocationStateImplCopyWithImpl<$Res>
     extends _$LocationStateCopyWithImpl<$Res, _$LocationStateImpl>
     implements _$$LocationStateImplCopyWith<$Res> {
   __$$LocationStateImplCopyWithImpl(
-    _$LocationStateImpl _value,
-    $Res Function(_$LocationStateImpl) _then,
-  ) : super(_value, _then);
+      _$LocationStateImpl _value, $Res Function(_$LocationStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? location = freezed, Object? status = null}) {
-    return _then(
-      _$LocationStateImpl(
-        location: freezed == location
-            ? _value.location
-            : location // ignore: cast_nullable_to_non_nullable
-                  as LocationModel?,
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as LocationProcessState,
-      ),
-    );
+  $Res call({
+    Object? location = freezed,
+    Object? status = null,
+  }) {
+    return _then(_$LocationStateImpl(
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LocationModel?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as LocationProcessState,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$LocationStateImpl implements _LocationState {
-  const _$LocationStateImpl({
-    this.location,
-    this.status = const LocationProcessState.idl(),
-  });
+  const _$LocationStateImpl(
+      {this.location, this.status = const LocationProcessState.idl()});
 
   @override
   final LocationModel? location;
@@ -668,10 +658,9 @@ class _$LocationStateImpl implements _LocationState {
 }
 
 abstract class _LocationState implements LocationState {
-  const factory _LocationState({
-    final LocationModel? location,
-    final LocationProcessState status,
-  }) = _$LocationStateImpl;
+  const factory _LocationState(
+      {final LocationModel? location,
+      final LocationProcessState status}) = _$LocationStateImpl;
 
   @override
   LocationModel? get location;
@@ -695,7 +684,8 @@ mixin _$LocationProcessState {
     required TResult Function() noPermission,
     required TResult Function() locationManually,
     required TResult Function() havePermission,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idl,
@@ -703,7 +693,8 @@ mixin _$LocationProcessState {
     TResult? Function()? noPermission,
     TResult? Function()? locationManually,
     TResult? Function()? havePermission,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idl,
@@ -712,52 +703,53 @@ mixin _$LocationProcessState {
     TResult Function()? locationManually,
     TResult Function()? havePermission,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LocationProcessStateIdl value) idl,
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
-  }) => throw _privateConstructorUsedError;
+        havePermission,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocationProcessStateIdl value)? idl,
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
     TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocationProcessStateIdl value)? idl,
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
     TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocationProcessStateCopyWith<$Res> {
-  factory $LocationProcessStateCopyWith(
-    LocationProcessState value,
-    $Res Function(LocationProcessState) then,
-  ) = _$LocationProcessStateCopyWithImpl<$Res, LocationProcessState>;
+  factory $LocationProcessStateCopyWith(LocationProcessState value,
+          $Res Function(LocationProcessState) then) =
+      _$LocationProcessStateCopyWithImpl<$Res, LocationProcessState>;
 }
 
 /// @nodoc
-class _$LocationProcessStateCopyWithImpl<
-  $Res,
-  $Val extends LocationProcessState
->
+class _$LocationProcessStateCopyWithImpl<$Res,
+        $Val extends LocationProcessState>
     implements $LocationProcessStateCopyWith<$Res> {
   _$LocationProcessStateCopyWithImpl(this._value, this._then);
 
@@ -773,20 +765,20 @@ class _$LocationProcessStateCopyWithImpl<
 /// @nodoc
 abstract class _$$LocationProcessStateIdlImplCopyWith<$Res> {
   factory _$$LocationProcessStateIdlImplCopyWith(
-    _$LocationProcessStateIdlImpl value,
-    $Res Function(_$LocationProcessStateIdlImpl) then,
-  ) = __$$LocationProcessStateIdlImplCopyWithImpl<$Res>;
+          _$LocationProcessStateIdlImpl value,
+          $Res Function(_$LocationProcessStateIdlImpl) then) =
+      __$$LocationProcessStateIdlImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$LocationProcessStateIdlImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<$Res, _$LocationProcessStateIdlImpl>
+    extends _$LocationProcessStateCopyWithImpl<$Res,
+        _$LocationProcessStateIdlImpl>
     implements _$$LocationProcessStateIdlImplCopyWith<$Res> {
   __$$LocationProcessStateIdlImplCopyWithImpl(
-    _$LocationProcessStateIdlImpl _value,
-    $Res Function(_$LocationProcessStateIdlImpl) _then,
-  ) : super(_value, _then);
+      _$LocationProcessStateIdlImpl _value,
+      $Res Function(_$LocationProcessStateIdlImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -858,11 +850,11 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     required TResult Function(LocationProcessStateIdl value) idl,
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return idl(this);
   }
@@ -874,7 +866,7 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
     TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return idl?.call(this);
@@ -887,7 +879,7 @@ class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
     TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {
@@ -905,23 +897,20 @@ abstract class LocationProcessStateIdl implements LocationProcessState {
 /// @nodoc
 abstract class _$$LocationProcessStateLoadingImplCopyWith<$Res> {
   factory _$$LocationProcessStateLoadingImplCopyWith(
-    _$LocationProcessStateLoadingImpl value,
-    $Res Function(_$LocationProcessStateLoadingImpl) then,
-  ) = __$$LocationProcessStateLoadingImplCopyWithImpl<$Res>;
+          _$LocationProcessStateLoadingImpl value,
+          $Res Function(_$LocationProcessStateLoadingImpl) then) =
+      __$$LocationProcessStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$LocationProcessStateLoadingImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<
-          $Res,
-          _$LocationProcessStateLoadingImpl
-        >
+    extends _$LocationProcessStateCopyWithImpl<$Res,
+        _$LocationProcessStateLoadingImpl>
     implements _$$LocationProcessStateLoadingImplCopyWith<$Res> {
   __$$LocationProcessStateLoadingImplCopyWithImpl(
-    _$LocationProcessStateLoadingImpl _value,
-    $Res Function(_$LocationProcessStateLoadingImpl) _then,
-  ) : super(_value, _then);
+      _$LocationProcessStateLoadingImpl _value,
+      $Res Function(_$LocationProcessStateLoadingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -993,11 +982,11 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     required TResult Function(LocationProcessStateIdl value) idl,
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return loading(this);
   }
@@ -1009,7 +998,7 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
     TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return loading?.call(this);
@@ -1022,7 +1011,7 @@ class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
     TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {
@@ -1041,23 +1030,20 @@ abstract class LocationProcessStateLoading implements LocationProcessState {
 /// @nodoc
 abstract class _$$LocationProcessStateNoPermissionImplCopyWith<$Res> {
   factory _$$LocationProcessStateNoPermissionImplCopyWith(
-    _$LocationProcessStateNoPermissionImpl value,
-    $Res Function(_$LocationProcessStateNoPermissionImpl) then,
-  ) = __$$LocationProcessStateNoPermissionImplCopyWithImpl<$Res>;
+          _$LocationProcessStateNoPermissionImpl value,
+          $Res Function(_$LocationProcessStateNoPermissionImpl) then) =
+      __$$LocationProcessStateNoPermissionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$LocationProcessStateNoPermissionImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<
-          $Res,
-          _$LocationProcessStateNoPermissionImpl
-        >
+    extends _$LocationProcessStateCopyWithImpl<$Res,
+        _$LocationProcessStateNoPermissionImpl>
     implements _$$LocationProcessStateNoPermissionImplCopyWith<$Res> {
   __$$LocationProcessStateNoPermissionImplCopyWithImpl(
-    _$LocationProcessStateNoPermissionImpl _value,
-    $Res Function(_$LocationProcessStateNoPermissionImpl) _then,
-  ) : super(_value, _then);
+      _$LocationProcessStateNoPermissionImpl _value,
+      $Res Function(_$LocationProcessStateNoPermissionImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -1130,11 +1116,11 @@ class _$LocationProcessStateNoPermissionImpl
     required TResult Function(LocationProcessStateIdl value) idl,
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return noPermission(this);
   }
@@ -1146,7 +1132,7 @@ class _$LocationProcessStateNoPermissionImpl
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
     TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return noPermission?.call(this);
@@ -1159,7 +1145,7 @@ class _$LocationProcessStateNoPermissionImpl
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
     TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {
@@ -1179,23 +1165,20 @@ abstract class LocationProcessStateNoPermission
 /// @nodoc
 abstract class _$$LocationProcessStateLocationManuallyImplCopyWith<$Res> {
   factory _$$LocationProcessStateLocationManuallyImplCopyWith(
-    _$LocationProcessStateLocationManuallyImpl value,
-    $Res Function(_$LocationProcessStateLocationManuallyImpl) then,
-  ) = __$$LocationProcessStateLocationManuallyImplCopyWithImpl<$Res>;
+          _$LocationProcessStateLocationManuallyImpl value,
+          $Res Function(_$LocationProcessStateLocationManuallyImpl) then) =
+      __$$LocationProcessStateLocationManuallyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$LocationProcessStateLocationManuallyImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<
-          $Res,
-          _$LocationProcessStateLocationManuallyImpl
-        >
+    extends _$LocationProcessStateCopyWithImpl<$Res,
+        _$LocationProcessStateLocationManuallyImpl>
     implements _$$LocationProcessStateLocationManuallyImplCopyWith<$Res> {
   __$$LocationProcessStateLocationManuallyImplCopyWithImpl(
-    _$LocationProcessStateLocationManuallyImpl _value,
-    $Res Function(_$LocationProcessStateLocationManuallyImpl) _then,
-  ) : super(_value, _then);
+      _$LocationProcessStateLocationManuallyImpl _value,
+      $Res Function(_$LocationProcessStateLocationManuallyImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -1268,11 +1251,11 @@ class _$LocationProcessStateLocationManuallyImpl
     required TResult Function(LocationProcessStateIdl value) idl,
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return locationManually(this);
   }
@@ -1284,7 +1267,7 @@ class _$LocationProcessStateLocationManuallyImpl
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
     TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return locationManually?.call(this);
@@ -1297,7 +1280,7 @@ class _$LocationProcessStateLocationManuallyImpl
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
     TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {
@@ -1317,23 +1300,20 @@ abstract class LocationProcessStateLocationManually
 /// @nodoc
 abstract class _$$LocationProcessStateHavePermissionImplCopyWith<$Res> {
   factory _$$LocationProcessStateHavePermissionImplCopyWith(
-    _$LocationProcessStateHavePermissionImpl value,
-    $Res Function(_$LocationProcessStateHavePermissionImpl) then,
-  ) = __$$LocationProcessStateHavePermissionImplCopyWithImpl<$Res>;
+          _$LocationProcessStateHavePermissionImpl value,
+          $Res Function(_$LocationProcessStateHavePermissionImpl) then) =
+      __$$LocationProcessStateHavePermissionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$LocationProcessStateHavePermissionImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<
-          $Res,
-          _$LocationProcessStateHavePermissionImpl
-        >
+    extends _$LocationProcessStateCopyWithImpl<$Res,
+        _$LocationProcessStateHavePermissionImpl>
     implements _$$LocationProcessStateHavePermissionImplCopyWith<$Res> {
   __$$LocationProcessStateHavePermissionImplCopyWithImpl(
-    _$LocationProcessStateHavePermissionImpl _value,
-    $Res Function(_$LocationProcessStateHavePermissionImpl) _then,
-  ) : super(_value, _then);
+      _$LocationProcessStateHavePermissionImpl _value,
+      $Res Function(_$LocationProcessStateHavePermissionImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocationProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -1406,11 +1386,11 @@ class _$LocationProcessStateHavePermissionImpl
     required TResult Function(LocationProcessStateIdl value) idl,
     required TResult Function(LocationProcessStateLoading value) loading,
     required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
+        locationManually,
     required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return havePermission(this);
   }
@@ -1422,7 +1402,7 @@ class _$LocationProcessStateHavePermissionImpl
     TResult? Function(LocationProcessStateLoading value)? loading,
     TResult? Function(LocationProcessStateNoPermission value)? noPermission,
     TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult? Function(LocationProcessStateHavePermission value)? havePermission,
   }) {
     return havePermission?.call(this);
@@ -1435,7 +1415,7 @@ class _$LocationProcessStateHavePermissionImpl
     TResult Function(LocationProcessStateLoading value)? loading,
     TResult Function(LocationProcessStateNoPermission value)? noPermission,
     TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
+        locationManually,
     TResult Function(LocationProcessStateHavePermission value)? havePermission,
     required TResult orElse(),
   }) {

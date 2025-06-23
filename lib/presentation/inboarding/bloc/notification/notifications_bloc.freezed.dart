@@ -12,56 +12,60 @@ part of 'notifications_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NotificationsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(NotificationsProcessState status)
-    changeNotificationStatus,
+        changeNotificationStatus,
     required TResult Function(String token) setupToken,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(NotificationsProcessState status)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult? Function(String token)? setupToken,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(NotificationsProcessState status)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult Function(String token)? setupToken,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeNotificationStatus value)
-    changeNotificationStatus,
+        changeNotificationStatus,
     required TResult Function(_SetupToken value) setupToken,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeNotificationStatus value)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult? Function(_SetupToken value)? setupToken,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeNotificationStatus value)? changeNotificationStatus,
     TResult Function(_SetupToken value)? setupToken,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NotificationsEventCopyWith<$Res> {
   factory $NotificationsEventCopyWith(
-    NotificationsEvent value,
-    $Res Function(NotificationsEvent) then,
-  ) = _$NotificationsEventCopyWithImpl<$Res, NotificationsEvent>;
+          NotificationsEvent value, $Res Function(NotificationsEvent) then) =
+      _$NotificationsEventCopyWithImpl<$Res, NotificationsEvent>;
 }
 
 /// @nodoc
@@ -81,9 +85,9 @@ class _$NotificationsEventCopyWithImpl<$Res, $Val extends NotificationsEvent>
 /// @nodoc
 abstract class _$$ChangeNotificationStatusImplCopyWith<$Res> {
   factory _$$ChangeNotificationStatusImplCopyWith(
-    _$ChangeNotificationStatusImpl value,
-    $Res Function(_$ChangeNotificationStatusImpl) then,
-  ) = __$$ChangeNotificationStatusImplCopyWithImpl<$Res>;
+          _$ChangeNotificationStatusImpl value,
+          $Res Function(_$ChangeNotificationStatusImpl) then) =
+      __$$ChangeNotificationStatusImplCopyWithImpl<$Res>;
   @useResult
   $Res call({NotificationsProcessState status});
 
@@ -92,27 +96,27 @@ abstract class _$$ChangeNotificationStatusImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ChangeNotificationStatusImplCopyWithImpl<$Res>
-    extends
-        _$NotificationsEventCopyWithImpl<$Res, _$ChangeNotificationStatusImpl>
+    extends _$NotificationsEventCopyWithImpl<$Res,
+        _$ChangeNotificationStatusImpl>
     implements _$$ChangeNotificationStatusImplCopyWith<$Res> {
   __$$ChangeNotificationStatusImplCopyWithImpl(
-    _$ChangeNotificationStatusImpl _value,
-    $Res Function(_$ChangeNotificationStatusImpl) _then,
-  ) : super(_value, _then);
+      _$ChangeNotificationStatusImpl _value,
+      $Res Function(_$ChangeNotificationStatusImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of NotificationsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$ChangeNotificationStatusImpl(
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as NotificationsProcessState,
-      ),
-    );
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$ChangeNotificationStatusImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as NotificationsProcessState,
+    ));
   }
 
   /// Create a copy of NotificationsEvent
@@ -156,16 +160,14 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeNotificationStatusImplCopyWith<_$ChangeNotificationStatusImpl>
-  get copyWith =>
-      __$$ChangeNotificationStatusImplCopyWithImpl<
-        _$ChangeNotificationStatusImpl
-      >(this, _$identity);
+      get copyWith => __$$ChangeNotificationStatusImplCopyWithImpl<
+          _$ChangeNotificationStatusImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(NotificationsProcessState status)
-    changeNotificationStatus,
+        changeNotificationStatus,
     required TResult Function(String token) setupToken,
   }) {
     return changeNotificationStatus(status);
@@ -175,7 +177,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(NotificationsProcessState status)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult? Function(String token)? setupToken,
   }) {
     return changeNotificationStatus?.call(status);
@@ -185,7 +187,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(NotificationsProcessState status)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult Function(String token)? setupToken,
     required TResult orElse(),
   }) {
@@ -199,7 +201,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeNotificationStatus value)
-    changeNotificationStatus,
+        changeNotificationStatus,
     required TResult Function(_SetupToken value) setupToken,
   }) {
     return changeNotificationStatus(this);
@@ -209,7 +211,7 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeNotificationStatus value)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult? Function(_SetupToken value)? setupToken,
   }) {
     return changeNotificationStatus?.call(this);
@@ -230,9 +232,9 @@ class _$ChangeNotificationStatusImpl implements _ChangeNotificationStatus {
 }
 
 abstract class _ChangeNotificationStatus implements NotificationsEvent {
-  const factory _ChangeNotificationStatus({
-    required final NotificationsProcessState status,
-  }) = _$ChangeNotificationStatusImpl;
+  const factory _ChangeNotificationStatus(
+          {required final NotificationsProcessState status}) =
+      _$ChangeNotificationStatusImpl;
 
   NotificationsProcessState get status;
 
@@ -240,15 +242,14 @@ abstract class _ChangeNotificationStatus implements NotificationsEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangeNotificationStatusImplCopyWith<_$ChangeNotificationStatusImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SetupTokenImplCopyWith<$Res> {
   factory _$$SetupTokenImplCopyWith(
-    _$SetupTokenImpl value,
-    $Res Function(_$SetupTokenImpl) then,
-  ) = __$$SetupTokenImplCopyWithImpl<$Res>;
+          _$SetupTokenImpl value, $Res Function(_$SetupTokenImpl) then) =
+      __$$SetupTokenImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String token});
 }
@@ -258,23 +259,22 @@ class __$$SetupTokenImplCopyWithImpl<$Res>
     extends _$NotificationsEventCopyWithImpl<$Res, _$SetupTokenImpl>
     implements _$$SetupTokenImplCopyWith<$Res> {
   __$$SetupTokenImplCopyWithImpl(
-    _$SetupTokenImpl _value,
-    $Res Function(_$SetupTokenImpl) _then,
-  ) : super(_value, _then);
+      _$SetupTokenImpl _value, $Res Function(_$SetupTokenImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of NotificationsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? token = null}) {
-    return _then(
-      _$SetupTokenImpl(
-        token: null == token
-            ? _value.token
-            : token // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? token = null,
+  }) {
+    return _then(_$SetupTokenImpl(
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -314,7 +314,7 @@ class _$SetupTokenImpl implements _SetupToken {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(NotificationsProcessState status)
-    changeNotificationStatus,
+        changeNotificationStatus,
     required TResult Function(String token) setupToken,
   }) {
     return setupToken(token);
@@ -324,7 +324,7 @@ class _$SetupTokenImpl implements _SetupToken {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(NotificationsProcessState status)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult? Function(String token)? setupToken,
   }) {
     return setupToken?.call(token);
@@ -334,7 +334,7 @@ class _$SetupTokenImpl implements _SetupToken {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(NotificationsProcessState status)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult Function(String token)? setupToken,
     required TResult orElse(),
   }) {
@@ -348,7 +348,7 @@ class _$SetupTokenImpl implements _SetupToken {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeNotificationStatus value)
-    changeNotificationStatus,
+        changeNotificationStatus,
     required TResult Function(_SetupToken value) setupToken,
   }) {
     return setupToken(this);
@@ -358,7 +358,7 @@ class _$SetupTokenImpl implements _SetupToken {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeNotificationStatus value)?
-    changeNotificationStatus,
+        changeNotificationStatus,
     TResult? Function(_SetupToken value)? setupToken,
   }) {
     return setupToken?.call(this);
@@ -404,9 +404,8 @@ mixin _$NotificationsState {
 /// @nodoc
 abstract class $NotificationsStateCopyWith<$Res> {
   factory $NotificationsStateCopyWith(
-    NotificationsState value,
-    $Res Function(NotificationsState) then,
-  ) = _$NotificationsStateCopyWithImpl<$Res, NotificationsState>;
+          NotificationsState value, $Res Function(NotificationsState) then) =
+      _$NotificationsStateCopyWithImpl<$Res, NotificationsState>;
   @useResult
   $Res call({NotificationsProcessState status});
 
@@ -427,16 +426,15 @@ class _$NotificationsStateCopyWithImpl<$Res, $Val extends NotificationsState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _value.copyWith(
-            status: null == status
-                ? _value.status
-                : status // ignore: cast_nullable_to_non_nullable
-                      as NotificationsProcessState,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_value.copyWith(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as NotificationsProcessState,
+    ) as $Val);
   }
 
   /// Create a copy of NotificationsState
@@ -453,10 +451,9 @@ class _$NotificationsStateCopyWithImpl<$Res, $Val extends NotificationsState>
 /// @nodoc
 abstract class _$$NotificationsStateImplCopyWith<$Res>
     implements $NotificationsStateCopyWith<$Res> {
-  factory _$$NotificationsStateImplCopyWith(
-    _$NotificationsStateImpl value,
-    $Res Function(_$NotificationsStateImpl) then,
-  ) = __$$NotificationsStateImplCopyWithImpl<$Res>;
+  factory _$$NotificationsStateImplCopyWith(_$NotificationsStateImpl value,
+          $Res Function(_$NotificationsStateImpl) then) =
+      __$$NotificationsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({NotificationsProcessState status});
@@ -469,33 +466,31 @@ abstract class _$$NotificationsStateImplCopyWith<$Res>
 class __$$NotificationsStateImplCopyWithImpl<$Res>
     extends _$NotificationsStateCopyWithImpl<$Res, _$NotificationsStateImpl>
     implements _$$NotificationsStateImplCopyWith<$Res> {
-  __$$NotificationsStateImplCopyWithImpl(
-    _$NotificationsStateImpl _value,
-    $Res Function(_$NotificationsStateImpl) _then,
-  ) : super(_value, _then);
+  __$$NotificationsStateImplCopyWithImpl(_$NotificationsStateImpl _value,
+      $Res Function(_$NotificationsStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of NotificationsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$NotificationsStateImpl(
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as NotificationsProcessState,
-      ),
-    );
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$NotificationsStateImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as NotificationsProcessState,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$NotificationsStateImpl implements _NotificationsState {
-  const _$NotificationsStateImpl({
-    this.status = const NotificationsProcessState.idl(),
-  });
+  const _$NotificationsStateImpl(
+      {this.status = const NotificationsProcessState.idl()});
 
   @override
   @JsonKey()
@@ -524,9 +519,7 @@ class _$NotificationsStateImpl implements _NotificationsState {
   @pragma('vm:prefer-inline')
   _$$NotificationsStateImplCopyWith<_$NotificationsStateImpl> get copyWith =>
       __$$NotificationsStateImplCopyWithImpl<_$NotificationsStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 }
 
 abstract class _NotificationsState implements NotificationsState {
@@ -552,14 +545,16 @@ mixin _$NotificationsProcessState {
     required TResult Function() loading,
     required TResult Function() noPermission,
     required TResult Function() havePermission,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idl,
     TResult? Function()? loading,
     TResult? Function()? noPermission,
     TResult? Function()? havePermission,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idl,
@@ -567,49 +562,50 @@ mixin _$NotificationsProcessState {
     TResult Function()? noPermission,
     TResult Function()? havePermission,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotificationsProcessStateIdl value) idl,
     required TResult Function(NotificationsProcessStateLoading value) loading,
     required TResult Function(NotificationsProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(NotificationsProcessStateHavePermission value)
-    havePermission,
-  }) => throw _privateConstructorUsedError;
+        havePermission,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NotificationsProcessStateIdl value)? idl,
     TResult? Function(NotificationsProcessStateLoading value)? loading,
     TResult? Function(NotificationsProcessStateNoPermission value)?
-    noPermission,
+        noPermission,
     TResult? Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
-  }) => throw _privateConstructorUsedError;
+        havePermission,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotificationsProcessStateIdl value)? idl,
     TResult Function(NotificationsProcessStateLoading value)? loading,
     TResult Function(NotificationsProcessStateNoPermission value)? noPermission,
     TResult Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NotificationsProcessStateCopyWith<$Res> {
-  factory $NotificationsProcessStateCopyWith(
-    NotificationsProcessState value,
-    $Res Function(NotificationsProcessState) then,
-  ) = _$NotificationsProcessStateCopyWithImpl<$Res, NotificationsProcessState>;
+  factory $NotificationsProcessStateCopyWith(NotificationsProcessState value,
+          $Res Function(NotificationsProcessState) then) =
+      _$NotificationsProcessStateCopyWithImpl<$Res, NotificationsProcessState>;
 }
 
 /// @nodoc
-class _$NotificationsProcessStateCopyWithImpl<
-  $Res,
-  $Val extends NotificationsProcessState
->
+class _$NotificationsProcessStateCopyWithImpl<$Res,
+        $Val extends NotificationsProcessState>
     implements $NotificationsProcessStateCopyWith<$Res> {
   _$NotificationsProcessStateCopyWithImpl(this._value, this._then);
 
@@ -625,23 +621,20 @@ class _$NotificationsProcessStateCopyWithImpl<
 /// @nodoc
 abstract class _$$NotificationsProcessStateIdlImplCopyWith<$Res> {
   factory _$$NotificationsProcessStateIdlImplCopyWith(
-    _$NotificationsProcessStateIdlImpl value,
-    $Res Function(_$NotificationsProcessStateIdlImpl) then,
-  ) = __$$NotificationsProcessStateIdlImplCopyWithImpl<$Res>;
+          _$NotificationsProcessStateIdlImpl value,
+          $Res Function(_$NotificationsProcessStateIdlImpl) then) =
+      __$$NotificationsProcessStateIdlImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationsProcessStateIdlImplCopyWithImpl<$Res>
-    extends
-        _$NotificationsProcessStateCopyWithImpl<
-          $Res,
-          _$NotificationsProcessStateIdlImpl
-        >
+    extends _$NotificationsProcessStateCopyWithImpl<$Res,
+        _$NotificationsProcessStateIdlImpl>
     implements _$$NotificationsProcessStateIdlImplCopyWith<$Res> {
   __$$NotificationsProcessStateIdlImplCopyWithImpl(
-    _$NotificationsProcessStateIdlImpl _value,
-    $Res Function(_$NotificationsProcessStateIdlImpl) _then,
-  ) : super(_value, _then);
+      _$NotificationsProcessStateIdlImpl _value,
+      $Res Function(_$NotificationsProcessStateIdlImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of NotificationsProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -711,9 +704,9 @@ class _$NotificationsProcessStateIdlImpl
     required TResult Function(NotificationsProcessStateIdl value) idl,
     required TResult Function(NotificationsProcessStateLoading value) loading,
     required TResult Function(NotificationsProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(NotificationsProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return idl(this);
   }
@@ -724,9 +717,9 @@ class _$NotificationsProcessStateIdlImpl
     TResult? Function(NotificationsProcessStateIdl value)? idl,
     TResult? Function(NotificationsProcessStateLoading value)? loading,
     TResult? Function(NotificationsProcessStateNoPermission value)?
-    noPermission,
+        noPermission,
     TResult? Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
   }) {
     return idl?.call(this);
   }
@@ -738,7 +731,7 @@ class _$NotificationsProcessStateIdlImpl
     TResult Function(NotificationsProcessStateLoading value)? loading,
     TResult Function(NotificationsProcessStateNoPermission value)? noPermission,
     TResult Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
     required TResult orElse(),
   }) {
     if (idl != null) {
@@ -757,23 +750,20 @@ abstract class NotificationsProcessStateIdl
 /// @nodoc
 abstract class _$$NotificationsProcessStateLoadingImplCopyWith<$Res> {
   factory _$$NotificationsProcessStateLoadingImplCopyWith(
-    _$NotificationsProcessStateLoadingImpl value,
-    $Res Function(_$NotificationsProcessStateLoadingImpl) then,
-  ) = __$$NotificationsProcessStateLoadingImplCopyWithImpl<$Res>;
+          _$NotificationsProcessStateLoadingImpl value,
+          $Res Function(_$NotificationsProcessStateLoadingImpl) then) =
+      __$$NotificationsProcessStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationsProcessStateLoadingImplCopyWithImpl<$Res>
-    extends
-        _$NotificationsProcessStateCopyWithImpl<
-          $Res,
-          _$NotificationsProcessStateLoadingImpl
-        >
+    extends _$NotificationsProcessStateCopyWithImpl<$Res,
+        _$NotificationsProcessStateLoadingImpl>
     implements _$$NotificationsProcessStateLoadingImplCopyWith<$Res> {
   __$$NotificationsProcessStateLoadingImplCopyWithImpl(
-    _$NotificationsProcessStateLoadingImpl _value,
-    $Res Function(_$NotificationsProcessStateLoadingImpl) _then,
-  ) : super(_value, _then);
+      _$NotificationsProcessStateLoadingImpl _value,
+      $Res Function(_$NotificationsProcessStateLoadingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of NotificationsProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -843,9 +833,9 @@ class _$NotificationsProcessStateLoadingImpl
     required TResult Function(NotificationsProcessStateIdl value) idl,
     required TResult Function(NotificationsProcessStateLoading value) loading,
     required TResult Function(NotificationsProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(NotificationsProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return loading(this);
   }
@@ -856,9 +846,9 @@ class _$NotificationsProcessStateLoadingImpl
     TResult? Function(NotificationsProcessStateIdl value)? idl,
     TResult? Function(NotificationsProcessStateLoading value)? loading,
     TResult? Function(NotificationsProcessStateNoPermission value)?
-    noPermission,
+        noPermission,
     TResult? Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
   }) {
     return loading?.call(this);
   }
@@ -870,7 +860,7 @@ class _$NotificationsProcessStateLoadingImpl
     TResult Function(NotificationsProcessStateLoading value)? loading,
     TResult Function(NotificationsProcessStateNoPermission value)? noPermission,
     TResult Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -889,23 +879,20 @@ abstract class NotificationsProcessStateLoading
 /// @nodoc
 abstract class _$$NotificationsProcessStateNoPermissionImplCopyWith<$Res> {
   factory _$$NotificationsProcessStateNoPermissionImplCopyWith(
-    _$NotificationsProcessStateNoPermissionImpl value,
-    $Res Function(_$NotificationsProcessStateNoPermissionImpl) then,
-  ) = __$$NotificationsProcessStateNoPermissionImplCopyWithImpl<$Res>;
+          _$NotificationsProcessStateNoPermissionImpl value,
+          $Res Function(_$NotificationsProcessStateNoPermissionImpl) then) =
+      __$$NotificationsProcessStateNoPermissionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationsProcessStateNoPermissionImplCopyWithImpl<$Res>
-    extends
-        _$NotificationsProcessStateCopyWithImpl<
-          $Res,
-          _$NotificationsProcessStateNoPermissionImpl
-        >
+    extends _$NotificationsProcessStateCopyWithImpl<$Res,
+        _$NotificationsProcessStateNoPermissionImpl>
     implements _$$NotificationsProcessStateNoPermissionImplCopyWith<$Res> {
   __$$NotificationsProcessStateNoPermissionImplCopyWithImpl(
-    _$NotificationsProcessStateNoPermissionImpl _value,
-    $Res Function(_$NotificationsProcessStateNoPermissionImpl) _then,
-  ) : super(_value, _then);
+      _$NotificationsProcessStateNoPermissionImpl _value,
+      $Res Function(_$NotificationsProcessStateNoPermissionImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of NotificationsProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -975,9 +962,9 @@ class _$NotificationsProcessStateNoPermissionImpl
     required TResult Function(NotificationsProcessStateIdl value) idl,
     required TResult Function(NotificationsProcessStateLoading value) loading,
     required TResult Function(NotificationsProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(NotificationsProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return noPermission(this);
   }
@@ -988,9 +975,9 @@ class _$NotificationsProcessStateNoPermissionImpl
     TResult? Function(NotificationsProcessStateIdl value)? idl,
     TResult? Function(NotificationsProcessStateLoading value)? loading,
     TResult? Function(NotificationsProcessStateNoPermission value)?
-    noPermission,
+        noPermission,
     TResult? Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
   }) {
     return noPermission?.call(this);
   }
@@ -1002,7 +989,7 @@ class _$NotificationsProcessStateNoPermissionImpl
     TResult Function(NotificationsProcessStateLoading value)? loading,
     TResult Function(NotificationsProcessStateNoPermission value)? noPermission,
     TResult Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
     required TResult orElse(),
   }) {
     if (noPermission != null) {
@@ -1021,23 +1008,20 @@ abstract class NotificationsProcessStateNoPermission
 /// @nodoc
 abstract class _$$NotificationsProcessStateHavePermissionImplCopyWith<$Res> {
   factory _$$NotificationsProcessStateHavePermissionImplCopyWith(
-    _$NotificationsProcessStateHavePermissionImpl value,
-    $Res Function(_$NotificationsProcessStateHavePermissionImpl) then,
-  ) = __$$NotificationsProcessStateHavePermissionImplCopyWithImpl<$Res>;
+          _$NotificationsProcessStateHavePermissionImpl value,
+          $Res Function(_$NotificationsProcessStateHavePermissionImpl) then) =
+      __$$NotificationsProcessStateHavePermissionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$NotificationsProcessStateHavePermissionImplCopyWithImpl<$Res>
-    extends
-        _$NotificationsProcessStateCopyWithImpl<
-          $Res,
-          _$NotificationsProcessStateHavePermissionImpl
-        >
+    extends _$NotificationsProcessStateCopyWithImpl<$Res,
+        _$NotificationsProcessStateHavePermissionImpl>
     implements _$$NotificationsProcessStateHavePermissionImplCopyWith<$Res> {
   __$$NotificationsProcessStateHavePermissionImplCopyWithImpl(
-    _$NotificationsProcessStateHavePermissionImpl _value,
-    $Res Function(_$NotificationsProcessStateHavePermissionImpl) _then,
-  ) : super(_value, _then);
+      _$NotificationsProcessStateHavePermissionImpl _value,
+      $Res Function(_$NotificationsProcessStateHavePermissionImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of NotificationsProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -1107,9 +1091,9 @@ class _$NotificationsProcessStateHavePermissionImpl
     required TResult Function(NotificationsProcessStateIdl value) idl,
     required TResult Function(NotificationsProcessStateLoading value) loading,
     required TResult Function(NotificationsProcessStateNoPermission value)
-    noPermission,
+        noPermission,
     required TResult Function(NotificationsProcessStateHavePermission value)
-    havePermission,
+        havePermission,
   }) {
     return havePermission(this);
   }
@@ -1120,9 +1104,9 @@ class _$NotificationsProcessStateHavePermissionImpl
     TResult? Function(NotificationsProcessStateIdl value)? idl,
     TResult? Function(NotificationsProcessStateLoading value)? loading,
     TResult? Function(NotificationsProcessStateNoPermission value)?
-    noPermission,
+        noPermission,
     TResult? Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
   }) {
     return havePermission?.call(this);
   }
@@ -1134,7 +1118,7 @@ class _$NotificationsProcessStateHavePermissionImpl
     TResult Function(NotificationsProcessStateLoading value)? loading,
     TResult Function(NotificationsProcessStateNoPermission value)? noPermission,
     TResult Function(NotificationsProcessStateHavePermission value)?
-    havePermission,
+        havePermission,
     required TResult orElse(),
   }) {
     if (havePermission != null) {

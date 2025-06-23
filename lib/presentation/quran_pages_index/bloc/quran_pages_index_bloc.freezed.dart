@@ -12,8 +12,7 @@ part of 'quran_pages_index_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$QuranPagesIndexEvent {
@@ -22,54 +21,57 @@ mixin _$QuranPagesIndexEvent {
     required TResult Function(int index) updateSelectedTab,
     required TResult Function(BuildContext context) getSowarList,
     required TResult Function(BuildContext context, String value) search,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int index)? updateSelectedTab,
     TResult? Function(BuildContext context)? getSowarList,
     TResult? Function(BuildContext context, String value)? search,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int index)? updateSelectedTab,
     TResult Function(BuildContext context)? getSowarList,
     TResult Function(BuildContext context, String value)? search,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateSelectedTab value) updateSelectedTab,
     required TResult Function(_GetSowarList value) getSowarList,
     required TResult Function(_Search value) search,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateSelectedTab value)? updateSelectedTab,
     TResult? Function(_GetSowarList value)? getSowarList,
     TResult? Function(_Search value)? search,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateSelectedTab value)? updateSelectedTab,
     TResult Function(_GetSowarList value)? getSowarList,
     TResult Function(_Search value)? search,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuranPagesIndexEventCopyWith<$Res> {
-  factory $QuranPagesIndexEventCopyWith(
-    QuranPagesIndexEvent value,
-    $Res Function(QuranPagesIndexEvent) then,
-  ) = _$QuranPagesIndexEventCopyWithImpl<$Res, QuranPagesIndexEvent>;
+  factory $QuranPagesIndexEventCopyWith(QuranPagesIndexEvent value,
+          $Res Function(QuranPagesIndexEvent) then) =
+      _$QuranPagesIndexEventCopyWithImpl<$Res, QuranPagesIndexEvent>;
 }
 
 /// @nodoc
-class _$QuranPagesIndexEventCopyWithImpl<
-  $Res,
-  $Val extends QuranPagesIndexEvent
->
+class _$QuranPagesIndexEventCopyWithImpl<$Res,
+        $Val extends QuranPagesIndexEvent>
     implements $QuranPagesIndexEventCopyWith<$Res> {
   _$QuranPagesIndexEventCopyWithImpl(this._value, this._then);
 
@@ -84,10 +86,9 @@ class _$QuranPagesIndexEventCopyWithImpl<
 
 /// @nodoc
 abstract class _$$UpdateSelectedTabImplCopyWith<$Res> {
-  factory _$$UpdateSelectedTabImplCopyWith(
-    _$UpdateSelectedTabImpl value,
-    $Res Function(_$UpdateSelectedTabImpl) then,
-  ) = __$$UpdateSelectedTabImplCopyWithImpl<$Res>;
+  factory _$$UpdateSelectedTabImplCopyWith(_$UpdateSelectedTabImpl value,
+          $Res Function(_$UpdateSelectedTabImpl) then) =
+      __$$UpdateSelectedTabImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
@@ -96,24 +97,23 @@ abstract class _$$UpdateSelectedTabImplCopyWith<$Res> {
 class __$$UpdateSelectedTabImplCopyWithImpl<$Res>
     extends _$QuranPagesIndexEventCopyWithImpl<$Res, _$UpdateSelectedTabImpl>
     implements _$$UpdateSelectedTabImplCopyWith<$Res> {
-  __$$UpdateSelectedTabImplCopyWithImpl(
-    _$UpdateSelectedTabImpl _value,
-    $Res Function(_$UpdateSelectedTabImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateSelectedTabImplCopyWithImpl(_$UpdateSelectedTabImpl _value,
+      $Res Function(_$UpdateSelectedTabImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranPagesIndexEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? index = null}) {
-    return _then(
-      _$UpdateSelectedTabImpl(
-        null == index
-            ? _value.index
-            : index // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$UpdateSelectedTabImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
@@ -148,9 +148,7 @@ class _$UpdateSelectedTabImpl implements _UpdateSelectedTab {
   @pragma('vm:prefer-inline')
   _$$UpdateSelectedTabImplCopyWith<_$UpdateSelectedTabImpl> get copyWith =>
       __$$UpdateSelectedTabImplCopyWithImpl<_$UpdateSelectedTabImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -236,9 +234,8 @@ abstract class _UpdateSelectedTab implements QuranPagesIndexEvent {
 /// @nodoc
 abstract class _$$GetSowarListImplCopyWith<$Res> {
   factory _$$GetSowarListImplCopyWith(
-    _$GetSowarListImpl value,
-    $Res Function(_$GetSowarListImpl) then,
-  ) = __$$GetSowarListImplCopyWithImpl<$Res>;
+          _$GetSowarListImpl value, $Res Function(_$GetSowarListImpl) then) =
+      __$$GetSowarListImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
@@ -248,23 +245,22 @@ class __$$GetSowarListImplCopyWithImpl<$Res>
     extends _$QuranPagesIndexEventCopyWithImpl<$Res, _$GetSowarListImpl>
     implements _$$GetSowarListImplCopyWith<$Res> {
   __$$GetSowarListImplCopyWithImpl(
-    _$GetSowarListImpl _value,
-    $Res Function(_$GetSowarListImpl) _then,
-  ) : super(_value, _then);
+      _$GetSowarListImpl _value, $Res Function(_$GetSowarListImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranPagesIndexEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? context = null}) {
-    return _then(
-      _$GetSowarListImpl(
-        null == context
-            ? _value.context
-            : context // ignore: cast_nullable_to_non_nullable
-                  as BuildContext,
-      ),
-    );
+  $Res call({
+    Object? context = null,
+  }) {
+    return _then(_$GetSowarListImpl(
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
   }
 }
 
@@ -384,9 +380,8 @@ abstract class _GetSowarList implements QuranPagesIndexEvent {
 /// @nodoc
 abstract class _$$SearchImplCopyWith<$Res> {
   factory _$$SearchImplCopyWith(
-    _$SearchImpl value,
-    $Res Function(_$SearchImpl) then,
-  ) = __$$SearchImplCopyWithImpl<$Res>;
+          _$SearchImpl value, $Res Function(_$SearchImpl) then) =
+      __$$SearchImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context, String value});
 }
@@ -396,27 +391,27 @@ class __$$SearchImplCopyWithImpl<$Res>
     extends _$QuranPagesIndexEventCopyWithImpl<$Res, _$SearchImpl>
     implements _$$SearchImplCopyWith<$Res> {
   __$$SearchImplCopyWithImpl(
-    _$SearchImpl _value,
-    $Res Function(_$SearchImpl) _then,
-  ) : super(_value, _then);
+      _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranPagesIndexEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? context = null, Object? value = null}) {
-    return _then(
-      _$SearchImpl(
-        null == context
-            ? _value.context
-            : context // ignore: cast_nullable_to_non_nullable
-                  as BuildContext,
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? context = null,
+    Object? value = null,
+  }) {
+    return _then(_$SearchImpl(
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -552,19 +547,16 @@ mixin _$QuranPagesIndexState {
 
 /// @nodoc
 abstract class $QuranPagesIndexStateCopyWith<$Res> {
-  factory $QuranPagesIndexStateCopyWith(
-    QuranPagesIndexState value,
-    $Res Function(QuranPagesIndexState) then,
-  ) = _$QuranPagesIndexStateCopyWithImpl<$Res, QuranPagesIndexState>;
+  factory $QuranPagesIndexStateCopyWith(QuranPagesIndexState value,
+          $Res Function(QuranPagesIndexState) then) =
+      _$QuranPagesIndexStateCopyWithImpl<$Res, QuranPagesIndexState>;
   @useResult
   $Res call({int selectedIndex, List<String> sowarList});
 }
 
 /// @nodoc
-class _$QuranPagesIndexStateCopyWithImpl<
-  $Res,
-  $Val extends QuranPagesIndexState
->
+class _$QuranPagesIndexStateCopyWithImpl<$Res,
+        $Val extends QuranPagesIndexState>
     implements $QuranPagesIndexStateCopyWith<$Res> {
   _$QuranPagesIndexStateCopyWithImpl(this._value, this._then);
 
@@ -577,30 +569,29 @@ class _$QuranPagesIndexStateCopyWithImpl<
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? selectedIndex = null, Object? sowarList = null}) {
-    return _then(
-      _value.copyWith(
-            selectedIndex: null == selectedIndex
-                ? _value.selectedIndex
-                : selectedIndex // ignore: cast_nullable_to_non_nullable
-                      as int,
-            sowarList: null == sowarList
-                ? _value.sowarList
-                : sowarList // ignore: cast_nullable_to_non_nullable
-                      as List<String>,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? selectedIndex = null,
+    Object? sowarList = null,
+  }) {
+    return _then(_value.copyWith(
+      selectedIndex: null == selectedIndex
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      sowarList: null == sowarList
+          ? _value.sowarList
+          : sowarList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$QuranPagesIndexStateImplCopyWith<$Res>
     implements $QuranPagesIndexStateCopyWith<$Res> {
-  factory _$$QuranPagesIndexStateImplCopyWith(
-    _$QuranPagesIndexStateImpl value,
-    $Res Function(_$QuranPagesIndexStateImpl) then,
-  ) = __$$QuranPagesIndexStateImplCopyWithImpl<$Res>;
+  factory _$$QuranPagesIndexStateImplCopyWith(_$QuranPagesIndexStateImpl value,
+          $Res Function(_$QuranPagesIndexStateImpl) then) =
+      __$$QuranPagesIndexStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int selectedIndex, List<String> sowarList});
@@ -610,38 +601,37 @@ abstract class _$$QuranPagesIndexStateImplCopyWith<$Res>
 class __$$QuranPagesIndexStateImplCopyWithImpl<$Res>
     extends _$QuranPagesIndexStateCopyWithImpl<$Res, _$QuranPagesIndexStateImpl>
     implements _$$QuranPagesIndexStateImplCopyWith<$Res> {
-  __$$QuranPagesIndexStateImplCopyWithImpl(
-    _$QuranPagesIndexStateImpl _value,
-    $Res Function(_$QuranPagesIndexStateImpl) _then,
-  ) : super(_value, _then);
+  __$$QuranPagesIndexStateImplCopyWithImpl(_$QuranPagesIndexStateImpl _value,
+      $Res Function(_$QuranPagesIndexStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranPagesIndexState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? selectedIndex = null, Object? sowarList = null}) {
-    return _then(
-      _$QuranPagesIndexStateImpl(
-        selectedIndex: null == selectedIndex
-            ? _value.selectedIndex
-            : selectedIndex // ignore: cast_nullable_to_non_nullable
-                  as int,
-        sowarList: null == sowarList
-            ? _value._sowarList
-            : sowarList // ignore: cast_nullable_to_non_nullable
-                  as List<String>,
-      ),
-    );
+  $Res call({
+    Object? selectedIndex = null,
+    Object? sowarList = null,
+  }) {
+    return _then(_$QuranPagesIndexStateImpl(
+      selectedIndex: null == selectedIndex
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      sowarList: null == sowarList
+          ? _value._sowarList
+          : sowarList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$QuranPagesIndexStateImpl implements _QuranPagesIndexState {
-  const _$QuranPagesIndexStateImpl({
-    this.selectedIndex = 0,
-    final List<String> sowarList = const [],
-  }) : _sowarList = sowarList;
+  const _$QuranPagesIndexStateImpl(
+      {this.selectedIndex = 0, final List<String> sowarList = const []})
+      : _sowarList = sowarList;
 
   @override
   @JsonKey()
@@ -667,18 +657,13 @@ class _$QuranPagesIndexStateImpl implements _QuranPagesIndexState {
             other is _$QuranPagesIndexStateImpl &&
             (identical(other.selectedIndex, selectedIndex) ||
                 other.selectedIndex == selectedIndex) &&
-            const DeepCollectionEquality().equals(
-              other._sowarList,
-              _sowarList,
-            ));
+            const DeepCollectionEquality()
+                .equals(other._sowarList, _sowarList));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    selectedIndex,
-    const DeepCollectionEquality().hash(_sowarList),
-  );
+  int get hashCode => Object.hash(runtimeType, selectedIndex,
+      const DeepCollectionEquality().hash(_sowarList));
 
   /// Create a copy of QuranPagesIndexState
   /// with the given fields replaced by the non-null parameter values.
@@ -686,18 +671,15 @@ class _$QuranPagesIndexStateImpl implements _QuranPagesIndexState {
   @override
   @pragma('vm:prefer-inline')
   _$$QuranPagesIndexStateImplCopyWith<_$QuranPagesIndexStateImpl>
-  get copyWith =>
-      __$$QuranPagesIndexStateImplCopyWithImpl<_$QuranPagesIndexStateImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith =>
+          __$$QuranPagesIndexStateImplCopyWithImpl<_$QuranPagesIndexStateImpl>(
+              this, _$identity);
 }
 
 abstract class _QuranPagesIndexState implements QuranPagesIndexState {
-  const factory _QuranPagesIndexState({
-    final int selectedIndex,
-    final List<String> sowarList,
-  }) = _$QuranPagesIndexStateImpl;
+  const factory _QuranPagesIndexState(
+      {final int selectedIndex,
+      final List<String> sowarList}) = _$QuranPagesIndexStateImpl;
 
   @override
   int get selectedIndex;
@@ -709,5 +691,5 @@ abstract class _QuranPagesIndexState implements QuranPagesIndexState {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$QuranPagesIndexStateImplCopyWith<_$QuranPagesIndexStateImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }

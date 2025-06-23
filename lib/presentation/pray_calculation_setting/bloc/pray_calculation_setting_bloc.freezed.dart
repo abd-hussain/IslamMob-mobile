@@ -12,8 +12,7 @@ part of 'pray_calculation_setting_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PrayCalculationSettingEvent {
@@ -21,61 +20,65 @@ mixin _$PrayCalculationSettingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Setup value)? setup,
@@ -83,11 +86,12 @@ mixin _$PrayCalculationSettingEvent {
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Setup value)? setup,
@@ -95,31 +99,27 @@ mixin _$PrayCalculationSettingEvent {
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrayCalculationSettingEventCopyWith<$Res> {
   factory $PrayCalculationSettingEventCopyWith(
-    PrayCalculationSettingEvent value,
-    $Res Function(PrayCalculationSettingEvent) then,
-  ) =
-      _$PrayCalculationSettingEventCopyWithImpl<
-        $Res,
-        PrayCalculationSettingEvent
-      >;
+          PrayCalculationSettingEvent value,
+          $Res Function(PrayCalculationSettingEvent) then) =
+      _$PrayCalculationSettingEventCopyWithImpl<$Res,
+          PrayCalculationSettingEvent>;
 }
 
 /// @nodoc
-class _$PrayCalculationSettingEventCopyWithImpl<
-  $Res,
-  $Val extends PrayCalculationSettingEvent
->
+class _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        $Val extends PrayCalculationSettingEvent>
     implements $PrayCalculationSettingEventCopyWith<$Res> {
   _$PrayCalculationSettingEventCopyWithImpl(this._value, this._then);
 
@@ -135,9 +135,8 @@ class _$PrayCalculationSettingEventCopyWithImpl<
 /// @nodoc
 abstract class _$$SetupImplCopyWith<$Res> {
   factory _$$SetupImplCopyWith(
-    _$SetupImpl value,
-    $Res Function(_$SetupImpl) then,
-  ) = __$$SetupImplCopyWithImpl<$Res>;
+          _$SetupImpl value, $Res Function(_$SetupImpl) then) =
+      __$$SetupImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -145,9 +144,8 @@ class __$$SetupImplCopyWithImpl<$Res>
     extends _$PrayCalculationSettingEventCopyWithImpl<$Res, _$SetupImpl>
     implements _$$SetupImplCopyWith<$Res> {
   __$$SetupImplCopyWithImpl(
-    _$SetupImpl _value,
-    $Res Function(_$SetupImpl) _then,
-  ) : super(_value, _then);
+      _$SetupImpl _value, $Res Function(_$SetupImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -177,15 +175,15 @@ class _$SetupImpl implements _Setup {
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
     return setup();
@@ -196,15 +194,15 @@ class _$SetupImpl implements _Setup {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
     return setup?.call();
@@ -215,15 +213,15 @@ class _$SetupImpl implements _Setup {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
@@ -238,11 +236,11 @@ class _$SetupImpl implements _Setup {
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
@@ -258,7 +256,7 @@ class _$SetupImpl implements _Setup {
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
@@ -274,7 +272,7 @@ class _$SetupImpl implements _Setup {
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
@@ -294,9 +292,9 @@ abstract class _Setup implements PrayCalculationSettingEvent {
 /// @nodoc
 abstract class _$$UpdateCalculationMethodImplCopyWith<$Res> {
   factory _$$UpdateCalculationMethodImplCopyWith(
-    _$UpdateCalculationMethodImpl value,
-    $Res Function(_$UpdateCalculationMethodImpl) then,
-  ) = __$$UpdateCalculationMethodImplCopyWithImpl<$Res>;
+          _$UpdateCalculationMethodImpl value,
+          $Res Function(_$UpdateCalculationMethodImpl) then) =
+      __$$UpdateCalculationMethodImplCopyWithImpl<$Res>;
   @useResult
   $Res call({PrayCalculationMethodState method});
 
@@ -305,30 +303,27 @@ abstract class _$$UpdateCalculationMethodImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateCalculationMethodImplCopyWithImpl<$Res>
-    extends
-        _$PrayCalculationSettingEventCopyWithImpl<
-          $Res,
-          _$UpdateCalculationMethodImpl
-        >
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$UpdateCalculationMethodImpl>
     implements _$$UpdateCalculationMethodImplCopyWith<$Res> {
   __$$UpdateCalculationMethodImplCopyWithImpl(
-    _$UpdateCalculationMethodImpl _value,
-    $Res Function(_$UpdateCalculationMethodImpl) _then,
-  ) : super(_value, _then);
+      _$UpdateCalculationMethodImpl _value,
+      $Res Function(_$UpdateCalculationMethodImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? method = null}) {
-    return _then(
-      _$UpdateCalculationMethodImpl(
-        method: null == method
-            ? _value.method
-            : method // ignore: cast_nullable_to_non_nullable
-                  as PrayCalculationMethodState,
-      ),
-    );
+  $Res call({
+    Object? method = null,
+  }) {
+    return _then(_$UpdateCalculationMethodImpl(
+      method: null == method
+          ? _value.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as PrayCalculationMethodState,
+    ));
   }
 
   /// Create a copy of PrayCalculationSettingEvent
@@ -372,25 +367,23 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateCalculationMethodImplCopyWith<_$UpdateCalculationMethodImpl>
-  get copyWith =>
-      __$$UpdateCalculationMethodImplCopyWithImpl<
-        _$UpdateCalculationMethodImpl
-      >(this, _$identity);
+      get copyWith => __$$UpdateCalculationMethodImplCopyWithImpl<
+          _$UpdateCalculationMethodImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
     return updateCalculationMethod(method);
@@ -401,15 +394,15 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
     return updateCalculationMethod?.call(method);
@@ -420,15 +413,15 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
@@ -443,11 +436,11 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
@@ -463,7 +456,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
@@ -479,7 +472,7 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
@@ -493,9 +486,9 @@ class _$UpdateCalculationMethodImpl implements _UpdateCalculationMethod {
 }
 
 abstract class _UpdateCalculationMethod implements PrayCalculationSettingEvent {
-  factory _UpdateCalculationMethod({
-    required final PrayCalculationMethodState method,
-  }) = _$UpdateCalculationMethodImpl;
+  factory _UpdateCalculationMethod(
+          {required final PrayCalculationMethodState method}) =
+      _$UpdateCalculationMethodImpl;
 
   PrayCalculationMethodState get method;
 
@@ -503,15 +496,14 @@ abstract class _UpdateCalculationMethod implements PrayCalculationSettingEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateCalculationMethodImplCopyWith<_$UpdateCalculationMethodImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateMadhabMethodImplCopyWith<$Res> {
-  factory _$$UpdateMadhabMethodImplCopyWith(
-    _$UpdateMadhabMethodImpl value,
-    $Res Function(_$UpdateMadhabMethodImpl) then,
-  ) = __$$UpdateMadhabMethodImplCopyWithImpl<$Res>;
+  factory _$$UpdateMadhabMethodImplCopyWith(_$UpdateMadhabMethodImpl value,
+          $Res Function(_$UpdateMadhabMethodImpl) then) =
+      __$$UpdateMadhabMethodImplCopyWithImpl<$Res>;
   @useResult
   $Res call({MadhabState madhab});
 
@@ -520,30 +512,26 @@ abstract class _$$UpdateMadhabMethodImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateMadhabMethodImplCopyWithImpl<$Res>
-    extends
-        _$PrayCalculationSettingEventCopyWithImpl<
-          $Res,
-          _$UpdateMadhabMethodImpl
-        >
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$UpdateMadhabMethodImpl>
     implements _$$UpdateMadhabMethodImplCopyWith<$Res> {
-  __$$UpdateMadhabMethodImplCopyWithImpl(
-    _$UpdateMadhabMethodImpl _value,
-    $Res Function(_$UpdateMadhabMethodImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateMadhabMethodImplCopyWithImpl(_$UpdateMadhabMethodImpl _value,
+      $Res Function(_$UpdateMadhabMethodImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? madhab = null}) {
-    return _then(
-      _$UpdateMadhabMethodImpl(
-        madhab: null == madhab
-            ? _value.madhab
-            : madhab // ignore: cast_nullable_to_non_nullable
-                  as MadhabState,
-      ),
-    );
+  $Res call({
+    Object? madhab = null,
+  }) {
+    return _then(_$UpdateMadhabMethodImpl(
+      madhab: null == madhab
+          ? _value.madhab
+          : madhab // ignore: cast_nullable_to_non_nullable
+              as MadhabState,
+    ));
   }
 
   /// Create a copy of PrayCalculationSettingEvent
@@ -588,24 +576,22 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
   @pragma('vm:prefer-inline')
   _$$UpdateMadhabMethodImplCopyWith<_$UpdateMadhabMethodImpl> get copyWith =>
       __$$UpdateMadhabMethodImplCopyWithImpl<_$UpdateMadhabMethodImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
     return updateMadhabMethod(madhab);
@@ -616,15 +602,15 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
     return updateMadhabMethod?.call(madhab);
@@ -635,15 +621,15 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
@@ -658,11 +644,11 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
@@ -678,7 +664,7 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
@@ -694,7 +680,7 @@ class _$UpdateMadhabMethodImpl implements _UpdateMadhabMethod {
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
@@ -722,37 +708,34 @@ abstract class _UpdateMadhabMethod implements PrayCalculationSettingEvent {
 
 /// @nodoc
 abstract class _$$UpdateTimeZoneImplCopyWith<$Res> {
-  factory _$$UpdateTimeZoneImplCopyWith(
-    _$UpdateTimeZoneImpl value,
-    $Res Function(_$UpdateTimeZoneImpl) then,
-  ) = __$$UpdateTimeZoneImplCopyWithImpl<$Res>;
+  factory _$$UpdateTimeZoneImplCopyWith(_$UpdateTimeZoneImpl value,
+          $Res Function(_$UpdateTimeZoneImpl) then) =
+      __$$UpdateTimeZoneImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Duration value});
 }
 
 /// @nodoc
 class __$$UpdateTimeZoneImplCopyWithImpl<$Res>
-    extends
-        _$PrayCalculationSettingEventCopyWithImpl<$Res, _$UpdateTimeZoneImpl>
-    implements _$$UpdateTimeZoneImplCopyWith<$Res> {
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$UpdateTimeZoneImpl> implements _$$UpdateTimeZoneImplCopyWith<$Res> {
   __$$UpdateTimeZoneImplCopyWithImpl(
-    _$UpdateTimeZoneImpl _value,
-    $Res Function(_$UpdateTimeZoneImpl) _then,
-  ) : super(_value, _then);
+      _$UpdateTimeZoneImpl _value, $Res Function(_$UpdateTimeZoneImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateTimeZoneImpl(
-        value: null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as Duration,
-      ),
-    );
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateTimeZoneImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ));
   }
 }
 
@@ -787,24 +770,22 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   @pragma('vm:prefer-inline')
   _$$UpdateTimeZoneImplCopyWith<_$UpdateTimeZoneImpl> get copyWith =>
       __$$UpdateTimeZoneImplCopyWithImpl<_$UpdateTimeZoneImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
     return updateTimeZone(value);
@@ -815,15 +796,15 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
     return updateTimeZone?.call(value);
@@ -834,15 +815,15 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
@@ -857,11 +838,11 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
@@ -877,7 +858,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
@@ -893,7 +874,7 @@ class _$UpdateTimeZoneImpl implements _UpdateTimeZone {
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
@@ -922,9 +903,9 @@ abstract class _UpdateTimeZone implements PrayCalculationSettingEvent {
 /// @nodoc
 abstract class _$$UpdateHightLatitudeCalculationImplCopyWith<$Res> {
   factory _$$UpdateHightLatitudeCalculationImplCopyWith(
-    _$UpdateHightLatitudeCalculationImpl value,
-    $Res Function(_$UpdateHightLatitudeCalculationImpl) then,
-  ) = __$$UpdateHightLatitudeCalculationImplCopyWithImpl<$Res>;
+          _$UpdateHightLatitudeCalculationImpl value,
+          $Res Function(_$UpdateHightLatitudeCalculationImpl) then) =
+      __$$UpdateHightLatitudeCalculationImplCopyWithImpl<$Res>;
   @useResult
   $Res call({PrayHightLatitudeCaluclationState state});
 
@@ -933,30 +914,27 @@ abstract class _$$UpdateHightLatitudeCalculationImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateHightLatitudeCalculationImplCopyWithImpl<$Res>
-    extends
-        _$PrayCalculationSettingEventCopyWithImpl<
-          $Res,
-          _$UpdateHightLatitudeCalculationImpl
-        >
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$UpdateHightLatitudeCalculationImpl>
     implements _$$UpdateHightLatitudeCalculationImplCopyWith<$Res> {
   __$$UpdateHightLatitudeCalculationImplCopyWithImpl(
-    _$UpdateHightLatitudeCalculationImpl _value,
-    $Res Function(_$UpdateHightLatitudeCalculationImpl) _then,
-  ) : super(_value, _then);
+      _$UpdateHightLatitudeCalculationImpl _value,
+      $Res Function(_$UpdateHightLatitudeCalculationImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? state = null}) {
-    return _then(
-      _$UpdateHightLatitudeCalculationImpl(
-        state: null == state
-            ? _value.state
-            : state // ignore: cast_nullable_to_non_nullable
-                  as PrayHightLatitudeCaluclationState,
-      ),
-    );
+  $Res call({
+    Object? state = null,
+  }) {
+    return _then(_$UpdateHightLatitudeCalculationImpl(
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as PrayHightLatitudeCaluclationState,
+    ));
   }
 
   /// Create a copy of PrayCalculationSettingEvent
@@ -964,9 +942,8 @@ class __$$UpdateHightLatitudeCalculationImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $PrayHightLatitudeCaluclationStateCopyWith<$Res> get state {
-    return $PrayHightLatitudeCaluclationStateCopyWith<$Res>(_value.state, (
-      value,
-    ) {
+    return $PrayHightLatitudeCaluclationStateCopyWith<$Res>(_value.state,
+        (value) {
       return _then(_value.copyWith(state: value));
     });
   }
@@ -1003,27 +980,24 @@ class _$UpdateHightLatitudeCalculationImpl
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateHightLatitudeCalculationImplCopyWith<
-    _$UpdateHightLatitudeCalculationImpl
-  >
-  get copyWith =>
-      __$$UpdateHightLatitudeCalculationImplCopyWithImpl<
-        _$UpdateHightLatitudeCalculationImpl
-      >(this, _$identity);
+          _$UpdateHightLatitudeCalculationImpl>
+      get copyWith => __$$UpdateHightLatitudeCalculationImplCopyWithImpl<
+          _$UpdateHightLatitudeCalculationImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
     return updateHightLatitudeCalculation(state);
@@ -1034,15 +1008,15 @@ class _$UpdateHightLatitudeCalculationImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
     return updateHightLatitudeCalculation?.call(state);
@@ -1053,15 +1027,15 @@ class _$UpdateHightLatitudeCalculationImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
@@ -1076,11 +1050,11 @@ class _$UpdateHightLatitudeCalculationImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
@@ -1096,7 +1070,7 @@ class _$UpdateHightLatitudeCalculationImpl
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
@@ -1112,7 +1086,7 @@ class _$UpdateHightLatitudeCalculationImpl
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
@@ -1127,9 +1101,9 @@ class _$UpdateHightLatitudeCalculationImpl
 
 abstract class _UpdateHightLatitudeCalculation
     implements PrayCalculationSettingEvent {
-  factory _UpdateHightLatitudeCalculation({
-    required final PrayHightLatitudeCaluclationState state,
-  }) = _$UpdateHightLatitudeCalculationImpl;
+  factory _UpdateHightLatitudeCalculation(
+          {required final PrayHightLatitudeCaluclationState state}) =
+      _$UpdateHightLatitudeCalculationImpl;
 
   PrayHightLatitudeCaluclationState get state;
 
@@ -1137,17 +1111,15 @@ abstract class _UpdateHightLatitudeCalculation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateHightLatitudeCalculationImplCopyWith<
-    _$UpdateHightLatitudeCalculationImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+          _$UpdateHightLatitudeCalculationImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateTimeOfPreviewImplCopyWith<$Res> {
-  factory _$$UpdateTimeOfPreviewImplCopyWith(
-    _$UpdateTimeOfPreviewImpl value,
-    $Res Function(_$UpdateTimeOfPreviewImpl) then,
-  ) = __$$UpdateTimeOfPreviewImplCopyWithImpl<$Res>;
+  factory _$$UpdateTimeOfPreviewImplCopyWith(_$UpdateTimeOfPreviewImpl value,
+          $Res Function(_$UpdateTimeOfPreviewImpl) then) =
+      __$$UpdateTimeOfPreviewImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime time, PreviewBoxesState azanType});
 
@@ -1156,34 +1128,31 @@ abstract class _$$UpdateTimeOfPreviewImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateTimeOfPreviewImplCopyWithImpl<$Res>
-    extends
-        _$PrayCalculationSettingEventCopyWithImpl<
-          $Res,
-          _$UpdateTimeOfPreviewImpl
-        >
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$UpdateTimeOfPreviewImpl>
     implements _$$UpdateTimeOfPreviewImplCopyWith<$Res> {
-  __$$UpdateTimeOfPreviewImplCopyWithImpl(
-    _$UpdateTimeOfPreviewImpl _value,
-    $Res Function(_$UpdateTimeOfPreviewImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateTimeOfPreviewImplCopyWithImpl(_$UpdateTimeOfPreviewImpl _value,
+      $Res Function(_$UpdateTimeOfPreviewImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? time = null, Object? azanType = null}) {
-    return _then(
-      _$UpdateTimeOfPreviewImpl(
-        time: null == time
-            ? _value.time
-            : time // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
-        azanType: null == azanType
-            ? _value.azanType
-            : azanType // ignore: cast_nullable_to_non_nullable
-                  as PreviewBoxesState,
-      ),
-    );
+  $Res call({
+    Object? time = null,
+    Object? azanType = null,
+  }) {
+    return _then(_$UpdateTimeOfPreviewImpl(
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      azanType: null == azanType
+          ? _value.azanType
+          : azanType // ignore: cast_nullable_to_non_nullable
+              as PreviewBoxesState,
+    ));
   }
 
   /// Create a copy of PrayCalculationSettingEvent
@@ -1232,24 +1201,22 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   @pragma('vm:prefer-inline')
   _$$UpdateTimeOfPreviewImplCopyWith<_$UpdateTimeOfPreviewImpl> get copyWith =>
       __$$UpdateTimeOfPreviewImplCopyWithImpl<_$UpdateTimeOfPreviewImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
     return updateTimeOfPreview(time, azanType);
@@ -1260,15 +1227,15 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
     return updateTimeOfPreview?.call(time, azanType);
@@ -1279,15 +1246,15 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
@@ -1302,11 +1269,11 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
@@ -1322,7 +1289,7 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
@@ -1338,7 +1305,7 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
@@ -1352,10 +1319,9 @@ class _$UpdateTimeOfPreviewImpl implements _UpdateTimeOfPreview {
 }
 
 abstract class _UpdateTimeOfPreview implements PrayCalculationSettingEvent {
-  factory _UpdateTimeOfPreview({
-    required final DateTime time,
-    required final PreviewBoxesState azanType,
-  }) = _$UpdateTimeOfPreviewImpl;
+  factory _UpdateTimeOfPreview(
+      {required final DateTime time,
+      required final PreviewBoxesState azanType}) = _$UpdateTimeOfPreviewImpl;
 
   DateTime get time;
   PreviewBoxesState get azanType;
@@ -1369,10 +1335,9 @@ abstract class _UpdateTimeOfPreview implements PrayCalculationSettingEvent {
 
 /// @nodoc
 abstract class _$$UpdateAzanTypeInMinImplCopyWith<$Res> {
-  factory _$$UpdateAzanTypeInMinImplCopyWith(
-    _$UpdateAzanTypeInMinImpl value,
-    $Res Function(_$UpdateAzanTypeInMinImpl) then,
-  ) = __$$UpdateAzanTypeInMinImplCopyWithImpl<$Res>;
+  factory _$$UpdateAzanTypeInMinImplCopyWith(_$UpdateAzanTypeInMinImpl value,
+          $Res Function(_$UpdateAzanTypeInMinImpl) then) =
+      __$$UpdateAzanTypeInMinImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int minutes, AzanTypeForEditMinState azanType});
 
@@ -1381,34 +1346,31 @@ abstract class _$$UpdateAzanTypeInMinImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateAzanTypeInMinImplCopyWithImpl<$Res>
-    extends
-        _$PrayCalculationSettingEventCopyWithImpl<
-          $Res,
-          _$UpdateAzanTypeInMinImpl
-        >
+    extends _$PrayCalculationSettingEventCopyWithImpl<$Res,
+        _$UpdateAzanTypeInMinImpl>
     implements _$$UpdateAzanTypeInMinImplCopyWith<$Res> {
-  __$$UpdateAzanTypeInMinImplCopyWithImpl(
-    _$UpdateAzanTypeInMinImpl _value,
-    $Res Function(_$UpdateAzanTypeInMinImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateAzanTypeInMinImplCopyWithImpl(_$UpdateAzanTypeInMinImpl _value,
+      $Res Function(_$UpdateAzanTypeInMinImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? minutes = null, Object? azanType = null}) {
-    return _then(
-      _$UpdateAzanTypeInMinImpl(
-        minutes: null == minutes
-            ? _value.minutes
-            : minutes // ignore: cast_nullable_to_non_nullable
-                  as int,
-        azanType: null == azanType
-            ? _value.azanType
-            : azanType // ignore: cast_nullable_to_non_nullable
-                  as AzanTypeForEditMinState,
-      ),
-    );
+  $Res call({
+    Object? minutes = null,
+    Object? azanType = null,
+  }) {
+    return _then(_$UpdateAzanTypeInMinImpl(
+      minutes: null == minutes
+          ? _value.minutes
+          : minutes // ignore: cast_nullable_to_non_nullable
+              as int,
+      azanType: null == azanType
+          ? _value.azanType
+          : azanType // ignore: cast_nullable_to_non_nullable
+              as AzanTypeForEditMinState,
+    ));
   }
 
   /// Create a copy of PrayCalculationSettingEvent
@@ -1457,24 +1419,22 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   @pragma('vm:prefer-inline')
   _$$UpdateAzanTypeInMinImplCopyWith<_$UpdateAzanTypeInMinImpl> get copyWith =>
       __$$UpdateAzanTypeInMinImplCopyWithImpl<_$UpdateAzanTypeInMinImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
     return updateAzanTypeInMin(minutes, azanType);
@@ -1485,15 +1445,15 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
     return updateAzanTypeInMin?.call(minutes, azanType);
@@ -1504,15 +1464,15 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
@@ -1527,11 +1487,11 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
@@ -1547,7 +1507,7 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
@@ -1563,7 +1523,7 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
@@ -1577,10 +1537,10 @@ class _$UpdateAzanTypeInMinImpl implements _UpdateAzanTypeInMin {
 }
 
 abstract class _UpdateAzanTypeInMin implements PrayCalculationSettingEvent {
-  factory _UpdateAzanTypeInMin({
-    required final int minutes,
-    required final AzanTypeForEditMinState azanType,
-  }) = _$UpdateAzanTypeInMinImpl;
+  factory _UpdateAzanTypeInMin(
+          {required final int minutes,
+          required final AzanTypeForEditMinState azanType}) =
+      _$UpdateAzanTypeInMinImpl;
 
   int get minutes;
   AzanTypeForEditMinState get azanType;
@@ -1595,9 +1555,8 @@ abstract class _UpdateAzanTypeInMin implements PrayCalculationSettingEvent {
 /// @nodoc
 abstract class _$$SaveChangesImplCopyWith<$Res> {
   factory _$$SaveChangesImplCopyWith(
-    _$SaveChangesImpl value,
-    $Res Function(_$SaveChangesImpl) then,
-  ) = __$$SaveChangesImplCopyWithImpl<$Res>;
+          _$SaveChangesImpl value, $Res Function(_$SaveChangesImpl) then) =
+      __$$SaveChangesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1605,9 +1564,8 @@ class __$$SaveChangesImplCopyWithImpl<$Res>
     extends _$PrayCalculationSettingEventCopyWithImpl<$Res, _$SaveChangesImpl>
     implements _$$SaveChangesImplCopyWith<$Res> {
   __$$SaveChangesImplCopyWithImpl(
-    _$SaveChangesImpl _value,
-    $Res Function(_$SaveChangesImpl) _then,
-  ) : super(_value, _then);
+      _$SaveChangesImpl _value, $Res Function(_$SaveChangesImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1637,15 +1595,15 @@ class _$SaveChangesImpl implements _SaveChanges {
   TResult when<TResult extends Object?>({
     required TResult Function() setup,
     required TResult Function(PrayCalculationMethodState method)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(MadhabState madhab) updateMadhabMethod,
     required TResult Function(Duration value) updateTimeZone,
     required TResult Function(PrayHightLatitudeCaluclationState state)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(DateTime time, PreviewBoxesState azanType)
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     required TResult Function(int minutes, AzanTypeForEditMinState azanType)
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     required TResult Function() saveChanges,
   }) {
     return saveChanges();
@@ -1656,15 +1614,15 @@ class _$SaveChangesImpl implements _SaveChanges {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? setup,
     TResult? Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult? Function(MadhabState madhab)? updateMadhabMethod,
     TResult? Function(Duration value)? updateTimeZone,
     TResult? Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult? Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult? Function()? saveChanges,
   }) {
     return saveChanges?.call();
@@ -1675,15 +1633,15 @@ class _$SaveChangesImpl implements _SaveChanges {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     TResult Function(PrayCalculationMethodState method)?
-    updateCalculationMethod,
+        updateCalculationMethod,
     TResult Function(MadhabState madhab)? updateMadhabMethod,
     TResult Function(Duration value)? updateTimeZone,
     TResult Function(PrayHightLatitudeCaluclationState state)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(DateTime time, PreviewBoxesState azanType)?
-    updateTimeOfPreview,
+        updateTimeOfPreview,
     TResult Function(int minutes, AzanTypeForEditMinState azanType)?
-    updateAzanTypeInMin,
+        updateAzanTypeInMin,
     TResult Function()? saveChanges,
     required TResult orElse(),
   }) {
@@ -1698,11 +1656,11 @@ class _$SaveChangesImpl implements _SaveChanges {
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
     required TResult Function(_UpdateCalculationMethod value)
-    updateCalculationMethod,
+        updateCalculationMethod,
     required TResult Function(_UpdateMadhabMethod value) updateMadhabMethod,
     required TResult Function(_UpdateTimeZone value) updateTimeZone,
     required TResult Function(_UpdateHightLatitudeCalculation value)
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     required TResult Function(_UpdateTimeOfPreview value) updateTimeOfPreview,
     required TResult Function(_UpdateAzanTypeInMin value) updateAzanTypeInMin,
     required TResult Function(_SaveChanges value) saveChanges,
@@ -1718,7 +1676,7 @@ class _$SaveChangesImpl implements _SaveChanges {
     TResult? Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult? Function(_UpdateTimeZone value)? updateTimeZone,
     TResult? Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult? Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult? Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult? Function(_SaveChanges value)? saveChanges,
@@ -1734,7 +1692,7 @@ class _$SaveChangesImpl implements _SaveChanges {
     TResult Function(_UpdateMadhabMethod value)? updateMadhabMethod,
     TResult Function(_UpdateTimeZone value)? updateTimeZone,
     TResult Function(_UpdateHightLatitudeCalculation value)?
-    updateHightLatitudeCalculation,
+        updateHightLatitudeCalculation,
     TResult Function(_UpdateTimeOfPreview value)? updateTimeOfPreview,
     TResult Function(_UpdateAzanTypeInMin value)? updateAzanTypeInMin,
     TResult Function(_SaveChanges value)? saveChanges,
@@ -1783,45 +1741,41 @@ mixin _$PrayCalculationSettingState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   $PrayCalculationSettingStateCopyWith<PrayCalculationSettingState>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrayCalculationSettingStateCopyWith<$Res> {
   factory $PrayCalculationSettingStateCopyWith(
-    PrayCalculationSettingState value,
-    $Res Function(PrayCalculationSettingState) then,
-  ) =
-      _$PrayCalculationSettingStateCopyWithImpl<
-        $Res,
-        PrayCalculationSettingState
-      >;
+          PrayCalculationSettingState value,
+          $Res Function(PrayCalculationSettingState) then) =
+      _$PrayCalculationSettingStateCopyWithImpl<$Res,
+          PrayCalculationSettingState>;
   @useResult
-  $Res call({
-    DateTime? fajirTime,
-    DateTime? sunriseTime,
-    DateTime? duherTime,
-    DateTime? asrTime,
-    DateTime? megribTime,
-    DateTime? ishaTime,
-    DateTime? midleNighTime,
-    DateTime? last3thTime,
-    DateTime? applicationTime,
-    DateTime? deviceTime,
-    bool buttonsStatus,
-    int editFajirTimeManual,
-    int editSunriseTimeManual,
-    int editDuhirTimeManual,
-    int editAsrTimeManual,
-    int editMagrebTimeManual,
-    int editIshaTimeManual,
-    int editMidNightTimeManual,
-    int editLast3thTimeTimeManual,
-    Duration timeZone,
-    MadhabState madhab,
-    PrayCalculationMethodState calculationMethod,
-    PrayHightLatitudeCaluclationState hightLatitudeCaluclation,
-  });
+  $Res call(
+      {DateTime? fajirTime,
+      DateTime? sunriseTime,
+      DateTime? duherTime,
+      DateTime? asrTime,
+      DateTime? megribTime,
+      DateTime? ishaTime,
+      DateTime? midleNighTime,
+      DateTime? last3thTime,
+      DateTime? applicationTime,
+      DateTime? deviceTime,
+      bool buttonsStatus,
+      int editFajirTimeManual,
+      int editSunriseTimeManual,
+      int editDuhirTimeManual,
+      int editAsrTimeManual,
+      int editMagrebTimeManual,
+      int editIshaTimeManual,
+      int editMidNightTimeManual,
+      int editLast3thTimeTimeManual,
+      Duration timeZone,
+      MadhabState madhab,
+      PrayCalculationMethodState calculationMethod,
+      PrayHightLatitudeCaluclationState hightLatitudeCaluclation});
 
   $MadhabStateCopyWith<$Res> get madhab;
   $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod;
@@ -1829,10 +1783,8 @@ abstract class $PrayCalculationSettingStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PrayCalculationSettingStateCopyWithImpl<
-  $Res,
-  $Val extends PrayCalculationSettingState
->
+class _$PrayCalculationSettingStateCopyWithImpl<$Res,
+        $Val extends PrayCalculationSettingState>
     implements $PrayCalculationSettingStateCopyWith<$Res> {
   _$PrayCalculationSettingStateCopyWithImpl(this._value, this._then);
 
@@ -1870,103 +1822,100 @@ class _$PrayCalculationSettingStateCopyWithImpl<
     Object? calculationMethod = null,
     Object? hightLatitudeCaluclation = null,
   }) {
-    return _then(
-      _value.copyWith(
-            fajirTime: freezed == fajirTime
-                ? _value.fajirTime
-                : fajirTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            sunriseTime: freezed == sunriseTime
-                ? _value.sunriseTime
-                : sunriseTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            duherTime: freezed == duherTime
-                ? _value.duherTime
-                : duherTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            asrTime: freezed == asrTime
-                ? _value.asrTime
-                : asrTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            megribTime: freezed == megribTime
-                ? _value.megribTime
-                : megribTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            ishaTime: freezed == ishaTime
-                ? _value.ishaTime
-                : ishaTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            midleNighTime: freezed == midleNighTime
-                ? _value.midleNighTime
-                : midleNighTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            last3thTime: freezed == last3thTime
-                ? _value.last3thTime
-                : last3thTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            applicationTime: freezed == applicationTime
-                ? _value.applicationTime
-                : applicationTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            deviceTime: freezed == deviceTime
-                ? _value.deviceTime
-                : deviceTime // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            buttonsStatus: null == buttonsStatus
-                ? _value.buttonsStatus
-                : buttonsStatus // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            editFajirTimeManual: null == editFajirTimeManual
-                ? _value.editFajirTimeManual
-                : editFajirTimeManual // ignore: cast_nullable_to_non_nullable
-                      as int,
-            editSunriseTimeManual: null == editSunriseTimeManual
-                ? _value.editSunriseTimeManual
-                : editSunriseTimeManual // ignore: cast_nullable_to_non_nullable
-                      as int,
-            editDuhirTimeManual: null == editDuhirTimeManual
-                ? _value.editDuhirTimeManual
-                : editDuhirTimeManual // ignore: cast_nullable_to_non_nullable
-                      as int,
-            editAsrTimeManual: null == editAsrTimeManual
-                ? _value.editAsrTimeManual
-                : editAsrTimeManual // ignore: cast_nullable_to_non_nullable
-                      as int,
-            editMagrebTimeManual: null == editMagrebTimeManual
-                ? _value.editMagrebTimeManual
-                : editMagrebTimeManual // ignore: cast_nullable_to_non_nullable
-                      as int,
-            editIshaTimeManual: null == editIshaTimeManual
-                ? _value.editIshaTimeManual
-                : editIshaTimeManual // ignore: cast_nullable_to_non_nullable
-                      as int,
-            editMidNightTimeManual: null == editMidNightTimeManual
-                ? _value.editMidNightTimeManual
-                : editMidNightTimeManual // ignore: cast_nullable_to_non_nullable
-                      as int,
-            editLast3thTimeTimeManual: null == editLast3thTimeTimeManual
-                ? _value.editLast3thTimeTimeManual
-                : editLast3thTimeTimeManual // ignore: cast_nullable_to_non_nullable
-                      as int,
-            timeZone: null == timeZone
-                ? _value.timeZone
-                : timeZone // ignore: cast_nullable_to_non_nullable
-                      as Duration,
-            madhab: null == madhab
-                ? _value.madhab
-                : madhab // ignore: cast_nullable_to_non_nullable
-                      as MadhabState,
-            calculationMethod: null == calculationMethod
-                ? _value.calculationMethod
-                : calculationMethod // ignore: cast_nullable_to_non_nullable
-                      as PrayCalculationMethodState,
-            hightLatitudeCaluclation: null == hightLatitudeCaluclation
-                ? _value.hightLatitudeCaluclation
-                : hightLatitudeCaluclation // ignore: cast_nullable_to_non_nullable
-                      as PrayHightLatitudeCaluclationState,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      fajirTime: freezed == fajirTime
+          ? _value.fajirTime
+          : fajirTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      sunriseTime: freezed == sunriseTime
+          ? _value.sunriseTime
+          : sunriseTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      duherTime: freezed == duherTime
+          ? _value.duherTime
+          : duherTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      asrTime: freezed == asrTime
+          ? _value.asrTime
+          : asrTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      megribTime: freezed == megribTime
+          ? _value.megribTime
+          : megribTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      ishaTime: freezed == ishaTime
+          ? _value.ishaTime
+          : ishaTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      midleNighTime: freezed == midleNighTime
+          ? _value.midleNighTime
+          : midleNighTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      last3thTime: freezed == last3thTime
+          ? _value.last3thTime
+          : last3thTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      applicationTime: freezed == applicationTime
+          ? _value.applicationTime
+          : applicationTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deviceTime: freezed == deviceTime
+          ? _value.deviceTime
+          : deviceTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      buttonsStatus: null == buttonsStatus
+          ? _value.buttonsStatus
+          : buttonsStatus // ignore: cast_nullable_to_non_nullable
+              as bool,
+      editFajirTimeManual: null == editFajirTimeManual
+          ? _value.editFajirTimeManual
+          : editFajirTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editSunriseTimeManual: null == editSunriseTimeManual
+          ? _value.editSunriseTimeManual
+          : editSunriseTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editDuhirTimeManual: null == editDuhirTimeManual
+          ? _value.editDuhirTimeManual
+          : editDuhirTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editAsrTimeManual: null == editAsrTimeManual
+          ? _value.editAsrTimeManual
+          : editAsrTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editMagrebTimeManual: null == editMagrebTimeManual
+          ? _value.editMagrebTimeManual
+          : editMagrebTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editIshaTimeManual: null == editIshaTimeManual
+          ? _value.editIshaTimeManual
+          : editIshaTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editMidNightTimeManual: null == editMidNightTimeManual
+          ? _value.editMidNightTimeManual
+          : editMidNightTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editLast3thTimeTimeManual: null == editLast3thTimeTimeManual
+          ? _value.editLast3thTimeTimeManual
+          : editLast3thTimeTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      timeZone: null == timeZone
+          ? _value.timeZone
+          : timeZone // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      madhab: null == madhab
+          ? _value.madhab
+          : madhab // ignore: cast_nullable_to_non_nullable
+              as MadhabState,
+      calculationMethod: null == calculationMethod
+          ? _value.calculationMethod
+          : calculationMethod // ignore: cast_nullable_to_non_nullable
+              as PrayCalculationMethodState,
+      hightLatitudeCaluclation: null == hightLatitudeCaluclation
+          ? _value.hightLatitudeCaluclation
+          : hightLatitudeCaluclation // ignore: cast_nullable_to_non_nullable
+              as PrayHightLatitudeCaluclationState,
+    ) as $Val);
   }
 
   /// Create a copy of PrayCalculationSettingState
@@ -1984,9 +1933,8 @@ class _$PrayCalculationSettingStateCopyWithImpl<
   @override
   @pragma('vm:prefer-inline')
   $PrayCalculationMethodStateCopyWith<$Res> get calculationMethod {
-    return $PrayCalculationMethodStateCopyWith<$Res>(_value.calculationMethod, (
-      value,
-    ) {
+    return $PrayCalculationMethodStateCopyWith<$Res>(_value.calculationMethod,
+        (value) {
       return _then(_value.copyWith(calculationMethod: value) as $Val);
     });
   }
@@ -1996,13 +1944,11 @@ class _$PrayCalculationSettingStateCopyWithImpl<
   @override
   @pragma('vm:prefer-inline')
   $PrayHightLatitudeCaluclationStateCopyWith<$Res>
-  get hightLatitudeCaluclation {
+      get hightLatitudeCaluclation {
     return $PrayHightLatitudeCaluclationStateCopyWith<$Res>(
-      _value.hightLatitudeCaluclation,
-      (value) {
-        return _then(_value.copyWith(hightLatitudeCaluclation: value) as $Val);
-      },
-    );
+        _value.hightLatitudeCaluclation, (value) {
+      return _then(_value.copyWith(hightLatitudeCaluclation: value) as $Val);
+    });
   }
 }
 
@@ -2010,36 +1956,35 @@ class _$PrayCalculationSettingStateCopyWithImpl<
 abstract class _$$PrayCalculationSettingStateImplCopyWith<$Res>
     implements $PrayCalculationSettingStateCopyWith<$Res> {
   factory _$$PrayCalculationSettingStateImplCopyWith(
-    _$PrayCalculationSettingStateImpl value,
-    $Res Function(_$PrayCalculationSettingStateImpl) then,
-  ) = __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>;
+          _$PrayCalculationSettingStateImpl value,
+          $Res Function(_$PrayCalculationSettingStateImpl) then) =
+      __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    DateTime? fajirTime,
-    DateTime? sunriseTime,
-    DateTime? duherTime,
-    DateTime? asrTime,
-    DateTime? megribTime,
-    DateTime? ishaTime,
-    DateTime? midleNighTime,
-    DateTime? last3thTime,
-    DateTime? applicationTime,
-    DateTime? deviceTime,
-    bool buttonsStatus,
-    int editFajirTimeManual,
-    int editSunriseTimeManual,
-    int editDuhirTimeManual,
-    int editAsrTimeManual,
-    int editMagrebTimeManual,
-    int editIshaTimeManual,
-    int editMidNightTimeManual,
-    int editLast3thTimeTimeManual,
-    Duration timeZone,
-    MadhabState madhab,
-    PrayCalculationMethodState calculationMethod,
-    PrayHightLatitudeCaluclationState hightLatitudeCaluclation,
-  });
+  $Res call(
+      {DateTime? fajirTime,
+      DateTime? sunriseTime,
+      DateTime? duherTime,
+      DateTime? asrTime,
+      DateTime? megribTime,
+      DateTime? ishaTime,
+      DateTime? midleNighTime,
+      DateTime? last3thTime,
+      DateTime? applicationTime,
+      DateTime? deviceTime,
+      bool buttonsStatus,
+      int editFajirTimeManual,
+      int editSunriseTimeManual,
+      int editDuhirTimeManual,
+      int editAsrTimeManual,
+      int editMagrebTimeManual,
+      int editIshaTimeManual,
+      int editMidNightTimeManual,
+      int editLast3thTimeTimeManual,
+      Duration timeZone,
+      MadhabState madhab,
+      PrayCalculationMethodState calculationMethod,
+      PrayHightLatitudeCaluclationState hightLatitudeCaluclation});
 
   @override
   $MadhabStateCopyWith<$Res> get madhab;
@@ -2051,16 +1996,13 @@ abstract class _$$PrayCalculationSettingStateImplCopyWith<$Res>
 
 /// @nodoc
 class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
-    extends
-        _$PrayCalculationSettingStateCopyWithImpl<
-          $Res,
-          _$PrayCalculationSettingStateImpl
-        >
+    extends _$PrayCalculationSettingStateCopyWithImpl<$Res,
+        _$PrayCalculationSettingStateImpl>
     implements _$$PrayCalculationSettingStateImplCopyWith<$Res> {
   __$$PrayCalculationSettingStateImplCopyWithImpl(
-    _$PrayCalculationSettingStateImpl _value,
-    $Res Function(_$PrayCalculationSettingStateImpl) _then,
-  ) : super(_value, _then);
+      _$PrayCalculationSettingStateImpl _value,
+      $Res Function(_$PrayCalculationSettingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PrayCalculationSettingState
   /// with the given fields replaced by the non-null parameter values.
@@ -2091,102 +2033,100 @@ class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
     Object? calculationMethod = null,
     Object? hightLatitudeCaluclation = null,
   }) {
-    return _then(
-      _$PrayCalculationSettingStateImpl(
-        fajirTime: freezed == fajirTime
-            ? _value.fajirTime
-            : fajirTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        sunriseTime: freezed == sunriseTime
-            ? _value.sunriseTime
-            : sunriseTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        duherTime: freezed == duherTime
-            ? _value.duherTime
-            : duherTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        asrTime: freezed == asrTime
-            ? _value.asrTime
-            : asrTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        megribTime: freezed == megribTime
-            ? _value.megribTime
-            : megribTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        ishaTime: freezed == ishaTime
-            ? _value.ishaTime
-            : ishaTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        midleNighTime: freezed == midleNighTime
-            ? _value.midleNighTime
-            : midleNighTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        last3thTime: freezed == last3thTime
-            ? _value.last3thTime
-            : last3thTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        applicationTime: freezed == applicationTime
-            ? _value.applicationTime
-            : applicationTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        deviceTime: freezed == deviceTime
-            ? _value.deviceTime
-            : deviceTime // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        buttonsStatus: null == buttonsStatus
-            ? _value.buttonsStatus
-            : buttonsStatus // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        editFajirTimeManual: null == editFajirTimeManual
-            ? _value.editFajirTimeManual
-            : editFajirTimeManual // ignore: cast_nullable_to_non_nullable
-                  as int,
-        editSunriseTimeManual: null == editSunriseTimeManual
-            ? _value.editSunriseTimeManual
-            : editSunriseTimeManual // ignore: cast_nullable_to_non_nullable
-                  as int,
-        editDuhirTimeManual: null == editDuhirTimeManual
-            ? _value.editDuhirTimeManual
-            : editDuhirTimeManual // ignore: cast_nullable_to_non_nullable
-                  as int,
-        editAsrTimeManual: null == editAsrTimeManual
-            ? _value.editAsrTimeManual
-            : editAsrTimeManual // ignore: cast_nullable_to_non_nullable
-                  as int,
-        editMagrebTimeManual: null == editMagrebTimeManual
-            ? _value.editMagrebTimeManual
-            : editMagrebTimeManual // ignore: cast_nullable_to_non_nullable
-                  as int,
-        editIshaTimeManual: null == editIshaTimeManual
-            ? _value.editIshaTimeManual
-            : editIshaTimeManual // ignore: cast_nullable_to_non_nullable
-                  as int,
-        editMidNightTimeManual: null == editMidNightTimeManual
-            ? _value.editMidNightTimeManual
-            : editMidNightTimeManual // ignore: cast_nullable_to_non_nullable
-                  as int,
-        editLast3thTimeTimeManual: null == editLast3thTimeTimeManual
-            ? _value.editLast3thTimeTimeManual
-            : editLast3thTimeTimeManual // ignore: cast_nullable_to_non_nullable
-                  as int,
-        timeZone: null == timeZone
-            ? _value.timeZone
-            : timeZone // ignore: cast_nullable_to_non_nullable
-                  as Duration,
-        madhab: null == madhab
-            ? _value.madhab
-            : madhab // ignore: cast_nullable_to_non_nullable
-                  as MadhabState,
-        calculationMethod: null == calculationMethod
-            ? _value.calculationMethod
-            : calculationMethod // ignore: cast_nullable_to_non_nullable
-                  as PrayCalculationMethodState,
-        hightLatitudeCaluclation: null == hightLatitudeCaluclation
-            ? _value.hightLatitudeCaluclation
-            : hightLatitudeCaluclation // ignore: cast_nullable_to_non_nullable
-                  as PrayHightLatitudeCaluclationState,
-      ),
-    );
+    return _then(_$PrayCalculationSettingStateImpl(
+      fajirTime: freezed == fajirTime
+          ? _value.fajirTime
+          : fajirTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      sunriseTime: freezed == sunriseTime
+          ? _value.sunriseTime
+          : sunriseTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      duherTime: freezed == duherTime
+          ? _value.duherTime
+          : duherTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      asrTime: freezed == asrTime
+          ? _value.asrTime
+          : asrTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      megribTime: freezed == megribTime
+          ? _value.megribTime
+          : megribTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      ishaTime: freezed == ishaTime
+          ? _value.ishaTime
+          : ishaTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      midleNighTime: freezed == midleNighTime
+          ? _value.midleNighTime
+          : midleNighTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      last3thTime: freezed == last3thTime
+          ? _value.last3thTime
+          : last3thTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      applicationTime: freezed == applicationTime
+          ? _value.applicationTime
+          : applicationTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deviceTime: freezed == deviceTime
+          ? _value.deviceTime
+          : deviceTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      buttonsStatus: null == buttonsStatus
+          ? _value.buttonsStatus
+          : buttonsStatus // ignore: cast_nullable_to_non_nullable
+              as bool,
+      editFajirTimeManual: null == editFajirTimeManual
+          ? _value.editFajirTimeManual
+          : editFajirTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editSunriseTimeManual: null == editSunriseTimeManual
+          ? _value.editSunriseTimeManual
+          : editSunriseTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editDuhirTimeManual: null == editDuhirTimeManual
+          ? _value.editDuhirTimeManual
+          : editDuhirTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editAsrTimeManual: null == editAsrTimeManual
+          ? _value.editAsrTimeManual
+          : editAsrTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editMagrebTimeManual: null == editMagrebTimeManual
+          ? _value.editMagrebTimeManual
+          : editMagrebTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editIshaTimeManual: null == editIshaTimeManual
+          ? _value.editIshaTimeManual
+          : editIshaTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editMidNightTimeManual: null == editMidNightTimeManual
+          ? _value.editMidNightTimeManual
+          : editMidNightTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      editLast3thTimeTimeManual: null == editLast3thTimeTimeManual
+          ? _value.editLast3thTimeTimeManual
+          : editLast3thTimeTimeManual // ignore: cast_nullable_to_non_nullable
+              as int,
+      timeZone: null == timeZone
+          ? _value.timeZone
+          : timeZone // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      madhab: null == madhab
+          ? _value.madhab
+          : madhab // ignore: cast_nullable_to_non_nullable
+              as MadhabState,
+      calculationMethod: null == calculationMethod
+          ? _value.calculationMethod
+          : calculationMethod // ignore: cast_nullable_to_non_nullable
+              as PrayCalculationMethodState,
+      hightLatitudeCaluclation: null == hightLatitudeCaluclation
+          ? _value.hightLatitudeCaluclation
+          : hightLatitudeCaluclation // ignore: cast_nullable_to_non_nullable
+              as PrayHightLatitudeCaluclationState,
+    ));
   }
 }
 
@@ -2194,32 +2134,31 @@ class __$$PrayCalculationSettingStateImplCopyWithImpl<$Res>
 
 class _$PrayCalculationSettingStateImpl
     implements _PrayCalculationSettingState {
-  const _$PrayCalculationSettingStateImpl({
-    this.fajirTime,
-    this.sunriseTime,
-    this.duherTime,
-    this.asrTime,
-    this.megribTime,
-    this.ishaTime,
-    this.midleNighTime,
-    this.last3thTime,
-    this.applicationTime,
-    this.deviceTime,
-    this.buttonsStatus = false,
-    this.editFajirTimeManual = 0,
-    this.editSunriseTimeManual = 0,
-    this.editDuhirTimeManual = 0,
-    this.editAsrTimeManual = 0,
-    this.editMagrebTimeManual = 0,
-    this.editIshaTimeManual = 0,
-    this.editMidNightTimeManual = 0,
-    this.editLast3thTimeTimeManual = 0,
-    this.timeZone = const Duration(hours: 3),
-    this.madhab = const MadhabState.hanafi(),
-    this.calculationMethod = const PrayCalculationMethodState.jordanAwqaf(),
-    this.hightLatitudeCaluclation =
-        const PrayHightLatitudeCaluclationState.none(),
-  });
+  const _$PrayCalculationSettingStateImpl(
+      {this.fajirTime,
+      this.sunriseTime,
+      this.duherTime,
+      this.asrTime,
+      this.megribTime,
+      this.ishaTime,
+      this.midleNighTime,
+      this.last3thTime,
+      this.applicationTime,
+      this.deviceTime,
+      this.buttonsStatus = false,
+      this.editFajirTimeManual = 0,
+      this.editSunriseTimeManual = 0,
+      this.editDuhirTimeManual = 0,
+      this.editAsrTimeManual = 0,
+      this.editMagrebTimeManual = 0,
+      this.editIshaTimeManual = 0,
+      this.editMidNightTimeManual = 0,
+      this.editLast3thTimeTimeManual = 0,
+      this.timeZone = const Duration(hours: 3),
+      this.madhab = const MadhabState.hanafi(),
+      this.calculationMethod = const PrayCalculationMethodState.jordanAwqaf(),
+      this.hightLatitudeCaluclation =
+          const PrayHightLatitudeCaluclationState.none()});
 
   @override
   final DateTime? fajirTime;
@@ -2326,10 +2265,8 @@ class _$PrayCalculationSettingStateImpl
                 other.editIshaTimeManual == editIshaTimeManual) &&
             (identical(other.editMidNightTimeManual, editMidNightTimeManual) ||
                 other.editMidNightTimeManual == editMidNightTimeManual) &&
-            (identical(
-                  other.editLast3thTimeTimeManual,
-                  editLast3thTimeTimeManual,
-                ) ||
+            (identical(other.editLast3thTimeTimeManual,
+                    editLast3thTimeTimeManual) ||
                 other.editLast3thTimeTimeManual == editLast3thTimeTimeManual) &&
             (identical(other.timeZone, timeZone) ||
                 other.timeZone == timeZone) &&
@@ -2337,39 +2274,37 @@ class _$PrayCalculationSettingStateImpl
             (identical(other.calculationMethod, calculationMethod) ||
                 other.calculationMethod == calculationMethod) &&
             (identical(
-                  other.hightLatitudeCaluclation,
-                  hightLatitudeCaluclation,
-                ) ||
+                    other.hightLatitudeCaluclation, hightLatitudeCaluclation) ||
                 other.hightLatitudeCaluclation == hightLatitudeCaluclation));
   }
 
   @override
   int get hashCode => Object.hashAll([
-    runtimeType,
-    fajirTime,
-    sunriseTime,
-    duherTime,
-    asrTime,
-    megribTime,
-    ishaTime,
-    midleNighTime,
-    last3thTime,
-    applicationTime,
-    deviceTime,
-    buttonsStatus,
-    editFajirTimeManual,
-    editSunriseTimeManual,
-    editDuhirTimeManual,
-    editAsrTimeManual,
-    editMagrebTimeManual,
-    editIshaTimeManual,
-    editMidNightTimeManual,
-    editLast3thTimeTimeManual,
-    timeZone,
-    madhab,
-    calculationMethod,
-    hightLatitudeCaluclation,
-  ]);
+        runtimeType,
+        fajirTime,
+        sunriseTime,
+        duherTime,
+        asrTime,
+        megribTime,
+        ishaTime,
+        midleNighTime,
+        last3thTime,
+        applicationTime,
+        deviceTime,
+        buttonsStatus,
+        editFajirTimeManual,
+        editSunriseTimeManual,
+        editDuhirTimeManual,
+        editAsrTimeManual,
+        editMagrebTimeManual,
+        editIshaTimeManual,
+        editMidNightTimeManual,
+        editLast3thTimeTimeManual,
+        timeZone,
+        madhab,
+        calculationMethod,
+        hightLatitudeCaluclation
+      ]);
 
   /// Create a copy of PrayCalculationSettingState
   /// with the given fields replaced by the non-null parameter values.
@@ -2377,39 +2312,37 @@ class _$PrayCalculationSettingStateImpl
   @override
   @pragma('vm:prefer-inline')
   _$$PrayCalculationSettingStateImplCopyWith<_$PrayCalculationSettingStateImpl>
-  get copyWith =>
-      __$$PrayCalculationSettingStateImplCopyWithImpl<
-        _$PrayCalculationSettingStateImpl
-      >(this, _$identity);
+      get copyWith => __$$PrayCalculationSettingStateImplCopyWithImpl<
+          _$PrayCalculationSettingStateImpl>(this, _$identity);
 }
 
 abstract class _PrayCalculationSettingState
     implements PrayCalculationSettingState {
-  const factory _PrayCalculationSettingState({
-    final DateTime? fajirTime,
-    final DateTime? sunriseTime,
-    final DateTime? duherTime,
-    final DateTime? asrTime,
-    final DateTime? megribTime,
-    final DateTime? ishaTime,
-    final DateTime? midleNighTime,
-    final DateTime? last3thTime,
-    final DateTime? applicationTime,
-    final DateTime? deviceTime,
-    final bool buttonsStatus,
-    final int editFajirTimeManual,
-    final int editSunriseTimeManual,
-    final int editDuhirTimeManual,
-    final int editAsrTimeManual,
-    final int editMagrebTimeManual,
-    final int editIshaTimeManual,
-    final int editMidNightTimeManual,
-    final int editLast3thTimeTimeManual,
-    final Duration timeZone,
-    final MadhabState madhab,
-    final PrayCalculationMethodState calculationMethod,
-    final PrayHightLatitudeCaluclationState hightLatitudeCaluclation,
-  }) = _$PrayCalculationSettingStateImpl;
+  const factory _PrayCalculationSettingState(
+          {final DateTime? fajirTime,
+          final DateTime? sunriseTime,
+          final DateTime? duherTime,
+          final DateTime? asrTime,
+          final DateTime? megribTime,
+          final DateTime? ishaTime,
+          final DateTime? midleNighTime,
+          final DateTime? last3thTime,
+          final DateTime? applicationTime,
+          final DateTime? deviceTime,
+          final bool buttonsStatus,
+          final int editFajirTimeManual,
+          final int editSunriseTimeManual,
+          final int editDuhirTimeManual,
+          final int editAsrTimeManual,
+          final int editMagrebTimeManual,
+          final int editIshaTimeManual,
+          final int editMidNightTimeManual,
+          final int editLast3thTimeTimeManual,
+          final Duration timeZone,
+          final MadhabState madhab,
+          final PrayCalculationMethodState calculationMethod,
+          final PrayHightLatitudeCaluclationState hightLatitudeCaluclation}) =
+      _$PrayCalculationSettingStateImpl;
 
   @override
   DateTime? get fajirTime;
@@ -2463,5 +2396,5 @@ abstract class _PrayCalculationSettingState
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PrayCalculationSettingStateImplCopyWith<_$PrayCalculationSettingStateImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }

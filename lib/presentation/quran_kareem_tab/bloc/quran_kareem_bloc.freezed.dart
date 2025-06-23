@@ -12,8 +12,7 @@ part of 'quran_kareem_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$QuranKareemEvent {
@@ -22,7 +21,7 @@ mixin _$QuranKareemEvent {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -30,7 +29,8 @@ mixin _$QuranKareemEvent {
     required TResult Function(String value) updateReadPDFFile,
     required TResult Function(String value) updateSorahName,
     required TResult Function(String value) updateJozo2Name,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? showHideHelpBar,
@@ -43,7 +43,8 @@ mixin _$QuranKareemEvent {
     TResult? Function(String value)? updateReadPDFFile,
     TResult? Function(String value)? updateSorahName,
     TResult? Function(String value)? updateJozo2Name,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? showHideHelpBar,
@@ -57,22 +58,24 @@ mixin _$QuranKareemEvent {
     TResult Function(String value)? updateSorahName,
     TResult Function(String value)? updateJozo2Name,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
     required TResult Function(_UpdateSorahName value) updateSorahName,
     required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
@@ -85,7 +88,8 @@ mixin _$QuranKareemEvent {
     TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
     TResult? Function(_UpdateSorahName value)? updateSorahName,
     TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
@@ -99,15 +103,15 @@ mixin _$QuranKareemEvent {
     TResult Function(_UpdateSorahName value)? updateSorahName,
     TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuranKareemEventCopyWith<$Res> {
   factory $QuranKareemEventCopyWith(
-    QuranKareemEvent value,
-    $Res Function(QuranKareemEvent) then,
-  ) = _$QuranKareemEventCopyWithImpl<$Res, QuranKareemEvent>;
+          QuranKareemEvent value, $Res Function(QuranKareemEvent) then) =
+      _$QuranKareemEventCopyWithImpl<$Res, QuranKareemEvent>;
 }
 
 /// @nodoc
@@ -126,10 +130,9 @@ class _$QuranKareemEventCopyWithImpl<$Res, $Val extends QuranKareemEvent>
 
 /// @nodoc
 abstract class _$$ShowHideHelpBarImplCopyWith<$Res> {
-  factory _$$ShowHideHelpBarImplCopyWith(
-    _$ShowHideHelpBarImpl value,
-    $Res Function(_$ShowHideHelpBarImpl) then,
-  ) = __$$ShowHideHelpBarImplCopyWithImpl<$Res>;
+  factory _$$ShowHideHelpBarImplCopyWith(_$ShowHideHelpBarImpl value,
+          $Res Function(_$ShowHideHelpBarImpl) then) =
+      __$$ShowHideHelpBarImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool status});
 }
@@ -139,23 +142,22 @@ class __$$ShowHideHelpBarImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$ShowHideHelpBarImpl>
     implements _$$ShowHideHelpBarImplCopyWith<$Res> {
   __$$ShowHideHelpBarImplCopyWithImpl(
-    _$ShowHideHelpBarImpl _value,
-    $Res Function(_$ShowHideHelpBarImpl) _then,
-  ) : super(_value, _then);
+      _$ShowHideHelpBarImpl _value, $Res Function(_$ShowHideHelpBarImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$ShowHideHelpBarImpl(
-        null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$ShowHideHelpBarImpl(
+      null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -190,9 +192,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
   @pragma('vm:prefer-inline')
   _$$ShowHideHelpBarImplCopyWith<_$ShowHideHelpBarImpl> get copyWith =>
       __$$ShowHideHelpBarImplCopyWithImpl<_$ShowHideHelpBarImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -200,7 +200,7 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -257,9 +257,9 @@ class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -322,10 +322,9 @@ abstract class _ShowHideHelpBar implements QuranKareemEvent {
 
 /// @nodoc
 abstract class _$$UpdatePageCountImplCopyWith<$Res> {
-  factory _$$UpdatePageCountImplCopyWith(
-    _$UpdatePageCountImpl value,
-    $Res Function(_$UpdatePageCountImpl) then,
-  ) = __$$UpdatePageCountImplCopyWithImpl<$Res>;
+  factory _$$UpdatePageCountImplCopyWith(_$UpdatePageCountImpl value,
+          $Res Function(_$UpdatePageCountImpl) then) =
+      __$$UpdatePageCountImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int pageCount});
 }
@@ -335,23 +334,22 @@ class __$$UpdatePageCountImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdatePageCountImpl>
     implements _$$UpdatePageCountImplCopyWith<$Res> {
   __$$UpdatePageCountImplCopyWithImpl(
-    _$UpdatePageCountImpl _value,
-    $Res Function(_$UpdatePageCountImpl) _then,
-  ) : super(_value, _then);
+      _$UpdatePageCountImpl _value, $Res Function(_$UpdatePageCountImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? pageCount = null}) {
-    return _then(
-      _$UpdatePageCountImpl(
-        null == pageCount
-            ? _value.pageCount
-            : pageCount // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+  $Res call({
+    Object? pageCount = null,
+  }) {
+    return _then(_$UpdatePageCountImpl(
+      null == pageCount
+          ? _value.pageCount
+          : pageCount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
@@ -387,9 +385,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
   @pragma('vm:prefer-inline')
   _$$UpdatePageCountImplCopyWith<_$UpdatePageCountImpl> get copyWith =>
       __$$UpdatePageCountImplCopyWithImpl<_$UpdatePageCountImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -397,7 +393,7 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -454,9 +450,9 @@ class _$UpdatePageCountImpl implements _UpdatePageCount {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -519,10 +515,9 @@ abstract class _UpdatePageCount implements QuranKareemEvent {
 
 /// @nodoc
 abstract class _$$UpdateSidePageImplCopyWith<$Res> {
-  factory _$$UpdateSidePageImplCopyWith(
-    _$UpdateSidePageImpl value,
-    $Res Function(_$UpdateSidePageImpl) then,
-  ) = __$$UpdateSidePageImplCopyWithImpl<$Res>;
+  factory _$$UpdateSidePageImplCopyWith(_$UpdateSidePageImpl value,
+          $Res Function(_$UpdateSidePageImpl) then) =
+      __$$UpdateSidePageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({QuranKareemStatePageSideState side});
 
@@ -534,23 +529,22 @@ class __$$UpdateSidePageImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateSidePageImpl>
     implements _$$UpdateSidePageImplCopyWith<$Res> {
   __$$UpdateSidePageImplCopyWithImpl(
-    _$UpdateSidePageImpl _value,
-    $Res Function(_$UpdateSidePageImpl) _then,
-  ) : super(_value, _then);
+      _$UpdateSidePageImpl _value, $Res Function(_$UpdateSidePageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? side = null}) {
-    return _then(
-      _$UpdateSidePageImpl(
-        null == side
-            ? _value.side
-            : side // ignore: cast_nullable_to_non_nullable
-                  as QuranKareemStatePageSideState,
-      ),
-    );
+  $Res call({
+    Object? side = null,
+  }) {
+    return _then(_$UpdateSidePageImpl(
+      null == side
+          ? _value.side
+          : side // ignore: cast_nullable_to_non_nullable
+              as QuranKareemStatePageSideState,
+    ));
   }
 
   /// Create a copy of QuranKareemEvent
@@ -595,9 +589,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
   @pragma('vm:prefer-inline')
   _$$UpdateSidePageImplCopyWith<_$UpdateSidePageImpl> get copyWith =>
       __$$UpdateSidePageImplCopyWithImpl<_$UpdateSidePageImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -605,7 +597,7 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -662,9 +654,9 @@ class _$UpdateSidePageImpl implements _UpdateSidePage {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -729,9 +721,9 @@ abstract class _UpdateSidePage implements QuranKareemEvent {
 /// @nodoc
 abstract class _$$UpdateBookMarkedPagesImplCopyWith<$Res> {
   factory _$$UpdateBookMarkedPagesImplCopyWith(
-    _$UpdateBookMarkedPagesImpl value,
-    $Res Function(_$UpdateBookMarkedPagesImpl) then,
-  ) = __$$UpdateBookMarkedPagesImplCopyWithImpl<$Res>;
+          _$UpdateBookMarkedPagesImpl value,
+          $Res Function(_$UpdateBookMarkedPagesImpl) then) =
+      __$$UpdateBookMarkedPagesImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<int> list});
 }
@@ -740,24 +732,23 @@ abstract class _$$UpdateBookMarkedPagesImplCopyWith<$Res> {
 class __$$UpdateBookMarkedPagesImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateBookMarkedPagesImpl>
     implements _$$UpdateBookMarkedPagesImplCopyWith<$Res> {
-  __$$UpdateBookMarkedPagesImplCopyWithImpl(
-    _$UpdateBookMarkedPagesImpl _value,
-    $Res Function(_$UpdateBookMarkedPagesImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateBookMarkedPagesImplCopyWithImpl(_$UpdateBookMarkedPagesImpl _value,
+      $Res Function(_$UpdateBookMarkedPagesImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? list = null}) {
-    return _then(
-      _$UpdateBookMarkedPagesImpl(
-        null == list
-            ? _value._list
-            : list // ignore: cast_nullable_to_non_nullable
-                  as List<int>,
-      ),
-    );
+  $Res call({
+    Object? list = null,
+  }) {
+    return _then(_$UpdateBookMarkedPagesImpl(
+      null == list
+          ? _value._list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+    ));
   }
 }
 
@@ -797,11 +788,8 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateBookMarkedPagesImplCopyWith<_$UpdateBookMarkedPagesImpl>
-  get copyWith =>
-      __$$UpdateBookMarkedPagesImplCopyWithImpl<_$UpdateBookMarkedPagesImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$UpdateBookMarkedPagesImplCopyWithImpl<
+          _$UpdateBookMarkedPagesImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -809,7 +797,7 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -866,9 +854,9 @@ class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -927,15 +915,15 @@ abstract class _UpdateBookMarkedPages implements QuranKareemEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateBookMarkedPagesImplCopyWith<_$UpdateBookMarkedPagesImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateScreenBrigtnessImplCopyWith<$Res> {
   factory _$$UpdateScreenBrigtnessImplCopyWith(
-    _$UpdateScreenBrigtnessImpl value,
-    $Res Function(_$UpdateScreenBrigtnessImpl) then,
-  ) = __$$UpdateScreenBrigtnessImplCopyWithImpl<$Res>;
+          _$UpdateScreenBrigtnessImpl value,
+          $Res Function(_$UpdateScreenBrigtnessImpl) then) =
+      __$$UpdateScreenBrigtnessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({double value});
 }
@@ -944,24 +932,23 @@ abstract class _$$UpdateScreenBrigtnessImplCopyWith<$Res> {
 class __$$UpdateScreenBrigtnessImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateScreenBrigtnessImpl>
     implements _$$UpdateScreenBrigtnessImplCopyWith<$Res> {
-  __$$UpdateScreenBrigtnessImplCopyWithImpl(
-    _$UpdateScreenBrigtnessImpl _value,
-    $Res Function(_$UpdateScreenBrigtnessImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateScreenBrigtnessImplCopyWithImpl(_$UpdateScreenBrigtnessImpl _value,
+      $Res Function(_$UpdateScreenBrigtnessImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateScreenBrigtnessImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as double,
-      ),
-    );
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateScreenBrigtnessImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
   }
 }
 
@@ -995,11 +982,8 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateScreenBrigtnessImplCopyWith<_$UpdateScreenBrigtnessImpl>
-  get copyWith =>
-      __$$UpdateScreenBrigtnessImplCopyWithImpl<_$UpdateScreenBrigtnessImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$UpdateScreenBrigtnessImplCopyWithImpl<
+          _$UpdateScreenBrigtnessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1007,7 +991,7 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -1064,9 +1048,9 @@ class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -1125,15 +1109,14 @@ abstract class _UpdateScreenBrigtness implements QuranKareemEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateScreenBrigtnessImplCopyWith<_$UpdateScreenBrigtnessImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateScreenTutorialImplCopyWith<$Res> {
-  factory _$$UpdateScreenTutorialImplCopyWith(
-    _$UpdateScreenTutorialImpl value,
-    $Res Function(_$UpdateScreenTutorialImpl) then,
-  ) = __$$UpdateScreenTutorialImplCopyWithImpl<$Res>;
+  factory _$$UpdateScreenTutorialImplCopyWith(_$UpdateScreenTutorialImpl value,
+          $Res Function(_$UpdateScreenTutorialImpl) then) =
+      __$$UpdateScreenTutorialImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
@@ -1142,24 +1125,23 @@ abstract class _$$UpdateScreenTutorialImplCopyWith<$Res> {
 class __$$UpdateScreenTutorialImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateScreenTutorialImpl>
     implements _$$UpdateScreenTutorialImplCopyWith<$Res> {
-  __$$UpdateScreenTutorialImplCopyWithImpl(
-    _$UpdateScreenTutorialImpl _value,
-    $Res Function(_$UpdateScreenTutorialImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateScreenTutorialImplCopyWithImpl(_$UpdateScreenTutorialImpl _value,
+      $Res Function(_$UpdateScreenTutorialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateScreenTutorialImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateScreenTutorialImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -1193,11 +1175,9 @@ class _$UpdateScreenTutorialImpl implements _UpdateScreenTutorial {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateScreenTutorialImplCopyWith<_$UpdateScreenTutorialImpl>
-  get copyWith =>
-      __$$UpdateScreenTutorialImplCopyWithImpl<_$UpdateScreenTutorialImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith =>
+          __$$UpdateScreenTutorialImplCopyWithImpl<_$UpdateScreenTutorialImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1205,7 +1185,7 @@ class _$UpdateScreenTutorialImpl implements _UpdateScreenTutorial {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -1262,9 +1242,9 @@ class _$UpdateScreenTutorialImpl implements _UpdateScreenTutorial {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -1322,15 +1302,14 @@ abstract class _UpdateScreenTutorial implements QuranKareemEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateScreenTutorialImplCopyWith<_$UpdateScreenTutorialImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
-  factory _$$UpdateRewardedAdImplCopyWith(
-    _$UpdateRewardedAdImpl value,
-    $Res Function(_$UpdateRewardedAdImpl) then,
-  ) = __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
+  factory _$$UpdateRewardedAdImplCopyWith(_$UpdateRewardedAdImpl value,
+          $Res Function(_$UpdateRewardedAdImpl) then) =
+      __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
@@ -1339,24 +1318,23 @@ abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
 class __$$UpdateRewardedAdImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateRewardedAdImpl>
     implements _$$UpdateRewardedAdImplCopyWith<$Res> {
-  __$$UpdateRewardedAdImplCopyWithImpl(
-    _$UpdateRewardedAdImpl _value,
-    $Res Function(_$UpdateRewardedAdImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateRewardedAdImplCopyWithImpl(_$UpdateRewardedAdImpl _value,
+      $Res Function(_$UpdateRewardedAdImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateRewardedAdImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateRewardedAdImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -1391,9 +1369,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
   @pragma('vm:prefer-inline')
   _$$UpdateRewardedAdImplCopyWith<_$UpdateRewardedAdImpl> get copyWith =>
       __$$UpdateRewardedAdImplCopyWithImpl<_$UpdateRewardedAdImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1401,7 +1377,7 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -1458,9 +1434,9 @@ class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -1523,10 +1499,9 @@ abstract class _UpdateRewardedAd implements QuranKareemEvent {
 
 /// @nodoc
 abstract class _$$UpdateReadPDFFileImplCopyWith<$Res> {
-  factory _$$UpdateReadPDFFileImplCopyWith(
-    _$UpdateReadPDFFileImpl value,
-    $Res Function(_$UpdateReadPDFFileImpl) then,
-  ) = __$$UpdateReadPDFFileImplCopyWithImpl<$Res>;
+  factory _$$UpdateReadPDFFileImplCopyWith(_$UpdateReadPDFFileImpl value,
+          $Res Function(_$UpdateReadPDFFileImpl) then) =
+      __$$UpdateReadPDFFileImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
@@ -1535,24 +1510,23 @@ abstract class _$$UpdateReadPDFFileImplCopyWith<$Res> {
 class __$$UpdateReadPDFFileImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateReadPDFFileImpl>
     implements _$$UpdateReadPDFFileImplCopyWith<$Res> {
-  __$$UpdateReadPDFFileImplCopyWithImpl(
-    _$UpdateReadPDFFileImpl _value,
-    $Res Function(_$UpdateReadPDFFileImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateReadPDFFileImplCopyWithImpl(_$UpdateReadPDFFileImpl _value,
+      $Res Function(_$UpdateReadPDFFileImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateReadPDFFileImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateReadPDFFileImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -1587,9 +1561,7 @@ class _$UpdateReadPDFFileImpl implements _UpdateReadPDFFile {
   @pragma('vm:prefer-inline')
   _$$UpdateReadPDFFileImplCopyWith<_$UpdateReadPDFFileImpl> get copyWith =>
       __$$UpdateReadPDFFileImplCopyWithImpl<_$UpdateReadPDFFileImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1597,7 +1569,7 @@ class _$UpdateReadPDFFileImpl implements _UpdateReadPDFFile {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -1654,9 +1626,9 @@ class _$UpdateReadPDFFileImpl implements _UpdateReadPDFFile {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -1719,10 +1691,9 @@ abstract class _UpdateReadPDFFile implements QuranKareemEvent {
 
 /// @nodoc
 abstract class _$$UpdateSorahNameImplCopyWith<$Res> {
-  factory _$$UpdateSorahNameImplCopyWith(
-    _$UpdateSorahNameImpl value,
-    $Res Function(_$UpdateSorahNameImpl) then,
-  ) = __$$UpdateSorahNameImplCopyWithImpl<$Res>;
+  factory _$$UpdateSorahNameImplCopyWith(_$UpdateSorahNameImpl value,
+          $Res Function(_$UpdateSorahNameImpl) then) =
+      __$$UpdateSorahNameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
@@ -1732,23 +1703,22 @@ class __$$UpdateSorahNameImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateSorahNameImpl>
     implements _$$UpdateSorahNameImplCopyWith<$Res> {
   __$$UpdateSorahNameImplCopyWithImpl(
-    _$UpdateSorahNameImpl _value,
-    $Res Function(_$UpdateSorahNameImpl) _then,
-  ) : super(_value, _then);
+      _$UpdateSorahNameImpl _value, $Res Function(_$UpdateSorahNameImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateSorahNameImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSorahNameImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -1783,9 +1753,7 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
   @pragma('vm:prefer-inline')
   _$$UpdateSorahNameImplCopyWith<_$UpdateSorahNameImpl> get copyWith =>
       __$$UpdateSorahNameImplCopyWithImpl<_$UpdateSorahNameImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1793,7 +1761,7 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -1850,9 +1818,9 @@ class _$UpdateSorahNameImpl implements _UpdateSorahName {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -1915,10 +1883,9 @@ abstract class _UpdateSorahName implements QuranKareemEvent {
 
 /// @nodoc
 abstract class _$$UpdateJozo2NameImplCopyWith<$Res> {
-  factory _$$UpdateJozo2NameImplCopyWith(
-    _$UpdateJozo2NameImpl value,
-    $Res Function(_$UpdateJozo2NameImpl) then,
-  ) = __$$UpdateJozo2NameImplCopyWithImpl<$Res>;
+  factory _$$UpdateJozo2NameImplCopyWith(_$UpdateJozo2NameImpl value,
+          $Res Function(_$UpdateJozo2NameImpl) then) =
+      __$$UpdateJozo2NameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
@@ -1928,23 +1895,22 @@ class __$$UpdateJozo2NameImplCopyWithImpl<$Res>
     extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateJozo2NameImpl>
     implements _$$UpdateJozo2NameImplCopyWith<$Res> {
   __$$UpdateJozo2NameImplCopyWithImpl(
-    _$UpdateJozo2NameImpl _value,
-    $Res Function(_$UpdateJozo2NameImpl) _then,
-  ) : super(_value, _then);
+      _$UpdateJozo2NameImpl _value, $Res Function(_$UpdateJozo2NameImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateJozo2NameImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateJozo2NameImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -1979,9 +1945,7 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
   @pragma('vm:prefer-inline')
   _$$UpdateJozo2NameImplCopyWith<_$UpdateJozo2NameImpl> get copyWith =>
       __$$UpdateJozo2NameImplCopyWithImpl<_$UpdateJozo2NameImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1989,7 +1953,7 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
     required TResult Function(bool status) showHideHelpBar,
     required TResult Function(int pageCount) updatePageCount,
     required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
+        updateSidePage,
     required TResult Function(List<int> list) updateBookMarkedPages,
     required TResult Function(double value) updateScreenBrigtness,
     required TResult Function(bool value) updateScreenTutorial,
@@ -2046,9 +2010,9 @@ class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
     required TResult Function(_UpdatePageCount value) updatePageCount,
     required TResult Function(_UpdateSidePage value) updateSidePage,
     required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
+        updateBookMarkedPages,
     required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
+        updateScreenBrigtness,
     required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
     required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
     required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
@@ -2133,22 +2097,20 @@ mixin _$QuranKareemState {
 /// @nodoc
 abstract class $QuranKareemStateCopyWith<$Res> {
   factory $QuranKareemStateCopyWith(
-    QuranKareemState value,
-    $Res Function(QuranKareemState) then,
-  ) = _$QuranKareemStateCopyWithImpl<$Res, QuranKareemState>;
+          QuranKareemState value, $Res Function(QuranKareemState) then) =
+      _$QuranKareemStateCopyWithImpl<$Res, QuranKareemState>;
   @useResult
-  $Res call({
-    bool showHelpBar,
-    int pageCount,
-    QuranKareemStatePageSideState pageSide,
-    List<int> bookmarkedPages,
-    double brigtness,
-    bool rewardedAdExists,
-    String sourceFileOfPDF,
-    String sorahName,
-    String jozo2Name,
-    bool tutorialShown,
-  });
+  $Res call(
+      {bool showHelpBar,
+      int pageCount,
+      QuranKareemStatePageSideState pageSide,
+      List<int> bookmarkedPages,
+      double brigtness,
+      bool rewardedAdExists,
+      String sourceFileOfPDF,
+      String sorahName,
+      String jozo2Name,
+      bool tutorialShown});
 
   $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide;
 }
@@ -2179,51 +2141,48 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
     Object? jozo2Name = null,
     Object? tutorialShown = null,
   }) {
-    return _then(
-      _value.copyWith(
-            showHelpBar: null == showHelpBar
-                ? _value.showHelpBar
-                : showHelpBar // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            pageCount: null == pageCount
-                ? _value.pageCount
-                : pageCount // ignore: cast_nullable_to_non_nullable
-                      as int,
-            pageSide: null == pageSide
-                ? _value.pageSide
-                : pageSide // ignore: cast_nullable_to_non_nullable
-                      as QuranKareemStatePageSideState,
-            bookmarkedPages: null == bookmarkedPages
-                ? _value.bookmarkedPages
-                : bookmarkedPages // ignore: cast_nullable_to_non_nullable
-                      as List<int>,
-            brigtness: null == brigtness
-                ? _value.brigtness
-                : brigtness // ignore: cast_nullable_to_non_nullable
-                      as double,
-            rewardedAdExists: null == rewardedAdExists
-                ? _value.rewardedAdExists
-                : rewardedAdExists // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            sourceFileOfPDF: null == sourceFileOfPDF
-                ? _value.sourceFileOfPDF
-                : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
-                      as String,
-            sorahName: null == sorahName
-                ? _value.sorahName
-                : sorahName // ignore: cast_nullable_to_non_nullable
-                      as String,
-            jozo2Name: null == jozo2Name
-                ? _value.jozo2Name
-                : jozo2Name // ignore: cast_nullable_to_non_nullable
-                      as String,
-            tutorialShown: null == tutorialShown
-                ? _value.tutorialShown
-                : tutorialShown // ignore: cast_nullable_to_non_nullable
-                      as bool,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      showHelpBar: null == showHelpBar
+          ? _value.showHelpBar
+          : showHelpBar // ignore: cast_nullable_to_non_nullable
+              as bool,
+      pageCount: null == pageCount
+          ? _value.pageCount
+          : pageCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      pageSide: null == pageSide
+          ? _value.pageSide
+          : pageSide // ignore: cast_nullable_to_non_nullable
+              as QuranKareemStatePageSideState,
+      bookmarkedPages: null == bookmarkedPages
+          ? _value.bookmarkedPages
+          : bookmarkedPages // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      brigtness: null == brigtness
+          ? _value.brigtness
+          : brigtness // ignore: cast_nullable_to_non_nullable
+              as double,
+      rewardedAdExists: null == rewardedAdExists
+          ? _value.rewardedAdExists
+          : rewardedAdExists // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sourceFileOfPDF: null == sourceFileOfPDF
+          ? _value.sourceFileOfPDF
+          : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
+              as String,
+      sorahName: null == sorahName
+          ? _value.sorahName
+          : sorahName // ignore: cast_nullable_to_non_nullable
+              as String,
+      jozo2Name: null == jozo2Name
+          ? _value.jozo2Name
+          : jozo2Name // ignore: cast_nullable_to_non_nullable
+              as String,
+      tutorialShown: null == tutorialShown
+          ? _value.tutorialShown
+          : tutorialShown // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
   }
 
   /// Create a copy of QuranKareemState
@@ -2231,9 +2190,8 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
   @override
   @pragma('vm:prefer-inline')
   $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide {
-    return $QuranKareemStatePageSideStateCopyWith<$Res>(_value.pageSide, (
-      value,
-    ) {
+    return $QuranKareemStatePageSideStateCopyWith<$Res>(_value.pageSide,
+        (value) {
       return _then(_value.copyWith(pageSide: value) as $Val);
     });
   }
@@ -2242,24 +2200,22 @@ class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
 /// @nodoc
 abstract class _$$QuranKareemStateImplCopyWith<$Res>
     implements $QuranKareemStateCopyWith<$Res> {
-  factory _$$QuranKareemStateImplCopyWith(
-    _$QuranKareemStateImpl value,
-    $Res Function(_$QuranKareemStateImpl) then,
-  ) = __$$QuranKareemStateImplCopyWithImpl<$Res>;
+  factory _$$QuranKareemStateImplCopyWith(_$QuranKareemStateImpl value,
+          $Res Function(_$QuranKareemStateImpl) then) =
+      __$$QuranKareemStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    bool showHelpBar,
-    int pageCount,
-    QuranKareemStatePageSideState pageSide,
-    List<int> bookmarkedPages,
-    double brigtness,
-    bool rewardedAdExists,
-    String sourceFileOfPDF,
-    String sorahName,
-    String jozo2Name,
-    bool tutorialShown,
-  });
+  $Res call(
+      {bool showHelpBar,
+      int pageCount,
+      QuranKareemStatePageSideState pageSide,
+      List<int> bookmarkedPages,
+      double brigtness,
+      bool rewardedAdExists,
+      String sourceFileOfPDF,
+      String sorahName,
+      String jozo2Name,
+      bool tutorialShown});
 
   @override
   $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide;
@@ -2269,10 +2225,9 @@ abstract class _$$QuranKareemStateImplCopyWith<$Res>
 class __$$QuranKareemStateImplCopyWithImpl<$Res>
     extends _$QuranKareemStateCopyWithImpl<$Res, _$QuranKareemStateImpl>
     implements _$$QuranKareemStateImplCopyWith<$Res> {
-  __$$QuranKareemStateImplCopyWithImpl(
-    _$QuranKareemStateImpl _value,
-    $Res Function(_$QuranKareemStateImpl) _then,
-  ) : super(_value, _then);
+  __$$QuranKareemStateImplCopyWithImpl(_$QuranKareemStateImpl _value,
+      $Res Function(_$QuranKareemStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.
@@ -2290,68 +2245,66 @@ class __$$QuranKareemStateImplCopyWithImpl<$Res>
     Object? jozo2Name = null,
     Object? tutorialShown = null,
   }) {
-    return _then(
-      _$QuranKareemStateImpl(
-        showHelpBar: null == showHelpBar
-            ? _value.showHelpBar
-            : showHelpBar // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        pageCount: null == pageCount
-            ? _value.pageCount
-            : pageCount // ignore: cast_nullable_to_non_nullable
-                  as int,
-        pageSide: null == pageSide
-            ? _value.pageSide
-            : pageSide // ignore: cast_nullable_to_non_nullable
-                  as QuranKareemStatePageSideState,
-        bookmarkedPages: null == bookmarkedPages
-            ? _value._bookmarkedPages
-            : bookmarkedPages // ignore: cast_nullable_to_non_nullable
-                  as List<int>,
-        brigtness: null == brigtness
-            ? _value.brigtness
-            : brigtness // ignore: cast_nullable_to_non_nullable
-                  as double,
-        rewardedAdExists: null == rewardedAdExists
-            ? _value.rewardedAdExists
-            : rewardedAdExists // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        sourceFileOfPDF: null == sourceFileOfPDF
-            ? _value.sourceFileOfPDF
-            : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
-                  as String,
-        sorahName: null == sorahName
-            ? _value.sorahName
-            : sorahName // ignore: cast_nullable_to_non_nullable
-                  as String,
-        jozo2Name: null == jozo2Name
-            ? _value.jozo2Name
-            : jozo2Name // ignore: cast_nullable_to_non_nullable
-                  as String,
-        tutorialShown: null == tutorialShown
-            ? _value.tutorialShown
-            : tutorialShown // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+    return _then(_$QuranKareemStateImpl(
+      showHelpBar: null == showHelpBar
+          ? _value.showHelpBar
+          : showHelpBar // ignore: cast_nullable_to_non_nullable
+              as bool,
+      pageCount: null == pageCount
+          ? _value.pageCount
+          : pageCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      pageSide: null == pageSide
+          ? _value.pageSide
+          : pageSide // ignore: cast_nullable_to_non_nullable
+              as QuranKareemStatePageSideState,
+      bookmarkedPages: null == bookmarkedPages
+          ? _value._bookmarkedPages
+          : bookmarkedPages // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      brigtness: null == brigtness
+          ? _value.brigtness
+          : brigtness // ignore: cast_nullable_to_non_nullable
+              as double,
+      rewardedAdExists: null == rewardedAdExists
+          ? _value.rewardedAdExists
+          : rewardedAdExists // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sourceFileOfPDF: null == sourceFileOfPDF
+          ? _value.sourceFileOfPDF
+          : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
+              as String,
+      sorahName: null == sorahName
+          ? _value.sorahName
+          : sorahName // ignore: cast_nullable_to_non_nullable
+              as String,
+      jozo2Name: null == jozo2Name
+          ? _value.jozo2Name
+          : jozo2Name // ignore: cast_nullable_to_non_nullable
+              as String,
+      tutorialShown: null == tutorialShown
+          ? _value.tutorialShown
+          : tutorialShown // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$QuranKareemStateImpl implements _QuranKareemState {
-  const _$QuranKareemStateImpl({
-    this.showHelpBar = false,
-    this.pageCount = 1,
-    this.pageSide = const QuranKareemStatePageSideState.left(),
-    final List<int> bookmarkedPages = const [],
-    this.brigtness = 0,
-    this.rewardedAdExists = false,
-    this.sourceFileOfPDF = "",
-    this.sorahName = "",
-    this.jozo2Name = "",
-    this.tutorialShown = false,
-  }) : _bookmarkedPages = bookmarkedPages;
+  const _$QuranKareemStateImpl(
+      {this.showHelpBar = false,
+      this.pageCount = 1,
+      this.pageSide = const QuranKareemStatePageSideState.left(),
+      final List<int> bookmarkedPages = const [],
+      this.brigtness = 0,
+      this.rewardedAdExists = false,
+      this.sourceFileOfPDF = "",
+      this.sorahName = "",
+      this.jozo2Name = "",
+      this.tutorialShown = false})
+      : _bookmarkedPages = bookmarkedPages;
 
   @override
   @JsonKey()
@@ -2406,10 +2359,8 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
                 other.pageCount == pageCount) &&
             (identical(other.pageSide, pageSide) ||
                 other.pageSide == pageSide) &&
-            const DeepCollectionEquality().equals(
-              other._bookmarkedPages,
-              _bookmarkedPages,
-            ) &&
+            const DeepCollectionEquality()
+                .equals(other._bookmarkedPages, _bookmarkedPages) &&
             (identical(other.brigtness, brigtness) ||
                 other.brigtness == brigtness) &&
             (identical(other.rewardedAdExists, rewardedAdExists) ||
@@ -2426,18 +2377,17 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
 
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    showHelpBar,
-    pageCount,
-    pageSide,
-    const DeepCollectionEquality().hash(_bookmarkedPages),
-    brigtness,
-    rewardedAdExists,
-    sourceFileOfPDF,
-    sorahName,
-    jozo2Name,
-    tutorialShown,
-  );
+      runtimeType,
+      showHelpBar,
+      pageCount,
+      pageSide,
+      const DeepCollectionEquality().hash(_bookmarkedPages),
+      brigtness,
+      rewardedAdExists,
+      sourceFileOfPDF,
+      sorahName,
+      jozo2Name,
+      tutorialShown);
 
   /// Create a copy of QuranKareemState
   /// with the given fields replaced by the non-null parameter values.
@@ -2446,24 +2396,21 @@ class _$QuranKareemStateImpl implements _QuranKareemState {
   @pragma('vm:prefer-inline')
   _$$QuranKareemStateImplCopyWith<_$QuranKareemStateImpl> get copyWith =>
       __$$QuranKareemStateImplCopyWithImpl<_$QuranKareemStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 }
 
 abstract class _QuranKareemState implements QuranKareemState {
-  const factory _QuranKareemState({
-    final bool showHelpBar,
-    final int pageCount,
-    final QuranKareemStatePageSideState pageSide,
-    final List<int> bookmarkedPages,
-    final double brigtness,
-    final bool rewardedAdExists,
-    final String sourceFileOfPDF,
-    final String sorahName,
-    final String jozo2Name,
-    final bool tutorialShown,
-  }) = _$QuranKareemStateImpl;
+  const factory _QuranKareemState(
+      {final bool showHelpBar,
+      final int pageCount,
+      final QuranKareemStatePageSideState pageSide,
+      final List<int> bookmarkedPages,
+      final double brigtness,
+      final bool rewardedAdExists,
+      final String sourceFileOfPDF,
+      final String sorahName,
+      final String jozo2Name,
+      final bool tutorialShown}) = _$QuranKareemStateImpl;
 
   @override
   bool get showHelpBar;
@@ -2500,53 +2447,54 @@ mixin _$QuranKareemStatePageSideState {
   TResult when<TResult extends Object?>({
     required TResult Function() left,
     required TResult Function() right,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? left,
     TResult? Function()? right,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? left,
     TResult Function()? right,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(QuranKareemStatePageSideStateLeft value) left,
     required TResult Function(QuranKareemStatePageSideStateRight value) right,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(QuranKareemStatePageSideStateLeft value)? left,
     TResult? Function(QuranKareemStatePageSideStateRight value)? right,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(QuranKareemStatePageSideStateLeft value)? left,
     TResult Function(QuranKareemStatePageSideStateRight value)? right,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuranKareemStatePageSideStateCopyWith<$Res> {
   factory $QuranKareemStatePageSideStateCopyWith(
-    QuranKareemStatePageSideState value,
-    $Res Function(QuranKareemStatePageSideState) then,
-  ) =
-      _$QuranKareemStatePageSideStateCopyWithImpl<
-        $Res,
-        QuranKareemStatePageSideState
-      >;
+          QuranKareemStatePageSideState value,
+          $Res Function(QuranKareemStatePageSideState) then) =
+      _$QuranKareemStatePageSideStateCopyWithImpl<$Res,
+          QuranKareemStatePageSideState>;
 }
 
 /// @nodoc
-class _$QuranKareemStatePageSideStateCopyWithImpl<
-  $Res,
-  $Val extends QuranKareemStatePageSideState
->
+class _$QuranKareemStatePageSideStateCopyWithImpl<$Res,
+        $Val extends QuranKareemStatePageSideState>
     implements $QuranKareemStatePageSideStateCopyWith<$Res> {
   _$QuranKareemStatePageSideStateCopyWithImpl(this._value, this._then);
 
@@ -2562,23 +2510,20 @@ class _$QuranKareemStatePageSideStateCopyWithImpl<
 /// @nodoc
 abstract class _$$QuranKareemStatePageSideStateLeftImplCopyWith<$Res> {
   factory _$$QuranKareemStatePageSideStateLeftImplCopyWith(
-    _$QuranKareemStatePageSideStateLeftImpl value,
-    $Res Function(_$QuranKareemStatePageSideStateLeftImpl) then,
-  ) = __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl<$Res>;
+          _$QuranKareemStatePageSideStateLeftImpl value,
+          $Res Function(_$QuranKareemStatePageSideStateLeftImpl) then) =
+      __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl<$Res>
-    extends
-        _$QuranKareemStatePageSideStateCopyWithImpl<
-          $Res,
-          _$QuranKareemStatePageSideStateLeftImpl
-        >
+    extends _$QuranKareemStatePageSideStateCopyWithImpl<$Res,
+        _$QuranKareemStatePageSideStateLeftImpl>
     implements _$$QuranKareemStatePageSideStateLeftImplCopyWith<$Res> {
   __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl(
-    _$QuranKareemStatePageSideStateLeftImpl _value,
-    $Res Function(_$QuranKareemStatePageSideStateLeftImpl) _then,
-  ) : super(_value, _then);
+      _$QuranKareemStatePageSideStateLeftImpl _value,
+      $Res Function(_$QuranKareemStatePageSideStateLeftImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemStatePageSideState
   /// with the given fields replaced by the non-null parameter values.
@@ -2677,23 +2622,20 @@ abstract class QuranKareemStatePageSideStateLeft
 /// @nodoc
 abstract class _$$QuranKareemStatePageSideStateRightImplCopyWith<$Res> {
   factory _$$QuranKareemStatePageSideStateRightImplCopyWith(
-    _$QuranKareemStatePageSideStateRightImpl value,
-    $Res Function(_$QuranKareemStatePageSideStateRightImpl) then,
-  ) = __$$QuranKareemStatePageSideStateRightImplCopyWithImpl<$Res>;
+          _$QuranKareemStatePageSideStateRightImpl value,
+          $Res Function(_$QuranKareemStatePageSideStateRightImpl) then) =
+      __$$QuranKareemStatePageSideStateRightImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$QuranKareemStatePageSideStateRightImplCopyWithImpl<$Res>
-    extends
-        _$QuranKareemStatePageSideStateCopyWithImpl<
-          $Res,
-          _$QuranKareemStatePageSideStateRightImpl
-        >
+    extends _$QuranKareemStatePageSideStateCopyWithImpl<$Res,
+        _$QuranKareemStatePageSideStateRightImpl>
     implements _$$QuranKareemStatePageSideStateRightImplCopyWith<$Res> {
   __$$QuranKareemStatePageSideStateRightImplCopyWithImpl(
-    _$QuranKareemStatePageSideStateRightImpl _value,
-    $Res Function(_$QuranKareemStatePageSideStateRightImpl) _then,
-  ) : super(_value, _then);
+      _$QuranKareemStatePageSideStateRightImpl _value,
+      $Res Function(_$QuranKareemStatePageSideStateRightImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of QuranKareemStatePageSideState
   /// with the given fields replaced by the non-null parameter values.

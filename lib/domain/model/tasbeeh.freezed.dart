@@ -12,8 +12,7 @@ part of 'tasbeeh.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TasbeehModel _$TasbeehModelFromJson(Map<String, dynamic> json) {
   return _TasbeehModel.fromJson(json);
@@ -40,17 +39,11 @@ mixin _$TasbeehModel {
 /// @nodoc
 abstract class $TasbeehModelCopyWith<$Res> {
   factory $TasbeehModelCopyWith(
-    TasbeehModel value,
-    $Res Function(TasbeehModel) then,
-  ) = _$TasbeehModelCopyWithImpl<$Res, TasbeehModel>;
+          TasbeehModel value, $Res Function(TasbeehModel) then) =
+      _$TasbeehModelCopyWithImpl<$Res, TasbeehModel>;
   @useResult
-  $Res call({
-    int id,
-    String title,
-    String desc,
-    int maxCount,
-    int currentCount,
-  });
+  $Res call(
+      {int id, String title, String desc, int maxCount, int currentCount});
 }
 
 /// @nodoc
@@ -74,31 +67,28 @@ class _$TasbeehModelCopyWithImpl<$Res, $Val extends TasbeehModel>
     Object? maxCount = null,
     Object? currentCount = null,
   }) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as int,
-            title: null == title
-                ? _value.title
-                : title // ignore: cast_nullable_to_non_nullable
-                      as String,
-            desc: null == desc
-                ? _value.desc
-                : desc // ignore: cast_nullable_to_non_nullable
-                      as String,
-            maxCount: null == maxCount
-                ? _value.maxCount
-                : maxCount // ignore: cast_nullable_to_non_nullable
-                      as int,
-            currentCount: null == currentCount
-                ? _value.currentCount
-                : currentCount // ignore: cast_nullable_to_non_nullable
-                      as int,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      desc: null == desc
+          ? _value.desc
+          : desc // ignore: cast_nullable_to_non_nullable
+              as String,
+      maxCount: null == maxCount
+          ? _value.maxCount
+          : maxCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      currentCount: null == currentCount
+          ? _value.currentCount
+          : currentCount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
   }
 }
 
@@ -106,18 +96,12 @@ class _$TasbeehModelCopyWithImpl<$Res, $Val extends TasbeehModel>
 abstract class _$$TasbeehModelImplCopyWith<$Res>
     implements $TasbeehModelCopyWith<$Res> {
   factory _$$TasbeehModelImplCopyWith(
-    _$TasbeehModelImpl value,
-    $Res Function(_$TasbeehModelImpl) then,
-  ) = __$$TasbeehModelImplCopyWithImpl<$Res>;
+          _$TasbeehModelImpl value, $Res Function(_$TasbeehModelImpl) then) =
+      __$$TasbeehModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    int id,
-    String title,
-    String desc,
-    int maxCount,
-    int currentCount,
-  });
+  $Res call(
+      {int id, String title, String desc, int maxCount, int currentCount});
 }
 
 /// @nodoc
@@ -125,9 +109,8 @@ class __$$TasbeehModelImplCopyWithImpl<$Res>
     extends _$TasbeehModelCopyWithImpl<$Res, _$TasbeehModelImpl>
     implements _$$TasbeehModelImplCopyWith<$Res> {
   __$$TasbeehModelImplCopyWithImpl(
-    _$TasbeehModelImpl _value,
-    $Res Function(_$TasbeehModelImpl) _then,
-  ) : super(_value, _then);
+      _$TasbeehModelImpl _value, $Res Function(_$TasbeehModelImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of TasbeehModel
   /// with the given fields replaced by the non-null parameter values.
@@ -140,43 +123,40 @@ class __$$TasbeehModelImplCopyWithImpl<$Res>
     Object? maxCount = null,
     Object? currentCount = null,
   }) {
-    return _then(
-      _$TasbeehModelImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
-        title: null == title
-            ? _value.title
-            : title // ignore: cast_nullable_to_non_nullable
-                  as String,
-        desc: null == desc
-            ? _value.desc
-            : desc // ignore: cast_nullable_to_non_nullable
-                  as String,
-        maxCount: null == maxCount
-            ? _value.maxCount
-            : maxCount // ignore: cast_nullable_to_non_nullable
-                  as int,
-        currentCount: null == currentCount
-            ? _value.currentCount
-            : currentCount // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+    return _then(_$TasbeehModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      desc: null == desc
+          ? _value.desc
+          : desc // ignore: cast_nullable_to_non_nullable
+              as String,
+      maxCount: null == maxCount
+          ? _value.maxCount
+          : maxCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      currentCount: null == currentCount
+          ? _value.currentCount
+          : currentCount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$TasbeehModelImpl implements _TasbeehModel {
-  _$TasbeehModelImpl({
-    required this.id,
-    required this.title,
-    required this.desc,
-    required this.maxCount,
-    required this.currentCount,
-  });
+  _$TasbeehModelImpl(
+      {required this.id,
+      required this.title,
+      required this.desc,
+      required this.maxCount,
+      required this.currentCount});
 
   factory _$TasbeehModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$TasbeehModelImplFromJson(json);
@@ -226,18 +206,19 @@ class _$TasbeehModelImpl implements _TasbeehModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TasbeehModelImplToJson(this);
+    return _$$TasbeehModelImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _TasbeehModel implements TasbeehModel {
-  factory _TasbeehModel({
-    required final int id,
-    required final String title,
-    required final String desc,
-    required final int maxCount,
-    required final int currentCount,
-  }) = _$TasbeehModelImpl;
+  factory _TasbeehModel(
+      {required final int id,
+      required final String title,
+      required final String desc,
+      required final int maxCount,
+      required final int currentCount}) = _$TasbeehModelImpl;
 
   factory _TasbeehModel.fromJson(Map<String, dynamic> json) =
       _$TasbeehModelImpl.fromJson;
