@@ -7,6 +7,9 @@ class LocalNotificationConstant {
   /// Key for disabling all notifications for today.
   static const String disableAllForTodayDate = "disableAllForTodayDate";
 
+  /// Key for disabling all notifications for a week.
+  static const String disableAllForWeekDate = "disableAllForWeekDate";
+
   /// Key for disabling Fajr prayer notifications.
   static const String disableFajr = "disableFajr";
 
@@ -35,6 +38,5 @@ class LocalNotificationConstant {
   static const String disableQeyamAlLayel = "disableQeyamAlLayel";
 
   /// Key for disabling notifications 15 minutes before prayer time.
-  static const String disableNotificationBefore15Min =
-      "disableNotificationBefore15Min";
+  static const String disableNotificationBefore15Min = "disableNotificationBefore15Min";
 }

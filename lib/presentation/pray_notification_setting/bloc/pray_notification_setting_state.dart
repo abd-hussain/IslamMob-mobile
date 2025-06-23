@@ -18,6 +18,9 @@ class PrayNotificationSettingState with _$PrayNotificationSettingState {
     /// Whether all notifications are enabled for today only.
     @Default("") String allNotificationForToday,
 
+    /// Whether all notifications are enabled for weekdays.
+    @Default("") String allNotificationForWeekDay,
+
     /// Whether Fajr prayer notifications are enabled.
     @Default(true) bool fajir,
 
@@ -58,21 +61,16 @@ class PrayNotificationSettingState with _$PrayNotificationSettingState {
 /// This class defines the different states that the prayer notification
 /// settings screen can be in during loading, saving, and error handling.
 @freezed
-sealed class PrayNotificationSettingProcessState
-    with _$PrayNotificationSettingProcessState {
+sealed class PrayNotificationSettingProcessState with _$PrayNotificationSettingProcessState {
   /// State indicating that settings are currently being loaded.
-  const factory PrayNotificationSettingProcessState.loading() =
-      PrayNotificationSettingProcessStateLoading;
+  const factory PrayNotificationSettingProcessState.loading() = PrayNotificationSettingProcessStateLoading;
 
   /// State indicating that an error occurred during processing.
-  const factory PrayNotificationSettingProcessState.error() =
-      PrayNotificationSettingProcessStateError;
+  const factory PrayNotificationSettingProcessState.error() = PrayNotificationSettingProcessStateError;
 
   /// State indicating that the operation completed successfully.
-  const factory PrayNotificationSettingProcessState.success() =
-      PrayNotificationSettingProcessStateSuccess;
+  const factory PrayNotificationSettingProcessState.success() = PrayNotificationSettingProcessStateSuccess;
 
   /// State indicating that settings have been successfully saved.
-  const factory PrayNotificationSettingProcessState.settingSaved() =
-      PrayNotificationSettingProcessStateSettingSaved;
+  const factory PrayNotificationSettingProcessState.settingSaved() = PrayNotificationSettingProcessStateSettingSaved;
 }

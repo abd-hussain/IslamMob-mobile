@@ -12,8 +12,7 @@ part of 'language_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LanguageEvent {
@@ -21,43 +20,48 @@ mixin _$LanguageEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(LanguageModel type) changeSelectedLanguage,
     required TResult Function(BuildContext context) setupLanguage,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LanguageModel type)? changeSelectedLanguage,
     TResult? Function(BuildContext context)? setupLanguage,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LanguageModel type)? changeSelectedLanguage,
     TResult Function(BuildContext context)? setupLanguage,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedLanguage value)
-    changeSelectedLanguage,
+        changeSelectedLanguage,
     required TResult Function(_SetupLanguage value) setupLanguage,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
     TResult? Function(_SetupLanguage value)? setupLanguage,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeSelectedLanguage value)? changeSelectedLanguage,
     TResult Function(_SetupLanguage value)? setupLanguage,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LanguageEventCopyWith<$Res> {
   factory $LanguageEventCopyWith(
-    LanguageEvent value,
-    $Res Function(LanguageEvent) then,
-  ) = _$LanguageEventCopyWithImpl<$Res, LanguageEvent>;
+          LanguageEvent value, $Res Function(LanguageEvent) then) =
+      _$LanguageEventCopyWithImpl<$Res, LanguageEvent>;
 }
 
 /// @nodoc
@@ -77,9 +81,9 @@ class _$LanguageEventCopyWithImpl<$Res, $Val extends LanguageEvent>
 /// @nodoc
 abstract class _$$ChangeSelectedLanguageImplCopyWith<$Res> {
   factory _$$ChangeSelectedLanguageImplCopyWith(
-    _$ChangeSelectedLanguageImpl value,
-    $Res Function(_$ChangeSelectedLanguageImpl) then,
-  ) = __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>;
+          _$ChangeSelectedLanguageImpl value,
+          $Res Function(_$ChangeSelectedLanguageImpl) then) =
+      __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LanguageModel type});
 
@@ -91,23 +95,23 @@ class __$$ChangeSelectedLanguageImplCopyWithImpl<$Res>
     extends _$LanguageEventCopyWithImpl<$Res, _$ChangeSelectedLanguageImpl>
     implements _$$ChangeSelectedLanguageImplCopyWith<$Res> {
   __$$ChangeSelectedLanguageImplCopyWithImpl(
-    _$ChangeSelectedLanguageImpl _value,
-    $Res Function(_$ChangeSelectedLanguageImpl) _then,
-  ) : super(_value, _then);
+      _$ChangeSelectedLanguageImpl _value,
+      $Res Function(_$ChangeSelectedLanguageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LanguageEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? type = null}) {
-    return _then(
-      _$ChangeSelectedLanguageImpl(
-        type: null == type
-            ? _value.type
-            : type // ignore: cast_nullable_to_non_nullable
-                  as LanguageModel,
-      ),
-    );
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ChangeSelectedLanguageImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as LanguageModel,
+    ));
   }
 
   /// Create a copy of LanguageEvent
@@ -151,11 +155,8 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeSelectedLanguageImplCopyWith<_$ChangeSelectedLanguageImpl>
-  get copyWith =>
-      __$$ChangeSelectedLanguageImplCopyWithImpl<_$ChangeSelectedLanguageImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$ChangeSelectedLanguageImplCopyWithImpl<
+          _$ChangeSelectedLanguageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -192,7 +193,7 @@ class _$ChangeSelectedLanguageImpl implements _ChangeSelectedLanguage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedLanguage value)
-    changeSelectedLanguage,
+        changeSelectedLanguage,
     required TResult Function(_SetupLanguage value) setupLanguage,
   }) {
     return changeSelectedLanguage(this);
@@ -231,15 +232,14 @@ abstract class _ChangeSelectedLanguage implements LanguageEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangeSelectedLanguageImplCopyWith<_$ChangeSelectedLanguageImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SetupLanguageImplCopyWith<$Res> {
   factory _$$SetupLanguageImplCopyWith(
-    _$SetupLanguageImpl value,
-    $Res Function(_$SetupLanguageImpl) then,
-  ) = __$$SetupLanguageImplCopyWithImpl<$Res>;
+          _$SetupLanguageImpl value, $Res Function(_$SetupLanguageImpl) then) =
+      __$$SetupLanguageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BuildContext context});
 }
@@ -249,23 +249,22 @@ class __$$SetupLanguageImplCopyWithImpl<$Res>
     extends _$LanguageEventCopyWithImpl<$Res, _$SetupLanguageImpl>
     implements _$$SetupLanguageImplCopyWith<$Res> {
   __$$SetupLanguageImplCopyWithImpl(
-    _$SetupLanguageImpl _value,
-    $Res Function(_$SetupLanguageImpl) _then,
-  ) : super(_value, _then);
+      _$SetupLanguageImpl _value, $Res Function(_$SetupLanguageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LanguageEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? context = null}) {
-    return _then(
-      _$SetupLanguageImpl(
-        context: null == context
-            ? _value.context
-            : context // ignore: cast_nullable_to_non_nullable
-                  as BuildContext,
-      ),
-    );
+  $Res call({
+    Object? context = null,
+  }) {
+    return _then(_$SetupLanguageImpl(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
   }
 }
 
@@ -336,7 +335,7 @@ class _$SetupLanguageImpl implements _SetupLanguage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeSelectedLanguage value)
-    changeSelectedLanguage,
+        changeSelectedLanguage,
     required TResult Function(_SetupLanguage value) setupLanguage,
   }) {
     return setupLanguage(this);
@@ -392,9 +391,8 @@ mixin _$LanguageState {
 /// @nodoc
 abstract class $LanguageStateCopyWith<$Res> {
   factory $LanguageStateCopyWith(
-    LanguageState value,
-    $Res Function(LanguageState) then,
-  ) = _$LanguageStateCopyWithImpl<$Res, LanguageState>;
+          LanguageState value, $Res Function(LanguageState) then) =
+      _$LanguageStateCopyWithImpl<$Res, LanguageState>;
   @useResult
   $Res call({LanguageModel? selectedLanguage});
 
@@ -415,16 +413,15 @@ class _$LanguageStateCopyWithImpl<$Res, $Val extends LanguageState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? selectedLanguage = freezed}) {
-    return _then(
-      _value.copyWith(
-            selectedLanguage: freezed == selectedLanguage
-                ? _value.selectedLanguage
-                : selectedLanguage // ignore: cast_nullable_to_non_nullable
-                      as LanguageModel?,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? selectedLanguage = freezed,
+  }) {
+    return _then(_value.copyWith(
+      selectedLanguage: freezed == selectedLanguage
+          ? _value.selectedLanguage
+          : selectedLanguage // ignore: cast_nullable_to_non_nullable
+              as LanguageModel?,
+    ) as $Val);
   }
 
   /// Create a copy of LanguageState
@@ -446,9 +443,8 @@ class _$LanguageStateCopyWithImpl<$Res, $Val extends LanguageState>
 abstract class _$$LanguageStateImplCopyWith<$Res>
     implements $LanguageStateCopyWith<$Res> {
   factory _$$LanguageStateImplCopyWith(
-    _$LanguageStateImpl value,
-    $Res Function(_$LanguageStateImpl) then,
-  ) = __$$LanguageStateImplCopyWithImpl<$Res>;
+          _$LanguageStateImpl value, $Res Function(_$LanguageStateImpl) then) =
+      __$$LanguageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({LanguageModel? selectedLanguage});
@@ -462,23 +458,22 @@ class __$$LanguageStateImplCopyWithImpl<$Res>
     extends _$LanguageStateCopyWithImpl<$Res, _$LanguageStateImpl>
     implements _$$LanguageStateImplCopyWith<$Res> {
   __$$LanguageStateImplCopyWithImpl(
-    _$LanguageStateImpl _value,
-    $Res Function(_$LanguageStateImpl) _then,
-  ) : super(_value, _then);
+      _$LanguageStateImpl _value, $Res Function(_$LanguageStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LanguageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? selectedLanguage = freezed}) {
-    return _then(
-      _$LanguageStateImpl(
-        selectedLanguage: freezed == selectedLanguage
-            ? _value.selectedLanguage
-            : selectedLanguage // ignore: cast_nullable_to_non_nullable
-                  as LanguageModel?,
-      ),
-    );
+  $Res call({
+    Object? selectedLanguage = freezed,
+  }) {
+    return _then(_$LanguageStateImpl(
+      selectedLanguage: freezed == selectedLanguage
+          ? _value.selectedLanguage
+          : selectedLanguage // ignore: cast_nullable_to_non_nullable
+              as LanguageModel?,
+    ));
   }
 }
 

@@ -20,8 +20,7 @@ import 'package:islam_app/my_app/locator.dart';
 ///
 class SetupLocalNotificationWhenAppOpenUseCase {
   final _localNotificationRepository = locator<LocalNotificationRepository>();
-  final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase =
-      locator<NotifyAdhanNotificationUsecase>();
+  final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase = locator<NotifyAdhanNotificationUsecase>();
 
   /// Maximum number of prayer-related notifications to schedule.
   ///
@@ -35,8 +34,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   /// for up to this many days (e.g., up to 2 weeks).
   static const int maxDayCount = 14;
 
-  int _notificationCount =
-      0; // will increment each time we schedule a notification
+  int _notificationCount = 0; // will increment each time we schedule a notification
 
   /// We'll store the maximum time we schedule a prayer notification,
   /// so the final 2 reminders can come *after* that.
@@ -57,8 +55,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     int scheduledPrayerNotifications = 0;
     int dayIndex = 0;
 
-    while (scheduledPrayerNotifications < maxPrayerNotifications &&
-        dayIndex < maxDayCount) {
+    while (scheduledPrayerNotifications < maxPrayerNotifications && dayIndex < maxDayCount) {
       final targetDate = now.add(Duration(days: dayIndex));
 
       // Possibly skip day if user disabled notifications for "today," "3 days," or "week"
@@ -68,8 +65,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
       }
 
       // Get prayer timing for this specific day
-      final prayTimingForDay = _notifyAdhanNotificationUsecase
-          .getPrayTimingForSpesificDates(listOfDates: [targetDate]);
+      final prayTimingForDay = _notifyAdhanNotificationUsecase.getPrayTimingForSpesificDates(listOfDates: [targetDate]);
       if (prayTimingForDay.isNotEmpty) {
         // Schedules notifications for this day, returns how many got scheduled
         final dayCount = await _scheduleDailyNotifications(
@@ -233,11 +229,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     // 1. "15 min before"
     if (beforeAllowed) {
       final beforeTime = mainTime.subtract(const Duration(minutes: 15));
-      count += await _scheduleSingleTimeNotification(
-        context: context,
-        time: beforeTime,
-        type: beforeType,
-      );
+      count += await _scheduleSingleTimeNotification(context: context, time: beforeTime, type: beforeType);
     }
 
     // 2. Main prayer time
@@ -254,10 +246,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   /// - Reminder to read Surat Al-Kahf (30 min after sunrise) if allowed
   /// - Last-hour do3aa (average between Asr and Maghrib) if allowed
   /// Returns how many were scheduled.
-  Future<int> _scheduleFridayNotifications(
-    BuildContext context,
-    PrayTimingDateTimeModel model,
-  ) async {
+  Future<int> _scheduleFridayNotifications(BuildContext context, PrayTimingDateTimeModel model) async {
     int count = 0;
 
     // a) Al-Kahf reminder
@@ -292,10 +281,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   /// Schedules the final 2 reminders **after** the last prayer notification
   /// we've scheduled. If no notifications were scheduled at all,
   /// we fallback to 'now'.
-  Future<void> _scheduleAppReminders({
-    required BuildContext context,
-    required DateTime referenceDate,
-  }) async {
+  Future<void> _scheduleAppReminders({required BuildContext context, required DateTime referenceDate}) async {
     // Example: 5 and 10 hours after the last scheduled prayer notification
     await _scheduleSingleTimeNotification(
       context: context,
@@ -378,11 +364,19 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     // If "disable all for today" and the day is 'today', skip it
     final notificationDisableTime = _isNotificationForTodayDisabledAndWhen();
     if (notificationDisableTime != "" &&
-        _isSameDay(
-          date,
-          DateTime.tryParse(notificationDisableTime) ?? DateTime.now(),
-        )) {
+        _isSameDay(date, DateTime.tryParse(notificationDisableTime) ?? DateTime.now())) {
       return true;
+    }
+
+    // If "disable all for week" and the day is within 7 days
+    final notificationDisableWeekTime = _isNotificationForWeekDisabledAndWhen();
+
+    if (notificationDisableWeekTime != "") {
+      final notificationDisableWeekTimeDate = DateTime.parse(notificationDisableWeekTime);
+      final diff = date.difference(notificationDisableWeekTimeDate).inDays;
+      if (diff >= 0 && diff < 7) {
+        return true;
+      }
     }
 
     return false;
@@ -398,51 +392,29 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   // ---------------------------------------------------------------------------
 
   bool _isFajirNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableFajr,
-          defaultValue: true,
-        )
-        as bool;
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableFajr, defaultValue: true) as bool;
   }
 
   bool _isSunriseNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableSunriseTime,
-          defaultValue: true,
-        )
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableSunriseTime, defaultValue: true)
         as bool;
   }
 
   bool _isZhurNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableDuher,
-          defaultValue: true,
-        )
-        as bool;
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableDuher, defaultValue: true) as bool;
   }
 
   bool _isAsrNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableAsr,
-          defaultValue: true,
-        )
-        as bool;
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAsr, defaultValue: true) as bool;
   }
 
   bool _isMagreebNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableMagrieb,
-          defaultValue: true,
-        )
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableMagrieb, defaultValue: true)
         as bool;
   }
 
   bool _isIshaNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableIsha,
-          defaultValue: true,
-        )
-        as bool;
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableIsha, defaultValue: true) as bool;
   }
 
   bool _isWarningBefore15MinNotificationAllowed() {
@@ -454,55 +426,66 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   }
 
   bool _isJom3aAlkahfNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableJom3aAlkahf,
-          defaultValue: true,
-        )
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableJom3aAlkahf, defaultValue: true)
         as bool;
   }
 
   bool _isJom3aDoaaNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableJom3aDo3aa,
-          defaultValue: true,
-        )
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableJom3aDo3aa, defaultValue: true)
         as bool;
   }
 
   bool _isMidNightPrayNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableQeyamAlLayel,
-          defaultValue: true,
-        )
+    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableQeyamAlLayel, defaultValue: true)
         as bool;
   }
 
   String _isNotificationForTodayDisabledAndWhen() {
-    final disableAllForTodayDate =
-        DataBaseManagerBase.getFromDatabase(
-              key: LocalNotificationConstant.disableAllForTodayDate,
-              defaultValue: "",
-            )
-            as String;
+    //TODO: Wrong
+    // final disableAllForTodayDate =
+    //     DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForTodayDate, defaultValue: "")
+    //         as String;
 
-    if (disableAllForTodayDate.isEmpty) return "";
+    // if (disableAllForTodayDate.isEmpty) return "";
 
-    final date = DateTime.parse(disableAllForTodayDate);
-    final now = DateTime.now();
+    // final date = DateTime.parse(disableAllForTodayDate);
+    // final now = DateTime.now();
 
-    final today = DateTime(now.year, now.month, now.day);
-    final tomorrow = today.add(const Duration(days: 1));
-    final savedDate = DateTime(date.year, date.month, date.day);
+    // final today = DateTime(now.year, now.month, now.day);
+    // final tomorrow = today.add(const Duration(days: 1));
+    // final savedDate = DateTime(date.year, date.month, date.day);
 
-    if (savedDate == today || savedDate == tomorrow) {
-      return disableAllForTodayDate;
-    }
+    // if (savedDate == today || savedDate == tomorrow) {
+    //   return disableAllForTodayDate;
+    // }
 
-    // If the saved date is more than tomorrow (i.e. beyond max allowed)
-    DataBaseManagerBase.saveInDatabase(
-      key: LocalNotificationConstant.disableAllForTodayDate,
-      value: "",
-    );
+    // // If the saved date is more than tomorrow (i.e. beyond max allowed)
+    // DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForTodayDate, value: "");
+    return "";
+  }
+
+  String _isNotificationForWeekDisabledAndWhen() {
+    //TODO: Wrong
+
+    // final disableAllForWeekDate =
+    //     DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForWeekDate, defaultValue: "")
+    //         as String;
+
+    // if (disableAllForWeekDate.isEmpty) return "";
+
+    // final date = DateTime.parse(disableAllForWeekDate);
+    // final now = DateTime.now();
+
+    // final today = DateTime(now.year, now.month, now.day);
+    // final endDate = today.add(const Duration(days: 7));
+    // final savedDate = DateTime(date.year, date.month, date.day);
+
+    // if (savedDate == today || savedDate == endDate) {
+    //   return disableAllForWeekDate;
+    // }
+
+    // // If the saved date is more than week (i.e. beyond max allowed)
+    // DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForWeekDate, value: "");
     return "";
   }
 

@@ -12,8 +12,7 @@ part of 'report_and_suggestion_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ReportAndSuggestionEvent {
@@ -25,7 +24,8 @@ mixin _$ReportAndSuggestionEvent {
     required TResult Function(File? value) updateAttachment2,
     required TResult Function(File? value) updateAttachment3,
     required TResult Function(bool status) updateInternetConnectionStatus,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool status)? updateEnableSubmitBtn,
@@ -34,7 +34,8 @@ mixin _$ReportAndSuggestionEvent {
     TResult? Function(File? value)? updateAttachment2,
     TResult? Function(File? value)? updateAttachment3,
     TResult? Function(bool status)? updateInternetConnectionStatus,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool status)? updateEnableSubmitBtn,
@@ -44,18 +45,20 @@ mixin _$ReportAndSuggestionEvent {
     TResult Function(File? value)? updateAttachment3,
     TResult Function(bool status)? updateInternetConnectionStatus,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateEnableSubmitBtn value)
-    updateEnableSubmitBtn,
+        updateEnableSubmitBtn,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
     required TResult Function(_UpdateInternetConnectionStatus value)
-    updateInternetConnectionStatus,
-  }) => throw _privateConstructorUsedError;
+        updateInternetConnectionStatus,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UpdateEnableSubmitBtn value)? updateEnableSubmitBtn,
@@ -64,8 +67,9 @@ mixin _$ReportAndSuggestionEvent {
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult? Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
-  }) => throw _privateConstructorUsedError;
+        updateInternetConnectionStatus,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UpdateEnableSubmitBtn value)? updateEnableSubmitBtn,
@@ -74,24 +78,22 @@ mixin _$ReportAndSuggestionEvent {
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ReportAndSuggestionEventCopyWith<$Res> {
-  factory $ReportAndSuggestionEventCopyWith(
-    ReportAndSuggestionEvent value,
-    $Res Function(ReportAndSuggestionEvent) then,
-  ) = _$ReportAndSuggestionEventCopyWithImpl<$Res, ReportAndSuggestionEvent>;
+  factory $ReportAndSuggestionEventCopyWith(ReportAndSuggestionEvent value,
+          $Res Function(ReportAndSuggestionEvent) then) =
+      _$ReportAndSuggestionEventCopyWithImpl<$Res, ReportAndSuggestionEvent>;
 }
 
 /// @nodoc
-class _$ReportAndSuggestionEventCopyWithImpl<
-  $Res,
-  $Val extends ReportAndSuggestionEvent
->
+class _$ReportAndSuggestionEventCopyWithImpl<$Res,
+        $Val extends ReportAndSuggestionEvent>
     implements $ReportAndSuggestionEventCopyWith<$Res> {
   _$ReportAndSuggestionEventCopyWithImpl(this._value, this._then);
 
@@ -107,39 +109,35 @@ class _$ReportAndSuggestionEventCopyWithImpl<
 /// @nodoc
 abstract class _$$UpdateEnableSubmitBtnImplCopyWith<$Res> {
   factory _$$UpdateEnableSubmitBtnImplCopyWith(
-    _$UpdateEnableSubmitBtnImpl value,
-    $Res Function(_$UpdateEnableSubmitBtnImpl) then,
-  ) = __$$UpdateEnableSubmitBtnImplCopyWithImpl<$Res>;
+          _$UpdateEnableSubmitBtnImpl value,
+          $Res Function(_$UpdateEnableSubmitBtnImpl) then) =
+      __$$UpdateEnableSubmitBtnImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool status});
 }
 
 /// @nodoc
 class __$$UpdateEnableSubmitBtnImplCopyWithImpl<$Res>
-    extends
-        _$ReportAndSuggestionEventCopyWithImpl<
-          $Res,
-          _$UpdateEnableSubmitBtnImpl
-        >
+    extends _$ReportAndSuggestionEventCopyWithImpl<$Res,
+        _$UpdateEnableSubmitBtnImpl>
     implements _$$UpdateEnableSubmitBtnImplCopyWith<$Res> {
-  __$$UpdateEnableSubmitBtnImplCopyWithImpl(
-    _$UpdateEnableSubmitBtnImpl _value,
-    $Res Function(_$UpdateEnableSubmitBtnImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateEnableSubmitBtnImplCopyWithImpl(_$UpdateEnableSubmitBtnImpl _value,
+      $Res Function(_$UpdateEnableSubmitBtnImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ReportAndSuggestionEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$UpdateEnableSubmitBtnImpl(
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$UpdateEnableSubmitBtnImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -173,11 +171,8 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateEnableSubmitBtnImplCopyWith<_$UpdateEnableSubmitBtnImpl>
-  get copyWith =>
-      __$$UpdateEnableSubmitBtnImplCopyWithImpl<_$UpdateEnableSubmitBtnImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$UpdateEnableSubmitBtnImplCopyWithImpl<
+          _$UpdateEnableSubmitBtnImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -226,13 +221,13 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateEnableSubmitBtn value)
-    updateEnableSubmitBtn,
+        updateEnableSubmitBtn,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
     required TResult Function(_UpdateInternetConnectionStatus value)
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateEnableSubmitBtn(this);
   }
@@ -246,7 +241,7 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult? Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateEnableSubmitBtn?.call(this);
   }
@@ -260,7 +255,7 @@ class _$UpdateEnableSubmitBtnImpl implements _UpdateEnableSubmitBtn {
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateEnableSubmitBtn != null) {
@@ -280,42 +275,40 @@ abstract class _UpdateEnableSubmitBtn implements ReportAndSuggestionEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateEnableSubmitBtnImplCopyWith<_$UpdateEnableSubmitBtnImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateLoadingStatusImplCopyWith<$Res> {
-  factory _$$UpdateLoadingStatusImplCopyWith(
-    _$UpdateLoadingStatusImpl value,
-    $Res Function(_$UpdateLoadingStatusImpl) then,
-  ) = __$$UpdateLoadingStatusImplCopyWithImpl<$Res>;
+  factory _$$UpdateLoadingStatusImplCopyWith(_$UpdateLoadingStatusImpl value,
+          $Res Function(_$UpdateLoadingStatusImpl) then) =
+      __$$UpdateLoadingStatusImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool status});
 }
 
 /// @nodoc
 class __$$UpdateLoadingStatusImplCopyWithImpl<$Res>
-    extends
-        _$ReportAndSuggestionEventCopyWithImpl<$Res, _$UpdateLoadingStatusImpl>
+    extends _$ReportAndSuggestionEventCopyWithImpl<$Res,
+        _$UpdateLoadingStatusImpl>
     implements _$$UpdateLoadingStatusImplCopyWith<$Res> {
-  __$$UpdateLoadingStatusImplCopyWithImpl(
-    _$UpdateLoadingStatusImpl _value,
-    $Res Function(_$UpdateLoadingStatusImpl) _then,
-  ) : super(_value, _then);
+  __$$UpdateLoadingStatusImplCopyWithImpl(_$UpdateLoadingStatusImpl _value,
+      $Res Function(_$UpdateLoadingStatusImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ReportAndSuggestionEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$UpdateLoadingStatusImpl(
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$UpdateLoadingStatusImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -350,9 +343,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
   @pragma('vm:prefer-inline')
   _$$UpdateLoadingStatusImplCopyWith<_$UpdateLoadingStatusImpl> get copyWith =>
       __$$UpdateLoadingStatusImplCopyWithImpl<_$UpdateLoadingStatusImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -401,13 +392,13 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateEnableSubmitBtn value)
-    updateEnableSubmitBtn,
+        updateEnableSubmitBtn,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
     required TResult Function(_UpdateInternetConnectionStatus value)
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateLoadingStatus(this);
   }
@@ -421,7 +412,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult? Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateLoadingStatus?.call(this);
   }
@@ -435,7 +426,7 @@ class _$UpdateLoadingStatusImpl implements _UpdateLoadingStatus {
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateLoadingStatus != null) {
@@ -460,37 +451,35 @@ abstract class _UpdateLoadingStatus implements ReportAndSuggestionEvent {
 
 /// @nodoc
 abstract class _$$UpdateAttachment1ImplCopyWith<$Res> {
-  factory _$$UpdateAttachment1ImplCopyWith(
-    _$UpdateAttachment1Impl value,
-    $Res Function(_$UpdateAttachment1Impl) then,
-  ) = __$$UpdateAttachment1ImplCopyWithImpl<$Res>;
+  factory _$$UpdateAttachment1ImplCopyWith(_$UpdateAttachment1Impl value,
+          $Res Function(_$UpdateAttachment1Impl) then) =
+      __$$UpdateAttachment1ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({File? value});
 }
 
 /// @nodoc
 class __$$UpdateAttachment1ImplCopyWithImpl<$Res>
-    extends
-        _$ReportAndSuggestionEventCopyWithImpl<$Res, _$UpdateAttachment1Impl>
+    extends _$ReportAndSuggestionEventCopyWithImpl<$Res,
+        _$UpdateAttachment1Impl>
     implements _$$UpdateAttachment1ImplCopyWith<$Res> {
-  __$$UpdateAttachment1ImplCopyWithImpl(
-    _$UpdateAttachment1Impl _value,
-    $Res Function(_$UpdateAttachment1Impl) _then,
-  ) : super(_value, _then);
+  __$$UpdateAttachment1ImplCopyWithImpl(_$UpdateAttachment1Impl _value,
+      $Res Function(_$UpdateAttachment1Impl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ReportAndSuggestionEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = freezed}) {
-    return _then(
-      _$UpdateAttachment1Impl(
-        value: freezed == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as File?,
-      ),
-    );
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_$UpdateAttachment1Impl(
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as File?,
+    ));
   }
 }
 
@@ -525,9 +514,7 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
   @pragma('vm:prefer-inline')
   _$$UpdateAttachment1ImplCopyWith<_$UpdateAttachment1Impl> get copyWith =>
       __$$UpdateAttachment1ImplCopyWithImpl<_$UpdateAttachment1Impl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -576,13 +563,13 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateEnableSubmitBtn value)
-    updateEnableSubmitBtn,
+        updateEnableSubmitBtn,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
     required TResult Function(_UpdateInternetConnectionStatus value)
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment1(this);
   }
@@ -596,7 +583,7 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult? Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment1?.call(this);
   }
@@ -610,7 +597,7 @@ class _$UpdateAttachment1Impl implements _UpdateAttachment1 {
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment1 != null) {
@@ -635,37 +622,35 @@ abstract class _UpdateAttachment1 implements ReportAndSuggestionEvent {
 
 /// @nodoc
 abstract class _$$UpdateAttachment2ImplCopyWith<$Res> {
-  factory _$$UpdateAttachment2ImplCopyWith(
-    _$UpdateAttachment2Impl value,
-    $Res Function(_$UpdateAttachment2Impl) then,
-  ) = __$$UpdateAttachment2ImplCopyWithImpl<$Res>;
+  factory _$$UpdateAttachment2ImplCopyWith(_$UpdateAttachment2Impl value,
+          $Res Function(_$UpdateAttachment2Impl) then) =
+      __$$UpdateAttachment2ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({File? value});
 }
 
 /// @nodoc
 class __$$UpdateAttachment2ImplCopyWithImpl<$Res>
-    extends
-        _$ReportAndSuggestionEventCopyWithImpl<$Res, _$UpdateAttachment2Impl>
+    extends _$ReportAndSuggestionEventCopyWithImpl<$Res,
+        _$UpdateAttachment2Impl>
     implements _$$UpdateAttachment2ImplCopyWith<$Res> {
-  __$$UpdateAttachment2ImplCopyWithImpl(
-    _$UpdateAttachment2Impl _value,
-    $Res Function(_$UpdateAttachment2Impl) _then,
-  ) : super(_value, _then);
+  __$$UpdateAttachment2ImplCopyWithImpl(_$UpdateAttachment2Impl _value,
+      $Res Function(_$UpdateAttachment2Impl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ReportAndSuggestionEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = freezed}) {
-    return _then(
-      _$UpdateAttachment2Impl(
-        value: freezed == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as File?,
-      ),
-    );
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_$UpdateAttachment2Impl(
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as File?,
+    ));
   }
 }
 
@@ -700,9 +685,7 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
   @pragma('vm:prefer-inline')
   _$$UpdateAttachment2ImplCopyWith<_$UpdateAttachment2Impl> get copyWith =>
       __$$UpdateAttachment2ImplCopyWithImpl<_$UpdateAttachment2Impl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -751,13 +734,13 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateEnableSubmitBtn value)
-    updateEnableSubmitBtn,
+        updateEnableSubmitBtn,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
     required TResult Function(_UpdateInternetConnectionStatus value)
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment2(this);
   }
@@ -771,7 +754,7 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult? Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment2?.call(this);
   }
@@ -785,7 +768,7 @@ class _$UpdateAttachment2Impl implements _UpdateAttachment2 {
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment2 != null) {
@@ -810,37 +793,35 @@ abstract class _UpdateAttachment2 implements ReportAndSuggestionEvent {
 
 /// @nodoc
 abstract class _$$UpdateAttachment3ImplCopyWith<$Res> {
-  factory _$$UpdateAttachment3ImplCopyWith(
-    _$UpdateAttachment3Impl value,
-    $Res Function(_$UpdateAttachment3Impl) then,
-  ) = __$$UpdateAttachment3ImplCopyWithImpl<$Res>;
+  factory _$$UpdateAttachment3ImplCopyWith(_$UpdateAttachment3Impl value,
+          $Res Function(_$UpdateAttachment3Impl) then) =
+      __$$UpdateAttachment3ImplCopyWithImpl<$Res>;
   @useResult
   $Res call({File? value});
 }
 
 /// @nodoc
 class __$$UpdateAttachment3ImplCopyWithImpl<$Res>
-    extends
-        _$ReportAndSuggestionEventCopyWithImpl<$Res, _$UpdateAttachment3Impl>
+    extends _$ReportAndSuggestionEventCopyWithImpl<$Res,
+        _$UpdateAttachment3Impl>
     implements _$$UpdateAttachment3ImplCopyWith<$Res> {
-  __$$UpdateAttachment3ImplCopyWithImpl(
-    _$UpdateAttachment3Impl _value,
-    $Res Function(_$UpdateAttachment3Impl) _then,
-  ) : super(_value, _then);
+  __$$UpdateAttachment3ImplCopyWithImpl(_$UpdateAttachment3Impl _value,
+      $Res Function(_$UpdateAttachment3Impl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ReportAndSuggestionEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? value = freezed}) {
-    return _then(
-      _$UpdateAttachment3Impl(
-        value: freezed == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as File?,
-      ),
-    );
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_$UpdateAttachment3Impl(
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as File?,
+    ));
   }
 }
 
@@ -875,9 +856,7 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
   @pragma('vm:prefer-inline')
   _$$UpdateAttachment3ImplCopyWith<_$UpdateAttachment3Impl> get copyWith =>
       __$$UpdateAttachment3ImplCopyWithImpl<_$UpdateAttachment3Impl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -926,13 +905,13 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateEnableSubmitBtn value)
-    updateEnableSubmitBtn,
+        updateEnableSubmitBtn,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
     required TResult Function(_UpdateInternetConnectionStatus value)
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment3(this);
   }
@@ -946,7 +925,7 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult? Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateAttachment3?.call(this);
   }
@@ -960,7 +939,7 @@ class _$UpdateAttachment3Impl implements _UpdateAttachment3 {
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateAttachment3 != null) {
@@ -986,39 +965,36 @@ abstract class _UpdateAttachment3 implements ReportAndSuggestionEvent {
 /// @nodoc
 abstract class _$$UpdateInternetConnectionStatusImplCopyWith<$Res> {
   factory _$$UpdateInternetConnectionStatusImplCopyWith(
-    _$UpdateInternetConnectionStatusImpl value,
-    $Res Function(_$UpdateInternetConnectionStatusImpl) then,
-  ) = __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>;
+          _$UpdateInternetConnectionStatusImpl value,
+          $Res Function(_$UpdateInternetConnectionStatusImpl) then) =
+      __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool status});
 }
 
 /// @nodoc
 class __$$UpdateInternetConnectionStatusImplCopyWithImpl<$Res>
-    extends
-        _$ReportAndSuggestionEventCopyWithImpl<
-          $Res,
-          _$UpdateInternetConnectionStatusImpl
-        >
+    extends _$ReportAndSuggestionEventCopyWithImpl<$Res,
+        _$UpdateInternetConnectionStatusImpl>
     implements _$$UpdateInternetConnectionStatusImplCopyWith<$Res> {
   __$$UpdateInternetConnectionStatusImplCopyWithImpl(
-    _$UpdateInternetConnectionStatusImpl _value,
-    $Res Function(_$UpdateInternetConnectionStatusImpl) _then,
-  ) : super(_value, _then);
+      _$UpdateInternetConnectionStatusImpl _value,
+      $Res Function(_$UpdateInternetConnectionStatusImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ReportAndSuggestionEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$UpdateInternetConnectionStatusImpl(
-        null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$UpdateInternetConnectionStatusImpl(
+      null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
@@ -1053,12 +1029,9 @@ class _$UpdateInternetConnectionStatusImpl
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateInternetConnectionStatusImplCopyWith<
-    _$UpdateInternetConnectionStatusImpl
-  >
-  get copyWith =>
-      __$$UpdateInternetConnectionStatusImplCopyWithImpl<
-        _$UpdateInternetConnectionStatusImpl
-      >(this, _$identity);
+          _$UpdateInternetConnectionStatusImpl>
+      get copyWith => __$$UpdateInternetConnectionStatusImplCopyWithImpl<
+          _$UpdateInternetConnectionStatusImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1107,13 +1080,13 @@ class _$UpdateInternetConnectionStatusImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UpdateEnableSubmitBtn value)
-    updateEnableSubmitBtn,
+        updateEnableSubmitBtn,
     required TResult Function(_UpdateLoadingStatus value) updateLoadingStatus,
     required TResult Function(_UpdateAttachment1 value) updateAttachment1,
     required TResult Function(_UpdateAttachment2 value) updateAttachment2,
     required TResult Function(_UpdateAttachment3 value) updateAttachment3,
     required TResult Function(_UpdateInternetConnectionStatus value)
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateInternetConnectionStatus(this);
   }
@@ -1127,7 +1100,7 @@ class _$UpdateInternetConnectionStatusImpl
     TResult? Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult? Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult? Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
   }) {
     return updateInternetConnectionStatus?.call(this);
   }
@@ -1141,7 +1114,7 @@ class _$UpdateInternetConnectionStatusImpl
     TResult Function(_UpdateAttachment2 value)? updateAttachment2,
     TResult Function(_UpdateAttachment3 value)? updateAttachment3,
     TResult Function(_UpdateInternetConnectionStatus value)?
-    updateInternetConnectionStatus,
+        updateInternetConnectionStatus,
     required TResult orElse(),
   }) {
     if (updateInternetConnectionStatus != null) {
@@ -1162,9 +1135,8 @@ abstract class _UpdateInternetConnectionStatus
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateInternetConnectionStatusImplCopyWith<
-    _$UpdateInternetConnectionStatusImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+          _$UpdateInternetConnectionStatusImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1185,26 +1157,22 @@ mixin _$ReportAndSuggestionState {
 
 /// @nodoc
 abstract class $ReportAndSuggestionStateCopyWith<$Res> {
-  factory $ReportAndSuggestionStateCopyWith(
-    ReportAndSuggestionState value,
-    $Res Function(ReportAndSuggestionState) then,
-  ) = _$ReportAndSuggestionStateCopyWithImpl<$Res, ReportAndSuggestionState>;
+  factory $ReportAndSuggestionStateCopyWith(ReportAndSuggestionState value,
+          $Res Function(ReportAndSuggestionState) then) =
+      _$ReportAndSuggestionStateCopyWithImpl<$Res, ReportAndSuggestionState>;
   @useResult
-  $Res call({
-    bool enableSubmitBtn,
-    bool loadingStatus,
-    File? attach1,
-    File? attach2,
-    File? attach3,
-    bool internetConnectionStauts,
-  });
+  $Res call(
+      {bool enableSubmitBtn,
+      bool loadingStatus,
+      File? attach1,
+      File? attach2,
+      File? attach3,
+      bool internetConnectionStauts});
 }
 
 /// @nodoc
-class _$ReportAndSuggestionStateCopyWithImpl<
-  $Res,
-  $Val extends ReportAndSuggestionState
->
+class _$ReportAndSuggestionStateCopyWithImpl<$Res,
+        $Val extends ReportAndSuggestionState>
     implements $ReportAndSuggestionStateCopyWith<$Res> {
   _$ReportAndSuggestionStateCopyWithImpl(this._value, this._then);
 
@@ -1225,35 +1193,32 @@ class _$ReportAndSuggestionStateCopyWithImpl<
     Object? attach3 = freezed,
     Object? internetConnectionStauts = null,
   }) {
-    return _then(
-      _value.copyWith(
-            enableSubmitBtn: null == enableSubmitBtn
-                ? _value.enableSubmitBtn
-                : enableSubmitBtn // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            loadingStatus: null == loadingStatus
-                ? _value.loadingStatus
-                : loadingStatus // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            attach1: freezed == attach1
-                ? _value.attach1
-                : attach1 // ignore: cast_nullable_to_non_nullable
-                      as File?,
-            attach2: freezed == attach2
-                ? _value.attach2
-                : attach2 // ignore: cast_nullable_to_non_nullable
-                      as File?,
-            attach3: freezed == attach3
-                ? _value.attach3
-                : attach3 // ignore: cast_nullable_to_non_nullable
-                      as File?,
-            internetConnectionStauts: null == internetConnectionStauts
-                ? _value.internetConnectionStauts
-                : internetConnectionStauts // ignore: cast_nullable_to_non_nullable
-                      as bool,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      enableSubmitBtn: null == enableSubmitBtn
+          ? _value.enableSubmitBtn
+          : enableSubmitBtn // ignore: cast_nullable_to_non_nullable
+              as bool,
+      loadingStatus: null == loadingStatus
+          ? _value.loadingStatus
+          : loadingStatus // ignore: cast_nullable_to_non_nullable
+              as bool,
+      attach1: freezed == attach1
+          ? _value.attach1
+          : attach1 // ignore: cast_nullable_to_non_nullable
+              as File?,
+      attach2: freezed == attach2
+          ? _value.attach2
+          : attach2 // ignore: cast_nullable_to_non_nullable
+              as File?,
+      attach3: freezed == attach3
+          ? _value.attach3
+          : attach3 // ignore: cast_nullable_to_non_nullable
+              as File?,
+      internetConnectionStauts: null == internetConnectionStauts
+          ? _value.internetConnectionStauts
+          : internetConnectionStauts // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
   }
 }
 
@@ -1261,33 +1226,29 @@ class _$ReportAndSuggestionStateCopyWithImpl<
 abstract class _$$ReportAndSuggestionStateImplCopyWith<$Res>
     implements $ReportAndSuggestionStateCopyWith<$Res> {
   factory _$$ReportAndSuggestionStateImplCopyWith(
-    _$ReportAndSuggestionStateImpl value,
-    $Res Function(_$ReportAndSuggestionStateImpl) then,
-  ) = __$$ReportAndSuggestionStateImplCopyWithImpl<$Res>;
+          _$ReportAndSuggestionStateImpl value,
+          $Res Function(_$ReportAndSuggestionStateImpl) then) =
+      __$$ReportAndSuggestionStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    bool enableSubmitBtn,
-    bool loadingStatus,
-    File? attach1,
-    File? attach2,
-    File? attach3,
-    bool internetConnectionStauts,
-  });
+  $Res call(
+      {bool enableSubmitBtn,
+      bool loadingStatus,
+      File? attach1,
+      File? attach2,
+      File? attach3,
+      bool internetConnectionStauts});
 }
 
 /// @nodoc
 class __$$ReportAndSuggestionStateImplCopyWithImpl<$Res>
-    extends
-        _$ReportAndSuggestionStateCopyWithImpl<
-          $Res,
-          _$ReportAndSuggestionStateImpl
-        >
+    extends _$ReportAndSuggestionStateCopyWithImpl<$Res,
+        _$ReportAndSuggestionStateImpl>
     implements _$$ReportAndSuggestionStateImplCopyWith<$Res> {
   __$$ReportAndSuggestionStateImplCopyWithImpl(
-    _$ReportAndSuggestionStateImpl _value,
-    $Res Function(_$ReportAndSuggestionStateImpl) _then,
-  ) : super(_value, _then);
+      _$ReportAndSuggestionStateImpl _value,
+      $Res Function(_$ReportAndSuggestionStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ReportAndSuggestionState
   /// with the given fields replaced by the non-null parameter values.
@@ -1301,48 +1262,45 @@ class __$$ReportAndSuggestionStateImplCopyWithImpl<$Res>
     Object? attach3 = freezed,
     Object? internetConnectionStauts = null,
   }) {
-    return _then(
-      _$ReportAndSuggestionStateImpl(
-        enableSubmitBtn: null == enableSubmitBtn
-            ? _value.enableSubmitBtn
-            : enableSubmitBtn // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        loadingStatus: null == loadingStatus
-            ? _value.loadingStatus
-            : loadingStatus // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        attach1: freezed == attach1
-            ? _value.attach1
-            : attach1 // ignore: cast_nullable_to_non_nullable
-                  as File?,
-        attach2: freezed == attach2
-            ? _value.attach2
-            : attach2 // ignore: cast_nullable_to_non_nullable
-                  as File?,
-        attach3: freezed == attach3
-            ? _value.attach3
-            : attach3 // ignore: cast_nullable_to_non_nullable
-                  as File?,
-        internetConnectionStauts: null == internetConnectionStauts
-            ? _value.internetConnectionStauts
-            : internetConnectionStauts // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+    return _then(_$ReportAndSuggestionStateImpl(
+      enableSubmitBtn: null == enableSubmitBtn
+          ? _value.enableSubmitBtn
+          : enableSubmitBtn // ignore: cast_nullable_to_non_nullable
+              as bool,
+      loadingStatus: null == loadingStatus
+          ? _value.loadingStatus
+          : loadingStatus // ignore: cast_nullable_to_non_nullable
+              as bool,
+      attach1: freezed == attach1
+          ? _value.attach1
+          : attach1 // ignore: cast_nullable_to_non_nullable
+              as File?,
+      attach2: freezed == attach2
+          ? _value.attach2
+          : attach2 // ignore: cast_nullable_to_non_nullable
+              as File?,
+      attach3: freezed == attach3
+          ? _value.attach3
+          : attach3 // ignore: cast_nullable_to_non_nullable
+              as File?,
+      internetConnectionStauts: null == internetConnectionStauts
+          ? _value.internetConnectionStauts
+          : internetConnectionStauts // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ReportAndSuggestionStateImpl implements _ReportAndSuggestionState {
-  const _$ReportAndSuggestionStateImpl({
-    this.enableSubmitBtn = false,
-    this.loadingStatus = false,
-    this.attach1,
-    this.attach2,
-    this.attach3,
-    this.internetConnectionStauts = false,
-  });
+  const _$ReportAndSuggestionStateImpl(
+      {this.enableSubmitBtn = false,
+      this.loadingStatus = false,
+      this.attach1,
+      this.attach2,
+      this.attach3,
+      this.internetConnectionStauts = false});
 
   @override
   @JsonKey()
@@ -1378,22 +1336,13 @@ class _$ReportAndSuggestionStateImpl implements _ReportAndSuggestionState {
             (identical(other.attach2, attach2) || other.attach2 == attach2) &&
             (identical(other.attach3, attach3) || other.attach3 == attach3) &&
             (identical(
-                  other.internetConnectionStauts,
-                  internetConnectionStauts,
-                ) ||
+                    other.internetConnectionStauts, internetConnectionStauts) ||
                 other.internetConnectionStauts == internetConnectionStauts));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    enableSubmitBtn,
-    loadingStatus,
-    attach1,
-    attach2,
-    attach3,
-    internetConnectionStauts,
-  );
+  int get hashCode => Object.hash(runtimeType, enableSubmitBtn, loadingStatus,
+      attach1, attach2, attach3, internetConnectionStauts);
 
   /// Create a copy of ReportAndSuggestionState
   /// with the given fields replaced by the non-null parameter values.
@@ -1401,21 +1350,18 @@ class _$ReportAndSuggestionStateImpl implements _ReportAndSuggestionState {
   @override
   @pragma('vm:prefer-inline')
   _$$ReportAndSuggestionStateImplCopyWith<_$ReportAndSuggestionStateImpl>
-  get copyWith =>
-      __$$ReportAndSuggestionStateImplCopyWithImpl<
-        _$ReportAndSuggestionStateImpl
-      >(this, _$identity);
+      get copyWith => __$$ReportAndSuggestionStateImplCopyWithImpl<
+          _$ReportAndSuggestionStateImpl>(this, _$identity);
 }
 
 abstract class _ReportAndSuggestionState implements ReportAndSuggestionState {
-  const factory _ReportAndSuggestionState({
-    final bool enableSubmitBtn,
-    final bool loadingStatus,
-    final File? attach1,
-    final File? attach2,
-    final File? attach3,
-    final bool internetConnectionStauts,
-  }) = _$ReportAndSuggestionStateImpl;
+  const factory _ReportAndSuggestionState(
+      {final bool enableSubmitBtn,
+      final bool loadingStatus,
+      final File? attach1,
+      final File? attach2,
+      final File? attach3,
+      final bool internetConnectionStauts}) = _$ReportAndSuggestionStateImpl;
 
   @override
   bool get enableSubmitBtn;
@@ -1435,5 +1381,5 @@ abstract class _ReportAndSuggestionState implements ReportAndSuggestionState {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReportAndSuggestionStateImplCopyWith<_$ReportAndSuggestionStateImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }

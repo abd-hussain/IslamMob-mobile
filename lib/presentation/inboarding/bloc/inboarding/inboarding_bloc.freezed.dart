@@ -12,8 +12,7 @@ part of 'inboarding_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$InboardingEvent {
@@ -22,48 +21,53 @@ mixin _$InboardingEvent {
     required TResult Function() initialStage,
     required TResult Function(int stage) changeInBoardingStage,
     required TResult Function() finalizeInBoarding,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialStage,
     TResult? Function(int stage)? changeInBoardingStage,
     TResult? Function()? finalizeInBoarding,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialStage,
     TResult Function(int stage)? changeInBoardingStage,
     TResult Function()? finalizeInBoarding,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialInBoardingStage value) initialStage,
     required TResult Function(_ChangeInBoardingStage value)
-    changeInBoardingStage,
+        changeInBoardingStage,
     required TResult Function(_FinalizeInBoarding value) finalizeInBoarding,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialInBoardingStage value)? initialStage,
     TResult? Function(_ChangeInBoardingStage value)? changeInBoardingStage,
     TResult? Function(_FinalizeInBoarding value)? finalizeInBoarding,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialInBoardingStage value)? initialStage,
     TResult Function(_ChangeInBoardingStage value)? changeInBoardingStage,
     TResult Function(_FinalizeInBoarding value)? finalizeInBoarding,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InboardingEventCopyWith<$Res> {
   factory $InboardingEventCopyWith(
-    InboardingEvent value,
-    $Res Function(InboardingEvent) then,
-  ) = _$InboardingEventCopyWithImpl<$Res, InboardingEvent>;
+          InboardingEvent value, $Res Function(InboardingEvent) then) =
+      _$InboardingEventCopyWithImpl<$Res, InboardingEvent>;
 }
 
 /// @nodoc
@@ -83,9 +87,9 @@ class _$InboardingEventCopyWithImpl<$Res, $Val extends InboardingEvent>
 /// @nodoc
 abstract class _$$InitialInBoardingStageImplCopyWith<$Res> {
   factory _$$InitialInBoardingStageImplCopyWith(
-    _$InitialInBoardingStageImpl value,
-    $Res Function(_$InitialInBoardingStageImpl) then,
-  ) = __$$InitialInBoardingStageImplCopyWithImpl<$Res>;
+          _$InitialInBoardingStageImpl value,
+          $Res Function(_$InitialInBoardingStageImpl) then) =
+      __$$InitialInBoardingStageImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -93,9 +97,9 @@ class __$$InitialInBoardingStageImplCopyWithImpl<$Res>
     extends _$InboardingEventCopyWithImpl<$Res, _$InitialInBoardingStageImpl>
     implements _$$InitialInBoardingStageImplCopyWith<$Res> {
   __$$InitialInBoardingStageImplCopyWithImpl(
-    _$InitialInBoardingStageImpl _value,
-    $Res Function(_$InitialInBoardingStageImpl) _then,
-  ) : super(_value, _then);
+      _$InitialInBoardingStageImpl _value,
+      $Res Function(_$InitialInBoardingStageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of InboardingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -160,7 +164,7 @@ class _$InitialInBoardingStageImpl implements _InitialInBoardingStage {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialInBoardingStage value) initialStage,
     required TResult Function(_ChangeInBoardingStage value)
-    changeInBoardingStage,
+        changeInBoardingStage,
     required TResult Function(_FinalizeInBoarding value) finalizeInBoarding,
   }) {
     return initialStage(this);
@@ -198,9 +202,9 @@ abstract class _InitialInBoardingStage implements InboardingEvent {
 /// @nodoc
 abstract class _$$ChangeInBoardingStageImplCopyWith<$Res> {
   factory _$$ChangeInBoardingStageImplCopyWith(
-    _$ChangeInBoardingStageImpl value,
-    $Res Function(_$ChangeInBoardingStageImpl) then,
-  ) = __$$ChangeInBoardingStageImplCopyWithImpl<$Res>;
+          _$ChangeInBoardingStageImpl value,
+          $Res Function(_$ChangeInBoardingStageImpl) then) =
+      __$$ChangeInBoardingStageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int stage});
 }
@@ -209,24 +213,23 @@ abstract class _$$ChangeInBoardingStageImplCopyWith<$Res> {
 class __$$ChangeInBoardingStageImplCopyWithImpl<$Res>
     extends _$InboardingEventCopyWithImpl<$Res, _$ChangeInBoardingStageImpl>
     implements _$$ChangeInBoardingStageImplCopyWith<$Res> {
-  __$$ChangeInBoardingStageImplCopyWithImpl(
-    _$ChangeInBoardingStageImpl _value,
-    $Res Function(_$ChangeInBoardingStageImpl) _then,
-  ) : super(_value, _then);
+  __$$ChangeInBoardingStageImplCopyWithImpl(_$ChangeInBoardingStageImpl _value,
+      $Res Function(_$ChangeInBoardingStageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of InboardingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? stage = null}) {
-    return _then(
-      _$ChangeInBoardingStageImpl(
-        stage: null == stage
-            ? _value.stage
-            : stage // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+  $Res call({
+    Object? stage = null,
+  }) {
+    return _then(_$ChangeInBoardingStageImpl(
+      stage: null == stage
+          ? _value.stage
+          : stage // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
@@ -260,11 +263,8 @@ class _$ChangeInBoardingStageImpl implements _ChangeInBoardingStage {
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeInBoardingStageImplCopyWith<_$ChangeInBoardingStageImpl>
-  get copyWith =>
-      __$$ChangeInBoardingStageImplCopyWithImpl<_$ChangeInBoardingStageImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$ChangeInBoardingStageImplCopyWithImpl<
+          _$ChangeInBoardingStageImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -305,7 +305,7 @@ class _$ChangeInBoardingStageImpl implements _ChangeInBoardingStage {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialInBoardingStage value) initialStage,
     required TResult Function(_ChangeInBoardingStage value)
-    changeInBoardingStage,
+        changeInBoardingStage,
     required TResult Function(_FinalizeInBoarding value) finalizeInBoarding,
   }) {
     return changeInBoardingStage(this);
@@ -346,25 +346,23 @@ abstract class _ChangeInBoardingStage implements InboardingEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangeInBoardingStageImplCopyWith<_$ChangeInBoardingStageImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FinalizeInBoardingImplCopyWith<$Res> {
-  factory _$$FinalizeInBoardingImplCopyWith(
-    _$FinalizeInBoardingImpl value,
-    $Res Function(_$FinalizeInBoardingImpl) then,
-  ) = __$$FinalizeInBoardingImplCopyWithImpl<$Res>;
+  factory _$$FinalizeInBoardingImplCopyWith(_$FinalizeInBoardingImpl value,
+          $Res Function(_$FinalizeInBoardingImpl) then) =
+      __$$FinalizeInBoardingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$FinalizeInBoardingImplCopyWithImpl<$Res>
     extends _$InboardingEventCopyWithImpl<$Res, _$FinalizeInBoardingImpl>
     implements _$$FinalizeInBoardingImplCopyWith<$Res> {
-  __$$FinalizeInBoardingImplCopyWithImpl(
-    _$FinalizeInBoardingImpl _value,
-    $Res Function(_$FinalizeInBoardingImpl) _then,
-  ) : super(_value, _then);
+  __$$FinalizeInBoardingImplCopyWithImpl(_$FinalizeInBoardingImpl _value,
+      $Res Function(_$FinalizeInBoardingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of InboardingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -428,7 +426,7 @@ class _$FinalizeInBoardingImpl implements _FinalizeInBoarding {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialInBoardingStage value) initialStage,
     required TResult Function(_ChangeInBoardingStage value)
-    changeInBoardingStage,
+        changeInBoardingStage,
     required TResult Function(_FinalizeInBoarding value) finalizeInBoarding,
   }) {
     return finalizeInBoarding(this);
@@ -478,9 +476,8 @@ mixin _$InboardingState {
 /// @nodoc
 abstract class $InboardingStateCopyWith<$Res> {
   factory $InboardingStateCopyWith(
-    InboardingState value,
-    $Res Function(InboardingState) then,
-  ) = _$InboardingStateCopyWithImpl<$Res, InboardingState>;
+          InboardingState value, $Res Function(InboardingState) then) =
+      _$InboardingStateCopyWithImpl<$Res, InboardingState>;
   @useResult
   $Res call({int inBoardingStage, bool finalizedInBoarding});
 }
@@ -503,29 +500,25 @@ class _$InboardingStateCopyWithImpl<$Res, $Val extends InboardingState>
     Object? inBoardingStage = null,
     Object? finalizedInBoarding = null,
   }) {
-    return _then(
-      _value.copyWith(
-            inBoardingStage: null == inBoardingStage
-                ? _value.inBoardingStage
-                : inBoardingStage // ignore: cast_nullable_to_non_nullable
-                      as int,
-            finalizedInBoarding: null == finalizedInBoarding
-                ? _value.finalizedInBoarding
-                : finalizedInBoarding // ignore: cast_nullable_to_non_nullable
-                      as bool,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      inBoardingStage: null == inBoardingStage
+          ? _value.inBoardingStage
+          : inBoardingStage // ignore: cast_nullable_to_non_nullable
+              as int,
+      finalizedInBoarding: null == finalizedInBoarding
+          ? _value.finalizedInBoarding
+          : finalizedInBoarding // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$InboardingStateImplCopyWith<$Res>
     implements $InboardingStateCopyWith<$Res> {
-  factory _$$InboardingStateImplCopyWith(
-    _$InboardingStateImpl value,
-    $Res Function(_$InboardingStateImpl) then,
-  ) = __$$InboardingStateImplCopyWithImpl<$Res>;
+  factory _$$InboardingStateImplCopyWith(_$InboardingStateImpl value,
+          $Res Function(_$InboardingStateImpl) then) =
+      __$$InboardingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int inBoardingStage, bool finalizedInBoarding});
@@ -536,9 +529,8 @@ class __$$InboardingStateImplCopyWithImpl<$Res>
     extends _$InboardingStateCopyWithImpl<$Res, _$InboardingStateImpl>
     implements _$$InboardingStateImplCopyWith<$Res> {
   __$$InboardingStateImplCopyWithImpl(
-    _$InboardingStateImpl _value,
-    $Res Function(_$InboardingStateImpl) _then,
-  ) : super(_value, _then);
+      _$InboardingStateImpl _value, $Res Function(_$InboardingStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of InboardingState
   /// with the given fields replaced by the non-null parameter values.
@@ -548,28 +540,24 @@ class __$$InboardingStateImplCopyWithImpl<$Res>
     Object? inBoardingStage = null,
     Object? finalizedInBoarding = null,
   }) {
-    return _then(
-      _$InboardingStateImpl(
-        inBoardingStage: null == inBoardingStage
-            ? _value.inBoardingStage
-            : inBoardingStage // ignore: cast_nullable_to_non_nullable
-                  as int,
-        finalizedInBoarding: null == finalizedInBoarding
-            ? _value.finalizedInBoarding
-            : finalizedInBoarding // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
+    return _then(_$InboardingStateImpl(
+      inBoardingStage: null == inBoardingStage
+          ? _value.inBoardingStage
+          : inBoardingStage // ignore: cast_nullable_to_non_nullable
+              as int,
+      finalizedInBoarding: null == finalizedInBoarding
+          ? _value.finalizedInBoarding
+          : finalizedInBoarding // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$InboardingStateImpl implements _InboardingState {
-  const _$InboardingStateImpl({
-    this.inBoardingStage = 10,
-    this.finalizedInBoarding = false,
-  });
+  const _$InboardingStateImpl(
+      {this.inBoardingStage = 10, this.finalizedInBoarding = false});
 
   @override
   @JsonKey()
@@ -605,16 +593,13 @@ class _$InboardingStateImpl implements _InboardingState {
   @pragma('vm:prefer-inline')
   _$$InboardingStateImplCopyWith<_$InboardingStateImpl> get copyWith =>
       __$$InboardingStateImplCopyWithImpl<_$InboardingStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 }
 
 abstract class _InboardingState implements InboardingState {
-  const factory _InboardingState({
-    final int inBoardingStage,
-    final bool finalizedInBoarding,
-  }) = _$InboardingStateImpl;
+  const factory _InboardingState(
+      {final int inBoardingStage,
+      final bool finalizedInBoarding}) = _$InboardingStateImpl;
 
   @override
   int get inBoardingStage;

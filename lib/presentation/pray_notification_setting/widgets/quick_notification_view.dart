@@ -50,16 +50,14 @@ class QuickNotificationView extends StatelessWidget {
 
     return [
       BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
-        buildWhen: (previous, current) =>
-            previous.allNotificationForToday != current.allNotificationForToday,
+        buildWhen: (previous, current) => previous.allNotificationForToday != current.allNotificationForToday,
         builder: (builderContext, state) {
           final dateInString = state.allNotificationForToday;
           String formatedDate = "";
           DateTime? date = DateTime.tryParse(dateInString);
           if (date != null) {
             date = date.add(const Duration(days: 1));
-            formatedDate =
-                "${localization.disableUntil} --- ${TimingUseCase().formatDate(date)}";
+            formatedDate = "${localization.disableUntil} --- ${TimingUseCase().formatDate(date)}";
           }
 
           return NotificationRowView(
@@ -74,6 +72,35 @@ class QuickNotificationView extends StatelessWidget {
                   status: value,
                   date: DateTime.now(),
                   type: const AllNotificationForToday(),
+                ),
+              );
+            },
+          );
+        },
+      ),
+      const Divider(height: 1, color: Colors.grey),
+      BlocBuilder<PrayNotificationSettingBloc, PrayNotificationSettingState>(
+        buildWhen: (previous, current) => previous.allNotificationForWeekDay != current.allNotificationForWeekDay,
+        builder: (builderContext, state) {
+          final dateInString = state.allNotificationForWeekDay;
+          String formatedDate = "";
+          DateTime? date = DateTime.tryParse(dateInString);
+          if (date != null) {
+            date = date.add(const Duration(days: 7));
+            formatedDate = "${localization.disableUntil} --- ${TimingUseCase().formatDate(date)}";
+          }
+          return NotificationRowView(
+            title: localization.notificationSettingWeekAll,
+            value: state.allNotificationForWeekDay != "",
+            soundFileName: "",
+            description: formatedDate,
+            onChangeSoundPresses: null,
+            onChanged: (value) {
+              builderContext.read<PrayNotificationSettingBloc>().add(
+                PrayNotificationSettingEvent.changePrayNotificationSettings(
+                  status: value,
+                  date: DateTime.now(),
+                  type: const AllNotificationForWeekDay(),
                 ),
               );
             },
