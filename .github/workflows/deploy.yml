@@ -19,6 +19,9 @@ jobs:
             distribution: 'oracle'
             java-version: '17'
 
+        - name: 🔎 Clean Gradle Cache (optional)
+          run: rm -rf ~/.gradle/caches
+
         - name: 🐦 Setup Flutter
           uses: subosito/flutter-action@v2
           with:
