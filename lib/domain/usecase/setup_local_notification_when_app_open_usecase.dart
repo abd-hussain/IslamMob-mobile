@@ -323,25 +323,23 @@ class SetupLocalNotificationWhenAppOpenUseCase {
 
       // Optionally handle countdown on Android
       if (Platform.isAndroid && !nextCounttdownNotificationScheduled) {
-        if (Platform.isAndroid && !nextCounttdownNotificationScheduled) {
-          if (type == const NotificationTypeStateFajir() ||
-              type == const NotificationTypeStateZuhr() ||
-              type == const NotificationTypeStateAsr() ||
-              type == const NotificationTypeStateMaghrib() ||
-              type == const NotificationTypeStateIsha()) {
-            final diff = time.difference(DateTime.now());
-            final minutes = diff.inMinutes;
-            await _localNotificationRepository.countdownNotificationForAndroid(
-              id: _notificationCount++,
-              // ignore: use_build_context_synchronously
-              context: context,
-              minites: minutes,
-              nextSalahTime: DateFormat('hh:mm a').format(time),
-              type: type,
-              soundFileName: _getSoundFileName(type),
-            );
-            nextCounttdownNotificationScheduled = true;
-          }
+        if (type == const NotificationTypeStateFajir() ||
+            type == const NotificationTypeStateZuhr() ||
+            type == const NotificationTypeStateAsr() ||
+            type == const NotificationTypeStateMaghrib() ||
+            type == const NotificationTypeStateIsha()) {
+          final diff = time.difference(DateTime.now());
+          final minutes = diff.inMinutes;
+          await _localNotificationRepository.countdownNotificationForAndroid(
+            id: _notificationCount++,
+            // ignore: use_build_context_synchronously
+            context: context,
+            minites: minutes,
+            nextSalahTime: DateFormat('hh:mm a').format(time),
+            type: type,
+            soundFileName: _getSoundFileName(type),
+          );
+          nextCounttdownNotificationScheduled = true;
         }
       }
       return 1;
@@ -363,9 +361,14 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     // Example logic:
     // If "disable all for today" and the day is 'today', skip it
     final notificationDisableTime = _isNotificationForTodayDisabledAndWhen();
-    if (notificationDisableTime != "" &&
-        _isSameDay(date, DateTime.tryParse(notificationDisableTime) ?? DateTime.now())) {
-      return true;
+    if (notificationDisableTime != "") {
+      final notificationDisableTimeDate = DateTime.parse(notificationDisableTime);
+      if (_isSameDay(date, notificationDisableTimeDate)) {
+        return true;
+      } else {
+        // If the saved date is more than day (i.e. beyond max allowed)
+        DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForTodayDate, value: "");
+      }
     }
 
     // If "disable all for week" and the day is within 7 days
@@ -373,121 +376,74 @@ class SetupLocalNotificationWhenAppOpenUseCase {
 
     if (notificationDisableWeekTime != "") {
       final notificationDisableWeekTimeDate = DateTime.parse(notificationDisableWeekTime);
-      final diff = date.difference(notificationDisableWeekTimeDate).inDays;
-      if (diff >= 0 && diff < 7) {
+      if (_isSameWeek(date, notificationDisableWeekTimeDate)) {
         return true;
+      } else {
+        // If the saved date is more than day (i.e. beyond max allowed)
+        DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForWeekDate, value: "");
       }
     }
-
     return false;
   }
 
   /// Checks if [d1] and [d2] represent the exact same calendar day (ignoring time).
-  bool _isSameDay(DateTime d1, DateTime d2) {
-    return d1.year == d2.year && d1.month == d2.month && d1.day == d2.day;
+  bool _isSameDay(DateTime d1, DateTime d2) => d1.year == d2.year && d1.month == d2.month && d1.day == d2.day;
+
+  /// Checks if [d1] and [d2] represent the exact same calendar day (ignoring time).
+  bool _isSameWeek(DateTime d1, DateTime d2) {
+    final mondayOfD1 = d1.subtract(Duration(days: d1.weekday - 1));
+    final mondayOfD2 = d2.subtract(Duration(days: d2.weekday - 1));
+    return _isSameDay(mondayOfD1, mondayOfD2);
   }
 
   // ---------------------------------------------------------------------------
   //                     DATABASE CHECKS FOR ALLOWED NOTIFICATIONS
   // ---------------------------------------------------------------------------
 
-  bool _isFajirNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableFajr, defaultValue: true) as bool;
-  }
+  bool _isFajirNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableFajr, defaultValue: true) as bool;
 
-  bool _isSunriseNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableSunriseTime, defaultValue: true)
-        as bool;
-  }
+  bool _isSunriseNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableSunriseTime, defaultValue: true)
+          as bool;
 
-  bool _isZhurNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableDuher, defaultValue: true) as bool;
-  }
+  bool _isZhurNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableDuher, defaultValue: true) as bool;
 
-  bool _isAsrNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAsr, defaultValue: true) as bool;
-  }
+  bool _isAsrNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAsr, defaultValue: true) as bool;
 
-  bool _isMagreebNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableMagrieb, defaultValue: true)
-        as bool;
-  }
+  bool _isMagreebNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableMagrieb, defaultValue: true) as bool;
 
-  bool _isIshaNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableIsha, defaultValue: true) as bool;
-  }
+  bool _isIshaNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableIsha, defaultValue: true) as bool;
 
-  bool _isWarningBefore15MinNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: LocalNotificationConstant.disableNotificationBefore15Min,
-          defaultValue: true,
-        )
-        as bool;
-  }
+  bool _isWarningBefore15MinNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableNotificationBefore15Min,
+            defaultValue: true,
+          )
+          as bool;
 
-  bool _isJom3aAlkahfNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableJom3aAlkahf, defaultValue: true)
-        as bool;
-  }
+  bool _isJom3aAlkahfNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableJom3aAlkahf, defaultValue: true)
+          as bool;
 
-  bool _isJom3aDoaaNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableJom3aDo3aa, defaultValue: true)
-        as bool;
-  }
+  bool _isJom3aDoaaNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableJom3aDo3aa, defaultValue: true) as bool;
 
-  bool _isMidNightPrayNotificationAllowed() {
-    return DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableQeyamAlLayel, defaultValue: true)
-        as bool;
-  }
+  bool _isMidNightPrayNotificationAllowed() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableQeyamAlLayel, defaultValue: true)
+          as bool;
 
-  String _isNotificationForTodayDisabledAndWhen() {
-    //TODO: Wrong
-    // final disableAllForTodayDate =
-    //     DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForTodayDate, defaultValue: "")
-    //         as String;
+  String _isNotificationForTodayDisabledAndWhen() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForTodayDate, defaultValue: "")
+          as String;
 
-    // if (disableAllForTodayDate.isEmpty) return "";
-
-    // final date = DateTime.parse(disableAllForTodayDate);
-    // final now = DateTime.now();
-
-    // final today = DateTime(now.year, now.month, now.day);
-    // final tomorrow = today.add(const Duration(days: 1));
-    // final savedDate = DateTime(date.year, date.month, date.day);
-
-    // if (savedDate == today || savedDate == tomorrow) {
-    //   return disableAllForTodayDate;
-    // }
-
-    // // If the saved date is more than tomorrow (i.e. beyond max allowed)
-    // DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForTodayDate, value: "");
-    return "";
-  }
-
-  String _isNotificationForWeekDisabledAndWhen() {
-    //TODO: Wrong
-
-    // final disableAllForWeekDate =
-    //     DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForWeekDate, defaultValue: "")
-    //         as String;
-
-    // if (disableAllForWeekDate.isEmpty) return "";
-
-    // final date = DateTime.parse(disableAllForWeekDate);
-    // final now = DateTime.now();
-
-    // final today = DateTime(now.year, now.month, now.day);
-    // final endDate = today.add(const Duration(days: 7));
-    // final savedDate = DateTime(date.year, date.month, date.day);
-
-    // if (savedDate == today || savedDate == endDate) {
-    //   return disableAllForWeekDate;
-    // }
-
-    // // If the saved date is more than week (i.e. beyond max allowed)
-    // DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForWeekDate, value: "");
-    return "";
-  }
+  String _isNotificationForWeekDisabledAndWhen() =>
+      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForWeekDate, defaultValue: "")
+          as String;
 
   // ---------------------------------------------------------------------------
   //                     DATABASE GET NOTIFICATIONS Sound
@@ -514,43 +470,38 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     }
   }
 
-  String _fajirNotificationSound() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseNotificationSoundConstant.fajirNotification,
-          defaultValue: "adhan1",
-        )
-        as String;
-  }
+  String _fajirNotificationSound() =>
+      DataBaseManagerBase.getFromDatabase(
+            key: DatabaseNotificationSoundConstant.fajirNotification,
+            defaultValue: "adhan1",
+          )
+          as String;
 
-  String _zhurNotificationSound() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseNotificationSoundConstant.zhurNotification,
-          defaultValue: "adhan2",
-        )
-        as String;
-  }
+  String _zhurNotificationSound() =>
+      DataBaseManagerBase.getFromDatabase(
+            key: DatabaseNotificationSoundConstant.zhurNotification,
+            defaultValue: "adhan2",
+          )
+          as String;
 
-  String _asrNotificationSound() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseNotificationSoundConstant.asrNotification,
-          defaultValue: "adhan3",
-        )
-        as String;
-  }
+  String _asrNotificationSound() =>
+      DataBaseManagerBase.getFromDatabase(
+            key: DatabaseNotificationSoundConstant.asrNotification,
+            defaultValue: "adhan3",
+          )
+          as String;
 
-  String _magreebNotificationSound() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseNotificationSoundConstant.maghribNotification,
-          defaultValue: "adhan4",
-        )
-        as String;
-  }
+  String _magreebNotificationSound() =>
+      DataBaseManagerBase.getFromDatabase(
+            key: DatabaseNotificationSoundConstant.maghribNotification,
+            defaultValue: "adhan4",
+          )
+          as String;
 
-  String _ishaNotificationSound() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseNotificationSoundConstant.ishaNotification,
-          defaultValue: "adhan5",
-        )
-        as String;
-  }
+  String _ishaNotificationSound() =>
+      DataBaseManagerBase.getFromDatabase(
+            key: DatabaseNotificationSoundConstant.ishaNotification,
+            defaultValue: "adhan5",
+          )
+          as String;
 }

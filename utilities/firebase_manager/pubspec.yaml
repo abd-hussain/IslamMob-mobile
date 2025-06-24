@@ -15,7 +15,7 @@ dependencies:
   firebase_remote_config: ^5.1.3
   firebase_performance: ^0.10.0+8
   firebase_storage: ^12.4.0
-  permission_handler: ^11.3.1
+  permission_handler: 12.0.0+1
   
   logger_manager:
     path: ../../utilities/logger_manager

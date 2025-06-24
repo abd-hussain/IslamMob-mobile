@@ -21,7 +21,7 @@ command:
       dio: 5.8.0+1
       intl: 0.20.2
       json_annotation: ^4.9.0
-      flutter_svg: 2.0.10+1
+      flutter_svg: 2.2.0
 
     dev_dependencies:
       build_verify: 3.1.0
@@ -156,4 +156,3 @@ scripts:
         - "build_runner"
       diff: origin/main...HEAD
     description: Run `dart run build_runner build --delete-conflicting-outputs`
-

@@ -1,6 +1,7 @@
 PODS:
   - audioplayers_darwin (0.0.1):
     - Flutter
+    - FlutterMacOS
   - cloud_firestore (5.6.6):
     - Firebase/Firestore (= 11.10.0)
     - firebase_core
@@ -297,7 +298,7 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
-  - audioplayers_darwin (from `.symlinks/plugins/audioplayers_darwin/ios`)
+  - audioplayers_darwin (from `.symlinks/plugins/audioplayers_darwin/darwin`)
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
@@ -373,7 +374,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   audioplayers_darwin:
-    :path: ".symlinks/plugins/audioplayers_darwin/ios"
+    :path: ".symlinks/plugins/audioplayers_darwin/darwin"
   cloud_firestore:
     :path: ".symlinks/plugins/cloud_firestore/ios"
   connectivity_plus:
@@ -452,10 +453,10 @@ CHECKOUT OPTIONS:
     :tag: 11.10.0
 
 SPEC CHECKSUMS:
-  audioplayers_darwin: ccf9c770ee768abb07e26d90af093f7bab1c12ab
+  audioplayers_darwin: 4f9ca89d92d3d21cec7ec580e78ca888e5fb68bd
   cloud_firestore: 07742f115155e19201e77b4cafb155011892d7b7
   connectivity_plus: cb623214f4e1f6ef8fe7403d580fdad517d2f7dd
-  device_info_plus: 335f3ce08d2e174b9fdc3db3db0f4e3b1f66bd89
+  device_info_plus: 21fcca2080fbcd348be798aa36c3e5ed849eefbe
   Firebase: 1fe1c0a7d9aaea32efe01fbea5f0ebd8d70e53a2
   firebase_analytics: 1998960b8fa16fd0cd9e77a6f9fd35a2009ad65e
   firebase_core: 2d4534e7b489907dcede540c835b48981d890943
@@ -515,12 +516,12 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
   rate_my_app: 567848e885b804d65eb9443f96e9fc2c30a06abb
-  screen_brightness_ios: 28c5fbdb40634de44f86025d84470158ad4df48c
+  screen_brightness_ios: 9953fd7da5bd480f1a93990daeec2eb42d4f3b52
   share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
   url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
-  wakelock_plus: 04623e3f525556020ebd4034310f20fe7fda8b49
+  wakelock_plus: e29112ab3ef0b318e58cfa5c32326458be66b556
   webview_flutter_wkwebview: 1821ceac936eba6f7984d89a9f3bcb4dea99ebb2
 
 PODFILE CHECKSUM: 37d737f41729469227564c8029237b5ef35beac9
