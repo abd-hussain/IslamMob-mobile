@@ -29,7 +29,9 @@ class _QuranKareemScreenState extends State<QuranKareemScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => QuranKareemBloc(),
-      child: Stack(children: [_buildMainContent(), _buildHelpToolTips()]),
+      child: SafeArea(
+        child: Stack(children: [_buildMainContent(), _buildHelpToolTips()]),
+      ),
     );
   }
 

@@ -9,8 +9,10 @@ part 'notification_type_sealed.freezed.dart';
 /// and special occasions like Friday prayers and night prayers.
 @freezed
 sealed class PrayNotificationTypeState with _$PrayNotificationTypeState {
-  const factory PrayNotificationTypeState.allNotificationForToday() = AllNotificationForToday;
-  const factory PrayNotificationTypeState.allNotificationForWeekDay() = AllNotificationForWeekDay;
+  const factory PrayNotificationTypeState.allNotificationForToday() =
+      AllNotificationForToday;
+  const factory PrayNotificationTypeState.allNotificationForWeekDay() =
+      AllNotificationForWeekDay;
   const factory PrayNotificationTypeState.fajir() = Fajir;
   const factory PrayNotificationTypeState.duhir() = Duhir;
   const factory PrayNotificationTypeState.asr() = Asr;

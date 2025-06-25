@@ -12,7 +12,8 @@ part of 'notification_type_sealed.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$PrayNotificationTypeState {
@@ -30,8 +31,7 @@ mixin _$PrayNotificationTypeState {
     required TResult Function() jom3aDo3aa,
     required TResult Function() qeyamAlLayel,
     required TResult Function() before15Min,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? allNotificationForToday,
@@ -46,8 +46,7 @@ mixin _$PrayNotificationTypeState {
     TResult? Function()? jom3aDo3aa,
     TResult? Function()? qeyamAlLayel,
     TResult? Function()? before15Min,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? allNotificationForToday,
@@ -63,14 +62,13 @@ mixin _$PrayNotificationTypeState {
     TResult Function()? qeyamAlLayel,
     TResult Function()? before15Min,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -81,13 +79,12 @@ mixin _$PrayNotificationTypeState {
     required TResult Function(Jom3aDo3aa value) jom3aDo3aa,
     required TResult Function(QeyamAlLayel value) qeyamAlLayel,
     required TResult Function(Before15Min value) before15Min,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -98,13 +95,12 @@ mixin _$PrayNotificationTypeState {
     TResult? Function(Jom3aDo3aa value)? jom3aDo3aa,
     TResult? Function(QeyamAlLayel value)? qeyamAlLayel,
     TResult? Function(Before15Min value)? before15Min,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -116,20 +112,22 @@ mixin _$PrayNotificationTypeState {
     TResult Function(QeyamAlLayel value)? qeyamAlLayel,
     TResult Function(Before15Min value)? before15Min,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrayNotificationTypeStateCopyWith<$Res> {
-  factory $PrayNotificationTypeStateCopyWith(PrayNotificationTypeState value,
-          $Res Function(PrayNotificationTypeState) then) =
-      _$PrayNotificationTypeStateCopyWithImpl<$Res, PrayNotificationTypeState>;
+  factory $PrayNotificationTypeStateCopyWith(
+    PrayNotificationTypeState value,
+    $Res Function(PrayNotificationTypeState) then,
+  ) = _$PrayNotificationTypeStateCopyWithImpl<$Res, PrayNotificationTypeState>;
 }
 
 /// @nodoc
-class _$PrayNotificationTypeStateCopyWithImpl<$Res,
-        $Val extends PrayNotificationTypeState>
+class _$PrayNotificationTypeStateCopyWithImpl<
+  $Res,
+  $Val extends PrayNotificationTypeState
+>
     implements $PrayNotificationTypeStateCopyWith<$Res> {
   _$PrayNotificationTypeStateCopyWithImpl(this._value, this._then);
 
@@ -145,20 +143,23 @@ class _$PrayNotificationTypeStateCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$AllNotificationForTodayImplCopyWith<$Res> {
   factory _$$AllNotificationForTodayImplCopyWith(
-          _$AllNotificationForTodayImpl value,
-          $Res Function(_$AllNotificationForTodayImpl) then) =
-      __$$AllNotificationForTodayImplCopyWithImpl<$Res>;
+    _$AllNotificationForTodayImpl value,
+    $Res Function(_$AllNotificationForTodayImpl) then,
+  ) = __$$AllNotificationForTodayImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$AllNotificationForTodayImplCopyWithImpl<$Res>
-    extends _$PrayNotificationTypeStateCopyWithImpl<$Res,
-        _$AllNotificationForTodayImpl>
+    extends
+        _$PrayNotificationTypeStateCopyWithImpl<
+          $Res,
+          _$AllNotificationForTodayImpl
+        >
     implements _$$AllNotificationForTodayImplCopyWith<$Res> {
   __$$AllNotificationForTodayImplCopyWithImpl(
-      _$AllNotificationForTodayImpl _value,
-      $Res Function(_$AllNotificationForTodayImpl) _then)
-      : super(_value, _then);
+    _$AllNotificationForTodayImpl _value,
+    $Res Function(_$AllNotificationForTodayImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -249,9 +250,9 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -271,7 +272,7 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -291,7 +292,7 @@ class _$AllNotificationForTodayImpl implements AllNotificationForToday {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -318,20 +319,23 @@ abstract class AllNotificationForToday implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$AllNotificationForWeekDayImplCopyWith<$Res> {
   factory _$$AllNotificationForWeekDayImplCopyWith(
-          _$AllNotificationForWeekDayImpl value,
-          $Res Function(_$AllNotificationForWeekDayImpl) then) =
-      __$$AllNotificationForWeekDayImplCopyWithImpl<$Res>;
+    _$AllNotificationForWeekDayImpl value,
+    $Res Function(_$AllNotificationForWeekDayImpl) then,
+  ) = __$$AllNotificationForWeekDayImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$AllNotificationForWeekDayImplCopyWithImpl<$Res>
-    extends _$PrayNotificationTypeStateCopyWithImpl<$Res,
-        _$AllNotificationForWeekDayImpl>
+    extends
+        _$PrayNotificationTypeStateCopyWithImpl<
+          $Res,
+          _$AllNotificationForWeekDayImpl
+        >
     implements _$$AllNotificationForWeekDayImplCopyWith<$Res> {
   __$$AllNotificationForWeekDayImplCopyWithImpl(
-      _$AllNotificationForWeekDayImpl _value,
-      $Res Function(_$AllNotificationForWeekDayImpl) _then)
-      : super(_value, _then);
+    _$AllNotificationForWeekDayImpl _value,
+    $Res Function(_$AllNotificationForWeekDayImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -422,9 +426,9 @@ class _$AllNotificationForWeekDayImpl implements AllNotificationForWeekDay {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -444,7 +448,7 @@ class _$AllNotificationForWeekDayImpl implements AllNotificationForWeekDay {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -464,7 +468,7 @@ class _$AllNotificationForWeekDayImpl implements AllNotificationForWeekDay {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -491,8 +495,9 @@ abstract class AllNotificationForWeekDay implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$FajirImplCopyWith<$Res> {
   factory _$$FajirImplCopyWith(
-          _$FajirImpl value, $Res Function(_$FajirImpl) then) =
-      __$$FajirImplCopyWithImpl<$Res>;
+    _$FajirImpl value,
+    $Res Function(_$FajirImpl) then,
+  ) = __$$FajirImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -500,8 +505,9 @@ class __$$FajirImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$FajirImpl>
     implements _$$FajirImplCopyWith<$Res> {
   __$$FajirImplCopyWithImpl(
-      _$FajirImpl _value, $Res Function(_$FajirImpl) _then)
-      : super(_value, _then);
+    _$FajirImpl _value,
+    $Res Function(_$FajirImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -591,9 +597,9 @@ class _$FajirImpl implements Fajir {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -613,7 +619,7 @@ class _$FajirImpl implements Fajir {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -633,7 +639,7 @@ class _$FajirImpl implements Fajir {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -660,8 +666,9 @@ abstract class Fajir implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$DuhirImplCopyWith<$Res> {
   factory _$$DuhirImplCopyWith(
-          _$DuhirImpl value, $Res Function(_$DuhirImpl) then) =
-      __$$DuhirImplCopyWithImpl<$Res>;
+    _$DuhirImpl value,
+    $Res Function(_$DuhirImpl) then,
+  ) = __$$DuhirImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -669,8 +676,9 @@ class __$$DuhirImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$DuhirImpl>
     implements _$$DuhirImplCopyWith<$Res> {
   __$$DuhirImplCopyWithImpl(
-      _$DuhirImpl _value, $Res Function(_$DuhirImpl) _then)
-      : super(_value, _then);
+    _$DuhirImpl _value,
+    $Res Function(_$DuhirImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -760,9 +768,9 @@ class _$DuhirImpl implements Duhir {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -782,7 +790,7 @@ class _$DuhirImpl implements Duhir {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -802,7 +810,7 @@ class _$DuhirImpl implements Duhir {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -837,7 +845,7 @@ class __$$AsrImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$AsrImpl>
     implements _$$AsrImplCopyWith<$Res> {
   __$$AsrImplCopyWithImpl(_$AsrImpl _value, $Res Function(_$AsrImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -927,9 +935,9 @@ class _$AsrImpl implements Asr {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -949,7 +957,7 @@ class _$AsrImpl implements Asr {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -969,7 +977,7 @@ class _$AsrImpl implements Asr {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -996,8 +1004,9 @@ abstract class Asr implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$MagriebImplCopyWith<$Res> {
   factory _$$MagriebImplCopyWith(
-          _$MagriebImpl value, $Res Function(_$MagriebImpl) then) =
-      __$$MagriebImplCopyWithImpl<$Res>;
+    _$MagriebImpl value,
+    $Res Function(_$MagriebImpl) then,
+  ) = __$$MagriebImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1005,8 +1014,9 @@ class __$$MagriebImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$MagriebImpl>
     implements _$$MagriebImplCopyWith<$Res> {
   __$$MagriebImplCopyWithImpl(
-      _$MagriebImpl _value, $Res Function(_$MagriebImpl) _then)
-      : super(_value, _then);
+    _$MagriebImpl _value,
+    $Res Function(_$MagriebImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1096,9 +1106,9 @@ class _$MagriebImpl implements Magrieb {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1118,7 +1128,7 @@ class _$MagriebImpl implements Magrieb {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1138,7 +1148,7 @@ class _$MagriebImpl implements Magrieb {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1165,8 +1175,9 @@ abstract class Magrieb implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$IshaImplCopyWith<$Res> {
   factory _$$IshaImplCopyWith(
-          _$IshaImpl value, $Res Function(_$IshaImpl) then) =
-      __$$IshaImplCopyWithImpl<$Res>;
+    _$IshaImpl value,
+    $Res Function(_$IshaImpl) then,
+  ) = __$$IshaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1174,7 +1185,7 @@ class __$$IshaImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$IshaImpl>
     implements _$$IshaImplCopyWith<$Res> {
   __$$IshaImplCopyWithImpl(_$IshaImpl _value, $Res Function(_$IshaImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1264,9 +1275,9 @@ class _$IshaImpl implements Isha {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1286,7 +1297,7 @@ class _$IshaImpl implements Isha {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1306,7 +1317,7 @@ class _$IshaImpl implements Isha {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1333,8 +1344,9 @@ abstract class Isha implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$SunriseTimeImplCopyWith<$Res> {
   factory _$$SunriseTimeImplCopyWith(
-          _$SunriseTimeImpl value, $Res Function(_$SunriseTimeImpl) then) =
-      __$$SunriseTimeImplCopyWithImpl<$Res>;
+    _$SunriseTimeImpl value,
+    $Res Function(_$SunriseTimeImpl) then,
+  ) = __$$SunriseTimeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1342,8 +1354,9 @@ class __$$SunriseTimeImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$SunriseTimeImpl>
     implements _$$SunriseTimeImplCopyWith<$Res> {
   __$$SunriseTimeImplCopyWithImpl(
-      _$SunriseTimeImpl _value, $Res Function(_$SunriseTimeImpl) _then)
-      : super(_value, _then);
+    _$SunriseTimeImpl _value,
+    $Res Function(_$SunriseTimeImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1433,9 +1446,9 @@ class _$SunriseTimeImpl implements SunriseTime {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1455,7 +1468,7 @@ class _$SunriseTimeImpl implements SunriseTime {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1475,7 +1488,7 @@ class _$SunriseTimeImpl implements SunriseTime {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1502,8 +1515,9 @@ abstract class SunriseTime implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$Jom3aAlkahfImplCopyWith<$Res> {
   factory _$$Jom3aAlkahfImplCopyWith(
-          _$Jom3aAlkahfImpl value, $Res Function(_$Jom3aAlkahfImpl) then) =
-      __$$Jom3aAlkahfImplCopyWithImpl<$Res>;
+    _$Jom3aAlkahfImpl value,
+    $Res Function(_$Jom3aAlkahfImpl) then,
+  ) = __$$Jom3aAlkahfImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1511,8 +1525,9 @@ class __$$Jom3aAlkahfImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$Jom3aAlkahfImpl>
     implements _$$Jom3aAlkahfImplCopyWith<$Res> {
   __$$Jom3aAlkahfImplCopyWithImpl(
-      _$Jom3aAlkahfImpl _value, $Res Function(_$Jom3aAlkahfImpl) _then)
-      : super(_value, _then);
+    _$Jom3aAlkahfImpl _value,
+    $Res Function(_$Jom3aAlkahfImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1602,9 +1617,9 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1624,7 +1639,7 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1644,7 +1659,7 @@ class _$Jom3aAlkahfImpl implements Jom3aAlkahf {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1671,8 +1686,9 @@ abstract class Jom3aAlkahf implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$Jom3aDo3aaImplCopyWith<$Res> {
   factory _$$Jom3aDo3aaImplCopyWith(
-          _$Jom3aDo3aaImpl value, $Res Function(_$Jom3aDo3aaImpl) then) =
-      __$$Jom3aDo3aaImplCopyWithImpl<$Res>;
+    _$Jom3aDo3aaImpl value,
+    $Res Function(_$Jom3aDo3aaImpl) then,
+  ) = __$$Jom3aDo3aaImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1680,8 +1696,9 @@ class __$$Jom3aDo3aaImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$Jom3aDo3aaImpl>
     implements _$$Jom3aDo3aaImplCopyWith<$Res> {
   __$$Jom3aDo3aaImplCopyWithImpl(
-      _$Jom3aDo3aaImpl _value, $Res Function(_$Jom3aDo3aaImpl) _then)
-      : super(_value, _then);
+    _$Jom3aDo3aaImpl _value,
+    $Res Function(_$Jom3aDo3aaImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1771,9 +1788,9 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1793,7 +1810,7 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1813,7 +1830,7 @@ class _$Jom3aDo3aaImpl implements Jom3aDo3aa {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -1840,8 +1857,9 @@ abstract class Jom3aDo3aa implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$QeyamAlLayelImplCopyWith<$Res> {
   factory _$$QeyamAlLayelImplCopyWith(
-          _$QeyamAlLayelImpl value, $Res Function(_$QeyamAlLayelImpl) then) =
-      __$$QeyamAlLayelImplCopyWithImpl<$Res>;
+    _$QeyamAlLayelImpl value,
+    $Res Function(_$QeyamAlLayelImpl) then,
+  ) = __$$QeyamAlLayelImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1849,8 +1867,9 @@ class __$$QeyamAlLayelImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$QeyamAlLayelImpl>
     implements _$$QeyamAlLayelImplCopyWith<$Res> {
   __$$QeyamAlLayelImplCopyWithImpl(
-      _$QeyamAlLayelImpl _value, $Res Function(_$QeyamAlLayelImpl) _then)
-      : super(_value, _then);
+    _$QeyamAlLayelImpl _value,
+    $Res Function(_$QeyamAlLayelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1940,9 +1959,9 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -1962,7 +1981,7 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -1982,7 +2001,7 @@ class _$QeyamAlLayelImpl implements QeyamAlLayel {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,
@@ -2009,8 +2028,9 @@ abstract class QeyamAlLayel implements PrayNotificationTypeState {
 /// @nodoc
 abstract class _$$Before15MinImplCopyWith<$Res> {
   factory _$$Before15MinImplCopyWith(
-          _$Before15MinImpl value, $Res Function(_$Before15MinImpl) then) =
-      __$$Before15MinImplCopyWithImpl<$Res>;
+    _$Before15MinImpl value,
+    $Res Function(_$Before15MinImpl) then,
+  ) = __$$Before15MinImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -2018,8 +2038,9 @@ class __$$Before15MinImplCopyWithImpl<$Res>
     extends _$PrayNotificationTypeStateCopyWithImpl<$Res, _$Before15MinImpl>
     implements _$$Before15MinImplCopyWith<$Res> {
   __$$Before15MinImplCopyWithImpl(
-      _$Before15MinImpl _value, $Res Function(_$Before15MinImpl) _then)
-      : super(_value, _then);
+    _$Before15MinImpl _value,
+    $Res Function(_$Before15MinImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrayNotificationTypeState
   /// with the given fields replaced by the non-null parameter values.
@@ -2109,9 +2130,9 @@ class _$Before15MinImpl implements Before15Min {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllNotificationForToday value)
-        allNotificationForToday,
+    allNotificationForToday,
     required TResult Function(AllNotificationForWeekDay value)
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     required TResult Function(Fajir value) fajir,
     required TResult Function(Duhir value) duhir,
     required TResult Function(Asr value) asr,
@@ -2131,7 +2152,7 @@ class _$Before15MinImpl implements Before15Min {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AllNotificationForToday value)? allNotificationForToday,
     TResult? Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult? Function(Fajir value)? fajir,
     TResult? Function(Duhir value)? duhir,
     TResult? Function(Asr value)? asr,
@@ -2151,7 +2172,7 @@ class _$Before15MinImpl implements Before15Min {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllNotificationForToday value)? allNotificationForToday,
     TResult Function(AllNotificationForWeekDay value)?
-        allNotificationForWeekDay,
+    allNotificationForWeekDay,
     TResult Function(Fajir value)? fajir,
     TResult Function(Duhir value)? duhir,
     TResult Function(Asr value)? asr,

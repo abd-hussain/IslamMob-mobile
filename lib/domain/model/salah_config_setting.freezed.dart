@@ -12,7 +12,8 @@ part of 'salah_config_setting.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$SalahConfigSetting {
@@ -30,12 +31,14 @@ mixin _$SalahConfigSetting {
 /// @nodoc
 abstract class $SalahConfigSettingCopyWith<$Res> {
   factory $SalahConfigSettingCopyWith(
-          SalahConfigSetting value, $Res Function(SalahConfigSetting) then) =
-      _$SalahConfigSettingCopyWithImpl<$Res, SalahConfigSetting>;
+    SalahConfigSetting value,
+    $Res Function(SalahConfigSetting) then,
+  ) = _$SalahConfigSettingCopyWithImpl<$Res, SalahConfigSetting>;
   @useResult
-  $Res call(
-      {SalahTimeState salahType,
-      DateTime? Function(PrayCalculationSettingState) stateSelector});
+  $Res call({
+    SalahTimeState salahType,
+    DateTime? Function(PrayCalculationSettingState) stateSelector,
+  });
 
   $SalahTimeStateCopyWith<$Res> get salahType;
 }
@@ -54,20 +57,20 @@ class _$SalahConfigSettingCopyWithImpl<$Res, $Val extends SalahConfigSetting>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? salahType = null,
-    Object? stateSelector = null,
-  }) {
-    return _then(_value.copyWith(
-      salahType: null == salahType
-          ? _value.salahType
-          : salahType // ignore: cast_nullable_to_non_nullable
-              as SalahTimeState,
-      stateSelector: null == stateSelector
-          ? _value.stateSelector
-          : stateSelector // ignore: cast_nullable_to_non_nullable
-              as DateTime? Function(PrayCalculationSettingState),
-    ) as $Val);
+  $Res call({Object? salahType = null, Object? stateSelector = null}) {
+    return _then(
+      _value.copyWith(
+            salahType: null == salahType
+                ? _value.salahType
+                : salahType // ignore: cast_nullable_to_non_nullable
+                      as SalahTimeState,
+            stateSelector: null == stateSelector
+                ? _value.stateSelector
+                : stateSelector // ignore: cast_nullable_to_non_nullable
+                      as DateTime? Function(PrayCalculationSettingState),
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of SalahConfigSetting
@@ -84,14 +87,16 @@ class _$SalahConfigSettingCopyWithImpl<$Res, $Val extends SalahConfigSetting>
 /// @nodoc
 abstract class _$$SalahConfigSettingImplCopyWith<$Res>
     implements $SalahConfigSettingCopyWith<$Res> {
-  factory _$$SalahConfigSettingImplCopyWith(_$SalahConfigSettingImpl value,
-          $Res Function(_$SalahConfigSettingImpl) then) =
-      __$$SalahConfigSettingImplCopyWithImpl<$Res>;
+  factory _$$SalahConfigSettingImplCopyWith(
+    _$SalahConfigSettingImpl value,
+    $Res Function(_$SalahConfigSettingImpl) then,
+  ) = __$$SalahConfigSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {SalahTimeState salahType,
-      DateTime? Function(PrayCalculationSettingState) stateSelector});
+  $Res call({
+    SalahTimeState salahType,
+    DateTime? Function(PrayCalculationSettingState) stateSelector,
+  });
 
   @override
   $SalahTimeStateCopyWith<$Res> get salahType;
@@ -101,36 +106,38 @@ abstract class _$$SalahConfigSettingImplCopyWith<$Res>
 class __$$SalahConfigSettingImplCopyWithImpl<$Res>
     extends _$SalahConfigSettingCopyWithImpl<$Res, _$SalahConfigSettingImpl>
     implements _$$SalahConfigSettingImplCopyWith<$Res> {
-  __$$SalahConfigSettingImplCopyWithImpl(_$SalahConfigSettingImpl _value,
-      $Res Function(_$SalahConfigSettingImpl) _then)
-      : super(_value, _then);
+  __$$SalahConfigSettingImplCopyWithImpl(
+    _$SalahConfigSettingImpl _value,
+    $Res Function(_$SalahConfigSettingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SalahConfigSetting
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? salahType = null,
-    Object? stateSelector = null,
-  }) {
-    return _then(_$SalahConfigSettingImpl(
-      salahType: null == salahType
-          ? _value.salahType
-          : salahType // ignore: cast_nullable_to_non_nullable
-              as SalahTimeState,
-      stateSelector: null == stateSelector
-          ? _value.stateSelector
-          : stateSelector // ignore: cast_nullable_to_non_nullable
-              as DateTime? Function(PrayCalculationSettingState),
-    ));
+  $Res call({Object? salahType = null, Object? stateSelector = null}) {
+    return _then(
+      _$SalahConfigSettingImpl(
+        salahType: null == salahType
+            ? _value.salahType
+            : salahType // ignore: cast_nullable_to_non_nullable
+                  as SalahTimeState,
+        stateSelector: null == stateSelector
+            ? _value.stateSelector
+            : stateSelector // ignore: cast_nullable_to_non_nullable
+                  as DateTime? Function(PrayCalculationSettingState),
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$SalahConfigSettingImpl implements _SalahConfigSetting {
-  _$SalahConfigSettingImpl(
-      {required this.salahType, required this.stateSelector});
+  _$SalahConfigSettingImpl({
+    required this.salahType,
+    required this.stateSelector,
+  });
 
   @override
   final SalahTimeState salahType;
@@ -163,14 +170,17 @@ class _$SalahConfigSettingImpl implements _SalahConfigSetting {
   @pragma('vm:prefer-inline')
   _$$SalahConfigSettingImplCopyWith<_$SalahConfigSettingImpl> get copyWith =>
       __$$SalahConfigSettingImplCopyWithImpl<_$SalahConfigSettingImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _SalahConfigSetting implements SalahConfigSetting {
-  factory _SalahConfigSetting(
-      {required final SalahTimeState salahType,
-      required final DateTime? Function(PrayCalculationSettingState)
-          stateSelector}) = _$SalahConfigSettingImpl;
+  factory _SalahConfigSetting({
+    required final SalahTimeState salahType,
+    required final DateTime? Function(PrayCalculationSettingState)
+    stateSelector,
+  }) = _$SalahConfigSettingImpl;
 
   @override
   SalahTimeState get salahType;

@@ -12,49 +12,43 @@ part of 'setup_account_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$SetupAccountEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() setup,
-  }) =>
+  TResult when<TResult extends Object?>({required TResult Function() setup}) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? setup,
-  }) =>
+  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? setup}) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? setup,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Setup value) setup,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Setup value)? setup,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Setup value)? setup,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetupAccountEventCopyWith<$Res> {
   factory $SetupAccountEventCopyWith(
-          SetupAccountEvent value, $Res Function(SetupAccountEvent) then) =
-      _$SetupAccountEventCopyWithImpl<$Res, SetupAccountEvent>;
+    SetupAccountEvent value,
+    $Res Function(SetupAccountEvent) then,
+  ) = _$SetupAccountEventCopyWithImpl<$Res, SetupAccountEvent>;
 }
 
 /// @nodoc
@@ -74,8 +68,9 @@ class _$SetupAccountEventCopyWithImpl<$Res, $Val extends SetupAccountEvent>
 /// @nodoc
 abstract class _$$SetupImplCopyWith<$Res> {
   factory _$$SetupImplCopyWith(
-          _$SetupImpl value, $Res Function(_$SetupImpl) then) =
-      __$$SetupImplCopyWithImpl<$Res>;
+    _$SetupImpl value,
+    $Res Function(_$SetupImpl) then,
+  ) = __$$SetupImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -83,8 +78,9 @@ class __$$SetupImplCopyWithImpl<$Res>
     extends _$SetupAccountEventCopyWithImpl<$Res, _$SetupImpl>
     implements _$$SetupImplCopyWith<$Res> {
   __$$SetupImplCopyWithImpl(
-      _$SetupImpl _value, $Res Function(_$SetupImpl) _then)
-      : super(_value, _then);
+    _$SetupImpl _value,
+    $Res Function(_$SetupImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SetupAccountEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -111,17 +107,13 @@ class _$SetupImpl implements _Setup {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() setup,
-  }) {
+  TResult when<TResult extends Object?>({required TResult Function() setup}) {
     return setup();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? setup,
-  }) {
+  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? setup}) {
     return setup?.call();
   }
 
@@ -184,8 +176,9 @@ mixin _$SetupAccountState {
 /// @nodoc
 abstract class $SetupAccountStateCopyWith<$Res> {
   factory $SetupAccountStateCopyWith(
-          SetupAccountState value, $Res Function(SetupAccountState) then) =
-      _$SetupAccountStateCopyWithImpl<$Res, SetupAccountState>;
+    SetupAccountState value,
+    $Res Function(SetupAccountState) then,
+  ) = _$SetupAccountStateCopyWithImpl<$Res, SetupAccountState>;
   @useResult
   $Res call({bool isLoading});
 }
@@ -204,24 +197,26 @@ class _$SetupAccountStateCopyWithImpl<$Res, $Val extends SetupAccountState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? isLoading = null,
-  }) {
-    return _then(_value.copyWith(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  $Res call({Object? isLoading = null}) {
+    return _then(
+      _value.copyWith(
+            isLoading: null == isLoading
+                ? _value.isLoading
+                : isLoading // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$SetupAccountStateImplCopyWith<$Res>
     implements $SetupAccountStateCopyWith<$Res> {
-  factory _$$SetupAccountStateImplCopyWith(_$SetupAccountStateImpl value,
-          $Res Function(_$SetupAccountStateImpl) then) =
-      __$$SetupAccountStateImplCopyWithImpl<$Res>;
+  factory _$$SetupAccountStateImplCopyWith(
+    _$SetupAccountStateImpl value,
+    $Res Function(_$SetupAccountStateImpl) then,
+  ) = __$$SetupAccountStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool isLoading});
@@ -231,23 +226,24 @@ abstract class _$$SetupAccountStateImplCopyWith<$Res>
 class __$$SetupAccountStateImplCopyWithImpl<$Res>
     extends _$SetupAccountStateCopyWithImpl<$Res, _$SetupAccountStateImpl>
     implements _$$SetupAccountStateImplCopyWith<$Res> {
-  __$$SetupAccountStateImplCopyWithImpl(_$SetupAccountStateImpl _value,
-      $Res Function(_$SetupAccountStateImpl) _then)
-      : super(_value, _then);
+  __$$SetupAccountStateImplCopyWithImpl(
+    _$SetupAccountStateImpl _value,
+    $Res Function(_$SetupAccountStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SetupAccountState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? isLoading = null,
-  }) {
-    return _then(_$SetupAccountStateImpl(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? isLoading = null}) {
+    return _then(
+      _$SetupAccountStateImpl(
+        isLoading: null == isLoading
+            ? _value.isLoading
+            : isLoading // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
@@ -284,7 +280,9 @@ class _$SetupAccountStateImpl implements _SetupAccountState {
   @pragma('vm:prefer-inline')
   _$$SetupAccountStateImplCopyWith<_$SetupAccountStateImpl> get copyWith =>
       __$$SetupAccountStateImplCopyWithImpl<_$SetupAccountStateImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _SetupAccountState implements SetupAccountState {

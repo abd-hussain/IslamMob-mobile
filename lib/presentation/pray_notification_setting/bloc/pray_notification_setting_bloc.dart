@@ -21,7 +21,8 @@ part 'pray_notification_setting_state.dart';
 /// including loading current settings, updating individual notification
 /// preferences, and saving changes to persistent storage. It manages
 /// notifications for all five daily prayers and special Islamic events.
-class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, PrayNotificationSettingState> {
+class PrayNotificationSettingBloc
+    extends Bloc<PrayNotificationSettingEvent, PrayNotificationSettingState> {
   /// Creates a [PrayNotificationSettingBloc] and initializes event handlers.
   ///
   /// Sets up event handlers for initializing settings, changing individual
@@ -32,13 +33,22 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
     on<_SavePrayNotificationSettings>(_onSaveSettings);
   }
 
-  FutureOr<void> _onInitialize(_InitialPrayNotificationSettings event, Emitter<PrayNotificationSettingState> emit) {
+  FutureOr<void> _onInitialize(
+    _InitialPrayNotificationSettings event,
+    Emitter<PrayNotificationSettingState> emit,
+  ) {
     final get = _getValue;
 
     emit(
       state.copyWith(
-        allNotificationForToday: get(LocalNotificationConstant.disableAllForTodayDate, ""),
-        allNotificationForWeekDay: get(LocalNotificationConstant.disableAllForWeekDate, ""),
+        allNotificationForToday: get(
+          LocalNotificationConstant.disableAllForTodayDate,
+          "",
+        ),
+        allNotificationForWeekDay: get(
+          LocalNotificationConstant.disableAllForWeekDate,
+          "",
+        ),
         fajir: get(LocalNotificationConstant.disableFajr, true),
         duhir: get(LocalNotificationConstant.disableDuher, true),
         asr: get(LocalNotificationConstant.disableAsr, true),
@@ -47,7 +57,10 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
         sunriseTime: get(LocalNotificationConstant.disableSunriseTime, true),
         jom3aAlkahf: get(LocalNotificationConstant.disableJom3aAlkahf, true),
         jom3aDo3aa: get(LocalNotificationConstant.disableJom3aDo3aa, true),
-        before15Min: get(LocalNotificationConstant.disableNotificationBefore15Min, true),
+        before15Min: get(
+          LocalNotificationConstant.disableNotificationBefore15Min,
+          true,
+        ),
         qeyamAlLayel: get(LocalNotificationConstant.disableQeyamAlLayel, true),
         loadingStatus: const PrayNotificationSettingProcessStateSuccess(),
       ),
@@ -63,22 +76,28 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
       parameters: {"state": event.status, "type": event.type.toString()},
     );
 
-    final stateUpdater = <PrayNotificationTypeState, PrayNotificationSettingState Function()>{
-      const AllNotificationForToday(): () =>
-          state.copyWith(allNotificationForToday: event.status ? event.date.toString() : ""),
-      const AllNotificationForWeekDay(): () =>
-          state.copyWith(allNotificationForWeekDay: event.status ? event.date.toString() : ""),
-      const Fajir(): () => state.copyWith(fajir: event.status),
-      const Duhir(): () => state.copyWith(duhir: event.status),
-      const Asr(): () => state.copyWith(asr: event.status),
-      const Magrieb(): () => state.copyWith(magrieb: event.status),
-      const Isha(): () => state.copyWith(isha: event.status),
-      const SunriseTime(): () => state.copyWith(sunriseTime: event.status),
-      const Jom3aAlkahf(): () => state.copyWith(jom3aAlkahf: event.status),
-      const Jom3aDo3aa(): () => state.copyWith(jom3aDo3aa: event.status),
-      const Before15Min(): () => state.copyWith(before15Min: event.status),
-      const QeyamAlLayel(): () => state.copyWith(qeyamAlLayel: event.status),
-    };
+    final stateUpdater =
+        <PrayNotificationTypeState, PrayNotificationSettingState Function()>{
+          const AllNotificationForToday(): () => state.copyWith(
+            allNotificationForToday: event.status ? event.date.toString() : "",
+          ),
+          const AllNotificationForWeekDay(): () => state.copyWith(
+            allNotificationForWeekDay: event.status
+                ? event.date.toString()
+                : "",
+          ),
+          const Fajir(): () => state.copyWith(fajir: event.status),
+          const Duhir(): () => state.copyWith(duhir: event.status),
+          const Asr(): () => state.copyWith(asr: event.status),
+          const Magrieb(): () => state.copyWith(magrieb: event.status),
+          const Isha(): () => state.copyWith(isha: event.status),
+          const SunriseTime(): () => state.copyWith(sunriseTime: event.status),
+          const Jom3aAlkahf(): () => state.copyWith(jom3aAlkahf: event.status),
+          const Jom3aDo3aa(): () => state.copyWith(jom3aDo3aa: event.status),
+          const Before15Min(): () => state.copyWith(before15Min: event.status),
+          const QeyamAlLayel(): () =>
+              state.copyWith(qeyamAlLayel: event.status),
+        };
 
     final newState = stateUpdater[event.type]?.call();
     if (newState != null) emit(newState);
@@ -90,8 +109,10 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
   ) async {
     await DataBaseManagerBase.saveMultipleInDatabase(
       data: {
-        LocalNotificationConstant.disableAllForTodayDate: state.allNotificationForToday,
-        LocalNotificationConstant.disableAllForWeekDate: state.allNotificationForWeekDay,
+        LocalNotificationConstant.disableAllForTodayDate:
+            state.allNotificationForToday,
+        LocalNotificationConstant.disableAllForWeekDate:
+            state.allNotificationForWeekDay,
         LocalNotificationConstant.disableFajr: state.fajir,
         LocalNotificationConstant.disableDuher: state.duhir,
         LocalNotificationConstant.disableAsr: state.asr,
@@ -100,16 +121,23 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
         LocalNotificationConstant.disableSunriseTime: state.sunriseTime,
         LocalNotificationConstant.disableJom3aAlkahf: state.jom3aAlkahf,
         LocalNotificationConstant.disableJom3aDo3aa: state.jom3aDo3aa,
-        LocalNotificationConstant.disableNotificationBefore15Min: state.before15Min,
+        LocalNotificationConstant.disableNotificationBefore15Min:
+            state.before15Min,
         LocalNotificationConstant.disableQeyamAlLayel: state.qeyamAlLayel,
       },
     );
 
     if (event.context.mounted) {
-      await locator<SetupLocalNotificationWhenAppOpenUseCase>().call(context: event.context);
+      await locator<SetupLocalNotificationWhenAppOpenUseCase>().call(
+        context: event.context,
+      );
     }
 
-    emit(state.copyWith(loadingStatus: const PrayNotificationSettingProcessStateSettingSaved()));
+    emit(
+      state.copyWith(
+        loadingStatus: const PrayNotificationSettingProcessStateSettingSaved(),
+      ),
+    );
   }
 
   /// Gets the localized name of the notification sound for a specific prayer type.
@@ -121,13 +149,21 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
   /// The [type] parameter specifies which prayer type to get the sound name for.
   ///
   /// Returns the localized sound name, or "unknown" if the sound is not found.
-  String getSoundName({required IslamMobLocalizations localization, required NotificationTypeState type}) {
+  String getSoundName({
+    required IslamMobLocalizations localization,
+    required NotificationTypeState type,
+  }) {
     final soundMap = {
-      const NotificationTypeState.fajir(): DatabaseNotificationSoundConstant.fajirNotification,
-      const NotificationTypeState.zuhr(): DatabaseNotificationSoundConstant.zhurNotification,
-      const NotificationTypeState.asr(): DatabaseNotificationSoundConstant.asrNotification,
-      const NotificationTypeState.maghrib(): DatabaseNotificationSoundConstant.maghribNotification,
-      const NotificationTypeState.isha(): DatabaseNotificationSoundConstant.ishaNotification,
+      const NotificationTypeState.fajir():
+          DatabaseNotificationSoundConstant.fajirNotification,
+      const NotificationTypeState.zuhr():
+          DatabaseNotificationSoundConstant.zhurNotification,
+      const NotificationTypeState.asr():
+          DatabaseNotificationSoundConstant.asrNotification,
+      const NotificationTypeState.maghrib():
+          DatabaseNotificationSoundConstant.maghribNotification,
+      const NotificationTypeState.isha():
+          DatabaseNotificationSoundConstant.ishaNotification,
     };
 
     final defaultMap = {
@@ -138,7 +174,10 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
       const NotificationTypeState.isha(): "adhan5",
     };
 
-    final path = DataBaseManagerBase.getFromDatabase(key: soundMap[type]!, defaultValue: defaultMap[type]);
+    final path = DataBaseManagerBase.getFromDatabase(
+      key: soundMap[type]!,
+      defaultValue: defaultMap[type],
+    );
 
     final soundNameMap = {
       "adhan1": localization.adhan1,
@@ -156,6 +195,10 @@ class PrayNotificationSettingBloc extends Bloc<PrayNotificationSettingEvent, Pra
   }
 
   T _getValue<T>(String key, T defaultValue) {
-    return DataBaseManagerBase.getFromDatabase(key: key, defaultValue: defaultValue) as T;
+    return DataBaseManagerBase.getFromDatabase(
+          key: key,
+          defaultValue: defaultValue,
+        )
+        as T;
   }
 }

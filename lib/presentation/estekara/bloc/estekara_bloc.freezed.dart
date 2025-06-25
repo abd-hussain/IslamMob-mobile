@@ -12,49 +12,45 @@ part of 'estekara_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$EstekaraEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fillInitialValue,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fillInitialValue,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fillInitialValue,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EstekaraEventCopyWith<$Res> {
   factory $EstekaraEventCopyWith(
-          EstekaraEvent value, $Res Function(EstekaraEvent) then) =
-      _$EstekaraEventCopyWithImpl<$Res, EstekaraEvent>;
+    EstekaraEvent value,
+    $Res Function(EstekaraEvent) then,
+  ) = _$EstekaraEventCopyWithImpl<$Res, EstekaraEvent>;
 }
 
 /// @nodoc
@@ -73,18 +69,20 @@ class _$EstekaraEventCopyWithImpl<$Res, $Val extends EstekaraEvent>
 
 /// @nodoc
 abstract class _$$FillInitialValueImplCopyWith<$Res> {
-  factory _$$FillInitialValueImplCopyWith(_$FillInitialValueImpl value,
-          $Res Function(_$FillInitialValueImpl) then) =
-      __$$FillInitialValueImplCopyWithImpl<$Res>;
+  factory _$$FillInitialValueImplCopyWith(
+    _$FillInitialValueImpl value,
+    $Res Function(_$FillInitialValueImpl) then,
+  ) = __$$FillInitialValueImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$FillInitialValueImplCopyWithImpl<$Res>
     extends _$EstekaraEventCopyWithImpl<$Res, _$FillInitialValueImpl>
     implements _$$FillInitialValueImplCopyWith<$Res> {
-  __$$FillInitialValueImplCopyWithImpl(_$FillInitialValueImpl _value,
-      $Res Function(_$FillInitialValueImpl) _then)
-      : super(_value, _then);
+  __$$FillInitialValueImplCopyWithImpl(
+    _$FillInitialValueImpl _value,
+    $Res Function(_$FillInitialValueImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of EstekaraEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -185,8 +183,9 @@ mixin _$EstekaraState {
 /// @nodoc
 abstract class $EstekaraStateCopyWith<$Res> {
   factory $EstekaraStateCopyWith(
-          EstekaraState value, $Res Function(EstekaraState) then) =
-      _$EstekaraStateCopyWithImpl<$Res, EstekaraState>;
+    EstekaraState value,
+    $Res Function(EstekaraState) then,
+  ) = _$EstekaraStateCopyWithImpl<$Res, EstekaraState>;
   @useResult
   $Res call({List<EstekaraData> listOfItems, bool isRtlLanguage});
 }
@@ -205,20 +204,20 @@ class _$EstekaraStateCopyWithImpl<$Res, $Val extends EstekaraState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? listOfItems = null,
-    Object? isRtlLanguage = null,
-  }) {
-    return _then(_value.copyWith(
-      listOfItems: null == listOfItems
-          ? _value.listOfItems
-          : listOfItems // ignore: cast_nullable_to_non_nullable
-              as List<EstekaraData>,
-      isRtlLanguage: null == isRtlLanguage
-          ? _value.isRtlLanguage
-          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  $Res call({Object? listOfItems = null, Object? isRtlLanguage = null}) {
+    return _then(
+      _value.copyWith(
+            listOfItems: null == listOfItems
+                ? _value.listOfItems
+                : listOfItems // ignore: cast_nullable_to_non_nullable
+                      as List<EstekaraData>,
+            isRtlLanguage: null == isRtlLanguage
+                ? _value.isRtlLanguage
+                : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -226,8 +225,9 @@ class _$EstekaraStateCopyWithImpl<$Res, $Val extends EstekaraState>
 abstract class _$$EstekaraStateImplCopyWith<$Res>
     implements $EstekaraStateCopyWith<$Res> {
   factory _$$EstekaraStateImplCopyWith(
-          _$EstekaraStateImpl value, $Res Function(_$EstekaraStateImpl) then) =
-      __$$EstekaraStateImplCopyWithImpl<$Res>;
+    _$EstekaraStateImpl value,
+    $Res Function(_$EstekaraStateImpl) then,
+  ) = __$$EstekaraStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<EstekaraData> listOfItems, bool isRtlLanguage});
@@ -238,37 +238,37 @@ class __$$EstekaraStateImplCopyWithImpl<$Res>
     extends _$EstekaraStateCopyWithImpl<$Res, _$EstekaraStateImpl>
     implements _$$EstekaraStateImplCopyWith<$Res> {
   __$$EstekaraStateImplCopyWithImpl(
-      _$EstekaraStateImpl _value, $Res Function(_$EstekaraStateImpl) _then)
-      : super(_value, _then);
+    _$EstekaraStateImpl _value,
+    $Res Function(_$EstekaraStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of EstekaraState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? listOfItems = null,
-    Object? isRtlLanguage = null,
-  }) {
-    return _then(_$EstekaraStateImpl(
-      listOfItems: null == listOfItems
-          ? _value._listOfItems
-          : listOfItems // ignore: cast_nullable_to_non_nullable
-              as List<EstekaraData>,
-      isRtlLanguage: null == isRtlLanguage
-          ? _value.isRtlLanguage
-          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? listOfItems = null, Object? isRtlLanguage = null}) {
+    return _then(
+      _$EstekaraStateImpl(
+        listOfItems: null == listOfItems
+            ? _value._listOfItems
+            : listOfItems // ignore: cast_nullable_to_non_nullable
+                  as List<EstekaraData>,
+        isRtlLanguage: null == isRtlLanguage
+            ? _value.isRtlLanguage
+            : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$EstekaraStateImpl implements _EstekaraState {
-  const _$EstekaraStateImpl(
-      {final List<EstekaraData> listOfItems = const [],
-      this.isRtlLanguage = false})
-      : _listOfItems = listOfItems;
+  const _$EstekaraStateImpl({
+    final List<EstekaraData> listOfItems = const [],
+    this.isRtlLanguage = false,
+  }) : _listOfItems = listOfItems;
 
   final List<EstekaraData> _listOfItems;
   @override
@@ -293,15 +293,20 @@ class _$EstekaraStateImpl implements _EstekaraState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EstekaraStateImpl &&
-            const DeepCollectionEquality()
-                .equals(other._listOfItems, _listOfItems) &&
+            const DeepCollectionEquality().equals(
+              other._listOfItems,
+              _listOfItems,
+            ) &&
             (identical(other.isRtlLanguage, isRtlLanguage) ||
                 other.isRtlLanguage == isRtlLanguage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_listOfItems), isRtlLanguage);
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_listOfItems),
+    isRtlLanguage,
+  );
 
   /// Create a copy of EstekaraState
   /// with the given fields replaced by the non-null parameter values.
@@ -313,9 +318,10 @@ class _$EstekaraStateImpl implements _EstekaraState {
 }
 
 abstract class _EstekaraState implements EstekaraState {
-  const factory _EstekaraState(
-      {final List<EstekaraData> listOfItems,
-      final bool isRtlLanguage}) = _$EstekaraStateImpl;
+  const factory _EstekaraState({
+    final List<EstekaraData> listOfItems,
+    final bool isRtlLanguage,
+  }) = _$EstekaraStateImpl;
 
   @override
   List<EstekaraData> get listOfItems;

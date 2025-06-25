@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
@@ -18,7 +16,6 @@ part 'main_container_state.dart';
 /// on the current tab selection.
 class MainContainerBloc extends Bloc<MainContainerEvent, MainContainerState> {
   /// Global key for accessing the convex app bar state.
-  GlobalKey<ConvexAppBarState> appBarKey = GlobalKey<ConvexAppBarState>();
 
   /// Creates a [MainContainerBloc] with initial state.
   ///

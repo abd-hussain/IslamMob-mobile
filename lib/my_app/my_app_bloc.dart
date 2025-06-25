@@ -59,6 +59,7 @@ class MyAppBloc {
 
   /// Sets the preferred screen orientations for the app
   Future<void> _setPreferredOrientations() async {
+    await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,

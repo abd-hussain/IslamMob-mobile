@@ -12,7 +12,8 @@ part of 'hisn_al_muslim_details_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$HisnAlMuslimDetailsEvent {
@@ -22,16 +23,14 @@ mixin _$HisnAlMuslimDetailsEvent {
     required TResult Function() updateFavoriteItem,
     required TResult Function(String description) updateTextToShare,
     required TResult Function(String title) shareItem,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HisnAlMuslimModel? item)? fillInitialValue,
     TResult? Function()? updateFavoriteItem,
     TResult? Function(String description)? updateTextToShare,
     TResult? Function(String title)? shareItem,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HisnAlMuslimModel? item)? fillInitialValue,
@@ -39,24 +38,21 @@ mixin _$HisnAlMuslimDetailsEvent {
     TResult Function(String description)? updateTextToShare,
     TResult Function(String title)? shareItem,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
     required TResult Function(_UpdateFavoriteItem value) updateFavoriteItem,
     required TResult Function(_UpdateTextToShare value) updateTextToShare,
     required TResult Function(_ShareItem value) shareItem,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
     TResult? Function(_UpdateFavoriteItem value)? updateFavoriteItem,
     TResult? Function(_UpdateTextToShare value)? updateTextToShare,
     TResult? Function(_ShareItem value)? shareItem,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
@@ -64,20 +60,22 @@ mixin _$HisnAlMuslimDetailsEvent {
     TResult Function(_UpdateTextToShare value)? updateTextToShare,
     TResult Function(_ShareItem value)? shareItem,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HisnAlMuslimDetailsEventCopyWith<$Res> {
-  factory $HisnAlMuslimDetailsEventCopyWith(HisnAlMuslimDetailsEvent value,
-          $Res Function(HisnAlMuslimDetailsEvent) then) =
-      _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, HisnAlMuslimDetailsEvent>;
+  factory $HisnAlMuslimDetailsEventCopyWith(
+    HisnAlMuslimDetailsEvent value,
+    $Res Function(HisnAlMuslimDetailsEvent) then,
+  ) = _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, HisnAlMuslimDetailsEvent>;
 }
 
 /// @nodoc
-class _$HisnAlMuslimDetailsEventCopyWithImpl<$Res,
-        $Val extends HisnAlMuslimDetailsEvent>
+class _$HisnAlMuslimDetailsEventCopyWithImpl<
+  $Res,
+  $Val extends HisnAlMuslimDetailsEvent
+>
     implements $HisnAlMuslimDetailsEventCopyWith<$Res> {
   _$HisnAlMuslimDetailsEventCopyWithImpl(this._value, this._then);
 
@@ -92,9 +90,10 @@ class _$HisnAlMuslimDetailsEventCopyWithImpl<$Res,
 
 /// @nodoc
 abstract class _$$FillInitialValueImplCopyWith<$Res> {
-  factory _$$FillInitialValueImplCopyWith(_$FillInitialValueImpl value,
-          $Res Function(_$FillInitialValueImpl) then) =
-      __$$FillInitialValueImplCopyWithImpl<$Res>;
+  factory _$$FillInitialValueImplCopyWith(
+    _$FillInitialValueImpl value,
+    $Res Function(_$FillInitialValueImpl) then,
+  ) = __$$FillInitialValueImplCopyWithImpl<$Res>;
   @useResult
   $Res call({HisnAlMuslimModel? item});
 
@@ -105,23 +104,24 @@ abstract class _$$FillInitialValueImplCopyWith<$Res> {
 class __$$FillInitialValueImplCopyWithImpl<$Res>
     extends _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, _$FillInitialValueImpl>
     implements _$$FillInitialValueImplCopyWith<$Res> {
-  __$$FillInitialValueImplCopyWithImpl(_$FillInitialValueImpl _value,
-      $Res Function(_$FillInitialValueImpl) _then)
-      : super(_value, _then);
+  __$$FillInitialValueImplCopyWithImpl(
+    _$FillInitialValueImpl _value,
+    $Res Function(_$FillInitialValueImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HisnAlMuslimDetailsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? item = freezed,
-  }) {
-    return _then(_$FillInitialValueImpl(
-      freezed == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as HisnAlMuslimModel?,
-    ));
+  $Res call({Object? item = freezed}) {
+    return _then(
+      _$FillInitialValueImpl(
+        freezed == item
+            ? _value.item
+            : item // ignore: cast_nullable_to_non_nullable
+                  as HisnAlMuslimModel?,
+      ),
+    );
   }
 
   /// Create a copy of HisnAlMuslimDetailsEvent
@@ -170,7 +170,9 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @pragma('vm:prefer-inline')
   _$$FillInitialValueImplCopyWith<_$FillInitialValueImpl> get copyWith =>
       __$$FillInitialValueImplCopyWithImpl<_$FillInitialValueImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -262,19 +264,21 @@ abstract class _FillInitialValue implements HisnAlMuslimDetailsEvent {
 
 /// @nodoc
 abstract class _$$UpdateFavoriteItemImplCopyWith<$Res> {
-  factory _$$UpdateFavoriteItemImplCopyWith(_$UpdateFavoriteItemImpl value,
-          $Res Function(_$UpdateFavoriteItemImpl) then) =
-      __$$UpdateFavoriteItemImplCopyWithImpl<$Res>;
+  factory _$$UpdateFavoriteItemImplCopyWith(
+    _$UpdateFavoriteItemImpl value,
+    $Res Function(_$UpdateFavoriteItemImpl) then,
+  ) = __$$UpdateFavoriteItemImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$UpdateFavoriteItemImplCopyWithImpl<$Res>
-    extends _$HisnAlMuslimDetailsEventCopyWithImpl<$Res,
-        _$UpdateFavoriteItemImpl>
+    extends
+        _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, _$UpdateFavoriteItemImpl>
     implements _$$UpdateFavoriteItemImplCopyWith<$Res> {
-  __$$UpdateFavoriteItemImplCopyWithImpl(_$UpdateFavoriteItemImpl _value,
-      $Res Function(_$UpdateFavoriteItemImpl) _then)
-      : super(_value, _then);
+  __$$UpdateFavoriteItemImplCopyWithImpl(
+    _$UpdateFavoriteItemImpl _value,
+    $Res Function(_$UpdateFavoriteItemImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HisnAlMuslimDetailsEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -380,35 +384,37 @@ abstract class _UpdateFavoriteItem implements HisnAlMuslimDetailsEvent {
 
 /// @nodoc
 abstract class _$$UpdateTextToShareImplCopyWith<$Res> {
-  factory _$$UpdateTextToShareImplCopyWith(_$UpdateTextToShareImpl value,
-          $Res Function(_$UpdateTextToShareImpl) then) =
-      __$$UpdateTextToShareImplCopyWithImpl<$Res>;
+  factory _$$UpdateTextToShareImplCopyWith(
+    _$UpdateTextToShareImpl value,
+    $Res Function(_$UpdateTextToShareImpl) then,
+  ) = __$$UpdateTextToShareImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String description});
 }
 
 /// @nodoc
 class __$$UpdateTextToShareImplCopyWithImpl<$Res>
-    extends _$HisnAlMuslimDetailsEventCopyWithImpl<$Res,
-        _$UpdateTextToShareImpl>
+    extends
+        _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, _$UpdateTextToShareImpl>
     implements _$$UpdateTextToShareImplCopyWith<$Res> {
-  __$$UpdateTextToShareImplCopyWithImpl(_$UpdateTextToShareImpl _value,
-      $Res Function(_$UpdateTextToShareImpl) _then)
-      : super(_value, _then);
+  __$$UpdateTextToShareImplCopyWithImpl(
+    _$UpdateTextToShareImpl _value,
+    $Res Function(_$UpdateTextToShareImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HisnAlMuslimDetailsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = null,
-  }) {
-    return _then(_$UpdateTextToShareImpl(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? description = null}) {
+    return _then(
+      _$UpdateTextToShareImpl(
+        description: null == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -444,7 +450,9 @@ class _$UpdateTextToShareImpl implements _UpdateTextToShare {
   @pragma('vm:prefer-inline')
   _$$UpdateTextToShareImplCopyWith<_$UpdateTextToShareImpl> get copyWith =>
       __$$UpdateTextToShareImplCopyWithImpl<_$UpdateTextToShareImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -537,8 +545,9 @@ abstract class _UpdateTextToShare implements HisnAlMuslimDetailsEvent {
 /// @nodoc
 abstract class _$$ShareItemImplCopyWith<$Res> {
   factory _$$ShareItemImplCopyWith(
-          _$ShareItemImpl value, $Res Function(_$ShareItemImpl) then) =
-      __$$ShareItemImplCopyWithImpl<$Res>;
+    _$ShareItemImpl value,
+    $Res Function(_$ShareItemImpl) then,
+  ) = __$$ShareItemImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String title});
 }
@@ -548,22 +557,23 @@ class __$$ShareItemImplCopyWithImpl<$Res>
     extends _$HisnAlMuslimDetailsEventCopyWithImpl<$Res, _$ShareItemImpl>
     implements _$$ShareItemImplCopyWith<$Res> {
   __$$ShareItemImplCopyWithImpl(
-      _$ShareItemImpl _value, $Res Function(_$ShareItemImpl) _then)
-      : super(_value, _then);
+    _$ShareItemImpl _value,
+    $Res Function(_$ShareItemImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HisnAlMuslimDetailsEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? title = null,
-  }) {
-    return _then(_$ShareItemImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? title = null}) {
+    return _then(
+      _$ShareItemImpl(
+        title: null == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -701,9 +711,10 @@ mixin _$HisnAlMuslimDetailsState {
 
 /// @nodoc
 abstract class $HisnAlMuslimDetailsStateCopyWith<$Res> {
-  factory $HisnAlMuslimDetailsStateCopyWith(HisnAlMuslimDetailsState value,
-          $Res Function(HisnAlMuslimDetailsState) then) =
-      _$HisnAlMuslimDetailsStateCopyWithImpl<$Res, HisnAlMuslimDetailsState>;
+  factory $HisnAlMuslimDetailsStateCopyWith(
+    HisnAlMuslimDetailsState value,
+    $Res Function(HisnAlMuslimDetailsState) then,
+  ) = _$HisnAlMuslimDetailsStateCopyWithImpl<$Res, HisnAlMuslimDetailsState>;
   @useResult
   $Res call({HisnAlMuslimModel? item, dynamic textToShare, bool isRtlLanguage});
 
@@ -711,8 +722,10 @@ abstract class $HisnAlMuslimDetailsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
-        $Val extends HisnAlMuslimDetailsState>
+class _$HisnAlMuslimDetailsStateCopyWithImpl<
+  $Res,
+  $Val extends HisnAlMuslimDetailsState
+>
     implements $HisnAlMuslimDetailsStateCopyWith<$Res> {
   _$HisnAlMuslimDetailsStateCopyWithImpl(this._value, this._then);
 
@@ -730,20 +743,23 @@ class _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
     Object? textToShare = freezed,
     Object? isRtlLanguage = null,
   }) {
-    return _then(_value.copyWith(
-      item: freezed == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as HisnAlMuslimModel?,
-      textToShare: freezed == textToShare
-          ? _value.textToShare
-          : textToShare // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      isRtlLanguage: null == isRtlLanguage
-          ? _value.isRtlLanguage
-          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            item: freezed == item
+                ? _value.item
+                : item // ignore: cast_nullable_to_non_nullable
+                      as HisnAlMuslimModel?,
+            textToShare: freezed == textToShare
+                ? _value.textToShare
+                : textToShare // ignore: cast_nullable_to_non_nullable
+                      as dynamic,
+            isRtlLanguage: null == isRtlLanguage
+                ? _value.isRtlLanguage
+                : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+                      as bool,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of HisnAlMuslimDetailsState
@@ -765,9 +781,9 @@ class _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
 abstract class _$$HisnAlMuslimDetailsStateImplCopyWith<$Res>
     implements $HisnAlMuslimDetailsStateCopyWith<$Res> {
   factory _$$HisnAlMuslimDetailsStateImplCopyWith(
-          _$HisnAlMuslimDetailsStateImpl value,
-          $Res Function(_$HisnAlMuslimDetailsStateImpl) then) =
-      __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>;
+    _$HisnAlMuslimDetailsStateImpl value,
+    $Res Function(_$HisnAlMuslimDetailsStateImpl) then,
+  ) = __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({HisnAlMuslimModel? item, dynamic textToShare, bool isRtlLanguage});
@@ -778,13 +794,16 @@ abstract class _$$HisnAlMuslimDetailsStateImplCopyWith<$Res>
 
 /// @nodoc
 class __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>
-    extends _$HisnAlMuslimDetailsStateCopyWithImpl<$Res,
-        _$HisnAlMuslimDetailsStateImpl>
+    extends
+        _$HisnAlMuslimDetailsStateCopyWithImpl<
+          $Res,
+          _$HisnAlMuslimDetailsStateImpl
+        >
     implements _$$HisnAlMuslimDetailsStateImplCopyWith<$Res> {
   __$$HisnAlMuslimDetailsStateImplCopyWithImpl(
-      _$HisnAlMuslimDetailsStateImpl _value,
-      $Res Function(_$HisnAlMuslimDetailsStateImpl) _then)
-      : super(_value, _then);
+    _$HisnAlMuslimDetailsStateImpl _value,
+    $Res Function(_$HisnAlMuslimDetailsStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -795,25 +814,30 @@ class __$$HisnAlMuslimDetailsStateImplCopyWithImpl<$Res>
     Object? textToShare = freezed,
     Object? isRtlLanguage = null,
   }) {
-    return _then(_$HisnAlMuslimDetailsStateImpl(
-      item: freezed == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as HisnAlMuslimModel?,
-      textToShare: freezed == textToShare ? _value.textToShare! : textToShare,
-      isRtlLanguage: null == isRtlLanguage
-          ? _value.isRtlLanguage
-          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$HisnAlMuslimDetailsStateImpl(
+        item: freezed == item
+            ? _value.item
+            : item // ignore: cast_nullable_to_non_nullable
+                  as HisnAlMuslimModel?,
+        textToShare: freezed == textToShare ? _value.textToShare! : textToShare,
+        isRtlLanguage: null == isRtlLanguage
+            ? _value.isRtlLanguage
+            : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
-  const _$HisnAlMuslimDetailsStateImpl(
-      {this.item, this.textToShare = "", this.isRtlLanguage = false});
+  const _$HisnAlMuslimDetailsStateImpl({
+    this.item,
+    this.textToShare = "",
+    this.isRtlLanguage = false,
+  });
 
   @override
   final HisnAlMuslimModel? item;
@@ -835,15 +859,21 @@ class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
         (other.runtimeType == runtimeType &&
             other is _$HisnAlMuslimDetailsStateImpl &&
             (identical(other.item, item) || other.item == item) &&
-            const DeepCollectionEquality()
-                .equals(other.textToShare, textToShare) &&
+            const DeepCollectionEquality().equals(
+              other.textToShare,
+              textToShare,
+            ) &&
             (identical(other.isRtlLanguage, isRtlLanguage) ||
                 other.isRtlLanguage == isRtlLanguage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, item,
-      const DeepCollectionEquality().hash(textToShare), isRtlLanguage);
+  int get hashCode => Object.hash(
+    runtimeType,
+    item,
+    const DeepCollectionEquality().hash(textToShare),
+    isRtlLanguage,
+  );
 
   /// Create a copy of HisnAlMuslimDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -851,15 +881,18 @@ class _$HisnAlMuslimDetailsStateImpl implements _HisnAlMuslimDetailsState {
   @override
   @pragma('vm:prefer-inline')
   _$$HisnAlMuslimDetailsStateImplCopyWith<_$HisnAlMuslimDetailsStateImpl>
-      get copyWith => __$$HisnAlMuslimDetailsStateImplCopyWithImpl<
-          _$HisnAlMuslimDetailsStateImpl>(this, _$identity);
+  get copyWith =>
+      __$$HisnAlMuslimDetailsStateImplCopyWithImpl<
+        _$HisnAlMuslimDetailsStateImpl
+      >(this, _$identity);
 }
 
 abstract class _HisnAlMuslimDetailsState implements HisnAlMuslimDetailsState {
-  const factory _HisnAlMuslimDetailsState(
-      {final HisnAlMuslimModel? item,
-      final dynamic textToShare,
-      final bool isRtlLanguage}) = _$HisnAlMuslimDetailsStateImpl;
+  const factory _HisnAlMuslimDetailsState({
+    final HisnAlMuslimModel? item,
+    final dynamic textToShare,
+    final bool isRtlLanguage,
+  }) = _$HisnAlMuslimDetailsStateImpl;
 
   @override
   HisnAlMuslimModel? get item;
@@ -873,5 +906,5 @@ abstract class _HisnAlMuslimDetailsState implements HisnAlMuslimDetailsState {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HisnAlMuslimDetailsStateImplCopyWith<_$HisnAlMuslimDetailsStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

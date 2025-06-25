@@ -20,7 +20,8 @@ import 'package:islam_app/my_app/locator.dart';
 ///
 class SetupLocalNotificationWhenAppOpenUseCase {
   final _localNotificationRepository = locator<LocalNotificationRepository>();
-  final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase = locator<NotifyAdhanNotificationUsecase>();
+  final NotifyAdhanNotificationUsecase _notifyAdhanNotificationUsecase =
+      locator<NotifyAdhanNotificationUsecase>();
 
   /// Maximum number of prayer-related notifications to schedule.
   ///
@@ -34,7 +35,8 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   /// for up to this many days (e.g., up to 2 weeks).
   static const int maxDayCount = 14;
 
-  int _notificationCount = 0; // will increment each time we schedule a notification
+  int _notificationCount =
+      0; // will increment each time we schedule a notification
 
   /// We'll store the maximum time we schedule a prayer notification,
   /// so the final 2 reminders can come *after* that.
@@ -55,7 +57,8 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     int scheduledPrayerNotifications = 0;
     int dayIndex = 0;
 
-    while (scheduledPrayerNotifications < maxPrayerNotifications && dayIndex < maxDayCount) {
+    while (scheduledPrayerNotifications < maxPrayerNotifications &&
+        dayIndex < maxDayCount) {
       final targetDate = now.add(Duration(days: dayIndex));
 
       // Possibly skip day if user disabled notifications for "today," "3 days," or "week"
@@ -65,7 +68,8 @@ class SetupLocalNotificationWhenAppOpenUseCase {
       }
 
       // Get prayer timing for this specific day
-      final prayTimingForDay = _notifyAdhanNotificationUsecase.getPrayTimingForSpesificDates(listOfDates: [targetDate]);
+      final prayTimingForDay = _notifyAdhanNotificationUsecase
+          .getPrayTimingForSpesificDates(listOfDates: [targetDate]);
       if (prayTimingForDay.isNotEmpty) {
         // Schedules notifications for this day, returns how many got scheduled
         final dayCount = await _scheduleDailyNotifications(
@@ -229,7 +233,11 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     // 1. "15 min before"
     if (beforeAllowed) {
       final beforeTime = mainTime.subtract(const Duration(minutes: 15));
-      count += await _scheduleSingleTimeNotification(context: context, time: beforeTime, type: beforeType);
+      count += await _scheduleSingleTimeNotification(
+        context: context,
+        time: beforeTime,
+        type: beforeType,
+      );
     }
 
     // 2. Main prayer time
@@ -246,7 +254,10 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   /// - Reminder to read Surat Al-Kahf (30 min after sunrise) if allowed
   /// - Last-hour do3aa (average between Asr and Maghrib) if allowed
   /// Returns how many were scheduled.
-  Future<int> _scheduleFridayNotifications(BuildContext context, PrayTimingDateTimeModel model) async {
+  Future<int> _scheduleFridayNotifications(
+    BuildContext context,
+    PrayTimingDateTimeModel model,
+  ) async {
     int count = 0;
 
     // a) Al-Kahf reminder
@@ -281,7 +292,10 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   /// Schedules the final 2 reminders **after** the last prayer notification
   /// we've scheduled. If no notifications were scheduled at all,
   /// we fallback to 'now'.
-  Future<void> _scheduleAppReminders({required BuildContext context, required DateTime referenceDate}) async {
+  Future<void> _scheduleAppReminders({
+    required BuildContext context,
+    required DateTime referenceDate,
+  }) async {
     // Example: 5 and 10 hours after the last scheduled prayer notification
     await _scheduleSingleTimeNotification(
       context: context,
@@ -362,12 +376,17 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     // If "disable all for today" and the day is 'today', skip it
     final notificationDisableTime = _isNotificationForTodayDisabledAndWhen();
     if (notificationDisableTime != "") {
-      final notificationDisableTimeDate = DateTime.parse(notificationDisableTime);
+      final notificationDisableTimeDate = DateTime.parse(
+        notificationDisableTime,
+      );
       if (_isSameDay(date, notificationDisableTimeDate)) {
         return true;
       } else {
         // If the saved date is more than day (i.e. beyond max allowed)
-        DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForTodayDate, value: "");
+        DataBaseManagerBase.saveInDatabase(
+          key: LocalNotificationConstant.disableAllForTodayDate,
+          value: "",
+        );
       }
     }
 
@@ -375,19 +394,25 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     final notificationDisableWeekTime = _isNotificationForWeekDisabledAndWhen();
 
     if (notificationDisableWeekTime != "") {
-      final notificationDisableWeekTimeDate = DateTime.parse(notificationDisableWeekTime);
+      final notificationDisableWeekTimeDate = DateTime.parse(
+        notificationDisableWeekTime,
+      );
       if (_isSameWeek(date, notificationDisableWeekTimeDate)) {
         return true;
       } else {
         // If the saved date is more than day (i.e. beyond max allowed)
-        DataBaseManagerBase.saveInDatabase(key: LocalNotificationConstant.disableAllForWeekDate, value: "");
+        DataBaseManagerBase.saveInDatabase(
+          key: LocalNotificationConstant.disableAllForWeekDate,
+          value: "",
+        );
       }
     }
     return false;
   }
 
   /// Checks if [d1] and [d2] represent the exact same calendar day (ignoring time).
-  bool _isSameDay(DateTime d1, DateTime d2) => d1.year == d2.year && d1.month == d2.month && d1.day == d2.day;
+  bool _isSameDay(DateTime d1, DateTime d2) =>
+      d1.year == d2.year && d1.month == d2.month && d1.day == d2.day;
 
   /// Checks if [d1] and [d2] represent the exact same calendar day (ignoring time).
   bool _isSameWeek(DateTime d1, DateTime d2) {
@@ -401,23 +426,46 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   // ---------------------------------------------------------------------------
 
   bool _isFajirNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableFajr, defaultValue: true) as bool;
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableFajr,
+            defaultValue: true,
+          )
+          as bool;
 
   bool _isSunriseNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableSunriseTime, defaultValue: true)
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableSunriseTime,
+            defaultValue: true,
+          )
           as bool;
 
   bool _isZhurNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableDuher, defaultValue: true) as bool;
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableDuher,
+            defaultValue: true,
+          )
+          as bool;
 
   bool _isAsrNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAsr, defaultValue: true) as bool;
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableAsr,
+            defaultValue: true,
+          )
+          as bool;
 
   bool _isMagreebNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableMagrieb, defaultValue: true) as bool;
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableMagrieb,
+            defaultValue: true,
+          )
+          as bool;
 
   bool _isIshaNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableIsha, defaultValue: true) as bool;
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableIsha,
+            defaultValue: true,
+          )
+          as bool;
 
   bool _isWarningBefore15MinNotificationAllowed() =>
       DataBaseManagerBase.getFromDatabase(
@@ -427,22 +475,38 @@ class SetupLocalNotificationWhenAppOpenUseCase {
           as bool;
 
   bool _isJom3aAlkahfNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableJom3aAlkahf, defaultValue: true)
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableJom3aAlkahf,
+            defaultValue: true,
+          )
           as bool;
 
   bool _isJom3aDoaaNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableJom3aDo3aa, defaultValue: true) as bool;
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableJom3aDo3aa,
+            defaultValue: true,
+          )
+          as bool;
 
   bool _isMidNightPrayNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableQeyamAlLayel, defaultValue: true)
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableQeyamAlLayel,
+            defaultValue: true,
+          )
           as bool;
 
   String _isNotificationForTodayDisabledAndWhen() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForTodayDate, defaultValue: "")
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableAllForTodayDate,
+            defaultValue: "",
+          )
           as String;
 
   String _isNotificationForWeekDisabledAndWhen() =>
-      DataBaseManagerBase.getFromDatabase(key: LocalNotificationConstant.disableAllForWeekDate, defaultValue: "")
+      DataBaseManagerBase.getFromDatabase(
+            key: LocalNotificationConstant.disableAllForWeekDate,
+            defaultValue: "",
+          )
           as String;
 
   // ---------------------------------------------------------------------------

@@ -12,7 +12,8 @@ part of 'hajj_omrah_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$HajjOmrahEvent {
@@ -20,47 +21,42 @@ mixin _$HajjOmrahEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(HajjOmrahScreenType screenType) fillInitialValue,
     required TResult Function(VideoProcessState state) loadingState,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HajjOmrahScreenType screenType)? fillInitialValue,
     TResult? Function(VideoProcessState state)? loadingState,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HajjOmrahScreenType screenType)? fillInitialValue,
     TResult Function(VideoProcessState state)? loadingState,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
     required TResult Function(_LoadingState value) loadingState,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
     TResult? Function(_LoadingState value)? loadingState,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
     TResult Function(_LoadingState value)? loadingState,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HajjOmrahEventCopyWith<$Res> {
   factory $HajjOmrahEventCopyWith(
-          HajjOmrahEvent value, $Res Function(HajjOmrahEvent) then) =
-      _$HajjOmrahEventCopyWithImpl<$Res, HajjOmrahEvent>;
+    HajjOmrahEvent value,
+    $Res Function(HajjOmrahEvent) then,
+  ) = _$HajjOmrahEventCopyWithImpl<$Res, HajjOmrahEvent>;
 }
 
 /// @nodoc
@@ -79,9 +75,10 @@ class _$HajjOmrahEventCopyWithImpl<$Res, $Val extends HajjOmrahEvent>
 
 /// @nodoc
 abstract class _$$FillInitialValueImplCopyWith<$Res> {
-  factory _$$FillInitialValueImplCopyWith(_$FillInitialValueImpl value,
-          $Res Function(_$FillInitialValueImpl) then) =
-      __$$FillInitialValueImplCopyWithImpl<$Res>;
+  factory _$$FillInitialValueImplCopyWith(
+    _$FillInitialValueImpl value,
+    $Res Function(_$FillInitialValueImpl) then,
+  ) = __$$FillInitialValueImplCopyWithImpl<$Res>;
   @useResult
   $Res call({HajjOmrahScreenType screenType});
 
@@ -92,23 +89,24 @@ abstract class _$$FillInitialValueImplCopyWith<$Res> {
 class __$$FillInitialValueImplCopyWithImpl<$Res>
     extends _$HajjOmrahEventCopyWithImpl<$Res, _$FillInitialValueImpl>
     implements _$$FillInitialValueImplCopyWith<$Res> {
-  __$$FillInitialValueImplCopyWithImpl(_$FillInitialValueImpl _value,
-      $Res Function(_$FillInitialValueImpl) _then)
-      : super(_value, _then);
+  __$$FillInitialValueImplCopyWithImpl(
+    _$FillInitialValueImpl _value,
+    $Res Function(_$FillInitialValueImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HajjOmrahEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? screenType = null,
-  }) {
-    return _then(_$FillInitialValueImpl(
-      null == screenType
-          ? _value.screenType
-          : screenType // ignore: cast_nullable_to_non_nullable
-              as HajjOmrahScreenType,
-    ));
+  $Res call({Object? screenType = null}) {
+    return _then(
+      _$FillInitialValueImpl(
+        null == screenType
+            ? _value.screenType
+            : screenType // ignore: cast_nullable_to_non_nullable
+                  as HajjOmrahScreenType,
+      ),
+    );
   }
 
   /// Create a copy of HajjOmrahEvent
@@ -154,7 +152,9 @@ class _$FillInitialValueImpl implements _FillInitialValue {
   @pragma('vm:prefer-inline')
   _$$FillInitialValueImplCopyWith<_$FillInitialValueImpl> get copyWith =>
       __$$FillInitialValueImplCopyWithImpl<_$FillInitialValueImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -235,8 +235,9 @@ abstract class _FillInitialValue implements HajjOmrahEvent {
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
-          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
-      __$$LoadingStateImplCopyWithImpl<$Res>;
+    _$LoadingStateImpl value,
+    $Res Function(_$LoadingStateImpl) then,
+  ) = __$$LoadingStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({VideoProcessState state});
 
@@ -248,22 +249,23 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
     extends _$HajjOmrahEventCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
-      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
-      : super(_value, _then);
+    _$LoadingStateImpl _value,
+    $Res Function(_$LoadingStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HajjOmrahEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? state = null,
-  }) {
-    return _then(_$LoadingStateImpl(
-      null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as VideoProcessState,
-    ));
+  $Res call({Object? state = null}) {
+    return _then(
+      _$LoadingStateImpl(
+        null == state
+            ? _value.state
+            : state // ignore: cast_nullable_to_non_nullable
+                  as VideoProcessState,
+      ),
+    );
   }
 
   /// Create a copy of HajjOmrahEvent
@@ -401,13 +403,15 @@ mixin _$HajjOmrahState {
 /// @nodoc
 abstract class $HajjOmrahStateCopyWith<$Res> {
   factory $HajjOmrahStateCopyWith(
-          HajjOmrahState value, $Res Function(HajjOmrahState) then) =
-      _$HajjOmrahStateCopyWithImpl<$Res, HajjOmrahState>;
+    HajjOmrahState value,
+    $Res Function(HajjOmrahState) then,
+  ) = _$HajjOmrahStateCopyWithImpl<$Res, HajjOmrahState>;
   @useResult
-  $Res call(
-      {List<HajjOmrahData> listOfItems,
-      bool isRtlLanguage,
-      VideoProcessState processState});
+  $Res call({
+    List<HajjOmrahData> listOfItems,
+    bool isRtlLanguage,
+    VideoProcessState processState,
+  });
 
   $VideoProcessStateCopyWith<$Res> get processState;
 }
@@ -431,20 +435,23 @@ class _$HajjOmrahStateCopyWithImpl<$Res, $Val extends HajjOmrahState>
     Object? isRtlLanguage = null,
     Object? processState = null,
   }) {
-    return _then(_value.copyWith(
-      listOfItems: null == listOfItems
-          ? _value.listOfItems
-          : listOfItems // ignore: cast_nullable_to_non_nullable
-              as List<HajjOmrahData>,
-      isRtlLanguage: null == isRtlLanguage
-          ? _value.isRtlLanguage
-          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
-              as bool,
-      processState: null == processState
-          ? _value.processState
-          : processState // ignore: cast_nullable_to_non_nullable
-              as VideoProcessState,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            listOfItems: null == listOfItems
+                ? _value.listOfItems
+                : listOfItems // ignore: cast_nullable_to_non_nullable
+                      as List<HajjOmrahData>,
+            isRtlLanguage: null == isRtlLanguage
+                ? _value.isRtlLanguage
+                : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            processState: null == processState
+                ? _value.processState
+                : processState // ignore: cast_nullable_to_non_nullable
+                      as VideoProcessState,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of HajjOmrahState
@@ -461,15 +468,17 @@ class _$HajjOmrahStateCopyWithImpl<$Res, $Val extends HajjOmrahState>
 /// @nodoc
 abstract class _$$HajjOmrahStateImplCopyWith<$Res>
     implements $HajjOmrahStateCopyWith<$Res> {
-  factory _$$HajjOmrahStateImplCopyWith(_$HajjOmrahStateImpl value,
-          $Res Function(_$HajjOmrahStateImpl) then) =
-      __$$HajjOmrahStateImplCopyWithImpl<$Res>;
+  factory _$$HajjOmrahStateImplCopyWith(
+    _$HajjOmrahStateImpl value,
+    $Res Function(_$HajjOmrahStateImpl) then,
+  ) = __$$HajjOmrahStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<HajjOmrahData> listOfItems,
-      bool isRtlLanguage,
-      VideoProcessState processState});
+  $Res call({
+    List<HajjOmrahData> listOfItems,
+    bool isRtlLanguage,
+    VideoProcessState processState,
+  });
 
   @override
   $VideoProcessStateCopyWith<$Res> get processState;
@@ -480,8 +489,9 @@ class __$$HajjOmrahStateImplCopyWithImpl<$Res>
     extends _$HajjOmrahStateCopyWithImpl<$Res, _$HajjOmrahStateImpl>
     implements _$$HajjOmrahStateImplCopyWith<$Res> {
   __$$HajjOmrahStateImplCopyWithImpl(
-      _$HajjOmrahStateImpl _value, $Res Function(_$HajjOmrahStateImpl) _then)
-      : super(_value, _then);
+    _$HajjOmrahStateImpl _value,
+    $Res Function(_$HajjOmrahStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HajjOmrahState
   /// with the given fields replaced by the non-null parameter values.
@@ -492,31 +502,33 @@ class __$$HajjOmrahStateImplCopyWithImpl<$Res>
     Object? isRtlLanguage = null,
     Object? processState = null,
   }) {
-    return _then(_$HajjOmrahStateImpl(
-      listOfItems: null == listOfItems
-          ? _value._listOfItems
-          : listOfItems // ignore: cast_nullable_to_non_nullable
-              as List<HajjOmrahData>,
-      isRtlLanguage: null == isRtlLanguage
-          ? _value.isRtlLanguage
-          : isRtlLanguage // ignore: cast_nullable_to_non_nullable
-              as bool,
-      processState: null == processState
-          ? _value.processState
-          : processState // ignore: cast_nullable_to_non_nullable
-              as VideoProcessState,
-    ));
+    return _then(
+      _$HajjOmrahStateImpl(
+        listOfItems: null == listOfItems
+            ? _value._listOfItems
+            : listOfItems // ignore: cast_nullable_to_non_nullable
+                  as List<HajjOmrahData>,
+        isRtlLanguage: null == isRtlLanguage
+            ? _value.isRtlLanguage
+            : isRtlLanguage // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        processState: null == processState
+            ? _value.processState
+            : processState // ignore: cast_nullable_to_non_nullable
+                  as VideoProcessState,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$HajjOmrahStateImpl implements _HajjOmrahState {
-  const _$HajjOmrahStateImpl(
-      {final List<HajjOmrahData> listOfItems = const [],
-      this.isRtlLanguage = false,
-      this.processState = const VideoProcessState.loading()})
-      : _listOfItems = listOfItems;
+  const _$HajjOmrahStateImpl({
+    final List<HajjOmrahData> listOfItems = const [],
+    this.isRtlLanguage = false,
+    this.processState = const VideoProcessState.loading(),
+  }) : _listOfItems = listOfItems;
 
   final List<HajjOmrahData> _listOfItems;
   @override
@@ -544,8 +556,10 @@ class _$HajjOmrahStateImpl implements _HajjOmrahState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HajjOmrahStateImpl &&
-            const DeepCollectionEquality()
-                .equals(other._listOfItems, _listOfItems) &&
+            const DeepCollectionEquality().equals(
+              other._listOfItems,
+              _listOfItems,
+            ) &&
             (identical(other.isRtlLanguage, isRtlLanguage) ||
                 other.isRtlLanguage == isRtlLanguage) &&
             (identical(other.processState, processState) ||
@@ -554,10 +568,11 @@ class _$HajjOmrahStateImpl implements _HajjOmrahState {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_listOfItems),
-      isRtlLanguage,
-      processState);
+    runtimeType,
+    const DeepCollectionEquality().hash(_listOfItems),
+    isRtlLanguage,
+    processState,
+  );
 
   /// Create a copy of HajjOmrahState
   /// with the given fields replaced by the non-null parameter values.
@@ -566,14 +581,17 @@ class _$HajjOmrahStateImpl implements _HajjOmrahState {
   @pragma('vm:prefer-inline')
   _$$HajjOmrahStateImplCopyWith<_$HajjOmrahStateImpl> get copyWith =>
       __$$HajjOmrahStateImplCopyWithImpl<_$HajjOmrahStateImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _HajjOmrahState implements HajjOmrahState {
-  const factory _HajjOmrahState(
-      {final List<HajjOmrahData> listOfItems,
-      final bool isRtlLanguage,
-      final VideoProcessState processState}) = _$HajjOmrahStateImpl;
+  const factory _HajjOmrahState({
+    final List<HajjOmrahData> listOfItems,
+    final bool isRtlLanguage,
+    final VideoProcessState processState,
+  }) = _$HajjOmrahStateImpl;
 
   @override
   List<HajjOmrahData> get listOfItems;
@@ -597,52 +615,47 @@ mixin _$VideoProcessState {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() error,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? error,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? error,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $VideoProcessStateCopyWith<$Res> {
   factory $VideoProcessStateCopyWith(
-          VideoProcessState value, $Res Function(VideoProcessState) then) =
-      _$VideoProcessStateCopyWithImpl<$Res, VideoProcessState>;
+    VideoProcessState value,
+    $Res Function(VideoProcessState) then,
+  ) = _$VideoProcessStateCopyWithImpl<$Res, VideoProcessState>;
 }
 
 /// @nodoc
@@ -662,8 +675,9 @@ class _$VideoProcessStateCopyWithImpl<$Res, $Val extends VideoProcessState>
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
   factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+    _$LoadingImpl value,
+    $Res Function(_$LoadingImpl) then,
+  ) = __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -671,8 +685,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
     extends _$VideoProcessStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-      : super(_value, _then);
+    _$LoadingImpl _value,
+    $Res Function(_$LoadingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of VideoProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -773,8 +788,9 @@ abstract class _Loading implements VideoProcessState {
 /// @nodoc
 abstract class _$$SuccessImplCopyWith<$Res> {
   factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
+    _$SuccessImpl value,
+    $Res Function(_$SuccessImpl) then,
+  ) = __$$SuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -782,8 +798,9 @@ class __$$SuccessImplCopyWithImpl<$Res>
     extends _$VideoProcessStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
-      : super(_value, _then);
+    _$SuccessImpl _value,
+    $Res Function(_$SuccessImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of VideoProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -884,8 +901,9 @@ abstract class _Success implements VideoProcessState {
 /// @nodoc
 abstract class _$$ErrorImplCopyWith<$Res> {
   factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+    _$ErrorImpl value,
+    $Res Function(_$ErrorImpl) then,
+  ) = __$$ErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -893,8 +911,9 @@ class __$$ErrorImplCopyWithImpl<$Res>
     extends _$VideoProcessStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
-      : super(_value, _then);
+    _$ErrorImpl _value,
+    $Res Function(_$ErrorImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of VideoProcessState
   /// with the given fields replaced by the non-null parameter values.
@@ -998,47 +1017,42 @@ mixin _$HajjOmrahScreenType {
   TResult when<TResult extends Object?>({
     required TResult Function() hajj,
     required TResult Function() omrah,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? hajj,
     TResult? Function()? omrah,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? hajj,
     TResult Function()? omrah,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Hajj value) hajj,
     required TResult Function(_Omrah value) omrah,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Hajj value)? hajj,
     TResult? Function(_Omrah value)? omrah,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Hajj value)? hajj,
     TResult Function(_Omrah value)? omrah,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HajjOmrahScreenTypeCopyWith<$Res> {
   factory $HajjOmrahScreenTypeCopyWith(
-          HajjOmrahScreenType value, $Res Function(HajjOmrahScreenType) then) =
-      _$HajjOmrahScreenTypeCopyWithImpl<$Res, HajjOmrahScreenType>;
+    HajjOmrahScreenType value,
+    $Res Function(HajjOmrahScreenType) then,
+  ) = _$HajjOmrahScreenTypeCopyWithImpl<$Res, HajjOmrahScreenType>;
 }
 
 /// @nodoc
@@ -1058,8 +1072,9 @@ class _$HajjOmrahScreenTypeCopyWithImpl<$Res, $Val extends HajjOmrahScreenType>
 /// @nodoc
 abstract class _$$HajjImplCopyWith<$Res> {
   factory _$$HajjImplCopyWith(
-          _$HajjImpl value, $Res Function(_$HajjImpl) then) =
-      __$$HajjImplCopyWithImpl<$Res>;
+    _$HajjImpl value,
+    $Res Function(_$HajjImpl) then,
+  ) = __$$HajjImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1067,7 +1082,7 @@ class __$$HajjImplCopyWithImpl<$Res>
     extends _$HajjOmrahScreenTypeCopyWithImpl<$Res, _$HajjImpl>
     implements _$$HajjImplCopyWith<$Res> {
   __$$HajjImplCopyWithImpl(_$HajjImpl _value, $Res Function(_$HajjImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of HajjOmrahScreenType
   /// with the given fields replaced by the non-null parameter values.
@@ -1162,8 +1177,9 @@ abstract class _Hajj implements HajjOmrahScreenType {
 /// @nodoc
 abstract class _$$OmrahImplCopyWith<$Res> {
   factory _$$OmrahImplCopyWith(
-          _$OmrahImpl value, $Res Function(_$OmrahImpl) then) =
-      __$$OmrahImplCopyWithImpl<$Res>;
+    _$OmrahImpl value,
+    $Res Function(_$OmrahImpl) then,
+  ) = __$$OmrahImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1171,8 +1187,9 @@ class __$$OmrahImplCopyWithImpl<$Res>
     extends _$HajjOmrahScreenTypeCopyWithImpl<$Res, _$OmrahImpl>
     implements _$$OmrahImplCopyWith<$Res> {
   __$$OmrahImplCopyWithImpl(
-      _$OmrahImpl _value, $Res Function(_$OmrahImpl) _then)
-      : super(_value, _then);
+    _$OmrahImpl _value,
+    $Res Function(_$OmrahImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HajjOmrahScreenType
   /// with the given fields replaced by the non-null parameter values.

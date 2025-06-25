@@ -15,7 +15,6 @@ import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/bottom_tile.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/widgets/tool_tips/brightness_popup.dart';
-import 'package:islam_app/shared_widgets/bottomsheet/quran_setting_bottomsheet.dart';
 import 'package:pdfx/pdfx.dart';
 
 /// A bottom help bar widget for the Quran reading interface.
@@ -68,18 +67,29 @@ class QuranBottomHelpBar extends StatelessWidget {
           childAspectRatio: aspectRatio,
         ),
         children: [
-          SizedBox(child: _buildIndexTile(context, localize)),
+          _buildIndexTile(context, localize),
           _buildBookmarkTile(context, localize),
           _buildAllBookmarksTile(context, localize),
-          _buildSettingsTile(context, localize),
-          _buildSpacerTile(),
+          _buildBrigtnessTile(context, localize),
+          _buildQuranPrints(context, localize),
           _buildSupportUsTile(context, localize),
         ],
       ),
     );
   }
 
-  Widget _buildSettingsTile(
+  Widget _buildQuranPrints(
+    BuildContext context,
+    IslamMobLocalizations localize,
+  ) {
+    return BottomTile(
+      title: localize.quranSettingMushaf,
+      icon: Icons.library_books,
+      onTap: () => _navigateToMushafScreen(context),
+    );
+  }
+
+  Widget _buildBrigtnessTile(
     BuildContext context,
     IslamMobLocalizations localize,
   ) {
@@ -87,38 +97,16 @@ class QuranBottomHelpBar extends StatelessWidget {
       buildWhen: (previous, current) => previous.brigtness != current.brigtness,
       builder: (context, state) {
         return BottomTile(
-          title: localize.settings,
-          icon: Icons.settings,
-          onTap: () async {
-            await QuranSettingBottomsheet().showBottomSheet(
+          title: localize.quranSettingLighting,
+          icon: Icons.sunny,
+          onTap: () {
+            showDialog(
               context: context,
-              showAdsCallback: () async {
-                await FirebaseAnalyticsRepository.logEvent(
-                  name: "QuranSupportUsShown",
-                );
-                await RewarderAds.showRewardedAd();
-                if (context.mounted) {
-                  context.read<QuranKareemBloc>().add(
-                    QuranKareemEvent.updateRewardedAd(
-                      RewarderAds.mainRewardedAd != null,
-                    ),
-                  );
-                }
-              },
-              brigtnessCallback: () {
-                FirebaseAnalyticsRepository.logEvent(
-                  name: "QuranBrightnessShown",
-                );
-                showDialog(
-                  context: context,
-                  barrierColor: const Color(0x01000000),
-                  builder: (context) => BrightnessPopup(
-                    initialValue: state.brigtness,
-                    returnBrightness: returnBrightness,
-                  ),
-                );
-              },
-              masaheefCallback: () => _navigateToMushafScreen(context),
+              barrierColor: const Color(0x01000000),
+              builder: (context) => BrightnessPopup(
+                initialValue: state.brigtness,
+                returnBrightness: returnBrightness,
+              ),
             );
           },
         );
@@ -313,9 +301,5 @@ class QuranBottomHelpBar extends StatelessWidget {
         );
       },
     );
-  }
-
-  Widget _buildSpacerTile() {
-    return ColoredBox(color: Colors.black.withValues(alpha: 0.5));
   }
 }
