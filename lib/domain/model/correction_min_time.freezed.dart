@@ -12,7 +12,8 @@ part of 'correction_min_time.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$CorrectionMinTimeData {
@@ -30,21 +31,25 @@ mixin _$CorrectionMinTimeData {
 
 /// @nodoc
 abstract class $CorrectionMinTimeDataCopyWith<$Res> {
-  factory $CorrectionMinTimeDataCopyWith(CorrectionMinTimeData value,
-          $Res Function(CorrectionMinTimeData) then) =
-      _$CorrectionMinTimeDataCopyWithImpl<$Res, CorrectionMinTimeData>;
+  factory $CorrectionMinTimeDataCopyWith(
+    CorrectionMinTimeData value,
+    $Res Function(CorrectionMinTimeData) then,
+  ) = _$CorrectionMinTimeDataCopyWithImpl<$Res, CorrectionMinTimeData>;
   @useResult
-  $Res call(
-      {String title,
-      AzanTypeForEditMinState type,
-      int Function(PrayCalculationSettingState) getter});
+  $Res call({
+    String title,
+    AzanTypeForEditMinState type,
+    int Function(PrayCalculationSettingState) getter,
+  });
 
   $AzanTypeForEditMinStateCopyWith<$Res> get type;
 }
 
 /// @nodoc
-class _$CorrectionMinTimeDataCopyWithImpl<$Res,
-        $Val extends CorrectionMinTimeData>
+class _$CorrectionMinTimeDataCopyWithImpl<
+  $Res,
+  $Val extends CorrectionMinTimeData
+>
     implements $CorrectionMinTimeDataCopyWith<$Res> {
   _$CorrectionMinTimeDataCopyWithImpl(this._value, this._then);
 
@@ -62,20 +67,23 @@ class _$CorrectionMinTimeDataCopyWithImpl<$Res,
     Object? type = null,
     Object? getter = null,
   }) {
-    return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as AzanTypeForEditMinState,
-      getter: null == getter
-          ? _value.getter
-          : getter // ignore: cast_nullable_to_non_nullable
-              as int Function(PrayCalculationSettingState),
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            title: null == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                      as String,
+            type: null == type
+                ? _value.type
+                : type // ignore: cast_nullable_to_non_nullable
+                      as AzanTypeForEditMinState,
+            getter: null == getter
+                ? _value.getter
+                : getter // ignore: cast_nullable_to_non_nullable
+                      as int Function(PrayCalculationSettingState),
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of CorrectionMinTimeData
@@ -93,15 +101,16 @@ class _$CorrectionMinTimeDataCopyWithImpl<$Res,
 abstract class _$$CorrectionMinTimeDataImplCopyWith<$Res>
     implements $CorrectionMinTimeDataCopyWith<$Res> {
   factory _$$CorrectionMinTimeDataImplCopyWith(
-          _$CorrectionMinTimeDataImpl value,
-          $Res Function(_$CorrectionMinTimeDataImpl) then) =
-      __$$CorrectionMinTimeDataImplCopyWithImpl<$Res>;
+    _$CorrectionMinTimeDataImpl value,
+    $Res Function(_$CorrectionMinTimeDataImpl) then,
+  ) = __$$CorrectionMinTimeDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String title,
-      AzanTypeForEditMinState type,
-      int Function(PrayCalculationSettingState) getter});
+  $Res call({
+    String title,
+    AzanTypeForEditMinState type,
+    int Function(PrayCalculationSettingState) getter,
+  });
 
   @override
   $AzanTypeForEditMinStateCopyWith<$Res> get type;
@@ -109,12 +118,13 @@ abstract class _$$CorrectionMinTimeDataImplCopyWith<$Res>
 
 /// @nodoc
 class __$$CorrectionMinTimeDataImplCopyWithImpl<$Res>
-    extends _$CorrectionMinTimeDataCopyWithImpl<$Res,
-        _$CorrectionMinTimeDataImpl>
+    extends
+        _$CorrectionMinTimeDataCopyWithImpl<$Res, _$CorrectionMinTimeDataImpl>
     implements _$$CorrectionMinTimeDataImplCopyWith<$Res> {
-  __$$CorrectionMinTimeDataImplCopyWithImpl(_$CorrectionMinTimeDataImpl _value,
-      $Res Function(_$CorrectionMinTimeDataImpl) _then)
-      : super(_value, _then);
+  __$$CorrectionMinTimeDataImplCopyWithImpl(
+    _$CorrectionMinTimeDataImpl _value,
+    $Res Function(_$CorrectionMinTimeDataImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CorrectionMinTimeData
   /// with the given fields replaced by the non-null parameter values.
@@ -125,28 +135,33 @@ class __$$CorrectionMinTimeDataImplCopyWithImpl<$Res>
     Object? type = null,
     Object? getter = null,
   }) {
-    return _then(_$CorrectionMinTimeDataImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as AzanTypeForEditMinState,
-      getter: null == getter
-          ? _value.getter
-          : getter // ignore: cast_nullable_to_non_nullable
-              as int Function(PrayCalculationSettingState),
-    ));
+    return _then(
+      _$CorrectionMinTimeDataImpl(
+        title: null == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String,
+        type: null == type
+            ? _value.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as AzanTypeForEditMinState,
+        getter: null == getter
+            ? _value.getter
+            : getter // ignore: cast_nullable_to_non_nullable
+                  as int Function(PrayCalculationSettingState),
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$CorrectionMinTimeDataImpl implements _CorrectionMinTimeData {
-  _$CorrectionMinTimeDataImpl(
-      {required this.title, required this.type, required this.getter});
+  _$CorrectionMinTimeDataImpl({
+    required this.title,
+    required this.type,
+    required this.getter,
+  });
 
   @override
   final String title;
@@ -179,16 +194,19 @@ class _$CorrectionMinTimeDataImpl implements _CorrectionMinTimeData {
   @override
   @pragma('vm:prefer-inline')
   _$$CorrectionMinTimeDataImplCopyWith<_$CorrectionMinTimeDataImpl>
-      get copyWith => __$$CorrectionMinTimeDataImplCopyWithImpl<
-          _$CorrectionMinTimeDataImpl>(this, _$identity);
+  get copyWith =>
+      __$$CorrectionMinTimeDataImplCopyWithImpl<_$CorrectionMinTimeDataImpl>(
+        this,
+        _$identity,
+      );
 }
 
 abstract class _CorrectionMinTimeData implements CorrectionMinTimeData {
-  factory _CorrectionMinTimeData(
-          {required final String title,
-          required final AzanTypeForEditMinState type,
-          required final int Function(PrayCalculationSettingState) getter}) =
-      _$CorrectionMinTimeDataImpl;
+  factory _CorrectionMinTimeData({
+    required final String title,
+    required final AzanTypeForEditMinState type,
+    required final int Function(PrayCalculationSettingState) getter,
+  }) = _$CorrectionMinTimeDataImpl;
 
   @override
   String get title;
@@ -202,5 +220,5 @@ abstract class _CorrectionMinTimeData implements CorrectionMinTimeData {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CorrectionMinTimeDataImplCopyWith<_$CorrectionMinTimeDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

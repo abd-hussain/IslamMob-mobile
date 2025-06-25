@@ -51,11 +51,9 @@ class ToolbarShortcutView extends StatelessWidget {
                   child: ToolbarCell(
                     title: localize.qurankareem,
                     imagePath: "assets/images/toolbar/quran.png",
-                    onTap: () {
-                      final bloc = context.read<MainContainerBloc>();
-                      bloc.appBarKey.currentState!.animateTo(1);
-                      bloc.add(MainContainerEvent.changeSelectedIndex(1));
-                    },
+                    onTap: () => context.read<MainContainerBloc>().add(
+                      MainContainerEvent.changeSelectedIndex(1),
+                    ),
                   ),
                 ),
                 Expanded(

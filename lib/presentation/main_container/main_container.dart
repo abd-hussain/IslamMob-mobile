@@ -39,8 +39,10 @@ class _MainContainerState extends State<MainContainer> {
       child: Scaffold(
         backgroundColor: const Color(0xffF5F6F7),
         resizeToAvoidBottomInset: false,
+        extendBody: true,
         appBar: const MainCustomAppBar(),
-        body: SafeArea(
+        body: ColoredBox(
+          color: const Color(0xffF5F6F7),
           child: BlocBuilder<MainContainerBloc, MainContainerState>(
             buildWhen: (previous, current) =>
                 previous.selectedIndex != current.selectedIndex,

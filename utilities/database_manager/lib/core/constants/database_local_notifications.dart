@@ -38,5 +38,6 @@ class LocalNotificationConstant {
   static const String disableQeyamAlLayel = "disableQeyamAlLayel";
 
   /// Key for disabling notifications 15 minutes before prayer time.
-  static const String disableNotificationBefore15Min = "disableNotificationBefore15Min";
+  static const String disableNotificationBefore15Min =
+      "disableNotificationBefore15Min";
 }

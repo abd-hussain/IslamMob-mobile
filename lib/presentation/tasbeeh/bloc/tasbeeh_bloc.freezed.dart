@@ -12,7 +12,8 @@ part of 'tasbeeh_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$TasbeehEvent {
@@ -25,8 +26,7 @@ mixin _$TasbeehEvent {
     required TResult Function() rightZikerEnabled,
     required TResult Function(TasbeehModel item) resetCounter,
     required TResult Function(TasbeehModel item) incrementCounter,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fillInitialValue,
@@ -36,8 +36,7 @@ mixin _$TasbeehEvent {
     TResult? Function()? rightZikerEnabled,
     TResult? Function(TasbeehModel item)? resetCounter,
     TResult? Function(TasbeehModel item)? incrementCounter,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fillInitialValue,
@@ -48,8 +47,7 @@ mixin _$TasbeehEvent {
     TResult Function(TasbeehModel item)? resetCounter,
     TResult Function(TasbeehModel item)? incrementCounter,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FillInitialValue value) fillInitialValue,
@@ -59,8 +57,7 @@ mixin _$TasbeehEvent {
     required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
     required TResult Function(_ResetCounter value) resetCounter,
     required TResult Function(_IncrementCounter value) incrementCounter,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FillInitialValue value)? fillInitialValue,
@@ -70,8 +67,7 @@ mixin _$TasbeehEvent {
     TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
     TResult? Function(_ResetCounter value)? resetCounter,
     TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FillInitialValue value)? fillInitialValue,
@@ -82,15 +78,15 @@ mixin _$TasbeehEvent {
     TResult Function(_ResetCounter value)? resetCounter,
     TResult Function(_IncrementCounter value)? incrementCounter,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TasbeehEventCopyWith<$Res> {
   factory $TasbeehEventCopyWith(
-          TasbeehEvent value, $Res Function(TasbeehEvent) then) =
-      _$TasbeehEventCopyWithImpl<$Res, TasbeehEvent>;
+    TasbeehEvent value,
+    $Res Function(TasbeehEvent) then,
+  ) = _$TasbeehEventCopyWithImpl<$Res, TasbeehEvent>;
 }
 
 /// @nodoc
@@ -109,18 +105,20 @@ class _$TasbeehEventCopyWithImpl<$Res, $Val extends TasbeehEvent>
 
 /// @nodoc
 abstract class _$$FillInitialValueImplCopyWith<$Res> {
-  factory _$$FillInitialValueImplCopyWith(_$FillInitialValueImpl value,
-          $Res Function(_$FillInitialValueImpl) then) =
-      __$$FillInitialValueImplCopyWithImpl<$Res>;
+  factory _$$FillInitialValueImplCopyWith(
+    _$FillInitialValueImpl value,
+    $Res Function(_$FillInitialValueImpl) then,
+  ) = __$$FillInitialValueImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$FillInitialValueImplCopyWithImpl<$Res>
     extends _$TasbeehEventCopyWithImpl<$Res, _$FillInitialValueImpl>
     implements _$$FillInitialValueImplCopyWith<$Res> {
-  __$$FillInitialValueImplCopyWithImpl(_$FillInitialValueImpl _value,
-      $Res Function(_$FillInitialValueImpl) _then)
-      : super(_value, _then);
+  __$$FillInitialValueImplCopyWithImpl(
+    _$FillInitialValueImpl _value,
+    $Res Function(_$FillInitialValueImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -245,8 +243,9 @@ abstract class _FillInitialValue implements TasbeehEvent {
 /// @nodoc
 abstract class _$$SoundSettingImplCopyWith<$Res> {
   factory _$$SoundSettingImplCopyWith(
-          _$SoundSettingImpl value, $Res Function(_$SoundSettingImpl) then) =
-      __$$SoundSettingImplCopyWithImpl<$Res>;
+    _$SoundSettingImpl value,
+    $Res Function(_$SoundSettingImpl) then,
+  ) = __$$SoundSettingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -254,8 +253,9 @@ class __$$SoundSettingImplCopyWithImpl<$Res>
     extends _$TasbeehEventCopyWithImpl<$Res, _$SoundSettingImpl>
     implements _$$SoundSettingImplCopyWith<$Res> {
   __$$SoundSettingImplCopyWithImpl(
-      _$SoundSettingImpl _value, $Res Function(_$SoundSettingImpl) _then)
-      : super(_value, _then);
+    _$SoundSettingImpl _value,
+    $Res Function(_$SoundSettingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -379,18 +379,20 @@ abstract class _SoundSetting implements TasbeehEvent {
 
 /// @nodoc
 abstract class _$$VibrationSettingImplCopyWith<$Res> {
-  factory _$$VibrationSettingImplCopyWith(_$VibrationSettingImpl value,
-          $Res Function(_$VibrationSettingImpl) then) =
-      __$$VibrationSettingImplCopyWithImpl<$Res>;
+  factory _$$VibrationSettingImplCopyWith(
+    _$VibrationSettingImpl value,
+    $Res Function(_$VibrationSettingImpl) then,
+  ) = __$$VibrationSettingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$VibrationSettingImplCopyWithImpl<$Res>
     extends _$TasbeehEventCopyWithImpl<$Res, _$VibrationSettingImpl>
     implements _$$VibrationSettingImplCopyWith<$Res> {
-  __$$VibrationSettingImplCopyWithImpl(_$VibrationSettingImpl _value,
-      $Res Function(_$VibrationSettingImpl) _then)
-      : super(_value, _then);
+  __$$VibrationSettingImplCopyWithImpl(
+    _$VibrationSettingImpl _value,
+    $Res Function(_$VibrationSettingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -514,18 +516,20 @@ abstract class _VibrationSetting implements TasbeehEvent {
 
 /// @nodoc
 abstract class _$$LeftZikerSelectedImplCopyWith<$Res> {
-  factory _$$LeftZikerSelectedImplCopyWith(_$LeftZikerSelectedImpl value,
-          $Res Function(_$LeftZikerSelectedImpl) then) =
-      __$$LeftZikerSelectedImplCopyWithImpl<$Res>;
+  factory _$$LeftZikerSelectedImplCopyWith(
+    _$LeftZikerSelectedImpl value,
+    $Res Function(_$LeftZikerSelectedImpl) then,
+  ) = __$$LeftZikerSelectedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$LeftZikerSelectedImplCopyWithImpl<$Res>
     extends _$TasbeehEventCopyWithImpl<$Res, _$LeftZikerSelectedImpl>
     implements _$$LeftZikerSelectedImplCopyWith<$Res> {
-  __$$LeftZikerSelectedImplCopyWithImpl(_$LeftZikerSelectedImpl _value,
-      $Res Function(_$LeftZikerSelectedImpl) _then)
-      : super(_value, _then);
+  __$$LeftZikerSelectedImplCopyWithImpl(
+    _$LeftZikerSelectedImpl _value,
+    $Res Function(_$LeftZikerSelectedImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -649,18 +653,20 @@ abstract class _LeftZikerSelected implements TasbeehEvent {
 
 /// @nodoc
 abstract class _$$RightZikerEnabledImplCopyWith<$Res> {
-  factory _$$RightZikerEnabledImplCopyWith(_$RightZikerEnabledImpl value,
-          $Res Function(_$RightZikerEnabledImpl) then) =
-      __$$RightZikerEnabledImplCopyWithImpl<$Res>;
+  factory _$$RightZikerEnabledImplCopyWith(
+    _$RightZikerEnabledImpl value,
+    $Res Function(_$RightZikerEnabledImpl) then,
+  ) = __$$RightZikerEnabledImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$RightZikerEnabledImplCopyWithImpl<$Res>
     extends _$TasbeehEventCopyWithImpl<$Res, _$RightZikerEnabledImpl>
     implements _$$RightZikerEnabledImplCopyWith<$Res> {
-  __$$RightZikerEnabledImplCopyWithImpl(_$RightZikerEnabledImpl _value,
-      $Res Function(_$RightZikerEnabledImpl) _then)
-      : super(_value, _then);
+  __$$RightZikerEnabledImplCopyWithImpl(
+    _$RightZikerEnabledImpl _value,
+    $Res Function(_$RightZikerEnabledImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -785,8 +791,9 @@ abstract class _RightZikerEnabled implements TasbeehEvent {
 /// @nodoc
 abstract class _$$ResetCounterImplCopyWith<$Res> {
   factory _$$ResetCounterImplCopyWith(
-          _$ResetCounterImpl value, $Res Function(_$ResetCounterImpl) then) =
-      __$$ResetCounterImplCopyWithImpl<$Res>;
+    _$ResetCounterImpl value,
+    $Res Function(_$ResetCounterImpl) then,
+  ) = __$$ResetCounterImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TasbeehModel item});
 
@@ -798,22 +805,23 @@ class __$$ResetCounterImplCopyWithImpl<$Res>
     extends _$TasbeehEventCopyWithImpl<$Res, _$ResetCounterImpl>
     implements _$$ResetCounterImplCopyWith<$Res> {
   __$$ResetCounterImplCopyWithImpl(
-      _$ResetCounterImpl _value, $Res Function(_$ResetCounterImpl) _then)
-      : super(_value, _then);
+    _$ResetCounterImpl _value,
+    $Res Function(_$ResetCounterImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? item = null,
-  }) {
-    return _then(_$ResetCounterImpl(
-      null == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as TasbeehModel,
-    ));
+  $Res call({Object? item = null}) {
+    return _then(
+      _$ResetCounterImpl(
+        null == item
+            ? _value.item
+            : item // ignore: cast_nullable_to_non_nullable
+                  as TasbeehModel,
+      ),
+    );
   }
 
   /// Create a copy of TasbeehEvent
@@ -966,9 +974,10 @@ abstract class _ResetCounter implements TasbeehEvent {
 
 /// @nodoc
 abstract class _$$IncrementCounterImplCopyWith<$Res> {
-  factory _$$IncrementCounterImplCopyWith(_$IncrementCounterImpl value,
-          $Res Function(_$IncrementCounterImpl) then) =
-      __$$IncrementCounterImplCopyWithImpl<$Res>;
+  factory _$$IncrementCounterImplCopyWith(
+    _$IncrementCounterImpl value,
+    $Res Function(_$IncrementCounterImpl) then,
+  ) = __$$IncrementCounterImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TasbeehModel item});
 
@@ -979,23 +988,24 @@ abstract class _$$IncrementCounterImplCopyWith<$Res> {
 class __$$IncrementCounterImplCopyWithImpl<$Res>
     extends _$TasbeehEventCopyWithImpl<$Res, _$IncrementCounterImpl>
     implements _$$IncrementCounterImplCopyWith<$Res> {
-  __$$IncrementCounterImplCopyWithImpl(_$IncrementCounterImpl _value,
-      $Res Function(_$IncrementCounterImpl) _then)
-      : super(_value, _then);
+  __$$IncrementCounterImplCopyWithImpl(
+    _$IncrementCounterImpl _value,
+    $Res Function(_$IncrementCounterImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of TasbeehEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? item = null,
-  }) {
-    return _then(_$IncrementCounterImpl(
-      null == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as TasbeehModel,
-    ));
+  $Res call({Object? item = null}) {
+    return _then(
+      _$IncrementCounterImpl(
+        null == item
+            ? _value.item
+            : item // ignore: cast_nullable_to_non_nullable
+                  as TasbeehModel,
+      ),
+    );
   }
 
   /// Create a copy of TasbeehEvent
@@ -1040,7 +1050,9 @@ class _$IncrementCounterImpl implements _IncrementCounter {
   @pragma('vm:prefer-inline')
   _$$IncrementCounterImplCopyWith<_$IncrementCounterImpl> get copyWith =>
       __$$IncrementCounterImplCopyWithImpl<_$IncrementCounterImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -1165,14 +1177,16 @@ mixin _$TasbeehState {
 /// @nodoc
 abstract class $TasbeehStateCopyWith<$Res> {
   factory $TasbeehStateCopyWith(
-          TasbeehState value, $Res Function(TasbeehState) then) =
-      _$TasbeehStateCopyWithImpl<$Res, TasbeehState>;
+    TasbeehState value,
+    $Res Function(TasbeehState) then,
+  ) = _$TasbeehStateCopyWithImpl<$Res, TasbeehState>;
   @useResult
-  $Res call(
-      {bool allowSound,
-      bool allowVibration,
-      List<TasbeehModel> list,
-      int selectedListIndex});
+  $Res call({
+    bool allowSound,
+    bool allowVibration,
+    List<TasbeehModel> list,
+    int selectedListIndex,
+  });
 }
 
 /// @nodoc
@@ -1195,24 +1209,27 @@ class _$TasbeehStateCopyWithImpl<$Res, $Val extends TasbeehState>
     Object? list = null,
     Object? selectedListIndex = null,
   }) {
-    return _then(_value.copyWith(
-      allowSound: null == allowSound
-          ? _value.allowSound
-          : allowSound // ignore: cast_nullable_to_non_nullable
-              as bool,
-      allowVibration: null == allowVibration
-          ? _value.allowVibration
-          : allowVibration // ignore: cast_nullable_to_non_nullable
-              as bool,
-      list: null == list
-          ? _value.list
-          : list // ignore: cast_nullable_to_non_nullable
-              as List<TasbeehModel>,
-      selectedListIndex: null == selectedListIndex
-          ? _value.selectedListIndex
-          : selectedListIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            allowSound: null == allowSound
+                ? _value.allowSound
+                : allowSound // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            allowVibration: null == allowVibration
+                ? _value.allowVibration
+                : allowVibration // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            list: null == list
+                ? _value.list
+                : list // ignore: cast_nullable_to_non_nullable
+                      as List<TasbeehModel>,
+            selectedListIndex: null == selectedListIndex
+                ? _value.selectedListIndex
+                : selectedListIndex // ignore: cast_nullable_to_non_nullable
+                      as int,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -1220,15 +1237,17 @@ class _$TasbeehStateCopyWithImpl<$Res, $Val extends TasbeehState>
 abstract class _$$TasbeehStateImplCopyWith<$Res>
     implements $TasbeehStateCopyWith<$Res> {
   factory _$$TasbeehStateImplCopyWith(
-          _$TasbeehStateImpl value, $Res Function(_$TasbeehStateImpl) then) =
-      __$$TasbeehStateImplCopyWithImpl<$Res>;
+    _$TasbeehStateImpl value,
+    $Res Function(_$TasbeehStateImpl) then,
+  ) = __$$TasbeehStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {bool allowSound,
-      bool allowVibration,
-      List<TasbeehModel> list,
-      int selectedListIndex});
+  $Res call({
+    bool allowSound,
+    bool allowVibration,
+    List<TasbeehModel> list,
+    int selectedListIndex,
+  });
 }
 
 /// @nodoc
@@ -1236,8 +1255,9 @@ class __$$TasbeehStateImplCopyWithImpl<$Res>
     extends _$TasbeehStateCopyWithImpl<$Res, _$TasbeehStateImpl>
     implements _$$TasbeehStateImplCopyWith<$Res> {
   __$$TasbeehStateImplCopyWithImpl(
-      _$TasbeehStateImpl _value, $Res Function(_$TasbeehStateImpl) _then)
-      : super(_value, _then);
+    _$TasbeehStateImpl _value,
+    $Res Function(_$TasbeehStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of TasbeehState
   /// with the given fields replaced by the non-null parameter values.
@@ -1249,36 +1269,38 @@ class __$$TasbeehStateImplCopyWithImpl<$Res>
     Object? list = null,
     Object? selectedListIndex = null,
   }) {
-    return _then(_$TasbeehStateImpl(
-      allowSound: null == allowSound
-          ? _value.allowSound
-          : allowSound // ignore: cast_nullable_to_non_nullable
-              as bool,
-      allowVibration: null == allowVibration
-          ? _value.allowVibration
-          : allowVibration // ignore: cast_nullable_to_non_nullable
-              as bool,
-      list: null == list
-          ? _value._list
-          : list // ignore: cast_nullable_to_non_nullable
-              as List<TasbeehModel>,
-      selectedListIndex: null == selectedListIndex
-          ? _value.selectedListIndex
-          : selectedListIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+    return _then(
+      _$TasbeehStateImpl(
+        allowSound: null == allowSound
+            ? _value.allowSound
+            : allowSound // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        allowVibration: null == allowVibration
+            ? _value.allowVibration
+            : allowVibration // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        list: null == list
+            ? _value._list
+            : list // ignore: cast_nullable_to_non_nullable
+                  as List<TasbeehModel>,
+        selectedListIndex: null == selectedListIndex
+            ? _value.selectedListIndex
+            : selectedListIndex // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$TasbeehStateImpl implements _TasbeehState {
-  const _$TasbeehStateImpl(
-      {this.allowSound = true,
-      this.allowVibration = true,
-      final List<TasbeehModel> list = const [],
-      this.selectedListIndex = 0})
-      : _list = list;
+  const _$TasbeehStateImpl({
+    this.allowSound = true,
+    this.allowVibration = true,
+    final List<TasbeehModel> list = const [],
+    this.selectedListIndex = 0,
+  }) : _list = list;
 
   @override
   @JsonKey()
@@ -1319,8 +1341,13 @@ class _$TasbeehStateImpl implements _TasbeehState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, allowSound, allowVibration,
-      const DeepCollectionEquality().hash(_list), selectedListIndex);
+  int get hashCode => Object.hash(
+    runtimeType,
+    allowSound,
+    allowVibration,
+    const DeepCollectionEquality().hash(_list),
+    selectedListIndex,
+  );
 
   /// Create a copy of TasbeehState
   /// with the given fields replaced by the non-null parameter values.
@@ -1332,11 +1359,12 @@ class _$TasbeehStateImpl implements _TasbeehState {
 }
 
 abstract class _TasbeehState implements TasbeehState {
-  const factory _TasbeehState(
-      {final bool allowSound,
-      final bool allowVibration,
-      final List<TasbeehModel> list,
-      final int selectedListIndex}) = _$TasbeehStateImpl;
+  const factory _TasbeehState({
+    final bool allowSound,
+    final bool allowVibration,
+    final List<TasbeehModel> list,
+    final int selectedListIndex,
+  }) = _$TasbeehStateImpl;
 
   @override
   bool get allowSound;
