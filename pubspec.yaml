@@ -1,11 +1,11 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.8.0+206
+version: 1.8.0+207
 
 environment:
   sdk: 3.8.1
-  flutter: 3.32.4
+  flutter: 3.32.6
 
 dependencies:
   flutter:
