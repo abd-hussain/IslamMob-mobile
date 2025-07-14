@@ -12,14 +12,10 @@ abstract class NetworkLoggerInterceptorBase extends Interceptor {
   final NetworkLogSanitizer sanitizer;
   final Uuid _uuid = const Uuid();
 
-  NetworkLoggerInterceptorBase(this.storage, this.config)
-    : sanitizer = NetworkLogSanitizer(config);
+  NetworkLoggerInterceptorBase(this.storage, this.config) : sanitizer = NetworkLogSanitizer(config);
 
   @override
-  Future<void> onRequest(
-    RequestOptions options,
-    RequestInterceptorHandler handler,
-  ) async {
+  Future<void> onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     if (!config.isEnabled) {
       return handler.next(options);
     }
@@ -39,8 +35,8 @@ abstract class NetworkLoggerInterceptorBase extends Interceptor {
   }
 
   @override
-  // ignore: strict_raw_type
   Future<void> onResponse(
+    // ignore: strict_raw_type
     Response response,
     ResponseInterceptorHandler handler,
   ) async {
@@ -49,8 +45,7 @@ abstract class NetworkLoggerInterceptorBase extends Interceptor {
     }
 
     try {
-      final requestId =
-          response.requestOptions.extra['networkLogId'] as String?;
+      final requestId = response.requestOptions.extra['networkLogId'] as String?;
       if (requestId != null) {
         await logResponse(response, requestId);
       }
@@ -62,10 +57,7 @@ abstract class NetworkLoggerInterceptorBase extends Interceptor {
   }
 
   @override
-  Future<void> onError(
-    DioException err,
-    ErrorInterceptorHandler handler,
-  ) async {
+  Future<void> onError(DioException err, ErrorInterceptorHandler handler) async {
     if (!config.isEnabled) {
       return handler.next(err);
     }
@@ -84,15 +76,10 @@ abstract class NetworkLoggerInterceptorBase extends Interceptor {
 
   @protected
   Future<NetworkLogEntry> createLogEntry(RequestOptions options) async {
-    final sanitizedHeaders = sanitizer.sanitizeHeaders(
-      Map<String, dynamic>.from(options.headers),
-    );
+    final sanitizedHeaders = sanitizer.sanitizeHeaders(Map<String, dynamic>.from(options.headers));
 
     final requestBody = config.logRequestBodies
-        ? sanitizer.sanitizeBody(
-            options.data?.toString(),
-            options.uri.toString(),
-          )
+        ? sanitizer.sanitizeBody(options.data?.toString(), options.uri.toString())
         : null;
 
     return NetworkLogEntry(
