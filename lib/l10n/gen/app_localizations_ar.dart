@@ -1571,4 +1571,122 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get disableUntil => 'متوقف حتى';
+
+  @override
+  String get registerAccount => 'إنشاء حساب جديد';
+
+  @override
+  String get dontHaveAccount => 'لا يوجد لك حساب ؟';
+
+  @override
+  String get emailaddress => 'البريد الالكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get confirmPassword => 'تاكيد كلمة المرور';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get forgotpassword => 'نسيت كلمة المرور ؟';
+
+  @override
+  String get wrongemailorpassword => 'خطا بالبريد الالكتروني او كلمة المرور';
+
+  @override
+  String get userblocked => 'حسابك محظور ولا يمكنك استخدام التطبيق';
+
+  @override
+  String get saveemailandpasswordfornextlogin =>
+      'حفظ البريد الإلكتروني وكلمة المرور لتسجيل الدخول التالي';
+
+  @override
+  String get fullNameProfile => 'الاسم الكامل';
+
+  @override
+  String get gender => 'الجنس';
+
+  @override
+  String get gendermale => 'ذكر';
+
+  @override
+  String get genderfemale => 'انثى';
+
+  @override
+  String get country => 'البلد';
+
+  @override
+  String get dateOfBirth => 'تاريخ الميلاد';
+
+  @override
+  String get profilePic => 'صورة الملف الشخصي';
+
+  @override
+  String get setprofilephoto => 'تحديد صورة شخصية';
+
+  @override
+  String get profilephotosetting => 'اعدادات الصورة الشخصية';
+
+  @override
+  String get changePassword => 'تغير كلمة المرور';
+
+  @override
+  String get oldPassword => 'كلمة المرور القديمة';
+
+  @override
+  String get newPassword => 'كلمة المرور الجديدة';
+
+  @override
+  String get validation_email => 'يرجى إدخال عنوان بريد إلكتروني صحيح';
+
+  @override
+  String get validation_passwordAndConfirm =>
+      'كلمة المرور والتأكيد غير متطابقين';
+
+  @override
+  String get validation_passwordLength =>
+      'يجب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل';
+
+  @override
+  String get edit_profile => 'تعديل الحساب';
+
+  @override
+  String get account_settings => 'اعدادات الحساب';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
+  String get delete_account => 'حذف الحساب بشكل كامل';
+
+  @override
+  String get sure => 'بالتأكيد';
+
+  @override
+  String get areyousuredeleteaccount => 'هل أنت متأكد أنك تريد حذف حسابك؟';
+
+  @override
+  String get accountInformationwillbedeleted =>
+      'سيتم حذف جميع معلومات الحساب، ولن تتمكن من تسجيل الدخول مرة أخرى';
+
+  @override
+  String get areYouSureLogout => 'هل أنت متأكد أنك تريد تسجيل الخروج؟';
+
+  @override
+  String get cantResetPassword =>
+      'لا يمكن إعادة تعيين كلمة المرور لهذا البريد الإلكتروني';
+
+  @override
+  String get done => 'اتمام';
+
+  @override
+  String get forgotPasswordSuccessTitle =>
+      'تم إرسال بريد إلكتروني يحتوي على تعليمات إعادة تعيين كلمة المرور إلى ';
+
+  @override
+  String get forgotPasswordSuccessDesc =>
+      'قد يستغرق الأمر بضع دقائق حتى يتم تسليم البريد الإلكتروني';
 }

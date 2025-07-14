@@ -3118,6 +3118,228 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'disabled until'**
   String get disableUntil;
+
+  /// No description provided for @registerAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Register now'**
+  String get registerAccount;
+
+  /// No description provided for @dontHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account yet?'**
+  String get dontHaveAccount;
+
+  /// No description provided for @emailaddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Address'**
+  String get emailaddress;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPassword;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @forgotpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password ?'**
+  String get forgotpassword;
+
+  /// No description provided for @wrongemailorpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong Email or Password'**
+  String get wrongemailorpassword;
+
+  /// No description provided for @userblocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account is Blocked and you can\'t use the application.'**
+  String get userblocked;
+
+  /// No description provided for @saveemailandpasswordfornextlogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Email and Password for next login'**
+  String get saveemailandpasswordfornextlogin;
+
+  /// No description provided for @fullNameProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullNameProfile;
+
+  /// No description provided for @gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
+
+  /// No description provided for @gendermale.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get gendermale;
+
+  /// No description provided for @genderfemale.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get genderfemale;
+
+  /// No description provided for @country.
+  ///
+  /// In en, this message translates to:
+  /// **'Country'**
+  String get country;
+
+  /// No description provided for @dateOfBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'Date Of Birth'**
+  String get dateOfBirth;
+
+  /// No description provided for @profilePic.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile Picture'**
+  String get profilePic;
+
+  /// No description provided for @setprofilephoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Profile Photo'**
+  String get setprofilephoto;
+
+  /// No description provided for @profilephotosetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile Photo Setting'**
+  String get profilephotosetting;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get changePassword;
+
+  /// No description provided for @oldPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Old Password'**
+  String get oldPassword;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get newPassword;
+
+  /// No description provided for @validation_email.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email address'**
+  String get validation_email;
+
+  /// No description provided for @validation_passwordAndConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Password and confirmation do not match'**
+  String get validation_passwordAndConfirm;
+
+  /// No description provided for @validation_passwordLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 8 characters long'**
+  String get validation_passwordLength;
+
+  /// No description provided for @edit_profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get edit_profile;
+
+  /// No description provided for @account_settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Settings'**
+  String get account_settings;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'SignOut'**
+  String get logout;
+
+  /// No description provided for @delete_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete the whole account'**
+  String get delete_account;
+
+  /// No description provided for @sure.
+  ///
+  /// In en, this message translates to:
+  /// **'Sure'**
+  String get sure;
+
+  /// No description provided for @areyousuredeleteaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to Delete your Account ?'**
+  String get areyousuredeleteaccount;
+
+  /// No description provided for @accountInformationwillbedeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'All Of The Account Informations Will Be Deleted, and you can\'t login again'**
+  String get accountInformationwillbedeleted;
+
+  /// No description provided for @areYouSureLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to Logout ?'**
+  String get areYouSureLogout;
+
+  /// No description provided for @cantResetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t reset the password for this email'**
+  String get cantResetPassword;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// No description provided for @forgotPasswordSuccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ve sent instructions to reset your password to '**
+  String get forgotPasswordSuccessTitle;
+
+  /// No description provided for @forgotPasswordSuccessDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Please wait a few minutes for it to appear in your inbox and make sure to check your spam folders too'**
+  String get forgotPasswordSuccessDesc;
 }
 
 class _IslamMobLocalizationsDelegate

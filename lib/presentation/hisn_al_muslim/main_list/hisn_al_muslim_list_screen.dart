@@ -6,7 +6,7 @@ import 'package:islam_app/presentation/hisn_al_muslim/main_list/bloc/hisn_al_mus
 import 'package:islam_app/presentation/hisn_al_muslim/main_list/widgets/hisn_all_items_list_view.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/main_list/widgets/hisn_favorite_items_list_view.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:islam_app/shared_widgets/custom_text_field.dart';
+import 'package:islam_app/shared_widgets/search_text_field.dart';
 
 /// Screen for browsing and managing Hisn Al-Muslim supplications list.
 ///
@@ -108,7 +108,7 @@ class _HisnAlMuslimListScreenState extends State<HisnAlMuslimListScreen> {
                       Image.asset("assets/images/hisnalmuslim.png"),
                       Builder(
                         builder: (context) {
-                          return CustomTextField(
+                          return SearchTextField(
                             controller: searchController,
                             hintText: IslamMobLocalizations.of(
                               context,

@@ -52,7 +52,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
       ),
       padding: const EdgeInsets.only(left: 6, right: 6),
       decoration: BoxDecoration(
-        color: const Color(0xFF0C111D),
+        color: const Color(0xff292929),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(

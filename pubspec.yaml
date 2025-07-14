@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.8.0+205
+version: 1.8.0+206
 
 environment:
   sdk: 3.8.1
@@ -42,7 +42,7 @@ dependencies:
   #   path: utilities/api_client
 
   http: 1.4.0
-  dio: 5.8.0+1 #//TODO
+  dio: 5.8.0+1 #//TODO:
   async: ^2.11.0
   get_it: 8.0.3
   loading_indicator: ^3.1.1
@@ -123,6 +123,7 @@ flutter:
   - assets/images/qibla/
   - assets/images/omrah/
   - assets/images/hajj/
+  - assets/images/bottom_bar/
   - assets/lottie/
   - assets/json/
   - assets/json/hajj_omrah/

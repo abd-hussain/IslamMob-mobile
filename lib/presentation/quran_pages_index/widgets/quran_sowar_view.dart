@@ -4,7 +4,7 @@ import 'package:islam_app/domain/usecase/quran_pages_index_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/quran_pages_index/bloc/quran_pages_index_bloc.dart';
 import 'package:islam_app/presentation/quran_pages_index/widgets/sub_widgets/sworah_tile_view.dart';
-import 'package:islam_app/shared_widgets/custom_text_field.dart';
+import 'package:islam_app/shared_widgets/search_text_field.dart';
 
 /// A widget that displays a searchable list of Quran Surahs (chapters) for navigation.
 ///
@@ -61,7 +61,7 @@ class QuranSowarView extends StatelessWidget {
               Image.asset("assets/images/hisnalmuslim.png"),
               Builder(
                 builder: (context) {
-                  return CustomTextField(
+                  return SearchTextField(
                     controller: searchController,
                     hintText: IslamMobLocalizations.of(context).searchField,
                     prefixIcon: Icons.search,

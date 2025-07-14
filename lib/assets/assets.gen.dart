@@ -75,6 +75,9 @@ class $AssetsImagesGen {
   AssetGenImage get background =>
       const AssetGenImage('assets/images/background.png');
 
+  /// Directory path: assets/images/bottom_bar
+  $AssetsImagesBottomBarGen get bottomBar => const $AssetsImagesBottomBarGen();
+
   /// File path: assets/images/calender.png
   AssetGenImage get calender =>
       const AssetGenImage('assets/images/calender.png');
@@ -203,6 +206,21 @@ class $AssetsLottieGen {
     animation1731435759765,
     animationLm3q2kl2,
   ];
+}
+
+class $AssetsImagesBottomBarGen {
+  const $AssetsImagesBottomBarGen();
+
+  /// File path: assets/images/bottom_bar/account.svg
+  SvgGenImage get account =>
+      const SvgGenImage('assets/images/bottom_bar/account.svg');
+
+  /// File path: assets/images/bottom_bar/home_icon.svg
+  SvgGenImage get homeIcon =>
+      const SvgGenImage('assets/images/bottom_bar/home_icon.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [account, homeIcon];
 }
 
 class $AssetsImagesDaysGen {
@@ -419,6 +437,10 @@ class $AssetsImagesToolbarGen {
   AssetGenImage get library =>
       const AssetGenImage('assets/images/toolbar/library.png');
 
+  /// File path: assets/images/toolbar/login.png
+  AssetGenImage get login =>
+      const AssetGenImage('assets/images/toolbar/login.png');
+
   /// File path: assets/images/toolbar/omra.png
   AssetGenImage get omra =>
       const AssetGenImage('assets/images/toolbar/omra.png');
@@ -463,6 +485,7 @@ class $AssetsImagesToolbarGen {
     hajj,
     hesenAlMuslim,
     library,
+    login,
     omra,
     qibla,
     quran,

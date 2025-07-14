@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_manager/model/firestore_options.dart';
+import 'package:firebase_manager/firebase_manager.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:logger_manager/logger_manager.dart';
 
@@ -17,6 +17,9 @@ class FirebaseFirestoreRepository {
     required String collectionName,
   }) async {
     if (await _isConnected()) {
+      if (!await FirebaseManagerBase.isFirebaseInitialized()) {
+        await FirebaseManagerBase.initialize();
+      }
       try {
         final collection = _firestoreInstance.collection(collectionName);
 
@@ -41,6 +44,9 @@ class FirebaseFirestoreRepository {
     FireStoreOptions<T> options,
   ) async {
     if (await _isConnected()) {
+      if (!await FirebaseManagerBase.isFirebaseInitialized()) {
+        await FirebaseManagerBase.initialize();
+      }
       try {
         final document = await _firestoreInstance
             .collection(options.collectionName!)
@@ -66,6 +72,101 @@ class FirebaseFirestoreRepository {
       LoggerManagerBase.logCritical(
         message: 'Error setting Firestore data',
         error: error,
+      );
+    }
+  }
+
+  /// Updates a single field in a Firestore document.
+  static Future<void> updateField({
+    required String collectionName,
+    required String docId,
+    required String field,
+    required dynamic value,
+  }) async {
+    if (await _isConnected()) {
+      if (!await FirebaseManagerBase.isFirebaseInitialized()) {
+        await FirebaseManagerBase.initialize();
+      }
+      try {
+        await _firestoreInstance.collection(collectionName).doc(docId).update({
+          field: value,
+        });
+        LoggerManagerBase.logInfo(
+          message: 'Field "$field" updated in document: $collectionName/$docId',
+        );
+      } on FirebaseException catch (error) {
+        LoggerManagerBase.logCritical(
+          error: error,
+          message: 'Failed to update field: $collectionName/$docId',
+        );
+      }
+    } else {
+      LoggerManagerBase.logWarning(
+        message: 'No internet connection. Update operation skipped.',
+      );
+    }
+  }
+
+  /// Gets a single field value from a Firestore document.
+  static Future<T?> getFieldValue<T>({
+    required String collectionName,
+    required String docId,
+    required String field,
+  }) async {
+    if (await _isConnected()) {
+      if (!await FirebaseManagerBase.isFirebaseInitialized()) {
+        await FirebaseManagerBase.initialize();
+      }
+      try {
+        final docSnapshot = await _firestoreInstance
+            .collection(collectionName)
+            .doc(docId)
+            .get();
+        if (docSnapshot.exists && docSnapshot.data()!.containsKey(field)) {
+          return docSnapshot.get(field) as T;
+        } else {
+          LoggerManagerBase.logWarning(
+            message:
+                'Field "$field" not found in document: $collectionName/$docId',
+          );
+        }
+      } on FirebaseException catch (error) {
+        LoggerManagerBase.logCritical(
+          error: error,
+          message: 'Failed to fetch field: $collectionName/$docId',
+        );
+      }
+    } else {
+      LoggerManagerBase.logWarning(
+        message: 'No internet connection. Get field operation skipped.',
+      );
+    }
+    return null;
+  }
+
+  /// Deletes a specific document from a Firestore collection.
+  static Future<void> deleteDocument({
+    required String collectionName,
+    required String docId,
+  }) async {
+    if (await _isConnected()) {
+      if (!await FirebaseManagerBase.isFirebaseInitialized()) {
+        await FirebaseManagerBase.initialize();
+      }
+      try {
+        await _firestoreInstance.collection(collectionName).doc(docId).delete();
+        LoggerManagerBase.logInfo(
+          message: 'Document deleted: $collectionName/$docId',
+        );
+      } on FirebaseException catch (error) {
+        LoggerManagerBase.logCritical(
+          error: error,
+          message: 'Failed to delete document: $collectionName/$docId',
+        );
+      }
+    } else {
+      LoggerManagerBase.logWarning(
+        message: 'No internet connection. Delete operation skipped.',
       );
     }
   }
