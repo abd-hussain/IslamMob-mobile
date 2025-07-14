@@ -12,7 +12,7 @@ command:
 
     environment:
       sdk: 3.8.1
-      flutter: 3.32.4
+      flutter: 3.32.6
 
     dependencies:
       get_it: 8.0.3
@@ -41,9 +41,9 @@ command:
       post: melos exec --flutter -c 1 -- dart format lib
 
 scripts:
-  # upgrade:
-  #   run: melos exec -c 1 -- flutter pub upgrade
-  #   description: Upgrade all dependencies.
+  upgrade:
+    run: melos exec -c 1 -- flutter pub upgrade
+    description: Upgrade all dependencies.
 
   analyze_changes:
     run: |
@@ -57,11 +57,14 @@ scripts:
   # update_goldens_dark:
   #   run: melos exec --dir-exists="test/goldens" -c 1 -- APP_LOCALE=ar APP_THEME=dark flutter test --update-goldens --tags golden
   #   description: Re-generate all golden test files for duplo package
-    # packageFilters:
-    #   scope:
-    #     - duplo
-    #     - login
-    #     - onboarding
+  #   packageFilters:
+  #     scope:
+  #       - duplo
+  #       - login
+  #       - onboarding
+  #       - hub
+  #       - payment
+  #       - e_trader
 
   # update_goldens_changes:
   #   run: |
@@ -76,6 +79,8 @@ scripts:
   #       - duplo
   #       - login
   #       - onboarding
+  #       - hub
+  #       - payments
   #   description: Update goldens for changed packages.
 
   fix_check:

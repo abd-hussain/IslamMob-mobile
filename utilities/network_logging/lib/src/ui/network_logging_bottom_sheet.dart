@@ -1,18 +1,20 @@
-// import 'dart:convert';
+import 'dart:convert';
 
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
+import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:network_logging/network_logging.dart';
+import 'package:network_logging/src/ui/duplo_overlay.dart';
+import 'package:network_logging/src/ui/logging_bottomsheet.dart';
 
-// /// Bottom sheet widget to display network request logs
-// /// Only available in development builds
+/// Bottom sheet widget to display network request logs
+/// Only available in development builds
 class NetworkLoggingBottomSheet extends StatefulWidget {
   const NetworkLoggingBottomSheet({super.key});
 
   @override
-  State<NetworkLoggingBottomSheet> createState() => _NetworkLoggingBottomSheetState();
+  State<NetworkLoggingBottomSheet> createState() =>
+      _NetworkLoggingBottomSheetState();
 }
 
 class _NetworkLoggingBottomSheetState extends State<NetworkLoggingBottomSheet> {
@@ -46,7 +48,10 @@ class _NetworkLoggingBottomSheetState extends State<NetworkLoggingBottomSheet> {
                       ? const SizedBox(
                           width: 16,
                           height: 16,
-                          child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Colors.white,
+                          ),
                         )
                       : const Icon(Icons.refresh, color: Colors.white),
                 ),
@@ -66,7 +71,11 @@ class _NetworkLoggingBottomSheetState extends State<NetworkLoggingBottomSheet> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.network_check, size: 48, color: Colors.amber),
+                        Icon(
+                          Icons.network_check,
+                          size: 48,
+                          color: Colors.amber,
+                        ),
                         SizedBox(height: 16),
                         Text('No network requests logged yet'),
                         SizedBox(height: 8),
@@ -111,11 +120,16 @@ class _NetworkLoggingBottomSheetState extends State<NetworkLoggingBottomSheet> {
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(color: _getMethodColor(log.method), borderRadius: BorderRadius.circular(4)),
+              decoration: BoxDecoration(
+                color: _getMethodColor(log.method),
+                borderRadius: BorderRadius.circular(4),
+              ),
               child: Text(log.method),
             ),
             const SizedBox(width: 8),
-            Expanded(child: Text(path, maxLines: 1, overflow: TextOverflow.ellipsis)),
+            Expanded(
+              child: Text(path, maxLines: 1, overflow: TextOverflow.ellipsis),
+            ),
           ],
         ),
         subtitle: Column(
@@ -133,7 +147,11 @@ class _NetworkLoggingBottomSheetState extends State<NetworkLoggingBottomSheet> {
             ),
             if (log.errorMessage != null) ...[
               const SizedBox(height: 4),
-              Text(log.errorMessage!, maxLines: 2, overflow: TextOverflow.ellipsis),
+              Text(
+                log.errorMessage!,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
             ],
           ],
         ),
@@ -180,203 +198,218 @@ class _NetworkLoggingBottomSheetState extends State<NetworkLoggingBottomSheet> {
   }
 
   void _showLogDetails(NetworkLogEntry log) {
-    //     DuploSheet.showModalSheetV2<void>(
-    //       context,
-    //       appBar: DuploAppBar(
-    //         title: 'Request Details',
-    //         automaticallyImplyLeading: false,
-    //         actions: [
-    //           IconButton(
-    //             icon: Icon(Icons.close, color: theme.foreground.fgPrimary),
-    //             onPressed: () => Navigator.pop(context),
-    //           ),
-    //         ],
-    //       ),
-    //       content: SingleChildScrollView(
-    //         padding: const EdgeInsets.all(16),
-    //         child: Column(
-    //           crossAxisAlignment: CrossAxisAlignment.start,
-    //           children: [
-    //             _buildDetailSection('URL', log.url, theme, textStyles),
-    //             _buildDetailSection('Method', log.method, theme, textStyles),
-    //             _buildDetailSection('Status', '${log.statusCode ?? 'Pending'}', theme, textStyles),
-    //             _buildDetailSection('Duration', '${log.duration ?? 0}ms', theme, textStyles),
-    //             _buildDetailSection('Request Time', _formatDateTime(log.requestTimestamp), theme, textStyles),
-    //             if (log.responseTimestamp != null)
-    //               _buildDetailSection('Response Time', _formatDateTime(log.responseTimestamp!), theme, textStyles),
-    //             if (log.errorMessage != null) _buildDetailSection('Error', log.errorMessage!, theme, textStyles),
-    //             if (log.requestHeaders.isNotEmpty)
-    //               _buildDetailSection('Request Headers', log.requestHeaders.toString(), theme, textStyles),
-    //             if (log.responseHeaders != null && log.responseHeaders!.isNotEmpty)
-    //               _buildDetailSection('Response Headers', log.responseHeaders?.toString() ?? '', theme, textStyles),
-    //             if (log.requestBody != null) _buildDetailSection('Request Body', log.requestBody!, theme, textStyles),
-    //             if (log.responseBody != null) _buildDetailSection('Response Body', log.responseBody!, theme, textStyles),
-    //             _buildCurlSection(log, theme, textStyles),
-    //           ],
-    //         ),
-    //       ),
-    //     );
+    LoggingBottomsheet.showModalSheetV2<void>(
+      context,
+      appBar: AppBar(
+        title: const Text("Request Details"),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.close, color: Colors.white),
+            onPressed: () => Navigator.pop(context),
+          ),
+        ],
+      ),
+      content: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildDetailSection('URL', log.url),
+            _buildDetailSection('Method', log.method),
+            _buildDetailSection('Status', '${log.statusCode ?? 'Pending'}'),
+            _buildDetailSection('Duration', '${log.duration ?? 0}ms'),
+            _buildDetailSection(
+              'Request Time',
+              _formatDateTime(log.requestTimestamp),
+            ),
+            if (log.responseTimestamp != null)
+              _buildDetailSection(
+                'Response Time',
+                _formatDateTime(log.responseTimestamp!),
+              ),
+            if (log.errorMessage != null)
+              _buildDetailSection('Error', log.errorMessage!),
+            if (log.requestHeaders.isNotEmpty)
+              _buildDetailSection(
+                'Request Headers',
+                log.requestHeaders.toString(),
+              ),
+            if (log.responseHeaders != null && log.responseHeaders!.isNotEmpty)
+              _buildDetailSection(
+                'Response Headers',
+                log.responseHeaders?.toString() ?? '',
+              ),
+            if (log.requestBody != null)
+              _buildDetailSection('Request Body', log.requestBody!),
+            if (log.responseBody != null)
+              _buildDetailSection('Response Body', log.responseBody!),
+            _buildCurlSection(log),
+          ],
+        ),
+      ),
+    );
   }
 
-  //   Widget _buildDetailSection(String label, String value, DuploThemeData theme, TextStyles textStyles) {
-  //     final bool showCopyButton = label == 'Request Body' || label == 'Response Body';
+  Widget _buildDetailSection(String label, String value) {
+    final bool showCopyButton =
+        label == 'Request Body' || label == 'Response Body';
 
-  //     return Padding(
-  //       padding: const EdgeInsets.only(bottom: 16),
-  //       child: Column(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         children: [
-  //           Row(
-  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //             children: [
-  //               DuploText(
-  //                 text: label,
-  //                 style: textStyles.textSm,
-  //                 fontWeight: DuploFontWeight.semiBold,
-  //                 color: theme.text.textPrimary,
-  //               ),
-  //               if (showCopyButton)
-  //                 Builder(
-  //                   builder: (ctx) => IconButton(
-  //                     onPressed: () => _copyToClipboard(ctx, value),
-  //                     icon: Icon(Icons.copy, size: 18, color: theme.foreground.fgSecondary),
-  //                     tooltip: 'Copy',
-  //                     padding: EdgeInsets.zero,
-  //                     constraints: const BoxConstraints(minWidth: 24, minHeight: 24),
-  //                   ),
-  //                 ),
-  //             ],
-  //           ),
-  //           const SizedBox(height: 4),
-  //           Container(
-  //             width: double.infinity,
-  //             padding: const EdgeInsets.all(12),
-  //             decoration: BoxDecoration(
-  //               color: theme.background.bgTertiary,
-  //               borderRadius: BorderRadius.circular(6),
-  //               border: Border.all(color: theme.border.borderSecondary),
-  //             ),
-  //             child: Text(
-  //               value,
-  //               style: TextStyle(
-  //                 fontSize: textStyles.textXs.fontSize,
-  //                 fontFamily: 'monospace',
-  //                 color: theme.text.textSecondary,
-  //                 height: textStyles.textXs.lineHeight,
-  //               ),
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //     );
-  //   }
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(label),
+              if (showCopyButton)
+                Builder(
+                  builder: (ctx) => IconButton(
+                    onPressed: () => _copyToClipboard(ctx, value),
+                    icon: const Icon(
+                      Icons.copy,
+                      size: 18,
+                      color: Colors.white24,
+                    ),
+                    tooltip: 'Copy',
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints(
+                      minWidth: 24,
+                      minHeight: 24,
+                    ),
+                  ),
+                ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.blueGrey,
+              borderRadius: BorderRadius.circular(6),
+              border: Border.all(color: const Color(0xff444444)),
+            ),
+            child: Text(
+              value,
+              style: const TextStyle(fontSize: 16, color: Colors.greenAccent),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
-  //   Widget _buildCurlSection(NetworkLogEntry log, DuploThemeData theme, TextStyles textStyles) {
-  //     final curlCommand = _generateCurlCommand(log);
+  Widget _buildCurlSection(NetworkLogEntry log) {
+    final curlCommand = _generateCurlCommand(log);
 
-  //     return Padding(
-  //       padding: const EdgeInsets.only(bottom: 16),
-  //       child: Column(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         children: [
-  //           Row(
-  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //             children: [
-  //               DuploText(
-  //                 text: 'cURL Command',
-  //                 style: textStyles.textSm,
-  //                 fontWeight: DuploFontWeight.semiBold,
-  //                 color: theme.text.textPrimary,
-  //               ),
-  //               Builder(
-  //                 builder: (ctx) => IconButton(
-  //                   onPressed: () => _copyToClipboard(ctx, curlCommand),
-  //                   icon: Icon(Icons.copy, size: 18, color: theme.foreground.fgSecondary),
-  //                   tooltip: 'Copy cURL',
-  //                   padding: EdgeInsets.zero,
-  //                   constraints: const BoxConstraints(minWidth: 24, minHeight: 24),
-  //                 ),
-  //               ),
-  //             ],
-  //           ),
-  //           const SizedBox(height: 4),
-  //           Container(
-  //             width: double.infinity,
-  //             padding: const EdgeInsets.all(12),
-  //             decoration: BoxDecoration(
-  //               color: theme.background.bgTertiary,
-  //               borderRadius: BorderRadius.circular(6),
-  //               border: Border.all(color: theme.border.borderSecondary),
-  //             ),
-  //             child: Text(
-  //               curlCommand,
-  //               style: TextStyle(
-  //                 fontSize: textStyles.textXs.fontSize,
-  //                 fontFamily: 'monospace',
-  //                 color: theme.text.textSecondary,
-  //                 height: textStyles.textXs.lineHeight,
-  //               ),
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //     );
-  //   }
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text('cURL Command'),
+              Builder(
+                builder: (ctx) => IconButton(
+                  onPressed: () => _copyToClipboard(ctx, curlCommand),
+                  icon: const Icon(Icons.copy, size: 18, color: Colors.white10),
+                  tooltip: 'Copy cURL',
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(
+                    minWidth: 24,
+                    minHeight: 24,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.blueGrey,
+              borderRadius: BorderRadius.circular(6),
+              border: Border.all(color: Colors.blueGrey),
+            ),
+            child: Text(
+              curlCommand,
+              style: const TextStyle(
+                fontSize: 12,
+                fontFamily: 'monospace',
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
-  //   String _formatDateTime(DateTime dateTime) {
-  //     return '${dateTime.year}-${dateTime.month.toString().padLeft(2, '0')}-${dateTime.day.toString().padLeft(2, '0')} '
-  //         '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}:${dateTime.second.toString().padLeft(2, '0')}';
-  //   }
+  String _formatDateTime(DateTime dateTime) {
+    return '${dateTime.year}-${dateTime.month.toString().padLeft(2, '0')}-${dateTime.day.toString().padLeft(2, '0')} '
+        '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}:${dateTime.second.toString().padLeft(2, '0')}';
+  }
 
-  //   String _generateCurlCommand(NetworkLogEntry log) {
-  //     try {
-  //       List<String> components = ['curl -i'];
+  String _generateCurlCommand(NetworkLogEntry log) {
+    try {
+      final List<String> components = ['curl -i'];
 
-  //       // Add method if not GET
-  //       if (log.method.toUpperCase() != 'GET') {
-  //         components.add('-X ${log.method}');
-  //       }
+      // Add method if not GET
+      if (log.method.toUpperCase() != 'GET') {
+        components.add('-X ${log.method}');
+      }
 
-  //       // Add headers (excluding Cookie for security)
-  //       log.requestHeaders.forEach((k, v) {
-  //         if (k != 'Cookie') {
-  //           components.add('-H "$k: $v"');
-  //         }
-  //       });
+      // Add headers (excluding Cookie for security)
+      log.requestHeaders.forEach((k, v) {
+        if (k != 'Cookie') {
+          components.add('-H "$k: $v"');
+        }
+      });
 
-  //       // Add request body if present
-  //       if (log.requestBody != null && log.requestBody!.isNotEmpty) {
-  //         try {
-  //           // Try to parse as JSON to validate and escape properly
-  //           final parsedData = json.decode(log.requestBody!);
-  //           final data = json.encode(parsedData).replaceAll('"', '\\"');
-  //           components.add('-d "$data"');
-  //         } catch (e) {
-  //           // If not valid JSON, treat as raw string and escape quotes
-  //           final data = log.requestBody!.replaceAll('"', '\\"');
-  //           components.add('-d "$data"');
-  //         }
-  //       }
+      // Add request body if present
+      if (log.requestBody != null && log.requestBody!.isNotEmpty) {
+        try {
+          // Try to parse as JSON to validate and escape properly
+          final parsedData = json.decode(log.requestBody!);
+          final data = json.encode(parsedData).replaceAll('"', '\\"');
+          components.add('-d "$data"');
+        } catch (e) {
+          // If not valid JSON, treat as raw string and escape quotes
+          final data = log.requestBody!.replaceAll('"', '\\"');
+          components.add('-d "$data"');
+        }
+      }
 
-  //       // Add URL
-  //       components.add('"${log.url}"');
+      // Add URL
+      components.add('"${log.url}"');
 
-  //       return components.join(' \\\n\t');
-  //     } catch (e) {
-  //       return 'Error generating cURL command: $e';
-  //     }
-  //   }
+      return components.join(' \\\n\t');
+    } catch (e) {
+      return 'Error generating cURL command: $e';
+    }
+  }
 
-  //   void _copyToClipboard(BuildContext ctx, String content) {
-  //     // Copy content as-is without any formatting to avoid FormatExceptions
-  //     Clipboard.setData(ClipboardData(text: content));
+  void _copyToClipboard(BuildContext ctx, String content) {
+    // Copy content as-is without any formatting to avoid FormatExceptions
+    Clipboard.setData(ClipboardData(text: content));
 
-  //     // Calculate position of copy button for overlay
-  //     final box = ctx.findRenderObject() as RenderBox?;
-  //     final position = box?.localToGlobal(Offset.zero);
+    // Calculate position of copy button for overlay
+    final box = ctx.findRenderObject() as RenderBox?;
+    final position = box?.localToGlobal(Offset.zero);
 
-  //     DuploOverlay.show(ctx, 'Copied', position: position, offset: const Offset(-24, -42));
-  //   }
+    DuploOverlay.show(
+      ctx,
+      'Copied',
+      position: position,
+      offset: const Offset(-24, -42),
+    );
+  }
 
   Future<void> _refreshLogs() async {
     if (_isLoading) return;
@@ -418,24 +451,24 @@ class _NetworkLoggingBottomSheetState extends State<NetworkLoggingBottomSheet> {
   }
 }
 
-  // /// Static method to show the network logging bottom sheet
-  // class NetworkLoggingSheet {
-  //   static void show(BuildContext context) {
-  //     DuploSheet.showModalSheetV2<void>(
-  //       context,
-  //       appBar: DuploAppBar(
-  //         title: 'Network Logs',
-  //         automaticallyImplyLeading: false,
-  //         actions: [
-  //           Builder(
-  //             builder: (builderContext) => IconButton(
-  //               icon: Icon(Icons.close, color: builderContext.duploTheme.foreground.fgPrimary),
-  //               onPressed: () => Navigator.pop(context),
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //       content: const NetworkLoggingBottomSheet(),
-  //     );
-  //   }
-
+/// Static method to show the network logging bottom sheet
+class NetworkLoggingSheet {
+  static void show(BuildContext context) {
+    LoggingBottomsheet.showModalSheetV2<void>(
+      context,
+      appBar: AppBar(
+        title: const Text('Network Logs'),
+        automaticallyImplyLeading: false,
+        actions: [
+          Builder(
+            builder: (builderContext) => IconButton(
+              icon: const Icon(Icons.close, color: Colors.white),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
+        ],
+      ),
+      content: const NetworkLoggingBottomSheet(),
+    );
+  }
+}
