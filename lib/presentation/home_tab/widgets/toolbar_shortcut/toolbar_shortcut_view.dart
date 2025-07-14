@@ -1,4 +1,5 @@
 import 'package:azkar/model/azkar_salah_time.dart';
+import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,6 +40,13 @@ class ToolbarShortcutView extends StatelessWidget {
   Widget build(BuildContext context) {
     final localize = IslamMobLocalizations.of(context);
     final navigator = Navigator.of(context, rootNavigator: true);
+    final bool isUserLoggedIn =
+        DataBaseManagerBase.getFromDatabase(
+          key: DatabaseUserCredentials.isUserLoggedIn,
+          defaultValue: "",
+        ) !=
+        "";
+
     return Container(
       decoration: _containerDecoration(),
       child: Padding(
@@ -187,78 +195,90 @@ class ToolbarShortcutView extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Expanded(
+                  child: ToolbarCell(
+                    title: isUserLoggedIn
+                        ? localize.edit_profile
+                        : localize.login,
+                    imagePath: "assets/images/toolbar/login.png",
+                    onTap: () async {
+                      if (isUserLoggedIn) {
+                        await FirebaseAnalyticsRepository.logEvent(
+                          name: "EditProfileScreenFromHomeScreen",
+                        );
+                        await navigator.pushNamed(
+                          RoutesConstants.editProfileScreen,
+                        );
+                      } else {
+                        await FirebaseAnalyticsRepository.logEvent(
+                          name: "LoginScreenFromHomeScreen",
+                        );
+                        await navigator.pushNamed(RoutesConstants.loginScreen);
+                      }
+                    },
+                  ),
+                ),
+                //     Expanded(
+                //       child: ToolbarCell(
+                //         title: "tracker",
+                //         imagePath: "assets/images/toolbar/tracker.png",
+                //         onTap: () async {
+                //           // await FirebaseAnalyticsRepository.logEvent(
+                //           //     name: "QiblaFinderScreenFromHomeToolBar");
+                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //         },
+                //       ),
+                //     ),
+                // Expanded(
+                //   child: ToolbarCell(
+                //     title: "Doaa",
+                //     imagePath: "assets/images/toolbar/doaa.png",
+                //     onTap: () async {
+                //       // await FirebaseAnalyticsRepository.logEvent(
+                //       //     name: "QiblaFinderScreenFromHomeToolBar");
+                //       // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //     },
+                //   ),
+                // ),
+                //     Expanded(
+                //       child: ToolbarCell(
+                //         title: "hadeeth",
+                //         imagePath: "assets/images/toolbar/hadeeth.png",
+                //         onTap: () async {
+                //           // await FirebaseAnalyticsRepository.logEvent(
+                //           //     name: "QiblaFinderScreenFromHomeToolBar");
+                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //         },
+                //       ),
+                //     ),
+                //     Expanded(
+                //       child: ToolbarCell(
+                //         title: "seyam",
+                //         imagePath: "assets/images/toolbar/seyam.png",
+                //         onTap: () async {
+                //           // await FirebaseAnalyticsRepository.logEvent(
+                //           //     name: "QiblaFinderScreenFromHomeToolBar");
+                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //         },
+                //       ),
+                //     ),
 
-            // Row(
-            //   children: [
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "Qibla",
-            //         imagePath: "assets/images/toolbar/qibla.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "tracker",
-            //         imagePath: "assets/images/toolbar/tracker.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            // Expanded(
-            //   child: ToolbarCell(
-            //     title: "Doaa",
-            //     imagePath: "assets/images/toolbar/doaa.png",
-            //     onTap: () async {
-            //       // await FirebaseAnalyticsRepository.logEvent(
-            //       //     name: "QiblaFinderScreenFromHomeToolBar");
-            //       // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //     },
-            //   ),
-            // ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "hadeeth",
-            //         imagePath: "assets/images/toolbar/hadeeth.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "seyam",
-            //         imagePath: "assets/images/toolbar/seyam.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-
-            //     Expanded(
-            //       child: ToolbarCell(
-            //         title: "library",
-            //         imagePath: "assets/images/toolbar/library.png",
-            //         onTap: () async {
-            //           // await FirebaseAnalyticsRepository.logEvent(
-            //           //     name: "QiblaFinderScreenFromHomeToolBar");
-            //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-            //         },
-            //       ),
-            //     ),
-            //   ],
-            // ),
+                //     Expanded(
+                //       child: ToolbarCell(
+                //         title: "library",
+                //         imagePath: "assets/images/toolbar/library.png",
+                //         onTap: () async {
+                //           // await FirebaseAnalyticsRepository.logEvent(
+                //           //     name: "QiblaFinderScreenFromHomeToolBar");
+                //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+                //         },
+                //       ),
+                //     ),
+              ],
+            ),
           ],
         ),
       ),

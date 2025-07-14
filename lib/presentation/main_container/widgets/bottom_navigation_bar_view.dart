@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/presentation/main_container/widgets/new/bottom_nav_bar/dublo_bottom_navbar_items.dart';
@@ -26,8 +27,20 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
           navItems: [
             DubloBottomNavBarItems(
               title: localization.home,
-              selectedIcon: const Icon(Icons.home, color: Colors.white),
-              unselectedIcon: const Icon(Icons.home, color: Color(0xff98A2B3)),
+              selectedIcon: SvgPicture.asset(
+                "assets/images/bottom_bar/home_icon.svg",
+                colorFilter: const ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
+              ),
+              unselectedIcon: SvgPicture.asset(
+                "assets/images/bottom_bar/home_icon.svg",
+                colorFilter: const ColorFilter.mode(
+                  Color(0xff98A2B3),
+                  BlendMode.srcIn,
+                ),
+              ),
             ),
             DubloBottomNavBarItems(
               title: localization.qurankareem,
@@ -42,10 +55,19 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
             ),
             DubloBottomNavBarItems(
               title: localization.settings,
-              selectedIcon: const Icon(Icons.settings, color: Colors.white),
-              unselectedIcon: const Icon(
-                Icons.settings,
-                color: Color(0xff98A2B3),
+              selectedIcon: SvgPicture.asset(
+                "assets/images/bottom_bar/account.svg",
+                colorFilter: const ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
+              ),
+              unselectedIcon: SvgPicture.asset(
+                "assets/images/bottom_bar/account.svg",
+                colorFilter: const ColorFilter.mode(
+                  Color(0xff98A2B3),
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ],

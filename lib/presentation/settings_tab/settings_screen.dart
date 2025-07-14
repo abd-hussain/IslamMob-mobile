@@ -1,4 +1,5 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
+import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,10 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/collection_list_option.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/footer.dart';
-import 'package:islam_app/presentation/settings_tab/widgets/profile_header.dart';
+import 'package:islam_app/presentation/settings_tab/widgets/login_header.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
+import 'package:islam_app/presentation/settings_tab/widgets/welcoming_header.dart';
+import 'package:islam_app/shared_widgets/bottomsheet/are_you_sure_bottomsheet.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 import 'package:rate_my_app/rate_my_app.dart';
@@ -38,10 +41,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     final navigator = Navigator.of(context, rootNavigator: true);
     final localize = IslamMobLocalizations.of(context);
+    final bool isUserLoggedIn =
+        DataBaseManagerBase.getFromDatabase(
+          key: DatabaseUserCredentials.isUserLoggedIn,
+          defaultValue: "",
+        ) !=
+        "";
 
     return Column(
       children: [
-        const ProfileHeader(),
+        const WelcomingHeader(),
+        const SizedBox(height: 4),
+        if (isUserLoggedIn)
+          const SizedBox()
+        else
+          LoginHeader(
+            onPress: () async {
+              await FirebaseAnalyticsRepository.logEvent(
+                name: "LoginScreenFromSettingsScreen",
+              );
+              await navigator.pushNamed(RoutesConstants.loginScreen);
+            },
+          ),
         Expanded(
           child: ListView(
             children: [
@@ -81,6 +102,130 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ],
               ),
+              if (isUserLoggedIn)
+                TitleView(title: localize.account_settings)
+              else
+                const SizedBox(),
+              if (isUserLoggedIn)
+                CollectionListOptionView(
+                  listOfOptions: [
+                    ProfileOptions(
+                      icon: Icons.account_box,
+                      name: localize.edit_profile,
+                      onTap: () async => navigator.pushNamed(
+                        RoutesConstants.editProfileScreen,
+                      ),
+                    ),
+                    ProfileOptions(
+                      icon: Icons.password,
+                      name: localize.changePassword,
+                      onTap: () async => navigator.pushNamed(
+                        RoutesConstants.changePasswordScreen,
+                      ),
+                    ),
+                    ProfileOptions(
+                      icon: Icons.logout_outlined,
+                      name: localize.logout,
+                      onTap: () {
+                        AreYouSureBottomsheet().buttomSheet(
+                          context: context,
+                          message: localize.areYouSureLogout,
+                          sure: () async {
+                            await FirebaseAuthRepository.signOut().then((
+                              value,
+                            ) async {
+                              if (!value) {
+                                return;
+                              }
+
+                              final mapToSave = {
+                                DatabaseUserCredentials.isUserLoggedIn: "",
+                                DatabaseUserCredentials.userEmail: "",
+                                DatabaseUserCredentials.userPassword: "",
+                                DatabaseUserCredentials.accessToken: "",
+                              };
+                              await DataBaseManagerBase.saveMultipleInDatabase(
+                                data: mapToSave,
+                              );
+                              if (context.mounted) {
+                                await Navigator.of(
+                                  context,
+                                  rootNavigator: true,
+                                ).pushNamedAndRemoveUntil(
+                                  RoutesConstants.mainContainer,
+                                  (Route<dynamic> route) => false,
+                                );
+                              }
+                            });
+                          },
+                        );
+                      },
+                    ),
+                    ProfileOptions(
+                      icon: Icons.delete_forever,
+                      name: localize.delete_account,
+                      onTap: () {
+                        AreYouSureBottomsheet().buttomSheet(
+                          context: context,
+                          message: localize.areyousuredeleteaccount,
+                          sure: () {
+                            AreYouSureBottomsheet().buttomSheet(
+                              context: context,
+                              message: localize.accountInformationwillbedeleted,
+                              sure: () async {
+                                final String email =
+                                    DataBaseManagerBase.getFromDatabase(
+                                          key:
+                                              DatabaseUserCredentials.userEmail,
+                                          defaultValue: "",
+                                        )
+                                        as String;
+
+                                final String password =
+                                    DataBaseManagerBase.getFromDatabase(
+                                          key: DatabaseUserCredentials
+                                              .userPassword,
+                                          defaultValue: "",
+                                        )
+                                        as String;
+
+                                await FirebaseAuthRepository.deleteAccount(
+                                  email: email,
+                                  password: password,
+                                ).then((value) async {
+                                  if (!value) {
+                                    return;
+                                  }
+
+                                  final mapToSave = {
+                                    DatabaseUserCredentials.isUserLoggedIn: "",
+                                    DatabaseUserCredentials.userEmail: "",
+                                    DatabaseUserCredentials.userPassword: "",
+                                    DatabaseUserCredentials.accessToken: "",
+                                  };
+                                  await DataBaseManagerBase.saveMultipleInDatabase(
+                                    data: mapToSave,
+                                  );
+                                  if (context.mounted) {
+                                    await Navigator.of(
+                                      context,
+                                      rootNavigator: true,
+                                    ).pushNamedAndRemoveUntil(
+                                      RoutesConstants.mainContainer,
+                                      (Route<dynamic> route) => false,
+                                    );
+                                  }
+                                });
+                              },
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                )
+              else
+                const SizedBox(),
               TitleView(title: localize.reachouttous),
               CollectionListOptionView(
                 listOfOptions: [

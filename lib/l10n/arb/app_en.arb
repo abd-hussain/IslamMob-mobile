@@ -501,7 +501,48 @@
     "unknown" : "Unknown",
     "chooseSoundDesc" : "Please note that the notification sound may not play in full when the app is open",
     "internetConnectionDisableCanGiveWrongTimes" : "If offline, time will be based on the last saved location. Ensure you're connected for accurate times",
-    "disableUntil" : "disabled until"
+    "disableUntil" : "disabled until",
+    "registerAccount": "Register now",
+    "dontHaveAccount": "Don't have an account yet?",
+    "emailaddress": "Email Address",
+    "password": "Password",
+    "confirmPassword" : "Confirm Password",
+    "login": "Login",
+    "forgotpassword" : "Forgot Password ?",
+    "wrongemailorpassword" : "Wrong Email or Password",
+    "userblocked" : "Your account is Blocked and you can't use the application.",
+    "saveemailandpasswordfornextlogin" : "Save Email and Password for next login",
+    "fullNameProfile" : "Full Name",
+    "gender" : "Gender",
+    "gendermale" : "Male",
+    "genderfemale" : "Female",
+    "country" : "Country",
+    "dateOfBirth" : "Date Of Birth",
+    "profilePic" : "Profile Picture",
+    "setprofilephoto" : "Set Profile Photo",
+    "profilephotosetting" : "Profile Photo Setting",
+    "changePassword" : "Change Password",
+    "oldPassword" : "Old Password",
+    "newPassword" : "New Password",
+    "validation_email" : "Please enter a valid email address",
+    "validation_passwordAndConfirm" : "Password and confirmation do not match",
+    "validation_passwordLength" : "Password must be at least 8 characters long",
+    "edit_profile" : "Edit Profile",
+    "account_settings" : "Account Settings",
+    "logout" : "SignOut",
+    "delete_account" : "Delete the whole account",
+    "sure" : "Sure",
+    "areyousuredeleteaccount" : "Are you sure you want to Delete your Account ?",
+    "accountInformationwillbedeleted" : "All Of The Account Informations Will Be Deleted, and you can't login again",
+    "areYouSureLogout" : "Are you sure you want to Logout ?",
+    "cantResetPassword" : "Can't reset the password for this email",
+    "done" : "Done",
+    "forgotPasswordSuccessTitle" : "We've sent instructions to reset your password to ",
+    "forgotPasswordSuccessDesc" : "Please wait a few minutes for it to appear in your inbox and make sure to check your spam folders too"
+
+
+
+
 
 
 }

@@ -56,6 +56,7 @@ The languages used by Muslims are influenced by regional demographics, and while
 
 
 ## //TODO features:
+- [ ] LogIn/Signup with Google/Apple/Twitter/Facebook
 - [ ] Support new languages
 - [ ] Qibla Finder
 - [ ] Place For Donate
@@ -83,6 +84,7 @@ The languages used by Muslims are influenced by regional demographics, and while
 - [ ] adhan sounds is too big make some of them downloadable
 - //TODO: [ ] Download PDF should happen in background thread will the user navigating inside
 //TODO: show widget out side the app for next prayer time
+//TODO: check iPad
 ## TODO Technical:
 - [ ] add golden widget test
 - [ ] check and change location on each lunch for the application

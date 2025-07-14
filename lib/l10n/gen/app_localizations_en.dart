@@ -1582,4 +1582,123 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get disableUntil => 'disabled until';
+
+  @override
+  String get registerAccount => 'Register now';
+
+  @override
+  String get dontHaveAccount => 'Don\'t have an account yet?';
+
+  @override
+  String get emailaddress => 'Email Address';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get forgotpassword => 'Forgot Password ?';
+
+  @override
+  String get wrongemailorpassword => 'Wrong Email or Password';
+
+  @override
+  String get userblocked =>
+      'Your account is Blocked and you can\'t use the application.';
+
+  @override
+  String get saveemailandpasswordfornextlogin =>
+      'Save Email and Password for next login';
+
+  @override
+  String get fullNameProfile => 'Full Name';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get gendermale => 'Male';
+
+  @override
+  String get genderfemale => 'Female';
+
+  @override
+  String get country => 'Country';
+
+  @override
+  String get dateOfBirth => 'Date Of Birth';
+
+  @override
+  String get profilePic => 'Profile Picture';
+
+  @override
+  String get setprofilephoto => 'Set Profile Photo';
+
+  @override
+  String get profilephotosetting => 'Profile Photo Setting';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get oldPassword => 'Old Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get validation_email => 'Please enter a valid email address';
+
+  @override
+  String get validation_passwordAndConfirm =>
+      'Password and confirmation do not match';
+
+  @override
+  String get validation_passwordLength =>
+      'Password must be at least 8 characters long';
+
+  @override
+  String get edit_profile => 'Edit Profile';
+
+  @override
+  String get account_settings => 'Account Settings';
+
+  @override
+  String get logout => 'SignOut';
+
+  @override
+  String get delete_account => 'Delete the whole account';
+
+  @override
+  String get sure => 'Sure';
+
+  @override
+  String get areyousuredeleteaccount =>
+      'Are you sure you want to Delete your Account ?';
+
+  @override
+  String get accountInformationwillbedeleted =>
+      'All Of The Account Informations Will Be Deleted, and you can\'t login again';
+
+  @override
+  String get areYouSureLogout => 'Are you sure you want to Logout ?';
+
+  @override
+  String get cantResetPassword => 'Can\'t reset the password for this email';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get forgotPasswordSuccessTitle =>
+      'We\'ve sent instructions to reset your password to ';
+
+  @override
+  String get forgotPasswordSuccessDesc =>
+      'Please wait a few minutes for it to appear in your inbox and make sure to check your spam folders too';
 }

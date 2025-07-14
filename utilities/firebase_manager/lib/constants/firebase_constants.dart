@@ -21,4 +21,6 @@ class FirebaseCollectionConstants {
   /// This collection contains user contact details and related
   /// contact management data.
   static const user_contacts = 'user_contacts';
+
+  static const registered_users = 'registered_users';
 }

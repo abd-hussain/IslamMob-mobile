@@ -9,12 +9,12 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 /// This widget displays a welcome message with a time-based icon that changes
 /// based on the current time of day (e.g., sun for day, moon for night).
 /// It provides a personalized greeting to the user at the top of the profile screen.
-class ProfileHeader extends StatelessWidget {
-  /// Creates a [ProfileHeader] widget.
+class WelcomingHeader extends StatelessWidget {
+  /// Creates a [WelcomingHeader] widget.
   ///
   /// This widget requires no parameters and automatically displays
   /// the appropriate time-based icon and localized welcome message.
-  const ProfileHeader({super.key});
+  const WelcomingHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
