@@ -14,8 +14,8 @@ class CustomTextField extends StatelessWidget {
     this.suffixWidget,
     this.keyboardType,
     this.inputFormatters,
-    this.onChange,
-    this.onEditingComplete,
+    required this.onChange,
+    required this.onEditingComplete,
     this.padding = const EdgeInsets.only(left: 16, right: 16),
     this.textAlign = TextAlign.start,
     super.key,
@@ -32,8 +32,8 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextAlign textAlign;
   final List<TextInputFormatter>? inputFormatters;
-  final Function(String text)? onChange;
-  final Function()? onEditingComplete;
+  final Function(String text) onChange;
+  final Function() onEditingComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -74,18 +74,8 @@ class CustomTextField extends StatelessWidget {
           ),
           filled: true,
         ),
-        onChanged: (text) {
-          if (onChange != null) {
-            // ignore: prefer_null_aware_method_calls
-            onChange!(text);
-          }
-        },
-        onEditingComplete: () {
-          if (onEditingComplete != null) {
-            // ignore: prefer_null_aware_method_calls
-            onEditingComplete!();
-          }
-        },
+        onChanged: onChange,
+        onEditingComplete: onEditingComplete,
       ),
     );
   }

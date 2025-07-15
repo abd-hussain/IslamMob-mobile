@@ -24,6 +24,7 @@ class GenderField extends StatelessWidget {
           hintText: IslamMobLocalizations.of(context).gender,
           keyboardType: TextInputType.text,
           inputFormatters: [LengthLimitingTextInputFormatter(45)],
+          onChange: (text) {},
           onEditingComplete: () => onChange(controller.text),
         ),
         InkWell(

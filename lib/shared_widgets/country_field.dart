@@ -25,6 +25,7 @@ class CountryField extends StatelessWidget {
           hintText: IslamMobLocalizations.of(context).country,
           keyboardType: TextInputType.text,
           inputFormatters: [LengthLimitingTextInputFormatter(45)],
+          onChange: (text) {},
           onEditingComplete: () => onChange(controller.text),
         ),
         InkWell(

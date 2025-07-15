@@ -36,29 +36,31 @@ class _MainContainerState extends State<MainContainer> {
     _checkApplicationVersion();
     return BlocProvider(
       create: (_) => locator<MainContainerBloc>(),
-      child: Scaffold(
-        backgroundColor: const Color(0xffF5F6F7),
-        resizeToAvoidBottomInset: false,
-        extendBody: true,
-        appBar: const MainCustomAppBar(),
-        body: ColoredBox(
-          color: const Color(0xffF5F6F7),
-          child: BlocBuilder<MainContainerBloc, MainContainerState>(
-            buildWhen: (previous, current) =>
-                previous.selectedIndex != current.selectedIndex,
-            builder: (context, state) {
-              return IndexedStack(
-                index: state.selectedIndex,
-                children: const [
-                  TabNavigator(initialRoute: RoutesConstants.homeScreen),
-                  TabNavigator(initialRoute: RoutesConstants.quranScreen),
-                  TabNavigator(initialRoute: RoutesConstants.settingsScreen),
-                ],
-              );
-            },
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: const Color(0xffF5F6F7),
+          resizeToAvoidBottomInset: false,
+          extendBody: true,
+          appBar: const MainCustomAppBar(),
+          body: ColoredBox(
+            color: const Color(0xffF5F6F7),
+            child: BlocBuilder<MainContainerBloc, MainContainerState>(
+              buildWhen: (previous, current) =>
+                  previous.selectedIndex != current.selectedIndex,
+              builder: (context, state) {
+                return IndexedStack(
+                  index: state.selectedIndex,
+                  children: const [
+                    TabNavigator(initialRoute: RoutesConstants.homeScreen),
+                    TabNavigator(initialRoute: RoutesConstants.quranScreen),
+                    TabNavigator(initialRoute: RoutesConstants.settingsScreen),
+                  ],
+                );
+              },
+            ),
           ),
+          bottomNavigationBar: const BottomNavigationBarView(),
         ),
-        bottomNavigationBar: const BottomNavigationBarView(),
       ),
     );
   }

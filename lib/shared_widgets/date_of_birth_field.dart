@@ -24,6 +24,7 @@ class DateOfBirthField extends StatelessWidget {
           hintText: IslamMobLocalizations.of(context).dateOfBirth,
           keyboardType: TextInputType.text,
           inputFormatters: [LengthLimitingTextInputFormatter(45)],
+          onChange: (text) {},
           onEditingComplete: () => onChange(controller.text),
         ),
         InkWell(
