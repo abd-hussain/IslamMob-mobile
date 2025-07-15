@@ -4,7 +4,6 @@ part of 'edit_profile_bloc.dart';
 class EditProfileEvent with _$EditProfileEvent {
   const factory EditProfileEvent.initialValues() = _InitialValues;
   const factory EditProfileEvent.updateButtonEnablity({
-    required IslamMobLocalizations localizations,
     required String fullName,
     required String dateOfBirth,
     required String gender,

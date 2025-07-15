@@ -21,7 +21,6 @@ mixin _$EditProfileEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initialValues,
     required TResult Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -44,7 +43,6 @@ mixin _$EditProfileEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialValues,
     TResult? Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -67,7 +65,6 @@ mixin _$EditProfileEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialValues,
     TResult Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -175,7 +172,6 @@ class _$InitialValuesImpl implements _InitialValues {
   TResult when<TResult extends Object?>({
     required TResult Function() initialValues,
     required TResult Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -202,7 +198,6 @@ class _$InitialValuesImpl implements _InitialValues {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialValues,
     TResult? Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -229,7 +224,6 @@ class _$InitialValuesImpl implements _InitialValues {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialValues,
     TResult Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -302,7 +296,6 @@ abstract class _$$UpdateButtonEnablityImplCopyWith<$Res> {
   ) = __$$UpdateButtonEnablityImplCopyWithImpl<$Res>;
   @useResult
   $Res call({
-    IslamMobLocalizations localizations,
     String fullName,
     String dateOfBirth,
     String gender,
@@ -325,7 +318,6 @@ class __$$UpdateButtonEnablityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? localizations = null,
     Object? fullName = null,
     Object? dateOfBirth = null,
     Object? gender = null,
@@ -334,10 +326,6 @@ class __$$UpdateButtonEnablityImplCopyWithImpl<$Res>
   }) {
     return _then(
       _$UpdateButtonEnablityImpl(
-        localizations: null == localizations
-            ? _value.localizations
-            : localizations // ignore: cast_nullable_to_non_nullable
-                  as IslamMobLocalizations,
         fullName: null == fullName
             ? _value.fullName
             : fullName // ignore: cast_nullable_to_non_nullable
@@ -367,7 +355,6 @@ class __$$UpdateButtonEnablityImplCopyWithImpl<$Res>
 
 class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
   const _$UpdateButtonEnablityImpl({
-    required this.localizations,
     required this.fullName,
     required this.dateOfBirth,
     required this.gender,
@@ -375,8 +362,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
     required this.profilePic,
   });
 
-  @override
-  final IslamMobLocalizations localizations;
   @override
   final String fullName;
   @override
@@ -390,7 +375,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
 
   @override
   String toString() {
-    return 'EditProfileEvent.updateButtonEnablity(localizations: $localizations, fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, profilePic: $profilePic)';
+    return 'EditProfileEvent.updateButtonEnablity(fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, profilePic: $profilePic)';
   }
 
   @override
@@ -398,8 +383,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateButtonEnablityImpl &&
-            (identical(other.localizations, localizations) ||
-                other.localizations == localizations) &&
             (identical(other.fullName, fullName) ||
                 other.fullName == fullName) &&
             (identical(other.dateOfBirth, dateOfBirth) ||
@@ -413,7 +396,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
   @override
   int get hashCode => Object.hash(
     runtimeType,
-    localizations,
     fullName,
     dateOfBirth,
     gender,
@@ -438,7 +420,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
   TResult when<TResult extends Object?>({
     required TResult Function() initialValues,
     required TResult Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -458,7 +439,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
     editPressed,
   }) {
     return updateButtonEnablity(
-      localizations,
       fullName,
       dateOfBirth,
       gender,
@@ -472,7 +452,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialValues,
     TResult? Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -492,7 +471,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
     editPressed,
   }) {
     return updateButtonEnablity?.call(
-      localizations,
       fullName,
       dateOfBirth,
       gender,
@@ -506,7 +484,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialValues,
     TResult Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -528,7 +505,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
   }) {
     if (updateButtonEnablity != null) {
       return updateButtonEnablity(
-        localizations,
         fullName,
         dateOfBirth,
         gender,
@@ -576,7 +552,6 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
 
 abstract class _UpdateButtonEnablity implements EditProfileEvent {
   const factory _UpdateButtonEnablity({
-    required final IslamMobLocalizations localizations,
     required final String fullName,
     required final String dateOfBirth,
     required final String gender,
@@ -584,7 +559,6 @@ abstract class _UpdateButtonEnablity implements EditProfileEvent {
     required final File? profilePic,
   }) = _$UpdateButtonEnablityImpl;
 
-  IslamMobLocalizations get localizations;
   String get fullName;
   String get dateOfBirth;
   String get gender;
@@ -753,7 +727,6 @@ class _$EditPressedImpl implements _EditPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() initialValues,
     required TResult Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -788,7 +761,6 @@ class _$EditPressedImpl implements _EditPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialValues,
     TResult? Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,
@@ -823,7 +795,6 @@ class _$EditPressedImpl implements _EditPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialValues,
     TResult Function(
-      IslamMobLocalizations localizations,
       String fullName,
       String dateOfBirth,
       String gender,

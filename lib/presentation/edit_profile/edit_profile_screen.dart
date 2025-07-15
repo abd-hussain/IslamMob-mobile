@@ -15,20 +15,24 @@ import 'package:islam_app/shared_widgets/email_field_view.dart';
 import 'package:islam_app/shared_widgets/gender_field.dart';
 import 'package:islam_app/shared_widgets/image_holder/image_holder_field.dart';
 
-class EditProfileScreen extends StatelessWidget {
+class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
 
   @override
+  State<EditProfileScreen> createState() => _EditProfileScreenState();
+}
+
+class _EditProfileScreenState extends State<EditProfileScreen> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController fullNameController = TextEditingController();
+  final TextEditingController genderController = TextEditingController();
+  final TextEditingController countryController = TextEditingController();
+  final TextEditingController dateOfBirthController = TextEditingController();
+  File? profileImage;
+  bool isUserChangeProfileImage = false;
+  @override
   Widget build(BuildContext context) {
     final localizations = IslamMobLocalizations.of(context);
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController fullNameController = TextEditingController();
-    final TextEditingController genderController = TextEditingController();
-    final TextEditingController countryController = TextEditingController();
-    final TextEditingController dateOfBirthController = TextEditingController();
-    File? profileImage;
-    bool isUserChangeProfileImage = false;
-
     return BlocProvider(
       create: (context) =>
           EditProfileBloc()..add(const EditProfileEvent.initialValues()),
@@ -64,7 +68,8 @@ class EditProfileScreen extends StatelessWidget {
                       ],
                     ),
                     child: BlocBuilder<EditProfileBloc, EditProfileState>(
-                      buildWhen: (previous, current) => previous != current,
+                      buildWhen: (previous, current) =>
+                          previous.processState != current.processState,
                       builder: (context, state) {
                         switch (state.processState) {
                           case EditProfileProcessStateLoading():
@@ -110,7 +115,6 @@ class EditProfileScreen extends StatelessWidget {
                                       profileImage = file;
                                       context.read<EditProfileBloc>().add(
                                         EditProfileEvent.updateButtonEnablity(
-                                          localizations: localizations,
                                           fullName: fullNameController.text,
                                           dateOfBirth:
                                               dateOfBirthController.text,
@@ -128,12 +132,12 @@ class EditProfileScreen extends StatelessWidget {
                                   hintText: localizations.fullNameProfile,
                                   keyboardType: TextInputType.name,
                                   inputFormatters: [
-                                    LengthLimitingTextInputFormatter(45),
+                                    LengthLimitingTextInputFormatter(100),
                                   ],
+                                  // onChange: (text) {},
                                   onChange: (text) =>
                                       context.read<EditProfileBloc>().add(
                                         EditProfileEvent.updateButtonEnablity(
-                                          localizations: localizations,
                                           fullName: fullNameController.text,
                                           dateOfBirth:
                                               dateOfBirthController.text,
@@ -153,7 +157,6 @@ class EditProfileScreen extends StatelessWidget {
                                   onChange: (p0) =>
                                       context.read<EditProfileBloc>().add(
                                         EditProfileEvent.updateButtonEnablity(
-                                          localizations: localizations,
                                           fullName: fullNameController.text,
                                           dateOfBirth:
                                               dateOfBirthController.text,
@@ -169,7 +172,6 @@ class EditProfileScreen extends StatelessWidget {
                                   onChange: (p0) =>
                                       context.read<EditProfileBloc>().add(
                                         EditProfileEvent.updateButtonEnablity(
-                                          localizations: localizations,
                                           fullName: fullNameController.text,
                                           dateOfBirth:
                                               dateOfBirthController.text,
@@ -185,7 +187,6 @@ class EditProfileScreen extends StatelessWidget {
                                   onChange: (p0) =>
                                       context.read<EditProfileBloc>().add(
                                         EditProfileEvent.updateButtonEnablity(
-                                          localizations: localizations,
                                           fullName: fullNameController.text,
                                           dateOfBirth:
                                               dateOfBirthController.text,
@@ -233,25 +234,33 @@ class EditProfileScreen extends StatelessWidget {
                                         ),
                                   ),
                                 ),
-                                CustomButton(
-                                  padding: const EdgeInsets.only(
-                                    left: 16,
-                                    right: 16,
-                                  ),
-                                  title: localizations.save,
-                                  isEnabled: state.isButtonEnabled,
-                                  onTap: () {
-                                    context.read<EditProfileBloc>().add(
-                                      EditProfileEvent.editPressed(
-                                        localizations: localizations,
-                                        isUserChangeProfileImage:
-                                            isUserChangeProfileImage,
-                                        fullName: fullNameController.text,
-                                        dateOfBirth: dateOfBirthController.text,
-                                        country: countryController.text,
-                                        gender: genderController.text,
-                                        profilePic: profileImage,
+                                BlocBuilder<EditProfileBloc, EditProfileState>(
+                                  buildWhen: (previous, current) =>
+                                      previous.isButtonEnabled !=
+                                      current.isButtonEnabled,
+                                  builder: (context, buttonState) {
+                                    return CustomButton(
+                                      padding: const EdgeInsets.only(
+                                        left: 16,
+                                        right: 16,
                                       ),
+                                      title: localizations.save,
+                                      isEnabled: buttonState.isButtonEnabled,
+                                      onTap: () {
+                                        context.read<EditProfileBloc>().add(
+                                          EditProfileEvent.editPressed(
+                                            localizations: localizations,
+                                            isUserChangeProfileImage:
+                                                isUserChangeProfileImage,
+                                            fullName: fullNameController.text,
+                                            dateOfBirth:
+                                                dateOfBirthController.text,
+                                            country: countryController.text,
+                                            gender: genderController.text,
+                                            profilePic: profileImage,
+                                          ),
+                                        );
+                                      },
                                     );
                                   },
                                 ),
