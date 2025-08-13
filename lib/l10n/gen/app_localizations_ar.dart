@@ -402,6 +402,10 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
       'الرجاء التحقق من الاتصال بالانترنت';
 
   @override
+  String get pleaselogininordertousethisfeature =>
+      'الرجاء تسجيل الدخول لاستخدام هذه الميزة';
+
+  @override
   String get pickimageremoveimage => 'حذف الصورة';
 
   @override
@@ -1689,4 +1693,93 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
   @override
   String get forgotPasswordSuccessDesc =>
       'قد يستغرق الأمر بضع دقائق حتى يتم تسليم البريد الإلكتروني';
+
+  @override
+  String get ask => 'سؤال';
+
+  @override
+  String get doaa => 'دعاء';
+
+  @override
+  String get statuses => 'حالات';
+
+  @override
+  String get whatdoyouwanttosay => 'ماذا تريد أن تسأل أو تشارك؟';
+
+  @override
+  String get upvote => 'إيجابي';
+
+  @override
+  String get downvote => 'سلبي';
+
+  @override
+  String get post_more_option => 'الخيارات';
+
+  @override
+  String get post_add_to_bookmark => 'أضافه إلى المفضلة';
+
+  @override
+  String get post_remove_from_bookmark => 'حذف من المفضلة';
+
+  @override
+  String get post_share_via => 'شارك عبر ...';
+
+  @override
+  String get post_report => 'الإبلاغ';
+
+  @override
+  String get post_report_content => 'إبلاغ عن محتوى';
+
+  @override
+  String get post_report_title_spam => 'عشوائي';
+
+  @override
+  String get post_report_description_spam =>
+      'بيع سلع غير قانونية، عمليات احتيال مالي، إلخ';
+
+  @override
+  String get post_report_title_hateSpeech => 'خطاب كراهية';
+
+  @override
+  String get post_report_description_hateSpeech => 'هجوم خطير على مجموعة';
+
+  @override
+  String get post_report_title_AdultContent => 'محتوى للبالغين';
+
+  @override
+  String get post_report_description_AdultContent => 'محتوى عُري/جنسي';
+
+  @override
+  String get post_report_title_HarmfulContent => 'أنشطة ضارة';
+
+  @override
+  String get post_report_description_HarmfulContent =>
+      'تهديد أو تمجيد للعنف أو الأذى الجسيم أو إيذاء النفس';
+
+  @override
+  String get post_report_title_other => 'أخرى';
+
+  @override
+  String get post_report_description_other => 'محتوى غير قانوني';
+
+  @override
+  String get add_post => 'إضافة منشور';
+
+  @override
+  String get whatdoyouwanttoask => 'ماذا تريد أن تسأل أو تشارك؟';
+
+  @override
+  String get all_category => 'الجميع';
+
+  @override
+  String get quran_category => 'القرآن الكريم';
+
+  @override
+  String get duaa_category => 'دعاء';
+
+  @override
+  String get watchlist_category => 'المفضلة';
+
+  @override
+  String get wall_category => 'الحائط';
 }

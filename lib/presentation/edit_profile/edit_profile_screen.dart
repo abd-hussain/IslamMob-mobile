@@ -27,6 +27,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController genderController = TextEditingController();
   final TextEditingController countryController = TextEditingController();
+  String countryFlagValue = "";
   final TextEditingController dateOfBirthController = TextEditingController();
   File? profileImage;
   bool isUserChangeProfileImage = false;
@@ -120,6 +121,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                               dateOfBirthController.text,
                                           gender: genderController.text,
                                           country: countryController.text,
+                                          countryFlag: countryFlagValue,
                                           profilePic: profileImage,
                                         ),
                                       );
@@ -143,6 +145,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                               dateOfBirthController.text,
                                           gender: genderController.text,
                                           country: countryController.text,
+                                          countryFlag: countryFlagValue,
                                           profilePic: profileImage,
                                         ),
                                       ),
@@ -162,6 +165,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                               dateOfBirthController.text,
                                           gender: genderController.text,
                                           country: countryController.text,
+                                          countryFlag: countryFlagValue,
                                           profilePic: profileImage,
                                         ),
                                       ),
@@ -177,6 +181,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                               dateOfBirthController.text,
                                           gender: genderController.text,
                                           country: countryController.text,
+                                          countryFlag: countryFlagValue,
                                           profilePic: profileImage,
                                         ),
                                       ),
@@ -184,17 +189,24 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                 const SizedBox(height: 16),
                                 CountryField(
                                   controller: countryController,
-                                  onChange: (p0) =>
-                                      context.read<EditProfileBloc>().add(
-                                        EditProfileEvent.updateButtonEnablity(
-                                          fullName: fullNameController.text,
-                                          dateOfBirth:
-                                              dateOfBirthController.text,
-                                          gender: genderController.text,
-                                          country: countryController.text,
-                                          profilePic: profileImage,
-                                        ),
-                                      ),
+                                  onChange:
+                                      ({
+                                        required countryFlag,
+                                        required countryName,
+                                      }) {
+                                        countryFlagValue = countryFlag;
+                                        context.read<EditProfileBloc>().add(
+                                          EditProfileEvent.updateButtonEnablity(
+                                            fullName: fullNameController.text,
+                                            dateOfBirth:
+                                                dateOfBirthController.text,
+                                            gender: genderController.text,
+                                            country: countryController.text,
+                                            countryFlag: countryFlagValue,
+                                            profilePic: profileImage,
+                                          ),
+                                        );
+                                      },
                                 ),
                                 const SizedBox(height: 16),
                                 EmailFieldView(
@@ -256,6 +268,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                             dateOfBirth:
                                                 dateOfBirthController.text,
                                             country: countryController.text,
+                                            countryFlag: countryFlagValue,
                                             gender: genderController.text,
                                             profilePic: profileImage,
                                           ),

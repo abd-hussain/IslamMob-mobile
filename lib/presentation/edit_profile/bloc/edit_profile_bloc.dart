@@ -100,6 +100,7 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
           "gender": event.gender,
           "dateOfBirth": event.dateOfBirth,
           "country": event.country,
+          "countryFlag": event.countryFlag,
           "profilePic": event.isUserChangeProfileImage
               ? filePathInStorage
               : state.originalProfileInfo?.profilePic ?? "",

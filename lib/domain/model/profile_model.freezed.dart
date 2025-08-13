@@ -30,6 +30,7 @@ mixin _$ProfileModel {
   String? get signInMethod => throw _privateConstructorUsedError;
   String? get emailAddress => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
+  String? get countryFlag => throw _privateConstructorUsedError;
 
   /// Serializes this ProfileModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -58,6 +59,7 @@ abstract class $ProfileModelCopyWith<$Res> {
     String? signInMethod,
     String? emailAddress,
     String? password,
+    String? countryFlag,
   });
 }
 
@@ -85,6 +87,7 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
     Object? signInMethod = freezed,
     Object? emailAddress = freezed,
     Object? password = freezed,
+    Object? countryFlag = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -124,6 +127,10 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
                 ? _value.password
                 : password // ignore: cast_nullable_to_non_nullable
                       as String?,
+            countryFlag: freezed == countryFlag
+                ? _value.countryFlag
+                : countryFlag // ignore: cast_nullable_to_non_nullable
+                      as String?,
           )
           as $Val,
     );
@@ -149,6 +156,7 @@ abstract class _$$ProfileModelImplCopyWith<$Res>
     String? signInMethod,
     String? emailAddress,
     String? password,
+    String? countryFlag,
   });
 }
 
@@ -175,6 +183,7 @@ class __$$ProfileModelImplCopyWithImpl<$Res>
     Object? signInMethod = freezed,
     Object? emailAddress = freezed,
     Object? password = freezed,
+    Object? countryFlag = freezed,
   }) {
     return _then(
       _$ProfileModelImpl(
@@ -214,6 +223,10 @@ class __$$ProfileModelImplCopyWithImpl<$Res>
             ? _value.password
             : password // ignore: cast_nullable_to_non_nullable
                   as String?,
+        countryFlag: freezed == countryFlag
+            ? _value.countryFlag
+            : countryFlag // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
@@ -232,6 +245,7 @@ class _$ProfileModelImpl implements _ProfileModel {
     this.signInMethod,
     this.emailAddress,
     this.password,
+    this.countryFlag,
   });
 
   factory _$ProfileModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -255,10 +269,12 @@ class _$ProfileModelImpl implements _ProfileModel {
   final String? emailAddress;
   @override
   final String? password;
+  @override
+  final String? countryFlag;
 
   @override
   String toString() {
-    return 'ProfileModel(country: $country, dateOfBirth: $dateOfBirth, fullName: $fullName, gender: $gender, profilePic: $profilePic, uid: $uid, signInMethod: $signInMethod, emailAddress: $emailAddress, password: $password)';
+    return 'ProfileModel(country: $country, dateOfBirth: $dateOfBirth, fullName: $fullName, gender: $gender, profilePic: $profilePic, uid: $uid, signInMethod: $signInMethod, emailAddress: $emailAddress, password: $password, countryFlag: $countryFlag)';
   }
 
   @override
@@ -280,7 +296,9 @@ class _$ProfileModelImpl implements _ProfileModel {
             (identical(other.emailAddress, emailAddress) ||
                 other.emailAddress == emailAddress) &&
             (identical(other.password, password) ||
-                other.password == password));
+                other.password == password) &&
+            (identical(other.countryFlag, countryFlag) ||
+                other.countryFlag == countryFlag));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -296,6 +314,7 @@ class _$ProfileModelImpl implements _ProfileModel {
     signInMethod,
     emailAddress,
     password,
+    countryFlag,
   );
 
   /// Create a copy of ProfileModel
@@ -323,6 +342,7 @@ abstract class _ProfileModel implements ProfileModel {
     final String? signInMethod,
     final String? emailAddress,
     final String? password,
+    final String? countryFlag,
   }) = _$ProfileModelImpl;
 
   factory _ProfileModel.fromJson(Map<String, dynamic> json) =
@@ -346,6 +366,8 @@ abstract class _ProfileModel implements ProfileModel {
   String? get emailAddress;
   @override
   String? get password;
+  @override
+  String? get countryFlag;
 
   /// Create a copy of ProfileModel
   /// with the given fields replaced by the non-null parameter values.

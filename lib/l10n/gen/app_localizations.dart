@@ -881,6 +881,12 @@ abstract class IslamMobLocalizations {
   /// **'Please check your internet connection'**
   String get pleasecheckyourinternetconnection;
 
+  /// No description provided for @pleaselogininordertousethisfeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Login to use this feature'**
+  String get pleaselogininordertousethisfeature;
+
   /// No description provided for @pickimageremoveimage.
   ///
   /// In en, this message translates to:
@@ -3340,6 +3346,180 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Please wait a few minutes for it to appear in your inbox and make sure to check your spam folders too'**
   String get forgotPasswordSuccessDesc;
+
+  /// No description provided for @ask.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask'**
+  String get ask;
+
+  /// No description provided for @doaa.
+  ///
+  /// In en, this message translates to:
+  /// **'Doa\'a'**
+  String get doaa;
+
+  /// No description provided for @statuses.
+  ///
+  /// In en, this message translates to:
+  /// **'Statuses'**
+  String get statuses;
+
+  /// No description provided for @whatdoyouwanttosay.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you want to ask or share ?'**
+  String get whatdoyouwanttosay;
+
+  /// No description provided for @upvote.
+  ///
+  /// In en, this message translates to:
+  /// **'Upvote'**
+  String get upvote;
+
+  /// No description provided for @downvote.
+  ///
+  /// In en, this message translates to:
+  /// **'Downvote'**
+  String get downvote;
+
+  /// No description provided for @post_more_option.
+  ///
+  /// In en, this message translates to:
+  /// **'More Options'**
+  String get post_more_option;
+
+  /// No description provided for @post_add_to_bookmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Add To Bookmark'**
+  String get post_add_to_bookmark;
+
+  /// No description provided for @post_remove_from_bookmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove From Bookmark'**
+  String get post_remove_from_bookmark;
+
+  /// No description provided for @post_share_via.
+  ///
+  /// In en, this message translates to:
+  /// **'Share via ...'**
+  String get post_share_via;
+
+  /// No description provided for @post_report.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get post_report;
+
+  /// No description provided for @post_report_content.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Content'**
+  String get post_report_content;
+
+  /// No description provided for @post_report_title_spam.
+  ///
+  /// In en, this message translates to:
+  /// **'Spam'**
+  String get post_report_title_spam;
+
+  /// No description provided for @post_report_description_spam.
+  ///
+  /// In en, this message translates to:
+  /// **'Selling illegal goods, money scams etc..'**
+  String get post_report_description_spam;
+
+  /// No description provided for @post_report_title_hateSpeech.
+  ///
+  /// In en, this message translates to:
+  /// **'Hate Speech'**
+  String get post_report_title_hateSpeech;
+
+  /// No description provided for @post_report_description_hateSpeech.
+  ///
+  /// In en, this message translates to:
+  /// **'Serious attack on a group'**
+  String get post_report_description_hateSpeech;
+
+  /// No description provided for @post_report_title_AdultContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Adult content'**
+  String get post_report_title_AdultContent;
+
+  /// No description provided for @post_report_description_AdultContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Nudity/Sexual content'**
+  String get post_report_description_AdultContent;
+
+  /// No description provided for @post_report_title_HarmfulContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Harmful activities'**
+  String get post_report_title_HarmfulContent;
+
+  /// No description provided for @post_report_description_HarmfulContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Threatening or glorifying violence or serious harm, self harm'**
+  String get post_report_description_HarmfulContent;
+
+  /// No description provided for @post_report_title_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get post_report_title_other;
+
+  /// No description provided for @post_report_description_other.
+  ///
+  /// In en, this message translates to:
+  /// **'illegal content'**
+  String get post_report_description_other;
+
+  /// No description provided for @add_post.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Post'**
+  String get add_post;
+
+  /// No description provided for @whatdoyouwanttoask.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you want to ask or share ?'**
+  String get whatdoyouwanttoask;
+
+  /// No description provided for @all_category.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get all_category;
+
+  /// No description provided for @quran_category.
+  ///
+  /// In en, this message translates to:
+  /// **'Quran'**
+  String get quran_category;
+
+  /// No description provided for @duaa_category.
+  ///
+  /// In en, this message translates to:
+  /// **'Duaa'**
+  String get duaa_category;
+
+  /// No description provided for @watchlist_category.
+  ///
+  /// In en, this message translates to:
+  /// **'Watchlist'**
+  String get watchlist_category;
+
+  /// No description provided for @wall_category.
+  ///
+  /// In en, this message translates to:
+  /// **'Wall'**
+  String get wall_category;
 }
 
 class _IslamMobLocalizationsDelegate

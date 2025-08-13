@@ -402,6 +402,10 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
       'Please check your internet connection';
 
   @override
+  String get pleaselogininordertousethisfeature =>
+      'Please Login to use this feature';
+
+  @override
   String get pickimageremoveimage => 'Remove image';
 
   @override
@@ -1701,4 +1705,93 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
   @override
   String get forgotPasswordSuccessDesc =>
       'Please wait a few minutes for it to appear in your inbox and make sure to check your spam folders too';
+
+  @override
+  String get ask => 'Ask';
+
+  @override
+  String get doaa => 'Doa\'a';
+
+  @override
+  String get statuses => 'Statuses';
+
+  @override
+  String get whatdoyouwanttosay => 'What do you want to ask or share ?';
+
+  @override
+  String get upvote => 'Upvote';
+
+  @override
+  String get downvote => 'Downvote';
+
+  @override
+  String get post_more_option => 'More Options';
+
+  @override
+  String get post_add_to_bookmark => 'Add To Bookmark';
+
+  @override
+  String get post_remove_from_bookmark => 'Remove From Bookmark';
+
+  @override
+  String get post_share_via => 'Share via ...';
+
+  @override
+  String get post_report => 'Report';
+
+  @override
+  String get post_report_content => 'Report Content';
+
+  @override
+  String get post_report_title_spam => 'Spam';
+
+  @override
+  String get post_report_description_spam =>
+      'Selling illegal goods, money scams etc..';
+
+  @override
+  String get post_report_title_hateSpeech => 'Hate Speech';
+
+  @override
+  String get post_report_description_hateSpeech => 'Serious attack on a group';
+
+  @override
+  String get post_report_title_AdultContent => 'Adult content';
+
+  @override
+  String get post_report_description_AdultContent => 'Nudity/Sexual content';
+
+  @override
+  String get post_report_title_HarmfulContent => 'Harmful activities';
+
+  @override
+  String get post_report_description_HarmfulContent =>
+      'Threatening or glorifying violence or serious harm, self harm';
+
+  @override
+  String get post_report_title_other => 'Other';
+
+  @override
+  String get post_report_description_other => 'illegal content';
+
+  @override
+  String get add_post => 'Add Post';
+
+  @override
+  String get whatdoyouwanttoask => 'What do you want to ask or share ?';
+
+  @override
+  String get all_category => 'All';
+
+  @override
+  String get quran_category => 'Quran';
+
+  @override
+  String get duaa_category => 'Duaa';
+
+  @override
+  String get watchlist_category => 'Watchlist';
+
+  @override
+  String get wall_category => 'Wall';
 }

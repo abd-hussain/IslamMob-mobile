@@ -8,8 +8,8 @@ import 'package:islam_app/presentation/report_suggestions/widgets/attachments.da
 import 'package:islam_app/presentation/report_suggestions/widgets/footer.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
-import 'package:islam_app/shared_widgets/no_internet_toast.dart';
 import 'package:islam_app/shared_widgets/no_internet_view.dart';
+import 'package:islam_app/shared_widgets/show_toast.dart';
 
 /// Screen for submitting reports and suggestions about the Islamic app.
 ///
@@ -192,7 +192,7 @@ class ReportOrSuggestionScreen extends StatelessWidget {
       navigator.pop();
     } on ConnectionException {
       if (context.mounted) {
-        NoInternetToast.show(context);
+        ShowToast.showInternetRequired(context);
       }
     }
   }

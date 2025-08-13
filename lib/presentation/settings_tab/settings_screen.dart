@@ -15,7 +15,7 @@ import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/welcoming_header.dart';
 import 'package:islam_app/shared_widgets/bottomsheet/are_you_sure_bottomsheet.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
-import 'package:islam_app/shared_widgets/no_internet_toast.dart';
+import 'package:islam_app/shared_widgets/show_toast.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
 /// The main settings screen that provides access to various app configurations.
@@ -250,7 +250,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                       if (internetStatus == false) {
                         if (context.mounted) {
-                          NoInternetToast.show(context);
+                          ShowToast.showInternetRequired(context);
                         }
                         return;
                       }

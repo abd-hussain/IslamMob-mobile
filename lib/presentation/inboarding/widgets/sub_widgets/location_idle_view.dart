@@ -5,7 +5,7 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:islam_app/shared_widgets/no_internet_toast.dart';
+import 'package:islam_app/shared_widgets/show_toast.dart';
 import 'package:location_manager/location_manager.dart';
 
 /// A widget that displays the initial location permission request interface during onboarding.
@@ -57,8 +57,9 @@ class LocationIdleView extends StatelessWidget {
           title: localization.allowgetlocation,
           onTap: () async {
             if (await NetworkUseCase.checkInternetConnection() == false) {
-              // ignore: use_build_context_synchronously
-              NoInternetToast.show(context);
+              if (context.mounted) {
+                ShowToast.showInternetRequired(context);
+              }
               return;
             }
 

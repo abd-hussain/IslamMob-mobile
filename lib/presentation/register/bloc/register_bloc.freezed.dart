@@ -23,6 +23,7 @@ mixin _$RegisterEvent {
   String get dateOfBirth => throw _privateConstructorUsedError;
   String get gender => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
+  String get countryFlag => throw _privateConstructorUsedError;
   File? get profilePic => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -35,6 +36,7 @@ mixin _$RegisterEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     updateLoginButtonEnablity,
@@ -45,6 +47,7 @@ mixin _$RegisterEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )
@@ -61,6 +64,7 @@ mixin _$RegisterEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateLoginButtonEnablity,
@@ -71,6 +75,7 @@ mixin _$RegisterEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )?
@@ -87,6 +92,7 @@ mixin _$RegisterEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateLoginButtonEnablity,
@@ -97,6 +103,7 @@ mixin _$RegisterEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )?
@@ -144,6 +151,7 @@ abstract class $RegisterEventCopyWith<$Res> {
     String dateOfBirth,
     String gender,
     String country,
+    String countryFlag,
     File? profilePic,
   });
 }
@@ -169,6 +177,7 @@ class _$RegisterEventCopyWithImpl<$Res, $Val extends RegisterEvent>
     Object? dateOfBirth = null,
     Object? gender = null,
     Object? country = null,
+    Object? countryFlag = null,
     Object? profilePic = freezed,
   }) {
     return _then(
@@ -196,6 +205,10 @@ class _$RegisterEventCopyWithImpl<$Res, $Val extends RegisterEvent>
             country: null == country
                 ? _value.country
                 : country // ignore: cast_nullable_to_non_nullable
+                      as String,
+            countryFlag: null == countryFlag
+                ? _value.countryFlag
+                : countryFlag // ignore: cast_nullable_to_non_nullable
                       as String,
             profilePic: freezed == profilePic
                 ? _value.profilePic
@@ -225,6 +238,7 @@ abstract class _$$UpdateLoginButtonEnablityImplCopyWith<$Res>
     String dateOfBirth,
     String gender,
     String country,
+    String countryFlag,
     File? profilePic,
   });
 }
@@ -251,6 +265,7 @@ class __$$UpdateLoginButtonEnablityImplCopyWithImpl<$Res>
     Object? dateOfBirth = null,
     Object? gender = null,
     Object? country = null,
+    Object? countryFlag = null,
     Object? profilePic = freezed,
   }) {
     return _then(
@@ -287,6 +302,10 @@ class __$$UpdateLoginButtonEnablityImplCopyWithImpl<$Res>
             ? _value.country
             : country // ignore: cast_nullable_to_non_nullable
                   as String,
+        countryFlag: null == countryFlag
+            ? _value.countryFlag
+            : countryFlag // ignore: cast_nullable_to_non_nullable
+                  as String,
         profilePic: freezed == profilePic
             ? _value.profilePic
             : profilePic // ignore: cast_nullable_to_non_nullable
@@ -308,6 +327,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
     required this.dateOfBirth,
     required this.gender,
     required this.country,
+    required this.countryFlag,
     required this.profilePic,
   });
 
@@ -328,11 +348,13 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
   @override
   final String country;
   @override
+  final String countryFlag;
+  @override
   final File? profilePic;
 
   @override
   String toString() {
-    return 'RegisterEvent.updateLoginButtonEnablity(localizations: $localizations, email: $email, password: $password, confirmPassword: $confirmPassword, fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, profilePic: $profilePic)';
+    return 'RegisterEvent.updateLoginButtonEnablity(localizations: $localizations, email: $email, password: $password, confirmPassword: $confirmPassword, fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, countryFlag: $countryFlag, profilePic: $profilePic)';
   }
 
   @override
@@ -353,6 +375,8 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
                 other.dateOfBirth == dateOfBirth) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.country, country) || other.country == country) &&
+            (identical(other.countryFlag, countryFlag) ||
+                other.countryFlag == countryFlag) &&
             (identical(other.profilePic, profilePic) ||
                 other.profilePic == profilePic));
   }
@@ -368,6 +392,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
     dateOfBirth,
     gender,
     country,
+    countryFlag,
     profilePic,
   );
 
@@ -394,6 +419,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     updateLoginButtonEnablity,
@@ -404,6 +430,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )
@@ -418,6 +445,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
       dateOfBirth,
       gender,
       country,
+      countryFlag,
       profilePic,
     );
   }
@@ -434,6 +462,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateLoginButtonEnablity,
@@ -444,6 +473,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )?
@@ -458,6 +488,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
       dateOfBirth,
       gender,
       country,
+      countryFlag,
       profilePic,
     );
   }
@@ -474,6 +505,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateLoginButtonEnablity,
@@ -484,6 +516,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )?
@@ -500,6 +533,7 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
         dateOfBirth,
         gender,
         country,
+        countryFlag,
         profilePic,
       );
     }
@@ -551,6 +585,7 @@ abstract class _UpdateLoginButtonEnablity implements RegisterEvent {
     required final String dateOfBirth,
     required final String gender,
     required final String country,
+    required final String countryFlag,
     required final File? profilePic,
   }) = _$UpdateLoginButtonEnablityImpl;
 
@@ -568,6 +603,8 @@ abstract class _UpdateLoginButtonEnablity implements RegisterEvent {
   String get gender;
   @override
   String get country;
+  @override
+  String get countryFlag;
   @override
   File? get profilePic;
 
@@ -595,6 +632,7 @@ abstract class _$$RegisterPressedImplCopyWith<$Res>
     String dateOfBirth,
     String gender,
     String country,
+    String countryFlag,
     File? profilePic,
     bool savedCradintial,
   });
@@ -620,6 +658,7 @@ class __$$RegisterPressedImplCopyWithImpl<$Res>
     Object? dateOfBirth = null,
     Object? gender = null,
     Object? country = null,
+    Object? countryFlag = null,
     Object? profilePic = freezed,
     Object? savedCradintial = null,
   }) {
@@ -649,6 +688,10 @@ class __$$RegisterPressedImplCopyWithImpl<$Res>
             ? _value.country
             : country // ignore: cast_nullable_to_non_nullable
                   as String,
+        countryFlag: null == countryFlag
+            ? _value.countryFlag
+            : countryFlag // ignore: cast_nullable_to_non_nullable
+                  as String,
         profilePic: freezed == profilePic
             ? _value.profilePic
             : profilePic // ignore: cast_nullable_to_non_nullable
@@ -672,6 +715,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
     required this.dateOfBirth,
     required this.gender,
     required this.country,
+    required this.countryFlag,
     required this.profilePic,
     required this.savedCradintial,
   });
@@ -689,13 +733,15 @@ class _$RegisterPressedImpl implements _RegisterPressed {
   @override
   final String country;
   @override
+  final String countryFlag;
+  @override
   final File? profilePic;
   @override
   final bool savedCradintial;
 
   @override
   String toString() {
-    return 'RegisterEvent.registerPressed(email: $email, password: $password, fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, profilePic: $profilePic, savedCradintial: $savedCradintial)';
+    return 'RegisterEvent.registerPressed(email: $email, password: $password, fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, countryFlag: $countryFlag, profilePic: $profilePic, savedCradintial: $savedCradintial)';
   }
 
   @override
@@ -712,6 +758,8 @@ class _$RegisterPressedImpl implements _RegisterPressed {
                 other.dateOfBirth == dateOfBirth) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.country, country) || other.country == country) &&
+            (identical(other.countryFlag, countryFlag) ||
+                other.countryFlag == countryFlag) &&
             (identical(other.profilePic, profilePic) ||
                 other.profilePic == profilePic) &&
             (identical(other.savedCradintial, savedCradintial) ||
@@ -727,6 +775,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
     dateOfBirth,
     gender,
     country,
+    countryFlag,
     profilePic,
     savedCradintial,
   );
@@ -754,6 +803,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     updateLoginButtonEnablity,
@@ -764,6 +814,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )
@@ -776,6 +827,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
       dateOfBirth,
       gender,
       country,
+      countryFlag,
       profilePic,
       savedCradintial,
     );
@@ -793,6 +845,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateLoginButtonEnablity,
@@ -803,6 +856,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )?
@@ -815,6 +869,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
       dateOfBirth,
       gender,
       country,
+      countryFlag,
       profilePic,
       savedCradintial,
     );
@@ -832,6 +887,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateLoginButtonEnablity,
@@ -842,6 +898,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
       bool savedCradintial,
     )?
@@ -856,6 +913,7 @@ class _$RegisterPressedImpl implements _RegisterPressed {
         dateOfBirth,
         gender,
         country,
+        countryFlag,
         profilePic,
         savedCradintial,
       );
@@ -906,6 +964,7 @@ abstract class _RegisterPressed implements RegisterEvent {
     required final String dateOfBirth,
     required final String gender,
     required final String country,
+    required final String countryFlag,
     required final File? profilePic,
     required final bool savedCradintial,
   }) = _$RegisterPressedImpl;
@@ -922,6 +981,8 @@ abstract class _RegisterPressed implements RegisterEvent {
   String get gender;
   @override
   String get country;
+  @override
+  String get countryFlag;
   @override
   File? get profilePic;
   bool get savedCradintial;

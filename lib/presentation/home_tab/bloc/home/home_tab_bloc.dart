@@ -9,7 +9,6 @@ import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
-import 'package:islam_app/shared_widgets/pray_timing_extarnal_widget.dart';
 import 'package:location_manager/location_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -63,10 +62,6 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     scrollController.addListener(_scrollListener);
     initializePrayerTimings();
 
-    await PrayTimingExtarnalWidget().updateHomeWidget(
-      title: "abbeed title",
-      content: "abeed content",
-    );
     // Store context locally to avoid using it across async gaps
     final context = event.context;
 

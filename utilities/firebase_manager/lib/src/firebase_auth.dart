@@ -19,6 +19,7 @@ class FirebaseAuthRepository {
     required String dateOfBirth,
     required File? profilePic,
     required String? country,
+    required String countryFlag,
   }) async {
     if (!await _isConnected()) {
       return {false: 'No internet connection.'};
@@ -58,6 +59,7 @@ class FirebaseAuthRepository {
             "dateOfBirth": dateOfBirth,
             "country": country,
             "profilePic": filePathInStorage,
+            "countryFlag": countryFlag,
             "syncedAt": DateTime.now(),
           },
         ),
@@ -142,12 +144,10 @@ class FirebaseAuthRepository {
       await user.reauthenticateWithCredential(credential);
       await user.updatePassword(newPassword);
       // Password changed successfully
-
       await FirebaseFirestoreRepository.updateField(
         collectionName: FirebaseCollectionConstants.registered_users,
         docId: email.trim(),
-        field: "password",
-        value: newPassword,
+        updateData: {'password': newPassword},
       );
 
       return true;

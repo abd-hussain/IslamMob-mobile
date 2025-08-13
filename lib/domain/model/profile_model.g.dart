@@ -17,6 +17,7 @@ _$ProfileModelImpl _$$ProfileModelImplFromJson(Map<String, dynamic> json) =>
       signInMethod: json['signInMethod'] as String?,
       emailAddress: json['emailAddress'] as String?,
       password: json['password'] as String?,
+      countryFlag: json['countryFlag'] as String?,
     );
 
 Map<String, dynamic> _$$ProfileModelImplToJson(_$ProfileModelImpl instance) =>
@@ -30,4 +31,5 @@ Map<String, dynamic> _$$ProfileModelImplToJson(_$ProfileModelImpl instance) =>
       'signInMethod': instance.signInMethod,
       'emailAddress': instance.emailAddress,
       'password': instance.password,
+      'countryFlag': instance.countryFlag,
     };
