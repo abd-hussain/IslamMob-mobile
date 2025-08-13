@@ -8,7 +8,7 @@ import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/inboarding/bloc/notification/notifications_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
-import 'package:islam_app/shared_widgets/no_internet_toast.dart';
+import 'package:islam_app/shared_widgets/show_toast.dart';
 
 /// A widget that displays the initial notification permission request view.
 ///
@@ -50,7 +50,7 @@ class NotificationIdleView extends StatelessWidget {
           onTap: () async {
             if (await NetworkUseCase.checkInternetConnection() == false) {
               if (context.mounted) {
-                NoInternetToast.show(context);
+                ShowToast.showInternetRequired(context);
               }
               return;
             }

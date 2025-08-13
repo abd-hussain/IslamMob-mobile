@@ -31,6 +31,7 @@ class RegisterScreen extends StatelessWidget {
     final TextEditingController fullNameController = TextEditingController();
     final TextEditingController genderController = TextEditingController();
     final TextEditingController countryController = TextEditingController();
+    String countryFlagValue = "";
     final TextEditingController dateOfBirthController = TextEditingController();
     File? profileImage;
     bool savingCradintialState = false;
@@ -122,6 +123,7 @@ class RegisterScreen extends StatelessWidget {
                                               dateOfBirthController.text,
                                           fullName: fullNameController.text,
                                           country: countryController.text,
+                                          countryFlag: countryFlagValue,
                                         ),
                                       );
                                     },
@@ -148,6 +150,7 @@ class RegisterScreen extends StatelessWidget {
                                         dateOfBirth: dateOfBirthController.text,
                                         fullName: fullNameController.text,
                                         country: countryController.text,
+                                        countryFlag: countryFlagValue,
                                       ),
                                     );
                                   },
@@ -172,6 +175,7 @@ class RegisterScreen extends StatelessWidget {
                                         dateOfBirth: dateOfBirthController.text,
                                         fullName: fullNameController.text,
                                         country: countryController.text,
+                                        countryFlag: countryFlagValue,
                                       ),
                                     );
                                   },
@@ -192,6 +196,7 @@ class RegisterScreen extends StatelessWidget {
                                         dateOfBirth: dateOfBirthController.text,
                                         fullName: fullNameController.text,
                                         country: countryController.text,
+                                        countryFlag: countryFlagValue,
                                       ),
                                     );
                                   },
@@ -199,22 +204,29 @@ class RegisterScreen extends StatelessWidget {
                                 const SizedBox(height: 16),
                                 CountryField(
                                   controller: countryController,
-                                  onChange: (p0) {
-                                    context.read<RegisterBloc>().add(
-                                      RegisterEvent.updateLoginButtonEnablity(
-                                        localizations: localizations,
-                                        profilePic: profileImage,
-                                        email: emailController.text,
-                                        password: passwordController.text,
-                                        confirmPassword:
-                                            confirmPasswordController.text,
-                                        gender: genderController.text,
-                                        dateOfBirth: dateOfBirthController.text,
-                                        fullName: fullNameController.text,
-                                        country: countryController.text,
-                                      ),
-                                    );
-                                  },
+                                  onChange:
+                                      ({
+                                        required countryFlag,
+                                        required countryName,
+                                      }) {
+                                        countryFlagValue = countryFlag;
+                                        context.read<RegisterBloc>().add(
+                                          RegisterEvent.updateLoginButtonEnablity(
+                                            localizations: localizations,
+                                            profilePic: profileImage,
+                                            email: emailController.text,
+                                            password: passwordController.text,
+                                            confirmPassword:
+                                                confirmPasswordController.text,
+                                            gender: genderController.text,
+                                            dateOfBirth:
+                                                dateOfBirthController.text,
+                                            fullName: fullNameController.text,
+                                            country: countryController.text,
+                                            countryFlag: countryFlagValue,
+                                          ),
+                                        );
+                                      },
                                 ),
                                 const SizedBox(height: 16),
                                 EmailFieldView(
@@ -232,6 +244,7 @@ class RegisterScreen extends StatelessWidget {
                                         dateOfBirth: dateOfBirthController.text,
                                         fullName: fullNameController.text,
                                         country: countryController.text,
+                                        countryFlag: countryFlagValue,
                                       ),
                                     );
                                   },
@@ -257,6 +270,7 @@ class RegisterScreen extends StatelessWidget {
                                         dateOfBirth: dateOfBirthController.text,
                                         fullName: fullNameController.text,
                                         country: countryController.text,
+                                        countryFlag: countryFlagValue,
                                       ),
                                     );
                                   },
@@ -282,6 +296,7 @@ class RegisterScreen extends StatelessWidget {
                                         dateOfBirth: dateOfBirthController.text,
                                         fullName: fullNameController.text,
                                         country: countryController.text,
+                                        countryFlag: countryFlagValue,
                                       ),
                                     );
                                   },
@@ -342,6 +357,7 @@ class RegisterScreen extends StatelessWidget {
                                             dateOfBirth:
                                                 dateOfBirthController.text,
                                             country: countryController.text,
+                                            countryFlag: countryFlagValue,
                                             gender: genderController.text,
                                             profilePic: profileImage,
                                             savedCradintial:

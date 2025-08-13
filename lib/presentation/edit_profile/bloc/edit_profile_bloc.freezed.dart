@@ -25,6 +25,7 @@ mixin _$EditProfileEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     updateButtonEnablity,
@@ -35,6 +36,7 @@ mixin _$EditProfileEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     editPressed,
@@ -47,6 +49,7 @@ mixin _$EditProfileEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateButtonEnablity,
@@ -57,6 +60,7 @@ mixin _$EditProfileEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     editPressed,
@@ -69,6 +73,7 @@ mixin _$EditProfileEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateButtonEnablity,
@@ -79,6 +84,7 @@ mixin _$EditProfileEvent {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     editPressed,
@@ -176,6 +182,7 @@ class _$InitialValuesImpl implements _InitialValues {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     updateButtonEnablity,
@@ -186,6 +193,7 @@ class _$InitialValuesImpl implements _InitialValues {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     editPressed,
@@ -202,6 +210,7 @@ class _$InitialValuesImpl implements _InitialValues {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateButtonEnablity,
@@ -212,6 +221,7 @@ class _$InitialValuesImpl implements _InitialValues {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     editPressed,
@@ -228,6 +238,7 @@ class _$InitialValuesImpl implements _InitialValues {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateButtonEnablity,
@@ -238,6 +249,7 @@ class _$InitialValuesImpl implements _InitialValues {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     editPressed,
@@ -300,6 +312,7 @@ abstract class _$$UpdateButtonEnablityImplCopyWith<$Res> {
     String dateOfBirth,
     String gender,
     String country,
+    String countryFlag,
     File? profilePic,
   });
 }
@@ -322,6 +335,7 @@ class __$$UpdateButtonEnablityImplCopyWithImpl<$Res>
     Object? dateOfBirth = null,
     Object? gender = null,
     Object? country = null,
+    Object? countryFlag = null,
     Object? profilePic = freezed,
   }) {
     return _then(
@@ -342,6 +356,10 @@ class __$$UpdateButtonEnablityImplCopyWithImpl<$Res>
             ? _value.country
             : country // ignore: cast_nullable_to_non_nullable
                   as String,
+        countryFlag: null == countryFlag
+            ? _value.countryFlag
+            : countryFlag // ignore: cast_nullable_to_non_nullable
+                  as String,
         profilePic: freezed == profilePic
             ? _value.profilePic
             : profilePic // ignore: cast_nullable_to_non_nullable
@@ -359,6 +377,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
     required this.dateOfBirth,
     required this.gender,
     required this.country,
+    required this.countryFlag,
     required this.profilePic,
   });
 
@@ -371,11 +390,13 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
   @override
   final String country;
   @override
+  final String countryFlag;
+  @override
   final File? profilePic;
 
   @override
   String toString() {
-    return 'EditProfileEvent.updateButtonEnablity(fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, profilePic: $profilePic)';
+    return 'EditProfileEvent.updateButtonEnablity(fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, countryFlag: $countryFlag, profilePic: $profilePic)';
   }
 
   @override
@@ -389,6 +410,8 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
                 other.dateOfBirth == dateOfBirth) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.country, country) || other.country == country) &&
+            (identical(other.countryFlag, countryFlag) ||
+                other.countryFlag == countryFlag) &&
             (identical(other.profilePic, profilePic) ||
                 other.profilePic == profilePic));
   }
@@ -400,6 +423,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
     dateOfBirth,
     gender,
     country,
+    countryFlag,
     profilePic,
   );
 
@@ -424,6 +448,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     updateButtonEnablity,
@@ -434,6 +459,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     editPressed,
@@ -443,6 +469,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
       dateOfBirth,
       gender,
       country,
+      countryFlag,
       profilePic,
     );
   }
@@ -456,6 +483,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateButtonEnablity,
@@ -466,6 +494,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     editPressed,
@@ -475,6 +504,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
       dateOfBirth,
       gender,
       country,
+      countryFlag,
       profilePic,
     );
   }
@@ -488,6 +518,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateButtonEnablity,
@@ -498,6 +529,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     editPressed,
@@ -509,6 +541,7 @@ class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
         dateOfBirth,
         gender,
         country,
+        countryFlag,
         profilePic,
       );
     }
@@ -556,6 +589,7 @@ abstract class _UpdateButtonEnablity implements EditProfileEvent {
     required final String dateOfBirth,
     required final String gender,
     required final String country,
+    required final String countryFlag,
     required final File? profilePic,
   }) = _$UpdateButtonEnablityImpl;
 
@@ -563,6 +597,7 @@ abstract class _UpdateButtonEnablity implements EditProfileEvent {
   String get dateOfBirth;
   String get gender;
   String get country;
+  String get countryFlag;
   File? get profilePic;
 
   /// Create a copy of EditProfileEvent
@@ -586,6 +621,7 @@ abstract class _$$EditPressedImplCopyWith<$Res> {
     String dateOfBirth,
     String gender,
     String country,
+    String countryFlag,
     File? profilePic,
   });
 }
@@ -610,6 +646,7 @@ class __$$EditPressedImplCopyWithImpl<$Res>
     Object? dateOfBirth = null,
     Object? gender = null,
     Object? country = null,
+    Object? countryFlag = null,
     Object? profilePic = freezed,
   }) {
     return _then(
@@ -638,6 +675,10 @@ class __$$EditPressedImplCopyWithImpl<$Res>
             ? _value.country
             : country // ignore: cast_nullable_to_non_nullable
                   as String,
+        countryFlag: null == countryFlag
+            ? _value.countryFlag
+            : countryFlag // ignore: cast_nullable_to_non_nullable
+                  as String,
         profilePic: freezed == profilePic
             ? _value.profilePic
             : profilePic // ignore: cast_nullable_to_non_nullable
@@ -657,6 +698,7 @@ class _$EditPressedImpl implements _EditPressed {
     required this.dateOfBirth,
     required this.gender,
     required this.country,
+    required this.countryFlag,
     required this.profilePic,
   });
 
@@ -673,11 +715,13 @@ class _$EditPressedImpl implements _EditPressed {
   @override
   final String country;
   @override
+  final String countryFlag;
+  @override
   final File? profilePic;
 
   @override
   String toString() {
-    return 'EditProfileEvent.editPressed(localizations: $localizations, isUserChangeProfileImage: $isUserChangeProfileImage, fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, profilePic: $profilePic)';
+    return 'EditProfileEvent.editPressed(localizations: $localizations, isUserChangeProfileImage: $isUserChangeProfileImage, fullName: $fullName, dateOfBirth: $dateOfBirth, gender: $gender, country: $country, countryFlag: $countryFlag, profilePic: $profilePic)';
   }
 
   @override
@@ -698,6 +742,8 @@ class _$EditPressedImpl implements _EditPressed {
                 other.dateOfBirth == dateOfBirth) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.country, country) || other.country == country) &&
+            (identical(other.countryFlag, countryFlag) ||
+                other.countryFlag == countryFlag) &&
             (identical(other.profilePic, profilePic) ||
                 other.profilePic == profilePic));
   }
@@ -711,6 +757,7 @@ class _$EditPressedImpl implements _EditPressed {
     dateOfBirth,
     gender,
     country,
+    countryFlag,
     profilePic,
   );
 
@@ -731,6 +778,7 @@ class _$EditPressedImpl implements _EditPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     updateButtonEnablity,
@@ -741,6 +789,7 @@ class _$EditPressedImpl implements _EditPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )
     editPressed,
@@ -752,6 +801,7 @@ class _$EditPressedImpl implements _EditPressed {
       dateOfBirth,
       gender,
       country,
+      countryFlag,
       profilePic,
     );
   }
@@ -765,6 +815,7 @@ class _$EditPressedImpl implements _EditPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateButtonEnablity,
@@ -775,6 +826,7 @@ class _$EditPressedImpl implements _EditPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     editPressed,
@@ -786,6 +838,7 @@ class _$EditPressedImpl implements _EditPressed {
       dateOfBirth,
       gender,
       country,
+      countryFlag,
       profilePic,
     );
   }
@@ -799,6 +852,7 @@ class _$EditPressedImpl implements _EditPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     updateButtonEnablity,
@@ -809,6 +863,7 @@ class _$EditPressedImpl implements _EditPressed {
       String dateOfBirth,
       String gender,
       String country,
+      String countryFlag,
       File? profilePic,
     )?
     editPressed,
@@ -822,6 +877,7 @@ class _$EditPressedImpl implements _EditPressed {
         dateOfBirth,
         gender,
         country,
+        countryFlag,
         profilePic,
       );
     }
@@ -871,6 +927,7 @@ abstract class _EditPressed implements EditProfileEvent {
     required final String dateOfBirth,
     required final String gender,
     required final String country,
+    required final String countryFlag,
     required final File? profilePic,
   }) = _$EditPressedImpl;
 
@@ -880,6 +937,7 @@ abstract class _EditPressed implements EditProfileEvent {
   String get dateOfBirth;
   String get gender;
   String get country;
+  String get countryFlag;
   File? get profilePic;
 
   /// Create a copy of EditProfileEvent

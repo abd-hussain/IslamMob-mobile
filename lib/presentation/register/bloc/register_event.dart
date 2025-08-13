@@ -11,6 +11,7 @@ class RegisterEvent with _$RegisterEvent {
     required String dateOfBirth,
     required String gender,
     required String country,
+    required String countryFlag,
     required File? profilePic,
   }) = _UpdateLoginButtonEnablity;
   const factory RegisterEvent.registerPressed({
@@ -20,6 +21,7 @@ class RegisterEvent with _$RegisterEvent {
     required String dateOfBirth,
     required String gender,
     required String country,
+    required String countryFlag,
     required File? profilePic,
     required bool savedCradintial,
   }) = _RegisterPressed;

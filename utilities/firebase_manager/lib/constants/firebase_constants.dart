@@ -23,4 +23,6 @@ class FirebaseCollectionConstants {
   static const user_contacts = 'user_contacts';
 
   static const registered_users = 'registered_users';
+  static const posts = 'posts';
+  static const votes = 'votes';
 }

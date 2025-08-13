@@ -57,6 +57,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         event.fullName.isNotEmpty &&
         event.gender.isNotEmpty &&
         event.country.isNotEmpty &&
+        event.countryFlag.isNotEmpty &&
         event.dateOfBirth.isNotEmpty;
   }
 
@@ -100,6 +101,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       dateOfBirth: event.dateOfBirth,
       profilePic: event.profilePic,
       country: event.country,
+      countryFlag: event.countryFlag,
     );
 
     if (value.containsKey(true)) {

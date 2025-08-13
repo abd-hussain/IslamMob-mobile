@@ -71,6 +71,9 @@ class $AssetsImagesGen {
   AssetGenImage get attachPlaceholder =>
       const AssetGenImage('assets/images/attach_placeholder.png');
 
+  /// File path: assets/images/avatar.png
+  AssetGenImage get avatar => const AssetGenImage('assets/images/avatar.png');
+
   /// File path: assets/images/background.png
   AssetGenImage get background =>
       const AssetGenImage('assets/images/background.png');
@@ -89,6 +92,10 @@ class $AssetsImagesGen {
   AssetGenImage get donatePopup =>
       const AssetGenImage('assets/images/donate_popup.png');
 
+  /// File path: assets/images/empty_item.svg
+  SvgGenImage get emptyItem =>
+      const SvgGenImage('assets/images/empty_item.svg');
+
   /// File path: assets/images/estekara_be.png
   AssetGenImage get estekaraBe =>
       const AssetGenImage('assets/images/estekara_be.png');
@@ -96,6 +103,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/finger_click.png
   AssetGenImage get fingerClick =>
       const AssetGenImage('assets/images/finger_click.png');
+
+  /// File path: assets/images/flag_place_holder.png
+  AssetGenImage get flagPlaceHolder =>
+      const AssetGenImage('assets/images/flag_place_holder.png');
 
   /// Directory path: assets/images/hajj
   $AssetsImagesHajjGen get hajj => const $AssetsImagesHajjGen();
@@ -141,11 +152,14 @@ class $AssetsImagesGen {
   /// List of all assets
   List<dynamic> get values => [
     attachPlaceholder,
+    avatar,
     background,
     calender,
     donatePopup,
+    emptyItem,
     estekaraBe,
     fingerClick,
+    flagPlaceHolder,
     hisnalmuslim,
     internet,
     readyToGo,

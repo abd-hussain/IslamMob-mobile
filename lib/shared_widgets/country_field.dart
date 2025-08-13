@@ -13,10 +13,12 @@ class CountryField extends StatelessWidget {
     required this.onChange,
   });
   final TextEditingController controller;
-  final Function(String) onChange;
+  final Function({required String countryName, required String countryFlag})
+  onChange;
 
   @override
   Widget build(BuildContext context) {
+    String countryFlag = "";
     return Stack(
       children: [
         CustomTextField(
@@ -26,7 +28,8 @@ class CountryField extends StatelessWidget {
           keyboardType: TextInputType.text,
           inputFormatters: [LengthLimitingTextInputFormatter(45)],
           onChange: (text) {},
-          onEditingComplete: () => onChange(controller.text),
+          onEditingComplete: () =>
+              onChange(countryName: controller.text, countryFlag: countryFlag),
         ),
         InkWell(
           onTap: () async {
@@ -34,7 +37,11 @@ class CountryField extends StatelessWidget {
               selectedCountry,
             ) {
               controller.text = selectedCountry.countryName;
-              onChange(selectedCountry.countryName);
+              countryFlag = selectedCountry.flag;
+              onChange(
+                countryName: selectedCountry.countryName,
+                countryFlag: selectedCountry.flag,
+              );
             });
           },
           child: Padding(

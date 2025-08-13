@@ -8,6 +8,7 @@ class EditProfileEvent with _$EditProfileEvent {
     required String dateOfBirth,
     required String gender,
     required String country,
+    required String countryFlag,
     required File? profilePic,
   }) = _UpdateButtonEnablity;
   const factory EditProfileEvent.editPressed({
@@ -17,6 +18,7 @@ class EditProfileEvent with _$EditProfileEvent {
     required String dateOfBirth,
     required String gender,
     required String country,
+    required String countryFlag,
     required File? profilePic,
   }) = _EditPressed;
 }

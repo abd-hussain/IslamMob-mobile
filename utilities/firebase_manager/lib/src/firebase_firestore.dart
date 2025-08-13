@@ -13,8 +13,11 @@ class FirebaseFirestoreRepository {
       FirebaseFirestore.instance;
 
   /// Fetches all documents from a Firestore collection.
-  static Future<List<Map<String, dynamic>>> getAllDocuments({
+  static Future<List<FirebaseDocumentSnapshot>> getAllDocuments({
     required String collectionName,
+    bool withPagination = false,
+    int limit = 10,
+    DocumentSnapshot? startAfterDoc, // for pagination
   }) async {
     if (await _isConnected()) {
       if (!await FirebaseManagerBase.isFirebaseInitialized()) {
@@ -22,18 +25,74 @@ class FirebaseFirestoreRepository {
       }
       try {
         final collection = _firestoreInstance.collection(collectionName);
+        Query query;
+        if (withPagination) {
+          // Apply pagination with optional startAfter
+          if (startAfterDoc != null) {
+            query = collection
+                .orderBy('createdAt', descending: true)
+                .startAfterDocument(startAfterDoc)
+                .limit(limit);
+          } else {
+            query = collection
+                .orderBy('createdAt', descending: true)
+                .limit(limit);
+          }
+        } else {
+          query = collection;
+        }
+        final querySnapshot = await query.get();
 
-        final List<Map<String, dynamic>> documents = (await collection.get())
-            .docs
-            .map((doc) => doc.data())
+        final List<FirebaseDocumentSnapshot> documents = querySnapshot.docs
+            .map(
+              (doc) => FirebaseDocumentSnapshot(
+                data: doc.data()! as Map<String, dynamic>,
+                id: doc.id,
+                raw: doc, // you can keep this private
+              ),
+            )
             .toList();
 
         return documents;
       } on FirebaseException catch (error) {
         LoggerManagerBase.logCritical(
           error: error,
-          message: 'Unable to fetch data',
+          message: 'Unable to fetch posts',
         );
+        return [];
+      }
+    }
+    return [];
+  }
+
+  static Future<List<FirebaseDocumentSnapshot>> getSubCollectionDocuments({
+    required String collectionName,
+    required String docId,
+    required String subCollectionName,
+  }) async {
+    if (await _isConnected()) {
+      if (!await FirebaseManagerBase.isFirebaseInitialized()) {
+        await FirebaseManagerBase.initialize();
+      }
+      try {
+        final subCollectionRef = _firestoreInstance
+            .collection(collectionName)
+            .doc(docId)
+            .collection(subCollectionName);
+        final snapshot = await subCollectionRef.get();
+        return snapshot.docs.map((doc) {
+          return FirebaseDocumentSnapshot(
+            id: doc.id,
+            data: doc.data(),
+            raw: doc,
+          );
+        }).toList();
+      } on FirebaseException catch (error) {
+        LoggerManagerBase.logCritical(
+          error: error,
+          message: 'Unable to fetch SubCollection',
+        );
+        return [];
       }
     }
     return [];
@@ -76,23 +135,65 @@ class FirebaseFirestoreRepository {
     }
   }
 
+  /// Sets Firestore data.
+  static Future<void> addData<T>({
+    required String collectionPath,
+    required Map<String, dynamic> map,
+  }) async {
+    try {
+      final collection = _firestoreInstance.collection(collectionPath);
+      await collection.add(map);
+    } catch (error) {
+      LoggerManagerBase.logCritical(
+        message: 'Error setting Firestore data',
+        error: error,
+      );
+    }
+  }
+
+  /// Sets Firestore Post data
+  static Future<void> addPostWithSubcollections<T>({
+    required Map<String, dynamic> mainMap,
+    required Map<String, dynamic> reportMap,
+    required Map<String, dynamic> voteMap,
+  }) async {
+    try {
+      final postsRef = FirebaseFirestore.instance.collection('posts');
+
+      // 1️⃣ Create the post (auto-generated ID)
+      final docRef = await postsRef.add(mainMap);
+
+      // 2️⃣ Add to 'reports' subcollection
+      await docRef.collection('reports').add(reportMap);
+
+      // 3️⃣ Add to 'votes' subcollection
+      await docRef.collection('votes').add(voteMap);
+    } catch (error) {
+      LoggerManagerBase.logCritical(
+        message: 'Error setting Firestore data',
+        error: error,
+      );
+    }
+  }
+
   /// Updates a single field in a Firestore document.
   static Future<void> updateField({
     required String collectionName,
     required String docId,
-    required String field,
-    required dynamic value,
+    required Map<String, dynamic> updateData,
   }) async {
     if (await _isConnected()) {
       if (!await FirebaseManagerBase.isFirebaseInitialized()) {
         await FirebaseManagerBase.initialize();
       }
       try {
-        await _firestoreInstance.collection(collectionName).doc(docId).update({
-          field: value,
-        });
+        await _firestoreInstance
+            .collection(collectionName)
+            .doc(docId)
+            .update(updateData);
         LoggerManagerBase.logInfo(
-          message: 'Field "$field" updated in document: $collectionName/$docId',
+          message:
+              'Field "${updateData.keys}" updated in document: $collectionName/$docId',
         );
       } on FirebaseException catch (error) {
         LoggerManagerBase.logCritical(
@@ -103,6 +204,55 @@ class FirebaseFirestoreRepository {
     } else {
       LoggerManagerBase.logWarning(
         message: 'No internet connection. Update operation skipped.',
+      );
+    }
+  }
+
+  static Future<void> updateArrayField({
+    required String collectionName,
+    required String docId,
+    required String fieldToAdd,
+    String? fieldToRemove, // optional
+    required dynamic valueToAddOrRemove,
+    bool removeOnly = false,
+  }) async {
+    if (!await _isConnected()) {
+      LoggerManagerBase.logWarning(
+        message: 'No internet connection. Update operation skipped.',
+      );
+      return;
+    }
+
+    if (!await FirebaseManagerBase.isFirebaseInitialized()) {
+      await FirebaseManagerBase.initialize();
+    }
+
+    try {
+      final docRef = _firestoreInstance.collection(collectionName).doc(docId);
+
+      final Map<String, dynamic> updateData = {};
+
+      if (removeOnly) {
+        updateData[fieldToAdd] = FieldValue.arrayRemove([valueToAddOrRemove]);
+        if (fieldToRemove != null) {
+          updateData[fieldToRemove] = FieldValue.arrayRemove([
+            valueToAddOrRemove,
+          ]);
+        }
+      } else {
+        updateData[fieldToAdd] = FieldValue.arrayUnion([valueToAddOrRemove]);
+        if (fieldToRemove != null) {
+          updateData[fieldToRemove] = FieldValue.arrayRemove([
+            valueToAddOrRemove,
+          ]);
+        }
+      }
+
+      await docRef.update(updateData);
+    } on FirebaseException catch (error) {
+      LoggerManagerBase.logCritical(
+        error: error,
+        message: 'Failed to update field: $collectionName/$docId',
       );
     }
   }

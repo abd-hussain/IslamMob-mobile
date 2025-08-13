@@ -15,6 +15,7 @@ class ProfileModel with _$ProfileModel {
     String? signInMethod,
     String? emailAddress,
     String? password,
+    String? countryFlag,
   }) = _ProfileModel;
 
   factory ProfileModel.fromJson(Map<String, dynamic> json) =>

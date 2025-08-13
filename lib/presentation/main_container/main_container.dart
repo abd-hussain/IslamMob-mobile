@@ -36,13 +36,13 @@ class _MainContainerState extends State<MainContainer> {
     _checkApplicationVersion();
     return BlocProvider(
       create: (_) => locator<MainContainerBloc>(),
-      child: SafeArea(
-        child: Scaffold(
-          backgroundColor: const Color(0xffF5F6F7),
-          resizeToAvoidBottomInset: false,
-          extendBody: true,
-          appBar: const MainCustomAppBar(),
-          body: ColoredBox(
+      child: Scaffold(
+        backgroundColor: const Color(0xffF5F6F7),
+        resizeToAvoidBottomInset: false,
+        extendBody: true,
+        appBar: const MainCustomAppBar(),
+        body: SafeArea(
+          child: ColoredBox(
             color: const Color(0xffF5F6F7),
             child: BlocBuilder<MainContainerBloc, MainContainerState>(
               buildWhen: (previous, current) =>
@@ -53,14 +53,15 @@ class _MainContainerState extends State<MainContainer> {
                   children: const [
                     TabNavigator(initialRoute: RoutesConstants.homeScreen),
                     TabNavigator(initialRoute: RoutesConstants.quranScreen),
+                    TabNavigator(initialRoute: RoutesConstants.feedTabScreen),
                     TabNavigator(initialRoute: RoutesConstants.settingsScreen),
                   ],
                 );
               },
             ),
           ),
-          bottomNavigationBar: const BottomNavigationBarView(),
         ),
+        bottomNavigationBar: const SafeArea(child: BottomNavigationBarView()),
       ),
     );
   }

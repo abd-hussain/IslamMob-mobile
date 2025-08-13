@@ -19,9 +19,9 @@ class BottomNavigationBarView extends StatefulWidget {
 class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
   @override
   Widget build(BuildContext context) {
+    final localization = IslamMobLocalizations.of(context);
     return BlocBuilder<MainContainerBloc, MainContainerState>(
       builder: (context, state) {
-        final localization = IslamMobLocalizations.of(context);
         return DuploBottomNavbar(
           selectedIndex: state.selectedIndex,
           navItems: [
@@ -50,6 +50,17 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
               ),
               unselectedIcon: const Icon(
                 Icons.menu_book_rounded,
+                color: Color(0xff98A2B3),
+              ),
+            ),
+            DubloBottomNavBarItems(
+              title: localization.today,
+              selectedIcon: const Icon(
+                Icons.local_fire_department_outlined,
+                color: Colors.amber,
+              ),
+              unselectedIcon: const Icon(
+                Icons.local_fire_department_outlined,
                 color: Color(0xff98A2B3),
               ),
             ),

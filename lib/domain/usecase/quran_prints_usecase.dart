@@ -53,23 +53,25 @@ class QuranPrintsUsecase {
 
   /// Maps Firestore documents to `QuranPrints` objects
   static List<QuranPrints> mapDocumentsToQuranPrints(
-    List<Map<String, dynamic>> documents,
+    List<FirebaseDocumentSnapshot> documents,
   ) {
     return documents.map((doc) {
+      final data = doc.data;
+
       return QuranPrints(
-        nameReferance: (doc["name_referance"] as String?) ?? "",
-        description: (doc["description"] as String?) ?? "",
-        language: (doc["language"] as String?) ?? "",
-        previewImage: (doc["previewImage"] as String?) ?? "",
-        attachmentLocation: (doc["attachmentLocation"] as String?) ?? "",
+        nameReferance: (data["name_referance"] as String?) ?? "",
+        description: (data["description"] as String?) ?? "",
+        language: (data["language"] as String?) ?? "",
+        previewImage: (data["previewImage"] as String?) ?? "",
+        attachmentLocation: (data["attachmentLocation"] as String?) ?? "",
         addedPagesAttachmentLocation:
-            (doc["addedPagesAttachmentLocation"] as String?) ?? "",
-        fieldName: (doc["fieldName"] as String?) ?? "",
+            (data["addedPagesAttachmentLocation"] as String?) ?? "",
+        fieldName: (data["fieldName"] as String?) ?? "",
         juz2ToPageNumbers:
-            (doc["juz2ToPageNumbers"] as Map<String, dynamic>?) ?? {},
+            (data["juz2ToPageNumbers"] as Map<String, dynamic>?) ?? {},
         sorahToPageNumbers:
-            (doc["sorahToPageNumbers"] as Map<String, dynamic>?) ?? {},
-        hidden: (doc["hidden"] as bool?) ?? false,
+            (data["sorahToPageNumbers"] as Map<String, dynamic>?) ?? {},
+        hidden: (data["hidden"] as bool?) ?? false,
       );
     }).toList();
   }
