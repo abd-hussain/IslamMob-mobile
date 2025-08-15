@@ -48,7 +48,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
         start: 16,
         end: 16,
         top: 8,
-        bottom: 27,
+        bottom: 20,
       ),
       padding: const EdgeInsets.only(left: 6, right: 6),
       decoration: BoxDecoration(

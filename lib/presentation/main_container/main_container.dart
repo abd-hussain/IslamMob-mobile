@@ -42,26 +42,39 @@ class _MainContainerState extends State<MainContainer> {
         extendBody: true,
         appBar: const MainCustomAppBar(),
         body: SafeArea(
-          child: ColoredBox(
-            color: const Color(0xffF5F6F7),
-            child: BlocBuilder<MainContainerBloc, MainContainerState>(
-              buildWhen: (previous, current) =>
-                  previous.selectedIndex != current.selectedIndex,
-              builder: (context, state) {
-                return IndexedStack(
-                  index: state.selectedIndex,
-                  children: const [
-                    TabNavigator(initialRoute: RoutesConstants.homeScreen),
-                    TabNavigator(initialRoute: RoutesConstants.quranScreen),
-                    TabNavigator(initialRoute: RoutesConstants.feedTabScreen),
-                    TabNavigator(initialRoute: RoutesConstants.settingsScreen),
-                  ],
-                );
-              },
-            ),
+          child: Stack(
+            children: [
+              ColoredBox(
+                color: const Color(0xffF5F6F7),
+                child: BlocBuilder<MainContainerBloc, MainContainerState>(
+                  buildWhen: (previous, current) =>
+                      previous.selectedIndex != current.selectedIndex,
+                  builder: (context, state) {
+                    return IndexedStack(
+                      index: state.selectedIndex,
+                      children: const [
+                        TabNavigator(initialRoute: RoutesConstants.homeScreen),
+                        TabNavigator(initialRoute: RoutesConstants.quranScreen),
+                        TabNavigator(
+                          initialRoute: RoutesConstants.feedTabScreen,
+                        ),
+                        TabNavigator(
+                          initialRoute: RoutesConstants.settingsScreen,
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+              const Positioned(
+                bottom: 4,
+                left: 4,
+                right: 4,
+                child: BottomNavigationBarView(),
+              ),
+            ],
           ),
         ),
-        bottomNavigationBar: const SafeArea(child: BottomNavigationBarView()),
       ),
     );
   }
