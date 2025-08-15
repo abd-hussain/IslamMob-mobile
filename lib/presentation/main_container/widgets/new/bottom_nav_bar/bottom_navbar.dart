@@ -44,12 +44,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
     pageIndex = currentIndex;
     return Container(
       height: 68,
-      margin: const EdgeInsetsDirectional.only(
-        start: 16,
-        end: 16,
-        top: 8,
-        bottom: 20,
-      ),
+      margin: const EdgeInsetsDirectional.only(start: 8, end: 8, bottom: 8),
       padding: const EdgeInsets.only(left: 6, right: 6),
       decoration: BoxDecoration(
         color: const Color(0xff292929),
