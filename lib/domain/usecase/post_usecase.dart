@@ -5,11 +5,9 @@ import 'package:logger_manager/logger_manager.dart';
 
 //TODO: handle pagenation/ pull to refresh
 //TODO: handle watchlist posts
-//TODO: add real posts
 //TODO: post up by defuilt why ??
 //TODO: post more option bottomsheet hight is wrong
 //TODO: post date is not formated
-//TODO: list of post have issue with showing last post
 //TODO: post profile image not fit 100%
 //TODO: add more space between posts
 //TODO: should recoginize arabic english posts arabic should be RTL
