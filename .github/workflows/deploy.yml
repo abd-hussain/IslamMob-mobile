@@ -92,7 +92,7 @@ jobs:
               make deploy-android
 
   ios:
-    runs-on: macos-15
+    runs-on: self-hosted
 
     steps:
         - name: 📚 Set up git and fetch all history for all branches and tags
