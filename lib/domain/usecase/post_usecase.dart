@@ -6,14 +6,14 @@ import 'package:logger_manager/logger_manager.dart';
 //TODO: handle pagenation/ pull to refresh
 //TODO: handle watchlist posts
 //TODO: post up by defuilt why ??
-//TODO: post more option bottomsheet hight is wrong
 //TODO: post date is not formated
 //TODO: post profile image not fit 100%
-//TODO: add more space between posts
-//TODO: should recoginize arabic english posts arabic should be RTL
 
 class PostUsecase {
-  static Future<List<Post>> getPosts({required PostCategoryType type, required String userEmail}) async {
+  static Future<List<Post>> getPosts({
+    required PostCategoryType type,
+    required String userEmail,
+  }) async {
     try {
       final documents = await FirebaseFirestoreRepository.getAllDocuments(
         collectionName: FirebaseCollectionConstants.posts,
@@ -22,7 +22,10 @@ class PostUsecase {
       );
       return _mapDocumentsToPosts(documents, userEmail, type);
     } catch (e) {
-      LoggerManagerBase.logErrorMessage(error: e, message: 'Error fetching Posts');
+      LoggerManagerBase.logErrorMessage(
+        error: e,
+        message: 'Error fetching Posts',
+      );
       return [];
     }
   }
@@ -44,7 +47,10 @@ class PostUsecase {
     if (filteredDocs.isEmpty) return [];
 
     // Extract all unique author IDs
-    final authorIds = filteredDocs.map((doc) => doc.data["authorEmail"] as String?).whereType<String>().toSet();
+    final authorIds = filteredDocs
+        .map((doc) => doc.data["authorEmail"] as String?)
+        .whereType<String>()
+        .toSet();
 
     // Fetch all profiles in parallel
     final profiles = await _fetchProfiles(authorIds);
@@ -56,15 +62,26 @@ class PostUsecase {
       final authorId = data["authorEmail"] as String? ?? "";
       final profile = profiles[authorId];
 
-      final upVotes = List<String>.from((data["upVote"] as List<dynamic>?) ?? []);
-      final downVotes = List<String>.from((data["downVote"] as List<dynamic>?) ?? []);
-      final bookmarks = List<String>.from((data["bookmark"] as List<dynamic>?) ?? []);
-      final listOfReports = List<dynamic>.from((data["reports"] as List<dynamic>?) ?? []);
+      final upVotes = List<String>.from(
+        (data["upVote"] as List<dynamic>?) ?? [],
+      );
+      final downVotes = List<String>.from(
+        (data["downVote"] as List<dynamic>?) ?? [],
+      );
+      final bookmarks = List<String>.from(
+        (data["bookmark"] as List<dynamic>?) ?? [],
+      );
+      final listOfReports = List<dynamic>.from(
+        (data["reports"] as List<dynamic>?) ?? [],
+      );
 
       return Post(
         id: doc.id,
         createdDate: data["createdAt"] as String? ?? "",
         content: data["text"] as String? ?? "",
+        direction: (data["text"] as String? ?? "") == "RTL"
+            ? const PostDirection.rtl()
+            : const PostDirection.ltr(),
         downComments: downVotes.length,
         upComments: upVotes.length,
         ownerEmail: authorId,
@@ -80,17 +97,20 @@ class PostUsecase {
   }
 
   /// Batch fetch user profiles by IDs
-  static Future<Map<String, ProfileModel>> _fetchProfiles(Set<String> ids) async {
+  static Future<Map<String, ProfileModel>> _fetchProfiles(
+    Set<String> ids,
+  ) async {
     if (ids.isEmpty) return {};
 
     final futures = ids.map((id) async {
-      final profile = await FirebaseFirestoreRepository.getDataFromFireStoreDocument(
-        FireStoreOptions(
-          collectionName: FirebaseCollectionConstants.registered_users,
-          docName: id,
-          toModel: _toProfileModel,
-        ),
-      );
+      final profile =
+          await FirebaseFirestoreRepository.getDataFromFireStoreDocument(
+            FireStoreOptions(
+              collectionName: FirebaseCollectionConstants.registered_users,
+              docName: id,
+              toModel: _toProfileModel,
+            ),
+          );
       return MapEntry(id, profile);
     });
 
@@ -106,9 +126,17 @@ class PostUsecase {
   }
 
   static bool _isUserReported(List<dynamic> reports, String userEmail) =>
-      reports.any((report) => report is Map<String, String> ? report.containsKey(userEmail) : false);
+      reports.any(
+        (report) => report is Map<String, String>
+            ? report.containsKey(userEmail)
+            : false,
+      );
 
-  static PostVoteType _getVoteStatus(List<String> upVotes, List<String> downVotes, String userEmail) {
+  static PostVoteType _getVoteStatus(
+    List<String> upVotes,
+    List<String> downVotes,
+    String userEmail,
+  ) {
     if (upVotes.contains(userEmail)) return const PostVoteType.up();
     if (downVotes.contains(userEmail)) return const PostVoteType.down();
     return const PostVoteType.idl();

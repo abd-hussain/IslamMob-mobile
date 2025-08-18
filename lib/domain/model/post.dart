@@ -13,6 +13,7 @@ class Post with _$Post {
     required int downComments,
     required String content,
     required PostCategoryType? category,
+    required PostDirection direction,
 
     //Profile
     required String profileImageUrl,
@@ -24,8 +25,7 @@ class Post with _$Post {
     required PostVoteType voteStatus,
   }) = _Post;
 
-  factory Post.fromJson(Map<String, dynamic> json) =>
-      _$PostFromJson(json); // <-- Add this
+  factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
 }
 
 @freezed
@@ -43,5 +43,13 @@ sealed class PostCategoryType with _$PostCategoryType {
   const factory PostCategoryType.wall() = _PostCategoryTypeWall;
   const factory PostCategoryType.watchlist() = _PostCategoryTypeWatchlist;
   factory PostCategoryType.fromJson(Map<String, dynamic> json) =>
-      _$PostCategoryTypeFromJson(json); // <-- Add this
+      _$PostCategoryTypeFromJson(json);
+}
+
+@freezed
+sealed class PostDirection with _$PostDirection {
+  const factory PostDirection.rtl() = _PostDirectionRTL;
+  const factory PostDirection.ltr() = _PostDirectionLTR;
+  factory PostDirection.fromJson(Map<String, dynamic> json) =>
+      _$PostDirectionFromJson(json);
 }

@@ -70,6 +70,7 @@ class PostReportBottomsheet {
                 description: "",
                 onPressed: () {},
               ),
+              const SizedBox(height: 28),
             ],
           ),
         );

@@ -27,8 +27,8 @@ mixin _$Post {
   int get upComments => throw _privateConstructorUsedError;
   int get downComments => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
-  PostCategoryType? get category =>
-      throw _privateConstructorUsedError; //Profile
+  PostCategoryType? get category => throw _privateConstructorUsedError;
+  PostDirection get direction => throw _privateConstructorUsedError; //Profile
   String get profileImageUrl => throw _privateConstructorUsedError;
   String get profilefullName => throw _privateConstructorUsedError;
   String get countryFlag => throw _privateConstructorUsedError; //Details
@@ -58,6 +58,7 @@ abstract class $PostCopyWith<$Res> {
     int downComments,
     String content,
     PostCategoryType? category,
+    PostDirection direction,
     String profileImageUrl,
     String profilefullName,
     String countryFlag,
@@ -67,6 +68,7 @@ abstract class $PostCopyWith<$Res> {
   });
 
   $PostCategoryTypeCopyWith<$Res>? get category;
+  $PostDirectionCopyWith<$Res> get direction;
   $PostVoteTypeCopyWith<$Res> get voteStatus;
 }
 
@@ -92,6 +94,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? downComments = null,
     Object? content = null,
     Object? category = freezed,
+    Object? direction = null,
     Object? profileImageUrl = null,
     Object? profilefullName = null,
     Object? countryFlag = null,
@@ -129,6 +132,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
                 ? _value.category
                 : category // ignore: cast_nullable_to_non_nullable
                       as PostCategoryType?,
+            direction: null == direction
+                ? _value.direction
+                : direction // ignore: cast_nullable_to_non_nullable
+                      as PostDirection,
             profileImageUrl: null == profileImageUrl
                 ? _value.profileImageUrl
                 : profileImageUrl // ignore: cast_nullable_to_non_nullable
@@ -176,6 +183,16 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
+  $PostDirectionCopyWith<$Res> get direction {
+    return $PostDirectionCopyWith<$Res>(_value.direction, (value) {
+      return _then(_value.copyWith(direction: value) as $Val);
+    });
+  }
+
+  /// Create a copy of Post
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
   $PostVoteTypeCopyWith<$Res> get voteStatus {
     return $PostVoteTypeCopyWith<$Res>(_value.voteStatus, (value) {
       return _then(_value.copyWith(voteStatus: value) as $Val);
@@ -199,6 +216,7 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
     int downComments,
     String content,
     PostCategoryType? category,
+    PostDirection direction,
     String profileImageUrl,
     String profilefullName,
     String countryFlag,
@@ -209,6 +227,8 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
 
   @override
   $PostCategoryTypeCopyWith<$Res>? get category;
+  @override
+  $PostDirectionCopyWith<$Res> get direction;
   @override
   $PostVoteTypeCopyWith<$Res> get voteStatus;
 }
@@ -232,6 +252,7 @@ class __$$PostImplCopyWithImpl<$Res>
     Object? downComments = null,
     Object? content = null,
     Object? category = freezed,
+    Object? direction = null,
     Object? profileImageUrl = null,
     Object? profilefullName = null,
     Object? countryFlag = null,
@@ -269,6 +290,10 @@ class __$$PostImplCopyWithImpl<$Res>
             ? _value.category
             : category // ignore: cast_nullable_to_non_nullable
                   as PostCategoryType?,
+        direction: null == direction
+            ? _value.direction
+            : direction // ignore: cast_nullable_to_non_nullable
+                  as PostDirection,
         profileImageUrl: null == profileImageUrl
             ? _value.profileImageUrl
             : profileImageUrl // ignore: cast_nullable_to_non_nullable
@@ -309,6 +334,7 @@ class _$PostImpl implements _Post {
     required this.downComments,
     required this.content,
     required this.category,
+    required this.direction,
     required this.profileImageUrl,
     required this.profilefullName,
     required this.countryFlag,
@@ -334,6 +360,8 @@ class _$PostImpl implements _Post {
   final String content;
   @override
   final PostCategoryType? category;
+  @override
+  final PostDirection direction;
   //Profile
   @override
   final String profileImageUrl;
@@ -351,7 +379,7 @@ class _$PostImpl implements _Post {
 
   @override
   String toString() {
-    return 'Post(id: $id, createdDate: $createdDate, ownerEmail: $ownerEmail, upComments: $upComments, downComments: $downComments, content: $content, category: $category, profileImageUrl: $profileImageUrl, profilefullName: $profilefullName, countryFlag: $countryFlag, isReported: $isReported, isAddedToBookMark: $isAddedToBookMark, voteStatus: $voteStatus)';
+    return 'Post(id: $id, createdDate: $createdDate, ownerEmail: $ownerEmail, upComments: $upComments, downComments: $downComments, content: $content, category: $category, direction: $direction, profileImageUrl: $profileImageUrl, profilefullName: $profilefullName, countryFlag: $countryFlag, isReported: $isReported, isAddedToBookMark: $isAddedToBookMark, voteStatus: $voteStatus)';
   }
 
   @override
@@ -371,6 +399,8 @@ class _$PostImpl implements _Post {
             (identical(other.content, content) || other.content == content) &&
             (identical(other.category, category) ||
                 other.category == category) &&
+            (identical(other.direction, direction) ||
+                other.direction == direction) &&
             (identical(other.profileImageUrl, profileImageUrl) ||
                 other.profileImageUrl == profileImageUrl) &&
             (identical(other.profilefullName, profilefullName) ||
@@ -396,6 +426,7 @@ class _$PostImpl implements _Post {
     downComments,
     content,
     category,
+    direction,
     profileImageUrl,
     profilefullName,
     countryFlag,
@@ -427,6 +458,7 @@ abstract class _Post implements Post {
     required final int downComments,
     required final String content,
     required final PostCategoryType? category,
+    required final PostDirection direction,
     required final String profileImageUrl,
     required final String profilefullName,
     required final String countryFlag,
@@ -450,7 +482,9 @@ abstract class _Post implements Post {
   @override
   String get content;
   @override
-  PostCategoryType? get category; //Profile
+  PostCategoryType? get category;
+  @override
+  PostDirection get direction; //Profile
   @override
   String get profileImageUrl;
   @override
@@ -1265,4 +1299,326 @@ abstract class _PostCategoryTypeWatchlist implements PostCategoryType {
 
   factory _PostCategoryTypeWatchlist.fromJson(Map<String, dynamic> json) =
       _$PostCategoryTypeWatchlistImpl.fromJson;
+}
+
+PostDirection _$PostDirectionFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType']) {
+    case 'rtl':
+      return _PostDirectionRTL.fromJson(json);
+    case 'ltr':
+      return _PostDirectionLTR.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(
+        json,
+        'runtimeType',
+        'PostDirection',
+        'Invalid union type "${json['runtimeType']}"!',
+      );
+  }
+}
+
+/// @nodoc
+mixin _$PostDirection {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() rtl,
+    required TResult Function() ltr,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? rtl,
+    TResult? Function()? ltr,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? rtl,
+    TResult Function()? ltr,
+    required TResult orElse(),
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PostDirectionRTL value) rtl,
+    required TResult Function(_PostDirectionLTR value) ltr,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PostDirectionRTL value)? rtl,
+    TResult? Function(_PostDirectionLTR value)? ltr,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PostDirectionRTL value)? rtl,
+    TResult Function(_PostDirectionLTR value)? ltr,
+    required TResult orElse(),
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this PostDirection to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PostDirectionCopyWith<$Res> {
+  factory $PostDirectionCopyWith(
+    PostDirection value,
+    $Res Function(PostDirection) then,
+  ) = _$PostDirectionCopyWithImpl<$Res, PostDirection>;
+}
+
+/// @nodoc
+class _$PostDirectionCopyWithImpl<$Res, $Val extends PostDirection>
+    implements $PostDirectionCopyWith<$Res> {
+  _$PostDirectionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of PostDirection
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$PostDirectionRTLImplCopyWith<$Res> {
+  factory _$$PostDirectionRTLImplCopyWith(
+    _$PostDirectionRTLImpl value,
+    $Res Function(_$PostDirectionRTLImpl) then,
+  ) = __$$PostDirectionRTLImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PostDirectionRTLImplCopyWithImpl<$Res>
+    extends _$PostDirectionCopyWithImpl<$Res, _$PostDirectionRTLImpl>
+    implements _$$PostDirectionRTLImplCopyWith<$Res> {
+  __$$PostDirectionRTLImplCopyWithImpl(
+    _$PostDirectionRTLImpl _value,
+    $Res Function(_$PostDirectionRTLImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of PostDirection
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PostDirectionRTLImpl implements _PostDirectionRTL {
+  const _$PostDirectionRTLImpl({final String? $type}) : $type = $type ?? 'rtl';
+
+  factory _$PostDirectionRTLImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostDirectionRTLImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'PostDirection.rtl()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PostDirectionRTLImpl);
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() rtl,
+    required TResult Function() ltr,
+  }) {
+    return rtl();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? rtl,
+    TResult? Function()? ltr,
+  }) {
+    return rtl?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? rtl,
+    TResult Function()? ltr,
+    required TResult orElse(),
+  }) {
+    if (rtl != null) {
+      return rtl();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PostDirectionRTL value) rtl,
+    required TResult Function(_PostDirectionLTR value) ltr,
+  }) {
+    return rtl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PostDirectionRTL value)? rtl,
+    TResult? Function(_PostDirectionLTR value)? ltr,
+  }) {
+    return rtl?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PostDirectionRTL value)? rtl,
+    TResult Function(_PostDirectionLTR value)? ltr,
+    required TResult orElse(),
+  }) {
+    if (rtl != null) {
+      return rtl(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PostDirectionRTLImplToJson(this);
+  }
+}
+
+abstract class _PostDirectionRTL implements PostDirection {
+  const factory _PostDirectionRTL() = _$PostDirectionRTLImpl;
+
+  factory _PostDirectionRTL.fromJson(Map<String, dynamic> json) =
+      _$PostDirectionRTLImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$PostDirectionLTRImplCopyWith<$Res> {
+  factory _$$PostDirectionLTRImplCopyWith(
+    _$PostDirectionLTRImpl value,
+    $Res Function(_$PostDirectionLTRImpl) then,
+  ) = __$$PostDirectionLTRImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PostDirectionLTRImplCopyWithImpl<$Res>
+    extends _$PostDirectionCopyWithImpl<$Res, _$PostDirectionLTRImpl>
+    implements _$$PostDirectionLTRImplCopyWith<$Res> {
+  __$$PostDirectionLTRImplCopyWithImpl(
+    _$PostDirectionLTRImpl _value,
+    $Res Function(_$PostDirectionLTRImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of PostDirection
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PostDirectionLTRImpl implements _PostDirectionLTR {
+  const _$PostDirectionLTRImpl({final String? $type}) : $type = $type ?? 'ltr';
+
+  factory _$PostDirectionLTRImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostDirectionLTRImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'PostDirection.ltr()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PostDirectionLTRImpl);
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() rtl,
+    required TResult Function() ltr,
+  }) {
+    return ltr();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? rtl,
+    TResult? Function()? ltr,
+  }) {
+    return ltr?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? rtl,
+    TResult Function()? ltr,
+    required TResult orElse(),
+  }) {
+    if (ltr != null) {
+      return ltr();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PostDirectionRTL value) rtl,
+    required TResult Function(_PostDirectionLTR value) ltr,
+  }) {
+    return ltr(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PostDirectionRTL value)? rtl,
+    TResult? Function(_PostDirectionLTR value)? ltr,
+  }) {
+    return ltr?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PostDirectionRTL value)? rtl,
+    TResult Function(_PostDirectionLTR value)? ltr,
+    required TResult orElse(),
+  }) {
+    if (ltr != null) {
+      return ltr(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PostDirectionLTRImplToJson(this);
+  }
+}
+
+abstract class _PostDirectionLTR implements PostDirection {
+  const factory _PostDirectionLTR() = _$PostDirectionLTRImpl;
+
+  factory _PostDirectionLTR.fromJson(Map<String, dynamic> json) =
+      _$PostDirectionLTRImpl.fromJson;
 }

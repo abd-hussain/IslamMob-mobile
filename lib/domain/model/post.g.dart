@@ -16,6 +16,7 @@ _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
   category: json['category'] == null
       ? null
       : PostCategoryType.fromJson(json['category'] as Map<String, dynamic>),
+  direction: PostDirection.fromJson(json['direction'] as Map<String, dynamic>),
   profileImageUrl: json['profileImageUrl'] as String,
   profilefullName: json['profilefullName'] as String,
   countryFlag: json['countryFlag'] as String,
@@ -33,6 +34,7 @@ Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
       'downComments': instance.downComments,
       'content': instance.content,
       'category': instance.category,
+      'direction': instance.direction,
       'profileImageUrl': instance.profileImageUrl,
       'profilefullName': instance.profilefullName,
       'countryFlag': instance.countryFlag,
@@ -73,4 +75,20 @@ _$PostCategoryTypeWatchlistImpl _$$PostCategoryTypeWatchlistImplFromJson(
 
 Map<String, dynamic> _$$PostCategoryTypeWatchlistImplToJson(
   _$PostCategoryTypeWatchlistImpl instance,
+) => <String, dynamic>{'runtimeType': instance.$type};
+
+_$PostDirectionRTLImpl _$$PostDirectionRTLImplFromJson(
+  Map<String, dynamic> json,
+) => _$PostDirectionRTLImpl($type: json['runtimeType'] as String?);
+
+Map<String, dynamic> _$$PostDirectionRTLImplToJson(
+  _$PostDirectionRTLImpl instance,
+) => <String, dynamic>{'runtimeType': instance.$type};
+
+_$PostDirectionLTRImpl _$$PostDirectionLTRImplFromJson(
+  Map<String, dynamic> json,
+) => _$PostDirectionLTRImpl($type: json['runtimeType'] as String?);
+
+Map<String, dynamic> _$$PostDirectionLTRImplToJson(
+  _$PostDirectionLTRImpl instance,
 ) => <String, dynamic>{'runtimeType': instance.$type};
