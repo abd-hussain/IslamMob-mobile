@@ -3,11 +3,9 @@ import 'package:islam_app/domain/model/post.dart';
 import 'package:islam_app/domain/model/profile_model.dart';
 import 'package:logger_manager/logger_manager.dart';
 
-//TODO: handle pagenation/ pull to refresh
+//TODO: handle pagenation
 //TODO: handle watchlist posts
 //TODO: post up by defuilt why ??
-//TODO: post date is not formated
-//TODO: post profile image not fit 100%
 
 class PostUsecase {
   static Future<List<Post>> getPosts({
@@ -79,7 +77,7 @@ class PostUsecase {
         id: doc.id,
         createdDate: data["createdAt"] as String? ?? "",
         content: data["text"] as String? ?? "",
-        direction: (data["text"] as String? ?? "") == "RTL"
+        direction: (data["direction"] as String? ?? "") == "RTL"
             ? const PostDirection.rtl()
             : const PostDirection.ltr(),
         downComments: downVotes.length,

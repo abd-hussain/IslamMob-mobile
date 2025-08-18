@@ -123,12 +123,17 @@ class PostView extends StatelessWidget {
   }
 
   TextAlign returnCorrectTextAlign(PostDirection direction) {
+    print("------------currentLanguage $direction");
+
     final currentLanguage =
         DataBaseManagerBase.getFromDatabase(
               key: DatabaseFieldConstant.userLanguageCode,
               defaultValue: "en",
             )
             as String;
+
+    print("------------currentLanguage $currentLanguage");
+    print("------------direction ${direction == const PostDirection.rtl()}");
 
     final isEnglish = currentLanguage == "en";
 

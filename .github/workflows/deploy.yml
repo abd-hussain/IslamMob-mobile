@@ -129,11 +129,15 @@ jobs:
               echo "Warning: App Store Connect secret not found. Skipping App Store setup."
             fi
 
+        # - name: 🎯 Setup Fastlane
+        #   uses: ruby/setup-ruby@v1
+        #   with:
+        #     ruby-version: 3.3
+        #     rubygems: latest
         - name: 🎯 Setup Fastlane
-          uses: ruby/setup-ruby@v1
-          with:
-            ruby-version: 3.3
-            rubygems: latest
+          run: |
+            gem install bundler
+            gem install fastlane
         
         - name: 📦 Cleaning before we start
           run: |
