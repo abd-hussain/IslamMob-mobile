@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class PostHeaderView extends StatelessWidget {
@@ -35,17 +34,10 @@ class PostHeaderView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   child: profileImageUrl != ""
                       ? FadeInImage(
-                          placeholder: const AssetImage(
-                            "assets/images/avatar.png",
-                          ),
+                          placeholder: const AssetImage("assets/images/avatar.png"),
                           image: NetworkImage(profileImageUrl),
                         )
-                      : Image.asset(
-                          'assets/images/avatar.png',
-                          width: 110,
-                          height: 110,
-                          fit: BoxFit.fill,
-                        ),
+                      : Image.asset('assets/images/avatar.png', width: 110, height: 110, fit: BoxFit.fill),
                 ),
               ),
               Positioned(
@@ -56,18 +48,9 @@ class PostHeaderView extends StatelessWidget {
                   radius: 10,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
-                    child:
-                        profileCountryName != null || profileCountryName != ""
-                        ? Text(
-                            profileCountryName!,
-                            style: const TextStyle(fontSize: 20),
-                          )
-                        : Image.asset(
-                            'assets/images/flag_place_holder.png',
-                            width: 110,
-                            height: 110,
-                            fit: BoxFit.fill,
-                          ),
+                    child: profileCountryName != null || profileCountryName != ""
+                        ? Text(profileCountryName!, style: const TextStyle(fontSize: 20))
+                        : Image.asset('assets/images/flag_place_holder.png', width: 110, height: 110, fit: BoxFit.fill),
                   ),
                 ),
               ),
@@ -97,20 +80,20 @@ class PostHeaderView extends StatelessWidget {
             ],
           ),
           const Expanded(child: SizedBox()),
-          if (isMyPost)
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(50)),
-              child: Material(
-                child: IconButton(
-                  onPressed: onEditPost,
-                  icon: const Icon(
-                    Ionicons.create_outline,
-                    size: 20,
-                    color: Color(0xff292929),
-                  ),
-                ),
-              ),
-            ),
+          // if (isMyPost)
+          //   ClipRRect(
+          //     borderRadius: const BorderRadius.all(Radius.circular(50)),
+          //     child: Material(
+          //       child: IconButton(
+          //         onPressed: onEditPost,
+          //         icon: const Icon(
+          //           Ionicons.create_outline,
+          //           size: 20,
+          //           color: Color(0xff292929),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
         ],
       ),
     );

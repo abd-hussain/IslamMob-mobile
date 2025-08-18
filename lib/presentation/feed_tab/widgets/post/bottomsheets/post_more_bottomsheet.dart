@@ -33,7 +33,7 @@ class PostMoreBottomsheet {
                 fontWeight: FontWeight.bold,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
               _buildSettingsButton(
                 context: context,
                 title: isMarkedAsBookmark
@@ -63,6 +63,7 @@ class PostMoreBottomsheet {
                 color: Colors.white,
                 onPressed: () {},
               ),
+              const SizedBox(height: 28),
             ],
           ),
         );
