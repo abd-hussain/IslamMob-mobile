@@ -33,11 +33,22 @@ class PostHeaderView extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: profileImageUrl != ""
-                      ? FadeInImage(
-                          placeholder: const AssetImage("assets/images/avatar.png"),
-                          image: NetworkImage(profileImageUrl),
+                      ? SizedBox.fromSize(
+                          size: const Size.fromRadius(40),
+                          child: FadeInImage(
+                            placeholder: const AssetImage(
+                              "assets/images/avatar.png",
+                            ),
+                            image: NetworkImage(profileImageUrl),
+                            fit: BoxFit.cover,
+                          ),
                         )
-                      : Image.asset('assets/images/avatar.png', width: 110, height: 110, fit: BoxFit.fill),
+                      : Image.asset(
+                          'assets/images/avatar.png',
+                          width: 40,
+                          height: 40,
+                          fit: BoxFit.cover,
+                        ),
                 ),
               ),
               Positioned(
@@ -45,12 +56,21 @@ class PostHeaderView extends StatelessWidget {
                 bottom: 0,
                 child: CircleAvatar(
                   backgroundColor: Colors.transparent,
-                  radius: 10,
+                  radius: 8,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: profileCountryName != null || profileCountryName != ""
-                        ? Text(profileCountryName!, style: const TextStyle(fontSize: 20))
-                        : Image.asset('assets/images/flag_place_holder.png', width: 110, height: 110, fit: BoxFit.fill),
+                    borderRadius: BorderRadius.circular(8),
+                    child:
+                        profileCountryName != null || profileCountryName != ""
+                        ? Text(
+                            profileCountryName!,
+                            style: const TextStyle(fontSize: 10),
+                          )
+                        : Image.asset(
+                            'assets/images/flag_place_holder.png',
+                            width: 110,
+                            height: 110,
+                            fit: BoxFit.cover,
+                          ),
                   ),
                 ),
               ),

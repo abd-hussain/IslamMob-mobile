@@ -54,7 +54,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     _PullRefresh event,
     Emitter<FeedState> emit,
   ) async {
-    // ignore: use_build_context_synchronously
     return Future.delayed(
       const Duration(milliseconds: 1000),
       // ignore: use_build_context_synchronously

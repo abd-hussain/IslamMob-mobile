@@ -64,11 +64,11 @@ class _FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
             type: const PostCategoryType.wall(),
           ),
         ),
-      child: Column(
-        children: [
-          Builder(
-            builder: (builderContext) {
-              return FeedTabbarView(
+      child: Builder(
+        builder: (builderContext) {
+          return Column(
+            children: [
+              FeedTabbarView(
                 tabController: tabController,
                 onTap: (index) {
                   PostCategoryType type = const PostCategoryType.wall();
@@ -82,45 +82,47 @@ class _FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
                     ),
                   );
                 },
-              );
-            },
-          ),
-          Expanded(
-            child: BlocBuilder<FeedBloc, FeedState>(
-              buildWhen: (previous, current) =>
-                  previous.loadingStatus != current.loadingStatus,
-              builder: (buildContext, state) {
-                if (state.loadingStatus ==
-                    const FeedScreenProcessState.loading()) {
-                  return const PostShimmer();
-                }
-                return TabBarView(
-                  controller: tabController,
-                  children: [
-                    PostListView(
-                      postsList: state.wallPostList,
-                      onRefresh: () async => context.read<FeedBloc>().add(
-                        FeedEvent.pullRefresh(
-                          context: context,
-                          type: const PostCategoryType.wall(),
+              ),
+              Expanded(
+                child: BlocBuilder<FeedBloc, FeedState>(
+                  buildWhen: (previous, current) =>
+                      previous.loadingStatus != current.loadingStatus,
+                  builder: (buildContext, state) {
+                    if (state.loadingStatus ==
+                        const FeedScreenProcessState.loading()) {
+                      return const PostShimmer();
+                    }
+                    return TabBarView(
+                      controller: tabController,
+                      children: [
+                        PostListView(
+                          postsList: state.wallPostList,
+                          onRefresh: () async =>
+                              builderContext.read<FeedBloc>().add(
+                                FeedEvent.pullRefresh(
+                                  context: context,
+                                  type: const PostCategoryType.wall(),
+                                ),
+                              ),
                         ),
-                      ),
-                    ),
-                    PostListView(
-                      postsList: state.watchlistPostList,
-                      onRefresh: () async => context.read<FeedBloc>().add(
-                        FeedEvent.pullRefresh(
-                          context: context,
-                          type: const PostCategoryType.watchlist(),
+                        PostListView(
+                          postsList: state.watchlistPostList,
+                          onRefresh: () async =>
+                              builderContext.read<FeedBloc>().add(
+                                FeedEvent.pullRefresh(
+                                  context: context,
+                                  type: const PostCategoryType.watchlist(),
+                                ),
+                              ),
                         ),
-                      ),
-                    ),
-                  ],
-                );
-              },
-            ),
-          ),
-        ],
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
