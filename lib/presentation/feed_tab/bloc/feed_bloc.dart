@@ -19,7 +19,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
   }
 
   List<Post> wallListOfPosts = [];
-  List<Post> watchlistListOfPosts = [];
 
   FutureOr<void> _getPostFromSpesificCategory(
     _GetPostFromSpesificCategory event,
@@ -33,18 +32,12 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
         type: event.type,
         userEmail: _userEmail(),
       );
-    } else if (event.type == const PostCategoryType.watchlist()) {
-      watchlistListOfPosts = await PostUsecase.getPosts(
-        type: event.type,
-        userEmail: _userEmail(),
-      );
     }
 
     emit(
       state.copyWith(
         loadingStatus: const FeedScreenProcessState.done(),
         wallPostList: wallListOfPosts,
-        watchlistPostList: watchlistListOfPosts,
         showInternetConnectionView: !haveInternetConnection,
       ),
     );

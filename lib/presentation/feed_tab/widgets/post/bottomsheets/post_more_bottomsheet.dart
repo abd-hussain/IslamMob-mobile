@@ -5,11 +5,9 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 class PostMoreBottomsheet {
   Future<void> showBottomSheet({
     required BuildContext context,
-    required bool isMarkedAsBookmark,
     required bool isPostReportedBefore,
     required Function() onReportPressed,
     required Function() onSharePressed,
-    required Function() onBookMarkPressed,
   }) {
     final localize = IslamMobLocalizations.of(context);
     return showModalBottomSheet(
@@ -34,14 +32,6 @@ class PostMoreBottomsheet {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 8),
-              _buildSettingsButton(
-                context: context,
-                title: isMarkedAsBookmark
-                    ? localize.post_add_to_bookmark
-                    : localize.post_remove_from_bookmark,
-                color: const Color(0xff008480),
-                onPressed: onBookMarkPressed,
-              ),
               _buildSettingsButton(
                 context: context,
                 title: localize.post_share_via,

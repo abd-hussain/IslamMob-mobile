@@ -1,4 +1,3 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/post.dart';
@@ -77,20 +76,7 @@ class PostView extends StatelessWidget {
                     },
                     moreAction: () => PostMoreBottomsheet().showBottomSheet(
                       context: context,
-                      isMarkedAsBookmark: state.inBookmark,
                       isPostReportedBefore: state.isPostReported,
-                      onBookMarkPressed: () {
-                        if (context.read<PostBloc>().isUserLoggedIn()) {
-                          context.read<PostBloc>().add(
-                            PostEvent.addRemoveFromBookMark(
-                              state.postID,
-                              state.inBookmark,
-                            ),
-                          );
-                        } else {
-                          ShowToast.showLoginRequired(context);
-                        }
-                      },
                       onReportPressed: () {
                         if (context.read<PostBloc>().isUserLoggedIn()) {
                           PostReportBottomsheet().showBottomSheet(
@@ -123,22 +109,7 @@ class PostView extends StatelessWidget {
   }
 
   TextAlign returnCorrectTextAlign(PostDirection direction) {
-    print("------------currentLanguage $direction");
-
-    final currentLanguage =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldConstant.userLanguageCode,
-              defaultValue: "en",
-            )
-            as String;
-
-    print("------------currentLanguage $currentLanguage");
-    print("------------direction ${direction == const PostDirection.rtl()}");
-
-    final isEnglish = currentLanguage == "en";
-
-    if ((isEnglish && direction == const PostDirection.ltr()) ||
-        (!isEnglish && direction == const PostDirection.rtl())) {
+    if (direction == const PostDirection.rtl()) {
       return TextAlign.right;
     } else {
       return TextAlign.left;

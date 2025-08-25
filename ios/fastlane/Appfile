@@ -1,8 +1,33 @@
-app_identifier("com.islammob.app") # The bundle identifier of your app
-apple_id("abd.alhaj.hussain@gmail.com") # Your Apple Developer Portal username
+# Appfile
+# More documentation about how to configure the Appfile can be found here:
+# https://docs.fastlane.tools/advanced/#appfile
 
-itc_team_id("108758801") # App Store Connect Team ID
-team_id("DX9H87DTX5") # Developer Portal Team ID
+# Apple ID for App Store Connect
+# app_identifier("com.yourcompany.yourapp") # The bundle identifier of your app
+# apple_id("your@email.com") # Your Apple email address
 
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile
+# It is recommended to not store the Apple ID in this file
+# Instead, use environment variables:
+# FASTLANE_APPLE_ID
+# FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD
+
+# For more information about the Appfile, see: https://docs.fastlane.tools/advanced/#appfile
+
+# Team ID for App Store Connect
+# team_id("TEAM_ID") # Your team ID
+
+# For more information about the Appfile, see: https://docs.fastlane.tools/advanced/#appfile
+
+# Enable debugging for self-hosted runners
+ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "3"
+ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "120"
+ENV["FASTLANE_XCODE_LIST_RETRIES"] = "3"
+
+# Increase timeout for various operations
+ENV["FASTLANE_TIMEOUT"] = "600"
+ENV["FASTLANE_VERBOSE"] = "true"
+
+# For self-hosted runners, ensure proper paths
+ENV["FASTLANE_SKIP_UPDATE_CHECK"] = "true"
+ENV["FASTLANE_DISABLE_COLORS"] = "false"

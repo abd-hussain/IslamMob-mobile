@@ -3,10 +3,6 @@ import 'package:islam_app/domain/model/post.dart';
 import 'package:islam_app/domain/model/profile_model.dart';
 import 'package:logger_manager/logger_manager.dart';
 
-//TODO: handle pagenation
-//TODO: handle watchlist posts
-//TODO: post up by defuilt why ??
-
 class PostUsecase {
   static Future<List<Post>> getPosts({
     required PostCategoryType type,
@@ -66,9 +62,6 @@ class PostUsecase {
       final downVotes = List<String>.from(
         (data["downVote"] as List<dynamic>?) ?? [],
       );
-      final bookmarks = List<String>.from(
-        (data["bookmark"] as List<dynamic>?) ?? [],
-      );
       final listOfReports = List<dynamic>.from(
         (data["reports"] as List<dynamic>?) ?? [],
       );
@@ -88,7 +81,6 @@ class PostUsecase {
         countryFlag: profile?.countryFlag ?? "",
         isReported: _isUserReported(listOfReports, userEmail),
         voteStatus: _getVoteStatus(upVotes, downVotes, userEmail),
-        isAddedToBookMark: bookmarks.contains(userEmail),
         category: _parseCategory(data["category"] as String? ?? ""),
       );
     }).toList();
@@ -135,6 +127,7 @@ class PostUsecase {
     List<String> downVotes,
     String userEmail,
   ) {
+    if (userEmail.isEmpty) return const PostVoteType.idl();
     if (upVotes.contains(userEmail)) return const PostVoteType.up();
     if (downVotes.contains(userEmail)) return const PostVoteType.down();
     return const PostVoteType.idl();
@@ -175,6 +168,7 @@ class PostUsecase {
         docId: postId,
         fieldToAdd: "bookmark",
         valueToAddOrRemove: userEmail,
+        removeOnly: true,
       );
     } else {
       await FirebaseFirestoreRepository.updateArrayField(
@@ -182,7 +176,6 @@ class PostUsecase {
         docId: postId,
         fieldToAdd: "bookmark",
         valueToAddOrRemove: userEmail,
-        removeOnly: true,
       );
     }
   }

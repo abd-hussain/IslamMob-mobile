@@ -21,7 +21,6 @@ _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
   profilefullName: json['profilefullName'] as String,
   countryFlag: json['countryFlag'] as String,
   isReported: json['isReported'] as bool,
-  isAddedToBookMark: json['isAddedToBookMark'] as bool,
   voteStatus: PostVoteType.fromJson(json['voteStatus'] as Map<String, dynamic>),
 );
 
@@ -39,7 +38,6 @@ Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
       'profilefullName': instance.profilefullName,
       'countryFlag': instance.countryFlag,
       'isReported': instance.isReported,
-      'isAddedToBookMark': instance.isAddedToBookMark,
       'voteStatus': instance.voteStatus,
     };
 
@@ -63,19 +61,11 @@ Map<String, dynamic> _$$VoteDownImplToJson(_$VoteDownImpl instance) =>
 
 _$PostCategoryTypeWallImpl _$$PostCategoryTypeWallImplFromJson(
   Map<String, dynamic> json,
-) => _$PostCategoryTypeWallImpl($type: json['runtimeType'] as String?);
+) => _$PostCategoryTypeWallImpl();
 
 Map<String, dynamic> _$$PostCategoryTypeWallImplToJson(
   _$PostCategoryTypeWallImpl instance,
-) => <String, dynamic>{'runtimeType': instance.$type};
-
-_$PostCategoryTypeWatchlistImpl _$$PostCategoryTypeWatchlistImplFromJson(
-  Map<String, dynamic> json,
-) => _$PostCategoryTypeWatchlistImpl($type: json['runtimeType'] as String?);
-
-Map<String, dynamic> _$$PostCategoryTypeWatchlistImplToJson(
-  _$PostCategoryTypeWatchlistImpl instance,
-) => <String, dynamic>{'runtimeType': instance.$type};
+) => <String, dynamic>{};
 
 _$PostDirectionRTLImpl _$$PostDirectionRTLImplFromJson(
   Map<String, dynamic> json,

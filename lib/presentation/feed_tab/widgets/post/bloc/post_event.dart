@@ -8,8 +8,4 @@ class PostEvent with _$PostEvent {
   const factory PostEvent.delete(String postId) = _DeletePost;
   const factory PostEvent.changeVote(String postId, PostVoteType voteType) =
       _ChangePostVote;
-  const factory PostEvent.addRemoveFromBookMark(
-    String postId,
-    bool inBookMark,
-  ) = _AddRemoveFromBookmark;
 }
