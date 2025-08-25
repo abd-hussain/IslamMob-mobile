@@ -7,90 +7,90 @@ on:
   workflow_dispatch:
 
 jobs:
-  android:
-    runs-on: ubuntu-latest
+  # android:
+  #   runs-on: ubuntu-latest
 
-    steps:
-        - name: 📚 Git Checkout
-          uses: actions/checkout@v4
+  #   steps:
+  #       - name: 📚 Git Checkout
+  #         uses: actions/checkout@v4
 
-        - name: 🔥 Set Up Java
-          uses: actions/setup-java@v4
-          with:
-            distribution: 'oracle'
-            java-version: '17'
+  #       - name: 🔥 Set Up Java
+  #         uses: actions/setup-java@v4
+  #         with:
+  #           distribution: 'oracle'
+  #           java-version: '17'
 
-        - name: 🔎 Clean Gradle Cache (optional)
-          run: rm -rf ~/.gradle/caches
+  #       - name: 🔎 Clean Gradle Cache (optional)
+  #         run: rm -rf ~/.gradle/caches
 
-        - name: 🐦 Setup Flutter
-          uses: subosito/flutter-action@v2
-          with:
-            flutter-version: '3.32.6'
-            channel: 'stable'
-            cache: true
+  #       - name: 🐦 Setup Flutter
+  #         uses: subosito/flutter-action@v2
+  #         with:
+  #           flutter-version: '3.32.6'
+  #           channel: 'stable'
+  #           cache: true
 
-        - name: 🗳️ Flutter gen-l10n
-          run: flutter gen-l10n
+  #       - name: 🗳️ Flutter gen-l10n
+  #         run: flutter gen-l10n
 
-        - name: 🗳️ Flutter Pub Get
-          run: flutter pub get
+  #       - name: 🗳️ Flutter Pub Get
+  #         run: flutter pub get
 
-        - name: 🗃️ Generate code (Optional)
-          run: flutter pub run build_runner build --delete-conflicting-outputs
+  #       - name: 🗃️ Generate code (Optional)
+  #         run: flutter pub run build_runner build --delete-conflicting-outputs
             
-        - name: 🔑 Set up key.properties
-          env:
-            ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
-            ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
-            ANDROID_KEY_CONTENT: ${{ secrets.ANDROID_KEY_CONTENT }}
-          run: |
-            if [ -n "$ANDROID_KEY_PASSWORD" ] && [ -n "$ANDROID_KEY_ALIAS" ] && [ -n "$ANDROID_KEY_CONTENT" ]; then
-              echo "keyPassword=$ANDROID_KEY_PASSWORD" > android/key.properties
-              echo "storePassword=$ANDROID_KEY_PASSWORD" >> android/key.properties
-              echo "keyAlias=$ANDROID_KEY_ALIAS" >> android/key.properties
-              echo "$ANDROID_KEY_CONTENT" | base64 --decode > android/androidkeystore.jks
-              # Optional test command to verify file creation (do not log file content directly for security)
-              ls -la android/ # Check if androidkeystore.jks file is generated
-            else
-              echo "Warning: Android signing secrets not found. Skipping key setup."
-            fi
+  #       - name: 🔑 Set up key.properties
+  #         env:
+  #           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+  #           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+  #           ANDROID_KEY_CONTENT: ${{ secrets.ANDROID_KEY_CONTENT }}
+  #         run: |
+  #           if [ -n "$ANDROID_KEY_PASSWORD" ] && [ -n "$ANDROID_KEY_ALIAS" ] && [ -n "$ANDROID_KEY_CONTENT" ]; then
+  #             echo "keyPassword=$ANDROID_KEY_PASSWORD" > android/key.properties
+  #             echo "storePassword=$ANDROID_KEY_PASSWORD" >> android/key.properties
+  #             echo "keyAlias=$ANDROID_KEY_ALIAS" >> android/key.properties
+  #             echo "$ANDROID_KEY_CONTENT" | base64 --decode > android/androidkeystore.jks
+  #             # Optional test command to verify file creation (do not log file content directly for security)
+  #             ls -la android/ # Check if androidkeystore.jks file is generated
+  #           else
+  #             echo "Warning: Android signing secrets not found. Skipping key setup."
+  #           fi
             
-        - name: 🔑 Set up local.properties
-          run: |
-            echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
-            echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
+  #       - name: 🔑 Set up local.properties
+  #         run: |
+  #           echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
+  #           echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
 
-        - name: 🔑 Set up Play Store Secret
-          env:
-            PLAY_STORE_SECRET: ${{ secrets.PLAY_STORE_SECRET }}
-          run: |
-            if [ -n "$PLAY_STORE_SECRET" ]; then
-              echo "$PLAY_STORE_SECRET" | base64 --decode > android/play_store_secret.json
-            else
-              echo "Warning: Play Store secret not found. Skipping Play Store setup."
-            fi
+  #       - name: 🔑 Set up Play Store Secret
+  #         env:
+  #           PLAY_STORE_SECRET: ${{ secrets.PLAY_STORE_SECRET }}
+  #         run: |
+  #           if [ -n "$PLAY_STORE_SECRET" ]; then
+  #             echo "$PLAY_STORE_SECRET" | base64 --decode > android/play_store_secret.json
+  #           else
+  #             echo "Warning: Play Store secret not found. Skipping Play Store setup."
+  #           fi
 
-        - name: 🎯 Setup Fastlane
-          uses: ruby/setup-ruby@v1
-          with:
-              ruby-version: 3.3
-              rubygems: latest
+  #       - name: 🎯 Setup Fastlane
+  #         uses: ruby/setup-ruby@v1
+  #         with:
+  #             ruby-version: 3.3
+  #             rubygems: latest
 
-        - name: 🔎 Cleaning cash before we start
-          run: |
-              flutter clean
-              rm -rf ~/.pub-cache
-              rm -rf pubspec.lock
-              rm -rf $HOME/.gradle/caches
-              flutter pub get
+  #       - name: 🔎 Cleaning cash before we start
+  #         run: |
+  #             flutter clean
+  #             rm -rf ~/.pub-cache
+  #             rm -rf pubspec.lock
+  #             rm -rf $HOME/.gradle/caches
+  #             flutter pub get
 
-        - name: 🔍 Dump full dependency tree
-          run: flutter pub deps --style=compact
+  #       - name: 🔍 Dump full dependency tree
+  #         run: flutter pub deps --style=compact
 
-        - name: 🛠️ Build and Deploy
-          run: |
-              make deploy-android
+  #       - name: 🛠️ Build and Deploy
+  #         run: |
+  #             make deploy-android
 
   ios:
     runs-on: self-hosted
