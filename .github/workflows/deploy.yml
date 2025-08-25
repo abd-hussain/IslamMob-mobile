@@ -221,6 +221,10 @@ jobs:
             echo "Installing gems..."
             bundle _2.5.18_ install
             
+            # Install missing abbrev gem for Ruby 3.4 compatibility
+            echo "Installing missing gems for Ruby 3.4..."
+            bundle _2.5.18_ add abbrev
+            
             echo "Installing pods..."
             bundle _2.5.18_ exec pod install --repo-update
             
@@ -269,6 +273,12 @@ jobs:
             if [ -n "$FASTLANE_TEAM_ID" ]; then
               export FASTLANE_TEAM_ID="$FASTLANE_TEAM_ID"
             fi
+            
+            # Ensure abbrev gem is available for Ruby 3.4
+            echo "Ensuring Ruby 3.4 compatibility..."
+            cd ios
+            bundle _2.5.18_ add abbrev
+            cd ..
             
             echo "Starting iOS deployment..."
             make deploy-ios
