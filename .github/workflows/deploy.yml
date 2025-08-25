@@ -187,7 +187,7 @@ jobs:
             sudo chmod -R 755 /opt/homebrew/lib/ruby/gems/3.4.0/ 2>/dev/null || true
             
             # Install bundler and fastlane with user gems
-            gem install bundler --no-document --user-install
+            gem install bundler -v 2.5.18 --no-document --user-install
             gem install fastlane --no-document --user-install
             
             # Configure bundler to use user gems
@@ -206,13 +206,23 @@ jobs:
             echo "Cleaning Podfile.lock..."
             rm -rf Podfile.lock
             rm -rf Pods/
+            rm -rf vendor/
             
-            # Install gems using user bundle
+            # Fix Bundler version mismatch
+            echo "Fixing Bundler version..."
+            gem uninstall bundler -I -x 2>/dev/null || true
+            gem install bundler -v 2.5.18
+            
+            # Configure bundler
+            bundle config set path 'vendor/bundle'
+            bundle config set deployment 'false'
+            
+            # Install gems with specific Bundler version
             echo "Installing gems..."
-            bundle install --path vendor/bundle
+            bundle _2.5.18_ install
             
             echo "Installing pods..."
-            bundle exec pod install --repo-update
+            bundle _2.5.18_ exec pod install --repo-update
             
             echo "Pod installation completed"
             cd ..
