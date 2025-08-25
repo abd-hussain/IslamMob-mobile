@@ -40,11 +40,17 @@ abstract class NetworkLoggingModule {
       return NoOpNetworkLogStorage();
     }
 
-    return InMemoryNetworkLogStorage(maxEntries: config.maxEntries, maxMemoryBytes: config.maxMemoryMB * 1024 * 1024);
+    return InMemoryNetworkLogStorage(
+      maxEntries: config.maxEntries,
+      maxMemoryBytes: config.maxMemoryMB * 1024 * 1024,
+    );
   }
 
   @lazySingleton
-  NetworkLoggerInterceptorBase networkLoggerInterceptor(NetworkLogStorage storage, NetworkLogConfig config) {
+  NetworkLoggerInterceptorBase networkLoggerInterceptor(
+    NetworkLogStorage storage,
+    NetworkLogConfig config,
+  ) {
     if (!config.isEnabled) {
       return ProductionNetworkLoggerInterceptor();
     }

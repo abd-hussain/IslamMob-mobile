@@ -176,9 +176,18 @@ jobs:
             ruby --version
             gem --version
             
-            # Install bundler and fastlane
-            gem install bundler --no-document
-            gem install fastlane --no-document
+            # Fix Ruby permissions if needed
+            echo "Fixing Ruby permissions..."
+            sudo chown -R $(whoami) /opt/homebrew/lib/ruby/gems/3.4.0/ 2>/dev/null || true
+            sudo chmod -R 755 /opt/homebrew/lib/ruby/gems/3.4.0/ 2>/dev/null || true
+            
+            # Install bundler and fastlane with user gems
+            gem install bundler --no-document --user-install
+            gem install fastlane --no-document --user-install
+            
+            # Configure bundler to use user gems
+            bundle config set path 'vendor/bundle'
+            bundle config set deployment 'false'
             
             echo "Fastlane version: $(fastlane --version)"
             echo "=================="
@@ -193,8 +202,12 @@ jobs:
             rm -rf Podfile.lock
             rm -rf Pods/
             
+            # Install gems using user bundle
+            echo "Installing gems..."
+            bundle install --path vendor/bundle
+            
             echo "Installing pods..."
-            pod install --repo-update
+            bundle exec pod install --repo-update
             
             echo "Pod installation completed"
             cd ..
