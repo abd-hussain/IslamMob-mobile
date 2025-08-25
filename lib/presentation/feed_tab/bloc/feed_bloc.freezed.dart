@@ -464,7 +464,6 @@ abstract class _PullRefresh implements FeedEvent {
 mixin _$FeedState {
   bool get showInternetConnectionView => throw _privateConstructorUsedError;
   List<Post> get wallPostList => throw _privateConstructorUsedError;
-  List<Post> get watchlistPostList => throw _privateConstructorUsedError;
   dynamic get loadingStatus => throw _privateConstructorUsedError;
 
   /// Create a copy of FeedState
@@ -482,7 +481,6 @@ abstract class $FeedStateCopyWith<$Res> {
   $Res call({
     bool showInternetConnectionView,
     List<Post> wallPostList,
-    List<Post> watchlistPostList,
     dynamic loadingStatus,
   });
 }
@@ -504,7 +502,6 @@ class _$FeedStateCopyWithImpl<$Res, $Val extends FeedState>
   $Res call({
     Object? showInternetConnectionView = null,
     Object? wallPostList = null,
-    Object? watchlistPostList = null,
     Object? loadingStatus = freezed,
   }) {
     return _then(
@@ -516,10 +513,6 @@ class _$FeedStateCopyWithImpl<$Res, $Val extends FeedState>
             wallPostList: null == wallPostList
                 ? _value.wallPostList
                 : wallPostList // ignore: cast_nullable_to_non_nullable
-                      as List<Post>,
-            watchlistPostList: null == watchlistPostList
-                ? _value.watchlistPostList
-                : watchlistPostList // ignore: cast_nullable_to_non_nullable
                       as List<Post>,
             loadingStatus: freezed == loadingStatus
                 ? _value.loadingStatus
@@ -543,7 +536,6 @@ abstract class _$$FeedStateImplCopyWith<$Res>
   $Res call({
     bool showInternetConnectionView,
     List<Post> wallPostList,
-    List<Post> watchlistPostList,
     dynamic loadingStatus,
   });
 }
@@ -564,7 +556,6 @@ class __$$FeedStateImplCopyWithImpl<$Res>
   $Res call({
     Object? showInternetConnectionView = null,
     Object? wallPostList = null,
-    Object? watchlistPostList = null,
     Object? loadingStatus = freezed,
   }) {
     return _then(
@@ -576,10 +567,6 @@ class __$$FeedStateImplCopyWithImpl<$Res>
         wallPostList: null == wallPostList
             ? _value._wallPostList
             : wallPostList // ignore: cast_nullable_to_non_nullable
-                  as List<Post>,
-        watchlistPostList: null == watchlistPostList
-            ? _value._watchlistPostList
-            : watchlistPostList // ignore: cast_nullable_to_non_nullable
                   as List<Post>,
         loadingStatus: freezed == loadingStatus
             ? _value.loadingStatus!
@@ -595,10 +582,8 @@ class _$FeedStateImpl implements _FeedState {
   const _$FeedStateImpl({
     this.showInternetConnectionView = false,
     final List<Post> wallPostList = const [],
-    final List<Post> watchlistPostList = const [],
     this.loadingStatus = const FeedScreenProcessState.loading(),
-  }) : _wallPostList = wallPostList,
-       _watchlistPostList = watchlistPostList;
+  }) : _wallPostList = wallPostList;
 
   @override
   @JsonKey()
@@ -612,23 +597,13 @@ class _$FeedStateImpl implements _FeedState {
     return EqualUnmodifiableListView(_wallPostList);
   }
 
-  final List<Post> _watchlistPostList;
-  @override
-  @JsonKey()
-  List<Post> get watchlistPostList {
-    if (_watchlistPostList is EqualUnmodifiableListView)
-      return _watchlistPostList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_watchlistPostList);
-  }
-
   @override
   @JsonKey()
   final dynamic loadingStatus;
 
   @override
   String toString() {
-    return 'FeedState(showInternetConnectionView: $showInternetConnectionView, wallPostList: $wallPostList, watchlistPostList: $watchlistPostList, loadingStatus: $loadingStatus)';
+    return 'FeedState(showInternetConnectionView: $showInternetConnectionView, wallPostList: $wallPostList, loadingStatus: $loadingStatus)';
   }
 
   @override
@@ -647,10 +622,6 @@ class _$FeedStateImpl implements _FeedState {
               _wallPostList,
             ) &&
             const DeepCollectionEquality().equals(
-              other._watchlistPostList,
-              _watchlistPostList,
-            ) &&
-            const DeepCollectionEquality().equals(
               other.loadingStatus,
               loadingStatus,
             ));
@@ -661,7 +632,6 @@ class _$FeedStateImpl implements _FeedState {
     runtimeType,
     showInternetConnectionView,
     const DeepCollectionEquality().hash(_wallPostList),
-    const DeepCollectionEquality().hash(_watchlistPostList),
     const DeepCollectionEquality().hash(loadingStatus),
   );
 
@@ -678,7 +648,6 @@ abstract class _FeedState implements FeedState {
   const factory _FeedState({
     final bool showInternetConnectionView,
     final List<Post> wallPostList,
-    final List<Post> watchlistPostList,
     final dynamic loadingStatus,
   }) = _$FeedStateImpl;
 
@@ -686,8 +655,6 @@ abstract class _FeedState implements FeedState {
   bool get showInternetConnectionView;
   @override
   List<Post> get wallPostList;
-  @override
-  List<Post> get watchlistPostList;
   @override
   dynamic get loadingStatus;
 

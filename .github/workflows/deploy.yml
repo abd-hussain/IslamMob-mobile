@@ -100,8 +100,27 @@ jobs:
           with:
             fetch-depth: 0
 
-        - name: 🧪 Check Xcode Version
-          run: xcodebuild -version
+        - name: 🔍 Debug Environment
+          run: |
+            echo "=== Environment Debug Info ==="
+            echo "Current directory: $(pwd)"
+            echo "User: $(whoami)"
+            echo "Home directory: $HOME"
+            echo "PATH: $PATH"
+            echo "Xcode path: $(xcode-select -p)"
+            echo "Flutter path: $(which flutter)"
+            echo "Ruby path: $(which ruby)"
+            echo "Ruby version: $(ruby --version)"
+            echo "Gem path: $(gem env home)"
+            echo "========================"
+
+        - name: 🧪 Check Xcode Version and Tools
+          run: |
+            echo "=== Xcode Info ==="
+            xcodebuild -version
+            xcodebuild -showsdks
+            xcrun --show-sdk-path
+            echo "=================="
 
         - name: 🐦 Setup Flutter
           uses: subosito/flutter-action@v2
@@ -109,6 +128,13 @@ jobs:
             flutter-version: '3.32.6'
             channel: 'stable'
             cache: true
+
+        - name: 🔍 Verify Flutter Setup
+          run: |
+            echo "=== Flutter Info ==="
+            flutter doctor -v
+            flutter --version
+            echo "===================="
 
         - name: 🗳️ Flutter gen-l10n
           run: flutter gen-l10n
@@ -125,38 +151,113 @@ jobs:
           run: |
             if [ -n "$APPSTORE_CONNECT" ]; then
               echo "$APPSTORE_CONNECT" | base64 --decode > ios/app_store_connect.json
+              echo "App Store Connect file created successfully"
+              ls -la ios/app_store_connect.json
             else
               echo "Warning: App Store Connect secret not found. Skipping App Store setup."
             fi
 
-        # - name: 🎯 Setup Fastlane
-        #   uses: ruby/setup-ruby@v1
-        #   with:
-        #     ruby-version: 3.3
-        #     rubygems: latest
-        - name: 🎯 Setup Fastlane
+        - name: 🎯 Setup Ruby and Fastlane
           run: |
-            gem install bundler
-            gem install fastlane
-        
-        - name: 📦 Cleaning before we start
-          run: |
-            flutter clean
-            cd ios && rm -rf Podfile.lock
-            cd ios && pod install
-            cd ..
-            flutter pub get
+            echo "=== Ruby Setup ==="
+            # Use system Ruby or install specific version
+            if command -v rbenv &> /dev/null; then
+              echo "Using rbenv Ruby"
+              rbenv versions
+              rbenv global
+            elif command -v rvm &> /dev/null; then
+              echo "Using RVM Ruby"
+              rvm list
+              rvm use default
+            else
+              echo "Using system Ruby"
+            fi
+            
+            ruby --version
+            gem --version
+            
+            # Install bundler and fastlane
+            gem install bundler --no-document
+            gem install fastlane --no-document
+            
+            echo "Fastlane version: $(fastlane --version)"
+            echo "=================="
 
-        - name: 🛠️ Build and Deploy
+        - name: 📦 Setup iOS Dependencies
+          run: |
+            echo "=== iOS Setup ==="
+            cd ios
+            
+            # Clean and setup pods
+            echo "Cleaning Podfile.lock..."
+            rm -rf Podfile.lock
+            rm -rf Pods/
+            
+            echo "Installing pods..."
+            pod install --repo-update
+            
+            echo "Pod installation completed"
+            cd ..
+            echo "=================="
+
+        - name: 🔧 Flutter Clean and Setup
+          run: |
+            echo "=== Flutter Setup ==="
+            flutter clean
+            flutter pub get
+            echo "===================="
+
+        - name: 🛠️ Build and Deploy iOS
           env:
             MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
             MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
+            FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+            FASTLANE_APPLE_ID: ${{ secrets.FASTLANE_APPLE_ID }}
+            FASTLANE_TEAM_ID: ${{ secrets.FASTLANE_TEAM_ID }}
           run: |
-            if [ -n "$MATCH_PASSWORD" ] && [ -n "$MATCH_GIT_BASIC_AUTHORIZATION" ]; then
-              make deploy-ios
-            else
-              echo "Warning: iOS deployment secrets not found. Skipping iOS deployment."
+            echo "=== iOS Deployment ==="
+            
+            # Check required secrets
+            if [ -z "$MATCH_PASSWORD" ] || [ -z "$MATCH_GIT_BASIC_AUTHORIZATION" ]; then
+              echo "❌ Error: iOS deployment secrets not found!"
+              echo "Required secrets:"
+              echo "- IOS_MATCH_PASSWORD"
+              echo "- GIT_BASIC_AUTHORIZATION"
               exit 1
             fi
+            
+            # Set additional environment variables for Fastlane
+            export MATCH_PASSWORD="$MATCH_PASSWORD"
+            export MATCH_GIT_BASIC_AUTHORIZATION="$MATCH_GIT_BASIC_AUTHORIZATION"
+            
+            if [ -n "$FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD" ]; then
+              export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD="$FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"
+            fi
+            
+            if [ -n "$FASTLANE_APPLE_ID" ]; then
+              export FASTLANE_APPLE_ID="$FASTLANE_APPLE_ID"
+            fi
+            
+            if [ -n "$FASTLANE_TEAM_ID" ]; then
+              export FASTLANE_TEAM_ID="$FASTLANE_TEAM_ID"
+            fi
+            
+            echo "Starting iOS deployment..."
+            make deploy-ios
+            echo "========================"
+
+        - name: 🔍 Debug Build Artifacts
+          if: always()
+          run: |
+            echo "=== Build Artifacts Debug ==="
+            echo "Checking build directory..."
+            ls -la ios/build/ || echo "Build directory not found"
+            
+            echo "Checking for IPA file..."
+            find ios/build -name "*.ipa" -type f 2>/dev/null || echo "No IPA files found"
+            
+            echo "Checking for archive..."
+            find ios/build -name "*.xcarchive" -type d 2>/dev/null || echo "No archive found"
+            echo "============================="
 
   

@@ -33,7 +33,6 @@ mixin _$Post {
   String get profilefullName => throw _privateConstructorUsedError;
   String get countryFlag => throw _privateConstructorUsedError; //Details
   bool get isReported => throw _privateConstructorUsedError;
-  bool get isAddedToBookMark => throw _privateConstructorUsedError;
   PostVoteType get voteStatus => throw _privateConstructorUsedError;
 
   /// Serializes this Post to a JSON map.
@@ -63,7 +62,6 @@ abstract class $PostCopyWith<$Res> {
     String profilefullName,
     String countryFlag,
     bool isReported,
-    bool isAddedToBookMark,
     PostVoteType voteStatus,
   });
 
@@ -99,7 +97,6 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? profilefullName = null,
     Object? countryFlag = null,
     Object? isReported = null,
-    Object? isAddedToBookMark = null,
     Object? voteStatus = null,
   }) {
     return _then(
@@ -151,10 +148,6 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
             isReported: null == isReported
                 ? _value.isReported
                 : isReported // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            isAddedToBookMark: null == isAddedToBookMark
-                ? _value.isAddedToBookMark
-                : isAddedToBookMark // ignore: cast_nullable_to_non_nullable
                       as bool,
             voteStatus: null == voteStatus
                 ? _value.voteStatus
@@ -221,7 +214,6 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
     String profilefullName,
     String countryFlag,
     bool isReported,
-    bool isAddedToBookMark,
     PostVoteType voteStatus,
   });
 
@@ -257,7 +249,6 @@ class __$$PostImplCopyWithImpl<$Res>
     Object? profilefullName = null,
     Object? countryFlag = null,
     Object? isReported = null,
-    Object? isAddedToBookMark = null,
     Object? voteStatus = null,
   }) {
     return _then(
@@ -310,10 +301,6 @@ class __$$PostImplCopyWithImpl<$Res>
             ? _value.isReported
             : isReported // ignore: cast_nullable_to_non_nullable
                   as bool,
-        isAddedToBookMark: null == isAddedToBookMark
-            ? _value.isAddedToBookMark
-            : isAddedToBookMark // ignore: cast_nullable_to_non_nullable
-                  as bool,
         voteStatus: null == voteStatus
             ? _value.voteStatus
             : voteStatus // ignore: cast_nullable_to_non_nullable
@@ -339,7 +326,6 @@ class _$PostImpl implements _Post {
     required this.profilefullName,
     required this.countryFlag,
     required this.isReported,
-    required this.isAddedToBookMark,
     required this.voteStatus,
   });
 
@@ -373,13 +359,11 @@ class _$PostImpl implements _Post {
   @override
   final bool isReported;
   @override
-  final bool isAddedToBookMark;
-  @override
   final PostVoteType voteStatus;
 
   @override
   String toString() {
-    return 'Post(id: $id, createdDate: $createdDate, ownerEmail: $ownerEmail, upComments: $upComments, downComments: $downComments, content: $content, category: $category, direction: $direction, profileImageUrl: $profileImageUrl, profilefullName: $profilefullName, countryFlag: $countryFlag, isReported: $isReported, isAddedToBookMark: $isAddedToBookMark, voteStatus: $voteStatus)';
+    return 'Post(id: $id, createdDate: $createdDate, ownerEmail: $ownerEmail, upComments: $upComments, downComments: $downComments, content: $content, category: $category, direction: $direction, profileImageUrl: $profileImageUrl, profilefullName: $profilefullName, countryFlag: $countryFlag, isReported: $isReported, voteStatus: $voteStatus)';
   }
 
   @override
@@ -409,8 +393,6 @@ class _$PostImpl implements _Post {
                 other.countryFlag == countryFlag) &&
             (identical(other.isReported, isReported) ||
                 other.isReported == isReported) &&
-            (identical(other.isAddedToBookMark, isAddedToBookMark) ||
-                other.isAddedToBookMark == isAddedToBookMark) &&
             (identical(other.voteStatus, voteStatus) ||
                 other.voteStatus == voteStatus));
   }
@@ -431,7 +413,6 @@ class _$PostImpl implements _Post {
     profilefullName,
     countryFlag,
     isReported,
-    isAddedToBookMark,
     voteStatus,
   );
 
@@ -463,7 +444,6 @@ abstract class _Post implements Post {
     required final String profilefullName,
     required final String countryFlag,
     required final bool isReported,
-    required final bool isAddedToBookMark,
     required final PostVoteType voteStatus,
   }) = _$PostImpl;
 
@@ -493,8 +473,6 @@ abstract class _Post implements Post {
   String get countryFlag; //Details
   @override
   bool get isReported;
-  @override
-  bool get isAddedToBookMark;
   @override
   PostVoteType get voteStatus;
 
@@ -975,54 +953,33 @@ abstract class VoteDown implements PostVoteType {
 }
 
 PostCategoryType _$PostCategoryTypeFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'wall':
-      return _PostCategoryTypeWall.fromJson(json);
-    case 'watchlist':
-      return _PostCategoryTypeWatchlist.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(
-        json,
-        'runtimeType',
-        'PostCategoryType',
-        'Invalid union type "${json['runtimeType']}"!',
-      );
-  }
+  return _PostCategoryTypeWall.fromJson(json);
 }
 
 /// @nodoc
 mixin _$PostCategoryType {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() wall,
-    required TResult Function() watchlist,
-  }) => throw _privateConstructorUsedError;
+  TResult when<TResult extends Object?>({required TResult Function() wall}) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? wall,
-    TResult? Function()? watchlist,
-  }) => throw _privateConstructorUsedError;
+  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? wall}) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? wall,
-    TResult Function()? watchlist,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PostCategoryTypeWall value) wall,
-    required TResult Function(_PostCategoryTypeWatchlist value) watchlist,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PostCategoryTypeWall value)? wall,
-    TResult? Function(_PostCategoryTypeWatchlist value)? watchlist,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PostCategoryTypeWall value)? wall,
-    TResult Function(_PostCategoryTypeWatchlist value)? watchlist,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 
@@ -1076,14 +1033,10 @@ class __$$PostCategoryTypeWallImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PostCategoryTypeWallImpl implements _PostCategoryTypeWall {
-  const _$PostCategoryTypeWallImpl({final String? $type})
-    : $type = $type ?? 'wall';
+  const _$PostCategoryTypeWallImpl();
 
   factory _$PostCategoryTypeWallImpl.fromJson(Map<String, dynamic> json) =>
       _$$PostCategoryTypeWallImplFromJson(json);
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
 
   @override
   String toString() {
@@ -1103,19 +1056,13 @@ class _$PostCategoryTypeWallImpl implements _PostCategoryTypeWall {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() wall,
-    required TResult Function() watchlist,
-  }) {
+  TResult when<TResult extends Object?>({required TResult Function() wall}) {
     return wall();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? wall,
-    TResult? Function()? watchlist,
-  }) {
+  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? wall}) {
     return wall?.call();
   }
 
@@ -1123,7 +1070,6 @@ class _$PostCategoryTypeWallImpl implements _PostCategoryTypeWall {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? wall,
-    TResult Function()? watchlist,
     required TResult orElse(),
   }) {
     if (wall != null) {
@@ -1136,7 +1082,6 @@ class _$PostCategoryTypeWallImpl implements _PostCategoryTypeWall {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PostCategoryTypeWall value) wall,
-    required TResult Function(_PostCategoryTypeWatchlist value) watchlist,
   }) {
     return wall(this);
   }
@@ -1145,7 +1090,6 @@ class _$PostCategoryTypeWallImpl implements _PostCategoryTypeWall {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PostCategoryTypeWall value)? wall,
-    TResult? Function(_PostCategoryTypeWatchlist value)? watchlist,
   }) {
     return wall?.call(this);
   }
@@ -1154,7 +1098,6 @@ class _$PostCategoryTypeWallImpl implements _PostCategoryTypeWall {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PostCategoryTypeWall value)? wall,
-    TResult Function(_PostCategoryTypeWatchlist value)? watchlist,
     required TResult orElse(),
   }) {
     if (wall != null) {
@@ -1174,131 +1117,6 @@ abstract class _PostCategoryTypeWall implements PostCategoryType {
 
   factory _PostCategoryTypeWall.fromJson(Map<String, dynamic> json) =
       _$PostCategoryTypeWallImpl.fromJson;
-}
-
-/// @nodoc
-abstract class _$$PostCategoryTypeWatchlistImplCopyWith<$Res> {
-  factory _$$PostCategoryTypeWatchlistImplCopyWith(
-    _$PostCategoryTypeWatchlistImpl value,
-    $Res Function(_$PostCategoryTypeWatchlistImpl) then,
-  ) = __$$PostCategoryTypeWatchlistImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PostCategoryTypeWatchlistImplCopyWithImpl<$Res>
-    extends
-        _$PostCategoryTypeCopyWithImpl<$Res, _$PostCategoryTypeWatchlistImpl>
-    implements _$$PostCategoryTypeWatchlistImplCopyWith<$Res> {
-  __$$PostCategoryTypeWatchlistImplCopyWithImpl(
-    _$PostCategoryTypeWatchlistImpl _value,
-    $Res Function(_$PostCategoryTypeWatchlistImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of PostCategoryType
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$PostCategoryTypeWatchlistImpl implements _PostCategoryTypeWatchlist {
-  const _$PostCategoryTypeWatchlistImpl({final String? $type})
-    : $type = $type ?? 'watchlist';
-
-  factory _$PostCategoryTypeWatchlistImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PostCategoryTypeWatchlistImplFromJson(json);
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'PostCategoryType.watchlist()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PostCategoryTypeWatchlistImpl);
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() wall,
-    required TResult Function() watchlist,
-  }) {
-    return watchlist();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? wall,
-    TResult? Function()? watchlist,
-  }) {
-    return watchlist?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? wall,
-    TResult Function()? watchlist,
-    required TResult orElse(),
-  }) {
-    if (watchlist != null) {
-      return watchlist();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PostCategoryTypeWall value) wall,
-    required TResult Function(_PostCategoryTypeWatchlist value) watchlist,
-  }) {
-    return watchlist(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PostCategoryTypeWall value)? wall,
-    TResult? Function(_PostCategoryTypeWatchlist value)? watchlist,
-  }) {
-    return watchlist?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PostCategoryTypeWall value)? wall,
-    TResult Function(_PostCategoryTypeWatchlist value)? watchlist,
-    required TResult orElse(),
-  }) {
-    if (watchlist != null) {
-      return watchlist(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PostCategoryTypeWatchlistImplToJson(this);
-  }
-}
-
-abstract class _PostCategoryTypeWatchlist implements PostCategoryType {
-  const factory _PostCategoryTypeWatchlist() = _$PostCategoryTypeWatchlistImpl;
-
-  factory _PostCategoryTypeWatchlist.fromJson(Map<String, dynamic> json) =
-      _$PostCategoryTypeWatchlistImpl.fromJson;
 }
 
 PostDirection _$PostDirectionFromJson(Map<String, dynamic> json) {

@@ -24,8 +24,6 @@ mixin _$PostEvent {
     required TResult Function(String postId, String message) report,
     required TResult Function(String postId) delete,
     required TResult Function(String postId, PostVoteType voteType) changeVote,
-    required TResult Function(String postId, bool inBookMark)
-    addRemoveFromBookMark,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
@@ -34,7 +32,6 @@ mixin _$PostEvent {
     TResult? Function(String postId, String message)? report,
     TResult? Function(String postId)? delete,
     TResult? Function(String postId, PostVoteType voteType)? changeVote,
-    TResult? Function(String postId, bool inBookMark)? addRemoveFromBookMark,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
@@ -43,7 +40,6 @@ mixin _$PostEvent {
     TResult Function(String postId, String message)? report,
     TResult Function(String postId)? delete,
     TResult Function(String postId, PostVoteType voteType)? changeVote,
-    TResult Function(String postId, bool inBookMark)? addRemoveFromBookMark,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,8 +49,6 @@ mixin _$PostEvent {
     required TResult Function(_ReportPost value) report,
     required TResult Function(_DeletePost value) delete,
     required TResult Function(_ChangePostVote value) changeVote,
-    required TResult Function(_AddRemoveFromBookmark value)
-    addRemoveFromBookMark,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
@@ -63,7 +57,6 @@ mixin _$PostEvent {
     TResult? Function(_ReportPost value)? report,
     TResult? Function(_DeletePost value)? delete,
     TResult? Function(_ChangePostVote value)? changeVote,
-    TResult? Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
@@ -72,7 +65,6 @@ mixin _$PostEvent {
     TResult Function(_ReportPost value)? report,
     TResult Function(_DeletePost value)? delete,
     TResult Function(_ChangePostVote value)? changeVote,
-    TResult Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -184,8 +176,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String postId, String message) report,
     required TResult Function(String postId) delete,
     required TResult Function(String postId, PostVoteType voteType) changeVote,
-    required TResult Function(String postId, bool inBookMark)
-    addRemoveFromBookMark,
   }) {
     return initial(post);
   }
@@ -198,7 +188,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String postId, String message)? report,
     TResult? Function(String postId)? delete,
     TResult? Function(String postId, PostVoteType voteType)? changeVote,
-    TResult? Function(String postId, bool inBookMark)? addRemoveFromBookMark,
   }) {
     return initial?.call(post);
   }
@@ -211,7 +200,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(String postId, String message)? report,
     TResult Function(String postId)? delete,
     TResult Function(String postId, PostVoteType voteType)? changeVote,
-    TResult Function(String postId, bool inBookMark)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -228,8 +216,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_ReportPost value) report,
     required TResult Function(_DeletePost value) delete,
     required TResult Function(_ChangePostVote value) changeVote,
-    required TResult Function(_AddRemoveFromBookmark value)
-    addRemoveFromBookMark,
   }) {
     return initial(this);
   }
@@ -242,7 +228,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_ReportPost value)? report,
     TResult? Function(_DeletePost value)? delete,
     TResult? Function(_ChangePostVote value)? changeVote,
-    TResult? Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
   }) {
     return initial?.call(this);
   }
@@ -255,7 +240,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(_ReportPost value)? report,
     TResult Function(_DeletePost value)? delete,
     TResult Function(_ChangePostVote value)? changeVote,
-    TResult Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -369,8 +353,6 @@ class _$EditImpl implements _Edit {
     required TResult Function(String postId, String message) report,
     required TResult Function(String postId) delete,
     required TResult Function(String postId, PostVoteType voteType) changeVote,
-    required TResult Function(String postId, bool inBookMark)
-    addRemoveFromBookMark,
   }) {
     return edit(postId, post);
   }
@@ -383,7 +365,6 @@ class _$EditImpl implements _Edit {
     TResult? Function(String postId, String message)? report,
     TResult? Function(String postId)? delete,
     TResult? Function(String postId, PostVoteType voteType)? changeVote,
-    TResult? Function(String postId, bool inBookMark)? addRemoveFromBookMark,
   }) {
     return edit?.call(postId, post);
   }
@@ -396,7 +377,6 @@ class _$EditImpl implements _Edit {
     TResult Function(String postId, String message)? report,
     TResult Function(String postId)? delete,
     TResult Function(String postId, PostVoteType voteType)? changeVote,
-    TResult Function(String postId, bool inBookMark)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (edit != null) {
@@ -413,8 +393,6 @@ class _$EditImpl implements _Edit {
     required TResult Function(_ReportPost value) report,
     required TResult Function(_DeletePost value) delete,
     required TResult Function(_ChangePostVote value) changeVote,
-    required TResult Function(_AddRemoveFromBookmark value)
-    addRemoveFromBookMark,
   }) {
     return edit(this);
   }
@@ -427,7 +405,6 @@ class _$EditImpl implements _Edit {
     TResult? Function(_ReportPost value)? report,
     TResult? Function(_DeletePost value)? delete,
     TResult? Function(_ChangePostVote value)? changeVote,
-    TResult? Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
   }) {
     return edit?.call(this);
   }
@@ -440,7 +417,6 @@ class _$EditImpl implements _Edit {
     TResult Function(_ReportPost value)? report,
     TResult Function(_DeletePost value)? delete,
     TResult Function(_ChangePostVote value)? changeVote,
-    TResult Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (edit != null) {
@@ -545,8 +521,6 @@ class _$ReportPostImpl implements _ReportPost {
     required TResult Function(String postId, String message) report,
     required TResult Function(String postId) delete,
     required TResult Function(String postId, PostVoteType voteType) changeVote,
-    required TResult Function(String postId, bool inBookMark)
-    addRemoveFromBookMark,
   }) {
     return report(postId, message);
   }
@@ -559,7 +533,6 @@ class _$ReportPostImpl implements _ReportPost {
     TResult? Function(String postId, String message)? report,
     TResult? Function(String postId)? delete,
     TResult? Function(String postId, PostVoteType voteType)? changeVote,
-    TResult? Function(String postId, bool inBookMark)? addRemoveFromBookMark,
   }) {
     return report?.call(postId, message);
   }
@@ -572,7 +545,6 @@ class _$ReportPostImpl implements _ReportPost {
     TResult Function(String postId, String message)? report,
     TResult Function(String postId)? delete,
     TResult Function(String postId, PostVoteType voteType)? changeVote,
-    TResult Function(String postId, bool inBookMark)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (report != null) {
@@ -589,8 +561,6 @@ class _$ReportPostImpl implements _ReportPost {
     required TResult Function(_ReportPost value) report,
     required TResult Function(_DeletePost value) delete,
     required TResult Function(_ChangePostVote value) changeVote,
-    required TResult Function(_AddRemoveFromBookmark value)
-    addRemoveFromBookMark,
   }) {
     return report(this);
   }
@@ -603,7 +573,6 @@ class _$ReportPostImpl implements _ReportPost {
     TResult? Function(_ReportPost value)? report,
     TResult? Function(_DeletePost value)? delete,
     TResult? Function(_ChangePostVote value)? changeVote,
-    TResult? Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
   }) {
     return report?.call(this);
   }
@@ -616,7 +585,6 @@ class _$ReportPostImpl implements _ReportPost {
     TResult Function(_ReportPost value)? report,
     TResult Function(_DeletePost value)? delete,
     TResult Function(_ChangePostVote value)? changeVote,
-    TResult Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (report != null) {
@@ -715,8 +683,6 @@ class _$DeletePostImpl implements _DeletePost {
     required TResult Function(String postId, String message) report,
     required TResult Function(String postId) delete,
     required TResult Function(String postId, PostVoteType voteType) changeVote,
-    required TResult Function(String postId, bool inBookMark)
-    addRemoveFromBookMark,
   }) {
     return delete(postId);
   }
@@ -729,7 +695,6 @@ class _$DeletePostImpl implements _DeletePost {
     TResult? Function(String postId, String message)? report,
     TResult? Function(String postId)? delete,
     TResult? Function(String postId, PostVoteType voteType)? changeVote,
-    TResult? Function(String postId, bool inBookMark)? addRemoveFromBookMark,
   }) {
     return delete?.call(postId);
   }
@@ -742,7 +707,6 @@ class _$DeletePostImpl implements _DeletePost {
     TResult Function(String postId, String message)? report,
     TResult Function(String postId)? delete,
     TResult Function(String postId, PostVoteType voteType)? changeVote,
-    TResult Function(String postId, bool inBookMark)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (delete != null) {
@@ -759,8 +723,6 @@ class _$DeletePostImpl implements _DeletePost {
     required TResult Function(_ReportPost value) report,
     required TResult Function(_DeletePost value) delete,
     required TResult Function(_ChangePostVote value) changeVote,
-    required TResult Function(_AddRemoveFromBookmark value)
-    addRemoveFromBookMark,
   }) {
     return delete(this);
   }
@@ -773,7 +735,6 @@ class _$DeletePostImpl implements _DeletePost {
     TResult? Function(_ReportPost value)? report,
     TResult? Function(_DeletePost value)? delete,
     TResult? Function(_ChangePostVote value)? changeVote,
-    TResult? Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
   }) {
     return delete?.call(this);
   }
@@ -786,7 +747,6 @@ class _$DeletePostImpl implements _DeletePost {
     TResult Function(_ReportPost value)? report,
     TResult Function(_DeletePost value)? delete,
     TResult Function(_ChangePostVote value)? changeVote,
-    TResult Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (delete != null) {
@@ -906,8 +866,6 @@ class _$ChangePostVoteImpl implements _ChangePostVote {
     required TResult Function(String postId, String message) report,
     required TResult Function(String postId) delete,
     required TResult Function(String postId, PostVoteType voteType) changeVote,
-    required TResult Function(String postId, bool inBookMark)
-    addRemoveFromBookMark,
   }) {
     return changeVote(postId, voteType);
   }
@@ -920,7 +878,6 @@ class _$ChangePostVoteImpl implements _ChangePostVote {
     TResult? Function(String postId, String message)? report,
     TResult? Function(String postId)? delete,
     TResult? Function(String postId, PostVoteType voteType)? changeVote,
-    TResult? Function(String postId, bool inBookMark)? addRemoveFromBookMark,
   }) {
     return changeVote?.call(postId, voteType);
   }
@@ -933,7 +890,6 @@ class _$ChangePostVoteImpl implements _ChangePostVote {
     TResult Function(String postId, String message)? report,
     TResult Function(String postId)? delete,
     TResult Function(String postId, PostVoteType voteType)? changeVote,
-    TResult Function(String postId, bool inBookMark)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (changeVote != null) {
@@ -950,8 +906,6 @@ class _$ChangePostVoteImpl implements _ChangePostVote {
     required TResult Function(_ReportPost value) report,
     required TResult Function(_DeletePost value) delete,
     required TResult Function(_ChangePostVote value) changeVote,
-    required TResult Function(_AddRemoveFromBookmark value)
-    addRemoveFromBookMark,
   }) {
     return changeVote(this);
   }
@@ -964,7 +918,6 @@ class _$ChangePostVoteImpl implements _ChangePostVote {
     TResult? Function(_ReportPost value)? report,
     TResult? Function(_DeletePost value)? delete,
     TResult? Function(_ChangePostVote value)? changeVote,
-    TResult? Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
   }) {
     return changeVote?.call(this);
   }
@@ -977,7 +930,6 @@ class _$ChangePostVoteImpl implements _ChangePostVote {
     TResult Function(_ReportPost value)? report,
     TResult Function(_DeletePost value)? delete,
     TResult Function(_ChangePostVote value)? changeVote,
-    TResult Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
     required TResult orElse(),
   }) {
     if (changeVote != null) {
@@ -1004,195 +956,10 @@ abstract class _ChangePostVote implements PostEvent {
 }
 
 /// @nodoc
-abstract class _$$AddRemoveFromBookmarkImplCopyWith<$Res> {
-  factory _$$AddRemoveFromBookmarkImplCopyWith(
-    _$AddRemoveFromBookmarkImpl value,
-    $Res Function(_$AddRemoveFromBookmarkImpl) then,
-  ) = __$$AddRemoveFromBookmarkImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String postId, bool inBookMark});
-}
-
-/// @nodoc
-class __$$AddRemoveFromBookmarkImplCopyWithImpl<$Res>
-    extends _$PostEventCopyWithImpl<$Res, _$AddRemoveFromBookmarkImpl>
-    implements _$$AddRemoveFromBookmarkImplCopyWith<$Res> {
-  __$$AddRemoveFromBookmarkImplCopyWithImpl(
-    _$AddRemoveFromBookmarkImpl _value,
-    $Res Function(_$AddRemoveFromBookmarkImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of PostEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? postId = null, Object? inBookMark = null}) {
-    return _then(
-      _$AddRemoveFromBookmarkImpl(
-        null == postId
-            ? _value.postId
-            : postId // ignore: cast_nullable_to_non_nullable
-                  as String,
-        null == inBookMark
-            ? _value.inBookMark
-            : inBookMark // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$AddRemoveFromBookmarkImpl implements _AddRemoveFromBookmark {
-  const _$AddRemoveFromBookmarkImpl(this.postId, this.inBookMark);
-
-  @override
-  final String postId;
-  @override
-  final bool inBookMark;
-
-  @override
-  String toString() {
-    return 'PostEvent.addRemoveFromBookMark(postId: $postId, inBookMark: $inBookMark)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddRemoveFromBookmarkImpl &&
-            (identical(other.postId, postId) || other.postId == postId) &&
-            (identical(other.inBookMark, inBookMark) ||
-                other.inBookMark == inBookMark));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, postId, inBookMark);
-
-  /// Create a copy of PostEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddRemoveFromBookmarkImplCopyWith<_$AddRemoveFromBookmarkImpl>
-  get copyWith =>
-      __$$AddRemoveFromBookmarkImplCopyWithImpl<_$AddRemoveFromBookmarkImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Post post) initial,
-    required TResult Function(String postId, Post post) edit,
-    required TResult Function(String postId, String message) report,
-    required TResult Function(String postId) delete,
-    required TResult Function(String postId, PostVoteType voteType) changeVote,
-    required TResult Function(String postId, bool inBookMark)
-    addRemoveFromBookMark,
-  }) {
-    return addRemoveFromBookMark(postId, inBookMark);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Post post)? initial,
-    TResult? Function(String postId, Post post)? edit,
-    TResult? Function(String postId, String message)? report,
-    TResult? Function(String postId)? delete,
-    TResult? Function(String postId, PostVoteType voteType)? changeVote,
-    TResult? Function(String postId, bool inBookMark)? addRemoveFromBookMark,
-  }) {
-    return addRemoveFromBookMark?.call(postId, inBookMark);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Post post)? initial,
-    TResult Function(String postId, Post post)? edit,
-    TResult Function(String postId, String message)? report,
-    TResult Function(String postId)? delete,
-    TResult Function(String postId, PostVoteType voteType)? changeVote,
-    TResult Function(String postId, bool inBookMark)? addRemoveFromBookMark,
-    required TResult orElse(),
-  }) {
-    if (addRemoveFromBookMark != null) {
-      return addRemoveFromBookMark(postId, inBookMark);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Edit value) edit,
-    required TResult Function(_ReportPost value) report,
-    required TResult Function(_DeletePost value) delete,
-    required TResult Function(_ChangePostVote value) changeVote,
-    required TResult Function(_AddRemoveFromBookmark value)
-    addRemoveFromBookMark,
-  }) {
-    return addRemoveFromBookMark(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Edit value)? edit,
-    TResult? Function(_ReportPost value)? report,
-    TResult? Function(_DeletePost value)? delete,
-    TResult? Function(_ChangePostVote value)? changeVote,
-    TResult? Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
-  }) {
-    return addRemoveFromBookMark?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Edit value)? edit,
-    TResult Function(_ReportPost value)? report,
-    TResult Function(_DeletePost value)? delete,
-    TResult Function(_ChangePostVote value)? changeVote,
-    TResult Function(_AddRemoveFromBookmark value)? addRemoveFromBookMark,
-    required TResult orElse(),
-  }) {
-    if (addRemoveFromBookMark != null) {
-      return addRemoveFromBookMark(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddRemoveFromBookmark implements PostEvent {
-  const factory _AddRemoveFromBookmark(
-    final String postId,
-    final bool inBookMark,
-  ) = _$AddRemoveFromBookmarkImpl;
-
-  String get postId;
-  bool get inBookMark;
-
-  /// Create a copy of PostEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AddRemoveFromBookmarkImplCopyWith<_$AddRemoveFromBookmarkImpl>
-  get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$PostState {
   String get postID => throw _privateConstructorUsedError;
   int get upComments => throw _privateConstructorUsedError;
   int get downComments => throw _privateConstructorUsedError;
-  bool get inBookmark => throw _privateConstructorUsedError;
   bool get isPostReported => throw _privateConstructorUsedError;
   PostVoteType get postVoteType => throw _privateConstructorUsedError;
 
@@ -1212,7 +979,6 @@ abstract class $PostStateCopyWith<$Res> {
     String postID,
     int upComments,
     int downComments,
-    bool inBookmark,
     bool isPostReported,
     PostVoteType postVoteType,
   });
@@ -1238,7 +1004,6 @@ class _$PostStateCopyWithImpl<$Res, $Val extends PostState>
     Object? postID = null,
     Object? upComments = null,
     Object? downComments = null,
-    Object? inBookmark = null,
     Object? isPostReported = null,
     Object? postVoteType = null,
   }) {
@@ -1256,10 +1021,6 @@ class _$PostStateCopyWithImpl<$Res, $Val extends PostState>
                 ? _value.downComments
                 : downComments // ignore: cast_nullable_to_non_nullable
                       as int,
-            inBookmark: null == inBookmark
-                ? _value.inBookmark
-                : inBookmark // ignore: cast_nullable_to_non_nullable
-                      as bool,
             isPostReported: null == isPostReported
                 ? _value.isPostReported
                 : isPostReported // ignore: cast_nullable_to_non_nullable
@@ -1297,7 +1058,6 @@ abstract class _$$PostStateImplCopyWith<$Res>
     String postID,
     int upComments,
     int downComments,
-    bool inBookmark,
     bool isPostReported,
     PostVoteType postVoteType,
   });
@@ -1323,7 +1083,6 @@ class __$$PostStateImplCopyWithImpl<$Res>
     Object? postID = null,
     Object? upComments = null,
     Object? downComments = null,
-    Object? inBookmark = null,
     Object? isPostReported = null,
     Object? postVoteType = null,
   }) {
@@ -1341,10 +1100,6 @@ class __$$PostStateImplCopyWithImpl<$Res>
             ? _value.downComments
             : downComments // ignore: cast_nullable_to_non_nullable
                   as int,
-        inBookmark: null == inBookmark
-            ? _value.inBookmark
-            : inBookmark // ignore: cast_nullable_to_non_nullable
-                  as bool,
         isPostReported: null == isPostReported
             ? _value.isPostReported
             : isPostReported // ignore: cast_nullable_to_non_nullable
@@ -1365,7 +1120,6 @@ class _$PostStateImpl implements _PostState {
     this.postID = "",
     this.upComments = 0,
     this.downComments = 0,
-    this.inBookmark = false,
     this.isPostReported = false,
     this.postVoteType = const PostVoteType.idl(),
   });
@@ -1381,9 +1135,6 @@ class _$PostStateImpl implements _PostState {
   final int downComments;
   @override
   @JsonKey()
-  final bool inBookmark;
-  @override
-  @JsonKey()
   final bool isPostReported;
   @override
   @JsonKey()
@@ -1391,7 +1142,7 @@ class _$PostStateImpl implements _PostState {
 
   @override
   String toString() {
-    return 'PostState(postID: $postID, upComments: $upComments, downComments: $downComments, inBookmark: $inBookmark, isPostReported: $isPostReported, postVoteType: $postVoteType)';
+    return 'PostState(postID: $postID, upComments: $upComments, downComments: $downComments, isPostReported: $isPostReported, postVoteType: $postVoteType)';
   }
 
   @override
@@ -1404,8 +1155,6 @@ class _$PostStateImpl implements _PostState {
                 other.upComments == upComments) &&
             (identical(other.downComments, downComments) ||
                 other.downComments == downComments) &&
-            (identical(other.inBookmark, inBookmark) ||
-                other.inBookmark == inBookmark) &&
             (identical(other.isPostReported, isPostReported) ||
                 other.isPostReported == isPostReported) &&
             (identical(other.postVoteType, postVoteType) ||
@@ -1418,7 +1167,6 @@ class _$PostStateImpl implements _PostState {
     postID,
     upComments,
     downComments,
-    inBookmark,
     isPostReported,
     postVoteType,
   );
@@ -1437,7 +1185,6 @@ abstract class _PostState implements PostState {
     final String postID,
     final int upComments,
     final int downComments,
-    final bool inBookmark,
     final bool isPostReported,
     final PostVoteType postVoteType,
   }) = _$PostStateImpl;
@@ -1448,8 +1195,6 @@ abstract class _PostState implements PostState {
   int get upComments;
   @override
   int get downComments;
-  @override
-  bool get inBookmark;
   @override
   bool get isPostReported;
   @override

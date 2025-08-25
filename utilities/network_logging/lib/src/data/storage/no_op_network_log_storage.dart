@@ -1,5 +1,5 @@
-import '../models/network_log_entry.dart';
-import 'network_log_storage.dart';
+import 'package:network_logging/src/data/models/network_log_entry.dart';
+import 'package:network_logging/src/data/storage/network_log_storage.dart';
 
 class NoOpNetworkLogStorage implements NetworkLogStorage {
   @override

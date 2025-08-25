@@ -13,12 +13,19 @@ deploy-android:
 	@echo "╠ FINISHED ╠"
 
 deploy-ios:
-	@echo "╠ Sending iOS Build to TestFlight..."
+	@echo "╠ Starting iOS Deployment Process..."
+	@echo "╠ Step 1: Updating CocoaPods..."
 	cd ios/fastlane && bundle update cocoapods
-	@echo "╠ cocoapods updated"
+	@echo "╠ ✅ CocoaPods updated"
+	
+	@echo "╠ Step 2: Installing Fastlane dependencies..."
 	cd ios/fastlane && bundle install
-	@echo "╠ bundle installed"
+	@echo "╠ ✅ Bundle installed"
+	
+	@echo "╠ Step 3: Running Fastlane deployment..."
 	cd ios/fastlane && bundle exec fastlane deploy
-	@echo "╠ FINISHED ╠"
+	@echo "╠ ✅ Fastlane deployment completed"
+	
+	@echo "╠ iOS Deployment FINISHED ╠"
 
 deploy: deploy-android deploy-ios

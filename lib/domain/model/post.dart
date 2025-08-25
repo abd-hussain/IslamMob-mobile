@@ -21,7 +21,6 @@ class Post with _$Post {
     required String countryFlag,
     //Details
     required bool isReported,
-    required bool isAddedToBookMark,
     required PostVoteType voteStatus,
   }) = _Post;
 
@@ -41,7 +40,6 @@ sealed class PostVoteType with _$PostVoteType {
 @freezed
 sealed class PostCategoryType with _$PostCategoryType {
   const factory PostCategoryType.wall() = _PostCategoryTypeWall;
-  const factory PostCategoryType.watchlist() = _PostCategoryTypeWatchlist;
   factory PostCategoryType.fromJson(Map<String, dynamic> json) =>
       _$PostCategoryTypeFromJson(json);
 }

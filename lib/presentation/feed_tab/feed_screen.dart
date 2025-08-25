@@ -21,7 +21,7 @@ class _FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     tabController = TabController(
-      length: 2,
+      length: 1,
       vsync: this,
       animationDuration: Duration.zero,
     );
@@ -71,16 +71,13 @@ class _FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
               FeedTabbarView(
                 tabController: tabController,
                 onTap: (index) {
-                  PostCategoryType type = const PostCategoryType.wall();
-                  if (index == 2) {
-                    type = const PostCategoryType.watchlist();
-                  }
-                  builderContext.read<FeedBloc>().add(
-                    FeedEvent.getPostFromSpesificCategory(
-                      context: context,
-                      type: type,
-                    ),
-                  );
+                  // final PostCategoryType type = const PostCategoryType.wall();
+                  // // if (index == 2) {
+                  // //   type = const PostCategoryType.watchlist();
+                  // // }
+                  // builderContext.read<FeedBloc>().add(
+                  //   FeedEvent.getPostFromSpesificCategory(context: context, type: type),
+                  // );
                 },
               ),
               Expanded(
@@ -102,16 +99,6 @@ class _FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
                                 FeedEvent.pullRefresh(
                                   context: context,
                                   type: const PostCategoryType.wall(),
-                                ),
-                              ),
-                        ),
-                        PostListView(
-                          postsList: state.watchlistPostList,
-                          onRefresh: () async =>
-                              builderContext.read<FeedBloc>().add(
-                                FeedEvent.pullRefresh(
-                                  context: context,
-                                  type: const PostCategoryType.watchlist(),
                                 ),
                               ),
                         ),
