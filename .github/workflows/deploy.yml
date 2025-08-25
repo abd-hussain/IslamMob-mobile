@@ -94,7 +94,7 @@ jobs:
 
   ios:
     runs-on: self-hosted
-    timeout-minutes: 30
+    timeout-minutes: 59
     concurrency:
       group: ios-deployment
       cancel-in-progress: true
