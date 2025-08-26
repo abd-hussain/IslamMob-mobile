@@ -29,6 +29,9 @@ platform :ios do
 
     setup_ci if is_ci
 
+    # Specify Xcode version for better compatibility
+    xcversion(version: "15.4")
+
     cocoapods(clean_install: is_ci)
 
     match(
@@ -41,6 +44,7 @@ platform :ios do
       scheme: "Runner",
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
+      destination: "generic/platform=iOS,OS=17.0",
     )
 
     upload_to_testflight(
