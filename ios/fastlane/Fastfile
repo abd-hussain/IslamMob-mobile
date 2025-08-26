@@ -41,7 +41,7 @@ platform :ios do
       scheme: "Runner",
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
-      destination: "generic/platform=iOS,OS=17.0",
+      destination: "generic/platform=iOS,name=Any iOS Device,OS=17.0",
       export_method: "app-store",
     )
 
