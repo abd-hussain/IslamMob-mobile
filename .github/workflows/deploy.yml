@@ -92,7 +92,7 @@ jobs:
               make deploy-android
 
   ios:
-    runs-on: self-hosted
+    runs-on: macos-15
 
     steps:
         - name: 📚 Set up git and fetch all history for all branches and tags
@@ -129,15 +129,11 @@ jobs:
               echo "Warning: App Store Connect secret not found. Skipping App Store setup."
             fi
 
-        # - name: 🎯 Setup Fastlane
-        #   uses: ruby/setup-ruby@v1
-        #   with:
-        #     ruby-version: 3.3
-        #     rubygems: latest
         - name: 🎯 Setup Fastlane
-          run: |
-            gem install bundler
-            gem install fastlane
+          uses: ruby/setup-ruby@v1
+          with:
+            ruby-version: 3.3
+            rubygems: latest
         
         - name: 📦 Cleaning before we start
           run: |
