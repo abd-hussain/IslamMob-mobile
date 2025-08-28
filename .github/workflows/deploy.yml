@@ -110,6 +110,11 @@ jobs:
           with:
             fetch-depth: 0
 
+        - name: 🧰 Finalize Xcode components
+          run: |
+            sudo xcode-select -s /Applications/Xcode_16.app
+            sudo xcodebuild -runFirstLaunch
+  
         - name: 🧪 Check Xcode Version
           run: xcodebuild -version
 
@@ -184,6 +189,44 @@ jobs:
             rm -f Podfile.lock
             pod install
             popd
+
+        - name: 🔀 Select Xcode with iPhoneOS DeviceSupport
+          run: |
+            set -e
+            echo "Available Xcodes:"; ls -1 /Applications | grep Xcode || true
+    
+            choose_xcode() {
+              for X in "$@"; do
+                [ -d "$X/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport" ] || continue
+                echo "Checking $X DeviceSupport…"
+                ls "$X/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport" | tail -5 || true
+                # Prefer iOS 18 if present, otherwise accept iOS 17
+                if ls "$X/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport" | grep -E '^18|iOS 18' >/dev/null 2>&1; then
+                  echo "$X"; return 0
+                fi
+                if ls "$X/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport" | grep -E '^17|iOS 17' >/dev/null 2>&1; then
+                  echo "$X"; return 0
+                fi
+              done
+              return 1
+            }
+    
+            PICK=$(choose_xcode \
+              /Applications/Xcode_16.1.app \
+              /Applications/Xcode_16.app \
+              /Applications/Xcode_15.4.app \
+              /Applications/Xcode.app || true)
+    
+            if [ -z "$PICK" ]; then
+              echo "❌ No suitable Xcode with iPhoneOS DeviceSupport found."
+              exit 1
+            fi
+
+            echo "✅ Using Xcode: $PICK"
+            echo "DEVELOPER_DIR=$PICK/Contents/Developer" >> "$GITHUB_ENV"
+            xcodebuild -version
+            xcodebuild -showsdks || true
+
 
         - name: 🧪 Pre-warm xcodebuild & validate scheme
           run: |
