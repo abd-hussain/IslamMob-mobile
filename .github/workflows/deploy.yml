@@ -139,12 +139,35 @@ jobs:
               echo "Warning: App Store Connect secret not found. Skipping App Store setup."
             fi
 
-        - name: 🎯 Setup Fastlane
+        # - name: 🎯 Setup Fastlane
+        #   uses: ruby/setup-ruby@v1
+        #   with:
+        #     ruby-version: 3.3
+        #     rubygems: latest
+        
+        - name: 🎯 Setup Ruby
           uses: ruby/setup-ruby@v1
           with:
-            ruby-version: 3.3
-            rubygems: latest
-        
+            ruby-version: '3.2'
+            bundler-cache: true   # will cache gems in the runner toolcache
+          env:
+            RUNNER_TOOL_CACHE: /Users/runner/hostedtoolcache
+            RUNNER_TEMP: /Users/runner/work/_temp
+  
+        - name: 📦 Install fastlane (no global writes)
+          run: |
+            gem install fastlane --no-document
+            ruby -v
+            which ruby
+            fastlane -v
+
+        - name: 🔎 Debug env & perms
+          run: |
+            id
+            echo "HOME=$HOME"
+            ls -ld /Users /Users/runner || true
+            ls -ld /Users/runner/hostedtoolcache || true
+          
         - name: 📦 Cleaning before we start
           run: |
             flutter clean
