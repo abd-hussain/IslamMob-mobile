@@ -168,13 +168,14 @@ jobs:
             ls -ld /Users /Users/runner || true
             ls -ld /Users/runner/hostedtoolcache || true
           
-        - name: 📦 Cleaning before we start
+        - name: 🧹 Reset Pods & install
           run: |
-            flutter clean
-            cd ios && rm -rf Podfile.lock
-            cd ios && pod install
-            cd ..
-            flutter pub get
+            pushd ios
+            pod deintegrate
+            rm -f Podfile.lock
+            pod repo update
+            pod install
+            popd
 
         - name: 🛠️ Build and Deploy
           env:
