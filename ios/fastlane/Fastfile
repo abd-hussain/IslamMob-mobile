@@ -16,19 +16,14 @@ platform :ios do
   desc "Set Info.plist Version and Build Number"
   lane :set_full_version do
     version = flutter_version()
-
     increment_version_number(version_number: version['version_name'])
-
     increment_build_number(build_number: version['version_code'])
   end
 
   desc "Push a new beta build to TestFlight"
   lane :deploy do
-
     set_full_version()
-
     setup_ci if is_ci
-
     cocoapods(clean_install: is_ci)
 
     match(
@@ -36,13 +31,24 @@ platform :ios do
       readonly: is_ci,
     )
 
+    # Make xcodebuild settings lookup more tolerant
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
+
     build_app(
       workspace: "Runner.xcworkspace",
       scheme: "Runner",
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
-      destination: "generic/platform=iOS,name=Any iOS Device,OS=17.0",
       export_method: "app-store",
+      # Let Xcode fetch profiles if needed and don’t hang on auth prompts
+      xcargs: "-allowProvisioningUpdates",
+      # Be explicit: map bundle id -> match profile name
+      export_options: {
+        provisioningProfiles: {
+          "com.islammob.app" => "match AppStore com.islammob.app"
+        }
+      }
     )
 
     upload_to_testflight(
@@ -55,9 +61,7 @@ platform :ios do
   desc "Build iOS archive only (no deployment)"
   lane :build_archive do
     set_full_version()
-    
     setup_ci if is_ci
-    
     cocoapods(clean_install: is_ci)
     
     match(
@@ -65,13 +69,21 @@ platform :ios do
       readonly: is_ci,
     )
     
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
+
     build_app(
       workspace: "Runner.xcworkspace",
       scheme: "Runner",
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
-      destination: "generic/platform=iOS,name=Any iOS Device,OS=17.0",
       export_method: "app-store",
+      xcargs: "-allowProvisioningUpdates",
+      export_options: {
+        provisioningProfiles: {
+          "com.islammob.app" => "match AppStore com.islammob.app"
+        }
+      }
     )
     
     puts "✅ iOS archive built successfully at ../build/ios/Runner/Runner.ipa"

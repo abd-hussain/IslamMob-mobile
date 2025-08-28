@@ -129,11 +129,12 @@ jobs:
         - name: 🗃️ Generate code (Optional)
           run: flutter pub run build_runner build --delete-conflicting-outputs
 
-        - name: 🧰 Set up App Store Connect
+        - name: 🧰 Set up App Store Connect (place where Fastlane expects it)
           env:
             APPSTORE_CONNECT: ${{ secrets.APPSTORE_CONNECT }}
           run: |
             if [ -n "$APPSTORE_CONNECT" ]; then
+              mkdir -p ios/fastlane
               echo "$APPSTORE_CONNECT" | base64 --decode > ios/app_store_connect.json
             else
               echo "Warning: App Store Connect secret not found. Skipping App Store setup."
@@ -161,26 +162,44 @@ jobs:
             which ruby
             fastlane -v
 
-        - name: 🔎 Debug env & perms
+        # ✅ Wire xcconfigs BEFORE pods
+        - name: 🧩 Ensure Flutter xcconfigs include Pods
           run: |
-            id
-            echo "HOME=$HOME"
-            ls -ld /Users /Users/runner || true
-            ls -ld /Users/runner/hostedtoolcache || true
+           ensure_line () { FILE="$1"; LINE="$2"; grep -qF "$LINE" "$FILE" || echo "$LINE" >> "$FILE"; }
+           ensure_line ios/Flutter/Debug.xcconfig   '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"'
+           ensure_line ios/Flutter/Release.xcconfig '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"'
+           ensure_line ios/Flutter/Profile.xcconfig '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"'
+        
+        # - name: 🔎 Debug env & perms
+        #   run: |
+        #     id
+        #     echo "HOME=$HOME"
+        #     ls -ld /Users /Users/runner || true
+        #     ls -ld /Users/runner/hostedtoolcache || true
           
-        - name: 🧹 Reset Pods & install
+        - name: 🧹 Pods clean install
           run: |
             pushd ios
             pod deintegrate
             rm -f Podfile.lock
-            pod repo update
             pod install
             popd
 
+        - name: 🧪 Pre-warm xcodebuild & validate scheme
+          run: |
+            xcodebuild -version
+            xcodebuild -list -workspace ios/Runner.xcworkspace
+            xcodebuild -resolvePackageDependencies \
+              -workspace ios/Runner.xcworkspace \
+              -scheme Runner \
+              -destination 'generic/platform=iOS'
+          
         - name: 🛠️ Build and Deploy
           env:
             MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
             MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
+            FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: "120"
+            FASTLANE_XCODEBUILD_SETTINGS_RETRIES: "6"
           run: |
             if [ -n "$MATCH_PASSWORD" ] && [ -n "$MATCH_GIT_BASIC_AUTHORIZATION" ]; then
               make deploy-ios
