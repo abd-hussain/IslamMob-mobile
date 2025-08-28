@@ -1,0 +1,94 @@
+name: iOS Self-Hosted Build
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build type'
+        required: true
+        default: 'testflight'
+        type: choice
+        options:
+          - testflight
+          - archive-only
+
+jobs:
+  ios-self-hosted:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        xcode: ['15.0']
+
+    steps:
+        - name: 📚 Checkout code
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+
+        - name: 🧪 Check Xcode Version
+          run: xcodebuild -version
+
+        - name: 🐦 Setup Flutter
+          uses: subosito/flutter-action@v2
+          with:
+            flutter-version: '3.32.6'
+            channel: 'stable'
+            cache: true
+
+        - name: 🗳️ Flutter gen-l10n
+          run: flutter gen-l10n
+
+        - name: 🗳️ Flutter Pub Get
+          run: flutter pub get
+  
+        - name: 🗃️ Generate code
+          run: flutter pub run build_runner build --delete-conflicting-outputs
+
+        - name: 🧰 Set up App Store Connect
+          env:
+            APPSTORE_CONNECT: ${{ secrets.APPSTORE_CONNECT }}
+          run: |
+            if [ -n "$APPSTORE_CONNECT" ]; then
+              echo "$APPSTORE_CONNECT" | base64 --decode > ios/app_store_connect.json
+            else
+              echo "Warning: App Store Connect secret not found. Skipping App Store setup."
+            fi
+
+        - name: 🎯 Setup Fastlane
+          uses: ruby/setup-ruby@v1
+          with:
+            ruby-version: 3.3
+            rubygems: latest
+        
+        - name: 📦 Clean and setup
+          run: |
+            flutter clean
+            cd ios && rm -rf Podfile.lock
+            cd ios && pod install
+            cd ..
+            flutter pub get
+
+        - name: 🛠️ Build and Deploy
+          if: github.event.inputs.build_type == 'testflight'
+          env:
+            MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
+            MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
+          run: |
+            if [ -n "$MATCH_PASSWORD" ] && [ -n "$MATCH_GIT_BASIC_AUTHORIZATION" ]; then
+              make deploy-ios
+            else
+              echo "Warning: iOS deployment secrets not found. Skipping iOS deployment."
+              exit 1
+            fi
+
+        - name: 🏗️ Build Archive Only
+          if: github.event.inputs.build_type == 'archive-only'
+          run: |
+            echo "Building iOS archive only..."
+            cd ios/fastlane && bundle update cocoapods
+            cd ios/fastlane && bundle install
+            cd ios/fastlane && bundle exec fastlane build_archive
+

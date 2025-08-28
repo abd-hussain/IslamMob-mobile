@@ -51,4 +51,29 @@ platform :ios do
       skip_waiting_for_build_processing: true,
     )
   end
+
+  desc "Build iOS archive only (no deployment)"
+  lane :build_archive do
+    set_full_version()
+    
+    setup_ci if is_ci
+    
+    cocoapods(clean_install: is_ci)
+    
+    match(
+      type: "appstore",
+      readonly: is_ci,
+    )
+    
+    build_app(
+      workspace: "Runner.xcworkspace",
+      scheme: "Runner",
+      archive_path: "../build/ios/Runner.xcarchive",
+      output_directory: "../build/ios/Runner",
+      destination: "generic/platform=iOS,name=Any iOS Device,OS=17.0",
+      export_method: "app-store",
+    )
+    
+    puts "✅ iOS archive built successfully at ../build/ios/Runner/Runner.ipa"
+  end
 end
