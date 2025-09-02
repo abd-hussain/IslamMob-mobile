@@ -83,7 +83,9 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   void _listenToStreams() {
     _durationSub = _player.onDurationChanged.listen(
       (d) {
-        MemoryUtils.safeSetState(this, () => _duration = d);
+        if (mounted) {
+          setState(() => _duration = d);
+        }
       },
       onError: (error) {
         // Handle duration stream errors
@@ -93,7 +95,9 @@ class _PlayerWidgetState extends State<PlayerWidget> {
 
     _positionSub = _player.onPositionChanged.listen(
       (p) {
-        MemoryUtils.safeSetState(this, () => _position = p);
+        if (mounted) {
+          setState(() => _position = p);
+        }
       },
       onError: (error) {
         // Handle position stream errors
@@ -103,10 +107,10 @@ class _PlayerWidgetState extends State<PlayerWidget> {
 
     _completeSub = _player.onPlayerComplete.listen(
       (_) {
-        MemoryUtils.safeSetState(this, () {
-          _playerState = PlayerState.stopped;
-          _position = Duration.zero;
-        });
+        if (mounted) {
+          setState(() => _playerState = PlayerState.stopped);
+          setState(() => _position = Duration.zero);
+        }
       },
       onError: (error) {
         // Handle completion stream errors
@@ -116,7 +120,9 @@ class _PlayerWidgetState extends State<PlayerWidget> {
 
     _stateSub = _player.onPlayerStateChanged.listen(
       (state) {
-        MemoryUtils.safeSetState(this, () => _playerState = state);
+        if (mounted) {
+          setState(() => _playerState = state);
+        }
       },
       onError: (error) {
         // Handle state stream errors

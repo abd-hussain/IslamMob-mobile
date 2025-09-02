@@ -48,13 +48,6 @@ class MemoryUtils {
     };
   }
 
-  /// Check if the widget is still mounted before calling setState
-  static void safeSetState(State state, VoidCallback fn) {
-    if (state.mounted) {
-      state.setState(fn);
-    }
-  }
-
   /// Dispose multiple resources safely
   static void safeDispose(List<VoidCallback> disposers) {
     for (final disposer in disposers) {
