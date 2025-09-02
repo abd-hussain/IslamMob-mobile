@@ -165,11 +165,7 @@ class PrintTileView extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: const Center(
-            child: Icon(
-              Icons.error_outline,
-              color: Colors.grey,
-              size: 32,
-            ),
+            child: Icon(Icons.error_outline, color: Colors.grey, size: 32),
           ),
         ),
         // Smooth animations

@@ -40,7 +40,10 @@ class _ImageHolderFieldState extends State<ImageHolderField> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ImageHolderBloc()..add(ImageHolderEvent.initialImage(widget.initialFile, widget.imageUrl)),
+      create: (_) => ImageHolderBloc()
+        ..add(
+          ImageHolderEvent.initialImage(widget.initialFile, widget.imageUrl),
+        ),
       child: BlocBuilder<ImageHolderBloc, ImageHolderState>(
         builder: (blocContext, state) {
           return InkWell(
@@ -62,7 +65,8 @@ class _ImageHolderFieldState extends State<ImageHolderField> {
   }
 
   Widget _buildImageContent(BuildContext context, ImageHolderState state) {
-    if (state.imageFile != null || (state.imageUrl != null && state.imageUrl!.isNotEmpty)) {
+    if (state.imageFile != null ||
+        (state.imageUrl != null && state.imageUrl!.isNotEmpty)) {
       return OptimizedImageWidget(
         imageFile: state.imageFile,
         imageUrl: state.imageUrl,
@@ -97,7 +101,8 @@ class _ImageHolderFieldState extends State<ImageHolderField> {
 
   void _showImageOptions(BuildContext context) {
     final bloc = context.read<ImageHolderBloc>();
-    final hasImage = bloc.state.imageFile != null || bloc.state.imageUrl != null;
+    final hasImage =
+        bloc.state.imageFile != null || bloc.state.imageUrl != null;
 
     ImageHolderBottmsheet().show(
       context: context,

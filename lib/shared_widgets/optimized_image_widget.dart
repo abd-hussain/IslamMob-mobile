@@ -98,8 +98,12 @@ class OptimizedImageWidget extends StatelessWidget {
         memCacheHeight: memCacheHeight,
         maxWidthDiskCache: maxWidthDiskCache,
         maxHeightDiskCache: maxHeightDiskCache,
-        placeholder: placeholder != null ? (context, url) => placeholder! : _buildDefaultPlaceholder,
-        errorWidget: errorWidget != null ? (context, url, error) => errorWidget! : _buildDefaultErrorWidget,
+        placeholder: placeholder != null
+            ? (context, url) => placeholder!
+            : _buildDefaultPlaceholder,
+        errorWidget: errorWidget != null
+            ? (context, url, error) => errorWidget!
+            : _buildDefaultErrorWidget,
         fadeInDuration: fadeInDuration,
         fadeOutDuration: fadeOutDuration,
       );
@@ -121,7 +125,10 @@ class OptimizedImageWidget extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      decoration: BoxDecoration(color: Colors.grey[200], borderRadius: borderRadius),
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+        borderRadius: borderRadius,
+      ),
       child: const Center(
         child: SizedBox(
           width: 20,
@@ -136,19 +143,34 @@ class OptimizedImageWidget extends StatelessWidget {
   }
 
   /// Builds the default error widget
-  Widget _buildDefaultErrorWidget(BuildContext context, String url, dynamic error) {
+  Widget _buildDefaultErrorWidget(
+    BuildContext context,
+    String url,
+    dynamic error,
+  ) {
     return Container(
       width: width,
       height: height,
-      decoration: BoxDecoration(color: Colors.grey[100], borderRadius: borderRadius),
-      child: const Center(child: Icon(Icons.error_outline, color: Colors.grey, size: 24)),
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+        borderRadius: borderRadius,
+      ),
+      child: const Center(
+        child: Icon(Icons.error_outline, color: Colors.grey, size: 24),
+      ),
     );
   }
 }
 
 /// A specialized version for profile images with common optimizations
 class OptimizedProfileImage extends StatelessWidget {
-  const OptimizedProfileImage({super.key, this.imageUrl, this.imageFile, this.size = 100.0, this.borderRadius});
+  const OptimizedProfileImage({
+    super.key,
+    this.imageUrl,
+    this.imageFile,
+    this.size = 100.0,
+    this.borderRadius,
+  });
 
   final String? imageUrl;
   final File? imageFile;
