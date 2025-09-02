@@ -14,7 +14,7 @@ class AudioService {
   AudioService._internal();
 
   final Map<String, AudioPlayer> _players = {};
-  final Map<String, StreamSubscription> _subscriptions = {};
+  final Map<String, StreamSubscription<dynamic>> _subscriptions = {};
 
   /// Play a short sound effect (like click sounds) with automatic disposal
   Future<void> playSoundEffect(String assetPath) async {
