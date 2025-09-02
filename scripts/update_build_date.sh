@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Script to automatically update build number based on current date
-# Format: YYYYMMDDHH (Year, Month, Day, Hour)
-# Example: 2025090205 (2025-09-02 05:00)
+# Script to automatically update build number based on current date (unified format for both platforms)
+# Format: YYYYMMDDHHMM (Year, Month, Day, Hour, Minute) - Compatible with both iOS and Android
+# Example: 202509021114 (2025-09-02 11:14)
 
 set -e
 
@@ -13,8 +13,9 @@ if [ ! -f "$PUBSPEC_FILE" ]; then
     exit 1
 fi
 
-# Generate date-based build number (YYYYMMDDHH)
-BUILD_NUMBER=$(date +"%Y%m%d%H")
+# Generate date-based build number with minute precision (YYYYMMDDHHMM)
+# This format is Android-compatible and provides good precision
+BUILD_NUMBER=$(date +"%Y%m%d%H%M")
 
 # Extract current version
 CURRENT_VERSION=$(grep "^version:" "$PUBSPEC_FILE" | sed 's/version: //')
@@ -36,4 +37,4 @@ else
 fi
 
 echo "Updated version: $CURRENT_VERSION => $NEW_VERSION"
-echo "Build number based on date: $BUILD_NUMBER ($(date))"
+echo "Build number based on date (unified format): $BUILD_NUMBER ($(date))"

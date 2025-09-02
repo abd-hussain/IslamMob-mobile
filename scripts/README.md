@@ -8,68 +8,62 @@ No human interaction required! Build numbers are automatically generated from th
 
 ## Available Scripts
 
-### `update_build_date.sh` (Recommended)
-Generates build numbers in format: `YYYYMMDDHH` (Year, Month, Day, Hour)
-- **Example:** `2025090211` (2025-09-02 11:00)
-- **Precision:** Hourly (24 unique builds per day)
-
-### `update_build_date_precise.sh` (Minute Precision)
+### `update_build_date.sh` (Unified Format - Default for Both Platforms)
 Generates build numbers in format: `YYYYMMDDHHMM` (Year, Month, Day, Hour, Minute)
-- **Example:** `202509021114` (2025-09-02 11:14)
-- **Precision:** Per minute (1440 unique builds per day)
-
-### `update_build_date_seconds.sh` (Maximum Precision - Default)
-Generates build numbers in format: `YYYYMMDDHHMMSS` (Year, Month, Day, Hour, Minute, Second)
-- **Example:** `20250902111752` (2025-09-02 11:17:52)
-- **Precision:** Per second (86,400 unique builds per day)
-- **Allows multiple builds per minute!**
+- **Example:** `202509021230` (2025-09-02 12:30)
+- **Precision:** Per minute (1,440 unique builds per day)
+- **Compatible with both iOS and Android**
+- **Used automatically for both Android and iOS builds**
+- **✅ Same build number for both platforms**
 
 ## Makefile Commands
 
 ### Automatic Integration
-Your existing deploy commands now automatically update build numbers:
+Your existing deploy commands now automatically update build numbers with the **same format for both platforms**:
 
 ```bash
 # Deploy Android (auto-updates build number)
 make deploy-android
 
-# Deploy iOS (auto-updates build number)
+# Deploy iOS (auto-updates build number - same format as Android)
 make deploy-ios
 
-# Deploy both platforms
+# Deploy both platforms (both get the same build number)
 make deploy
 ```
 
+**✅ Both platforms will have identical build numbers for easy identification!**
+
 ### Manual Commands
 ```bash
-# Update build number manually (seconds precision - default)
+# Update build number manually (unified format for both platforms)
 make update-build-date
 
 # Or run script directly
-./scripts/update_build_date.sh          # Hourly precision
-./scripts/update_build_date_precise.sh  # Minute precision
-./scripts/update_build_date_seconds.sh  # Seconds precision (default)
+./scripts/update_build_date.sh  # Unified format (default)
 ```
 
 ## Build Number Examples
 
-| Date/Time | Hourly Format | Minute Format | Seconds Format (Default) |
-|-----------|---------------|---------------|-------------------------|
-| 2025-09-02 11:00:00 | `2025090211` | `202509021100` | `20250902110000` |
-| 2025-09-02 11:14:30 | `2025090211` | `202509021114` | `20250902111430` |
-| 2025-09-02 11:14:45 | `2025090211` | `202509021114` | `20250902111445` |
-| 2025-09-02 15:30:15 | `2025090215` | `202509021530` | `20250902153015` |
-| 2025-09-03 09:45:22 | `2025090309` | `202509030945` | `20250903094522` |
+| Date/Time | **Unified Format (Default)** |
+|-----------|------------------------------|
+| 2025-09-02 11:00:00 | **`202509021100`** |
+| 2025-09-02 11:14:30 | **`202509021114`** |
+| 2025-09-02 11:14:45 | **`202509021114`** |
+| 2025-09-02 15:30:15 | **`202509021530`** |
+| 2025-09-03 09:45:22 | **`202509030945`** |
+
+**✅ Both iOS and Android will use the "Unified Format" for identical build numbers!**
 
 ## Current Version Format
 
 The version follows the format: `MAJOR.MINOR.PATCH+BUILD_NUMBER`
 
-**Current Example:** `1.9.0+20250902111752`
+**Current Example:** `1.9.0+202509021230`
 - Major: 1
 - Minor: 9  
 - Patch: 0
-- Build: 20250902111752 (2025-09-02 11:17:52)
+- Build: 202509021230 (2025-09-02 12:30)
 
 ## Benefits
 
@@ -79,6 +73,7 @@ The version follows the format: `MAJOR.MINOR.PATCH+BUILD_NUMBER`
 ✅ **Automatic Integration** - Works with your existing deploy workflow  
 ✅ **No Conflicts** - Impossible to have duplicate build numbers  
 ✅ **Multiple Builds Per Minute** - Can push multiple builds within the same minute  
+✅ **Unified Build Numbers** - Same build number for both iOS and Android platforms  
 
 ## CI/CD Integration
 
@@ -91,20 +86,34 @@ The scripts work perfectly in CI/CD pipelines:
   # Build number automatically updated to current date/time
 ```
 
-## Switching Between Scripts
+## Script Customization
 
-To change precision, simply update the Makefile:
+The current script uses minute precision (`YYYYMMDDHHMM`). If you need different precision, you can modify the script:
 
-```makefile
-# For hourly precision
-./scripts/update_build_date.sh
+```bash
+# Current format in the script:
+BUILD_NUMBER=$(date +"%Y%m%d%H%M")
 
-# For minute precision
-./scripts/update_build_date_precise.sh
+# For hourly precision, change to:
+BUILD_NUMBER=$(date +"%Y%m%d%H")
 
-# For seconds precision (current default)
-./scripts/update_build_date_seconds.sh
+# For seconds precision (not recommended for Android), change to:
+BUILD_NUMBER=$(date +"%Y%m%d%H%M%S")
 ```
+
+## Unified Build Number System
+
+**Solution:** Both iOS and Android now use the same build number format (`YYYYMMDDHHMM`) for easy identification.
+
+**Benefits:**
+- ✅ **Same build number** for both platforms
+- ✅ **Easy identification** of matching builds
+- ✅ **Android-compatible** format
+- ✅ **Automatic synchronization**
+
+**Example:**
+- ❌ Different formats: iOS `20250902111752`, Android `202509021114` (confusing)
+- ✅ **Unified format**: Both `202509021230` (clear identification)
 
 ## Troubleshooting
 
@@ -117,6 +126,11 @@ chmod +x scripts/update_build_date.sh
 ```bash
 chmod +x scripts/*.sh
 ```
+
+**Android build fails with "Value is null":**
+- This usually means the build number is too large
+- The unified format should prevent this issue
+- Both platforms now use the same Android-compatible format
 
 **Date format issues:**
 The scripts use standard Unix `date` command and should work on macOS and Linux.
