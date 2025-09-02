@@ -110,10 +110,7 @@ class OptimizedImageWidget extends StatelessWidget {
 
     // Apply border radius if specified
     if (borderRadius != null) {
-      imageWidget = ClipRRect(
-        borderRadius: borderRadius!,
-        child: imageWidget,
-      );
+      imageWidget = ClipRRect(borderRadius: borderRadius!, child: imageWidget);
     }
 
     return imageWidget;
@@ -124,10 +121,7 @@ class OptimizedImageWidget extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: borderRadius,
-      ),
+      decoration: BoxDecoration(color: Colors.grey[200], borderRadius: borderRadius),
       child: const Center(
         child: SizedBox(
           width: 20,
@@ -146,30 +140,15 @@ class OptimizedImageWidget extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: borderRadius,
-      ),
-      child: const Center(
-        child: Icon(
-          Icons.error_outline,
-          color: Colors.grey,
-          size: 24,
-        ),
-      ),
+      decoration: BoxDecoration(color: Colors.grey[100], borderRadius: borderRadius),
+      child: const Center(child: Icon(Icons.error_outline, color: Colors.grey, size: 24)),
     );
   }
 }
 
 /// A specialized version for profile images with common optimizations
 class OptimizedProfileImage extends StatelessWidget {
-  const OptimizedProfileImage({
-    super.key,
-    this.imageUrl,
-    this.imageFile,
-    this.size = 100.0,
-    this.borderRadius,
-  });
+  const OptimizedProfileImage({super.key, this.imageUrl, this.imageFile, this.size = 100.0, this.borderRadius});
 
   final String? imageUrl;
   final File? imageFile;

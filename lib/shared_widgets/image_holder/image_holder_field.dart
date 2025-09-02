@@ -138,11 +138,11 @@ class _ImageHolderFieldState extends State<ImageHolderField> {
         // Enable compression
         requestFullMetadata: false, // Faster processing
       );
-      
+
       if (image == null) {
         return File("");
       }
-      
+
       return File(image.path);
     } catch (e) {
       // Handle picker errors gracefully
