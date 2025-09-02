@@ -58,7 +58,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           LoginHeader(
             onPress: () async {
               await FirebaseAnalyticsRepository.logEvent(
-                name: "LoginScreenFromSettingsScreen",
+                name: "ManualLoginScreenFromSettingsScreen",
               );
               await navigator.pushNamed(RoutesConstants.manualLoginScreen);
             },
