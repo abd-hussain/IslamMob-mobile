@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islam_app/domain/services/audio_service.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/estekara/bloc/estekara_bloc.dart';
 import 'package:islam_app/presentation/estekara/widget/player_widget.dart';
@@ -36,30 +37,34 @@ class EstekaraScreen extends StatefulWidget {
 }
 
 class _EstekaraScreenState extends State<EstekaraScreen> {
-  late AudioPlayer player = AudioPlayer();
+  late AudioPlayer player;
+  static const String _playerId = 'estekara_player';
 
   @override
   void initState() {
     super.initState();
 
-    // Create the audio player.
-    player = AudioPlayer();
+    // Use centralized audio service for better memory management
+    player = AudioService().getPersistentPlayer(_playerId);
 
     // Set the release mode to keep the source after playback has completed.
     player.setReleaseMode(ReleaseMode.stop);
 
     // Start the player as soon as the app is displayed.
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await player.setSource(AssetSource('audios/istikhara.mp3'));
-      await player.resume();
+      try {
+        await player.setSource(AssetSource('audios/istikhara.mp3'));
+        await player.resume();
+      } catch (e) {
+        debugPrint('Error setting up audio: $e');
+      }
     });
   }
 
   @override
   void dispose() {
-    // Release all sources and dispose the player.
-    player.dispose();
-
+    // Dispose the player through the audio service
+    AudioService().disposePlayer(_playerId);
     super.dispose();
   }
 

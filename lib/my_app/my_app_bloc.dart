@@ -53,18 +53,6 @@ class MyAppBloc {
     tz.initializeTimeZones();
   }
 
-  /// Initializes Firebase and Mobile Ads if the device has internet connectivity
-  Future<void> _initializeFirebaseAndAds() async {
-    try {
-      if (await _hasInternetConnectivity()) {
-        await FirebaseManagerBase.initialize();
-        await AdvertismentsBase.initializeMobileAds();
-      }
-    } catch (e) {
-      return;
-    }
-  }
-
   /// Sets the preferred screen orientations for the app
   Future<void> _setPreferredOrientations() async {
     await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);

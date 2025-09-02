@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:audioplayers/audioplayers.dart';
 import 'package:bloc/bloc.dart';
 import 'package:database_manager/database_manager.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/tasbeeh.dart';
+import 'package:islam_app/domain/services/audio_service.dart';
 import 'package:islam_app/domain/usecase/tasbeeh_usecase.dart';
 
 part 'tasbeeh_bloc.freezed.dart';
@@ -132,7 +132,8 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
       HapticFeedback.vibrate();
     }
     if (allowSound) {
-      AudioPlayer().play(AssetSource('audios/click.wav'));
+      // Use centralized audio service to prevent memory leaks
+      AudioService().playSoundEffect('audios/click.wav');
     }
   }
 }

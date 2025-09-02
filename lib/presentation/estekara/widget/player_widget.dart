@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/domain/utils/memory_utils.dart';
 
 /// Widget for controlling audio playback of Istikhara prayer recitation.
 ///
@@ -76,32 +77,60 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   }
 
   void _listenToStreams() {
-    _durationSub = _player.onDurationChanged.listen((d) {
-      setState(() => _duration = d);
-    });
+    _durationSub = _player.onDurationChanged.listen(
+      (d) {
+        MemoryUtils.safeSetState(this, () => _duration = d);
+      },
+      onError: (error) {
+        // Handle duration stream errors
+        debugPrint('Duration stream error: $error');
+      },
+    );
 
-    _positionSub = _player.onPositionChanged.listen((p) {
-      setState(() => _position = p);
-    });
+    _positionSub = _player.onPositionChanged.listen(
+      (p) {
+        MemoryUtils.safeSetState(this, () => _position = p);
+      },
+      onError: (error) {
+        // Handle position stream errors
+        debugPrint('Position stream error: $error');
+      },
+    );
 
-    _completeSub = _player.onPlayerComplete.listen((_) {
-      setState(() {
-        _playerState = PlayerState.stopped;
-        _position = Duration.zero;
-      });
-    });
+    _completeSub = _player.onPlayerComplete.listen(
+      (_) {
+        MemoryUtils.safeSetState(this, () {
+          _playerState = PlayerState.stopped;
+          _position = Duration.zero;
+        });
+      },
+      onError: (error) {
+        // Handle completion stream errors
+        debugPrint('Completion stream error: $error');
+      },
+    );
 
-    _stateSub = _player.onPlayerStateChanged.listen((state) {
-      setState(() => _playerState = state);
-    });
+    _stateSub = _player.onPlayerStateChanged.listen(
+      (state) {
+        MemoryUtils.safeSetState(this, () => _playerState = state);
+      },
+      onError: (error) {
+        // Handle state stream errors
+        debugPrint('State stream error: $error');
+      },
+    );
   }
 
   @override
   void dispose() {
-    _durationSub.cancel();
-    _positionSub.cancel();
-    _completeSub.cancel();
-    _stateSub.cancel();
+    // Cancel all subscriptions safely using memory utils
+    MemoryUtils.safeCancelSubscriptions([
+      _durationSub,
+      _positionSub,
+      _completeSub,
+      _stateSub,
+    ]);
+
     super.dispose();
   }
 
