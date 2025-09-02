@@ -26,6 +26,7 @@ class HelpToolTipsView extends StatelessWidget {
         const QuranHeaderHelpBar(),
         const Spacer(),
         QuranBottomHelpBar(returnBrightness: returnBrightness),
+        const SizedBox(height: 75),
       ],
     );
   }

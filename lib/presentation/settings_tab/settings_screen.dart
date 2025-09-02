@@ -60,7 +60,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               await FirebaseAnalyticsRepository.logEvent(
                 name: "LoginScreenFromSettingsScreen",
               );
-              await navigator.pushNamed(RoutesConstants.loginScreen);
+              await navigator.pushNamed(RoutesConstants.manualLoginScreen);
             },
           ),
         Expanded(
@@ -297,7 +297,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               const SizedBox(height: 8),
               if (kIsWeb) const SizedBox() else const AddMobBanner(),
               const FooterView(),
-              const SizedBox(height: 8),
+              const SizedBox(height: 75),
             ],
           ),
         ),

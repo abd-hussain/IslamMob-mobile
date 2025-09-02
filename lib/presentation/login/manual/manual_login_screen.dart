@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
-import 'package:islam_app/presentation/login/bloc/login_bloc.dart';
+import 'package:islam_app/presentation/login/manual/bloc/manual_login_bloc.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
@@ -11,8 +11,8 @@ import 'package:islam_app/shared_widgets/email_field_view.dart';
 import 'package:islam_app/shared_widgets/password_field/password_field_view.dart';
 import 'package:islam_app/shared_widgets/save_cradintial_box/save_cradintial_box_view.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class ManualLoginScreen extends StatelessWidget {
+  const ManualLoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +24,13 @@ class LoginScreen extends StatelessWidget {
     final navigator = Navigator.of(context, rootNavigator: true);
 
     return BlocProvider(
-      create: (context) => LoginBloc()..add(const LoginEvent.initialValues()),
+      create: (context) =>
+          ManualLoginBloc()..add(const ManualLoginEvent.initialValues()),
       child: Scaffold(
         appBar: CustomAppBar(title: localizations.login),
-        body: BlocListener<LoginBloc, LoginState>(
+        body: BlocListener<ManualLoginBloc, ManualLoginState>(
           listenWhen: (previous, current) =>
-              current.processState == const LoginProcessState.success(),
+              current.processState == const ManualLoginProcessState.success(),
           listener: (context, state) {
             Navigator.of(context, rootNavigator: true).pushNamedAndRemoveUntil(
               RoutesConstants.mainContainer,
@@ -67,12 +68,12 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: BlocBuilder<LoginBloc, LoginState>(
+                        child: BlocBuilder<ManualLoginBloc, ManualLoginState>(
                           buildWhen: (previous, current) =>
                               previous.processState != current.processState,
                           builder: (context, state) {
                             switch (state.processState) {
-                              case LoginProcessLoading():
+                              case ManualLoginProcessLoading():
                                 return const Padding(
                                   padding: EdgeInsets.all(20),
                                   child: Center(
@@ -83,9 +84,9 @@ class LoginScreen extends StatelessWidget {
                                     ),
                                   ),
                                 );
-                              case LoginProcessSuccess():
+                              case ManualLoginProcessSuccess():
                                 return const SizedBox();
-                              case LoginProcessIdl(
+                              case ManualLoginProcessIdl(
                                 :final email,
                                 :final password,
                               ):
@@ -100,7 +101,7 @@ class LoginScreen extends StatelessWidget {
                                   state,
                                   navigator,
                                 );
-                              case LoginProcessError():
+                              case ManualLoginProcessError():
                                 return bodyOfLogin(
                                   emailController,
                                   context,
@@ -156,7 +157,7 @@ class LoginScreen extends StatelessWidget {
     IslamMobLocalizations localizations,
     TextEditingController passwordController,
     bool savingCradintialState,
-    LoginState state,
+    ManualLoginState state,
     NavigatorState navigator,
   ) {
     return Column(
@@ -166,8 +167,8 @@ class LoginScreen extends StatelessWidget {
         EmailFieldView(
           controller: emailController,
           onChange: (p0) {
-            context.read<LoginBloc>().add(
-              LoginEvent.updateLoginButtonEnablity(
+            context.read<ManualLoginBloc>().add(
+              ManualLoginEvent.updateLoginButtonEnablity(
                 localizations: localizations,
                 email: emailController.text,
                 password: passwordController.text,
@@ -182,8 +183,8 @@ class LoginScreen extends StatelessWidget {
           controller: passwordController,
           hintMessage: IslamMobLocalizations.of(context).password,
           onChange: (p0) {
-            context.read<LoginBloc>().add(
-              LoginEvent.updateLoginButtonEnablity(
+            context.read<ManualLoginBloc>().add(
+              ManualLoginEvent.updateLoginButtonEnablity(
                 localizations: localizations,
                 email: emailController.text,
                 password: passwordController.text,
@@ -210,7 +211,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ),
-        BlocBuilder<LoginBloc, LoginState>(
+        BlocBuilder<ManualLoginBloc, ManualLoginState>(
           buildWhen: (previous, current) =>
               previous.isLoginButtonEnabled != current.isLoginButtonEnabled,
           builder: (context, state) {
@@ -219,8 +220,8 @@ class LoginScreen extends StatelessWidget {
               title: localizations.login,
               isEnabled: state.isLoginButtonEnabled,
               onTap: () {
-                context.read<LoginBloc>().add(
-                  LoginEvent.loginPressed(
+                context.read<ManualLoginBloc>().add(
+                  ManualLoginEvent.loginPressed(
                     email: emailController.text,
                     password: passwordController.text,
                     savedCradintial: savingCradintialState,

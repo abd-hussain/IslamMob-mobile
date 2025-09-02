@@ -32,7 +32,7 @@ class FeedTabbarView extends StatelessWidget {
       ),
       tabs: [
         Tab(text: localization.wall_category),
-        Tab(text: localization.watchlist_category),
+        // Tab(text: localization.watchlist_category),
       ],
       onTap: onTap,
     );

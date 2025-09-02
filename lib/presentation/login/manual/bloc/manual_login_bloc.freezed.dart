@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'login_bloc.dart';
+part of 'manual_login_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 );
 
 /// @nodoc
-mixin _$LoginEvent {
+mixin _$ManualLoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialValues,
@@ -60,85 +60,86 @@ mixin _$LoginEvent {
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialValues value) initialValues,
-    required TResult Function(_UpdateLoginButtonEnablity value)
+    required TResult Function(_ManualInitialValues value) initialValues,
+    required TResult Function(_ManualUpdateLoginButtonEnablity value)
     updateLoginButtonEnablity,
-    required TResult Function(_LoginPressed value) loginPressed,
+    required TResult Function(_ManualLoginPressed value) loginPressed,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialValues value)? initialValues,
-    TResult? Function(_UpdateLoginButtonEnablity value)?
+    TResult? Function(_ManualInitialValues value)? initialValues,
+    TResult? Function(_ManualUpdateLoginButtonEnablity value)?
     updateLoginButtonEnablity,
-    TResult? Function(_LoginPressed value)? loginPressed,
+    TResult? Function(_ManualLoginPressed value)? loginPressed,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialValues value)? initialValues,
-    TResult Function(_UpdateLoginButtonEnablity value)?
+    TResult Function(_ManualInitialValues value)? initialValues,
+    TResult Function(_ManualUpdateLoginButtonEnablity value)?
     updateLoginButtonEnablity,
-    TResult Function(_LoginPressed value)? loginPressed,
+    TResult Function(_ManualLoginPressed value)? loginPressed,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginEventCopyWith<$Res> {
-  factory $LoginEventCopyWith(
-    LoginEvent value,
-    $Res Function(LoginEvent) then,
-  ) = _$LoginEventCopyWithImpl<$Res, LoginEvent>;
+abstract class $ManualLoginEventCopyWith<$Res> {
+  factory $ManualLoginEventCopyWith(
+    ManualLoginEvent value,
+    $Res Function(ManualLoginEvent) then,
+  ) = _$ManualLoginEventCopyWithImpl<$Res, ManualLoginEvent>;
 }
 
 /// @nodoc
-class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
-    implements $LoginEventCopyWith<$Res> {
-  _$LoginEventCopyWithImpl(this._value, this._then);
+class _$ManualLoginEventCopyWithImpl<$Res, $Val extends ManualLoginEvent>
+    implements $ManualLoginEventCopyWith<$Res> {
+  _$ManualLoginEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoginEvent
+  /// Create a copy of ManualLoginEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$InitialValuesImplCopyWith<$Res> {
-  factory _$$InitialValuesImplCopyWith(
-    _$InitialValuesImpl value,
-    $Res Function(_$InitialValuesImpl) then,
-  ) = __$$InitialValuesImplCopyWithImpl<$Res>;
+abstract class _$$ManualInitialValuesImplCopyWith<$Res> {
+  factory _$$ManualInitialValuesImplCopyWith(
+    _$ManualInitialValuesImpl value,
+    $Res Function(_$ManualInitialValuesImpl) then,
+  ) = __$$ManualInitialValuesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialValuesImplCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$InitialValuesImpl>
-    implements _$$InitialValuesImplCopyWith<$Res> {
-  __$$InitialValuesImplCopyWithImpl(
-    _$InitialValuesImpl _value,
-    $Res Function(_$InitialValuesImpl) _then,
+class __$$ManualInitialValuesImplCopyWithImpl<$Res>
+    extends _$ManualLoginEventCopyWithImpl<$Res, _$ManualInitialValuesImpl>
+    implements _$$ManualInitialValuesImplCopyWith<$Res> {
+  __$$ManualInitialValuesImplCopyWithImpl(
+    _$ManualInitialValuesImpl _value,
+    $Res Function(_$ManualInitialValuesImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of LoginEvent
+  /// Create a copy of ManualLoginEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$InitialValuesImpl implements _InitialValues {
-  const _$InitialValuesImpl();
+class _$ManualInitialValuesImpl implements _ManualInitialValues {
+  const _$ManualInitialValuesImpl();
 
   @override
   String toString() {
-    return 'LoginEvent.initialValues()';
+    return 'ManualLoginEvent.initialValues()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialValuesImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ManualInitialValuesImpl);
   }
 
   @override
@@ -203,10 +204,10 @@ class _$InitialValuesImpl implements _InitialValues {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialValues value) initialValues,
-    required TResult Function(_UpdateLoginButtonEnablity value)
+    required TResult Function(_ManualInitialValues value) initialValues,
+    required TResult Function(_ManualUpdateLoginButtonEnablity value)
     updateLoginButtonEnablity,
-    required TResult Function(_LoginPressed value) loginPressed,
+    required TResult Function(_ManualLoginPressed value) loginPressed,
   }) {
     return initialValues(this);
   }
@@ -214,10 +215,10 @@ class _$InitialValuesImpl implements _InitialValues {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialValues value)? initialValues,
-    TResult? Function(_UpdateLoginButtonEnablity value)?
+    TResult? Function(_ManualInitialValues value)? initialValues,
+    TResult? Function(_ManualUpdateLoginButtonEnablity value)?
     updateLoginButtonEnablity,
-    TResult? Function(_LoginPressed value)? loginPressed,
+    TResult? Function(_ManualLoginPressed value)? loginPressed,
   }) {
     return initialValues?.call(this);
   }
@@ -225,10 +226,10 @@ class _$InitialValuesImpl implements _InitialValues {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialValues value)? initialValues,
-    TResult Function(_UpdateLoginButtonEnablity value)?
+    TResult Function(_ManualInitialValues value)? initialValues,
+    TResult Function(_ManualUpdateLoginButtonEnablity value)?
     updateLoginButtonEnablity,
-    TResult Function(_LoginPressed value)? loginPressed,
+    TResult Function(_ManualLoginPressed value)? loginPressed,
     required TResult orElse(),
   }) {
     if (initialValues != null) {
@@ -238,16 +239,16 @@ class _$InitialValuesImpl implements _InitialValues {
   }
 }
 
-abstract class _InitialValues implements LoginEvent {
-  const factory _InitialValues() = _$InitialValuesImpl;
+abstract class _ManualInitialValues implements ManualLoginEvent {
+  const factory _ManualInitialValues() = _$ManualInitialValuesImpl;
 }
 
 /// @nodoc
-abstract class _$$UpdateLoginButtonEnablityImplCopyWith<$Res> {
-  factory _$$UpdateLoginButtonEnablityImplCopyWith(
-    _$UpdateLoginButtonEnablityImpl value,
-    $Res Function(_$UpdateLoginButtonEnablityImpl) then,
-  ) = __$$UpdateLoginButtonEnablityImplCopyWithImpl<$Res>;
+abstract class _$$ManualUpdateLoginButtonEnablityImplCopyWith<$Res> {
+  factory _$$ManualUpdateLoginButtonEnablityImplCopyWith(
+    _$ManualUpdateLoginButtonEnablityImpl value,
+    $Res Function(_$ManualUpdateLoginButtonEnablityImpl) then,
+  ) = __$$ManualUpdateLoginButtonEnablityImplCopyWithImpl<$Res>;
   @useResult
   $Res call({
     IslamMobLocalizations localizations,
@@ -257,15 +258,19 @@ abstract class _$$UpdateLoginButtonEnablityImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UpdateLoginButtonEnablityImplCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$UpdateLoginButtonEnablityImpl>
-    implements _$$UpdateLoginButtonEnablityImplCopyWith<$Res> {
-  __$$UpdateLoginButtonEnablityImplCopyWithImpl(
-    _$UpdateLoginButtonEnablityImpl _value,
-    $Res Function(_$UpdateLoginButtonEnablityImpl) _then,
+class __$$ManualUpdateLoginButtonEnablityImplCopyWithImpl<$Res>
+    extends
+        _$ManualLoginEventCopyWithImpl<
+          $Res,
+          _$ManualUpdateLoginButtonEnablityImpl
+        >
+    implements _$$ManualUpdateLoginButtonEnablityImplCopyWith<$Res> {
+  __$$ManualUpdateLoginButtonEnablityImplCopyWithImpl(
+    _$ManualUpdateLoginButtonEnablityImpl _value,
+    $Res Function(_$ManualUpdateLoginButtonEnablityImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of LoginEvent
+  /// Create a copy of ManualLoginEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -275,7 +280,7 @@ class __$$UpdateLoginButtonEnablityImplCopyWithImpl<$Res>
     Object? password = null,
   }) {
     return _then(
-      _$UpdateLoginButtonEnablityImpl(
+      _$ManualUpdateLoginButtonEnablityImpl(
         localizations: null == localizations
             ? _value.localizations
             : localizations // ignore: cast_nullable_to_non_nullable
@@ -295,8 +300,9 @@ class __$$UpdateLoginButtonEnablityImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
-  const _$UpdateLoginButtonEnablityImpl({
+class _$ManualUpdateLoginButtonEnablityImpl
+    implements _ManualUpdateLoginButtonEnablity {
+  const _$ManualUpdateLoginButtonEnablityImpl({
     required this.localizations,
     required this.email,
     required this.password,
@@ -311,14 +317,14 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
 
   @override
   String toString() {
-    return 'LoginEvent.updateLoginButtonEnablity(localizations: $localizations, email: $email, password: $password)';
+    return 'ManualLoginEvent.updateLoginButtonEnablity(localizations: $localizations, email: $email, password: $password)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateLoginButtonEnablityImpl &&
+            other is _$ManualUpdateLoginButtonEnablityImpl &&
             (identical(other.localizations, localizations) ||
                 other.localizations == localizations) &&
             (identical(other.email, email) || other.email == email) &&
@@ -329,15 +335,17 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
   @override
   int get hashCode => Object.hash(runtimeType, localizations, email, password);
 
-  /// Create a copy of LoginEvent
+  /// Create a copy of ManualLoginEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateLoginButtonEnablityImplCopyWith<_$UpdateLoginButtonEnablityImpl>
+  _$$ManualUpdateLoginButtonEnablityImplCopyWith<
+    _$ManualUpdateLoginButtonEnablityImpl
+  >
   get copyWith =>
-      __$$UpdateLoginButtonEnablityImplCopyWithImpl<
-        _$UpdateLoginButtonEnablityImpl
+      __$$ManualUpdateLoginButtonEnablityImplCopyWithImpl<
+        _$ManualUpdateLoginButtonEnablityImpl
       >(this, _$identity);
 
   @override
@@ -399,10 +407,10 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialValues value) initialValues,
-    required TResult Function(_UpdateLoginButtonEnablity value)
+    required TResult Function(_ManualInitialValues value) initialValues,
+    required TResult Function(_ManualUpdateLoginButtonEnablity value)
     updateLoginButtonEnablity,
-    required TResult Function(_LoginPressed value) loginPressed,
+    required TResult Function(_ManualLoginPressed value) loginPressed,
   }) {
     return updateLoginButtonEnablity(this);
   }
@@ -410,10 +418,10 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialValues value)? initialValues,
-    TResult? Function(_UpdateLoginButtonEnablity value)?
+    TResult? Function(_ManualInitialValues value)? initialValues,
+    TResult? Function(_ManualUpdateLoginButtonEnablity value)?
     updateLoginButtonEnablity,
-    TResult? Function(_LoginPressed value)? loginPressed,
+    TResult? Function(_ManualLoginPressed value)? loginPressed,
   }) {
     return updateLoginButtonEnablity?.call(this);
   }
@@ -421,10 +429,10 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialValues value)? initialValues,
-    TResult Function(_UpdateLoginButtonEnablity value)?
+    TResult Function(_ManualInitialValues value)? initialValues,
+    TResult Function(_ManualUpdateLoginButtonEnablity value)?
     updateLoginButtonEnablity,
-    TResult Function(_LoginPressed value)? loginPressed,
+    TResult Function(_ManualLoginPressed value)? loginPressed,
     required TResult orElse(),
   }) {
     if (updateLoginButtonEnablity != null) {
@@ -434,44 +442,46 @@ class _$UpdateLoginButtonEnablityImpl implements _UpdateLoginButtonEnablity {
   }
 }
 
-abstract class _UpdateLoginButtonEnablity implements LoginEvent {
-  const factory _UpdateLoginButtonEnablity({
+abstract class _ManualUpdateLoginButtonEnablity implements ManualLoginEvent {
+  const factory _ManualUpdateLoginButtonEnablity({
     required final IslamMobLocalizations localizations,
     required final String email,
     required final String password,
-  }) = _$UpdateLoginButtonEnablityImpl;
+  }) = _$ManualUpdateLoginButtonEnablityImpl;
 
   IslamMobLocalizations get localizations;
   String get email;
   String get password;
 
-  /// Create a copy of LoginEvent
+  /// Create a copy of ManualLoginEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateLoginButtonEnablityImplCopyWith<_$UpdateLoginButtonEnablityImpl>
+  _$$ManualUpdateLoginButtonEnablityImplCopyWith<
+    _$ManualUpdateLoginButtonEnablityImpl
+  >
   get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoginPressedImplCopyWith<$Res> {
-  factory _$$LoginPressedImplCopyWith(
-    _$LoginPressedImpl value,
-    $Res Function(_$LoginPressedImpl) then,
-  ) = __$$LoginPressedImplCopyWithImpl<$Res>;
+abstract class _$$ManualLoginPressedImplCopyWith<$Res> {
+  factory _$$ManualLoginPressedImplCopyWith(
+    _$ManualLoginPressedImpl value,
+    $Res Function(_$ManualLoginPressedImpl) then,
+  ) = __$$ManualLoginPressedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String email, String password, bool savedCradintial});
 }
 
 /// @nodoc
-class __$$LoginPressedImplCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$LoginPressedImpl>
-    implements _$$LoginPressedImplCopyWith<$Res> {
-  __$$LoginPressedImplCopyWithImpl(
-    _$LoginPressedImpl _value,
-    $Res Function(_$LoginPressedImpl) _then,
+class __$$ManualLoginPressedImplCopyWithImpl<$Res>
+    extends _$ManualLoginEventCopyWithImpl<$Res, _$ManualLoginPressedImpl>
+    implements _$$ManualLoginPressedImplCopyWith<$Res> {
+  __$$ManualLoginPressedImplCopyWithImpl(
+    _$ManualLoginPressedImpl _value,
+    $Res Function(_$ManualLoginPressedImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of LoginEvent
+  /// Create a copy of ManualLoginEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -481,7 +491,7 @@ class __$$LoginPressedImplCopyWithImpl<$Res>
     Object? savedCradintial = null,
   }) {
     return _then(
-      _$LoginPressedImpl(
+      _$ManualLoginPressedImpl(
         email: null == email
             ? _value.email
             : email // ignore: cast_nullable_to_non_nullable
@@ -501,8 +511,8 @@ class __$$LoginPressedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginPressedImpl implements _LoginPressed {
-  const _$LoginPressedImpl({
+class _$ManualLoginPressedImpl implements _ManualLoginPressed {
+  const _$ManualLoginPressedImpl({
     required this.email,
     required this.password,
     required this.savedCradintial,
@@ -517,14 +527,14 @@ class _$LoginPressedImpl implements _LoginPressed {
 
   @override
   String toString() {
-    return 'LoginEvent.loginPressed(email: $email, password: $password, savedCradintial: $savedCradintial)';
+    return 'ManualLoginEvent.loginPressed(email: $email, password: $password, savedCradintial: $savedCradintial)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginPressedImpl &&
+            other is _$ManualLoginPressedImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
@@ -536,13 +546,16 @@ class _$LoginPressedImpl implements _LoginPressed {
   int get hashCode =>
       Object.hash(runtimeType, email, password, savedCradintial);
 
-  /// Create a copy of LoginEvent
+  /// Create a copy of ManualLoginEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginPressedImplCopyWith<_$LoginPressedImpl> get copyWith =>
-      __$$LoginPressedImplCopyWithImpl<_$LoginPressedImpl>(this, _$identity);
+  _$$ManualLoginPressedImplCopyWith<_$ManualLoginPressedImpl> get copyWith =>
+      __$$ManualLoginPressedImplCopyWithImpl<_$ManualLoginPressedImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -603,10 +616,10 @@ class _$LoginPressedImpl implements _LoginPressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialValues value) initialValues,
-    required TResult Function(_UpdateLoginButtonEnablity value)
+    required TResult Function(_ManualInitialValues value) initialValues,
+    required TResult Function(_ManualUpdateLoginButtonEnablity value)
     updateLoginButtonEnablity,
-    required TResult Function(_LoginPressed value) loginPressed,
+    required TResult Function(_ManualLoginPressed value) loginPressed,
   }) {
     return loginPressed(this);
   }
@@ -614,10 +627,10 @@ class _$LoginPressedImpl implements _LoginPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialValues value)? initialValues,
-    TResult? Function(_UpdateLoginButtonEnablity value)?
+    TResult? Function(_ManualInitialValues value)? initialValues,
+    TResult? Function(_ManualUpdateLoginButtonEnablity value)?
     updateLoginButtonEnablity,
-    TResult? Function(_LoginPressed value)? loginPressed,
+    TResult? Function(_ManualLoginPressed value)? loginPressed,
   }) {
     return loginPressed?.call(this);
   }
@@ -625,10 +638,10 @@ class _$LoginPressedImpl implements _LoginPressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialValues value)? initialValues,
-    TResult Function(_UpdateLoginButtonEnablity value)?
+    TResult Function(_ManualInitialValues value)? initialValues,
+    TResult Function(_ManualUpdateLoginButtonEnablity value)?
     updateLoginButtonEnablity,
-    TResult Function(_LoginPressed value)? loginPressed,
+    TResult Function(_ManualLoginPressed value)? loginPressed,
     required TResult orElse(),
   }) {
     if (loginPressed != null) {
@@ -638,64 +651,65 @@ class _$LoginPressedImpl implements _LoginPressed {
   }
 }
 
-abstract class _LoginPressed implements LoginEvent {
-  const factory _LoginPressed({
+abstract class _ManualLoginPressed implements ManualLoginEvent {
+  const factory _ManualLoginPressed({
     required final String email,
     required final String password,
     required final bool savedCradintial,
-  }) = _$LoginPressedImpl;
+  }) = _$ManualLoginPressedImpl;
 
   String get email;
   String get password;
   bool get savedCradintial;
 
-  /// Create a copy of LoginEvent
+  /// Create a copy of ManualLoginEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoginPressedImplCopyWith<_$LoginPressedImpl> get copyWith =>
+  _$$ManualLoginPressedImplCopyWith<_$ManualLoginPressedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$LoginState {
-  LoginProcessState get processState => throw _privateConstructorUsedError;
+mixin _$ManualLoginState {
+  ManualLoginProcessState get processState =>
+      throw _privateConstructorUsedError;
   bool get isLoginButtonEnabled => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
-  /// Create a copy of LoginState
+  /// Create a copy of ManualLoginState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LoginStateCopyWith<LoginState> get copyWith =>
+  $ManualLoginStateCopyWith<ManualLoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginStateCopyWith<$Res> {
-  factory $LoginStateCopyWith(
-    LoginState value,
-    $Res Function(LoginState) then,
-  ) = _$LoginStateCopyWithImpl<$Res, LoginState>;
+abstract class $ManualLoginStateCopyWith<$Res> {
+  factory $ManualLoginStateCopyWith(
+    ManualLoginState value,
+    $Res Function(ManualLoginState) then,
+  ) = _$ManualLoginStateCopyWithImpl<$Res, ManualLoginState>;
   @useResult
   $Res call({
-    LoginProcessState processState,
+    ManualLoginProcessState processState,
     bool isLoginButtonEnabled,
     String errorMessage,
   });
 
-  $LoginProcessStateCopyWith<$Res> get processState;
+  $ManualLoginProcessStateCopyWith<$Res> get processState;
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
-    implements $LoginStateCopyWith<$Res> {
-  _$LoginStateCopyWithImpl(this._value, this._then);
+class _$ManualLoginStateCopyWithImpl<$Res, $Val extends ManualLoginState>
+    implements $ManualLoginStateCopyWith<$Res> {
+  _$ManualLoginStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoginState
+  /// Create a copy of ManualLoginState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -709,7 +723,7 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
             processState: null == processState
                 ? _value.processState
                 : processState // ignore: cast_nullable_to_non_nullable
-                      as LoginProcessState,
+                      as ManualLoginProcessState,
             isLoginButtonEnabled: null == isLoginButtonEnabled
                 ? _value.isLoginButtonEnabled
                 : isLoginButtonEnabled // ignore: cast_nullable_to_non_nullable
@@ -723,46 +737,46 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
     );
   }
 
-  /// Create a copy of LoginState
+  /// Create a copy of ManualLoginState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $LoginProcessStateCopyWith<$Res> get processState {
-    return $LoginProcessStateCopyWith<$Res>(_value.processState, (value) {
+  $ManualLoginProcessStateCopyWith<$Res> get processState {
+    return $ManualLoginProcessStateCopyWith<$Res>(_value.processState, (value) {
       return _then(_value.copyWith(processState: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$LoginStateImplCopyWith<$Res>
-    implements $LoginStateCopyWith<$Res> {
-  factory _$$LoginStateImplCopyWith(
-    _$LoginStateImpl value,
-    $Res Function(_$LoginStateImpl) then,
-  ) = __$$LoginStateImplCopyWithImpl<$Res>;
+abstract class _$$ManualLoginStateImplCopyWith<$Res>
+    implements $ManualLoginStateCopyWith<$Res> {
+  factory _$$ManualLoginStateImplCopyWith(
+    _$ManualLoginStateImpl value,
+    $Res Function(_$ManualLoginStateImpl) then,
+  ) = __$$ManualLoginStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
-    LoginProcessState processState,
+    ManualLoginProcessState processState,
     bool isLoginButtonEnabled,
     String errorMessage,
   });
 
   @override
-  $LoginProcessStateCopyWith<$Res> get processState;
+  $ManualLoginProcessStateCopyWith<$Res> get processState;
 }
 
 /// @nodoc
-class __$$LoginStateImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateImpl>
-    implements _$$LoginStateImplCopyWith<$Res> {
-  __$$LoginStateImplCopyWithImpl(
-    _$LoginStateImpl _value,
-    $Res Function(_$LoginStateImpl) _then,
+class __$$ManualLoginStateImplCopyWithImpl<$Res>
+    extends _$ManualLoginStateCopyWithImpl<$Res, _$ManualLoginStateImpl>
+    implements _$$ManualLoginStateImplCopyWith<$Res> {
+  __$$ManualLoginStateImplCopyWithImpl(
+    _$ManualLoginStateImpl _value,
+    $Res Function(_$ManualLoginStateImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of LoginState
+  /// Create a copy of ManualLoginState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -772,11 +786,11 @@ class __$$LoginStateImplCopyWithImpl<$Res>
     Object? errorMessage = null,
   }) {
     return _then(
-      _$LoginStateImpl(
+      _$ManualLoginStateImpl(
         processState: null == processState
             ? _value.processState
             : processState // ignore: cast_nullable_to_non_nullable
-                  as LoginProcessState,
+                  as ManualLoginProcessState,
         isLoginButtonEnabled: null == isLoginButtonEnabled
             ? _value.isLoginButtonEnabled
             : isLoginButtonEnabled // ignore: cast_nullable_to_non_nullable
@@ -792,16 +806,16 @@ class __$$LoginStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginStateImpl implements _LoginState {
-  const _$LoginStateImpl({
-    this.processState = const LoginProcessState.loading(),
+class _$ManualLoginStateImpl implements _ManualLoginState {
+  const _$ManualLoginStateImpl({
+    this.processState = const ManualLoginProcessState.loading(),
     this.isLoginButtonEnabled = false,
     this.errorMessage = "",
   });
 
   @override
   @JsonKey()
-  final LoginProcessState processState;
+  final ManualLoginProcessState processState;
   @override
   @JsonKey()
   final bool isLoginButtonEnabled;
@@ -811,14 +825,14 @@ class _$LoginStateImpl implements _LoginState {
 
   @override
   String toString() {
-    return 'LoginState(processState: $processState, isLoginButtonEnabled: $isLoginButtonEnabled, errorMessage: $errorMessage)';
+    return 'ManualLoginState(processState: $processState, isLoginButtonEnabled: $isLoginButtonEnabled, errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginStateImpl &&
+            other is _$ManualLoginStateImpl &&
             (identical(other.processState, processState) ||
                 other.processState == processState) &&
             (identical(other.isLoginButtonEnabled, isLoginButtonEnabled) ||
@@ -835,39 +849,42 @@ class _$LoginStateImpl implements _LoginState {
     errorMessage,
   );
 
-  /// Create a copy of LoginState
+  /// Create a copy of ManualLoginState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginStateImplCopyWith<_$LoginStateImpl> get copyWith =>
-      __$$LoginStateImplCopyWithImpl<_$LoginStateImpl>(this, _$identity);
+  _$$ManualLoginStateImplCopyWith<_$ManualLoginStateImpl> get copyWith =>
+      __$$ManualLoginStateImplCopyWithImpl<_$ManualLoginStateImpl>(
+        this,
+        _$identity,
+      );
 }
 
-abstract class _LoginState implements LoginState {
-  const factory _LoginState({
-    final LoginProcessState processState,
+abstract class _ManualLoginState implements ManualLoginState {
+  const factory _ManualLoginState({
+    final ManualLoginProcessState processState,
     final bool isLoginButtonEnabled,
     final String errorMessage,
-  }) = _$LoginStateImpl;
+  }) = _$ManualLoginStateImpl;
 
   @override
-  LoginProcessState get processState;
+  ManualLoginProcessState get processState;
   @override
   bool get isLoginButtonEnabled;
   @override
   String get errorMessage;
 
-  /// Create a copy of LoginState
+  /// Create a copy of ManualLoginState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoginStateImplCopyWith<_$LoginStateImpl> get copyWith =>
+  _$$ManualLoginStateImplCopyWith<_$ManualLoginStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$LoginProcessState {
+mixin _$ManualLoginProcessState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -892,86 +909,93 @@ mixin _$LoginProcessState {
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginProcessLoading value) loading,
-    required TResult Function(LoginProcessIdl value) idl,
-    required TResult Function(LoginProcessSuccess value) success,
-    required TResult Function(LoginProcessError value) error,
+    required TResult Function(ManualLoginProcessLoading value) loading,
+    required TResult Function(ManualLoginProcessIdl value) idl,
+    required TResult Function(ManualLoginProcessSuccess value) success,
+    required TResult Function(ManualLoginProcessError value) error,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginProcessLoading value)? loading,
-    TResult? Function(LoginProcessIdl value)? idl,
-    TResult? Function(LoginProcessSuccess value)? success,
-    TResult? Function(LoginProcessError value)? error,
+    TResult? Function(ManualLoginProcessLoading value)? loading,
+    TResult? Function(ManualLoginProcessIdl value)? idl,
+    TResult? Function(ManualLoginProcessSuccess value)? success,
+    TResult? Function(ManualLoginProcessError value)? error,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginProcessLoading value)? loading,
-    TResult Function(LoginProcessIdl value)? idl,
-    TResult Function(LoginProcessSuccess value)? success,
-    TResult Function(LoginProcessError value)? error,
+    TResult Function(ManualLoginProcessLoading value)? loading,
+    TResult Function(ManualLoginProcessIdl value)? idl,
+    TResult Function(ManualLoginProcessSuccess value)? success,
+    TResult Function(ManualLoginProcessError value)? error,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginProcessStateCopyWith<$Res> {
-  factory $LoginProcessStateCopyWith(
-    LoginProcessState value,
-    $Res Function(LoginProcessState) then,
-  ) = _$LoginProcessStateCopyWithImpl<$Res, LoginProcessState>;
+abstract class $ManualLoginProcessStateCopyWith<$Res> {
+  factory $ManualLoginProcessStateCopyWith(
+    ManualLoginProcessState value,
+    $Res Function(ManualLoginProcessState) then,
+  ) = _$ManualLoginProcessStateCopyWithImpl<$Res, ManualLoginProcessState>;
 }
 
 /// @nodoc
-class _$LoginProcessStateCopyWithImpl<$Res, $Val extends LoginProcessState>
-    implements $LoginProcessStateCopyWith<$Res> {
-  _$LoginProcessStateCopyWithImpl(this._value, this._then);
+class _$ManualLoginProcessStateCopyWithImpl<
+  $Res,
+  $Val extends ManualLoginProcessState
+>
+    implements $ManualLoginProcessStateCopyWith<$Res> {
+  _$ManualLoginProcessStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$LoginProcessLoadingImplCopyWith<$Res> {
-  factory _$$LoginProcessLoadingImplCopyWith(
-    _$LoginProcessLoadingImpl value,
-    $Res Function(_$LoginProcessLoadingImpl) then,
-  ) = __$$LoginProcessLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ManualLoginProcessLoadingImplCopyWith<$Res> {
+  factory _$$ManualLoginProcessLoadingImplCopyWith(
+    _$ManualLoginProcessLoadingImpl value,
+    $Res Function(_$ManualLoginProcessLoadingImpl) then,
+  ) = __$$ManualLoginProcessLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginProcessLoadingImplCopyWithImpl<$Res>
-    extends _$LoginProcessStateCopyWithImpl<$Res, _$LoginProcessLoadingImpl>
-    implements _$$LoginProcessLoadingImplCopyWith<$Res> {
-  __$$LoginProcessLoadingImplCopyWithImpl(
-    _$LoginProcessLoadingImpl _value,
-    $Res Function(_$LoginProcessLoadingImpl) _then,
+class __$$ManualLoginProcessLoadingImplCopyWithImpl<$Res>
+    extends
+        _$ManualLoginProcessStateCopyWithImpl<
+          $Res,
+          _$ManualLoginProcessLoadingImpl
+        >
+    implements _$$ManualLoginProcessLoadingImplCopyWith<$Res> {
+  __$$ManualLoginProcessLoadingImplCopyWithImpl(
+    _$ManualLoginProcessLoadingImpl _value,
+    $Res Function(_$ManualLoginProcessLoadingImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoginProcessLoadingImpl implements LoginProcessLoading {
-  const _$LoginProcessLoadingImpl();
+class _$ManualLoginProcessLoadingImpl implements ManualLoginProcessLoading {
+  const _$ManualLoginProcessLoadingImpl();
 
   @override
   String toString() {
-    return 'LoginProcessState.loading()';
+    return 'ManualLoginProcessState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginProcessLoadingImpl);
+            other is _$ManualLoginProcessLoadingImpl);
   }
 
   @override
@@ -1017,10 +1041,10 @@ class _$LoginProcessLoadingImpl implements LoginProcessLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginProcessLoading value) loading,
-    required TResult Function(LoginProcessIdl value) idl,
-    required TResult Function(LoginProcessSuccess value) success,
-    required TResult Function(LoginProcessError value) error,
+    required TResult Function(ManualLoginProcessLoading value) loading,
+    required TResult Function(ManualLoginProcessIdl value) idl,
+    required TResult Function(ManualLoginProcessSuccess value) success,
+    required TResult Function(ManualLoginProcessError value) error,
   }) {
     return loading(this);
   }
@@ -1028,10 +1052,10 @@ class _$LoginProcessLoadingImpl implements LoginProcessLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginProcessLoading value)? loading,
-    TResult? Function(LoginProcessIdl value)? idl,
-    TResult? Function(LoginProcessSuccess value)? success,
-    TResult? Function(LoginProcessError value)? error,
+    TResult? Function(ManualLoginProcessLoading value)? loading,
+    TResult? Function(ManualLoginProcessIdl value)? idl,
+    TResult? Function(ManualLoginProcessSuccess value)? success,
+    TResult? Function(ManualLoginProcessError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -1039,10 +1063,10 @@ class _$LoginProcessLoadingImpl implements LoginProcessLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginProcessLoading value)? loading,
-    TResult Function(LoginProcessIdl value)? idl,
-    TResult Function(LoginProcessSuccess value)? success,
-    TResult Function(LoginProcessError value)? error,
+    TResult Function(ManualLoginProcessLoading value)? loading,
+    TResult Function(ManualLoginProcessIdl value)? idl,
+    TResult Function(ManualLoginProcessSuccess value)? success,
+    TResult Function(ManualLoginProcessError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1052,36 +1076,37 @@ class _$LoginProcessLoadingImpl implements LoginProcessLoading {
   }
 }
 
-abstract class LoginProcessLoading implements LoginProcessState {
-  const factory LoginProcessLoading() = _$LoginProcessLoadingImpl;
+abstract class ManualLoginProcessLoading implements ManualLoginProcessState {
+  const factory ManualLoginProcessLoading() = _$ManualLoginProcessLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$LoginProcessIdlImplCopyWith<$Res> {
-  factory _$$LoginProcessIdlImplCopyWith(
-    _$LoginProcessIdlImpl value,
-    $Res Function(_$LoginProcessIdlImpl) then,
-  ) = __$$LoginProcessIdlImplCopyWithImpl<$Res>;
+abstract class _$$ManualLoginProcessIdlImplCopyWith<$Res> {
+  factory _$$ManualLoginProcessIdlImplCopyWith(
+    _$ManualLoginProcessIdlImpl value,
+    $Res Function(_$ManualLoginProcessIdlImpl) then,
+  ) = __$$ManualLoginProcessIdlImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String email, String password});
 }
 
 /// @nodoc
-class __$$LoginProcessIdlImplCopyWithImpl<$Res>
-    extends _$LoginProcessStateCopyWithImpl<$Res, _$LoginProcessIdlImpl>
-    implements _$$LoginProcessIdlImplCopyWith<$Res> {
-  __$$LoginProcessIdlImplCopyWithImpl(
-    _$LoginProcessIdlImpl _value,
-    $Res Function(_$LoginProcessIdlImpl) _then,
+class __$$ManualLoginProcessIdlImplCopyWithImpl<$Res>
+    extends
+        _$ManualLoginProcessStateCopyWithImpl<$Res, _$ManualLoginProcessIdlImpl>
+    implements _$$ManualLoginProcessIdlImplCopyWith<$Res> {
+  __$$ManualLoginProcessIdlImplCopyWithImpl(
+    _$ManualLoginProcessIdlImpl _value,
+    $Res Function(_$ManualLoginProcessIdlImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({Object? email = null, Object? password = null}) {
     return _then(
-      _$LoginProcessIdlImpl(
+      _$ManualLoginProcessIdlImpl(
         email: null == email
             ? _value.email
             : email // ignore: cast_nullable_to_non_nullable
@@ -1097,8 +1122,11 @@ class __$$LoginProcessIdlImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginProcessIdlImpl implements LoginProcessIdl {
-  const _$LoginProcessIdlImpl({required this.email, required this.password});
+class _$ManualLoginProcessIdlImpl implements ManualLoginProcessIdl {
+  const _$ManualLoginProcessIdlImpl({
+    required this.email,
+    required this.password,
+  });
 
   @override
   final String email;
@@ -1107,14 +1135,14 @@ class _$LoginProcessIdlImpl implements LoginProcessIdl {
 
   @override
   String toString() {
-    return 'LoginProcessState.idl(email: $email, password: $password)';
+    return 'ManualLoginProcessState.idl(email: $email, password: $password)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginProcessIdlImpl &&
+            other is _$ManualLoginProcessIdlImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -1123,13 +1151,14 @@ class _$LoginProcessIdlImpl implements LoginProcessIdl {
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginProcessIdlImplCopyWith<_$LoginProcessIdlImpl> get copyWith =>
-      __$$LoginProcessIdlImplCopyWithImpl<_$LoginProcessIdlImpl>(
+  _$$ManualLoginProcessIdlImplCopyWith<_$ManualLoginProcessIdlImpl>
+  get copyWith =>
+      __$$ManualLoginProcessIdlImplCopyWithImpl<_$ManualLoginProcessIdlImpl>(
         this,
         _$identity,
       );
@@ -1174,10 +1203,10 @@ class _$LoginProcessIdlImpl implements LoginProcessIdl {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginProcessLoading value) loading,
-    required TResult Function(LoginProcessIdl value) idl,
-    required TResult Function(LoginProcessSuccess value) success,
-    required TResult Function(LoginProcessError value) error,
+    required TResult Function(ManualLoginProcessLoading value) loading,
+    required TResult Function(ManualLoginProcessIdl value) idl,
+    required TResult Function(ManualLoginProcessSuccess value) success,
+    required TResult Function(ManualLoginProcessError value) error,
   }) {
     return idl(this);
   }
@@ -1185,10 +1214,10 @@ class _$LoginProcessIdlImpl implements LoginProcessIdl {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginProcessLoading value)? loading,
-    TResult? Function(LoginProcessIdl value)? idl,
-    TResult? Function(LoginProcessSuccess value)? success,
-    TResult? Function(LoginProcessError value)? error,
+    TResult? Function(ManualLoginProcessLoading value)? loading,
+    TResult? Function(ManualLoginProcessIdl value)? idl,
+    TResult? Function(ManualLoginProcessSuccess value)? success,
+    TResult? Function(ManualLoginProcessError value)? error,
   }) {
     return idl?.call(this);
   }
@@ -1196,10 +1225,10 @@ class _$LoginProcessIdlImpl implements LoginProcessIdl {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginProcessLoading value)? loading,
-    TResult Function(LoginProcessIdl value)? idl,
-    TResult Function(LoginProcessSuccess value)? success,
-    TResult Function(LoginProcessError value)? error,
+    TResult Function(ManualLoginProcessLoading value)? loading,
+    TResult Function(ManualLoginProcessIdl value)? idl,
+    TResult Function(ManualLoginProcessSuccess value)? success,
+    TResult Function(ManualLoginProcessError value)? error,
     required TResult orElse(),
   }) {
     if (idl != null) {
@@ -1209,58 +1238,62 @@ class _$LoginProcessIdlImpl implements LoginProcessIdl {
   }
 }
 
-abstract class LoginProcessIdl implements LoginProcessState {
-  const factory LoginProcessIdl({
+abstract class ManualLoginProcessIdl implements ManualLoginProcessState {
+  const factory ManualLoginProcessIdl({
     required final String email,
     required final String password,
-  }) = _$LoginProcessIdlImpl;
+  }) = _$ManualLoginProcessIdlImpl;
 
   String get email;
   String get password;
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoginProcessIdlImplCopyWith<_$LoginProcessIdlImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ManualLoginProcessIdlImplCopyWith<_$ManualLoginProcessIdlImpl>
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoginProcessSuccessImplCopyWith<$Res> {
-  factory _$$LoginProcessSuccessImplCopyWith(
-    _$LoginProcessSuccessImpl value,
-    $Res Function(_$LoginProcessSuccessImpl) then,
-  ) = __$$LoginProcessSuccessImplCopyWithImpl<$Res>;
+abstract class _$$ManualLoginProcessSuccessImplCopyWith<$Res> {
+  factory _$$ManualLoginProcessSuccessImplCopyWith(
+    _$ManualLoginProcessSuccessImpl value,
+    $Res Function(_$ManualLoginProcessSuccessImpl) then,
+  ) = __$$ManualLoginProcessSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginProcessSuccessImplCopyWithImpl<$Res>
-    extends _$LoginProcessStateCopyWithImpl<$Res, _$LoginProcessSuccessImpl>
-    implements _$$LoginProcessSuccessImplCopyWith<$Res> {
-  __$$LoginProcessSuccessImplCopyWithImpl(
-    _$LoginProcessSuccessImpl _value,
-    $Res Function(_$LoginProcessSuccessImpl) _then,
+class __$$ManualLoginProcessSuccessImplCopyWithImpl<$Res>
+    extends
+        _$ManualLoginProcessStateCopyWithImpl<
+          $Res,
+          _$ManualLoginProcessSuccessImpl
+        >
+    implements _$$ManualLoginProcessSuccessImplCopyWith<$Res> {
+  __$$ManualLoginProcessSuccessImplCopyWithImpl(
+    _$ManualLoginProcessSuccessImpl _value,
+    $Res Function(_$ManualLoginProcessSuccessImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoginProcessSuccessImpl implements LoginProcessSuccess {
-  const _$LoginProcessSuccessImpl();
+class _$ManualLoginProcessSuccessImpl implements ManualLoginProcessSuccess {
+  const _$ManualLoginProcessSuccessImpl();
 
   @override
   String toString() {
-    return 'LoginProcessState.success()';
+    return 'ManualLoginProcessState.success()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginProcessSuccessImpl);
+            other is _$ManualLoginProcessSuccessImpl);
   }
 
   @override
@@ -1306,10 +1339,10 @@ class _$LoginProcessSuccessImpl implements LoginProcessSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginProcessLoading value) loading,
-    required TResult Function(LoginProcessIdl value) idl,
-    required TResult Function(LoginProcessSuccess value) success,
-    required TResult Function(LoginProcessError value) error,
+    required TResult Function(ManualLoginProcessLoading value) loading,
+    required TResult Function(ManualLoginProcessIdl value) idl,
+    required TResult Function(ManualLoginProcessSuccess value) success,
+    required TResult Function(ManualLoginProcessError value) error,
   }) {
     return success(this);
   }
@@ -1317,10 +1350,10 @@ class _$LoginProcessSuccessImpl implements LoginProcessSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginProcessLoading value)? loading,
-    TResult? Function(LoginProcessIdl value)? idl,
-    TResult? Function(LoginProcessSuccess value)? success,
-    TResult? Function(LoginProcessError value)? error,
+    TResult? Function(ManualLoginProcessLoading value)? loading,
+    TResult? Function(ManualLoginProcessIdl value)? idl,
+    TResult? Function(ManualLoginProcessSuccess value)? success,
+    TResult? Function(ManualLoginProcessError value)? error,
   }) {
     return success?.call(this);
   }
@@ -1328,10 +1361,10 @@ class _$LoginProcessSuccessImpl implements LoginProcessSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginProcessLoading value)? loading,
-    TResult Function(LoginProcessIdl value)? idl,
-    TResult Function(LoginProcessSuccess value)? success,
-    TResult Function(LoginProcessError value)? error,
+    TResult Function(ManualLoginProcessLoading value)? loading,
+    TResult Function(ManualLoginProcessIdl value)? idl,
+    TResult Function(ManualLoginProcessSuccess value)? success,
+    TResult Function(ManualLoginProcessError value)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1341,36 +1374,40 @@ class _$LoginProcessSuccessImpl implements LoginProcessSuccess {
   }
 }
 
-abstract class LoginProcessSuccess implements LoginProcessState {
-  const factory LoginProcessSuccess() = _$LoginProcessSuccessImpl;
+abstract class ManualLoginProcessSuccess implements ManualLoginProcessState {
+  const factory ManualLoginProcessSuccess() = _$ManualLoginProcessSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$LoginProcessErrorImplCopyWith<$Res> {
-  factory _$$LoginProcessErrorImplCopyWith(
-    _$LoginProcessErrorImpl value,
-    $Res Function(_$LoginProcessErrorImpl) then,
-  ) = __$$LoginProcessErrorImplCopyWithImpl<$Res>;
+abstract class _$$ManualLoginProcessErrorImplCopyWith<$Res> {
+  factory _$$ManualLoginProcessErrorImplCopyWith(
+    _$ManualLoginProcessErrorImpl value,
+    $Res Function(_$ManualLoginProcessErrorImpl) then,
+  ) = __$$ManualLoginProcessErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$LoginProcessErrorImplCopyWithImpl<$Res>
-    extends _$LoginProcessStateCopyWithImpl<$Res, _$LoginProcessErrorImpl>
-    implements _$$LoginProcessErrorImplCopyWith<$Res> {
-  __$$LoginProcessErrorImplCopyWithImpl(
-    _$LoginProcessErrorImpl _value,
-    $Res Function(_$LoginProcessErrorImpl) _then,
+class __$$ManualLoginProcessErrorImplCopyWithImpl<$Res>
+    extends
+        _$ManualLoginProcessStateCopyWithImpl<
+          $Res,
+          _$ManualLoginProcessErrorImpl
+        >
+    implements _$$ManualLoginProcessErrorImplCopyWith<$Res> {
+  __$$ManualLoginProcessErrorImplCopyWithImpl(
+    _$ManualLoginProcessErrorImpl _value,
+    $Res Function(_$ManualLoginProcessErrorImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({Object? message = null}) {
     return _then(
-      _$LoginProcessErrorImpl(
+      _$ManualLoginProcessErrorImpl(
         null == message
             ? _value.message
             : message // ignore: cast_nullable_to_non_nullable
@@ -1382,38 +1419,38 @@ class __$$LoginProcessErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginProcessErrorImpl implements LoginProcessError {
-  const _$LoginProcessErrorImpl(this.message);
+class _$ManualLoginProcessErrorImpl implements ManualLoginProcessError {
+  const _$ManualLoginProcessErrorImpl(this.message);
 
   @override
   final String message;
 
   @override
   String toString() {
-    return 'LoginProcessState.error(message: $message)';
+    return 'ManualLoginProcessState.error(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginProcessErrorImpl &&
+            other is _$ManualLoginProcessErrorImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginProcessErrorImplCopyWith<_$LoginProcessErrorImpl> get copyWith =>
-      __$$LoginProcessErrorImplCopyWithImpl<_$LoginProcessErrorImpl>(
-        this,
-        _$identity,
-      );
+  _$$ManualLoginProcessErrorImplCopyWith<_$ManualLoginProcessErrorImpl>
+  get copyWith =>
+      __$$ManualLoginProcessErrorImplCopyWithImpl<
+        _$ManualLoginProcessErrorImpl
+      >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1455,10 +1492,10 @@ class _$LoginProcessErrorImpl implements LoginProcessError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginProcessLoading value) loading,
-    required TResult Function(LoginProcessIdl value) idl,
-    required TResult Function(LoginProcessSuccess value) success,
-    required TResult Function(LoginProcessError value) error,
+    required TResult Function(ManualLoginProcessLoading value) loading,
+    required TResult Function(ManualLoginProcessIdl value) idl,
+    required TResult Function(ManualLoginProcessSuccess value) success,
+    required TResult Function(ManualLoginProcessError value) error,
   }) {
     return error(this);
   }
@@ -1466,10 +1503,10 @@ class _$LoginProcessErrorImpl implements LoginProcessError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginProcessLoading value)? loading,
-    TResult? Function(LoginProcessIdl value)? idl,
-    TResult? Function(LoginProcessSuccess value)? success,
-    TResult? Function(LoginProcessError value)? error,
+    TResult? Function(ManualLoginProcessLoading value)? loading,
+    TResult? Function(ManualLoginProcessIdl value)? idl,
+    TResult? Function(ManualLoginProcessSuccess value)? success,
+    TResult? Function(ManualLoginProcessError value)? error,
   }) {
     return error?.call(this);
   }
@@ -1477,10 +1514,10 @@ class _$LoginProcessErrorImpl implements LoginProcessError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginProcessLoading value)? loading,
-    TResult Function(LoginProcessIdl value)? idl,
-    TResult Function(LoginProcessSuccess value)? success,
-    TResult Function(LoginProcessError value)? error,
+    TResult Function(ManualLoginProcessLoading value)? loading,
+    TResult Function(ManualLoginProcessIdl value)? idl,
+    TResult Function(ManualLoginProcessSuccess value)? success,
+    TResult Function(ManualLoginProcessError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1490,15 +1527,15 @@ class _$LoginProcessErrorImpl implements LoginProcessError {
   }
 }
 
-abstract class LoginProcessError implements LoginProcessState {
-  const factory LoginProcessError(final String message) =
-      _$LoginProcessErrorImpl;
+abstract class ManualLoginProcessError implements ManualLoginProcessState {
+  const factory ManualLoginProcessError(final String message) =
+      _$ManualLoginProcessErrorImpl;
 
   String get message;
 
-  /// Create a copy of LoginProcessState
+  /// Create a copy of ManualLoginProcessState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoginProcessErrorImplCopyWith<_$LoginProcessErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ManualLoginProcessErrorImplCopyWith<_$ManualLoginProcessErrorImpl>
+  get copyWith => throw _privateConstructorUsedError;
 }

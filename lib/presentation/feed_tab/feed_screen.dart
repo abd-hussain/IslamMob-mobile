@@ -21,7 +21,7 @@ class _FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     tabController = TabController(
-      length: 2,
+      length: 1,
       vsync: this,
       animationDuration: Duration.zero,
     );
@@ -105,16 +105,12 @@ class _FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
                                 ),
                               ),
                         ),
-                        PostListView(
-                          postsList: state.watchlistPostList,
-                          onRefresh: () async =>
-                              builderContext.read<FeedBloc>().add(
-                                FeedEvent.pullRefresh(
-                                  context: context,
-                                  type: const PostCategoryType.watchlist(),
-                                ),
-                              ),
-                        ),
+                        // PostListView(
+                        //   postsList: state.watchlistPostList,
+                        //   onRefresh: () async => builderContext.read<FeedBloc>().add(
+                        //     FeedEvent.pullRefresh(context: context, type: const PostCategoryType.watchlist()),
+                        //   ),
+                        // ),
                       ],
                     );
                   },

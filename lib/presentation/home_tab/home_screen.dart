@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                   _buildLocationPermissionView(),
                   const AddMobBanner(),
                   _buildAzkarView(),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 75),
                 ],
               ),
             ),

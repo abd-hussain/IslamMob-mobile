@@ -67,7 +67,7 @@ class _MainContainerState extends State<MainContainer> {
                 ),
               ),
               const Positioned(
-                bottom: 4,
+                bottom: 0,
                 left: 4,
                 right: 4,
                 child: BottomNavigationBarView(),

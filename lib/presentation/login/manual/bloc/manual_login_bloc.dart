@@ -6,20 +6,20 @@ import 'package:firebase_manager/firebase_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 
-part 'login_bloc.freezed.dart';
-part 'login_event.dart';
-part 'login_state.dart';
+part 'manual_login_bloc.freezed.dart';
+part 'manual_login_event.dart';
+part 'manual_login_state.dart';
 
-class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc() : super(const LoginState()) {
-    on<_InitialValues>(_initialValues);
-    on<_UpdateLoginButtonEnablity>(_updateLoginButtonEnablity);
-    on<_LoginPressed>(_loginPressed);
+class ManualLoginBloc extends Bloc<ManualLoginEvent, ManualLoginState> {
+  ManualLoginBloc() : super(const ManualLoginState()) {
+    on<_ManualInitialValues>(_initialValues);
+    on<_ManualUpdateLoginButtonEnablity>(_updateLoginButtonEnablity);
+    on<_ManualLoginPressed>(_loginPressed);
   }
 
   FutureOr<void> _initialValues(
-    _InitialValues event,
-    Emitter<LoginState> emit,
+    _ManualInitialValues event,
+    Emitter<ManualLoginState> emit,
   ) {
     String email = "";
     String password = "";
@@ -36,14 +36,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
     emit(
       state.copyWith(
-        processState: LoginProcessState.idl(email: email, password: password),
+        processState: ManualLoginProcessState.idl(
+          email: email,
+          password: password,
+        ),
       ),
     );
   }
 
   FutureOr<void> _updateLoginButtonEnablity(
-    _UpdateLoginButtonEnablity event,
-    Emitter<LoginState> emit,
+    _ManualUpdateLoginButtonEnablity event,
+    Emitter<ManualLoginState> emit,
   ) {
     final isValid = _areAllFieldsFilled(event);
 
@@ -74,11 +77,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(state.copyWith(isLoginButtonEnabled: true, errorMessage: ''));
   }
 
-  bool _areAllFieldsFilled(_UpdateLoginButtonEnablity event) {
+  bool _areAllFieldsFilled(_ManualUpdateLoginButtonEnablity event) {
     return event.email.isNotEmpty && event.password.isNotEmpty;
   }
 
-  String? _validateForm(_UpdateLoginButtonEnablity event) {
+  String? _validateForm(_ManualUpdateLoginButtonEnablity event) {
     if (!_isValidEmail(event.email)) {
       return event.localizations.validation_email;
     }
@@ -112,13 +115,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   FutureOr<void> _loginPressed(
-    _LoginPressed event,
-    Emitter<LoginState> emit,
+    _ManualLoginPressed event,
+    Emitter<ManualLoginState> emit,
   ) async {
     emit(
       state.copyWith(
         errorMessage: "",
-        processState: const LoginProcessState.loading(),
+        processState: const ManualLoginProcessState.loading(),
       ),
     );
 
@@ -144,7 +147,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(
         state.copyWith(
           errorMessage: "",
-          processState: const LoginProcessState.success(),
+          processState: const ManualLoginProcessState.success(),
         ),
       );
     } else if (value.containsKey(false)) {
@@ -153,7 +156,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(
         state.copyWith(
           errorMessage: error.toString(),
-          processState: LoginProcessState.error(error.toString()),
+          processState: ManualLoginProcessState.error(error.toString()),
         ),
       );
     }

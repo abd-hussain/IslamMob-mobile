@@ -18,7 +18,7 @@ import 'package:islam_app/presentation/hisn_al_muslim/details/hisn_al_muslim_det
 import 'package:islam_app/presentation/hisn_al_muslim/main_list/hisn_al_muslim_list_screen.dart';
 import 'package:islam_app/presentation/home_tab/home_screen.dart';
 import 'package:islam_app/presentation/inboarding/inboarding_screen.dart';
-import 'package:islam_app/presentation/login/login_screen.dart';
+import 'package:islam_app/presentation/login/manual/manual_login_screen.dart';
 import 'package:islam_app/presentation/main_container/main_container.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/pray_calculation_setting_screen.dart';
 import 'package:islam_app/presentation/pray_notification_setting/choose_sound/choose_sound_screen.dart';
@@ -127,7 +127,7 @@ class RoutesConstants {
   static const chooseSoundScreen = 'chooseSoundScreen';
 
   /// Route for the login screen.
-  static const loginScreen = 'loginScreen';
+  static const manualLoginScreen = 'manualLoginScreen';
 
   /// Route for the register screen.
   static const registerScreen = 'registerScreen';
@@ -192,7 +192,7 @@ final Map<String, Widget> routes = {
   RoutesConstants.hajjOmrahDetailsScreen: const HajjOmrahDetailsScreen(),
   RoutesConstants.estekaraScreen: const EstekaraScreen(),
   RoutesConstants.chooseSoundScreen: const ChooseSoundScreen(),
-  RoutesConstants.loginScreen: const LoginScreen(),
+  RoutesConstants.manualLoginScreen: const ManualLoginScreen(),
   RoutesConstants.registerScreen: const RegisterScreen(),
   RoutesConstants.forgotPasswordScreen: const ForgotPasswordScreen(),
   RoutesConstants.forgotSuccessPasswordScreen:

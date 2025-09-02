@@ -34,14 +34,14 @@ class PostMoreBottomsheet {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 8),
-              _buildSettingsButton(
-                context: context,
-                title: isMarkedAsBookmark
-                    ? localize.post_add_to_bookmark
-                    : localize.post_remove_from_bookmark,
-                color: const Color(0xff008480),
-                onPressed: onBookMarkPressed,
-              ),
+              // _buildSettingsButton(
+              //   context: context,
+              //   title: isMarkedAsBookmark
+              //       ? localize.post_add_to_bookmark
+              //       : localize.post_remove_from_bookmark,
+              //   color: const Color(0xff008480),
+              //   onPressed: onBookMarkPressed,
+              // ),
               _buildSettingsButton(
                 context: context,
                 title: localize.post_share_via,
