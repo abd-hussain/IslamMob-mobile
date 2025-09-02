@@ -7,6 +7,7 @@ import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/image_holder/bloc/image_holder_bloc.dart';
 import 'package:islam_app/shared_widgets/image_holder/image_holder_bottmsheet.dart';
+import 'package:islam_app/shared_widgets/optimized_image_widget.dart';
 
 class ImageHolderField extends StatefulWidget {
   const ImageHolderField({
@@ -39,10 +40,7 @@ class _ImageHolderFieldState extends State<ImageHolderField> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ImageHolderBloc()
-        ..add(
-          ImageHolderEvent.initialImage(widget.initialFile, widget.imageUrl),
-        ),
+      create: (_) => ImageHolderBloc()..add(ImageHolderEvent.initialImage(widget.initialFile, widget.imageUrl)),
       child: BlocBuilder<ImageHolderBloc, ImageHolderState>(
         builder: (blocContext, state) {
           return InkWell(
@@ -64,46 +62,42 @@ class _ImageHolderFieldState extends State<ImageHolderField> {
   }
 
   Widget _buildImageContent(BuildContext context, ImageHolderState state) {
-    if (state.imageFile != null) {
-      return ClipRRect(
+    if (state.imageFile != null || (state.imageUrl != null && state.imageUrl!.isNotEmpty)) {
+      return OptimizedImageWidget(
+        imageFile: state.imageFile,
+        imageUrl: state.imageUrl,
+        width: widget.width,
+        height: widget.height,
+
         borderRadius: BorderRadius.circular(10),
-        child: Image.file(
-          state.imageFile!,
-          width: 100,
-          height: 115,
-          fit: BoxFit.cover,
-        ),
-      );
-    } else if (state.imageUrl != null) {
-      return ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: Image.network(
-          state.imageUrl!,
-          width: 100,
-          height: 115,
-          fit: BoxFit.cover,
-        ),
+        maxWidthDiskCache: 400, // Smaller cache for profile images
+        maxHeightDiskCache: 400,
       );
     } else {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomText(
-            title: IslamMobLocalizations.of(context).profilePic,
-            fontSize: 12,
-            textAlign: TextAlign.center,
-            color: Colors.black,
-          ),
-          const Icon(Icons.add, color: Color(0xff444444)),
-        ],
-      );
+      return _buildPlaceholderContent(context);
     }
+  }
+
+  /// Builds the placeholder content when no image is available
+  Widget _buildPlaceholderContent(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CustomText(
+          title: IslamMobLocalizations.of(context).profilePic,
+          fontSize: 12,
+          textAlign: TextAlign.center,
+          color: Colors.black,
+        ),
+        const SizedBox(height: 4),
+        const Icon(Icons.add, color: Color(0xff444444)),
+      ],
+    );
   }
 
   void _showImageOptions(BuildContext context) {
     final bloc = context.read<ImageHolderBloc>();
-    final hasImage =
-        bloc.state.imageFile != null || bloc.state.imageUrl != null;
+    final hasImage = bloc.state.imageFile != null || bloc.state.imageUrl != null;
 
     ImageHolderBottmsheet().show(
       context: context,
@@ -132,8 +126,28 @@ class _ImageHolderFieldState extends State<ImageHolderField> {
     );
   }
 
+  /// Picks an image from camera or gallery with optimization
   Future<File> _pickImage(ImageSource source) async {
-    final image = await ImagePicker().pickImage(source: source);
-    return File(image?.path ?? "");
+    try {
+      final image = await ImagePicker().pickImage(
+        source: source,
+        // Add image quality optimization
+        imageQuality: 85, // Reduce file size while maintaining good quality
+        maxWidth: 1024, // Limit image dimensions
+        maxHeight: 1024,
+        // Enable compression
+        requestFullMetadata: false, // Faster processing
+      );
+      
+      if (image == null) {
+        return File("");
+      }
+      
+      return File(image.path);
+    } catch (e) {
+      // Handle picker errors gracefully
+      debugPrint('Error picking image: $e');
+      return File("");
+    }
   }
 }

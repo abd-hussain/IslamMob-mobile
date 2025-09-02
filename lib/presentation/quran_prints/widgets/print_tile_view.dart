@@ -134,8 +134,47 @@ class PrintTileView extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: CachedNetworkImage(
         imageUrl: previewImage ?? "",
-        placeholder: (context, url) => const CircularProgressIndicator(),
-        errorWidget: (context, url, error) => const Icon(Icons.error),
+        // Performance optimizations
+        memCacheWidth: 400, // Limit memory cache size
+        memCacheHeight: 400,
+        maxWidthDiskCache: 800, // Limit disk cache size
+        maxHeightDiskCache: 800,
+        // Better loading placeholder
+        placeholder: (context, url) => Container(
+          height: 120,
+          decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: const Center(
+            child: SizedBox(
+              width: 20,
+              height: 20,
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xff034061)),
+              ),
+            ),
+          ),
+        ),
+        // Better error widget
+        errorWidget: (context, url, error) => Container(
+          height: 120,
+          decoration: BoxDecoration(
+            color: Colors.grey[100],
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: const Center(
+            child: Icon(
+              Icons.error_outline,
+              color: Colors.grey,
+              size: 32,
+            ),
+          ),
+        ),
+        // Smooth animations
+        fadeInDuration: const Duration(milliseconds: 300),
+        fadeOutDuration: const Duration(milliseconds: 100),
       ),
     );
   }
