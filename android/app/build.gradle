@@ -5,6 +5,19 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+def convertToValidVersionCode(String versionCodeStr) {
+    try {
+        long versionCode = Long.parseLong(versionCodeStr)
+        // If the version code is too large, take the last 9 digits
+        if (versionCode > 2147483647) {
+            return Integer.parseInt(versionCodeStr.substring(versionCodeStr.length() - 9))
+        }
+        return versionCode.toInteger()
+    } catch (Exception e) {
+        return 1
+    }
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -42,7 +55,7 @@ android {
         applicationId "com.islammob.app"
         minSdk 23
         targetSdk 35
-        versionCode project.hasProperty('versionCode') ? project.versionCode.toInteger() : 1
+        versionCode project.hasProperty('versionCode') ? convertToValidVersionCode(project.versionCode.toString()) : 1
         versionName project.hasProperty('versionName') ? project.versionName : "1.0.0"
         multiDexEnabled true
     }
