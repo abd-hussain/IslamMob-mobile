@@ -60,11 +60,27 @@ android {
 
     buildTypes {
         release {
-            shrinkResources = false
+            shrinkResources = true
             signingConfig = signingConfigs.release
-            minifyEnabled = false
+            minifyEnabled = true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
+            // Add these optimizations
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
+            
+            // Additional performance optimizations
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            zipAlignEnabled true
+        }
+        
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
         }
     }
 

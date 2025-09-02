@@ -31,12 +31,20 @@ class MyAppBloc {
   Future<dynamic> fetchData() => _memoizer.runOnce(_initializeApp);
 
   /// Initializes the app by setting up dependencies and configurations
+  // Parallel initialization
   Future<void> _initializeApp() async {
     WidgetsFlutterBinding.ensureInitialized();
-    await DataBaseManagerBase.initializeHive();
-    await setupLocator();
+
+    // Run non-dependent operations in parallel
+    await Future.wait([DataBaseManagerBase.initializeHive(), setupLocator()]);
+
     _initializeTimeZones();
-    await _initializeFirebaseAndAds();
+
+    // Then initialize dependent services
+    if (await _hasInternetConnectivity()) {
+      await Future.wait([FirebaseManagerBase.initialize(), AdvertismentsBase.initializeMobileAds()]);
+    }
+
     await _setPreferredOrientations();
   }
 
@@ -60,10 +68,7 @@ class MyAppBloc {
   /// Sets the preferred screen orientations for the app
   Future<void> _setPreferredOrientations() async {
     await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-    await SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   }
 
   /// Checks for internet connectivity during app initialization
