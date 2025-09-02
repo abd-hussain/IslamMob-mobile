@@ -39,7 +39,7 @@ dependencies:
     path: utilities/firebase_manager
 
   # api_client: // commented out because it's not used in the app and piplines filed on android
-  #   path: utilities/api_client
+  #   path: utilities/api_client //TODO: need to be checked
 
   http: 1.4.0
   dio: 5.8.0+1 #//TODO:
