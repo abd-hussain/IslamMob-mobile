@@ -39,9 +39,13 @@ class PlayerWidget extends StatefulWidget {
 
 class _PlayerWidgetState extends State<PlayerWidget> {
   late final AudioPlayer _player;
+  // ignore: cancel_subscriptions
   late StreamSubscription<Duration> _durationSub;
+  // ignore: cancel_subscriptions
   late StreamSubscription<Duration> _positionSub;
+  // ignore: cancel_subscriptions
   late StreamSubscription<void> _completeSub;
+  // ignore: cancel_subscriptions
   late StreamSubscription<PlayerState> _stateSub;
 
   Duration _duration = Duration.zero;

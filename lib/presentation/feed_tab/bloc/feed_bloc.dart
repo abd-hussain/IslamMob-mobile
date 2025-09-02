@@ -56,9 +56,9 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
   ) async {
     return Future.delayed(
       const Duration(milliseconds: 1000),
-      // ignore: use_build_context_synchronously
       () => add(
         FeedEvent.getPostFromSpesificCategory(
+          // ignore: use_build_context_synchronously
           context: event.context,
           type: event.type,
         ),

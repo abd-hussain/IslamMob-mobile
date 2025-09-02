@@ -8,7 +8,9 @@ import 'package:flutter/material.dart';
 /// memory leaks in the Islamic app.
 class MemoryUtils {
   /// Safely cancel a stream subscription
-  static void safeCancelSubscription(StreamSubscription<dynamic>? subscription) {
+  static void safeCancelSubscription(
+    StreamSubscription<dynamic>? subscription,
+  ) {
     try {
       subscription?.cancel();
     } catch (e) {
@@ -17,7 +19,9 @@ class MemoryUtils {
   }
 
   /// Safely cancel multiple stream subscriptions
-  static void safeCancelSubscriptions(List<StreamSubscription<dynamic>?> subscriptions) {
+  static void safeCancelSubscriptions(
+    List<StreamSubscription<dynamic>?> subscriptions,
+  ) {
     for (final subscription in subscriptions) {
       safeCancelSubscription(subscription);
     }
@@ -63,12 +67,18 @@ class MemoryUtils {
   }
 
   /// Create a memory-efficient timer that auto-disposes
-  static Timer createAutoDisposeTimer(Duration duration, VoidCallback callback) {
+  static Timer createAutoDisposeTimer(
+    Duration duration,
+    VoidCallback callback,
+  ) {
     return Timer(duration, callback);
   }
 
   /// Create a periodic timer that can be easily disposed
-  static Timer createDisposablePeriodicTimer(Duration duration, void Function(Timer) callback) {
+  static Timer createDisposablePeriodicTimer(
+    Duration duration,
+    void Function(Timer) callback,
+  ) {
     return Timer.periodic(duration, callback);
   }
 }

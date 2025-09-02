@@ -1,4 +1,4 @@
-import '../models/network_log_entry.dart';
+import 'package:network_logging/src/data/models/network_log_entry.dart';
 
 abstract class NetworkLogStorage {
   /// Store a network log entry

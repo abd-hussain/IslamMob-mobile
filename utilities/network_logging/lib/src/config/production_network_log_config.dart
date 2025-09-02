@@ -1,4 +1,4 @@
-import 'network_log_config.dart';
+import 'package:network_logging/src/config/network_log_config.dart';
 
 class ProductionNetworkLogConfig implements NetworkLogConfig {
   const ProductionNetworkLogConfig();
