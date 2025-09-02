@@ -12,7 +12,20 @@
           "package_name": "com.islammob.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "572946835267-ofccqqcuuv86vdoj3u6akl7dm3scpvp5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.islammob.app",
+            "certificate_hash": "3987d03b241029d76a1e0291b3186fd5f4bbdb7c"
+          }
+        },
+        {
+          "client_id": "572946835267-hgj94si1hb2pjugekd5bafp6bj0vqqs9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB_nbH1ubleM7dIDBiYC8ZM45Ax7zrAxP8"
@@ -20,7 +33,20 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572946835267-hgj94si1hb2pjugekd5bafp6bj0vqqs9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "572946835267-gi3ajhbc5vt47de06bni9uug3j3s9ggo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.islammob.app",
+                "app_store_id": "6670502375"
+              }
+            }
+          ]
         }
       }
     }
