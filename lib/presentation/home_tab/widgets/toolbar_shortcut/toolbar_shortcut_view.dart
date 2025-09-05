@@ -214,10 +214,10 @@ class ToolbarShortcutView extends StatelessWidget {
                         );
                       } else {
                         await FirebaseAnalyticsRepository.logEvent(
-                          name: "ManualLoginScreenFromHomeScreen",
+                          name: "WelcomeLoginScreenFromHomeScreen",
                         );
                         await navigator.pushNamed(
-                          RoutesConstants.manualLoginScreen,
+                          RoutesConstants.welcomeLoginScreen,
                         );
                       }
                     },

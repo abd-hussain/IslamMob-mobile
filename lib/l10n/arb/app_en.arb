@@ -577,7 +577,15 @@
     "quran_category" : "Quran",
     "duaa_category" : "Duaa",
     "watchlist_category" : "Watchlist",
-    "wall_category" : "Wall"
+    "wall_category" : "Wall",
+    "continue_google": "Continue With Google",
+    "continue_facebook": "Continue With Facebook",
+    "continue_apple": "Continue With Apple",
+    "manual_login": "Manual Login",
+    "signup_agreement": "By signing up, you agree to our",
+    "terms_of_service": "Terms of Service",
+    "and_word": "and",
+    "privacy_policy": "Privacy Policy."
 
 
 

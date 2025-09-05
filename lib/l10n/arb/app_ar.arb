@@ -600,7 +600,15 @@
     "quran_category" : "القرآن الكريم",
     "duaa_category" : "دعاء",
     "watchlist_category" : "المفضلة",
-    "wall_category" : "الحائط"
+    "wall_category" : "الحائط",
+    "continue_google": "المتابعة باستخدام جوجل",
+    "continue_facebook": "المتابعة باستخدام فيسبوك",
+    "continue_apple": "المتابعة باستخدام آبل",
+    "manual_login": "تسجيل الدخول اليدوي",
+    "signup_agreement": "بالتسجيل، فإنك توافق على",
+    "terms_of_service": "شروط الخدمة",
+    "and_word": "و",
+    "privacy_policy": "سياسة الخصوصية."
 
 
 

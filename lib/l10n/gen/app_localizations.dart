@@ -3520,6 +3520,54 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Wall'**
   String get wall_category;
+
+  /// No description provided for @continue_google.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue With Google'**
+  String get continue_google;
+
+  /// No description provided for @continue_facebook.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue With Facebook'**
+  String get continue_facebook;
+
+  /// No description provided for @continue_apple.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue With Apple'**
+  String get continue_apple;
+
+  /// No description provided for @manual_login.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual Login'**
+  String get manual_login;
+
+  /// No description provided for @signup_agreement.
+  ///
+  /// In en, this message translates to:
+  /// **'By signing up, you agree to our'**
+  String get signup_agreement;
+
+  /// No description provided for @terms_of_service.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get terms_of_service;
+
+  /// No description provided for @and_word.
+  ///
+  /// In en, this message translates to:
+  /// **'and'**
+  String get and_word;
+
+  /// No description provided for @privacy_policy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy.'**
+  String get privacy_policy;
 }
 
 class _IslamMobLocalizationsDelegate

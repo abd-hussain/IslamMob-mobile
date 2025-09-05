@@ -67,6 +67,10 @@ class $AssetsAudiosGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Apple_logo_white.svg
+  SvgGenImage get appleLogoWhite =>
+      const SvgGenImage('assets/images/Apple_logo_white.svg');
+
   /// File path: assets/images/attach_placeholder.png
   AssetGenImage get attachPlaceholder =>
       const AssetGenImage('assets/images/attach_placeholder.png');
@@ -100,6 +104,10 @@ class $AssetsImagesGen {
   AssetGenImage get estekaraBe =>
       const AssetGenImage('assets/images/estekara_be.png');
 
+  /// File path: assets/images/facebook_ic.svg
+  SvgGenImage get facebookIc =>
+      const SvgGenImage('assets/images/facebook_ic.svg');
+
   /// File path: assets/images/finger_click.png
   AssetGenImage get fingerClick =>
       const AssetGenImage('assets/images/finger_click.png');
@@ -107,6 +115,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/flag_place_holder.png
   AssetGenImage get flagPlaceHolder =>
       const AssetGenImage('assets/images/flag_place_holder.png');
+
+  /// File path: assets/images/google_ic.svg
+  SvgGenImage get googleIc => const SvgGenImage('assets/images/google_ic.svg');
 
   /// Directory path: assets/images/hajj
   $AssetsImagesHajjGen get hajj => const $AssetsImagesHajjGen();
@@ -151,6 +162,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
+    appleLogoWhite,
     attachPlaceholder,
     avatar,
     background,
@@ -158,8 +170,10 @@ class $AssetsImagesGen {
     donatePopup,
     emptyItem,
     estekaraBe,
+    facebookIc,
     fingerClick,
     flagPlaceHolder,
+    googleIc,
     hisnalmuslim,
     internet,
     readyToGo,

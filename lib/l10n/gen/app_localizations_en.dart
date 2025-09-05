@@ -1794,4 +1794,28 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get wall_category => 'Wall';
+
+  @override
+  String get continue_google => 'Continue With Google';
+
+  @override
+  String get continue_facebook => 'Continue With Facebook';
+
+  @override
+  String get continue_apple => 'Continue With Apple';
+
+  @override
+  String get manual_login => 'Manual Login';
+
+  @override
+  String get signup_agreement => 'By signing up, you agree to our';
+
+  @override
+  String get terms_of_service => 'Terms of Service';
+
+  @override
+  String get and_word => 'and';
+
+  @override
+  String get privacy_policy => 'Privacy Policy.';
 }

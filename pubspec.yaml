@@ -1,7 +1,7 @@
 name: islam_app
 publish_to: 'none' 
 
-version: 1.9.0+202509021234
+version: 1.9.0+202509032339
 
 environment:
   sdk: 3.8.1

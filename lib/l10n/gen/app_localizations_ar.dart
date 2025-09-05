@@ -1782,4 +1782,28 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get wall_category => 'الحائط';
+
+  @override
+  String get continue_google => 'المتابعة باستخدام جوجل';
+
+  @override
+  String get continue_facebook => 'المتابعة باستخدام فيسبوك';
+
+  @override
+  String get continue_apple => 'المتابعة باستخدام آبل';
+
+  @override
+  String get manual_login => 'تسجيل الدخول اليدوي';
+
+  @override
+  String get signup_agreement => 'بالتسجيل، فإنك توافق على';
+
+  @override
+  String get terms_of_service => 'شروط الخدمة';
+
+  @override
+  String get and_word => 'و';
+
+  @override
+  String get privacy_policy => 'سياسة الخصوصية.';
 }
