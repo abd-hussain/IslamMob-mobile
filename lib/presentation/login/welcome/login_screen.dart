@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/login/welcome/bloc/welcome_login_bloc.dart';
-import 'package:islam_app/presentation/login/welcome/widgets/social_button.dart';
 import 'package:islam_app/presentation/login/welcome/widgets/terms_and_privacy.dart';
 import 'package:islam_app/presentation/login/welcome/widgets/welcome_login_header.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
@@ -146,34 +145,30 @@ class WelcomeLoginScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          SocialButton(
-            iconName: "assets/images/facebook_ic.svg",
-            buttonLabel: localizations.continue_facebook,
-            buttonColor: const Color(0xFF4267B2),
-            buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
-              const WelcomeLoginEvent.facebookSignin(),
-            ),
-          ),
-          const SizedBox(height: 16),
-          SocialButton(
-            iconName: "assets/images/google_ic.svg",
-            buttonLabel: localizations.continue_google,
-            labelColor: const Color(0xFF616161),
-            borderColor: const Color(0xFFE0E0E0),
-            buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
-              const WelcomeLoginEvent.googleSignin(),
-            ),
-          ),
-          const SizedBox(height: 16),
-          SocialButton(
-            iconName: "assets/images/Apple_logo_white.svg",
-            buttonLabel: localizations.continue_apple,
-            buttonColor: Colors.black,
-            buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
-              const WelcomeLoginEvent.appleSignin(),
-            ),
-          ),
-          const SizedBox(height: 16),
+          // SocialButton(
+          //   iconName: "assets/images/facebook_ic.svg",
+          //   buttonLabel: localizations.continue_facebook,
+          //   buttonColor: const Color(0xFF4267B2),
+          //   buttonCallBack: () => context.read<WelcomeLoginBloc>().add(const WelcomeLoginEvent.facebookSignin()),
+          // ),
+          // const SizedBox(height: 16),
+          // SocialButton(
+          //   iconName: "assets/images/google_ic.svg",
+          //   buttonLabel: localizations.continue_google,
+          //   labelColor: const Color(0xFF616161),
+          //   borderColor: const Color(0xFFE0E0E0),
+          //   buttonCallBack: () => context.read<WelcomeLoginBloc>().add(const WelcomeLoginEvent.googleSignin()),
+          // ),
+          // const SizedBox(height: 16),
+          // SocialButton(
+          //   iconName: "assets/images/Apple_logo_white.svg",
+          //   buttonLabel: localizations.continue_apple,
+          //   buttonColor: Colors.black,
+          //   buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
+          //     const WelcomeLoginEvent.appleSignin(),
+          //   ),
+          // ),
+          // const SizedBox(height: 16),
           CustomButton(
             padding: EdgeInsets.zero,
             title: localizations.manual_login,
