@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  BUILD_TIMESTAMP: ${{ github.run_number }}
+
 jobs:
   android:
     runs-on: ubuntu-latest
@@ -12,6 +15,15 @@ jobs:
     steps:
         - name: 📚 Git Checkout
           uses: actions/checkout@v4
+
+        - name: 📊 Display Build Information
+          run: |
+              echo "🚀 Starting CI/CD Deploy #${{ github.run_number }}"
+              echo "📅 Build Date: $(date '+%Y-%m-%d %H:%M UTC')"
+              echo "🔢 Run Number: ${{ github.run_number }}"
+              echo "📝 Commit: ${{ github.sha }}"
+              echo "👤 Author: ${{ github.actor }}"
+              echo "🌿 Branch: ${{ github.ref_name }}"
 
         - name: 🔥 Set Up Java
           uses: actions/setup-java@v4
@@ -88,8 +100,21 @@ jobs:
           run: flutter pub deps --style=compact
 
         - name: 🛠️ Build and Deploy
+          id: build
           run: |
               make deploy-android
+              # Extract build number from pubspec.yaml for commit message
+              BUILD_NUMBER=$(grep "^version:" pubspec.yaml | sed 's/version: .*+//')
+              echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
+              echo "Build completed with build number: $BUILD_NUMBER"
+
+        - name: 📝 Update commit message with build number
+          if: success()
+          run: |
+              BUILD_NUMBER="${{ steps.build.outputs.build_number }}"
+              COMMIT_MSG="🚀 Deploy build $BUILD_NUMBER - $(date '+%Y-%m-%d %H:%M:%S')"
+              echo "Updated commit message: $COMMIT_MSG"
+              # Note: This will be visible in the workflow run summary
 
   ios:
     runs-on: 'macos-15'
@@ -99,6 +124,15 @@ jobs:
           uses: actions/checkout@v4
           with:
             fetch-depth: 0
+
+        - name: 📊 Display iOS Build Information
+          run: |
+              echo "🍎 Starting iOS CI/CD Deploy #${{ github.run_number }}"
+              echo "📅 Build Date: $(date '+%Y-%m-%d %H:%M UTC')"
+              echo "🔢 Run Number: ${{ github.run_number }}"
+              echo "📝 Commit: ${{ github.sha }}"
+              echo "👤 Author: ${{ github.actor }}"
+              echo "🌿 Branch: ${{ github.ref_name }}"
 
         - name: 🧰 Finalize Xcode components
           run: |
@@ -222,6 +256,7 @@ jobs:
               -destination 'generic/platform=iOS'
           
         - name: 🛠️ Build and Deploy
+          id: build-ios
           env:
             MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
             MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
@@ -230,9 +265,21 @@ jobs:
           run: |
             if [ -n "$MATCH_PASSWORD" ] && [ -n "$MATCH_GIT_BASIC_AUTHORIZATION" ]; then
               make deploy-ios
+              # Extract build number from pubspec.yaml for commit message
+              BUILD_NUMBER=$(grep "^version:" pubspec.yaml | sed 's/version: .*+//')
+              echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
+              echo "iOS build completed with build number: $BUILD_NUMBER"
             else
               echo "Warning: iOS deployment secrets not found. Skipping iOS deployment."
               exit 1
             fi
+
+        - name: 📝 Update commit message with build number
+          if: success()
+          run: |
+              BUILD_NUMBER="${{ steps.build-ios.outputs.build_number }}"
+              COMMIT_MSG="🍎 iOS Deploy build $BUILD_NUMBER - $(date '+%Y-%m-%d %H:%M')"
+              echo "Updated commit message: $COMMIT_MSG"
+              # Note: This will be visible in the workflow run summary
 
   

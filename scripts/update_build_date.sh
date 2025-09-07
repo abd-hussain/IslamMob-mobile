@@ -38,3 +38,7 @@ fi
 
 echo "Updated version: $CURRENT_VERSION => $NEW_VERSION"
 echo "Build number based on date (unified format): $BUILD_NUMBER ($(date))"
+
+# Export build number for use in GitHub Actions
+echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
+echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
