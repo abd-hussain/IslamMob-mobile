@@ -157,7 +157,9 @@ class WelcomeLoginScreen extends StatelessWidget {
           //   buttonLabel: localizations.continue_google,
           //   labelColor: const Color(0xFF616161),
           //   borderColor: const Color(0xFFE0E0E0),
-          //   buttonCallBack: () => context.read<WelcomeLoginBloc>().add(const WelcomeLoginEvent.googleSignin()),
+          //   buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
+          //     const WelcomeLoginEvent.googleSignin(),
+          //   ),
           // ),
           // const SizedBox(height: 16),
           // SocialButton(

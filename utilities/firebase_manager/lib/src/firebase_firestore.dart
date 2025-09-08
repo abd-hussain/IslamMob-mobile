@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_manager/firebase_manager.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:logger_manager/logger_manager.dart';
 
@@ -319,6 +320,16 @@ class FirebaseFirestoreRepository {
         message: 'No internet connection. Delete operation skipped.',
       );
     }
+  }
+
+  TaskEither<Exception, bool> checkIfUserExists(String userEmail) {
+    return TaskEither.tryCatch(() async {
+      final userInfo = await _firestoreInstance
+          .collection(FirebaseCollectionConstants.registered_users)
+          .doc(userEmail)
+          .get();
+      return userInfo.exists;
+    }, (error, stackTrace) => Exception(error.toString()));
   }
 
   /// Checks for network connectivity.

@@ -19,7 +19,7 @@ import 'package:islam_app/presentation/hisn_al_muslim/main_list/hisn_al_muslim_l
 import 'package:islam_app/presentation/home_tab/home_screen.dart';
 import 'package:islam_app/presentation/inboarding/inboarding_screen.dart';
 import 'package:islam_app/presentation/login/manual/manual_login_screen.dart';
-import 'package:islam_app/presentation/login/welcome/login_screen.dart';
+import 'package:islam_app/presentation/login/welcome/welcome_login_screen.dart';
 import 'package:islam_app/presentation/main_container/main_container.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/pray_calculation_setting_screen.dart';
 import 'package:islam_app/presentation/pray_notification_setting/choose_sound/choose_sound_screen.dart';
