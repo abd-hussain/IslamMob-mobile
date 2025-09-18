@@ -123,12 +123,17 @@ jobs:
           test -f "$APK" || { echo "❌ Not found: $APK"; exit 1; }
           INFO="$(${ANDROID_HOME}/build-tools/36.0.0/aapt dump badging "$APK")"
           echo "$INFO" | grep -E "sdkVersion|targetSdkVersion" || true
-          TSDK="$(echo "$INFO" | awk -F"'" '/targetSdkVersion/{print $2}')"
-          if [[ "$TSDK" != "35" ]]; then
-            echo "❌ Expected targetSdkVersion=35 but found: ${TSDK:-<none>}"
+          # robust parse + trim
+          TSDK="$(echo "$INFO" | grep -Po "targetSdkVersion:'\K[0-9]+" | head -n1 | tr -dc '0-9')"
+          if [ -z "$TSDK" ]; then
+            echo "❌ Could not parse targetSdkVersion from aapt output"
             exit 2
           fi
-          echo "🎯 targetSdkVersion=35 (OK)"
+          if [ "$TSDK" != "35" ]; then
+            echo "❌ Expected targetSdkVersion=35 but found: $TSDK"
+            exit 2
+          fi
+          echo "🎯 targetSdkVersion=$TSDK (OK)"
 
       - name: 🛠️ Build and Deploy
         id: build
@@ -145,6 +150,7 @@ jobs:
           BUILD_NUMBER="${{ steps.build.outputs.build_number }}"
           COMMIT_MSG="🚀 Deploy build $BUILD_NUMBER - $(date '+%Y-%m-%d %H:%M:%S')"
           echo "Updated commit message: $COMMIT_MSG"
+
 
 
   # ios:
