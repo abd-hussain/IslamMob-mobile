@@ -13,135 +13,147 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        - name: 📚 Git Checkout
-          uses: actions/checkout@v4
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v4
 
-        - name: 📊 Display Build Information
-          run: |
-              echo "🚀 Starting CI/CD Deploy #${{ github.run_number }}"
-              echo "📅 Build Date: $(date '+%Y-%m-%d %H:%M UTC')"
-              echo "🔢 Run Number: ${{ github.run_number }}"
-              echo "📝 Commit: ${{ github.sha }}"
-              echo "👤 Author: ${{ github.actor }}"
-              echo "🌿 Branch: ${{ github.ref_name }}"
+      - name: 📊 Display Build Information
+        run: |
+          echo "🚀 Starting CI/CD Deploy #${{ github.run_number }}"
+          echo "📅 Build Date: $(date '+%Y-%m-%d %H:%M UTC')"
+          echo "🔢 Run Number: ${{ github.run_number }}"
+          echo "📝 Commit: ${{ github.sha }}"
+          echo "👤 Author: ${{ github.actor }}"
+          echo "🌿 Branch: ${{ github.ref_name }}"
 
-        - name: 🔥 Set Up Java
-          uses: actions/setup-java@v4
-          with:
-            distribution: 'oracle'
-            java-version: '17'
+      - name: 🔥 Set Up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '17'
 
-        - name: 🔎 Clean Gradle Cache (optional)
-          run: rm -rf ~/.gradle/caches
+      - name: 🔎 Clean Gradle Cache (optional)
+        run: rm -rf ~/.gradle/caches
 
-        - name: 🐦 Setup Flutter
-          uses: subosito/flutter-action@v2
-          with:
-            flutter-version: '3.32.6'
-            channel: 'stable'
-            cache: true
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.6'
+          channel: 'stable'
+          cache: true
 
-        - name: Accept Android Licenses
-          run: yes | sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses
+      - name: ✅ Accept Android Licenses
+        run: yes | sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses
 
-        - name: 🗳️ Flutter gen-l10n
-          run: flutter gen-l10n
+      - name: 🗳️ Flutter gen-l10n
+        run: flutter gen-l10n
 
-        - name: 🗳️ Flutter Pub Get
-          run: flutter pub get
+      - name: 🗳️ Flutter Pub Get
+        run: flutter pub get
 
-        - name: 🗃️ Generate code (Optional)
-          run: flutter pub run build_runner build --delete-conflicting-outputs
-            
-        - name: 🔑 Set up key.properties
-          env:
-            ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
-            ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
-            ANDROID_KEY_CONTENT: ${{ secrets.ANDROID_KEY_CONTENT }}
-          run: |
-            if [ -n "$ANDROID_KEY_PASSWORD" ] && [ -n "$ANDROID_KEY_ALIAS" ] && [ -n "$ANDROID_KEY_CONTENT" ]; then
-              echo "keyPassword=$ANDROID_KEY_PASSWORD" > android/key.properties
-              echo "storePassword=$ANDROID_KEY_PASSWORD" >> android/key.properties
-              echo "keyAlias=$ANDROID_KEY_ALIAS" >> android/key.properties
-              echo "$ANDROID_KEY_CONTENT" | base64 --decode > android/androidkeystore.jks
-              # Optional test command to verify file creation (do not log file content directly for security)
-              ls -la android/ # Check if androidkeystore.jks file is generated
-            else
-              echo "Warning: Android signing secrets not found. Skipping key setup."
-            fi
-            
-        - name: 🔑 Set up local.properties
-          run: |
-            echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
-            echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
+      - name: 🗃️ Generate code (Optional)
+        run: flutter pub run build_runner build --delete-conflicting-outputs
 
-        - name: 🔑 Set up Play Store Secret
-          env:
-            PLAY_STORE_SECRET: ${{ secrets.PLAY_STORE_SECRET }}
-          run: |
-            if [ -n "$PLAY_STORE_SECRET" ]; then
-              echo "$PLAY_STORE_SECRET" | base64 --decode > android/play_store_secret.json
-            else
-              echo "Warning: Play Store secret not found. Skipping Play Store setup."
-            fi
+      - name: 🔑 Set up key.properties
+        env:
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_CONTENT: ${{ secrets.ANDROID_KEY_CONTENT }}
+        run: |
+          if [ -n "$ANDROID_KEY_PASSWORD" ] && [ -n "$ANDROID_KEY_ALIAS" ] && [ -n "$ANDROID_KEY_CONTENT" ]; then
+            echo "keyPassword=$ANDROID_KEY_PASSWORD" > android/key.properties
+            echo "storePassword=$ANDROID_KEY_PASSWORD" >> android/key.properties
+            echo "keyAlias=$ANDROID_KEY_ALIAS" >> android/key.properties
+            echo "$ANDROID_KEY_CONTENT" | base64 --decode > android/androidkeystore.jks
+            ls -la android/ # verify file created
+          else
+            echo "Warning: Android signing secrets not found. Skipping key setup."
+          fi
 
-        - name: 🎯 Setup Fastlane
-          uses: ruby/setup-ruby@v1
-          with:
-              ruby-version: 3.3
-              rubygems: latest
+      - name: 🔑 Set up local.properties
+        run: |
+          echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
+          echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
 
-        - name: 🔎 Cleaning cash before we start
-          run: |
-              flutter clean
-              rm -rf ~/.pub-cache
-              rm -rf pubspec.lock
-              rm -rf $HOME/.gradle/caches
-              flutter pub get
+      - name: 🔑 Set up Play Store Secret
+        env:
+          PLAY_STORE_SECRET: ${{ secrets.PLAY_STORE_SECRET }}
+        run: |
+          if [ -n "$PLAY_STORE_SECRET" ]; then
+            echo "$PLAY_STORE_SECRET" | base64 --decode > android/play_store_secret.json
+          else
+            echo "Warning: Play Store secret not found. Skipping Play Store setup."
+          fi
 
-        - name: 🔍 Dump full dependency tree
-          run: flutter pub deps --style=compact
+      - name: 🎯 Setup Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+          rubygems: latest
 
-        - name: 📦 Install Android SDK 35/36 + Build-Tools
-          run: |
-            yes | sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses
-            sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager \
+      - name: 🔎 Cleaning cache before we start
+        run: |
+          flutter clean
+          rm -rf ~/.pub-cache
+          rm -rf pubspec.lock
+          rm -rf $HOME/.gradle/caches
+          flutter pub get
+
+      - name: 🔍 Dump full dependency tree
+        run: flutter pub deps --style=compact
+
+      - name: 📦 Install Android SDK 35/36 + Build-Tools
+        run: |
+          sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager \
             "platforms;android-35" "build-tools;35.0.0" \
             "platforms;android-36" "build-tools;36.0.0" \
             "platform-tools"
 
-        - name: ⚡ Build debug APK and verify sdk levels
-          run: |
-            set -euo pipefail
-            flutter build apk --debug
-            APK="build/app/outputs/flutter-apk/app-debug.apk"
-            test -f "$APK" || { echo "❌ Not found: $APK"; exit 1; }
-            INFO="$(${ANDROID_HOME}/build-tools/36.0.0/aapt dump badging "$APK")"
-            echo "$INFO" | grep -E "sdkVersion|targetSdkVersion" || true
-            TSDK="$(echo "$INFO" | awk -F"'" '/targetSdkVersion/{print $2}')"
-            if [[ "$TSDK" != "35" ]]; then
-              echo "❌ Expected targetSdkVersion=35 but found: ${TSDK:-<none>}"
-              exit 2
-            fi
-            echo "🎯 targetSdkVersion=35 (OK)"
+      - name: 🔐 Fix Android config dir perms (prevent keystore issues)
+        run: |
+          mkdir -p "$HOME/.android" "$HOME/.config/.android"
+          sudo chown -R "$USER:$USER" "$HOME/.android" "$HOME/.config" || true
+          chmod -R u+rwX "$HOME/.android" "$HOME/.config"
 
+      # 🔎 FAST VERIFY: read merged manifest produced by AGP (no APK, no signing)
+      - name: 🔍 Verify targetSdk from merged manifest (fast, no APK)
+        working-directory: android
+        run: |
+          set -euo pipefail
+          ./gradlew :app:processReleaseMainManifest --no-daemon -q
+          FOUND="$(find app/build/intermediates -type f -path '*/merged_manifests/*/AndroidManifest.xml' | head -n1 || true)"
+          if [[ -z "${FOUND}" || ! -f "${FOUND}" ]]; then
+            echo "❌ Could not locate merged manifest. Tree (depth 4):"
+            find app/build/intermediates -maxdepth 4 -type d -print | sed 's/^/ - /'
+            exit 1
+          fi
+          echo "✅ Using merged manifest: ${FOUND}"
+          echo "----- uses-sdk block -----"
+          sed -n '/<uses-sdk/,/\/>/p' "${FOUND}" || true
+          echo "----- parsed targetSdkVersion -----"
+          TSDK="$(grep -o 'android:targetSdkVersion=\"[0-9]*\"' "${FOUND}" | head -n1 | sed 's/[^0-9]//g')"
+          echo "targetSdkVersion=${TSDK:-<not found>}"
+          if [[ "${TSDK:-}" != "35" ]]; then
+            echo "❌ Expected targetSdkVersion=35 but found: ${TSDK:-<none>}"
+            exit 2
+          fi
+          echo "🎯 targetSdkVersion=35 (OK)"
 
-        - name: 🛠️ Build and Deploy
-          id: build
-          run: |
-              make deploy-android
-              # Extract build number from pubspec.yaml for commit message
-              BUILD_NUMBER=$(grep "^version:" pubspec.yaml | sed 's/version: .*+//')
-              echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
-              echo "Build completed with build number: $BUILD_NUMBER"
+      - name: 🛠️ Build and Deploy
+        id: build
+        run: |
+          make deploy-android
+          # Extract build number from pubspec.yaml for commit message
+          BUILD_NUMBER=$(grep "^version:" pubspec.yaml | sed 's/version: .*+//')
+          echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
+          echo "Build completed with build number: $BUILD_NUMBER"
 
-        - name: 📝 Update commit message with build number
-          if: success()
-          run: |
-              BUILD_NUMBER="${{ steps.build.outputs.build_number }}"
-              COMMIT_MSG="🚀 Deploy build $BUILD_NUMBER - $(date '+%Y-%m-%d %H:%M:%S')"
-              echo "Updated commit message: $COMMIT_MSG"
-              # Note: This will be visible in the workflow run summary
+      - name: 📝 Update commit message with build number
+        if: success()
+        run: |
+          BUILD_NUMBER="${{ steps.build.outputs.build_number }}"
+          COMMIT_MSG="🚀 Deploy build $BUILD_NUMBER - $(date '+%Y-%m-%d %H:%M:%S')"
+          echo "Updated commit message: $COMMIT_MSG"
+          # visible in workflow run summary
 
   # ios:
   #   runs-on: 'macos-15'
