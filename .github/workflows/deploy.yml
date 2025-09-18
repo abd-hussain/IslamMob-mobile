@@ -41,6 +41,13 @@ jobs:
             channel: 'stable'
             cache: true
 
+        - name: Accept Android Licenses
+          run: yes | sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses
+
+        - name: Install Android SDK 35
+          run: |
+            sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
         - name: 🗳️ Flutter gen-l10n
           run: flutter gen-l10n
 
