@@ -42,7 +42,7 @@ jobs:
           cache: true
 
       - name: ✅ Accept Android Licenses
-        run: yes | sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses
+        run: sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses <<< "y"
 
       - name: 🗳️ Flutter gen-l10n
         run: flutter gen-l10n
@@ -64,7 +64,7 @@ jobs:
             echo "storePassword=$ANDROID_KEY_PASSWORD" >> android/key.properties
             echo "keyAlias=$ANDROID_KEY_ALIAS" >> android/key.properties
             echo "$ANDROID_KEY_CONTENT" | base64 --decode > android/androidkeystore.jks
-            ls -la android/ # verify file created
+            ls -la android/
           else
             echo "Warning: Android signing secrets not found. Skipping key setup."
           fi
@@ -114,25 +114,17 @@ jobs:
           sudo chown -R "$USER:$USER" "$HOME/.android" "$HOME/.config" || true
           chmod -R u+rwX "$HOME/.android" "$HOME/.config"
 
-      # 🔎 FAST VERIFY: read merged manifest produced by AGP (no APK, no signing)
-      - name: 🔍 Verify targetSdk from merged manifest (fast, no APK)
-        working-directory: android
+      # ✅ Fast & reliable verification using a debug APK + aapt
+      - name: 🔍 Verify targetSdk with aapt (must be 35)
         run: |
           set -euo pipefail
-          ./gradlew :app:processReleaseMainManifest --no-daemon -q
-          FOUND="$(find app/build/intermediates -type f -path '*/merged_manifests/*/AndroidManifest.xml' | head -n1 || true)"
-          if [[ -z "${FOUND}" || ! -f "${FOUND}" ]]; then
-            echo "❌ Could not locate merged manifest. Tree (depth 4):"
-            find app/build/intermediates -maxdepth 4 -type d -print | sed 's/^/ - /'
-            exit 1
-          fi
-          echo "✅ Using merged manifest: ${FOUND}"
-          echo "----- uses-sdk block -----"
-          sed -n '/<uses-sdk/,/\/>/p' "${FOUND}" || true
-          echo "----- parsed targetSdkVersion -----"
-          TSDK="$(grep -o 'android:targetSdkVersion=\"[0-9]*\"' "${FOUND}" | head -n1 | sed 's/[^0-9]//g')"
-          echo "targetSdkVersion=${TSDK:-<not found>}"
-          if [[ "${TSDK:-}" != "35" ]]; then
+          flutter build apk --debug
+          APK="build/app/outputs/flutter-apk/app-debug.apk"
+          test -f "$APK" || { echo "❌ Not found: $APK"; exit 1; }
+          INFO="$(${ANDROID_HOME}/build-tools/36.0.0/aapt dump badging "$APK")"
+          echo "$INFO" | grep -E "sdkVersion|targetSdkVersion" || true
+          TSDK="$(echo "$INFO" | awk -F"'" '/targetSdkVersion/{print $2}')"
+          if [[ "$TSDK" != "35" ]]; then
             echo "❌ Expected targetSdkVersion=35 but found: ${TSDK:-<none>}"
             exit 2
           fi
@@ -153,7 +145,7 @@ jobs:
           BUILD_NUMBER="${{ steps.build.outputs.build_number }}"
           COMMIT_MSG="🚀 Deploy build $BUILD_NUMBER - $(date '+%Y-%m-%d %H:%M:%S')"
           echo "Updated commit message: $COMMIT_MSG"
-          # visible in workflow run summary
+
 
   # ios:
   #   runs-on: 'macos-15'
