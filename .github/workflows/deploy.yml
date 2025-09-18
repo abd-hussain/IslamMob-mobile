@@ -110,49 +110,20 @@ jobs:
             "platforms;android-36" "build-tools;36.0.0" \
             "platform-tools"
 
-        - name: 🔍 Verify targetSdk from merged manifest (fast)
+        - name: ⚡ Build debug APK and verify sdk levels
           run: |
             set -euo pipefail
-            cd android
-        
-            # Make sure SDK 35/36 are installed (already in your pipeline, but harmless if repeated)
-            yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null
-            ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0" "platforms;android-36" "build-tools;36.0.0" >/dev/null
-        
-            # Generate merged manifests (both variants to be safe)
-            ./gradlew :app:processReleaseMainManifest :app:processDebugMainManifest --no-daemon -q
-        
-            # Try common AGP output locations
-            CANDIDATES=(
-              "app/build/intermediates/merged_manifests/release/AndroidManifest.xml"
-              "app/build/intermediates/merged_manifests/debug/AndroidManifest.xml"
-              "app/build/intermediates/merged_manifest/release/AndroidManifest.xml"
-              "app/build/intermediates/merged_manifest/debug/AndroidManifest.xml"
-              "app/build/intermediates/packaged_manifests/release/AndroidManifest.xml"
-              "app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml"
-            )
-        
-            FOUND=""
-            for F in "${CANDIDATES[@]}"; do
-              if [[ -f "$F" ]]; then FOUND="$F"; break; fi
-            done
-        
-            # Fallback: search anywhere under intermediates
-            if [[ -z "$FOUND" ]]; then
-              FOUND="$(find app/build/intermediates -type f -name AndroidManifest.xml | grep -E '/merged_?manifests?/.*/AndroidManifest.xml' | head -n1 || true)"
+            flutter build apk --debug
+            APK="build/app/outputs/flutter-apk/app-debug.apk"
+            test -f "$APK" || { echo "❌ Not found: $APK"; exit 1; }
+            INFO="$(${ANDROID_HOME}/build-tools/36.0.0/aapt dump badging "$APK")"
+            echo "$INFO" | grep -E "sdkVersion|targetSdkVersion" || true
+            TSDK="$(echo "$INFO" | awk -F"'" '/targetSdkVersion/{print $2}')"
+            if [[ "$TSDK" != "35" ]]; then
+              echo "❌ Expected targetSdkVersion=35 but found: ${TSDK:-<none>}"
+              exit 2
             fi
-        
-            if [[ -z "$FOUND" || ! -f "$FOUND" ]]; then
-              echo "❌ Could not locate merged manifest. Listing tree for debugging:"
-              find app/build/intermediates -maxdepth 3 -type d -print | sed 's/^/ - /'
-              exit 1
-            fi
-        
-            echo "✅ Using merged manifest: $FOUND"
-            echo "----- uses-sdk block -----"
-            awk '/<uses-sdk/{flag=1} flag; /\/>/{if(flag){exit}}' "$FOUND" || true
-            echo "----- parsed targetSdkVersion -----"
-            grep -o 'android:targetSdkVersion="[0-9]*"' "$FOUND" || true
+            echo "🎯 targetSdkVersion=35 (OK)"
 
 
         - name: 🛠️ Build and Deploy
@@ -172,170 +143,170 @@ jobs:
               echo "Updated commit message: $COMMIT_MSG"
               # Note: This will be visible in the workflow run summary
 
-  ios:
-    runs-on: 'macos-15'
+  # ios:
+  #   runs-on: 'macos-15'
 
-    steps:
-        - name: 📚 Set up git and fetch all history for all branches and tags
-          uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
+  #   steps:
+  #       - name: 📚 Set up git and fetch all history for all branches and tags
+  #         uses: actions/checkout@v4
+  #         with:
+  #           fetch-depth: 0
 
-        - name: 📊 Display iOS Build Information
-          run: |
-              echo "🍎 Starting iOS CI/CD Deploy #${{ github.run_number }}"
-              echo "📅 Build Date: $(date '+%Y-%m-%d %H:%M UTC')"
-              echo "🔢 Run Number: ${{ github.run_number }}"
-              echo "📝 Commit: ${{ github.sha }}"
-              echo "👤 Author: ${{ github.actor }}"
-              echo "🌿 Branch: ${{ github.ref_name }}"
+  #       - name: 📊 Display iOS Build Information
+  #         run: |
+  #             echo "🍎 Starting iOS CI/CD Deploy #${{ github.run_number }}"
+  #             echo "📅 Build Date: $(date '+%Y-%m-%d %H:%M UTC')"
+  #             echo "🔢 Run Number: ${{ github.run_number }}"
+  #             echo "📝 Commit: ${{ github.sha }}"
+  #             echo "👤 Author: ${{ github.actor }}"
+  #             echo "🌿 Branch: ${{ github.ref_name }}"
 
-        - name: 🧰 Finalize Xcode components
-          run: |
-            sudo xcode-select -s /Applications/Xcode_16.app
-            sudo xcodebuild -runFirstLaunch
+  #       - name: 🧰 Finalize Xcode components
+  #         run: |
+  #           sudo xcode-select -s /Applications/Xcode_16.app
+  #           sudo xcodebuild -runFirstLaunch
   
-        - name: 🧪 Check Xcode Version
-          run: xcodebuild -version
+  #       - name: 🧪 Check Xcode Version
+  #         run: xcodebuild -version
 
-        - name: 🐦 Setup Flutter
-          uses: subosito/flutter-action@v2
-          with:
-            flutter-version: '3.32.6'
-            channel: 'stable'
-            cache: true
+  #       - name: 🐦 Setup Flutter
+  #         uses: subosito/flutter-action@v2
+  #         with:
+  #           flutter-version: '3.32.6'
+  #           channel: 'stable'
+  #           cache: true
 
-        - name: 🗳️ Flutter gen-l10n
-          run: flutter gen-l10n
+  #       - name: 🗳️ Flutter gen-l10n
+  #         run: flutter gen-l10n
 
-        - name: 🗳️ Flutter Pub Get
-          run: flutter pub get
+  #       - name: 🗳️ Flutter Pub Get
+  #         run: flutter pub get
   
-        - name: 🗃️ Generate code (Optional)
-          run: flutter pub run build_runner build --delete-conflicting-outputs
+  #       - name: 🗃️ Generate code (Optional)
+  #         run: flutter pub run build_runner build --delete-conflicting-outputs
 
-        - name: 🧰 Set up App Store Connect (place where Fastlane expects it)
-          env:
-            APPSTORE_CONNECT: ${{ secrets.APPSTORE_CONNECT }}
-          run: |
-            if [ -n "$APPSTORE_CONNECT" ]; then
-              mkdir -p ios/fastlane
-              echo "$APPSTORE_CONNECT" | base64 --decode > ios/app_store_connect.json
-            else
-              echo "Warning: App Store Connect secret not found. Skipping App Store setup."
-            fi
+  #       - name: 🧰 Set up App Store Connect (place where Fastlane expects it)
+  #         env:
+  #           APPSTORE_CONNECT: ${{ secrets.APPSTORE_CONNECT }}
+  #         run: |
+  #           if [ -n "$APPSTORE_CONNECT" ]; then
+  #             mkdir -p ios/fastlane
+  #             echo "$APPSTORE_CONNECT" | base64 --decode > ios/app_store_connect.json
+  #           else
+  #             echo "Warning: App Store Connect secret not found. Skipping App Store setup."
+  #           fi
         
-        - name: 🎯 Setup Ruby
-          uses: ruby/setup-ruby@v1
-          with:
-            ruby-version: '3.2'
-            bundler-cache: true   # will cache gems in the runner toolcache
-          env:
-            RUNNER_TOOL_CACHE: /Users/runner/hostedtoolcache
-            RUNNER_TEMP: /Users/runner/work/_temp
+  #       - name: 🎯 Setup Ruby
+  #         uses: ruby/setup-ruby@v1
+  #         with:
+  #           ruby-version: '3.2'
+  #           bundler-cache: true   # will cache gems in the runner toolcache
+  #         env:
+  #           RUNNER_TOOL_CACHE: /Users/runner/hostedtoolcache
+  #           RUNNER_TEMP: /Users/runner/work/_temp
   
-        - name: 📦 Install fastlane (no global writes)
-          run: |
-            gem install fastlane --no-document
-            ruby -v
-            which ruby
-            fastlane -v
+  #       - name: 📦 Install fastlane (no global writes)
+  #         run: |
+  #           gem install fastlane --no-document
+  #           ruby -v
+  #           which ruby
+  #           fastlane -v
 
-        # ✅ Wire xcconfigs BEFORE pods
-        - name: 🧩 Ensure Flutter xcconfigs include Pods
-          run: |
-           ensure_line () { FILE="$1"; LINE="$2"; grep -qF "$LINE" "$FILE" || echo "$LINE" >> "$FILE"; }
-           ensure_line ios/Flutter/Debug.xcconfig   '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"'
-           ensure_line ios/Flutter/Release.xcconfig '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"'
-           ensure_line ios/Flutter/Profile.xcconfig '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"'
+  #       # ✅ Wire xcconfigs BEFORE pods
+  #       - name: 🧩 Ensure Flutter xcconfigs include Pods
+  #         run: |
+  #          ensure_line () { FILE="$1"; LINE="$2"; grep -qF "$LINE" "$FILE" || echo "$LINE" >> "$FILE"; }
+  #          ensure_line ios/Flutter/Debug.xcconfig   '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"'
+  #          ensure_line ios/Flutter/Release.xcconfig '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"'
+  #          ensure_line ios/Flutter/Profile.xcconfig '#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"'
           
-        - name: 🧹 Pods clean install
-          run: |
-            pushd ios
-            pod deintegrate
-            rm -f Podfile.lock
-            pod install
-            popd
+  #       - name: 🧹 Pods clean install
+  #         run: |
+  #           pushd ios
+  #           pod deintegrate
+  #           rm -f Podfile.lock
+  #           pod install
+  #           popd
 
-        - name: 🔀 Select Xcode with iPhoneOS SDK
-          shell: bash
-          run: |
-            set -euo pipefail
+  #       - name: 🔀 Select Xcode with iPhoneOS SDK
+  #         shell: bash
+  #         run: |
+  #           set -euo pipefail
         
-            choose_xcode() {
-              for X in "$@"; do
-                DS="$X/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport"
-                SDK="$X/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iphoneos.sdk"
-                [[ -d "$SDK" ]] || continue
+  #           choose_xcode() {
+  #             for X in "$@"; do
+  #               DS="$X/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport"
+  #               SDK="$X/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iphoneos.sdk"
+  #               [[ -d "$SDK" ]] || continue
         
-                # Debug to STDERR only:
-                >&2 echo "Checking $X"
-                [[ -d "$DS" ]] && >&2 ls "$DS" | tail -5 || true
+  #               # Debug to STDERR only:
+  #               >&2 echo "Checking $X"
+  #               [[ -d "$DS" ]] && >&2 ls "$DS" | tail -5 || true
         
-                # Prefer an SDK that reports iOS 18 (fallback to any iOS SDK present)
-                if /usr/libexec/PlistBuddy -c 'Print :DTPlatformVersion' "$SDK/SDKSettings.plist" 2>/dev/null | grep -q '^18'; then
-                  echo "$X"; return 0
-                fi
-                # fallback acceptable
-                echo "$X"; return 0
-              done
-              return 1
-            }
+  #               # Prefer an SDK that reports iOS 18 (fallback to any iOS SDK present)
+  #               if /usr/libexec/PlistBuddy -c 'Print :DTPlatformVersion' "$SDK/SDKSettings.plist" 2>/dev/null | grep -q '^18'; then
+  #                 echo "$X"; return 0
+  #               fi
+  #               # fallback acceptable
+  #               echo "$X"; return 0
+  #             done
+  #             return 1
+  #           }
         
-            PICK="$(choose_xcode \
-              /Applications/Xcode_16.4.app \
-              /Applications/Xcode_16.3.app \
-              /Applications/Xcode_16.2.app \
-              /Applications/Xcode_16.1.app \
-              /Applications/Xcode_16.app \
-              /Applications/Xcode.app)"
+  #           PICK="$(choose_xcode \
+  #             /Applications/Xcode_16.4.app \
+  #             /Applications/Xcode_16.3.app \
+  #             /Applications/Xcode_16.2.app \
+  #             /Applications/Xcode_16.1.app \
+  #             /Applications/Xcode_16.app \
+  #             /Applications/Xcode.app)"
         
-            if [[ -z "$PICK" ]]; then
-              echo "❌ No suitable Xcode found" >&2
-              exit 1
-            fi
+  #           if [[ -z "$PICK" ]]; then
+  #             echo "❌ No suitable Xcode found" >&2
+  #             exit 1
+  #           fi
         
-            echo "Using Xcode: $PICK" >&2
-            echo "DEVELOPER_DIR=$PICK/Contents/Developer" >> "$GITHUB_ENV"
+  #           echo "Using Xcode: $PICK" >&2
+  #           echo "DEVELOPER_DIR=$PICK/Contents/Developer" >> "$GITHUB_ENV"
         
-            # Sanity:
-            xcodebuild -version
-            xcodebuild -showsdks || true
+  #           # Sanity:
+  #           xcodebuild -version
+  #           xcodebuild -showsdks || true
 
-        - name: 🧪 Pre-warm xcodebuild & validate scheme
-          run: |
-            xcodebuild -version
-            xcodebuild -list -workspace ios/Runner.xcworkspace
-            xcodebuild -resolvePackageDependencies \
-              -workspace ios/Runner.xcworkspace \
-              -scheme Runner \
-              -destination 'generic/platform=iOS'
+  #       - name: 🧪 Pre-warm xcodebuild & validate scheme
+  #         run: |
+  #           xcodebuild -version
+  #           xcodebuild -list -workspace ios/Runner.xcworkspace
+  #           xcodebuild -resolvePackageDependencies \
+  #             -workspace ios/Runner.xcworkspace \
+  #             -scheme Runner \
+  #             -destination 'generic/platform=iOS'
           
-        - name: 🛠️ Build and Deploy
-          id: build-ios
-          env:
-            MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
-            MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
-            FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: "120"
-            FASTLANE_XCODEBUILD_SETTINGS_RETRIES: "6"
-          run: |
-            if [ -n "$MATCH_PASSWORD" ] && [ -n "$MATCH_GIT_BASIC_AUTHORIZATION" ]; then
-              make deploy-ios
-              # Extract build number from pubspec.yaml for commit message
-              BUILD_NUMBER=$(grep "^version:" pubspec.yaml | sed 's/version: .*+//')
-              echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
-              echo "iOS build completed with build number: $BUILD_NUMBER"
-            else
-              echo "Warning: iOS deployment secrets not found. Skipping iOS deployment."
-              exit 1
-            fi
+  #       - name: 🛠️ Build and Deploy
+  #         id: build-ios
+  #         env:
+  #           MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
+  #           MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
+  #           FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: "120"
+  #           FASTLANE_XCODEBUILD_SETTINGS_RETRIES: "6"
+  #         run: |
+  #           if [ -n "$MATCH_PASSWORD" ] && [ -n "$MATCH_GIT_BASIC_AUTHORIZATION" ]; then
+  #             make deploy-ios
+  #             # Extract build number from pubspec.yaml for commit message
+  #             BUILD_NUMBER=$(grep "^version:" pubspec.yaml | sed 's/version: .*+//')
+  #             echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
+  #             echo "iOS build completed with build number: $BUILD_NUMBER"
+  #           else
+  #             echo "Warning: iOS deployment secrets not found. Skipping iOS deployment."
+  #             exit 1
+  #           fi
 
-        - name: 📝 Update commit message with build number
-          if: success()
-          run: |
-              BUILD_NUMBER="${{ steps.build-ios.outputs.build_number }}"
-              COMMIT_MSG="🍎 iOS Deploy build $BUILD_NUMBER - $(date '+%Y-%m-%d %H:%M')"
-              echo "Updated commit message: $COMMIT_MSG"
-              # Note: This will be visible in the workflow run summary
+  #       - name: 📝 Update commit message with build number
+  #         if: success()
+  #         run: |
+  #             BUILD_NUMBER="${{ steps.build-ios.outputs.build_number }}"
+  #             COMMIT_MSG="🍎 iOS Deploy build $BUILD_NUMBER - $(date '+%Y-%m-%d %H:%M')"
+  #             echo "Updated commit message: $COMMIT_MSG"
+  #             # Note: This will be visible in the workflow run summary
 
   
