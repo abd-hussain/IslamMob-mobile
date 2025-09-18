@@ -102,38 +102,24 @@ jobs:
         - name: 🔍 Dump full dependency tree
           run: flutter pub deps --style=compact
 
-        - name: 📦 Install Android SDK Platform 35 & Build-Tools
+        - name: 📦 Install Android SDK 35/36 + Build-Tools
           run: |
             yes | sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses
             sudo ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager \
-            "platforms;android-35" \
-            "build-tools;35.0.0" \
+            "platforms;android-35" "build-tools;35.0.0" \
+            "platforms;android-36" "build-tools;36.0.0" \
             "platform-tools"
 
-        - name: 🔍 Verify targetSdk inside AAB
-          if: success()
+        - name: 🔍 Verify targetSdk from merged manifest (release)
           run: |
-            # Build (or keep as-is if your Makefile already builds the AAB)
-            flutter build appbundle --release
-
-            AAB="build/app/outputs/bundle/release/app-release.aab"
-            test -f "$AAB" || { echo "❌ AAB not found: $AAB"; exit 1; }
-
-            # Extract base manifest and show targetSdk
-            mkdir -p aabcheck
-            pushd aabcheck >/dev/null
-            unzip -q "../$AAB" base/manifest/AndroidManifest.xml
-            echo "----- AAB manifest uses-sdk line -----"
-            grep -n "uses-sdk" base/manifest/AndroidManifest.xml || true
-            echo "----- AAB targetSdkVersion -----"
-            grep -o 'android:targetSdkVersion="[0-9]*"' base/manifest/AndroidManifest.xml || true
-            popd >/dev/null
-
-            # Also print merged manifest target for sanity (Gradle path may differ by AGP)
-            ./gradlew :app:processReleaseMainManifest
-            echo "----- Merged manifest uses-sdk (release) -----"
-            grep -n "uses-sdk" app/build/intermediates/merged_manifest/release/AndroidManifest.xml || true
-
+            cd android
+            ./gradlew :app:processReleaseMainManifest --no-daemon
+            FILE=app/build/intermediates/merged_manifest/release/AndroidManifest.xml
+            test -f "$FILE" || { echo "❌ Not found: $FILE"; ls -R app/build/intermediates/merged_manifest || true; exit 1; }
+            echo "----- uses-sdk block -----"
+            sed -n '/<uses-sdk/,/\/>/p' "$FILE"
+            echo "----- targetSdkVersion -----"
+            grep -o 'android:targetSdkVersion="[0-9]*"' "$FILE" || true
 
         - name: 🛠️ Build and Deploy
           id: build
