@@ -110,16 +110,50 @@ jobs:
             "platforms;android-36" "build-tools;36.0.0" \
             "platform-tools"
 
-        - name: 🔍 Verify targetSdk from merged manifest (release)
+        - name: 🔍 Verify targetSdk from merged manifest (fast)
           run: |
+            set -euo pipefail
             cd android
-            ./gradlew :app:processReleaseMainManifest --no-daemon
-            FILE=app/build/intermediates/merged_manifest/release/AndroidManifest.xml
-            test -f "$FILE" || { echo "❌ Not found: $FILE"; ls -R app/build/intermediates/merged_manifest || true; exit 1; }
+        
+            # Make sure SDK 35/36 are installed (already in your pipeline, but harmless if repeated)
+            yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses >/dev/null
+            ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0" "platforms;android-36" "build-tools;36.0.0" >/dev/null
+        
+            # Generate merged manifests (both variants to be safe)
+            ./gradlew :app:processReleaseMainManifest :app:processDebugMainManifest --no-daemon -q
+        
+            # Try common AGP output locations
+            CANDIDATES=(
+              "app/build/intermediates/merged_manifests/release/AndroidManifest.xml"
+              "app/build/intermediates/merged_manifests/debug/AndroidManifest.xml"
+              "app/build/intermediates/merged_manifest/release/AndroidManifest.xml"
+              "app/build/intermediates/merged_manifest/debug/AndroidManifest.xml"
+              "app/build/intermediates/packaged_manifests/release/AndroidManifest.xml"
+              "app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml"
+            )
+        
+            FOUND=""
+            for F in "${CANDIDATES[@]}"; do
+              if [[ -f "$F" ]]; then FOUND="$F"; break; fi
+            done
+        
+            # Fallback: search anywhere under intermediates
+            if [[ -z "$FOUND" ]]; then
+              FOUND="$(find app/build/intermediates -type f -name AndroidManifest.xml | grep -E '/merged_?manifests?/.*/AndroidManifest.xml' | head -n1 || true)"
+            fi
+        
+            if [[ -z "$FOUND" || ! -f "$FOUND" ]]; then
+              echo "❌ Could not locate merged manifest. Listing tree for debugging:"
+              find app/build/intermediates -maxdepth 3 -type d -print | sed 's/^/ - /'
+              exit 1
+            fi
+        
+            echo "✅ Using merged manifest: $FOUND"
             echo "----- uses-sdk block -----"
-            sed -n '/<uses-sdk/,/\/>/p' "$FILE"
-            echo "----- targetSdkVersion -----"
-            grep -o 'android:targetSdkVersion="[0-9]*"' "$FILE" || true
+            awk '/<uses-sdk/{flag=1} flag; /\/>/{if(flag){exit}}' "$FOUND" || true
+            echo "----- parsed targetSdkVersion -----"
+            grep -o 'android:targetSdkVersion="[0-9]*"' "$FOUND" || true
+
 
         - name: 🛠️ Build and Deploy
           id: build
