@@ -673,6 +673,10 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
       'We are committed to protecting your privacy. Please review our Privacy Policy to understand how we collect, use, and safeguard your information.';
 
   @override
+  String get locationDataDisclosure =>
+      'LOCATION DATA COLLECTION AND USAGE: This app collects and uses your precise location data (GPS coordinates and address information) for the following purposes: 1) Calculating accurate Islamic prayer times based on your geographical position, 2) Determining the correct Qibla direction for prayers, 3) Providing location-specific Islamic calendar information. Your location data is stored locally on your device and is not shared with third parties. This data collection is essential for the app\'s core Islamic worship functionality.';
+
+  @override
   String get termstitle5 => '5. Intellectual Property';
 
   @override
@@ -770,7 +774,7 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get mawaqeetalsalahdetails =>
-      'Allow your location to be determined to accurately determine prayer times according to your location';
+      'This app needs access to your location to provide accurate Islamic prayer times and Qibla direction. We collect your GPS coordinates and address information, which is stored locally on your device for prayer calculations.';
 
   @override
   String get mawaqeetalsalahdetails2 =>
@@ -785,7 +789,7 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get whyyoushouldallowlocationdetails =>
-      'Without allowing your location, we will not be able to accurately determine prayer times based on your location.';
+      'Location access is required to: 1) Calculate accurate prayer times based on your geographical position, 2) Determine the correct Qibla direction for prayers, 3) Provide location-specific Islamic calendar information. Your location data is collected, stored locally, and used solely for these Islamic worship purposes.';
 
   @override
   String get nolocationPermissionButton => 'Activate from settings';
@@ -1263,7 +1267,7 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get allowLocationDetails =>
-      'Enabling location allows us to accurately calculate prayer times, which is very important for the app';
+      'This app collects and uses your precise location data (GPS coordinates and address information) to provide accurate Islamic prayer times and Qibla direction. Your location data is stored locally on your device and is essential for calculating prayer times based on your geographical position. This data is not shared with third parties and is used solely for Islamic worship purposes.';
 
   @override
   String get changeLocationSettings => 'Change Location';
@@ -1818,4 +1822,42 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get privacy_policy => 'Privacy Policy.';
+
+  @override
+  String get location_privecy_title => 'Location Data Collection';
+
+  @override
+  String get location_not_now => 'Not Now';
+
+  @override
+  String get location_why_location => 'Why we need your location:';
+
+  @override
+  String get location_desc_one =>
+      'Accurate Prayer Times: Islamic prayer times vary by location';
+
+  @override
+  String get location_desc_two =>
+      'Qibla Direction: Finding the correct direction to Mecca';
+
+  @override
+  String get location_desc_three =>
+      'Islamic Calendar: Location-specific Islamic dates';
+
+  @override
+  String get privacy_protected => 'Your privacy is protected:';
+
+  @override
+  String get privacy_protected_desc_one =>
+      'Data stored locally on your device only';
+
+  @override
+  String get privacy_protected_desc_two => 'No data shared with third parties';
+
+  @override
+  String get privacy_protected_desc_three =>
+      'Used solely for Islamic worship purposes';
+
+  @override
+  String get allow_location => 'Allow Location';
 }

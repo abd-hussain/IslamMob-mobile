@@ -673,6 +673,10 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
       'نحن ملتزمون بحماية خصوصيتك. يرجى مراجعة سياسة الخصوصية الخاصة بنا لفهم كيفية جمع معلوماتك واستخدامها وحمايتها.';
 
   @override
+  String get locationDataDisclosure =>
+      'جمع واستخدام بيانات الموقع: يجمع هذا التطبيق ويستخدم بيانات موقعك الدقيقة (إحداثيات GPS ومعلومات العنوان) للأغراض التالية: 1) حساب مواقيت الصلاة الإسلامية الدقيقة بناءً على موقعك الجغرافي، 2) تحديد اتجاه القبلة الصحيح للصلاة، 3) توفير معلومات التقويم الإسلامي الخاصة بالموقع. يتم تخزين بيانات موقعك محلياً على جهازك ولا يتم مشاركتها مع أطراف ثالثة. هذا الجمع للبيانات ضروري لوظائف العبادة الإسلامية الأساسية للتطبيق.';
+
+  @override
   String get termstitle5 => '5. الملكية الفكرية';
 
   @override
@@ -768,7 +772,7 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get mawaqeetalsalahdetails =>
-      'السماح بتحديد موقعك لتحديد مواقيت الصلاة بشكل دقيق وفقا لموقعك';
+      'يحتاج هذا التطبيق إلى الوصول إلى موقعك لتوفير مواقيت الصلاة الإسلامية الدقيقة واتجاه القبلة. نجمع إحداثيات GPS ومعلومات العنوان الخاصة بك، والتي يتم تخزينها محلياً على جهازك لحساب مواقيت الصلاة.';
 
   @override
   String get mawaqeetalsalahdetails2 => 'يمكنك تغير ذلك لاحقاً من الاعدادات';
@@ -782,7 +786,7 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get whyyoushouldallowlocationdetails =>
-      'بدون السماح بالحصول على موقعك، لن نتمكن من تحديد مواقيت الصلاة بشكل دقيق وفقا لموقعك';
+      'الوصول إلى الموقع مطلوب لـ: 1) حساب مواقيت الصلاة الدقيقة بناءً على موقعك الجغرافي، 2) تحديد اتجاه القبلة الصحيح للصلاة، 3) توفير معلومات التقويم الإسلامي الخاصة بالموقع. يتم جمع بيانات موقعك وتخزينها محلياً واستخدامها فقط لأغراض العبادة الإسلامية هذه.';
 
   @override
   String get nolocationPermissionButton => 'تفعيل من الاعدادات';
@@ -1253,7 +1257,7 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get allowLocationDetails =>
-      'إن تفعيل الموقع يسمح لنا بحساب اوقات الصلاة بالشكل الصحيح وذلك مهم جدا للتطبيق';
+      'يجمع هذا التطبيق ويستخدم بيانات موقعك الدقيقة (إحداثيات GPS ومعلومات العنوان) لتوفير مواقيت الصلاة الإسلامية الدقيقة واتجاه القبلة. يتم تخزين بيانات موقعك محلياً على جهازك وهي ضرورية لحساب مواقيت الصلاة بناءً على موقعك الجغرافي. لا يتم مشاركة هذه البيانات مع أطراف ثالثة وتستخدم فقط لأغراض العبادة الإسلامية.';
 
   @override
   String get changeLocationSettings => 'تغيير الموقع';
@@ -1806,4 +1810,43 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get privacy_policy => 'سياسة الخصوصية.';
+
+  @override
+  String get location_privecy_title => 'جمع بيانات الموقع';
+
+  @override
+  String get location_not_now => 'ليس الآن';
+
+  @override
+  String get location_why_location => 'لماذا نحتاج إلى موقعك:';
+
+  @override
+  String get location_desc_one =>
+      'أوقات الصلاة الدقيقة: تختلف أوقات الصلاة الإسلامية حسب الموقع';
+
+  @override
+  String get location_desc_two =>
+      'اتجاه القبلة: إيجاد الاتجاه الصحيح لمكة المكرمة';
+
+  @override
+  String get location_desc_three =>
+      'التقويم الإسلامي: التواريخ الإسلامية الخاصة بالموقع';
+
+  @override
+  String get privacy_protected => 'خصوصيتك محمية:';
+
+  @override
+  String get privacy_protected_desc_one =>
+      'البيانات المخزنة محليًا على جهازك فقط';
+
+  @override
+  String get privacy_protected_desc_two =>
+      'لا تتم مشاركة البيانات مع أطراف ثالثة';
+
+  @override
+  String get privacy_protected_desc_three =>
+      'يستخدم فقط لأغراض العبادة الإسلامية';
+
+  @override
+  String get allow_location => 'السماح بالموقع';
 }

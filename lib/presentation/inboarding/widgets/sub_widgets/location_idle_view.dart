@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/inboarding/bloc/location/location_bloc.dart';
+import 'package:islam_app/presentation/inboarding/widgets/sub_widgets/location_disclosure_dialog.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:islam_app/shared_widgets/show_toast.dart';
@@ -56,57 +57,74 @@ class LocationIdleView extends StatelessWidget {
           isEnabled: true,
           title: localization.allowgetlocation,
           onTap: () async {
-            if (await NetworkUseCase.checkInternetConnection() == false) {
-              if (context.mounted) {
-                ShowToast.showInternetRequired(context);
-              }
-              return;
-            }
+            // Show prominent disclosure dialog first
+            await LocationDisclosureDialog.show(
+              context,
+              onAccept: () async {
+                Navigator.of(context).pop(); // Close the dialog
 
-            // ignore: use_build_context_synchronously
-            final locationBloc = context.read<LocationBloc>();
+                if (await NetworkUseCase.checkInternetConnection() == false) {
+                  if (context.mounted) {
+                    ShowToast.showInternetRequired(context);
+                  }
+                  return;
+                }
 
-            // Set state to loading
-            locationBloc.add(
-              const LocationEvent.changeLocationStatus(
-                status: LocationProcessStateLoading(),
-              ),
+                // ignore: use_build_context_synchronously
+                final locationBloc = context.read<LocationBloc>();
+
+                // Set state to loading
+                locationBloc.add(
+                  const LocationEvent.changeLocationStatus(
+                    status: LocationProcessStateLoading(),
+                  ),
+                );
+
+                // Request location details
+                final locationDetails = await LocationManagerBase()
+                    .getLocationDetails();
+
+                if (locationDetails.containsKey('error')) {
+                  /// Handles the case when location permission is not granted
+                  locationBloc.add(
+                    const LocationEvent.changeLocationStatus(
+                      status: LocationProcessStateNoPermission(),
+                    ),
+                  );
+                } else {
+                  final location = LocationModel(
+                    countryCode:
+                        (locationDetails['isoCountryCode'] as String?) ?? "",
+                    country: (locationDetails['country'] as String?) ?? "",
+                    city: (locationDetails['city'] as String?) ?? "",
+                    subCity: (locationDetails['subCity'] as String?) ?? "",
+                    street: (locationDetails['street'] as String?) ?? "",
+                    latitude: (locationDetails['latitude'] as double?) ?? 0.0,
+                    longitude: (locationDetails['longitude'] as double?) ?? 0.0,
+                    thoroughfare:
+                        (locationDetails['thoroughfare'] as String?) ?? "",
+                  );
+                  locationBloc.add(
+                    LocationEvent.setCountryAndCityNames(location: location),
+                  );
+
+                  locationBloc.add(
+                    const LocationEvent.changeLocationStatus(
+                      status: LocationProcessStateHavePermission(),
+                    ),
+                  );
+                }
+              },
+              onDecline: () {
+                Navigator.of(context).pop(); // Close the dialog
+                // User declined, could show manual location selection
+                context.read<LocationBloc>().add(
+                  const LocationEvent.changeLocationStatus(
+                    status: LocationProcessStateLocationManually(),
+                  ),
+                );
+              },
             );
-
-            // Request location details
-            final locationDetails = await LocationManagerBase()
-                .getLocationDetails();
-
-            if (locationDetails.containsKey('error')) {
-              /// Handles the case when location permission is not granted
-              locationBloc.add(
-                const LocationEvent.changeLocationStatus(
-                  status: LocationProcessStateNoPermission(),
-                ),
-              );
-            } else {
-              final location = LocationModel(
-                countryCode:
-                    (locationDetails['isoCountryCode'] as String?) ?? "",
-                country: (locationDetails['country'] as String?) ?? "",
-                city: (locationDetails['city'] as String?) ?? "",
-                subCity: (locationDetails['subCity'] as String?) ?? "",
-                street: (locationDetails['street'] as String?) ?? "",
-                latitude: (locationDetails['latitude'] as double?) ?? 0.0,
-                longitude: (locationDetails['longitude'] as double?) ?? 0.0,
-                thoroughfare:
-                    (locationDetails['thoroughfare'] as String?) ?? "",
-              );
-              locationBloc.add(
-                LocationEvent.setCountryAndCityNames(location: location),
-              );
-
-              locationBloc.add(
-                const LocationEvent.changeLocationStatus(
-                  status: LocationProcessStateHavePermission(),
-                ),
-              );
-            }
           },
         ),
       ],

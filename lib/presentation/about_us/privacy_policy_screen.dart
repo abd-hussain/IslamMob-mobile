@@ -69,6 +69,10 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 descriptions: [localization.termsdesc4],
               ),
               SectionView(
+                title: localization.location_privecy_title,
+                descriptions: [localization.locationDataDisclosure],
+              ),
+              SectionView(
                 title: localization.termstitle5,
                 descriptions: [localization.termsdesc5],
               ),

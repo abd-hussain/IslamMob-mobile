@@ -22,7 +22,6 @@ mixin _$WelcomeLoginEvent {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() manualSignin,
     required TResult Function() checkUserExistance,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,7 +29,6 @@ mixin _$WelcomeLoginEvent {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? manualSignin,
     TResult? Function()? checkUserExistance,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,7 +36,6 @@ mixin _$WelcomeLoginEvent {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? manualSignin,
     TResult Function()? checkUserExistance,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
@@ -47,7 +44,6 @@ mixin _$WelcomeLoginEvent {
     required TResult Function(_GoogleSignin value) googleSignin,
     required TResult Function(_AppleSignin value) appleSignin,
     required TResult Function(_FacebookSignin value) facebookSignin,
-    required TResult Function(_ManualSignin value) manualSignin,
     required TResult Function(_CheckUserExistance value) checkUserExistance,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,7 +51,6 @@ mixin _$WelcomeLoginEvent {
     TResult? Function(_GoogleSignin value)? googleSignin,
     TResult? Function(_AppleSignin value)? appleSignin,
     TResult? Function(_FacebookSignin value)? facebookSignin,
-    TResult? Function(_ManualSignin value)? manualSignin,
     TResult? Function(_CheckUserExistance value)? checkUserExistance,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,7 +58,6 @@ mixin _$WelcomeLoginEvent {
     TResult Function(_GoogleSignin value)? googleSignin,
     TResult Function(_AppleSignin value)? appleSignin,
     TResult Function(_FacebookSignin value)? facebookSignin,
-    TResult Function(_ManualSignin value)? manualSignin,
     TResult Function(_CheckUserExistance value)? checkUserExistance,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
@@ -137,7 +131,6 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() manualSignin,
     required TResult Function() checkUserExistance,
   }) {
     return googleSignin();
@@ -149,7 +142,6 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? manualSignin,
     TResult? Function()? checkUserExistance,
   }) {
     return googleSignin?.call();
@@ -161,7 +153,6 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? manualSignin,
     TResult Function()? checkUserExistance,
     required TResult orElse(),
   }) {
@@ -177,7 +168,6 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     required TResult Function(_GoogleSignin value) googleSignin,
     required TResult Function(_AppleSignin value) appleSignin,
     required TResult Function(_FacebookSignin value) facebookSignin,
-    required TResult Function(_ManualSignin value) manualSignin,
     required TResult Function(_CheckUserExistance value) checkUserExistance,
   }) {
     return googleSignin(this);
@@ -189,7 +179,6 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     TResult? Function(_GoogleSignin value)? googleSignin,
     TResult? Function(_AppleSignin value)? appleSignin,
     TResult? Function(_FacebookSignin value)? facebookSignin,
-    TResult? Function(_ManualSignin value)? manualSignin,
     TResult? Function(_CheckUserExistance value)? checkUserExistance,
   }) {
     return googleSignin?.call(this);
@@ -201,7 +190,6 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     TResult Function(_GoogleSignin value)? googleSignin,
     TResult Function(_AppleSignin value)? appleSignin,
     TResult Function(_FacebookSignin value)? facebookSignin,
-    TResult Function(_ManualSignin value)? manualSignin,
     TResult Function(_CheckUserExistance value)? checkUserExistance,
     required TResult orElse(),
   }) {
@@ -262,7 +250,6 @@ class _$AppleSigninImpl implements _AppleSignin {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() manualSignin,
     required TResult Function() checkUserExistance,
   }) {
     return appleSignin();
@@ -274,7 +261,6 @@ class _$AppleSigninImpl implements _AppleSignin {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? manualSignin,
     TResult? Function()? checkUserExistance,
   }) {
     return appleSignin?.call();
@@ -286,7 +272,6 @@ class _$AppleSigninImpl implements _AppleSignin {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? manualSignin,
     TResult Function()? checkUserExistance,
     required TResult orElse(),
   }) {
@@ -302,7 +287,6 @@ class _$AppleSigninImpl implements _AppleSignin {
     required TResult Function(_GoogleSignin value) googleSignin,
     required TResult Function(_AppleSignin value) appleSignin,
     required TResult Function(_FacebookSignin value) facebookSignin,
-    required TResult Function(_ManualSignin value) manualSignin,
     required TResult Function(_CheckUserExistance value) checkUserExistance,
   }) {
     return appleSignin(this);
@@ -314,7 +298,6 @@ class _$AppleSigninImpl implements _AppleSignin {
     TResult? Function(_GoogleSignin value)? googleSignin,
     TResult? Function(_AppleSignin value)? appleSignin,
     TResult? Function(_FacebookSignin value)? facebookSignin,
-    TResult? Function(_ManualSignin value)? manualSignin,
     TResult? Function(_CheckUserExistance value)? checkUserExistance,
   }) {
     return appleSignin?.call(this);
@@ -326,7 +309,6 @@ class _$AppleSigninImpl implements _AppleSignin {
     TResult Function(_GoogleSignin value)? googleSignin,
     TResult Function(_AppleSignin value)? appleSignin,
     TResult Function(_FacebookSignin value)? facebookSignin,
-    TResult Function(_ManualSignin value)? manualSignin,
     TResult Function(_CheckUserExistance value)? checkUserExistance,
     required TResult orElse(),
   }) {
@@ -387,7 +369,6 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() manualSignin,
     required TResult Function() checkUserExistance,
   }) {
     return facebookSignin();
@@ -399,7 +380,6 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? manualSignin,
     TResult? Function()? checkUserExistance,
   }) {
     return facebookSignin?.call();
@@ -411,7 +391,6 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? manualSignin,
     TResult Function()? checkUserExistance,
     required TResult orElse(),
   }) {
@@ -427,7 +406,6 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     required TResult Function(_GoogleSignin value) googleSignin,
     required TResult Function(_AppleSignin value) appleSignin,
     required TResult Function(_FacebookSignin value) facebookSignin,
-    required TResult Function(_ManualSignin value) manualSignin,
     required TResult Function(_CheckUserExistance value) checkUserExistance,
   }) {
     return facebookSignin(this);
@@ -439,7 +417,6 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     TResult? Function(_GoogleSignin value)? googleSignin,
     TResult? Function(_AppleSignin value)? appleSignin,
     TResult? Function(_FacebookSignin value)? facebookSignin,
-    TResult? Function(_ManualSignin value)? manualSignin,
     TResult? Function(_CheckUserExistance value)? checkUserExistance,
   }) {
     return facebookSignin?.call(this);
@@ -451,7 +428,6 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     TResult Function(_GoogleSignin value)? googleSignin,
     TResult Function(_AppleSignin value)? appleSignin,
     TResult Function(_FacebookSignin value)? facebookSignin,
-    TResult Function(_ManualSignin value)? manualSignin,
     TResult Function(_CheckUserExistance value)? checkUserExistance,
     required TResult orElse(),
   }) {
@@ -464,131 +440,6 @@ class _$FacebookSigninImpl implements _FacebookSignin {
 
 abstract class _FacebookSignin implements WelcomeLoginEvent {
   const factory _FacebookSignin() = _$FacebookSigninImpl;
-}
-
-/// @nodoc
-abstract class _$$ManualSigninImplCopyWith<$Res> {
-  factory _$$ManualSigninImplCopyWith(
-    _$ManualSigninImpl value,
-    $Res Function(_$ManualSigninImpl) then,
-  ) = __$$ManualSigninImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ManualSigninImplCopyWithImpl<$Res>
-    extends _$WelcomeLoginEventCopyWithImpl<$Res, _$ManualSigninImpl>
-    implements _$$ManualSigninImplCopyWith<$Res> {
-  __$$ManualSigninImplCopyWithImpl(
-    _$ManualSigninImpl _value,
-    $Res Function(_$ManualSigninImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WelcomeLoginEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$ManualSigninImpl implements _ManualSignin {
-  const _$ManualSigninImpl();
-
-  @override
-  String toString() {
-    return 'WelcomeLoginEvent.manualSignin()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ManualSigninImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() googleSignin,
-    required TResult Function() appleSignin,
-    required TResult Function() facebookSignin,
-    required TResult Function() manualSignin,
-    required TResult Function() checkUserExistance,
-  }) {
-    return manualSignin();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? googleSignin,
-    TResult? Function()? appleSignin,
-    TResult? Function()? facebookSignin,
-    TResult? Function()? manualSignin,
-    TResult? Function()? checkUserExistance,
-  }) {
-    return manualSignin?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? googleSignin,
-    TResult Function()? appleSignin,
-    TResult Function()? facebookSignin,
-    TResult Function()? manualSignin,
-    TResult Function()? checkUserExistance,
-    required TResult orElse(),
-  }) {
-    if (manualSignin != null) {
-      return manualSignin();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GoogleSignin value) googleSignin,
-    required TResult Function(_AppleSignin value) appleSignin,
-    required TResult Function(_FacebookSignin value) facebookSignin,
-    required TResult Function(_ManualSignin value) manualSignin,
-    required TResult Function(_CheckUserExistance value) checkUserExistance,
-  }) {
-    return manualSignin(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GoogleSignin value)? googleSignin,
-    TResult? Function(_AppleSignin value)? appleSignin,
-    TResult? Function(_FacebookSignin value)? facebookSignin,
-    TResult? Function(_ManualSignin value)? manualSignin,
-    TResult? Function(_CheckUserExistance value)? checkUserExistance,
-  }) {
-    return manualSignin?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GoogleSignin value)? googleSignin,
-    TResult Function(_AppleSignin value)? appleSignin,
-    TResult Function(_FacebookSignin value)? facebookSignin,
-    TResult Function(_ManualSignin value)? manualSignin,
-    TResult Function(_CheckUserExistance value)? checkUserExistance,
-    required TResult orElse(),
-  }) {
-    if (manualSignin != null) {
-      return manualSignin(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ManualSignin implements WelcomeLoginEvent {
-  const factory _ManualSignin() = _$ManualSigninImpl;
 }
 
 /// @nodoc
@@ -637,7 +488,6 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() manualSignin,
     required TResult Function() checkUserExistance,
   }) {
     return checkUserExistance();
@@ -649,7 +499,6 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? manualSignin,
     TResult? Function()? checkUserExistance,
   }) {
     return checkUserExistance?.call();
@@ -661,7 +510,6 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? manualSignin,
     TResult Function()? checkUserExistance,
     required TResult orElse(),
   }) {
@@ -677,7 +525,6 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     required TResult Function(_GoogleSignin value) googleSignin,
     required TResult Function(_AppleSignin value) appleSignin,
     required TResult Function(_FacebookSignin value) facebookSignin,
-    required TResult Function(_ManualSignin value) manualSignin,
     required TResult Function(_CheckUserExistance value) checkUserExistance,
   }) {
     return checkUserExistance(this);
@@ -689,7 +536,6 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     TResult? Function(_GoogleSignin value)? googleSignin,
     TResult? Function(_AppleSignin value)? appleSignin,
     TResult? Function(_FacebookSignin value)? facebookSignin,
-    TResult? Function(_ManualSignin value)? manualSignin,
     TResult? Function(_CheckUserExistance value)? checkUserExistance,
   }) {
     return checkUserExistance?.call(this);
@@ -701,7 +547,6 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     TResult Function(_GoogleSignin value)? googleSignin,
     TResult Function(_AppleSignin value)? appleSignin,
     TResult Function(_FacebookSignin value)? facebookSignin,
-    TResult Function(_ManualSignin value)? manualSignin,
     TResult Function(_CheckUserExistance value)? checkUserExistance,
     required TResult orElse(),
   }) {
