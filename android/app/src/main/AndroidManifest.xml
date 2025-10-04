@@ -87,6 +87,15 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-0120000896649737~9685432335"/>
+
+        <meta-data 
+            android:name="com.google.android.gms.version" 
+            android:value="@integer/google_play_services_version" />
+            
+        <!-- Google Sign-In Configuration -->
+        <meta-data 
+            android:name="com.google.android.web.client_id" 
+            android:value="572946835267-hgj94si1hb2pjugekd5bafp6bj0vqqs9.apps.googleusercontent.com" />
         
         <!-- <service
             android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmService"

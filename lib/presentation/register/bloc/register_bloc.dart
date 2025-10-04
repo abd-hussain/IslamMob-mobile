@@ -102,6 +102,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       profilePic: event.profilePic,
       country: event.country,
       countryFlag: event.countryFlag,
+      os: Platform.isIOS ? "ios" : "android",
     );
 
     if (value.containsKey(true)) {

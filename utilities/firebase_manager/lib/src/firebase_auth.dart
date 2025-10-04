@@ -3,14 +3,12 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:path/path.dart' as path;
 
 /// A repository class that handles all Firebase Auth-related operations.
 class FirebaseAuthRepository {
   static final FirebaseAuth _authInstance = FirebaseAuth.instance;
-  static final _googleSignIn = GoogleSignIn.instance;
 
   /// Registers a new user using Firebase Auth.
   /// Returns a map: `{true: UserCredential}` on success, `{false: error message}` on failure.
@@ -23,6 +21,7 @@ class FirebaseAuthRepository {
     required File? profilePic,
     required String? country,
     required String countryFlag,
+    required String os,
   }) async {
     if (!await _isConnected()) {
       return {false: 'No internet connection.'};
@@ -63,6 +62,8 @@ class FirebaseAuthRepository {
             "country": country,
             "profilePic": filePathInStorage,
             "countryFlag": countryFlag,
+            "os": os,
+
             "syncedAt": DateTime.now(),
           },
         ),
@@ -83,25 +84,6 @@ class FirebaseAuthRepository {
     } catch (e) {
       return {false: 'Unexpected error: $e'};
     }
-  }
-
-  TaskEither<AuthFailure, UserModel> googleSignIn() {
-    return _authenticateWithGoogle()
-        .flatMap(_getGoogleAuth)
-        .flatMap(_createFirebaseCredential)
-        .flatMap(_signInWithFirebase)
-        .map(_toUserModel)
-        .chainFirst((user) {
-          return TaskEither.tryCatch(
-            () async {
-              // await _preferences.setValue('uid', user.uid);
-              // await _preferences.setValue('email', user.email);
-              // await _preferences.setValue('token', user.token);
-            },
-            (error, _) =>
-                AuthFailure(message: 'Error saving user data: $error'),
-          );
-        });
   }
 
   /// Logs in a user using Firebase Auth.
@@ -184,7 +166,7 @@ class FirebaseAuthRepository {
     if (!await _isConnected()) return false;
 
     try {
-      await Future.wait([_authInstance.signOut(), _googleSignIn.signOut()]);
+      await Future.wait([_authInstance.signOut()]);
 
       return true;
     } catch (_) {
@@ -247,56 +229,14 @@ class FirebaseAuthRepository {
     }
   }
 
-  /// Initiates the Google sign-in process.
-  /// Returns a [TaskEither] containing the [GoogleSignInAccount] if successful.
-  TaskEither<AuthFailure, GoogleSignInAccount> _authenticateWithGoogle() {
-    return TaskEither.tryCatch(
-      _googleSignIn.authenticate,
-      (error, _) => AuthFailure(message: 'Google sign-in failed: $error'),
-    ).flatMap(TaskEither.right);
-  }
-
-  /// Retrieves Google authentication details from the signed-in account.
-  /// Returns a [TaskEither] containing [GoogleSignInAuthentication] if successful.
-  TaskEither<AuthFailure, GoogleSignInAuthentication> _getGoogleAuth(
-    GoogleSignInAccount account,
-  ) {
-    return TaskEither.tryCatch(
-      () async => account.authentication,
-      (error, _) =>
-          AuthFailure(message: 'Google authentication failed: $error'),
-    );
-  }
-
-  /// Creates Firebase credentials using Google authentication details.
-  /// Returns a [TaskEither] containing [AuthCredential] if successful.
-  TaskEither<AuthFailure, AuthCredential> _createFirebaseCredential(
-    GoogleSignInAuthentication auth,
-  ) {
-    return TaskEither.tryCatch(
-      () async => GoogleAuthProvider.credential(idToken: auth.idToken),
-      (error, _) => AuthFailure(message: 'Credential creation failed: $error'),
-    );
-  }
-
   /// Signs in to Firebase using the provided credentials.
   /// Returns a [TaskEither] containing [UserCredential] if successful.
-  TaskEither<AuthFailure, UserCredential> _signInWithFirebase(
+  TaskEither<AuthFailure, UserCredential> signInWithFirebase(
     AuthCredential credential,
   ) {
     return TaskEither.tryCatch(
       () => _authInstance.signInWithCredential(credential),
       (error, _) => AuthFailure.fromFirebase(error as FirebaseAuthException),
-    );
-  }
-
-  /// Converts Firebase user credentials to a [UserModel].
-  /// Returns a [UserModel] containing the user's information.
-  UserModel _toUserModel(UserCredential credential) {
-    return UserModel(
-      uid: credential.user?.uid ?? "",
-      email: credential.user?.email ?? "",
-      token: credential.credential?.accessToken ?? "",
     );
   }
 

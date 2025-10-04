@@ -17,3 +17,4 @@ export 'src/firebase_messages.dart';
 export 'src/firebase_performance.dart';
 export 'src/firebase_remote_config.dart';
 export 'src/firebase_storage.dart';
+export 'src/google_signin.dart';

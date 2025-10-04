@@ -116,13 +116,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         RoutesConstants.editProfileScreen,
                       ),
                     ),
-                    ProfileOptions(
-                      icon: Icons.password,
-                      name: localize.changePassword,
-                      onTap: () async => navigator.pushNamed(
-                        RoutesConstants.changePasswordScreen,
+
+                    if (DataBaseManagerBase.getFromDatabase(
+                          key: DatabaseUserCredentials.isSocialLogin,
+                          defaultValue: true,
+                        ) ==
+                        false)
+                      ProfileOptions(
+                        icon: Icons.password,
+                        name: localize.changePassword,
+                        onTap: () async => navigator.pushNamed(
+                          RoutesConstants.changePasswordScreen,
+                        ),
                       ),
-                    ),
                     ProfileOptions(
                       icon: Icons.logout_outlined,
                       name: localize.logout,

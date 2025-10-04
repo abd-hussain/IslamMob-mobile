@@ -39,6 +39,20 @@
 	<string>All files have been downloaded</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-0120000896649737~2532070312</string>
+	<key>GIDClientID</key>
+	<string>572946835267-gi3ajhbc5vt47de06bni9uug3j3s9ggo.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <!-- Paste the value of REVERSED_CLIENT_ID from GoogleService-Info.plist -->
+			<string>com.googleusercontent.apps.572946835267-gi3ajhbc5vt47de06bni9uug3j3s9ggo</string>
+        </array>
+      </dict>
+    </array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -73,6 +87,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
   		<string>sms</string>
+		<string>com.googleusercontent.apps.572946835267-gi3ajhbc5vt47de06bni9uug3j3s9ggo</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

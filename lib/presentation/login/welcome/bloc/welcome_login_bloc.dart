@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:database_manager/database_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/check_user_existance_use_case.dart';
 import 'package:islam_app/domain/usecase/google_signin_usecase.dart';
@@ -23,8 +24,18 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
       state.copyWith(proccessState: const WelcomeLoginProccessState.loading()),
     );
     final result = await GoogleSigninUseCase().call().run();
-    result.fold(
+    await result.fold(
       (error) {
+        // If user cancelled Google sign-in, just reset to initial state without showing error
+        if (error.message == 'CANCELLED') {
+          emit(
+            state.copyWith(
+              proccessState: const WelcomeLoginProccessState.idle(),
+            ),
+          );
+          return;
+        }
+        // Log and show only actual errors (not cancellations)
         LoggerManagerBase.logErrorMessage(
           error: error,
           message: 'Google Signin Error: ${error.message}',
@@ -35,7 +46,16 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
           ),
         );
       },
-      (data) {
+      (data) async {
+        await DataBaseManagerBase.saveMultipleInDatabase(
+          data: {
+            DatabaseUserCredentials.userEmail: data.email,
+            DatabaseUserCredentials.accessToken: data.token,
+            DatabaseUserCredentials.userUID: data.uid,
+            DatabaseUserCredentials.isUserLoggedIn: true,
+            DatabaseUserCredentials.isSocialLogin: true,
+          },
+        );
         add(const WelcomeLoginEvent.checkUserExistance());
       },
     );
@@ -59,12 +79,12 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
   }
 
   FutureOr<void> _onCheckUserExistance(
-    event,
+    _CheckUserExistance event,
     Emitter<WelcomeLoginState> emit,
   ) async {
     final result = await CheckUserExistanceUseCase().call().run();
 
-    result.fold(
+    await result.fold(
       (error) {
         emit(
           state.copyWith(
@@ -72,12 +92,44 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
           ),
         );
       },
-      (data) {
-        emit(
-          state.copyWith(
-            proccessState: WelcomeLoginProccessState.success(data),
-          ),
-        );
+      (data) async {
+        if (data) {
+          emit(
+            state.copyWith(
+              proccessState: WelcomeLoginProccessState.success(data),
+            ),
+          );
+        } else {
+          // Register user in firebase firestore since they don't exist
+
+          final accessToken =
+              DataBaseManagerBase.getFromDatabase(
+                    key: DatabaseUserCredentials.accessToken,
+                    defaultValue: "",
+                  )
+                  as String;
+
+          final registrationSuccess = await GoogleSigninUseCase()
+              .registerSocialUserInFirestore(
+                signInMethod: accessToken.isNotEmpty ? "google" : "email",
+              );
+
+          if (registrationSuccess) {
+            emit(
+              state.copyWith(
+                proccessState: const WelcomeLoginProccessState.success(true),
+              ),
+            );
+          } else {
+            emit(
+              state.copyWith(
+                proccessState: const WelcomeLoginProccessState.error(
+                  "Failed to register user in Firestore",
+                ),
+              ),
+            );
+          }
+        }
       },
     );
   }

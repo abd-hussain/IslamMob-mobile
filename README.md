@@ -5,6 +5,7 @@ All Muslim Application
 ## Languages
 
 The languages spoken by Muslims around the world vary significantly depending on the region and population. Here are some of the major languages used by Muslim communities:
+
 1. Arabic
 	•	Spoken in: Middle East and North Africa (e.g., Saudi Arabia, Egypt, Iraq, Syria, Morocco, etc.).
 	•	Population: Over 400 million native speakers
@@ -56,6 +57,7 @@ The languages used by Muslims are influenced by regional demographics, and while
 
 
 ## //TODO features:
+
 - [ ] LogIn/Signup with Google/Apple/Twitter/Facebook
 - [ ] Support new languages
 - [ ] Qibla Finder
@@ -82,12 +84,16 @@ The languages used by Muslims are influenced by regional demographics, and while
 - [ ] place for articles
 - [ ] after finish tasbeeh scrollup 
 - [ ] adhan sounds is too big make some of them downloadable
-- //TODO: [ ] Download PDF should happen in background thread will the user navigating inside
-//TODO: show widget out side the app for next prayer time
-//TODO: check iPad
+- [ ] Download PDF should happen in background thread will the user navigating inside
+- [ ] show widget out side the app for next prayer time
+- [ ] check iPad
+- [ ] Social Media should only take images and Videos
+- [ ] Loyality Program
+- [ ] redesign the Home screen
+
 ## TODO Technical:
+
 - [ ] add golden widget test
 - [ ] check and change location on each lunch for the application
 - [ ] add Widget test
-- [ ] handle fvmrc
 - [ ] handle dependency_validator 

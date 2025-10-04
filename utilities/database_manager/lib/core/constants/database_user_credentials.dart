@@ -4,4 +4,6 @@ class DatabaseUserCredentials {
   static const String accessToken = "accessToken";
   static const String isUserLoggedIn = "isUserLoggedIn";
   static const String isUserChooceShowCradintial = "isUserChooceShowCradintial";
+  static const String userUID = "userUID";
+  static const String isSocialLogin = "isSocialLogin";
 }
