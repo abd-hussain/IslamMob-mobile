@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:database_manager/database_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:islam_app/domain/usecase/apple_signin_usecase.dart';
 import 'package:islam_app/domain/usecase/check_user_existance_use_case.dart';
 import 'package:islam_app/domain/usecase/google_signin_usecase.dart';
 import 'package:logger_manager/logger_manager.dart';
@@ -56,7 +57,7 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
             DatabaseUserCredentials.isSocialLogin: true,
           },
         );
-        add(const WelcomeLoginEvent.checkUserExistance());
+        add(const WelcomeLoginEvent.checkUserExistance(signInMethod: "google"));
       },
     );
   }
@@ -65,7 +66,43 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
     emit(
       state.copyWith(proccessState: const WelcomeLoginProccessState.loading()),
     );
-    //TODO: Implement the Apple Signin Use Case
+    final result = await AppleSigninUseCase().call().run();
+    await result.fold(
+      (error) {
+        // If user cancelled Google sign-in, just reset to initial state without showing error
+        if (error.message == 'CANCELLED') {
+          emit(
+            state.copyWith(
+              proccessState: const WelcomeLoginProccessState.idle(),
+            ),
+          );
+          return;
+        }
+
+        // Log and show only actual errors (not cancellations)
+        LoggerManagerBase.logErrorMessage(
+          error: error,
+          message: 'Apple Signin Error: ${error.message}',
+        );
+        emit(
+          state.copyWith(
+            proccessState: WelcomeLoginProccessState.error(error.message),
+          ),
+        );
+      },
+      (data) async {
+        await DataBaseManagerBase.saveMultipleInDatabase(
+          data: {
+            DatabaseUserCredentials.userEmail: data.email,
+            DatabaseUserCredentials.accessToken: data.token,
+            DatabaseUserCredentials.userUID: data.uid,
+            DatabaseUserCredentials.isUserLoggedIn: true,
+            DatabaseUserCredentials.isSocialLogin: true,
+          },
+        );
+        add(const WelcomeLoginEvent.checkUserExistance(signInMethod: "apple"));
+      },
+    );
   }
 
   FutureOr<void> _onFacebookSignin(
@@ -100,19 +137,15 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
             ),
           );
         } else {
-          // Register user in firebase firestore since they don't exist
-
-          final accessToken =
-              DataBaseManagerBase.getFromDatabase(
-                    key: DatabaseUserCredentials.accessToken,
-                    defaultValue: "",
-                  )
-                  as String;
-
-          final registrationSuccess = await GoogleSigninUseCase()
-              .registerSocialUserInFirestore(
-                signInMethod: accessToken.isNotEmpty ? "google" : "email",
-              );
+          // Determine which use case to use based on the sign-in method
+          final bool isGoogleSignIn = event.signInMethod == "google";
+          final registrationSuccess = isGoogleSignIn
+              ? await GoogleSigninUseCase().registerSocialUserInFirestore(
+                  signInMethod: "google",
+                )
+              : await AppleSigninUseCase().registerSocialUserInFirestore(
+                  signInMethod: "apple",
+                );
 
           if (registrationSuccess) {
             emit(

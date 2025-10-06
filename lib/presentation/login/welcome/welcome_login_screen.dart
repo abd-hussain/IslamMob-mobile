@@ -163,15 +163,16 @@ class WelcomeLoginScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          // SocialButton(
-          //   iconName: "assets/images/Apple_logo_white.svg",
-          //   buttonLabel: localizations.continue_apple,
-          //   buttonColor: Colors.black,
-          //   buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
-          //     const WelcomeLoginEvent.appleSignin(),
-          //   ),
-          // ),
-          // const SizedBox(height: 16),
+          SocialButton(
+            iconName: "assets/images/Apple_logo_white.svg",
+            buttonLabel: localizations.continue_apple,
+            buttonColor: Colors.black,
+            buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
+              const WelcomeLoginEvent.appleSignin(),
+            ),
+          ),
+          const SizedBox(height: 16),
+          // ],
           CustomButton(
             padding: EdgeInsets.zero,
             title: localizations.manual_login,

@@ -8,6 +8,7 @@ export 'exceptions/auth_exception.dart';
 export 'model/document_snapshot.dart';
 export 'model/firestore_options.dart';
 export 'model/user_model.dart';
+export 'src/apple_signin.dart';
 export 'src/firebase_analytics.dart';
 export 'src/firebase_auth.dart';
 export 'src/firebase_crashlytics.dart';

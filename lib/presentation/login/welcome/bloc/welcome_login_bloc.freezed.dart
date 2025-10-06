@@ -22,21 +22,21 @@ mixin _$WelcomeLoginEvent {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() checkUserExistance,
+    required TResult Function(String signInMethod) checkUserExistance,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? checkUserExistance,
+    TResult? Function(String signInMethod)? checkUserExistance,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? checkUserExistance,
+    TResult Function(String signInMethod)? checkUserExistance,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -131,7 +131,7 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() checkUserExistance,
+    required TResult Function(String signInMethod) checkUserExistance,
   }) {
     return googleSignin();
   }
@@ -142,7 +142,7 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? checkUserExistance,
+    TResult? Function(String signInMethod)? checkUserExistance,
   }) {
     return googleSignin?.call();
   }
@@ -153,7 +153,7 @@ class _$GoogleSigninImpl implements _GoogleSignin {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? checkUserExistance,
+    TResult Function(String signInMethod)? checkUserExistance,
     required TResult orElse(),
   }) {
     if (googleSignin != null) {
@@ -250,7 +250,7 @@ class _$AppleSigninImpl implements _AppleSignin {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() checkUserExistance,
+    required TResult Function(String signInMethod) checkUserExistance,
   }) {
     return appleSignin();
   }
@@ -261,7 +261,7 @@ class _$AppleSigninImpl implements _AppleSignin {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? checkUserExistance,
+    TResult? Function(String signInMethod)? checkUserExistance,
   }) {
     return appleSignin?.call();
   }
@@ -272,7 +272,7 @@ class _$AppleSigninImpl implements _AppleSignin {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? checkUserExistance,
+    TResult Function(String signInMethod)? checkUserExistance,
     required TResult orElse(),
   }) {
     if (appleSignin != null) {
@@ -369,7 +369,7 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() checkUserExistance,
+    required TResult Function(String signInMethod) checkUserExistance,
   }) {
     return facebookSignin();
   }
@@ -380,7 +380,7 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? checkUserExistance,
+    TResult? Function(String signInMethod)? checkUserExistance,
   }) {
     return facebookSignin?.call();
   }
@@ -391,7 +391,7 @@ class _$FacebookSigninImpl implements _FacebookSignin {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? checkUserExistance,
+    TResult Function(String signInMethod)? checkUserExistance,
     required TResult orElse(),
   }) {
     if (facebookSignin != null) {
@@ -448,6 +448,8 @@ abstract class _$$CheckUserExistanceImplCopyWith<$Res> {
     _$CheckUserExistanceImpl value,
     $Res Function(_$CheckUserExistanceImpl) then,
   ) = __$$CheckUserExistanceImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String signInMethod});
 }
 
 /// @nodoc
@@ -461,26 +463,55 @@ class __$$CheckUserExistanceImplCopyWithImpl<$Res>
 
   /// Create a copy of WelcomeLoginEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? signInMethod = null}) {
+    return _then(
+      _$CheckUserExistanceImpl(
+        signInMethod: null == signInMethod
+            ? _value.signInMethod
+            : signInMethod // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
+  }
 }
 
 /// @nodoc
 
 class _$CheckUserExistanceImpl implements _CheckUserExistance {
-  const _$CheckUserExistanceImpl();
+  const _$CheckUserExistanceImpl({required this.signInMethod});
+
+  @override
+  final String signInMethod;
 
   @override
   String toString() {
-    return 'WelcomeLoginEvent.checkUserExistance()';
+    return 'WelcomeLoginEvent.checkUserExistance(signInMethod: $signInMethod)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CheckUserExistanceImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$CheckUserExistanceImpl &&
+            (identical(other.signInMethod, signInMethod) ||
+                other.signInMethod == signInMethod));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, signInMethod);
+
+  /// Create a copy of WelcomeLoginEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckUserExistanceImplCopyWith<_$CheckUserExistanceImpl> get copyWith =>
+      __$$CheckUserExistanceImplCopyWithImpl<_$CheckUserExistanceImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -488,9 +519,9 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     required TResult Function() googleSignin,
     required TResult Function() appleSignin,
     required TResult Function() facebookSignin,
-    required TResult Function() checkUserExistance,
+    required TResult Function(String signInMethod) checkUserExistance,
   }) {
-    return checkUserExistance();
+    return checkUserExistance(signInMethod);
   }
 
   @override
@@ -499,9 +530,9 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     TResult? Function()? googleSignin,
     TResult? Function()? appleSignin,
     TResult? Function()? facebookSignin,
-    TResult? Function()? checkUserExistance,
+    TResult? Function(String signInMethod)? checkUserExistance,
   }) {
-    return checkUserExistance?.call();
+    return checkUserExistance?.call(signInMethod);
   }
 
   @override
@@ -510,11 +541,11 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
     TResult Function()? googleSignin,
     TResult Function()? appleSignin,
     TResult Function()? facebookSignin,
-    TResult Function()? checkUserExistance,
+    TResult Function(String signInMethod)? checkUserExistance,
     required TResult orElse(),
   }) {
     if (checkUserExistance != null) {
-      return checkUserExistance();
+      return checkUserExistance(signInMethod);
     }
     return orElse();
   }
@@ -558,7 +589,16 @@ class _$CheckUserExistanceImpl implements _CheckUserExistance {
 }
 
 abstract class _CheckUserExistance implements WelcomeLoginEvent {
-  const factory _CheckUserExistance() = _$CheckUserExistanceImpl;
+  const factory _CheckUserExistance({required final String signInMethod}) =
+      _$CheckUserExistanceImpl;
+
+  String get signInMethod;
+
+  /// Create a copy of WelcomeLoginEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CheckUserExistanceImplCopyWith<_$CheckUserExistanceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

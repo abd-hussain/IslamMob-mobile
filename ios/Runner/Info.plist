@@ -50,6 +50,7 @@
         <array>
           <!-- Paste the value of REVERSED_CLIENT_ID from GoogleService-Info.plist -->
 			<string>com.googleusercontent.apps.572946835267-gi3ajhbc5vt47de06bni9uug3j3s9ggo</string>
+			<string>com.islammob.app</string>
         </array>
       </dict>
     </array>
