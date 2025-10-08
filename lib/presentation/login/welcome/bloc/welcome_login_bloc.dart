@@ -16,7 +16,6 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
   WelcomeLoginBloc() : super(const WelcomeLoginState()) {
     on<_GoogleSignin>(_onGoogleSignin);
     on<_AppleSignin>(_onAppleSignin);
-    on<_FacebookSignin>(_onFacebookSignin);
     on<_CheckUserExistance>(_onCheckUserExistance);
   }
 
@@ -103,16 +102,6 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
         add(const WelcomeLoginEvent.checkUserExistance(signInMethod: "apple"));
       },
     );
-  }
-
-  FutureOr<void> _onFacebookSignin(
-    event,
-    Emitter<WelcomeLoginState> emit,
-  ) async {
-    emit(
-      state.copyWith(proccessState: const WelcomeLoginProccessState.loading()),
-    );
-    //TODO: Implement the Facebook Signin Use Case
   }
 
   FutureOr<void> _onCheckUserExistance(

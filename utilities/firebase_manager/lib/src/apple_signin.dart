@@ -57,9 +57,7 @@ class AppleSigninRepository {
         return credential;
       },
       (error, _) {
-        print('Apple Sign-In Error Details: $error');
-        print('Error Type: ${error.runtimeType}');
-
+        // Handle user cancellation
         if (error is AppleSignInCancelledException) {
           return AuthFailure(message: 'CANCELLED');
         }
@@ -69,7 +67,54 @@ class AppleSigninRepository {
           return AuthFailure(message: 'CANCELLED');
         }
 
-        return AuthFailure(message: 'Apple sign-in failed: $error');
+        // Handle specific Apple Sign In errors
+        final errorString = error.toString();
+
+        // Error 1000: Unknown/Invalid request
+        if (errorString.contains('error 1000')) {
+          return AuthFailure(
+            message:
+                'Apple Sign-In is not properly configured. Please enable Sign In with Apple in your Apple Developer account and ensure your provisioning profile includes this capability.',
+          );
+        }
+
+        // Error 1001: Canceled by user
+        if (errorString.contains('error 1001')) {
+          return AuthFailure(message: 'CANCELLED');
+        }
+
+        // Error 1002: Invalid response
+        if (errorString.contains('error 1002')) {
+          return AuthFailure(
+            message: 'Invalid response from Apple. Please try again.',
+          );
+        }
+
+        // Error 1003: Not handled
+        if (errorString.contains('error 1003')) {
+          return AuthFailure(
+            message:
+                'Apple Sign-In not available. Please update iOS to the latest version.',
+          );
+        }
+
+        // Error 1004: Failed
+        if (errorString.contains('error 1004')) {
+          return AuthFailure(
+            message:
+                'Apple Sign-In failed. Please check your internet connection and try again.',
+          );
+        }
+
+        // Generic error with helpful message
+        return AuthFailure(
+          message:
+              'Apple Sign-In failed. This might be due to:\n'
+              '• Missing Sign In with Apple capability in provisioning profile\n'
+              '• Apple Developer account configuration issue\n'
+              '• Network connectivity problem\n\n'
+              'Please try again or use another sign-in method.',
+        );
       },
     );
   }
