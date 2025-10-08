@@ -291,22 +291,6 @@ jobs:
               -workspace ios/Runner.xcworkspace \
               -scheme Runner \
               -destination 'generic/platform=iOS'
-
-
-        - name: 🔐 Refresh App Store provisioning profile (with new entitlements)
-          env:
-            MATCH_PASSWORD: ${{ secrets.IOS_MATCH_PASSWORD }}
-            MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
-            MATCH_READONLY: "false"   # allow match to write/update
-          run: |
-            pushd ios/fastlane
-            bundle update fastlane
-            bundle exec fastlane match appstore \
-              --app_identifier com.islammob.app \
-              --team_id DX9H87DTX5 \
-              --readonly false \
-              --force
-            popd
           
         - name: 🛠️ Build and Deploy
           id: build-ios
