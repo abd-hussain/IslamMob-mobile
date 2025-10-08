@@ -24,11 +24,12 @@ platform :ios do
   lane :deploy do
     set_full_version()
     setup_ci if is_ci
+    ENV["MATCH_READONLY"] = "false"            # 👈 add
     cocoapods(clean_install: is_ci)
 
     match(
       type: "appstore",
-      readonly: is_ci, # 👈 allow profile regeneration in CI
+      readonly: false, # 👈 allow profile regeneration in CI
       force: true,          # 👈 recreate profile if needed
       app_identifier: ["com.islammob.app"],
       team_id: "DX9H87DTX5"
@@ -65,11 +66,15 @@ platform :ios do
   lane :build_archive do
     set_full_version()
     setup_ci if is_ci
+    ENV["MATCH_READONLY"] = "false"            # 👈 add
     cocoapods(clean_install: is_ci)
     
     match(
       type: "appstore",
-      readonly: is_ci,
+      readonly: false,                         # 👈 change from is_ci to false
+      force: true,
+      app_identifier: ["com.islammob.app"],
+      team_id: "DX9H87DTX5"
     )
     
     ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
