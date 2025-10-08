@@ -28,7 +28,10 @@ platform :ios do
 
     match(
       type: "appstore",
-      readonly: is_ci,
+      readonly: is_ci, # 👈 allow profile regeneration in CI
+      force: true,          # 👈 recreate profile if needed
+      app_identifier: ["com.islammob.app"],
+      team_id: "DX9H87DTX5"
     )
 
     # Make xcodebuild settings lookup more tolerant
