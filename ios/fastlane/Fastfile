@@ -11,6 +11,19 @@ platform :ios do
     increment_build_number(build_number: version['version_code'])
   end
 
+  # Shared xcargs to force correct signing in CI
+  def signing_xcargs
+    %Q[
+      -allowProvisioningUpdates
+      CODE_SIGN_STYLE=Manual
+      DEVELOPMENT_TEAM=DX9H87DTX5
+      CODE_SIGN_IDENTITY="Apple Distribution"
+      PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"
+      CODE_SIGNING_ALLOWED=YES
+      CODE_SIGNING_REQUIRED=YES
+    ].gsub(/\s+/, ' ').strip
+  end
+
   desc "Build and upload a new beta to TestFlight"
   lane :deploy do
     set_full_version()
@@ -23,11 +36,12 @@ platform :ios do
       readonly: is_ci,
       app_identifier: ["com.islammob.app"],
       team_id: "DX9H87DTX5"
+      # If you add new capabilities (e.g. Push/Sign in with Apple) and need a fresh profile, run once with: force: true
     )
 
     # Make xcodebuild settings lookup more tolerant (sometimes slow in CI)
     ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
-    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"]  = "6"
 
     build_app(
       workspace: "Runner.xcworkspace",
@@ -36,8 +50,7 @@ platform :ios do
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
       export_method: "app-store",
-      # all flags in ONE line:
-      xcargs: %Q[-allowProvisioningUpdates CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=DX9H87DTX5 PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"],
+      xcargs: signing_xcargs,
       export_options: {
         provisioningProfiles: {
           "com.islammob.app" => "match AppStore com.islammob.app"
@@ -66,7 +79,7 @@ platform :ios do
     )
 
     ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
-    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"]  = "6"
 
     build_app(
       workspace: "Runner.xcworkspace",
@@ -75,8 +88,7 @@ platform :ios do
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
       export_method: "app-store",
-      # all flags in ONE line:
-      xcargs: %Q[-allowProvisioningUpdates CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=DX9H87DTX5 PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"],
+      xcargs: signing_xcargs,
       export_options: {
         provisioningProfiles: {
           "com.islammob.app" => "match AppStore com.islammob.app"
