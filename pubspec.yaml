@@ -35,8 +35,8 @@ dependencies:
   location_manager:
     path: utilities/location_manager
 
-  firebase_manager:
-    path: utilities/firebase_manager
+  # firebase_manager:
+  #   path: utilities/firebase_manager
 
   # api_client: // commented out because it's not used in the app and piplines filed on android
   #   path: utilities/api_client //TODO: need to be checked
