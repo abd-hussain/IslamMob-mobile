@@ -36,16 +36,8 @@ platform :ios do
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
       export_method: "app-store",
-
-      # 👉 Force manual signing and the exact Match profile during ARCHIVE
-      # (Keep these in a SINGLE xcargs so nothing overwrites them)
-      xcargs: %(
-        CODE_SIGN_STYLE=Manual
-        DEVELOPMENT_TEAM=DX9H87DTX5
-        PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"
-      ),
-
-      # 👉 Be explicit during EXPORT as well
+      # all flags in ONE line:
+      xcargs: %Q[-allowProvisioningUpdates CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=DX9H87DTX5 PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"],
       export_options: {
         provisioningProfiles: {
           "com.islammob.app" => "match AppStore com.islammob.app"
@@ -83,14 +75,8 @@ platform :ios do
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
       export_method: "app-store",
-
-      # 👉 Same signing enforcement for a deterministic archive
-      xcargs: %(
-        CODE_SIGN_STYLE=Manual
-        DEVELOPMENT_TEAM=DX9H87DTX5
-        PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"
-      ),
-
+      # all flags in ONE line:
+      xcargs: %Q[-allowProvisioningUpdates CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=DX9H87DTX5 PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"],
       export_options: {
         provisioningProfiles: {
           "com.islammob.app" => "match AppStore com.islammob.app"
