@@ -1,49 +1,51 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
+# Fastlane configuration
+# Docs: https://docs.fastlane.tools
 
 default_platform(:ios)
 
 platform :ios do
-  desc "Set Info.plist Version and Build Number"
+  desc "Set Info.plist Version and Build Number from pubspec via flutter_version"
   lane :set_full_version do
-    version = flutter_version()
+    version = flutter_version() # from fastlane-plugin-flutter_version
     increment_version_number(version_number: version['version_name'])
     increment_build_number(build_number: version['version_code'])
   end
 
-  desc "Push a new beta build to TestFlight"
+  desc "Build and upload a new beta to TestFlight"
   lane :deploy do
     set_full_version()
     setup_ci if is_ci
     cocoapods(clean_install: is_ci)
 
+    # Install certs/profiles via match (readonly on CI)
     match(
       type: "appstore",
       readonly: is_ci,
+      app_identifier: ["com.islammob.app"],
+      team_id: "DX9H87DTX5"
     )
 
-    # Make xcodebuild settings lookup more tolerant
+    # Make xcodebuild settings lookup more tolerant (sometimes slow in CI)
     ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
     ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
 
     build_app(
       workspace: "Runner.xcworkspace",
       scheme: "Runner",
+      destination: "generic/platform=iOS",
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
       export_method: "app-store",
-      # Let Xcode fetch profiles if needed and don’t hang on auth prompts
-      xcargs: "-allowProvisioningUpdates",
-      # Be explicit: map bundle id -> match profile name
+
+      # 👉 Force manual signing and the exact Match profile during ARCHIVE
+      # (Keep these in a SINGLE xcargs so nothing overwrites them)
+      xcargs: %(
+        CODE_SIGN_STYLE=Manual
+        DEVELOPMENT_TEAM=DX9H87DTX5
+        PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"
+      ),
+
+      # 👉 Be explicit during EXPORT as well
       export_options: {
         provisioningProfiles: {
           "com.islammob.app" => "match AppStore com.islammob.app"
@@ -53,42 +55,49 @@ platform :ios do
 
     upload_to_testflight(
       api_key_path: "./app_store_connect.json",
-      ipa: '../build/ios/Runner/Runner.ipa',
-      skip_waiting_for_build_processing: true,
+      ipa: "../build/ios/Runner/Runner.ipa",
+      skip_waiting_for_build_processing: true
     )
   end
 
-  desc "Build iOS archive only (no deployment)"
+  desc "Build iOS archive only (no upload)"
   lane :build_archive do
     set_full_version()
     setup_ci if is_ci
     cocoapods(clean_install: is_ci)
-    
+
     match(
       type: "appstore",
       readonly: is_ci,
-      force: true,
       app_identifier: ["com.islammob.app"],
       team_id: "DX9H87DTX5"
     )
-    
+
     ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
     ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
 
     build_app(
       workspace: "Runner.xcworkspace",
       scheme: "Runner",
+      destination: "generic/platform=iOS",
       archive_path: "../build/ios/Runner.xcarchive",
       output_directory: "../build/ios/Runner",
       export_method: "app-store",
-      xcargs: "-allowProvisioningUpdates",
+
+      # 👉 Same signing enforcement for a deterministic archive
+      xcargs: %(
+        CODE_SIGN_STYLE=Manual
+        DEVELOPMENT_TEAM=DX9H87DTX5
+        PROVISIONING_PROFILE_SPECIFIER="match AppStore com.islammob.app"
+      ),
+
       export_options: {
         provisioningProfiles: {
           "com.islammob.app" => "match AppStore com.islammob.app"
         }
       }
     )
-    
+
     puts "✅ iOS archive built successfully at ../build/ios/Runner/Runner.ipa"
   end
 end

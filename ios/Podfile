@@ -47,14 +47,26 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
+    # Flutter settings
     flutter_additional_ios_build_settings(target)
+
+    # Your settings
     target.build_configurations.each do |config|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
       config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
         '$(inherited)',
-         ## dart: PermissionGroup.notification
-         'PERMISSION_NOTIFICATIONS=1',
+        'PERMISSION_NOTIFICATIONS=1',
       ]
-     end
+    end
+
+    # Move .xcprivacy files to Resources (silences "no rule to process ... .xcprivacy")
+    target.source_build_phase.files_references
+      .select { |f| File.extname(f.path) == ".xcprivacy" }
+      .each do |f|
+        unless target.resources_build_phase.files_references.include?(f)
+          target.resources_build_phase.add_file_reference(f)
+        end
+        target.source_build_phase.remove_file_reference(f)
+      end
   end
 end
