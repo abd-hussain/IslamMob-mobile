@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: advertisments_manager,azkar,bdd_steps,database_manager,internet_connection_checkup,islam_mob_adhan,islam_mob_lint,islam_test,location_manager,logger_manager
+# melos_managed_dependency_overrides: advertisments_manager,firebase_manager, azkar,bdd_steps,database_manager,internet_connection_checkup,islam_mob_adhan,islam_mob_lint,islam_test,location_manager,logger_manager
 dependency_overrides:
   advertisments_manager:
     path: utilities/advertisments_manager
@@ -20,3 +20,5 @@ dependency_overrides:
     path: utilities/location_manager
   logger_manager:
     path: utilities/logger_manager
+  firebase_manager:
+    path: utilities/firebase_manager

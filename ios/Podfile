@@ -40,6 +40,7 @@ target 'Runner' do
   pod 'GTMSessionFetcher/Core', '~> 3.4'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
   target 'RunnerTests' do
     inherit! :search_paths
   end
@@ -47,26 +48,37 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    # Flutter settings
+    # Keep Flutter's additional settings
     flutter_additional_ios_build_settings(target)
 
-    # Your settings
+    # Your build settings
     target.build_configurations.each do |config|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
       config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
         '$(inherited)',
+        # dart: PermissionGroup.notification
         'PERMISSION_NOTIFICATIONS=1',
       ]
     end
 
-    # Move .xcprivacy files to Resources (silences "no rule to process ... .xcprivacy")
-    target.source_build_phase.files_references
-      .select { |f| File.extname(f.path) == ".xcprivacy" }
-      .each do |f|
-        unless target.resources_build_phase.files_references.include?(f)
-          target.resources_build_phase.add_file_reference(f)
-        end
-        target.source_build_phase.remove_file_reference(f)
-      end
+    # --- Safe .xcprivacy relocation ---
+    # Only PBXNativeTarget has source/resources phases. Aggregate targets don't.
+    next unless target.respond_to?(:build_phases) &&
+                target.respond_to?(:source_build_phase) &&
+                target.respond_to?(:resources_build_phase)
+
+    sources_phase   = target.source_build_phase
+    resources_phase = target.resources_build_phase || target.new_resources_build_phase
+
+    # Some targets may not even have a sources phase; guard those too.
+    next if sources_phase.nil? || resources_phase.nil?
+
+    xcprivacy_files = sources_phase.files_references.select { |f| File.extname(f.path) == '.xcprivacy' }
+    xcprivacy_files.each do |f|
+      resources_phase.add_file_reference(f) unless resources_phase.files_references.include?(f)
+      # remove from sources if it was there
+      sources_phase.remove_file_reference(f)
+    end
+    # --- end safe relocation ---
   end
 end
