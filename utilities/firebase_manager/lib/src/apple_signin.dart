@@ -1,9 +1,12 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
+import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_manager/exceptions/auth_exception.dart';
 import 'package:firebase_manager/firebase_manager.dart' hide AuthFailure;
+import 'package:flutter/material.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
@@ -12,8 +15,11 @@ class AppleSigninRepository {
   static final FirebaseAuth _authInstance = FirebaseAuth.instance;
 
   static TaskEither<AuthFailure, UserModel> appleSignIn() {
-    return _authenticateWithApple()
-        .flatMap(_createFirebaseCredential)
+    final rawNonce = _generateNonce();
+    return _authenticateWithApple(rawNonce)
+        .flatMap(
+          (credential) => _createFirebaseCredential(credential, rawNonce),
+        )
         .flatMap(_signInWithFirebase)
         .map(_toUserModel);
   }
@@ -34,25 +40,40 @@ class AppleSigninRepository {
   /// Initiates the Apple sign-in process using sign_in_with_apple plugin.
   /// Returns a [TaskEither] containing the [AuthorizationCredentialAppleID] if successful.
   static TaskEither<AuthFailure, AuthorizationCredentialAppleID>
-  _authenticateWithApple() {
+  _authenticateWithApple(String rawNonce) {
     return TaskEither.tryCatch(
       () async {
         if (!Platform.isIOS) {
           throw Exception('Apple Sign-In is only available on iOS');
         }
 
-        final rawNonce = _generateNonce();
+        // Hash the nonce with SHA256 for Apple
+        final hashedNonce = _sha256ofString(rawNonce);
+
         final credential = await SignInWithApple.getAppleIDCredential(
           scopes: [
             AppleIDAuthorizationScopes.email,
             AppleIDAuthorizationScopes.fullName,
           ],
-          nonce: rawNonce,
+          nonce: hashedNonce,
         );
 
         if (credential.userIdentifier?.isEmpty ?? true) {
           throw AppleSignInCancelledException('User cancelled Apple sign-in');
         }
+
+        final idToken = credential.identityToken;
+        assert(
+          idToken != null && idToken!.isNotEmpty,
+          'Apple returned null identityToken',
+        );
+        _debugAppleJwt(idToken!);
+
+        // Also log nonce snippets to match hash
+        final hashed = _sha256ofString(rawNonce);
+        debugPrint(
+          'nonce(raw)=${rawNonce.substring(0, 8)}…  nonce(sha256)=${hashed.substring(0, 8)}…',
+        );
 
         return credential;
       },
@@ -123,17 +144,22 @@ class AppleSigninRepository {
   /// Returns a [TaskEither] containing [AuthCredential] if successful.
   static TaskEither<AuthFailure, AuthCredential> _createFirebaseCredential(
     AuthorizationCredentialAppleID credential,
+    String rawNonce,
   ) {
-    return TaskEither.tryCatch(
-      () async {
-        final rawNonce = _generateNonce();
-        final oauthCredential = OAuthProvider(
-          'apple.com',
-        ).credential(idToken: credential.identityToken, rawNonce: rawNonce);
-        return oauthCredential;
-      },
-      (error, _) => AuthFailure(message: 'Credential creation failed: $error'),
-    );
+    return TaskEither.tryCatch(() async {
+      final idToken = credential.identityToken;
+      if (idToken == null || idToken.isEmpty) {
+        throw Exception(
+          'Missing identityToken from Apple. Ensure Apple Sign-In is configured and use a real device.',
+        );
+      }
+
+      // IMPORTANT: pass rawNonce here (unhashed). Apple got the SHA256 earlier.
+      final oauthCredential = OAuthProvider(
+        'apple.com',
+      ).credential(idToken: idToken, rawNonce: rawNonce);
+      return oauthCredential;
+    }, (error, _) => AuthFailure(message: 'Credential creation failed: $error'));
   }
 
   /// Signs in to Firebase using the provided credentials.
@@ -143,7 +169,29 @@ class AppleSigninRepository {
   ) {
     return TaskEither.tryCatch(
       () => _authInstance.signInWithCredential(credential),
-      (error, _) => AuthFailure.fromFirebase(error as FirebaseAuthException),
+      (error, st) {
+        if (error is FirebaseAuthException) {
+          debugPrint(
+            'FirebaseAuthException code=${error.code} message=${error.message}',
+          );
+        } else {
+          debugPrint('Firebase sign-in error: $e\n$st');
+        }
+        if (error is FirebaseAuthException) {
+          final code =
+              error.code; // e.g., invalid-credential, invalid-tenant-id, etc.
+          final msg = switch (code) {
+            'invalid-credential' =>
+              'Apple token/nonce rejected by Firebase. Re-check Firebase Apple provider key, bundle ID, nonce flow, and device time.',
+            'invalid-verification-code' =>
+              'Invalid authorization code from Apple.',
+            'invalid-verification-id' => 'Invalid verification context.',
+            _ => error.message ?? code,
+          };
+          return AuthFailure(message: msg);
+        }
+        return AuthFailure(message: 'Firebase sign-in failed: $error');
+      },
     );
   }
 
@@ -219,6 +267,25 @@ class AppleSigninRepository {
       length,
       (_) => charset[random.nextInt(charset.length)],
     ).join();
+  }
+
+  /// Returns the SHA256 hash of [input] as a string.
+  static String _sha256ofString(String input) {
+    final bytes = utf8.encode(input);
+    final digest = sha256.convert(bytes);
+    return digest.toString();
+  }
+
+  // Debug: decode Apple identityToken (JWT) to verify aud & nonce
+  static void _debugAppleJwt(String jwt) {
+    try {
+      final parts = jwt.split('.');
+      if (parts.length != 3) return;
+      final payload = utf8.decode(
+        base64Url.decode(base64Url.normalize(parts[1])),
+      );
+      debugPrint('Apple JWT payload: $payload'); // Look for "aud" and "nonce"
+    } catch (_) {}
   }
 }
 
