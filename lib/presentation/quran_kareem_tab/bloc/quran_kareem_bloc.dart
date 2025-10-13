@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +10,7 @@ import 'package:islam_app/domain/usecase/load_file_from_document_usecase.dart';
 import 'package:islam_app/domain/usecase/quran_referances_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:pdfx/pdfx.dart';
+import 'package:preferences/preferences.dart';
 
 part 'quran_kareem_bloc.freezed.dart';
 part 'quran_kareem_event.dart';
@@ -79,12 +79,10 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   // Load the initial PDF
   Future<void> _setupFirstInitialPDF() async {
-    final pageNumber =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
-              defaultValue: "1",
-            )
-            as String;
+    final pageNumber = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
+      defaultValue: "1",
+    );
 
     final filePath = await locator<LoadFileFromDocumentUseCase>().call();
 
@@ -112,12 +110,10 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
   // Load bookmarked pages from local storage
   void _loadBookmarkedPages() {
-    final List<dynamic> bookMarkedPages =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
-              defaultValue: [],
-            )
-            as List<dynamic>;
+    final List<dynamic> bookMarkedPages = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
+      defaultValue: [],
+    );
 
     if (bookMarkedPages.isNotEmpty) {
       final intList = List<int>.from(bookMarkedPages);
@@ -164,7 +160,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
 
     add(QuranKareemEvent.updateSidePage(_getPageSide(currentPageNumber)));
 
-    await DataBaseManagerBase.saveInDatabase(
+    await locator<IslamPreferences>().setValue(
       key: DatabaseFieldQuranCopyConstant.quranKaremLastPageNumber,
       value: event.pageCount.toString(),
     );
@@ -187,7 +183,7 @@ class QuranKareemBloc extends Bloc<QuranKareemEvent, QuranKareemState> {
     _UpdateBookMarkedPages event,
     Emitter<QuranKareemState> emit,
   ) async {
-    await DataBaseManagerBase.saveInDatabase(
+    await locator<IslamPreferences>().setValue(
       key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
       value: event.list,
     );

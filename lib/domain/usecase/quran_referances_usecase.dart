@@ -1,4 +1,5 @@
-import 'package:database_manager/database_manager.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 /// A use case class that handles Quran reference operations and page navigation.
 ///
@@ -11,8 +12,10 @@ import 'package:database_manager/database_manager.dart';
 class QuranReferancesUsecase {
   /// Retrieves a field from the database or returns an empty map by default.
   static Map<dynamic, dynamic> _getDatabaseField(String fieldName) {
-    return DataBaseManagerBase.getFromDatabase(key: fieldName, defaultValue: {})
-        as Map<dynamic, dynamic>;
+    return locator<IslamPreferences>().getValue(
+      key: fieldName,
+      defaultValue: {},
+    );
   }
 
   /// Gets the Surah name for localization based on a given page number.

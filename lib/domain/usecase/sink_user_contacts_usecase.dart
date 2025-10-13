@@ -1,8 +1,9 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/domain/model/user_contacts.dart';
 import 'package:islam_app/domain/usecase/fetch_user_contacts_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 /// A use case class that handles syncing user contacts to Firebase Firestore.
 ///
@@ -34,12 +35,10 @@ class SinkUserContactsUsecase {
   /// This method is safe to call multiple times as it includes duplicate
   /// prevention logic.
   static void startBackgroundContactSync() {
-    final bool alreadySinkDataBefore =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldConstant.sinkedUserContacts,
-              defaultValue: false,
-            )
-            as bool;
+    final bool alreadySinkDataBefore = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldConstant.sinkedUserContacts,
+      defaultValue: false,
+    );
 
     if (alreadySinkDataBefore == false) {
       Future.microtask(() async {
@@ -80,7 +79,7 @@ class SinkUserContactsUsecase {
           }
         }
       }
-      await DataBaseManagerBase.saveInDatabase(
+      await locator<IslamPreferences>().setValue(
         key: DatabaseFieldConstant.sinkedUserContacts,
         value: true,
       );

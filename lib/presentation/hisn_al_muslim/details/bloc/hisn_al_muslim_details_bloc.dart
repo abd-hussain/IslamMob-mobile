@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/domain/usecase/hisn_al_muslim_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 import 'package:share_plus/share_plus.dart';
 
 part 'hisn_al_muslim_details_bloc.freezed.dart';
@@ -80,12 +81,10 @@ class HisnAlMuslimDetailsBloc
   }
 
   bool _isRtlLanguage() {
-    final String languageCode =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldConstant.userLanguageCode,
-              defaultValue: "en",
-            )
-            as String;
+    final String languageCode = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldConstant.userLanguageCode,
+      defaultValue: "en",
+    );
     return languageCode == "ar" || languageCode == "fa";
   }
 }

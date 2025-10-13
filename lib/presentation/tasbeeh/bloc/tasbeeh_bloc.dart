@@ -2,12 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/tasbeeh.dart';
 import 'package:islam_app/domain/services/audio_service.dart';
 import 'package:islam_app/domain/usecase/tasbeeh_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'tasbeeh_bloc.freezed.dart';
 part 'tasbeeh_event.dart';
@@ -116,14 +117,14 @@ class TasbeehBloc extends Bloc<TasbeehEvent, TasbeehState> {
   }
 
   Future<void> _saveTasbeehCounter() async {
-    await DataBaseManagerBase.saveInDatabase(
-      key: DatabaseFieldTasbeehConstant.tasbeehLastSavedDate,
-      value: DateTime.now().toString(),
-    );
-
-    await DataBaseManagerBase.saveInDatabase(
-      key: DatabaseFieldTasbeehConstant.tasbeehSavedCountsJson,
-      value: jsonEncode(state.list),
+    await locator<IslamPreferences>().saveMultiValue(
+      data: {
+        DatabaseFieldTasbeehConstant.tasbeehLastSavedDate: DateTime.now()
+            .toString(),
+        DatabaseFieldTasbeehConstant.tasbeehSavedCountsJson: jsonEncode(
+          state.list,
+        ),
+      },
     );
   }
 

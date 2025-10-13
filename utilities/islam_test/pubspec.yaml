@@ -4,8 +4,9 @@ version: 1.0.0
 publish_to: none
 
 environment:
-  sdk: 3.8.1
+  sdk: '>=3.9.2 <4.0.0'
 
+resolution: workspace
 # Add regular dependencies here.
 dependencies:
   flutter:
@@ -15,6 +16,5 @@ dependencies:
   golden_toolkit: ^0.15.0
 
 dev_dependencies:
-  dependency_validator: 4.1.0
-  islam_mob_lint:
-    path: ../islam_mob_lint
+  dependency_validator: 5.0.2
+  islam_mob_lint: any

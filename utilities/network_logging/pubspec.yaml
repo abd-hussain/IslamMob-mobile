@@ -3,29 +3,28 @@ description: Network request logging system for IslamMob
 version: 0.0.1
 publish_to: none
 environment:
-  sdk: 3.8.1
-  flutter: 3.32.6
+  sdk: '>=3.9.2 <4.0.0'
+  flutter: '>=3.35.3'
+
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
   dio: 5.8.0+1
-  freezed_annotation: 2.4.4
+  freezed_annotation: ^3.1.0
   injectable: 2.5.0
   get_it: 8.0.3
   uuid: ^4.5.1
   smooth_sheets: ^0.13.0
 
-  logger_manager:
-    path: ../../utilities/logger_manager
-  internet_connection_checkup:
-    path: ../../utilities/internet_connection_checkup
+  logger_manager: any
+  internet_connection_checkup: any
 
 dev_dependencies:
-  islam_mob_lint:
-    path: ../islam_mob_lint
-  build_runner: 2.4.15
-  freezed: 2.5.7
-  json_serializable: 6.8.0
-  injectable_generator: 2.6.2
-  dependency_validator: 4.1.0
+  islam_mob_lint: any
+  build_runner: 2.7.1
+  freezed: 3.2.3
+  json_serializable: ^6.11.1
+  injectable_generator: 2.8.1
+  dependency_validator: 5.0.2

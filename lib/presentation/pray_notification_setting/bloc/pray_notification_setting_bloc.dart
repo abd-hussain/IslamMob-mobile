@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +9,7 @@ import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/pray_notification_setting/bloc/notification_type_sealed.dart';
+import 'package:preferences/preferences.dart';
 
 part 'pray_notification_setting_bloc.freezed.dart';
 part 'pray_notification_setting_event.dart';
@@ -107,7 +107,7 @@ class PrayNotificationSettingBloc
     _SavePrayNotificationSettings event,
     Emitter<PrayNotificationSettingState> emit,
   ) async {
-    await DataBaseManagerBase.saveMultipleInDatabase(
+    await locator<IslamPreferences>().saveMultiValue(
       data: {
         LocalNotificationConstant.disableAllForTodayDate:
             state.allNotificationForToday,
@@ -174,7 +174,7 @@ class PrayNotificationSettingBloc
       const NotificationTypeState.isha(): "adhan5",
     };
 
-    final path = DataBaseManagerBase.getFromDatabase(
+    final path = locator<IslamPreferences>().getValue(
       key: soundMap[type]!,
       defaultValue: defaultMap[type],
     );
@@ -195,10 +195,9 @@ class PrayNotificationSettingBloc
   }
 
   T _getValue<T>(String key, T defaultValue) {
-    return DataBaseManagerBase.getFromDatabase(
-          key: key,
-          defaultValue: defaultValue,
-        )
-        as T;
+    return locator<IslamPreferences>().getValue(
+      key: key,
+      defaultValue: defaultValue,
+    );
   }
 }

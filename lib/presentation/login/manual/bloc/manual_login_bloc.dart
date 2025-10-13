@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'manual_login_bloc.freezed.dart';
 part 'manual_login_event.dart';
@@ -24,11 +25,10 @@ class ManualLoginBloc extends Bloc<ManualLoginEvent, ManualLoginState> {
     String email = "";
     String password = "";
 
-    if (DataBaseManagerBase.getFromDatabase(
-              key: DatabaseUserCredentials.isUserChooceShowCradintial,
-              defaultValue: "",
-            )
-            as String !=
+    if (locator<IslamPreferences>().getValue(
+          key: DatabaseUserCredentials.isUserChooceShowCradintial,
+          defaultValue: "",
+        ) !=
         "") {
       email = _getUserEmail();
       password = _getUserPassword();
@@ -99,19 +99,17 @@ class ManualLoginBloc extends Bloc<ManualLoginEvent, ManualLoginState> {
   }
 
   String _getUserEmail() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseUserCredentials.userEmail,
-          defaultValue: "",
-        )
-        as String;
+    return locator<IslamPreferences>().getValue(
+      key: DatabaseUserCredentials.userEmail,
+      defaultValue: "",
+    );
   }
 
   String _getUserPassword() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseUserCredentials.userPassword,
-          defaultValue: "",
-        )
-        as String;
+    return locator<IslamPreferences>().getValue(
+      key: DatabaseUserCredentials.userPassword,
+      defaultValue: "",
+    );
   }
 
   FutureOr<void> _loginPressed(
@@ -142,7 +140,7 @@ class ManualLoginBloc extends Bloc<ManualLoginEvent, ManualLoginState> {
       if (event.savedCradintial) {
         mapToSave[DatabaseUserCredentials.isUserChooceShowCradintial] = "YES";
       }
-      await DataBaseManagerBase.saveMultipleInDatabase(data: mapToSave);
+      await locator<IslamPreferences>().saveMultiValue(data: mapToSave);
 
       emit(
         state.copyWith(

@@ -1,12 +1,13 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/apple_signin_usecase.dart';
 import 'package:islam_app/domain/usecase/check_user_existance_use_case.dart';
 import 'package:islam_app/domain/usecase/google_signin_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:logger_manager/logger_manager.dart';
+import 'package:preferences/preferences.dart';
 
 part 'welcome_login_bloc.freezed.dart';
 part 'welcome_login_event.dart';
@@ -47,7 +48,7 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
         );
       },
       (data) async {
-        await DataBaseManagerBase.saveMultipleInDatabase(
+        await locator<IslamPreferences>().saveMultiValue(
           data: {
             DatabaseUserCredentials.userEmail: data.email,
             DatabaseUserCredentials.accessToken: data.token,
@@ -90,7 +91,7 @@ class WelcomeLoginBloc extends Bloc<WelcomeLoginEvent, WelcomeLoginState> {
         );
       },
       (data) async {
-        await DataBaseManagerBase.saveMultipleInDatabase(
+        await locator<IslamPreferences>().saveMultiValue(
           data: {
             DatabaseUserCredentials.userEmail: data.email,
             DatabaseUserCredentials.accessToken: data.token,

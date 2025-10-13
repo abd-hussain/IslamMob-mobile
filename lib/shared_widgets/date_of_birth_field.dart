@@ -1,9 +1,10 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_textfield.dart';
+import 'package:preferences/preferences.dart';
 
 class DateOfBirthField extends StatelessWidget {
   final TextEditingController controller;
@@ -66,12 +67,10 @@ class DateOfBirthField extends StatelessWidget {
   }
 
   Locale _getLocale() {
-    final selectedLanguage =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldConstant.userLanguageCode,
-              defaultValue: "",
-            )
-            as String;
+    final selectedLanguage = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldConstant.userLanguageCode,
+      defaultValue: "",
+    );
     return selectedLanguage != ""
         ? Locale(selectedLanguage)
         : const Locale("en");

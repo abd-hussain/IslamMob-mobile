@@ -1,10 +1,11 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/domain/model/calender.dart';
 import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_app/domain/repository/pray_manager.dart';
 import 'package:islam_app/domain/usecase/hijri_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_mob_adhan/adhan.dart';
+import 'package:preferences/preferences.dart';
 
 /// A use case class that handles prayer time calculations and retrieval.
 ///
@@ -139,90 +140,74 @@ class AllPrayTimeUsecase {
   }
 
   Duration _fajirAddedMinutes() {
-    final String selectedTimeFajirMin =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin,
-              defaultValue: "0",
-            )
-            as String;
+    final String selectedTimeFajirMin = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedTimeFajirMin,
+      defaultValue: "0",
+    );
 
     return Duration(minutes: int.tryParse(selectedTimeFajirMin) ?? 0);
   }
 
   Duration _sunriseAddedMinutes() {
-    final String selectedTimeSunriseMin =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin,
-              defaultValue: "0",
-            )
-            as String;
+    final String selectedTimeSunriseMin = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedTimeSunriseMin,
+      defaultValue: "0",
+    );
 
     return Duration(minutes: int.tryParse(selectedTimeSunriseMin) ?? 0);
   }
 
   Duration _zhurAddedMinutes() {
-    final String selectedTimeZhurMin =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin,
-              defaultValue: "0",
-            )
-            as String;
+    final String selectedTimeZhurMin = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedTimeZhurMin,
+      defaultValue: "0",
+    );
 
     return Duration(minutes: int.tryParse(selectedTimeZhurMin) ?? 0);
   }
 
   Duration _asrAddedMinutes() {
-    final String selectedTimeAsrMin =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin,
-              defaultValue: "0",
-            )
-            as String;
+    final String selectedTimeAsrMin = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedTimeAsrMin,
+      defaultValue: "0",
+    );
 
     return Duration(minutes: int.tryParse(selectedTimeAsrMin) ?? 0);
   }
 
   Duration _maghribAddedMinutes() {
-    final String selectedTimeMaghribMin =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin,
-              defaultValue: "0",
-            )
-            as String;
+    final String selectedTimeMaghribMin = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedTimeMaghribMin,
+      defaultValue: "0",
+    );
 
     return Duration(minutes: int.tryParse(selectedTimeMaghribMin) ?? 0);
   }
 
   Duration _ishaAddedMinutes() {
-    final String selectedTimeIshaMin =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin,
-              defaultValue: "0",
-            )
-            as String;
+    final String selectedTimeIshaMin = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedTimeIshaMin,
+      defaultValue: "0",
+    );
 
     return Duration(minutes: int.tryParse(selectedTimeIshaMin) ?? 0);
   }
 
   Duration _middleOfTheNightAddedMinutes() {
-    final String selectedTimeMidnightMin =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin,
-              defaultValue: "0",
-            )
-            as String;
+    final String selectedTimeMidnightMin = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedTimeMidnightMin,
+      defaultValue: "0",
+    );
 
     return Duration(minutes: int.tryParse(selectedTimeMidnightMin) ?? 0);
   }
 
   Duration _lastThirdOfTheNightAddedMinutes() {
-    final String selectedTimeLast3thOfNightMin =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant
-                  .selectedTimeLast3thOfNightMin,
-              defaultValue: "0",
-            )
-            as String;
+    final String
+    selectedTimeLast3thOfNightMin = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedTimeLast3thOfNightMin,
+      defaultValue: "0",
+    );
 
     return Duration(minutes: int.tryParse(selectedTimeLast3thOfNightMin) ?? 0);
   }

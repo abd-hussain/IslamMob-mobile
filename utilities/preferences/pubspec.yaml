@@ -1,0 +1,20 @@
+name: preferences
+description: "A new Flutter package project."
+version: 0.0.1
+publish_to: none
+
+resolution: workspace
+
+environment:
+  sdk: '>=3.9.2 <4.0.0'
+  flutter: '>=3.35.3'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: 2.3.2
+
+dev_dependencies:
+  dependency_validator: 5.0.2
+  islam_mob_lint: any
+  dart_code_metrics_presets: 2.22.0

@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -11,6 +10,7 @@ import 'package:islam_app/domain/usecase/get_user_setting_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_setting_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_sealed.dart';
+import 'package:preferences/preferences.dart';
 
 part 'pray_calculation_setting_bloc.freezed.dart';
 part 'pray_calculation_setting_event.dart';
@@ -308,7 +308,7 @@ class PrayCalculationSettingBloc
     );
 
     for (final entry in saveMapping.entries) {
-      await DataBaseManagerBase.saveInDatabase(
+      await locator<IslamPreferences>().setValue(
         key: entry.key,
         value: entry.value,
       );

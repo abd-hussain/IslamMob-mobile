@@ -1,10 +1,10 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/usecase/salah_box_usecase.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:preferences/preferences.dart';
 
 /// Widget for displaying day information in the Islamic prayer timing interface.
 ///
@@ -140,10 +140,9 @@ class DayBox extends StatelessWidget {
 
   /// Retrieves the current language code from the Hive box.
   String _currentLanguageCode() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseFieldConstant.userLanguageCode,
-          defaultValue: "en",
-        )
-        as String;
+    return locator<IslamPreferences>().getValue(
+      key: DatabaseFieldConstant.userLanguageCode,
+      defaultValue: "en",
+    );
   }
 }

@@ -4,8 +4,8 @@ publish_to: 'none'
 version: 2.0.0+202509032339
 
 environment:
-  sdk: 3.8.1
-  flutter: 3.32.6
+  sdk: '>=3.9.2 <4.0.0'
+  flutter: '>=3.35.3'
 
 dependencies:
   flutter:
@@ -14,40 +14,25 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  islam_mob_adhan:
-    path: utilities/islam_mob_adhan
+  azkar: any
+  api_client: any
+  preferences: any
+  logger_manager: any
+  islam_mob_adhan: any
+  network_logging: any
+  location_manager: any
+  firebase_manager: any
+  advertisments_manager: any
+  internet_connection_checkup: any
 
-  azkar:
-    path: utilities/azkar
 
-  advertisments_manager:
-    path: utilities/advertisments_manager
-
-  logger_manager:
-    path: utilities/logger_manager
-
-  database_manager:
-    path: utilities/database_manager
-
-  internet_connection_checkup:
-    path: utilities/internet_connection_checkup
-
-  location_manager:
-    path: utilities/location_manager
-
-  firebase_manager:
-    path: utilities/firebase_manager
-
-  # api_client: // commented out because it's not used in the app and piplines filed on android
-  #   path: utilities/api_client //TODO: need to be checked
-
-  http: 1.4.0
+  http: 1.5.0
   dio: 5.8.0+1 #//TODO:
   async: ^2.11.0
   get_it: 8.0.3
   loading_indicator: ^3.1.1
   intl: 0.20.2
-  freezed_annotation: 2.4.4
+  freezed_annotation: ^3.1.0
   flutter_bloc: 9.1.1
   permission_handler: 12.0.0+1
   shimmer: ^3.0.0
@@ -90,25 +75,42 @@ dependencies:
   # sensors_plus: ^6.1.0 
 
 dev_dependencies:
-  test: ^1.25.7
   flutter_test:
     sdk: flutter
-  hive_generator: ^2.0.1 #TODO
-  build_runner: 2.4.15
-  islam_mob_lint:
-    path: utilities/islam_mob_lint
-  json_serializable: 6.8.0
+  test: ^1.25.7
+  # hive_generator: ^2.0.1 #TODO
+  build_runner: 2.7.1
+  islam_mob_lint: any
+  json_serializable: ^6.11.1
   mocktail: 1.0.4
-  melos: ^6.3.2
+  melos: 7.1.1
   mockito: ^5.4.4
-  dependency_validator: 4.1.0
-  flutter_gen_runner: 5.8.0
-  freezed: 2.5.7
-  bdd_widget_test: 1.7.6
-  bdd_steps:
-    path: utilities/bdd_steps
-  islam_test:
-    path: utilities/islam_test
+  dependency_validator: 5.0.2
+  flutter_gen_runner: 5.12.0
+  freezed: 3.2.3
+  bdd_steps: any
+  islam_test: any
+
+# List all workspace members (relative paths)
+workspace:
+  - utilities/azkar
+  - utilities/logger_manager
+  - utilities/islam_mob_adhan
+  - utilities/location_manager
+  - utilities/firebase_manager
+  - utilities/advertisments_manager
+  - utilities/internet_connection_checkup
+  - utilities/bdd_steps
+  - utilities/islam_test
+  - utilities/islam_mob_lint
+  - utilities/api_client
+  - utilities/network_logging
+  - utilities/preferences
+
+
+melos:
+  # Optional: treat the root as a package too (so it shows in melos list)
+  useRootAsPackage: true
 
 flutter:
   generate: true
@@ -127,6 +129,127 @@ flutter:
   - assets/json/
   - assets/json/hajj_omrah/
   - assets/audios/
+
+scripts:
+  upgrade:
+    run: melos exec -c 1 -- flutter pub upgrade
+    description: Upgrade all dependencies.
+
+  analyze_changes:
+    run: |
+      melos analyze --fatal-infos --diff=origin/main...HEAD --include-dependents
+    description: Run `flutter analyze` on changed packages.
+  
+  # update_goldens:
+  #   run: melos exec --dir-exists="test/goldens" -c 1 -- APP_LOCALE=en APP_THEME=light flutter test --update-goldens --tags golden
+  #   description: Re-generate all golden test files
+
+  # update_goldens_dark:
+  #   run: melos exec --dir-exists="test/goldens" -c 1 -- APP_LOCALE=ar APP_THEME=dark flutter test --update-goldens --tags golden
+  #   description: Re-generate all golden test files for duplo package
+  #   packageFilters:
+  #     scope:
+  #       - duplo
+  #       - login
+  #       - onboarding
+  #       - hub
+  #       - payment
+
+  # update_goldens_changes:
+  #   run: |
+  #     melos exec --dir-exists="test/goldens" -c 1 --diff=origin/main...HEAD -- "flutter test --no-optimization --update-goldens"
+  #   description: Update goldens for changed packages.
+  
+  # update_goldens_changes_dark:
+  #   run: |
+  #     melos exec --dir-exists="test/goldens" -c 1 --diff=origin/main...HEAD -- "flutter test --no-optimization --update-goldens"
+  #   packageFilters:
+  #     dirExists:
+  #       - duplo
+  #       - login
+  #       - onboarding
+  #       - hub
+  #       - payments
+  #   description: Update goldens for changed packages.
+
+  fix_check:
+    run: melos exec -- "dart fix --dry-run"
+    description: Run `dart fix` checks on all packages.
+
+  test:
+    run: |
+      melos exec -c 1 --fail-fast -- "flutter test --no-pub"
+    packageFilters:
+      dirExists: 
+        - test
+    description: Run `flutter test` checks on all packages.
+
+  # test_changes:
+  #   run: |
+  #     melos exec -c 1 --fail-fast --diff=origin/main...HEAD --include-dependents -- "very_good test"
+  #   description: Run tests on changed packages.
+
+  format_check_changes:
+    run: melos exec --diff=origin/main...HEAD -- "bash $MELOS_ROOT_PATH/scripts/format.sh --set-exit-if-changed"
+    description: Run `dart format` checks on changed packages.
+
+  format_check:
+    run: melos exec -- "bash $MELOS_ROOT_PATH/scripts/format.sh --set-exit-if-changed"
+    description: Run `dart format` checks on all packages.
+
+  format:
+    run: melos exec -- "bash $MELOS_ROOT_PATH/scripts/format.sh"
+    description: Runs `dart format` on all packages.
+
+  dependency_validator:
+    run: melos exec -c 1 -- "dart run dependency_validator"
+    description: Run `dart run dependency_validator` checks on all packages.
+
+  dependency_validator_changes:
+    run: melos exec -c 1 --diff=origin/main...HEAD --include-dependents -- "dart run dependency_validator"
+    description: Run `dart run dependency_validator` checks on changed packages.
+
+  gen_l10n:
+    run: dart pub global run melos run combine_arb_files && dart pub global run melos run gen_lok_l10n
+    description: Combine and generate localization files.
+
+  combine_arb_files:
+    run : dart pub global run melos exec --scope="equiti_localization" -- "dart lib/src/combine_arb_files.dart"
+    description: Combine all .arb files.
+
+  gen_lok_l10n:
+    run: dart pub global run melos exec --scope="equiti_localization" -- "dart run lokalise_flutter_sdk:gen-lok-l10n"
+    description: Generate localization files using lokalise_flutter_sdk.
+
+  gen_l10n_watch:
+    run: melos run combine_arb_files_watch
+    description: Combine and generate localization files.
+
+  combine_arb_files_watch:
+    run : melos exec --scope="equiti_localization" -- "dart lib/src/combine_arb_files.dart --watch"
+    description: Combine and watch for all .arb files.
+
+  autogen:
+    run: melos exec -c 1 -- "dart run build_runner build --delete-conflicting-outputs"
+    packageFilters:
+      dependsOn: 
+        - "build_runner"
+    description: Run `dart run build_runner build --delete-conflicting-outputs`
+
+  autogen_watch:
+    run: melos exec -c 1 -- "dart run build_runner watch --delete-conflicting-outputs"
+    packageFilters:
+      dependsOn: 
+        - "build_runner"
+    description: Run `dart run build_runner watch --delete-conflicting-outputs`
+
+  autogen_changes:
+    run: melos exec -c 1 -- "dart run build_runner build --delete-conflicting-outputs"
+    packageFilters:
+      dependsOn: 
+        - "build_runner"
+      diff: origin/main...HEAD
+    description: Run `dart run build_runner build --delete-conflicting-outputs`
 
   fonts:
     - family: Uthman

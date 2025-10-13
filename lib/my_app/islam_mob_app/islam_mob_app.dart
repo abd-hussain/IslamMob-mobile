@@ -1,10 +1,11 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islam_app/domain/constants/app_constant.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_gusture.dart';
+import 'package:preferences/preferences.dart';
 
 /// The main application widget for the Islam Mobile app.
 ///
@@ -95,12 +96,11 @@ class IslamMobAppState extends State<IslamMobApp> {
   }
 
   Locale _getLocale() {
-    final selectedLanguage =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldConstant.userLanguageCode,
-              defaultValue: "",
-            )
-            as String;
+    final selectedLanguage = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldConstant.userLanguageCode,
+      defaultValue: "",
+    );
+
     return selectedLanguage != ""
         ? Locale(selectedLanguage)
         : const Locale("en");
@@ -137,13 +137,11 @@ class IslamMobAppState extends State<IslamMobApp> {
   }
 
   String _getInitialRoute() {
-    final bool? finishInBoarding =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldInBoardingStageConstant.finishInBoarding,
-              defaultValue: null,
-            )
-            as bool?;
-    return finishInBoarding != null
+    final bool finishInBoarding = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldInBoardingStageConstant.finishInBoarding,
+      defaultValue: false,
+    );
+    return finishInBoarding != false
         ? RoutesConstants.mainContainer
         : RoutesConstants.inBoardingScreen;
   }

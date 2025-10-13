@@ -1,9 +1,10 @@
 import 'dart:convert';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
 import 'package:islam_app/domain/model/tasbeeh.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 /// A use case class that handles loading and managing Tasbeeh (Islamic prayer beads) data.
 ///
@@ -82,12 +83,10 @@ class TasbeehUseCase {
   ///
   /// Returns true if saved data is from today and should be used, false otherwise.
   static bool _shouldUseSavedData() {
-    final dateStr =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldTasbeehConstant.tasbeehLastSavedDate,
-              defaultValue: "",
-            )
-            as String;
+    final dateStr = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldTasbeehConstant.tasbeehLastSavedDate,
+      defaultValue: "",
+    );
 
     final parsedDate = DateTime.tryParse(dateStr);
     return parsedDate != null &&
@@ -105,12 +104,10 @@ class TasbeehUseCase {
   /// Returns the saved count for the specified Tasbeeh item, or 0 if not found
   /// or if there's an error parsing the saved data.
   static int _getSavedCount(int id) {
-    final rawData =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldTasbeehConstant.tasbeehSavedCountsJson,
-              defaultValue: "",
-            )
-            as String;
+    final rawData = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldTasbeehConstant.tasbeehSavedCountsJson,
+      defaultValue: "",
+    );
 
     try {
       final List<dynamic> jsonList = jsonDecode(rawData) as List<dynamic>;

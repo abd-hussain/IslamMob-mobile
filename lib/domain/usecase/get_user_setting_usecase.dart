@@ -1,9 +1,10 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:islam_app/domain/sealed/high_latitude_method.dart';
 import 'package:islam_app/domain/sealed/madhab.dart';
 import 'package:islam_app/domain/sealed/pray_calculation_method.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_sealed.dart';
+import 'package:preferences/preferences.dart';
 
 /// Use case for retrieving user prayer calculation settings from the database.
 ///
@@ -14,11 +15,10 @@ class GetUserSettingUseCase {
   /// Retrieves the HighLatitude Rule, from Hive
   PrayHightLatitudeCaluclationState savedHighLatitudeRule() {
     final String selectedPrayHighLatitudeCalculation =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
-              defaultValue: "PrayHightLatitudeCaluclationState.none()",
-            )
-            as String;
+        locator<IslamPreferences>().getValue(
+          key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
+          defaultValue: "PrayHightLatitudeCaluclationState.none()",
+        );
 
     final PrayHightLatitudeCaluclationState highLatitude =
         PrayDBParser.parseHighLatitudeRuleState(
@@ -29,13 +29,11 @@ class GetUserSettingUseCase {
 
   /// Retrieves the Calculation Method, from Hive
   PrayCalculationMethodState savedCalculationMethod() {
-    final String selectedCalculationMethod =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant
-                  .selectedCalculationMethod,
-              defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
-            )
-            as String;
+    final String selectedCalculationMethod = locator<IslamPreferences>()
+        .getValue(
+          key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
+          defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
+        );
 
     final PrayCalculationMethodState calculationMethod =
         PrayDBParser.parseCalculationMethodState(selectedCalculationMethod);
@@ -45,12 +43,10 @@ class GetUserSettingUseCase {
 
   /// Retrieves the Madhab, from Hive
   MadhabState savedMadhab() {
-    final String selectedMadhab =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
-              defaultValue: "MadhabState.hanafi()",
-            )
-            as String;
+    final String selectedMadhab = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
+      defaultValue: "MadhabState.hanafi()",
+    );
 
     final MadhabState madhab = PrayDBParser.parseMadhabState(selectedMadhab);
     return madhab;
@@ -58,20 +54,14 @@ class GetUserSettingUseCase {
 
   /// Retrieves the UTC offset, from Hive
   Duration savedUtcOffset() {
-    final String hourOffset =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant
-                  .selectedDifferenceWithUTCHour,
-              defaultValue: "",
-            )
-            as String;
-    final String minuteOffset =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant
-                  .selectedDifferenceWithUTCMin,
-              defaultValue: "",
-            )
-            as String;
+    final String hourOffset = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour,
+      defaultValue: "",
+    );
+    final String minuteOffset = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin,
+      defaultValue: "",
+    );
 
     if (hourOffset.isEmpty) {
       return const Duration(hours: 3);
@@ -98,7 +88,7 @@ class GetUserSettingUseCase {
     final Map<AzanTypeForEditMinState, int> minutesEdited = {};
 
     getDefaultMinEditSettings.forEach((key, defaultValue) {
-      final value = DataBaseManagerBase.getFromDatabase(
+      final value = locator<IslamPreferences>().getValue(
         key: key,
         defaultValue: defaultValue,
       );

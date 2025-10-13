@@ -14,8 +14,6 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 class WelcomeLoginScreen extends StatelessWidget {
   const WelcomeLoginScreen({super.key});
 
-  //TODO: Implement the login screen
-
   @override
   Widget build(BuildContext context) {
     final localizations = IslamMobLocalizations.of(context);

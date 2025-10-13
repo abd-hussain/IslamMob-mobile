@@ -1,7 +1,8 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_switch.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:preferences/preferences.dart';
 
 /// A widget that displays a notification setting row with toggle switch and sound configuration.
 ///
@@ -141,12 +142,10 @@ class NotificationRowView extends StatelessWidget {
   }
 
   bool _isRtlLanguage() {
-    final String languageCode =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldConstant.userLanguageCode,
-              defaultValue: "en",
-            )
-            as String;
+    final String languageCode = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldConstant.userLanguageCode,
+      defaultValue: "en",
+    );
     return languageCode == "ar" || languageCode == "fa";
   }
 }

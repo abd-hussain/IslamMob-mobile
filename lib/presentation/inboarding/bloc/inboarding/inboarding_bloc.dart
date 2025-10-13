@@ -1,9 +1,10 @@
 import 'dart:async';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'inboarding_bloc.freezed.dart';
 part 'inboarding_event.dart';
@@ -35,11 +36,10 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
 
   /// Retrieves the current inboarding stage from storage
   int _getInBoardingStage() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseFieldInBoardingStageConstant.inBoardingStage,
-          defaultValue: 0,
-        )
-        as int;
+    return locator<IslamPreferences>().getValue(
+      key: DatabaseFieldInBoardingStageConstant.inBoardingStage,
+      defaultValue: 0,
+    );
   }
 
   /// Handles the event to change the inboarding stage
@@ -47,7 +47,7 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
     _ChangeInBoardingStage event,
     Emitter<InboardingState> emit,
   ) async {
-    await DataBaseManagerBase.saveInDatabase(
+    await locator<IslamPreferences>().setValue(
       key: DatabaseFieldInBoardingStageConstant.inBoardingStage,
       value: event.stage,
     );
@@ -72,7 +72,7 @@ class InboardingBloc extends Bloc<InboardingEvent, InboardingState> {
     _FinalizeInBoarding event,
     Emitter<InboardingState> emit,
   ) async {
-    await DataBaseManagerBase.saveInDatabase(
+    await locator<IslamPreferences>().setValue(
       key: DatabaseFieldInBoardingStageConstant.finishInBoarding,
       value: true,
     );

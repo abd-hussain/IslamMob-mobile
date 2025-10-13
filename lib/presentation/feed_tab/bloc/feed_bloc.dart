@@ -1,12 +1,13 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:islam_app/domain/model/post.dart';
 import 'package:islam_app/domain/usecase/post_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'feed_bloc.freezed.dart';
 part 'feed_event.dart';
@@ -66,10 +67,8 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     );
   }
 
-  String _userEmail() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: DatabaseUserCredentials.userEmail,
-            defaultValue: "",
-          )
-          as String;
+  String _userEmail() => locator<IslamPreferences>().getValue(
+    key: DatabaseUserCredentials.userEmail,
+    defaultValue: "",
+  );
 }

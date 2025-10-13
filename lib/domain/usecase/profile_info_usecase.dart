@@ -1,7 +1,8 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/domain/model/profile_model.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:logger_manager/logger_manager.dart';
+import 'package:preferences/preferences.dart';
 
 class ProfileInfoUsecase {
   static Future<ProfileModel?> getDetails() async {
@@ -30,11 +31,10 @@ class ProfileInfoUsecase {
   }
 
   static String _getUserEmail() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseUserCredentials.userEmail,
-          defaultValue: "",
-        )
-        as String;
+    return locator<IslamPreferences>().getValue(
+      key: DatabaseUserCredentials.userEmail,
+      defaultValue: "",
+    );
   }
 
   /// Convert map/json into [ProfileModel].

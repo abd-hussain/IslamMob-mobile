@@ -64,7 +64,7 @@ class AppleSigninRepository {
 
         final idToken = credential.identityToken;
         assert(
-          idToken != null && idToken!.isNotEmpty,
+          idToken != null && idToken.isNotEmpty,
           'Apple returned null identityToken',
         );
         _debugAppleJwt(idToken!);
@@ -155,9 +155,16 @@ class AppleSigninRepository {
       }
 
       // IMPORTANT: pass rawNonce here (unhashed). Apple got the SHA256 earlier.
+      debugPrint('Creating OAuth credential with:');
+      debugPrint('  - idToken length: ${idToken.length}');
+      debugPrint('  - rawNonce length: ${rawNonce.length}');
+      debugPrint('  - rawNonce: $rawNonce');
+
       final oauthCredential = OAuthProvider(
         'apple.com',
       ).credential(idToken: idToken, rawNonce: rawNonce);
+
+      debugPrint('OAuth credential created successfully');
       return oauthCredential;
     }, (error, _) => AuthFailure(message: 'Credential creation failed: $error'));
   }
@@ -175,14 +182,22 @@ class AppleSigninRepository {
             'FirebaseAuthException code=${error.code} message=${error.message}',
           );
         } else {
-          debugPrint('Firebase sign-in error: $e\n$st');
+          debugPrint('Firebase sign-in error: $error\n$st');
         }
         if (error is FirebaseAuthException) {
           final code =
               error.code; // e.g., invalid-credential, invalid-tenant-id, etc.
           final msg = switch (code) {
             'invalid-credential' =>
-              'Apple token/nonce rejected by Firebase. Re-check Firebase Apple provider key, bundle ID, nonce flow, and device time.',
+              'Firebase rejected Apple credential. This means:\n'
+                  '1. Firebase Apple Sign-In Key (.p8) is missing/incorrect\n'
+                  '2. Key ID or Team ID in Firebase doesn\'t match Apple\n'
+                  '3. Apple private key has expired\n'
+                  '4. Service ID mismatch (leave empty for native iOS)\n\n'
+                  'Go to Firebase Console → Authentication → Apple → Reconfigure with correct:\n'
+                  '• Team ID (from Apple Developer)\n'
+                  '• Key ID (from your .p8 key)\n'
+                  '• Private Key (full .p8 file content)',
             'invalid-verification-code' =>
               'Invalid authorization code from Apple.',
             'invalid-verification-id' => 'Invalid verification context.',

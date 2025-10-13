@@ -1,7 +1,8 @@
 import 'dart:io';
 
-import 'package:database_manager/database_manager.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:preferences/preferences.dart';
 
 /// Use case for loading Quran files from the app's document directory.
 ///
@@ -49,7 +50,7 @@ class LoadFileFromDocumentUseCase {
   /// }
   /// ```
   Future<String?> call() async {
-    final printName = DataBaseManagerBase.getFromDatabase(
+    final printName = locator<IslamPreferences>().getValue(
       key: DatabaseFieldQuranCopyConstant.quranKaremPrintNameToUse,
       defaultValue: "",
     );

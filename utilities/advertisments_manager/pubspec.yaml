@@ -2,7 +2,9 @@ name: advertisments_manager
 version: 0.0.1
 
 environment:
-  sdk: 3.8.1
+  sdk: '>=3.9.2 <4.0.0'
+
+resolution: workspace
 
 dependencies:
   flutter:
@@ -10,10 +12,8 @@ dependencies:
   google_mobile_ads: ^5.1.0
 
 dev_dependencies:
-  islam_mob_lint:
-    path: ../islam_mob_lint
-  mockito: ^5.4.4
-  dependency_validator: 4.1.0
+  islam_mob_lint: any
+  dependency_validator: 5.0.2
 
 flutter:
   uses-material-design: true

@@ -1,5 +1,4 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:islam_app/domain/model/profile_options.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/collection_list_option.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/footer.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/login_header.dart';
@@ -16,6 +16,7 @@ import 'package:islam_app/presentation/settings_tab/widgets/welcoming_header.dar
 import 'package:islam_app/shared_widgets/bottomsheet/are_you_sure_bottomsheet.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/show_toast.dart';
+import 'package:preferences/preferences.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
 /// The main settings screen that provides access to various app configurations.
@@ -42,7 +43,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final navigator = Navigator.of(context, rootNavigator: true);
     final localize = IslamMobLocalizations.of(context);
     final bool isUserLoggedIn =
-        DataBaseManagerBase.getFromDatabase(
+        locator<IslamPreferences>().getValue(
           key: DatabaseUserCredentials.isUserLoggedIn,
           defaultValue: "",
         ) !=
@@ -117,7 +118,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                     ),
 
-                    if (DataBaseManagerBase.getFromDatabase(
+                    if (locator<IslamPreferences>().getValue(
                           key: DatabaseUserCredentials.isSocialLogin,
                           defaultValue: true,
                         ) ==
@@ -150,7 +151,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 DatabaseUserCredentials.userPassword: "",
                                 DatabaseUserCredentials.accessToken: "",
                               };
-                              await DataBaseManagerBase.saveMultipleInDatabase(
+                              await locator<IslamPreferences>().saveMultiValue(
                                 data: mapToSave,
                               );
                               if (context.mounted) {
@@ -179,21 +180,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               context: context,
                               message: localize.accountInformationwillbedeleted,
                               sure: () async {
-                                final String email =
-                                    DataBaseManagerBase.getFromDatabase(
-                                          key:
-                                              DatabaseUserCredentials.userEmail,
-                                          defaultValue: "",
-                                        )
-                                        as String;
+                                final String email = locator<IslamPreferences>()
+                                    .getValue(
+                                      key: DatabaseUserCredentials.userEmail,
+                                      defaultValue: "",
+                                    );
 
                                 final String password =
-                                    DataBaseManagerBase.getFromDatabase(
-                                          key: DatabaseUserCredentials
-                                              .userPassword,
-                                          defaultValue: "",
-                                        )
-                                        as String;
+                                    locator<IslamPreferences>().getValue(
+                                      key: DatabaseUserCredentials.userPassword,
+                                      defaultValue: "",
+                                    );
 
                                 await FirebaseAuthRepository.deleteAccount(
                                   email: email,
@@ -209,9 +206,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     DatabaseUserCredentials.userPassword: "",
                                     DatabaseUserCredentials.accessToken: "",
                                   };
-                                  await DataBaseManagerBase.saveMultipleInDatabase(
-                                    data: mapToSave,
-                                  );
+                                  await locator<IslamPreferences>()
+                                      .saveMultiValue(data: mapToSave);
                                   if (context.mounted) {
                                     await Navigator.of(
                                       context,

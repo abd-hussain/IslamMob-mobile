@@ -1,8 +1,9 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
+import 'package:preferences/preferences.dart';
 
 /// A utility class for displaying a settings bottom sheet.
 ///
@@ -73,7 +74,7 @@ class SettingBottomSheet {
                 color: const Color(0xff008480),
                 onPressed: () async {
                   final navigator = Navigator.of(context, rootNavigator: true);
-                  await DataBaseManagerBase.saveMultipleInDatabase(
+                  await locator<IslamPreferences>().saveMultiValue(
                     data: {
                       DatabaseFieldInBoardingStageConstant.finishInBoarding:
                           null,

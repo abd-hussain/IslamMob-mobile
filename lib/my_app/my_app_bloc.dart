@@ -1,6 +1,5 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:async/async.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -36,7 +35,7 @@ class MyAppBloc {
     WidgetsFlutterBinding.ensureInitialized();
 
     // Run non-dependent operations in parallel
-    await Future.wait([DataBaseManagerBase.initializeHive(), setupLocator()]);
+    await Future.wait([setupLocator()]);
 
     _initializeTimeZones();
 

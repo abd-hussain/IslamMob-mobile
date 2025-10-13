@@ -11,6 +11,7 @@ import 'package:islam_app/domain/usecase/report_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.dart';
+import 'package:preferences/preferences.dart';
 
 /// Global service locator instance for dependency injection in the Islam Mob app.
 ///
@@ -43,6 +44,11 @@ GetIt locator = GetIt.instance;
 /// clean dependency injection for all Islamic features and app functionality.
 Future<void> setupLocator() async {
   locator.pushNewScope();
+
+  locator.registerSingleton<IslamPreferences>(
+    await IslamPreferencesImpl.create(),
+  );
+
   // UseCases
   locator.registerSingleton<TimingUseCase>(TimingUseCase());
   locator.registerFactory<SetupLocalNotificationWhenAppOpenUseCase>(

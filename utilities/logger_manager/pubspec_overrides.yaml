@@ -1,4 +1,0 @@
-# melos_managed_dependency_overrides: islam_mob_lint
-dependency_overrides:
-  islam_mob_lint:
-    path: ../islam_mob_lint

@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/domain/model/pray_timing.dart';
@@ -8,6 +7,7 @@ import 'package:islam_app/domain/repository/local_notifications.dart';
 import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:islam_app/domain/usecase/notify_adhan_notification_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 /// This UseCase schedules up to 64 local notifications:
 /// - Up to 62 notifications for prayers:
@@ -383,7 +383,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
         return true;
       } else {
         // If the saved date is more than day (i.e. beyond max allowed)
-        DataBaseManagerBase.saveInDatabase(
+        locator<IslamPreferences>().setValue(
           key: LocalNotificationConstant.disableAllForTodayDate,
           value: "",
         );
@@ -401,7 +401,7 @@ class SetupLocalNotificationWhenAppOpenUseCase {
         return true;
       } else {
         // If the saved date is more than day (i.e. beyond max allowed)
-        DataBaseManagerBase.saveInDatabase(
+        locator<IslamPreferences>().setValue(
           key: LocalNotificationConstant.disableAllForWeekDate,
           value: "",
         );
@@ -425,89 +425,71 @@ class SetupLocalNotificationWhenAppOpenUseCase {
   //                     DATABASE CHECKS FOR ALLOWED NOTIFICATIONS
   // ---------------------------------------------------------------------------
 
-  bool _isFajirNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableFajr,
-            defaultValue: true,
-          )
-          as bool;
+  bool _isFajirNotificationAllowed() => locator<IslamPreferences>().getValue(
+    key: LocalNotificationConstant.disableFajr,
+    defaultValue: true,
+  );
 
-  bool _isSunriseNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableSunriseTime,
-            defaultValue: true,
-          )
-          as bool;
+  bool _isSunriseNotificationAllowed() => locator<IslamPreferences>().getValue(
+    key: LocalNotificationConstant.disableSunriseTime,
+    defaultValue: true,
+  );
 
-  bool _isZhurNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableDuher,
-            defaultValue: true,
-          )
-          as bool;
+  bool _isZhurNotificationAllowed() => locator<IslamPreferences>().getValue(
+    key: LocalNotificationConstant.disableDuher,
+    defaultValue: true,
+  );
 
-  bool _isAsrNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableAsr,
-            defaultValue: true,
-          )
-          as bool;
+  bool _isAsrNotificationAllowed() => locator<IslamPreferences>().getValue(
+    key: LocalNotificationConstant.disableAsr,
+    defaultValue: true,
+  );
 
-  bool _isMagreebNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableMagrieb,
-            defaultValue: true,
-          )
-          as bool;
+  bool _isMagreebNotificationAllowed() => locator<IslamPreferences>().getValue(
+    key: LocalNotificationConstant.disableMagrieb,
+    defaultValue: true,
+  );
 
-  bool _isIshaNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableIsha,
-            defaultValue: true,
-          )
-          as bool;
+  bool _isIshaNotificationAllowed() => locator<IslamPreferences>().getValue(
+    key: LocalNotificationConstant.disableIsha,
+    defaultValue: true,
+  );
 
   bool _isWarningBefore15MinNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableNotificationBefore15Min,
-            defaultValue: true,
-          )
-          as bool;
+      locator<IslamPreferences>().getValue(
+        key: LocalNotificationConstant.disableNotificationBefore15Min,
+        defaultValue: true,
+      );
 
   bool _isJom3aAlkahfNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableJom3aAlkahf,
-            defaultValue: true,
-          )
-          as bool;
+      locator<IslamPreferences>().getValue(
+        key: LocalNotificationConstant.disableJom3aAlkahf,
+        defaultValue: true,
+      );
 
   bool _isJom3aDoaaNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableJom3aDo3aa,
-            defaultValue: true,
-          )
-          as bool;
+      locator<IslamPreferences>().getValue(
+        key: LocalNotificationConstant.disableJom3aDo3aa,
+        defaultValue: true,
+      );
 
   bool _isMidNightPrayNotificationAllowed() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableQeyamAlLayel,
-            defaultValue: true,
-          )
-          as bool;
+      locator<IslamPreferences>().getValue(
+        key: LocalNotificationConstant.disableQeyamAlLayel,
+        defaultValue: true,
+      );
 
   String _isNotificationForTodayDisabledAndWhen() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableAllForTodayDate,
-            defaultValue: "",
-          )
-          as String;
+      locator<IslamPreferences>().getValue(
+        key: LocalNotificationConstant.disableAllForTodayDate,
+        defaultValue: "",
+      );
 
   String _isNotificationForWeekDisabledAndWhen() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: LocalNotificationConstant.disableAllForWeekDate,
-            defaultValue: "",
-          )
-          as String;
+      locator<IslamPreferences>().getValue(
+        key: LocalNotificationConstant.disableAllForWeekDate,
+        defaultValue: "",
+      );
 
   // ---------------------------------------------------------------------------
   //                     DATABASE GET NOTIFICATIONS Sound
@@ -534,38 +516,28 @@ class SetupLocalNotificationWhenAppOpenUseCase {
     }
   }
 
-  String _fajirNotificationSound() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: DatabaseNotificationSoundConstant.fajirNotification,
-            defaultValue: "adhan1",
-          )
-          as String;
+  String _fajirNotificationSound() => locator<IslamPreferences>().getValue(
+    key: DatabaseNotificationSoundConstant.fajirNotification,
+    defaultValue: "adhan1",
+  );
 
-  String _zhurNotificationSound() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: DatabaseNotificationSoundConstant.zhurNotification,
-            defaultValue: "adhan2",
-          )
-          as String;
+  String _zhurNotificationSound() => locator<IslamPreferences>().getValue(
+    key: DatabaseNotificationSoundConstant.zhurNotification,
+    defaultValue: "adhan2",
+  );
 
-  String _asrNotificationSound() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: DatabaseNotificationSoundConstant.asrNotification,
-            defaultValue: "adhan3",
-          )
-          as String;
+  String _asrNotificationSound() => locator<IslamPreferences>().getValue(
+    key: DatabaseNotificationSoundConstant.asrNotification,
+    defaultValue: "adhan3",
+  );
 
-  String _magreebNotificationSound() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: DatabaseNotificationSoundConstant.maghribNotification,
-            defaultValue: "adhan4",
-          )
-          as String;
+  String _magreebNotificationSound() => locator<IslamPreferences>().getValue(
+    key: DatabaseNotificationSoundConstant.maghribNotification,
+    defaultValue: "adhan4",
+  );
 
-  String _ishaNotificationSound() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: DatabaseNotificationSoundConstant.ishaNotification,
-            defaultValue: "adhan5",
-          )
-          as String;
+  String _ishaNotificationSound() => locator<IslamPreferences>().getValue(
+    key: DatabaseNotificationSoundConstant.ishaNotification,
+    defaultValue: "adhan5",
+  );
 }

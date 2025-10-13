@@ -1,8 +1,9 @@
 import 'dart:io';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:fpdart/fpdart.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 class AppleSigninUseCase {
   TaskEither<AuthFailure, UserModel> call() {
@@ -10,19 +11,15 @@ class AppleSigninUseCase {
   }
 
   Future<bool> registerSocialUserInFirestore({required String signInMethod}) {
-    final userEmail =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseUserCredentials.userEmail,
-              defaultValue: "",
-            )
-            as String;
+    final userEmail = locator<IslamPreferences>().getValue(
+      key: DatabaseUserCredentials.userEmail,
+      defaultValue: "",
+    );
 
-    final userUID =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseUserCredentials.userUID,
-              defaultValue: "",
-            )
-            as String;
+    final userUID = locator<IslamPreferences>().getValue(
+      key: DatabaseUserCredentials.userUID,
+      defaultValue: "",
+    );
 
     return AppleSigninRepository.registerSocialUserInFirestore(
       email: userEmail,

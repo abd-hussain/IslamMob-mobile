@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/post.dart';
 import 'package:islam_app/domain/usecase/post_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'post_bloc.freezed.dart';
 part 'post_event.dart';
@@ -86,7 +87,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
   }
 
   bool isMyPost(String email) {
-    final userEmail = DataBaseManagerBase.getFromDatabase(
+    final userEmail = locator<IslamPreferences>().getValue(
       key: DatabaseUserCredentials.userEmail,
       defaultValue: "",
     );
@@ -97,7 +98,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
   }
 
   bool isUserLoggedIn() {
-    final userEmail = DataBaseManagerBase.getFromDatabase(
+    final userEmail = locator<IslamPreferences>().getValue(
       key: DatabaseUserCredentials.userEmail,
       defaultValue: "",
     );
@@ -107,10 +108,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     return true;
   }
 
-  String _userEmail() =>
-      DataBaseManagerBase.getFromDatabase(
-            key: DatabaseUserCredentials.userEmail,
-            defaultValue: "",
-          )
-          as String;
+  String _userEmail() => locator<IslamPreferences>().getValue(
+    key: DatabaseUserCredentials.userEmail,
+    defaultValue: "",
+  );
 }

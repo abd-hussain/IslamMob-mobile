@@ -1,10 +1,10 @@
 import 'package:card_swiper/card_swiper.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/bloc/pray_calculation_setting_bloc.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/calculation_method_view.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/edit_pray_time_minutes_view.dart';
@@ -15,6 +15,7 @@ import 'package:islam_app/presentation/pray_calculation_setting/widgets/pray_cal
 import 'package:islam_app/presentation/pray_calculation_setting/widgets/time_zoon_view.dart';
 import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
+import 'package:preferences/preferences.dart';
 
 /// A screen that provides comprehensive prayer calculation settings.
 ///
@@ -117,7 +118,7 @@ class PrayCalculationSettingScreen extends StatelessWidget {
               title: localization.factoryReset,
               onTap: () async {
                 final navigator = Navigator.of(context, rootNavigator: true);
-                await DataBaseManagerBase.saveMultipleInDatabase(
+                await locator<IslamPreferences>().saveMultiValue(
                   data: {
                     DatabaseFieldInBoardingStageConstant.finishInBoarding: null,
                     DatabaseFieldInBoardingStageConstant.inBoardingStage: 0,

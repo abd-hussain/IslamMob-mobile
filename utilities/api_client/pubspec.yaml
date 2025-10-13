@@ -3,18 +3,19 @@ version: 1.0.0
 publish_to: none
 
 environment:
-  sdk: 3.8.1
+  sdk: '>=3.9.2 <4.0.0'
+
+resolution: workspace
 
 dependencies:
   dio: 5.8.0+1
-  fpdart: ^1.1.0
+  fpdart: ^1.1.1
   native_dio_adapter: ^1.3.0
     
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  islam_mob_lint:
-    path: ../islam_mob_lint
-  json_serializable: 6.8.0
+  islam_mob_lint: any
+  json_serializable: ^6.11.1
   mocktail: 1.0.4
-  dependency_validator: 4.1.0
+  dependency_validator: 5.0.2

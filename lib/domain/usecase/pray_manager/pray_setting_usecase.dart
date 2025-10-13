@@ -1,9 +1,10 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:islam_app/domain/model/pray_timing.dart';
 import 'package:islam_app/domain/repository/pray_manager.dart';
 import 'package:islam_app/domain/usecase/pray_manager/all_pray_time_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_mob_adhan/adhan.dart';
+import 'package:preferences/preferences.dart';
 
 /// A use case class that manages prayer time settings and configurations.
 ///
@@ -70,18 +71,14 @@ class PraySettingUsecase {
 
   /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
   Coordinates _retrieveCoordinates() {
-    final double latitude =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldLocationConstant.selectedLat,
-              defaultValue: 0.0,
-            )
-            as double;
-    final double longitude =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldLocationConstant.selectedLong,
-              defaultValue: 0.0,
-            )
-            as double;
+    final double latitude = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldLocationConstant.selectedLat,
+      defaultValue: 0,
+    );
+    final double longitude = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldLocationConstant.selectedLong,
+      defaultValue: 0,
+    );
 
     return Coordinates(latitude, longitude);
   }

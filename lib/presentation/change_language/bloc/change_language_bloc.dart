@@ -1,9 +1,10 @@
 import 'dart:async';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/language.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'change_language_bloc.freezed.dart';
 part 'change_language_event.dart';
@@ -44,7 +45,7 @@ class ChangeLanguageBloc
     _PlaceNewLanguage event,
     Emitter<ChangeLanguageState> emit,
   ) async {
-    await DataBaseManagerBase.saveInDatabase(
+    await locator<IslamPreferences>().setValue(
       key: DatabaseFieldConstant.userLanguageCode,
       value: event.langCode,
     );

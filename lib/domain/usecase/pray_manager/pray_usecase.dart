@@ -1,4 +1,3 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:hijri/hijri_calendar.dart';
 import 'package:islam_app/domain/model/calender.dart';
 import 'package:islam_app/domain/model/pray_timing.dart';
@@ -8,7 +7,9 @@ import 'package:islam_app/domain/usecase/hijri_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/all_pray_time_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/next_pray_usecase.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_calculation_db_parser.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_mob_adhan/adhan.dart';
+import 'package:preferences/preferences.dart';
 
 /// A comprehensive use case class for managing prayer time operations.
 ///
@@ -119,73 +120,56 @@ class PrayUsecase {
 
   /// Retrieves the selected Madhab from the Hive box.
   Madhab _retrieveMadhab() {
-    final String madhab =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
-              defaultValue: "MadhabState.hanafi()",
-            )
-            as String;
+    final String madhab = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedMadhab,
+      defaultValue: "MadhabState.hanafi()",
+    );
     return PrayDBParser.parseMadhab(madhab);
   }
 
   /// Retrieves the selected calculation method from the Hive box.
   CalculationMethod _retrieveCalculationMethod() {
-    final String selectedMethod =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant
-                  .selectedCalculationMethod,
-              defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
-            )
-            as String;
+    final String selectedMethod = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedCalculationMethod,
+      defaultValue: "PrayCalculationMethodState.jordanAwqaf()",
+    );
 
     return PrayDBParser.parseCalculationMethod(selectedMethod);
   }
 
   HighLatitudeRule? _retrieveHighLatitudeRule() {
-    final String selectedMethod =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
-              defaultValue: "PrayHightLatitudeCaluclationState.none()",
-            )
-            as String;
+    final String selectedMethod = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedHighLatitude,
+      defaultValue: "PrayHightLatitudeCaluclationState.none()",
+    );
 
     return PrayDBParser.parseHighLatitudeRule(selectedMethod);
   }
 
   /// Retrieves the selected coordinates (latitude and longitude) from the Hive box.
   Coordinates _retrieveCoordinates() {
-    final double latitude =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldLocationConstant.selectedLat,
-              defaultValue: 0.0,
-            )
-            as double;
-    final double longitude =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldLocationConstant.selectedLong,
-              defaultValue: 0.0,
-            )
-            as double;
+    final double latitude = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldLocationConstant.selectedLat,
+      defaultValue: 0,
+    );
+    final double longitude = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldLocationConstant.selectedLong,
+      defaultValue: 0,
+    );
 
     return Coordinates(latitude, longitude);
   }
 
   /// Retrieves the UTC offset, either from Hive or the device's timezone.
   Duration _retrieveUtcOffset() {
-    final String hourOffset =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant
-                  .selectedDifferenceWithUTCHour,
-              defaultValue: "",
-            )
-            as String;
-    final String minuteOffset =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldPrayCalculationConstant
-                  .selectedDifferenceWithUTCMin,
-              defaultValue: "",
-            )
-            as String;
+    final String hourOffset = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCHour,
+      defaultValue: "",
+    );
+    final String minuteOffset = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldPrayCalculationConstant.selectedDifferenceWithUTCMin,
+      defaultValue: "",
+    );
 
     if (hourOffset.isEmpty) {
       return DateTime.now().timeZoneOffset;

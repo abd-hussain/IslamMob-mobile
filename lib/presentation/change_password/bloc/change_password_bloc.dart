@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'change_password_bloc.freezed.dart';
 part 'change_password_event.dart';
@@ -58,7 +59,7 @@ class ChangePasswordBloc
       newPassword: event.confirmPassword,
     );
     if (value) {
-      await DataBaseManagerBase.saveInDatabase(
+      await locator<IslamPreferences>().setValue(
         key: DatabaseUserCredentials.userPassword,
         value: event.confirmPassword,
       );
@@ -81,10 +82,9 @@ class ChangePasswordBloc
   }
 
   String _getUserEmail() {
-    return DataBaseManagerBase.getFromDatabase(
-          key: DatabaseUserCredentials.userPassword,
-          defaultValue: "",
-        )
-        as String;
+    return locator<IslamPreferences>().getValue(
+      key: DatabaseUserCredentials.userPassword,
+      defaultValue: "",
+    );
   }
 }

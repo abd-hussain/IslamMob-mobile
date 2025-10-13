@@ -2,10 +2,11 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'register_bloc.freezed.dart';
 part 'register_event.dart';
@@ -120,7 +121,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         mapToSave[DatabaseUserCredentials.isUserChooceShowCradintial] = "YES";
       }
 
-      await DataBaseManagerBase.saveMultipleInDatabase(data: mapToSave);
+      await locator<IslamPreferences>().saveMultiValue(data: mapToSave);
 
       emit(
         state.copyWith(

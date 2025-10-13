@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/usecase/quran_pages_index_usecase.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'quran_pages_index_bloc.freezed.dart';
 part 'quran_pages_index_event.dart';
@@ -36,12 +37,10 @@ class QuranPagesIndexBloc
 
   /// Loads the list of bookmarked pages from persistent storage.
   void _loadBookmarkedPages() {
-    final List<dynamic> storedBookmarks =
-        DataBaseManagerBase.getFromDatabase(
-              key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
-              defaultValue: [],
-            )
-            as List<dynamic>;
+    final List<dynamic> storedBookmarks = locator<IslamPreferences>().getValue(
+      key: DatabaseFieldQuranCopyConstant.quranKaremBookMarkList,
+      defaultValue: [],
+    );
     if (storedBookmarks.isNotEmpty) {
       bookmarkedPages = storedBookmarks.cast<int>();
     }

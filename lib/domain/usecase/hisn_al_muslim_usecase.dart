@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:islam_app/domain/model/hisn_al_muslim.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 /// A use case class that handles loading and managing Hisn Al Muslim (Fortress of the Muslim) data.
 ///
@@ -127,11 +128,11 @@ class HisnAlMuslimUseCase {
 
   /// Retrieves favorite IDs from the database.
   static List<int> _getFavoriteIds() {
-    final data = DataBaseManagerBase.getFromDatabase(
+    final data = locator<IslamPreferences>().getValue(
       key: DatabaseFieldInHisnAlMuslimConstant.favoriteList,
       defaultValue: [],
     );
-    return (data as List).map((e) => e as int).toList(); // Ensures List<int>
+    return data.map((e) => e as int).toList(); // Ensures List<int>
   }
 
   /// Adds or removes an item from the favorites list.
@@ -145,12 +146,12 @@ class HisnAlMuslimUseCase {
   /// Parameters:
   /// - [id]: The unique identifier of the supplication to toggle
   static void addRemoveNewItemToFavoriteList(int id) {
-    final data = DataBaseManagerBase.getFromDatabase(
+    final data = locator<IslamPreferences>().getValue(
       key: DatabaseFieldInHisnAlMuslimConstant.favoriteList,
       defaultValue: [],
     );
 
-    final List<int> favoriteIds = (data as List).map((e) => e as int).toList();
+    final List<int> favoriteIds = data.map((e) => e as int).toList();
 
     if (favoriteIds.contains(id)) {
       favoriteIds.remove(id);
@@ -158,7 +159,7 @@ class HisnAlMuslimUseCase {
       favoriteIds.add(id);
     }
 
-    DataBaseManagerBase.saveInDatabase(
+    locator<IslamPreferences>().setValue(
       key: DatabaseFieldInHisnAlMuslimConstant.favoriteList,
       value: favoriteIds,
     );

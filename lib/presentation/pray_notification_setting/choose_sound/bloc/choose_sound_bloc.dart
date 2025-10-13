@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:islam_app/domain/model/notification_sound.dart';
 import 'package:islam_app/domain/sealed/local_notification.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/locator.dart';
+import 'package:preferences/preferences.dart';
 
 part 'choose_sound_bloc.freezed.dart';
 part 'choose_sound_event.dart';
@@ -88,35 +89,30 @@ class ChooseSoundBloc extends Bloc<ChooseSoundEvent, ChooseSoundState> {
   String _getSelectedNotificationSoundFile(NotificationTypeState type) {
     switch (type) {
       case const NotificationTypeState.fajir():
-        return DataBaseManagerBase.getFromDatabase(
-              key: DatabaseNotificationSoundConstant.fajirNotification,
-              defaultValue: "adhan1",
-            )
-            as String;
+        return locator<IslamPreferences>().getValue(
+          key: DatabaseNotificationSoundConstant.fajirNotification,
+          defaultValue: "adhan1",
+        );
       case const NotificationTypeState.zuhr():
-        return DataBaseManagerBase.getFromDatabase(
-              key: DatabaseNotificationSoundConstant.zhurNotification,
-              defaultValue: "adhan2",
-            )
-            as String;
+        return locator<IslamPreferences>().getValue(
+          key: DatabaseNotificationSoundConstant.zhurNotification,
+          defaultValue: "adhan2",
+        );
       case const NotificationTypeState.asr():
-        return DataBaseManagerBase.getFromDatabase(
-              key: DatabaseNotificationSoundConstant.asrNotification,
-              defaultValue: "adhan3",
-            )
-            as String;
+        return locator<IslamPreferences>().getValue(
+          key: DatabaseNotificationSoundConstant.asrNotification,
+          defaultValue: "adhan3",
+        );
       case const NotificationTypeState.maghrib():
-        return DataBaseManagerBase.getFromDatabase(
-              key: DatabaseNotificationSoundConstant.maghribNotification,
-              defaultValue: "adhan4",
-            )
-            as String;
+        return locator<IslamPreferences>().getValue(
+          key: DatabaseNotificationSoundConstant.maghribNotification,
+          defaultValue: "adhan4",
+        );
       case const NotificationTypeState.isha():
-        return DataBaseManagerBase.getFromDatabase(
-              key: DatabaseNotificationSoundConstant.ishaNotification,
-              defaultValue: "adhan5",
-            )
-            as String;
+        return locator<IslamPreferences>().getValue(
+          key: DatabaseNotificationSoundConstant.ishaNotification,
+          defaultValue: "adhan5",
+        );
       default:
         return "";
     }
@@ -135,27 +131,27 @@ class ChooseSoundBloc extends Bloc<ChooseSoundEvent, ChooseSoundState> {
   ) async {
     switch (event.type) {
       case const NotificationTypeState.fajir():
-        await DataBaseManagerBase.saveInDatabase(
+        await locator<IslamPreferences>().setValue(
           key: DatabaseNotificationSoundConstant.fajirNotification,
           value: state.selectedSound,
         );
       case const NotificationTypeState.zuhr():
-        await DataBaseManagerBase.saveInDatabase(
+        await locator<IslamPreferences>().setValue(
           key: DatabaseNotificationSoundConstant.zhurNotification,
           value: state.selectedSound,
         );
       case const NotificationTypeState.asr():
-        await DataBaseManagerBase.saveInDatabase(
+        await locator<IslamPreferences>().setValue(
           key: DatabaseNotificationSoundConstant.asrNotification,
           value: state.selectedSound,
         );
       case const NotificationTypeState.maghrib():
-        await DataBaseManagerBase.saveInDatabase(
+        await locator<IslamPreferences>().setValue(
           key: DatabaseNotificationSoundConstant.maghribNotification,
           value: state.selectedSound,
         );
       case const NotificationTypeState.isha():
-        await DataBaseManagerBase.saveInDatabase(
+        await locator<IslamPreferences>().setValue(
           key: DatabaseNotificationSoundConstant.ishaNotification,
           value: state.selectedSound,
         );

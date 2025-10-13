@@ -1,10 +1,11 @@
-import 'package:database_manager/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/bloc/quran_kareem_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 import 'package:pdfx/pdfx.dart';
+import 'package:preferences/preferences.dart';
 
 /// The main view widget for displaying the Quran Kareem (Holy Quran) PDF.
 ///
@@ -37,7 +38,7 @@ class QuranKareemMainView extends StatelessWidget {
 
   Widget _buildPdfView(BuildContext context) {
     final isReversed =
-        DataBaseManagerBase.getFromDatabase(
+        locator<IslamPreferences>().getValue(
           key: DatabaseFieldConstant.userLanguageCode,
           defaultValue: "",
         ) !=

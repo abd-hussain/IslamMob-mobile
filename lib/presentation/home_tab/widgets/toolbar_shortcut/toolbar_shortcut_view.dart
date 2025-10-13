@@ -1,15 +1,16 @@
 import 'package:azkar/model/azkar_salah_time.dart';
-import 'package:database_manager/database_manager.dart';
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/constants/argument_constant.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
+import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_cell.dart';
 import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/dialogs/support_us/support_dialog.dart';
+import 'package:preferences/preferences.dart';
 
 /// Widget for displaying the main toolbar with Islamic app shortcuts.
 ///
@@ -41,7 +42,7 @@ class ToolbarShortcutView extends StatelessWidget {
     final localize = IslamMobLocalizations.of(context);
     final navigator = Navigator.of(context, rootNavigator: true);
     final bool isUserLoggedIn =
-        DataBaseManagerBase.getFromDatabase(
+        locator<IslamPreferences>().getValue(
           key: DatabaseUserCredentials.isUserLoggedIn,
           defaultValue: "",
         ) !=
