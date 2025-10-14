@@ -131,7 +131,7 @@ class ManualLoginBloc extends Bloc<ManualLoginEvent, ManualLoginState> {
     if (value.containsKey(true)) {
       final accessToken = value[true];
       final mapToSave = {
-        DatabaseUserCredentials.isUserLoggedIn: "YES",
+        DatabaseUserCredentials.isUserLoggedIn: true,
         DatabaseUserCredentials.userEmail: event.email,
         DatabaseUserCredentials.userPassword: event.password,
         DatabaseUserCredentials.accessToken: accessToken ?? "",

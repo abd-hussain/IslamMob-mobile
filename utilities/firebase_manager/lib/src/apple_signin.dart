@@ -6,7 +6,6 @@ import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_manager/exceptions/auth_exception.dart';
 import 'package:firebase_manager/firebase_manager.dart' hide AuthFailure;
-import 'package:flutter/material.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:internet_connection_checkup/internet_connection_checkup.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
@@ -66,13 +65,6 @@ class AppleSigninRepository {
         assert(
           idToken != null && idToken.isNotEmpty,
           'Apple returned null identityToken',
-        );
-        _debugAppleJwt(idToken!);
-
-        // Also log nonce snippets to match hash
-        final hashed = _sha256ofString(rawNonce);
-        debugPrint(
-          'nonce(raw)=${rawNonce.substring(0, 8)}…  nonce(sha256)=${hashed.substring(0, 8)}…',
         );
 
         return credential;
@@ -154,17 +146,13 @@ class AppleSigninRepository {
         );
       }
 
-      // IMPORTANT: pass rawNonce here (unhashed). Apple got the SHA256 earlier.
-      debugPrint('Creating OAuth credential with:');
-      debugPrint('  - idToken length: ${idToken.length}');
-      debugPrint('  - rawNonce length: ${rawNonce.length}');
-      debugPrint('  - rawNonce: $rawNonce');
+      // Include authorizationCode for better Firebase compatibility
+      final authCode = credential.authorizationCode;
 
       final oauthCredential = OAuthProvider(
         'apple.com',
-      ).credential(idToken: idToken, rawNonce: rawNonce);
+      ).credential(idToken: idToken, rawNonce: rawNonce, accessToken: authCode);
 
-      debugPrint('OAuth credential created successfully');
       return oauthCredential;
     }, (error, _) => AuthFailure(message: 'Credential creation failed: $error'));
   }
@@ -177,13 +165,6 @@ class AppleSigninRepository {
     return TaskEither.tryCatch(
       () => _authInstance.signInWithCredential(credential),
       (error, st) {
-        if (error is FirebaseAuthException) {
-          debugPrint(
-            'FirebaseAuthException code=${error.code} message=${error.message}',
-          );
-        } else {
-          debugPrint('Firebase sign-in error: $error\n$st');
-        }
         if (error is FirebaseAuthException) {
           final code =
               error.code; // e.g., invalid-credential, invalid-tenant-id, etc.
@@ -289,18 +270,6 @@ class AppleSigninRepository {
     final bytes = utf8.encode(input);
     final digest = sha256.convert(bytes);
     return digest.toString();
-  }
-
-  // Debug: decode Apple identityToken (JWT) to verify aud & nonce
-  static void _debugAppleJwt(String jwt) {
-    try {
-      final parts = jwt.split('.');
-      if (parts.length != 3) return;
-      final payload = utf8.decode(
-        base64Url.decode(base64Url.normalize(parts[1])),
-      );
-      debugPrint('Apple JWT payload: $payload'); // Look for "aud" and "nonce"
-    } catch (_) {}
   }
 }
 

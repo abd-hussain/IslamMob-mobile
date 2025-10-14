@@ -42,12 +42,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     final navigator = Navigator.of(context, rootNavigator: true);
     final localize = IslamMobLocalizations.of(context);
-    final bool isUserLoggedIn =
-        locator<IslamPreferences>().getValue(
-          key: DatabaseUserCredentials.isUserLoggedIn,
-          defaultValue: "",
-        ) !=
-        "";
+    final bool isUserLoggedIn = locator<IslamPreferences>().getValue(
+      key: DatabaseUserCredentials.isUserLoggedIn,
+      defaultValue: false,
+    );
 
     return Column(
       children: [
@@ -146,7 +144,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               }
 
                               final mapToSave = {
-                                DatabaseUserCredentials.isUserLoggedIn: "",
+                                DatabaseUserCredentials.isUserLoggedIn: false,
                                 DatabaseUserCredentials.userEmail: "",
                                 DatabaseUserCredentials.userPassword: "",
                                 DatabaseUserCredentials.accessToken: "",
@@ -201,7 +199,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   }
 
                                   final mapToSave = {
-                                    DatabaseUserCredentials.isUserLoggedIn: "",
+                                    DatabaseUserCredentials.isUserLoggedIn:
+                                        false,
                                     DatabaseUserCredentials.userEmail: "",
                                     DatabaseUserCredentials.userPassword: "",
                                     DatabaseUserCredentials.accessToken: "",

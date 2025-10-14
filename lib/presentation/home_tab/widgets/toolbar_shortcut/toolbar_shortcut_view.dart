@@ -41,12 +41,10 @@ class ToolbarShortcutView extends StatelessWidget {
   Widget build(BuildContext context) {
     final localize = IslamMobLocalizations.of(context);
     final navigator = Navigator.of(context, rootNavigator: true);
-    final bool isUserLoggedIn =
-        locator<IslamPreferences>().getValue(
-          key: DatabaseUserCredentials.isUserLoggedIn,
-          defaultValue: "",
-        ) !=
-        "";
+    final bool isUserLoggedIn = locator<IslamPreferences>().getValue(
+      key: DatabaseUserCredentials.isUserLoggedIn,
+      defaultValue: false,
+    );
 
     return Container(
       decoration: _containerDecoration(),
