@@ -24,7 +24,7 @@ part 'version.g.dart';
 /// The version checking helps maintain a consistent and secure experience
 /// for all users of the Islam Mob application.
 @freezed
-class AppVersionModel with _$AppVersionModel {
+abstract class AppVersionModel with _$AppVersionModel {
   /// Creates an [AppVersionModel] instance for version management.
   ///
   /// Parameters:

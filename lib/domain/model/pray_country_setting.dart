@@ -23,7 +23,7 @@ part 'pray_country_setting.freezed.dart';
 /// The settings ensure that prayer times align with local Islamic authority
 /// recommendations and account for geographical factors that affect accuracy.
 @freezed
-class PrayCountrySetting with _$PrayCountrySetting {
+abstract class PrayCountrySetting with _$PrayCountrySetting {
   /// Creates a [PrayCountrySetting] instance for country-specific prayer calculations.
   ///
   /// Parameters:

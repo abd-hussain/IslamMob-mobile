@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,2782 +9,1427 @@ part of 'quran_kareem_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$QuranKareemEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranKareemEvent);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'QuranKareemEvent()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $QuranKareemEventCopyWith<$Res> {
-  factory $QuranKareemEventCopyWith(
-    QuranKareemEvent value,
-    $Res Function(QuranKareemEvent) then,
-  ) = _$QuranKareemEventCopyWithImpl<$Res, QuranKareemEvent>;
+class $QuranKareemEventCopyWith<$Res>  {
+$QuranKareemEventCopyWith(QuranKareemEvent _, $Res Function(QuranKareemEvent) __);
 }
 
-/// @nodoc
-class _$QuranKareemEventCopyWithImpl<$Res, $Val extends QuranKareemEvent>
-    implements $QuranKareemEventCopyWith<$Res> {
-  _$QuranKareemEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [QuranKareemEvent].
+extension QuranKareemEventPatterns on QuranKareemEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _ShowHideHelpBar value)?  showHideHelpBar,TResult Function( _UpdatePageCount value)?  updatePageCount,TResult Function( _UpdateSidePage value)?  updateSidePage,TResult Function( _UpdateBookMarkedPages value)?  updateBookMarkedPages,TResult Function( _UpdateScreenBrigtness value)?  updateScreenBrigtness,TResult Function( _UpdateScreenTutorial value)?  updateScreenTutorial,TResult Function( _UpdateRewardedAd value)?  updateRewardedAd,TResult Function( _UpdateReadPDFFile value)?  updateReadPDFFile,TResult Function( _UpdateSorahName value)?  updateSorahName,TResult Function( _UpdateJozo2Name value)?  updateJozo2Name,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ShowHideHelpBar() when showHideHelpBar != null:
+return showHideHelpBar(_that);case _UpdatePageCount() when updatePageCount != null:
+return updatePageCount(_that);case _UpdateSidePage() when updateSidePage != null:
+return updateSidePage(_that);case _UpdateBookMarkedPages() when updateBookMarkedPages != null:
+return updateBookMarkedPages(_that);case _UpdateScreenBrigtness() when updateScreenBrigtness != null:
+return updateScreenBrigtness(_that);case _UpdateScreenTutorial() when updateScreenTutorial != null:
+return updateScreenTutorial(_that);case _UpdateRewardedAd() when updateRewardedAd != null:
+return updateRewardedAd(_that);case _UpdateReadPDFFile() when updateReadPDFFile != null:
+return updateReadPDFFile(_that);case _UpdateSorahName() when updateSorahName != null:
+return updateSorahName(_that);case _UpdateJozo2Name() when updateJozo2Name != null:
+return updateJozo2Name(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _ShowHideHelpBar value)  showHideHelpBar,required TResult Function( _UpdatePageCount value)  updatePageCount,required TResult Function( _UpdateSidePage value)  updateSidePage,required TResult Function( _UpdateBookMarkedPages value)  updateBookMarkedPages,required TResult Function( _UpdateScreenBrigtness value)  updateScreenBrigtness,required TResult Function( _UpdateScreenTutorial value)  updateScreenTutorial,required TResult Function( _UpdateRewardedAd value)  updateRewardedAd,required TResult Function( _UpdateReadPDFFile value)  updateReadPDFFile,required TResult Function( _UpdateSorahName value)  updateSorahName,required TResult Function( _UpdateJozo2Name value)  updateJozo2Name,}){
+final _that = this;
+switch (_that) {
+case _ShowHideHelpBar():
+return showHideHelpBar(_that);case _UpdatePageCount():
+return updatePageCount(_that);case _UpdateSidePage():
+return updateSidePage(_that);case _UpdateBookMarkedPages():
+return updateBookMarkedPages(_that);case _UpdateScreenBrigtness():
+return updateScreenBrigtness(_that);case _UpdateScreenTutorial():
+return updateScreenTutorial(_that);case _UpdateRewardedAd():
+return updateRewardedAd(_that);case _UpdateReadPDFFile():
+return updateReadPDFFile(_that);case _UpdateSorahName():
+return updateSorahName(_that);case _UpdateJozo2Name():
+return updateJozo2Name(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _ShowHideHelpBar value)?  showHideHelpBar,TResult? Function( _UpdatePageCount value)?  updatePageCount,TResult? Function( _UpdateSidePage value)?  updateSidePage,TResult? Function( _UpdateBookMarkedPages value)?  updateBookMarkedPages,TResult? Function( _UpdateScreenBrigtness value)?  updateScreenBrigtness,TResult? Function( _UpdateScreenTutorial value)?  updateScreenTutorial,TResult? Function( _UpdateRewardedAd value)?  updateRewardedAd,TResult? Function( _UpdateReadPDFFile value)?  updateReadPDFFile,TResult? Function( _UpdateSorahName value)?  updateSorahName,TResult? Function( _UpdateJozo2Name value)?  updateJozo2Name,}){
+final _that = this;
+switch (_that) {
+case _ShowHideHelpBar() when showHideHelpBar != null:
+return showHideHelpBar(_that);case _UpdatePageCount() when updatePageCount != null:
+return updatePageCount(_that);case _UpdateSidePage() when updateSidePage != null:
+return updateSidePage(_that);case _UpdateBookMarkedPages() when updateBookMarkedPages != null:
+return updateBookMarkedPages(_that);case _UpdateScreenBrigtness() when updateScreenBrigtness != null:
+return updateScreenBrigtness(_that);case _UpdateScreenTutorial() when updateScreenTutorial != null:
+return updateScreenTutorial(_that);case _UpdateRewardedAd() when updateRewardedAd != null:
+return updateRewardedAd(_that);case _UpdateReadPDFFile() when updateReadPDFFile != null:
+return updateReadPDFFile(_that);case _UpdateSorahName() when updateSorahName != null:
+return updateSorahName(_that);case _UpdateJozo2Name() when updateJozo2Name != null:
+return updateJozo2Name(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( bool status)?  showHideHelpBar,TResult Function( int pageCount)?  updatePageCount,TResult Function( QuranKareemStatePageSideState side)?  updateSidePage,TResult Function( List<int> list)?  updateBookMarkedPages,TResult Function( double value)?  updateScreenBrigtness,TResult Function( bool value)?  updateScreenTutorial,TResult Function( bool value)?  updateRewardedAd,TResult Function( String value)?  updateReadPDFFile,TResult Function( String value)?  updateSorahName,TResult Function( String value)?  updateJozo2Name,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ShowHideHelpBar() when showHideHelpBar != null:
+return showHideHelpBar(_that.status);case _UpdatePageCount() when updatePageCount != null:
+return updatePageCount(_that.pageCount);case _UpdateSidePage() when updateSidePage != null:
+return updateSidePage(_that.side);case _UpdateBookMarkedPages() when updateBookMarkedPages != null:
+return updateBookMarkedPages(_that.list);case _UpdateScreenBrigtness() when updateScreenBrigtness != null:
+return updateScreenBrigtness(_that.value);case _UpdateScreenTutorial() when updateScreenTutorial != null:
+return updateScreenTutorial(_that.value);case _UpdateRewardedAd() when updateRewardedAd != null:
+return updateRewardedAd(_that.value);case _UpdateReadPDFFile() when updateReadPDFFile != null:
+return updateReadPDFFile(_that.value);case _UpdateSorahName() when updateSorahName != null:
+return updateSorahName(_that.value);case _UpdateJozo2Name() when updateJozo2Name != null:
+return updateJozo2Name(_that.value);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( bool status)  showHideHelpBar,required TResult Function( int pageCount)  updatePageCount,required TResult Function( QuranKareemStatePageSideState side)  updateSidePage,required TResult Function( List<int> list)  updateBookMarkedPages,required TResult Function( double value)  updateScreenBrigtness,required TResult Function( bool value)  updateScreenTutorial,required TResult Function( bool value)  updateRewardedAd,required TResult Function( String value)  updateReadPDFFile,required TResult Function( String value)  updateSorahName,required TResult Function( String value)  updateJozo2Name,}) {final _that = this;
+switch (_that) {
+case _ShowHideHelpBar():
+return showHideHelpBar(_that.status);case _UpdatePageCount():
+return updatePageCount(_that.pageCount);case _UpdateSidePage():
+return updateSidePage(_that.side);case _UpdateBookMarkedPages():
+return updateBookMarkedPages(_that.list);case _UpdateScreenBrigtness():
+return updateScreenBrigtness(_that.value);case _UpdateScreenTutorial():
+return updateScreenTutorial(_that.value);case _UpdateRewardedAd():
+return updateRewardedAd(_that.value);case _UpdateReadPDFFile():
+return updateReadPDFFile(_that.value);case _UpdateSorahName():
+return updateSorahName(_that.value);case _UpdateJozo2Name():
+return updateJozo2Name(_that.value);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( bool status)?  showHideHelpBar,TResult? Function( int pageCount)?  updatePageCount,TResult? Function( QuranKareemStatePageSideState side)?  updateSidePage,TResult? Function( List<int> list)?  updateBookMarkedPages,TResult? Function( double value)?  updateScreenBrigtness,TResult? Function( bool value)?  updateScreenTutorial,TResult? Function( bool value)?  updateRewardedAd,TResult? Function( String value)?  updateReadPDFFile,TResult? Function( String value)?  updateSorahName,TResult? Function( String value)?  updateJozo2Name,}) {final _that = this;
+switch (_that) {
+case _ShowHideHelpBar() when showHideHelpBar != null:
+return showHideHelpBar(_that.status);case _UpdatePageCount() when updatePageCount != null:
+return updatePageCount(_that.pageCount);case _UpdateSidePage() when updateSidePage != null:
+return updateSidePage(_that.side);case _UpdateBookMarkedPages() when updateBookMarkedPages != null:
+return updateBookMarkedPages(_that.list);case _UpdateScreenBrigtness() when updateScreenBrigtness != null:
+return updateScreenBrigtness(_that.value);case _UpdateScreenTutorial() when updateScreenTutorial != null:
+return updateScreenTutorial(_that.value);case _UpdateRewardedAd() when updateRewardedAd != null:
+return updateRewardedAd(_that.value);case _UpdateReadPDFFile() when updateReadPDFFile != null:
+return updateReadPDFFile(_that.value);case _UpdateSorahName() when updateSorahName != null:
+return updateSorahName(_that.value);case _UpdateJozo2Name() when updateJozo2Name != null:
+return updateJozo2Name(_that.value);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$ShowHideHelpBarImplCopyWith<$Res> {
-  factory _$$ShowHideHelpBarImplCopyWith(
-    _$ShowHideHelpBarImpl value,
-    $Res Function(_$ShowHideHelpBarImpl) then,
-  ) = __$$ShowHideHelpBarImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$ShowHideHelpBarImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$ShowHideHelpBarImpl>
-    implements _$$ShowHideHelpBarImplCopyWith<$Res> {
-  __$$ShowHideHelpBarImplCopyWithImpl(
-    _$ShowHideHelpBarImpl _value,
-    $Res Function(_$ShowHideHelpBarImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$ShowHideHelpBarImpl(
-        null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$ShowHideHelpBarImpl implements _ShowHideHelpBar {
-  _$ShowHideHelpBarImpl(this.status);
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'QuranKareemEvent.showHideHelpBar(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ShowHideHelpBarImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ShowHideHelpBarImplCopyWith<_$ShowHideHelpBarImpl> get copyWith =>
-      __$$ShowHideHelpBarImplCopyWithImpl<_$ShowHideHelpBarImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return showHideHelpBar(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return showHideHelpBar?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (showHideHelpBar != null) {
-      return showHideHelpBar(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return showHideHelpBar(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return showHideHelpBar?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (showHideHelpBar != null) {
-      return showHideHelpBar(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ShowHideHelpBar implements QuranKareemEvent {
-  factory _ShowHideHelpBar(final bool status) = _$ShowHideHelpBarImpl;
-
-  bool get status;
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ShowHideHelpBarImplCopyWith<_$ShowHideHelpBarImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdatePageCountImplCopyWith<$Res> {
-  factory _$$UpdatePageCountImplCopyWith(
-    _$UpdatePageCountImpl value,
-    $Res Function(_$UpdatePageCountImpl) then,
-  ) = __$$UpdatePageCountImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int pageCount});
-}
-
-/// @nodoc
-class __$$UpdatePageCountImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdatePageCountImpl>
-    implements _$$UpdatePageCountImplCopyWith<$Res> {
-  __$$UpdatePageCountImplCopyWithImpl(
-    _$UpdatePageCountImpl _value,
-    $Res Function(_$UpdatePageCountImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? pageCount = null}) {
-    return _then(
-      _$UpdatePageCountImpl(
-        null == pageCount
-            ? _value.pageCount
-            : pageCount // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$UpdatePageCountImpl implements _UpdatePageCount {
-  _$UpdatePageCountImpl(this.pageCount);
 
-  @override
-  final int pageCount;
+class _ShowHideHelpBar implements QuranKareemEvent {
+   _ShowHideHelpBar(this.status);
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updatePageCount(pageCount: $pageCount)';
-  }
+ final  bool status;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdatePageCountImpl &&
-            (identical(other.pageCount, pageCount) ||
-                other.pageCount == pageCount));
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ShowHideHelpBarCopyWith<_ShowHideHelpBar> get copyWith => __$ShowHideHelpBarCopyWithImpl<_ShowHideHelpBar>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, pageCount);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdatePageCountImplCopyWith<_$UpdatePageCountImpl> get copyWith =>
-      __$$UpdatePageCountImplCopyWithImpl<_$UpdatePageCountImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updatePageCount(pageCount);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updatePageCount?.call(pageCount);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updatePageCount != null) {
-      return updatePageCount(pageCount);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updatePageCount(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updatePageCount?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updatePageCount != null) {
-      return updatePageCount(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ShowHideHelpBar&&(identical(other.status, status) || other.status == status));
 }
 
-abstract class _UpdatePageCount implements QuranKareemEvent {
-  factory _UpdatePageCount(final int pageCount) = _$UpdatePageCountImpl;
 
-  int get pageCount;
+@override
+int get hashCode => Object.hash(runtimeType,status);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdatePageCountImplCopyWith<_$UpdatePageCountImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'QuranKareemEvent.showHideHelpBar(status: $status)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateSidePageImplCopyWith<$Res> {
-  factory _$$UpdateSidePageImplCopyWith(
-    _$UpdateSidePageImpl value,
-    $Res Function(_$UpdateSidePageImpl) then,
-  ) = __$$UpdateSidePageImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({QuranKareemStatePageSideState side});
+abstract mixin class _$ShowHideHelpBarCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$ShowHideHelpBarCopyWith(_ShowHideHelpBar value, $Res Function(_ShowHideHelpBar) _then) = __$ShowHideHelpBarCopyWithImpl;
+@useResult
+$Res call({
+ bool status
+});
 
-  $QuranKareemStatePageSideStateCopyWith<$Res> get side;
+
+
+
+}
+/// @nodoc
+class __$ShowHideHelpBarCopyWithImpl<$Res>
+    implements _$ShowHideHelpBarCopyWith<$Res> {
+  __$ShowHideHelpBarCopyWithImpl(this._self, this._then);
+
+  final _ShowHideHelpBar _self;
+  final $Res Function(_ShowHideHelpBar) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? status = null,}) {
+  return _then(_ShowHideHelpBar(
+null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateSidePageImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateSidePageImpl>
-    implements _$$UpdateSidePageImplCopyWith<$Res> {
-  __$$UpdateSidePageImplCopyWithImpl(
-    _$UpdateSidePageImpl _value,
-    $Res Function(_$UpdateSidePageImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? side = null}) {
-    return _then(
-      _$UpdateSidePageImpl(
-        null == side
-            ? _value.side
-            : side // ignore: cast_nullable_to_non_nullable
-                  as QuranKareemStatePageSideState,
-      ),
-    );
-  }
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $QuranKareemStatePageSideStateCopyWith<$Res> get side {
-    return $QuranKareemStatePageSideStateCopyWith<$Res>(_value.side, (value) {
-      return _then(_value.copyWith(side: value));
-    });
-  }
 }
 
 /// @nodoc
 
-class _$UpdateSidePageImpl implements _UpdateSidePage {
-  _$UpdateSidePageImpl(this.side);
 
-  @override
-  final QuranKareemStatePageSideState side;
+class _UpdatePageCount implements QuranKareemEvent {
+   _UpdatePageCount(this.pageCount);
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateSidePage(side: $side)';
-  }
+ final  int pageCount;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateSidePageImpl &&
-            (identical(other.side, side) || other.side == side));
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdatePageCountCopyWith<_UpdatePageCount> get copyWith => __$UpdatePageCountCopyWithImpl<_UpdatePageCount>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, side);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateSidePageImplCopyWith<_$UpdateSidePageImpl> get copyWith =>
-      __$$UpdateSidePageImplCopyWithImpl<_$UpdateSidePageImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updateSidePage(side);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updateSidePage?.call(side);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateSidePage != null) {
-      return updateSidePage(side);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updateSidePage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updateSidePage?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateSidePage != null) {
-      return updateSidePage(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdatePageCount&&(identical(other.pageCount, pageCount) || other.pageCount == pageCount));
 }
 
-abstract class _UpdateSidePage implements QuranKareemEvent {
-  factory _UpdateSidePage(final QuranKareemStatePageSideState side) =
-      _$UpdateSidePageImpl;
 
-  QuranKareemStatePageSideState get side;
+@override
+int get hashCode => Object.hash(runtimeType,pageCount);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateSidePageImplCopyWith<_$UpdateSidePageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'QuranKareemEvent.updatePageCount(pageCount: $pageCount)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateBookMarkedPagesImplCopyWith<$Res> {
-  factory _$$UpdateBookMarkedPagesImplCopyWith(
-    _$UpdateBookMarkedPagesImpl value,
-    $Res Function(_$UpdateBookMarkedPagesImpl) then,
-  ) = __$$UpdateBookMarkedPagesImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<int> list});
+abstract mixin class _$UpdatePageCountCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdatePageCountCopyWith(_UpdatePageCount value, $Res Function(_UpdatePageCount) _then) = __$UpdatePageCountCopyWithImpl;
+@useResult
+$Res call({
+ int pageCount
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdatePageCountCopyWithImpl<$Res>
+    implements _$UpdatePageCountCopyWith<$Res> {
+  __$UpdatePageCountCopyWithImpl(this._self, this._then);
+
+  final _UpdatePageCount _self;
+  final $Res Function(_UpdatePageCount) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? pageCount = null,}) {
+  return _then(_UpdatePageCount(
+null == pageCount ? _self.pageCount : pageCount // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateBookMarkedPagesImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateBookMarkedPagesImpl>
-    implements _$$UpdateBookMarkedPagesImplCopyWith<$Res> {
-  __$$UpdateBookMarkedPagesImplCopyWithImpl(
-    _$UpdateBookMarkedPagesImpl _value,
-    $Res Function(_$UpdateBookMarkedPagesImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? list = null}) {
-    return _then(
-      _$UpdateBookMarkedPagesImpl(
-        null == list
-            ? _value._list
-            : list // ignore: cast_nullable_to_non_nullable
-                  as List<int>,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$UpdateBookMarkedPagesImpl implements _UpdateBookMarkedPages {
-  _$UpdateBookMarkedPagesImpl(final List<int> list) : _list = list;
 
-  final List<int> _list;
-  @override
-  List<int> get list {
-    if (_list is EqualUnmodifiableListView) return _list;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_list);
-  }
+class _UpdateSidePage implements QuranKareemEvent {
+   _UpdateSidePage(this.side);
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateBookMarkedPages(list: $list)';
-  }
+ final  QuranKareemStatePageSideState side;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateBookMarkedPagesImpl &&
-            const DeepCollectionEquality().equals(other._list, _list));
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateSidePageCopyWith<_UpdateSidePage> get copyWith => __$UpdateSidePageCopyWithImpl<_UpdateSidePage>(this, _$identity);
 
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateBookMarkedPagesImplCopyWith<_$UpdateBookMarkedPagesImpl>
-  get copyWith =>
-      __$$UpdateBookMarkedPagesImplCopyWithImpl<_$UpdateBookMarkedPagesImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updateBookMarkedPages(list);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updateBookMarkedPages?.call(list);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateBookMarkedPages != null) {
-      return updateBookMarkedPages(list);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updateBookMarkedPages(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updateBookMarkedPages?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateBookMarkedPages != null) {
-      return updateBookMarkedPages(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateSidePage&&(identical(other.side, side) || other.side == side));
 }
 
-abstract class _UpdateBookMarkedPages implements QuranKareemEvent {
-  factory _UpdateBookMarkedPages(final List<int> list) =
-      _$UpdateBookMarkedPagesImpl;
 
-  List<int> get list;
+@override
+int get hashCode => Object.hash(runtimeType,side);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateBookMarkedPagesImplCopyWith<_$UpdateBookMarkedPagesImpl>
-  get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'QuranKareemEvent.updateSidePage(side: $side)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateScreenBrigtnessImplCopyWith<$Res> {
-  factory _$$UpdateScreenBrigtnessImplCopyWith(
-    _$UpdateScreenBrigtnessImpl value,
-    $Res Function(_$UpdateScreenBrigtnessImpl) then,
-  ) = __$$UpdateScreenBrigtnessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({double value});
+abstract mixin class _$UpdateSidePageCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdateSidePageCopyWith(_UpdateSidePage value, $Res Function(_UpdateSidePage) _then) = __$UpdateSidePageCopyWithImpl;
+@useResult
+$Res call({
+ QuranKareemStatePageSideState side
+});
+
+
+$QuranKareemStatePageSideStateCopyWith<$Res> get side;
+
+}
+/// @nodoc
+class __$UpdateSidePageCopyWithImpl<$Res>
+    implements _$UpdateSidePageCopyWith<$Res> {
+  __$UpdateSidePageCopyWithImpl(this._self, this._then);
+
+  final _UpdateSidePage _self;
+  final $Res Function(_UpdateSidePage) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? side = null,}) {
+  return _then(_UpdateSidePage(
+null == side ? _self.side : side // ignore: cast_nullable_to_non_nullable
+as QuranKareemStatePageSideState,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateScreenBrigtnessImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateScreenBrigtnessImpl>
-    implements _$$UpdateScreenBrigtnessImplCopyWith<$Res> {
-  __$$UpdateScreenBrigtnessImplCopyWithImpl(
-    _$UpdateScreenBrigtnessImpl _value,
-    $Res Function(_$UpdateScreenBrigtnessImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateScreenBrigtnessImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as double,
-      ),
-    );
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$QuranKareemStatePageSideStateCopyWith<$Res> get side {
+  
+  return $QuranKareemStatePageSideStateCopyWith<$Res>(_self.side, (value) {
+    return _then(_self.copyWith(side: value));
+  });
+}
 }
 
 /// @nodoc
 
-class _$UpdateScreenBrigtnessImpl implements _UpdateScreenBrigtness {
-  _$UpdateScreenBrigtnessImpl(this.value);
 
-  @override
-  final double value;
+class _UpdateBookMarkedPages implements QuranKareemEvent {
+   _UpdateBookMarkedPages(final  List<int> list): _list = list;
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateScreenBrigtness(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateScreenBrigtnessImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateScreenBrigtnessImplCopyWith<_$UpdateScreenBrigtnessImpl>
-  get copyWith =>
-      __$$UpdateScreenBrigtnessImplCopyWithImpl<_$UpdateScreenBrigtnessImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updateScreenBrigtness(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updateScreenBrigtness?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateScreenBrigtness != null) {
-      return updateScreenBrigtness(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updateScreenBrigtness(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updateScreenBrigtness?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateScreenBrigtness != null) {
-      return updateScreenBrigtness(this);
-    }
-    return orElse();
-  }
+ final  List<int> _list;
+ List<int> get list {
+  if (_list is EqualUnmodifiableListView) return _list;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_list);
 }
 
-abstract class _UpdateScreenBrigtness implements QuranKareemEvent {
-  factory _UpdateScreenBrigtness(final double value) =
-      _$UpdateScreenBrigtnessImpl;
 
-  double get value;
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateBookMarkedPagesCopyWith<_UpdateBookMarkedPages> get copyWith => __$UpdateBookMarkedPagesCopyWithImpl<_UpdateBookMarkedPages>(this, _$identity);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateScreenBrigtnessImplCopyWith<_$UpdateScreenBrigtnessImpl>
-  get copyWith => throw _privateConstructorUsedError;
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateBookMarkedPages&&const DeepCollectionEquality().equals(other._list, _list));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_list));
+
+@override
+String toString() {
+  return 'QuranKareemEvent.updateBookMarkedPages(list: $list)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateScreenTutorialImplCopyWith<$Res> {
-  factory _$$UpdateScreenTutorialImplCopyWith(
-    _$UpdateScreenTutorialImpl value,
-    $Res Function(_$UpdateScreenTutorialImpl) then,
-  ) = __$$UpdateScreenTutorialImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool value});
+abstract mixin class _$UpdateBookMarkedPagesCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdateBookMarkedPagesCopyWith(_UpdateBookMarkedPages value, $Res Function(_UpdateBookMarkedPages) _then) = __$UpdateBookMarkedPagesCopyWithImpl;
+@useResult
+$Res call({
+ List<int> list
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateBookMarkedPagesCopyWithImpl<$Res>
+    implements _$UpdateBookMarkedPagesCopyWith<$Res> {
+  __$UpdateBookMarkedPagesCopyWithImpl(this._self, this._then);
+
+  final _UpdateBookMarkedPages _self;
+  final $Res Function(_UpdateBookMarkedPages) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? list = null,}) {
+  return _then(_UpdateBookMarkedPages(
+null == list ? _self._list : list // ignore: cast_nullable_to_non_nullable
+as List<int>,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateScreenTutorialImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateScreenTutorialImpl>
-    implements _$$UpdateScreenTutorialImplCopyWith<$Res> {
-  __$$UpdateScreenTutorialImplCopyWithImpl(
-    _$UpdateScreenTutorialImpl _value,
-    $Res Function(_$UpdateScreenTutorialImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateScreenTutorialImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$UpdateScreenTutorialImpl implements _UpdateScreenTutorial {
-  _$UpdateScreenTutorialImpl(this.value);
 
-  @override
-  final bool value;
+class _UpdateScreenBrigtness implements QuranKareemEvent {
+   _UpdateScreenBrigtness(this.value);
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateScreenTutorial(value: $value)';
-  }
+ final  double value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateScreenTutorialImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateScreenBrigtnessCopyWith<_UpdateScreenBrigtness> get copyWith => __$UpdateScreenBrigtnessCopyWithImpl<_UpdateScreenBrigtness>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateScreenTutorialImplCopyWith<_$UpdateScreenTutorialImpl>
-  get copyWith =>
-      __$$UpdateScreenTutorialImplCopyWithImpl<_$UpdateScreenTutorialImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updateScreenTutorial(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updateScreenTutorial?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateScreenTutorial != null) {
-      return updateScreenTutorial(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updateScreenTutorial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updateScreenTutorial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateScreenTutorial != null) {
-      return updateScreenTutorial(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateScreenBrigtness&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _UpdateScreenTutorial implements QuranKareemEvent {
-  factory _UpdateScreenTutorial(final bool value) = _$UpdateScreenTutorialImpl;
 
-  bool get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateScreenTutorialImplCopyWith<_$UpdateScreenTutorialImpl>
-  get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'QuranKareemEvent.updateScreenBrigtness(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
-  factory _$$UpdateRewardedAdImplCopyWith(
-    _$UpdateRewardedAdImpl value,
-    $Res Function(_$UpdateRewardedAdImpl) then,
-  ) = __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool value});
+abstract mixin class _$UpdateScreenBrigtnessCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdateScreenBrigtnessCopyWith(_UpdateScreenBrigtness value, $Res Function(_UpdateScreenBrigtness) _then) = __$UpdateScreenBrigtnessCopyWithImpl;
+@useResult
+$Res call({
+ double value
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateScreenBrigtnessCopyWithImpl<$Res>
+    implements _$UpdateScreenBrigtnessCopyWith<$Res> {
+  __$UpdateScreenBrigtnessCopyWithImpl(this._self, this._then);
+
+  final _UpdateScreenBrigtness _self;
+  final $Res Function(_UpdateScreenBrigtness) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_UpdateScreenBrigtness(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateRewardedAdImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateRewardedAdImpl>
-    implements _$$UpdateRewardedAdImplCopyWith<$Res> {
-  __$$UpdateRewardedAdImplCopyWithImpl(
-    _$UpdateRewardedAdImpl _value,
-    $Res Function(_$UpdateRewardedAdImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateRewardedAdImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
-  _$UpdateRewardedAdImpl(this.value);
 
-  @override
-  final bool value;
+class _UpdateScreenTutorial implements QuranKareemEvent {
+   _UpdateScreenTutorial(this.value);
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateRewardedAd(value: $value)';
-  }
+ final  bool value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateRewardedAdImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateScreenTutorialCopyWith<_UpdateScreenTutorial> get copyWith => __$UpdateScreenTutorialCopyWithImpl<_UpdateScreenTutorial>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateRewardedAdImplCopyWith<_$UpdateRewardedAdImpl> get copyWith =>
-      __$$UpdateRewardedAdImplCopyWithImpl<_$UpdateRewardedAdImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updateRewardedAd(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updateRewardedAd?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateRewardedAd != null) {
-      return updateRewardedAd(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updateRewardedAd(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updateRewardedAd?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateRewardedAd != null) {
-      return updateRewardedAd(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateScreenTutorial&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _UpdateRewardedAd implements QuranKareemEvent {
-  factory _UpdateRewardedAd(final bool value) = _$UpdateRewardedAdImpl;
 
-  bool get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateRewardedAdImplCopyWith<_$UpdateRewardedAdImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'QuranKareemEvent.updateScreenTutorial(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateReadPDFFileImplCopyWith<$Res> {
-  factory _$$UpdateReadPDFFileImplCopyWith(
-    _$UpdateReadPDFFileImpl value,
-    $Res Function(_$UpdateReadPDFFileImpl) then,
-  ) = __$$UpdateReadPDFFileImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract mixin class _$UpdateScreenTutorialCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdateScreenTutorialCopyWith(_UpdateScreenTutorial value, $Res Function(_UpdateScreenTutorial) _then) = __$UpdateScreenTutorialCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateScreenTutorialCopyWithImpl<$Res>
+    implements _$UpdateScreenTutorialCopyWith<$Res> {
+  __$UpdateScreenTutorialCopyWithImpl(this._self, this._then);
+
+  final _UpdateScreenTutorial _self;
+  final $Res Function(_UpdateScreenTutorial) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_UpdateScreenTutorial(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateReadPDFFileImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateReadPDFFileImpl>
-    implements _$$UpdateReadPDFFileImplCopyWith<$Res> {
-  __$$UpdateReadPDFFileImplCopyWithImpl(
-    _$UpdateReadPDFFileImpl _value,
-    $Res Function(_$UpdateReadPDFFileImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateReadPDFFileImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$UpdateReadPDFFileImpl implements _UpdateReadPDFFile {
-  _$UpdateReadPDFFileImpl(this.value);
 
-  @override
-  final String value;
+class _UpdateRewardedAd implements QuranKareemEvent {
+   _UpdateRewardedAd(this.value);
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateReadPDFFile(value: $value)';
-  }
+ final  bool value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateReadPDFFileImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateRewardedAdCopyWith<_UpdateRewardedAd> get copyWith => __$UpdateRewardedAdCopyWithImpl<_UpdateRewardedAd>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateReadPDFFileImplCopyWith<_$UpdateReadPDFFileImpl> get copyWith =>
-      __$$UpdateReadPDFFileImplCopyWithImpl<_$UpdateReadPDFFileImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updateReadPDFFile(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updateReadPDFFile?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateReadPDFFile != null) {
-      return updateReadPDFFile(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updateReadPDFFile(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updateReadPDFFile?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateReadPDFFile != null) {
-      return updateReadPDFFile(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateRewardedAd&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _UpdateReadPDFFile implements QuranKareemEvent {
-  factory _UpdateReadPDFFile(final String value) = _$UpdateReadPDFFileImpl;
 
-  String get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateReadPDFFileImplCopyWith<_$UpdateReadPDFFileImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'QuranKareemEvent.updateRewardedAd(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateSorahNameImplCopyWith<$Res> {
-  factory _$$UpdateSorahNameImplCopyWith(
-    _$UpdateSorahNameImpl value,
-    $Res Function(_$UpdateSorahNameImpl) then,
-  ) = __$$UpdateSorahNameImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract mixin class _$UpdateRewardedAdCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdateRewardedAdCopyWith(_UpdateRewardedAd value, $Res Function(_UpdateRewardedAd) _then) = __$UpdateRewardedAdCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateRewardedAdCopyWithImpl<$Res>
+    implements _$UpdateRewardedAdCopyWith<$Res> {
+  __$UpdateRewardedAdCopyWithImpl(this._self, this._then);
+
+  final _UpdateRewardedAd _self;
+  final $Res Function(_UpdateRewardedAd) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_UpdateRewardedAd(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateSorahNameImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateSorahNameImpl>
-    implements _$$UpdateSorahNameImplCopyWith<$Res> {
-  __$$UpdateSorahNameImplCopyWithImpl(
-    _$UpdateSorahNameImpl _value,
-    $Res Function(_$UpdateSorahNameImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateSorahNameImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$UpdateSorahNameImpl implements _UpdateSorahName {
-  _$UpdateSorahNameImpl(this.value);
 
-  @override
-  final String value;
+class _UpdateReadPDFFile implements QuranKareemEvent {
+   _UpdateReadPDFFile(this.value);
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateSorahName(value: $value)';
-  }
+ final  String value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateSorahNameImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateReadPDFFileCopyWith<_UpdateReadPDFFile> get copyWith => __$UpdateReadPDFFileCopyWithImpl<_UpdateReadPDFFile>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateSorahNameImplCopyWith<_$UpdateSorahNameImpl> get copyWith =>
-      __$$UpdateSorahNameImplCopyWithImpl<_$UpdateSorahNameImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updateSorahName(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updateSorahName?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateSorahName != null) {
-      return updateSorahName(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updateSorahName(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updateSorahName?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateSorahName != null) {
-      return updateSorahName(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateReadPDFFile&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _UpdateSorahName implements QuranKareemEvent {
-  factory _UpdateSorahName(final String value) = _$UpdateSorahNameImpl;
 
-  String get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateSorahNameImplCopyWith<_$UpdateSorahNameImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'QuranKareemEvent.updateReadPDFFile(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateJozo2NameImplCopyWith<$Res> {
-  factory _$$UpdateJozo2NameImplCopyWith(
-    _$UpdateJozo2NameImpl value,
-    $Res Function(_$UpdateJozo2NameImpl) then,
-  ) = __$$UpdateJozo2NameImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract mixin class _$UpdateReadPDFFileCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdateReadPDFFileCopyWith(_UpdateReadPDFFile value, $Res Function(_UpdateReadPDFFile) _then) = __$UpdateReadPDFFileCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateReadPDFFileCopyWithImpl<$Res>
+    implements _$UpdateReadPDFFileCopyWith<$Res> {
+  __$UpdateReadPDFFileCopyWithImpl(this._self, this._then);
+
+  final _UpdateReadPDFFile _self;
+  final $Res Function(_UpdateReadPDFFile) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_UpdateReadPDFFile(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateJozo2NameImplCopyWithImpl<$Res>
-    extends _$QuranKareemEventCopyWithImpl<$Res, _$UpdateJozo2NameImpl>
-    implements _$$UpdateJozo2NameImplCopyWith<$Res> {
-  __$$UpdateJozo2NameImplCopyWithImpl(
-    _$UpdateJozo2NameImpl _value,
-    $Res Function(_$UpdateJozo2NameImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateJozo2NameImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$UpdateJozo2NameImpl implements _UpdateJozo2Name {
-  _$UpdateJozo2NameImpl(this.value);
 
-  @override
-  final String value;
+class _UpdateSorahName implements QuranKareemEvent {
+   _UpdateSorahName(this.value);
+  
 
-  @override
-  String toString() {
-    return 'QuranKareemEvent.updateJozo2Name(value: $value)';
-  }
+ final  String value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateJozo2NameImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateSorahNameCopyWith<_UpdateSorahName> get copyWith => __$UpdateSorahNameCopyWithImpl<_UpdateSorahName>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateJozo2NameImplCopyWith<_$UpdateJozo2NameImpl> get copyWith =>
-      __$$UpdateJozo2NameImplCopyWithImpl<_$UpdateJozo2NameImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool status) showHideHelpBar,
-    required TResult Function(int pageCount) updatePageCount,
-    required TResult Function(QuranKareemStatePageSideState side)
-    updateSidePage,
-    required TResult Function(List<int> list) updateBookMarkedPages,
-    required TResult Function(double value) updateScreenBrigtness,
-    required TResult Function(bool value) updateScreenTutorial,
-    required TResult Function(bool value) updateRewardedAd,
-    required TResult Function(String value) updateReadPDFFile,
-    required TResult Function(String value) updateSorahName,
-    required TResult Function(String value) updateJozo2Name,
-  }) {
-    return updateJozo2Name(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool status)? showHideHelpBar,
-    TResult? Function(int pageCount)? updatePageCount,
-    TResult? Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult? Function(List<int> list)? updateBookMarkedPages,
-    TResult? Function(double value)? updateScreenBrigtness,
-    TResult? Function(bool value)? updateScreenTutorial,
-    TResult? Function(bool value)? updateRewardedAd,
-    TResult? Function(String value)? updateReadPDFFile,
-    TResult? Function(String value)? updateSorahName,
-    TResult? Function(String value)? updateJozo2Name,
-  }) {
-    return updateJozo2Name?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool status)? showHideHelpBar,
-    TResult Function(int pageCount)? updatePageCount,
-    TResult Function(QuranKareemStatePageSideState side)? updateSidePage,
-    TResult Function(List<int> list)? updateBookMarkedPages,
-    TResult Function(double value)? updateScreenBrigtness,
-    TResult Function(bool value)? updateScreenTutorial,
-    TResult Function(bool value)? updateRewardedAd,
-    TResult Function(String value)? updateReadPDFFile,
-    TResult Function(String value)? updateSorahName,
-    TResult Function(String value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateJozo2Name != null) {
-      return updateJozo2Name(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ShowHideHelpBar value) showHideHelpBar,
-    required TResult Function(_UpdatePageCount value) updatePageCount,
-    required TResult Function(_UpdateSidePage value) updateSidePage,
-    required TResult Function(_UpdateBookMarkedPages value)
-    updateBookMarkedPages,
-    required TResult Function(_UpdateScreenBrigtness value)
-    updateScreenBrigtness,
-    required TResult Function(_UpdateScreenTutorial value) updateScreenTutorial,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-    required TResult Function(_UpdateReadPDFFile value) updateReadPDFFile,
-    required TResult Function(_UpdateSorahName value) updateSorahName,
-    required TResult Function(_UpdateJozo2Name value) updateJozo2Name,
-  }) {
-    return updateJozo2Name(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult? Function(_UpdatePageCount value)? updatePageCount,
-    TResult? Function(_UpdateSidePage value)? updateSidePage,
-    TResult? Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult? Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult? Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult? Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult? Function(_UpdateSorahName value)? updateSorahName,
-    TResult? Function(_UpdateJozo2Name value)? updateJozo2Name,
-  }) {
-    return updateJozo2Name?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ShowHideHelpBar value)? showHideHelpBar,
-    TResult Function(_UpdatePageCount value)? updatePageCount,
-    TResult Function(_UpdateSidePage value)? updateSidePage,
-    TResult Function(_UpdateBookMarkedPages value)? updateBookMarkedPages,
-    TResult Function(_UpdateScreenBrigtness value)? updateScreenBrigtness,
-    TResult Function(_UpdateScreenTutorial value)? updateScreenTutorial,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    TResult Function(_UpdateReadPDFFile value)? updateReadPDFFile,
-    TResult Function(_UpdateSorahName value)? updateSorahName,
-    TResult Function(_UpdateJozo2Name value)? updateJozo2Name,
-    required TResult orElse(),
-  }) {
-    if (updateJozo2Name != null) {
-      return updateJozo2Name(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateSorahName&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class _UpdateJozo2Name implements QuranKareemEvent {
-  factory _UpdateJozo2Name(final String value) = _$UpdateJozo2NameImpl;
 
-  String get value;
+@override
+int get hashCode => Object.hash(runtimeType,value);
 
-  /// Create a copy of QuranKareemEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateJozo2NameImplCopyWith<_$UpdateJozo2NameImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'QuranKareemEvent.updateSorahName(value: $value)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UpdateSorahNameCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdateSorahNameCopyWith(_UpdateSorahName value, $Res Function(_UpdateSorahName) _then) = __$UpdateSorahNameCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateSorahNameCopyWithImpl<$Res>
+    implements _$UpdateSorahNameCopyWith<$Res> {
+  __$UpdateSorahNameCopyWithImpl(this._self, this._then);
+
+  final _UpdateSorahName _self;
+  final $Res Function(_UpdateSorahName) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_UpdateSorahName(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class _UpdateJozo2Name implements QuranKareemEvent {
+   _UpdateJozo2Name(this.value);
+  
+
+ final  String value;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateJozo2NameCopyWith<_UpdateJozo2Name> get copyWith => __$UpdateJozo2NameCopyWithImpl<_UpdateJozo2Name>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateJozo2Name&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'QuranKareemEvent.updateJozo2Name(value: $value)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UpdateJozo2NameCopyWith<$Res> implements $QuranKareemEventCopyWith<$Res> {
+  factory _$UpdateJozo2NameCopyWith(_UpdateJozo2Name value, $Res Function(_UpdateJozo2Name) _then) = __$UpdateJozo2NameCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateJozo2NameCopyWithImpl<$Res>
+    implements _$UpdateJozo2NameCopyWith<$Res> {
+  __$UpdateJozo2NameCopyWithImpl(this._self, this._then);
+
+  final _UpdateJozo2Name _self;
+  final $Res Function(_UpdateJozo2Name) _then;
+
+/// Create a copy of QuranKareemEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_UpdateJozo2Name(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 /// @nodoc
 mixin _$QuranKareemState {
-  bool get showHelpBar => throw _privateConstructorUsedError;
-  int get pageCount => throw _privateConstructorUsedError;
-  QuranKareemStatePageSideState get pageSide =>
-      throw _privateConstructorUsedError;
-  List<int> get bookmarkedPages => throw _privateConstructorUsedError;
-  double get brigtness => throw _privateConstructorUsedError;
-  bool get rewardedAdExists => throw _privateConstructorUsedError;
-  String get sourceFileOfPDF => throw _privateConstructorUsedError;
-  String get sorahName => throw _privateConstructorUsedError;
-  String get jozo2Name => throw _privateConstructorUsedError;
-  bool get tutorialShown => throw _privateConstructorUsedError;
 
-  /// Create a copy of QuranKareemState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $QuranKareemStateCopyWith<QuranKareemState> get copyWith =>
-      throw _privateConstructorUsedError;
+ bool get showHelpBar; int get pageCount; QuranKareemStatePageSideState get pageSide; List<int> get bookmarkedPages; double get brigtness; bool get rewardedAdExists; String get sourceFileOfPDF; String get sorahName; String get jozo2Name; bool get tutorialShown;
+/// Create a copy of QuranKareemState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$QuranKareemStateCopyWith<QuranKareemState> get copyWith => _$QuranKareemStateCopyWithImpl<QuranKareemState>(this as QuranKareemState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranKareemState&&(identical(other.showHelpBar, showHelpBar) || other.showHelpBar == showHelpBar)&&(identical(other.pageCount, pageCount) || other.pageCount == pageCount)&&(identical(other.pageSide, pageSide) || other.pageSide == pageSide)&&const DeepCollectionEquality().equals(other.bookmarkedPages, bookmarkedPages)&&(identical(other.brigtness, brigtness) || other.brigtness == brigtness)&&(identical(other.rewardedAdExists, rewardedAdExists) || other.rewardedAdExists == rewardedAdExists)&&(identical(other.sourceFileOfPDF, sourceFileOfPDF) || other.sourceFileOfPDF == sourceFileOfPDF)&&(identical(other.sorahName, sorahName) || other.sorahName == sorahName)&&(identical(other.jozo2Name, jozo2Name) || other.jozo2Name == jozo2Name)&&(identical(other.tutorialShown, tutorialShown) || other.tutorialShown == tutorialShown));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,showHelpBar,pageCount,pageSide,const DeepCollectionEquality().hash(bookmarkedPages),brigtness,rewardedAdExists,sourceFileOfPDF,sorahName,jozo2Name,tutorialShown);
+
+@override
+String toString() {
+  return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, pageSide: $pageSide, bookmarkedPages: $bookmarkedPages, brigtness: $brigtness, rewardedAdExists: $rewardedAdExists, sourceFileOfPDF: $sourceFileOfPDF, sorahName: $sorahName, jozo2Name: $jozo2Name, tutorialShown: $tutorialShown)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $QuranKareemStateCopyWith<$Res> {
-  factory $QuranKareemStateCopyWith(
-    QuranKareemState value,
-    $Res Function(QuranKareemState) then,
-  ) = _$QuranKareemStateCopyWithImpl<$Res, QuranKareemState>;
-  @useResult
-  $Res call({
-    bool showHelpBar,
-    int pageCount,
-    QuranKareemStatePageSideState pageSide,
-    List<int> bookmarkedPages,
-    double brigtness,
-    bool rewardedAdExists,
-    String sourceFileOfPDF,
-    String sorahName,
-    String jozo2Name,
-    bool tutorialShown,
-  });
+abstract mixin class $QuranKareemStateCopyWith<$Res>  {
+  factory $QuranKareemStateCopyWith(QuranKareemState value, $Res Function(QuranKareemState) _then) = _$QuranKareemStateCopyWithImpl;
+@useResult
+$Res call({
+ bool showHelpBar, int pageCount, QuranKareemStatePageSideState pageSide, List<int> bookmarkedPages, double brigtness, bool rewardedAdExists, String sourceFileOfPDF, String sorahName, String jozo2Name, bool tutorialShown
+});
 
-  $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide;
+
+$QuranKareemStatePageSideStateCopyWith<$Res> get pageSide;
+
 }
-
 /// @nodoc
-class _$QuranKareemStateCopyWithImpl<$Res, $Val extends QuranKareemState>
+class _$QuranKareemStateCopyWithImpl<$Res>
     implements $QuranKareemStateCopyWith<$Res> {
-  _$QuranKareemStateCopyWithImpl(this._value, this._then);
+  _$QuranKareemStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final QuranKareemState _self;
+  final $Res Function(QuranKareemState) _then;
 
-  /// Create a copy of QuranKareemState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? showHelpBar = null,
-    Object? pageCount = null,
-    Object? pageSide = null,
-    Object? bookmarkedPages = null,
-    Object? brigtness = null,
-    Object? rewardedAdExists = null,
-    Object? sourceFileOfPDF = null,
-    Object? sorahName = null,
-    Object? jozo2Name = null,
-    Object? tutorialShown = null,
-  }) {
-    return _then(
-      _value.copyWith(
-            showHelpBar: null == showHelpBar
-                ? _value.showHelpBar
-                : showHelpBar // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            pageCount: null == pageCount
-                ? _value.pageCount
-                : pageCount // ignore: cast_nullable_to_non_nullable
-                      as int,
-            pageSide: null == pageSide
-                ? _value.pageSide
-                : pageSide // ignore: cast_nullable_to_non_nullable
-                      as QuranKareemStatePageSideState,
-            bookmarkedPages: null == bookmarkedPages
-                ? _value.bookmarkedPages
-                : bookmarkedPages // ignore: cast_nullable_to_non_nullable
-                      as List<int>,
-            brigtness: null == brigtness
-                ? _value.brigtness
-                : brigtness // ignore: cast_nullable_to_non_nullable
-                      as double,
-            rewardedAdExists: null == rewardedAdExists
-                ? _value.rewardedAdExists
-                : rewardedAdExists // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            sourceFileOfPDF: null == sourceFileOfPDF
-                ? _value.sourceFileOfPDF
-                : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
-                      as String,
-            sorahName: null == sorahName
-                ? _value.sorahName
-                : sorahName // ignore: cast_nullable_to_non_nullable
-                      as String,
-            jozo2Name: null == jozo2Name
-                ? _value.jozo2Name
-                : jozo2Name // ignore: cast_nullable_to_non_nullable
-                      as String,
-            tutorialShown: null == tutorialShown
-                ? _value.tutorialShown
-                : tutorialShown // ignore: cast_nullable_to_non_nullable
-                      as bool,
-          )
-          as $Val,
-    );
-  }
-
-  /// Create a copy of QuranKareemState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide {
-    return $QuranKareemStatePageSideStateCopyWith<$Res>(_value.pageSide, (
-      value,
-    ) {
-      return _then(_value.copyWith(pageSide: value) as $Val);
-    });
-  }
+/// Create a copy of QuranKareemState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? showHelpBar = null,Object? pageCount = null,Object? pageSide = null,Object? bookmarkedPages = null,Object? brigtness = null,Object? rewardedAdExists = null,Object? sourceFileOfPDF = null,Object? sorahName = null,Object? jozo2Name = null,Object? tutorialShown = null,}) {
+  return _then(_self.copyWith(
+showHelpBar: null == showHelpBar ? _self.showHelpBar : showHelpBar // ignore: cast_nullable_to_non_nullable
+as bool,pageCount: null == pageCount ? _self.pageCount : pageCount // ignore: cast_nullable_to_non_nullable
+as int,pageSide: null == pageSide ? _self.pageSide : pageSide // ignore: cast_nullable_to_non_nullable
+as QuranKareemStatePageSideState,bookmarkedPages: null == bookmarkedPages ? _self.bookmarkedPages : bookmarkedPages // ignore: cast_nullable_to_non_nullable
+as List<int>,brigtness: null == brigtness ? _self.brigtness : brigtness // ignore: cast_nullable_to_non_nullable
+as double,rewardedAdExists: null == rewardedAdExists ? _self.rewardedAdExists : rewardedAdExists // ignore: cast_nullable_to_non_nullable
+as bool,sourceFileOfPDF: null == sourceFileOfPDF ? _self.sourceFileOfPDF : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
+as String,sorahName: null == sorahName ? _self.sorahName : sorahName // ignore: cast_nullable_to_non_nullable
+as String,jozo2Name: null == jozo2Name ? _self.jozo2Name : jozo2Name // ignore: cast_nullable_to_non_nullable
+as String,tutorialShown: null == tutorialShown ? _self.tutorialShown : tutorialShown // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
-
-/// @nodoc
-abstract class _$$QuranKareemStateImplCopyWith<$Res>
-    implements $QuranKareemStateCopyWith<$Res> {
-  factory _$$QuranKareemStateImplCopyWith(
-    _$QuranKareemStateImpl value,
-    $Res Function(_$QuranKareemStateImpl) then,
-  ) = __$$QuranKareemStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    bool showHelpBar,
-    int pageCount,
-    QuranKareemStatePageSideState pageSide,
-    List<int> bookmarkedPages,
-    double brigtness,
-    bool rewardedAdExists,
-    String sourceFileOfPDF,
-    String sorahName,
-    String jozo2Name,
-    bool tutorialShown,
+/// Create a copy of QuranKareemState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$QuranKareemStatePageSideStateCopyWith<$Res> get pageSide {
+  
+  return $QuranKareemStatePageSideStateCopyWith<$Res>(_self.pageSide, (value) {
+    return _then(_self.copyWith(pageSide: value));
   });
+}
+}
 
-  @override
-  $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide;
+
+/// Adds pattern-matching-related methods to [QuranKareemState].
+extension QuranKareemStatePatterns on QuranKareemState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _QuranKareemState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _QuranKareemState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _QuranKareemState value)  $default,){
+final _that = this;
+switch (_that) {
+case _QuranKareemState():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _QuranKareemState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _QuranKareemState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool showHelpBar,  int pageCount,  QuranKareemStatePageSideState pageSide,  List<int> bookmarkedPages,  double brigtness,  bool rewardedAdExists,  String sourceFileOfPDF,  String sorahName,  String jozo2Name,  bool tutorialShown)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _QuranKareemState() when $default != null:
+return $default(_that.showHelpBar,_that.pageCount,_that.pageSide,_that.bookmarkedPages,_that.brigtness,_that.rewardedAdExists,_that.sourceFileOfPDF,_that.sorahName,_that.jozo2Name,_that.tutorialShown);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool showHelpBar,  int pageCount,  QuranKareemStatePageSideState pageSide,  List<int> bookmarkedPages,  double brigtness,  bool rewardedAdExists,  String sourceFileOfPDF,  String sorahName,  String jozo2Name,  bool tutorialShown)  $default,) {final _that = this;
+switch (_that) {
+case _QuranKareemState():
+return $default(_that.showHelpBar,_that.pageCount,_that.pageSide,_that.bookmarkedPages,_that.brigtness,_that.rewardedAdExists,_that.sourceFileOfPDF,_that.sorahName,_that.jozo2Name,_that.tutorialShown);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool showHelpBar,  int pageCount,  QuranKareemStatePageSideState pageSide,  List<int> bookmarkedPages,  double brigtness,  bool rewardedAdExists,  String sourceFileOfPDF,  String sorahName,  String jozo2Name,  bool tutorialShown)?  $default,) {final _that = this;
+switch (_that) {
+case _QuranKareemState() when $default != null:
+return $default(_that.showHelpBar,_that.pageCount,_that.pageSide,_that.bookmarkedPages,_that.brigtness,_that.rewardedAdExists,_that.sourceFileOfPDF,_that.sorahName,_that.jozo2Name,_that.tutorialShown);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-class __$$QuranKareemStateImplCopyWithImpl<$Res>
-    extends _$QuranKareemStateCopyWithImpl<$Res, _$QuranKareemStateImpl>
-    implements _$$QuranKareemStateImplCopyWith<$Res> {
-  __$$QuranKareemStateImplCopyWithImpl(
-    _$QuranKareemStateImpl _value,
-    $Res Function(_$QuranKareemStateImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of QuranKareemState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? showHelpBar = null,
-    Object? pageCount = null,
-    Object? pageSide = null,
-    Object? bookmarkedPages = null,
-    Object? brigtness = null,
-    Object? rewardedAdExists = null,
-    Object? sourceFileOfPDF = null,
-    Object? sorahName = null,
-    Object? jozo2Name = null,
-    Object? tutorialShown = null,
-  }) {
-    return _then(
-      _$QuranKareemStateImpl(
-        showHelpBar: null == showHelpBar
-            ? _value.showHelpBar
-            : showHelpBar // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        pageCount: null == pageCount
-            ? _value.pageCount
-            : pageCount // ignore: cast_nullable_to_non_nullable
-                  as int,
-        pageSide: null == pageSide
-            ? _value.pageSide
-            : pageSide // ignore: cast_nullable_to_non_nullable
-                  as QuranKareemStatePageSideState,
-        bookmarkedPages: null == bookmarkedPages
-            ? _value._bookmarkedPages
-            : bookmarkedPages // ignore: cast_nullable_to_non_nullable
-                  as List<int>,
-        brigtness: null == brigtness
-            ? _value.brigtness
-            : brigtness // ignore: cast_nullable_to_non_nullable
-                  as double,
-        rewardedAdExists: null == rewardedAdExists
-            ? _value.rewardedAdExists
-            : rewardedAdExists // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        sourceFileOfPDF: null == sourceFileOfPDF
-            ? _value.sourceFileOfPDF
-            : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
-                  as String,
-        sorahName: null == sorahName
-            ? _value.sorahName
-            : sorahName // ignore: cast_nullable_to_non_nullable
-                  as String,
-        jozo2Name: null == jozo2Name
-            ? _value.jozo2Name
-            : jozo2Name // ignore: cast_nullable_to_non_nullable
-                  as String,
-        tutorialShown: null == tutorialShown
-            ? _value.tutorialShown
-            : tutorialShown // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
+
+class _QuranKareemState implements QuranKareemState {
+  const _QuranKareemState({this.showHelpBar = false, this.pageCount = 1, this.pageSide = const QuranKareemStatePageSideState.left(), final  List<int> bookmarkedPages = const [], this.brigtness = 0, this.rewardedAdExists = false, this.sourceFileOfPDF = "", this.sorahName = "", this.jozo2Name = "", this.tutorialShown = false}): _bookmarkedPages = bookmarkedPages;
+  
+
+@override@JsonKey() final  bool showHelpBar;
+@override@JsonKey() final  int pageCount;
+@override@JsonKey() final  QuranKareemStatePageSideState pageSide;
+ final  List<int> _bookmarkedPages;
+@override@JsonKey() List<int> get bookmarkedPages {
+  if (_bookmarkedPages is EqualUnmodifiableListView) return _bookmarkedPages;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_bookmarkedPages);
+}
+
+@override@JsonKey() final  double brigtness;
+@override@JsonKey() final  bool rewardedAdExists;
+@override@JsonKey() final  String sourceFileOfPDF;
+@override@JsonKey() final  String sorahName;
+@override@JsonKey() final  String jozo2Name;
+@override@JsonKey() final  bool tutorialShown;
+
+/// Create a copy of QuranKareemState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$QuranKareemStateCopyWith<_QuranKareemState> get copyWith => __$QuranKareemStateCopyWithImpl<_QuranKareemState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _QuranKareemState&&(identical(other.showHelpBar, showHelpBar) || other.showHelpBar == showHelpBar)&&(identical(other.pageCount, pageCount) || other.pageCount == pageCount)&&(identical(other.pageSide, pageSide) || other.pageSide == pageSide)&&const DeepCollectionEquality().equals(other._bookmarkedPages, _bookmarkedPages)&&(identical(other.brigtness, brigtness) || other.brigtness == brigtness)&&(identical(other.rewardedAdExists, rewardedAdExists) || other.rewardedAdExists == rewardedAdExists)&&(identical(other.sourceFileOfPDF, sourceFileOfPDF) || other.sourceFileOfPDF == sourceFileOfPDF)&&(identical(other.sorahName, sorahName) || other.sorahName == sorahName)&&(identical(other.jozo2Name, jozo2Name) || other.jozo2Name == jozo2Name)&&(identical(other.tutorialShown, tutorialShown) || other.tutorialShown == tutorialShown));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,showHelpBar,pageCount,pageSide,const DeepCollectionEquality().hash(_bookmarkedPages),brigtness,rewardedAdExists,sourceFileOfPDF,sorahName,jozo2Name,tutorialShown);
+
+@override
+String toString() {
+  return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, pageSide: $pageSide, bookmarkedPages: $bookmarkedPages, brigtness: $brigtness, rewardedAdExists: $rewardedAdExists, sourceFileOfPDF: $sourceFileOfPDF, sorahName: $sorahName, jozo2Name: $jozo2Name, tutorialShown: $tutorialShown)';
+}
+
+
 }
 
 /// @nodoc
+abstract mixin class _$QuranKareemStateCopyWith<$Res> implements $QuranKareemStateCopyWith<$Res> {
+  factory _$QuranKareemStateCopyWith(_QuranKareemState value, $Res Function(_QuranKareemState) _then) = __$QuranKareemStateCopyWithImpl;
+@override @useResult
+$Res call({
+ bool showHelpBar, int pageCount, QuranKareemStatePageSideState pageSide, List<int> bookmarkedPages, double brigtness, bool rewardedAdExists, String sourceFileOfPDF, String sorahName, String jozo2Name, bool tutorialShown
+});
 
-class _$QuranKareemStateImpl implements _QuranKareemState {
-  const _$QuranKareemStateImpl({
-    this.showHelpBar = false,
-    this.pageCount = 1,
-    this.pageSide = const QuranKareemStatePageSideState.left(),
-    final List<int> bookmarkedPages = const [],
-    this.brigtness = 0,
-    this.rewardedAdExists = false,
-    this.sourceFileOfPDF = "",
-    this.sorahName = "",
-    this.jozo2Name = "",
-    this.tutorialShown = false,
-  }) : _bookmarkedPages = bookmarkedPages;
 
-  @override
-  @JsonKey()
-  final bool showHelpBar;
-  @override
-  @JsonKey()
-  final int pageCount;
-  @override
-  @JsonKey()
-  final QuranKareemStatePageSideState pageSide;
-  final List<int> _bookmarkedPages;
-  @override
-  @JsonKey()
-  List<int> get bookmarkedPages {
-    if (_bookmarkedPages is EqualUnmodifiableListView) return _bookmarkedPages;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bookmarkedPages);
-  }
+@override $QuranKareemStatePageSideStateCopyWith<$Res> get pageSide;
 
-  @override
-  @JsonKey()
-  final double brigtness;
-  @override
-  @JsonKey()
-  final bool rewardedAdExists;
-  @override
-  @JsonKey()
-  final String sourceFileOfPDF;
-  @override
-  @JsonKey()
-  final String sorahName;
-  @override
-  @JsonKey()
-  final String jozo2Name;
-  @override
-  @JsonKey()
-  final bool tutorialShown;
+}
+/// @nodoc
+class __$QuranKareemStateCopyWithImpl<$Res>
+    implements _$QuranKareemStateCopyWith<$Res> {
+  __$QuranKareemStateCopyWithImpl(this._self, this._then);
 
-  @override
-  String toString() {
-    return 'QuranKareemState(showHelpBar: $showHelpBar, pageCount: $pageCount, pageSide: $pageSide, bookmarkedPages: $bookmarkedPages, brigtness: $brigtness, rewardedAdExists: $rewardedAdExists, sourceFileOfPDF: $sourceFileOfPDF, sorahName: $sorahName, jozo2Name: $jozo2Name, tutorialShown: $tutorialShown)';
-  }
+  final _QuranKareemState _self;
+  final $Res Function(_QuranKareemState) _then;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$QuranKareemStateImpl &&
-            (identical(other.showHelpBar, showHelpBar) ||
-                other.showHelpBar == showHelpBar) &&
-            (identical(other.pageCount, pageCount) ||
-                other.pageCount == pageCount) &&
-            (identical(other.pageSide, pageSide) ||
-                other.pageSide == pageSide) &&
-            const DeepCollectionEquality().equals(
-              other._bookmarkedPages,
-              _bookmarkedPages,
-            ) &&
-            (identical(other.brigtness, brigtness) ||
-                other.brigtness == brigtness) &&
-            (identical(other.rewardedAdExists, rewardedAdExists) ||
-                other.rewardedAdExists == rewardedAdExists) &&
-            (identical(other.sourceFileOfPDF, sourceFileOfPDF) ||
-                other.sourceFileOfPDF == sourceFileOfPDF) &&
-            (identical(other.sorahName, sorahName) ||
-                other.sorahName == sorahName) &&
-            (identical(other.jozo2Name, jozo2Name) ||
-                other.jozo2Name == jozo2Name) &&
-            (identical(other.tutorialShown, tutorialShown) ||
-                other.tutorialShown == tutorialShown));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    showHelpBar,
-    pageCount,
-    pageSide,
-    const DeepCollectionEquality().hash(_bookmarkedPages),
-    brigtness,
-    rewardedAdExists,
-    sourceFileOfPDF,
-    sorahName,
-    jozo2Name,
-    tutorialShown,
-  );
-
-  /// Create a copy of QuranKareemState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$QuranKareemStateImplCopyWith<_$QuranKareemStateImpl> get copyWith =>
-      __$$QuranKareemStateImplCopyWithImpl<_$QuranKareemStateImpl>(
-        this,
-        _$identity,
-      );
+/// Create a copy of QuranKareemState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? showHelpBar = null,Object? pageCount = null,Object? pageSide = null,Object? bookmarkedPages = null,Object? brigtness = null,Object? rewardedAdExists = null,Object? sourceFileOfPDF = null,Object? sorahName = null,Object? jozo2Name = null,Object? tutorialShown = null,}) {
+  return _then(_QuranKareemState(
+showHelpBar: null == showHelpBar ? _self.showHelpBar : showHelpBar // ignore: cast_nullable_to_non_nullable
+as bool,pageCount: null == pageCount ? _self.pageCount : pageCount // ignore: cast_nullable_to_non_nullable
+as int,pageSide: null == pageSide ? _self.pageSide : pageSide // ignore: cast_nullable_to_non_nullable
+as QuranKareemStatePageSideState,bookmarkedPages: null == bookmarkedPages ? _self._bookmarkedPages : bookmarkedPages // ignore: cast_nullable_to_non_nullable
+as List<int>,brigtness: null == brigtness ? _self.brigtness : brigtness // ignore: cast_nullable_to_non_nullable
+as double,rewardedAdExists: null == rewardedAdExists ? _self.rewardedAdExists : rewardedAdExists // ignore: cast_nullable_to_non_nullable
+as bool,sourceFileOfPDF: null == sourceFileOfPDF ? _self.sourceFileOfPDF : sourceFileOfPDF // ignore: cast_nullable_to_non_nullable
+as String,sorahName: null == sorahName ? _self.sorahName : sorahName // ignore: cast_nullable_to_non_nullable
+as String,jozo2Name: null == jozo2Name ? _self.jozo2Name : jozo2Name // ignore: cast_nullable_to_non_nullable
+as String,tutorialShown: null == tutorialShown ? _self.tutorialShown : tutorialShown // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-abstract class _QuranKareemState implements QuranKareemState {
-  const factory _QuranKareemState({
-    final bool showHelpBar,
-    final int pageCount,
-    final QuranKareemStatePageSideState pageSide,
-    final List<int> bookmarkedPages,
-    final double brigtness,
-    final bool rewardedAdExists,
-    final String sourceFileOfPDF,
-    final String sorahName,
-    final String jozo2Name,
-    final bool tutorialShown,
-  }) = _$QuranKareemStateImpl;
-
-  @override
-  bool get showHelpBar;
-  @override
-  int get pageCount;
-  @override
-  QuranKareemStatePageSideState get pageSide;
-  @override
-  List<int> get bookmarkedPages;
-  @override
-  double get brigtness;
-  @override
-  bool get rewardedAdExists;
-  @override
-  String get sourceFileOfPDF;
-  @override
-  String get sorahName;
-  @override
-  String get jozo2Name;
-  @override
-  bool get tutorialShown;
-
-  /// Create a copy of QuranKareemState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$QuranKareemStateImplCopyWith<_$QuranKareemStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+/// Create a copy of QuranKareemState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$QuranKareemStatePageSideStateCopyWith<$Res> get pageSide {
+  
+  return $QuranKareemStatePageSideStateCopyWith<$Res>(_self.pageSide, (value) {
+    return _then(_self.copyWith(pageSide: value));
+  });
+}
 }
 
 /// @nodoc
 mixin _$QuranKareemStatePageSideState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() left,
-    required TResult Function() right,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? left,
-    TResult? Function()? right,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? left,
-    TResult Function()? right,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(QuranKareemStatePageSideStateLeft value) left,
-    required TResult Function(QuranKareemStatePageSideStateRight value) right,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(QuranKareemStatePageSideStateLeft value)? left,
-    TResult? Function(QuranKareemStatePageSideStateRight value)? right,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(QuranKareemStatePageSideStateLeft value)? left,
-    TResult Function(QuranKareemStatePageSideStateRight value)? right,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranKareemStatePageSideState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'QuranKareemStatePageSideState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $QuranKareemStatePageSideStateCopyWith<$Res> {
-  factory $QuranKareemStatePageSideStateCopyWith(
-    QuranKareemStatePageSideState value,
-    $Res Function(QuranKareemStatePageSideState) then,
-  ) =
-      _$QuranKareemStatePageSideStateCopyWithImpl<
-        $Res,
-        QuranKareemStatePageSideState
-      >;
+class $QuranKareemStatePageSideStateCopyWith<$Res>  {
+$QuranKareemStatePageSideStateCopyWith(QuranKareemStatePageSideState _, $Res Function(QuranKareemStatePageSideState) __);
 }
 
-/// @nodoc
-class _$QuranKareemStatePageSideStateCopyWithImpl<
-  $Res,
-  $Val extends QuranKareemStatePageSideState
->
-    implements $QuranKareemStatePageSideStateCopyWith<$Res> {
-  _$QuranKareemStatePageSideStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [QuranKareemStatePageSideState].
+extension QuranKareemStatePageSideStatePatterns on QuranKareemStatePageSideState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of QuranKareemStatePageSideState
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( QuranKareemStatePageSideStateLeft value)?  left,TResult Function( QuranKareemStatePageSideStateRight value)?  right,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case QuranKareemStatePageSideStateLeft() when left != null:
+return left(_that);case QuranKareemStatePageSideStateRight() when right != null:
+return right(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( QuranKareemStatePageSideStateLeft value)  left,required TResult Function( QuranKareemStatePageSideStateRight value)  right,}){
+final _that = this;
+switch (_that) {
+case QuranKareemStatePageSideStateLeft():
+return left(_that);case QuranKareemStatePageSideStateRight():
+return right(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( QuranKareemStatePageSideStateLeft value)?  left,TResult? Function( QuranKareemStatePageSideStateRight value)?  right,}){
+final _that = this;
+switch (_that) {
+case QuranKareemStatePageSideStateLeft() when left != null:
+return left(_that);case QuranKareemStatePageSideStateRight() when right != null:
+return right(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  left,TResult Function()?  right,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case QuranKareemStatePageSideStateLeft() when left != null:
+return left();case QuranKareemStatePageSideStateRight() when right != null:
+return right();case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  left,required TResult Function()  right,}) {final _that = this;
+switch (_that) {
+case QuranKareemStatePageSideStateLeft():
+return left();case QuranKareemStatePageSideStateRight():
+return right();}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  left,TResult? Function()?  right,}) {final _that = this;
+switch (_that) {
+case QuranKareemStatePageSideStateLeft() when left != null:
+return left();case QuranKareemStatePageSideStateRight() when right != null:
+return right();case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$QuranKareemStatePageSideStateLeftImplCopyWith<$Res> {
-  factory _$$QuranKareemStatePageSideStateLeftImplCopyWith(
-    _$QuranKareemStatePageSideStateLeftImpl value,
-    $Res Function(_$QuranKareemStatePageSideStateLeftImpl) then,
-  ) = __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl<$Res>
-    extends
-        _$QuranKareemStatePageSideStateCopyWithImpl<
-          $Res,
-          _$QuranKareemStatePageSideStateLeftImpl
-        >
-    implements _$$QuranKareemStatePageSideStateLeftImplCopyWith<$Res> {
-  __$$QuranKareemStatePageSideStateLeftImplCopyWithImpl(
-    _$QuranKareemStatePageSideStateLeftImpl _value,
-    $Res Function(_$QuranKareemStatePageSideStateLeftImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of QuranKareemStatePageSideState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$QuranKareemStatePageSideStateLeftImpl
-    implements QuranKareemStatePageSideStateLeft {
-  const _$QuranKareemStatePageSideStateLeftImpl();
-
-  @override
-  String toString() {
-    return 'QuranKareemStatePageSideState.left()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$QuranKareemStatePageSideStateLeftImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() left,
-    required TResult Function() right,
-  }) {
-    return left();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? left,
-    TResult? Function()? right,
-  }) {
-    return left?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? left,
-    TResult Function()? right,
-    required TResult orElse(),
-  }) {
-    if (left != null) {
-      return left();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(QuranKareemStatePageSideStateLeft value) left,
-    required TResult Function(QuranKareemStatePageSideStateRight value) right,
-  }) {
-    return left(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(QuranKareemStatePageSideStateLeft value)? left,
-    TResult? Function(QuranKareemStatePageSideStateRight value)? right,
-  }) {
-    return left?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(QuranKareemStatePageSideStateLeft value)? left,
-    TResult Function(QuranKareemStatePageSideStateRight value)? right,
-    required TResult orElse(),
-  }) {
-    if (left != null) {
-      return left(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class QuranKareemStatePageSideStateLeft
-    implements QuranKareemStatePageSideState {
-  const factory QuranKareemStatePageSideStateLeft() =
-      _$QuranKareemStatePageSideStateLeftImpl;
-}
-
-/// @nodoc
-abstract class _$$QuranKareemStatePageSideStateRightImplCopyWith<$Res> {
-  factory _$$QuranKareemStatePageSideStateRightImplCopyWith(
-    _$QuranKareemStatePageSideStateRightImpl value,
-    $Res Function(_$QuranKareemStatePageSideStateRightImpl) then,
-  ) = __$$QuranKareemStatePageSideStateRightImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$QuranKareemStatePageSideStateRightImplCopyWithImpl<$Res>
-    extends
-        _$QuranKareemStatePageSideStateCopyWithImpl<
-          $Res,
-          _$QuranKareemStatePageSideStateRightImpl
-        >
-    implements _$$QuranKareemStatePageSideStateRightImplCopyWith<$Res> {
-  __$$QuranKareemStatePageSideStateRightImplCopyWithImpl(
-    _$QuranKareemStatePageSideStateRightImpl _value,
-    $Res Function(_$QuranKareemStatePageSideStateRightImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of QuranKareemStatePageSideState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$QuranKareemStatePageSideStateRightImpl
-    implements QuranKareemStatePageSideStateRight {
-  const _$QuranKareemStatePageSideStateRightImpl();
 
-  @override
-  String toString() {
-    return 'QuranKareemStatePageSideState.right()';
-  }
+class QuranKareemStatePageSideStateLeft implements QuranKareemStatePageSideState {
+  const QuranKareemStatePageSideStateLeft();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$QuranKareemStatePageSideStateRightImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() left,
-    required TResult Function() right,
-  }) {
-    return right();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? left,
-    TResult? Function()? right,
-  }) {
-    return right?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? left,
-    TResult Function()? right,
-    required TResult orElse(),
-  }) {
-    if (right != null) {
-      return right();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(QuranKareemStatePageSideStateLeft value) left,
-    required TResult Function(QuranKareemStatePageSideStateRight value) right,
-  }) {
-    return right(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(QuranKareemStatePageSideStateLeft value)? left,
-    TResult? Function(QuranKareemStatePageSideStateRight value)? right,
-  }) {
-    return right?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(QuranKareemStatePageSideStateLeft value)? left,
-    TResult Function(QuranKareemStatePageSideStateRight value)? right,
-    required TResult orElse(),
-  }) {
-    if (right != null) {
-      return right(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranKareemStatePageSideStateLeft);
 }
 
-abstract class QuranKareemStatePageSideStateRight
-    implements QuranKareemStatePageSideState {
-  const factory QuranKareemStatePageSideStateRight() =
-      _$QuranKareemStatePageSideStateRightImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'QuranKareemStatePageSideState.left()';
 }
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class QuranKareemStatePageSideStateRight implements QuranKareemStatePageSideState {
+  const QuranKareemStatePageSideStateRight();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranKareemStatePageSideStateRight);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'QuranKareemStatePageSideState.right()';
+}
+
+
+}
+
+
+
+
+// dart format on

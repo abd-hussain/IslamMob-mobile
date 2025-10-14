@@ -13,7 +13,7 @@ part of 'language_bloc.dart';
 /// preferred language, supporting the global Muslim community's diverse
 /// language needs.
 @freezed
-class LanguageState with _$LanguageState {
+abstract class LanguageState with _$LanguageState {
   /// Creates a [LanguageState] with language selection information.
   ///
   /// Parameters:

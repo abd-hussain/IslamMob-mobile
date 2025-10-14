@@ -21,7 +21,7 @@ part 'report_request.freezed.dart';
 /// The attachment support allows users to include visual evidence or
 /// additional context for their reports.
 @freezed
-class ReportRequest with _$ReportRequest {
+abstract class ReportRequest with _$ReportRequest {
   /// Creates a [ReportRequest] instance for user reports and feedback.
   ///
   /// Parameters:

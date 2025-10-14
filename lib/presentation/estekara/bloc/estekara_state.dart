@@ -12,7 +12,7 @@ part of 'estekara_bloc.dart';
 /// important Islamic practice of seeking Allah's guidance when making
 /// significant life decisions according to Sunnah teachings.
 @freezed
-class EstekaraState with _$EstekaraState {
+abstract class EstekaraState with _$EstekaraState {
   /// Creates an [EstekaraState] with Istikhara content and language settings.
   ///
   /// Parameters:

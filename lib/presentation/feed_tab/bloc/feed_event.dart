@@ -1,7 +1,7 @@
 part of 'feed_bloc.dart';
 
 @freezed
-class FeedEvent with _$FeedEvent {
+abstract class FeedEvent with _$FeedEvent {
   factory FeedEvent.getPostFromSpesificCategory({
     required BuildContext context,
     required PostCategoryType type,

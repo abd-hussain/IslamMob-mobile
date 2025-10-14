@@ -6,7 +6,7 @@ part of 'post.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
+_Post _$PostFromJson(Map<String, dynamic> json) => _Post(
   id: json['id'] as String?,
   createdDate: json['createdDate'] as String,
   ownerEmail: json['ownerEmail'] as String,
@@ -25,70 +25,68 @@ _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
   voteStatus: PostVoteType.fromJson(json['voteStatus'] as Map<String, dynamic>),
 );
 
-Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'createdDate': instance.createdDate,
-      'ownerEmail': instance.ownerEmail,
-      'upComments': instance.upComments,
-      'downComments': instance.downComments,
-      'content': instance.content,
-      'category': instance.category,
-      'direction': instance.direction,
-      'profileImageUrl': instance.profileImageUrl,
-      'profilefullName': instance.profilefullName,
-      'countryFlag': instance.countryFlag,
-      'isReported': instance.isReported,
-      'isAddedToBookMark': instance.isAddedToBookMark,
-      'voteStatus': instance.voteStatus,
-    };
+Map<String, dynamic> _$PostToJson(_Post instance) => <String, dynamic>{
+  'id': instance.id,
+  'createdDate': instance.createdDate,
+  'ownerEmail': instance.ownerEmail,
+  'upComments': instance.upComments,
+  'downComments': instance.downComments,
+  'content': instance.content,
+  'category': instance.category,
+  'direction': instance.direction,
+  'profileImageUrl': instance.profileImageUrl,
+  'profilefullName': instance.profilefullName,
+  'countryFlag': instance.countryFlag,
+  'isReported': instance.isReported,
+  'isAddedToBookMark': instance.isAddedToBookMark,
+  'voteStatus': instance.voteStatus,
+};
 
-_$VoteIdlImpl _$$VoteIdlImplFromJson(Map<String, dynamic> json) =>
-    _$VoteIdlImpl($type: json['runtimeType'] as String?);
+VoteIdl _$VoteIdlFromJson(Map<String, dynamic> json) =>
+    VoteIdl($type: json['runtimeType'] as String?);
 
-Map<String, dynamic> _$$VoteIdlImplToJson(_$VoteIdlImpl instance) =>
+Map<String, dynamic> _$VoteIdlToJson(VoteIdl instance) => <String, dynamic>{
+  'runtimeType': instance.$type,
+};
+
+VoteUp _$VoteUpFromJson(Map<String, dynamic> json) =>
+    VoteUp($type: json['runtimeType'] as String?);
+
+Map<String, dynamic> _$VoteUpToJson(VoteUp instance) => <String, dynamic>{
+  'runtimeType': instance.$type,
+};
+
+VoteDown _$VoteDownFromJson(Map<String, dynamic> json) =>
+    VoteDown($type: json['runtimeType'] as String?);
+
+Map<String, dynamic> _$VoteDownToJson(VoteDown instance) => <String, dynamic>{
+  'runtimeType': instance.$type,
+};
+
+_PostCategoryTypeWall _$PostCategoryTypeWallFromJson(
+  Map<String, dynamic> json,
+) => _PostCategoryTypeWall($type: json['runtimeType'] as String?);
+
+Map<String, dynamic> _$PostCategoryTypeWallToJson(
+  _PostCategoryTypeWall instance,
+) => <String, dynamic>{'runtimeType': instance.$type};
+
+_PostCategoryTypeWatchlist _$PostCategoryTypeWatchlistFromJson(
+  Map<String, dynamic> json,
+) => _PostCategoryTypeWatchlist($type: json['runtimeType'] as String?);
+
+Map<String, dynamic> _$PostCategoryTypeWatchlistToJson(
+  _PostCategoryTypeWatchlist instance,
+) => <String, dynamic>{'runtimeType': instance.$type};
+
+_PostDirectionRTL _$PostDirectionRTLFromJson(Map<String, dynamic> json) =>
+    _PostDirectionRTL($type: json['runtimeType'] as String?);
+
+Map<String, dynamic> _$PostDirectionRTLToJson(_PostDirectionRTL instance) =>
     <String, dynamic>{'runtimeType': instance.$type};
 
-_$VoteUpImpl _$$VoteUpImplFromJson(Map<String, dynamic> json) =>
-    _$VoteUpImpl($type: json['runtimeType'] as String?);
+_PostDirectionLTR _$PostDirectionLTRFromJson(Map<String, dynamic> json) =>
+    _PostDirectionLTR($type: json['runtimeType'] as String?);
 
-Map<String, dynamic> _$$VoteUpImplToJson(_$VoteUpImpl instance) =>
+Map<String, dynamic> _$PostDirectionLTRToJson(_PostDirectionLTR instance) =>
     <String, dynamic>{'runtimeType': instance.$type};
-
-_$VoteDownImpl _$$VoteDownImplFromJson(Map<String, dynamic> json) =>
-    _$VoteDownImpl($type: json['runtimeType'] as String?);
-
-Map<String, dynamic> _$$VoteDownImplToJson(_$VoteDownImpl instance) =>
-    <String, dynamic>{'runtimeType': instance.$type};
-
-_$PostCategoryTypeWallImpl _$$PostCategoryTypeWallImplFromJson(
-  Map<String, dynamic> json,
-) => _$PostCategoryTypeWallImpl($type: json['runtimeType'] as String?);
-
-Map<String, dynamic> _$$PostCategoryTypeWallImplToJson(
-  _$PostCategoryTypeWallImpl instance,
-) => <String, dynamic>{'runtimeType': instance.$type};
-
-_$PostCategoryTypeWatchlistImpl _$$PostCategoryTypeWatchlistImplFromJson(
-  Map<String, dynamic> json,
-) => _$PostCategoryTypeWatchlistImpl($type: json['runtimeType'] as String?);
-
-Map<String, dynamic> _$$PostCategoryTypeWatchlistImplToJson(
-  _$PostCategoryTypeWatchlistImpl instance,
-) => <String, dynamic>{'runtimeType': instance.$type};
-
-_$PostDirectionRTLImpl _$$PostDirectionRTLImplFromJson(
-  Map<String, dynamic> json,
-) => _$PostDirectionRTLImpl($type: json['runtimeType'] as String?);
-
-Map<String, dynamic> _$$PostDirectionRTLImplToJson(
-  _$PostDirectionRTLImpl instance,
-) => <String, dynamic>{'runtimeType': instance.$type};
-
-_$PostDirectionLTRImpl _$$PostDirectionLTRImplFromJson(
-  Map<String, dynamic> json,
-) => _$PostDirectionLTRImpl($type: json['runtimeType'] as String?);
-
-Map<String, dynamic> _$$PostDirectionLTRImplToJson(
-  _$PostDirectionLTRImpl instance,
-) => <String, dynamic>{'runtimeType': instance.$type};

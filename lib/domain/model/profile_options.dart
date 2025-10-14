@@ -19,7 +19,7 @@ part 'profile_options.freezed.dart';
 /// The model supports both enabled and disabled states for options that
 /// may not be available in certain contexts or app versions.
 @freezed
-class ProfileOptions with _$ProfileOptions {
+abstract class ProfileOptions with _$ProfileOptions {
   /// Creates a [ProfileOptions] instance representing a profile menu item.
   ///
   /// Parameters:

@@ -21,7 +21,7 @@ part 'high_latitude_setting.freezed.dart';
 /// (like Scandinavia, northern Canada, Alaska) or southern regions with
 /// extreme seasonal variations in daylight hours.
 @freezed
-class HighLatitudeSetting with _$HighLatitudeSetting {
+abstract class HighLatitudeSetting with _$HighLatitudeSetting {
   /// Creates a [HighLatitudeSetting] instance for high latitude prayer calculations.
   ///
   /// Parameters:

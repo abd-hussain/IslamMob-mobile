@@ -19,7 +19,7 @@ part 'salah_config_setting.freezed.dart';
 /// The configuration enables flexible prayer time management where each prayer
 /// can have its own settings while maintaining a unified state management system.
 @freezed
-class SalahConfigSetting with _$SalahConfigSetting {
+abstract class SalahConfigSetting with _$SalahConfigSetting {
   /// Creates a [SalahConfigSetting] instance for prayer-specific configuration.
   ///
   /// Parameters:

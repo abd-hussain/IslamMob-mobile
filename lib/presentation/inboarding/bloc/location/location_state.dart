@@ -12,7 +12,7 @@ part of 'location_bloc.dart';
 /// geographical information essential for determining proper prayer times
 /// according to the user's specific location and Islamic requirements.
 @freezed
-class LocationState with _$LocationState {
+abstract class LocationState with _$LocationState {
   /// Creates a [LocationState] with location information and detection status.
   ///
   /// Parameters:

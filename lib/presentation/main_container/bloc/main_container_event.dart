@@ -6,7 +6,7 @@ part of 'main_container_bloc.dart';
 /// in the main container, including tab navigation changes and screen
 /// wakelock management.
 @freezed
-class MainContainerEvent with _$MainContainerEvent {
+abstract class MainContainerEvent with _$MainContainerEvent {
   /// Event to change the selected tab index in the bottom navigation.
   ///
   /// Takes a [tabIndex] parameter that specifies which tab should be

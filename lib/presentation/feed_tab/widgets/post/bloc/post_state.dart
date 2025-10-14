@@ -1,7 +1,7 @@
 part of 'post_bloc.dart';
 
 @freezed
-class PostState with _$PostState {
+abstract class PostState with _$PostState {
   const factory PostState({
     @Default("") String postID,
     @Default(0) int upComments,

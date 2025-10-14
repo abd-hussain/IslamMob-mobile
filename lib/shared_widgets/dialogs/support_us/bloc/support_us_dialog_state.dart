@@ -6,7 +6,7 @@ part of 'support_us_dialog_bloc.dart';
 /// which allows users to support the application through various means
 /// such as watching rewarded advertisements.
 @freezed
-class SupportUsDialogState with _$SupportUsDialogState {
+abstract class SupportUsDialogState with _$SupportUsDialogState {
   /// Creates a [SupportUsDialogState] with the specified parameters.
   ///
   /// The [rewardedAdExsist] parameter indicates whether a rewarded advertisement

@@ -6,8 +6,8 @@ part of 'profile_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProfileModelImpl _$$ProfileModelImplFromJson(Map<String, dynamic> json) =>
-    _$ProfileModelImpl(
+_ProfileModel _$ProfileModelFromJson(Map<String, dynamic> json) =>
+    _ProfileModel(
       country: json['country'] as String?,
       dateOfBirth: json['dateOfBirth'] as String?,
       fullName: json['fullName'] as String?,
@@ -20,7 +20,7 @@ _$ProfileModelImpl _$$ProfileModelImplFromJson(Map<String, dynamic> json) =>
       countryFlag: json['countryFlag'] as String?,
     );
 
-Map<String, dynamic> _$$ProfileModelImplToJson(_$ProfileModelImpl instance) =>
+Map<String, dynamic> _$ProfileModelToJson(_ProfileModel instance) =>
     <String, dynamic>{
       'country': instance.country,
       'dateOfBirth': instance.dateOfBirth,

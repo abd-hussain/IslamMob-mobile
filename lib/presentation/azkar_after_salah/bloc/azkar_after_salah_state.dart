@@ -19,7 +19,7 @@ part of 'azkar_after_salah_bloc.dart';
 /// practices after each prayer, helping Muslims maintain consistent
 /// post-prayer remembrance routines.
 @freezed
-class AzkarAfterSalahState with _$AzkarAfterSalahState {
+abstract class AzkarAfterSalahState with _$AzkarAfterSalahState {
   /// Creates an [AzkarAfterSalahState] with azkar list and visibility settings.
   ///
   /// Parameters:

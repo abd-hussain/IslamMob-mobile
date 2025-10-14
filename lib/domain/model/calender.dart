@@ -15,7 +15,7 @@ part 'calender.freezed.dart';
 /// times for different days, plan their prayer schedule, and navigate between
 /// dates while maintaining awareness of both Islamic and Gregorian calendar systems.
 @freezed
-class CalenderModel with _$CalenderModel {
+abstract class CalenderModel with _$CalenderModel {
   /// Creates a [CalenderModel] instance representing a calendar day with prayer times.
   ///
   /// Parameters:

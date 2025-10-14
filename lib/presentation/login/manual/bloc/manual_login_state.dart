@@ -1,7 +1,7 @@
 part of 'manual_login_bloc.dart';
 
 @freezed
-class ManualLoginState with _$ManualLoginState {
+abstract class ManualLoginState with _$ManualLoginState {
   const factory ManualLoginState({
     @Default(ManualLoginProcessState.loading())
     ManualLoginProcessState processState,

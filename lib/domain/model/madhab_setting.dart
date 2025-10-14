@@ -21,7 +21,7 @@ part 'madhab_setting.freezed.dart';
 /// Madhab to ensure their prayer times align with their religious tradition
 /// and scholarly guidance they follow.
 @freezed
-class MadhabSetting with _$MadhabSetting {
+abstract class MadhabSetting with _$MadhabSetting {
   /// Creates a [MadhabSetting] instance representing a selectable Madhab option.
   ///
   /// Parameters:

@@ -21,7 +21,7 @@ part 'estekara_data.freezed.dart';
 /// - Guidance on interpreting the results
 /// - When and how to use Istikhara
 @freezed
-class EstekaraData with _$EstekaraData {
+abstract class EstekaraData with _$EstekaraData {
   /// Creates an [EstekaraData] instance representing Istikhara guidance content.
   ///
   /// Parameters:

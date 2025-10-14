@@ -13,7 +13,7 @@ part of 'home_header_bloc.dart';
 /// information and location details, supporting their Islamic practice
 /// with accurate, location-based prayer time display in the home header.
 @freezed
-class HomeHeaderState with _$HomeHeaderState {
+abstract class HomeHeaderState with _$HomeHeaderState {
   /// Creates a [HomeHeaderState] with prayer timing and location information.
   ///
   /// Parameters:

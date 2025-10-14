@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1274 +9,951 @@ part of 'welcome_login_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$WelcomeLoginEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() googleSignin,
-    required TResult Function() appleSignin,
-    required TResult Function(String signInMethod) checkUserExistance,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? googleSignin,
-    TResult? Function()? appleSignin,
-    TResult? Function(String signInMethod)? checkUserExistance,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? googleSignin,
-    TResult Function()? appleSignin,
-    TResult Function(String signInMethod)? checkUserExistance,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GoogleSignin value) googleSignin,
-    required TResult Function(_AppleSignin value) appleSignin,
-    required TResult Function(_CheckUserExistance value) checkUserExistance,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GoogleSignin value)? googleSignin,
-    TResult? Function(_AppleSignin value)? appleSignin,
-    TResult? Function(_CheckUserExistance value)? checkUserExistance,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GoogleSignin value)? googleSignin,
-    TResult Function(_AppleSignin value)? appleSignin,
-    TResult Function(_CheckUserExistance value)? checkUserExistance,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WelcomeLoginEvent);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'WelcomeLoginEvent()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $WelcomeLoginEventCopyWith<$Res> {
-  factory $WelcomeLoginEventCopyWith(
-    WelcomeLoginEvent value,
-    $Res Function(WelcomeLoginEvent) then,
-  ) = _$WelcomeLoginEventCopyWithImpl<$Res, WelcomeLoginEvent>;
+class $WelcomeLoginEventCopyWith<$Res>  {
+$WelcomeLoginEventCopyWith(WelcomeLoginEvent _, $Res Function(WelcomeLoginEvent) __);
 }
 
-/// @nodoc
-class _$WelcomeLoginEventCopyWithImpl<$Res, $Val extends WelcomeLoginEvent>
-    implements $WelcomeLoginEventCopyWith<$Res> {
-  _$WelcomeLoginEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [WelcomeLoginEvent].
+extension WelcomeLoginEventPatterns on WelcomeLoginEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of WelcomeLoginEvent
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _GoogleSignin value)?  googleSignin,TResult Function( _AppleSignin value)?  appleSignin,TResult Function( _CheckUserExistance value)?  checkUserExistance,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _GoogleSignin() when googleSignin != null:
+return googleSignin(_that);case _AppleSignin() when appleSignin != null:
+return appleSignin(_that);case _CheckUserExistance() when checkUserExistance != null:
+return checkUserExistance(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _GoogleSignin value)  googleSignin,required TResult Function( _AppleSignin value)  appleSignin,required TResult Function( _CheckUserExistance value)  checkUserExistance,}){
+final _that = this;
+switch (_that) {
+case _GoogleSignin():
+return googleSignin(_that);case _AppleSignin():
+return appleSignin(_that);case _CheckUserExistance():
+return checkUserExistance(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _GoogleSignin value)?  googleSignin,TResult? Function( _AppleSignin value)?  appleSignin,TResult? Function( _CheckUserExistance value)?  checkUserExistance,}){
+final _that = this;
+switch (_that) {
+case _GoogleSignin() when googleSignin != null:
+return googleSignin(_that);case _AppleSignin() when appleSignin != null:
+return appleSignin(_that);case _CheckUserExistance() when checkUserExistance != null:
+return checkUserExistance(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  googleSignin,TResult Function()?  appleSignin,TResult Function( String signInMethod)?  checkUserExistance,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _GoogleSignin() when googleSignin != null:
+return googleSignin();case _AppleSignin() when appleSignin != null:
+return appleSignin();case _CheckUserExistance() when checkUserExistance != null:
+return checkUserExistance(_that.signInMethod);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  googleSignin,required TResult Function()  appleSignin,required TResult Function( String signInMethod)  checkUserExistance,}) {final _that = this;
+switch (_that) {
+case _GoogleSignin():
+return googleSignin();case _AppleSignin():
+return appleSignin();case _CheckUserExistance():
+return checkUserExistance(_that.signInMethod);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  googleSignin,TResult? Function()?  appleSignin,TResult? Function( String signInMethod)?  checkUserExistance,}) {final _that = this;
+switch (_that) {
+case _GoogleSignin() when googleSignin != null:
+return googleSignin();case _AppleSignin() when appleSignin != null:
+return appleSignin();case _CheckUserExistance() when checkUserExistance != null:
+return checkUserExistance(_that.signInMethod);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$GoogleSigninImplCopyWith<$Res> {
-  factory _$$GoogleSigninImplCopyWith(
-    _$GoogleSigninImpl value,
-    $Res Function(_$GoogleSigninImpl) then,
-  ) = __$$GoogleSigninImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GoogleSigninImplCopyWithImpl<$Res>
-    extends _$WelcomeLoginEventCopyWithImpl<$Res, _$GoogleSigninImpl>
-    implements _$$GoogleSigninImplCopyWith<$Res> {
-  __$$GoogleSigninImplCopyWithImpl(
-    _$GoogleSigninImpl _value,
-    $Res Function(_$GoogleSigninImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WelcomeLoginEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$GoogleSigninImpl implements _GoogleSignin {
-  const _$GoogleSigninImpl();
-
-  @override
-  String toString() {
-    return 'WelcomeLoginEvent.googleSignin()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GoogleSigninImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() googleSignin,
-    required TResult Function() appleSignin,
-    required TResult Function(String signInMethod) checkUserExistance,
-  }) {
-    return googleSignin();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? googleSignin,
-    TResult? Function()? appleSignin,
-    TResult? Function(String signInMethod)? checkUserExistance,
-  }) {
-    return googleSignin?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? googleSignin,
-    TResult Function()? appleSignin,
-    TResult Function(String signInMethod)? checkUserExistance,
-    required TResult orElse(),
-  }) {
-    if (googleSignin != null) {
-      return googleSignin();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GoogleSignin value) googleSignin,
-    required TResult Function(_AppleSignin value) appleSignin,
-    required TResult Function(_CheckUserExistance value) checkUserExistance,
-  }) {
-    return googleSignin(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GoogleSignin value)? googleSignin,
-    TResult? Function(_AppleSignin value)? appleSignin,
-    TResult? Function(_CheckUserExistance value)? checkUserExistance,
-  }) {
-    return googleSignin?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GoogleSignin value)? googleSignin,
-    TResult Function(_AppleSignin value)? appleSignin,
-    TResult Function(_CheckUserExistance value)? checkUserExistance,
-    required TResult orElse(),
-  }) {
-    if (googleSignin != null) {
-      return googleSignin(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GoogleSignin implements WelcomeLoginEvent {
-  const factory _GoogleSignin() = _$GoogleSigninImpl;
-}
-
-/// @nodoc
-abstract class _$$AppleSigninImplCopyWith<$Res> {
-  factory _$$AppleSigninImplCopyWith(
-    _$AppleSigninImpl value,
-    $Res Function(_$AppleSigninImpl) then,
-  ) = __$$AppleSigninImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AppleSigninImplCopyWithImpl<$Res>
-    extends _$WelcomeLoginEventCopyWithImpl<$Res, _$AppleSigninImpl>
-    implements _$$AppleSigninImplCopyWith<$Res> {
-  __$$AppleSigninImplCopyWithImpl(
-    _$AppleSigninImpl _value,
-    $Res Function(_$AppleSigninImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WelcomeLoginEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$AppleSigninImpl implements _AppleSignin {
-  const _$AppleSigninImpl();
 
-  @override
-  String toString() {
-    return 'WelcomeLoginEvent.appleSignin()';
-  }
+class _GoogleSignin implements WelcomeLoginEvent {
+  const _GoogleSignin();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppleSigninImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() googleSignin,
-    required TResult Function() appleSignin,
-    required TResult Function(String signInMethod) checkUserExistance,
-  }) {
-    return appleSignin();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? googleSignin,
-    TResult? Function()? appleSignin,
-    TResult? Function(String signInMethod)? checkUserExistance,
-  }) {
-    return appleSignin?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? googleSignin,
-    TResult Function()? appleSignin,
-    TResult Function(String signInMethod)? checkUserExistance,
-    required TResult orElse(),
-  }) {
-    if (appleSignin != null) {
-      return appleSignin();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GoogleSignin value) googleSignin,
-    required TResult Function(_AppleSignin value) appleSignin,
-    required TResult Function(_CheckUserExistance value) checkUserExistance,
-  }) {
-    return appleSignin(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GoogleSignin value)? googleSignin,
-    TResult? Function(_AppleSignin value)? appleSignin,
-    TResult? Function(_CheckUserExistance value)? checkUserExistance,
-  }) {
-    return appleSignin?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GoogleSignin value)? googleSignin,
-    TResult Function(_AppleSignin value)? appleSignin,
-    TResult Function(_CheckUserExistance value)? checkUserExistance,
-    required TResult orElse(),
-  }) {
-    if (appleSignin != null) {
-      return appleSignin(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GoogleSignin);
 }
 
-abstract class _AppleSignin implements WelcomeLoginEvent {
-  const factory _AppleSignin() = _$AppleSigninImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'WelcomeLoginEvent.googleSignin()';
 }
 
-/// @nodoc
-abstract class _$$CheckUserExistanceImplCopyWith<$Res> {
-  factory _$$CheckUserExistanceImplCopyWith(
-    _$CheckUserExistanceImpl value,
-    $Res Function(_$CheckUserExistanceImpl) then,
-  ) = __$$CheckUserExistanceImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String signInMethod});
+
 }
 
-/// @nodoc
-class __$$CheckUserExistanceImplCopyWithImpl<$Res>
-    extends _$WelcomeLoginEventCopyWithImpl<$Res, _$CheckUserExistanceImpl>
-    implements _$$CheckUserExistanceImplCopyWith<$Res> {
-  __$$CheckUserExistanceImplCopyWithImpl(
-    _$CheckUserExistanceImpl _value,
-    $Res Function(_$CheckUserExistanceImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of WelcomeLoginEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? signInMethod = null}) {
-    return _then(
-      _$CheckUserExistanceImpl(
-        signInMethod: null == signInMethod
-            ? _value.signInMethod
-            : signInMethod // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
-}
+
 
 /// @nodoc
 
-class _$CheckUserExistanceImpl implements _CheckUserExistance {
-  const _$CheckUserExistanceImpl({required this.signInMethod});
 
-  @override
-  final String signInMethod;
+class _AppleSignin implements WelcomeLoginEvent {
+  const _AppleSignin();
+  
 
-  @override
-  String toString() {
-    return 'WelcomeLoginEvent.checkUserExistance(signInMethod: $signInMethod)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CheckUserExistanceImpl &&
-            (identical(other.signInMethod, signInMethod) ||
-                other.signInMethod == signInMethod));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, signInMethod);
 
-  /// Create a copy of WelcomeLoginEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CheckUserExistanceImplCopyWith<_$CheckUserExistanceImpl> get copyWith =>
-      __$$CheckUserExistanceImplCopyWithImpl<_$CheckUserExistanceImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() googleSignin,
-    required TResult Function() appleSignin,
-    required TResult Function(String signInMethod) checkUserExistance,
-  }) {
-    return checkUserExistance(signInMethod);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? googleSignin,
-    TResult? Function()? appleSignin,
-    TResult? Function(String signInMethod)? checkUserExistance,
-  }) {
-    return checkUserExistance?.call(signInMethod);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? googleSignin,
-    TResult Function()? appleSignin,
-    TResult Function(String signInMethod)? checkUserExistance,
-    required TResult orElse(),
-  }) {
-    if (checkUserExistance != null) {
-      return checkUserExistance(signInMethod);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GoogleSignin value) googleSignin,
-    required TResult Function(_AppleSignin value) appleSignin,
-    required TResult Function(_CheckUserExistance value) checkUserExistance,
-  }) {
-    return checkUserExistance(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GoogleSignin value)? googleSignin,
-    TResult? Function(_AppleSignin value)? appleSignin,
-    TResult? Function(_CheckUserExistance value)? checkUserExistance,
-  }) {
-    return checkUserExistance?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GoogleSignin value)? googleSignin,
-    TResult Function(_AppleSignin value)? appleSignin,
-    TResult Function(_CheckUserExistance value)? checkUserExistance,
-    required TResult orElse(),
-  }) {
-    if (checkUserExistance != null) {
-      return checkUserExistance(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppleSignin);
 }
 
-abstract class _CheckUserExistance implements WelcomeLoginEvent {
-  const factory _CheckUserExistance({required final String signInMethod}) =
-      _$CheckUserExistanceImpl;
 
-  String get signInMethod;
+@override
+int get hashCode => runtimeType.hashCode;
 
-  /// Create a copy of WelcomeLoginEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CheckUserExistanceImplCopyWith<_$CheckUserExistanceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'WelcomeLoginEvent.appleSignin()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _CheckUserExistance implements WelcomeLoginEvent {
+  const _CheckUserExistance({required this.signInMethod});
+  
+
+ final  String signInMethod;
+
+/// Create a copy of WelcomeLoginEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CheckUserExistanceCopyWith<_CheckUserExistance> get copyWith => __$CheckUserExistanceCopyWithImpl<_CheckUserExistance>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CheckUserExistance&&(identical(other.signInMethod, signInMethod) || other.signInMethod == signInMethod));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,signInMethod);
+
+@override
+String toString() {
+  return 'WelcomeLoginEvent.checkUserExistance(signInMethod: $signInMethod)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CheckUserExistanceCopyWith<$Res> implements $WelcomeLoginEventCopyWith<$Res> {
+  factory _$CheckUserExistanceCopyWith(_CheckUserExistance value, $Res Function(_CheckUserExistance) _then) = __$CheckUserExistanceCopyWithImpl;
+@useResult
+$Res call({
+ String signInMethod
+});
+
+
+
+
+}
+/// @nodoc
+class __$CheckUserExistanceCopyWithImpl<$Res>
+    implements _$CheckUserExistanceCopyWith<$Res> {
+  __$CheckUserExistanceCopyWithImpl(this._self, this._then);
+
+  final _CheckUserExistance _self;
+  final $Res Function(_CheckUserExistance) _then;
+
+/// Create a copy of WelcomeLoginEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? signInMethod = null,}) {
+  return _then(_CheckUserExistance(
+signInMethod: null == signInMethod ? _self.signInMethod : signInMethod // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 /// @nodoc
 mixin _$WelcomeLoginState {
-  WelcomeLoginProccessState get proccessState =>
-      throw _privateConstructorUsedError;
 
-  /// Create a copy of WelcomeLoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $WelcomeLoginStateCopyWith<WelcomeLoginState> get copyWith =>
-      throw _privateConstructorUsedError;
+ WelcomeLoginProccessState get proccessState;
+/// Create a copy of WelcomeLoginState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WelcomeLoginStateCopyWith<WelcomeLoginState> get copyWith => _$WelcomeLoginStateCopyWithImpl<WelcomeLoginState>(this as WelcomeLoginState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WelcomeLoginState&&(identical(other.proccessState, proccessState) || other.proccessState == proccessState));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,proccessState);
+
+@override
+String toString() {
+  return 'WelcomeLoginState(proccessState: $proccessState)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $WelcomeLoginStateCopyWith<$Res> {
-  factory $WelcomeLoginStateCopyWith(
-    WelcomeLoginState value,
-    $Res Function(WelcomeLoginState) then,
-  ) = _$WelcomeLoginStateCopyWithImpl<$Res, WelcomeLoginState>;
-  @useResult
-  $Res call({WelcomeLoginProccessState proccessState});
+abstract mixin class $WelcomeLoginStateCopyWith<$Res>  {
+  factory $WelcomeLoginStateCopyWith(WelcomeLoginState value, $Res Function(WelcomeLoginState) _then) = _$WelcomeLoginStateCopyWithImpl;
+@useResult
+$Res call({
+ WelcomeLoginProccessState proccessState
+});
 
-  $WelcomeLoginProccessStateCopyWith<$Res> get proccessState;
+
+$WelcomeLoginProccessStateCopyWith<$Res> get proccessState;
+
 }
-
 /// @nodoc
-class _$WelcomeLoginStateCopyWithImpl<$Res, $Val extends WelcomeLoginState>
+class _$WelcomeLoginStateCopyWithImpl<$Res>
     implements $WelcomeLoginStateCopyWith<$Res> {
-  _$WelcomeLoginStateCopyWithImpl(this._value, this._then);
+  _$WelcomeLoginStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final WelcomeLoginState _self;
+  final $Res Function(WelcomeLoginState) _then;
 
-  /// Create a copy of WelcomeLoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? proccessState = null}) {
-    return _then(
-      _value.copyWith(
-            proccessState: null == proccessState
-                ? _value.proccessState
-                : proccessState // ignore: cast_nullable_to_non_nullable
-                      as WelcomeLoginProccessState,
-          )
-          as $Val,
-    );
-  }
-
-  /// Create a copy of WelcomeLoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $WelcomeLoginProccessStateCopyWith<$Res> get proccessState {
-    return $WelcomeLoginProccessStateCopyWith<$Res>(_value.proccessState, (
-      value,
-    ) {
-      return _then(_value.copyWith(proccessState: value) as $Val);
-    });
-  }
+/// Create a copy of WelcomeLoginState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? proccessState = null,}) {
+  return _then(_self.copyWith(
+proccessState: null == proccessState ? _self.proccessState : proccessState // ignore: cast_nullable_to_non_nullable
+as WelcomeLoginProccessState,
+  ));
 }
-
-/// @nodoc
-abstract class _$$WelcomeLoginStateImplCopyWith<$Res>
-    implements $WelcomeLoginStateCopyWith<$Res> {
-  factory _$$WelcomeLoginStateImplCopyWith(
-    _$WelcomeLoginStateImpl value,
-    $Res Function(_$WelcomeLoginStateImpl) then,
-  ) = __$$WelcomeLoginStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({WelcomeLoginProccessState proccessState});
-
-  @override
-  $WelcomeLoginProccessStateCopyWith<$Res> get proccessState;
-}
-
-/// @nodoc
-class __$$WelcomeLoginStateImplCopyWithImpl<$Res>
-    extends _$WelcomeLoginStateCopyWithImpl<$Res, _$WelcomeLoginStateImpl>
-    implements _$$WelcomeLoginStateImplCopyWith<$Res> {
-  __$$WelcomeLoginStateImplCopyWithImpl(
-    _$WelcomeLoginStateImpl _value,
-    $Res Function(_$WelcomeLoginStateImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WelcomeLoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? proccessState = null}) {
-    return _then(
-      _$WelcomeLoginStateImpl(
-        proccessState: null == proccessState
-            ? _value.proccessState
-            : proccessState // ignore: cast_nullable_to_non_nullable
-                  as WelcomeLoginProccessState,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$WelcomeLoginStateImpl implements _WelcomeLoginState {
-  const _$WelcomeLoginStateImpl({
-    this.proccessState = const WelcomeLoginProccessState.idle(),
+/// Create a copy of WelcomeLoginState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WelcomeLoginProccessStateCopyWith<$Res> get proccessState {
+  
+  return $WelcomeLoginProccessStateCopyWith<$Res>(_self.proccessState, (value) {
+    return _then(_self.copyWith(proccessState: value));
   });
-
-  @override
-  @JsonKey()
-  final WelcomeLoginProccessState proccessState;
-
-  @override
-  String toString() {
-    return 'WelcomeLoginState(proccessState: $proccessState)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$WelcomeLoginStateImpl &&
-            (identical(other.proccessState, proccessState) ||
-                other.proccessState == proccessState));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, proccessState);
-
-  /// Create a copy of WelcomeLoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$WelcomeLoginStateImplCopyWith<_$WelcomeLoginStateImpl> get copyWith =>
-      __$$WelcomeLoginStateImplCopyWithImpl<_$WelcomeLoginStateImpl>(
-        this,
-        _$identity,
-      );
+}
 }
 
-abstract class _WelcomeLoginState implements WelcomeLoginState {
-  const factory _WelcomeLoginState({
-    final WelcomeLoginProccessState proccessState,
-  }) = _$WelcomeLoginStateImpl;
 
-  @override
-  WelcomeLoginProccessState get proccessState;
+/// Adds pattern-matching-related methods to [WelcomeLoginState].
+extension WelcomeLoginStatePatterns on WelcomeLoginState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of WelcomeLoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WelcomeLoginStateImplCopyWith<_$WelcomeLoginStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WelcomeLoginState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WelcomeLoginState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WelcomeLoginState value)  $default,){
+final _that = this;
+switch (_that) {
+case _WelcomeLoginState():
+return $default(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WelcomeLoginState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WelcomeLoginState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( WelcomeLoginProccessState proccessState)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WelcomeLoginState() when $default != null:
+return $default(_that.proccessState);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( WelcomeLoginProccessState proccessState)  $default,) {final _that = this;
+switch (_that) {
+case _WelcomeLoginState():
+return $default(_that.proccessState);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( WelcomeLoginProccessState proccessState)?  $default,) {final _that = this;
+switch (_that) {
+case _WelcomeLoginState() when $default != null:
+return $default(_that.proccessState);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+
+
+class _WelcomeLoginState implements WelcomeLoginState {
+  const _WelcomeLoginState({this.proccessState = const WelcomeLoginProccessState.idle()});
+  
+
+@override@JsonKey() final  WelcomeLoginProccessState proccessState;
+
+/// Create a copy of WelcomeLoginState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WelcomeLoginStateCopyWith<_WelcomeLoginState> get copyWith => __$WelcomeLoginStateCopyWithImpl<_WelcomeLoginState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WelcomeLoginState&&(identical(other.proccessState, proccessState) || other.proccessState == proccessState));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,proccessState);
+
+@override
+String toString() {
+  return 'WelcomeLoginState(proccessState: $proccessState)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WelcomeLoginStateCopyWith<$Res> implements $WelcomeLoginStateCopyWith<$Res> {
+  factory _$WelcomeLoginStateCopyWith(_WelcomeLoginState value, $Res Function(_WelcomeLoginState) _then) = __$WelcomeLoginStateCopyWithImpl;
+@override @useResult
+$Res call({
+ WelcomeLoginProccessState proccessState
+});
+
+
+@override $WelcomeLoginProccessStateCopyWith<$Res> get proccessState;
+
+}
+/// @nodoc
+class __$WelcomeLoginStateCopyWithImpl<$Res>
+    implements _$WelcomeLoginStateCopyWith<$Res> {
+  __$WelcomeLoginStateCopyWithImpl(this._self, this._then);
+
+  final _WelcomeLoginState _self;
+  final $Res Function(_WelcomeLoginState) _then;
+
+/// Create a copy of WelcomeLoginState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? proccessState = null,}) {
+  return _then(_WelcomeLoginState(
+proccessState: null == proccessState ? _self.proccessState : proccessState // ignore: cast_nullable_to_non_nullable
+as WelcomeLoginProccessState,
+  ));
+}
+
+/// Create a copy of WelcomeLoginState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WelcomeLoginProccessStateCopyWith<$Res> get proccessState {
+  
+  return $WelcomeLoginProccessStateCopyWith<$Res>(_self.proccessState, (value) {
+    return _then(_self.copyWith(proccessState: value));
+  });
+}
 }
 
 /// @nodoc
 mixin _$WelcomeLoginProccessState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(bool hasAccount) success,
-    required TResult Function(String message) error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(bool hasAccount)? success,
-    TResult? Function(String message)? error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(bool hasAccount)? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(WelcomeLoginProccessStateIdle value) idle,
-    required TResult Function(WelcomeLoginProccessStateLoading value) loading,
-    required TResult Function(WelcomeLoginProccessStateSuccess value) success,
-    required TResult Function(WelcomeLoginProccessStateError value) error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult? Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult? Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult? Function(WelcomeLoginProccessStateError value)? error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult Function(WelcomeLoginProccessStateError value)? error,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WelcomeLoginProccessState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'WelcomeLoginProccessState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $WelcomeLoginProccessStateCopyWith<$Res> {
-  factory $WelcomeLoginProccessStateCopyWith(
-    WelcomeLoginProccessState value,
-    $Res Function(WelcomeLoginProccessState) then,
-  ) = _$WelcomeLoginProccessStateCopyWithImpl<$Res, WelcomeLoginProccessState>;
+class $WelcomeLoginProccessStateCopyWith<$Res>  {
+$WelcomeLoginProccessStateCopyWith(WelcomeLoginProccessState _, $Res Function(WelcomeLoginProccessState) __);
 }
 
-/// @nodoc
-class _$WelcomeLoginProccessStateCopyWithImpl<
-  $Res,
-  $Val extends WelcomeLoginProccessState
->
-    implements $WelcomeLoginProccessStateCopyWith<$Res> {
-  _$WelcomeLoginProccessStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [WelcomeLoginProccessState].
+extension WelcomeLoginProccessStatePatterns on WelcomeLoginProccessState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( WelcomeLoginProccessStateIdle value)?  idle,TResult Function( WelcomeLoginProccessStateLoading value)?  loading,TResult Function( WelcomeLoginProccessStateSuccess value)?  success,TResult Function( WelcomeLoginProccessStateError value)?  error,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case WelcomeLoginProccessStateIdle() when idle != null:
+return idle(_that);case WelcomeLoginProccessStateLoading() when loading != null:
+return loading(_that);case WelcomeLoginProccessStateSuccess() when success != null:
+return success(_that);case WelcomeLoginProccessStateError() when error != null:
+return error(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( WelcomeLoginProccessStateIdle value)  idle,required TResult Function( WelcomeLoginProccessStateLoading value)  loading,required TResult Function( WelcomeLoginProccessStateSuccess value)  success,required TResult Function( WelcomeLoginProccessStateError value)  error,}){
+final _that = this;
+switch (_that) {
+case WelcomeLoginProccessStateIdle():
+return idle(_that);case WelcomeLoginProccessStateLoading():
+return loading(_that);case WelcomeLoginProccessStateSuccess():
+return success(_that);case WelcomeLoginProccessStateError():
+return error(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( WelcomeLoginProccessStateIdle value)?  idle,TResult? Function( WelcomeLoginProccessStateLoading value)?  loading,TResult? Function( WelcomeLoginProccessStateSuccess value)?  success,TResult? Function( WelcomeLoginProccessStateError value)?  error,}){
+final _that = this;
+switch (_that) {
+case WelcomeLoginProccessStateIdle() when idle != null:
+return idle(_that);case WelcomeLoginProccessStateLoading() when loading != null:
+return loading(_that);case WelcomeLoginProccessStateSuccess() when success != null:
+return success(_that);case WelcomeLoginProccessStateError() when error != null:
+return error(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  idle,TResult Function()?  loading,TResult Function( bool hasAccount)?  success,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case WelcomeLoginProccessStateIdle() when idle != null:
+return idle();case WelcomeLoginProccessStateLoading() when loading != null:
+return loading();case WelcomeLoginProccessStateSuccess() when success != null:
+return success(_that.hasAccount);case WelcomeLoginProccessStateError() when error != null:
+return error(_that.message);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  idle,required TResult Function()  loading,required TResult Function( bool hasAccount)  success,required TResult Function( String message)  error,}) {final _that = this;
+switch (_that) {
+case WelcomeLoginProccessStateIdle():
+return idle();case WelcomeLoginProccessStateLoading():
+return loading();case WelcomeLoginProccessStateSuccess():
+return success(_that.hasAccount);case WelcomeLoginProccessStateError():
+return error(_that.message);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  idle,TResult? Function()?  loading,TResult? Function( bool hasAccount)?  success,TResult? Function( String message)?  error,}) {final _that = this;
+switch (_that) {
+case WelcomeLoginProccessStateIdle() when idle != null:
+return idle();case WelcomeLoginProccessStateLoading() when loading != null:
+return loading();case WelcomeLoginProccessStateSuccess() when success != null:
+return success(_that.hasAccount);case WelcomeLoginProccessStateError() when error != null:
+return error(_that.message);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$WelcomeLoginProccessStateIdleImplCopyWith<$Res> {
-  factory _$$WelcomeLoginProccessStateIdleImplCopyWith(
-    _$WelcomeLoginProccessStateIdleImpl value,
-    $Res Function(_$WelcomeLoginProccessStateIdleImpl) then,
-  ) = __$$WelcomeLoginProccessStateIdleImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$WelcomeLoginProccessStateIdleImplCopyWithImpl<$Res>
-    extends
-        _$WelcomeLoginProccessStateCopyWithImpl<
-          $Res,
-          _$WelcomeLoginProccessStateIdleImpl
-        >
-    implements _$$WelcomeLoginProccessStateIdleImplCopyWith<$Res> {
-  __$$WelcomeLoginProccessStateIdleImplCopyWithImpl(
-    _$WelcomeLoginProccessStateIdleImpl _value,
-    $Res Function(_$WelcomeLoginProccessStateIdleImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$WelcomeLoginProccessStateIdleImpl
-    implements WelcomeLoginProccessStateIdle {
-  const _$WelcomeLoginProccessStateIdleImpl();
-
-  @override
-  String toString() {
-    return 'WelcomeLoginProccessState.idle()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$WelcomeLoginProccessStateIdleImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(bool hasAccount) success,
-    required TResult Function(String message) error,
-  }) {
-    return idle();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(bool hasAccount)? success,
-    TResult? Function(String message)? error,
-  }) {
-    return idle?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(bool hasAccount)? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (idle != null) {
-      return idle();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(WelcomeLoginProccessStateIdle value) idle,
-    required TResult Function(WelcomeLoginProccessStateLoading value) loading,
-    required TResult Function(WelcomeLoginProccessStateSuccess value) success,
-    required TResult Function(WelcomeLoginProccessStateError value) error,
-  }) {
-    return idle(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult? Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult? Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult? Function(WelcomeLoginProccessStateError value)? error,
-  }) {
-    return idle?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult Function(WelcomeLoginProccessStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (idle != null) {
-      return idle(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class WelcomeLoginProccessStateIdle
-    implements WelcomeLoginProccessState {
-  const factory WelcomeLoginProccessStateIdle() =
-      _$WelcomeLoginProccessStateIdleImpl;
-}
-
-/// @nodoc
-abstract class _$$WelcomeLoginProccessStateLoadingImplCopyWith<$Res> {
-  factory _$$WelcomeLoginProccessStateLoadingImplCopyWith(
-    _$WelcomeLoginProccessStateLoadingImpl value,
-    $Res Function(_$WelcomeLoginProccessStateLoadingImpl) then,
-  ) = __$$WelcomeLoginProccessStateLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$WelcomeLoginProccessStateLoadingImplCopyWithImpl<$Res>
-    extends
-        _$WelcomeLoginProccessStateCopyWithImpl<
-          $Res,
-          _$WelcomeLoginProccessStateLoadingImpl
-        >
-    implements _$$WelcomeLoginProccessStateLoadingImplCopyWith<$Res> {
-  __$$WelcomeLoginProccessStateLoadingImplCopyWithImpl(
-    _$WelcomeLoginProccessStateLoadingImpl _value,
-    $Res Function(_$WelcomeLoginProccessStateLoadingImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$WelcomeLoginProccessStateLoadingImpl
-    implements WelcomeLoginProccessStateLoading {
-  const _$WelcomeLoginProccessStateLoadingImpl();
 
-  @override
-  String toString() {
-    return 'WelcomeLoginProccessState.loading()';
-  }
+class WelcomeLoginProccessStateIdle implements WelcomeLoginProccessState {
+  const WelcomeLoginProccessStateIdle();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$WelcomeLoginProccessStateLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(bool hasAccount) success,
-    required TResult Function(String message) error,
-  }) {
-    return loading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(bool hasAccount)? success,
-    TResult? Function(String message)? error,
-  }) {
-    return loading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(bool hasAccount)? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(WelcomeLoginProccessStateIdle value) idle,
-    required TResult Function(WelcomeLoginProccessStateLoading value) loading,
-    required TResult Function(WelcomeLoginProccessStateSuccess value) success,
-    required TResult Function(WelcomeLoginProccessStateError value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult? Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult? Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult? Function(WelcomeLoginProccessStateError value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult Function(WelcomeLoginProccessStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WelcomeLoginProccessStateIdle);
 }
 
-abstract class WelcomeLoginProccessStateLoading
-    implements WelcomeLoginProccessState {
-  const factory WelcomeLoginProccessStateLoading() =
-      _$WelcomeLoginProccessStateLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'WelcomeLoginProccessState.idle()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class WelcomeLoginProccessStateLoading implements WelcomeLoginProccessState {
+  const WelcomeLoginProccessStateLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WelcomeLoginProccessStateLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'WelcomeLoginProccessState.loading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class WelcomeLoginProccessStateSuccess implements WelcomeLoginProccessState {
+  const WelcomeLoginProccessStateSuccess(this.hasAccount);
+  
+
+ final  bool hasAccount;
+
+/// Create a copy of WelcomeLoginProccessState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WelcomeLoginProccessStateSuccessCopyWith<WelcomeLoginProccessStateSuccess> get copyWith => _$WelcomeLoginProccessStateSuccessCopyWithImpl<WelcomeLoginProccessStateSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WelcomeLoginProccessStateSuccess&&(identical(other.hasAccount, hasAccount) || other.hasAccount == hasAccount));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,hasAccount);
+
+@override
+String toString() {
+  return 'WelcomeLoginProccessState.success(hasAccount: $hasAccount)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$WelcomeLoginProccessStateSuccessImplCopyWith<$Res> {
-  factory _$$WelcomeLoginProccessStateSuccessImplCopyWith(
-    _$WelcomeLoginProccessStateSuccessImpl value,
-    $Res Function(_$WelcomeLoginProccessStateSuccessImpl) then,
-  ) = __$$WelcomeLoginProccessStateSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool hasAccount});
+abstract mixin class $WelcomeLoginProccessStateSuccessCopyWith<$Res> implements $WelcomeLoginProccessStateCopyWith<$Res> {
+  factory $WelcomeLoginProccessStateSuccessCopyWith(WelcomeLoginProccessStateSuccess value, $Res Function(WelcomeLoginProccessStateSuccess) _then) = _$WelcomeLoginProccessStateSuccessCopyWithImpl;
+@useResult
+$Res call({
+ bool hasAccount
+});
+
+
+
+
+}
+/// @nodoc
+class _$WelcomeLoginProccessStateSuccessCopyWithImpl<$Res>
+    implements $WelcomeLoginProccessStateSuccessCopyWith<$Res> {
+  _$WelcomeLoginProccessStateSuccessCopyWithImpl(this._self, this._then);
+
+  final WelcomeLoginProccessStateSuccess _self;
+  final $Res Function(WelcomeLoginProccessStateSuccess) _then;
+
+/// Create a copy of WelcomeLoginProccessState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? hasAccount = null,}) {
+  return _then(WelcomeLoginProccessStateSuccess(
+null == hasAccount ? _self.hasAccount : hasAccount // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-class __$$WelcomeLoginProccessStateSuccessImplCopyWithImpl<$Res>
-    extends
-        _$WelcomeLoginProccessStateCopyWithImpl<
-          $Res,
-          _$WelcomeLoginProccessStateSuccessImpl
-        >
-    implements _$$WelcomeLoginProccessStateSuccessImplCopyWith<$Res> {
-  __$$WelcomeLoginProccessStateSuccessImplCopyWithImpl(
-    _$WelcomeLoginProccessStateSuccessImpl _value,
-    $Res Function(_$WelcomeLoginProccessStateSuccessImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? hasAccount = null}) {
-    return _then(
-      _$WelcomeLoginProccessStateSuccessImpl(
-        null == hasAccount
-            ? _value.hasAccount
-            : hasAccount // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$WelcomeLoginProccessStateSuccessImpl
-    implements WelcomeLoginProccessStateSuccess {
-  const _$WelcomeLoginProccessStateSuccessImpl(this.hasAccount);
 
-  @override
-  final bool hasAccount;
+class WelcomeLoginProccessStateError implements WelcomeLoginProccessState {
+  const WelcomeLoginProccessStateError(this.message);
+  
 
-  @override
-  String toString() {
-    return 'WelcomeLoginProccessState.success(hasAccount: $hasAccount)';
-  }
+ final  String message;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$WelcomeLoginProccessStateSuccessImpl &&
-            (identical(other.hasAccount, hasAccount) ||
-                other.hasAccount == hasAccount));
-  }
+/// Create a copy of WelcomeLoginProccessState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WelcomeLoginProccessStateErrorCopyWith<WelcomeLoginProccessStateError> get copyWith => _$WelcomeLoginProccessStateErrorCopyWithImpl<WelcomeLoginProccessStateError>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, hasAccount);
 
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$WelcomeLoginProccessStateSuccessImplCopyWith<
-    _$WelcomeLoginProccessStateSuccessImpl
-  >
-  get copyWith =>
-      __$$WelcomeLoginProccessStateSuccessImplCopyWithImpl<
-        _$WelcomeLoginProccessStateSuccessImpl
-      >(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(bool hasAccount) success,
-    required TResult Function(String message) error,
-  }) {
-    return success(hasAccount);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(bool hasAccount)? success,
-    TResult? Function(String message)? error,
-  }) {
-    return success?.call(hasAccount);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(bool hasAccount)? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(hasAccount);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(WelcomeLoginProccessStateIdle value) idle,
-    required TResult Function(WelcomeLoginProccessStateLoading value) loading,
-    required TResult Function(WelcomeLoginProccessStateSuccess value) success,
-    required TResult Function(WelcomeLoginProccessStateError value) error,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult? Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult? Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult? Function(WelcomeLoginProccessStateError value)? error,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult Function(WelcomeLoginProccessStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WelcomeLoginProccessStateError&&(identical(other.message, message) || other.message == message));
 }
 
-abstract class WelcomeLoginProccessStateSuccess
-    implements WelcomeLoginProccessState {
-  const factory WelcomeLoginProccessStateSuccess(final bool hasAccount) =
-      _$WelcomeLoginProccessStateSuccessImpl;
 
-  bool get hasAccount;
+@override
+int get hashCode => Object.hash(runtimeType,message);
 
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WelcomeLoginProccessStateSuccessImplCopyWith<
-    _$WelcomeLoginProccessStateSuccessImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'WelcomeLoginProccessState.error(message: $message)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$WelcomeLoginProccessStateErrorImplCopyWith<$Res> {
-  factory _$$WelcomeLoginProccessStateErrorImplCopyWith(
-    _$WelcomeLoginProccessStateErrorImpl value,
-    $Res Function(_$WelcomeLoginProccessStateErrorImpl) then,
-  ) = __$$WelcomeLoginProccessStateErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
-}
+abstract mixin class $WelcomeLoginProccessStateErrorCopyWith<$Res> implements $WelcomeLoginProccessStateCopyWith<$Res> {
+  factory $WelcomeLoginProccessStateErrorCopyWith(WelcomeLoginProccessStateError value, $Res Function(WelcomeLoginProccessStateError) _then) = _$WelcomeLoginProccessStateErrorCopyWithImpl;
+@useResult
+$Res call({
+ String message
+});
 
+
+
+
+}
 /// @nodoc
-class __$$WelcomeLoginProccessStateErrorImplCopyWithImpl<$Res>
-    extends
-        _$WelcomeLoginProccessStateCopyWithImpl<
-          $Res,
-          _$WelcomeLoginProccessStateErrorImpl
-        >
-    implements _$$WelcomeLoginProccessStateErrorImplCopyWith<$Res> {
-  __$$WelcomeLoginProccessStateErrorImplCopyWithImpl(
-    _$WelcomeLoginProccessStateErrorImpl _value,
-    $Res Function(_$WelcomeLoginProccessStateErrorImpl) _then,
-  ) : super(_value, _then);
+class _$WelcomeLoginProccessStateErrorCopyWithImpl<$Res>
+    implements $WelcomeLoginProccessStateErrorCopyWith<$Res> {
+  _$WelcomeLoginProccessStateErrorCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? message = null}) {
-    return _then(
-      _$WelcomeLoginProccessStateErrorImpl(
-        null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
+  final WelcomeLoginProccessStateError _self;
+  final $Res Function(WelcomeLoginProccessStateError) _then;
+
+/// Create a copy of WelcomeLoginProccessState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+  return _then(WelcomeLoginProccessStateError(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
 
-class _$WelcomeLoginProccessStateErrorImpl
-    implements WelcomeLoginProccessStateError {
-  const _$WelcomeLoginProccessStateErrorImpl(this.message);
-
-  @override
-  final String message;
-
-  @override
-  String toString() {
-    return 'WelcomeLoginProccessState.error(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$WelcomeLoginProccessStateErrorImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$WelcomeLoginProccessStateErrorImplCopyWith<
-    _$WelcomeLoginProccessStateErrorImpl
-  >
-  get copyWith =>
-      __$$WelcomeLoginProccessStateErrorImplCopyWithImpl<
-        _$WelcomeLoginProccessStateErrorImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(bool hasAccount) success,
-    required TResult Function(String message) error,
-  }) {
-    return error(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(bool hasAccount)? success,
-    TResult? Function(String message)? error,
-  }) {
-    return error?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(bool hasAccount)? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(WelcomeLoginProccessStateIdle value) idle,
-    required TResult Function(WelcomeLoginProccessStateLoading value) loading,
-    required TResult Function(WelcomeLoginProccessStateSuccess value) success,
-    required TResult Function(WelcomeLoginProccessStateError value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult? Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult? Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult? Function(WelcomeLoginProccessStateError value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(WelcomeLoginProccessStateIdle value)? idle,
-    TResult Function(WelcomeLoginProccessStateLoading value)? loading,
-    TResult Function(WelcomeLoginProccessStateSuccess value)? success,
-    TResult Function(WelcomeLoginProccessStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class WelcomeLoginProccessStateError
-    implements WelcomeLoginProccessState {
-  const factory WelcomeLoginProccessStateError(final String message) =
-      _$WelcomeLoginProccessStateErrorImpl;
-
-  String get message;
-
-  /// Create a copy of WelcomeLoginProccessState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WelcomeLoginProccessStateErrorImplCopyWith<
-    _$WelcomeLoginProccessStateErrorImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

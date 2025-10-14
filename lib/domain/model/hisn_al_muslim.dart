@@ -14,7 +14,7 @@ part 'hisn_al_muslim.freezed.dart';
 /// supports multi-language content (Arabic and English) and includes favorite
 /// functionality for user personalization.
 @freezed
-class HisnAlMuslimModel with _$HisnAlMuslimModel {
+abstract class HisnAlMuslimModel with _$HisnAlMuslimModel {
   /// Creates a [HisnAlMuslimModel] instance representing a supplication item.
   ///
   /// Parameters:

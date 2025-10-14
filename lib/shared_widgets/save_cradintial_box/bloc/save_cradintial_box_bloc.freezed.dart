@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,376 +9,520 @@ part of 'save_cradintial_box_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$SaveCradintialBoxEvent {
-  bool get value => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool value) saveCradintialsChanged,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool value)? saveCradintialsChanged,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool value)? saveCradintialsChanged,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SaveCradintialsChanged value)
-    saveCradintialsChanged,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SaveCradintialsChanged value)? saveCradintialsChanged,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SaveCradintialsChanged value)? saveCradintialsChanged,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
 
-  /// Create a copy of SaveCradintialBoxEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $SaveCradintialBoxEventCopyWith<SaveCradintialBoxEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+ bool get value;
+/// Create a copy of SaveCradintialBoxEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SaveCradintialBoxEventCopyWith<SaveCradintialBoxEvent> get copyWith => _$SaveCradintialBoxEventCopyWithImpl<SaveCradintialBoxEvent>(this as SaveCradintialBoxEvent, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SaveCradintialBoxEvent&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'SaveCradintialBoxEvent(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $SaveCradintialBoxEventCopyWith<$Res> {
-  factory $SaveCradintialBoxEventCopyWith(
-    SaveCradintialBoxEvent value,
-    $Res Function(SaveCradintialBoxEvent) then,
-  ) = _$SaveCradintialBoxEventCopyWithImpl<$Res, SaveCradintialBoxEvent>;
-  @useResult
-  $Res call({bool value});
-}
+abstract mixin class $SaveCradintialBoxEventCopyWith<$Res>  {
+  factory $SaveCradintialBoxEventCopyWith(SaveCradintialBoxEvent value, $Res Function(SaveCradintialBoxEvent) _then) = _$SaveCradintialBoxEventCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
 
+
+
+
+}
 /// @nodoc
-class _$SaveCradintialBoxEventCopyWithImpl<
-  $Res,
-  $Val extends SaveCradintialBoxEvent
->
+class _$SaveCradintialBoxEventCopyWithImpl<$Res>
     implements $SaveCradintialBoxEventCopyWith<$Res> {
-  _$SaveCradintialBoxEventCopyWithImpl(this._value, this._then);
+  _$SaveCradintialBoxEventCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SaveCradintialBoxEvent _self;
+  final $Res Function(SaveCradintialBoxEvent) _then;
 
-  /// Create a copy of SaveCradintialBoxEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _value.copyWith(
-            value: null == value
-                ? _value.value
-                : value // ignore: cast_nullable_to_non_nullable
-                      as bool,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of SaveCradintialBoxEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? value = null,}) {
+  return _then(_self.copyWith(
+value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SaveCradintialBoxEvent].
+extension SaveCradintialBoxEventPatterns on SaveCradintialBoxEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _SaveCradintialsChanged value)?  saveCradintialsChanged,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SaveCradintialsChanged() when saveCradintialsChanged != null:
+return saveCradintialsChanged(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _SaveCradintialsChanged value)  saveCradintialsChanged,}){
+final _that = this;
+switch (_that) {
+case _SaveCradintialsChanged():
+return saveCradintialsChanged(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _SaveCradintialsChanged value)?  saveCradintialsChanged,}){
+final _that = this;
+switch (_that) {
+case _SaveCradintialsChanged() when saveCradintialsChanged != null:
+return saveCradintialsChanged(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( bool value)?  saveCradintialsChanged,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SaveCradintialsChanged() when saveCradintialsChanged != null:
+return saveCradintialsChanged(_that.value);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( bool value)  saveCradintialsChanged,}) {final _that = this;
+switch (_that) {
+case _SaveCradintialsChanged():
+return saveCradintialsChanged(_that.value);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( bool value)?  saveCradintialsChanged,}) {final _that = this;
+switch (_that) {
+case _SaveCradintialsChanged() when saveCradintialsChanged != null:
+return saveCradintialsChanged(_that.value);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-abstract class _$$SaveCradintialsChangedImplCopyWith<$Res>
-    implements $SaveCradintialBoxEventCopyWith<$Res> {
-  factory _$$SaveCradintialsChangedImplCopyWith(
-    _$SaveCradintialsChangedImpl value,
-    $Res Function(_$SaveCradintialsChangedImpl) then,
-  ) = __$$SaveCradintialsChangedImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool value});
+
+
+class _SaveCradintialsChanged implements SaveCradintialBoxEvent {
+  const _SaveCradintialsChanged({required this.value});
+  
+
+@override final  bool value;
+
+/// Create a copy of SaveCradintialBoxEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SaveCradintialsChangedCopyWith<_SaveCradintialsChanged> get copyWith => __$SaveCradintialsChangedCopyWithImpl<_SaveCradintialsChanged>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SaveCradintialsChanged&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'SaveCradintialBoxEvent.saveCradintialsChanged(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-class __$$SaveCradintialsChangedImplCopyWithImpl<$Res>
-    extends
-        _$SaveCradintialBoxEventCopyWithImpl<$Res, _$SaveCradintialsChangedImpl>
-    implements _$$SaveCradintialsChangedImplCopyWith<$Res> {
-  __$$SaveCradintialsChangedImplCopyWithImpl(
-    _$SaveCradintialsChangedImpl _value,
-    $Res Function(_$SaveCradintialsChangedImpl) _then,
-  ) : super(_value, _then);
+abstract mixin class _$SaveCradintialsChangedCopyWith<$Res> implements $SaveCradintialBoxEventCopyWith<$Res> {
+  factory _$SaveCradintialsChangedCopyWith(_SaveCradintialsChanged value, $Res Function(_SaveCradintialsChanged) _then) = __$SaveCradintialsChangedCopyWithImpl;
+@override @useResult
+$Res call({
+ bool value
+});
 
-  /// Create a copy of SaveCradintialBoxEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$SaveCradintialsChangedImpl(
-        value: null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
+
+
+
 }
-
 /// @nodoc
+class __$SaveCradintialsChangedCopyWithImpl<$Res>
+    implements _$SaveCradintialsChangedCopyWith<$Res> {
+  __$SaveCradintialsChangedCopyWithImpl(this._self, this._then);
 
-class _$SaveCradintialsChangedImpl implements _SaveCradintialsChanged {
-  const _$SaveCradintialsChangedImpl({required this.value});
+  final _SaveCradintialsChanged _self;
+  final $Res Function(_SaveCradintialsChanged) _then;
 
-  @override
-  final bool value;
-
-  @override
-  String toString() {
-    return 'SaveCradintialBoxEvent.saveCradintialsChanged(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SaveCradintialsChangedImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  /// Create a copy of SaveCradintialBoxEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SaveCradintialsChangedImplCopyWith<_$SaveCradintialsChangedImpl>
-  get copyWith =>
-      __$$SaveCradintialsChangedImplCopyWithImpl<_$SaveCradintialsChangedImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool value) saveCradintialsChanged,
-  }) {
-    return saveCradintialsChanged(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool value)? saveCradintialsChanged,
-  }) {
-    return saveCradintialsChanged?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool value)? saveCradintialsChanged,
-    required TResult orElse(),
-  }) {
-    if (saveCradintialsChanged != null) {
-      return saveCradintialsChanged(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SaveCradintialsChanged value)
-    saveCradintialsChanged,
-  }) {
-    return saveCradintialsChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SaveCradintialsChanged value)? saveCradintialsChanged,
-  }) {
-    return saveCradintialsChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SaveCradintialsChanged value)? saveCradintialsChanged,
-    required TResult orElse(),
-  }) {
-    if (saveCradintialsChanged != null) {
-      return saveCradintialsChanged(this);
-    }
-    return orElse();
-  }
+/// Create a copy of SaveCradintialBoxEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_SaveCradintialsChanged(
+value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-abstract class _SaveCradintialsChanged implements SaveCradintialBoxEvent {
-  const factory _SaveCradintialsChanged({required final bool value}) =
-      _$SaveCradintialsChangedImpl;
 
-  @override
-  bool get value;
-
-  /// Create a copy of SaveCradintialBoxEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SaveCradintialsChangedImplCopyWith<_$SaveCradintialsChangedImpl>
-  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$SaveCradintialBoxState {
-  bool get saveCraditialEnabled => throw _privateConstructorUsedError;
 
-  /// Create a copy of SaveCradintialBoxState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $SaveCradintialBoxStateCopyWith<SaveCradintialBoxState> get copyWith =>
-      throw _privateConstructorUsedError;
+ bool get saveCraditialEnabled;
+/// Create a copy of SaveCradintialBoxState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SaveCradintialBoxStateCopyWith<SaveCradintialBoxState> get copyWith => _$SaveCradintialBoxStateCopyWithImpl<SaveCradintialBoxState>(this as SaveCradintialBoxState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SaveCradintialBoxState&&(identical(other.saveCraditialEnabled, saveCraditialEnabled) || other.saveCraditialEnabled == saveCraditialEnabled));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,saveCraditialEnabled);
+
+@override
+String toString() {
+  return 'SaveCradintialBoxState(saveCraditialEnabled: $saveCraditialEnabled)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $SaveCradintialBoxStateCopyWith<$Res> {
-  factory $SaveCradintialBoxStateCopyWith(
-    SaveCradintialBoxState value,
-    $Res Function(SaveCradintialBoxState) then,
-  ) = _$SaveCradintialBoxStateCopyWithImpl<$Res, SaveCradintialBoxState>;
-  @useResult
-  $Res call({bool saveCraditialEnabled});
-}
+abstract mixin class $SaveCradintialBoxStateCopyWith<$Res>  {
+  factory $SaveCradintialBoxStateCopyWith(SaveCradintialBoxState value, $Res Function(SaveCradintialBoxState) _then) = _$SaveCradintialBoxStateCopyWithImpl;
+@useResult
+$Res call({
+ bool saveCraditialEnabled
+});
 
+
+
+
+}
 /// @nodoc
-class _$SaveCradintialBoxStateCopyWithImpl<
-  $Res,
-  $Val extends SaveCradintialBoxState
->
+class _$SaveCradintialBoxStateCopyWithImpl<$Res>
     implements $SaveCradintialBoxStateCopyWith<$Res> {
-  _$SaveCradintialBoxStateCopyWithImpl(this._value, this._then);
+  _$SaveCradintialBoxStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SaveCradintialBoxState _self;
+  final $Res Function(SaveCradintialBoxState) _then;
 
-  /// Create a copy of SaveCradintialBoxState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? saveCraditialEnabled = null}) {
-    return _then(
-      _value.copyWith(
-            saveCraditialEnabled: null == saveCraditialEnabled
-                ? _value.saveCraditialEnabled
-                : saveCraditialEnabled // ignore: cast_nullable_to_non_nullable
-                      as bool,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of SaveCradintialBoxState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? saveCraditialEnabled = null,}) {
+  return _then(_self.copyWith(
+saveCraditialEnabled: null == saveCraditialEnabled ? _self.saveCraditialEnabled : saveCraditialEnabled // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SaveCradintialBoxState].
+extension SaveCradintialBoxStatePatterns on SaveCradintialBoxState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SaveCradintialBoxState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SaveCradintialBoxState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SaveCradintialBoxState value)  $default,){
+final _that = this;
+switch (_that) {
+case _SaveCradintialBoxState():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SaveCradintialBoxState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SaveCradintialBoxState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool saveCraditialEnabled)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SaveCradintialBoxState() when $default != null:
+return $default(_that.saveCraditialEnabled);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool saveCraditialEnabled)  $default,) {final _that = this;
+switch (_that) {
+case _SaveCradintialBoxState():
+return $default(_that.saveCraditialEnabled);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool saveCraditialEnabled)?  $default,) {final _that = this;
+switch (_that) {
+case _SaveCradintialBoxState() when $default != null:
+return $default(_that.saveCraditialEnabled);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-abstract class _$$SaveCradintialBoxStateImplCopyWith<$Res>
-    implements $SaveCradintialBoxStateCopyWith<$Res> {
-  factory _$$SaveCradintialBoxStateImplCopyWith(
-    _$SaveCradintialBoxStateImpl value,
-    $Res Function(_$SaveCradintialBoxStateImpl) then,
-  ) = __$$SaveCradintialBoxStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool saveCraditialEnabled});
+
+
+class _SaveCradintialBoxState implements SaveCradintialBoxState {
+  const _SaveCradintialBoxState({this.saveCraditialEnabled = false});
+  
+
+@override@JsonKey() final  bool saveCraditialEnabled;
+
+/// Create a copy of SaveCradintialBoxState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SaveCradintialBoxStateCopyWith<_SaveCradintialBoxState> get copyWith => __$SaveCradintialBoxStateCopyWithImpl<_SaveCradintialBoxState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SaveCradintialBoxState&&(identical(other.saveCraditialEnabled, saveCraditialEnabled) || other.saveCraditialEnabled == saveCraditialEnabled));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,saveCraditialEnabled);
+
+@override
+String toString() {
+  return 'SaveCradintialBoxState(saveCraditialEnabled: $saveCraditialEnabled)';
+}
+
+
 }
 
 /// @nodoc
-class __$$SaveCradintialBoxStateImplCopyWithImpl<$Res>
-    extends
-        _$SaveCradintialBoxStateCopyWithImpl<$Res, _$SaveCradintialBoxStateImpl>
-    implements _$$SaveCradintialBoxStateImplCopyWith<$Res> {
-  __$$SaveCradintialBoxStateImplCopyWithImpl(
-    _$SaveCradintialBoxStateImpl _value,
-    $Res Function(_$SaveCradintialBoxStateImpl) _then,
-  ) : super(_value, _then);
+abstract mixin class _$SaveCradintialBoxStateCopyWith<$Res> implements $SaveCradintialBoxStateCopyWith<$Res> {
+  factory _$SaveCradintialBoxStateCopyWith(_SaveCradintialBoxState value, $Res Function(_SaveCradintialBoxState) _then) = __$SaveCradintialBoxStateCopyWithImpl;
+@override @useResult
+$Res call({
+ bool saveCraditialEnabled
+});
 
-  /// Create a copy of SaveCradintialBoxState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? saveCraditialEnabled = null}) {
-    return _then(
-      _$SaveCradintialBoxStateImpl(
-        saveCraditialEnabled: null == saveCraditialEnabled
-            ? _value.saveCraditialEnabled
-            : saveCraditialEnabled // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
+
+
+
 }
-
 /// @nodoc
+class __$SaveCradintialBoxStateCopyWithImpl<$Res>
+    implements _$SaveCradintialBoxStateCopyWith<$Res> {
+  __$SaveCradintialBoxStateCopyWithImpl(this._self, this._then);
 
-class _$SaveCradintialBoxStateImpl implements _SaveCradintialBoxState {
-  const _$SaveCradintialBoxStateImpl({this.saveCraditialEnabled = false});
+  final _SaveCradintialBoxState _self;
+  final $Res Function(_SaveCradintialBoxState) _then;
 
-  @override
-  @JsonKey()
-  final bool saveCraditialEnabled;
-
-  @override
-  String toString() {
-    return 'SaveCradintialBoxState(saveCraditialEnabled: $saveCraditialEnabled)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SaveCradintialBoxStateImpl &&
-            (identical(other.saveCraditialEnabled, saveCraditialEnabled) ||
-                other.saveCraditialEnabled == saveCraditialEnabled));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, saveCraditialEnabled);
-
-  /// Create a copy of SaveCradintialBoxState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SaveCradintialBoxStateImplCopyWith<_$SaveCradintialBoxStateImpl>
-  get copyWith =>
-      __$$SaveCradintialBoxStateImplCopyWithImpl<_$SaveCradintialBoxStateImpl>(
-        this,
-        _$identity,
-      );
+/// Create a copy of SaveCradintialBoxState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? saveCraditialEnabled = null,}) {
+  return _then(_SaveCradintialBoxState(
+saveCraditialEnabled: null == saveCraditialEnabled ? _self.saveCraditialEnabled : saveCraditialEnabled // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-abstract class _SaveCradintialBoxState implements SaveCradintialBoxState {
-  const factory _SaveCradintialBoxState({final bool saveCraditialEnabled}) =
-      _$SaveCradintialBoxStateImpl;
 
-  @override
-  bool get saveCraditialEnabled;
-
-  /// Create a copy of SaveCradintialBoxState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SaveCradintialBoxStateImplCopyWith<_$SaveCradintialBoxStateImpl>
-  get copyWith => throw _privateConstructorUsedError;
 }
+
+// dart format on

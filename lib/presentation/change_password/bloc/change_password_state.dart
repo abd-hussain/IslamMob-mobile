@@ -1,7 +1,7 @@
 part of 'change_password_bloc.dart';
 
 @freezed
-class ChangePasswordState with _$ChangePasswordState {
+abstract class ChangePasswordState with _$ChangePasswordState {
   const factory ChangePasswordState({
     @Default(ChangePasswordProcessState.idl())
     ChangePasswordProcessState processState,

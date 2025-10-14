@@ -19,7 +19,7 @@ part 'time_zone_setting.freezed.dart';
 /// location. Even small time zone errors can result in incorrect prayer times,
 /// which could affect the validity of prayers in Islamic practice.
 @freezed
-class TimeZoneSetting with _$TimeZoneSetting {
+abstract class TimeZoneSetting with _$TimeZoneSetting {
   /// Creates a [TimeZoneSetting] instance representing a time zone option.
   ///
   /// Parameters:

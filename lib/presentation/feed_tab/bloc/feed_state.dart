@@ -1,7 +1,7 @@
 part of 'feed_bloc.dart';
 
 @freezed
-class FeedState with _$FeedState {
+abstract class FeedState with _$FeedState {
   const factory FeedState({
     @Default(false) bool showInternetConnectionView,
     @Default([]) List<Post> wallPostList,

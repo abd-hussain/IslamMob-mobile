@@ -12,7 +12,7 @@ part of 'notifications_bloc.dart';
 /// permission information essential for delivering timely alerts to help
 /// Muslims maintain their spiritual obligations throughout the day.
 @freezed
-class NotificationsState with _$NotificationsState {
+abstract class NotificationsState with _$NotificationsState {
   /// Creates a [NotificationsState] with notification permission information.
   ///
   /// Parameters:

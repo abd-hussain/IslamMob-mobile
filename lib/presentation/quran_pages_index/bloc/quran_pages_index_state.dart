@@ -5,7 +5,7 @@ part of 'quran_pages_index_bloc.dart';
 /// This class represents the current state of the Quran pages index screen,
 /// including the selected tab index and the list of surah names.
 @freezed
-class QuranPagesIndexState with _$QuranPagesIndexState {
+abstract class QuranPagesIndexState with _$QuranPagesIndexState {
   /// Creates a [QuranPagesIndexState] with the given parameters.
   ///
   /// The [selectedIndex] represents the currently selected tab index,

@@ -7,7 +7,7 @@ part of 'pray_calculation_setting_bloc.dart';
 /// selection, calculation methods, and high latitude calculation options.
 /// It uses Freezed for immutability and code generation.
 @freezed
-class PrayCalculationSettingState with _$PrayCalculationSettingState {
+abstract class PrayCalculationSettingState with _$PrayCalculationSettingState {
   /// Creates a [PrayCalculationSettingState] with optional parameters.
   ///
   /// All parameters are optional and have default values where applicable.

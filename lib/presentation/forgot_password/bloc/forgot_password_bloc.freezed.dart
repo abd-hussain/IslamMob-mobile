@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1278 +9,955 @@ part of 'forgot_password_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$ForgotPasswordEvent {
-  IslamMobLocalizations get localizations => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(IslamMobLocalizations localizations, String email)
-    updateButtonEnablity,
-    required TResult Function(IslamMobLocalizations localizations, String email)
-    forgotPressed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(IslamMobLocalizations localizations, String email)?
-    updateButtonEnablity,
-    TResult? Function(IslamMobLocalizations localizations, String email)?
-    forgotPressed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IslamMobLocalizations localizations, String email)?
-    updateButtonEnablity,
-    TResult Function(IslamMobLocalizations localizations, String email)?
-    forgotPressed,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateButtonEnablity value) updateButtonEnablity,
-    required TResult Function(_ForgotPressed value) forgotPressed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult? Function(_ForgotPressed value)? forgotPressed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult Function(_ForgotPressed value)? forgotPressed,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
 
-  /// Create a copy of ForgotPasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ForgotPasswordEventCopyWith<ForgotPasswordEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+ IslamMobLocalizations get localizations; String get email;
+/// Create a copy of ForgotPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ForgotPasswordEventCopyWith<ForgotPasswordEvent> get copyWith => _$ForgotPasswordEventCopyWithImpl<ForgotPasswordEvent>(this as ForgotPasswordEvent, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgotPasswordEvent&&(identical(other.localizations, localizations) || other.localizations == localizations)&&(identical(other.email, email) || other.email == email));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,localizations,email);
+
+@override
+String toString() {
+  return 'ForgotPasswordEvent(localizations: $localizations, email: $email)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ForgotPasswordEventCopyWith<$Res> {
-  factory $ForgotPasswordEventCopyWith(
-    ForgotPasswordEvent value,
-    $Res Function(ForgotPasswordEvent) then,
-  ) = _$ForgotPasswordEventCopyWithImpl<$Res, ForgotPasswordEvent>;
-  @useResult
-  $Res call({IslamMobLocalizations localizations, String email});
-}
+abstract mixin class $ForgotPasswordEventCopyWith<$Res>  {
+  factory $ForgotPasswordEventCopyWith(ForgotPasswordEvent value, $Res Function(ForgotPasswordEvent) _then) = _$ForgotPasswordEventCopyWithImpl;
+@useResult
+$Res call({
+ IslamMobLocalizations localizations, String email
+});
 
+
+
+
+}
 /// @nodoc
-class _$ForgotPasswordEventCopyWithImpl<$Res, $Val extends ForgotPasswordEvent>
+class _$ForgotPasswordEventCopyWithImpl<$Res>
     implements $ForgotPasswordEventCopyWith<$Res> {
-  _$ForgotPasswordEventCopyWithImpl(this._value, this._then);
+  _$ForgotPasswordEventCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ForgotPasswordEvent _self;
+  final $Res Function(ForgotPasswordEvent) _then;
 
-  /// Create a copy of ForgotPasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? localizations = null, Object? email = null}) {
-    return _then(
-      _value.copyWith(
-            localizations: null == localizations
-                ? _value.localizations
-                : localizations // ignore: cast_nullable_to_non_nullable
-                      as IslamMobLocalizations,
-            email: null == email
-                ? _value.email
-                : email // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of ForgotPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? localizations = null,Object? email = null,}) {
+  return _then(_self.copyWith(
+localizations: null == localizations ? _self.localizations : localizations // ignore: cast_nullable_to_non_nullable
+as IslamMobLocalizations,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$UpdateButtonEnablityImplCopyWith<$Res>
-    implements $ForgotPasswordEventCopyWith<$Res> {
-  factory _$$UpdateButtonEnablityImplCopyWith(
-    _$UpdateButtonEnablityImpl value,
-    $Res Function(_$UpdateButtonEnablityImpl) then,
-  ) = __$$UpdateButtonEnablityImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({IslamMobLocalizations localizations, String email});
 }
 
-/// @nodoc
-class __$$UpdateButtonEnablityImplCopyWithImpl<$Res>
-    extends _$ForgotPasswordEventCopyWithImpl<$Res, _$UpdateButtonEnablityImpl>
-    implements _$$UpdateButtonEnablityImplCopyWith<$Res> {
-  __$$UpdateButtonEnablityImplCopyWithImpl(
-    _$UpdateButtonEnablityImpl _value,
-    $Res Function(_$UpdateButtonEnablityImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ForgotPasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? localizations = null, Object? email = null}) {
-    return _then(
-      _$UpdateButtonEnablityImpl(
-        localizations: null == localizations
-            ? _value.localizations
-            : localizations // ignore: cast_nullable_to_non_nullable
-                  as IslamMobLocalizations,
-        email: null == email
-            ? _value.email
-            : email // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [ForgotPasswordEvent].
+extension ForgotPasswordEventPatterns on ForgotPasswordEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _UpdateButtonEnablity value)?  updateButtonEnablity,TResult Function( _ForgotPressed value)?  forgotPressed,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity() when updateButtonEnablity != null:
+return updateButtonEnablity(_that);case _ForgotPressed() when forgotPressed != null:
+return forgotPressed(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _UpdateButtonEnablity value)  updateButtonEnablity,required TResult Function( _ForgotPressed value)  forgotPressed,}){
+final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity():
+return updateButtonEnablity(_that);case _ForgotPressed():
+return forgotPressed(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _UpdateButtonEnablity value)?  updateButtonEnablity,TResult? Function( _ForgotPressed value)?  forgotPressed,}){
+final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity() when updateButtonEnablity != null:
+return updateButtonEnablity(_that);case _ForgotPressed() when forgotPressed != null:
+return forgotPressed(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( IslamMobLocalizations localizations,  String email)?  updateButtonEnablity,TResult Function( IslamMobLocalizations localizations,  String email)?  forgotPressed,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity() when updateButtonEnablity != null:
+return updateButtonEnablity(_that.localizations,_that.email);case _ForgotPressed() when forgotPressed != null:
+return forgotPressed(_that.localizations,_that.email);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( IslamMobLocalizations localizations,  String email)  updateButtonEnablity,required TResult Function( IslamMobLocalizations localizations,  String email)  forgotPressed,}) {final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity():
+return updateButtonEnablity(_that.localizations,_that.email);case _ForgotPressed():
+return forgotPressed(_that.localizations,_that.email);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( IslamMobLocalizations localizations,  String email)?  updateButtonEnablity,TResult? Function( IslamMobLocalizations localizations,  String email)?  forgotPressed,}) {final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity() when updateButtonEnablity != null:
+return updateButtonEnablity(_that.localizations,_that.email);case _ForgotPressed() when forgotPressed != null:
+return forgotPressed(_that.localizations,_that.email);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-
-class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
-  const _$UpdateButtonEnablityImpl({
-    required this.localizations,
-    required this.email,
-  });
-
-  @override
-  final IslamMobLocalizations localizations;
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'ForgotPasswordEvent.updateButtonEnablity(localizations: $localizations, email: $email)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateButtonEnablityImpl &&
-            (identical(other.localizations, localizations) ||
-                other.localizations == localizations) &&
-            (identical(other.email, email) || other.email == email));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, localizations, email);
-
-  /// Create a copy of ForgotPasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateButtonEnablityImplCopyWith<_$UpdateButtonEnablityImpl>
-  get copyWith =>
-      __$$UpdateButtonEnablityImplCopyWithImpl<_$UpdateButtonEnablityImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(IslamMobLocalizations localizations, String email)
-    updateButtonEnablity,
-    required TResult Function(IslamMobLocalizations localizations, String email)
-    forgotPressed,
-  }) {
-    return updateButtonEnablity(localizations, email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(IslamMobLocalizations localizations, String email)?
-    updateButtonEnablity,
-    TResult? Function(IslamMobLocalizations localizations, String email)?
-    forgotPressed,
-  }) {
-    return updateButtonEnablity?.call(localizations, email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IslamMobLocalizations localizations, String email)?
-    updateButtonEnablity,
-    TResult Function(IslamMobLocalizations localizations, String email)?
-    forgotPressed,
-    required TResult orElse(),
-  }) {
-    if (updateButtonEnablity != null) {
-      return updateButtonEnablity(localizations, email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateButtonEnablity value) updateButtonEnablity,
-    required TResult Function(_ForgotPressed value) forgotPressed,
-  }) {
-    return updateButtonEnablity(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult? Function(_ForgotPressed value)? forgotPressed,
-  }) {
-    return updateButtonEnablity?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult Function(_ForgotPressed value)? forgotPressed,
-    required TResult orElse(),
-  }) {
-    if (updateButtonEnablity != null) {
-      return updateButtonEnablity(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateButtonEnablity implements ForgotPasswordEvent {
-  const factory _UpdateButtonEnablity({
-    required final IslamMobLocalizations localizations,
-    required final String email,
-  }) = _$UpdateButtonEnablityImpl;
-
-  @override
-  IslamMobLocalizations get localizations;
-  @override
-  String get email;
-
-  /// Create a copy of ForgotPasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateButtonEnablityImplCopyWith<_$UpdateButtonEnablityImpl>
-  get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ForgotPressedImplCopyWith<$Res>
-    implements $ForgotPasswordEventCopyWith<$Res> {
-  factory _$$ForgotPressedImplCopyWith(
-    _$ForgotPressedImpl value,
-    $Res Function(_$ForgotPressedImpl) then,
-  ) = __$$ForgotPressedImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({IslamMobLocalizations localizations, String email});
-}
-
-/// @nodoc
-class __$$ForgotPressedImplCopyWithImpl<$Res>
-    extends _$ForgotPasswordEventCopyWithImpl<$Res, _$ForgotPressedImpl>
-    implements _$$ForgotPressedImplCopyWith<$Res> {
-  __$$ForgotPressedImplCopyWithImpl(
-    _$ForgotPressedImpl _value,
-    $Res Function(_$ForgotPressedImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ForgotPasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? localizations = null, Object? email = null}) {
-    return _then(
-      _$ForgotPressedImpl(
-        localizations: null == localizations
-            ? _value.localizations
-            : localizations // ignore: cast_nullable_to_non_nullable
-                  as IslamMobLocalizations,
-        email: null == email
-            ? _value.email
-            : email // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$ForgotPressedImpl implements _ForgotPressed {
-  const _$ForgotPressedImpl({required this.localizations, required this.email});
 
-  @override
-  final IslamMobLocalizations localizations;
-  @override
-  final String email;
+class _UpdateButtonEnablity implements ForgotPasswordEvent {
+  const _UpdateButtonEnablity({required this.localizations, required this.email});
+  
 
-  @override
-  String toString() {
-    return 'ForgotPasswordEvent.forgotPressed(localizations: $localizations, email: $email)';
-  }
+@override final  IslamMobLocalizations localizations;
+@override final  String email;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgotPressedImpl &&
-            (identical(other.localizations, localizations) ||
-                other.localizations == localizations) &&
-            (identical(other.email, email) || other.email == email));
-  }
+/// Create a copy of ForgotPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateButtonEnablityCopyWith<_UpdateButtonEnablity> get copyWith => __$UpdateButtonEnablityCopyWithImpl<_UpdateButtonEnablity>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, localizations, email);
 
-  /// Create a copy of ForgotPasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ForgotPressedImplCopyWith<_$ForgotPressedImpl> get copyWith =>
-      __$$ForgotPressedImplCopyWithImpl<_$ForgotPressedImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(IslamMobLocalizations localizations, String email)
-    updateButtonEnablity,
-    required TResult Function(IslamMobLocalizations localizations, String email)
-    forgotPressed,
-  }) {
-    return forgotPressed(localizations, email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(IslamMobLocalizations localizations, String email)?
-    updateButtonEnablity,
-    TResult? Function(IslamMobLocalizations localizations, String email)?
-    forgotPressed,
-  }) {
-    return forgotPressed?.call(localizations, email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IslamMobLocalizations localizations, String email)?
-    updateButtonEnablity,
-    TResult Function(IslamMobLocalizations localizations, String email)?
-    forgotPressed,
-    required TResult orElse(),
-  }) {
-    if (forgotPressed != null) {
-      return forgotPressed(localizations, email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateButtonEnablity value) updateButtonEnablity,
-    required TResult Function(_ForgotPressed value) forgotPressed,
-  }) {
-    return forgotPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult? Function(_ForgotPressed value)? forgotPressed,
-  }) {
-    return forgotPressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult Function(_ForgotPressed value)? forgotPressed,
-    required TResult orElse(),
-  }) {
-    if (forgotPressed != null) {
-      return forgotPressed(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateButtonEnablity&&(identical(other.localizations, localizations) || other.localizations == localizations)&&(identical(other.email, email) || other.email == email));
 }
 
-abstract class _ForgotPressed implements ForgotPasswordEvent {
-  const factory _ForgotPressed({
-    required final IslamMobLocalizations localizations,
-    required final String email,
-  }) = _$ForgotPressedImpl;
 
-  @override
-  IslamMobLocalizations get localizations;
-  @override
-  String get email;
+@override
+int get hashCode => Object.hash(runtimeType,localizations,email);
 
-  /// Create a copy of ForgotPasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ForgotPressedImplCopyWith<_$ForgotPressedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ForgotPasswordEvent.updateButtonEnablity(localizations: $localizations, email: $email)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UpdateButtonEnablityCopyWith<$Res> implements $ForgotPasswordEventCopyWith<$Res> {
+  factory _$UpdateButtonEnablityCopyWith(_UpdateButtonEnablity value, $Res Function(_UpdateButtonEnablity) _then) = __$UpdateButtonEnablityCopyWithImpl;
+@override @useResult
+$Res call({
+ IslamMobLocalizations localizations, String email
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateButtonEnablityCopyWithImpl<$Res>
+    implements _$UpdateButtonEnablityCopyWith<$Res> {
+  __$UpdateButtonEnablityCopyWithImpl(this._self, this._then);
+
+  final _UpdateButtonEnablity _self;
+  final $Res Function(_UpdateButtonEnablity) _then;
+
+/// Create a copy of ForgotPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? localizations = null,Object? email = null,}) {
+  return _then(_UpdateButtonEnablity(
+localizations: null == localizations ? _self.localizations : localizations // ignore: cast_nullable_to_non_nullable
+as IslamMobLocalizations,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class _ForgotPressed implements ForgotPasswordEvent {
+  const _ForgotPressed({required this.localizations, required this.email});
+  
+
+@override final  IslamMobLocalizations localizations;
+@override final  String email;
+
+/// Create a copy of ForgotPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ForgotPressedCopyWith<_ForgotPressed> get copyWith => __$ForgotPressedCopyWithImpl<_ForgotPressed>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ForgotPressed&&(identical(other.localizations, localizations) || other.localizations == localizations)&&(identical(other.email, email) || other.email == email));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,localizations,email);
+
+@override
+String toString() {
+  return 'ForgotPasswordEvent.forgotPressed(localizations: $localizations, email: $email)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ForgotPressedCopyWith<$Res> implements $ForgotPasswordEventCopyWith<$Res> {
+  factory _$ForgotPressedCopyWith(_ForgotPressed value, $Res Function(_ForgotPressed) _then) = __$ForgotPressedCopyWithImpl;
+@override @useResult
+$Res call({
+ IslamMobLocalizations localizations, String email
+});
+
+
+
+
+}
+/// @nodoc
+class __$ForgotPressedCopyWithImpl<$Res>
+    implements _$ForgotPressedCopyWith<$Res> {
+  __$ForgotPressedCopyWithImpl(this._self, this._then);
+
+  final _ForgotPressed _self;
+  final $Res Function(_ForgotPressed) _then;
+
+/// Create a copy of ForgotPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? localizations = null,Object? email = null,}) {
+  return _then(_ForgotPressed(
+localizations: null == localizations ? _self.localizations : localizations // ignore: cast_nullable_to_non_nullable
+as IslamMobLocalizations,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 /// @nodoc
 mixin _$ForgotPasswordState {
-  ForgotPasswordProcessState get processState =>
-      throw _privateConstructorUsedError;
-  bool get isForgotButtonEnabled => throw _privateConstructorUsedError;
-  String get errorMessage => throw _privateConstructorUsedError;
 
-  /// Create a copy of ForgotPasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ForgotPasswordStateCopyWith<ForgotPasswordState> get copyWith =>
-      throw _privateConstructorUsedError;
+ ForgotPasswordProcessState get processState; bool get isForgotButtonEnabled; String get errorMessage;
+/// Create a copy of ForgotPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ForgotPasswordStateCopyWith<ForgotPasswordState> get copyWith => _$ForgotPasswordStateCopyWithImpl<ForgotPasswordState>(this as ForgotPasswordState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgotPasswordState&&(identical(other.processState, processState) || other.processState == processState)&&(identical(other.isForgotButtonEnabled, isForgotButtonEnabled) || other.isForgotButtonEnabled == isForgotButtonEnabled)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,processState,isForgotButtonEnabled,errorMessage);
+
+@override
+String toString() {
+  return 'ForgotPasswordState(processState: $processState, isForgotButtonEnabled: $isForgotButtonEnabled, errorMessage: $errorMessage)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ForgotPasswordStateCopyWith<$Res> {
-  factory $ForgotPasswordStateCopyWith(
-    ForgotPasswordState value,
-    $Res Function(ForgotPasswordState) then,
-  ) = _$ForgotPasswordStateCopyWithImpl<$Res, ForgotPasswordState>;
-  @useResult
-  $Res call({
-    ForgotPasswordProcessState processState,
-    bool isForgotButtonEnabled,
-    String errorMessage,
-  });
+abstract mixin class $ForgotPasswordStateCopyWith<$Res>  {
+  factory $ForgotPasswordStateCopyWith(ForgotPasswordState value, $Res Function(ForgotPasswordState) _then) = _$ForgotPasswordStateCopyWithImpl;
+@useResult
+$Res call({
+ ForgotPasswordProcessState processState, bool isForgotButtonEnabled, String errorMessage
+});
 
-  $ForgotPasswordProcessStateCopyWith<$Res> get processState;
+
+$ForgotPasswordProcessStateCopyWith<$Res> get processState;
+
 }
-
 /// @nodoc
-class _$ForgotPasswordStateCopyWithImpl<$Res, $Val extends ForgotPasswordState>
+class _$ForgotPasswordStateCopyWithImpl<$Res>
     implements $ForgotPasswordStateCopyWith<$Res> {
-  _$ForgotPasswordStateCopyWithImpl(this._value, this._then);
+  _$ForgotPasswordStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ForgotPasswordState _self;
+  final $Res Function(ForgotPasswordState) _then;
 
-  /// Create a copy of ForgotPasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? processState = null,
-    Object? isForgotButtonEnabled = null,
-    Object? errorMessage = null,
-  }) {
-    return _then(
-      _value.copyWith(
-            processState: null == processState
-                ? _value.processState
-                : processState // ignore: cast_nullable_to_non_nullable
-                      as ForgotPasswordProcessState,
-            isForgotButtonEnabled: null == isForgotButtonEnabled
-                ? _value.isForgotButtonEnabled
-                : isForgotButtonEnabled // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            errorMessage: null == errorMessage
-                ? _value.errorMessage
-                : errorMessage // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
-  }
-
-  /// Create a copy of ForgotPasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ForgotPasswordProcessStateCopyWith<$Res> get processState {
-    return $ForgotPasswordProcessStateCopyWith<$Res>(_value.processState, (
-      value,
-    ) {
-      return _then(_value.copyWith(processState: value) as $Val);
-    });
-  }
+/// Create a copy of ForgotPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? processState = null,Object? isForgotButtonEnabled = null,Object? errorMessage = null,}) {
+  return _then(_self.copyWith(
+processState: null == processState ? _self.processState : processState // ignore: cast_nullable_to_non_nullable
+as ForgotPasswordProcessState,isForgotButtonEnabled: null == isForgotButtonEnabled ? _self.isForgotButtonEnabled : isForgotButtonEnabled // ignore: cast_nullable_to_non_nullable
+as bool,errorMessage: null == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
-
-/// @nodoc
-abstract class _$$ForgotPasswordStateImplCopyWith<$Res>
-    implements $ForgotPasswordStateCopyWith<$Res> {
-  factory _$$ForgotPasswordStateImplCopyWith(
-    _$ForgotPasswordStateImpl value,
-    $Res Function(_$ForgotPasswordStateImpl) then,
-  ) = __$$ForgotPasswordStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    ForgotPasswordProcessState processState,
-    bool isForgotButtonEnabled,
-    String errorMessage,
+/// Create a copy of ForgotPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ForgotPasswordProcessStateCopyWith<$Res> get processState {
+  
+  return $ForgotPasswordProcessStateCopyWith<$Res>(_self.processState, (value) {
+    return _then(_self.copyWith(processState: value));
   });
+}
+}
 
-  @override
-  $ForgotPasswordProcessStateCopyWith<$Res> get processState;
+
+/// Adds pattern-matching-related methods to [ForgotPasswordState].
+extension ForgotPasswordStatePatterns on ForgotPasswordState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ForgotPasswordState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ForgotPasswordState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ForgotPasswordState value)  $default,){
+final _that = this;
+switch (_that) {
+case _ForgotPasswordState():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ForgotPasswordState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ForgotPasswordState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ForgotPasswordProcessState processState,  bool isForgotButtonEnabled,  String errorMessage)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ForgotPasswordState() when $default != null:
+return $default(_that.processState,_that.isForgotButtonEnabled,_that.errorMessage);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ForgotPasswordProcessState processState,  bool isForgotButtonEnabled,  String errorMessage)  $default,) {final _that = this;
+switch (_that) {
+case _ForgotPasswordState():
+return $default(_that.processState,_that.isForgotButtonEnabled,_that.errorMessage);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ForgotPasswordProcessState processState,  bool isForgotButtonEnabled,  String errorMessage)?  $default,) {final _that = this;
+switch (_that) {
+case _ForgotPasswordState() when $default != null:
+return $default(_that.processState,_that.isForgotButtonEnabled,_that.errorMessage);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-class __$$ForgotPasswordStateImplCopyWithImpl<$Res>
-    extends _$ForgotPasswordStateCopyWithImpl<$Res, _$ForgotPasswordStateImpl>
-    implements _$$ForgotPasswordStateImplCopyWith<$Res> {
-  __$$ForgotPasswordStateImplCopyWithImpl(
-    _$ForgotPasswordStateImpl _value,
-    $Res Function(_$ForgotPasswordStateImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ForgotPasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? processState = null,
-    Object? isForgotButtonEnabled = null,
-    Object? errorMessage = null,
-  }) {
-    return _then(
-      _$ForgotPasswordStateImpl(
-        processState: null == processState
-            ? _value.processState
-            : processState // ignore: cast_nullable_to_non_nullable
-                  as ForgotPasswordProcessState,
-        isForgotButtonEnabled: null == isForgotButtonEnabled
-            ? _value.isForgotButtonEnabled
-            : isForgotButtonEnabled // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        errorMessage: null == errorMessage
-            ? _value.errorMessage
-            : errorMessage // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
+
+class _ForgotPasswordState implements ForgotPasswordState {
+  const _ForgotPasswordState({this.processState = const ForgotPasswordProcessState.idl(), this.isForgotButtonEnabled = false, this.errorMessage = ""});
+  
+
+@override@JsonKey() final  ForgotPasswordProcessState processState;
+@override@JsonKey() final  bool isForgotButtonEnabled;
+@override@JsonKey() final  String errorMessage;
+
+/// Create a copy of ForgotPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ForgotPasswordStateCopyWith<_ForgotPasswordState> get copyWith => __$ForgotPasswordStateCopyWithImpl<_ForgotPasswordState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ForgotPasswordState&&(identical(other.processState, processState) || other.processState == processState)&&(identical(other.isForgotButtonEnabled, isForgotButtonEnabled) || other.isForgotButtonEnabled == isForgotButtonEnabled)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,processState,isForgotButtonEnabled,errorMessage);
+
+@override
+String toString() {
+  return 'ForgotPasswordState(processState: $processState, isForgotButtonEnabled: $isForgotButtonEnabled, errorMessage: $errorMessage)';
+}
+
+
 }
 
 /// @nodoc
+abstract mixin class _$ForgotPasswordStateCopyWith<$Res> implements $ForgotPasswordStateCopyWith<$Res> {
+  factory _$ForgotPasswordStateCopyWith(_ForgotPasswordState value, $Res Function(_ForgotPasswordState) _then) = __$ForgotPasswordStateCopyWithImpl;
+@override @useResult
+$Res call({
+ ForgotPasswordProcessState processState, bool isForgotButtonEnabled, String errorMessage
+});
 
-class _$ForgotPasswordStateImpl implements _ForgotPasswordState {
-  const _$ForgotPasswordStateImpl({
-    this.processState = const ForgotPasswordProcessState.idl(),
-    this.isForgotButtonEnabled = false,
-    this.errorMessage = "",
+
+@override $ForgotPasswordProcessStateCopyWith<$Res> get processState;
+
+}
+/// @nodoc
+class __$ForgotPasswordStateCopyWithImpl<$Res>
+    implements _$ForgotPasswordStateCopyWith<$Res> {
+  __$ForgotPasswordStateCopyWithImpl(this._self, this._then);
+
+  final _ForgotPasswordState _self;
+  final $Res Function(_ForgotPasswordState) _then;
+
+/// Create a copy of ForgotPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? processState = null,Object? isForgotButtonEnabled = null,Object? errorMessage = null,}) {
+  return _then(_ForgotPasswordState(
+processState: null == processState ? _self.processState : processState // ignore: cast_nullable_to_non_nullable
+as ForgotPasswordProcessState,isForgotButtonEnabled: null == isForgotButtonEnabled ? _self.isForgotButtonEnabled : isForgotButtonEnabled // ignore: cast_nullable_to_non_nullable
+as bool,errorMessage: null == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+/// Create a copy of ForgotPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ForgotPasswordProcessStateCopyWith<$Res> get processState {
+  
+  return $ForgotPasswordProcessStateCopyWith<$Res>(_self.processState, (value) {
+    return _then(_self.copyWith(processState: value));
   });
-
-  @override
-  @JsonKey()
-  final ForgotPasswordProcessState processState;
-  @override
-  @JsonKey()
-  final bool isForgotButtonEnabled;
-  @override
-  @JsonKey()
-  final String errorMessage;
-
-  @override
-  String toString() {
-    return 'ForgotPasswordState(processState: $processState, isForgotButtonEnabled: $isForgotButtonEnabled, errorMessage: $errorMessage)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgotPasswordStateImpl &&
-            (identical(other.processState, processState) ||
-                other.processState == processState) &&
-            (identical(other.isForgotButtonEnabled, isForgotButtonEnabled) ||
-                other.isForgotButtonEnabled == isForgotButtonEnabled) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    processState,
-    isForgotButtonEnabled,
-    errorMessage,
-  );
-
-  /// Create a copy of ForgotPasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ForgotPasswordStateImplCopyWith<_$ForgotPasswordStateImpl> get copyWith =>
-      __$$ForgotPasswordStateImplCopyWithImpl<_$ForgotPasswordStateImpl>(
-        this,
-        _$identity,
-      );
 }
-
-abstract class _ForgotPasswordState implements ForgotPasswordState {
-  const factory _ForgotPasswordState({
-    final ForgotPasswordProcessState processState,
-    final bool isForgotButtonEnabled,
-    final String errorMessage,
-  }) = _$ForgotPasswordStateImpl;
-
-  @override
-  ForgotPasswordProcessState get processState;
-  @override
-  bool get isForgotButtonEnabled;
-  @override
-  String get errorMessage;
-
-  /// Create a copy of ForgotPasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ForgotPasswordStateImplCopyWith<_$ForgotPasswordStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$ForgotPasswordProcessState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function() idl,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
-    TResult? Function()? idl,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function()? idl,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ForgotPasswordProcessStateLoading value) loading,
-    required TResult Function(ForgotPasswordProcessStateIdl value) idl,
-    required TResult Function(ForgotPasswordProcessStateSuccess value) success,
-    required TResult Function(ForgotPasswordProcessStateError value) error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult? Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult? Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult? Function(ForgotPasswordProcessStateError value)? error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult Function(ForgotPasswordProcessStateError value)? error,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgotPasswordProcessState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgotPasswordProcessState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ForgotPasswordProcessStateCopyWith<$Res> {
-  factory $ForgotPasswordProcessStateCopyWith(
-    ForgotPasswordProcessState value,
-    $Res Function(ForgotPasswordProcessState) then,
-  ) =
-      _$ForgotPasswordProcessStateCopyWithImpl<
-        $Res,
-        ForgotPasswordProcessState
-      >;
+class $ForgotPasswordProcessStateCopyWith<$Res>  {
+$ForgotPasswordProcessStateCopyWith(ForgotPasswordProcessState _, $Res Function(ForgotPasswordProcessState) __);
 }
 
-/// @nodoc
-class _$ForgotPasswordProcessStateCopyWithImpl<
-  $Res,
-  $Val extends ForgotPasswordProcessState
->
-    implements $ForgotPasswordProcessStateCopyWith<$Res> {
-  _$ForgotPasswordProcessStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [ForgotPasswordProcessState].
+extension ForgotPasswordProcessStatePatterns on ForgotPasswordProcessState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of ForgotPasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ForgotPasswordProcessStateLoading value)?  loading,TResult Function( ForgotPasswordProcessStateIdl value)?  idl,TResult Function( ForgotPasswordProcessStateSuccess value)?  success,TResult Function( ForgotPasswordProcessStateError value)?  error,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case ForgotPasswordProcessStateLoading() when loading != null:
+return loading(_that);case ForgotPasswordProcessStateIdl() when idl != null:
+return idl(_that);case ForgotPasswordProcessStateSuccess() when success != null:
+return success(_that);case ForgotPasswordProcessStateError() when error != null:
+return error(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ForgotPasswordProcessStateLoading value)  loading,required TResult Function( ForgotPasswordProcessStateIdl value)  idl,required TResult Function( ForgotPasswordProcessStateSuccess value)  success,required TResult Function( ForgotPasswordProcessStateError value)  error,}){
+final _that = this;
+switch (_that) {
+case ForgotPasswordProcessStateLoading():
+return loading(_that);case ForgotPasswordProcessStateIdl():
+return idl(_that);case ForgotPasswordProcessStateSuccess():
+return success(_that);case ForgotPasswordProcessStateError():
+return error(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ForgotPasswordProcessStateLoading value)?  loading,TResult? Function( ForgotPasswordProcessStateIdl value)?  idl,TResult? Function( ForgotPasswordProcessStateSuccess value)?  success,TResult? Function( ForgotPasswordProcessStateError value)?  error,}){
+final _that = this;
+switch (_that) {
+case ForgotPasswordProcessStateLoading() when loading != null:
+return loading(_that);case ForgotPasswordProcessStateIdl() when idl != null:
+return idl(_that);case ForgotPasswordProcessStateSuccess() when success != null:
+return success(_that);case ForgotPasswordProcessStateError() when error != null:
+return error(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loading,TResult Function()?  idl,TResult Function()?  success,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case ForgotPasswordProcessStateLoading() when loading != null:
+return loading();case ForgotPasswordProcessStateIdl() when idl != null:
+return idl();case ForgotPasswordProcessStateSuccess() when success != null:
+return success();case ForgotPasswordProcessStateError() when error != null:
+return error(_that.message);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loading,required TResult Function()  idl,required TResult Function()  success,required TResult Function( String message)  error,}) {final _that = this;
+switch (_that) {
+case ForgotPasswordProcessStateLoading():
+return loading();case ForgotPasswordProcessStateIdl():
+return idl();case ForgotPasswordProcessStateSuccess():
+return success();case ForgotPasswordProcessStateError():
+return error(_that.message);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loading,TResult? Function()?  idl,TResult? Function()?  success,TResult? Function( String message)?  error,}) {final _that = this;
+switch (_that) {
+case ForgotPasswordProcessStateLoading() when loading != null:
+return loading();case ForgotPasswordProcessStateIdl() when idl != null:
+return idl();case ForgotPasswordProcessStateSuccess() when success != null:
+return success();case ForgotPasswordProcessStateError() when error != null:
+return error(_that.message);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$ForgotPasswordProcessStateLoadingImplCopyWith<$Res> {
-  factory _$$ForgotPasswordProcessStateLoadingImplCopyWith(
-    _$ForgotPasswordProcessStateLoadingImpl value,
-    $Res Function(_$ForgotPasswordProcessStateLoadingImpl) then,
-  ) = __$$ForgotPasswordProcessStateLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ForgotPasswordProcessStateLoadingImplCopyWithImpl<$Res>
-    extends
-        _$ForgotPasswordProcessStateCopyWithImpl<
-          $Res,
-          _$ForgotPasswordProcessStateLoadingImpl
-        >
-    implements _$$ForgotPasswordProcessStateLoadingImplCopyWith<$Res> {
-  __$$ForgotPasswordProcessStateLoadingImplCopyWithImpl(
-    _$ForgotPasswordProcessStateLoadingImpl _value,
-    $Res Function(_$ForgotPasswordProcessStateLoadingImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ForgotPasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$ForgotPasswordProcessStateLoadingImpl
-    implements ForgotPasswordProcessStateLoading {
-  const _$ForgotPasswordProcessStateLoadingImpl();
-
-  @override
-  String toString() {
-    return 'ForgotPasswordProcessState.loading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgotPasswordProcessStateLoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function() idl,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
-    TResult? Function()? idl,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function()? idl,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ForgotPasswordProcessStateLoading value) loading,
-    required TResult Function(ForgotPasswordProcessStateIdl value) idl,
-    required TResult Function(ForgotPasswordProcessStateSuccess value) success,
-    required TResult Function(ForgotPasswordProcessStateError value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult? Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult? Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult? Function(ForgotPasswordProcessStateError value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult Function(ForgotPasswordProcessStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ForgotPasswordProcessStateLoading
-    implements ForgotPasswordProcessState {
-  const factory ForgotPasswordProcessStateLoading() =
-      _$ForgotPasswordProcessStateLoadingImpl;
-}
-
-/// @nodoc
-abstract class _$$ForgotPasswordProcessStateIdlImplCopyWith<$Res> {
-  factory _$$ForgotPasswordProcessStateIdlImplCopyWith(
-    _$ForgotPasswordProcessStateIdlImpl value,
-    $Res Function(_$ForgotPasswordProcessStateIdlImpl) then,
-  ) = __$$ForgotPasswordProcessStateIdlImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ForgotPasswordProcessStateIdlImplCopyWithImpl<$Res>
-    extends
-        _$ForgotPasswordProcessStateCopyWithImpl<
-          $Res,
-          _$ForgotPasswordProcessStateIdlImpl
-        >
-    implements _$$ForgotPasswordProcessStateIdlImplCopyWith<$Res> {
-  __$$ForgotPasswordProcessStateIdlImplCopyWithImpl(
-    _$ForgotPasswordProcessStateIdlImpl _value,
-    $Res Function(_$ForgotPasswordProcessStateIdlImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ForgotPasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$ForgotPasswordProcessStateIdlImpl
-    implements ForgotPasswordProcessStateIdl {
-  const _$ForgotPasswordProcessStateIdlImpl();
 
-  @override
-  String toString() {
-    return 'ForgotPasswordProcessState.idl()';
-  }
+class ForgotPasswordProcessStateLoading implements ForgotPasswordProcessState {
+  const ForgotPasswordProcessStateLoading();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgotPasswordProcessStateIdlImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function() idl,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) {
-    return idl();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
-    TResult? Function()? idl,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) {
-    return idl?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function()? idl,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (idl != null) {
-      return idl();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ForgotPasswordProcessStateLoading value) loading,
-    required TResult Function(ForgotPasswordProcessStateIdl value) idl,
-    required TResult Function(ForgotPasswordProcessStateSuccess value) success,
-    required TResult Function(ForgotPasswordProcessStateError value) error,
-  }) {
-    return idl(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult? Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult? Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult? Function(ForgotPasswordProcessStateError value)? error,
-  }) {
-    return idl?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult Function(ForgotPasswordProcessStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (idl != null) {
-      return idl(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgotPasswordProcessStateLoading);
 }
 
-abstract class ForgotPasswordProcessStateIdl
-    implements ForgotPasswordProcessState {
-  const factory ForgotPasswordProcessStateIdl() =
-      _$ForgotPasswordProcessStateIdlImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgotPasswordProcessState.loading()';
 }
 
-/// @nodoc
-abstract class _$$ForgotPasswordProcessStateSuccessImplCopyWith<$Res> {
-  factory _$$ForgotPasswordProcessStateSuccessImplCopyWith(
-    _$ForgotPasswordProcessStateSuccessImpl value,
-    $Res Function(_$ForgotPasswordProcessStateSuccessImpl) then,
-  ) = __$$ForgotPasswordProcessStateSuccessImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$ForgotPasswordProcessStateSuccessImplCopyWithImpl<$Res>
-    extends
-        _$ForgotPasswordProcessStateCopyWithImpl<
-          $Res,
-          _$ForgotPasswordProcessStateSuccessImpl
-        >
-    implements _$$ForgotPasswordProcessStateSuccessImplCopyWith<$Res> {
-  __$$ForgotPasswordProcessStateSuccessImplCopyWithImpl(
-    _$ForgotPasswordProcessStateSuccessImpl _value,
-    $Res Function(_$ForgotPasswordProcessStateSuccessImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ForgotPasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$ForgotPasswordProcessStateSuccessImpl
-    implements ForgotPasswordProcessStateSuccess {
-  const _$ForgotPasswordProcessStateSuccessImpl();
 
-  @override
-  String toString() {
-    return 'ForgotPasswordProcessState.success()';
-  }
+class ForgotPasswordProcessStateIdl implements ForgotPasswordProcessState {
+  const ForgotPasswordProcessStateIdl();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgotPasswordProcessStateSuccessImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function() idl,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) {
-    return success();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
-    TResult? Function()? idl,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) {
-    return success?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function()? idl,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ForgotPasswordProcessStateLoading value) loading,
-    required TResult Function(ForgotPasswordProcessStateIdl value) idl,
-    required TResult Function(ForgotPasswordProcessStateSuccess value) success,
-    required TResult Function(ForgotPasswordProcessStateError value) error,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult? Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult? Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult? Function(ForgotPasswordProcessStateError value)? error,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult Function(ForgotPasswordProcessStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgotPasswordProcessStateIdl);
 }
 
-abstract class ForgotPasswordProcessStateSuccess
-    implements ForgotPasswordProcessState {
-  const factory ForgotPasswordProcessStateSuccess() =
-      _$ForgotPasswordProcessStateSuccessImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgotPasswordProcessState.idl()';
 }
 
-/// @nodoc
-abstract class _$$ForgotPasswordProcessStateErrorImplCopyWith<$Res> {
-  factory _$$ForgotPasswordProcessStateErrorImplCopyWith(
-    _$ForgotPasswordProcessStateErrorImpl value,
-    $Res Function(_$ForgotPasswordProcessStateErrorImpl) then,
-  ) = __$$ForgotPasswordProcessStateErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
+
 }
 
-/// @nodoc
-class __$$ForgotPasswordProcessStateErrorImplCopyWithImpl<$Res>
-    extends
-        _$ForgotPasswordProcessStateCopyWithImpl<
-          $Res,
-          _$ForgotPasswordProcessStateErrorImpl
-        >
-    implements _$$ForgotPasswordProcessStateErrorImplCopyWith<$Res> {
-  __$$ForgotPasswordProcessStateErrorImplCopyWithImpl(
-    _$ForgotPasswordProcessStateErrorImpl _value,
-    $Res Function(_$ForgotPasswordProcessStateErrorImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ForgotPasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? message = null}) {
-    return _then(
-      _$ForgotPasswordProcessStateErrorImpl(
-        null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
-}
+
 
 /// @nodoc
 
-class _$ForgotPasswordProcessStateErrorImpl
-    implements ForgotPasswordProcessStateError {
-  const _$ForgotPasswordProcessStateErrorImpl(this.message);
 
-  @override
-  final String message;
+class ForgotPasswordProcessStateSuccess implements ForgotPasswordProcessState {
+  const ForgotPasswordProcessStateSuccess();
+  
 
-  @override
-  String toString() {
-    return 'ForgotPasswordProcessState.error(message: $message)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgotPasswordProcessStateErrorImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of ForgotPasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ForgotPasswordProcessStateErrorImplCopyWith<
-    _$ForgotPasswordProcessStateErrorImpl
-  >
-  get copyWith =>
-      __$$ForgotPasswordProcessStateErrorImplCopyWithImpl<
-        _$ForgotPasswordProcessStateErrorImpl
-      >(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function() idl,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) {
-    return error(message);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
-    TResult? Function()? idl,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) {
-    return error?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function()? idl,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ForgotPasswordProcessStateLoading value) loading,
-    required TResult Function(ForgotPasswordProcessStateIdl value) idl,
-    required TResult Function(ForgotPasswordProcessStateSuccess value) success,
-    required TResult Function(ForgotPasswordProcessStateError value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult? Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult? Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult? Function(ForgotPasswordProcessStateError value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ForgotPasswordProcessStateLoading value)? loading,
-    TResult Function(ForgotPasswordProcessStateIdl value)? idl,
-    TResult Function(ForgotPasswordProcessStateSuccess value)? success,
-    TResult Function(ForgotPasswordProcessStateError value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgotPasswordProcessStateSuccess);
 }
 
-abstract class ForgotPasswordProcessStateError
-    implements ForgotPasswordProcessState {
-  const factory ForgotPasswordProcessStateError(final String message) =
-      _$ForgotPasswordProcessStateErrorImpl;
 
-  String get message;
+@override
+int get hashCode => runtimeType.hashCode;
 
-  /// Create a copy of ForgotPasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ForgotPasswordProcessStateErrorImplCopyWith<
-    _$ForgotPasswordProcessStateErrorImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ForgotPasswordProcessState.success()';
 }
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ForgotPasswordProcessStateError implements ForgotPasswordProcessState {
+  const ForgotPasswordProcessStateError(this.message);
+  
+
+ final  String message;
+
+/// Create a copy of ForgotPasswordProcessState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ForgotPasswordProcessStateErrorCopyWith<ForgotPasswordProcessStateError> get copyWith => _$ForgotPasswordProcessStateErrorCopyWithImpl<ForgotPasswordProcessStateError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgotPasswordProcessStateError&&(identical(other.message, message) || other.message == message));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,message);
+
+@override
+String toString() {
+  return 'ForgotPasswordProcessState.error(message: $message)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ForgotPasswordProcessStateErrorCopyWith<$Res> implements $ForgotPasswordProcessStateCopyWith<$Res> {
+  factory $ForgotPasswordProcessStateErrorCopyWith(ForgotPasswordProcessStateError value, $Res Function(ForgotPasswordProcessStateError) _then) = _$ForgotPasswordProcessStateErrorCopyWithImpl;
+@useResult
+$Res call({
+ String message
+});
+
+
+
+
+}
+/// @nodoc
+class _$ForgotPasswordProcessStateErrorCopyWithImpl<$Res>
+    implements $ForgotPasswordProcessStateErrorCopyWith<$Res> {
+  _$ForgotPasswordProcessStateErrorCopyWithImpl(this._self, this._then);
+
+  final ForgotPasswordProcessStateError _self;
+  final $Res Function(ForgotPasswordProcessStateError) _then;
+
+/// Create a copy of ForgotPasswordProcessState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+  return _then(ForgotPasswordProcessStateError(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

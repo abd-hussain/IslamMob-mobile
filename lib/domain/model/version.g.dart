@@ -6,16 +6,14 @@ part of 'version.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AppVersionModelImpl _$$AppVersionModelImplFromJson(
-  Map<String, dynamic> json,
-) => _$AppVersionModelImpl(
-  latestVersion: json['latestVersion'] as String?,
-  minSupportedVersion: json['minSupportedVersion'] as String?,
-);
+_AppVersionModel _$AppVersionModelFromJson(Map<String, dynamic> json) =>
+    _AppVersionModel(
+      latestVersion: json['latestVersion'] as String?,
+      minSupportedVersion: json['minSupportedVersion'] as String?,
+    );
 
-Map<String, dynamic> _$$AppVersionModelImplToJson(
-  _$AppVersionModelImpl instance,
-) => <String, dynamic>{
-  'latestVersion': instance.latestVersion,
-  'minSupportedVersion': instance.minSupportedVersion,
-};
+Map<String, dynamic> _$AppVersionModelToJson(_AppVersionModel instance) =>
+    <String, dynamic>{
+      'latestVersion': instance.latestVersion,
+      'minSupportedVersion': instance.minSupportedVersion,
+    };

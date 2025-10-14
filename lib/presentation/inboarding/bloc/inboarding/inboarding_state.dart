@@ -12,7 +12,7 @@ part of 'inboarding_bloc.dart';
 /// app introduction, learning about prayer times, Quran reading, Islamic
 /// calendar, and other spiritual features while maintaining their progress.
 @freezed
-class InboardingState with _$InboardingState {
+abstract class InboardingState with _$InboardingState {
   /// Creates an [InboardingState] with onboarding progress and completion status.
   ///
   /// Parameters:

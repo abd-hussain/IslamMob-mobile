@@ -6,7 +6,7 @@ part of 'qibla_finder_bloc.dart';
 /// including loading, error, and success states during the process
 /// of determining the Qibla direction.
 @freezed
-class QiblaFinderState with _$QiblaFinderState {
+abstract class QiblaFinderState with _$QiblaFinderState {
   /// Creates a [QiblaFinderState] with the given status.
   ///
   /// The [status] parameter represents the current process state

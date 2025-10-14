@@ -19,7 +19,7 @@ part 'choose_location.freezed.dart';
 /// determined by specific solar positions (dawn, noon, afternoon shadow,
 /// sunset, and twilight) which vary based on geographical location and date.
 @freezed
-class ChooseLocation with _$ChooseLocation {
+abstract class ChooseLocation with _$ChooseLocation {
   /// Creates a [ChooseLocation] instance representing a selectable location.
   ///
   /// Parameters:

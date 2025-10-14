@@ -13,7 +13,7 @@ part of 'hisn_al_muslim_details_bloc.dart';
 /// Islamic supplications for various life situations, supporting their
 /// daily spiritual practices and the sharing of beneficial Islamic knowledge.
 @freezed
-class HisnAlMuslimDetailsState with _$HisnAlMuslimDetailsState {
+abstract class HisnAlMuslimDetailsState with _$HisnAlMuslimDetailsState {
   /// Creates a [HisnAlMuslimDetailsState] with supplication details and settings.
   ///
   /// Parameters:

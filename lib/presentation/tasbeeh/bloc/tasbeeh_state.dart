@@ -7,7 +7,7 @@ part of 'tasbeeh_bloc.dart';
 /// available Tasbeeh items, and the currently selected item index.
 /// It uses Freezed for immutability and code generation.
 @freezed
-class TasbeehState with _$TasbeehState {
+abstract class TasbeehState with _$TasbeehState {
   /// Creates a [TasbeehState] with optional parameters.
   ///
   /// All parameters have default values:

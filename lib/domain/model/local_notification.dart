@@ -18,7 +18,7 @@ part 'local_notification.freezed.dart';
 /// Islamic observances. It supports both immediate notifications (for current
 /// prayer times) and scheduled notifications (for upcoming prayers).
 @freezed
-class LocalNotification with _$LocalNotification {
+abstract class LocalNotification with _$LocalNotification {
   /// Creates a [LocalNotification] instance for Islamic prayer and reminder notifications.
   ///
   /// Parameters:

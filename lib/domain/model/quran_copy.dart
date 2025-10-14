@@ -23,7 +23,7 @@ part 'quran_copy.freezed.dart';
 /// - Index navigation
 /// - Cross-referencing between different organizational systems
 @freezed
-class QuranCopy with _$QuranCopy {
+abstract class QuranCopy with _$QuranCopy {
   /// Creates a [QuranCopy] instance representing a specific Quran print/copy.
   ///
   /// Parameters:

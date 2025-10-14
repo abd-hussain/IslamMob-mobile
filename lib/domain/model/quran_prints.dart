@@ -20,7 +20,7 @@ part 'quran_prints.freezed.dart';
 /// choose from various authentic Quran print editions based on their
 /// preferences, regional traditions, or visual accessibility needs.
 @freezed
-class QuranPrints with _$QuranPrints {
+abstract class QuranPrints with _$QuranPrints {
   /// Creates a [QuranPrints] instance representing a Quran print edition.
   ///
   /// Parameters:

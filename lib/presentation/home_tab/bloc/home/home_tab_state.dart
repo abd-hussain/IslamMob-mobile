@@ -14,7 +14,7 @@ part of 'home_tab_bloc.dart';
 /// and navigate to other Islamic features while maintaining proper UI
 /// state management and permission handling for location-based prayer times.
 @freezed
-class HomeTabState with _$HomeTabState {
+abstract class HomeTabState with _$HomeTabState {
   /// Creates a [HomeTabState] with home screen settings and prayer information.
   ///
   /// Parameters:

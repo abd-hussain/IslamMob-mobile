@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1445 +9,967 @@ part of 'location_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$LocationEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LocationModel location) setCountryAndCityNames,
-    required TResult Function(LocationProcessState status) changeLocationStatus,
-    required TResult Function() setupLocation,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LocationModel location)? setCountryAndCityNames,
-    TResult? Function(LocationProcessState status)? changeLocationStatus,
-    TResult? Function()? setupLocation,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LocationModel location)? setCountryAndCityNames,
-    TResult Function(LocationProcessState status)? changeLocationStatus,
-    TResult Function()? setupLocation,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetCountryAndCityNames value)
-    setCountryAndCityNames,
-    required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
-    required TResult Function(_SetupLocation value) setupLocation,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
-    TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
-    TResult? Function(_SetupLocation value)? setupLocation,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
-    TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
-    TResult Function(_SetupLocation value)? setupLocation,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationEvent);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LocationEvent()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $LocationEventCopyWith<$Res> {
-  factory $LocationEventCopyWith(
-    LocationEvent value,
-    $Res Function(LocationEvent) then,
-  ) = _$LocationEventCopyWithImpl<$Res, LocationEvent>;
+class $LocationEventCopyWith<$Res>  {
+$LocationEventCopyWith(LocationEvent _, $Res Function(LocationEvent) __);
 }
 
-/// @nodoc
-class _$LocationEventCopyWithImpl<$Res, $Val extends LocationEvent>
-    implements $LocationEventCopyWith<$Res> {
-  _$LocationEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [LocationEvent].
+extension LocationEventPatterns on LocationEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _SetCountryAndCityNames value)?  setCountryAndCityNames,TResult Function( _ChangeLocationStatus value)?  changeLocationStatus,TResult Function( _SetupLocation value)?  setupLocation,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SetCountryAndCityNames() when setCountryAndCityNames != null:
+return setCountryAndCityNames(_that);case _ChangeLocationStatus() when changeLocationStatus != null:
+return changeLocationStatus(_that);case _SetupLocation() when setupLocation != null:
+return setupLocation(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _SetCountryAndCityNames value)  setCountryAndCityNames,required TResult Function( _ChangeLocationStatus value)  changeLocationStatus,required TResult Function( _SetupLocation value)  setupLocation,}){
+final _that = this;
+switch (_that) {
+case _SetCountryAndCityNames():
+return setCountryAndCityNames(_that);case _ChangeLocationStatus():
+return changeLocationStatus(_that);case _SetupLocation():
+return setupLocation(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _SetCountryAndCityNames value)?  setCountryAndCityNames,TResult? Function( _ChangeLocationStatus value)?  changeLocationStatus,TResult? Function( _SetupLocation value)?  setupLocation,}){
+final _that = this;
+switch (_that) {
+case _SetCountryAndCityNames() when setCountryAndCityNames != null:
+return setCountryAndCityNames(_that);case _ChangeLocationStatus() when changeLocationStatus != null:
+return changeLocationStatus(_that);case _SetupLocation() when setupLocation != null:
+return setupLocation(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( LocationModel location)?  setCountryAndCityNames,TResult Function( LocationProcessState status)?  changeLocationStatus,TResult Function()?  setupLocation,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SetCountryAndCityNames() when setCountryAndCityNames != null:
+return setCountryAndCityNames(_that.location);case _ChangeLocationStatus() when changeLocationStatus != null:
+return changeLocationStatus(_that.status);case _SetupLocation() when setupLocation != null:
+return setupLocation();case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( LocationModel location)  setCountryAndCityNames,required TResult Function( LocationProcessState status)  changeLocationStatus,required TResult Function()  setupLocation,}) {final _that = this;
+switch (_that) {
+case _SetCountryAndCityNames():
+return setCountryAndCityNames(_that.location);case _ChangeLocationStatus():
+return changeLocationStatus(_that.status);case _SetupLocation():
+return setupLocation();case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( LocationModel location)?  setCountryAndCityNames,TResult? Function( LocationProcessState status)?  changeLocationStatus,TResult? Function()?  setupLocation,}) {final _that = this;
+switch (_that) {
+case _SetCountryAndCityNames() when setCountryAndCityNames != null:
+return setCountryAndCityNames(_that.location);case _ChangeLocationStatus() when changeLocationStatus != null:
+return changeLocationStatus(_that.status);case _SetupLocation() when setupLocation != null:
+return setupLocation();case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$SetCountryAndCityNamesImplCopyWith<$Res> {
-  factory _$$SetCountryAndCityNamesImplCopyWith(
-    _$SetCountryAndCityNamesImpl value,
-    $Res Function(_$SetCountryAndCityNamesImpl) then,
-  ) = __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({LocationModel location});
-}
-
-/// @nodoc
-class __$$SetCountryAndCityNamesImplCopyWithImpl<$Res>
-    extends _$LocationEventCopyWithImpl<$Res, _$SetCountryAndCityNamesImpl>
-    implements _$$SetCountryAndCityNamesImplCopyWith<$Res> {
-  __$$SetCountryAndCityNamesImplCopyWithImpl(
-    _$SetCountryAndCityNamesImpl _value,
-    $Res Function(_$SetCountryAndCityNamesImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? location = null}) {
-    return _then(
-      _$SetCountryAndCityNamesImpl(
-        location: null == location
-            ? _value.location
-            : location // ignore: cast_nullable_to_non_nullable
-                  as LocationModel,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$SetCountryAndCityNamesImpl implements _SetCountryAndCityNames {
-  const _$SetCountryAndCityNamesImpl({required this.location});
-
-  @override
-  final LocationModel location;
-
-  @override
-  String toString() {
-    return 'LocationEvent.setCountryAndCityNames(location: $location)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SetCountryAndCityNamesImpl &&
-            (identical(other.location, location) ||
-                other.location == location));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, location);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetCountryAndCityNamesImplCopyWith<_$SetCountryAndCityNamesImpl>
-  get copyWith =>
-      __$$SetCountryAndCityNamesImplCopyWithImpl<_$SetCountryAndCityNamesImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LocationModel location) setCountryAndCityNames,
-    required TResult Function(LocationProcessState status) changeLocationStatus,
-    required TResult Function() setupLocation,
-  }) {
-    return setCountryAndCityNames(location);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LocationModel location)? setCountryAndCityNames,
-    TResult? Function(LocationProcessState status)? changeLocationStatus,
-    TResult? Function()? setupLocation,
-  }) {
-    return setCountryAndCityNames?.call(location);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LocationModel location)? setCountryAndCityNames,
-    TResult Function(LocationProcessState status)? changeLocationStatus,
-    TResult Function()? setupLocation,
-    required TResult orElse(),
-  }) {
-    if (setCountryAndCityNames != null) {
-      return setCountryAndCityNames(location);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetCountryAndCityNames value)
-    setCountryAndCityNames,
-    required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
-    required TResult Function(_SetupLocation value) setupLocation,
-  }) {
-    return setCountryAndCityNames(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
-    TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
-    TResult? Function(_SetupLocation value)? setupLocation,
-  }) {
-    return setCountryAndCityNames?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
-    TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
-    TResult Function(_SetupLocation value)? setupLocation,
-    required TResult orElse(),
-  }) {
-    if (setCountryAndCityNames != null) {
-      return setCountryAndCityNames(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SetCountryAndCityNames implements LocationEvent {
-  const factory _SetCountryAndCityNames({
-    required final LocationModel location,
-  }) = _$SetCountryAndCityNamesImpl;
-
-  LocationModel get location;
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetCountryAndCityNamesImplCopyWith<_$SetCountryAndCityNamesImpl>
-  get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ChangeLocationStatusImplCopyWith<$Res> {
-  factory _$$ChangeLocationStatusImplCopyWith(
-    _$ChangeLocationStatusImpl value,
-    $Res Function(_$ChangeLocationStatusImpl) then,
-  ) = __$$ChangeLocationStatusImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({LocationProcessState status});
-
-  $LocationProcessStateCopyWith<$Res> get status;
-}
-
-/// @nodoc
-class __$$ChangeLocationStatusImplCopyWithImpl<$Res>
-    extends _$LocationEventCopyWithImpl<$Res, _$ChangeLocationStatusImpl>
-    implements _$$ChangeLocationStatusImplCopyWith<$Res> {
-  __$$ChangeLocationStatusImplCopyWithImpl(
-    _$ChangeLocationStatusImpl _value,
-    $Res Function(_$ChangeLocationStatusImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? status = null}) {
-    return _then(
-      _$ChangeLocationStatusImpl(
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as LocationProcessState,
-      ),
-    );
-  }
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $LocationProcessStateCopyWith<$Res> get status {
-    return $LocationProcessStateCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value));
-    });
-  }
 }
 
 /// @nodoc
 
-class _$ChangeLocationStatusImpl implements _ChangeLocationStatus {
-  const _$ChangeLocationStatusImpl({required this.status});
 
-  @override
-  final LocationProcessState status;
+class _SetCountryAndCityNames implements LocationEvent {
+  const _SetCountryAndCityNames({required this.location});
+  
 
-  @override
-  String toString() {
-    return 'LocationEvent.changeLocationStatus(status: $status)';
-  }
+ final  LocationModel location;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangeLocationStatusImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
+/// Create a copy of LocationEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SetCountryAndCityNamesCopyWith<_SetCountryAndCityNames> get copyWith => __$SetCountryAndCityNamesCopyWithImpl<_SetCountryAndCityNames>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangeLocationStatusImplCopyWith<_$ChangeLocationStatusImpl>
-  get copyWith =>
-      __$$ChangeLocationStatusImplCopyWithImpl<_$ChangeLocationStatusImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LocationModel location) setCountryAndCityNames,
-    required TResult Function(LocationProcessState status) changeLocationStatus,
-    required TResult Function() setupLocation,
-  }) {
-    return changeLocationStatus(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LocationModel location)? setCountryAndCityNames,
-    TResult? Function(LocationProcessState status)? changeLocationStatus,
-    TResult? Function()? setupLocation,
-  }) {
-    return changeLocationStatus?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LocationModel location)? setCountryAndCityNames,
-    TResult Function(LocationProcessState status)? changeLocationStatus,
-    TResult Function()? setupLocation,
-    required TResult orElse(),
-  }) {
-    if (changeLocationStatus != null) {
-      return changeLocationStatus(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetCountryAndCityNames value)
-    setCountryAndCityNames,
-    required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
-    required TResult Function(_SetupLocation value) setupLocation,
-  }) {
-    return changeLocationStatus(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
-    TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
-    TResult? Function(_SetupLocation value)? setupLocation,
-  }) {
-    return changeLocationStatus?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
-    TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
-    TResult Function(_SetupLocation value)? setupLocation,
-    required TResult orElse(),
-  }) {
-    if (changeLocationStatus != null) {
-      return changeLocationStatus(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SetCountryAndCityNames&&(identical(other.location, location) || other.location == location));
 }
 
-abstract class _ChangeLocationStatus implements LocationEvent {
-  const factory _ChangeLocationStatus({
-    required final LocationProcessState status,
-  }) = _$ChangeLocationStatusImpl;
 
-  LocationProcessState get status;
+@override
+int get hashCode => Object.hash(runtimeType,location);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChangeLocationStatusImplCopyWith<_$ChangeLocationStatusImpl>
-  get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'LocationEvent.setCountryAndCityNames(location: $location)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$SetupLocationImplCopyWith<$Res> {
-  factory _$$SetupLocationImplCopyWith(
-    _$SetupLocationImpl value,
-    $Res Function(_$SetupLocationImpl) then,
-  ) = __$$SetupLocationImplCopyWithImpl<$Res>;
+abstract mixin class _$SetCountryAndCityNamesCopyWith<$Res> implements $LocationEventCopyWith<$Res> {
+  factory _$SetCountryAndCityNamesCopyWith(_SetCountryAndCityNames value, $Res Function(_SetCountryAndCityNames) _then) = __$SetCountryAndCityNamesCopyWithImpl;
+@useResult
+$Res call({
+ LocationModel location
+});
+
+
+
+
+}
+/// @nodoc
+class __$SetCountryAndCityNamesCopyWithImpl<$Res>
+    implements _$SetCountryAndCityNamesCopyWith<$Res> {
+  __$SetCountryAndCityNamesCopyWithImpl(this._self, this._then);
+
+  final _SetCountryAndCityNames _self;
+  final $Res Function(_SetCountryAndCityNames) _then;
+
+/// Create a copy of LocationEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? location = null,}) {
+  return _then(_SetCountryAndCityNames(
+location: null == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as LocationModel,
+  ));
 }
 
-/// @nodoc
-class __$$SetupLocationImplCopyWithImpl<$Res>
-    extends _$LocationEventCopyWithImpl<$Res, _$SetupLocationImpl>
-    implements _$$SetupLocationImplCopyWith<$Res> {
-  __$$SetupLocationImplCopyWithImpl(
-    _$SetupLocationImpl _value,
-    $Res Function(_$SetupLocationImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SetupLocationImpl implements _SetupLocation {
-  const _$SetupLocationImpl();
 
-  @override
-  String toString() {
-    return 'LocationEvent.setupLocation()';
-  }
+class _ChangeLocationStatus implements LocationEvent {
+  const _ChangeLocationStatus({required this.status});
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SetupLocationImpl);
-  }
+ final  LocationProcessState status;
 
-  @override
-  int get hashCode => runtimeType.hashCode;
+/// Create a copy of LocationEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChangeLocationStatusCopyWith<_ChangeLocationStatus> get copyWith => __$ChangeLocationStatusCopyWithImpl<_ChangeLocationStatus>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LocationModel location) setCountryAndCityNames,
-    required TResult Function(LocationProcessState status) changeLocationStatus,
-    required TResult Function() setupLocation,
-  }) {
-    return setupLocation();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LocationModel location)? setCountryAndCityNames,
-    TResult? Function(LocationProcessState status)? changeLocationStatus,
-    TResult? Function()? setupLocation,
-  }) {
-    return setupLocation?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LocationModel location)? setCountryAndCityNames,
-    TResult Function(LocationProcessState status)? changeLocationStatus,
-    TResult Function()? setupLocation,
-    required TResult orElse(),
-  }) {
-    if (setupLocation != null) {
-      return setupLocation();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetCountryAndCityNames value)
-    setCountryAndCityNames,
-    required TResult Function(_ChangeLocationStatus value) changeLocationStatus,
-    required TResult Function(_SetupLocation value) setupLocation,
-  }) {
-    return setupLocation(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
-    TResult? Function(_ChangeLocationStatus value)? changeLocationStatus,
-    TResult? Function(_SetupLocation value)? setupLocation,
-  }) {
-    return setupLocation?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetCountryAndCityNames value)? setCountryAndCityNames,
-    TResult Function(_ChangeLocationStatus value)? changeLocationStatus,
-    TResult Function(_SetupLocation value)? setupLocation,
-    required TResult orElse(),
-  }) {
-    if (setupLocation != null) {
-      return setupLocation(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChangeLocationStatus&&(identical(other.status, status) || other.status == status));
 }
 
-abstract class _SetupLocation implements LocationEvent {
-  const factory _SetupLocation() = _$SetupLocationImpl;
+
+@override
+int get hashCode => Object.hash(runtimeType,status);
+
+@override
+String toString() {
+  return 'LocationEvent.changeLocationStatus(status: $status)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ChangeLocationStatusCopyWith<$Res> implements $LocationEventCopyWith<$Res> {
+  factory _$ChangeLocationStatusCopyWith(_ChangeLocationStatus value, $Res Function(_ChangeLocationStatus) _then) = __$ChangeLocationStatusCopyWithImpl;
+@useResult
+$Res call({
+ LocationProcessState status
+});
+
+
+$LocationProcessStateCopyWith<$Res> get status;
+
+}
+/// @nodoc
+class __$ChangeLocationStatusCopyWithImpl<$Res>
+    implements _$ChangeLocationStatusCopyWith<$Res> {
+  __$ChangeLocationStatusCopyWithImpl(this._self, this._then);
+
+  final _ChangeLocationStatus _self;
+  final $Res Function(_ChangeLocationStatus) _then;
+
+/// Create a copy of LocationEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? status = null,}) {
+  return _then(_ChangeLocationStatus(
+status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as LocationProcessState,
+  ));
+}
+
+/// Create a copy of LocationEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocationProcessStateCopyWith<$Res> get status {
+  
+  return $LocationProcessStateCopyWith<$Res>(_self.status, (value) {
+    return _then(_self.copyWith(status: value));
+  });
+}
+}
+
+/// @nodoc
+
+
+class _SetupLocation implements LocationEvent {
+  const _SetupLocation();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SetupLocation);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LocationEvent.setupLocation()';
+}
+
+
+}
+
+
+
 
 /// @nodoc
 mixin _$LocationState {
-  LocationModel? get location => throw _privateConstructorUsedError;
-  LocationProcessState get status => throw _privateConstructorUsedError;
 
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LocationStateCopyWith<LocationState> get copyWith =>
-      throw _privateConstructorUsedError;
+ LocationModel? get location; LocationProcessState get status;
+/// Create a copy of LocationState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$LocationStateCopyWith<LocationState> get copyWith => _$LocationStateCopyWithImpl<LocationState>(this as LocationState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationState&&(identical(other.location, location) || other.location == location)&&(identical(other.status, status) || other.status == status));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,location,status);
+
+@override
+String toString() {
+  return 'LocationState(location: $location, status: $status)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $LocationStateCopyWith<$Res> {
-  factory $LocationStateCopyWith(
-    LocationState value,
-    $Res Function(LocationState) then,
-  ) = _$LocationStateCopyWithImpl<$Res, LocationState>;
-  @useResult
-  $Res call({LocationModel? location, LocationProcessState status});
+abstract mixin class $LocationStateCopyWith<$Res>  {
+  factory $LocationStateCopyWith(LocationState value, $Res Function(LocationState) _then) = _$LocationStateCopyWithImpl;
+@useResult
+$Res call({
+ LocationModel? location, LocationProcessState status
+});
 
-  $LocationProcessStateCopyWith<$Res> get status;
+
+$LocationProcessStateCopyWith<$Res> get status;
+
 }
-
 /// @nodoc
-class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
+class _$LocationStateCopyWithImpl<$Res>
     implements $LocationStateCopyWith<$Res> {
-  _$LocationStateCopyWithImpl(this._value, this._then);
+  _$LocationStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final LocationState _self;
+  final $Res Function(LocationState) _then;
 
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? location = freezed, Object? status = null}) {
-    return _then(
-      _value.copyWith(
-            location: freezed == location
-                ? _value.location
-                : location // ignore: cast_nullable_to_non_nullable
-                      as LocationModel?,
-            status: null == status
-                ? _value.status
-                : status // ignore: cast_nullable_to_non_nullable
-                      as LocationProcessState,
-          )
-          as $Val,
-    );
-  }
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $LocationProcessStateCopyWith<$Res> get status {
-    return $LocationProcessStateCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value) as $Val);
-    });
-  }
+/// Create a copy of LocationState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? location = freezed,Object? status = null,}) {
+  return _then(_self.copyWith(
+location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as LocationModel?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as LocationProcessState,
+  ));
 }
-
-/// @nodoc
-abstract class _$$LocationStateImplCopyWith<$Res>
-    implements $LocationStateCopyWith<$Res> {
-  factory _$$LocationStateImplCopyWith(
-    _$LocationStateImpl value,
-    $Res Function(_$LocationStateImpl) then,
-  ) = __$$LocationStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({LocationModel? location, LocationProcessState status});
-
-  @override
-  $LocationProcessStateCopyWith<$Res> get status;
-}
-
-/// @nodoc
-class __$$LocationStateImplCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationStateImpl>
-    implements _$$LocationStateImplCopyWith<$Res> {
-  __$$LocationStateImplCopyWithImpl(
-    _$LocationStateImpl _value,
-    $Res Function(_$LocationStateImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? location = freezed, Object? status = null}) {
-    return _then(
-      _$LocationStateImpl(
-        location: freezed == location
-            ? _value.location
-            : location // ignore: cast_nullable_to_non_nullable
-                  as LocationModel?,
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as LocationProcessState,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$LocationStateImpl implements _LocationState {
-  const _$LocationStateImpl({
-    this.location,
-    this.status = const LocationProcessState.idl(),
+/// Create a copy of LocationState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocationProcessStateCopyWith<$Res> get status {
+  
+  return $LocationProcessStateCopyWith<$Res>(_self.status, (value) {
+    return _then(_self.copyWith(status: value));
   });
-
-  @override
-  final LocationModel? location;
-  @override
-  @JsonKey()
-  final LocationProcessState status;
-
-  @override
-  String toString() {
-    return 'LocationState(location: $location, status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationStateImpl &&
-            (identical(other.location, location) ||
-                other.location == location) &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, location, status);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LocationStateImplCopyWith<_$LocationStateImpl> get copyWith =>
-      __$$LocationStateImplCopyWithImpl<_$LocationStateImpl>(this, _$identity);
+}
 }
 
-abstract class _LocationState implements LocationState {
-  const factory _LocationState({
-    final LocationModel? location,
-    final LocationProcessState status,
-  }) = _$LocationStateImpl;
 
-  @override
-  LocationModel? get location;
-  @override
-  LocationProcessState get status;
+/// Adds pattern-matching-related methods to [LocationState].
+extension LocationStatePatterns on LocationState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LocationStateImplCopyWith<_$LocationStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _LocationState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _LocationState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _LocationState value)  $default,){
+final _that = this;
+switch (_that) {
+case _LocationState():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _LocationState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _LocationState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( LocationModel? location,  LocationProcessState status)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _LocationState() when $default != null:
+return $default(_that.location,_that.status);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( LocationModel? location,  LocationProcessState status)  $default,) {final _that = this;
+switch (_that) {
+case _LocationState():
+return $default(_that.location,_that.status);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( LocationModel? location,  LocationProcessState status)?  $default,) {final _that = this;
+switch (_that) {
+case _LocationState() when $default != null:
+return $default(_that.location,_that.status);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+
+
+class _LocationState implements LocationState {
+  const _LocationState({this.location, this.status = const LocationProcessState.idl()});
+  
+
+@override final  LocationModel? location;
+@override@JsonKey() final  LocationProcessState status;
+
+/// Create a copy of LocationState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$LocationStateCopyWith<_LocationState> get copyWith => __$LocationStateCopyWithImpl<_LocationState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LocationState&&(identical(other.location, location) || other.location == location)&&(identical(other.status, status) || other.status == status));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,location,status);
+
+@override
+String toString() {
+  return 'LocationState(location: $location, status: $status)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$LocationStateCopyWith<$Res> implements $LocationStateCopyWith<$Res> {
+  factory _$LocationStateCopyWith(_LocationState value, $Res Function(_LocationState) _then) = __$LocationStateCopyWithImpl;
+@override @useResult
+$Res call({
+ LocationModel? location, LocationProcessState status
+});
+
+
+@override $LocationProcessStateCopyWith<$Res> get status;
+
+}
+/// @nodoc
+class __$LocationStateCopyWithImpl<$Res>
+    implements _$LocationStateCopyWith<$Res> {
+  __$LocationStateCopyWithImpl(this._self, this._then);
+
+  final _LocationState _self;
+  final $Res Function(_LocationState) _then;
+
+/// Create a copy of LocationState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? location = freezed,Object? status = null,}) {
+  return _then(_LocationState(
+location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as LocationModel?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as LocationProcessState,
+  ));
+}
+
+/// Create a copy of LocationState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocationProcessStateCopyWith<$Res> get status {
+  
+  return $LocationProcessStateCopyWith<$Res>(_self.status, (value) {
+    return _then(_self.copyWith(status: value));
+  });
+}
 }
 
 /// @nodoc
 mixin _$LocationProcessState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() noPermission,
-    required TResult Function() locationManually,
-    required TResult Function() havePermission,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? noPermission,
-    TResult? Function()? locationManually,
-    TResult? Function()? havePermission,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? noPermission,
-    TResult Function()? locationManually,
-    TResult Function()? havePermission,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LocationProcessStateIdl value) idl,
-    required TResult Function(LocationProcessStateLoading value) loading,
-    required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
-    required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
-    required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationProcessStateIdl value)? idl,
-    TResult? Function(LocationProcessStateLoading value)? loading,
-    TResult? Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult? Function(LocationProcessStateHavePermission value)? havePermission,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationProcessStateIdl value)? idl,
-    TResult Function(LocationProcessStateLoading value)? loading,
-    TResult Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult Function(LocationProcessStateHavePermission value)? havePermission,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationProcessState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LocationProcessState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $LocationProcessStateCopyWith<$Res> {
-  factory $LocationProcessStateCopyWith(
-    LocationProcessState value,
-    $Res Function(LocationProcessState) then,
-  ) = _$LocationProcessStateCopyWithImpl<$Res, LocationProcessState>;
+class $LocationProcessStateCopyWith<$Res>  {
+$LocationProcessStateCopyWith(LocationProcessState _, $Res Function(LocationProcessState) __);
 }
 
-/// @nodoc
-class _$LocationProcessStateCopyWithImpl<
-  $Res,
-  $Val extends LocationProcessState
->
-    implements $LocationProcessStateCopyWith<$Res> {
-  _$LocationProcessStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [LocationProcessState].
+extension LocationProcessStatePatterns on LocationProcessState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of LocationProcessState
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LocationProcessStateIdl value)?  idl,TResult Function( LocationProcessStateLoading value)?  loading,TResult Function( LocationProcessStateNoPermission value)?  noPermission,TResult Function( LocationProcessStateLocationManually value)?  locationManually,TResult Function( LocationProcessStateHavePermission value)?  havePermission,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case LocationProcessStateIdl() when idl != null:
+return idl(_that);case LocationProcessStateLoading() when loading != null:
+return loading(_that);case LocationProcessStateNoPermission() when noPermission != null:
+return noPermission(_that);case LocationProcessStateLocationManually() when locationManually != null:
+return locationManually(_that);case LocationProcessStateHavePermission() when havePermission != null:
+return havePermission(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LocationProcessStateIdl value)  idl,required TResult Function( LocationProcessStateLoading value)  loading,required TResult Function( LocationProcessStateNoPermission value)  noPermission,required TResult Function( LocationProcessStateLocationManually value)  locationManually,required TResult Function( LocationProcessStateHavePermission value)  havePermission,}){
+final _that = this;
+switch (_that) {
+case LocationProcessStateIdl():
+return idl(_that);case LocationProcessStateLoading():
+return loading(_that);case LocationProcessStateNoPermission():
+return noPermission(_that);case LocationProcessStateLocationManually():
+return locationManually(_that);case LocationProcessStateHavePermission():
+return havePermission(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LocationProcessStateIdl value)?  idl,TResult? Function( LocationProcessStateLoading value)?  loading,TResult? Function( LocationProcessStateNoPermission value)?  noPermission,TResult? Function( LocationProcessStateLocationManually value)?  locationManually,TResult? Function( LocationProcessStateHavePermission value)?  havePermission,}){
+final _that = this;
+switch (_that) {
+case LocationProcessStateIdl() when idl != null:
+return idl(_that);case LocationProcessStateLoading() when loading != null:
+return loading(_that);case LocationProcessStateNoPermission() when noPermission != null:
+return noPermission(_that);case LocationProcessStateLocationManually() when locationManually != null:
+return locationManually(_that);case LocationProcessStateHavePermission() when havePermission != null:
+return havePermission(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  idl,TResult Function()?  loading,TResult Function()?  noPermission,TResult Function()?  locationManually,TResult Function()?  havePermission,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case LocationProcessStateIdl() when idl != null:
+return idl();case LocationProcessStateLoading() when loading != null:
+return loading();case LocationProcessStateNoPermission() when noPermission != null:
+return noPermission();case LocationProcessStateLocationManually() when locationManually != null:
+return locationManually();case LocationProcessStateHavePermission() when havePermission != null:
+return havePermission();case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  idl,required TResult Function()  loading,required TResult Function()  noPermission,required TResult Function()  locationManually,required TResult Function()  havePermission,}) {final _that = this;
+switch (_that) {
+case LocationProcessStateIdl():
+return idl();case LocationProcessStateLoading():
+return loading();case LocationProcessStateNoPermission():
+return noPermission();case LocationProcessStateLocationManually():
+return locationManually();case LocationProcessStateHavePermission():
+return havePermission();}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  idl,TResult? Function()?  loading,TResult? Function()?  noPermission,TResult? Function()?  locationManually,TResult? Function()?  havePermission,}) {final _that = this;
+switch (_that) {
+case LocationProcessStateIdl() when idl != null:
+return idl();case LocationProcessStateLoading() when loading != null:
+return loading();case LocationProcessStateNoPermission() when noPermission != null:
+return noPermission();case LocationProcessStateLocationManually() when locationManually != null:
+return locationManually();case LocationProcessStateHavePermission() when havePermission != null:
+return havePermission();case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$LocationProcessStateIdlImplCopyWith<$Res> {
-  factory _$$LocationProcessStateIdlImplCopyWith(
-    _$LocationProcessStateIdlImpl value,
-    $Res Function(_$LocationProcessStateIdlImpl) then,
-  ) = __$$LocationProcessStateIdlImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LocationProcessStateIdlImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<$Res, _$LocationProcessStateIdlImpl>
-    implements _$$LocationProcessStateIdlImplCopyWith<$Res> {
-  __$$LocationProcessStateIdlImplCopyWithImpl(
-    _$LocationProcessStateIdlImpl _value,
-    $Res Function(_$LocationProcessStateIdlImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of LocationProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LocationProcessStateIdlImpl implements LocationProcessStateIdl {
-  const _$LocationProcessStateIdlImpl();
-
-  @override
-  String toString() {
-    return 'LocationProcessState.idl()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationProcessStateIdlImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() noPermission,
-    required TResult Function() locationManually,
-    required TResult Function() havePermission,
-  }) {
-    return idl();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? noPermission,
-    TResult? Function()? locationManually,
-    TResult? Function()? havePermission,
-  }) {
-    return idl?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? noPermission,
-    TResult Function()? locationManually,
-    TResult Function()? havePermission,
-    required TResult orElse(),
-  }) {
-    if (idl != null) {
-      return idl();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LocationProcessStateIdl value) idl,
-    required TResult Function(LocationProcessStateLoading value) loading,
-    required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
-    required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
-    required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
-  }) {
-    return idl(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationProcessStateIdl value)? idl,
-    TResult? Function(LocationProcessStateLoading value)? loading,
-    TResult? Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult? Function(LocationProcessStateHavePermission value)? havePermission,
-  }) {
-    return idl?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationProcessStateIdl value)? idl,
-    TResult Function(LocationProcessStateLoading value)? loading,
-    TResult Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult Function(LocationProcessStateHavePermission value)? havePermission,
-    required TResult orElse(),
-  }) {
-    if (idl != null) {
-      return idl(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LocationProcessStateIdl implements LocationProcessState {
-  const factory LocationProcessStateIdl() = _$LocationProcessStateIdlImpl;
-}
-
-/// @nodoc
-abstract class _$$LocationProcessStateLoadingImplCopyWith<$Res> {
-  factory _$$LocationProcessStateLoadingImplCopyWith(
-    _$LocationProcessStateLoadingImpl value,
-    $Res Function(_$LocationProcessStateLoadingImpl) then,
-  ) = __$$LocationProcessStateLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LocationProcessStateLoadingImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<
-          $Res,
-          _$LocationProcessStateLoadingImpl
-        >
-    implements _$$LocationProcessStateLoadingImplCopyWith<$Res> {
-  __$$LocationProcessStateLoadingImplCopyWithImpl(
-    _$LocationProcessStateLoadingImpl _value,
-    $Res Function(_$LocationProcessStateLoadingImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of LocationProcessState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LocationProcessStateLoadingImpl implements LocationProcessStateLoading {
-  const _$LocationProcessStateLoadingImpl();
 
-  @override
-  String toString() {
-    return 'LocationProcessState.loading()';
-  }
+class LocationProcessStateIdl implements LocationProcessState {
+  const LocationProcessStateIdl();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationProcessStateLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() noPermission,
-    required TResult Function() locationManually,
-    required TResult Function() havePermission,
-  }) {
-    return loading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? noPermission,
-    TResult? Function()? locationManually,
-    TResult? Function()? havePermission,
-  }) {
-    return loading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? noPermission,
-    TResult Function()? locationManually,
-    TResult Function()? havePermission,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LocationProcessStateIdl value) idl,
-    required TResult Function(LocationProcessStateLoading value) loading,
-    required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
-    required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
-    required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationProcessStateIdl value)? idl,
-    TResult? Function(LocationProcessStateLoading value)? loading,
-    TResult? Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult? Function(LocationProcessStateHavePermission value)? havePermission,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationProcessStateIdl value)? idl,
-    TResult Function(LocationProcessStateLoading value)? loading,
-    TResult Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult Function(LocationProcessStateHavePermission value)? havePermission,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationProcessStateIdl);
 }
 
-abstract class LocationProcessStateLoading implements LocationProcessState {
-  const factory LocationProcessStateLoading() =
-      _$LocationProcessStateLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LocationProcessState.idl()';
 }
 
-/// @nodoc
-abstract class _$$LocationProcessStateNoPermissionImplCopyWith<$Res> {
-  factory _$$LocationProcessStateNoPermissionImplCopyWith(
-    _$LocationProcessStateNoPermissionImpl value,
-    $Res Function(_$LocationProcessStateNoPermissionImpl) then,
-  ) = __$$LocationProcessStateNoPermissionImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$LocationProcessStateNoPermissionImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<
-          $Res,
-          _$LocationProcessStateNoPermissionImpl
-        >
-    implements _$$LocationProcessStateNoPermissionImplCopyWith<$Res> {
-  __$$LocationProcessStateNoPermissionImplCopyWithImpl(
-    _$LocationProcessStateNoPermissionImpl _value,
-    $Res Function(_$LocationProcessStateNoPermissionImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of LocationProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$LocationProcessStateNoPermissionImpl
-    implements LocationProcessStateNoPermission {
-  const _$LocationProcessStateNoPermissionImpl();
 
-  @override
-  String toString() {
-    return 'LocationProcessState.noPermission()';
-  }
+class LocationProcessStateLoading implements LocationProcessState {
+  const LocationProcessStateLoading();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationProcessStateNoPermissionImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() noPermission,
-    required TResult Function() locationManually,
-    required TResult Function() havePermission,
-  }) {
-    return noPermission();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? noPermission,
-    TResult? Function()? locationManually,
-    TResult? Function()? havePermission,
-  }) {
-    return noPermission?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? noPermission,
-    TResult Function()? locationManually,
-    TResult Function()? havePermission,
-    required TResult orElse(),
-  }) {
-    if (noPermission != null) {
-      return noPermission();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LocationProcessStateIdl value) idl,
-    required TResult Function(LocationProcessStateLoading value) loading,
-    required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
-    required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
-    required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
-  }) {
-    return noPermission(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationProcessStateIdl value)? idl,
-    TResult? Function(LocationProcessStateLoading value)? loading,
-    TResult? Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult? Function(LocationProcessStateHavePermission value)? havePermission,
-  }) {
-    return noPermission?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationProcessStateIdl value)? idl,
-    TResult Function(LocationProcessStateLoading value)? loading,
-    TResult Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult Function(LocationProcessStateHavePermission value)? havePermission,
-    required TResult orElse(),
-  }) {
-    if (noPermission != null) {
-      return noPermission(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationProcessStateLoading);
 }
 
-abstract class LocationProcessStateNoPermission
-    implements LocationProcessState {
-  const factory LocationProcessStateNoPermission() =
-      _$LocationProcessStateNoPermissionImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LocationProcessState.loading()';
 }
 
-/// @nodoc
-abstract class _$$LocationProcessStateLocationManuallyImplCopyWith<$Res> {
-  factory _$$LocationProcessStateLocationManuallyImplCopyWith(
-    _$LocationProcessStateLocationManuallyImpl value,
-    $Res Function(_$LocationProcessStateLocationManuallyImpl) then,
-  ) = __$$LocationProcessStateLocationManuallyImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$LocationProcessStateLocationManuallyImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<
-          $Res,
-          _$LocationProcessStateLocationManuallyImpl
-        >
-    implements _$$LocationProcessStateLocationManuallyImplCopyWith<$Res> {
-  __$$LocationProcessStateLocationManuallyImplCopyWithImpl(
-    _$LocationProcessStateLocationManuallyImpl _value,
-    $Res Function(_$LocationProcessStateLocationManuallyImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of LocationProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$LocationProcessStateLocationManuallyImpl
-    implements LocationProcessStateLocationManually {
-  const _$LocationProcessStateLocationManuallyImpl();
 
-  @override
-  String toString() {
-    return 'LocationProcessState.locationManually()';
-  }
+class LocationProcessStateNoPermission implements LocationProcessState {
+  const LocationProcessStateNoPermission();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationProcessStateLocationManuallyImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() noPermission,
-    required TResult Function() locationManually,
-    required TResult Function() havePermission,
-  }) {
-    return locationManually();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? noPermission,
-    TResult? Function()? locationManually,
-    TResult? Function()? havePermission,
-  }) {
-    return locationManually?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? noPermission,
-    TResult Function()? locationManually,
-    TResult Function()? havePermission,
-    required TResult orElse(),
-  }) {
-    if (locationManually != null) {
-      return locationManually();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LocationProcessStateIdl value) idl,
-    required TResult Function(LocationProcessStateLoading value) loading,
-    required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
-    required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
-    required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
-  }) {
-    return locationManually(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationProcessStateIdl value)? idl,
-    TResult? Function(LocationProcessStateLoading value)? loading,
-    TResult? Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult? Function(LocationProcessStateHavePermission value)? havePermission,
-  }) {
-    return locationManually?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationProcessStateIdl value)? idl,
-    TResult Function(LocationProcessStateLoading value)? loading,
-    TResult Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult Function(LocationProcessStateHavePermission value)? havePermission,
-    required TResult orElse(),
-  }) {
-    if (locationManually != null) {
-      return locationManually(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationProcessStateNoPermission);
 }
 
-abstract class LocationProcessStateLocationManually
-    implements LocationProcessState {
-  const factory LocationProcessStateLocationManually() =
-      _$LocationProcessStateLocationManuallyImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LocationProcessState.noPermission()';
 }
 
-/// @nodoc
-abstract class _$$LocationProcessStateHavePermissionImplCopyWith<$Res> {
-  factory _$$LocationProcessStateHavePermissionImplCopyWith(
-    _$LocationProcessStateHavePermissionImpl value,
-    $Res Function(_$LocationProcessStateHavePermissionImpl) then,
-  ) = __$$LocationProcessStateHavePermissionImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$LocationProcessStateHavePermissionImplCopyWithImpl<$Res>
-    extends
-        _$LocationProcessStateCopyWithImpl<
-          $Res,
-          _$LocationProcessStateHavePermissionImpl
-        >
-    implements _$$LocationProcessStateHavePermissionImplCopyWith<$Res> {
-  __$$LocationProcessStateHavePermissionImplCopyWithImpl(
-    _$LocationProcessStateHavePermissionImpl _value,
-    $Res Function(_$LocationProcessStateHavePermissionImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of LocationProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$LocationProcessStateHavePermissionImpl
-    implements LocationProcessStateHavePermission {
-  const _$LocationProcessStateHavePermissionImpl();
 
-  @override
-  String toString() {
-    return 'LocationProcessState.havePermission()';
-  }
+class LocationProcessStateLocationManually implements LocationProcessState {
+  const LocationProcessStateLocationManually();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationProcessStateHavePermissionImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() noPermission,
-    required TResult Function() locationManually,
-    required TResult Function() havePermission,
-  }) {
-    return havePermission();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? noPermission,
-    TResult? Function()? locationManually,
-    TResult? Function()? havePermission,
-  }) {
-    return havePermission?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? noPermission,
-    TResult Function()? locationManually,
-    TResult Function()? havePermission,
-    required TResult orElse(),
-  }) {
-    if (havePermission != null) {
-      return havePermission();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LocationProcessStateIdl value) idl,
-    required TResult Function(LocationProcessStateLoading value) loading,
-    required TResult Function(LocationProcessStateNoPermission value)
-    noPermission,
-    required TResult Function(LocationProcessStateLocationManually value)
-    locationManually,
-    required TResult Function(LocationProcessStateHavePermission value)
-    havePermission,
-  }) {
-    return havePermission(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationProcessStateIdl value)? idl,
-    TResult? Function(LocationProcessStateLoading value)? loading,
-    TResult? Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult? Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult? Function(LocationProcessStateHavePermission value)? havePermission,
-  }) {
-    return havePermission?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationProcessStateIdl value)? idl,
-    TResult Function(LocationProcessStateLoading value)? loading,
-    TResult Function(LocationProcessStateNoPermission value)? noPermission,
-    TResult Function(LocationProcessStateLocationManually value)?
-    locationManually,
-    TResult Function(LocationProcessStateHavePermission value)? havePermission,
-    required TResult orElse(),
-  }) {
-    if (havePermission != null) {
-      return havePermission(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationProcessStateLocationManually);
 }
 
-abstract class LocationProcessStateHavePermission
-    implements LocationProcessState {
-  const factory LocationProcessStateHavePermission() =
-      _$LocationProcessStateHavePermissionImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LocationProcessState.locationManually()';
 }
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class LocationProcessStateHavePermission implements LocationProcessState {
+  const LocationProcessStateHavePermission();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationProcessStateHavePermission);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LocationProcessState.havePermission()';
+}
+
+
+}
+
+
+
+
+// dart format on

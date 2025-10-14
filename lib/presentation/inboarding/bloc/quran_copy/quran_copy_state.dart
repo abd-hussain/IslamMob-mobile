@@ -13,7 +13,7 @@ part of 'quran_copy_bloc.dart';
 /// available Quran copies, download progress, and user selection for optimal
 /// Quran reading experience according to individual preferences.
 @freezed
-class QuranCopyState with _$QuranCopyState {
+abstract class QuranCopyState with _$QuranCopyState {
   /// Creates a [QuranCopyState] with Quran copy selection and download information.
   ///
   /// Parameters:

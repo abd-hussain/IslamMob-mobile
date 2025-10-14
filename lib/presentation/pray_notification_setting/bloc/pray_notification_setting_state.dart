@@ -6,7 +6,8 @@ part of 'pray_notification_setting_bloc.dart';
 /// including individual prayer notifications, special notifications, and
 /// the overall loading status of the settings screen.
 @freezed
-class PrayNotificationSettingState with _$PrayNotificationSettingState {
+abstract class PrayNotificationSettingState
+    with _$PrayNotificationSettingState {
   /// Creates a [PrayNotificationSettingState] with the given parameters.
   ///
   /// All notification settings default to their respective values:

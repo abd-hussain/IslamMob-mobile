@@ -6,7 +6,7 @@ part of 'about_us_bloc.dart';
 /// specifically tracking the availability of rewarded advertisements
 /// that allow users to support the Islam Mob app development.
 @freezed
-class AboutUsState with _$AboutUsState {
+abstract class AboutUsState with _$AboutUsState {
   /// Creates an [AboutUsState] with rewarded ad availability status.
   ///
   /// Parameters:

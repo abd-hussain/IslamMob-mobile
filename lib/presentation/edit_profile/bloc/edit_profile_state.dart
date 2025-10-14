@@ -1,7 +1,7 @@
 part of 'edit_profile_bloc.dart';
 
 @freezed
-class EditProfileState with _$EditProfileState {
+abstract class EditProfileState with _$EditProfileState {
   const factory EditProfileState({
     @Default(EditProfileProcessState.loading())
     EditProfileProcessState processState,

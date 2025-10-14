@@ -7,7 +7,7 @@ part of 'quran_kareem_bloc.dart';
 /// It tracks the current page, brightness settings, bookmarked pages, tutorial state,
 /// and other reading-related preferences.
 @freezed
-class QuranKareemState with _$QuranKareemState {
+abstract class QuranKareemState with _$QuranKareemState {
   /// Creates a [QuranKareemState] with the specified parameters.
   ///
   /// All parameters have default values to ensure the state can be created

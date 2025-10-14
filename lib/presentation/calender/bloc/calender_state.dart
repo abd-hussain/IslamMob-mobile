@@ -13,7 +13,7 @@ part of 'calender_bloc.dart';
 /// the context of the Islamic calendar system, helping maintain awareness
 /// of Islamic dates and religious observances throughout the year.
 @freezed
-class CalenderState with _$CalenderState {
+abstract class CalenderState with _$CalenderState {
   /// Creates a [CalenderState] with calendar data and processing status.
   ///
   /// Parameters:

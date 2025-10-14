@@ -12,7 +12,7 @@ part of 'salah_timing_bloc.dart';
 /// for the entire week while maintaining current prayer status for proper
 /// countdown functionality and prayer preparation reminders.
 @freezed
-class SalahTimingState with _$SalahTimingState {
+abstract class SalahTimingState with _$SalahTimingState {
   /// Creates a [SalahTimingState] with prayer timing and schedule information.
   ///
   /// Parameters:

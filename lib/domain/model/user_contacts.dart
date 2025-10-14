@@ -20,7 +20,7 @@ part 'user_contacts.freezed.dart';
 /// users to share beneficial Islamic content and connect with other Muslims
 /// in their network for mutual spiritual benefit.
 @freezed
-class UserContacts with _$UserContacts {
+abstract class UserContacts with _$UserContacts {
   /// Creates a [UserContacts] instance representing contact information.
   ///
   /// Parameters:

@@ -21,7 +21,7 @@ part 'calculation_method_setting.freezed.dart';
 /// The model is used in settings screens where users can select their
 /// preferred calculation method based on their location or religious authority.
 @freezed
-class CalculationMethodSetting with _$CalculationMethodSetting {
+abstract class CalculationMethodSetting with _$CalculationMethodSetting {
   /// Creates a [CalculationMethodSetting] instance.
   ///
   /// Parameters:

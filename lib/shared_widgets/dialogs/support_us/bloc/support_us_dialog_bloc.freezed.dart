@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,464 +9,527 @@ part of 'support_us_dialog_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$SupportUsDialogEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initializeRewardedAd,
-    required TResult Function(bool value) updateRewardedAd,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initializeRewardedAd,
-    TResult? Function(bool value)? updateRewardedAd,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initializeRewardedAd,
-    TResult Function(bool value)? updateRewardedAd,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitializeRewardedAd value) initializeRewardedAd,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitializeRewardedAd value)? initializeRewardedAd,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitializeRewardedAd value)? initializeRewardedAd,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SupportUsDialogEvent);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'SupportUsDialogEvent()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $SupportUsDialogEventCopyWith<$Res> {
-  factory $SupportUsDialogEventCopyWith(
-    SupportUsDialogEvent value,
-    $Res Function(SupportUsDialogEvent) then,
-  ) = _$SupportUsDialogEventCopyWithImpl<$Res, SupportUsDialogEvent>;
+class $SupportUsDialogEventCopyWith<$Res>  {
+$SupportUsDialogEventCopyWith(SupportUsDialogEvent _, $Res Function(SupportUsDialogEvent) __);
 }
 
-/// @nodoc
-class _$SupportUsDialogEventCopyWithImpl<
-  $Res,
-  $Val extends SupportUsDialogEvent
->
-    implements $SupportUsDialogEventCopyWith<$Res> {
-  _$SupportUsDialogEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [SupportUsDialogEvent].
+extension SupportUsDialogEventPatterns on SupportUsDialogEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of SupportUsDialogEvent
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _InitializeRewardedAd value)?  initializeRewardedAd,TResult Function( _UpdateRewardedAd value)?  updateRewardedAd,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _InitializeRewardedAd() when initializeRewardedAd != null:
+return initializeRewardedAd(_that);case _UpdateRewardedAd() when updateRewardedAd != null:
+return updateRewardedAd(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _InitializeRewardedAd value)  initializeRewardedAd,required TResult Function( _UpdateRewardedAd value)  updateRewardedAd,}){
+final _that = this;
+switch (_that) {
+case _InitializeRewardedAd():
+return initializeRewardedAd(_that);case _UpdateRewardedAd():
+return updateRewardedAd(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _InitializeRewardedAd value)?  initializeRewardedAd,TResult? Function( _UpdateRewardedAd value)?  updateRewardedAd,}){
+final _that = this;
+switch (_that) {
+case _InitializeRewardedAd() when initializeRewardedAd != null:
+return initializeRewardedAd(_that);case _UpdateRewardedAd() when updateRewardedAd != null:
+return updateRewardedAd(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initializeRewardedAd,TResult Function( bool value)?  updateRewardedAd,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _InitializeRewardedAd() when initializeRewardedAd != null:
+return initializeRewardedAd();case _UpdateRewardedAd() when updateRewardedAd != null:
+return updateRewardedAd(_that.value);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initializeRewardedAd,required TResult Function( bool value)  updateRewardedAd,}) {final _that = this;
+switch (_that) {
+case _InitializeRewardedAd():
+return initializeRewardedAd();case _UpdateRewardedAd():
+return updateRewardedAd(_that.value);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initializeRewardedAd,TResult? Function( bool value)?  updateRewardedAd,}) {final _that = this;
+switch (_that) {
+case _InitializeRewardedAd() when initializeRewardedAd != null:
+return initializeRewardedAd();case _UpdateRewardedAd() when updateRewardedAd != null:
+return updateRewardedAd(_that.value);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitializeRewardedAdImplCopyWith<$Res> {
-  factory _$$InitializeRewardedAdImplCopyWith(
-    _$InitializeRewardedAdImpl value,
-    $Res Function(_$InitializeRewardedAdImpl) then,
-  ) = __$$InitializeRewardedAdImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitializeRewardedAdImplCopyWithImpl<$Res>
-    extends _$SupportUsDialogEventCopyWithImpl<$Res, _$InitializeRewardedAdImpl>
-    implements _$$InitializeRewardedAdImplCopyWith<$Res> {
-  __$$InitializeRewardedAdImplCopyWithImpl(
-    _$InitializeRewardedAdImpl _value,
-    $Res Function(_$InitializeRewardedAdImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of SupportUsDialogEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$InitializeRewardedAdImpl implements _InitializeRewardedAd {
-  _$InitializeRewardedAdImpl();
-
-  @override
-  String toString() {
-    return 'SupportUsDialogEvent.initializeRewardedAd()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitializeRewardedAdImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initializeRewardedAd,
-    required TResult Function(bool value) updateRewardedAd,
-  }) {
-    return initializeRewardedAd();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initializeRewardedAd,
-    TResult? Function(bool value)? updateRewardedAd,
-  }) {
-    return initializeRewardedAd?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initializeRewardedAd,
-    TResult Function(bool value)? updateRewardedAd,
-    required TResult orElse(),
-  }) {
-    if (initializeRewardedAd != null) {
-      return initializeRewardedAd();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitializeRewardedAd value) initializeRewardedAd,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-  }) {
-    return initializeRewardedAd(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitializeRewardedAd value)? initializeRewardedAd,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-  }) {
-    return initializeRewardedAd?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitializeRewardedAd value)? initializeRewardedAd,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    required TResult orElse(),
-  }) {
-    if (initializeRewardedAd != null) {
-      return initializeRewardedAd(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InitializeRewardedAd implements SupportUsDialogEvent {
-  factory _InitializeRewardedAd() = _$InitializeRewardedAdImpl;
-}
-
-/// @nodoc
-abstract class _$$UpdateRewardedAdImplCopyWith<$Res> {
-  factory _$$UpdateRewardedAdImplCopyWith(
-    _$UpdateRewardedAdImpl value,
-    $Res Function(_$UpdateRewardedAdImpl) then,
-  ) = __$$UpdateRewardedAdImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool value});
-}
-
-/// @nodoc
-class __$$UpdateRewardedAdImplCopyWithImpl<$Res>
-    extends _$SupportUsDialogEventCopyWithImpl<$Res, _$UpdateRewardedAdImpl>
-    implements _$$UpdateRewardedAdImplCopyWith<$Res> {
-  __$$UpdateRewardedAdImplCopyWithImpl(
-    _$UpdateRewardedAdImpl _value,
-    $Res Function(_$UpdateRewardedAdImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of SupportUsDialogEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UpdateRewardedAdImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$UpdateRewardedAdImpl implements _UpdateRewardedAd {
-  _$UpdateRewardedAdImpl(this.value);
 
-  @override
-  final bool value;
+class _InitializeRewardedAd implements SupportUsDialogEvent {
+   _InitializeRewardedAd();
+  
 
-  @override
-  String toString() {
-    return 'SupportUsDialogEvent.updateRewardedAd(value: $value)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateRewardedAdImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  /// Create a copy of SupportUsDialogEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateRewardedAdImplCopyWith<_$UpdateRewardedAdImpl> get copyWith =>
-      __$$UpdateRewardedAdImplCopyWithImpl<_$UpdateRewardedAdImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initializeRewardedAd,
-    required TResult Function(bool value) updateRewardedAd,
-  }) {
-    return updateRewardedAd(value);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initializeRewardedAd,
-    TResult? Function(bool value)? updateRewardedAd,
-  }) {
-    return updateRewardedAd?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initializeRewardedAd,
-    TResult Function(bool value)? updateRewardedAd,
-    required TResult orElse(),
-  }) {
-    if (updateRewardedAd != null) {
-      return updateRewardedAd(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitializeRewardedAd value) initializeRewardedAd,
-    required TResult Function(_UpdateRewardedAd value) updateRewardedAd,
-  }) {
-    return updateRewardedAd(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitializeRewardedAd value)? initializeRewardedAd,
-    TResult? Function(_UpdateRewardedAd value)? updateRewardedAd,
-  }) {
-    return updateRewardedAd?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitializeRewardedAd value)? initializeRewardedAd,
-    TResult Function(_UpdateRewardedAd value)? updateRewardedAd,
-    required TResult orElse(),
-  }) {
-    if (updateRewardedAd != null) {
-      return updateRewardedAd(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InitializeRewardedAd);
 }
 
-abstract class _UpdateRewardedAd implements SupportUsDialogEvent {
-  factory _UpdateRewardedAd(final bool value) = _$UpdateRewardedAdImpl;
 
-  bool get value;
+@override
+int get hashCode => runtimeType.hashCode;
 
-  /// Create a copy of SupportUsDialogEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateRewardedAdImplCopyWith<_$UpdateRewardedAdImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'SupportUsDialogEvent.initializeRewardedAd()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _UpdateRewardedAd implements SupportUsDialogEvent {
+   _UpdateRewardedAd(this.value);
+  
+
+ final  bool value;
+
+/// Create a copy of SupportUsDialogEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateRewardedAdCopyWith<_UpdateRewardedAd> get copyWith => __$UpdateRewardedAdCopyWithImpl<_UpdateRewardedAd>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateRewardedAd&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'SupportUsDialogEvent.updateRewardedAd(value: $value)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UpdateRewardedAdCopyWith<$Res> implements $SupportUsDialogEventCopyWith<$Res> {
+  factory _$UpdateRewardedAdCopyWith(_UpdateRewardedAd value, $Res Function(_UpdateRewardedAd) _then) = __$UpdateRewardedAdCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateRewardedAdCopyWithImpl<$Res>
+    implements _$UpdateRewardedAdCopyWith<$Res> {
+  __$UpdateRewardedAdCopyWithImpl(this._self, this._then);
+
+  final _UpdateRewardedAd _self;
+  final $Res Function(_UpdateRewardedAd) _then;
+
+/// Create a copy of SupportUsDialogEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(_UpdateRewardedAd(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
 }
 
 /// @nodoc
 mixin _$SupportUsDialogState {
-  bool get rewardedAdExsist => throw _privateConstructorUsedError;
 
-  /// Create a copy of SupportUsDialogState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $SupportUsDialogStateCopyWith<SupportUsDialogState> get copyWith =>
-      throw _privateConstructorUsedError;
+ bool get rewardedAdExsist;
+/// Create a copy of SupportUsDialogState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SupportUsDialogStateCopyWith<SupportUsDialogState> get copyWith => _$SupportUsDialogStateCopyWithImpl<SupportUsDialogState>(this as SupportUsDialogState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SupportUsDialogState&&(identical(other.rewardedAdExsist, rewardedAdExsist) || other.rewardedAdExsist == rewardedAdExsist));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,rewardedAdExsist);
+
+@override
+String toString() {
+  return 'SupportUsDialogState(rewardedAdExsist: $rewardedAdExsist)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $SupportUsDialogStateCopyWith<$Res> {
-  factory $SupportUsDialogStateCopyWith(
-    SupportUsDialogState value,
-    $Res Function(SupportUsDialogState) then,
-  ) = _$SupportUsDialogStateCopyWithImpl<$Res, SupportUsDialogState>;
-  @useResult
-  $Res call({bool rewardedAdExsist});
-}
+abstract mixin class $SupportUsDialogStateCopyWith<$Res>  {
+  factory $SupportUsDialogStateCopyWith(SupportUsDialogState value, $Res Function(SupportUsDialogState) _then) = _$SupportUsDialogStateCopyWithImpl;
+@useResult
+$Res call({
+ bool rewardedAdExsist
+});
 
+
+
+
+}
 /// @nodoc
-class _$SupportUsDialogStateCopyWithImpl<
-  $Res,
-  $Val extends SupportUsDialogState
->
+class _$SupportUsDialogStateCopyWithImpl<$Res>
     implements $SupportUsDialogStateCopyWith<$Res> {
-  _$SupportUsDialogStateCopyWithImpl(this._value, this._then);
+  _$SupportUsDialogStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SupportUsDialogState _self;
+  final $Res Function(SupportUsDialogState) _then;
 
-  /// Create a copy of SupportUsDialogState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? rewardedAdExsist = null}) {
-    return _then(
-      _value.copyWith(
-            rewardedAdExsist: null == rewardedAdExsist
-                ? _value.rewardedAdExsist
-                : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
-                      as bool,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of SupportUsDialogState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? rewardedAdExsist = null,}) {
+  return _then(_self.copyWith(
+rewardedAdExsist: null == rewardedAdExsist ? _self.rewardedAdExsist : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SupportUsDialogState].
+extension SupportUsDialogStatePatterns on SupportUsDialogState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SupportUsDialogState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SupportUsDialogState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SupportUsDialogState value)  $default,){
+final _that = this;
+switch (_that) {
+case _SupportUsDialogState():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SupportUsDialogState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SupportUsDialogState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool rewardedAdExsist)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SupportUsDialogState() when $default != null:
+return $default(_that.rewardedAdExsist);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool rewardedAdExsist)  $default,) {final _that = this;
+switch (_that) {
+case _SupportUsDialogState():
+return $default(_that.rewardedAdExsist);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool rewardedAdExsist)?  $default,) {final _that = this;
+switch (_that) {
+case _SupportUsDialogState() when $default != null:
+return $default(_that.rewardedAdExsist);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-abstract class _$$SupportUsDialogStateImplCopyWith<$Res>
-    implements $SupportUsDialogStateCopyWith<$Res> {
-  factory _$$SupportUsDialogStateImplCopyWith(
-    _$SupportUsDialogStateImpl value,
-    $Res Function(_$SupportUsDialogStateImpl) then,
-  ) = __$$SupportUsDialogStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool rewardedAdExsist});
+
+
+class _SupportUsDialogState implements SupportUsDialogState {
+  const _SupportUsDialogState({this.rewardedAdExsist = false});
+  
+
+@override@JsonKey() final  bool rewardedAdExsist;
+
+/// Create a copy of SupportUsDialogState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SupportUsDialogStateCopyWith<_SupportUsDialogState> get copyWith => __$SupportUsDialogStateCopyWithImpl<_SupportUsDialogState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SupportUsDialogState&&(identical(other.rewardedAdExsist, rewardedAdExsist) || other.rewardedAdExsist == rewardedAdExsist));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,rewardedAdExsist);
+
+@override
+String toString() {
+  return 'SupportUsDialogState(rewardedAdExsist: $rewardedAdExsist)';
+}
+
+
 }
 
 /// @nodoc
-class __$$SupportUsDialogStateImplCopyWithImpl<$Res>
-    extends _$SupportUsDialogStateCopyWithImpl<$Res, _$SupportUsDialogStateImpl>
-    implements _$$SupportUsDialogStateImplCopyWith<$Res> {
-  __$$SupportUsDialogStateImplCopyWithImpl(
-    _$SupportUsDialogStateImpl _value,
-    $Res Function(_$SupportUsDialogStateImpl) _then,
-  ) : super(_value, _then);
+abstract mixin class _$SupportUsDialogStateCopyWith<$Res> implements $SupportUsDialogStateCopyWith<$Res> {
+  factory _$SupportUsDialogStateCopyWith(_SupportUsDialogState value, $Res Function(_SupportUsDialogState) _then) = __$SupportUsDialogStateCopyWithImpl;
+@override @useResult
+$Res call({
+ bool rewardedAdExsist
+});
 
-  /// Create a copy of SupportUsDialogState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? rewardedAdExsist = null}) {
-    return _then(
-      _$SupportUsDialogStateImpl(
-        rewardedAdExsist: null == rewardedAdExsist
-            ? _value.rewardedAdExsist
-            : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
-                  as bool,
-      ),
-    );
-  }
+
+
+
 }
-
 /// @nodoc
+class __$SupportUsDialogStateCopyWithImpl<$Res>
+    implements _$SupportUsDialogStateCopyWith<$Res> {
+  __$SupportUsDialogStateCopyWithImpl(this._self, this._then);
 
-class _$SupportUsDialogStateImpl implements _SupportUsDialogState {
-  const _$SupportUsDialogStateImpl({this.rewardedAdExsist = false});
+  final _SupportUsDialogState _self;
+  final $Res Function(_SupportUsDialogState) _then;
 
-  @override
-  @JsonKey()
-  final bool rewardedAdExsist;
-
-  @override
-  String toString() {
-    return 'SupportUsDialogState(rewardedAdExsist: $rewardedAdExsist)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SupportUsDialogStateImpl &&
-            (identical(other.rewardedAdExsist, rewardedAdExsist) ||
-                other.rewardedAdExsist == rewardedAdExsist));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, rewardedAdExsist);
-
-  /// Create a copy of SupportUsDialogState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SupportUsDialogStateImplCopyWith<_$SupportUsDialogStateImpl>
-  get copyWith =>
-      __$$SupportUsDialogStateImplCopyWithImpl<_$SupportUsDialogStateImpl>(
-        this,
-        _$identity,
-      );
+/// Create a copy of SupportUsDialogState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? rewardedAdExsist = null,}) {
+  return _then(_SupportUsDialogState(
+rewardedAdExsist: null == rewardedAdExsist ? _self.rewardedAdExsist : rewardedAdExsist // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-abstract class _SupportUsDialogState implements SupportUsDialogState {
-  const factory _SupportUsDialogState({final bool rewardedAdExsist}) =
-      _$SupportUsDialogStateImpl;
 
-  @override
-  bool get rewardedAdExsist;
-
-  /// Create a copy of SupportUsDialogState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SupportUsDialogStateImplCopyWith<_$SupportUsDialogStateImpl>
-  get copyWith => throw _privateConstructorUsedError;
 }
+
+// dart format on

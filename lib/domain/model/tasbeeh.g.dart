@@ -6,8 +6,8 @@ part of 'tasbeeh.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TasbeehModelImpl _$$TasbeehModelImplFromJson(Map<String, dynamic> json) =>
-    _$TasbeehModelImpl(
+_TasbeehModel _$TasbeehModelFromJson(Map<String, dynamic> json) =>
+    _TasbeehModel(
       id: (json['id'] as num).toInt(),
       title: json['title'] as String,
       desc: json['desc'] as String,
@@ -15,7 +15,7 @@ _$TasbeehModelImpl _$$TasbeehModelImplFromJson(Map<String, dynamic> json) =>
       currentCount: (json['currentCount'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$TasbeehModelImplToJson(_$TasbeehModelImpl instance) =>
+Map<String, dynamic> _$TasbeehModelToJson(_TasbeehModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

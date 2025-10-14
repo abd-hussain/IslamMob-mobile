@@ -14,7 +14,7 @@ part of 'hajj_omrah_bloc.dart';
 /// for and perform these fundamental Islamic religious obligations
 /// according to Sunnah and Islamic teachings.
 @freezed
-class HajjOmrahState with _$HajjOmrahState {
+abstract class HajjOmrahState with _$HajjOmrahState {
   /// Creates a [HajjOmrahState] with pilgrimage content and processing status.
   ///
   /// Parameters:

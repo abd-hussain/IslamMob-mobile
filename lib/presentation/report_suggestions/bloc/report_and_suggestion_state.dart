@@ -7,7 +7,7 @@ part of 'report_and_suggestion_bloc.dart';
 /// file attachments, and internet connectivity status.
 /// It uses Freezed for immutability and code generation.
 @freezed
-class ReportAndSuggestionState with _$ReportAndSuggestionState {
+abstract class ReportAndSuggestionState with _$ReportAndSuggestionState {
   /// Creates a [ReportAndSuggestionState] with optional parameters.
   ///
   /// All parameters have default values:

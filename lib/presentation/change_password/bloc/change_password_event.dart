@@ -1,7 +1,7 @@
 part of 'change_password_bloc.dart';
 
 @freezed
-class ChangePasswordEvent with _$ChangePasswordEvent {
+abstract class ChangePasswordEvent with _$ChangePasswordEvent {
   const factory ChangePasswordEvent.updateButtonEnablity({
     required IslamMobLocalizations localizations,
     required String oldPassword,

@@ -22,7 +22,7 @@ part 'hajj_omrah_data.freezed.dart';
 /// The content typically includes ritual instructions, supplications (duas),
 /// historical context, and practical guidance for pilgrims.
 @freezed
-class HajjOmrahData with _$HajjOmrahData {
+abstract class HajjOmrahData with _$HajjOmrahData {
   /// Creates a [HajjOmrahData] instance representing pilgrimage guidance content.
   ///
   /// Parameters:

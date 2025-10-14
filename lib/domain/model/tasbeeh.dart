@@ -23,7 +23,7 @@ part 'tasbeeh.g.dart';
 /// - La ilaha illa Allah (There is no god but Allah) - various counts
 /// - Istighfar (seeking forgiveness) - typically 100 times
 @freezed
-class TasbeehModel with _$TasbeehModel {
+abstract class TasbeehModel with _$TasbeehModel {
   /// Creates a [TasbeehModel] instance representing a dhikr counter item.
   ///
   /// Parameters:

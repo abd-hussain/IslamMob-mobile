@@ -19,7 +19,7 @@ part 'language.freezed.dart';
 /// original language of Islamic texts) and other languages for broader
 /// accessibility.
 @freezed
-class LanguageModel with _$LanguageModel {
+abstract class LanguageModel with _$LanguageModel {
   /// Creates a [LanguageModel] instance representing a selectable language option.
   ///
   /// Parameters:

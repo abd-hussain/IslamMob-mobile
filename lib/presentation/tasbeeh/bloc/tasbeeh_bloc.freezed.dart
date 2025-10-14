@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1376 +9,784 @@ part of 'tasbeeh_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$TasbeehEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(TasbeehModel item) resetCounter,
-    required TResult Function(TasbeehModel item) incrementCounter,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(TasbeehModel item)? resetCounter,
-    TResult? Function(TasbeehModel item)? incrementCounter,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(TasbeehModel item)? resetCounter,
-    TResult Function(TasbeehModel item)? incrementCounter,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TasbeehEvent);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'TasbeehEvent()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $TasbeehEventCopyWith<$Res> {
-  factory $TasbeehEventCopyWith(
-    TasbeehEvent value,
-    $Res Function(TasbeehEvent) then,
-  ) = _$TasbeehEventCopyWithImpl<$Res, TasbeehEvent>;
+class $TasbeehEventCopyWith<$Res>  {
+$TasbeehEventCopyWith(TasbeehEvent _, $Res Function(TasbeehEvent) __);
 }
 
-/// @nodoc
-class _$TasbeehEventCopyWithImpl<$Res, $Val extends TasbeehEvent>
-    implements $TasbeehEventCopyWith<$Res> {
-  _$TasbeehEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [TasbeehEvent].
+extension TasbeehEventPatterns on TasbeehEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _FillInitialValue value)?  fillInitialValue,TResult Function( _SoundSetting value)?  soundSetting,TResult Function( _VibrationSetting value)?  vibrationSetting,TResult Function( _LeftZikerSelected value)?  leftZikerSelected,TResult Function( _RightZikerEnabled value)?  rightZikerEnabled,TResult Function( _ResetCounter value)?  resetCounter,TResult Function( _IncrementCounter value)?  incrementCounter,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _FillInitialValue() when fillInitialValue != null:
+return fillInitialValue(_that);case _SoundSetting() when soundSetting != null:
+return soundSetting(_that);case _VibrationSetting() when vibrationSetting != null:
+return vibrationSetting(_that);case _LeftZikerSelected() when leftZikerSelected != null:
+return leftZikerSelected(_that);case _RightZikerEnabled() when rightZikerEnabled != null:
+return rightZikerEnabled(_that);case _ResetCounter() when resetCounter != null:
+return resetCounter(_that);case _IncrementCounter() when incrementCounter != null:
+return incrementCounter(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _FillInitialValue value)  fillInitialValue,required TResult Function( _SoundSetting value)  soundSetting,required TResult Function( _VibrationSetting value)  vibrationSetting,required TResult Function( _LeftZikerSelected value)  leftZikerSelected,required TResult Function( _RightZikerEnabled value)  rightZikerEnabled,required TResult Function( _ResetCounter value)  resetCounter,required TResult Function( _IncrementCounter value)  incrementCounter,}){
+final _that = this;
+switch (_that) {
+case _FillInitialValue():
+return fillInitialValue(_that);case _SoundSetting():
+return soundSetting(_that);case _VibrationSetting():
+return vibrationSetting(_that);case _LeftZikerSelected():
+return leftZikerSelected(_that);case _RightZikerEnabled():
+return rightZikerEnabled(_that);case _ResetCounter():
+return resetCounter(_that);case _IncrementCounter():
+return incrementCounter(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _FillInitialValue value)?  fillInitialValue,TResult? Function( _SoundSetting value)?  soundSetting,TResult? Function( _VibrationSetting value)?  vibrationSetting,TResult? Function( _LeftZikerSelected value)?  leftZikerSelected,TResult? Function( _RightZikerEnabled value)?  rightZikerEnabled,TResult? Function( _ResetCounter value)?  resetCounter,TResult? Function( _IncrementCounter value)?  incrementCounter,}){
+final _that = this;
+switch (_that) {
+case _FillInitialValue() when fillInitialValue != null:
+return fillInitialValue(_that);case _SoundSetting() when soundSetting != null:
+return soundSetting(_that);case _VibrationSetting() when vibrationSetting != null:
+return vibrationSetting(_that);case _LeftZikerSelected() when leftZikerSelected != null:
+return leftZikerSelected(_that);case _RightZikerEnabled() when rightZikerEnabled != null:
+return rightZikerEnabled(_that);case _ResetCounter() when resetCounter != null:
+return resetCounter(_that);case _IncrementCounter() when incrementCounter != null:
+return incrementCounter(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  fillInitialValue,TResult Function()?  soundSetting,TResult Function()?  vibrationSetting,TResult Function()?  leftZikerSelected,TResult Function()?  rightZikerEnabled,TResult Function( TasbeehModel item)?  resetCounter,TResult Function( TasbeehModel item)?  incrementCounter,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _FillInitialValue() when fillInitialValue != null:
+return fillInitialValue();case _SoundSetting() when soundSetting != null:
+return soundSetting();case _VibrationSetting() when vibrationSetting != null:
+return vibrationSetting();case _LeftZikerSelected() when leftZikerSelected != null:
+return leftZikerSelected();case _RightZikerEnabled() when rightZikerEnabled != null:
+return rightZikerEnabled();case _ResetCounter() when resetCounter != null:
+return resetCounter(_that.item);case _IncrementCounter() when incrementCounter != null:
+return incrementCounter(_that.item);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  fillInitialValue,required TResult Function()  soundSetting,required TResult Function()  vibrationSetting,required TResult Function()  leftZikerSelected,required TResult Function()  rightZikerEnabled,required TResult Function( TasbeehModel item)  resetCounter,required TResult Function( TasbeehModel item)  incrementCounter,}) {final _that = this;
+switch (_that) {
+case _FillInitialValue():
+return fillInitialValue();case _SoundSetting():
+return soundSetting();case _VibrationSetting():
+return vibrationSetting();case _LeftZikerSelected():
+return leftZikerSelected();case _RightZikerEnabled():
+return rightZikerEnabled();case _ResetCounter():
+return resetCounter(_that.item);case _IncrementCounter():
+return incrementCounter(_that.item);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  fillInitialValue,TResult? Function()?  soundSetting,TResult? Function()?  vibrationSetting,TResult? Function()?  leftZikerSelected,TResult? Function()?  rightZikerEnabled,TResult? Function( TasbeehModel item)?  resetCounter,TResult? Function( TasbeehModel item)?  incrementCounter,}) {final _that = this;
+switch (_that) {
+case _FillInitialValue() when fillInitialValue != null:
+return fillInitialValue();case _SoundSetting() when soundSetting != null:
+return soundSetting();case _VibrationSetting() when vibrationSetting != null:
+return vibrationSetting();case _LeftZikerSelected() when leftZikerSelected != null:
+return leftZikerSelected();case _RightZikerEnabled() when rightZikerEnabled != null:
+return rightZikerEnabled();case _ResetCounter() when resetCounter != null:
+return resetCounter(_that.item);case _IncrementCounter() when incrementCounter != null:
+return incrementCounter(_that.item);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$FillInitialValueImplCopyWith<$Res> {
-  factory _$$FillInitialValueImplCopyWith(
-    _$FillInitialValueImpl value,
-    $Res Function(_$FillInitialValueImpl) then,
-  ) = __$$FillInitialValueImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$FillInitialValueImplCopyWithImpl<$Res>
-    extends _$TasbeehEventCopyWithImpl<$Res, _$FillInitialValueImpl>
-    implements _$$FillInitialValueImplCopyWith<$Res> {
-  __$$FillInitialValueImplCopyWithImpl(
-    _$FillInitialValueImpl _value,
-    $Res Function(_$FillInitialValueImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$FillInitialValueImpl implements _FillInitialValue {
-  const _$FillInitialValueImpl();
-
-  @override
-  String toString() {
-    return 'TasbeehEvent.fillInitialValue()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FillInitialValueImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(TasbeehModel item) resetCounter,
-    required TResult Function(TasbeehModel item) incrementCounter,
-  }) {
-    return fillInitialValue();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(TasbeehModel item)? resetCounter,
-    TResult? Function(TasbeehModel item)? incrementCounter,
-  }) {
-    return fillInitialValue?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(TasbeehModel item)? resetCounter,
-    TResult Function(TasbeehModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (fillInitialValue != null) {
-      return fillInitialValue();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return fillInitialValue(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return fillInitialValue?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (fillInitialValue != null) {
-      return fillInitialValue(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FillInitialValue implements TasbeehEvent {
-  const factory _FillInitialValue() = _$FillInitialValueImpl;
-}
-
-/// @nodoc
-abstract class _$$SoundSettingImplCopyWith<$Res> {
-  factory _$$SoundSettingImplCopyWith(
-    _$SoundSettingImpl value,
-    $Res Function(_$SoundSettingImpl) then,
-  ) = __$$SoundSettingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SoundSettingImplCopyWithImpl<$Res>
-    extends _$TasbeehEventCopyWithImpl<$Res, _$SoundSettingImpl>
-    implements _$$SoundSettingImplCopyWith<$Res> {
-  __$$SoundSettingImplCopyWithImpl(
-    _$SoundSettingImpl _value,
-    $Res Function(_$SoundSettingImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SoundSettingImpl implements _SoundSetting {
-  const _$SoundSettingImpl();
 
-  @override
-  String toString() {
-    return 'TasbeehEvent.soundSetting()';
-  }
+class _FillInitialValue implements TasbeehEvent {
+  const _FillInitialValue();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SoundSettingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(TasbeehModel item) resetCounter,
-    required TResult Function(TasbeehModel item) incrementCounter,
-  }) {
-    return soundSetting();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(TasbeehModel item)? resetCounter,
-    TResult? Function(TasbeehModel item)? incrementCounter,
-  }) {
-    return soundSetting?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(TasbeehModel item)? resetCounter,
-    TResult Function(TasbeehModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (soundSetting != null) {
-      return soundSetting();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return soundSetting(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return soundSetting?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (soundSetting != null) {
-      return soundSetting(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FillInitialValue);
 }
 
-abstract class _SoundSetting implements TasbeehEvent {
-  const factory _SoundSetting() = _$SoundSettingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'TasbeehEvent.fillInitialValue()';
 }
 
-/// @nodoc
-abstract class _$$VibrationSettingImplCopyWith<$Res> {
-  factory _$$VibrationSettingImplCopyWith(
-    _$VibrationSettingImpl value,
-    $Res Function(_$VibrationSettingImpl) then,
-  ) = __$$VibrationSettingImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$VibrationSettingImplCopyWithImpl<$Res>
-    extends _$TasbeehEventCopyWithImpl<$Res, _$VibrationSettingImpl>
-    implements _$$VibrationSettingImplCopyWith<$Res> {
-  __$$VibrationSettingImplCopyWithImpl(
-    _$VibrationSettingImpl _value,
-    $Res Function(_$VibrationSettingImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$VibrationSettingImpl implements _VibrationSetting {
-  const _$VibrationSettingImpl();
 
-  @override
-  String toString() {
-    return 'TasbeehEvent.vibrationSetting()';
-  }
+class _SoundSetting implements TasbeehEvent {
+  const _SoundSetting();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$VibrationSettingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(TasbeehModel item) resetCounter,
-    required TResult Function(TasbeehModel item) incrementCounter,
-  }) {
-    return vibrationSetting();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(TasbeehModel item)? resetCounter,
-    TResult? Function(TasbeehModel item)? incrementCounter,
-  }) {
-    return vibrationSetting?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(TasbeehModel item)? resetCounter,
-    TResult Function(TasbeehModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (vibrationSetting != null) {
-      return vibrationSetting();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return vibrationSetting(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return vibrationSetting?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (vibrationSetting != null) {
-      return vibrationSetting(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SoundSetting);
 }
 
-abstract class _VibrationSetting implements TasbeehEvent {
-  const factory _VibrationSetting() = _$VibrationSettingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'TasbeehEvent.soundSetting()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _VibrationSetting implements TasbeehEvent {
+  const _VibrationSetting();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _VibrationSetting);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'TasbeehEvent.vibrationSetting()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _LeftZikerSelected implements TasbeehEvent {
+  const _LeftZikerSelected();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LeftZikerSelected);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'TasbeehEvent.leftZikerSelected()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _RightZikerEnabled implements TasbeehEvent {
+  const _RightZikerEnabled();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RightZikerEnabled);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'TasbeehEvent.rightZikerEnabled()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _ResetCounter implements TasbeehEvent {
+  const _ResetCounter(this.item);
+  
+
+ final  TasbeehModel item;
+
+/// Create a copy of TasbeehEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ResetCounterCopyWith<_ResetCounter> get copyWith => __$ResetCounterCopyWithImpl<_ResetCounter>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ResetCounter&&(identical(other.item, item) || other.item == item));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,item);
+
+@override
+String toString() {
+  return 'TasbeehEvent.resetCounter(item: $item)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$LeftZikerSelectedImplCopyWith<$Res> {
-  factory _$$LeftZikerSelectedImplCopyWith(
-    _$LeftZikerSelectedImpl value,
-    $Res Function(_$LeftZikerSelectedImpl) then,
-  ) = __$$LeftZikerSelectedImplCopyWithImpl<$Res>;
+abstract mixin class _$ResetCounterCopyWith<$Res> implements $TasbeehEventCopyWith<$Res> {
+  factory _$ResetCounterCopyWith(_ResetCounter value, $Res Function(_ResetCounter) _then) = __$ResetCounterCopyWithImpl;
+@useResult
+$Res call({
+ TasbeehModel item
+});
+
+
+$TasbeehModelCopyWith<$Res> get item;
+
+}
+/// @nodoc
+class __$ResetCounterCopyWithImpl<$Res>
+    implements _$ResetCounterCopyWith<$Res> {
+  __$ResetCounterCopyWithImpl(this._self, this._then);
+
+  final _ResetCounter _self;
+  final $Res Function(_ResetCounter) _then;
+
+/// Create a copy of TasbeehEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? item = null,}) {
+  return _then(_ResetCounter(
+null == item ? _self.item : item // ignore: cast_nullable_to_non_nullable
+as TasbeehModel,
+  ));
 }
 
-/// @nodoc
-class __$$LeftZikerSelectedImplCopyWithImpl<$Res>
-    extends _$TasbeehEventCopyWithImpl<$Res, _$LeftZikerSelectedImpl>
-    implements _$$LeftZikerSelectedImplCopyWith<$Res> {
-  __$$LeftZikerSelectedImplCopyWithImpl(
-    _$LeftZikerSelectedImpl _value,
-    $Res Function(_$LeftZikerSelectedImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
+/// Create a copy of TasbeehEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$TasbeehModelCopyWith<$Res> get item {
+  
+  return $TasbeehModelCopyWith<$Res>(_self.item, (value) {
+    return _then(_self.copyWith(item: value));
+  });
+}
 }
 
 /// @nodoc
 
-class _$LeftZikerSelectedImpl implements _LeftZikerSelected {
-  const _$LeftZikerSelectedImpl();
 
-  @override
-  String toString() {
-    return 'TasbeehEvent.leftZikerSelected()';
-  }
+class _IncrementCounter implements TasbeehEvent {
+  const _IncrementCounter(this.item);
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LeftZikerSelectedImpl);
-  }
+ final  TasbeehModel item;
 
-  @override
-  int get hashCode => runtimeType.hashCode;
+/// Create a copy of TasbeehEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$IncrementCounterCopyWith<_IncrementCounter> get copyWith => __$IncrementCounterCopyWithImpl<_IncrementCounter>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(TasbeehModel item) resetCounter,
-    required TResult Function(TasbeehModel item) incrementCounter,
-  }) {
-    return leftZikerSelected();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(TasbeehModel item)? resetCounter,
-    TResult? Function(TasbeehModel item)? incrementCounter,
-  }) {
-    return leftZikerSelected?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(TasbeehModel item)? resetCounter,
-    TResult Function(TasbeehModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (leftZikerSelected != null) {
-      return leftZikerSelected();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return leftZikerSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return leftZikerSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (leftZikerSelected != null) {
-      return leftZikerSelected(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IncrementCounter&&(identical(other.item, item) || other.item == item));
 }
 
-abstract class _LeftZikerSelected implements TasbeehEvent {
-  const factory _LeftZikerSelected() = _$LeftZikerSelectedImpl;
+
+@override
+int get hashCode => Object.hash(runtimeType,item);
+
+@override
+String toString() {
+  return 'TasbeehEvent.incrementCounter(item: $item)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$RightZikerEnabledImplCopyWith<$Res> {
-  factory _$$RightZikerEnabledImplCopyWith(
-    _$RightZikerEnabledImpl value,
-    $Res Function(_$RightZikerEnabledImpl) then,
-  ) = __$$RightZikerEnabledImplCopyWithImpl<$Res>;
-}
+abstract mixin class _$IncrementCounterCopyWith<$Res> implements $TasbeehEventCopyWith<$Res> {
+  factory _$IncrementCounterCopyWith(_IncrementCounter value, $Res Function(_IncrementCounter) _then) = __$IncrementCounterCopyWithImpl;
+@useResult
+$Res call({
+ TasbeehModel item
+});
 
+
+$TasbeehModelCopyWith<$Res> get item;
+
+}
 /// @nodoc
-class __$$RightZikerEnabledImplCopyWithImpl<$Res>
-    extends _$TasbeehEventCopyWithImpl<$Res, _$RightZikerEnabledImpl>
-    implements _$$RightZikerEnabledImplCopyWith<$Res> {
-  __$$RightZikerEnabledImplCopyWithImpl(
-    _$RightZikerEnabledImpl _value,
-    $Res Function(_$RightZikerEnabledImpl) _then,
-  ) : super(_value, _then);
+class __$IncrementCounterCopyWithImpl<$Res>
+    implements _$IncrementCounterCopyWith<$Res> {
+  __$IncrementCounterCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
+  final _IncrementCounter _self;
+  final $Res Function(_IncrementCounter) _then;
+
+/// Create a copy of TasbeehEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? item = null,}) {
+  return _then(_IncrementCounter(
+null == item ? _self.item : item // ignore: cast_nullable_to_non_nullable
+as TasbeehModel,
+  ));
 }
 
-/// @nodoc
-
-class _$RightZikerEnabledImpl implements _RightZikerEnabled {
-  const _$RightZikerEnabledImpl();
-
-  @override
-  String toString() {
-    return 'TasbeehEvent.rightZikerEnabled()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RightZikerEnabledImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(TasbeehModel item) resetCounter,
-    required TResult Function(TasbeehModel item) incrementCounter,
-  }) {
-    return rightZikerEnabled();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(TasbeehModel item)? resetCounter,
-    TResult? Function(TasbeehModel item)? incrementCounter,
-  }) {
-    return rightZikerEnabled?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(TasbeehModel item)? resetCounter,
-    TResult Function(TasbeehModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (rightZikerEnabled != null) {
-      return rightZikerEnabled();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return rightZikerEnabled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return rightZikerEnabled?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (rightZikerEnabled != null) {
-      return rightZikerEnabled(this);
-    }
-    return orElse();
-  }
+/// Create a copy of TasbeehEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$TasbeehModelCopyWith<$Res> get item {
+  
+  return $TasbeehModelCopyWith<$Res>(_self.item, (value) {
+    return _then(_self.copyWith(item: value));
+  });
 }
-
-abstract class _RightZikerEnabled implements TasbeehEvent {
-  const factory _RightZikerEnabled() = _$RightZikerEnabledImpl;
-}
-
-/// @nodoc
-abstract class _$$ResetCounterImplCopyWith<$Res> {
-  factory _$$ResetCounterImplCopyWith(
-    _$ResetCounterImpl value,
-    $Res Function(_$ResetCounterImpl) then,
-  ) = __$$ResetCounterImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({TasbeehModel item});
-
-  $TasbeehModelCopyWith<$Res> get item;
-}
-
-/// @nodoc
-class __$$ResetCounterImplCopyWithImpl<$Res>
-    extends _$TasbeehEventCopyWithImpl<$Res, _$ResetCounterImpl>
-    implements _$$ResetCounterImplCopyWith<$Res> {
-  __$$ResetCounterImplCopyWithImpl(
-    _$ResetCounterImpl _value,
-    $Res Function(_$ResetCounterImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? item = null}) {
-    return _then(
-      _$ResetCounterImpl(
-        null == item
-            ? _value.item
-            : item // ignore: cast_nullable_to_non_nullable
-                  as TasbeehModel,
-      ),
-    );
-  }
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TasbeehModelCopyWith<$Res> get item {
-    return $TasbeehModelCopyWith<$Res>(_value.item, (value) {
-      return _then(_value.copyWith(item: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$ResetCounterImpl implements _ResetCounter {
-  const _$ResetCounterImpl(this.item);
-
-  @override
-  final TasbeehModel item;
-
-  @override
-  String toString() {
-    return 'TasbeehEvent.resetCounter(item: $item)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ResetCounterImpl &&
-            (identical(other.item, item) || other.item == item));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, item);
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ResetCounterImplCopyWith<_$ResetCounterImpl> get copyWith =>
-      __$$ResetCounterImplCopyWithImpl<_$ResetCounterImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(TasbeehModel item) resetCounter,
-    required TResult Function(TasbeehModel item) incrementCounter,
-  }) {
-    return resetCounter(item);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(TasbeehModel item)? resetCounter,
-    TResult? Function(TasbeehModel item)? incrementCounter,
-  }) {
-    return resetCounter?.call(item);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(TasbeehModel item)? resetCounter,
-    TResult Function(TasbeehModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (resetCounter != null) {
-      return resetCounter(item);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return resetCounter(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return resetCounter?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (resetCounter != null) {
-      return resetCounter(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ResetCounter implements TasbeehEvent {
-  const factory _ResetCounter(final TasbeehModel item) = _$ResetCounterImpl;
-
-  TasbeehModel get item;
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ResetCounterImplCopyWith<_$ResetCounterImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$IncrementCounterImplCopyWith<$Res> {
-  factory _$$IncrementCounterImplCopyWith(
-    _$IncrementCounterImpl value,
-    $Res Function(_$IncrementCounterImpl) then,
-  ) = __$$IncrementCounterImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({TasbeehModel item});
-
-  $TasbeehModelCopyWith<$Res> get item;
-}
-
-/// @nodoc
-class __$$IncrementCounterImplCopyWithImpl<$Res>
-    extends _$TasbeehEventCopyWithImpl<$Res, _$IncrementCounterImpl>
-    implements _$$IncrementCounterImplCopyWith<$Res> {
-  __$$IncrementCounterImplCopyWithImpl(
-    _$IncrementCounterImpl _value,
-    $Res Function(_$IncrementCounterImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? item = null}) {
-    return _then(
-      _$IncrementCounterImpl(
-        null == item
-            ? _value.item
-            : item // ignore: cast_nullable_to_non_nullable
-                  as TasbeehModel,
-      ),
-    );
-  }
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TasbeehModelCopyWith<$Res> get item {
-    return $TasbeehModelCopyWith<$Res>(_value.item, (value) {
-      return _then(_value.copyWith(item: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$IncrementCounterImpl implements _IncrementCounter {
-  const _$IncrementCounterImpl(this.item);
-
-  @override
-  final TasbeehModel item;
-
-  @override
-  String toString() {
-    return 'TasbeehEvent.incrementCounter(item: $item)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$IncrementCounterImpl &&
-            (identical(other.item, item) || other.item == item));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, item);
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$IncrementCounterImplCopyWith<_$IncrementCounterImpl> get copyWith =>
-      __$$IncrementCounterImplCopyWithImpl<_$IncrementCounterImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fillInitialValue,
-    required TResult Function() soundSetting,
-    required TResult Function() vibrationSetting,
-    required TResult Function() leftZikerSelected,
-    required TResult Function() rightZikerEnabled,
-    required TResult Function(TasbeehModel item) resetCounter,
-    required TResult Function(TasbeehModel item) incrementCounter,
-  }) {
-    return incrementCounter(item);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fillInitialValue,
-    TResult? Function()? soundSetting,
-    TResult? Function()? vibrationSetting,
-    TResult? Function()? leftZikerSelected,
-    TResult? Function()? rightZikerEnabled,
-    TResult? Function(TasbeehModel item)? resetCounter,
-    TResult? Function(TasbeehModel item)? incrementCounter,
-  }) {
-    return incrementCounter?.call(item);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fillInitialValue,
-    TResult Function()? soundSetting,
-    TResult Function()? vibrationSetting,
-    TResult Function()? leftZikerSelected,
-    TResult Function()? rightZikerEnabled,
-    TResult Function(TasbeehModel item)? resetCounter,
-    TResult Function(TasbeehModel item)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (incrementCounter != null) {
-      return incrementCounter(item);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FillInitialValue value) fillInitialValue,
-    required TResult Function(_SoundSetting value) soundSetting,
-    required TResult Function(_VibrationSetting value) vibrationSetting,
-    required TResult Function(_LeftZikerSelected value) leftZikerSelected,
-    required TResult Function(_RightZikerEnabled value) rightZikerEnabled,
-    required TResult Function(_ResetCounter value) resetCounter,
-    required TResult Function(_IncrementCounter value) incrementCounter,
-  }) {
-    return incrementCounter(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FillInitialValue value)? fillInitialValue,
-    TResult? Function(_SoundSetting value)? soundSetting,
-    TResult? Function(_VibrationSetting value)? vibrationSetting,
-    TResult? Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult? Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult? Function(_ResetCounter value)? resetCounter,
-    TResult? Function(_IncrementCounter value)? incrementCounter,
-  }) {
-    return incrementCounter?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FillInitialValue value)? fillInitialValue,
-    TResult Function(_SoundSetting value)? soundSetting,
-    TResult Function(_VibrationSetting value)? vibrationSetting,
-    TResult Function(_LeftZikerSelected value)? leftZikerSelected,
-    TResult Function(_RightZikerEnabled value)? rightZikerEnabled,
-    TResult Function(_ResetCounter value)? resetCounter,
-    TResult Function(_IncrementCounter value)? incrementCounter,
-    required TResult orElse(),
-  }) {
-    if (incrementCounter != null) {
-      return incrementCounter(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _IncrementCounter implements TasbeehEvent {
-  const factory _IncrementCounter(final TasbeehModel item) =
-      _$IncrementCounterImpl;
-
-  TasbeehModel get item;
-
-  /// Create a copy of TasbeehEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$IncrementCounterImplCopyWith<_$IncrementCounterImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$TasbeehState {
-  bool get allowSound => throw _privateConstructorUsedError;
-  bool get allowVibration => throw _privateConstructorUsedError;
-  List<TasbeehModel> get list => throw _privateConstructorUsedError;
-  int get selectedListIndex => throw _privateConstructorUsedError;
 
-  /// Create a copy of TasbeehState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $TasbeehStateCopyWith<TasbeehState> get copyWith =>
-      throw _privateConstructorUsedError;
+ bool get allowSound; bool get allowVibration; List<TasbeehModel> get list; int get selectedListIndex;
+/// Create a copy of TasbeehState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TasbeehStateCopyWith<TasbeehState> get copyWith => _$TasbeehStateCopyWithImpl<TasbeehState>(this as TasbeehState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TasbeehState&&(identical(other.allowSound, allowSound) || other.allowSound == allowSound)&&(identical(other.allowVibration, allowVibration) || other.allowVibration == allowVibration)&&const DeepCollectionEquality().equals(other.list, list)&&(identical(other.selectedListIndex, selectedListIndex) || other.selectedListIndex == selectedListIndex));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,allowSound,allowVibration,const DeepCollectionEquality().hash(list),selectedListIndex);
+
+@override
+String toString() {
+  return 'TasbeehState(allowSound: $allowSound, allowVibration: $allowVibration, list: $list, selectedListIndex: $selectedListIndex)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $TasbeehStateCopyWith<$Res> {
-  factory $TasbeehStateCopyWith(
-    TasbeehState value,
-    $Res Function(TasbeehState) then,
-  ) = _$TasbeehStateCopyWithImpl<$Res, TasbeehState>;
-  @useResult
-  $Res call({
-    bool allowSound,
-    bool allowVibration,
-    List<TasbeehModel> list,
-    int selectedListIndex,
-  });
-}
+abstract mixin class $TasbeehStateCopyWith<$Res>  {
+  factory $TasbeehStateCopyWith(TasbeehState value, $Res Function(TasbeehState) _then) = _$TasbeehStateCopyWithImpl;
+@useResult
+$Res call({
+ bool allowSound, bool allowVibration, List<TasbeehModel> list, int selectedListIndex
+});
 
+
+
+
+}
 /// @nodoc
-class _$TasbeehStateCopyWithImpl<$Res, $Val extends TasbeehState>
+class _$TasbeehStateCopyWithImpl<$Res>
     implements $TasbeehStateCopyWith<$Res> {
-  _$TasbeehStateCopyWithImpl(this._value, this._then);
+  _$TasbeehStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final TasbeehState _self;
+  final $Res Function(TasbeehState) _then;
 
-  /// Create a copy of TasbeehState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? allowSound = null,
-    Object? allowVibration = null,
-    Object? list = null,
-    Object? selectedListIndex = null,
-  }) {
-    return _then(
-      _value.copyWith(
-            allowSound: null == allowSound
-                ? _value.allowSound
-                : allowSound // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            allowVibration: null == allowVibration
-                ? _value.allowVibration
-                : allowVibration // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            list: null == list
-                ? _value.list
-                : list // ignore: cast_nullable_to_non_nullable
-                      as List<TasbeehModel>,
-            selectedListIndex: null == selectedListIndex
-                ? _value.selectedListIndex
-                : selectedListIndex // ignore: cast_nullable_to_non_nullable
-                      as int,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of TasbeehState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? allowSound = null,Object? allowVibration = null,Object? list = null,Object? selectedListIndex = null,}) {
+  return _then(_self.copyWith(
+allowSound: null == allowSound ? _self.allowSound : allowSound // ignore: cast_nullable_to_non_nullable
+as bool,allowVibration: null == allowVibration ? _self.allowVibration : allowVibration // ignore: cast_nullable_to_non_nullable
+as bool,list: null == list ? _self.list : list // ignore: cast_nullable_to_non_nullable
+as List<TasbeehModel>,selectedListIndex: null == selectedListIndex ? _self.selectedListIndex : selectedListIndex // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [TasbeehState].
+extension TasbeehStatePatterns on TasbeehState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _TasbeehState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _TasbeehState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _TasbeehState value)  $default,){
+final _that = this;
+switch (_that) {
+case _TasbeehState():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _TasbeehState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _TasbeehState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool allowSound,  bool allowVibration,  List<TasbeehModel> list,  int selectedListIndex)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _TasbeehState() when $default != null:
+return $default(_that.allowSound,_that.allowVibration,_that.list,_that.selectedListIndex);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool allowSound,  bool allowVibration,  List<TasbeehModel> list,  int selectedListIndex)  $default,) {final _that = this;
+switch (_that) {
+case _TasbeehState():
+return $default(_that.allowSound,_that.allowVibration,_that.list,_that.selectedListIndex);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool allowSound,  bool allowVibration,  List<TasbeehModel> list,  int selectedListIndex)?  $default,) {final _that = this;
+switch (_that) {
+case _TasbeehState() when $default != null:
+return $default(_that.allowSound,_that.allowVibration,_that.list,_that.selectedListIndex);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-abstract class _$$TasbeehStateImplCopyWith<$Res>
-    implements $TasbeehStateCopyWith<$Res> {
-  factory _$$TasbeehStateImplCopyWith(
-    _$TasbeehStateImpl value,
-    $Res Function(_$TasbeehStateImpl) then,
-  ) = __$$TasbeehStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    bool allowSound,
-    bool allowVibration,
-    List<TasbeehModel> list,
-    int selectedListIndex,
-  });
+
+
+class _TasbeehState implements TasbeehState {
+  const _TasbeehState({this.allowSound = true, this.allowVibration = true, final  List<TasbeehModel> list = const [], this.selectedListIndex = 0}): _list = list;
+  
+
+@override@JsonKey() final  bool allowSound;
+@override@JsonKey() final  bool allowVibration;
+ final  List<TasbeehModel> _list;
+@override@JsonKey() List<TasbeehModel> get list {
+  if (_list is EqualUnmodifiableListView) return _list;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_list);
+}
+
+@override@JsonKey() final  int selectedListIndex;
+
+/// Create a copy of TasbeehState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$TasbeehStateCopyWith<_TasbeehState> get copyWith => __$TasbeehStateCopyWithImpl<_TasbeehState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TasbeehState&&(identical(other.allowSound, allowSound) || other.allowSound == allowSound)&&(identical(other.allowVibration, allowVibration) || other.allowVibration == allowVibration)&&const DeepCollectionEquality().equals(other._list, _list)&&(identical(other.selectedListIndex, selectedListIndex) || other.selectedListIndex == selectedListIndex));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,allowSound,allowVibration,const DeepCollectionEquality().hash(_list),selectedListIndex);
+
+@override
+String toString() {
+  return 'TasbeehState(allowSound: $allowSound, allowVibration: $allowVibration, list: $list, selectedListIndex: $selectedListIndex)';
+}
+
+
 }
 
 /// @nodoc
-class __$$TasbeehStateImplCopyWithImpl<$Res>
-    extends _$TasbeehStateCopyWithImpl<$Res, _$TasbeehStateImpl>
-    implements _$$TasbeehStateImplCopyWith<$Res> {
-  __$$TasbeehStateImplCopyWithImpl(
-    _$TasbeehStateImpl _value,
-    $Res Function(_$TasbeehStateImpl) _then,
-  ) : super(_value, _then);
+abstract mixin class _$TasbeehStateCopyWith<$Res> implements $TasbeehStateCopyWith<$Res> {
+  factory _$TasbeehStateCopyWith(_TasbeehState value, $Res Function(_TasbeehState) _then) = __$TasbeehStateCopyWithImpl;
+@override @useResult
+$Res call({
+ bool allowSound, bool allowVibration, List<TasbeehModel> list, int selectedListIndex
+});
 
-  /// Create a copy of TasbeehState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? allowSound = null,
-    Object? allowVibration = null,
-    Object? list = null,
-    Object? selectedListIndex = null,
-  }) {
-    return _then(
-      _$TasbeehStateImpl(
-        allowSound: null == allowSound
-            ? _value.allowSound
-            : allowSound // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        allowVibration: null == allowVibration
-            ? _value.allowVibration
-            : allowVibration // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        list: null == list
-            ? _value._list
-            : list // ignore: cast_nullable_to_non_nullable
-                  as List<TasbeehModel>,
-        selectedListIndex: null == selectedListIndex
-            ? _value.selectedListIndex
-            : selectedListIndex // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
+
+
+
 }
-
 /// @nodoc
+class __$TasbeehStateCopyWithImpl<$Res>
+    implements _$TasbeehStateCopyWith<$Res> {
+  __$TasbeehStateCopyWithImpl(this._self, this._then);
 
-class _$TasbeehStateImpl implements _TasbeehState {
-  const _$TasbeehStateImpl({
-    this.allowSound = true,
-    this.allowVibration = true,
-    final List<TasbeehModel> list = const [],
-    this.selectedListIndex = 0,
-  }) : _list = list;
+  final _TasbeehState _self;
+  final $Res Function(_TasbeehState) _then;
 
-  @override
-  @JsonKey()
-  final bool allowSound;
-  @override
-  @JsonKey()
-  final bool allowVibration;
-  final List<TasbeehModel> _list;
-  @override
-  @JsonKey()
-  List<TasbeehModel> get list {
-    if (_list is EqualUnmodifiableListView) return _list;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_list);
-  }
-
-  @override
-  @JsonKey()
-  final int selectedListIndex;
-
-  @override
-  String toString() {
-    return 'TasbeehState(allowSound: $allowSound, allowVibration: $allowVibration, list: $list, selectedListIndex: $selectedListIndex)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TasbeehStateImpl &&
-            (identical(other.allowSound, allowSound) ||
-                other.allowSound == allowSound) &&
-            (identical(other.allowVibration, allowVibration) ||
-                other.allowVibration == allowVibration) &&
-            const DeepCollectionEquality().equals(other._list, _list) &&
-            (identical(other.selectedListIndex, selectedListIndex) ||
-                other.selectedListIndex == selectedListIndex));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    allowSound,
-    allowVibration,
-    const DeepCollectionEquality().hash(_list),
-    selectedListIndex,
-  );
-
-  /// Create a copy of TasbeehState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TasbeehStateImplCopyWith<_$TasbeehStateImpl> get copyWith =>
-      __$$TasbeehStateImplCopyWithImpl<_$TasbeehStateImpl>(this, _$identity);
+/// Create a copy of TasbeehState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? allowSound = null,Object? allowVibration = null,Object? list = null,Object? selectedListIndex = null,}) {
+  return _then(_TasbeehState(
+allowSound: null == allowSound ? _self.allowSound : allowSound // ignore: cast_nullable_to_non_nullable
+as bool,allowVibration: null == allowVibration ? _self.allowVibration : allowVibration // ignore: cast_nullable_to_non_nullable
+as bool,list: null == list ? _self._list : list // ignore: cast_nullable_to_non_nullable
+as List<TasbeehModel>,selectedListIndex: null == selectedListIndex ? _self.selectedListIndex : selectedListIndex // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-abstract class _TasbeehState implements TasbeehState {
-  const factory _TasbeehState({
-    final bool allowSound,
-    final bool allowVibration,
-    final List<TasbeehModel> list,
-    final int selectedListIndex,
-  }) = _$TasbeehStateImpl;
 
-  @override
-  bool get allowSound;
-  @override
-  bool get allowVibration;
-  @override
-  List<TasbeehModel> get list;
-  @override
-  int get selectedListIndex;
-
-  /// Create a copy of TasbeehState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TasbeehStateImplCopyWith<_$TasbeehStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
+
+// dart format on

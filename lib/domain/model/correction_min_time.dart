@@ -18,7 +18,7 @@ part 'correction_min_time.freezed.dart';
 /// providing the UI title, prayer type identifier, and a function to retrieve
 /// the current correction value from the application state.
 @freezed
-class CorrectionMinTimeData with _$CorrectionMinTimeData {
+abstract class CorrectionMinTimeData with _$CorrectionMinTimeData {
   /// Creates a [CorrectionMinTimeData] instance for prayer time corrections.
   ///
   /// Parameters:

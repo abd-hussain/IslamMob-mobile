@@ -11,7 +11,7 @@ part of 'contacts_bloc.dart';
 /// reminders, and beneficial religious knowledge with their family and
 /// friends, supporting the Islamic principle of sharing beneficial knowledge.
 @freezed
-class ContactsState with _$ContactsState {
+abstract class ContactsState with _$ContactsState {
   /// Creates a [ContactsState] with contact list and progress information.
   ///
   /// Parameters:

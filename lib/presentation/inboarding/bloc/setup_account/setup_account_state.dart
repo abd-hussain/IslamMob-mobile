@@ -13,7 +13,7 @@ part of 'setup_account_bloc.dart';
 /// Madhab selection, and other Islamic requirements for accurate religious
 /// observance according to the user's geographical location.
 @freezed
-class SetupAccountState with _$SetupAccountState {
+abstract class SetupAccountState with _$SetupAccountState {
   /// Creates a [SetupAccountState] with Islamic account setup information.
   ///
   /// Parameters:

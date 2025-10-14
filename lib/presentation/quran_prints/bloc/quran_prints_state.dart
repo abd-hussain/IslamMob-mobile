@@ -6,7 +6,7 @@ part of 'quran_prints_bloc.dart';
 /// including the list of available prints, internet connection status,
 /// and currently downloading prints.
 @freezed
-class QuranPrintsState with _$QuranPrintsState {
+abstract class QuranPrintsState with _$QuranPrintsState {
   /// Creates a [QuranPrintsState] with the given parameters.
   ///
   /// The [listOfPrints] contains the available Quran print options,

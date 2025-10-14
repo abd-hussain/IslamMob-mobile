@@ -18,7 +18,7 @@ part 'notification_sound.freezed.dart';
 /// This is used in sound selection interfaces where users can preview
 /// and choose their preferred notification audio for prayer times.
 @freezed
-class NotificationSound with _$NotificationSound {
+abstract class NotificationSound with _$NotificationSound {
   /// Creates a [NotificationSound] instance representing an available notification sound.
   ///
   /// Parameters:

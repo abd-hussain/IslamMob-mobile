@@ -6,7 +6,7 @@ part of 'main_container_bloc.dart';
 /// including the currently selected tab index for bottom navigation.
 /// It uses Freezed for immutability and code generation.
 @freezed
-class MainContainerState with _$MainContainerState {
+abstract class MainContainerState with _$MainContainerState {
   /// Creates a [MainContainerState] with optional parameters.
   ///
   /// The [selectedIndex] parameter represents the currently selected tab

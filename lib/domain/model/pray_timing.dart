@@ -21,7 +21,7 @@ part 'pray_timing.freezed.dart';
 ///
 /// All times are formatted as strings for display purposes in the user interface.
 @freezed
-class PrayTimingModel with _$PrayTimingModel {
+abstract class PrayTimingModel with _$PrayTimingModel {
   /// Creates a [PrayTimingModel] with formatted prayer time strings.
   ///
   /// All parameters represent prayer times formatted for display (e.g., "5:30 AM", "17:45").
@@ -67,7 +67,7 @@ class PrayTimingModel with _$PrayTimingModel {
 /// The DateTime objects provide precise timing information that can be
 /// used for accurate prayer time management and Islamic time calculations.
 @freezed
-class PrayTimingDateTimeModel with _$PrayTimingDateTimeModel {
+abstract class PrayTimingDateTimeModel with _$PrayTimingDateTimeModel {
   /// Creates a [PrayTimingDateTimeModel] with precise DateTime prayer times.
   ///
   /// All parameters represent exact prayer times as DateTime objects.

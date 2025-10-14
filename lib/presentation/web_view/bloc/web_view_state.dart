@@ -6,7 +6,7 @@ part of 'web_view_bloc.dart';
 /// functionality including the URL to load, page title for the app bar,
 /// and internet connectivity status for handling offline scenarios.
 @freezed
-class WebViewState with _$WebViewState {
+abstract class WebViewState with _$WebViewState {
   /// Creates a [WebViewState] with the specified parameters.
   ///
   /// All parameters have default values:

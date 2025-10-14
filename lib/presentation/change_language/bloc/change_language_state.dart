@@ -11,7 +11,7 @@ part of 'change_language_bloc.dart';
 /// Muslim community, ensuring Islamic content accessibility across different
 /// languages while maintaining religious authenticity.
 @freezed
-class ChangeLanguageState with _$ChangeLanguageState {
+abstract class ChangeLanguageState with _$ChangeLanguageState {
   /// Creates a [ChangeLanguageState] with language selection information.
   ///
   /// Parameters:

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1491 +9,965 @@ part of 'change_password_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$ChangePasswordEvent {
-  IslamMobLocalizations get localizations => throw _privateConstructorUsedError;
-  String get oldPassword => throw _privateConstructorUsedError;
-  String get newPassword => throw _privateConstructorUsedError;
-  String get confirmPassword => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )
-    updateButtonEnablity,
-    required TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )
-    changePressed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    updateButtonEnablity,
-    TResult? Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    changePressed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    updateButtonEnablity,
-    TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    changePressed,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateButtonEnablity value) updateButtonEnablity,
-    required TResult Function(_ChangePressed value) changePressed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult? Function(_ChangePressed value)? changePressed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult Function(_ChangePressed value)? changePressed,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
 
-  /// Create a copy of ChangePasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChangePasswordEventCopyWith<ChangePasswordEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+ IslamMobLocalizations get localizations; String get oldPassword; String get newPassword; String get confirmPassword;
+/// Create a copy of ChangePasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChangePasswordEventCopyWith<ChangePasswordEvent> get copyWith => _$ChangePasswordEventCopyWithImpl<ChangePasswordEvent>(this as ChangePasswordEvent, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangePasswordEvent&&(identical(other.localizations, localizations) || other.localizations == localizations)&&(identical(other.oldPassword, oldPassword) || other.oldPassword == oldPassword)&&(identical(other.newPassword, newPassword) || other.newPassword == newPassword)&&(identical(other.confirmPassword, confirmPassword) || other.confirmPassword == confirmPassword));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,localizations,oldPassword,newPassword,confirmPassword);
+
+@override
+String toString() {
+  return 'ChangePasswordEvent(localizations: $localizations, oldPassword: $oldPassword, newPassword: $newPassword, confirmPassword: $confirmPassword)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChangePasswordEventCopyWith<$Res> {
-  factory $ChangePasswordEventCopyWith(
-    ChangePasswordEvent value,
-    $Res Function(ChangePasswordEvent) then,
-  ) = _$ChangePasswordEventCopyWithImpl<$Res, ChangePasswordEvent>;
-  @useResult
-  $Res call({
-    IslamMobLocalizations localizations,
-    String oldPassword,
-    String newPassword,
-    String confirmPassword,
-  });
-}
+abstract mixin class $ChangePasswordEventCopyWith<$Res>  {
+  factory $ChangePasswordEventCopyWith(ChangePasswordEvent value, $Res Function(ChangePasswordEvent) _then) = _$ChangePasswordEventCopyWithImpl;
+@useResult
+$Res call({
+ IslamMobLocalizations localizations, String oldPassword, String newPassword, String confirmPassword
+});
 
+
+
+
+}
 /// @nodoc
-class _$ChangePasswordEventCopyWithImpl<$Res, $Val extends ChangePasswordEvent>
+class _$ChangePasswordEventCopyWithImpl<$Res>
     implements $ChangePasswordEventCopyWith<$Res> {
-  _$ChangePasswordEventCopyWithImpl(this._value, this._then);
+  _$ChangePasswordEventCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ChangePasswordEvent _self;
+  final $Res Function(ChangePasswordEvent) _then;
 
-  /// Create a copy of ChangePasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? localizations = null,
-    Object? oldPassword = null,
-    Object? newPassword = null,
-    Object? confirmPassword = null,
-  }) {
-    return _then(
-      _value.copyWith(
-            localizations: null == localizations
-                ? _value.localizations
-                : localizations // ignore: cast_nullable_to_non_nullable
-                      as IslamMobLocalizations,
-            oldPassword: null == oldPassword
-                ? _value.oldPassword
-                : oldPassword // ignore: cast_nullable_to_non_nullable
-                      as String,
-            newPassword: null == newPassword
-                ? _value.newPassword
-                : newPassword // ignore: cast_nullable_to_non_nullable
-                      as String,
-            confirmPassword: null == confirmPassword
-                ? _value.confirmPassword
-                : confirmPassword // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of ChangePasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? localizations = null,Object? oldPassword = null,Object? newPassword = null,Object? confirmPassword = null,}) {
+  return _then(_self.copyWith(
+localizations: null == localizations ? _self.localizations : localizations // ignore: cast_nullable_to_non_nullable
+as IslamMobLocalizations,oldPassword: null == oldPassword ? _self.oldPassword : oldPassword // ignore: cast_nullable_to_non_nullable
+as String,newPassword: null == newPassword ? _self.newPassword : newPassword // ignore: cast_nullable_to_non_nullable
+as String,confirmPassword: null == confirmPassword ? _self.confirmPassword : confirmPassword // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$UpdateButtonEnablityImplCopyWith<$Res>
-    implements $ChangePasswordEventCopyWith<$Res> {
-  factory _$$UpdateButtonEnablityImplCopyWith(
-    _$UpdateButtonEnablityImpl value,
-    $Res Function(_$UpdateButtonEnablityImpl) then,
-  ) = __$$UpdateButtonEnablityImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    IslamMobLocalizations localizations,
-    String oldPassword,
-    String newPassword,
-    String confirmPassword,
-  });
 }
 
-/// @nodoc
-class __$$UpdateButtonEnablityImplCopyWithImpl<$Res>
-    extends _$ChangePasswordEventCopyWithImpl<$Res, _$UpdateButtonEnablityImpl>
-    implements _$$UpdateButtonEnablityImplCopyWith<$Res> {
-  __$$UpdateButtonEnablityImplCopyWithImpl(
-    _$UpdateButtonEnablityImpl _value,
-    $Res Function(_$UpdateButtonEnablityImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChangePasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? localizations = null,
-    Object? oldPassword = null,
-    Object? newPassword = null,
-    Object? confirmPassword = null,
-  }) {
-    return _then(
-      _$UpdateButtonEnablityImpl(
-        localizations: null == localizations
-            ? _value.localizations
-            : localizations // ignore: cast_nullable_to_non_nullable
-                  as IslamMobLocalizations,
-        oldPassword: null == oldPassword
-            ? _value.oldPassword
-            : oldPassword // ignore: cast_nullable_to_non_nullable
-                  as String,
-        newPassword: null == newPassword
-            ? _value.newPassword
-            : newPassword // ignore: cast_nullable_to_non_nullable
-                  as String,
-        confirmPassword: null == confirmPassword
-            ? _value.confirmPassword
-            : confirmPassword // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [ChangePasswordEvent].
+extension ChangePasswordEventPatterns on ChangePasswordEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _UpdateButtonEnablity value)?  updateButtonEnablity,TResult Function( _ChangePressed value)?  changePressed,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity() when updateButtonEnablity != null:
+return updateButtonEnablity(_that);case _ChangePressed() when changePressed != null:
+return changePressed(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _UpdateButtonEnablity value)  updateButtonEnablity,required TResult Function( _ChangePressed value)  changePressed,}){
+final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity():
+return updateButtonEnablity(_that);case _ChangePressed():
+return changePressed(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _UpdateButtonEnablity value)?  updateButtonEnablity,TResult? Function( _ChangePressed value)?  changePressed,}){
+final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity() when updateButtonEnablity != null:
+return updateButtonEnablity(_that);case _ChangePressed() when changePressed != null:
+return changePressed(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( IslamMobLocalizations localizations,  String oldPassword,  String newPassword,  String confirmPassword)?  updateButtonEnablity,TResult Function( IslamMobLocalizations localizations,  String oldPassword,  String newPassword,  String confirmPassword)?  changePressed,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity() when updateButtonEnablity != null:
+return updateButtonEnablity(_that.localizations,_that.oldPassword,_that.newPassword,_that.confirmPassword);case _ChangePressed() when changePressed != null:
+return changePressed(_that.localizations,_that.oldPassword,_that.newPassword,_that.confirmPassword);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( IslamMobLocalizations localizations,  String oldPassword,  String newPassword,  String confirmPassword)  updateButtonEnablity,required TResult Function( IslamMobLocalizations localizations,  String oldPassword,  String newPassword,  String confirmPassword)  changePressed,}) {final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity():
+return updateButtonEnablity(_that.localizations,_that.oldPassword,_that.newPassword,_that.confirmPassword);case _ChangePressed():
+return changePressed(_that.localizations,_that.oldPassword,_that.newPassword,_that.confirmPassword);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( IslamMobLocalizations localizations,  String oldPassword,  String newPassword,  String confirmPassword)?  updateButtonEnablity,TResult? Function( IslamMobLocalizations localizations,  String oldPassword,  String newPassword,  String confirmPassword)?  changePressed,}) {final _that = this;
+switch (_that) {
+case _UpdateButtonEnablity() when updateButtonEnablity != null:
+return updateButtonEnablity(_that.localizations,_that.oldPassword,_that.newPassword,_that.confirmPassword);case _ChangePressed() when changePressed != null:
+return changePressed(_that.localizations,_that.oldPassword,_that.newPassword,_that.confirmPassword);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-
-class _$UpdateButtonEnablityImpl implements _UpdateButtonEnablity {
-  const _$UpdateButtonEnablityImpl({
-    required this.localizations,
-    required this.oldPassword,
-    required this.newPassword,
-    required this.confirmPassword,
-  });
-
-  @override
-  final IslamMobLocalizations localizations;
-  @override
-  final String oldPassword;
-  @override
-  final String newPassword;
-  @override
-  final String confirmPassword;
-
-  @override
-  String toString() {
-    return 'ChangePasswordEvent.updateButtonEnablity(localizations: $localizations, oldPassword: $oldPassword, newPassword: $newPassword, confirmPassword: $confirmPassword)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateButtonEnablityImpl &&
-            (identical(other.localizations, localizations) ||
-                other.localizations == localizations) &&
-            (identical(other.oldPassword, oldPassword) ||
-                other.oldPassword == oldPassword) &&
-            (identical(other.newPassword, newPassword) ||
-                other.newPassword == newPassword) &&
-            (identical(other.confirmPassword, confirmPassword) ||
-                other.confirmPassword == confirmPassword));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    localizations,
-    oldPassword,
-    newPassword,
-    confirmPassword,
-  );
-
-  /// Create a copy of ChangePasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateButtonEnablityImplCopyWith<_$UpdateButtonEnablityImpl>
-  get copyWith =>
-      __$$UpdateButtonEnablityImplCopyWithImpl<_$UpdateButtonEnablityImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )
-    updateButtonEnablity,
-    required TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )
-    changePressed,
-  }) {
-    return updateButtonEnablity(
-      localizations,
-      oldPassword,
-      newPassword,
-      confirmPassword,
-    );
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    updateButtonEnablity,
-    TResult? Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    changePressed,
-  }) {
-    return updateButtonEnablity?.call(
-      localizations,
-      oldPassword,
-      newPassword,
-      confirmPassword,
-    );
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    updateButtonEnablity,
-    TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    changePressed,
-    required TResult orElse(),
-  }) {
-    if (updateButtonEnablity != null) {
-      return updateButtonEnablity(
-        localizations,
-        oldPassword,
-        newPassword,
-        confirmPassword,
-      );
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateButtonEnablity value) updateButtonEnablity,
-    required TResult Function(_ChangePressed value) changePressed,
-  }) {
-    return updateButtonEnablity(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult? Function(_ChangePressed value)? changePressed,
-  }) {
-    return updateButtonEnablity?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult Function(_ChangePressed value)? changePressed,
-    required TResult orElse(),
-  }) {
-    if (updateButtonEnablity != null) {
-      return updateButtonEnablity(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateButtonEnablity implements ChangePasswordEvent {
-  const factory _UpdateButtonEnablity({
-    required final IslamMobLocalizations localizations,
-    required final String oldPassword,
-    required final String newPassword,
-    required final String confirmPassword,
-  }) = _$UpdateButtonEnablityImpl;
-
-  @override
-  IslamMobLocalizations get localizations;
-  @override
-  String get oldPassword;
-  @override
-  String get newPassword;
-  @override
-  String get confirmPassword;
-
-  /// Create a copy of ChangePasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateButtonEnablityImplCopyWith<_$UpdateButtonEnablityImpl>
-  get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ChangePressedImplCopyWith<$Res>
-    implements $ChangePasswordEventCopyWith<$Res> {
-  factory _$$ChangePressedImplCopyWith(
-    _$ChangePressedImpl value,
-    $Res Function(_$ChangePressedImpl) then,
-  ) = __$$ChangePressedImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    IslamMobLocalizations localizations,
-    String oldPassword,
-    String newPassword,
-    String confirmPassword,
-  });
-}
-
-/// @nodoc
-class __$$ChangePressedImplCopyWithImpl<$Res>
-    extends _$ChangePasswordEventCopyWithImpl<$Res, _$ChangePressedImpl>
-    implements _$$ChangePressedImplCopyWith<$Res> {
-  __$$ChangePressedImplCopyWithImpl(
-    _$ChangePressedImpl _value,
-    $Res Function(_$ChangePressedImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChangePasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? localizations = null,
-    Object? oldPassword = null,
-    Object? newPassword = null,
-    Object? confirmPassword = null,
-  }) {
-    return _then(
-      _$ChangePressedImpl(
-        localizations: null == localizations
-            ? _value.localizations
-            : localizations // ignore: cast_nullable_to_non_nullable
-                  as IslamMobLocalizations,
-        oldPassword: null == oldPassword
-            ? _value.oldPassword
-            : oldPassword // ignore: cast_nullable_to_non_nullable
-                  as String,
-        newPassword: null == newPassword
-            ? _value.newPassword
-            : newPassword // ignore: cast_nullable_to_non_nullable
-                  as String,
-        confirmPassword: null == confirmPassword
-            ? _value.confirmPassword
-            : confirmPassword // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$ChangePressedImpl implements _ChangePressed {
-  const _$ChangePressedImpl({
-    required this.localizations,
-    required this.oldPassword,
-    required this.newPassword,
-    required this.confirmPassword,
-  });
 
-  @override
-  final IslamMobLocalizations localizations;
-  @override
-  final String oldPassword;
-  @override
-  final String newPassword;
-  @override
-  final String confirmPassword;
+class _UpdateButtonEnablity implements ChangePasswordEvent {
+  const _UpdateButtonEnablity({required this.localizations, required this.oldPassword, required this.newPassword, required this.confirmPassword});
+  
 
-  @override
-  String toString() {
-    return 'ChangePasswordEvent.changePressed(localizations: $localizations, oldPassword: $oldPassword, newPassword: $newPassword, confirmPassword: $confirmPassword)';
-  }
+@override final  IslamMobLocalizations localizations;
+@override final  String oldPassword;
+@override final  String newPassword;
+@override final  String confirmPassword;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangePressedImpl &&
-            (identical(other.localizations, localizations) ||
-                other.localizations == localizations) &&
-            (identical(other.oldPassword, oldPassword) ||
-                other.oldPassword == oldPassword) &&
-            (identical(other.newPassword, newPassword) ||
-                other.newPassword == newPassword) &&
-            (identical(other.confirmPassword, confirmPassword) ||
-                other.confirmPassword == confirmPassword));
-  }
+/// Create a copy of ChangePasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateButtonEnablityCopyWith<_UpdateButtonEnablity> get copyWith => __$UpdateButtonEnablityCopyWithImpl<_UpdateButtonEnablity>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    localizations,
-    oldPassword,
-    newPassword,
-    confirmPassword,
-  );
 
-  /// Create a copy of ChangePasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangePressedImplCopyWith<_$ChangePressedImpl> get copyWith =>
-      __$$ChangePressedImplCopyWithImpl<_$ChangePressedImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )
-    updateButtonEnablity,
-    required TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )
-    changePressed,
-  }) {
-    return changePressed(
-      localizations,
-      oldPassword,
-      newPassword,
-      confirmPassword,
-    );
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    updateButtonEnablity,
-    TResult? Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    changePressed,
-  }) {
-    return changePressed?.call(
-      localizations,
-      oldPassword,
-      newPassword,
-      confirmPassword,
-    );
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    updateButtonEnablity,
-    TResult Function(
-      IslamMobLocalizations localizations,
-      String oldPassword,
-      String newPassword,
-      String confirmPassword,
-    )?
-    changePressed,
-    required TResult orElse(),
-  }) {
-    if (changePressed != null) {
-      return changePressed(
-        localizations,
-        oldPassword,
-        newPassword,
-        confirmPassword,
-      );
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateButtonEnablity value) updateButtonEnablity,
-    required TResult Function(_ChangePressed value) changePressed,
-  }) {
-    return changePressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult? Function(_ChangePressed value)? changePressed,
-  }) {
-    return changePressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateButtonEnablity value)? updateButtonEnablity,
-    TResult Function(_ChangePressed value)? changePressed,
-    required TResult orElse(),
-  }) {
-    if (changePressed != null) {
-      return changePressed(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateButtonEnablity&&(identical(other.localizations, localizations) || other.localizations == localizations)&&(identical(other.oldPassword, oldPassword) || other.oldPassword == oldPassword)&&(identical(other.newPassword, newPassword) || other.newPassword == newPassword)&&(identical(other.confirmPassword, confirmPassword) || other.confirmPassword == confirmPassword));
 }
 
-abstract class _ChangePressed implements ChangePasswordEvent {
-  const factory _ChangePressed({
-    required final IslamMobLocalizations localizations,
-    required final String oldPassword,
-    required final String newPassword,
-    required final String confirmPassword,
-  }) = _$ChangePressedImpl;
 
-  @override
-  IslamMobLocalizations get localizations;
-  @override
-  String get oldPassword;
-  @override
-  String get newPassword;
-  @override
-  String get confirmPassword;
+@override
+int get hashCode => Object.hash(runtimeType,localizations,oldPassword,newPassword,confirmPassword);
 
-  /// Create a copy of ChangePasswordEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChangePressedImplCopyWith<_$ChangePressedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ChangePasswordEvent.updateButtonEnablity(localizations: $localizations, oldPassword: $oldPassword, newPassword: $newPassword, confirmPassword: $confirmPassword)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UpdateButtonEnablityCopyWith<$Res> implements $ChangePasswordEventCopyWith<$Res> {
+  factory _$UpdateButtonEnablityCopyWith(_UpdateButtonEnablity value, $Res Function(_UpdateButtonEnablity) _then) = __$UpdateButtonEnablityCopyWithImpl;
+@override @useResult
+$Res call({
+ IslamMobLocalizations localizations, String oldPassword, String newPassword, String confirmPassword
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateButtonEnablityCopyWithImpl<$Res>
+    implements _$UpdateButtonEnablityCopyWith<$Res> {
+  __$UpdateButtonEnablityCopyWithImpl(this._self, this._then);
+
+  final _UpdateButtonEnablity _self;
+  final $Res Function(_UpdateButtonEnablity) _then;
+
+/// Create a copy of ChangePasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? localizations = null,Object? oldPassword = null,Object? newPassword = null,Object? confirmPassword = null,}) {
+  return _then(_UpdateButtonEnablity(
+localizations: null == localizations ? _self.localizations : localizations // ignore: cast_nullable_to_non_nullable
+as IslamMobLocalizations,oldPassword: null == oldPassword ? _self.oldPassword : oldPassword // ignore: cast_nullable_to_non_nullable
+as String,newPassword: null == newPassword ? _self.newPassword : newPassword // ignore: cast_nullable_to_non_nullable
+as String,confirmPassword: null == confirmPassword ? _self.confirmPassword : confirmPassword // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class _ChangePressed implements ChangePasswordEvent {
+  const _ChangePressed({required this.localizations, required this.oldPassword, required this.newPassword, required this.confirmPassword});
+  
+
+@override final  IslamMobLocalizations localizations;
+@override final  String oldPassword;
+@override final  String newPassword;
+@override final  String confirmPassword;
+
+/// Create a copy of ChangePasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChangePressedCopyWith<_ChangePressed> get copyWith => __$ChangePressedCopyWithImpl<_ChangePressed>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChangePressed&&(identical(other.localizations, localizations) || other.localizations == localizations)&&(identical(other.oldPassword, oldPassword) || other.oldPassword == oldPassword)&&(identical(other.newPassword, newPassword) || other.newPassword == newPassword)&&(identical(other.confirmPassword, confirmPassword) || other.confirmPassword == confirmPassword));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,localizations,oldPassword,newPassword,confirmPassword);
+
+@override
+String toString() {
+  return 'ChangePasswordEvent.changePressed(localizations: $localizations, oldPassword: $oldPassword, newPassword: $newPassword, confirmPassword: $confirmPassword)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ChangePressedCopyWith<$Res> implements $ChangePasswordEventCopyWith<$Res> {
+  factory _$ChangePressedCopyWith(_ChangePressed value, $Res Function(_ChangePressed) _then) = __$ChangePressedCopyWithImpl;
+@override @useResult
+$Res call({
+ IslamMobLocalizations localizations, String oldPassword, String newPassword, String confirmPassword
+});
+
+
+
+
+}
+/// @nodoc
+class __$ChangePressedCopyWithImpl<$Res>
+    implements _$ChangePressedCopyWith<$Res> {
+  __$ChangePressedCopyWithImpl(this._self, this._then);
+
+  final _ChangePressed _self;
+  final $Res Function(_ChangePressed) _then;
+
+/// Create a copy of ChangePasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? localizations = null,Object? oldPassword = null,Object? newPassword = null,Object? confirmPassword = null,}) {
+  return _then(_ChangePressed(
+localizations: null == localizations ? _self.localizations : localizations // ignore: cast_nullable_to_non_nullable
+as IslamMobLocalizations,oldPassword: null == oldPassword ? _self.oldPassword : oldPassword // ignore: cast_nullable_to_non_nullable
+as String,newPassword: null == newPassword ? _self.newPassword : newPassword // ignore: cast_nullable_to_non_nullable
+as String,confirmPassword: null == confirmPassword ? _self.confirmPassword : confirmPassword // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 /// @nodoc
 mixin _$ChangePasswordState {
-  ChangePasswordProcessState get processState =>
-      throw _privateConstructorUsedError;
-  bool get isButtonEnabled => throw _privateConstructorUsedError;
-  String get errorMessage => throw _privateConstructorUsedError;
 
-  /// Create a copy of ChangePasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChangePasswordStateCopyWith<ChangePasswordState> get copyWith =>
-      throw _privateConstructorUsedError;
+ ChangePasswordProcessState get processState; bool get isButtonEnabled; String get errorMessage;
+/// Create a copy of ChangePasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChangePasswordStateCopyWith<ChangePasswordState> get copyWith => _$ChangePasswordStateCopyWithImpl<ChangePasswordState>(this as ChangePasswordState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangePasswordState&&(identical(other.processState, processState) || other.processState == processState)&&(identical(other.isButtonEnabled, isButtonEnabled) || other.isButtonEnabled == isButtonEnabled)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,processState,isButtonEnabled,errorMessage);
+
+@override
+String toString() {
+  return 'ChangePasswordState(processState: $processState, isButtonEnabled: $isButtonEnabled, errorMessage: $errorMessage)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChangePasswordStateCopyWith<$Res> {
-  factory $ChangePasswordStateCopyWith(
-    ChangePasswordState value,
-    $Res Function(ChangePasswordState) then,
-  ) = _$ChangePasswordStateCopyWithImpl<$Res, ChangePasswordState>;
-  @useResult
-  $Res call({
-    ChangePasswordProcessState processState,
-    bool isButtonEnabled,
-    String errorMessage,
-  });
+abstract mixin class $ChangePasswordStateCopyWith<$Res>  {
+  factory $ChangePasswordStateCopyWith(ChangePasswordState value, $Res Function(ChangePasswordState) _then) = _$ChangePasswordStateCopyWithImpl;
+@useResult
+$Res call({
+ ChangePasswordProcessState processState, bool isButtonEnabled, String errorMessage
+});
 
-  $ChangePasswordProcessStateCopyWith<$Res> get processState;
+
+$ChangePasswordProcessStateCopyWith<$Res> get processState;
+
 }
-
 /// @nodoc
-class _$ChangePasswordStateCopyWithImpl<$Res, $Val extends ChangePasswordState>
+class _$ChangePasswordStateCopyWithImpl<$Res>
     implements $ChangePasswordStateCopyWith<$Res> {
-  _$ChangePasswordStateCopyWithImpl(this._value, this._then);
+  _$ChangePasswordStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ChangePasswordState _self;
+  final $Res Function(ChangePasswordState) _then;
 
-  /// Create a copy of ChangePasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? processState = null,
-    Object? isButtonEnabled = null,
-    Object? errorMessage = null,
-  }) {
-    return _then(
-      _value.copyWith(
-            processState: null == processState
-                ? _value.processState
-                : processState // ignore: cast_nullable_to_non_nullable
-                      as ChangePasswordProcessState,
-            isButtonEnabled: null == isButtonEnabled
-                ? _value.isButtonEnabled
-                : isButtonEnabled // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            errorMessage: null == errorMessage
-                ? _value.errorMessage
-                : errorMessage // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
-  }
-
-  /// Create a copy of ChangePasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChangePasswordProcessStateCopyWith<$Res> get processState {
-    return $ChangePasswordProcessStateCopyWith<$Res>(_value.processState, (
-      value,
-    ) {
-      return _then(_value.copyWith(processState: value) as $Val);
-    });
-  }
+/// Create a copy of ChangePasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? processState = null,Object? isButtonEnabled = null,Object? errorMessage = null,}) {
+  return _then(_self.copyWith(
+processState: null == processState ? _self.processState : processState // ignore: cast_nullable_to_non_nullable
+as ChangePasswordProcessState,isButtonEnabled: null == isButtonEnabled ? _self.isButtonEnabled : isButtonEnabled // ignore: cast_nullable_to_non_nullable
+as bool,errorMessage: null == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
-
-/// @nodoc
-abstract class _$$ChangePasswordStateImplCopyWith<$Res>
-    implements $ChangePasswordStateCopyWith<$Res> {
-  factory _$$ChangePasswordStateImplCopyWith(
-    _$ChangePasswordStateImpl value,
-    $Res Function(_$ChangePasswordStateImpl) then,
-  ) = __$$ChangePasswordStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    ChangePasswordProcessState processState,
-    bool isButtonEnabled,
-    String errorMessage,
+/// Create a copy of ChangePasswordState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ChangePasswordProcessStateCopyWith<$Res> get processState {
+  
+  return $ChangePasswordProcessStateCopyWith<$Res>(_self.processState, (value) {
+    return _then(_self.copyWith(processState: value));
   });
+}
+}
 
-  @override
-  $ChangePasswordProcessStateCopyWith<$Res> get processState;
+
+/// Adds pattern-matching-related methods to [ChangePasswordState].
+extension ChangePasswordStatePatterns on ChangePasswordState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChangePasswordState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChangePasswordState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChangePasswordState value)  $default,){
+final _that = this;
+switch (_that) {
+case _ChangePasswordState():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChangePasswordState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ChangePasswordState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ChangePasswordProcessState processState,  bool isButtonEnabled,  String errorMessage)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ChangePasswordState() when $default != null:
+return $default(_that.processState,_that.isButtonEnabled,_that.errorMessage);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ChangePasswordProcessState processState,  bool isButtonEnabled,  String errorMessage)  $default,) {final _that = this;
+switch (_that) {
+case _ChangePasswordState():
+return $default(_that.processState,_that.isButtonEnabled,_that.errorMessage);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ChangePasswordProcessState processState,  bool isButtonEnabled,  String errorMessage)?  $default,) {final _that = this;
+switch (_that) {
+case _ChangePasswordState() when $default != null:
+return $default(_that.processState,_that.isButtonEnabled,_that.errorMessage);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-class __$$ChangePasswordStateImplCopyWithImpl<$Res>
-    extends _$ChangePasswordStateCopyWithImpl<$Res, _$ChangePasswordStateImpl>
-    implements _$$ChangePasswordStateImplCopyWith<$Res> {
-  __$$ChangePasswordStateImplCopyWithImpl(
-    _$ChangePasswordStateImpl _value,
-    $Res Function(_$ChangePasswordStateImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChangePasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? processState = null,
-    Object? isButtonEnabled = null,
-    Object? errorMessage = null,
-  }) {
-    return _then(
-      _$ChangePasswordStateImpl(
-        processState: null == processState
-            ? _value.processState
-            : processState // ignore: cast_nullable_to_non_nullable
-                  as ChangePasswordProcessState,
-        isButtonEnabled: null == isButtonEnabled
-            ? _value.isButtonEnabled
-            : isButtonEnabled // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        errorMessage: null == errorMessage
-            ? _value.errorMessage
-            : errorMessage // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
+
+class _ChangePasswordState implements ChangePasswordState {
+  const _ChangePasswordState({this.processState = const ChangePasswordProcessState.idl(), this.isButtonEnabled = false, this.errorMessage = ""});
+  
+
+@override@JsonKey() final  ChangePasswordProcessState processState;
+@override@JsonKey() final  bool isButtonEnabled;
+@override@JsonKey() final  String errorMessage;
+
+/// Create a copy of ChangePasswordState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChangePasswordStateCopyWith<_ChangePasswordState> get copyWith => __$ChangePasswordStateCopyWithImpl<_ChangePasswordState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChangePasswordState&&(identical(other.processState, processState) || other.processState == processState)&&(identical(other.isButtonEnabled, isButtonEnabled) || other.isButtonEnabled == isButtonEnabled)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,processState,isButtonEnabled,errorMessage);
+
+@override
+String toString() {
+  return 'ChangePasswordState(processState: $processState, isButtonEnabled: $isButtonEnabled, errorMessage: $errorMessage)';
+}
+
+
 }
 
 /// @nodoc
+abstract mixin class _$ChangePasswordStateCopyWith<$Res> implements $ChangePasswordStateCopyWith<$Res> {
+  factory _$ChangePasswordStateCopyWith(_ChangePasswordState value, $Res Function(_ChangePasswordState) _then) = __$ChangePasswordStateCopyWithImpl;
+@override @useResult
+$Res call({
+ ChangePasswordProcessState processState, bool isButtonEnabled, String errorMessage
+});
 
-class _$ChangePasswordStateImpl implements _ChangePasswordState {
-  const _$ChangePasswordStateImpl({
-    this.processState = const ChangePasswordProcessState.idl(),
-    this.isButtonEnabled = false,
-    this.errorMessage = "",
+
+@override $ChangePasswordProcessStateCopyWith<$Res> get processState;
+
+}
+/// @nodoc
+class __$ChangePasswordStateCopyWithImpl<$Res>
+    implements _$ChangePasswordStateCopyWith<$Res> {
+  __$ChangePasswordStateCopyWithImpl(this._self, this._then);
+
+  final _ChangePasswordState _self;
+  final $Res Function(_ChangePasswordState) _then;
+
+/// Create a copy of ChangePasswordState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? processState = null,Object? isButtonEnabled = null,Object? errorMessage = null,}) {
+  return _then(_ChangePasswordState(
+processState: null == processState ? _self.processState : processState // ignore: cast_nullable_to_non_nullable
+as ChangePasswordProcessState,isButtonEnabled: null == isButtonEnabled ? _self.isButtonEnabled : isButtonEnabled // ignore: cast_nullable_to_non_nullable
+as bool,errorMessage: null == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+/// Create a copy of ChangePasswordState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ChangePasswordProcessStateCopyWith<$Res> get processState {
+  
+  return $ChangePasswordProcessStateCopyWith<$Res>(_self.processState, (value) {
+    return _then(_self.copyWith(processState: value));
   });
-
-  @override
-  @JsonKey()
-  final ChangePasswordProcessState processState;
-  @override
-  @JsonKey()
-  final bool isButtonEnabled;
-  @override
-  @JsonKey()
-  final String errorMessage;
-
-  @override
-  String toString() {
-    return 'ChangePasswordState(processState: $processState, isButtonEnabled: $isButtonEnabled, errorMessage: $errorMessage)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangePasswordStateImpl &&
-            (identical(other.processState, processState) ||
-                other.processState == processState) &&
-            (identical(other.isButtonEnabled, isButtonEnabled) ||
-                other.isButtonEnabled == isButtonEnabled) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, processState, isButtonEnabled, errorMessage);
-
-  /// Create a copy of ChangePasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangePasswordStateImplCopyWith<_$ChangePasswordStateImpl> get copyWith =>
-      __$$ChangePasswordStateImplCopyWithImpl<_$ChangePasswordStateImpl>(
-        this,
-        _$identity,
-      );
 }
-
-abstract class _ChangePasswordState implements ChangePasswordState {
-  const factory _ChangePasswordState({
-    final ChangePasswordProcessState processState,
-    final bool isButtonEnabled,
-    final String errorMessage,
-  }) = _$ChangePasswordStateImpl;
-
-  @override
-  ChangePasswordProcessState get processState;
-  @override
-  bool get isButtonEnabled;
-  @override
-  String get errorMessage;
-
-  /// Create a copy of ChangePasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChangePasswordStateImplCopyWith<_$ChangePasswordStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$ChangePasswordProcessState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChangePasswordProcessIdl value) idl,
-    required TResult Function(ChangePasswordProcessLoading value) loading,
-    required TResult Function(ChangePasswordProcessSuccess value) success,
-    required TResult Function(ChangePasswordProcessError value) error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangePasswordProcessIdl value)? idl,
-    TResult? Function(ChangePasswordProcessLoading value)? loading,
-    TResult? Function(ChangePasswordProcessSuccess value)? success,
-    TResult? Function(ChangePasswordProcessError value)? error,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangePasswordProcessIdl value)? idl,
-    TResult Function(ChangePasswordProcessLoading value)? loading,
-    TResult Function(ChangePasswordProcessSuccess value)? success,
-    TResult Function(ChangePasswordProcessError value)? error,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangePasswordProcessState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ChangePasswordProcessState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChangePasswordProcessStateCopyWith<$Res> {
-  factory $ChangePasswordProcessStateCopyWith(
-    ChangePasswordProcessState value,
-    $Res Function(ChangePasswordProcessState) then,
-  ) =
-      _$ChangePasswordProcessStateCopyWithImpl<
-        $Res,
-        ChangePasswordProcessState
-      >;
+class $ChangePasswordProcessStateCopyWith<$Res>  {
+$ChangePasswordProcessStateCopyWith(ChangePasswordProcessState _, $Res Function(ChangePasswordProcessState) __);
 }
 
-/// @nodoc
-class _$ChangePasswordProcessStateCopyWithImpl<
-  $Res,
-  $Val extends ChangePasswordProcessState
->
-    implements $ChangePasswordProcessStateCopyWith<$Res> {
-  _$ChangePasswordProcessStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [ChangePasswordProcessState].
+extension ChangePasswordProcessStatePatterns on ChangePasswordProcessState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of ChangePasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ChangePasswordProcessIdl value)?  idl,TResult Function( ChangePasswordProcessLoading value)?  loading,TResult Function( ChangePasswordProcessSuccess value)?  success,TResult Function( ChangePasswordProcessError value)?  error,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case ChangePasswordProcessIdl() when idl != null:
+return idl(_that);case ChangePasswordProcessLoading() when loading != null:
+return loading(_that);case ChangePasswordProcessSuccess() when success != null:
+return success(_that);case ChangePasswordProcessError() when error != null:
+return error(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ChangePasswordProcessIdl value)  idl,required TResult Function( ChangePasswordProcessLoading value)  loading,required TResult Function( ChangePasswordProcessSuccess value)  success,required TResult Function( ChangePasswordProcessError value)  error,}){
+final _that = this;
+switch (_that) {
+case ChangePasswordProcessIdl():
+return idl(_that);case ChangePasswordProcessLoading():
+return loading(_that);case ChangePasswordProcessSuccess():
+return success(_that);case ChangePasswordProcessError():
+return error(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ChangePasswordProcessIdl value)?  idl,TResult? Function( ChangePasswordProcessLoading value)?  loading,TResult? Function( ChangePasswordProcessSuccess value)?  success,TResult? Function( ChangePasswordProcessError value)?  error,}){
+final _that = this;
+switch (_that) {
+case ChangePasswordProcessIdl() when idl != null:
+return idl(_that);case ChangePasswordProcessLoading() when loading != null:
+return loading(_that);case ChangePasswordProcessSuccess() when success != null:
+return success(_that);case ChangePasswordProcessError() when error != null:
+return error(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  idl,TResult Function()?  loading,TResult Function()?  success,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case ChangePasswordProcessIdl() when idl != null:
+return idl();case ChangePasswordProcessLoading() when loading != null:
+return loading();case ChangePasswordProcessSuccess() when success != null:
+return success();case ChangePasswordProcessError() when error != null:
+return error(_that.message);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  idl,required TResult Function()  loading,required TResult Function()  success,required TResult Function( String message)  error,}) {final _that = this;
+switch (_that) {
+case ChangePasswordProcessIdl():
+return idl();case ChangePasswordProcessLoading():
+return loading();case ChangePasswordProcessSuccess():
+return success();case ChangePasswordProcessError():
+return error(_that.message);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  idl,TResult? Function()?  loading,TResult? Function()?  success,TResult? Function( String message)?  error,}) {final _that = this;
+switch (_that) {
+case ChangePasswordProcessIdl() when idl != null:
+return idl();case ChangePasswordProcessLoading() when loading != null:
+return loading();case ChangePasswordProcessSuccess() when success != null:
+return success();case ChangePasswordProcessError() when error != null:
+return error(_that.message);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$ChangePasswordProcessIdlImplCopyWith<$Res> {
-  factory _$$ChangePasswordProcessIdlImplCopyWith(
-    _$ChangePasswordProcessIdlImpl value,
-    $Res Function(_$ChangePasswordProcessIdlImpl) then,
-  ) = __$$ChangePasswordProcessIdlImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ChangePasswordProcessIdlImplCopyWithImpl<$Res>
-    extends
-        _$ChangePasswordProcessStateCopyWithImpl<
-          $Res,
-          _$ChangePasswordProcessIdlImpl
-        >
-    implements _$$ChangePasswordProcessIdlImplCopyWith<$Res> {
-  __$$ChangePasswordProcessIdlImplCopyWithImpl(
-    _$ChangePasswordProcessIdlImpl _value,
-    $Res Function(_$ChangePasswordProcessIdlImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChangePasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$ChangePasswordProcessIdlImpl implements ChangePasswordProcessIdl {
-  const _$ChangePasswordProcessIdlImpl();
-
-  @override
-  String toString() {
-    return 'ChangePasswordProcessState.idl()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangePasswordProcessIdlImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) {
-    return idl();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) {
-    return idl?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (idl != null) {
-      return idl();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChangePasswordProcessIdl value) idl,
-    required TResult Function(ChangePasswordProcessLoading value) loading,
-    required TResult Function(ChangePasswordProcessSuccess value) success,
-    required TResult Function(ChangePasswordProcessError value) error,
-  }) {
-    return idl(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangePasswordProcessIdl value)? idl,
-    TResult? Function(ChangePasswordProcessLoading value)? loading,
-    TResult? Function(ChangePasswordProcessSuccess value)? success,
-    TResult? Function(ChangePasswordProcessError value)? error,
-  }) {
-    return idl?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangePasswordProcessIdl value)? idl,
-    TResult Function(ChangePasswordProcessLoading value)? loading,
-    TResult Function(ChangePasswordProcessSuccess value)? success,
-    TResult Function(ChangePasswordProcessError value)? error,
-    required TResult orElse(),
-  }) {
-    if (idl != null) {
-      return idl(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChangePasswordProcessIdl implements ChangePasswordProcessState {
-  const factory ChangePasswordProcessIdl() = _$ChangePasswordProcessIdlImpl;
-}
-
-/// @nodoc
-abstract class _$$ChangePasswordProcessLoadingImplCopyWith<$Res> {
-  factory _$$ChangePasswordProcessLoadingImplCopyWith(
-    _$ChangePasswordProcessLoadingImpl value,
-    $Res Function(_$ChangePasswordProcessLoadingImpl) then,
-  ) = __$$ChangePasswordProcessLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ChangePasswordProcessLoadingImplCopyWithImpl<$Res>
-    extends
-        _$ChangePasswordProcessStateCopyWithImpl<
-          $Res,
-          _$ChangePasswordProcessLoadingImpl
-        >
-    implements _$$ChangePasswordProcessLoadingImplCopyWith<$Res> {
-  __$$ChangePasswordProcessLoadingImplCopyWithImpl(
-    _$ChangePasswordProcessLoadingImpl _value,
-    $Res Function(_$ChangePasswordProcessLoadingImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChangePasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$ChangePasswordProcessLoadingImpl
-    implements ChangePasswordProcessLoading {
-  const _$ChangePasswordProcessLoadingImpl();
 
-  @override
-  String toString() {
-    return 'ChangePasswordProcessState.loading()';
-  }
+class ChangePasswordProcessIdl implements ChangePasswordProcessState {
+  const ChangePasswordProcessIdl();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangePasswordProcessLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) {
-    return loading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) {
-    return loading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChangePasswordProcessIdl value) idl,
-    required TResult Function(ChangePasswordProcessLoading value) loading,
-    required TResult Function(ChangePasswordProcessSuccess value) success,
-    required TResult Function(ChangePasswordProcessError value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangePasswordProcessIdl value)? idl,
-    TResult? Function(ChangePasswordProcessLoading value)? loading,
-    TResult? Function(ChangePasswordProcessSuccess value)? success,
-    TResult? Function(ChangePasswordProcessError value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangePasswordProcessIdl value)? idl,
-    TResult Function(ChangePasswordProcessLoading value)? loading,
-    TResult Function(ChangePasswordProcessSuccess value)? success,
-    TResult Function(ChangePasswordProcessError value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangePasswordProcessIdl);
 }
 
-abstract class ChangePasswordProcessLoading
-    implements ChangePasswordProcessState {
-  const factory ChangePasswordProcessLoading() =
-      _$ChangePasswordProcessLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ChangePasswordProcessState.idl()';
 }
 
-/// @nodoc
-abstract class _$$ChangePasswordProcessSuccessImplCopyWith<$Res> {
-  factory _$$ChangePasswordProcessSuccessImplCopyWith(
-    _$ChangePasswordProcessSuccessImpl value,
-    $Res Function(_$ChangePasswordProcessSuccessImpl) then,
-  ) = __$$ChangePasswordProcessSuccessImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$ChangePasswordProcessSuccessImplCopyWithImpl<$Res>
-    extends
-        _$ChangePasswordProcessStateCopyWithImpl<
-          $Res,
-          _$ChangePasswordProcessSuccessImpl
-        >
-    implements _$$ChangePasswordProcessSuccessImplCopyWith<$Res> {
-  __$$ChangePasswordProcessSuccessImplCopyWithImpl(
-    _$ChangePasswordProcessSuccessImpl _value,
-    $Res Function(_$ChangePasswordProcessSuccessImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChangePasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$ChangePasswordProcessSuccessImpl
-    implements ChangePasswordProcessSuccess {
-  const _$ChangePasswordProcessSuccessImpl();
 
-  @override
-  String toString() {
-    return 'ChangePasswordProcessState.success()';
-  }
+class ChangePasswordProcessLoading implements ChangePasswordProcessState {
+  const ChangePasswordProcessLoading();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangePasswordProcessSuccessImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) {
-    return success();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) {
-    return success?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChangePasswordProcessIdl value) idl,
-    required TResult Function(ChangePasswordProcessLoading value) loading,
-    required TResult Function(ChangePasswordProcessSuccess value) success,
-    required TResult Function(ChangePasswordProcessError value) error,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangePasswordProcessIdl value)? idl,
-    TResult? Function(ChangePasswordProcessLoading value)? loading,
-    TResult? Function(ChangePasswordProcessSuccess value)? success,
-    TResult? Function(ChangePasswordProcessError value)? error,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangePasswordProcessIdl value)? idl,
-    TResult Function(ChangePasswordProcessLoading value)? loading,
-    TResult Function(ChangePasswordProcessSuccess value)? success,
-    TResult Function(ChangePasswordProcessError value)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangePasswordProcessLoading);
 }
 
-abstract class ChangePasswordProcessSuccess
-    implements ChangePasswordProcessState {
-  const factory ChangePasswordProcessSuccess() =
-      _$ChangePasswordProcessSuccessImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ChangePasswordProcessState.loading()';
 }
 
-/// @nodoc
-abstract class _$$ChangePasswordProcessErrorImplCopyWith<$Res> {
-  factory _$$ChangePasswordProcessErrorImplCopyWith(
-    _$ChangePasswordProcessErrorImpl value,
-    $Res Function(_$ChangePasswordProcessErrorImpl) then,
-  ) = __$$ChangePasswordProcessErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
+
 }
 
-/// @nodoc
-class __$$ChangePasswordProcessErrorImplCopyWithImpl<$Res>
-    extends
-        _$ChangePasswordProcessStateCopyWithImpl<
-          $Res,
-          _$ChangePasswordProcessErrorImpl
-        >
-    implements _$$ChangePasswordProcessErrorImplCopyWith<$Res> {
-  __$$ChangePasswordProcessErrorImplCopyWithImpl(
-    _$ChangePasswordProcessErrorImpl _value,
-    $Res Function(_$ChangePasswordProcessErrorImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChangePasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? message = null}) {
-    return _then(
-      _$ChangePasswordProcessErrorImpl(
-        null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
-}
+
 
 /// @nodoc
 
-class _$ChangePasswordProcessErrorImpl implements ChangePasswordProcessError {
-  const _$ChangePasswordProcessErrorImpl(this.message);
 
-  @override
-  final String message;
+class ChangePasswordProcessSuccess implements ChangePasswordProcessState {
+  const ChangePasswordProcessSuccess();
+  
 
-  @override
-  String toString() {
-    return 'ChangePasswordProcessState.error(message: $message)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangePasswordProcessErrorImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of ChangePasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangePasswordProcessErrorImplCopyWith<_$ChangePasswordProcessErrorImpl>
-  get copyWith =>
-      __$$ChangePasswordProcessErrorImplCopyWithImpl<
-        _$ChangePasswordProcessErrorImpl
-      >(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idl,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) error,
-  }) {
-    return error(message);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idl,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? error,
-  }) {
-    return error?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idl,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChangePasswordProcessIdl value) idl,
-    required TResult Function(ChangePasswordProcessLoading value) loading,
-    required TResult Function(ChangePasswordProcessSuccess value) success,
-    required TResult Function(ChangePasswordProcessError value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangePasswordProcessIdl value)? idl,
-    TResult? Function(ChangePasswordProcessLoading value)? loading,
-    TResult? Function(ChangePasswordProcessSuccess value)? success,
-    TResult? Function(ChangePasswordProcessError value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangePasswordProcessIdl value)? idl,
-    TResult Function(ChangePasswordProcessLoading value)? loading,
-    TResult Function(ChangePasswordProcessSuccess value)? success,
-    TResult Function(ChangePasswordProcessError value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangePasswordProcessSuccess);
 }
 
-abstract class ChangePasswordProcessError
-    implements ChangePasswordProcessState {
-  const factory ChangePasswordProcessError(final String message) =
-      _$ChangePasswordProcessErrorImpl;
 
-  String get message;
+@override
+int get hashCode => runtimeType.hashCode;
 
-  /// Create a copy of ChangePasswordProcessState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChangePasswordProcessErrorImplCopyWith<_$ChangePasswordProcessErrorImpl>
-  get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ChangePasswordProcessState.success()';
 }
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ChangePasswordProcessError implements ChangePasswordProcessState {
+  const ChangePasswordProcessError(this.message);
+  
+
+ final  String message;
+
+/// Create a copy of ChangePasswordProcessState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChangePasswordProcessErrorCopyWith<ChangePasswordProcessError> get copyWith => _$ChangePasswordProcessErrorCopyWithImpl<ChangePasswordProcessError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangePasswordProcessError&&(identical(other.message, message) || other.message == message));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,message);
+
+@override
+String toString() {
+  return 'ChangePasswordProcessState.error(message: $message)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ChangePasswordProcessErrorCopyWith<$Res> implements $ChangePasswordProcessStateCopyWith<$Res> {
+  factory $ChangePasswordProcessErrorCopyWith(ChangePasswordProcessError value, $Res Function(ChangePasswordProcessError) _then) = _$ChangePasswordProcessErrorCopyWithImpl;
+@useResult
+$Res call({
+ String message
+});
+
+
+
+
+}
+/// @nodoc
+class _$ChangePasswordProcessErrorCopyWithImpl<$Res>
+    implements $ChangePasswordProcessErrorCopyWith<$Res> {
+  _$ChangePasswordProcessErrorCopyWithImpl(this._self, this._then);
+
+  final ChangePasswordProcessError _self;
+  final $Res Function(ChangePasswordProcessError) _then;
+
+/// Create a copy of ChangePasswordProcessState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+  return _then(ChangePasswordProcessError(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on
