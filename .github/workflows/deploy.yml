@@ -15,6 +15,24 @@ jobs:
     steps:
       - name: 📚 Git Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      
+      - name: 🧹 Free disk space (Android & tooling)
+        run: |
+          echo "Before cleanup:" && df -h
+          # Remove huge Android images & emulator
+          sudo rm -rf "$ANDROID_HOME/system-images" || true
+          sudo rm -rf "$ANDROID_HOME/emulator" || true
+          # Remove all NDKs (add a keep rule if you actually use NDK)
+          sudo rm -rf "$ANDROID_HOME/ndk" || true
+          # Clear APT caches & ghcup (large on runners)
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
+          sudo rm -rf /opt/ghc /usr/local/.ghcup || true
+          # Docker cleanup (safe on hosted runners)
+          docker system prune -af || true
+          echo "After cleanup:" && df -h
 
       - name: 📊 Display Build Information
         run: |
