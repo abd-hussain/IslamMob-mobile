@@ -90,6 +90,9 @@ The languages used by Muslims are influenced by regional demographics, and while
 - [ ] Social Media should only take images and Videos
 - [ ] Loyality Program
 - [ ] redesign the Home screen
+- [ ] remove ads option
+- [ ] login / support should be kind of banner in gif rather than have them here in the home menu
+- [ ] hide bottom bar on slide down
 
 ## TODO Technical:
 

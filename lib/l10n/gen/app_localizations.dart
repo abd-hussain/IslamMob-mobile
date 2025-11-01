@@ -2954,7 +2954,7 @@ abstract class IslamMobLocalizations {
   /// No description provided for @omrahTitle.
   ///
   /// In en, this message translates to:
-  /// **'Omrah'**
+  /// **'Umrah'**
   String get omrahTitle;
 
   /// No description provided for @hajjDescription.

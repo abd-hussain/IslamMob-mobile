@@ -1498,7 +1498,7 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
   String get alhajjTitle => 'Hajj';
 
   @override
-  String get omrahTitle => 'Omrah';
+  String get omrahTitle => 'Umrah';
 
   @override
   String get hajjDescription =>

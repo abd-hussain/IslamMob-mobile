@@ -37,8 +37,6 @@ This document outlines the code style guidelines for all Islam Mob projects. Fol
 - Include examples in documentation when appropriate
 - Use `//` for implementation comments
 - Keep comments up-to-date with code changes
-- Use `TODO:` comments for code that needs to be revisited
-
 ## Dart-Specific Guidelines
 
 ### Variables

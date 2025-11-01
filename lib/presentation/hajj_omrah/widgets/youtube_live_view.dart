@@ -37,7 +37,8 @@ class YoutubeLiveView extends StatelessWidget {
   /// users learn about pilgrimage guidance and preparation.
   @override
   Widget build(BuildContext context) {
-    final youtubeUrl = "https://www.youtube.com/embed/2Gub8-cSH9c";
+    final youtubeUrl =
+        "https://www.youtube.com/live/7-Qf3g-0xEI?si=sJ1-Gc8MD3zpTsva";
 
     return Padding(
       padding: const EdgeInsets.all(8),
