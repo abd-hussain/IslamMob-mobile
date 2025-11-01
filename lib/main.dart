@@ -8,9 +8,7 @@ import 'package:logger_manager/logger_manager.dart';
 void main() {
   LoggerManagerBase.logInfo(message: 'Application Started ...');
   WidgetsFlutterBinding.ensureInitialized();
-
   // Enable edge-to-edge display
   EdgeToEdgeHandler.enableEdgeToEdge();
-
   runApp(const MyApp());
 }
