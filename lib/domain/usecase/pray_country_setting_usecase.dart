@@ -785,7 +785,7 @@ class PrayCountrySettingUsecase {
     PrayCountrySetting(
       countryCode: 'IQ', // Iraq
       madhab: const MadhabState.shafi(),
-      calculationMethod: const PrayCalculationMethodState.muslimWorldLeague(),
+      calculationMethod: const PrayCalculationMethodState.ummAlQura(),
       hightLatitudeCaluclationState:
           const PrayHightLatitudeCaluclationState.none(),
     ),

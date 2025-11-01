@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/version_usecase.dart';
@@ -23,6 +24,9 @@ class MainContainer extends StatefulWidget {
 
 class _MainContainerState extends State<MainContainer> {
   void _checkApplicationVersion() {
+    // Skip version check in debug/development mode
+    if (kDebugMode) return;
+
     VersionUseCase.getCurrentVersionUpdateStatus().then((status) async {
       if (status != VersionUpdate.noUpdate) {
         // ignore: use_build_context_synchronously

@@ -53,6 +53,7 @@ class ToolbarCell extends StatelessWidget {
             fontSize: 10,
             fontWeight: FontWeight.w600,
             maxLines: 3,
+            textAlign: TextAlign.center,
           ),
         ],
       ),

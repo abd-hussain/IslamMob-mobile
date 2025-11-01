@@ -65,13 +65,16 @@ class ToolbarShortcutView extends StatelessWidget {
                 ),
                 Expanded(
                   child: ToolbarCell(
-                    title: localize.calenderSettings,
-                    imagePath: "assets/images/toolbar/calender.png",
+                    title: localize.azkarTitle,
+                    imagePath: "assets/images/toolbar/azkar_after_salah.png",
                     onTap: () async {
                       await FirebaseAnalyticsRepository.logEvent(
-                        name: "CalenderScreenFromHomeToolBar",
+                        name: "AzkarAfterSalahScreenFromHomeToolBar",
                       );
-                      await navigator.pushNamed(RoutesConstants.calenderScreen);
+                      await navigator.pushNamed(
+                        RoutesConstants.azkarAfterSalahScreen,
+                        arguments: {ArgumentConstant.salahTime: salahTime},
+                      );
                     },
                   ),
                 ),
@@ -91,39 +94,6 @@ class ToolbarShortcutView extends StatelessWidget {
                 ),
                 Expanded(
                   child: ToolbarCell(
-                    title: localize.shareapp,
-                    imagePath: "assets/images/toolbar/share.png",
-                    onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                        name: "ShareAppFromHomeToolBar",
-                      );
-                      if (context.mounted) {
-                        await ShareDialog().dialog(context: context);
-                      }
-                    },
-                  ),
-                ),
-                Expanded(
-                  child: ToolbarCell(
-                    title: localize.quranSettingSupportUs,
-                    imagePath: "assets/images/toolbar/donate.png",
-                    onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                        name: "SupportUsFromHomeToolBar",
-                      );
-                      if (context.mounted) {
-                        await SupportUsDialog().dialog(context: context);
-                      }
-                    },
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Expanded(
-                  child: ToolbarCell(
                     title: localize.tasbeeh,
                     imagePath: "assets/images/toolbar/tasbeeh.png",
                     onTap: () async {
@@ -134,6 +104,11 @@ class ToolbarShortcutView extends StatelessWidget {
                     },
                   ),
                 ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
                 Expanded(
                   child: ToolbarCell(
                     title: localize.omrahTitle,
@@ -166,6 +141,18 @@ class ToolbarShortcutView extends StatelessWidget {
                 ),
                 Expanded(
                   child: ToolbarCell(
+                    title: localize.calenderSettings,
+                    imagePath: "assets/images/toolbar/calender.png",
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                        name: "CalenderScreenFromHomeToolBar",
+                      );
+                      await navigator.pushNamed(RoutesConstants.calenderScreen);
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: ToolbarCell(
                     title: localize.estekaraTitle,
                     imagePath: "assets/images/toolbar/estekara.png",
                     onTap: () async {
@@ -176,27 +163,39 @@ class ToolbarShortcutView extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(height: 8),
-                Expanded(
-                  child: ToolbarCell(
-                    title: localize.azkarTitle,
-                    imagePath: "assets/images/toolbar/azkar_after_salah.png",
-                    onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                        name: "AzkarAfterSalahScreenFromHomeToolBar",
-                      );
-                      await navigator.pushNamed(
-                        RoutesConstants.azkarAfterSalahScreen,
-                        arguments: {ArgumentConstant.salahTime: salahTime},
-                      );
-                    },
-                  ),
-                ),
               ],
             ),
             const SizedBox(height: 8),
             Row(
               children: [
+                Expanded(
+                  child: ToolbarCell(
+                    title: localize.shareapp,
+                    imagePath: "assets/images/toolbar/share.png",
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                        name: "ShareAppFromHomeToolBar",
+                      );
+                      if (context.mounted) {
+                        await ShareDialog().dialog(context: context);
+                      }
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: ToolbarCell(
+                    title: localize.quranSettingSupportUs,
+                    imagePath: "assets/images/toolbar/donate.png",
+                    onTap: () async {
+                      await FirebaseAnalyticsRepository.logEvent(
+                        name: "SupportUsFromHomeToolBar",
+                      );
+                      if (context.mounted) {
+                        await SupportUsDialog().dialog(context: context);
+                      }
+                    },
+                  ),
+                ),
                 Expanded(
                   child: ToolbarCell(
                     title: isUserLoggedIn
@@ -222,7 +221,7 @@ class ToolbarShortcutView extends StatelessWidget {
                     },
                   ),
                 ),
-                // Expanded(
+                const Expanded(child: SizedBox()),
                 //   child: ToolbarCell(
                 //     title: localize.qiblaFinder,
                 //     imagePath: "assets/images/toolbar/qibla.png",

@@ -53,7 +53,7 @@ android {
 
     defaultConfig {
         applicationId "com.islammob.app"
-        minSdk 23
+        minSdkVersion flutter.minSdkVersion
         targetSdk 35
         versionCode project.hasProperty('versionCode') ? convertToValidVersionCode(project.versionCode.toString()) : 1
         versionName project.hasProperty('versionName') ? project.versionName : "1.0.0"
