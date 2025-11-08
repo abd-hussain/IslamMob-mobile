@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -144,13 +146,6 @@ class WelcomeLoginScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          // SocialButton(
-          //   iconName: "assets/images/facebook_ic.svg",
-          //   buttonLabel: localizations.continue_facebook,
-          //   buttonColor: const Color(0xFF4267B2),
-          //   buttonCallBack: () => context.read<WelcomeLoginBloc>().add(const WelcomeLoginEvent.facebookSignin()),
-          // ),
-          // const SizedBox(height: 16),
           SocialButton(
             iconName: "assets/images/google_ic.svg",
             buttonLabel: localizations.continue_google,
@@ -161,16 +156,20 @@ class WelcomeLoginScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          SocialButton(
-            iconName: "assets/images/Apple_logo_white.svg",
-            buttonLabel: localizations.continue_apple,
-            buttonColor: Colors.black,
-            buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
-              const WelcomeLoginEvent.appleSignin(),
+          if (Platform.isIOS)
+            Column(
+              children: [
+                SocialButton(
+                  iconName: "assets/images/Apple_logo_white.svg",
+                  buttonLabel: localizations.continue_apple,
+                  buttonColor: Colors.black,
+                  buttonCallBack: () => context.read<WelcomeLoginBloc>().add(
+                    const WelcomeLoginEvent.appleSignin(),
+                  ),
+                ),
+                const SizedBox(height: 16),
+              ],
             ),
-          ),
-          const SizedBox(height: 16),
-          // ],
           CustomButton(
             padding: EdgeInsets.zero,
             title: localizations.manual_login,
