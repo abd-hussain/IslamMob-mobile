@@ -1849,4 +1849,14 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get allow_location => 'السماح بالموقع';
+
+  @override
+  String get addPost => 'إضافة منشور';
+
+  @override
+  String get share => 'مشاركة';
+
+  @override
+  String get addPostFooterText =>
+      'نحن نقرأ كل منشور بعناية، ولهذا السبب سيتم مراجعة منشورك قبل نشره';
 }

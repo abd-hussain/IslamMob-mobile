@@ -3640,6 +3640,24 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Allow Location'**
   String get allow_location;
+
+  /// No description provided for @addPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Post'**
+  String get addPost;
+
+  /// No description provided for @share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get share;
+
+  /// No description provided for @addPostFooterText.
+  ///
+  /// In en, this message translates to:
+  /// **'We are reading all of the post carefully, that\'s why your post will go for review before we push it up'**
+  String get addPostFooterText;
 }
 
 class _IslamMobLocalizationsDelegate

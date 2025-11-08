@@ -93,6 +93,7 @@ class SettingBottomSheet {
                 color: Colors.redAccent,
                 onPressed: () {},
               ),
+              const SizedBox(height: 25),
             ],
           ),
         );

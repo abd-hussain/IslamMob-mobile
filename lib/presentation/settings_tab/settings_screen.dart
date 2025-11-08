@@ -12,7 +12,7 @@ import 'package:islam_app/presentation/settings_tab/widgets/collection_list_opti
 import 'package:islam_app/presentation/settings_tab/widgets/footer.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/login_header.dart';
 import 'package:islam_app/presentation/settings_tab/widgets/title_view.dart';
-import 'package:islam_app/presentation/settings_tab/widgets/welcoming_header.dart';
+import 'package:islam_app/shared_widgets/appbar/welcoming_header.dart';
 import 'package:islam_app/shared_widgets/bottomsheet/are_you_sure_bottomsheet.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/show_toast.dart';

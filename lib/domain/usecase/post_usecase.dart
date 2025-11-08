@@ -4,7 +4,6 @@ import 'package:islam_app/domain/model/profile_model.dart';
 import 'package:logger_manager/logger_manager.dart';
 
 //TODO: handle pagenation
-//TODO: handle watchlist posts
 //TODO: post up by defuilt why ??
 
 class PostUsecase {

@@ -1860,4 +1860,14 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get allow_location => 'Allow Location';
+
+  @override
+  String get addPost => 'Add Post';
+
+  @override
+  String get share => 'Share';
+
+  @override
+  String get addPostFooterText =>
+      'We are reading all of the post carefully, that\'s why your post will go for review before we push it up';
 }

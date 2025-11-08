@@ -41,7 +41,6 @@ sealed class PostVoteType with _$PostVoteType {
 @freezed
 sealed class PostCategoryType with _$PostCategoryType {
   const factory PostCategoryType.wall() = _PostCategoryTypeWall;
-  const factory PostCategoryType.watchlist() = _PostCategoryTypeWatchlist;
   factory PostCategoryType.fromJson(Map<String, dynamic> json) =>
       _$PostCategoryTypeFromJson(json);
 }

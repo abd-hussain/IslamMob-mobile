@@ -5,8 +5,6 @@ abstract class FeedState with _$FeedState {
   const factory FeedState({
     @Default(false) bool showInternetConnectionView,
     @Default([]) List<Post> wallPostList,
-    @Default([]) List<Post> watchlistPostList,
-
     @Default(FeedScreenProcessState.loading()) loadingStatus,
   }) = _FeedState;
 }

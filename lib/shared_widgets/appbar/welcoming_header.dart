@@ -10,11 +10,18 @@ import 'package:islam_app/shared_widgets/custom_text.dart';
 /// based on the current time of day (e.g., sun for day, moon for night).
 /// It provides a personalized greeting to the user at the top of the profile screen.
 class WelcomingHeader extends StatelessWidget {
+  final bool withActionButton;
+  final Function()? onActionButtonTap;
+
   /// Creates a [WelcomingHeader] widget.
   ///
   /// This widget requires no parameters and automatically displays
   /// the appropriate time-based icon and localized welcome message.
-  const WelcomingHeader({super.key});
+  const WelcomingHeader({
+    super.key,
+    this.withActionButton = false,
+    this.onActionButtonTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +45,27 @@ class WelcomingHeader extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            if (withActionButton)
+              Material(
+                color: const Color(0xFF00AFAB),
+                borderRadius: BorderRadius.circular(10),
+                child: InkWell(
+                  onTap: onActionButtonTap,
+                  borderRadius: BorderRadius.circular(10),
+                  splashColor: Colors.white.withAlpha(3),
+                  highlightColor: Colors.white.withAlpha(60),
+                  child: Container(
+                    width: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: const Color.fromARGB(255, 32, 32, 32),
+                      ),
+                    ),
+                    child: const Icon(Icons.add, color: Colors.white, size: 30),
+                  ),
+                ),
+              ),
           ],
         ),
       ),

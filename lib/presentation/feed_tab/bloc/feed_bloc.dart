@@ -15,37 +15,30 @@ part 'feed_state.dart';
 
 class FeedBloc extends Bloc<FeedEvent, FeedState> {
   FeedBloc() : super(const FeedState()) {
-    on<_GetPostFromSpesificCategory>(_getPostFromSpesificCategory);
+    on<_GetWallPosts>(_getWallPosts);
     on<_PullRefresh>(_pullRefresh);
+    on<_CreatePost>(_createPost);
   }
 
   List<Post> wallListOfPosts = [];
-  List<Post> watchlistListOfPosts = [];
 
-  FutureOr<void> _getPostFromSpesificCategory(
-    _GetPostFromSpesificCategory event,
+  FutureOr<void> _getWallPosts(
+    _GetWallPosts event,
     Emitter<FeedState> emit,
   ) async {
     emit(state.copyWith(loadingStatus: const FeedScreenProcessState.loading()));
     final haveInternetConnection =
         await NetworkUseCase.checkInternetConnection();
-    if (event.type == const PostCategoryType.wall()) {
-      wallListOfPosts = await PostUsecase.getPosts(
-        type: event.type,
-        userEmail: _userEmail(),
-      );
-    } else if (event.type == const PostCategoryType.watchlist()) {
-      watchlistListOfPosts = await PostUsecase.getPosts(
-        type: event.type,
-        userEmail: _userEmail(),
-      );
-    }
+
+    wallListOfPosts = await PostUsecase.getPosts(
+      type: const PostCategoryType.wall(),
+      userEmail: _userEmail(),
+    );
 
     emit(
       state.copyWith(
         loadingStatus: const FeedScreenProcessState.done(),
         wallPostList: wallListOfPosts,
-        watchlistPostList: watchlistListOfPosts,
         showInternetConnectionView: !haveInternetConnection,
       ),
     );
@@ -58,10 +51,9 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     return Future.delayed(
       const Duration(milliseconds: 1000),
       () => add(
-        FeedEvent.getPostFromSpesificCategory(
+        FeedEvent.getWallPosts(
           // ignore: use_build_context_synchronously
           context: event.context,
-          type: event.type,
         ),
       ),
     );
@@ -71,4 +63,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     key: DatabaseUserCredentials.userEmail,
     defaultValue: "",
   );
+
+  FutureOr<void> _createPost(_CreatePost event, Emitter<FeedState> emit) {}
 }

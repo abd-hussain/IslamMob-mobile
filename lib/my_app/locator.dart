@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:islam_app/domain/repository/local_notifications.dart';
+import 'package:islam_app/domain/usecase/add_edit_post_usecase.dart';
 import 'package:islam_app/domain/usecase/application_version_usecase.dart';
 import 'package:islam_app/domain/usecase/download_file_usecase.dart';
 import 'package:islam_app/domain/usecase/get_user_setting_usecase.dart';
@@ -64,6 +65,7 @@ Future<void> setupLocator() async {
   locator.registerFactory<GetUserSettingUseCase>(GetUserSettingUseCase.new);
   locator.registerFactory<QuranPrintsUsecase>(QuranPrintsUsecase.new);
   locator.registerFactory<PostUsecase>(PostUsecase.new);
+  locator.registerFactory<AddEditPostUseCase>(AddEditPostUseCase.new);
   locator.registerFactory<DownloadFileUsecase>(DownloadFileUsecase.new);
   locator.registerFactory<ApplicationVersionUsecase>(
     ApplicationVersionUsecase.new,

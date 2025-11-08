@@ -83,7 +83,7 @@ class AttachmentBottomSheetsUtil {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 22),
+                    const SizedBox(height: 30),
                   ],
                 )
               : Column(

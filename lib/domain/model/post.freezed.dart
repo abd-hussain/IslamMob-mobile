@@ -693,25 +693,9 @@ String toString() {
 PostCategoryType _$PostCategoryTypeFromJson(
   Map<String, dynamic> json
 ) {
-        switch (json['runtimeType']) {
-                  case 'wall':
-          return _PostCategoryTypeWall.fromJson(
-            json
-          );
-                case 'watchlist':
-          return _PostCategoryTypeWatchlist.fromJson(
-            json
-          );
-        
-          default:
-            throw CheckedFromJsonException(
-  json,
-  'runtimeType',
-  'PostCategoryType',
-  'Invalid union type "${json['runtimeType']}"!'
-);
-        }
-      
+    return _PostCategoryTypeWall.fromJson(
+      json
+    );
 }
 
 /// @nodoc
@@ -760,12 +744,11 @@ extension PostCategoryTypePatterns on PostCategoryType {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _PostCategoryTypeWall value)?  wall,TResult Function( _PostCategoryTypeWatchlist value)?  watchlist,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _PostCategoryTypeWall value)?  wall,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _PostCategoryTypeWall() when wall != null:
-return wall(_that);case _PostCategoryTypeWatchlist() when watchlist != null:
-return watchlist(_that);case _:
+return wall(_that);case _:
   return orElse();
 
 }
@@ -783,12 +766,11 @@ return watchlist(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _PostCategoryTypeWall value)  wall,required TResult Function( _PostCategoryTypeWatchlist value)  watchlist,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _PostCategoryTypeWall value)  wall,}){
 final _that = this;
 switch (_that) {
 case _PostCategoryTypeWall():
-return wall(_that);case _PostCategoryTypeWatchlist():
-return watchlist(_that);}
+return wall(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -802,12 +784,11 @@ return watchlist(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _PostCategoryTypeWall value)?  wall,TResult? Function( _PostCategoryTypeWatchlist value)?  watchlist,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _PostCategoryTypeWall value)?  wall,}){
 final _that = this;
 switch (_that) {
 case _PostCategoryTypeWall() when wall != null:
-return wall(_that);case _PostCategoryTypeWatchlist() when watchlist != null:
-return watchlist(_that);case _:
+return wall(_that);case _:
   return null;
 
 }
@@ -824,11 +805,10 @@ return watchlist(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  wall,TResult Function()?  watchlist,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  wall,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PostCategoryTypeWall() when wall != null:
-return wall();case _PostCategoryTypeWatchlist() when watchlist != null:
-return watchlist();case _:
+return wall();case _:
   return orElse();
 
 }
@@ -846,11 +826,10 @@ return watchlist();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  wall,required TResult Function()  watchlist,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  wall,}) {final _that = this;
 switch (_that) {
 case _PostCategoryTypeWall():
-return wall();case _PostCategoryTypeWatchlist():
-return watchlist();}
+return wall();}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -864,11 +843,10 @@ return watchlist();}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  wall,TResult? Function()?  watchlist,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  wall,}) {final _that = this;
 switch (_that) {
 case _PostCategoryTypeWall() when wall != null:
-return wall();case _PostCategoryTypeWatchlist() when watchlist != null:
-return watchlist();case _:
+return wall();case _:
   return null;
 
 }
@@ -880,13 +858,9 @@ return watchlist();case _:
 @JsonSerializable()
 
 class _PostCategoryTypeWall implements PostCategoryType {
-  const _PostCategoryTypeWall({final  String? $type}): $type = $type ?? 'wall';
+  const _PostCategoryTypeWall();
   factory _PostCategoryTypeWall.fromJson(Map<String, dynamic> json) => _$PostCategoryTypeWallFromJson(json);
 
-
-
-@JsonKey(name: 'runtimeType')
-final String $type;
 
 
 
@@ -907,45 +881,6 @@ int get hashCode => runtimeType.hashCode;
 @override
 String toString() {
   return 'PostCategoryType.wall()';
-}
-
-
-}
-
-
-
-
-/// @nodoc
-@JsonSerializable()
-
-class _PostCategoryTypeWatchlist implements PostCategoryType {
-  const _PostCategoryTypeWatchlist({final  String? $type}): $type = $type ?? 'watchlist';
-  factory _PostCategoryTypeWatchlist.fromJson(Map<String, dynamic> json) => _$PostCategoryTypeWatchlistFromJson(json);
-
-
-
-@JsonKey(name: 'runtimeType')
-final String $type;
-
-
-
-@override
-Map<String, dynamic> toJson() {
-  return _$PostCategoryTypeWatchlistToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostCategoryTypeWatchlist);
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'PostCategoryType.watchlist()';
 }
 
 

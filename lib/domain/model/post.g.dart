@@ -65,19 +65,11 @@ Map<String, dynamic> _$VoteDownToJson(VoteDown instance) => <String, dynamic>{
 
 _PostCategoryTypeWall _$PostCategoryTypeWallFromJson(
   Map<String, dynamic> json,
-) => _PostCategoryTypeWall($type: json['runtimeType'] as String?);
+) => _PostCategoryTypeWall();
 
 Map<String, dynamic> _$PostCategoryTypeWallToJson(
   _PostCategoryTypeWall instance,
-) => <String, dynamic>{'runtimeType': instance.$type};
-
-_PostCategoryTypeWatchlist _$PostCategoryTypeWatchlistFromJson(
-  Map<String, dynamic> json,
-) => _PostCategoryTypeWatchlist($type: json['runtimeType'] as String?);
-
-Map<String, dynamic> _$PostCategoryTypeWatchlistToJson(
-  _PostCategoryTypeWatchlist instance,
-) => <String, dynamic>{'runtimeType': instance.$type};
+) => <String, dynamic>{};
 
 _PostDirectionRTL _$PostDirectionRTLFromJson(Map<String, dynamic> json) =>
     _PostDirectionRTL($type: json['runtimeType'] as String?);

@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$FeedEvent {
 
- BuildContext get context; PostCategoryType get type;
+ BuildContext get context;
 /// Create a copy of FeedEvent
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $FeedEventCopyWith<FeedEvent> get copyWith => _$FeedEventCopyWithImpl<FeedEvent>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeedEvent&&(identical(other.context, context) || other.context == context)&&(identical(other.type, type) || other.type == type));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeedEvent&&(identical(other.context, context) || other.context == context));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,context,type);
+int get hashCode => Object.hash(runtimeType,context);
 
 @override
 String toString() {
-  return 'FeedEvent(context: $context, type: $type)';
+  return 'FeedEvent(context: $context)';
 }
 
 
@@ -45,11 +45,11 @@ abstract mixin class $FeedEventCopyWith<$Res>  {
   factory $FeedEventCopyWith(FeedEvent value, $Res Function(FeedEvent) _then) = _$FeedEventCopyWithImpl;
 @useResult
 $Res call({
- BuildContext context, PostCategoryType type
+ BuildContext context
 });
 
 
-$PostCategoryTypeCopyWith<$Res> get type;
+
 
 }
 /// @nodoc
@@ -62,23 +62,13 @@ class _$FeedEventCopyWithImpl<$Res>
 
 /// Create a copy of FeedEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? context = null,Object? type = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? context = null,}) {
   return _then(_self.copyWith(
 context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
-as BuildContext,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as PostCategoryType,
+as BuildContext,
   ));
 }
-/// Create a copy of FeedEvent
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$PostCategoryTypeCopyWith<$Res> get type {
-  
-  return $PostCategoryTypeCopyWith<$Res>(_self.type, (value) {
-    return _then(_self.copyWith(type: value));
-  });
-}
+
 }
 
 
@@ -96,12 +86,13 @@ extension FeedEventPatterns on FeedEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _GetPostFromSpesificCategory value)?  getPostFromSpesificCategory,TResult Function( _PullRefresh value)?  pullRefresh,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _GetWallPosts value)?  getWallPosts,TResult Function( _PullRefresh value)?  pullRefresh,TResult Function( _CreatePost value)?  createPost,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _GetPostFromSpesificCategory() when getPostFromSpesificCategory != null:
-return getPostFromSpesificCategory(_that);case _PullRefresh() when pullRefresh != null:
-return pullRefresh(_that);case _:
+case _GetWallPosts() when getWallPosts != null:
+return getWallPosts(_that);case _PullRefresh() when pullRefresh != null:
+return pullRefresh(_that);case _CreatePost() when createPost != null:
+return createPost(_that);case _:
   return orElse();
 
 }
@@ -119,12 +110,13 @@ return pullRefresh(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _GetPostFromSpesificCategory value)  getPostFromSpesificCategory,required TResult Function( _PullRefresh value)  pullRefresh,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _GetWallPosts value)  getWallPosts,required TResult Function( _PullRefresh value)  pullRefresh,required TResult Function( _CreatePost value)  createPost,}){
 final _that = this;
 switch (_that) {
-case _GetPostFromSpesificCategory():
-return getPostFromSpesificCategory(_that);case _PullRefresh():
-return pullRefresh(_that);case _:
+case _GetWallPosts():
+return getWallPosts(_that);case _PullRefresh():
+return pullRefresh(_that);case _CreatePost():
+return createPost(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -141,12 +133,13 @@ return pullRefresh(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _GetPostFromSpesificCategory value)?  getPostFromSpesificCategory,TResult? Function( _PullRefresh value)?  pullRefresh,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _GetWallPosts value)?  getWallPosts,TResult? Function( _PullRefresh value)?  pullRefresh,TResult? Function( _CreatePost value)?  createPost,}){
 final _that = this;
 switch (_that) {
-case _GetPostFromSpesificCategory() when getPostFromSpesificCategory != null:
-return getPostFromSpesificCategory(_that);case _PullRefresh() when pullRefresh != null:
-return pullRefresh(_that);case _:
+case _GetWallPosts() when getWallPosts != null:
+return getWallPosts(_that);case _PullRefresh() when pullRefresh != null:
+return pullRefresh(_that);case _CreatePost() when createPost != null:
+return createPost(_that);case _:
   return null;
 
 }
@@ -163,11 +156,12 @@ return pullRefresh(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( BuildContext context,  PostCategoryType type)?  getPostFromSpesificCategory,TResult Function( BuildContext context,  PostCategoryType type)?  pullRefresh,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( BuildContext context)?  getWallPosts,TResult Function( BuildContext context,  PostCategoryType type)?  pullRefresh,TResult Function( BuildContext context)?  createPost,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _GetPostFromSpesificCategory() when getPostFromSpesificCategory != null:
-return getPostFromSpesificCategory(_that.context,_that.type);case _PullRefresh() when pullRefresh != null:
-return pullRefresh(_that.context,_that.type);case _:
+case _GetWallPosts() when getWallPosts != null:
+return getWallPosts(_that.context);case _PullRefresh() when pullRefresh != null:
+return pullRefresh(_that.context,_that.type);case _CreatePost() when createPost != null:
+return createPost(_that.context);case _:
   return orElse();
 
 }
@@ -185,11 +179,12 @@ return pullRefresh(_that.context,_that.type);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( BuildContext context,  PostCategoryType type)  getPostFromSpesificCategory,required TResult Function( BuildContext context,  PostCategoryType type)  pullRefresh,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( BuildContext context)  getWallPosts,required TResult Function( BuildContext context,  PostCategoryType type)  pullRefresh,required TResult Function( BuildContext context)  createPost,}) {final _that = this;
 switch (_that) {
-case _GetPostFromSpesificCategory():
-return getPostFromSpesificCategory(_that.context,_that.type);case _PullRefresh():
-return pullRefresh(_that.context,_that.type);case _:
+case _GetWallPosts():
+return getWallPosts(_that.context);case _PullRefresh():
+return pullRefresh(_that.context,_that.type);case _CreatePost():
+return createPost(_that.context);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -206,11 +201,12 @@ return pullRefresh(_that.context,_that.type);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( BuildContext context,  PostCategoryType type)?  getPostFromSpesificCategory,TResult? Function( BuildContext context,  PostCategoryType type)?  pullRefresh,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( BuildContext context)?  getWallPosts,TResult? Function( BuildContext context,  PostCategoryType type)?  pullRefresh,TResult? Function( BuildContext context)?  createPost,}) {final _that = this;
 switch (_that) {
-case _GetPostFromSpesificCategory() when getPostFromSpesificCategory != null:
-return getPostFromSpesificCategory(_that.context,_that.type);case _PullRefresh() when pullRefresh != null:
-return pullRefresh(_that.context,_that.type);case _:
+case _GetWallPosts() when getWallPosts != null:
+return getWallPosts(_that.context);case _PullRefresh() when pullRefresh != null:
+return pullRefresh(_that.context,_that.type);case _CreatePost() when createPost != null:
+return createPost(_that.context);case _:
   return null;
 
 }
@@ -221,78 +217,67 @@ return pullRefresh(_that.context,_that.type);case _:
 /// @nodoc
 
 
-class _GetPostFromSpesificCategory implements FeedEvent {
-   _GetPostFromSpesificCategory({required this.context, required this.type});
+class _GetWallPosts implements FeedEvent {
+   _GetWallPosts({required this.context});
   
 
 @override final  BuildContext context;
-@override final  PostCategoryType type;
 
 /// Create a copy of FeedEvent
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$GetPostFromSpesificCategoryCopyWith<_GetPostFromSpesificCategory> get copyWith => __$GetPostFromSpesificCategoryCopyWithImpl<_GetPostFromSpesificCategory>(this, _$identity);
+_$GetWallPostsCopyWith<_GetWallPosts> get copyWith => __$GetWallPostsCopyWithImpl<_GetWallPosts>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetPostFromSpesificCategory&&(identical(other.context, context) || other.context == context)&&(identical(other.type, type) || other.type == type));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetWallPosts&&(identical(other.context, context) || other.context == context));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,context,type);
+int get hashCode => Object.hash(runtimeType,context);
 
 @override
 String toString() {
-  return 'FeedEvent.getPostFromSpesificCategory(context: $context, type: $type)';
+  return 'FeedEvent.getWallPosts(context: $context)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$GetPostFromSpesificCategoryCopyWith<$Res> implements $FeedEventCopyWith<$Res> {
-  factory _$GetPostFromSpesificCategoryCopyWith(_GetPostFromSpesificCategory value, $Res Function(_GetPostFromSpesificCategory) _then) = __$GetPostFromSpesificCategoryCopyWithImpl;
+abstract mixin class _$GetWallPostsCopyWith<$Res> implements $FeedEventCopyWith<$Res> {
+  factory _$GetWallPostsCopyWith(_GetWallPosts value, $Res Function(_GetWallPosts) _then) = __$GetWallPostsCopyWithImpl;
 @override @useResult
 $Res call({
- BuildContext context, PostCategoryType type
+ BuildContext context
 });
 
 
-@override $PostCategoryTypeCopyWith<$Res> get type;
+
 
 }
 /// @nodoc
-class __$GetPostFromSpesificCategoryCopyWithImpl<$Res>
-    implements _$GetPostFromSpesificCategoryCopyWith<$Res> {
-  __$GetPostFromSpesificCategoryCopyWithImpl(this._self, this._then);
+class __$GetWallPostsCopyWithImpl<$Res>
+    implements _$GetWallPostsCopyWith<$Res> {
+  __$GetWallPostsCopyWithImpl(this._self, this._then);
 
-  final _GetPostFromSpesificCategory _self;
-  final $Res Function(_GetPostFromSpesificCategory) _then;
+  final _GetWallPosts _self;
+  final $Res Function(_GetWallPosts) _then;
 
 /// Create a copy of FeedEvent
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? context = null,Object? type = null,}) {
-  return _then(_GetPostFromSpesificCategory(
+@override @pragma('vm:prefer-inline') $Res call({Object? context = null,}) {
+  return _then(_GetWallPosts(
 context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
-as BuildContext,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as PostCategoryType,
+as BuildContext,
   ));
 }
 
-/// Create a copy of FeedEvent
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$PostCategoryTypeCopyWith<$Res> get type {
-  
-  return $PostCategoryTypeCopyWith<$Res>(_self.type, (value) {
-    return _then(_self.copyWith(type: value));
-  });
-}
+
 }
 
 /// @nodoc
@@ -303,7 +288,7 @@ class _PullRefresh implements FeedEvent {
   
 
 @override final  BuildContext context;
-@override final  PostCategoryType type;
+ final  PostCategoryType type;
 
 /// Create a copy of FeedEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -339,7 +324,7 @@ $Res call({
 });
 
 
-@override $PostCategoryTypeCopyWith<$Res> get type;
+$PostCategoryTypeCopyWith<$Res> get type;
 
 }
 /// @nodoc
@@ -373,9 +358,75 @@ $PostCategoryTypeCopyWith<$Res> get type {
 }
 
 /// @nodoc
+
+
+class _CreatePost implements FeedEvent {
+   _CreatePost({required this.context});
+  
+
+@override final  BuildContext context;
+
+/// Create a copy of FeedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CreatePostCopyWith<_CreatePost> get copyWith => __$CreatePostCopyWithImpl<_CreatePost>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreatePost&&(identical(other.context, context) || other.context == context));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,context);
+
+@override
+String toString() {
+  return 'FeedEvent.createPost(context: $context)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CreatePostCopyWith<$Res> implements $FeedEventCopyWith<$Res> {
+  factory _$CreatePostCopyWith(_CreatePost value, $Res Function(_CreatePost) _then) = __$CreatePostCopyWithImpl;
+@override @useResult
+$Res call({
+ BuildContext context
+});
+
+
+
+
+}
+/// @nodoc
+class __$CreatePostCopyWithImpl<$Res>
+    implements _$CreatePostCopyWith<$Res> {
+  __$CreatePostCopyWithImpl(this._self, this._then);
+
+  final _CreatePost _self;
+  final $Res Function(_CreatePost) _then;
+
+/// Create a copy of FeedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? context = null,}) {
+  return _then(_CreatePost(
+context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as BuildContext,
+  ));
+}
+
+
+}
+
+/// @nodoc
 mixin _$FeedState {
 
- bool get showInternetConnectionView; List<Post> get wallPostList; List<Post> get watchlistPostList; dynamic get loadingStatus;
+ bool get showInternetConnectionView; List<Post> get wallPostList; dynamic get loadingStatus;
 /// Create a copy of FeedState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -386,16 +437,16 @@ $FeedStateCopyWith<FeedState> get copyWith => _$FeedStateCopyWithImpl<FeedState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeedState&&(identical(other.showInternetConnectionView, showInternetConnectionView) || other.showInternetConnectionView == showInternetConnectionView)&&const DeepCollectionEquality().equals(other.wallPostList, wallPostList)&&const DeepCollectionEquality().equals(other.watchlistPostList, watchlistPostList)&&const DeepCollectionEquality().equals(other.loadingStatus, loadingStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeedState&&(identical(other.showInternetConnectionView, showInternetConnectionView) || other.showInternetConnectionView == showInternetConnectionView)&&const DeepCollectionEquality().equals(other.wallPostList, wallPostList)&&const DeepCollectionEquality().equals(other.loadingStatus, loadingStatus));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,showInternetConnectionView,const DeepCollectionEquality().hash(wallPostList),const DeepCollectionEquality().hash(watchlistPostList),const DeepCollectionEquality().hash(loadingStatus));
+int get hashCode => Object.hash(runtimeType,showInternetConnectionView,const DeepCollectionEquality().hash(wallPostList),const DeepCollectionEquality().hash(loadingStatus));
 
 @override
 String toString() {
-  return 'FeedState(showInternetConnectionView: $showInternetConnectionView, wallPostList: $wallPostList, watchlistPostList: $watchlistPostList, loadingStatus: $loadingStatus)';
+  return 'FeedState(showInternetConnectionView: $showInternetConnectionView, wallPostList: $wallPostList, loadingStatus: $loadingStatus)';
 }
 
 
@@ -406,7 +457,7 @@ abstract mixin class $FeedStateCopyWith<$Res>  {
   factory $FeedStateCopyWith(FeedState value, $Res Function(FeedState) _then) = _$FeedStateCopyWithImpl;
 @useResult
 $Res call({
- bool showInternetConnectionView, List<Post> wallPostList, List<Post> watchlistPostList, dynamic loadingStatus
+ bool showInternetConnectionView, List<Post> wallPostList, dynamic loadingStatus
 });
 
 
@@ -423,11 +474,10 @@ class _$FeedStateCopyWithImpl<$Res>
 
 /// Create a copy of FeedState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? showInternetConnectionView = null,Object? wallPostList = null,Object? watchlistPostList = null,Object? loadingStatus = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? showInternetConnectionView = null,Object? wallPostList = null,Object? loadingStatus = freezed,}) {
   return _then(_self.copyWith(
 showInternetConnectionView: null == showInternetConnectionView ? _self.showInternetConnectionView : showInternetConnectionView // ignore: cast_nullable_to_non_nullable
 as bool,wallPostList: null == wallPostList ? _self.wallPostList : wallPostList // ignore: cast_nullable_to_non_nullable
-as List<Post>,watchlistPostList: null == watchlistPostList ? _self.watchlistPostList : watchlistPostList // ignore: cast_nullable_to_non_nullable
 as List<Post>,loadingStatus: freezed == loadingStatus ? _self.loadingStatus : loadingStatus // ignore: cast_nullable_to_non_nullable
 as dynamic,
   ));
@@ -514,10 +564,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool showInternetConnectionView,  List<Post> wallPostList,  List<Post> watchlistPostList,  dynamic loadingStatus)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool showInternetConnectionView,  List<Post> wallPostList,  dynamic loadingStatus)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FeedState() when $default != null:
-return $default(_that.showInternetConnectionView,_that.wallPostList,_that.watchlistPostList,_that.loadingStatus);case _:
+return $default(_that.showInternetConnectionView,_that.wallPostList,_that.loadingStatus);case _:
   return orElse();
 
 }
@@ -535,10 +585,10 @@ return $default(_that.showInternetConnectionView,_that.wallPostList,_that.watchl
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool showInternetConnectionView,  List<Post> wallPostList,  List<Post> watchlistPostList,  dynamic loadingStatus)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool showInternetConnectionView,  List<Post> wallPostList,  dynamic loadingStatus)  $default,) {final _that = this;
 switch (_that) {
 case _FeedState():
-return $default(_that.showInternetConnectionView,_that.wallPostList,_that.watchlistPostList,_that.loadingStatus);case _:
+return $default(_that.showInternetConnectionView,_that.wallPostList,_that.loadingStatus);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -555,10 +605,10 @@ return $default(_that.showInternetConnectionView,_that.wallPostList,_that.watchl
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool showInternetConnectionView,  List<Post> wallPostList,  List<Post> watchlistPostList,  dynamic loadingStatus)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool showInternetConnectionView,  List<Post> wallPostList,  dynamic loadingStatus)?  $default,) {final _that = this;
 switch (_that) {
 case _FeedState() when $default != null:
-return $default(_that.showInternetConnectionView,_that.wallPostList,_that.watchlistPostList,_that.loadingStatus);case _:
+return $default(_that.showInternetConnectionView,_that.wallPostList,_that.loadingStatus);case _:
   return null;
 
 }
@@ -570,7 +620,7 @@ return $default(_that.showInternetConnectionView,_that.wallPostList,_that.watchl
 
 
 class _FeedState implements FeedState {
-  const _FeedState({this.showInternetConnectionView = false, final  List<Post> wallPostList = const [], final  List<Post> watchlistPostList = const [], this.loadingStatus = const FeedScreenProcessState.loading()}): _wallPostList = wallPostList,_watchlistPostList = watchlistPostList;
+  const _FeedState({this.showInternetConnectionView = false, final  List<Post> wallPostList = const [], this.loadingStatus = const FeedScreenProcessState.loading()}): _wallPostList = wallPostList;
   
 
 @override@JsonKey() final  bool showInternetConnectionView;
@@ -579,13 +629,6 @@ class _FeedState implements FeedState {
   if (_wallPostList is EqualUnmodifiableListView) return _wallPostList;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_wallPostList);
-}
-
- final  List<Post> _watchlistPostList;
-@override@JsonKey() List<Post> get watchlistPostList {
-  if (_watchlistPostList is EqualUnmodifiableListView) return _watchlistPostList;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_watchlistPostList);
 }
 
 @override@JsonKey() final  dynamic loadingStatus;
@@ -600,16 +643,16 @@ _$FeedStateCopyWith<_FeedState> get copyWith => __$FeedStateCopyWithImpl<_FeedSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FeedState&&(identical(other.showInternetConnectionView, showInternetConnectionView) || other.showInternetConnectionView == showInternetConnectionView)&&const DeepCollectionEquality().equals(other._wallPostList, _wallPostList)&&const DeepCollectionEquality().equals(other._watchlistPostList, _watchlistPostList)&&const DeepCollectionEquality().equals(other.loadingStatus, loadingStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FeedState&&(identical(other.showInternetConnectionView, showInternetConnectionView) || other.showInternetConnectionView == showInternetConnectionView)&&const DeepCollectionEquality().equals(other._wallPostList, _wallPostList)&&const DeepCollectionEquality().equals(other.loadingStatus, loadingStatus));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,showInternetConnectionView,const DeepCollectionEquality().hash(_wallPostList),const DeepCollectionEquality().hash(_watchlistPostList),const DeepCollectionEquality().hash(loadingStatus));
+int get hashCode => Object.hash(runtimeType,showInternetConnectionView,const DeepCollectionEquality().hash(_wallPostList),const DeepCollectionEquality().hash(loadingStatus));
 
 @override
 String toString() {
-  return 'FeedState(showInternetConnectionView: $showInternetConnectionView, wallPostList: $wallPostList, watchlistPostList: $watchlistPostList, loadingStatus: $loadingStatus)';
+  return 'FeedState(showInternetConnectionView: $showInternetConnectionView, wallPostList: $wallPostList, loadingStatus: $loadingStatus)';
 }
 
 
@@ -620,7 +663,7 @@ abstract mixin class _$FeedStateCopyWith<$Res> implements $FeedStateCopyWith<$Re
   factory _$FeedStateCopyWith(_FeedState value, $Res Function(_FeedState) _then) = __$FeedStateCopyWithImpl;
 @override @useResult
 $Res call({
- bool showInternetConnectionView, List<Post> wallPostList, List<Post> watchlistPostList, dynamic loadingStatus
+ bool showInternetConnectionView, List<Post> wallPostList, dynamic loadingStatus
 });
 
 
@@ -637,11 +680,10 @@ class __$FeedStateCopyWithImpl<$Res>
 
 /// Create a copy of FeedState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? showInternetConnectionView = null,Object? wallPostList = null,Object? watchlistPostList = null,Object? loadingStatus = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? showInternetConnectionView = null,Object? wallPostList = null,Object? loadingStatus = freezed,}) {
   return _then(_FeedState(
 showInternetConnectionView: null == showInternetConnectionView ? _self.showInternetConnectionView : showInternetConnectionView // ignore: cast_nullable_to_non_nullable
 as bool,wallPostList: null == wallPostList ? _self._wallPostList : wallPostList // ignore: cast_nullable_to_non_nullable
-as List<Post>,watchlistPostList: null == watchlistPostList ? _self._watchlistPostList : watchlistPostList // ignore: cast_nullable_to_non_nullable
 as List<Post>,loadingStatus: freezed == loadingStatus ? _self.loadingStatus : loadingStatus // ignore: cast_nullable_to_non_nullable
 as dynamic,
   ));

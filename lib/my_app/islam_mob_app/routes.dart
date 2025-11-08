@@ -10,6 +10,7 @@ import 'package:islam_app/presentation/contacts/contacts_screen.dart';
 import 'package:islam_app/presentation/edit_profile/edit_profile_screen.dart';
 import 'package:islam_app/presentation/estekara/estekara_screen.dart';
 import 'package:islam_app/presentation/feed_tab/feed_screen.dart';
+import 'package:islam_app/presentation/add_edit_post/add_edit_post_screen.dart';
 import 'package:islam_app/presentation/forgot_password/forgot_password_screen.dart';
 import 'package:islam_app/presentation/forgot_password/forgot_password_success_screen.dart';
 import 'package:islam_app/presentation/hajj_omrah/hajj_omrah_details_screen.dart';
@@ -147,6 +148,9 @@ class RoutesConstants {
   /// Route for the edit profile screen.
   static const editProfileScreen = 'editProfileScreen';
 
+  /// Route for the add post screen.
+  static const addEditPostScreen = 'addEditPostScreen';
+
   /// Route for the feed tab screen.
   static const feedTabScreen = 'feedTabScreen';
 }
@@ -204,4 +208,5 @@ final Map<String, Widget> routes = {
   RoutesConstants.changePasswordScreen: const ChangePasswordScreen(),
   RoutesConstants.editProfileScreen: const EditProfileScreen(),
   RoutesConstants.feedTabScreen: const FeedScreen(),
+  RoutesConstants.addEditPostScreen: const AddEditPostScreen(),
 };

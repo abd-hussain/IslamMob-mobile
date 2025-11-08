@@ -620,7 +620,11 @@
     "privacy_protected_desc_one" : "البيانات المخزنة محليًا على جهازك فقط",
     "privacy_protected_desc_two" : "لا تتم مشاركة البيانات مع أطراف ثالثة",
     "privacy_protected_desc_three" : "يستخدم فقط لأغراض العبادة الإسلامية",
-    "allow_location" : "السماح بالموقع"
+    "allow_location" : "السماح بالموقع",
+    "addPost" : "إضافة منشور",
+    "share" : "مشاركة",
+    "addPostFooterText" : "نحن نقرأ كل منشور بعناية، ولهذا السبب سيتم مراجعة منشورك قبل نشره"
+
 
 
 

@@ -597,7 +597,10 @@
     "privacy_protected_desc_one" : "Data stored locally on your device only",
     "privacy_protected_desc_two" : "No data shared with third parties",
     "privacy_protected_desc_three" : "Used solely for Islamic worship purposes",
-    "allow_location" : "Allow Location"
+    "allow_location" : "Allow Location",
+    "addPost" : "Add Post",
+    "share" : "Share",
+    "addPostFooterText" : "We are reading all of the post carefully, that's why your post will go for review before we push it up"
 
 
 
