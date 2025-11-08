@@ -37,8 +37,10 @@ class PostUsecase {
 
     // Filter by category first
     final filteredDocs = documents.where((doc) {
-      final category = doc.data["category"] as String? ?? "";
-      return _parseCategory(category) == type;
+      final data = doc.data;
+      final category = data["category"] as String? ?? "";
+      final isApproved = data["isApproved"] as bool? ?? false;
+      return _parseCategory(category) == type && isApproved;
     }).toList();
 
     if (filteredDocs.isEmpty) return [];
