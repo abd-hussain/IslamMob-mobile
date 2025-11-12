@@ -8,5 +8,4 @@ abstract class FeedEvent with _$FeedEvent {
     required BuildContext context,
     required PostCategoryType type,
   }) = _PullRefresh;
-  factory FeedEvent.createPost({required BuildContext context}) = _CreatePost;
 }

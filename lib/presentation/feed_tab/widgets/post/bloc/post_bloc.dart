@@ -1,10 +1,15 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:firebase_manager/firebase_manager.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:internet_connection_checkup/core/exceptions.dart';
 import 'package:islam_app/domain/model/post.dart';
+import 'package:islam_app/domain/usecase/add_edit_post_usecase.dart';
 import 'package:islam_app/domain/usecase/post_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/shared_widgets/show_toast.dart';
 import 'package:preferences/preferences.dart';
 
 part 'post_bloc.freezed.dart';
@@ -17,7 +22,6 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     on<_ReportPost>(_report);
     on<_ChangePostVote>(_changePostVote);
     on<_DeletePost>(_deletePost);
-    on<_EditPost>(_editPost);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<PostState> emit) {
@@ -102,11 +106,33 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     defaultValue: "",
   );
 
-  FutureOr<void> _deletePost(_DeletePost event, Emitter<PostState> emit) {
-    //TODO: delete post
+  void _validateEmail(BuildContext context) {
+    final userEmail = _userEmail();
+
+    if (userEmail == "") {
+      if (context.mounted) {
+        ShowToast.showLoginRequired(context);
+      }
+      return;
+    }
   }
 
-  FutureOr<void> _editPost(_EditPost event, Emitter<PostState> emit) {
-    //TODO: edit post
+  FutureOr<void> _deletePost(_DeletePost event, Emitter<PostState> emit) async {
+    _validateEmail(event.context);
+    emit(state.copyWith(postDeleteState: const PostDeleteState.idl()));
+
+    try {
+      await FirebaseAnalyticsRepository.logEvent(name: "DeletePostSubmitsion");
+
+      if (!event.context.mounted) return;
+
+      await locator<AddEditPostUseCase>().deletePost(postId: event.postId);
+
+      emit(state.copyWith(postDeleteState: const PostDeleteState.done()));
+    } on ConnectionException {
+      if (event.context.mounted) {
+        ShowToast.showInternetRequired(event.context);
+      }
+    }
   }
 }

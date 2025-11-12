@@ -17,7 +17,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
   FeedBloc() : super(const FeedState()) {
     on<_GetWallPosts>(_getWallPosts);
     on<_PullRefresh>(_pullRefresh);
-    on<_CreatePost>(_createPost);
   }
 
   List<Post> wallListOfPosts = [];
@@ -63,6 +62,4 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     key: DatabaseUserCredentials.userEmail,
     defaultValue: "",
   );
-
-  FutureOr<void> _createPost(_CreatePost event, Emitter<FeedState> emit) {}
 }

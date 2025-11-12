@@ -15,7 +15,7 @@ class PostUsecase {
       final documents = await FirebaseFirestoreRepository.getAllDocuments(
         collectionName: FirebaseCollectionConstants.posts,
         withPagination: true,
-        limit: 11,
+        limit: 100,
       );
       return _mapDocumentsToPosts(documents, userEmail, type);
     } catch (e) {

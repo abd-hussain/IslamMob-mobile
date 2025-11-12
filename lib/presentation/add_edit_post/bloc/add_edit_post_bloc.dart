@@ -117,7 +117,7 @@ class AddEditPostBloc extends Bloc<AddEditPostEvent, AddEditPostState> {
     return image != null ? File(image.path) : null;
   }
 
-  void validateEmail(BuildContext context) {
+  void _validateEmail(BuildContext context) {
     final userEmail = locator<IslamPreferences>().getValue(
       key: DatabaseUserCredentials.userEmail,
       defaultValue: "",
@@ -135,7 +135,7 @@ class AddEditPostBloc extends Bloc<AddEditPostEvent, AddEditPostState> {
     _AddPost event,
     Emitter<AddEditPostState> emit,
   ) async {
-    validateEmail(event.context);
+    _validateEmail(event.context);
     try {
       await FirebaseAnalyticsRepository.logEvent(name: "AddPostSubmitsion");
 
@@ -162,7 +162,7 @@ class AddEditPostBloc extends Bloc<AddEditPostEvent, AddEditPostState> {
     _EditPost event,
     Emitter<AddEditPostState> emit,
   ) async {
-    validateEmail(event.context);
+    _validateEmail(event.context);
     try {
       await FirebaseAnalyticsRepository.logEvent(name: "EditPostSubmitsion");
 

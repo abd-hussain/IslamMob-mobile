@@ -9,5 +9,12 @@ abstract class PostState with _$PostState {
     @Default(false) bool inBookmark,
     @Default(false) bool isPostReported,
     @Default(PostVoteType.idl()) PostVoteType postVoteType,
+    @Default(PostDeleteState.idl()) PostDeleteState postDeleteState,
   }) = _PostState;
+}
+
+@freezed
+sealed class PostDeleteState with _$PostDeleteState {
+  const factory PostDeleteState.idl() = PostDeleteStateIdl;
+  const factory PostDeleteState.done() = PostDeleteStateDone;
 }

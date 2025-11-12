@@ -55,12 +55,11 @@ extension PostEventPatterns on PostEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _EditPost value)?  edit,TResult Function( _ReportPost value)?  report,TResult Function( _DeletePost value)?  delete,TResult Function( _ChangePostVote value)?  changeVote,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _ReportPost value)?  report,TResult Function( _DeletePost value)?  delete,TResult Function( _ChangePostVote value)?  changeVote,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case _EditPost() when edit != null:
-return edit(_that);case _ReportPost() when report != null:
+return initial(_that);case _ReportPost() when report != null:
 return report(_that);case _DeletePost() when delete != null:
 return delete(_that);case _ChangePostVote() when changeVote != null:
 return changeVote(_that);case _:
@@ -81,12 +80,11 @@ return changeVote(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _EditPost value)  edit,required TResult Function( _ReportPost value)  report,required TResult Function( _DeletePost value)  delete,required TResult Function( _ChangePostVote value)  changeVote,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _ReportPost value)  report,required TResult Function( _DeletePost value)  delete,required TResult Function( _ChangePostVote value)  changeVote,}){
 final _that = this;
 switch (_that) {
 case _Initial():
-return initial(_that);case _EditPost():
-return edit(_that);case _ReportPost():
+return initial(_that);case _ReportPost():
 return report(_that);case _DeletePost():
 return delete(_that);case _ChangePostVote():
 return changeVote(_that);case _:
@@ -106,12 +104,11 @@ return changeVote(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _EditPost value)?  edit,TResult? Function( _ReportPost value)?  report,TResult? Function( _DeletePost value)?  delete,TResult? Function( _ChangePostVote value)?  changeVote,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _ReportPost value)?  report,TResult? Function( _DeletePost value)?  delete,TResult? Function( _ChangePostVote value)?  changeVote,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case _EditPost() when edit != null:
-return edit(_that);case _ReportPost() when report != null:
+return initial(_that);case _ReportPost() when report != null:
 return report(_that);case _DeletePost() when delete != null:
 return delete(_that);case _ChangePostVote() when changeVote != null:
 return changeVote(_that);case _:
@@ -131,13 +128,12 @@ return changeVote(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( Post post)?  initial,TResult Function( String postId,  Post post)?  edit,TResult Function( String postId,  String message)?  report,TResult Function( String postId)?  delete,TResult Function( String postId,  PostVoteType voteType)?  changeVote,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( Post post)?  initial,TResult Function( String postId,  String message)?  report,TResult Function( BuildContext context,  String postId)?  delete,TResult Function( String postId,  PostVoteType voteType)?  changeVote,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that.post);case _EditPost() when edit != null:
-return edit(_that.postId,_that.post);case _ReportPost() when report != null:
+return initial(_that.post);case _ReportPost() when report != null:
 return report(_that.postId,_that.message);case _DeletePost() when delete != null:
-return delete(_that.postId);case _ChangePostVote() when changeVote != null:
+return delete(_that.context,_that.postId);case _ChangePostVote() when changeVote != null:
 return changeVote(_that.postId,_that.voteType);case _:
   return orElse();
 
@@ -156,13 +152,12 @@ return changeVote(_that.postId,_that.voteType);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( Post post)  initial,required TResult Function( String postId,  Post post)  edit,required TResult Function( String postId,  String message)  report,required TResult Function( String postId)  delete,required TResult Function( String postId,  PostVoteType voteType)  changeVote,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( Post post)  initial,required TResult Function( String postId,  String message)  report,required TResult Function( BuildContext context,  String postId)  delete,required TResult Function( String postId,  PostVoteType voteType)  changeVote,}) {final _that = this;
 switch (_that) {
 case _Initial():
-return initial(_that.post);case _EditPost():
-return edit(_that.postId,_that.post);case _ReportPost():
+return initial(_that.post);case _ReportPost():
 return report(_that.postId,_that.message);case _DeletePost():
-return delete(_that.postId);case _ChangePostVote():
+return delete(_that.context,_that.postId);case _ChangePostVote():
 return changeVote(_that.postId,_that.voteType);case _:
   throw StateError('Unexpected subclass');
 
@@ -180,13 +175,12 @@ return changeVote(_that.postId,_that.voteType);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( Post post)?  initial,TResult? Function( String postId,  Post post)?  edit,TResult? Function( String postId,  String message)?  report,TResult? Function( String postId)?  delete,TResult? Function( String postId,  PostVoteType voteType)?  changeVote,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( Post post)?  initial,TResult? Function( String postId,  String message)?  report,TResult? Function( BuildContext context,  String postId)?  delete,TResult? Function( String postId,  PostVoteType voteType)?  changeVote,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that.post);case _EditPost() when edit != null:
-return edit(_that.postId,_that.post);case _ReportPost() when report != null:
+return initial(_that.post);case _ReportPost() when report != null:
 return report(_that.postId,_that.message);case _DeletePost() when delete != null:
-return delete(_that.postId);case _ChangePostVote() when changeVote != null:
+return delete(_that.context,_that.postId);case _ChangePostVote() when changeVote != null:
 return changeVote(_that.postId,_that.voteType);case _:
   return null;
 
@@ -254,83 +248,6 @@ class __$InitialCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? post = null,}) {
   return _then(_Initial(
 null == post ? _self.post : post // ignore: cast_nullable_to_non_nullable
-as Post,
-  ));
-}
-
-/// Create a copy of PostEvent
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$PostCopyWith<$Res> get post {
-  
-  return $PostCopyWith<$Res>(_self.post, (value) {
-    return _then(_self.copyWith(post: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class _EditPost implements PostEvent {
-  const _EditPost(this.postId, this.post);
-  
-
- final  String postId;
- final  Post post;
-
-/// Create a copy of PostEvent
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$EditPostCopyWith<_EditPost> get copyWith => __$EditPostCopyWithImpl<_EditPost>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditPost&&(identical(other.postId, postId) || other.postId == postId)&&(identical(other.post, post) || other.post == post));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,postId,post);
-
-@override
-String toString() {
-  return 'PostEvent.edit(postId: $postId, post: $post)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$EditPostCopyWith<$Res> implements $PostEventCopyWith<$Res> {
-  factory _$EditPostCopyWith(_EditPost value, $Res Function(_EditPost) _then) = __$EditPostCopyWithImpl;
-@useResult
-$Res call({
- String postId, Post post
-});
-
-
-$PostCopyWith<$Res> get post;
-
-}
-/// @nodoc
-class __$EditPostCopyWithImpl<$Res>
-    implements _$EditPostCopyWith<$Res> {
-  __$EditPostCopyWithImpl(this._self, this._then);
-
-  final _EditPost _self;
-  final $Res Function(_EditPost) _then;
-
-/// Create a copy of PostEvent
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? postId = null,Object? post = null,}) {
-  return _then(_EditPost(
-null == postId ? _self.postId : postId // ignore: cast_nullable_to_non_nullable
-as String,null == post ? _self.post : post // ignore: cast_nullable_to_non_nullable
 as Post,
   ));
 }
@@ -419,9 +336,10 @@ as String,
 
 
 class _DeletePost implements PostEvent {
-  const _DeletePost(this.postId);
+  const _DeletePost({required this.context, required this.postId});
   
 
+ final  BuildContext context;
  final  String postId;
 
 /// Create a copy of PostEvent
@@ -434,16 +352,16 @@ _$DeletePostCopyWith<_DeletePost> get copyWith => __$DeletePostCopyWithImpl<_Del
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeletePost&&(identical(other.postId, postId) || other.postId == postId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeletePost&&(identical(other.context, context) || other.context == context)&&(identical(other.postId, postId) || other.postId == postId));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,postId);
+int get hashCode => Object.hash(runtimeType,context,postId);
 
 @override
 String toString() {
-  return 'PostEvent.delete(postId: $postId)';
+  return 'PostEvent.delete(context: $context, postId: $postId)';
 }
 
 
@@ -454,7 +372,7 @@ abstract mixin class _$DeletePostCopyWith<$Res> implements $PostEventCopyWith<$R
   factory _$DeletePostCopyWith(_DeletePost value, $Res Function(_DeletePost) _then) = __$DeletePostCopyWithImpl;
 @useResult
 $Res call({
- String postId
+ BuildContext context, String postId
 });
 
 
@@ -471,9 +389,10 @@ class __$DeletePostCopyWithImpl<$Res>
 
 /// Create a copy of PostEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? postId = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? context = null,Object? postId = null,}) {
   return _then(_DeletePost(
-null == postId ? _self.postId : postId // ignore: cast_nullable_to_non_nullable
+context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as BuildContext,postId: null == postId ? _self.postId : postId // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -561,7 +480,7 @@ $PostVoteTypeCopyWith<$Res> get voteType {
 /// @nodoc
 mixin _$PostState {
 
- String get postID; int get upComments; int get downComments; bool get inBookmark; bool get isPostReported; PostVoteType get postVoteType;
+ String get postID; int get upComments; int get downComments; bool get inBookmark; bool get isPostReported; PostVoteType get postVoteType; PostDeleteState get postDeleteState;
 /// Create a copy of PostState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -572,16 +491,16 @@ $PostStateCopyWith<PostState> get copyWith => _$PostStateCopyWithImpl<PostState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostState&&(identical(other.postID, postID) || other.postID == postID)&&(identical(other.upComments, upComments) || other.upComments == upComments)&&(identical(other.downComments, downComments) || other.downComments == downComments)&&(identical(other.inBookmark, inBookmark) || other.inBookmark == inBookmark)&&(identical(other.isPostReported, isPostReported) || other.isPostReported == isPostReported)&&(identical(other.postVoteType, postVoteType) || other.postVoteType == postVoteType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostState&&(identical(other.postID, postID) || other.postID == postID)&&(identical(other.upComments, upComments) || other.upComments == upComments)&&(identical(other.downComments, downComments) || other.downComments == downComments)&&(identical(other.inBookmark, inBookmark) || other.inBookmark == inBookmark)&&(identical(other.isPostReported, isPostReported) || other.isPostReported == isPostReported)&&(identical(other.postVoteType, postVoteType) || other.postVoteType == postVoteType)&&(identical(other.postDeleteState, postDeleteState) || other.postDeleteState == postDeleteState));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,postID,upComments,downComments,inBookmark,isPostReported,postVoteType);
+int get hashCode => Object.hash(runtimeType,postID,upComments,downComments,inBookmark,isPostReported,postVoteType,postDeleteState);
 
 @override
 String toString() {
-  return 'PostState(postID: $postID, upComments: $upComments, downComments: $downComments, inBookmark: $inBookmark, isPostReported: $isPostReported, postVoteType: $postVoteType)';
+  return 'PostState(postID: $postID, upComments: $upComments, downComments: $downComments, inBookmark: $inBookmark, isPostReported: $isPostReported, postVoteType: $postVoteType, postDeleteState: $postDeleteState)';
 }
 
 
@@ -592,11 +511,11 @@ abstract mixin class $PostStateCopyWith<$Res>  {
   factory $PostStateCopyWith(PostState value, $Res Function(PostState) _then) = _$PostStateCopyWithImpl;
 @useResult
 $Res call({
- String postID, int upComments, int downComments, bool inBookmark, bool isPostReported, PostVoteType postVoteType
+ String postID, int upComments, int downComments, bool inBookmark, bool isPostReported, PostVoteType postVoteType, PostDeleteState postDeleteState
 });
 
 
-$PostVoteTypeCopyWith<$Res> get postVoteType;
+$PostVoteTypeCopyWith<$Res> get postVoteType;$PostDeleteStateCopyWith<$Res> get postDeleteState;
 
 }
 /// @nodoc
@@ -609,7 +528,7 @@ class _$PostStateCopyWithImpl<$Res>
 
 /// Create a copy of PostState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? postID = null,Object? upComments = null,Object? downComments = null,Object? inBookmark = null,Object? isPostReported = null,Object? postVoteType = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? postID = null,Object? upComments = null,Object? downComments = null,Object? inBookmark = null,Object? isPostReported = null,Object? postVoteType = null,Object? postDeleteState = null,}) {
   return _then(_self.copyWith(
 postID: null == postID ? _self.postID : postID // ignore: cast_nullable_to_non_nullable
 as String,upComments: null == upComments ? _self.upComments : upComments // ignore: cast_nullable_to_non_nullable
@@ -617,7 +536,8 @@ as int,downComments: null == downComments ? _self.downComments : downComments //
 as int,inBookmark: null == inBookmark ? _self.inBookmark : inBookmark // ignore: cast_nullable_to_non_nullable
 as bool,isPostReported: null == isPostReported ? _self.isPostReported : isPostReported // ignore: cast_nullable_to_non_nullable
 as bool,postVoteType: null == postVoteType ? _self.postVoteType : postVoteType // ignore: cast_nullable_to_non_nullable
-as PostVoteType,
+as PostVoteType,postDeleteState: null == postDeleteState ? _self.postDeleteState : postDeleteState // ignore: cast_nullable_to_non_nullable
+as PostDeleteState,
   ));
 }
 /// Create a copy of PostState
@@ -628,6 +548,15 @@ $PostVoteTypeCopyWith<$Res> get postVoteType {
   
   return $PostVoteTypeCopyWith<$Res>(_self.postVoteType, (value) {
     return _then(_self.copyWith(postVoteType: value));
+  });
+}/// Create a copy of PostState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PostDeleteStateCopyWith<$Res> get postDeleteState {
+  
+  return $PostDeleteStateCopyWith<$Res>(_self.postDeleteState, (value) {
+    return _then(_self.copyWith(postDeleteState: value));
   });
 }
 }
@@ -711,10 +640,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String postID,  int upComments,  int downComments,  bool inBookmark,  bool isPostReported,  PostVoteType postVoteType)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String postID,  int upComments,  int downComments,  bool inBookmark,  bool isPostReported,  PostVoteType postVoteType,  PostDeleteState postDeleteState)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PostState() when $default != null:
-return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmark,_that.isPostReported,_that.postVoteType);case _:
+return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmark,_that.isPostReported,_that.postVoteType,_that.postDeleteState);case _:
   return orElse();
 
 }
@@ -732,10 +661,10 @@ return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmar
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String postID,  int upComments,  int downComments,  bool inBookmark,  bool isPostReported,  PostVoteType postVoteType)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String postID,  int upComments,  int downComments,  bool inBookmark,  bool isPostReported,  PostVoteType postVoteType,  PostDeleteState postDeleteState)  $default,) {final _that = this;
 switch (_that) {
 case _PostState():
-return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmark,_that.isPostReported,_that.postVoteType);case _:
+return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmark,_that.isPostReported,_that.postVoteType,_that.postDeleteState);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -752,10 +681,10 @@ return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmar
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String postID,  int upComments,  int downComments,  bool inBookmark,  bool isPostReported,  PostVoteType postVoteType)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String postID,  int upComments,  int downComments,  bool inBookmark,  bool isPostReported,  PostVoteType postVoteType,  PostDeleteState postDeleteState)?  $default,) {final _that = this;
 switch (_that) {
 case _PostState() when $default != null:
-return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmark,_that.isPostReported,_that.postVoteType);case _:
+return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmark,_that.isPostReported,_that.postVoteType,_that.postDeleteState);case _:
   return null;
 
 }
@@ -767,7 +696,7 @@ return $default(_that.postID,_that.upComments,_that.downComments,_that.inBookmar
 
 
 class _PostState implements PostState {
-  const _PostState({this.postID = "", this.upComments = 0, this.downComments = 0, this.inBookmark = false, this.isPostReported = false, this.postVoteType = const PostVoteType.idl()});
+  const _PostState({this.postID = "", this.upComments = 0, this.downComments = 0, this.inBookmark = false, this.isPostReported = false, this.postVoteType = const PostVoteType.idl(), this.postDeleteState = const PostDeleteState.idl()});
   
 
 @override@JsonKey() final  String postID;
@@ -776,6 +705,7 @@ class _PostState implements PostState {
 @override@JsonKey() final  bool inBookmark;
 @override@JsonKey() final  bool isPostReported;
 @override@JsonKey() final  PostVoteType postVoteType;
+@override@JsonKey() final  PostDeleteState postDeleteState;
 
 /// Create a copy of PostState
 /// with the given fields replaced by the non-null parameter values.
@@ -787,16 +717,16 @@ _$PostStateCopyWith<_PostState> get copyWith => __$PostStateCopyWithImpl<_PostSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostState&&(identical(other.postID, postID) || other.postID == postID)&&(identical(other.upComments, upComments) || other.upComments == upComments)&&(identical(other.downComments, downComments) || other.downComments == downComments)&&(identical(other.inBookmark, inBookmark) || other.inBookmark == inBookmark)&&(identical(other.isPostReported, isPostReported) || other.isPostReported == isPostReported)&&(identical(other.postVoteType, postVoteType) || other.postVoteType == postVoteType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostState&&(identical(other.postID, postID) || other.postID == postID)&&(identical(other.upComments, upComments) || other.upComments == upComments)&&(identical(other.downComments, downComments) || other.downComments == downComments)&&(identical(other.inBookmark, inBookmark) || other.inBookmark == inBookmark)&&(identical(other.isPostReported, isPostReported) || other.isPostReported == isPostReported)&&(identical(other.postVoteType, postVoteType) || other.postVoteType == postVoteType)&&(identical(other.postDeleteState, postDeleteState) || other.postDeleteState == postDeleteState));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,postID,upComments,downComments,inBookmark,isPostReported,postVoteType);
+int get hashCode => Object.hash(runtimeType,postID,upComments,downComments,inBookmark,isPostReported,postVoteType,postDeleteState);
 
 @override
 String toString() {
-  return 'PostState(postID: $postID, upComments: $upComments, downComments: $downComments, inBookmark: $inBookmark, isPostReported: $isPostReported, postVoteType: $postVoteType)';
+  return 'PostState(postID: $postID, upComments: $upComments, downComments: $downComments, inBookmark: $inBookmark, isPostReported: $isPostReported, postVoteType: $postVoteType, postDeleteState: $postDeleteState)';
 }
 
 
@@ -807,11 +737,11 @@ abstract mixin class _$PostStateCopyWith<$Res> implements $PostStateCopyWith<$Re
   factory _$PostStateCopyWith(_PostState value, $Res Function(_PostState) _then) = __$PostStateCopyWithImpl;
 @override @useResult
 $Res call({
- String postID, int upComments, int downComments, bool inBookmark, bool isPostReported, PostVoteType postVoteType
+ String postID, int upComments, int downComments, bool inBookmark, bool isPostReported, PostVoteType postVoteType, PostDeleteState postDeleteState
 });
 
 
-@override $PostVoteTypeCopyWith<$Res> get postVoteType;
+@override $PostVoteTypeCopyWith<$Res> get postVoteType;@override $PostDeleteStateCopyWith<$Res> get postDeleteState;
 
 }
 /// @nodoc
@@ -824,7 +754,7 @@ class __$PostStateCopyWithImpl<$Res>
 
 /// Create a copy of PostState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? postID = null,Object? upComments = null,Object? downComments = null,Object? inBookmark = null,Object? isPostReported = null,Object? postVoteType = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? postID = null,Object? upComments = null,Object? downComments = null,Object? inBookmark = null,Object? isPostReported = null,Object? postVoteType = null,Object? postDeleteState = null,}) {
   return _then(_PostState(
 postID: null == postID ? _self.postID : postID // ignore: cast_nullable_to_non_nullable
 as String,upComments: null == upComments ? _self.upComments : upComments // ignore: cast_nullable_to_non_nullable
@@ -832,7 +762,8 @@ as int,downComments: null == downComments ? _self.downComments : downComments //
 as int,inBookmark: null == inBookmark ? _self.inBookmark : inBookmark // ignore: cast_nullable_to_non_nullable
 as bool,isPostReported: null == isPostReported ? _self.isPostReported : isPostReported // ignore: cast_nullable_to_non_nullable
 as bool,postVoteType: null == postVoteType ? _self.postVoteType : postVoteType // ignore: cast_nullable_to_non_nullable
-as PostVoteType,
+as PostVoteType,postDeleteState: null == postDeleteState ? _self.postDeleteState : postDeleteState // ignore: cast_nullable_to_non_nullable
+as PostDeleteState,
   ));
 }
 
@@ -845,7 +776,240 @@ $PostVoteTypeCopyWith<$Res> get postVoteType {
   return $PostVoteTypeCopyWith<$Res>(_self.postVoteType, (value) {
     return _then(_self.copyWith(postVoteType: value));
   });
+}/// Create a copy of PostState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PostDeleteStateCopyWith<$Res> get postDeleteState {
+  
+  return $PostDeleteStateCopyWith<$Res>(_self.postDeleteState, (value) {
+    return _then(_self.copyWith(postDeleteState: value));
+  });
 }
 }
+
+/// @nodoc
+mixin _$PostDeleteState {
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDeleteState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PostDeleteState()';
+}
+
+
+}
+
+/// @nodoc
+class $PostDeleteStateCopyWith<$Res>  {
+$PostDeleteStateCopyWith(PostDeleteState _, $Res Function(PostDeleteState) __);
+}
+
+
+/// Adds pattern-matching-related methods to [PostDeleteState].
+extension PostDeleteStatePatterns on PostDeleteState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( PostDeleteStateIdl value)?  idl,TResult Function( PostDeleteStateDone value)?  done,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case PostDeleteStateIdl() when idl != null:
+return idl(_that);case PostDeleteStateDone() when done != null:
+return done(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( PostDeleteStateIdl value)  idl,required TResult Function( PostDeleteStateDone value)  done,}){
+final _that = this;
+switch (_that) {
+case PostDeleteStateIdl():
+return idl(_that);case PostDeleteStateDone():
+return done(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( PostDeleteStateIdl value)?  idl,TResult? Function( PostDeleteStateDone value)?  done,}){
+final _that = this;
+switch (_that) {
+case PostDeleteStateIdl() when idl != null:
+return idl(_that);case PostDeleteStateDone() when done != null:
+return done(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  idl,TResult Function()?  done,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case PostDeleteStateIdl() when idl != null:
+return idl();case PostDeleteStateDone() when done != null:
+return done();case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  idl,required TResult Function()  done,}) {final _that = this;
+switch (_that) {
+case PostDeleteStateIdl():
+return idl();case PostDeleteStateDone():
+return done();}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  idl,TResult? Function()?  done,}) {final _that = this;
+switch (_that) {
+case PostDeleteStateIdl() when idl != null:
+return idl();case PostDeleteStateDone() when done != null:
+return done();case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+
+
+class PostDeleteStateIdl implements PostDeleteState {
+  const PostDeleteStateIdl();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDeleteStateIdl);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PostDeleteState.idl()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class PostDeleteStateDone implements PostDeleteState {
+  const PostDeleteStateDone();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDeleteStateDone);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PostDeleteState.done()';
+}
+
+
+}
+
+
+
 
 // dart format on

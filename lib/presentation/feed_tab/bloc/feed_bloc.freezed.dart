@@ -86,13 +86,12 @@ extension FeedEventPatterns on FeedEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _GetWallPosts value)?  getWallPosts,TResult Function( _PullRefresh value)?  pullRefresh,TResult Function( _CreatePost value)?  createPost,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _GetWallPosts value)?  getWallPosts,TResult Function( _PullRefresh value)?  pullRefresh,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _GetWallPosts() when getWallPosts != null:
 return getWallPosts(_that);case _PullRefresh() when pullRefresh != null:
-return pullRefresh(_that);case _CreatePost() when createPost != null:
-return createPost(_that);case _:
+return pullRefresh(_that);case _:
   return orElse();
 
 }
@@ -110,13 +109,12 @@ return createPost(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _GetWallPosts value)  getWallPosts,required TResult Function( _PullRefresh value)  pullRefresh,required TResult Function( _CreatePost value)  createPost,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _GetWallPosts value)  getWallPosts,required TResult Function( _PullRefresh value)  pullRefresh,}){
 final _that = this;
 switch (_that) {
 case _GetWallPosts():
 return getWallPosts(_that);case _PullRefresh():
-return pullRefresh(_that);case _CreatePost():
-return createPost(_that);case _:
+return pullRefresh(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -133,13 +131,12 @@ return createPost(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _GetWallPosts value)?  getWallPosts,TResult? Function( _PullRefresh value)?  pullRefresh,TResult? Function( _CreatePost value)?  createPost,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _GetWallPosts value)?  getWallPosts,TResult? Function( _PullRefresh value)?  pullRefresh,}){
 final _that = this;
 switch (_that) {
 case _GetWallPosts() when getWallPosts != null:
 return getWallPosts(_that);case _PullRefresh() when pullRefresh != null:
-return pullRefresh(_that);case _CreatePost() when createPost != null:
-return createPost(_that);case _:
+return pullRefresh(_that);case _:
   return null;
 
 }
@@ -156,12 +153,11 @@ return createPost(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( BuildContext context)?  getWallPosts,TResult Function( BuildContext context,  PostCategoryType type)?  pullRefresh,TResult Function( BuildContext context)?  createPost,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( BuildContext context)?  getWallPosts,TResult Function( BuildContext context,  PostCategoryType type)?  pullRefresh,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetWallPosts() when getWallPosts != null:
 return getWallPosts(_that.context);case _PullRefresh() when pullRefresh != null:
-return pullRefresh(_that.context,_that.type);case _CreatePost() when createPost != null:
-return createPost(_that.context);case _:
+return pullRefresh(_that.context,_that.type);case _:
   return orElse();
 
 }
@@ -179,12 +175,11 @@ return createPost(_that.context);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( BuildContext context)  getWallPosts,required TResult Function( BuildContext context,  PostCategoryType type)  pullRefresh,required TResult Function( BuildContext context)  createPost,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( BuildContext context)  getWallPosts,required TResult Function( BuildContext context,  PostCategoryType type)  pullRefresh,}) {final _that = this;
 switch (_that) {
 case _GetWallPosts():
 return getWallPosts(_that.context);case _PullRefresh():
-return pullRefresh(_that.context,_that.type);case _CreatePost():
-return createPost(_that.context);case _:
+return pullRefresh(_that.context,_that.type);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -201,12 +196,11 @@ return createPost(_that.context);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( BuildContext context)?  getWallPosts,TResult? Function( BuildContext context,  PostCategoryType type)?  pullRefresh,TResult? Function( BuildContext context)?  createPost,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( BuildContext context)?  getWallPosts,TResult? Function( BuildContext context,  PostCategoryType type)?  pullRefresh,}) {final _that = this;
 switch (_that) {
 case _GetWallPosts() when getWallPosts != null:
 return getWallPosts(_that.context);case _PullRefresh() when pullRefresh != null:
-return pullRefresh(_that.context,_that.type);case _CreatePost() when createPost != null:
-return createPost(_that.context);case _:
+return pullRefresh(_that.context,_that.type);case _:
   return null;
 
 }
@@ -355,72 +349,6 @@ $PostCategoryTypeCopyWith<$Res> get type {
     return _then(_self.copyWith(type: value));
   });
 }
-}
-
-/// @nodoc
-
-
-class _CreatePost implements FeedEvent {
-   _CreatePost({required this.context});
-  
-
-@override final  BuildContext context;
-
-/// Create a copy of FeedEvent
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$CreatePostCopyWith<_CreatePost> get copyWith => __$CreatePostCopyWithImpl<_CreatePost>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreatePost&&(identical(other.context, context) || other.context == context));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,context);
-
-@override
-String toString() {
-  return 'FeedEvent.createPost(context: $context)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$CreatePostCopyWith<$Res> implements $FeedEventCopyWith<$Res> {
-  factory _$CreatePostCopyWith(_CreatePost value, $Res Function(_CreatePost) _then) = __$CreatePostCopyWithImpl;
-@override @useResult
-$Res call({
- BuildContext context
-});
-
-
-
-
-}
-/// @nodoc
-class __$CreatePostCopyWithImpl<$Res>
-    implements _$CreatePostCopyWith<$Res> {
-  __$CreatePostCopyWithImpl(this._self, this._then);
-
-  final _CreatePost _self;
-  final $Res Function(_CreatePost) _then;
-
-/// Create a copy of FeedEvent
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? context = null,}) {
-  return _then(_CreatePost(
-context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
-as BuildContext,
-  ));
-}
-
-
 }
 
 /// @nodoc

@@ -82,6 +82,13 @@ class AddEditPostUseCase {
     );
   }
 
+  Future<void> deletePost({required String postId}) async {
+    await FirebaseFirestoreRepository.deleteDocument(
+      collectionName: FirebaseCollectionConstants.posts,
+      docId: postId,
+    );
+  }
+
   Future<String?> _maybeUploadAttachment({
     required String postId,
     required File? attachment,

@@ -28,7 +28,10 @@ class PostListView extends StatelessWidget {
                     height: 85,
                   ); // adjust the height you want
                 }
-                return PostView(postDetails: postsList[index]);
+                return PostView(
+                  postDetails: postsList[index],
+                  onPostDeleted: onRefresh,
+                );
               },
             ),
           )
