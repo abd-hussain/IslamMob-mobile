@@ -1,8 +1,8 @@
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/domain/model/post.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/presentation/add_edit_post/bloc/add_edit_post_bloc.dart';
 import 'package:islam_app/presentation/add_edit_post/widgets/add_edit_post_attachments.dart';
 import 'package:islam_app/presentation/add_edit_post/widgets/add_edit_post_footer_view.dart';
