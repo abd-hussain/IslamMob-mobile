@@ -1859,4 +1859,16 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
   @override
   String get addPostFooterText =>
       'نحن نقرأ كل منشور بعناية، ولهذا السبب سيتم مراجعة منشورك قبل نشره';
+
+  @override
+  String get anonymous => 'مجهول';
+
+  @override
+  String get delete_post_title => 'هل أنت متأكد أنك تريد حذف هذه التدوينة؟';
+
+  @override
+  String get delete_post_option => 'حذف';
+
+  @override
+  String get editPost => 'تعديل منشور';
 }

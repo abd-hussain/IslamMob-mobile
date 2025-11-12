@@ -600,7 +600,11 @@
     "allow_location" : "Allow Location",
     "addPost" : "Add Post",
     "share" : "Share",
-    "addPostFooterText" : "We are reading all of the post carefully, that's why your post will go for review before we push it up"
+    "addPostFooterText" : "We are reading all of the post carefully, that's why your post will go for review before we push it up",
+    "anonymous" : "Anonymous",
+    "delete_post_title" : "Are you sure you want to delete this post",
+    "delete_post_option" : "Delete",
+    "editPost" : "Edit Post"
 
 
 

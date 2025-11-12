@@ -90,6 +90,7 @@ class PostUsecase {
         isReported: _isUserReported(listOfReports, userEmail),
         voteStatus: _getVoteStatus(upVotes, downVotes, userEmail),
         isAddedToBookMark: bookmarks.contains(userEmail),
+        imageUrl: data["attachmentUrl"] as String? ?? "",
         category: _parseCategory(data["category"] as String? ?? ""),
       );
     }).toList();
@@ -163,29 +164,6 @@ class PostUsecase {
       fieldToAdd: "reports",
       valueToAddOrRemove: {userEmail: reportText},
     );
-  }
-
-  static Future<void> addRemovePostFromBookMark({
-    required String postId,
-    required bool bookmark,
-    required String userEmail,
-  }) async {
-    if (bookmark) {
-      await FirebaseFirestoreRepository.updateArrayField(
-        collectionName: FirebaseCollectionConstants.posts,
-        docId: postId,
-        fieldToAdd: "bookmark",
-        valueToAddOrRemove: userEmail,
-      );
-    } else {
-      await FirebaseFirestoreRepository.updateArrayField(
-        collectionName: FirebaseCollectionConstants.posts,
-        docId: postId,
-        fieldToAdd: "bookmark",
-        valueToAddOrRemove: userEmail,
-        removeOnly: true,
-      );
-    }
   }
 
   static Future<void> changePostVote({

@@ -3658,6 +3658,30 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'We are reading all of the post carefully, that\'s why your post will go for review before we push it up'**
   String get addPostFooterText;
+
+  /// No description provided for @anonymous.
+  ///
+  /// In en, this message translates to:
+  /// **'Anonymous'**
+  String get anonymous;
+
+  /// No description provided for @delete_post_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this post'**
+  String get delete_post_title;
+
+  /// No description provided for @delete_post_option.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete_post_option;
+
+  /// No description provided for @editPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Post'**
+  String get editPost;
 }
 
 class _IslamMobLocalizationsDelegate

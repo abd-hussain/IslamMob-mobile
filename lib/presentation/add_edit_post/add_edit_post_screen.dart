@@ -2,6 +2,7 @@ import 'package:firebase_manager/firebase_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
+import 'package:islam_app/domain/model/post.dart';
 import 'package:islam_app/presentation/add_edit_post/bloc/add_edit_post_bloc.dart';
 import 'package:islam_app/presentation/add_edit_post/widgets/add_edit_post_attachments.dart';
 import 'package:islam_app/presentation/add_edit_post/widgets/add_edit_post_footer_view.dart';
@@ -17,15 +18,22 @@ class AddEditPostScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     FirebaseAnalyticsRepository.logEvent(name: "AddPostScreen");
     final localize = IslamMobLocalizations.of(context);
+    final route = ModalRoute.of(context);
+    final Post? postToEdit = route?.settings.arguments is Post
+        ? route!.settings.arguments! as Post
+        : null;
+    final bool isEditMode = postToEdit != null;
 
     return BlocProvider(
-      create: (context) => AddEditPostBloc(),
+      create: (context) =>
+          AddEditPostBloc()
+            ..add(AddEditPostEvent.initialPost(post: postToEdit)),
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Scaffold(
           backgroundColor: const Color(0xffF5F6F7),
           appBar: CustomAppBar(
-            title: localize.addPost,
+            title: isEditMode ? localize.editPost : localize.addPost,
             actions: [
               BlocBuilder<AddEditPostBloc, AddEditPostState>(
                 buildWhen: (previous, current) =>
@@ -33,13 +41,15 @@ class AddEditPostScreen extends StatelessWidget {
                     previous.attachment != current.attachment,
                 builder: (context, state) {
                   return CustomButton(
-                    title: localize.share,
+                    title: state.isEditMode ? localize.save : localize.share,
                     titleColor: state.enableSubmitBtn
                         ? Colors.white
                         : Colors.grey,
                     isEnabled: state.enableSubmitBtn,
                     onTap: () => context.read<AddEditPostBloc>().add(
-                      AddEditPostEvent.addPost(context: context),
+                      isEditMode
+                          ? AddEditPostEvent.editPost(context: context)
+                          : AddEditPostEvent.addPost(context: context),
                     ),
                   );
                 },

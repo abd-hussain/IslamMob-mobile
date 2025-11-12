@@ -6,11 +6,12 @@ import 'package:path/path.dart' as p;
 import 'package:preferences/preferences.dart';
 
 class AddEditPostUseCase {
+  final preferences = locator<IslamPreferences>();
+
   Future<void> addNewPost({
     required File? attachment,
     required String content,
   }) async {
-    final preferences = locator<IslamPreferences>();
     final authorEmail = preferences.getValue(
       key: DatabaseUserCredentials.userEmail,
       defaultValue: '',
@@ -51,6 +52,33 @@ class AddEditPostUseCase {
         docName: postId,
         fromModel: postData,
       ),
+    );
+  }
+
+  Future<void> editPost({
+    required String postId,
+    required File? attachment,
+    required String content,
+  }) async {
+    final updatedAt = DateTime.now().toIso8601String();
+
+    String? attachmentUrl;
+    if (attachment != null) {
+      attachmentUrl = await _maybeUploadAttachment(
+        postId: postId,
+        attachment: attachment,
+      );
+    }
+
+    await FirebaseFirestoreRepository.updateField(
+      collectionName: FirebaseCollectionConstants.posts,
+      docId: postId,
+      updateData: {
+        'direction': _detectDirection(content),
+        'text': content.trim(),
+        'attachmentUrl': attachmentUrl,
+        'updatedAt': updatedAt,
+      },
     );
   }
 

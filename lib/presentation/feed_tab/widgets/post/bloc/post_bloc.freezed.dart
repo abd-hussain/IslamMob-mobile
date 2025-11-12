@@ -55,16 +55,15 @@ extension PostEventPatterns on PostEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _Edit value)?  edit,TResult Function( _ReportPost value)?  report,TResult Function( _DeletePost value)?  delete,TResult Function( _ChangePostVote value)?  changeVote,TResult Function( _AddRemoveFromBookmark value)?  addRemoveFromBookMark,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _EditPost value)?  edit,TResult Function( _ReportPost value)?  report,TResult Function( _DeletePost value)?  delete,TResult Function( _ChangePostVote value)?  changeVote,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case _Edit() when edit != null:
+return initial(_that);case _EditPost() when edit != null:
 return edit(_that);case _ReportPost() when report != null:
 return report(_that);case _DeletePost() when delete != null:
 return delete(_that);case _ChangePostVote() when changeVote != null:
-return changeVote(_that);case _AddRemoveFromBookmark() when addRemoveFromBookMark != null:
-return addRemoveFromBookMark(_that);case _:
+return changeVote(_that);case _:
   return orElse();
 
 }
@@ -82,16 +81,15 @@ return addRemoveFromBookMark(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _Edit value)  edit,required TResult Function( _ReportPost value)  report,required TResult Function( _DeletePost value)  delete,required TResult Function( _ChangePostVote value)  changeVote,required TResult Function( _AddRemoveFromBookmark value)  addRemoveFromBookMark,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _EditPost value)  edit,required TResult Function( _ReportPost value)  report,required TResult Function( _DeletePost value)  delete,required TResult Function( _ChangePostVote value)  changeVote,}){
 final _that = this;
 switch (_that) {
 case _Initial():
-return initial(_that);case _Edit():
+return initial(_that);case _EditPost():
 return edit(_that);case _ReportPost():
 return report(_that);case _DeletePost():
 return delete(_that);case _ChangePostVote():
-return changeVote(_that);case _AddRemoveFromBookmark():
-return addRemoveFromBookMark(_that);case _:
+return changeVote(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -108,16 +106,15 @@ return addRemoveFromBookMark(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _Edit value)?  edit,TResult? Function( _ReportPost value)?  report,TResult? Function( _DeletePost value)?  delete,TResult? Function( _ChangePostVote value)?  changeVote,TResult? Function( _AddRemoveFromBookmark value)?  addRemoveFromBookMark,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _EditPost value)?  edit,TResult? Function( _ReportPost value)?  report,TResult? Function( _DeletePost value)?  delete,TResult? Function( _ChangePostVote value)?  changeVote,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case _Edit() when edit != null:
+return initial(_that);case _EditPost() when edit != null:
 return edit(_that);case _ReportPost() when report != null:
 return report(_that);case _DeletePost() when delete != null:
 return delete(_that);case _ChangePostVote() when changeVote != null:
-return changeVote(_that);case _AddRemoveFromBookmark() when addRemoveFromBookMark != null:
-return addRemoveFromBookMark(_that);case _:
+return changeVote(_that);case _:
   return null;
 
 }
@@ -134,15 +131,14 @@ return addRemoveFromBookMark(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( Post post)?  initial,TResult Function( String postId,  Post post)?  edit,TResult Function( String postId,  String message)?  report,TResult Function( String postId)?  delete,TResult Function( String postId,  PostVoteType voteType)?  changeVote,TResult Function( String postId,  bool inBookMark)?  addRemoveFromBookMark,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( Post post)?  initial,TResult Function( String postId,  Post post)?  edit,TResult Function( String postId,  String message)?  report,TResult Function( String postId)?  delete,TResult Function( String postId,  PostVoteType voteType)?  changeVote,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that.post);case _Edit() when edit != null:
+return initial(_that.post);case _EditPost() when edit != null:
 return edit(_that.postId,_that.post);case _ReportPost() when report != null:
 return report(_that.postId,_that.message);case _DeletePost() when delete != null:
 return delete(_that.postId);case _ChangePostVote() when changeVote != null:
-return changeVote(_that.postId,_that.voteType);case _AddRemoveFromBookmark() when addRemoveFromBookMark != null:
-return addRemoveFromBookMark(_that.postId,_that.inBookMark);case _:
+return changeVote(_that.postId,_that.voteType);case _:
   return orElse();
 
 }
@@ -160,15 +156,14 @@ return addRemoveFromBookMark(_that.postId,_that.inBookMark);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( Post post)  initial,required TResult Function( String postId,  Post post)  edit,required TResult Function( String postId,  String message)  report,required TResult Function( String postId)  delete,required TResult Function( String postId,  PostVoteType voteType)  changeVote,required TResult Function( String postId,  bool inBookMark)  addRemoveFromBookMark,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( Post post)  initial,required TResult Function( String postId,  Post post)  edit,required TResult Function( String postId,  String message)  report,required TResult Function( String postId)  delete,required TResult Function( String postId,  PostVoteType voteType)  changeVote,}) {final _that = this;
 switch (_that) {
 case _Initial():
-return initial(_that.post);case _Edit():
+return initial(_that.post);case _EditPost():
 return edit(_that.postId,_that.post);case _ReportPost():
 return report(_that.postId,_that.message);case _DeletePost():
 return delete(_that.postId);case _ChangePostVote():
-return changeVote(_that.postId,_that.voteType);case _AddRemoveFromBookmark():
-return addRemoveFromBookMark(_that.postId,_that.inBookMark);case _:
+return changeVote(_that.postId,_that.voteType);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -185,15 +180,14 @@ return addRemoveFromBookMark(_that.postId,_that.inBookMark);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( Post post)?  initial,TResult? Function( String postId,  Post post)?  edit,TResult? Function( String postId,  String message)?  report,TResult? Function( String postId)?  delete,TResult? Function( String postId,  PostVoteType voteType)?  changeVote,TResult? Function( String postId,  bool inBookMark)?  addRemoveFromBookMark,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( Post post)?  initial,TResult? Function( String postId,  Post post)?  edit,TResult? Function( String postId,  String message)?  report,TResult? Function( String postId)?  delete,TResult? Function( String postId,  PostVoteType voteType)?  changeVote,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that.post);case _Edit() when edit != null:
+return initial(_that.post);case _EditPost() when edit != null:
 return edit(_that.postId,_that.post);case _ReportPost() when report != null:
 return report(_that.postId,_that.message);case _DeletePost() when delete != null:
 return delete(_that.postId);case _ChangePostVote() when changeVote != null:
-return changeVote(_that.postId,_that.voteType);case _AddRemoveFromBookmark() when addRemoveFromBookMark != null:
-return addRemoveFromBookMark(_that.postId,_that.inBookMark);case _:
+return changeVote(_that.postId,_that.voteType);case _:
   return null;
 
 }
@@ -279,8 +273,8 @@ $PostCopyWith<$Res> get post {
 /// @nodoc
 
 
-class _Edit implements PostEvent {
-  const _Edit(this.postId, this.post);
+class _EditPost implements PostEvent {
+  const _EditPost(this.postId, this.post);
   
 
  final  String postId;
@@ -290,13 +284,13 @@ class _Edit implements PostEvent {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$EditCopyWith<_Edit> get copyWith => __$EditCopyWithImpl<_Edit>(this, _$identity);
+_$EditPostCopyWith<_EditPost> get copyWith => __$EditPostCopyWithImpl<_EditPost>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Edit&&(identical(other.postId, postId) || other.postId == postId)&&(identical(other.post, post) || other.post == post));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditPost&&(identical(other.postId, postId) || other.postId == postId)&&(identical(other.post, post) || other.post == post));
 }
 
 
@@ -312,8 +306,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$EditCopyWith<$Res> implements $PostEventCopyWith<$Res> {
-  factory _$EditCopyWith(_Edit value, $Res Function(_Edit) _then) = __$EditCopyWithImpl;
+abstract mixin class _$EditPostCopyWith<$Res> implements $PostEventCopyWith<$Res> {
+  factory _$EditPostCopyWith(_EditPost value, $Res Function(_EditPost) _then) = __$EditPostCopyWithImpl;
 @useResult
 $Res call({
  String postId, Post post
@@ -324,17 +318,17 @@ $PostCopyWith<$Res> get post;
 
 }
 /// @nodoc
-class __$EditCopyWithImpl<$Res>
-    implements _$EditCopyWith<$Res> {
-  __$EditCopyWithImpl(this._self, this._then);
+class __$EditPostCopyWithImpl<$Res>
+    implements _$EditPostCopyWith<$Res> {
+  __$EditPostCopyWithImpl(this._self, this._then);
 
-  final _Edit _self;
-  final $Res Function(_Edit) _then;
+  final _EditPost _self;
+  final $Res Function(_EditPost) _then;
 
 /// Create a copy of PostEvent
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? postId = null,Object? post = null,}) {
-  return _then(_Edit(
+  return _then(_EditPost(
 null == postId ? _self.postId : postId // ignore: cast_nullable_to_non_nullable
 as String,null == post ? _self.post : post // ignore: cast_nullable_to_non_nullable
 as Post,
@@ -562,74 +556,6 @@ $PostVoteTypeCopyWith<$Res> get voteType {
     return _then(_self.copyWith(voteType: value));
   });
 }
-}
-
-/// @nodoc
-
-
-class _AddRemoveFromBookmark implements PostEvent {
-  const _AddRemoveFromBookmark(this.postId, this.inBookMark);
-  
-
- final  String postId;
- final  bool inBookMark;
-
-/// Create a copy of PostEvent
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$AddRemoveFromBookmarkCopyWith<_AddRemoveFromBookmark> get copyWith => __$AddRemoveFromBookmarkCopyWithImpl<_AddRemoveFromBookmark>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AddRemoveFromBookmark&&(identical(other.postId, postId) || other.postId == postId)&&(identical(other.inBookMark, inBookMark) || other.inBookMark == inBookMark));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,postId,inBookMark);
-
-@override
-String toString() {
-  return 'PostEvent.addRemoveFromBookMark(postId: $postId, inBookMark: $inBookMark)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$AddRemoveFromBookmarkCopyWith<$Res> implements $PostEventCopyWith<$Res> {
-  factory _$AddRemoveFromBookmarkCopyWith(_AddRemoveFromBookmark value, $Res Function(_AddRemoveFromBookmark) _then) = __$AddRemoveFromBookmarkCopyWithImpl;
-@useResult
-$Res call({
- String postId, bool inBookMark
-});
-
-
-
-
-}
-/// @nodoc
-class __$AddRemoveFromBookmarkCopyWithImpl<$Res>
-    implements _$AddRemoveFromBookmarkCopyWith<$Res> {
-  __$AddRemoveFromBookmarkCopyWithImpl(this._self, this._then);
-
-  final _AddRemoveFromBookmark _self;
-  final $Res Function(_AddRemoveFromBookmark) _then;
-
-/// Create a copy of PostEvent
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? postId = null,Object? inBookMark = null,}) {
-  return _then(_AddRemoveFromBookmark(
-null == postId ? _self.postId : postId // ignore: cast_nullable_to_non_nullable
-as String,null == inBookMark ? _self.inBookMark : inBookMark // ignore: cast_nullable_to_non_nullable
-as bool,
-  ));
-}
-
-
 }
 
 /// @nodoc

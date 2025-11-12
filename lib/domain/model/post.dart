@@ -14,6 +14,7 @@ abstract class Post with _$Post {
     required String content,
     required PostCategoryType? category,
     required PostDirection direction,
+    required String? imageUrl,
 
     //Profile
     required String profileImageUrl,

@@ -1870,4 +1870,16 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
   @override
   String get addPostFooterText =>
       'We are reading all of the post carefully, that\'s why your post will go for review before we push it up';
+
+  @override
+  String get anonymous => 'Anonymous';
+
+  @override
+  String get delete_post_title => 'Are you sure you want to delete this post';
+
+  @override
+  String get delete_post_option => 'Delete';
+
+  @override
+  String get editPost => 'Edit Post';
 }

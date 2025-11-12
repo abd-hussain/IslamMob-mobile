@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Post {
 
- String? get id; String get createdDate; String get ownerEmail; int get upComments; int get downComments; String get content; PostCategoryType? get category; PostDirection get direction;//Profile
+ String? get id; String get createdDate; String get ownerEmail; int get upComments; int get downComments; String get content; PostCategoryType? get category; PostDirection get direction; String? get imageUrl;//Profile
  String get profileImageUrl; String get profilefullName; String get countryFlag;//Details
  bool get isReported; bool get isAddedToBookMark; PostVoteType get voteStatus;
 /// Create a copy of Post
@@ -30,16 +30,16 @@ $PostCopyWith<Post> get copyWith => _$PostCopyWithImpl<Post>(this as Post, _$ide
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Post&&(identical(other.id, id) || other.id == id)&&(identical(other.createdDate, createdDate) || other.createdDate == createdDate)&&(identical(other.ownerEmail, ownerEmail) || other.ownerEmail == ownerEmail)&&(identical(other.upComments, upComments) || other.upComments == upComments)&&(identical(other.downComments, downComments) || other.downComments == downComments)&&(identical(other.content, content) || other.content == content)&&(identical(other.category, category) || other.category == category)&&(identical(other.direction, direction) || other.direction == direction)&&(identical(other.profileImageUrl, profileImageUrl) || other.profileImageUrl == profileImageUrl)&&(identical(other.profilefullName, profilefullName) || other.profilefullName == profilefullName)&&(identical(other.countryFlag, countryFlag) || other.countryFlag == countryFlag)&&(identical(other.isReported, isReported) || other.isReported == isReported)&&(identical(other.isAddedToBookMark, isAddedToBookMark) || other.isAddedToBookMark == isAddedToBookMark)&&(identical(other.voteStatus, voteStatus) || other.voteStatus == voteStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Post&&(identical(other.id, id) || other.id == id)&&(identical(other.createdDate, createdDate) || other.createdDate == createdDate)&&(identical(other.ownerEmail, ownerEmail) || other.ownerEmail == ownerEmail)&&(identical(other.upComments, upComments) || other.upComments == upComments)&&(identical(other.downComments, downComments) || other.downComments == downComments)&&(identical(other.content, content) || other.content == content)&&(identical(other.category, category) || other.category == category)&&(identical(other.direction, direction) || other.direction == direction)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.profileImageUrl, profileImageUrl) || other.profileImageUrl == profileImageUrl)&&(identical(other.profilefullName, profilefullName) || other.profilefullName == profilefullName)&&(identical(other.countryFlag, countryFlag) || other.countryFlag == countryFlag)&&(identical(other.isReported, isReported) || other.isReported == isReported)&&(identical(other.isAddedToBookMark, isAddedToBookMark) || other.isAddedToBookMark == isAddedToBookMark)&&(identical(other.voteStatus, voteStatus) || other.voteStatus == voteStatus));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,createdDate,ownerEmail,upComments,downComments,content,category,direction,profileImageUrl,profilefullName,countryFlag,isReported,isAddedToBookMark,voteStatus);
+int get hashCode => Object.hash(runtimeType,id,createdDate,ownerEmail,upComments,downComments,content,category,direction,imageUrl,profileImageUrl,profilefullName,countryFlag,isReported,isAddedToBookMark,voteStatus);
 
 @override
 String toString() {
-  return 'Post(id: $id, createdDate: $createdDate, ownerEmail: $ownerEmail, upComments: $upComments, downComments: $downComments, content: $content, category: $category, direction: $direction, profileImageUrl: $profileImageUrl, profilefullName: $profilefullName, countryFlag: $countryFlag, isReported: $isReported, isAddedToBookMark: $isAddedToBookMark, voteStatus: $voteStatus)';
+  return 'Post(id: $id, createdDate: $createdDate, ownerEmail: $ownerEmail, upComments: $upComments, downComments: $downComments, content: $content, category: $category, direction: $direction, imageUrl: $imageUrl, profileImageUrl: $profileImageUrl, profilefullName: $profilefullName, countryFlag: $countryFlag, isReported: $isReported, isAddedToBookMark: $isAddedToBookMark, voteStatus: $voteStatus)';
 }
 
 
@@ -50,7 +50,7 @@ abstract mixin class $PostCopyWith<$Res>  {
   factory $PostCopyWith(Post value, $Res Function(Post) _then) = _$PostCopyWithImpl;
 @useResult
 $Res call({
- String? id, String createdDate, String ownerEmail, int upComments, int downComments, String content, PostCategoryType? category, PostDirection direction, String profileImageUrl, String profilefullName, String countryFlag, bool isReported, bool isAddedToBookMark, PostVoteType voteStatus
+ String? id, String createdDate, String ownerEmail, int upComments, int downComments, String content, PostCategoryType? category, PostDirection direction, String? imageUrl, String profileImageUrl, String profilefullName, String countryFlag, bool isReported, bool isAddedToBookMark, PostVoteType voteStatus
 });
 
 
@@ -67,7 +67,7 @@ class _$PostCopyWithImpl<$Res>
 
 /// Create a copy of Post
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? createdDate = null,Object? ownerEmail = null,Object? upComments = null,Object? downComments = null,Object? content = null,Object? category = freezed,Object? direction = null,Object? profileImageUrl = null,Object? profilefullName = null,Object? countryFlag = null,Object? isReported = null,Object? isAddedToBookMark = null,Object? voteStatus = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? createdDate = null,Object? ownerEmail = null,Object? upComments = null,Object? downComments = null,Object? content = null,Object? category = freezed,Object? direction = null,Object? imageUrl = freezed,Object? profileImageUrl = null,Object? profilefullName = null,Object? countryFlag = null,Object? isReported = null,Object? isAddedToBookMark = null,Object? voteStatus = null,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,createdDate: null == createdDate ? _self.createdDate : createdDate // ignore: cast_nullable_to_non_nullable
@@ -77,7 +77,8 @@ as int,downComments: null == downComments ? _self.downComments : downComments //
 as int,content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
 as String,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as PostCategoryType?,direction: null == direction ? _self.direction : direction // ignore: cast_nullable_to_non_nullable
-as PostDirection,profileImageUrl: null == profileImageUrl ? _self.profileImageUrl : profileImageUrl // ignore: cast_nullable_to_non_nullable
+as PostDirection,imageUrl: freezed == imageUrl ? _self.imageUrl : imageUrl // ignore: cast_nullable_to_non_nullable
+as String?,profileImageUrl: null == profileImageUrl ? _self.profileImageUrl : profileImageUrl // ignore: cast_nullable_to_non_nullable
 as String,profilefullName: null == profilefullName ? _self.profilefullName : profilefullName // ignore: cast_nullable_to_non_nullable
 as String,countryFlag: null == countryFlag ? _self.countryFlag : countryFlag // ignore: cast_nullable_to_non_nullable
 as String,isReported: null == isReported ? _self.isReported : isReported // ignore: cast_nullable_to_non_nullable
@@ -198,10 +199,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String createdDate,  String ownerEmail,  int upComments,  int downComments,  String content,  PostCategoryType? category,  PostDirection direction,  String profileImageUrl,  String profilefullName,  String countryFlag,  bool isReported,  bool isAddedToBookMark,  PostVoteType voteStatus)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String createdDate,  String ownerEmail,  int upComments,  int downComments,  String content,  PostCategoryType? category,  PostDirection direction,  String? imageUrl,  String profileImageUrl,  String profilefullName,  String countryFlag,  bool isReported,  bool isAddedToBookMark,  PostVoteType voteStatus)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Post() when $default != null:
-return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_that.downComments,_that.content,_that.category,_that.direction,_that.profileImageUrl,_that.profilefullName,_that.countryFlag,_that.isReported,_that.isAddedToBookMark,_that.voteStatus);case _:
+return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_that.downComments,_that.content,_that.category,_that.direction,_that.imageUrl,_that.profileImageUrl,_that.profilefullName,_that.countryFlag,_that.isReported,_that.isAddedToBookMark,_that.voteStatus);case _:
   return orElse();
 
 }
@@ -219,10 +220,10 @@ return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String createdDate,  String ownerEmail,  int upComments,  int downComments,  String content,  PostCategoryType? category,  PostDirection direction,  String profileImageUrl,  String profilefullName,  String countryFlag,  bool isReported,  bool isAddedToBookMark,  PostVoteType voteStatus)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String createdDate,  String ownerEmail,  int upComments,  int downComments,  String content,  PostCategoryType? category,  PostDirection direction,  String? imageUrl,  String profileImageUrl,  String profilefullName,  String countryFlag,  bool isReported,  bool isAddedToBookMark,  PostVoteType voteStatus)  $default,) {final _that = this;
 switch (_that) {
 case _Post():
-return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_that.downComments,_that.content,_that.category,_that.direction,_that.profileImageUrl,_that.profilefullName,_that.countryFlag,_that.isReported,_that.isAddedToBookMark,_that.voteStatus);case _:
+return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_that.downComments,_that.content,_that.category,_that.direction,_that.imageUrl,_that.profileImageUrl,_that.profilefullName,_that.countryFlag,_that.isReported,_that.isAddedToBookMark,_that.voteStatus);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -239,10 +240,10 @@ return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String createdDate,  String ownerEmail,  int upComments,  int downComments,  String content,  PostCategoryType? category,  PostDirection direction,  String profileImageUrl,  String profilefullName,  String countryFlag,  bool isReported,  bool isAddedToBookMark,  PostVoteType voteStatus)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String createdDate,  String ownerEmail,  int upComments,  int downComments,  String content,  PostCategoryType? category,  PostDirection direction,  String? imageUrl,  String profileImageUrl,  String profilefullName,  String countryFlag,  bool isReported,  bool isAddedToBookMark,  PostVoteType voteStatus)?  $default,) {final _that = this;
 switch (_that) {
 case _Post() when $default != null:
-return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_that.downComments,_that.content,_that.category,_that.direction,_that.profileImageUrl,_that.profilefullName,_that.countryFlag,_that.isReported,_that.isAddedToBookMark,_that.voteStatus);case _:
+return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_that.downComments,_that.content,_that.category,_that.direction,_that.imageUrl,_that.profileImageUrl,_that.profilefullName,_that.countryFlag,_that.isReported,_that.isAddedToBookMark,_that.voteStatus);case _:
   return null;
 
 }
@@ -254,7 +255,7 @@ return $default(_that.id,_that.createdDate,_that.ownerEmail,_that.upComments,_th
 @JsonSerializable()
 
 class _Post implements Post {
-   _Post({this.id, required this.createdDate, required this.ownerEmail, required this.upComments, required this.downComments, required this.content, required this.category, required this.direction, required this.profileImageUrl, required this.profilefullName, required this.countryFlag, required this.isReported, required this.isAddedToBookMark, required this.voteStatus});
+   _Post({this.id, required this.createdDate, required this.ownerEmail, required this.upComments, required this.downComments, required this.content, required this.category, required this.direction, required this.imageUrl, required this.profileImageUrl, required this.profilefullName, required this.countryFlag, required this.isReported, required this.isAddedToBookMark, required this.voteStatus});
   factory _Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
 
 @override final  String? id;
@@ -265,6 +266,7 @@ class _Post implements Post {
 @override final  String content;
 @override final  PostCategoryType? category;
 @override final  PostDirection direction;
+@override final  String? imageUrl;
 //Profile
 @override final  String profileImageUrl;
 @override final  String profilefullName;
@@ -287,16 +289,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Post&&(identical(other.id, id) || other.id == id)&&(identical(other.createdDate, createdDate) || other.createdDate == createdDate)&&(identical(other.ownerEmail, ownerEmail) || other.ownerEmail == ownerEmail)&&(identical(other.upComments, upComments) || other.upComments == upComments)&&(identical(other.downComments, downComments) || other.downComments == downComments)&&(identical(other.content, content) || other.content == content)&&(identical(other.category, category) || other.category == category)&&(identical(other.direction, direction) || other.direction == direction)&&(identical(other.profileImageUrl, profileImageUrl) || other.profileImageUrl == profileImageUrl)&&(identical(other.profilefullName, profilefullName) || other.profilefullName == profilefullName)&&(identical(other.countryFlag, countryFlag) || other.countryFlag == countryFlag)&&(identical(other.isReported, isReported) || other.isReported == isReported)&&(identical(other.isAddedToBookMark, isAddedToBookMark) || other.isAddedToBookMark == isAddedToBookMark)&&(identical(other.voteStatus, voteStatus) || other.voteStatus == voteStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Post&&(identical(other.id, id) || other.id == id)&&(identical(other.createdDate, createdDate) || other.createdDate == createdDate)&&(identical(other.ownerEmail, ownerEmail) || other.ownerEmail == ownerEmail)&&(identical(other.upComments, upComments) || other.upComments == upComments)&&(identical(other.downComments, downComments) || other.downComments == downComments)&&(identical(other.content, content) || other.content == content)&&(identical(other.category, category) || other.category == category)&&(identical(other.direction, direction) || other.direction == direction)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.profileImageUrl, profileImageUrl) || other.profileImageUrl == profileImageUrl)&&(identical(other.profilefullName, profilefullName) || other.profilefullName == profilefullName)&&(identical(other.countryFlag, countryFlag) || other.countryFlag == countryFlag)&&(identical(other.isReported, isReported) || other.isReported == isReported)&&(identical(other.isAddedToBookMark, isAddedToBookMark) || other.isAddedToBookMark == isAddedToBookMark)&&(identical(other.voteStatus, voteStatus) || other.voteStatus == voteStatus));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,createdDate,ownerEmail,upComments,downComments,content,category,direction,profileImageUrl,profilefullName,countryFlag,isReported,isAddedToBookMark,voteStatus);
+int get hashCode => Object.hash(runtimeType,id,createdDate,ownerEmail,upComments,downComments,content,category,direction,imageUrl,profileImageUrl,profilefullName,countryFlag,isReported,isAddedToBookMark,voteStatus);
 
 @override
 String toString() {
-  return 'Post(id: $id, createdDate: $createdDate, ownerEmail: $ownerEmail, upComments: $upComments, downComments: $downComments, content: $content, category: $category, direction: $direction, profileImageUrl: $profileImageUrl, profilefullName: $profilefullName, countryFlag: $countryFlag, isReported: $isReported, isAddedToBookMark: $isAddedToBookMark, voteStatus: $voteStatus)';
+  return 'Post(id: $id, createdDate: $createdDate, ownerEmail: $ownerEmail, upComments: $upComments, downComments: $downComments, content: $content, category: $category, direction: $direction, imageUrl: $imageUrl, profileImageUrl: $profileImageUrl, profilefullName: $profilefullName, countryFlag: $countryFlag, isReported: $isReported, isAddedToBookMark: $isAddedToBookMark, voteStatus: $voteStatus)';
 }
 
 
@@ -307,7 +309,7 @@ abstract mixin class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   factory _$PostCopyWith(_Post value, $Res Function(_Post) _then) = __$PostCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String createdDate, String ownerEmail, int upComments, int downComments, String content, PostCategoryType? category, PostDirection direction, String profileImageUrl, String profilefullName, String countryFlag, bool isReported, bool isAddedToBookMark, PostVoteType voteStatus
+ String? id, String createdDate, String ownerEmail, int upComments, int downComments, String content, PostCategoryType? category, PostDirection direction, String? imageUrl, String profileImageUrl, String profilefullName, String countryFlag, bool isReported, bool isAddedToBookMark, PostVoteType voteStatus
 });
 
 
@@ -324,7 +326,7 @@ class __$PostCopyWithImpl<$Res>
 
 /// Create a copy of Post
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? createdDate = null,Object? ownerEmail = null,Object? upComments = null,Object? downComments = null,Object? content = null,Object? category = freezed,Object? direction = null,Object? profileImageUrl = null,Object? profilefullName = null,Object? countryFlag = null,Object? isReported = null,Object? isAddedToBookMark = null,Object? voteStatus = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? createdDate = null,Object? ownerEmail = null,Object? upComments = null,Object? downComments = null,Object? content = null,Object? category = freezed,Object? direction = null,Object? imageUrl = freezed,Object? profileImageUrl = null,Object? profilefullName = null,Object? countryFlag = null,Object? isReported = null,Object? isAddedToBookMark = null,Object? voteStatus = null,}) {
   return _then(_Post(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,createdDate: null == createdDate ? _self.createdDate : createdDate // ignore: cast_nullable_to_non_nullable
@@ -334,7 +336,8 @@ as int,downComments: null == downComments ? _self.downComments : downComments //
 as int,content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
 as String,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
 as PostCategoryType?,direction: null == direction ? _self.direction : direction // ignore: cast_nullable_to_non_nullable
-as PostDirection,profileImageUrl: null == profileImageUrl ? _self.profileImageUrl : profileImageUrl // ignore: cast_nullable_to_non_nullable
+as PostDirection,imageUrl: freezed == imageUrl ? _self.imageUrl : imageUrl // ignore: cast_nullable_to_non_nullable
+as String?,profileImageUrl: null == profileImageUrl ? _self.profileImageUrl : profileImageUrl // ignore: cast_nullable_to_non_nullable
 as String,profilefullName: null == profilefullName ? _self.profilefullName : profilefullName // ignore: cast_nullable_to_non_nullable
 as String,countryFlag: null == countryFlag ? _self.countryFlag : countryFlag // ignore: cast_nullable_to_non_nullable
 as String,isReported: null == isReported ? _self.isReported : isReported // ignore: cast_nullable_to_non_nullable

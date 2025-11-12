@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
-class PostMoreBottomsheet {
+class PostDeleteBottomsheet {
   Future<void> showBottomSheet({
     required BuildContext context,
-    required bool isMarkedAsBookmark,
-    required bool isPostReportedBefore,
-    required Function() onReportPressed,
-    required Function() onSharePressed,
+    required Function() onDeletePressed,
+    required Function() onCancelPressed,
   }) {
     final localize = IslamMobLocalizations.of(context);
     return showModalBottomSheet(
@@ -27,32 +25,26 @@ class PostMoreBottomsheet {
             mainAxisSize: MainAxisSize.min,
             children: [
               CustomText(
-                title: localize.post_more_option,
+                title: localize.delete_post_title,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 textAlign: TextAlign.center,
+                maxLines: 2,
               ),
               const SizedBox(height: 8),
               _buildSettingsButton(
                 context: context,
-                title: localize.post_share_via,
-                color: const Color(0xff008480),
-                onPressed: onSharePressed,
+                title: localize.delete_post_option,
+                color: Colors.redAccent,
+                titleColor: Colors.redAccent,
+                onPressed: onDeletePressed,
               ),
-              if (isPostReportedBefore == false)
-                _buildSettingsButton(
-                  context: context,
-                  title: localize.post_report,
-                  color: Colors.redAccent,
-                  onPressed: onReportPressed,
-                )
-              else
-                const SizedBox(),
               _buildSettingsButton(
                 context: context,
                 title: localize.cancel,
                 color: Colors.white,
-                onPressed: () {},
+                titleColor: Colors.white,
+                onPressed: onCancelPressed,
               ),
               const SizedBox(height: 28),
             ],
@@ -67,6 +59,7 @@ class PostMoreBottomsheet {
     required BuildContext context,
     required String title,
     required Color color,
+    required Color titleColor,
     required VoidCallback onPressed,
   }) {
     return Padding(
@@ -81,6 +74,7 @@ class PostMoreBottomsheet {
           style: OutlinedButton.styleFrom(side: BorderSide(color: color)),
           child: CustomText(
             title: title,
+            color: titleColor,
             fontSize: 14,
             fontWeight: FontWeight.bold,
           ),

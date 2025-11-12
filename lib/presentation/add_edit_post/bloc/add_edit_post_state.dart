@@ -6,7 +6,10 @@ abstract class AddEditPostState with _$AddEditPostState {
     @Default(false) bool enableSubmitBtn,
     @Default(false) bool loadingStatus,
     File? attachment,
-    @Default("") String? content,
+    String? existingAttachmentUrl,
     @Default(false) bool internetConnectionStauts,
+    @Default(false) bool isEditMode,
+    @Default('') String postId,
+    @Default(false) bool removeExistingAttachment,
   }) = _AddEditPostState;
 }

@@ -16,7 +16,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     on<_Initial>(_initial);
     on<_ReportPost>(_report);
     on<_ChangePostVote>(_changePostVote);
-    on<_AddRemoveFromBookmark>(_addRemoveFromBookmark);
+    on<_DeletePost>(_deletePost);
+    on<_EditPost>(_editPost);
   }
 
   FutureOr<void> _initial(_Initial event, Emitter<PostState> emit) {
@@ -39,18 +40,6 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       userEmail: _userEmail(),
     );
     emit(state.copyWith(isPostReported: true));
-  }
-
-  FutureOr<void> _addRemoveFromBookmark(
-    _AddRemoveFromBookmark event,
-    Emitter<PostState> emit,
-  ) async {
-    await PostUsecase.addRemovePostFromBookMark(
-      postId: event.postId,
-      bookmark: event.inBookMark,
-      userEmail: _userEmail(),
-    );
-    emit(state.copyWith(inBookmark: !event.inBookMark));
   }
 
   FutureOr<void> _changePostVote(
@@ -112,4 +101,12 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     key: DatabaseUserCredentials.userEmail,
     defaultValue: "",
   );
+
+  FutureOr<void> _deletePost(_DeletePost event, Emitter<PostState> emit) {
+    //TODO: delete post
+  }
+
+  FutureOr<void> _editPost(_EditPost event, Emitter<PostState> emit) {
+    //TODO: edit post
+  }
 }

@@ -17,6 +17,7 @@ _Post _$PostFromJson(Map<String, dynamic> json) => _Post(
       ? null
       : PostCategoryType.fromJson(json['category'] as Map<String, dynamic>),
   direction: PostDirection.fromJson(json['direction'] as Map<String, dynamic>),
+  imageUrl: json['imageUrl'] as String?,
   profileImageUrl: json['profileImageUrl'] as String,
   profilefullName: json['profilefullName'] as String,
   countryFlag: json['countryFlag'] as String,
@@ -34,6 +35,7 @@ Map<String, dynamic> _$PostToJson(_Post instance) => <String, dynamic>{
   'content': instance.content,
   'category': instance.category,
   'direction': instance.direction,
+  'imageUrl': instance.imageUrl,
   'profileImageUrl': instance.profileImageUrl,
   'profilefullName': instance.profilefullName,
   'countryFlag': instance.countryFlag,

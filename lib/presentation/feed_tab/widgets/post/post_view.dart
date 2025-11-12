@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/model/post.dart';
+import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/feed_tab/widgets/post/bloc/post_bloc.dart';
+import 'package:islam_app/presentation/feed_tab/widgets/post/bottomsheets/post_delete_bottomsheet.dart';
 import 'package:islam_app/presentation/feed_tab/widgets/post/bottomsheets/post_more_bottomsheet.dart';
 import 'package:islam_app/presentation/feed_tab/widgets/post/bottomsheets/post_report_bottomsheet.dart';
 import 'package:islam_app/presentation/feed_tab/widgets/post/widgets/post_footer_view.dart';
@@ -46,7 +48,32 @@ class PostView extends StatelessWidget {
                       postDetails.ownerEmail,
                     ),
                     postDate: postDetails.createdDate,
-                    onEditPost: () {},
+                    onEditPost: () async {
+                      if (context.read<PostBloc>().isUserLoggedIn()) {
+                        await Navigator.of(
+                          context,
+                          rootNavigator: true,
+                        ).pushNamed(
+                          RoutesConstants.addEditPostScreen,
+                          arguments: postDetails,
+                        );
+                      }
+                    },
+                    onDeletePost: () {
+                      if (context.read<PostBloc>().isUserLoggedIn()) {
+                        PostDeleteBottomsheet().showBottomSheet(
+                          context: context,
+                          onDeletePressed: () {
+                            context.read<PostBloc>().add(
+                              PostEvent.delete(state.postID),
+                            );
+                          },
+                          onCancelPressed: () {},
+                        );
+                      } else {
+                        ShowToast.showLoginRequired(context);
+                      }
+                    },
                   ),
                   Container(height: 0.2, color: const Color(0xff444444)),
                   Padding(
@@ -60,6 +87,14 @@ class PostView extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
+
+                  if (postDetails.imageUrl != "")
+                    Column(
+                      children: [
+                        Image.network(postDetails.imageUrl ?? ''),
+                        const SizedBox(height: 8),
+                      ],
+                    ),
                   const SizedBox(height: 8),
                   PostFooterView(
                     voteStatus: state.postVoteType,
@@ -78,18 +113,6 @@ class PostView extends StatelessWidget {
                       context: context,
                       isMarkedAsBookmark: state.inBookmark,
                       isPostReportedBefore: state.isPostReported,
-                      onBookMarkPressed: () {
-                        if (context.read<PostBloc>().isUserLoggedIn()) {
-                          context.read<PostBloc>().add(
-                            PostEvent.addRemoveFromBookMark(
-                              state.postID,
-                              state.inBookmark,
-                            ),
-                          );
-                        } else {
-                          ShowToast.showLoginRequired(context);
-                        }
-                      },
                       onReportPressed: () {
                         if (context.read<PostBloc>().isUserLoggedIn()) {
                           PostReportBottomsheet().showBottomSheet(

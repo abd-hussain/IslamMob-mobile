@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "572946835267-ii425eoc4u5b06lrbheekavo28662uqp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.islammob.app",
+            "certificate_hash": "0154e7ce3d0a78b78c2bf57ff6ae16bae3dc28cd"
+          }
+        },
+        {
           "client_id": "572946835267-ofccqqcuuv86vdoj3u6akl7dm3scpvp5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

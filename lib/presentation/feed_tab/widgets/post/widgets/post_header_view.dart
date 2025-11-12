@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
+import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class PostHeaderView extends StatelessWidget {
@@ -8,6 +10,7 @@ class PostHeaderView extends StatelessWidget {
   final bool isMyPost;
   final String postDate;
   final void Function()? onEditPost;
+  final void Function()? onDeletePost;
 
   const PostHeaderView({
     super.key,
@@ -16,11 +19,14 @@ class PostHeaderView extends StatelessWidget {
     required this.profileCountryName,
     required this.isMyPost,
     required this.postDate,
-    this.onEditPost,
+    required this.onEditPost,
+    required this.onDeletePost,
   });
 
   @override
   Widget build(BuildContext context) {
+    final localizations = IslamMobLocalizations.of(context);
+
     return Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 4, right: 8, left: 8),
       child: Row(
@@ -80,13 +86,22 @@ class PostHeaderView extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomText(
-                title: profileFullName,
-                color: const Color(0xff444444),
-                fontSize: 12,
-                textAlign: TextAlign.center,
-                fontWeight: FontWeight.bold,
-              ),
+              if (profileFullName != "")
+                CustomText(
+                  title: profileFullName,
+                  color: const Color(0xff444444),
+                  fontSize: 12,
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                )
+              else
+                CustomText(
+                  title: localizations.anonymous,
+                  color: const Color(0xff444444),
+                  fontSize: 12,
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                ),
               const SizedBox(height: 8),
               Directionality(
                 textDirection: TextDirection.ltr,
@@ -100,20 +115,37 @@ class PostHeaderView extends StatelessWidget {
             ],
           ),
           const Expanded(child: SizedBox()),
-          // if (isMyPost)
-          //   ClipRRect(
-          //     borderRadius: const BorderRadius.all(Radius.circular(50)),
-          //     child: Material(
-          //       child: IconButton(
-          //         onPressed: onEditPost,
-          //         icon: const Icon(
-          //           Ionicons.create_outline,
-          //           size: 20,
-          //           color: Color(0xff292929),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
+          if (isMyPost)
+            Row(
+              children: [
+                ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(50)),
+                  child: Material(
+                    child: IconButton(
+                      onPressed: onEditPost,
+                      icon: const Icon(
+                        Ionicons.create_outline,
+                        size: 20,
+                        color: Color(0xff292929),
+                      ),
+                    ),
+                  ),
+                ),
+                ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(50)),
+                  child: Material(
+                    child: IconButton(
+                      onPressed: onDeletePost,
+                      icon: const Icon(
+                        Ionicons.trash_outline,
+                        size: 20,
+                        color: Color(0xff292929),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
     );
