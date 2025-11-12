@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:firebase_manager/firebase_manager.dart';
 import 'package:islam_app/my_app/locator.dart';
+import 'package:logger_manager/logger_manager.dart';
 import 'package:path/path.dart' as p;
 import 'package:preferences/preferences.dart';
 
@@ -83,10 +84,39 @@ class AddEditPostUseCase {
   }
 
   Future<void> deletePost({required String postId}) async {
-    await FirebaseFirestoreRepository.deleteDocument(
-      collectionName: FirebaseCollectionConstants.posts,
-      docId: postId,
-    );
+    try {
+      final postData =
+          await FirebaseFirestoreRepository.getDataFromFireStoreDocument<
+            Map<String, dynamic>
+          >(
+            FireStoreOptions<Map<String, dynamic>>(
+              collectionName: FirebaseCollectionConstants.posts,
+              docName: postId,
+              toModel: (source) =>
+                  (source as Map<String, dynamic>?) ?? <String, dynamic>{},
+            ),
+          );
+
+      final attachmentUrl = postData?['attachmentUrl'] as String? ?? '';
+
+      if (attachmentUrl.isNotEmpty) {
+        final storagePath = _extractStoragePathFromUrl(attachmentUrl);
+        if (storagePath != null) {
+          await FirebaseStorageRepository.deleteFile(storagePath);
+        }
+      }
+    } catch (error, stackTrace) {
+      LoggerManagerBase.logErrorMessage(
+        error: error,
+        stackTrace: stackTrace,
+        message: 'Failed to delete post attachment from storage',
+      );
+    } finally {
+      await FirebaseFirestoreRepository.deleteDocument(
+        collectionName: FirebaseCollectionConstants.posts,
+        docId: postId,
+      );
+    }
   }
 
   Future<String?> _maybeUploadAttachment({
@@ -108,5 +138,24 @@ class AddEditPostUseCase {
   String _detectDirection(String content) {
     final rtlRegex = RegExp(r'[\u0600-\u06FF]');
     return rtlRegex.hasMatch(content) ? 'RTL' : 'LTR';
+  }
+
+  String? _extractStoragePathFromUrl(String url) {
+    try {
+      final uri = Uri.tryParse(url);
+      if (uri == null || uri.pathSegments.isEmpty) return null;
+
+      final encodedPath = uri.pathSegments.last;
+      if (encodedPath.isEmpty) return null;
+
+      return Uri.decodeComponent(encodedPath);
+    } catch (error, stackTrace) {
+      LoggerManagerBase.logErrorMessage(
+        error: error,
+        stackTrace: stackTrace,
+        message: 'Failed to parse attachment url for deletion',
+      );
+      return null;
+    }
   }
 }
