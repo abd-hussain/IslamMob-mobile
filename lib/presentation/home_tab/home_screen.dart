@@ -5,6 +5,7 @@ import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/internet_connection_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/location_permission_view.dart';
+import 'package:islam_app/presentation/home_tab/widgets/next_salah_view/next_salah_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_shortcut_view.dart';
 
@@ -60,6 +61,7 @@ class HomeScreen extends StatelessWidget {
           return SingleChildScrollView(
             child: Column(
               children: [
+                NextSalahView(salahType: state.nextPrayType),
                 _buildToolBarView(),
                 _buildInternetConnectionView(),
                 _buildNotificationPermissionView(),
