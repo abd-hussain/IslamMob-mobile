@@ -1,7 +1,9 @@
+import 'package:advertisments_manager/advertisments_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/presentation/pray_timing_tab/bloc/pray_timing_bloc.dart';
 import 'package:islam_app/presentation/pray_timing_tab/widgets/pray_timing_header_view/pray_timing_header_view.dart';
+import 'package:islam_app/presentation/pray_timing_tab/widgets/salah_timing_view/salah_timing_view.dart';
 
 class PrayTimingScreen extends StatelessWidget {
   const PrayTimingScreen({super.key});
@@ -31,14 +33,9 @@ class PrayTimingScreen extends StatelessWidget {
               child: Column(
                 children: [
                   _buildAppBarSpacer(),
-                  // const SalahTimingView(),
-                  // const SizedBox(height: 0.3),
-                  // // _buildToolBarView(),
-                  // // _buildInternetConnectionView(),
-                  // // _buildNotificationPermissionView(),
-                  // // _buildLocationPermissionView(),
-                  // const AddMobBanner(),
-                  // const SizedBox(height: 75),
+                  const SalahTimingView(),
+                  const AddMobBanner(verticalPadding: 0),
+                  const SizedBox(height: 75),
                 ],
               ),
             ),

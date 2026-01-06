@@ -17,6 +17,8 @@ import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:preferences/preferences.dart';
 
+/// TODO: this screen is broke need to fix it
+
 /// A screen that provides comprehensive prayer calculation settings.
 ///
 /// This screen allows users to configure various aspects of prayer time

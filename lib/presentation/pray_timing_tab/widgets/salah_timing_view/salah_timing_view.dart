@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
-import 'package:islam_app/presentation/home_tab/bloc/salah_timing/salah_timing_bloc.dart';
-import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/day_box.dart';
-import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/widgets/salah_box.dart';
+import 'package:islam_app/presentation/pray_timing_tab/widgets/salah_timing_view/bloc/salah_timing_bloc.dart';
+import 'package:islam_app/presentation/pray_timing_tab/widgets/salah_timing_view/widgets/day_box.dart';
+import 'package:islam_app/presentation/pray_timing_tab/widgets/salah_timing_view/widgets/salah_box.dart';
 import 'package:islam_app/shared_widgets/bottomsheet/setting_bottomsheet.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
@@ -40,18 +40,25 @@ class SalahTimingView extends StatefulWidget {
 }
 
 class _SalahTimingViewState extends State<SalahTimingView> {
+  SwiperController swiperController = SwiperController();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SalahTimingBloc(),
       child: SizedBox(
-        height: 220,
+        height: 460,
         child: Swiper(
           itemCount: 7,
           index: 3,
           loop: false,
-          pagination: const SwiperPagination(),
-          controller: SwiperController(),
+          pagination: const SwiperPagination(
+            alignment: Alignment.bottomCenter,
+            builder: DotSwiperPaginationBuilder(
+              color: Colors.grey,
+              activeColor: Color(0xff38547C),
+            ),
+          ),
+          controller: swiperController,
           itemBuilder: _buildDayTimingView,
         ),
       ),
@@ -59,11 +66,20 @@ class _SalahTimingViewState extends State<SalahTimingView> {
   }
 
   Widget _buildDayTimingView(BuildContext context, int index) {
-    return ColoredBox(
-      color: const Color(0xff292929),
+    return Padding(
+      padding: const EdgeInsets.all(8),
       child: Column(
         children: [
-          DayBox(index: index),
+          DayBox(
+            index: index,
+            onArrowNextPressed: () {
+              swiperController.previous();
+            },
+            onArrowPreviousPressed: () {
+              swiperController.next();
+            },
+          ),
+          const SizedBox(height: 8),
           _buildSalahBoxes(context, index),
           _buildAdditionalInfoRow(context, index),
         ],
@@ -85,8 +101,8 @@ class _SalahTimingViewState extends State<SalahTimingView> {
         final currentSalah = state.currentSalahType;
 
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: Row(
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          child: Column(
             children: [
               SalahBox(
                 salahType: const SalahTimeStateFajir(),
@@ -94,35 +110,30 @@ class _SalahTimingViewState extends State<SalahTimingView> {
                 isCurrentSalah:
                     currentSalah == const SalahTimeStateFajir() && index == 3,
               ),
-              const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateSunrise(),
                 salahTime: prayTimes.sunrise,
                 isCurrentSalah:
                     currentSalah == const SalahTimeStateSunrise() && index == 3,
               ),
-              const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateZhur(),
                 salahTime: prayTimes.dhuhr,
                 isCurrentSalah:
                     currentSalah == const SalahTimeStateZhur() && index == 3,
               ),
-              const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateAsr(),
                 salahTime: prayTimes.asr,
                 isCurrentSalah:
                     currentSalah == const SalahTimeStateAsr() && index == 3,
               ),
-              const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateMaghrib(),
                 salahTime: prayTimes.maghrib,
                 isCurrentSalah:
                     currentSalah == const SalahTimeStateMaghrib() && index == 3,
               ),
-              const Expanded(child: SizedBox()),
               SalahBox(
                 salahType: const SalahTimeStateIsha(),
                 salahTime: prayTimes.isha,
@@ -189,11 +200,8 @@ class _SalahTimingViewState extends State<SalahTimingView> {
   Widget _buildInfoBox({required String title, required DateTime time}) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.grey,
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(10),
-          topLeft: Radius.circular(10),
-        ),
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8),
@@ -241,12 +249,9 @@ class _SalahTimingViewState extends State<SalahTimingView> {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: Container(
-        decoration: BoxDecoration(
-          color: Colors.grey[100],
-          borderRadius: const BorderRadius.only(
-            topRight: Radius.circular(10),
-            topLeft: Radius.circular(10),
-          ),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8),

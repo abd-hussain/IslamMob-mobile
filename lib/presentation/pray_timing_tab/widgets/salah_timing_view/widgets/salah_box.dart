@@ -43,23 +43,29 @@ class SalahBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: isCurrentSalah ? Colors.white : Colors.grey,
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(8),
-          bottomRight: Radius.circular(8),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 4),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(
+            color: isCurrentSalah ? const Color(0xff292929) : Colors.white,
+          ),
+          borderRadius: BorderRadius.circular(10),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 6, right: 6, top: 4, bottom: 4),
-        child: Column(
-          children: [
-            _buildSalahImage(),
-            _buildSalahName(context),
-            _buildSalahTime(),
-            _buildTimeType(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            children: [
+              _buildSalahImage(),
+              const SizedBox(width: 8),
+              _buildSalahName(context),
+              const Expanded(child: SizedBox()),
+              _buildSalahTime(),
+              const SizedBox(width: 4),
+              _buildTimeType(),
+            ],
+          ),
         ),
       ),
     );
@@ -67,14 +73,14 @@ class SalahBox extends StatelessWidget {
 
   /// Builds the image representing the Salah type.
   Widget _buildSalahImage() {
-    return Image.asset(SalahBoxUseCase.getSalahImage(salahType), scale: 6);
+    return Image.asset(SalahBoxUseCase.getSalahImage(salahType), scale: 8);
   }
 
   /// Builds the text widget for the Salah name.
   Widget _buildSalahName(BuildContext context) {
     return CustomText(
       title: SalahBoxUseCase.getSalahName(context, salahType),
-      fontSize: 14,
+      fontSize: 16,
       color: const Color(0xff444444),
       fontWeight: FontWeight.bold,
       textAlign: TextAlign.center,
@@ -85,7 +91,7 @@ class SalahBox extends StatelessWidget {
   Widget _buildSalahTime() {
     return CustomText(
       title: DateFormat('hh:mm').format(salahTime),
-      fontSize: 14,
+      fontSize: 16,
       color: const Color(0xff444444),
       fontWeight: FontWeight.bold,
       maxLines: 2,
@@ -97,7 +103,7 @@ class SalahBox extends StatelessWidget {
   Widget _buildTimeType() {
     return CustomText(
       title: DateFormat('a').format(salahTime),
-      fontSize: 14,
+      fontSize: 12,
       color: const Color(0xff444444),
       fontWeight: FontWeight.bold,
       maxLines: 2,

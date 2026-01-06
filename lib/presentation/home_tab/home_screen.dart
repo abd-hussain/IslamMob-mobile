@@ -1,15 +1,11 @@
 import 'package:advertisments_manager/advertisments_manager.dart';
-import 'package:azkar/model/azkar_salah_time.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
-import 'package:islam_app/presentation/home_tab/bloc/home/home_tab_bloc.dart';
-import 'package:islam_app/presentation/home_tab/widgets/azkar_after_salah/azkar_after_salah_view.dart';
-import 'package:islam_app/presentation/home_tab/widgets/home_header_view/home_header_view.dart';
+import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
 import 'package:islam_app/presentation/home_tab/widgets/internet_connection_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/location_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/notification_permission_view.dart';
-import 'package:islam_app/presentation/home_tab/widgets/salah_timing_view/salah_timing_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_shortcut_view.dart';
 
 /// Main home screen of the Islamic application.
@@ -61,41 +57,20 @@ class HomeScreen extends StatelessWidget {
               ),
             );
           }
-          return NestedScrollView(
-            controller: context.read<HomeTabBloc>().scrollController,
-            headerSliverBuilder: (context, innerBoxIsScrolled) {
-              return [const HomeHeaderView()];
-            },
-            body: SingleChildScrollView(
-              child: Column(
-                children: [
-                  _buildAppBarSpacer(),
-                  const SalahTimingView(),
-                  const SizedBox(height: 0.3),
-                  _buildToolBarView(),
-                  _buildInternetConnectionView(),
-                  _buildNotificationPermissionView(),
-                  _buildLocationPermissionView(),
-                  const AddMobBanner(),
-                  _buildAzkarView(),
-                  const SizedBox(height: 75),
-                ],
-              ),
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                _buildToolBarView(),
+                _buildInternetConnectionView(),
+                _buildNotificationPermissionView(),
+                _buildLocationPermissionView(),
+                const AddMobBanner(),
+                const SizedBox(height: 75),
+              ],
             ),
           );
         },
       ),
-    );
-  }
-
-  /// Builds the spacer under the app bar when it is collapsed.
-  Widget _buildAppBarSpacer() {
-    return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.isBarExpanded != current.isBarExpanded,
-      builder: (context, state) {
-        return SizedBox(height: state.isBarExpanded ? 0 : 75);
-      },
     );
   }
 
@@ -108,27 +83,6 @@ class HomeScreen extends StatelessWidget {
         return ToolbarShortcutView(
           salahTime: SalahTimeStateParser.getSalahTimeState(state.nextPrayType),
         );
-      },
-    );
-  }
-
-  /// Builds the Azkar view based on the next prayer type.
-  Widget _buildAzkarView() {
-    return BlocBuilder<HomeTabBloc, HomeTabState>(
-      buildWhen: (previous, current) =>
-          previous.nextPrayType != current.nextPrayType,
-      builder: (context, state) {
-        final type = SalahTimeStateParser.getSalahTimeState(state.nextPrayType);
-
-        context.read<HomeTabBloc>().initializePrayerTimings();
-
-        if (type == const AzkarSalahTimeState.none()) {
-          return const AzkarAfterSalahView(
-            salahType: AzkarSalahTimeState.isha(),
-          );
-        }
-
-        return AzkarAfterSalahView(salahType: type);
       },
     );
   }
