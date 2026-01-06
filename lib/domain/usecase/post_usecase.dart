@@ -3,9 +3,6 @@ import 'package:islam_app/domain/model/post.dart';
 import 'package:islam_app/domain/model/profile_model.dart';
 import 'package:logger_manager/logger_manager.dart';
 
-//TODO: handle pagenation
-//TODO: post up by defuilt why ??
-
 class PostUsecase {
   static Future<List<Post>> getPosts({
     required PostCategoryType type,

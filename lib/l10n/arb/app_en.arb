@@ -604,7 +604,9 @@
     "anonymous" : "Anonymous",
     "delete_post_title" : "Are you sure you want to delete this post",
     "delete_post_option" : "Delete",
-    "editPost" : "Edit Post"
+    "editPost" : "Edit Post",
+    "login_screen_title" : "Login to make your memories",
+    "prayTimes" : "Prayer"
 
 
 

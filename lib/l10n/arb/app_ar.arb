@@ -627,7 +627,9 @@
     "anonymous" : "مجهول",
     "delete_post_title" : "هل أنت متأكد أنك تريد حذف هذه التدوينة؟",
     "delete_post_option" : "حذف",
-    "editPost" : "تعديل منشور"
+    "editPost" : "تعديل منشور",
+    "login_screen_title" : "سجل الدخول لإنشاء ذكرياتك",
+    "prayTimes" : "الصلاة"
 
 
 

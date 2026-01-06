@@ -1871,4 +1871,10 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get editPost => 'تعديل منشور';
+
+  @override
+  String get login_screen_title => 'سجل الدخول لإنشاء ذكرياتك';
+
+  @override
+  String get prayTimes => 'الصلاة';
 }

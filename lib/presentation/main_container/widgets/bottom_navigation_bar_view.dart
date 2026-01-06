@@ -43,6 +43,11 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
               ),
             ),
             DubloBottomNavBarItems(
+              title: localization.prayTimes,
+              selectedIcon: const Icon(Icons.timer, color: Colors.white),
+              unselectedIcon: const Icon(Icons.timer, color: Color(0xff98A2B3)),
+            ),
+            DubloBottomNavBarItems(
               title: localization.qurankareem,
               selectedIcon: const Icon(
                 Icons.menu_book_rounded,
@@ -50,17 +55,6 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
               ),
               unselectedIcon: const Icon(
                 Icons.menu_book_rounded,
-                color: Color(0xff98A2B3),
-              ),
-            ),
-            DubloBottomNavBarItems(
-              title: localization.today,
-              selectedIcon: const Icon(
-                Icons.local_fire_department_outlined,
-                color: Colors.amber,
-              ),
-              unselectedIcon: const Icon(
-                Icons.local_fire_department_outlined,
                 color: Color(0xff98A2B3),
               ),
             ),

@@ -1882,4 +1882,10 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get editPost => 'Edit Post';
+
+  @override
+  String get login_screen_title => 'Login to make your memories';
+
+  @override
+  String get prayTimes => 'Prayer';
 }

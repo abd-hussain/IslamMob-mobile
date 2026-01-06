@@ -2,34 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:islam_app/presentation/about_us/about_us_screen.dart';
 import 'package:islam_app/presentation/about_us/privacy_policy_screen.dart';
 import 'package:islam_app/presentation/about_us/terms_condition_screen.dart';
-import 'package:islam_app/presentation/add_edit_post/add_edit_post_screen.dart';
 import 'package:islam_app/presentation/azkar_after_salah/azkar_after_salah_screen.dart';
 import 'package:islam_app/presentation/calender/calender_screen.dart';
 import 'package:islam_app/presentation/change_language/change_language_screen.dart';
-import 'package:islam_app/presentation/change_password/change_password_screen.dart';
 import 'package:islam_app/presentation/contacts/contacts_screen.dart';
-import 'package:islam_app/presentation/edit_profile/edit_profile_screen.dart';
 import 'package:islam_app/presentation/estekara/estekara_screen.dart';
-import 'package:islam_app/presentation/feed_tab/feed_screen.dart';
-import 'package:islam_app/presentation/forgot_password/forgot_password_screen.dart';
-import 'package:islam_app/presentation/forgot_password/forgot_password_success_screen.dart';
 import 'package:islam_app/presentation/hajj_omrah/hajj_omrah_details_screen.dart';
 import 'package:islam_app/presentation/hajj_omrah/hajj_omrah_screen.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/details/hisn_al_muslim_details_screen.dart';
 import 'package:islam_app/presentation/hisn_al_muslim/main_list/hisn_al_muslim_list_screen.dart';
 import 'package:islam_app/presentation/home_tab/home_screen.dart';
 import 'package:islam_app/presentation/inboarding/inboarding_screen.dart';
-import 'package:islam_app/presentation/login/manual/manual_login_screen.dart';
-import 'package:islam_app/presentation/login/welcome/welcome_login_screen.dart';
 import 'package:islam_app/presentation/main_container/main_container.dart';
 import 'package:islam_app/presentation/pray_calculation_setting/pray_calculation_setting_screen.dart';
 import 'package:islam_app/presentation/pray_notification_setting/choose_sound/choose_sound_screen.dart';
 import 'package:islam_app/presentation/pray_notification_setting/pray_notification_setting_screen.dart';
+import 'package:islam_app/presentation/pray_timing_tab/pray_timing_screen.dart';
 import 'package:islam_app/presentation/qibla_finder/qibla_finder_screen.dart';
 import 'package:islam_app/presentation/quran_kareem_tab/quran_kareem_screen.dart';
 import 'package:islam_app/presentation/quran_pages_index/quran_pages_index_screen.dart';
 import 'package:islam_app/presentation/quran_prints/quran_prints_screen.dart';
-import 'package:islam_app/presentation/register/register_screen.dart';
 import 'package:islam_app/presentation/report_suggestions/report_suggestion_screen.dart';
 import 'package:islam_app/presentation/settings_tab/settings_screen.dart';
 import 'package:islam_app/presentation/tasbeeh/tasbeeh_screen.dart';
@@ -73,6 +65,9 @@ class RoutesConstants {
 
   /// Route for the home screen with prayer times.
   static const homeScreen = 'homeScreen';
+
+  /// Route for the feed screen.
+  static const prayTimesScreen = 'prayTimesScreen';
 
   /// Route for the web view screen.
   static const webViewScreen = 'webViewScreen';
@@ -127,32 +122,6 @@ class RoutesConstants {
 
   /// Route for the notification sound selection screen.
   static const chooseSoundScreen = 'chooseSoundScreen';
-
-  /// Route for the login screen.
-  static const manualLoginScreen = 'manualLoginScreen';
-
-  static const welcomeLoginScreen = 'welcomeLoginScreen';
-
-  /// Route for the register screen.
-  static const registerScreen = 'registerScreen';
-
-  /// Route for the forgot password screen.
-  static const forgotPasswordScreen = 'forgotPasswordScreen';
-
-  /// Route for the forgot Success password screen.
-  static const forgotSuccessPasswordScreen = 'forgotSuccessPasswordScreen';
-
-  /// Route for the change password screen.
-  static const changePasswordScreen = 'changePasswordScreen';
-
-  /// Route for the edit profile screen.
-  static const editProfileScreen = 'editProfileScreen';
-
-  /// Route for the add post screen.
-  static const addEditPostScreen = 'addEditPostScreen';
-
-  /// Route for the feed tab screen.
-  static const feedTabScreen = 'feedTabScreen';
 }
 
 /// Map of route names to their corresponding screen widgets.
@@ -199,14 +168,5 @@ final Map<String, Widget> routes = {
   RoutesConstants.hajjOmrahDetailsScreen: const HajjOmrahDetailsScreen(),
   RoutesConstants.estekaraScreen: const EstekaraScreen(),
   RoutesConstants.chooseSoundScreen: const ChooseSoundScreen(),
-  RoutesConstants.manualLoginScreen: const ManualLoginScreen(),
-  RoutesConstants.welcomeLoginScreen: const WelcomeLoginScreen(),
-  RoutesConstants.registerScreen: const RegisterScreen(),
-  RoutesConstants.forgotPasswordScreen: const ForgotPasswordScreen(),
-  RoutesConstants.forgotSuccessPasswordScreen:
-      const ForgotPasswordSuccessScreen(),
-  RoutesConstants.changePasswordScreen: const ChangePasswordScreen(),
-  RoutesConstants.editProfileScreen: const EditProfileScreen(),
-  RoutesConstants.feedTabScreen: const FeedScreen(),
-  RoutesConstants.addEditPostScreen: const AddEditPostScreen(),
+  RoutesConstants.prayTimesScreen: const PrayTimingScreen(),
 };

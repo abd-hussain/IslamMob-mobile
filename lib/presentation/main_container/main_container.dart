@@ -58,10 +58,10 @@ class _MainContainerState extends State<MainContainer> {
                       index: state.selectedIndex,
                       children: const [
                         TabNavigator(initialRoute: RoutesConstants.homeScreen),
-                        TabNavigator(initialRoute: RoutesConstants.quranScreen),
                         TabNavigator(
-                          initialRoute: RoutesConstants.feedTabScreen,
+                          initialRoute: RoutesConstants.prayTimesScreen,
                         ),
+                        TabNavigator(initialRoute: RoutesConstants.quranScreen),
                         TabNavigator(
                           initialRoute: RoutesConstants.settingsScreen,
                         ),

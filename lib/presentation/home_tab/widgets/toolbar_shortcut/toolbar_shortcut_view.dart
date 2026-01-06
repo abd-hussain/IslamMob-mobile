@@ -5,12 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/constants/argument_constant.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
-import 'package:islam_app/my_app/locator.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_cell.dart';
 import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
 import 'package:islam_app/shared_widgets/dialogs/support_us/support_dialog.dart';
-import 'package:preferences/preferences.dart';
 
 /// Widget for displaying the main toolbar with Islamic app shortcuts.
 ///
@@ -41,10 +39,6 @@ class ToolbarShortcutView extends StatelessWidget {
   Widget build(BuildContext context) {
     final localize = IslamMobLocalizations.of(context);
     final navigator = Navigator.of(context, rootNavigator: true);
-    final bool isUserLoggedIn = locator<IslamPreferences>().getValue(
-      key: DatabaseUserCredentials.isUserLoggedIn,
-      defaultValue: false,
-    );
 
     return Container(
       decoration: _containerDecoration(),
@@ -196,32 +190,9 @@ class ToolbarShortcutView extends StatelessWidget {
                     },
                   ),
                 ),
-                Expanded(
-                  child: ToolbarCell(
-                    title: isUserLoggedIn
-                        ? localize.edit_profile
-                        : localize.login,
-                    imagePath: "assets/images/toolbar/login.png",
-                    onTap: () async {
-                      if (isUserLoggedIn) {
-                        await FirebaseAnalyticsRepository.logEvent(
-                          name: "EditProfileScreenFromHomeScreen",
-                        );
-                        await navigator.pushNamed(
-                          RoutesConstants.editProfileScreen,
-                        );
-                      } else {
-                        await FirebaseAnalyticsRepository.logEvent(
-                          name: "WelcomeLoginScreenFromHomeScreen",
-                        );
-                        await navigator.pushNamed(
-                          RoutesConstants.welcomeLoginScreen,
-                        );
-                      }
-                    },
-                  ),
-                ),
                 const Expanded(child: SizedBox()),
+                const Expanded(child: SizedBox()),
+
                 //   child: ToolbarCell(
                 //     title: localize.qiblaFinder,
                 //     imagePath: "assets/images/toolbar/qibla.png",

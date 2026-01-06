@@ -3682,6 +3682,18 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Edit Post'**
   String get editPost;
+
+  /// No description provided for @login_screen_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Login to make your memories'**
+  String get login_screen_title;
+
+  /// No description provided for @prayTimes.
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer'**
+  String get prayTimes;
 }
 
 class _IslamMobLocalizationsDelegate
