@@ -1894,4 +1894,15 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get remeningTime => 'Remaining time';
+
+  @override
+  String get donateapp => 'Support App';
+
+  @override
+  String get donateappDetails =>
+      'Your donations help us continue to develop and improve the app to serve Muslims';
+
+  @override
+  String get shareappDetails =>
+      'Share it with friends and be part of spreading goodness';
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/usecase/salah_time_state_parser.dart';
 import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/presentation/home_tab/widgets/about_app_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/internet_connection_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/location_permission_view.dart';
 import 'package:islam_app/presentation/home_tab/widgets/next_salah_view/next_salah_view.dart';
@@ -73,11 +74,12 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
                 _buildToolBarView(),
+                const AddMobBanner(),
                 _buildInternetConnectionView(),
                 _buildNotificationPermissionView(),
                 _buildLocationPermissionView(),
-                const AddMobBanner(),
-                const SizedBox(height: 75),
+                const AboutIslamView(),
+                const SizedBox(height: 80),
               ],
             ),
           );

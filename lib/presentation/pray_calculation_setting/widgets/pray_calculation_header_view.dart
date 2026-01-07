@@ -19,9 +19,12 @@ class PrayCalculationHeaderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: _buildSalahBoxes(context),
+    return SizedBox(
+      height: 350,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: _buildSalahBoxes(context),
+      ),
     );
   }
 

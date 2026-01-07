@@ -631,7 +631,10 @@
     "login_screen_title" : "سجل الدخول لإنشاء ذكرياتك",
     "prayTimes" : "الصلاة",
     "tapToSeeThePrayerTime" : "انقر لعرض أوقات الصلاة",
-    "remeningTime" : "الوقت المتبقي"
+    "remeningTime" : "الوقت المتبقي",
+    "donateapp" : "ادعم التطبيق",
+    "donateappDetails" : "تساعد تبرعاتكم في استمرار تطوير و تحسين التطبيق لخدمة المسلمين",
+    "shareappDetails" : "شاركها مع أصدقائك وكن جزءًا من نشر الخير"
 
 
 

@@ -1883,4 +1883,14 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get remeningTime => 'الوقت المتبقي';
+
+  @override
+  String get donateapp => 'ادعم التطبيق';
+
+  @override
+  String get donateappDetails =>
+      'تساعد تبرعاتكم في استمرار تطوير و تحسين التطبيق لخدمة المسلمين';
+
+  @override
+  String get shareappDetails => 'شاركها مع أصدقائك وكن جزءًا من نشر الخير';
 }

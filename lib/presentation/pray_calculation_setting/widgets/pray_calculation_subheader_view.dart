@@ -74,7 +74,7 @@ class _TimeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.grey,
+        color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Padding(

@@ -5,8 +5,6 @@ import 'package:islam_app/domain/constants/argument_constant.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/islam_mob_app/routes.dart';
 import 'package:islam_app/presentation/home_tab/widgets/toolbar_shortcut/toolbar_cell.dart';
-import 'package:islam_app/shared_widgets/dialogs/share_app/share_dialog.dart';
-import 'package:islam_app/shared_widgets/dialogs/support_us/support_dialog.dart';
 
 /// Widget for displaying the main toolbar with Islamic app shortcuts.
 ///
@@ -157,100 +155,65 @@ class ToolbarShortcutView extends StatelessWidget {
                   const Expanded(child: SizedBox()),
                 ],
               ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  Expanded(
-                    child: ToolbarCell(
-                      title: localize.shareapp,
-                      imagePath: "assets/images/toolbar/share.png",
-                      onTap: () async {
-                        await FirebaseAnalyticsRepository.logEvent(
-                          name: "ShareAppFromHomeToolBar",
-                        );
-                        if (context.mounted) {
-                          await ShareDialog().dialog(context: context);
-                        }
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: ToolbarCell(
-                      title: localize.quranSettingSupportUs,
-                      imagePath: "assets/images/toolbar/donate.png",
-                      onTap: () async {
-                        await FirebaseAnalyticsRepository.logEvent(
-                          name: "SupportUsFromHomeToolBar",
-                        );
-                        if (context.mounted) {
-                          await SupportUsDialog().dialog(context: context);
-                        }
-                      },
-                    ),
-                  ),
-                  const Expanded(child: SizedBox()),
-                  const Expanded(child: SizedBox()),
 
-                  //   child: ToolbarCell(
-                  //     title: localize.qiblaFinder,
-                  //     imagePath: "assets/images/toolbar/qibla.png",
-                  //     onTap: () async {
-                  //       await FirebaseAnalyticsRepository.logEvent(
-                  //         name: "QiblaFinderScreenFromHomeToolBar",
-                  //       );
-                  //       await navigator.pushNamed(
-                  //         RoutesConstants.qiblaFinderScreen,
-                  //       );
-                  //     },
-                  //   ),
-                  // ),
-                  // Expanded(
-                  //   child: ToolbarCell(
-                  //     title: "Doaa",
-                  //     imagePath: "assets/images/toolbar/doaa.png",
-                  //     onTap: () async {
-                  //       // await FirebaseAnalyticsRepository.logEvent(
-                  //       //     name: "QiblaFinderScreenFromHomeToolBar");
-                  //       // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-                  //     },
-                  //   ),
-                  // ),
-                  //     Expanded(
-                  //       child: ToolbarCell(
-                  //         title: "hadeeth",
-                  //         imagePath: "assets/images/toolbar/hadeeth.png",
-                  //         onTap: () async {
-                  //           // await FirebaseAnalyticsRepository.logEvent(
-                  //           //     name: "QiblaFinderScreenFromHomeToolBar");
-                  //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-                  //         },
-                  //       ),
-                  //     ),
-                  //     Expanded(
-                  //       child: ToolbarCell(
-                  //         title: "seyam",
-                  //         imagePath: "assets/images/toolbar/seyam.png",
-                  //         onTap: () async {
-                  //           // await FirebaseAnalyticsRepository.logEvent(
-                  //           //     name: "QiblaFinderScreenFromHomeToolBar");
-                  //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-                  //         },
-                  //       ),
-                  //     ),
+              //   child: ToolbarCell(
+              //     title: localize.qiblaFinder,
+              //     imagePath: "assets/images/toolbar/qibla.png",
+              //     onTap: () async {
+              //       await FirebaseAnalyticsRepository.logEvent(
+              //         name: "QiblaFinderScreenFromHomeToolBar",
+              //       );
+              //       await navigator.pushNamed(
+              //         RoutesConstants.qiblaFinderScreen,
+              //       );
+              //     },
+              //   ),
+              // ),
+              // Expanded(
+              //   child: ToolbarCell(
+              //     title: "Doaa",
+              //     imagePath: "assets/images/toolbar/doaa.png",
+              //     onTap: () async {
+              //       // await FirebaseAnalyticsRepository.logEvent(
+              //       //     name: "QiblaFinderScreenFromHomeToolBar");
+              //       // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+              //     },
+              //   ),
+              // ),
+              //     Expanded(
+              //       child: ToolbarCell(
+              //         title: "hadeeth",
+              //         imagePath: "assets/images/toolbar/hadeeth.png",
+              //         onTap: () async {
+              //           // await FirebaseAnalyticsRepository.logEvent(
+              //           //     name: "QiblaFinderScreenFromHomeToolBar");
+              //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+              //         },
+              //       ),
+              //     ),
+              //     Expanded(
+              //       child: ToolbarCell(
+              //         title: "seyam",
+              //         imagePath: "assets/images/toolbar/seyam.png",
+              //         onTap: () async {
+              //           // await FirebaseAnalyticsRepository.logEvent(
+              //           //     name: "QiblaFinderScreenFromHomeToolBar");
+              //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+              //         },
+              //       ),
+              //     ),
 
-                  //     Expanded(
-                  //       child: ToolbarCell(
-                  //         title: "library",
-                  //         imagePath: "assets/images/toolbar/library.png",
-                  //         onTap: () async {
-                  //           // await FirebaseAnalyticsRepository.logEvent(
-                  //           //     name: "QiblaFinderScreenFromHomeToolBar");
-                  //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
-                  //         },
-                  //       ),
-                  //     ),
-                ],
-              ),
+              //     Expanded(
+              //       child: ToolbarCell(
+              //         title: "library",
+              //         imagePath: "assets/images/toolbar/library.png",
+              //         onTap: () async {
+              //           // await FirebaseAnalyticsRepository.logEvent(
+              //           //     name: "QiblaFinderScreenFromHomeToolBar");
+              //           // await navigator.pushNamed(RoutesConstants.qiblaFinderScreen);
+              //         },
+              //       ),
+              //     ),
             ],
           ),
         ),

@@ -17,8 +17,6 @@ import 'package:islam_app/shared_widgets/appbar/custom_appbar.dart';
 import 'package:islam_app/shared_widgets/custom_button.dart';
 import 'package:preferences/preferences.dart';
 
-/// TODO: this screen is broke need to fix it
-
 /// A screen that provides comprehensive prayer calculation settings.
 ///
 /// This screen allows users to configure various aspects of prayer time
@@ -46,16 +44,18 @@ class PrayCalculationSettingScreen extends StatelessWidget {
           title: IslamMobLocalizations.of(context).prayCalculationSettings,
         ),
         body: SafeArea(
-          child: Column(
-            children: [
-              const PrayCalculationHeaderView(),
-              const SizedBox(height: 4),
-              const PrayCalculationSubHeaderView(),
-              const SizedBox(height: 8),
-              _swiperSection(),
-              const SizedBox(height: 10),
-              _buttonsSection(context),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const PrayCalculationHeaderView(),
+                const SizedBox(height: 4),
+                const PrayCalculationSubHeaderView(),
+                const SizedBox(height: 8),
+                _swiperSection(),
+                const SizedBox(height: 10),
+                _buttonsSection(context),
+              ],
+            ),
           ),
         ),
       ),
@@ -64,31 +64,39 @@ class PrayCalculationSettingScreen extends StatelessWidget {
 
   // Swiper section for displaying the different calculation views
   Widget _swiperSection() {
-    return Expanded(
-      child: Container(
-        color: Colors.grey[300],
-        child: Swiper(
-          itemCount: 5,
-          pagination: const SwiperPagination(),
-          controller: SwiperController(),
-          itemBuilder: (BuildContext context, int index) {
-            switch (index) {
-              case 0:
-                return const CalculationMethodView();
-              case 1:
-                return const MadhabView();
-              case 2:
-                return const TimeZoneView();
-              case 3:
-                return const EditPrayTimeMinutesView();
-              case 4:
-                return const PolesCalculationView();
-              default:
-                return const SizedBox.shrink();
-            }
-          },
-        ),
-      ),
+    return Builder(
+      builder: (context) {
+        // Calculate available height for the swiper section
+        // Using 40% of screen height, clamped between 300 and 600 pixels
+        final screenHeight = MediaQuery.of(context).size.height;
+        final availableHeight = (screenHeight * 0.4).clamp(300.0, 600.0);
+
+        return Container(
+          height: availableHeight,
+          color: Colors.grey[300],
+          child: Swiper(
+            itemCount: 5,
+            pagination: const SwiperPagination(),
+            controller: SwiperController(),
+            itemBuilder: (BuildContext context, int index) {
+              switch (index) {
+                case 0:
+                  return const CalculationMethodView();
+                case 1:
+                  return const MadhabView();
+                case 2:
+                  return const TimeZoneView();
+                case 3:
+                  return const EditPrayTimeMinutesView();
+                case 4:
+                  return const PolesCalculationView();
+                default:
+                  return const SizedBox.shrink();
+              }
+            },
+          ),
+        );
+      },
     );
   }
 

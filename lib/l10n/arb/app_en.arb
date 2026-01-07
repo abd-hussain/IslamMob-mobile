@@ -608,7 +608,10 @@
     "login_screen_title" : "Login to make your memories",
     "prayTimes" : "Prayer",
     "tapToSeeThePrayerTime" : "Tap to see the prayer time",
-    "remeningTime" : "Remaining time"
+    "remeningTime" : "Remaining time",
+    "donateapp" : "Support App",
+    "donateappDetails" : "Your donations help us continue to develop and improve the app to serve Muslims",
+    "shareappDetails" : "Share it with friends and be part of spreading goodness"
 
 
 

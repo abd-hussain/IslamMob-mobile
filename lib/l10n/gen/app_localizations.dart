@@ -3706,6 +3706,24 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Remaining time'**
   String get remeningTime;
+
+  /// No description provided for @donateapp.
+  ///
+  /// In en, this message translates to:
+  /// **'Support App'**
+  String get donateapp;
+
+  /// No description provided for @donateappDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Your donations help us continue to develop and improve the app to serve Muslims'**
+  String get donateappDetails;
+
+  /// No description provided for @shareappDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Share it with friends and be part of spreading goodness'**
+  String get shareappDetails;
 }
 
 class _IslamMobLocalizationsDelegate
