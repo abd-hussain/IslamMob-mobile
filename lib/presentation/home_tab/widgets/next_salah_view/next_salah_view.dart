@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/domain/usecase/salah_box_usecase.dart';
 import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/l10n/gen/app_localizations.dart';
 import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_app/presentation/home_tab/bloc/home_tab_bloc.dart';
+import 'package:islam_app/presentation/home_tab/widgets/next_salah_view/salah_timer_view.dart';
+import 'package:islam_app/presentation/main_container/bloc/main_container_bloc.dart';
 import 'package:islam_app/shared_widgets/custom_text.dart';
 
 class NextSalahView extends StatefulWidget {
   final SalahTimeState salahType;
 
-  const NextSalahView({super.key, required this.salahType});
+  /// The target date and time for the next Islamic prayer.
+  final DateTime targetTime;
+
+  /// Callback function triggered when the countdown reaches zero.
+  final Function() onTimerFinished;
+
+  const NextSalahView({
+    super.key,
+    required this.salahType,
+    required this.targetTime,
+    required this.onTimerFinished,
+  });
 
   @override
   State<NextSalahView> createState() => _NextSalahViewState();
@@ -35,30 +50,67 @@ class _NextSalahViewState extends State<NextSalahView> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _buildHijriDate(),
-                      const SizedBox(height: 5),
-                      _buildMeladyDate(),
-                      const SizedBox(height: 5),
                       _buildDayDetails(context),
-                      const SizedBox(height: 5),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          _buildHijriDate(),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, right: 8),
+                            child: Container(
+                              width: 2,
+                              height: 12,
+                              color: Colors.white,
+                            ),
+                          ),
+                          _buildMeladyDate(),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
                       _buildNextSalahInfo(context, widget.salahType),
+                      const SizedBox(height: 8),
+                      _buildNextSalahTime(),
+                      const SizedBox(height: 8),
+                      BlocBuilder<HomeTabBloc, HomeTabState>(
+                        buildWhen: (previous, current) =>
+                            previous.nextPrayDateTime !=
+                            current.nextPrayDateTime,
+                        builder: (context, state) {
+                          return _buildSalahTimer(
+                            context.read<HomeTabBloc>(),
+                            state,
+                          );
+                        },
+                      ),
                     ],
                   ),
                   const Expanded(child: SizedBox()),
-                  Expanded(child: _buildSalahImage(widget.salahType)),
+                  Expanded(flex: 2, child: _buildSalahImage(widget.salahType)),
                 ],
               ),
               const Divider(color: Colors.white),
-              Row(
-                children: [
-                  CustomText(title: "Tap to see the prayer time", fontSize: 16),
-                  const Expanded(child: SizedBox()),
-                  Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.white,
-                    size: 20,
-                  ),
-                ],
+              InkWell(
+                onTap: () {
+                  context.read<MainContainerBloc>().add(
+                    MainContainerEvent.changeSelectedIndex(1),
+                  );
+                },
+                child: Row(
+                  children: [
+                    CustomText(
+                      title: IslamMobLocalizations.of(
+                        context,
+                      ).tapToSeeThePrayerTime,
+                      fontSize: 12,
+                    ),
+                    const Expanded(child: SizedBox()),
+                    const Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -73,9 +125,38 @@ class _NextSalahViewState extends State<NextSalahView> {
       children: [
         CustomText(
           title: SalahBoxUseCase.getSalahName(context, salahType),
-          fontSize: 25,
+          fontSize: 30,
         ),
       ],
+    );
+  }
+
+  /// Builds the next Salah time with AM/PM indication.
+  Widget _buildNextSalahTime() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        CustomText(
+          title: context.read<HomeTabBloc>().getNextSalahTime(),
+          fontSize: 25,
+        ),
+        const SizedBox(width: 2),
+        CustomText(
+          title: context.read<HomeTabBloc>().knowTimingAMorPM(),
+          fontSize: 12,
+        ),
+      ],
+    );
+  }
+
+  /// Builds the Salah timer view.
+  Widget _buildSalahTimer(HomeTabBloc bloc, HomeTabState state) {
+    return HomeTabSalahTimerView(
+      targetTime: state.nextPrayDateTime!,
+      onTimerFinished: () {
+        bloc.add(HomeTabEvent.prepareNextSalahTypeAndTime());
+      },
     );
   }
 
@@ -93,7 +174,7 @@ class _NextSalahViewState extends State<NextSalahView> {
 
     return CustomText(
       title: dayName,
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: FontWeight.bold,
       textAlign: TextAlign.center,
     );

@@ -134,6 +134,10 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/logoz
   $AssetsImagesLogozGen get logoz => const $AssetsImagesLogozGen();
 
+  /// File path: assets/images/man_pray.png
+  AssetGenImage get manPray =>
+      const AssetGenImage('assets/images/man_pray.png');
+
   /// Directory path: assets/images/omrah
   $AssetsImagesOmrahGen get omrah => const $AssetsImagesOmrahGen();
 
@@ -178,6 +182,7 @@ class $AssetsImagesGen {
     googleIc,
     hisnalmuslim,
     internet,
+    manPray,
     readyToGo,
     sharePopoup,
     tasbeehCounterLayout,

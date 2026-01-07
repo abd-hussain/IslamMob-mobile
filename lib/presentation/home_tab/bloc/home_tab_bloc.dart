@@ -8,7 +8,9 @@ import 'package:islam_app/domain/sealed/salah_time_state.dart';
 import 'package:islam_app/domain/usecase/pray_manager/pray_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_local_notification_when_app_open_usecase.dart';
 import 'package:islam_app/domain/usecase/setup_user_setting_usecase.dart';
+import 'package:islam_app/domain/usecase/timing_usecase.dart';
 import 'package:islam_app/my_app/locator.dart';
+import 'package:islam_mob_adhan/adhan.dart';
 import 'package:location_manager/location_manager.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -34,6 +36,12 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   /// Scroll controller for managing app bar expansion and scroll behavior.
   final ScrollController scrollController = ScrollController();
 
+  /// Prayer use case instance for Islamic prayer calculations and next prayer determination.
+  PrayUsecase prayUsecase = PrayUsecase();
+
+  /// Timing use case instance for prayer time calculations and formatting.
+  final TimingUseCase timingUsecase = locator<TimingUseCase>();
+
   /// Creates a [HomeTabBloc] with initial state and event handlers.
   ///
   /// Initializes the BLoC with empty home state and sets up event handlers for:
@@ -47,10 +55,10 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     on<_UpdateShowingNotificationView>(_handleNotificationViewUpdate);
     on<_UpdateShowingLocationView>(_handleLocationViewUpdate);
     on<_UpdateNextPrayType>(_handleNextPrayTypeUpdate);
+    on<_PrepareNextSalahTypeAndTime>(_handlePrepareNextSalahTypeAndTime);
+    on<_UpdateNextPrayTypeAndTime>(_handleUpdateNextPrayTypeAndTime);
   }
 
-  /// Prayer use case instance for calculating Islamic prayer times and next prayer.
-  final PrayUsecase prayUsecase = PrayUsecase();
   final LocationManagerBase _locationManager = LocationManagerBase();
 
   FutureOr<void> _initialize(
@@ -174,5 +182,65 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
     scrollController.removeListener(_scrollListener);
     scrollController.dispose();
     return super.close();
+  }
+
+  FutureOr<void> _handlePrepareNextSalahTypeAndTime(
+    _PrepareNextSalahTypeAndTime event,
+    Emitter<HomeTabState> emit,
+  ) {
+    if (prayUsecase.getNextPrayType() == const SalahTimeState.none()) {
+      final tommorrow = DateTime.now().add(const Duration(days: 1));
+      prayUsecase = PrayUsecase(
+        specificDate: DateComponents(
+          tommorrow.year,
+          tommorrow.month,
+          tommorrow.day,
+        ),
+      );
+      add(
+        HomeTabEvent.updateSalahTypeAndTime(
+          nextPrayType: const SalahTimeState.fajir(),
+          nextPrayDateTime: prayUsecase
+              .getAllPrayTimeAsDateTimeForToday()
+              .fajir,
+        ),
+      );
+    } else {
+      add(
+        HomeTabEvent.updateSalahTypeAndTime(
+          nextPrayType: prayUsecase.getNextPrayType(),
+          nextPrayDateTime: prayUsecase.getNextPrayTime(),
+        ),
+      );
+    }
+  }
+
+  FutureOr<void> _handleUpdateNextPrayTypeAndTime(
+    _UpdateNextPrayTypeAndTime event,
+    Emitter<HomeTabState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        nextPrayType: event.nextPrayType,
+        nextPrayDateTime: event.nextPrayDateTime,
+      ),
+    );
+  }
+
+  /// Formats the next Salah time in 12-hour format.
+  String getNextSalahTime() {
+    final hour = timingUsecase.convertTo12HourFormat(
+      state.nextPrayDateTime?.hour,
+    );
+    final minute = (state.nextPrayDateTime?.minute ?? 0).toString().padLeft(
+      2,
+      '0',
+    );
+    return "$hour:$minute";
+  }
+
+  /// Determines if the next Salah time is AM or PM.
+  String knowTimingAMorPM() {
+    return timingUsecase.getAmPm(state.nextPrayDateTime?.hour);
   }
 }

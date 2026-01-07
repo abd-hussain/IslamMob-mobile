@@ -1877,4 +1877,10 @@ class IslamMobLocalizationsAr extends IslamMobLocalizations {
 
   @override
   String get prayTimes => 'الصلاة';
+
+  @override
+  String get tapToSeeThePrayerTime => 'انقر لعرض أوقات الصلاة';
+
+  @override
+  String get remeningTime => 'الوقت المتبقي';
 }

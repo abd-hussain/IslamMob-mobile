@@ -606,7 +606,9 @@
     "delete_post_option" : "Delete",
     "editPost" : "Edit Post",
     "login_screen_title" : "Login to make your memories",
-    "prayTimes" : "Prayer"
+    "prayTimes" : "Prayer",
+    "tapToSeeThePrayerTime" : "Tap to see the prayer time",
+    "remeningTime" : "Remaining time"
 
 
 

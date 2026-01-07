@@ -1888,4 +1888,10 @@ class IslamMobLocalizationsEn extends IslamMobLocalizations {
 
   @override
   String get prayTimes => 'Prayer';
+
+  @override
+  String get tapToSeeThePrayerTime => 'Tap to see the prayer time';
+
+  @override
+  String get remeningTime => 'Remaining time';
 }

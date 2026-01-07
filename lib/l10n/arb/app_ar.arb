@@ -629,7 +629,9 @@
     "delete_post_option" : "حذف",
     "editPost" : "تعديل منشور",
     "login_screen_title" : "سجل الدخول لإنشاء ذكرياتك",
-    "prayTimes" : "الصلاة"
+    "prayTimes" : "الصلاة",
+    "tapToSeeThePrayerTime" : "انقر لعرض أوقات الصلاة",
+    "remeningTime" : "الوقت المتبقي"
 
 
 

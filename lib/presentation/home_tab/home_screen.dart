@@ -46,7 +46,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeTabBloc()..add(HomeTabEvent.initialize(context)),
+      create: (context) => HomeTabBloc()
+        ..add(HomeTabEvent.initialize(context))
+        ..add(HomeTabEvent.prepareNextSalahTypeAndTime()),
       child: BlocBuilder<HomeTabBloc, HomeTabState>(
         buildWhen: (previous, current) =>
             previous.loadingStatus != current.loadingStatus,
@@ -61,7 +63,15 @@ class HomeScreen extends StatelessWidget {
           return SingleChildScrollView(
             child: Column(
               children: [
-                NextSalahView(salahType: state.nextPrayType),
+                NextSalahView(
+                  salahType: state.nextPrayType,
+                  targetTime: state.nextPrayDateTime!,
+                  onTimerFinished: () {
+                    context.read<HomeTabBloc>().add(
+                      HomeTabEvent.updateNextPrayType(state.nextPrayType),
+                    );
+                  },
+                ),
                 _buildToolBarView(),
                 _buildInternetConnectionView(),
                 _buildNotificationPermissionView(),

@@ -59,4 +59,26 @@ class HomeTabEvent with _$HomeTabEvent {
   /// - [nextPrayType]: The next prayer type (Fajr, Dhuhr, Asr, Maghrib, Isha)
   factory HomeTabEvent.updateNextPrayType(SalahTimeState nextPrayType) =
       _UpdateNextPrayType;
+
+  /// Event to prepare and calculate the next Islamic prayer type and time.
+  ///
+  /// This event triggers the calculation of the next upcoming prayer,
+  /// handling day transitions and ensuring accurate prayer time information
+  /// is available for display in the home header.
+  factory HomeTabEvent.prepareNextSalahTypeAndTime() =
+      _PrepareNextSalahTypeAndTime;
+
+  /// Event to update the prayer type and time information in the state.
+  ///
+  /// This event updates the home header with specific prayer timing
+  /// information, including the prayer type and exact time for proper
+  /// countdown and preparation display.
+  ///
+  /// Parameters:
+  /// - [nextPrayType]: The next Islamic prayer type (Fajr, Dhuhr, Asr, Maghrib, Isha)
+  /// - [nextPrayDateTime]: The exact date and time of the next prayer
+  factory HomeTabEvent.updateSalahTypeAndTime({
+    required SalahTimeState nextPrayType,
+    required DateTime? nextPrayDateTime,
+  }) = _UpdateNextPrayTypeAndTime;
 }

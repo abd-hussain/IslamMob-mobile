@@ -3694,6 +3694,18 @@ abstract class IslamMobLocalizations {
   /// In en, this message translates to:
   /// **'Prayer'**
   String get prayTimes;
+
+  /// No description provided for @tapToSeeThePrayerTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to see the prayer time'**
+  String get tapToSeeThePrayerTime;
+
+  /// No description provided for @remeningTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Remaining time'**
+  String get remeningTime;
 }
 
 class _IslamMobLocalizationsDelegate

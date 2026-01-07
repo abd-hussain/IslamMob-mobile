@@ -55,7 +55,7 @@ extension HomeTabEventPatterns on HomeTabEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initialize value)?  initialize,TResult Function( _UpdateExpandedStatus value)?  updateExpandedStatus,TResult Function( _UpdateShowingNotificationView value)?  updateShowingNotificationView,TResult Function( _UpdateShowingLocationView value)?  updateShowingLocationView,TResult Function( _UpdateNextPrayType value)?  updateNextPrayType,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initialize value)?  initialize,TResult Function( _UpdateExpandedStatus value)?  updateExpandedStatus,TResult Function( _UpdateShowingNotificationView value)?  updateShowingNotificationView,TResult Function( _UpdateShowingLocationView value)?  updateShowingLocationView,TResult Function( _UpdateNextPrayType value)?  updateNextPrayType,TResult Function( _PrepareNextSalahTypeAndTime value)?  prepareNextSalahTypeAndTime,TResult Function( _UpdateNextPrayTypeAndTime value)?  updateSalahTypeAndTime,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initialize() when initialize != null:
@@ -63,7 +63,9 @@ return initialize(_that);case _UpdateExpandedStatus() when updateExpandedStatus 
 return updateExpandedStatus(_that);case _UpdateShowingNotificationView() when updateShowingNotificationView != null:
 return updateShowingNotificationView(_that);case _UpdateShowingLocationView() when updateShowingLocationView != null:
 return updateShowingLocationView(_that);case _UpdateNextPrayType() when updateNextPrayType != null:
-return updateNextPrayType(_that);case _:
+return updateNextPrayType(_that);case _PrepareNextSalahTypeAndTime() when prepareNextSalahTypeAndTime != null:
+return prepareNextSalahTypeAndTime(_that);case _UpdateNextPrayTypeAndTime() when updateSalahTypeAndTime != null:
+return updateSalahTypeAndTime(_that);case _:
   return orElse();
 
 }
@@ -81,7 +83,7 @@ return updateNextPrayType(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initialize value)  initialize,required TResult Function( _UpdateExpandedStatus value)  updateExpandedStatus,required TResult Function( _UpdateShowingNotificationView value)  updateShowingNotificationView,required TResult Function( _UpdateShowingLocationView value)  updateShowingLocationView,required TResult Function( _UpdateNextPrayType value)  updateNextPrayType,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initialize value)  initialize,required TResult Function( _UpdateExpandedStatus value)  updateExpandedStatus,required TResult Function( _UpdateShowingNotificationView value)  updateShowingNotificationView,required TResult Function( _UpdateShowingLocationView value)  updateShowingLocationView,required TResult Function( _UpdateNextPrayType value)  updateNextPrayType,required TResult Function( _PrepareNextSalahTypeAndTime value)  prepareNextSalahTypeAndTime,required TResult Function( _UpdateNextPrayTypeAndTime value)  updateSalahTypeAndTime,}){
 final _that = this;
 switch (_that) {
 case _Initialize():
@@ -89,7 +91,9 @@ return initialize(_that);case _UpdateExpandedStatus():
 return updateExpandedStatus(_that);case _UpdateShowingNotificationView():
 return updateShowingNotificationView(_that);case _UpdateShowingLocationView():
 return updateShowingLocationView(_that);case _UpdateNextPrayType():
-return updateNextPrayType(_that);case _:
+return updateNextPrayType(_that);case _PrepareNextSalahTypeAndTime():
+return prepareNextSalahTypeAndTime(_that);case _UpdateNextPrayTypeAndTime():
+return updateSalahTypeAndTime(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -106,7 +110,7 @@ return updateNextPrayType(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initialize value)?  initialize,TResult? Function( _UpdateExpandedStatus value)?  updateExpandedStatus,TResult? Function( _UpdateShowingNotificationView value)?  updateShowingNotificationView,TResult? Function( _UpdateShowingLocationView value)?  updateShowingLocationView,TResult? Function( _UpdateNextPrayType value)?  updateNextPrayType,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initialize value)?  initialize,TResult? Function( _UpdateExpandedStatus value)?  updateExpandedStatus,TResult? Function( _UpdateShowingNotificationView value)?  updateShowingNotificationView,TResult? Function( _UpdateShowingLocationView value)?  updateShowingLocationView,TResult? Function( _UpdateNextPrayType value)?  updateNextPrayType,TResult? Function( _PrepareNextSalahTypeAndTime value)?  prepareNextSalahTypeAndTime,TResult? Function( _UpdateNextPrayTypeAndTime value)?  updateSalahTypeAndTime,}){
 final _that = this;
 switch (_that) {
 case _Initialize() when initialize != null:
@@ -114,7 +118,9 @@ return initialize(_that);case _UpdateExpandedStatus() when updateExpandedStatus 
 return updateExpandedStatus(_that);case _UpdateShowingNotificationView() when updateShowingNotificationView != null:
 return updateShowingNotificationView(_that);case _UpdateShowingLocationView() when updateShowingLocationView != null:
 return updateShowingLocationView(_that);case _UpdateNextPrayType() when updateNextPrayType != null:
-return updateNextPrayType(_that);case _:
+return updateNextPrayType(_that);case _PrepareNextSalahTypeAndTime() when prepareNextSalahTypeAndTime != null:
+return prepareNextSalahTypeAndTime(_that);case _UpdateNextPrayTypeAndTime() when updateSalahTypeAndTime != null:
+return updateSalahTypeAndTime(_that);case _:
   return null;
 
 }
@@ -131,14 +137,16 @@ return updateNextPrayType(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( BuildContext context)?  initialize,TResult Function( bool status)?  updateExpandedStatus,TResult Function( bool status)?  updateShowingNotificationView,TResult Function( bool status)?  updateShowingLocationView,TResult Function( SalahTimeState nextPrayType)?  updateNextPrayType,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( BuildContext context)?  initialize,TResult Function( bool status)?  updateExpandedStatus,TResult Function( bool status)?  updateShowingNotificationView,TResult Function( bool status)?  updateShowingLocationView,TResult Function( SalahTimeState nextPrayType)?  updateNextPrayType,TResult Function()?  prepareNextSalahTypeAndTime,TResult Function( SalahTimeState nextPrayType,  DateTime? nextPrayDateTime)?  updateSalahTypeAndTime,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initialize() when initialize != null:
 return initialize(_that.context);case _UpdateExpandedStatus() when updateExpandedStatus != null:
 return updateExpandedStatus(_that.status);case _UpdateShowingNotificationView() when updateShowingNotificationView != null:
 return updateShowingNotificationView(_that.status);case _UpdateShowingLocationView() when updateShowingLocationView != null:
 return updateShowingLocationView(_that.status);case _UpdateNextPrayType() when updateNextPrayType != null:
-return updateNextPrayType(_that.nextPrayType);case _:
+return updateNextPrayType(_that.nextPrayType);case _PrepareNextSalahTypeAndTime() when prepareNextSalahTypeAndTime != null:
+return prepareNextSalahTypeAndTime();case _UpdateNextPrayTypeAndTime() when updateSalahTypeAndTime != null:
+return updateSalahTypeAndTime(_that.nextPrayType,_that.nextPrayDateTime);case _:
   return orElse();
 
 }
@@ -156,14 +164,16 @@ return updateNextPrayType(_that.nextPrayType);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( BuildContext context)  initialize,required TResult Function( bool status)  updateExpandedStatus,required TResult Function( bool status)  updateShowingNotificationView,required TResult Function( bool status)  updateShowingLocationView,required TResult Function( SalahTimeState nextPrayType)  updateNextPrayType,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( BuildContext context)  initialize,required TResult Function( bool status)  updateExpandedStatus,required TResult Function( bool status)  updateShowingNotificationView,required TResult Function( bool status)  updateShowingLocationView,required TResult Function( SalahTimeState nextPrayType)  updateNextPrayType,required TResult Function()  prepareNextSalahTypeAndTime,required TResult Function( SalahTimeState nextPrayType,  DateTime? nextPrayDateTime)  updateSalahTypeAndTime,}) {final _that = this;
 switch (_that) {
 case _Initialize():
 return initialize(_that.context);case _UpdateExpandedStatus():
 return updateExpandedStatus(_that.status);case _UpdateShowingNotificationView():
 return updateShowingNotificationView(_that.status);case _UpdateShowingLocationView():
 return updateShowingLocationView(_that.status);case _UpdateNextPrayType():
-return updateNextPrayType(_that.nextPrayType);case _:
+return updateNextPrayType(_that.nextPrayType);case _PrepareNextSalahTypeAndTime():
+return prepareNextSalahTypeAndTime();case _UpdateNextPrayTypeAndTime():
+return updateSalahTypeAndTime(_that.nextPrayType,_that.nextPrayDateTime);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -180,14 +190,16 @@ return updateNextPrayType(_that.nextPrayType);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( BuildContext context)?  initialize,TResult? Function( bool status)?  updateExpandedStatus,TResult? Function( bool status)?  updateShowingNotificationView,TResult? Function( bool status)?  updateShowingLocationView,TResult? Function( SalahTimeState nextPrayType)?  updateNextPrayType,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( BuildContext context)?  initialize,TResult? Function( bool status)?  updateExpandedStatus,TResult? Function( bool status)?  updateShowingNotificationView,TResult? Function( bool status)?  updateShowingLocationView,TResult? Function( SalahTimeState nextPrayType)?  updateNextPrayType,TResult? Function()?  prepareNextSalahTypeAndTime,TResult? Function( SalahTimeState nextPrayType,  DateTime? nextPrayDateTime)?  updateSalahTypeAndTime,}) {final _that = this;
 switch (_that) {
 case _Initialize() when initialize != null:
 return initialize(_that.context);case _UpdateExpandedStatus() when updateExpandedStatus != null:
 return updateExpandedStatus(_that.status);case _UpdateShowingNotificationView() when updateShowingNotificationView != null:
 return updateShowingNotificationView(_that.status);case _UpdateShowingLocationView() when updateShowingLocationView != null:
 return updateShowingLocationView(_that.status);case _UpdateNextPrayType() when updateNextPrayType != null:
-return updateNextPrayType(_that.nextPrayType);case _:
+return updateNextPrayType(_that.nextPrayType);case _PrepareNextSalahTypeAndTime() when prepareNextSalahTypeAndTime != null:
+return prepareNextSalahTypeAndTime();case _UpdateNextPrayTypeAndTime() when updateSalahTypeAndTime != null:
+return updateSalahTypeAndTime(_that.nextPrayType,_that.nextPrayDateTime);case _:
   return null;
 
 }
@@ -535,9 +547,118 @@ $SalahTimeStateCopyWith<$Res> get nextPrayType {
 }
 
 /// @nodoc
+
+
+class _PrepareNextSalahTypeAndTime implements HomeTabEvent {
+   _PrepareNextSalahTypeAndTime();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PrepareNextSalahTypeAndTime);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'HomeTabEvent.prepareNextSalahTypeAndTime()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _UpdateNextPrayTypeAndTime implements HomeTabEvent {
+   _UpdateNextPrayTypeAndTime({required this.nextPrayType, required this.nextPrayDateTime});
+  
+
+ final  SalahTimeState nextPrayType;
+ final  DateTime? nextPrayDateTime;
+
+/// Create a copy of HomeTabEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateNextPrayTypeAndTimeCopyWith<_UpdateNextPrayTypeAndTime> get copyWith => __$UpdateNextPrayTypeAndTimeCopyWithImpl<_UpdateNextPrayTypeAndTime>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateNextPrayTypeAndTime&&(identical(other.nextPrayType, nextPrayType) || other.nextPrayType == nextPrayType)&&(identical(other.nextPrayDateTime, nextPrayDateTime) || other.nextPrayDateTime == nextPrayDateTime));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,nextPrayType,nextPrayDateTime);
+
+@override
+String toString() {
+  return 'HomeTabEvent.updateSalahTypeAndTime(nextPrayType: $nextPrayType, nextPrayDateTime: $nextPrayDateTime)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UpdateNextPrayTypeAndTimeCopyWith<$Res> implements $HomeTabEventCopyWith<$Res> {
+  factory _$UpdateNextPrayTypeAndTimeCopyWith(_UpdateNextPrayTypeAndTime value, $Res Function(_UpdateNextPrayTypeAndTime) _then) = __$UpdateNextPrayTypeAndTimeCopyWithImpl;
+@useResult
+$Res call({
+ SalahTimeState nextPrayType, DateTime? nextPrayDateTime
+});
+
+
+$SalahTimeStateCopyWith<$Res> get nextPrayType;
+
+}
+/// @nodoc
+class __$UpdateNextPrayTypeAndTimeCopyWithImpl<$Res>
+    implements _$UpdateNextPrayTypeAndTimeCopyWith<$Res> {
+  __$UpdateNextPrayTypeAndTimeCopyWithImpl(this._self, this._then);
+
+  final _UpdateNextPrayTypeAndTime _self;
+  final $Res Function(_UpdateNextPrayTypeAndTime) _then;
+
+/// Create a copy of HomeTabEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? nextPrayType = null,Object? nextPrayDateTime = freezed,}) {
+  return _then(_UpdateNextPrayTypeAndTime(
+nextPrayType: null == nextPrayType ? _self.nextPrayType : nextPrayType // ignore: cast_nullable_to_non_nullable
+as SalahTimeState,nextPrayDateTime: freezed == nextPrayDateTime ? _self.nextPrayDateTime : nextPrayDateTime // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+/// Create a copy of HomeTabEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SalahTimeStateCopyWith<$Res> get nextPrayType {
+  
+  return $SalahTimeStateCopyWith<$Res>(_self.nextPrayType, (value) {
+    return _then(_self.copyWith(nextPrayType: value));
+  });
+}
+}
+
+/// @nodoc
 mixin _$HomeTabState {
 
- bool get isBarExpanded; bool get showAllowNotificationView; bool get showAllowLocationView; bool get showInternetConnectionView; SalahTimeState get nextPrayType; dynamic get loadingStatus;
+ bool get isBarExpanded; bool get showAllowNotificationView; bool get showAllowLocationView; bool get showInternetConnectionView; SalahTimeState get nextPrayType; DateTime? get nextPrayDateTime; dynamic get loadingStatus;
 /// Create a copy of HomeTabState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -548,16 +669,16 @@ $HomeTabStateCopyWith<HomeTabState> get copyWith => _$HomeTabStateCopyWithImpl<H
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeTabState&&(identical(other.isBarExpanded, isBarExpanded) || other.isBarExpanded == isBarExpanded)&&(identical(other.showAllowNotificationView, showAllowNotificationView) || other.showAllowNotificationView == showAllowNotificationView)&&(identical(other.showAllowLocationView, showAllowLocationView) || other.showAllowLocationView == showAllowLocationView)&&(identical(other.showInternetConnectionView, showInternetConnectionView) || other.showInternetConnectionView == showInternetConnectionView)&&(identical(other.nextPrayType, nextPrayType) || other.nextPrayType == nextPrayType)&&const DeepCollectionEquality().equals(other.loadingStatus, loadingStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeTabState&&(identical(other.isBarExpanded, isBarExpanded) || other.isBarExpanded == isBarExpanded)&&(identical(other.showAllowNotificationView, showAllowNotificationView) || other.showAllowNotificationView == showAllowNotificationView)&&(identical(other.showAllowLocationView, showAllowLocationView) || other.showAllowLocationView == showAllowLocationView)&&(identical(other.showInternetConnectionView, showInternetConnectionView) || other.showInternetConnectionView == showInternetConnectionView)&&(identical(other.nextPrayType, nextPrayType) || other.nextPrayType == nextPrayType)&&(identical(other.nextPrayDateTime, nextPrayDateTime) || other.nextPrayDateTime == nextPrayDateTime)&&const DeepCollectionEquality().equals(other.loadingStatus, loadingStatus));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,isBarExpanded,showAllowNotificationView,showAllowLocationView,showInternetConnectionView,nextPrayType,const DeepCollectionEquality().hash(loadingStatus));
+int get hashCode => Object.hash(runtimeType,isBarExpanded,showAllowNotificationView,showAllowLocationView,showInternetConnectionView,nextPrayType,nextPrayDateTime,const DeepCollectionEquality().hash(loadingStatus));
 
 @override
 String toString() {
-  return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView, showAllowLocationView: $showAllowLocationView, showInternetConnectionView: $showInternetConnectionView, nextPrayType: $nextPrayType, loadingStatus: $loadingStatus)';
+  return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView, showAllowLocationView: $showAllowLocationView, showInternetConnectionView: $showInternetConnectionView, nextPrayType: $nextPrayType, nextPrayDateTime: $nextPrayDateTime, loadingStatus: $loadingStatus)';
 }
 
 
@@ -568,7 +689,7 @@ abstract mixin class $HomeTabStateCopyWith<$Res>  {
   factory $HomeTabStateCopyWith(HomeTabState value, $Res Function(HomeTabState) _then) = _$HomeTabStateCopyWithImpl;
 @useResult
 $Res call({
- bool isBarExpanded, bool showAllowNotificationView, bool showAllowLocationView, bool showInternetConnectionView, SalahTimeState nextPrayType, dynamic loadingStatus
+ bool isBarExpanded, bool showAllowNotificationView, bool showAllowLocationView, bool showInternetConnectionView, SalahTimeState nextPrayType, DateTime? nextPrayDateTime, dynamic loadingStatus
 });
 
 
@@ -585,14 +706,15 @@ class _$HomeTabStateCopyWithImpl<$Res>
 
 /// Create a copy of HomeTabState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? isBarExpanded = null,Object? showAllowNotificationView = null,Object? showAllowLocationView = null,Object? showInternetConnectionView = null,Object? nextPrayType = null,Object? loadingStatus = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? isBarExpanded = null,Object? showAllowNotificationView = null,Object? showAllowLocationView = null,Object? showInternetConnectionView = null,Object? nextPrayType = null,Object? nextPrayDateTime = freezed,Object? loadingStatus = freezed,}) {
   return _then(_self.copyWith(
 isBarExpanded: null == isBarExpanded ? _self.isBarExpanded : isBarExpanded // ignore: cast_nullable_to_non_nullable
 as bool,showAllowNotificationView: null == showAllowNotificationView ? _self.showAllowNotificationView : showAllowNotificationView // ignore: cast_nullable_to_non_nullable
 as bool,showAllowLocationView: null == showAllowLocationView ? _self.showAllowLocationView : showAllowLocationView // ignore: cast_nullable_to_non_nullable
 as bool,showInternetConnectionView: null == showInternetConnectionView ? _self.showInternetConnectionView : showInternetConnectionView // ignore: cast_nullable_to_non_nullable
 as bool,nextPrayType: null == nextPrayType ? _self.nextPrayType : nextPrayType // ignore: cast_nullable_to_non_nullable
-as SalahTimeState,loadingStatus: freezed == loadingStatus ? _self.loadingStatus : loadingStatus // ignore: cast_nullable_to_non_nullable
+as SalahTimeState,nextPrayDateTime: freezed == nextPrayDateTime ? _self.nextPrayDateTime : nextPrayDateTime // ignore: cast_nullable_to_non_nullable
+as DateTime?,loadingStatus: freezed == loadingStatus ? _self.loadingStatus : loadingStatus // ignore: cast_nullable_to_non_nullable
 as dynamic,
   ));
 }
@@ -687,10 +809,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool isBarExpanded,  bool showAllowNotificationView,  bool showAllowLocationView,  bool showInternetConnectionView,  SalahTimeState nextPrayType,  dynamic loadingStatus)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool isBarExpanded,  bool showAllowNotificationView,  bool showAllowLocationView,  bool showInternetConnectionView,  SalahTimeState nextPrayType,  DateTime? nextPrayDateTime,  dynamic loadingStatus)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HomeTabState() when $default != null:
-return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAllowLocationView,_that.showInternetConnectionView,_that.nextPrayType,_that.loadingStatus);case _:
+return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAllowLocationView,_that.showInternetConnectionView,_that.nextPrayType,_that.nextPrayDateTime,_that.loadingStatus);case _:
   return orElse();
 
 }
@@ -708,10 +830,10 @@ return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAl
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool isBarExpanded,  bool showAllowNotificationView,  bool showAllowLocationView,  bool showInternetConnectionView,  SalahTimeState nextPrayType,  dynamic loadingStatus)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool isBarExpanded,  bool showAllowNotificationView,  bool showAllowLocationView,  bool showInternetConnectionView,  SalahTimeState nextPrayType,  DateTime? nextPrayDateTime,  dynamic loadingStatus)  $default,) {final _that = this;
 switch (_that) {
 case _HomeTabState():
-return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAllowLocationView,_that.showInternetConnectionView,_that.nextPrayType,_that.loadingStatus);case _:
+return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAllowLocationView,_that.showInternetConnectionView,_that.nextPrayType,_that.nextPrayDateTime,_that.loadingStatus);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -728,10 +850,10 @@ return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAl
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool isBarExpanded,  bool showAllowNotificationView,  bool showAllowLocationView,  bool showInternetConnectionView,  SalahTimeState nextPrayType,  dynamic loadingStatus)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool isBarExpanded,  bool showAllowNotificationView,  bool showAllowLocationView,  bool showInternetConnectionView,  SalahTimeState nextPrayType,  DateTime? nextPrayDateTime,  dynamic loadingStatus)?  $default,) {final _that = this;
 switch (_that) {
 case _HomeTabState() when $default != null:
-return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAllowLocationView,_that.showInternetConnectionView,_that.nextPrayType,_that.loadingStatus);case _:
+return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAllowLocationView,_that.showInternetConnectionView,_that.nextPrayType,_that.nextPrayDateTime,_that.loadingStatus);case _:
   return null;
 
 }
@@ -743,7 +865,7 @@ return $default(_that.isBarExpanded,_that.showAllowNotificationView,_that.showAl
 
 
 class _HomeTabState implements HomeTabState {
-  const _HomeTabState({this.isBarExpanded = true, this.showAllowNotificationView = false, this.showAllowLocationView = false, this.showInternetConnectionView = false, this.nextPrayType = const SalahTimeState.none(), this.loadingStatus = const HomeScreenProcessState.loading()});
+  const _HomeTabState({this.isBarExpanded = true, this.showAllowNotificationView = false, this.showAllowLocationView = false, this.showInternetConnectionView = false, this.nextPrayType = const SalahTimeState.none(), this.nextPrayDateTime = null, this.loadingStatus = const HomeScreenProcessState.loading()});
   
 
 @override@JsonKey() final  bool isBarExpanded;
@@ -751,6 +873,7 @@ class _HomeTabState implements HomeTabState {
 @override@JsonKey() final  bool showAllowLocationView;
 @override@JsonKey() final  bool showInternetConnectionView;
 @override@JsonKey() final  SalahTimeState nextPrayType;
+@override@JsonKey() final  DateTime? nextPrayDateTime;
 @override@JsonKey() final  dynamic loadingStatus;
 
 /// Create a copy of HomeTabState
@@ -763,16 +886,16 @@ _$HomeTabStateCopyWith<_HomeTabState> get copyWith => __$HomeTabStateCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HomeTabState&&(identical(other.isBarExpanded, isBarExpanded) || other.isBarExpanded == isBarExpanded)&&(identical(other.showAllowNotificationView, showAllowNotificationView) || other.showAllowNotificationView == showAllowNotificationView)&&(identical(other.showAllowLocationView, showAllowLocationView) || other.showAllowLocationView == showAllowLocationView)&&(identical(other.showInternetConnectionView, showInternetConnectionView) || other.showInternetConnectionView == showInternetConnectionView)&&(identical(other.nextPrayType, nextPrayType) || other.nextPrayType == nextPrayType)&&const DeepCollectionEquality().equals(other.loadingStatus, loadingStatus));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HomeTabState&&(identical(other.isBarExpanded, isBarExpanded) || other.isBarExpanded == isBarExpanded)&&(identical(other.showAllowNotificationView, showAllowNotificationView) || other.showAllowNotificationView == showAllowNotificationView)&&(identical(other.showAllowLocationView, showAllowLocationView) || other.showAllowLocationView == showAllowLocationView)&&(identical(other.showInternetConnectionView, showInternetConnectionView) || other.showInternetConnectionView == showInternetConnectionView)&&(identical(other.nextPrayType, nextPrayType) || other.nextPrayType == nextPrayType)&&(identical(other.nextPrayDateTime, nextPrayDateTime) || other.nextPrayDateTime == nextPrayDateTime)&&const DeepCollectionEquality().equals(other.loadingStatus, loadingStatus));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,isBarExpanded,showAllowNotificationView,showAllowLocationView,showInternetConnectionView,nextPrayType,const DeepCollectionEquality().hash(loadingStatus));
+int get hashCode => Object.hash(runtimeType,isBarExpanded,showAllowNotificationView,showAllowLocationView,showInternetConnectionView,nextPrayType,nextPrayDateTime,const DeepCollectionEquality().hash(loadingStatus));
 
 @override
 String toString() {
-  return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView, showAllowLocationView: $showAllowLocationView, showInternetConnectionView: $showInternetConnectionView, nextPrayType: $nextPrayType, loadingStatus: $loadingStatus)';
+  return 'HomeTabState(isBarExpanded: $isBarExpanded, showAllowNotificationView: $showAllowNotificationView, showAllowLocationView: $showAllowLocationView, showInternetConnectionView: $showInternetConnectionView, nextPrayType: $nextPrayType, nextPrayDateTime: $nextPrayDateTime, loadingStatus: $loadingStatus)';
 }
 
 
@@ -783,7 +906,7 @@ abstract mixin class _$HomeTabStateCopyWith<$Res> implements $HomeTabStateCopyWi
   factory _$HomeTabStateCopyWith(_HomeTabState value, $Res Function(_HomeTabState) _then) = __$HomeTabStateCopyWithImpl;
 @override @useResult
 $Res call({
- bool isBarExpanded, bool showAllowNotificationView, bool showAllowLocationView, bool showInternetConnectionView, SalahTimeState nextPrayType, dynamic loadingStatus
+ bool isBarExpanded, bool showAllowNotificationView, bool showAllowLocationView, bool showInternetConnectionView, SalahTimeState nextPrayType, DateTime? nextPrayDateTime, dynamic loadingStatus
 });
 
 
@@ -800,14 +923,15 @@ class __$HomeTabStateCopyWithImpl<$Res>
 
 /// Create a copy of HomeTabState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? isBarExpanded = null,Object? showAllowNotificationView = null,Object? showAllowLocationView = null,Object? showInternetConnectionView = null,Object? nextPrayType = null,Object? loadingStatus = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? isBarExpanded = null,Object? showAllowNotificationView = null,Object? showAllowLocationView = null,Object? showInternetConnectionView = null,Object? nextPrayType = null,Object? nextPrayDateTime = freezed,Object? loadingStatus = freezed,}) {
   return _then(_HomeTabState(
 isBarExpanded: null == isBarExpanded ? _self.isBarExpanded : isBarExpanded // ignore: cast_nullable_to_non_nullable
 as bool,showAllowNotificationView: null == showAllowNotificationView ? _self.showAllowNotificationView : showAllowNotificationView // ignore: cast_nullable_to_non_nullable
 as bool,showAllowLocationView: null == showAllowLocationView ? _self.showAllowLocationView : showAllowLocationView // ignore: cast_nullable_to_non_nullable
 as bool,showInternetConnectionView: null == showInternetConnectionView ? _self.showInternetConnectionView : showInternetConnectionView // ignore: cast_nullable_to_non_nullable
 as bool,nextPrayType: null == nextPrayType ? _self.nextPrayType : nextPrayType // ignore: cast_nullable_to_non_nullable
-as SalahTimeState,loadingStatus: freezed == loadingStatus ? _self.loadingStatus : loadingStatus // ignore: cast_nullable_to_non_nullable
+as SalahTimeState,nextPrayDateTime: freezed == nextPrayDateTime ? _self.nextPrayDateTime : nextPrayDateTime // ignore: cast_nullable_to_non_nullable
+as DateTime?,loadingStatus: freezed == loadingStatus ? _self.loadingStatus : loadingStatus // ignore: cast_nullable_to_non_nullable
 as dynamic,
   ));
 }

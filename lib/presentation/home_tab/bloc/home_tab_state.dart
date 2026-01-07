@@ -49,6 +49,7 @@ abstract class HomeTabState with _$HomeTabState {
     @Default(false) bool showAllowLocationView,
     @Default(false) bool showInternetConnectionView,
     @Default(SalahTimeState.none()) SalahTimeState nextPrayType,
+    @Default(null) DateTime? nextPrayDateTime,
     @Default(HomeScreenProcessState.loading()) loadingStatus,
   }) = _HomeTabState;
 }
