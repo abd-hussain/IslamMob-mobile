@@ -47,14 +47,7 @@ class ZekerView extends StatelessWidget {
         decoration: BoxDecoration(
           color: isDisabled ? const Color(0xffE0E0E0) : Colors.white,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withValues(alpha: 0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: const Offset(0, 3),
-            ),
-          ],
+          border: Border.all(color: Colors.grey),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8),

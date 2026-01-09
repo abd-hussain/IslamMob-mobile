@@ -68,6 +68,7 @@ class AzkarAfterSalahScreen extends StatelessWidget {
               Expanded(
                 child: Stack(children: [_buildAzkarList(), _buildFinishView()]),
               ),
+              const SizedBox(height: 10),
               const AddMobBanner(verticalPadding: 0),
             ],
           ),
@@ -95,21 +96,24 @@ class AzkarAfterSalahScreen extends StatelessWidget {
           return const SizedBox.shrink();
         }
 
-        return ListView.builder(
-          itemCount: state.azkarList.length,
-          shrinkWrap: true,
-          itemBuilder: (context, index) {
-            final azkar = state.azkarList[index];
+        return Padding(
+          padding: const EdgeInsets.all(8),
+          child: ListView.builder(
+            itemCount: state.azkarList.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              final azkar = state.azkarList[index];
 
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: ZekerView(
-                azkarModel: azkar,
-                isDisabled: azkar.currentCount >= azkar.maxCount,
-                onTap: () => _incrementAzkar(context, azkar),
-              ),
-            );
-          },
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: ZekerView(
+                  azkarModel: azkar,
+                  isDisabled: azkar.currentCount >= azkar.maxCount,
+                  onTap: () => _incrementAzkar(context, azkar),
+                ),
+              );
+            },
+          ),
         );
       },
     );

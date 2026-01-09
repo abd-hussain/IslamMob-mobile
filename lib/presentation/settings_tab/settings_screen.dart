@@ -50,20 +50,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
               CollectionListOptionView(
                 listOfOptions: [
                   ProfileOptions(
-                    icon: Icons.calendar_month,
-                    name: localize.calenderSettings,
-                    onTap: () async {
-                      await FirebaseAnalyticsRepository.logEvent(
-                        name: "CalenderScreenFromSettingsScreen",
-                      );
-                      await navigator.pushNamed(RoutesConstants.calenderScreen);
-                    },
-                  ),
-                  ProfileOptions(
-                    icon: Icons.translate,
-                    name: localize.changeSelectedLanguage,
+                    icon: Icons.settings,
+                    name: localize.prayCalculationSettings,
                     onTap: () async => navigator.pushNamed(
-                      RoutesConstants.changeLanguageScreen,
+                      RoutesConstants.prayCalculationSettingScreen,
                     ),
                   ),
                   ProfileOptions(
@@ -74,10 +64,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                   ProfileOptions(
-                    icon: Icons.settings,
-                    name: localize.prayCalculationSettings,
+                    icon: Icons.translate,
+                    name: localize.changeSelectedLanguage,
                     onTap: () async => navigator.pushNamed(
-                      RoutesConstants.prayCalculationSettingScreen,
+                      RoutesConstants.changeLanguageScreen,
                     ),
                   ),
                 ],
@@ -97,6 +87,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               TitleView(title: localize.support),
               CollectionListOptionView(
                 listOfOptions: [
+                  ProfileOptions(
+                    icon: Ionicons.color_palette,
+                    name: localize.aboutus,
+                    onTap: () async =>
+                        navigator.pushNamed(RoutesConstants.aboutUsScreen),
+                  ),
                   ProfileOptions(
                     icon: Ionicons.sparkles,
                     name: localize.rateapp,
@@ -129,12 +125,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         });
                       });
                     },
-                  ),
-                  ProfileOptions(
-                    icon: Ionicons.color_palette,
-                    name: localize.aboutus,
-                    onTap: () async =>
-                        navigator.pushNamed(RoutesConstants.aboutUsScreen),
                   ),
                   ProfileOptions(
                     icon: Icons.share,
